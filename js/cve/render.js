@@ -202,7 +202,7 @@ pug_html = pug_html + (pug_escape(null == (pug_interp = v) ? "" : pug_interp));
 pug_mixins["CVSS"] = pug_interp = function(value){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + (pug_escape(null == (pug_interp = value.baseScore.toFixed(1)) ? "" : pug_interp)) + " ";
-if (value.version >= "3.0") {
+if (value.version >= "3") {
 pug_html = pug_html + "(\u003Ca" + (pug_attr("href", "https://cvssjs.github.io/#" + value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E)";
 }
 else {
@@ -232,6 +232,27 @@ pug_mixins["CVSS"](cve.impact.cvss);
 }
 pug_html = pug_html + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EPR: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E" + (pug_escape(null == (pug_interp = cve.source.defect) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EAffects: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E" + (pug_escape(null == (pug_interp = textUtil.getProductAffected(cve)) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EProblem: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E";
 pug_mixins["mpara"](cve.description.description_data.slice(0,1));
+if (cmap && Object.keys(cmap).length > 0 && cmap.constructor === Object) {
+pug_mixins["mpara"](cve.CNA_private.CVE_table_description);
+// iterate cmap
+;(function(){
+  var $$obj = cmap;
+  if ('number' == typeof $$obj.length) {
+      for (var id = 0, $$l = $$obj.length; id < $$l; id++) {
+        var x = $$obj[id];
+pug_html = pug_html + (pug_escape(null == (pug_interp = id + " ") ? "" : pug_interp));
+      }
+  } else {
+    var $$l = 0;
+    for (var id in $$obj) {
+      $$l++;
+      var x = $$obj[id];
+pug_html = pug_html + (pug_escape(null == (pug_interp = id + " ") ? "" : pug_interp));
+    }
+  }
+}).call(this);
+
+}
 pug_html = pug_html + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EWorkaround: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E";
 pug_mixins["mpara"](cve.work_around);
 pug_html = pug_html + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003ESolution: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E";
@@ -320,15 +341,15 @@ pug_html = pug_html + "\u003Cli\u003E\u003Ca" + (pug_attr("href", "http://cve.mi
 ;(function(){
   var $$obj = cve.references.reference_data;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index7 = 0, $$l = $$obj.length; pug_index7 < $$l; pug_index7++) {
-        var r = $$obj[pug_index7];
+      for (var pug_index8 = 0, $$l = $$obj.length; pug_index8 < $$l; pug_index8++) {
+        var r = $$obj[pug_index8];
 pug_html = pug_html + "\u003Cli\u003E\u003Ca" + (pug_attr("href", r.url, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = r.url) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index7 in $$obj) {
+    for (var pug_index8 in $$obj) {
       $$l++;
-      var r = $$obj[pug_index7];
+      var r = $$obj[pug_index8];
 pug_html = pug_html + "\u003Cli\u003E\u003Ca" + (pug_attr("href", r.url, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = r.url) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
     }
   }
@@ -349,15 +370,15 @@ pug_html = pug_html + "\u003Ch4\u003EACKNOWLEDGEMENTS:\u003C\u002Fh4\u003E\u003C
 ;(function(){
   var $$obj = cve.credit;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index8 = 0, $$l = $$obj.length; pug_index8 < $$l; pug_index8++) {
-        var c = $$obj[pug_index8];
+      for (var pug_index9 = 0, $$l = $$obj.length; pug_index9 < $$l; pug_index9++) {
+        var c = $$obj[pug_index9];
 pug_html = pug_html + "\u003Cli\u003E" + (pug_escape(null == (pug_interp = c.value) ? "" : pug_interp)) + "\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index8 in $$obj) {
+    for (var pug_index9 in $$obj) {
       $$l++;
-      var c = $$obj[pug_index8];
+      var c = $$obj[pug_index9];
 pug_html = pug_html + "\u003Cli\u003E" + (pug_escape(null == (pug_interp = c.value) ? "" : pug_interp)) + "\u003C\u002Fli\u003E";
     }
   }
