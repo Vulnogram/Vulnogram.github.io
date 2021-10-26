@@ -616,8 +616,8 @@ async function cvePost() {
         }*/
         if(cveClient) {
             console.log('uploading...');
-            var j = mainTabGroup.getValue();
-            var j = textUtil.getMITREJSON(textUtil.reduceJSON(j))
+            var j = await mainTabGroup.getValue();
+            var j = textUtil.reduceJSON(j);
             var ret = null;
             if(cveApi.state[j.cveMetadata.id] == 'RESERVED') {
                 console.log('Creating');
@@ -2310,8 +2310,8 @@ async function cvePost() {
         }*/
         if(cveClient) {
             console.log('uploading...');
-            var j = mainTabGroup.getValue();
-            var j = textUtil.getMITREJSON(textUtil.reduceJSON(j))
+            var j = await mainTabGroup.getValue();
+            var j = textUtil.reduceJSON(j);
             var ret = null;
             if(cveApi.state[j.cveMetadata.id] == 'RESERVED') {
                 console.log('Creating');
