@@ -1062,7 +1062,7 @@ var pug_has_own_property=Object.prototype.hasOwnProperty;
 var pug_match_html=/["&<>]/;function pugRender(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
     var locals_for_with = (locals || {});
     
-    (function (Array, Date, JSON, Object, URL, cmap, cna, doc, doc_id, encodeURIComponent, isNaN, renderTemplate, versionStatusTable5) {
+    (function (Array, Date, JSON, Object, URL, cmap, doc, doc_id, encodeURIComponent, isNaN, renderTemplate, versionStatusTable5) {
       pug_mixins["spara"] = pug_interp = function(l, hypertext){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 if (l) {
@@ -1537,11 +1537,7 @@ var cveShowId = con.cveId.match(/^CVE-[0-9-]+$/)? con.cveId : 'CVE-yyyy-nnnn';
 if (con.source && con.source.advisory) {
 pug_html = pug_html + (pug_escape(null == (pug_interp = con.source.advisory) ? "" : pug_interp)) + " ";
 }
-pug_html = pug_html + (pug_escape(null == (pug_interp = cveShowId + ' ' + con.title) ? "" : pug_interp)) + "\u003C\u002Fh2\u003E";
-if (cna[con.shortName] && cna[con.shortName].i) {
-pug_html = pug_html + "\u003Cb\u003E\u003Cimg" + (" class=\"logo\""+pug_attr("src", "https://www.google.com/s2/favicons?sz=64&domain_url="+cna[con.shortName].i, true, false)) + "\u002F\u003E\u003C\u002Fb\u003E";
-}
-pug_html = pug_html + "\u003Cspan\u003E \u003Cb\u003E" + (pug_escape(null == (pug_interp = cna[con.shortName]? cna[con.shortName].n : con.shortName) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cbr\u002F\u003E";
+pug_html = pug_html + (pug_escape(null == (pug_interp = cveShowId + ' ' + con.title) ? "" : pug_interp)) + "\u003C\u002Fh2\u003E\u003C!--if cna[con.shortName] && cna[con.shortName].ib\n    img.logo(src=\"https:\u002F\u002Fwww.google.com\u002Fs2\u002Ffavicons?sz=64&domain_url=\"+cna[con.shortName].i)--\u003E\u003Cspan\u003E \u003C!--b=cna[con.shortName]? cna[con.shortName].n : con.shortName--\u003E\u003Cbr\u002F\u003E";
 pug_mixins["renderDate"](con.datePublic);
 if (con.dateUpdated && con.dateUpdated != con.datePublic) {
 pug_html = pug_html + " (updated ";
@@ -2523,9 +2519,7 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
         locals_for_with.URL :
         typeof URL !== 'undefined' ? URL : undefined, "cmap" in locals_for_with ?
         locals_for_with.cmap :
-        typeof cmap !== 'undefined' ? cmap : undefined, "cna" in locals_for_with ?
-        locals_for_with.cna :
-        typeof cna !== 'undefined' ? cna : undefined, "doc" in locals_for_with ?
+        typeof cmap !== 'undefined' ? cmap : undefined, "doc" in locals_for_with ?
         locals_for_with.doc :
         typeof doc !== 'undefined' ? doc : undefined, "doc_id" in locals_for_with ?
         locals_for_with.doc_id :
