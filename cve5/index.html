@@ -3,6 +3,23 @@
  --hig: #e5ebec;
 }   
 
+.CVSS.NONE {
+  background-color: rgb(162, 213, 114);
+}
+.CVSS.LOW {
+  background-color: gold;
+}
+.CVSS.MEDIUM {
+  background-color: orange;
+}
+.CVSS.HIGH {
+  background-color: salmon;
+}
+.CVSS.CRITICAL {
+  color: white;
+  background-color: orangered;
+}
+
 .affectedCol {
   border: 4px solid #fa582d
 }
@@ -22,6 +39,28 @@
 
 button.json-editor-btn-delete {
   margin-left: 1em;
+}
+
+
+.tags-look .tagify__dropdown__item{
+  display: inline-block;
+  border-radius: 3px;
+  padding: .3em .5em;
+  border: 1px solid #CCC;
+  background: #F3F3F3;
+  margin: .2em;
+  font-size: .85em;
+  color: black;
+  transition: 0s;
+}
+
+.tags-look .tagify__dropdown__item--active{
+  color: black;
+}
+
+.tags-look .tagify__dropdown__item:hover{
+  background: lightyellow;
+  border-color: gold;
 }
 
 /* MITRE simulation styles */
@@ -81,7 +120,7 @@ table.striped td {
   border-width: 0px 1px 0px 1px;
   border : #c1c1c1 1px solid;
 }
-</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"></head><body class="cve" id="body"><div class="stk"><header class="ban pad wht btm"><div class="left"><a class="fbn vgi-logo" title="Making the world safer one CVE at a time, since 2017" href="https://vulnogram.github.io">Vulnogram</a> <a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="../">CVE 4.0</a><a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href=".">CVE 5.0 (beta)</a></div><div class="right"></div></header><header class="ban pad shd hig"><div class="left"><a class="fbn sfe" href="./">NEW</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><a class="fbn vgi-folder" type="file" onclick="importFile(event, this);">Open</a><a class="fbn vgi-download" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download">Download</a><button class="fbn sfe vgi-put" id="post1">Post to CVE.org</button><a class="vgi-tweet fbn" type="button" oncontextmenu="tweetJSON(event, this);" onclick="tweetJSON(event, this);" value="Download" target="_blank" title="Share a tweet about this CVE">Tweet</a></div><div class="right"><form class="indent out nobr" onsubmit="cveSelectLoad(event);return false;"><input class="txt lbl" id="cveEditable" type="search" name="id" list="editablelist" placeholder="CVE-yyyy-nnnn.." title="Load CVE for editing" required><datalist id="editablelist"></datalist><button class="btn vgi-in" type="submit">Load</button></form></div></header></div><script>var userUsername = ""
+</style><link href="/css/tagify.css" rel="stylesheet" type="text/css"></head><body class="cve" id="body"><div class="stk"><header class="ban pad wht btm"><div class="left"><a class="fbn vgi-logo" title="Making the world safer one CVE at a time, since 2017" href="https://vulnogram.github.io">Vulnogram</a> <a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="../">CVE 4.0</a><a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href=".">CVE 5.0 (beta)</a></div><div class="right"></div></header><header class="ban pad shd hig"><div class="left"><a class="fbn sfe" href="./">NEW</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><a class="fbn vgi-folder" type="file" onclick="importFile(event, this);">Open</a><a class="fbn vgi-download" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download">Download</a><form class="indent out nobr" onsubmit="event.preventDefault();loadCVE(this.git.value);return false;"><input class="txt" type="text" name="git" placeholder="CVE-YYYY-NNNN" pattern=".*CVE-[0-9]{4}-[0-9]{4,12}.*" size="17" title="CVE ID CVE-yyyy-nnnn+" required><button class="btn vgi-in" type="submit">GIT</button></form><button class="fbn sfe vgi-put" id="post1">Post to CVE.org</button><a class="vgi-tweet fbn" type="button" oncontextmenu="tweetJSON(event, this);" onclick="tweetJSON(event, this);" value="Download" target="_blank" title="Share a tweet about this CVE">Tweet</a></div><div class="right"><form class="indent out nobr" onsubmit="cveSelectLoad(event);return false;"><input class="txt lbl" id="cveEditable" type="search" name="id" list="editablelist" placeholder="CVE-yyyy-nnnn.." title="Load CVE for editing" required><datalist id="editablelist"></datalist><button class="btn vgi-in" type="submit">Load</button></form></div></header></div><script>var userUsername = ""
 </script><div class="pad ban messagebar"><div class="left tred" id="errMsg"></div><div class="right" id="infoMsg"></div></div><div class="pad"><script>var iconMap = {"Platforms":"stack","References":"ext","Versions":"versions","Timeline":"time","Solution":"safe","ID":"tag","Tags":"tag","Advisory-ID":"tag","ASSIGNER":"user","ASSIGNER_SHORT_NAME":"user","DATE_PUBLIC":"cal","TITLE":"title","Published":"cal","product_name":"package","Found during":"info","CNA_private":"lock","TYPE":"bucket","unsure":"what","no-vuln":"safe","advisory":"alert","no-advisory":"no","doc":"text","misc":"misc","duplicate":"ext","CVE_data_meta":"info","STATE":"knob","new":"inbox","closed":"closed","open":"inbox1","draft":"text","review":"eye","waiting":"wait","pending":"cal","vectorString":"title","baseScore":"dial","baseSeverity":"knob","scenario":"text","source":"info","descriptions":"text","affected":"impact","Vendors":"factory","references":"ext","impacts":"impact","metrics":"dial","Configuration":"cog","Defect":"bug","INTERNAL":"hardhat","EXTERNAL":"hat","USER":"cap","UNKNOWN":"what"}</script><script>function tweetJSON(event, link) {
     var j = mainTabGroup.getValue();
     if (!j) {
@@ -100,6 +139,53 @@ table.striped td {
         + '&url=' + encodeURI(textUtil.deep_value(j, 'containers.cna.references.0.url'));
     //    + '&hashtags=' + encodeURI(id)
     //via=vulnogram&hashtags=CVE
+}
+
+function loadCVE(value) {
+    var realId = value.match(/(CVE-(\d{4})-(\d{1,12})(\d{3}))/);
+    if (realId) {
+        var id = realId[1];
+        var year = realId[2];
+        var bucket = realId[3];
+        fetch('https://raw.githubusercontent.com/CVEProject/cvelistv5/master/review_set/' + year + '/' + bucket + 'xxx/' + id + '.json', {
+                method: 'GET',
+                credentials: 'omit',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*'
+                },
+                redirect: 'error'
+            })
+            .then(function (response) {
+                if (!response.ok) {
+                    errMsg.textContent = "Failed to load valid CVE JSON";
+                    infoMsg.textContent = "";
+                    throw Error(id + ' ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(function (res) {
+                if (res.dataVersion && res.dataVersion == '5.0') {
+                    if(res.containers.cna.x_legacyV4Record) {
+                        delete res.containers.cna.x_legacyV4Record;
+                    }
+                    if(res.containers) {
+                        res = addRichTextCVE(res);
+                        res = cvssv3_0_to_cvss3_1(res);
+                    }
+                    loadJSON(res, id, "Loaded "+id+" from GIT!");
+                    mainTabGroup.change(0);
+                } else {
+                    errMsg.textContent = "Failed to load valid CVE JSON v 5.0 record";
+                    infoMsg.textContent = "";
+                }
+            })
+            .catch(function (error) {
+                errMsg.textContent = error;
+            })
+    } else {
+        errMsg.textContent = "CVE ID required";
+    }
+    return false;
 }
 
 async function draftEmail(event, link, renderId) {
@@ -217,12 +303,10 @@ var additionalTabs = {
     }
 }
 
+/* fullname = vendor . product . platforms . module .others 
+/* table --> [ fullname ][version][affected|unaffected|unknown] = [ list of ranges ] */
 function versionStatusTable5(affected) {
-    var table= {
-        affected: {},
-        unaffected: {},
-        unknown: {}
-    };
+    var t = {};
     nameAndPlatforms = {};
     var showCols = {
         platforms: false,
@@ -258,62 +342,62 @@ function versionStatusTable5(affected) {
         var modules = p.modules ? p.modules.join(', ') : '';
         if(p.versions) {
             for(v of p.versions) {
+                var rows = {
+                    affected: [],
+                    unaffected: [],
+                    unknown: []
+                };
                 //var major = v.version != 'unspecified' ? v.version: undefined;//? v.version.match(/^(.*)\./): null;
                 var major = undefined;//major ? major[1] : '';
                 var pFullName = [(p.vendor ? p.vendor + ' ' : '') + pname + (major ? ' ' + major : ''), platforms, modules, others];
                 nameAndPlatforms[pFullName] = pFullName;
-                if(!table[v.status][pFullName]) {
-                    table[v.status][pFullName] = [];
-                }
                 if (v.version) {
                     showCols[v.status] = true;
                     if(!v.changes) {
                         if(v.lessThan) {
-                            table[v.status][pFullName].push('>= ' + v.version + ' to < ' + v.lessThan);
+                            rows[v.status].push('>= ' + v.version + ' to < ' + v.lessThan);
                         } else if(v.lessThanOrEqual) {
-                            table[v.status][pFullName].push('>= ' + v.version + ' to <= ' + v.lessThan);
+                            rows[v.status].push('>= ' + v.version + ' to <= ' + v.lessThan);
                         } else {
-                            table[v.status][pFullName].push(v.version);
+                            rows[v.status].push('= ' + v.version);
                         }
                     } else {
                         var prevStatus = v.status;
                         var prevVersion = v.version;
                         for(c of v.changes) {
                             showCols[c.status] = true;
-                            if(!table[c.status][pFullName]) {
-                                table[c.status][pFullName] = [];
-                            }
-                            table[prevStatus][pFullName].push('>= ' + prevVersion + ' to < ' + c.at);
-                            //table[c.status][pFullName].push('>= ' + c.at);
+                            rows[prevStatus].push('>= ' + prevVersion + ' to < ' + c.at);
                             prevStatus = c.status;
                             prevVersion = c.at;
                         }
                         if(v.lessThan) {
-                            table[prevStatus][pFullName].push('>= ' + prevVersion + (v.lessThan != prevVersion ? ' to < ' + v.lessThan : ''));
+                            rows[prevStatus].push('>= ' + prevVersion + (v.lessThan != prevVersion ? ' to < ' + v.lessThan : ''));
                         } else if(v.lessThanOrEqual) {
-                            table[prevStatus][pFullName].push('>= ' + prevVersion + (v.lessThanOrEqual != prevVersion ? ' to < ' + v.lessThanOrEqual : ''));
+                            rows[prevStatus].push('>= ' + prevVersion + (v.lessThanOrEqual != prevVersion ? ' to < ' + v.lessThanOrEqual : ''));
                         } else {
-                            table[prevStatus][pFullName].push(prevVersion);
+                            rows[prevStatus].push(">=" + prevVersion);
                         }                  
                     }
                 }
+                if(!t[pFullName]) t[pFullName] = [];
+                //if(!t[pFullName][v.version]) t[pFullName][v.version] = [];
+                t[pFullName].push(rows);
             }
-        }
-        var defaultLabel = '';
-        if (Object.keys(table[p.defaultStatus]).length > 0) {
-            defaultLabel = ' - all other versions';
         }
         var pFullName = [(p.vendor ? p.vendor + ' ' : '') + pname + (major ? ' ' + major : ''), platforms, modules, others];
         nameAndPlatforms[pFullName] = pFullName;
-        if(!table[p.defaultStatus][pFullName]) {
-            table[p.defaultStatus][pFullName] = ['everything else is ' + p.defaultStatus];
+        var rows = {};
+        rows[p.defaultStatus] = ["everything else"];
+        if(!t[pFullName]) {
+            t[pFullName] = [rows];
         } else {
-            table[p.defaultStatus][pFullName].push( 'everything else is ' + p.defaultStatus );
+            t[pFullName].push(rows);
         }
         if (p.defaultStatus)
             showCols[p.defaultStatus] = true;
     }
-    return({cols:nameAndPlatforms, vals:table, show: showCols});
+    console.log(t);
+    return({groups:nameAndPlatforms, vals:t, show: showCols});
 }
 
 function getProductAffected(cve) {
@@ -581,7 +665,7 @@ async function cveReserve(yearOffset) {
             //console.log(e);
         }
     } else {
-        alert('Please login to CVE.org');
+        alert('Please login to CVE Portal');
     }
 }
 
@@ -590,7 +674,7 @@ async function cveSelectLoad(event) {
     if(cveClient){
     cveLoad(event.target.elements.id.value)
     } else {
-        alert('Please login to CVE.org');
+        alert('Please login to CVE Portal');
     }
     return false;
 }
@@ -626,13 +710,34 @@ function addRichTextCVE(j) {
         'descriptions',
         'solutions',
         'workarounds',
-        'exploits'
+        'exploits',
+        'configurations'
     ];
+
     if(j && j.containers.cna) {
         var cna = j.containers.cna
-        htmlFields.forEach(element => addRichTextArray(cna[element]));
+        htmlFields.forEach(element => {
+            addRichTextArray(cna[element])
+        });
     }
     return j;
+}
+
+function cvssv3_0_to_cvss3_1(j) {
+    if(j && j.containers && j.containers.cna && j.containers.cna.metrics) {
+        j.containers.cna.metrics.forEach(m => {
+            console.log(m);
+            if(m.cvssV3_0) {
+                m.cvssV3_1 = m.cvssV3_0;
+                m.cvssV3_1.version = "3.1";
+                if(m.cvssV3_1.vectorString) {
+                    m.cvssV3_1.vectorString = m.cvssV3_1.vectorString.replace('CVSS:3.0', 'CVSS:3.1');
+                }
+                delete m.cvssV3_0;
+            }
+        });
+    }
+    return j
 }
 
 async function cveLoad(cveId) {
@@ -657,6 +762,7 @@ async function cveLoad(cveId) {
                 cveApi.state[cveId] = res.cveMetadata.state;
                 if(res.cveMetadata.containers) {
                     res = addRichTextCVE(res);
+                    res = cvssv3_0_to_cvss3_1(res);
                 }
                 loadJSON(res, cveId, "Loaded " + cveId + " from CVE.org!");
                 mainTabGroup.change(0);
@@ -666,7 +772,7 @@ async function cveLoad(cveId) {
                 infoMsg.textContent = "";
             }
         } else {
-            alert('Please login to CVE.org!');
+            alert('Please login to CVE Portal');
         }
     }
 }
@@ -715,7 +821,7 @@ async function cvePost() {
         }
         } else {
             //todo enable/disable post button
-            alert('Please login to CVE.org (CVE AWG Test)');
+            alert('Please login to CVE Portal -> (CVE AWG Test)');
         }
     } else {
         alert('Please fix errors before posting');
@@ -727,7 +833,7 @@ async function cveReserveAndRender(yearOffset) {
         await cveReserve(yearOffset);
         await cveGetList();
     } else {
-        alert('Please login to CVE.org');
+        alert('Please login to CVE Portal');
     }
 } 
 /*
@@ -1101,14 +1207,34 @@ pug_mixins["para"](d.value);
 pug_mixins["cvssList"] = pug_interp = function(cvssList){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 if (cvssList) {
-var nonSpec = ['baseScore', 'version', 'vectorString', 'baseSeverity']
+var nonSpec = ['baseScore', 'version', 'vectorString', 'baseSeverity', 'scenarios']
 // iterate cvssList
 ;(function(){
   var $$obj = cvssList;
   if ('number' == typeof $$obj.length) {
       for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
         var cvss = $$obj[i];
-pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary" + (pug_attr("class", pug_classes(["lbl","rnd","sec","CVSS",cvss.baseSeverity ? cvss.baseSeverity : 'gray'], [false,false,false,false,true]), false, false)) + "\u003E" + (pug_escape(null == (pug_interp = cvss.baseSeverity) ? "" : pug_interp)) + "· \u003Csup\u003E" + (pug_escape(null == (pug_interp = cvss.baseScore) ? "" : pug_interp)) + "\u003C\u002Fsup\u003E⁄10\u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht rnd shd pad bor\"\u003E";
+pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary" + (pug_attr("class", pug_classes(["lbl","rnd","sec","CVSS",cvss.baseSeverity ? cvss.baseSeverity : 'gray'], [false,false,false,false,true]), false, false)) + "\u003ECVSS · " + (pug_escape(null == (pug_interp = cvss.baseSeverity) ? "" : pug_interp)) + " · \u003Csup\u003E" + (pug_escape(null == (pug_interp = cvss.baseScore) ? "" : pug_interp)) + "\u003C\u002Fsup\u003E⁄10\u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht rnd shd pad bor\"\u003E";
+if (cvss.scenarios) {
+// iterate cvss.scenarios
+;(function(){
+  var $$obj = cvss.scenarios;
+  if ('number' == typeof $$obj.length) {
+      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+        var s = $$obj[i];
+pug_html = pug_html + ("\u003Cspan\u003EScoring scenario: \u003C\u002Fspan\u003E" + (pug_escape(null == (pug_interp = s.value) ? "" : pug_interp)));
+      }
+  } else {
+    var $$l = 0;
+    for (var i in $$obj) {
+      $$l++;
+      var s = $$obj[i];
+pug_html = pug_html + ("\u003Cspan\u003EScoring scenario: \u003C\u002Fspan\u003E" + (pug_escape(null == (pug_interp = s.value) ? "" : pug_interp)));
+    }
+  }
+}).call(this);
+
+}
 // iterate cvss
 ;(function(){
   var $$obj = cvss;
@@ -1133,10 +1259,10 @@ pug_html = pug_html + "\u003Cdiv\u003E" + (pug_escape(null == (pug_interp = i) ?
 
 pug_html = pug_html + "\u003Cdiv\u003E";
 if (cvss.version >= "3") {
-pug_html = pug_html + "\u003Ca" + (" class=\"vgi-ext\""+pug_attr("href", "https://cvssjs.github.io/#" + cvss.vectorString, true, false)) + "\u003EOpen CVSS Calc\u003C\u002Fa\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"vgi-dial\""+pug_attr("href", "https://cvssjs.github.io/#" + cvss.vectorString, true, false)) + "\u003EOpen CVSS Calc\u003C\u002Fa\u003E";
 }
 else {
-pug_html = pug_html + "\u003Ca" + (" class=\"vgi-ext\""+pug_attr("href", 'https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector='+cvss.vectorString, true, false)) + "\u003EOpen CVSS Calc\u003C\u002Fa\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"vgi-dial\""+pug_attr("href", 'https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector='+cvss.vectorString, true, false)) + "\u003EOpen CVSS Calc\u003C\u002Fa\u003E";
 }
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdetails\u003E";
       }
@@ -1145,7 +1271,27 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdet
     for (var i in $$obj) {
       $$l++;
       var cvss = $$obj[i];
-pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary" + (pug_attr("class", pug_classes(["lbl","rnd","sec","CVSS",cvss.baseSeverity ? cvss.baseSeverity : 'gray'], [false,false,false,false,true]), false, false)) + "\u003E" + (pug_escape(null == (pug_interp = cvss.baseSeverity) ? "" : pug_interp)) + "· \u003Csup\u003E" + (pug_escape(null == (pug_interp = cvss.baseScore) ? "" : pug_interp)) + "\u003C\u002Fsup\u003E⁄10\u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht rnd shd pad bor\"\u003E";
+pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary" + (pug_attr("class", pug_classes(["lbl","rnd","sec","CVSS",cvss.baseSeverity ? cvss.baseSeverity : 'gray'], [false,false,false,false,true]), false, false)) + "\u003ECVSS · " + (pug_escape(null == (pug_interp = cvss.baseSeverity) ? "" : pug_interp)) + " · \u003Csup\u003E" + (pug_escape(null == (pug_interp = cvss.baseScore) ? "" : pug_interp)) + "\u003C\u002Fsup\u003E⁄10\u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht rnd shd pad bor\"\u003E";
+if (cvss.scenarios) {
+// iterate cvss.scenarios
+;(function(){
+  var $$obj = cvss.scenarios;
+  if ('number' == typeof $$obj.length) {
+      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+        var s = $$obj[i];
+pug_html = pug_html + ("\u003Cspan\u003EScoring scenario: \u003C\u002Fspan\u003E" + (pug_escape(null == (pug_interp = s.value) ? "" : pug_interp)));
+      }
+  } else {
+    var $$l = 0;
+    for (var i in $$obj) {
+      $$l++;
+      var s = $$obj[i];
+pug_html = pug_html + ("\u003Cspan\u003EScoring scenario: \u003C\u002Fspan\u003E" + (pug_escape(null == (pug_interp = s.value) ? "" : pug_interp)));
+    }
+  }
+}).call(this);
+
+}
 // iterate cvss
 ;(function(){
   var $$obj = cvss;
@@ -1170,10 +1316,10 @@ pug_html = pug_html + "\u003Cdiv\u003E" + (pug_escape(null == (pug_interp = i) ?
 
 pug_html = pug_html + "\u003Cdiv\u003E";
 if (cvss.version >= "3") {
-pug_html = pug_html + "\u003Ca" + (" class=\"vgi-ext\""+pug_attr("href", "https://cvssjs.github.io/#" + cvss.vectorString, true, false)) + "\u003EOpen CVSS Calc\u003C\u002Fa\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"vgi-dial\""+pug_attr("href", "https://cvssjs.github.io/#" + cvss.vectorString, true, false)) + "\u003EOpen CVSS Calc\u003C\u002Fa\u003E";
 }
 else {
-pug_html = pug_html + "\u003Ca" + (" class=\"vgi-ext\""+pug_attr("href", 'https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector='+cvss.vectorString, true, false)) + "\u003EOpen CVSS Calc\u003C\u002Fa\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"vgi-dial\""+pug_attr("href", 'https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector='+cvss.vectorString, true, false)) + "\u003EOpen CVSS Calc\u003C\u002Fa\u003E";
 }
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdetails\u003E";
     }
@@ -1182,181 +1328,198 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdet
 
 }
 };
+pug_mixins["prodDetails"] = pug_interp = function(p){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\u003Cb class=\"vgi-package\"\u003E" + (pug_escape(null == (pug_interp = p[0]) ? "" : pug_interp)) + "\u003C\u002Fb\u003E";
+if (p[2]) {
+pug_html = pug_html + "\u003Cspan\u003E » " + (pug_escape(null == (pug_interp = p[2]) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+}
+if (p[1]) {
+pug_html = pug_html + "\u003Ci class=\"lbl\"\u003E on \u003C\u002Fi\u003E \u003Cspan class=\"vgi-stack\"\u003E" + (pug_escape(null == (pug_interp = p[1]) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+}
+if (p[3]) {
+pug_html = pug_html + "\u003Cbr\u002F\u003E";
+if (p[3].collectionURL) {
+pug_html = pug_html + "\u003Ca" + (" class=\"vgi-package\""+pug_attr("href", p[3].collectionURL, true, false)) + "\u003Epackage repo\u003C\u002Fa\u003E";
+}
+if (p[3].repo) {
+pug_html = pug_html + "\u003Ca" + (" class=\"vgi-ext\""+pug_attr("href", p[3].repo, true, false)) + "\u003Esource repo\u003C\u002Fa\u003E";
+}
+if (p[3].programFiles) {
+// iterate p[3].programFiles
+;(function(){
+  var $$obj = p[3].programFiles;
+  if ('number' == typeof $$obj.length) {
+      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+        var f = $$obj[i];
+pug_html = pug_html + "\u003Cspan class=\"vgi-text\"\u003E" + (pug_escape(null == (pug_interp = f) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var i in $$obj) {
+      $$l++;
+      var f = $$obj[i];
+pug_html = pug_html + "\u003Cspan class=\"vgi-text\"\u003E" + (pug_escape(null == (pug_interp = f) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+    }
+  }
+}).call(this);
+
+}
+if (p[3].programRoutines) {
+// iterate p[3].programRoutines
+;(function(){
+  var $$obj = p[3].programRoutines;
+  if ('number' == typeof $$obj.length) {
+      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+        var f = $$obj[i];
+pug_html = pug_html + "\u003Cspan class=\"vgi-edit\"\u003E" + (pug_escape(null == (pug_interp = f.name) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var i in $$obj) {
+      $$l++;
+      var f = $$obj[i];
+pug_html = pug_html + "\u003Cspan class=\"vgi-edit\"\u003E" + (pug_escape(null == (pug_interp = f.name) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+    }
+  }
+}).call(this);
+
+}
+}
+};
 pug_mixins["statusTable"] = pug_interp = function(st){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Ctable class=\"tbl\"\u003E\u003Ccolgroup\u003E\u003Ccol\u002F\u003E";
-if (st.show.platforms) {
-pug_html = pug_html + "\u003Ccol\u002F\u003E";
-}
-if (st.show.modules) {
-pug_html = pug_html + "\u003Ccol\u002F\u003E";
-}
-pug_html = pug_html + "\u003Ccol class=\"affectedCol\"\u002F\u003E\u003C\u002Fcolgroup\u003E\u003Cthead\u003E\u003Ctr\u003E\u003Cth\u003EProduct\u003C\u002Fth\u003E";
-if (st.show.platforms) {
-pug_html = pug_html + "\u003Cth\u003EPlatforms\u003C\u002Fth\u003E";
-}
-if (st.show.modules) {
-pug_html = pug_html + "\u003Cth\u003EModules\u003C\u002Fth\u003E";
-}
-pug_html = pug_html + "\u003Cth\u003EAffected\u003C\u002Fth\u003E";
+pug_html = pug_html + "\u003Ctable class=\"tbl gap\"\u003E\u003Ccolgroup\u003E\u003Ccol\u002F\u003E\u003Ccol class=\"affectedCol\"\u002F\u003E\u003C\u002Fcolgroup\u003E\u003Cthead\u003E\u003Ctr\u003E\u003Cth\u003EProduct\u003C\u002Fth\u003E\u003Cth\u003EAffected\u003C\u002Fth\u003E";
 if (st.show.unaffected) {
 pug_html = pug_html + "\u003Cth\u003EUnaffected\u003C\u002Fth\u003E";
 }
 if (st.show.unknown) {
 pug_html = pug_html + "\u003Cth\u003EUnknown\u003C\u002Fth\u003E";
 }
-pug_html = pug_html + "\u003C\u002Ftr\u003E\u003C\u002Fthead\u003E\u003Ctbody\u003E";
-// iterate st.cols
+pug_html = pug_html + "\u003C\u002Ftr\u003E\u003Ctbody\u003E";
+// iterate st.groups
 ;(function(){
-  var $$obj = st.cols;
+  var $$obj = st.groups;
   if ('number' == typeof $$obj.length) {
       for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
         var p = $$obj[i];
-pug_html = pug_html + ("\u003Ctr\u003E\u003Ctd\u003E" + (pug_escape(null == (pug_interp = p[0]) ? "" : pug_interp)));
-if (p[3]) {
-pug_html = pug_html + "\u003Cbr\u002F\u003E";
-if (p[3].collectionURL) {
-pug_html = pug_html + "\u003Ca" + (" class=\"vgi-package\""+pug_attr("href", p[3].collectionURL, true, false)) + "\u003Epackage repo\u003C\u002Fa\u003E";
-}
-if (p[3].repo) {
-pug_html = pug_html + "\u003Ca" + (" class=\"vgi-ext\""+pug_attr("href", p[3].repo, true, false)) + "\u003Esource repo\u003C\u002Fa\u003E";
-}
-if (p[3].programFiles) {
-// iterate p[3].programFiles
+var showProd = st.vals[i].length
+// iterate st.vals[i]
 ;(function(){
-  var $$obj = p[3].programFiles;
+  var $$obj = st.vals[i];
   if ('number' == typeof $$obj.length) {
-      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
-        var f = $$obj[i];
-pug_html = pug_html + "\u003Cspan class=\"vgi-text\"\u003E" + (pug_escape(null == (pug_interp = f) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var i in $$obj) {
-      $$l++;
-      var f = $$obj[i];
-pug_html = pug_html + "\u003Cspan class=\"vgi-text\"\u003E" + (pug_escape(null == (pug_interp = f) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-    }
-  }
-}).call(this);
-
-}
-if (p[3].programRoutines) {
-// iterate p[3].programRoutines
-;(function(){
-  var $$obj = p[3].programRoutines;
-  if ('number' == typeof $$obj.length) {
-      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
-        var f = $$obj[i];
-pug_html = pug_html + "\u003Cspan class=\"vgi-edit\"\u003E" + (pug_escape(null == (pug_interp = f.name) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var i in $$obj) {
-      $$l++;
-      var f = $$obj[i];
-pug_html = pug_html + "\u003Cspan class=\"vgi-edit\"\u003E" + (pug_escape(null == (pug_interp = f.name) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-    }
-  }
-}).call(this);
-
-}
-}
+      for (var j = 0, $$l = $$obj.length; j < $$l; j++) {
+        var x = $$obj[j];
+pug_html = pug_html + "\u003Ctr\u003E";
+if (showProd) {
+pug_html = pug_html + "\u003Ctd" + (pug_attr("rowspan", showProd, true, false)) + "\u003E";
+pug_mixins["prodDetails"](p);
 pug_html = pug_html + "\u003C\u002Ftd\u003E";
-if (st.show.platforms) {
-pug_html = pug_html + "\u003Ctd\u003E" + (pug_escape(null == (pug_interp = p[1]) ? "" : pug_interp)) + "\u003C\u002Ftd\u003E";
-}
-if (st.show.modules) {
-pug_html = pug_html + "\u003Ctd\u003E" + (pug_escape(null == (pug_interp = p[2]) ? "" : pug_interp)) + "\u003C\u002Ftd\u003E";
+showProd = false
 }
 pug_html = pug_html + "\u003Ctd\u003E";
-pug_mixins["versionList"](st.vals.affected[i]);
+pug_mixins["versionList"](x.affected);
 pug_html = pug_html + "\u003C\u002Ftd\u003E";
 if (st.show.unaffected) {
 pug_html = pug_html + "\u003Ctd\u003E";
-pug_mixins["versionList"](st.vals.unaffected[i]);
+pug_mixins["versionList"](x.unaffected);
 pug_html = pug_html + "\u003C\u002Ftd\u003E";
 }
 if (st.show.unknown) {
 pug_html = pug_html + "\u003Ctd\u003E";
-pug_mixins["versionList"](st.vals.unknown[i]);
+pug_mixins["versionList"](x.unknown);
 pug_html = pug_html + "\u003C\u002Ftd\u003E";
 }
 pug_html = pug_html + "\u003C\u002Ftr\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var j in $$obj) {
+      $$l++;
+      var x = $$obj[j];
+pug_html = pug_html + "\u003Ctr\u003E";
+if (showProd) {
+pug_html = pug_html + "\u003Ctd" + (pug_attr("rowspan", showProd, true, false)) + "\u003E";
+pug_mixins["prodDetails"](p);
+pug_html = pug_html + "\u003C\u002Ftd\u003E";
+showProd = false
+}
+pug_html = pug_html + "\u003Ctd\u003E";
+pug_mixins["versionList"](x.affected);
+pug_html = pug_html + "\u003C\u002Ftd\u003E";
+if (st.show.unaffected) {
+pug_html = pug_html + "\u003Ctd\u003E";
+pug_mixins["versionList"](x.unaffected);
+pug_html = pug_html + "\u003C\u002Ftd\u003E";
+}
+if (st.show.unknown) {
+pug_html = pug_html + "\u003Ctd\u003E";
+pug_mixins["versionList"](x.unknown);
+pug_html = pug_html + "\u003C\u002Ftd\u003E";
+}
+pug_html = pug_html + "\u003C\u002Ftr\u003E";
+    }
+  }
+}).call(this);
+
       }
   } else {
     var $$l = 0;
     for (var i in $$obj) {
       $$l++;
       var p = $$obj[i];
-pug_html = pug_html + ("\u003Ctr\u003E\u003Ctd\u003E" + (pug_escape(null == (pug_interp = p[0]) ? "" : pug_interp)));
-if (p[3]) {
-pug_html = pug_html + "\u003Cbr\u002F\u003E";
-if (p[3].collectionURL) {
-pug_html = pug_html + "\u003Ca" + (" class=\"vgi-package\""+pug_attr("href", p[3].collectionURL, true, false)) + "\u003Epackage repo\u003C\u002Fa\u003E";
-}
-if (p[3].repo) {
-pug_html = pug_html + "\u003Ca" + (" class=\"vgi-ext\""+pug_attr("href", p[3].repo, true, false)) + "\u003Esource repo\u003C\u002Fa\u003E";
-}
-if (p[3].programFiles) {
-// iterate p[3].programFiles
+var showProd = st.vals[i].length
+// iterate st.vals[i]
 ;(function(){
-  var $$obj = p[3].programFiles;
+  var $$obj = st.vals[i];
   if ('number' == typeof $$obj.length) {
-      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
-        var f = $$obj[i];
-pug_html = pug_html + "\u003Cspan class=\"vgi-text\"\u003E" + (pug_escape(null == (pug_interp = f) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var i in $$obj) {
-      $$l++;
-      var f = $$obj[i];
-pug_html = pug_html + "\u003Cspan class=\"vgi-text\"\u003E" + (pug_escape(null == (pug_interp = f) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-    }
-  }
-}).call(this);
-
-}
-if (p[3].programRoutines) {
-// iterate p[3].programRoutines
-;(function(){
-  var $$obj = p[3].programRoutines;
-  if ('number' == typeof $$obj.length) {
-      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
-        var f = $$obj[i];
-pug_html = pug_html + "\u003Cspan class=\"vgi-edit\"\u003E" + (pug_escape(null == (pug_interp = f.name) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var i in $$obj) {
-      $$l++;
-      var f = $$obj[i];
-pug_html = pug_html + "\u003Cspan class=\"vgi-edit\"\u003E" + (pug_escape(null == (pug_interp = f.name) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
-    }
-  }
-}).call(this);
-
-}
-}
+      for (var j = 0, $$l = $$obj.length; j < $$l; j++) {
+        var x = $$obj[j];
+pug_html = pug_html + "\u003Ctr\u003E";
+if (showProd) {
+pug_html = pug_html + "\u003Ctd" + (pug_attr("rowspan", showProd, true, false)) + "\u003E";
+pug_mixins["prodDetails"](p);
 pug_html = pug_html + "\u003C\u002Ftd\u003E";
-if (st.show.platforms) {
-pug_html = pug_html + "\u003Ctd\u003E" + (pug_escape(null == (pug_interp = p[1]) ? "" : pug_interp)) + "\u003C\u002Ftd\u003E";
-}
-if (st.show.modules) {
-pug_html = pug_html + "\u003Ctd\u003E" + (pug_escape(null == (pug_interp = p[2]) ? "" : pug_interp)) + "\u003C\u002Ftd\u003E";
+showProd = false
 }
 pug_html = pug_html + "\u003Ctd\u003E";
-pug_mixins["versionList"](st.vals.affected[i]);
+pug_mixins["versionList"](x.affected);
 pug_html = pug_html + "\u003C\u002Ftd\u003E";
 if (st.show.unaffected) {
 pug_html = pug_html + "\u003Ctd\u003E";
-pug_mixins["versionList"](st.vals.unaffected[i]);
+pug_mixins["versionList"](x.unaffected);
 pug_html = pug_html + "\u003C\u002Ftd\u003E";
 }
 if (st.show.unknown) {
 pug_html = pug_html + "\u003Ctd\u003E";
-pug_mixins["versionList"](st.vals.unknown[i]);
+pug_mixins["versionList"](x.unknown);
+pug_html = pug_html + "\u003C\u002Ftd\u003E";
+}
+pug_html = pug_html + "\u003C\u002Ftr\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var j in $$obj) {
+      $$l++;
+      var x = $$obj[j];
+pug_html = pug_html + "\u003Ctr\u003E";
+if (showProd) {
+pug_html = pug_html + "\u003Ctd" + (pug_attr("rowspan", showProd, true, false)) + "\u003E";
+pug_mixins["prodDetails"](p);
+pug_html = pug_html + "\u003C\u002Ftd\u003E";
+showProd = false
+}
+pug_html = pug_html + "\u003Ctd\u003E";
+pug_mixins["versionList"](x.affected);
+pug_html = pug_html + "\u003C\u002Ftd\u003E";
+if (st.show.unaffected) {
+pug_html = pug_html + "\u003Ctd\u003E";
+pug_mixins["versionList"](x.unaffected);
+pug_html = pug_html + "\u003C\u002Ftd\u003E";
+}
+if (st.show.unknown) {
+pug_html = pug_html + "\u003Ctd\u003E";
+pug_mixins["versionList"](x.unknown);
 pug_html = pug_html + "\u003C\u002Ftd\u003E";
 }
 pug_html = pug_html + "\u003C\u002Ftr\u003E";
@@ -1364,7 +1527,11 @@ pug_html = pug_html + "\u003C\u002Ftr\u003E";
   }
 }).call(this);
 
-pug_html = pug_html + "\u003C\u002Ftbody\u003E\u003C\u002Ftable\u003E";
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\u003C\u002Ftbody\u003E\u003C\u002Fthead\u003E\u003C\u002Ftable\u003E";
 };
 pug_mixins["creditList"] = pug_interp = function(credits){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
@@ -1372,15 +1539,15 @@ var block = (this && this.block), attributes = (this && this.attributes) || {};
 ;(function(){
   var $$obj = credits;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index9 = 0, $$l = $$obj.length; pug_index9 < $$l; pug_index9++) {
-        var c = $$obj[pug_index9];
+      for (var pug_index11 = 0, $$l = $$obj.length; pug_index11 < $$l; pug_index11++) {
+        var c = $$obj[pug_index11];
 pug_html = pug_html + "\u003Cp\u003E" + (pug_escape(null == (pug_interp = c.value) ? "" : pug_interp)) + "\u003C\u002Fp\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index9 in $$obj) {
+    for (var pug_index11 in $$obj) {
       $$l++;
-      var c = $$obj[pug_index9];
+      var c = $$obj[pug_index11];
 pug_html = pug_html + "\u003Cp\u003E" + (pug_escape(null == (pug_interp = c.value) ? "" : pug_interp)) + "\u003C\u002Fp\u003E";
     }
   }
@@ -1394,15 +1561,15 @@ if (tags) {
 ;(function(){
   var $$obj = tags;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index10 = 0, $$l = $$obj.length; pug_index10 < $$l; pug_index10++) {
-        var t = $$obj[pug_index10];
+      for (var pug_index12 = 0, $$l = $$obj.length; pug_index12 < $$l; pug_index12++) {
+        var t = $$obj[pug_index12];
 pug_html = pug_html + "\u003Cb class=\"tag rnd CRITICAL\"\u003E" + (pug_escape(null == (pug_interp = t) ? "" : pug_interp)) + "\u003C\u002Fb\u003E  ";
       }
   } else {
     var $$l = 0;
-    for (var pug_index10 in $$obj) {
+    for (var pug_index12 in $$obj) {
       $$l++;
-      var t = $$obj[pug_index10];
+      var t = $$obj[pug_index12];
 pug_html = pug_html + "\u003Cb class=\"tag rnd CRITICAL\"\u003E" + (pug_escape(null == (pug_interp = t) ? "" : pug_interp)) + "\u003C\u002Fb\u003E  ";
     }
   }
@@ -1443,8 +1610,8 @@ var block = (this && this.block), attributes = (this && this.attributes) || {};
 ;(function(){
   var $$obj = references;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index12 = 0, $$l = $$obj.length; pug_index12 < $$l; pug_index12++) {
-        var r = $$obj[pug_index12];
+      for (var pug_index14 = 0, $$l = $$obj.length; pug_index14 < $$l; pug_index14++) {
+        var r = $$obj[pug_index14];
 if (r.url) {
 pug_html = pug_html + "\u003Cdiv\u003E";
 var u ; try { u = (new URL(r.url)) } catch(e){};
@@ -1462,9 +1629,9 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index12 in $$obj) {
+    for (var pug_index14 in $$obj) {
       $$l++;
-      var r = $$obj[pug_index12];
+      var r = $$obj[pug_index14];
 if (r.url) {
 pug_html = pug_html + "\u003Cdiv\u003E";
 var u ; try { u = (new URL(r.url)) } catch(e){};
@@ -1491,15 +1658,15 @@ if (con.x_ValidationErrors) {
 ;(function(){
   var $$obj = con.x_ValidationErrors;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index13 = 0, $$l = $$obj.length; pug_index13 < $$l; pug_index13++) {
-        var x = $$obj[pug_index13];
+      for (var pug_index15 = 0, $$l = $$obj.length; pug_index15 < $$l; pug_index15++) {
+        var x = $$obj[pug_index15];
 pug_html = pug_html + "\u003Cp class=\"sec rnd pad\"\u003E\u003Cb class=\"vgi-alert\"\u003EValidation Error : \u003C\u002Fb\u003E  \u003Cspan\u003E" + (pug_escape(null == (pug_interp = x) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fp\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index13 in $$obj) {
+    for (var pug_index15 in $$obj) {
       $$l++;
-      var x = $$obj[pug_index13];
+      var x = $$obj[pug_index15];
 pug_html = pug_html + "\u003Cp class=\"sec rnd pad\"\u003E\u003Cb class=\"vgi-alert\"\u003EValidation Error : \u003C\u002Fb\u003E  \u003Cspan\u003E" + (pug_escape(null == (pug_interp = x) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fp\u003E";
     }
   }
@@ -1537,18 +1704,19 @@ var cveShowId = con.cveId.match(/^CVE-[0-9-]+$/)? con.cveId : 'CVE-yyyy-nnnn';
 if (con.source && con.source.advisory) {
 pug_html = pug_html + (pug_escape(null == (pug_interp = con.source.advisory) ? "" : pug_interp)) + " ";
 }
-pug_html = pug_html + (pug_escape(null == (pug_interp = cveShowId + ' ' + con.title) ? "" : pug_interp)) + "\u003C\u002Fh2\u003E\u003C!--if cna[con.shortName] && cna[con.shortName].ib\n    img.logo(src=\"https:\u002F\u002Fwww.google.com\u002Fs2\u002Ffavicons?sz=64&domain_url=\"+cna[con.shortName].i)--\u003E\u003Cspan\u003E \u003C!--b=cna[con.shortName]? cna[con.shortName].n : con.shortName--\u003E\u003Cbr\u002F\u003E";
+pug_html = pug_html + (pug_escape(null == (pug_interp = cveShowId + ' ' + con.title) ? "" : pug_interp)) + "\u003C\u002Fh2\u003E\u003Cp\u003E";
+if (con.shortName) {
+pug_html = pug_html + "\u003Cspan\u003EPublished by \u003Cb\u003E" + (pug_escape(null == (pug_interp = con.shortName) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fspan\u003E  ";
+}
 pug_mixins["renderDate"](con.datePublic);
 if (con.dateUpdated && con.dateUpdated != con.datePublic) {
 pug_html = pug_html + " (updated ";
 pug_mixins["renderDate"](con.dateUpdated);
 pug_html = pug_html + ")";
 }
-pug_html = pug_html + "\u003C\u002Fspan\u003E";
+pug_html = pug_html + "\u003C\u002Fp\u003E";
 if (con.cvssList) {
-pug_html = pug_html + "\u003Cspan class=\"right row\"\u003E\u003Cb class=\"lbl vgi-dial\"\u003ECVSS        \u003C\u002Fb\u003E";
 pug_mixins["cvssList"](con.cvssList);
-pug_html = pug_html + "\u003C\u002Fspan\u003E";
 }
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"desc pad\"\u003E";
 if (con.state == 'REJECTED') {
@@ -1570,60 +1738,8 @@ pug_html = pug_html + "\u003Cdiv class=\"problem pad\"\u003E\u003Cb class=\"vgi-
 ;(function(){
   var $$obj = con.problemTypes;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index15 = 0, $$l = $$obj.length; pug_index15 < $$l; pug_index15++) {
-        var t = $$obj[pug_index15];
-if (t.description) {
-// iterate t.description
-;(function(){
-  var $$obj = t.description;
-  if ('number' == typeof $$obj.length) {
-      for (var pug_index16 = 0, $$l = $$obj.length; pug_index16 < $$l; pug_index16++) {
-        var d = $$obj[pug_index16];
-pug_html = pug_html + (pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + "\u003Cbr\u002F\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index16 in $$obj) {
-      $$l++;
-      var d = $$obj[pug_index16];
-pug_html = pug_html + (pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + "\u003Cbr\u002F\u003E";
-    }
-  }
-}).call(this);
-
-}
-if (t.descriptions) {
-// iterate t.descriptions
-;(function(){
-  var $$obj = t.descriptions;
-  if ('number' == typeof $$obj.length) {
       for (var pug_index17 = 0, $$l = $$obj.length; pug_index17 < $$l; pug_index17++) {
-        var d = $$obj[pug_index17];
-pug_html = pug_html + (pug_escape(null == (pug_interp = d.description) ? "" : pug_interp)) + "  ";
-if (d.cweId) {
-pug_html = pug_html + "\u003Ca" + (pug_attr("href", "https://cwe.mitre.org/data/definitions/"+d.cweId, true, false)) + "\u003E\u003Csmall\u003E" + (pug_escape(null == (pug_interp = d.cweId) ? "" : pug_interp)) + "\u003C\u002Fsmall\u003E\u003C\u002Fa\u003E\u003Cbr\u002F\u003E";
-}
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index17 in $$obj) {
-      $$l++;
-      var d = $$obj[pug_index17];
-pug_html = pug_html + (pug_escape(null == (pug_interp = d.description) ? "" : pug_interp)) + "  ";
-if (d.cweId) {
-pug_html = pug_html + "\u003Ca" + (pug_attr("href", "https://cwe.mitre.org/data/definitions/"+d.cweId, true, false)) + "\u003E\u003Csmall\u003E" + (pug_escape(null == (pug_interp = d.cweId) ? "" : pug_interp)) + "\u003C\u002Fsmall\u003E\u003C\u002Fa\u003E\u003Cbr\u002F\u003E";
-}
-    }
-  }
-}).call(this);
-
-}
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index15 in $$obj) {
-      $$l++;
-      var t = $$obj[pug_index15];
+        var t = $$obj[pug_index17];
 if (t.description) {
 // iterate t.description
 ;(function(){
@@ -1670,6 +1786,58 @@ pug_html = pug_html + "\u003Ca" + (pug_attr("href", "https://cwe.mitre.org/data/
 }).call(this);
 
 }
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index17 in $$obj) {
+      $$l++;
+      var t = $$obj[pug_index17];
+if (t.description) {
+// iterate t.description
+;(function(){
+  var $$obj = t.description;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index20 = 0, $$l = $$obj.length; pug_index20 < $$l; pug_index20++) {
+        var d = $$obj[pug_index20];
+pug_html = pug_html + (pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + "\u003Cbr\u002F\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index20 in $$obj) {
+      $$l++;
+      var d = $$obj[pug_index20];
+pug_html = pug_html + (pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + "\u003Cbr\u002F\u003E";
+    }
+  }
+}).call(this);
+
+}
+if (t.descriptions) {
+// iterate t.descriptions
+;(function(){
+  var $$obj = t.descriptions;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index21 = 0, $$l = $$obj.length; pug_index21 < $$l; pug_index21++) {
+        var d = $$obj[pug_index21];
+pug_html = pug_html + (pug_escape(null == (pug_interp = d.description) ? "" : pug_interp)) + "  ";
+if (d.cweId) {
+pug_html = pug_html + "\u003Ca" + (pug_attr("href", "https://cwe.mitre.org/data/definitions/"+d.cweId, true, false)) + "\u003E\u003Csmall\u003E" + (pug_escape(null == (pug_interp = d.cweId) ? "" : pug_interp)) + "\u003C\u002Fsmall\u003E\u003C\u002Fa\u003E\u003Cbr\u002F\u003E";
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index21 in $$obj) {
+      $$l++;
+      var d = $$obj[pug_index21];
+pug_html = pug_html + (pug_escape(null == (pug_interp = d.description) ? "" : pug_interp)) + "  ";
+if (d.cweId) {
+pug_html = pug_html + "\u003Ca" + (pug_attr("href", "https://cwe.mitre.org/data/definitions/"+d.cweId, true, false)) + "\u003E\u003Csmall\u003E" + (pug_escape(null == (pug_interp = d.cweId) ? "" : pug_interp)) + "\u003C\u002Fsmall\u003E\u003C\u002Fa\u003E\u003Cbr\u002F\u003E";
+}
+    }
+  }
+}).call(this);
+
+}
     }
   }
 }).call(this);
@@ -1682,22 +1850,22 @@ pug_html = pug_html + "\u003Cdiv class=\"impact pad\"\u003E\u003Cb class=\"vgi-i
 ;(function(){
   var $$obj = con.impacts;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index20 = 0, $$l = $$obj.length; pug_index20 < $$l; pug_index20++) {
-        var t = $$obj[pug_index20];
+      for (var pug_index22 = 0, $$l = $$obj.length; pug_index22 < $$l; pug_index22++) {
+        var t = $$obj[pug_index22];
 if (t.descriptions) {
 // iterate t.descriptions
 ;(function(){
   var $$obj = t.descriptions;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index21 = 0, $$l = $$obj.length; pug_index21 < $$l; pug_index21++) {
-        var d = $$obj[pug_index21];
+      for (var pug_index23 = 0, $$l = $$obj.length; pug_index23 < $$l; pug_index23++) {
+        var d = $$obj[pug_index23];
 pug_html = pug_html + (pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + "  ";
       }
   } else {
     var $$l = 0;
-    for (var pug_index21 in $$obj) {
+    for (var pug_index23 in $$obj) {
       $$l++;
-      var d = $$obj[pug_index21];
+      var d = $$obj[pug_index23];
 pug_html = pug_html + (pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + "  ";
     }
   }
@@ -1710,23 +1878,23 @@ pug_html = pug_html + "\u003Ca" + (pug_attr("href", "https://capec.mitre.org/dat
       }
   } else {
     var $$l = 0;
-    for (var pug_index20 in $$obj) {
+    for (var pug_index22 in $$obj) {
       $$l++;
-      var t = $$obj[pug_index20];
+      var t = $$obj[pug_index22];
 if (t.descriptions) {
 // iterate t.descriptions
 ;(function(){
   var $$obj = t.descriptions;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index22 = 0, $$l = $$obj.length; pug_index22 < $$l; pug_index22++) {
-        var d = $$obj[pug_index22];
+      for (var pug_index24 = 0, $$l = $$obj.length; pug_index24 < $$l; pug_index24++) {
+        var d = $$obj[pug_index24];
 pug_html = pug_html + (pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + "  ";
       }
   } else {
     var $$l = 0;
-    for (var pug_index22 in $$obj) {
+    for (var pug_index24 in $$obj) {
       $$l++;
-      var d = $$obj[pug_index22];
+      var d = $$obj[pug_index24];
 pug_html = pug_html + (pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + "  ";
     }
   }
@@ -1748,7 +1916,9 @@ pug_mixins["spara"](con.exploits);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.pvstatus) {
+pug_html = pug_html + "\u003Cdiv class=\"status pad\"\u003E\u003Cb\u003EAffected Product Status\u003C\u002Fb\u003E";
 pug_mixins["statusTable"](con.pvstatus);
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.solutions) {
 pug_html = pug_html + "\u003Cdiv class=\"solution pad\"\u003E\u003Cb class=\"vgi-safe\"\u003ESolution\u003C\u002Fb\u003E";
@@ -1790,8 +1960,8 @@ else {
 ;(function(){
   var $$obj = t.split(/\n/);
   if ('number' == typeof $$obj.length) {
-      for (var pug_index23 = 0, $$l = $$obj.length; pug_index23 < $$l; pug_index23++) {
-        var line = $$obj[pug_index23];
+      for (var pug_index25 = 0, $$l = $$obj.length; pug_index25 < $$l; pug_index25++) {
+        var line = $$obj[pug_index25];
 if (line) {
 if (line.startsWith('  ')) {
 pug_html = pug_html + "\u003Ccode\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fcode\u003E\u003Cbr\u002F\u003E";
@@ -1803,9 +1973,9 @@ pug_html = pug_html + "\u003Cp\u003E" + (pug_escape(null == (pug_interp = line) 
       }
   } else {
     var $$l = 0;
-    for (var pug_index23 in $$obj) {
+    for (var pug_index25 in $$obj) {
       $$l++;
-      var line = $$obj[pug_index23];
+      var line = $$obj[pug_index25];
 if (line) {
 if (line.startsWith('  ')) {
 pug_html = pug_html + "\u003Ccode\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fcode\u003E\u003Cbr\u002F\u003E";
@@ -1828,17 +1998,17 @@ if (l) {
 ;(function(){
   var $$obj = l;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index24 = 0, $$l = $$obj.length; pug_index24 < $$l; pug_index24++) {
-        var d = $$obj[pug_index24];
+      for (var pug_index26 = 0, $$l = $$obj.length; pug_index26 < $$l; pug_index26++) {
+        var d = $$obj[pug_index26];
 if (d.value) {
 pug_mixins["para"](d.value, hypertext);
 }
       }
   } else {
     var $$l = 0;
-    for (var pug_index24 in $$obj) {
+    for (var pug_index26 in $$obj) {
       $$l++;
-      var d = $$obj[pug_index24];
+      var d = $$obj[pug_index26];
 if (d.value) {
 pug_mixins["para"](d.value, hypertext);
 }
@@ -1884,8 +2054,8 @@ if (l) {
 ;(function(){
   var $$obj = l;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index26 = 0, $$l = $$obj.length; pug_index26 < $$l; pug_index26++) {
-        var d = $$obj[pug_index26];
+      for (var pug_index28 = 0, $$l = $$obj.length; pug_index28 < $$l; pug_index28++) {
+        var d = $$obj[pug_index28];
 if (d.supportingMedia && d.supportingMedia.length > 0 && d.supportingMedia[0].type == 'text/html') {
 pug_html = pug_html + "\u003Cp\u003E" + (null == (pug_interp = d.supportingMedia[0].value) ? "" : pug_interp) + "\u003C\u002Fp\u003E";
 }
@@ -1896,9 +2066,9 @@ pug_mixins["para"](d.value);
       }
   } else {
     var $$l = 0;
-    for (var pug_index26 in $$obj) {
+    for (var pug_index28 in $$obj) {
       $$l++;
-      var d = $$obj[pug_index26];
+      var d = $$obj[pug_index28];
 if (d.supportingMedia && d.supportingMedia.length > 0 && d.supportingMedia[0].type == 'text/html') {
 pug_html = pug_html + "\u003Cp\u003E" + (null == (pug_interp = d.supportingMedia[0].value) ? "" : pug_interp) + "\u003C\u002Fp\u003E";
 }
@@ -2081,6 +2251,29 @@ pug_html = pug_html + "\u003Ci\u003E,\u003C\u002Fi\u003E";
 pug_mixins["versionList"] = pug_interp = function(v){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 if (v) {
+// iterate v
+;(function(){
+  var $$obj = v;
+  if ('number' == typeof $$obj.length) {
+      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+        var x = $$obj[i];
+pug_html = pug_html + (pug_escape(null == (pug_interp = x) ? "" : pug_interp)) + "\u003Cbr\u002F\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var i in $$obj) {
+      $$l++;
+      var x = $$obj[i];
+pug_html = pug_html + (pug_escape(null == (pug_interp = x) ? "" : pug_interp)) + "\u003Cbr\u002F\u003E";
+    }
+  }
+}).call(this);
+
+}
+};
+pug_mixins["del_versionList"] = pug_interp = function(v){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+if (v) {
 var n = v.shift();
 while (n != undefined) {
 pug_html = pug_html + (pug_escape(null == (pug_interp = n) ? "" : pug_interp));
@@ -2100,15 +2293,15 @@ pug_html = pug_html + "\u003Cdiv id=\"GeneratedTable\"\u003E\u003Ctable cellpadd
 ;(function(){
   var $$obj = cna.descriptions;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index30 = 0, $$l = $$obj.length; pug_index30 < $$l; pug_index30++) {
-        var d = $$obj[pug_index30];
+      for (var pug_index33 = 0, $$l = $$obj.length; pug_index33 < $$l; pug_index33++) {
+        var d = $$obj[pug_index33];
 pug_html = pug_html + ((pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + (pug_escape(null == (pug_interp = ' ') ? "" : pug_interp)));
       }
   } else {
     var $$l = 0;
-    for (var pug_index30 in $$obj) {
+    for (var pug_index33 in $$obj) {
       $$l++;
-      var d = $$obj[pug_index30];
+      var d = $$obj[pug_index33];
 pug_html = pug_html + ((pug_escape(null == (pug_interp = d.value) ? "" : pug_interp)) + (pug_escape(null == (pug_interp = ' ') ? "" : pug_interp)));
     }
   }
@@ -2119,15 +2312,15 @@ pug_html = pug_html + "\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E\u003Ctr\u003E\u0
 ;(function(){
   var $$obj = cna.references;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index31 = 0, $$l = $$obj.length; pug_index31 < $$l; pug_index31++) {
-        var r = $$obj[pug_index31];
+      for (var pug_index34 = 0, $$l = $$obj.length; pug_index34 < $$l; pug_index34++) {
+        var r = $$obj[pug_index34];
 pug_html = pug_html + "\u003Cli\u003E\u003Ca" + (" target=\"_blank\""+pug_attr("href", r.url, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = r.url) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index31 in $$obj) {
+    for (var pug_index34 in $$obj) {
       $$l++;
-      var r = $$obj[pug_index31];
+      var r = $$obj[pug_index34];
 pug_html = pug_html + "\u003Cli\u003E\u003Ca" + (" target=\"_blank\""+pug_attr("href", r.url, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = r.url) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
     }
   }
@@ -2146,8 +2339,8 @@ else {
 ;(function(){
   var $$obj = t.split(/\n/);
   if ('number' == typeof $$obj.length) {
-      for (var pug_index32 = 0, $$l = $$obj.length; pug_index32 < $$l; pug_index32++) {
-        var line = $$obj[pug_index32];
+      for (var pug_index35 = 0, $$l = $$obj.length; pug_index35 < $$l; pug_index35++) {
+        var line = $$obj[pug_index35];
 if (line) {
 if (line.startsWith('  ')) {
 pug_html = pug_html + "\u003Ccode\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fcode\u003E\u003Cbr\u002F\u003E";
@@ -2159,9 +2352,9 @@ pug_html = pug_html + "\u003Cp\u003E" + (pug_escape(null == (pug_interp = line) 
       }
   } else {
     var $$l = 0;
-    for (var pug_index32 in $$obj) {
+    for (var pug_index35 in $$obj) {
       $$l++;
-      var line = $$obj[pug_index32];
+      var line = $$obj[pug_index35];
 if (line) {
 if (line.startsWith('  ')) {
 pug_html = pug_html + "\u003Ccode\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fcode\u003E\u003Cbr\u002F\u003E";
@@ -2184,17 +2377,17 @@ if (l) {
 ;(function(){
   var $$obj = l;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index33 = 0, $$l = $$obj.length; pug_index33 < $$l; pug_index33++) {
-        var d = $$obj[pug_index33];
+      for (var pug_index36 = 0, $$l = $$obj.length; pug_index36 < $$l; pug_index36++) {
+        var d = $$obj[pug_index36];
 if (d.value) {
 pug_mixins["para"](d.value, hypertext);
 }
       }
   } else {
     var $$l = 0;
-    for (var pug_index33 in $$obj) {
+    for (var pug_index36 in $$obj) {
       $$l++;
-      var d = $$obj[pug_index33];
+      var d = $$obj[pug_index36];
 if (d.value) {
 pug_mixins["para"](d.value, hypertext);
 }
@@ -2396,7 +2589,7 @@ pug_html = pug_html + "\u003Cdiv class=\"page wht shd pad2 gap\"\u003E\u003Cb cl
 if (cve.source && cve.source.advisory) {
 pug_html = pug_html + (pug_escape(null == (pug_interp = cve.source.advisory) ? "" : pug_interp)) + "             ";
 }
-pug_html = pug_html + (pug_escape(null == (pug_interp = cve.cveMetadata.title + ' (' + cve.cveMetadata.cveId + ')') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cul class=\"bullets\"\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003ECVSS: \u003C\u002Fb\u003E\u003C!--span.textif cna.metrics && cna.metrics && cna.metrics.length \u003E 0\n    ol\n        each x, i in cna.metrics\n            - cvss = x.cvssV3_1 ? x.cvssV3_1 : x.cvssV3_0 ? x.cvssV3_0 : x.cvssV2_0 ? x.cvssV2_0 : null\n            if cvss\n                li \n                    +spara(x.scenarios)\n                    if cvss.baseSeverity\n                        =cvss.baseSeverity\n                    |  \n                    +CVSS(cvss)--\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EPR: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E" + (pug_escape(null == (pug_interp = cve.source.defect) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EAffects: \u003C\u002Fb\u003E\u003C!--span.text= getProductAffected(cna) --\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EProblem: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E";
+pug_html = pug_html + (pug_escape(null == (pug_interp = cve.cveMetadata.title + ' (' + cve.cveMetadata.cveId + ')') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cul class=\"bullets\"\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003ECVSS: \u003C\u002Fb\u003E\u003C!--span.textif cna.metrics && cna.metrics && cna.metrics.length \u003E 0\n    ol\n        each x, i in cna.metrics\n            - cvss = x.cvssV3_1 ? x.cvssV3_1 : x.cvssV3_0 ? x.cvssV3_0 : x.cvssV2_0 ? x.cvssV2_0 : null\n            if cvss\n                li \n                    =x.scenarios\n                    if cvss.baseSeverity\n                        =cvss.baseSeverity\n                    |  \n                    +CVSS(cvss)--\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EPR: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E" + (pug_escape(null == (pug_interp = cve.source.defect) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EAffects: \u003C\u002Fb\u003E\u003C!--span.text= getProductAffected(cna) --\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EProblem: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E";
 pug_mixins["spara"](cve.description.description_data.slice(0,1));
 if (cmap && Object.keys(cmap).length > 0 && cmap.constructor === Object) {
 pug_mixins["spara"](cve.CNA_private.CVE_table_description);
@@ -2621,6 +2814,20 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
                     });
                 }
             }
+            if(schema.id == "xtag") {
+                if(value && schema.items && schema.items.examples) {
+                    for(i = 0; i < value.length; i++) {
+                        if(value[i] && !schema.items.examples.includes(value[i]) && !value[i].match("^x_.*$")) {
+                            errors.push({
+                                path: path,
+                                property: 'format',
+                                message: 'Select from the suggested tags or enter custom tags starting with x_'
+                            });
+                            break;
+                        }
+                    }
+                }
+            }
             return errors;
         }];</script><script>var errorFilter = function(errors) {
         if(errors && errors.length > 0) {
@@ -2658,6 +2865,53 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
         + '&url=' + encodeURI(textUtil.deep_value(j, 'containers.cna.references.0.url'));
     //    + '&hashtags=' + encodeURI(id)
     //via=vulnogram&hashtags=CVE
+}
+
+function loadCVE(value) {
+    var realId = value.match(/(CVE-(\d{4})-(\d{1,12})(\d{3}))/);
+    if (realId) {
+        var id = realId[1];
+        var year = realId[2];
+        var bucket = realId[3];
+        fetch('https://raw.githubusercontent.com/CVEProject/cvelistv5/master/review_set/' + year + '/' + bucket + 'xxx/' + id + '.json', {
+                method: 'GET',
+                credentials: 'omit',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*'
+                },
+                redirect: 'error'
+            })
+            .then(function (response) {
+                if (!response.ok) {
+                    errMsg.textContent = "Failed to load valid CVE JSON";
+                    infoMsg.textContent = "";
+                    throw Error(id + ' ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(function (res) {
+                if (res.dataVersion && res.dataVersion == '5.0') {
+                    if(res.containers.cna.x_legacyV4Record) {
+                        delete res.containers.cna.x_legacyV4Record;
+                    }
+                    if(res.containers) {
+                        res = addRichTextCVE(res);
+                        res = cvssv3_0_to_cvss3_1(res);
+                    }
+                    loadJSON(res, id, "Loaded "+id+" from GIT!");
+                    mainTabGroup.change(0);
+                } else {
+                    errMsg.textContent = "Failed to load valid CVE JSON v 5.0 record";
+                    infoMsg.textContent = "";
+                }
+            })
+            .catch(function (error) {
+                errMsg.textContent = error;
+            })
+    } else {
+        errMsg.textContent = "CVE ID required";
+    }
+    return false;
 }
 
 async function draftEmail(event, link, renderId) {
@@ -2775,12 +3029,10 @@ var additionalTabs = {
     }
 }
 
+/* fullname = vendor . product . platforms . module .others 
+/* table --> [ fullname ][version][affected|unaffected|unknown] = [ list of ranges ] */
 function versionStatusTable5(affected) {
-    var table= {
-        affected: {},
-        unaffected: {},
-        unknown: {}
-    };
+    var t = {};
     nameAndPlatforms = {};
     var showCols = {
         platforms: false,
@@ -2816,62 +3068,62 @@ function versionStatusTable5(affected) {
         var modules = p.modules ? p.modules.join(', ') : '';
         if(p.versions) {
             for(v of p.versions) {
+                var rows = {
+                    affected: [],
+                    unaffected: [],
+                    unknown: []
+                };
                 //var major = v.version != 'unspecified' ? v.version: undefined;//? v.version.match(/^(.*)\./): null;
                 var major = undefined;//major ? major[1] : '';
                 var pFullName = [(p.vendor ? p.vendor + ' ' : '') + pname + (major ? ' ' + major : ''), platforms, modules, others];
                 nameAndPlatforms[pFullName] = pFullName;
-                if(!table[v.status][pFullName]) {
-                    table[v.status][pFullName] = [];
-                }
                 if (v.version) {
                     showCols[v.status] = true;
                     if(!v.changes) {
                         if(v.lessThan) {
-                            table[v.status][pFullName].push('>= ' + v.version + ' to < ' + v.lessThan);
+                            rows[v.status].push('>= ' + v.version + ' to < ' + v.lessThan);
                         } else if(v.lessThanOrEqual) {
-                            table[v.status][pFullName].push('>= ' + v.version + ' to <= ' + v.lessThan);
+                            rows[v.status].push('>= ' + v.version + ' to <= ' + v.lessThan);
                         } else {
-                            table[v.status][pFullName].push(v.version);
+                            rows[v.status].push('= ' + v.version);
                         }
                     } else {
                         var prevStatus = v.status;
                         var prevVersion = v.version;
                         for(c of v.changes) {
                             showCols[c.status] = true;
-                            if(!table[c.status][pFullName]) {
-                                table[c.status][pFullName] = [];
-                            }
-                            table[prevStatus][pFullName].push('>= ' + prevVersion + ' to < ' + c.at);
-                            //table[c.status][pFullName].push('>= ' + c.at);
+                            rows[prevStatus].push('>= ' + prevVersion + ' to < ' + c.at);
                             prevStatus = c.status;
                             prevVersion = c.at;
                         }
                         if(v.lessThan) {
-                            table[prevStatus][pFullName].push('>= ' + prevVersion + (v.lessThan != prevVersion ? ' to < ' + v.lessThan : ''));
+                            rows[prevStatus].push('>= ' + prevVersion + (v.lessThan != prevVersion ? ' to < ' + v.lessThan : ''));
                         } else if(v.lessThanOrEqual) {
-                            table[prevStatus][pFullName].push('>= ' + prevVersion + (v.lessThanOrEqual != prevVersion ? ' to < ' + v.lessThanOrEqual : ''));
+                            rows[prevStatus].push('>= ' + prevVersion + (v.lessThanOrEqual != prevVersion ? ' to < ' + v.lessThanOrEqual : ''));
                         } else {
-                            table[prevStatus][pFullName].push(prevVersion);
+                            rows[prevStatus].push(">=" + prevVersion);
                         }                  
                     }
                 }
+                if(!t[pFullName]) t[pFullName] = [];
+                //if(!t[pFullName][v.version]) t[pFullName][v.version] = [];
+                t[pFullName].push(rows);
             }
-        }
-        var defaultLabel = '';
-        if (Object.keys(table[p.defaultStatus]).length > 0) {
-            defaultLabel = ' - all other versions';
         }
         var pFullName = [(p.vendor ? p.vendor + ' ' : '') + pname + (major ? ' ' + major : ''), platforms, modules, others];
         nameAndPlatforms[pFullName] = pFullName;
-        if(!table[p.defaultStatus][pFullName]) {
-            table[p.defaultStatus][pFullName] = ['everything else is ' + p.defaultStatus];
+        var rows = {};
+        rows[p.defaultStatus] = ["everything else"];
+        if(!t[pFullName]) {
+            t[pFullName] = [rows];
         } else {
-            table[p.defaultStatus][pFullName].push( 'everything else is ' + p.defaultStatus );
+            t[pFullName].push(rows);
         }
         if (p.defaultStatus)
             showCols[p.defaultStatus] = true;
     }
-    return({cols:nameAndPlatforms, vals:table, show: showCols});
+    console.log(t);
+    return({groups:nameAndPlatforms, vals:t, show: showCols});
 }
 
 function getProductAffected(cve) {
@@ -3139,7 +3391,7 @@ async function cveReserve(yearOffset) {
             //console.log(e);
         }
     } else {
-        alert('Please login to CVE.org');
+        alert('Please login to CVE Portal');
     }
 }
 
@@ -3148,7 +3400,7 @@ async function cveSelectLoad(event) {
     if(cveClient){
     cveLoad(event.target.elements.id.value)
     } else {
-        alert('Please login to CVE.org');
+        alert('Please login to CVE Portal');
     }
     return false;
 }
@@ -3184,13 +3436,34 @@ function addRichTextCVE(j) {
         'descriptions',
         'solutions',
         'workarounds',
-        'exploits'
+        'exploits',
+        'configurations'
     ];
+
     if(j && j.containers.cna) {
         var cna = j.containers.cna
-        htmlFields.forEach(element => addRichTextArray(cna[element]));
+        htmlFields.forEach(element => {
+            addRichTextArray(cna[element])
+        });
     }
     return j;
+}
+
+function cvssv3_0_to_cvss3_1(j) {
+    if(j && j.containers && j.containers.cna && j.containers.cna.metrics) {
+        j.containers.cna.metrics.forEach(m => {
+            console.log(m);
+            if(m.cvssV3_0) {
+                m.cvssV3_1 = m.cvssV3_0;
+                m.cvssV3_1.version = "3.1";
+                if(m.cvssV3_1.vectorString) {
+                    m.cvssV3_1.vectorString = m.cvssV3_1.vectorString.replace('CVSS:3.0', 'CVSS:3.1');
+                }
+                delete m.cvssV3_0;
+            }
+        });
+    }
+    return j
 }
 
 async function cveLoad(cveId) {
@@ -3215,6 +3488,7 @@ async function cveLoad(cveId) {
                 cveApi.state[cveId] = res.cveMetadata.state;
                 if(res.cveMetadata.containers) {
                     res = addRichTextCVE(res);
+                    res = cvssv3_0_to_cvss3_1(res);
                 }
                 loadJSON(res, cveId, "Loaded " + cveId + " from CVE.org!");
                 mainTabGroup.change(0);
@@ -3224,7 +3498,7 @@ async function cveLoad(cveId) {
                 infoMsg.textContent = "";
             }
         } else {
-            alert('Please login to CVE.org!');
+            alert('Please login to CVE Portal');
         }
     }
 }
@@ -3273,7 +3547,7 @@ async function cvePost() {
         }
         } else {
             //todo enable/disable post button
-            alert('Please login to CVE.org (CVE AWG Test)');
+            alert('Please login to CVE Portal -> (CVE AWG Test)');
         }
     } else {
         alert('Please fix errors before posting');
@@ -3285,7 +3559,7 @@ async function cveReserveAndRender(yearOffset) {
         await cveReserve(yearOffset);
         await cveGetList();
     } else {
-        alert('Please login to CVE.org');
+        alert('Please login to CVE Portal');
     }
 } 
 /*
@@ -3623,7 +3897,7 @@ var pug_match_html=/["&<>]/;function cveRender(locals) {var pug_html = "", pug_m
     (function (Date, Math, cl, ctemplate, cveIds, editable, isNaN, name, obj, org, t, userInfo) {
       pug_mixins["userstats"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Cdetails class=\"lbl popup\"\u003E\u003Csummary class=\"vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo.name ? userInfo.name.first : userInfo.username) ? "" : pug_interp)) + "\u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd pad\"\u003E\u003Cb class=\"vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo.username) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cdt\u003ERoles:  \u003Cb class=\"vgi-cap\"\u003E" + (pug_escape(null == (pug_interp = userInfo.authority.active_roles) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr\u002F\u003E\u003Cdt\u003EOrg:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.name) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003EShortName:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.short_name) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003ERole:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.authority.active_roles) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr\u002F\u003E\u003Cspan class=\"vgi-exit fbn\" onclick=\"cveLogout()\"\u003ELogout!\u003C\u002Fspan\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E";
+pug_html = pug_html + "\u003Cdetails class=\"lbl popup\"\u003E\u003Csummary class=\"fbn vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo.name ? userInfo.name.first : userInfo.username) ? "" : pug_interp)) + " ▼ \u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd pad\"\u003E\u003Cb class=\"vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo.username) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cdt\u003ERoles:  \u003Cb class=\"vgi-cap\"\u003E" + (pug_escape(null == (pug_interp = userInfo.authority.active_roles) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr\u002F\u003E\u003Cdt\u003EOrg:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.name) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003EShortName:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.short_name) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003ERole:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.authority.active_roles) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr\u002F\u003E\u003Cspan class=\"vgi-exit fbn\" onclick=\"cveLogout()\"\u003ELogout!\u003C\u002Fspan\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E";
 };
 pug_mixins["htext"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
@@ -3841,7 +4115,7 @@ var allowAjax = "false";
 var schemaName = "cve";
 var postUrl = "";
 var csrfToken = "";
-var ajaxBase  = "./";var initJSON = undefined;var docSchema={"$schema":"http:\u002F\u002Fjson-schema.org\u002Fdraft-07\u002Fschema#","$id":"https:\u002F\u002Fcve.org\u002Fcve\u002Frecord\u002Fv5_00\u002F","type":"object","title":"CVE JSON record format","description":"cve-schema specifies the CVE JSON record format. This is the blueprint for a rich set of JSON data that can be submitted by CVE Numbering Authorities (CNAs) and Authorized Data Publishers (ADPs) to describe a CVE Record. Some examples of CVE record data include CVE ID number, affected product(s), affected version(s), and public references. While those specific items are required when assigning a CVE, there are many other optional data in the schema that can be used to enrich CVE Records for community benefit. Learn more about the CVE program at [the official website](https:\u002F\u002Fcve.mitre.org). This CVE JSON record format is defined using JSON Schema. Learn more about JSON Schema [here](https:\u002F\u002Fjson-schema.org\u002F).","options":{"keep_oneof_values":false,"patternmessage":"Enter a valid UUID"},"definitions":{"generator":{},"uriType":{"description":"A universal resource identifier (URI), according to [RFC 3986](https:\u002F\u002Ftools.ietf.org\u002Fhtml\u002Frfc3986).","type":"string","format":"uri","pattern":"^(([^:\u002F?#]+):)?(\u002F\u002F([^\u002F?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?","minLength":1,"maxLength":2000},"uuidType":{"description":"A version 4 (random) universally unique identifier (UUID) as defined by [RFC 4122](https:\u002F\u002Ftools.ietf.org\u002Fhtml\u002Frfc4122#section-4.1.3).","type":"string","pattern":"^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$","options":{"patternmessage":"Enter a valid UUID"},"default":"00000000-0000-4000-9000-000000000000"},"reference":{"type":"object","title":"Reference","required":["url"],"properties":{"url":{"title":"URL","description":"The uniform resource locator (URL), according to [RFC 3986](https:\u002F\u002Ftools.ietf.org\u002Fhtml\u002Frfc3986#section-1.1.3), that can be used to retrieve the referenced resource.","$ref":"#\u002Fdefinitions\u002FuriType","pattern":"^(ftp|http)s?:\u002F\u002F\\S+$","options":{"patternmessage":"Enter a valid URL","inputAttributes":{"placeholder":"eg., https:\u002F\u002Fexample.org\u002FCVE-yyyy-nnnn"}}},"name":{"description":"User created name for the reference, often the title of the page.","type":"string","maxLength":500,"minLength":1,"options":{"hidden":true}},"tags":{"description":"An array of one or more tags that describe the resource referenced by 'url'.","type":"array","minItems":1,"format":"select2","uniqueItems":true,"items":{"type":"string","description":"broken-link: The reference link is returning a 404 error, or the site is no longer online.\n\ncustomer-entitlement: Similar to Privileges Required, but specific to references that require non-public\u002Fpaid access for customers of the particular vendor.\n\nexploit: Reference contains an in-depth\u002Fdetailed description of steps to exploit a vulnerability OR the reference contains any legitimate Proof of Concept (PoC) code or exploit kit.\n\ngovernment-resource: All reference links that are from a government agency or organization should be given the Government Resource tag.\n\nissue-tracking: The reference is a post from a bug tracking tool such as MantisBT, Bugzilla, JIRA, Github Issues, etc...\n\nmailing-list: The reference is from a mailing list -- often specific to a product or vendor.\n\nmitigation: The reference contains information on steps to mitigate against the vulnerability in the event a patch can't be applied or is unavailable or for EOL product situations.\n\nnot-applicable: The reference link is not applicable to the vulnerability and was likely associated by MITRE accidentally (should be used sparingly).\n\npatch: The reference contains an update to the software that fixes the vulnerability.\n\npermissions-required: The reference link provided is blocked by a logon page. If credentials are required to see any information this tag must be applied.\n\nmedia-coverage: The reference is from a media outlet such as a newspaper, magazine, social media, or weblog. This tag is not intended to apply to any individual's personal social media account. It is strictly intended for public media entities.\n\nproduct: A reference appropriate for describing a product for the purpose of CPE or SWID.\n\nrelated: A reference that is for a related (but not the same) vulnerability.\n\nrelease-notes: The reference is in the format of a vendor or open source project's release notes or change log.\n\nsignature: The reference contains a method to detect or prevent the presence or exploitation of the vulnerability.\n\ntechnical-description: The reference contains in-depth technical information about a vulnerability and its exploitation process, typically in the form of a presentation or whitepaper.\n\nthird-party-advisory: Advisory is from an organization that is not the vulnerable product's vendor\u002Fpublisher\u002Fmaintainer.\n\nvendor-advisory: Advisory is from the vendor\u002Fpublisher\u002Fmaintainer of the product or the parent organization.\n\nvdb-entry: VDBs are loosely defined as sites that provide information about this vulnerability, such as advisories, with identifiers. Included VDBs are free to access, substantially public, and have broad scope and coverage (not limited to a single vendor or research organization). See: https:\u002F\u002Fwww.first.org\u002Fglobal\u002Fsigs\u002Fvrdx\u002Fvdb-catalog","enum":["broken-link","customer-entitlement","exploit","government-resource","issue-tracking","mailing-list","mitigation","not-applicable","patch","permissions-required","media-coverage","product","related","release-notes","signature","technical-description","third-party-advisory","vendor-advisory","vdb-entry"]}}}},"cveId":{"type":"string","title":"CVE ID","pattern":"^CVE-[0-9]{4}-[0-9]{4,19}$","options":{"class":"vgi-tag","formClass":"lni","grid_columns":6,"patternmessage":"Enter CVE-yyyy-nnnn format","remove_empty_properties":false,"inputAttributes":{"placeholder":"CVE-yyyy-nnnn or pick from existing","type":"search"}},"examples":["CVE-yyyy-nnnn"]},"orgId":{"description":"A UUID for an organization participating in the CVE program. This UUID can be used to lookup the organization record in the user registry service.","$ref":"#\u002Fdefinitions\u002FuuidType","template":"cveApi && cveApi.org?cveApi.org.UUID:'00000000-0000-4000-9000-000000000000'"},"userId":{"description":"A UUID for a user participating in the CVE program. This UUID can be used to lookup the user record in the user registry service.","$ref":"#\u002Fdefinitions\u002FuuidType"},"shortName":{"description":"A 3-12 character name that can be used to complement an organization's UUID.","type":"string","minLength":3,"maxLength":12,"options":{"class":"vgi-factory","input_width":"5em","hidden":true}},"datestamp":{"description":"Date\u002Ftime format based on RFC3339 and ISO ISO8601.","type":"string","format":"datetime","pattern":"^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))$","options":{"class":"vgi-cal","grid_columns":4,"patternmessage":"Enter date"}},"timestamp":{"type":"string","format":"datetime","description":"Date\u002Ftime format based on RFC3339 and ISO ISO8601, with an optional timezone in the format 'yyyy-MM-ddTHH:mm:ssZZZZ'. If timezone offset is not given, GMT (0000) is assumed.","pattern":"^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})?$","options":{"class":"vgi-cal","grid_columns":4,"patternmessage":"Enter date"}},"version":{"description":"A single version of a product, as expressed in its own version numbering scheme.","type":"string","minLength":1,"maxLength":1024},"status":{"description":"The vulnerability status of a given version or range of versions of a product. The statuses 'affected' and 'unaffected' indicate that the version is affected or unaffected by the vulnerability. The status 'unknown' indicates that it is unknown or unspecified whether the given version is affected. There can be many reasons for an 'unknown' status, including that an investigation has not been undertaken or that a vendor has not disclosed the status.","type":"string","format":"radio","enum":["affected","unaffected","unknown"],"options":{"icons":{"affected":"impact","unaffected":"safe","unknown":"what"},"enum_titles":["y","n","?"]}},"product":{"type":"object","id":"pE","format":"grid","title":"Product","options":{"class":"vgi-package tgap"},"description":"Provides information about the set of products and services affected by this vulnerability.","properties":{"vendor":{"type":"string","title":"Vendor or project","description":"Name of the organization, project, community, individual, or user that created or maintains this product or hosted service. Can be 'N\u002FA' if none of those apply. When collectionURL and packageName are used, this field may optionally represent the user or account within the package collection associated with the package.","minLength":1,"maxLength":512,"options":{"show_errors":"always","infoText":"Vendor or org or project.","grid_columns":4,"class":"vgi-factory","inputAttributes":{"placeholder":"eg., Linux"}}},"product":{"type":"string","title":"Product name","description":"Name of the affected product.","minLength":1,"maxLength":2058,"options":{"show_errors":"always","infoText":"Name of the affected product.","grid_columns":4,"class":"vgi-package","inputAttributes":{"placeholder":"eg., Linux Kernel"}}},"platforms":{"title":"Platforms","description":"List of specific platforms if the vulnerability is only relevant in the context of these platforms (optional). Platforms may include execution environments, operating systems, virtualization technolgies, hardware models, or computing architectures. Lack of this field or an empty array implies that the other fields are applicable for all relevant platforms.","type":"array","format":"taglist","options":{"grid_columns":4,"class":"vgi-stack","inputAttributes":{"placeholder":"eg., x86 Android Windows MacOS PS5 MISP"}},"uniqueItems":true,"items":{"type":"string","examples":["iOS","Android","Windows","macOS","x86","ARM","64 bit","Big Endian","iPad","Chromebook","Docker"],"maxLength":1024}},"collectionURL":{"title":"Package collection URL","description":"URL identifying a package collection (determines meaning of packageName).","$ref":"#\u002Fdefinitions\u002FuriType","type":"string","maxLength":500,"minLength":0,"pattern":"^(ftp|http)s?:\u002F\u002F\\S+$","examples":["https:\u002F\u002Faccess.redhat.com\u002Fdownloads\u002Fcontent\u002Fpackage-browser","https:\u002F\u002Faddons.mozilla.org","https:\u002F\u002Faddons.thunderbird.net","https:\u002F\u002Fanaconda.org\u002Fanaconda\u002Frepo","https:\u002F\u002Fapp.vagrantup.com\u002Fboxes\u002Fsearch","https:\u002F\u002Fapps.apple.com","https:\u002F\u002Farchlinux.org\u002Fpackages","https:\u002F\u002Fatmospherejs.meteor.com","https:\u002F\u002Fatom.io\u002Fpackages","https:\u002F\u002Fbitbucket.org","https:\u002F\u002Fbower.io","https:\u002F\u002Fbrew.sh\u002F","https:\u002F\u002Fchocolatey.org\u002Fpackages","https:\u002F\u002Fchrome.google.com\u002Fwebstore","https:\u002F\u002Fclojars.org","https:\u002F\u002Fcocoapods.org","https:\u002F\u002Fcode.dlang.org","https:\u002F\u002Fconan.io\u002Fcenter","https:\u002F\u002Fcpan.org\u002Fmodules","https:\u002F\u002Fcran.r-project.org","https:\u002F\u002Fcrates.io","https:\u002F\u002Fctan.org\u002Fpkg","https:\u002F\u002Fdrupal.org","https:\u002F\u002Fexchange.adobe.com","https:\u002F\u002Fforge.puppet.com\u002Fmodules","https:\u002F\u002Fgithub.com","https:\u002F\u002Fgitlab.com\u002Fexplore","https:\u002F\u002Fgolang.org\u002Fpkg","https:\u002F\u002Fguix.gnu.org\u002Fpackages","https:\u002F\u002Fhackage.haskell.org","https:\u002F\u002Fhelm.sh","https:\u002F\u002Fhub.docker.com","https:\u002F\u002Fjuliahub.com","https:\u002F\u002Flib.haxe.org","https:\u002F\u002Fluarocks.org","https:\u002F\u002Fmarketplace.visualstudio.com","https:\u002F\u002Fmelpa.org","https:\u002F\u002Fmicrosoft.com\u002Fen-us\u002Fstore\u002Fapps","https:\u002F\u002Fnimble.directory","https:\u002F\u002Fnuget.org\u002Fpackages","https:\u002F\u002Fopam.ocaml.org\u002Fpackages","https:\u002F\u002Fopenwrt.org\u002Fpackages\u002Findex","https:\u002F\u002Fpackage.elm-lang.org","https:\u002F\u002Fpackagecontrol.io","https:\u002F\u002Fpackages.debian.org","https:\u002F\u002Fpackages.gentoo.org","https:\u002F\u002Fpackagist.org","https:\u002F\u002Fpear.php.net\u002Fpackages.php","https:\u002F\u002Fpecl.php.net","https:\u002F\u002Fplatformio.org\u002Flib","https:\u002F\u002Fplay.google.com\u002Fstore","https:\u002F\u002Fplugins.gradle.org","https:\u002F\u002Fprojects.eclipse.org","https:\u002F\u002Fpub.dev","https:\u002F\u002Fpypi.python.org","https:\u002F\u002Fregistry.npmjs.org","https:\u002F\u002Fregistry.terraform.io","https:\u002F\u002Frepo.hex.pm","https:\u002F\u002Frepo.maven.apache.org\u002Fmaven2","https:\u002F\u002Frubygems.org","https:\u002F\u002Fsearch.nixos.org\u002Fpackages","https:\u002F\u002Fsourceforge.net","https:\u002F\u002Fwordpress.org\u002Fplugins"],"options":{"show_errors":"always","grid_columns":4,"class":"vgi-ext","patternmessage":"Enter a valid URL","inputAttributes":{"placeholder":"eg., https:\u002F\u002Fwordpress.org\u002Fplugins"}}},"packageName":{"title":"Package name","type":"string","description":"Name or identifier of the affected software package as used in the package collection.","minLength":1,"maxLength":2058,"options":{"show_errors":"always","grid_columns":4,"class":"vgi-package","inputAttributes":{"placeholder":"eg., kernel"}}},"repo":{"title":"Source repository","description":"The URL of the source code repository, for informational purposes and\u002For to resolve git hash version ranges.","$ref":"#\u002Fdefinitions\u002FuriType","options":{"grid_columns":4,"class":"vgi-ext","inputAttributes":{"placeholder":"eg., https:\u002F\u002Fgit.kernel.org"}}},"cpes":{"title":"CPEs","type":"array","format":"table","options":{"hidden":true},"description":"Affected products defined by CPE. This is an array of CPE values (vulnerable and not), we use an array so that we can make multiple statements about the same version and they are separate (if we used a JSON object we'd essentially be keying on the CPE name and they would have to overlap). Also this allows things like cveDataVersion or cveDescription to be applied directly to the product entry. This also allows more complex statements such as \"Product X between versions 10.2 and 10.8\" to be put in a machine-readable format. As well since multiple statements can be used multiple branches of the same product can be defined here.","uniqueItems":true,"items":{"title":"CPE Name","type":"string","description":"Common Platform Enumeration (CPE) Name in either 2.2 or 2.3 format","pattern":"([c][pP][eE]:\u002F[AHOaho]?(:[A-Za-z0-9._\\-~%]*){0,6})|(cpe:2\\.3:[aho*\\-](:(((\\?*|\\*?)([a-zA-Z0-9\\-._]|(\\\\[\\\\*?!\"#$%&'()+,\u002F:;\u003C=\u003E@\\[\\]\\^`{|}~]))+(\\?*|\\*?))|[*\\-])){5}(:(([a-zA-Z]{2,3}(-([a-zA-Z]{2}|[0-9]{3}))?)|[*\\-]))(:(((\\?*|\\*?)([a-zA-Z0-9\\-._]|(\\\\[\\\\*?!\"#$%&'()+,\u002F:;\u003C=\u003E@\\[\\]\\^`{|}~]))+(\\?*|\\*?))|[*\\-])){4})","minLength":1,"maxLength":2000,"options":{"patternmessage":"Enter a valid CPE"}}},"modules":{"type":"array","title":"Modules","format":"taglist","description":"A list of the affected components, features, modules, sub-components, sub-products, APIs, commands, utilities, programs, or functionalities (optional)","uniqueItems":true,"items":{"type":"string","description":"Name of the affected component, feature, module, sub-component, sub-product, API, command, utility, program, or functionality (optional).","minLength":1,"maxLength":4000},"options":{"grid_columns":4,"class":"vgi-square","inputAttributes":{"placeholder":"eg., filesystem"}}},"programFiles":{"type":"array","title":"Source-code file (OSS)","format":"taglist","description":"A list of the affected source code files (optional)","uniqueItems":true,"items":{"description":"Name or path or location of the affected source code file.","type":"string","minLength":1,"maxLength":1024},"options":{"grid_columns":4,"class":"vgi-text","inputAttributes":{"placeholder":"eg., hello.c"}}},"programRoutines":{"title":"Program routines (OSS)","type":"array","format":"table","description":"A list of the affected source code functions, methods, subroutines, or procedures (optional).","uniqueItems":true,"options":{"grid_columns":4,"class":"vgi-edit"},"items":{"type":"object","description":"Object describing program routine.","required":["name"],"properties":{"name":{"type":"string","description":"Name of the affected source code file, function, method, subroutine, or procedure.","minLength":1,"maxLength":4000,"options":{"inputAttributes":{"placeholder":"parse_file()"}}}}}},"versions":{"type":"array","title":"Versions (exact versions or ranges)","options":{"class":"vgi-versions"},"description":"Set of product versions or version ranges related to the vulnerability. The versions satisfy the CNA Rules [8.1.2 requirement](https:\u002F\u002Fcve.mitre.org\u002Fcve\u002Fcna\u002Frules.html#section_8-1_cve_entry_information_requirements). Versions or defaultStatus may be omitted, but not both.","minItems":1,"uniqueItems":true,"format":"table","items":{"type":"object","id":"vE","title":"Version","description":"A single version or a range of versions, with vulnerability status.\n\nAn entry with only 'version' and 'status' indicates the status of a single version.\n\nOtherwise, an entry describes a range; it must include the 'versionType' property, to define the version numbering semantics in use, and 'limit', to indicate the non-inclusive upper limit of the range. The object describes the status for versions V such that 'version' \u003C= V and V \u003C 'limit', using the \u003C= and \u003C semantics defined for the specific kind of 'versionType'. Status changes within the range can be specified by an optional 'changes' list.\n\nThe algorithm to decide the status specified for a version V is:\n\n\tfor entry in product.versions {\n\t\tif entry.lessThan is not present and entry.lessThanOrEqual is not present and v == entry.version {\n\t\t\treturn entry.status\n\t\t}\n\t\tif (entry.lessThan is present and entry.version \u003C= v and v \u003C entry.lessThan) or\n\t\t   (entry.lessThanOrEqual is present and entry.version \u003C= v and v \u003C= entry.lessThanOrEqual) { \u002F\u002F \u003C= and \u003C defined by entry.versionType\n\t\t\tstatus = entry.status\n\t\t\tfor change in entry.changes {\n\t\t\t\tif change.at \u003C= v {\n\t\t\t\t\tstatus = change.status\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn status\n\t\t}\n\t}\n\treturn product.defaultStatus\n\n","properties":{"status":{"title":"Affected?","description":"The vulnerability status for the version or range of versions. For a range, the status may be refined by the 'changes' list.","$ref":"#\u002Fdefinitions\u002Fstatus"},"version":{"title":"Version (or start of range)","description":"The single version being described, or the version at the start of the range. By convention, typically 0 denotes the earliest possible version.","$ref":"#\u002Fdefinitions\u002Fversion","options":{"inputAttributes":{"placeholder":"eg., 1.2.0"}}},"lessThan":{"title":"\u003C version (for range)","description":"The non-inclusive upper limit of the range. This is the least version NOT in the range. The usual version syntax is expanded to allow a pattern to end in an asterisk `(*)`, indicating an arbitrarily large number in the version ordering. For example, `{version: 1.0 lessThan: 1.*}` would describe the entire 1.X branch for most range kinds, and `{version: 2.0, lessThan: *}` describes all versions starting at 2.0, including 3.0, 5.1, and so on. Only one of lessThan and lessThanOrEqual should be specified.","$ref":"#\u002Fdefinitions\u002Fversion","options":{"inputAttributes":{"placeholder":"eg., 1.2.8","size":4}}},"lessThanOrEqual":{"title":"\u003C= version (for range)","description":"The inclusive upper limit of the range. This is the greatest version contained in the range. Only one of lessThan and lessThanOrEqual should be specified. For example, `{version: 1.0, lessThanOrEqual: 1.3}` covers all versions from 1.0 up to and including 1.3.","$ref":"#\u002Fdefinitions\u002Fversion","options":{"inputAttributes":{"placeholder":"eg., 1.2.7","size":4}}},"changes":{"type":"array","title":"status changes (patches, split ranges)","format":"table","description":"A list of status changes that take place during the range. The array should be sorted in increasing order by the 'at' field, according to the versionType, but clients must re-sort the list themselves rather than assume it is sorted.","uniqueItems":true,"items":{"type":"object","description":"The start of a single status change during the range.","required":["at","status"],"properties":{"at":{"description":"The version at which a status change occurs.","$ref":"#\u002Fdefinitions\u002Fversion","options":{"inputAttributes":{"placeholder":"eg., patch 10, 1.2.5a, 1.2.6"}}},"status":{"title":"Affected status changes to","description":"The new status in the range starting at the given version.","$ref":"#\u002Fdefinitions\u002Fstatus"}}}},"versionType":{"type":"string","description":"The version numbering system used for specifying the range. This defines the exact semantics of the comparison (less-than) operation on versions, which is required to understand the range itself. 'Custom' indicates that the version type is unspecified and should be avoided whenever possible. It is included primarily for use in conversion of older data files.","minLength":1,"options":{"inputAttributes":{"placeholder":"eg., patch 10, 1.2.5a, 1.2.6","size":"3"}},"maxLength":128,"examples":["custom","git","maven","python","rpm","semver"]}},"required":["version","status"]}},"defaultStatus":{"title":"Default status (for versions not specified above)","description":"The default status for versions that are not otherwise listed in the versions list. If not specified, defaultStatus defaults to 'unknown'. Versions or defaultStatus may be omitted, but not both.","$ref":"#\u002Fdefinitions\u002Fstatus","default":"unaffected"}}},"replacedBy":{"type":"array","format":"table","description":"Contains an array of CVE IDs that this CVE ID was rejected in favor of because the this CVE ID was assigned to the vulnerabilities","uniqueItems":true,"items":{"$ref":"#\u002Fdefinitions\u002FcveId","title":"Replaced by CVE ID"},"options":{"class":"vgi-reuse"}},"dataType":{"description":"Indicates the type of information represented in the JSON instance.","type":"string","enum":["CVE_RECORD"],"options":{"hidden":"true"}},"dataVersion":{"description":"The version of the schema being used. Used to support multiple versions of this format.","type":"string","enum":["5.0"],"options":{"hidden":"true"}},"cveMetadataPublished":{"description":"This is meta data about the CVE ID such as the CVE ID, who requested it, who assigned it, when it was requested, the current state (PUBLISHED, REJECTED, etc.) and so on.  These fields are controlled by the CVE Services.","title":" ","id":"pubmd","type":"object","format":"grid","options":{},"required":["cveId","assignerOrgId","state"],"properties":{"cveId":{"description":"The CVE identifier that this record pertains to.","$ref":"#\u002Fdefinitions\u002FcveId","options":{"grid_columns":3}},"assignerOrgId":{"$ref":"#\u002Fdefinitions\u002ForgId","description":"The UUID for the organization to which the CVE ID was originally assigned. This UUID can be used to lookup the organization record in the user registry service.","options":{"hidden":true}},"assignerShortName":{"title":"Assigner","$ref":"#\u002Fdefinitions\u002FshortName","description":"The short name for the organization to which the CVE ID was originally assigned."},"requesterUserId":{"$ref":"#\u002Fdefinitions\u002FuserId","description":"The user that requested the CVE identifier.","options":{"hidden":true},"default":""},"dateUpdated":{"description":"The date\u002Ftime the record was last updated.","$ref":"#\u002Fdefinitions\u002Ftimestamp","options":{"hidden":true}},"serial":{"type":"integer","minimum":1,"default":1,"description":"The system of record causes this to start at 1, and increment by 1 each time a submission from a data provider changes this CVE Record. The incremented value moves to the Rejected schema upon a PUBLISHED-\u003EREJECTED transition, and moves to the Published schema upon a REJECTED-\u003EPUBLISHED transition.","options":{"hidden":true}},"dateReserved":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime this CVE ID was reserved in the CVE automation workgroup services system. Disclaimer: This date reflects when the CVE ID was reserved, and does not necessarily indicate when this vulnerability was discovered, shared with the affected vendor, publicly disclosed, or updated in CVE.","options":{"hidden":true}},"datePublished":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime the CVE Record was first published in the CVE List.","options":{"hidden":true}},"state":{"description":"State of CVE - PUBLISHED, REJECTED.","type":"string","enum":["PUBLISHED"],"options":{"hidden":true}}},"additionalProperties":false},"cveMetadataRejected":{"type":"object","format":"gird","title":" ","options":{"class":"hid"},"description":"This is meta data about the CVE ID such as the CVE ID, who requested it, who assigned it, when it was requested, the current state (PUBLISHED, REJECTED, etc.) and so on.  These fields are controlled by the CVE Services.","required":["cveId","assignerOrgId","state"],"properties":{"cveId":{"description":"The CVE identifier that this record pertains to.","$ref":"#\u002Fdefinitions\u002FcveId"},"assignerOrgId":{"$ref":"#\u002Fdefinitions\u002ForgId","description":"The UUID for the organization to which the CVE ID was originally assigned.","options":{"hidden":true}},"assignerShortName":{"$ref":"#\u002Fdefinitions\u002FshortName","description":"The short name for the organization to which the CVE ID was originally assigned.","options":{"hidden":true}},"serial":{"type":"integer","minimum":1,"default":1,"description":"The system of record causes this to start at 1, and increment by 1 each time a submission from a data provider changes this CVE Record. The incremented value moves to the Rejected schema upon a PUBLISHED-\u003EREJECTED transition, and moves to the Published schema upon a REJECTED-\u003EPUBLISHED transition.","options":{"hidden":true}},"updated":{"description":"The date\u002Ftime the record was last updated.","$ref":"#\u002Fdefinitions\u002Ftimestamp","options":{"hidden":true}},"datePublished":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime the CVE Record was first published in the CVE List.","options":{"hidden":true}},"dateRejected":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime the CVE ID was rejected.","options":{"hidden":true}},"state":{"type":"string","description":"State of CVE - PUBLISHED, REJECTED.","enum":["REJECTED"],"options":{"hidden":true}},"dateReserved":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime this CVE ID was reserved in the CVE automation workgroup services system. Disclaimer: This date reflects when the CVE ID was reserved, and does not necessarily indicate when this vulnerability was discovered, shared with the affected vendor, publicly disclosed, or updated in CVE.","options":{"hidden":true}}},"additionalProperties":false},"providerMetadata":{"type":"object","format":"grid","options":{"class":"hid"},"description":"Details related to the information container provider (CNA or ADP)","properties":{"orgId":{"$ref":"#\u002Fdefinitions\u002ForgId","description":"The container provider's organizational UUID.","options":{"hidden":true},"template":"cveApi.org?cveApi.org.UUID:'00000000-0000-4000-9000-000000000000'"},"shortName":{"$ref":"#\u002Fdefinitions\u002FshortName","description":"The container provider's organizational short name.","options":{"hidden":true}},"dateUpdated":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"Timestamp to be set by the system of record at time of submission. If updatedDate is provided to the system of record it will be replaced by the current timestamp at the time of submission.","options":{"hidden":true}}},"required":["orgId"]},"cnaPublishedContainer":{"description":"An object containing the vulnerability information provided by a CVE Numbering Authority (CNA) for a published CVE ID. There can only be one CNA container per CVE record since there can only be one assigning CNA. The CNA container must include the required information defined in the CVE Rules, which includes a product, version, problem type, prose description, and a reference.","type":"object","format":"grid","options":{"class":"hid"},"properties":{"providerMetadata":{"$ref":"#\u002Fdefinitions\u002FproviderMetadata"},"dateAssigned":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime this CVE ID was associated with a vulnerability by a CNA.","options":{"hidden":true}},"title":{"type":"string","title":"Title","description":"Short title - if the description is long we may want a short title to refer to.","minLength":1,"maxLength":128,"options":{"class":"vgi-title","grid_columns":8,"formClass":"lni","inputAttributes":{"placeholder":"eg., Memory leak in Linux Filesystem"}}},"datePublic":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","title":"Public at","description":"If known, the date\u002Ftime the vulnerability was disclosed publicly.","options":{"grid_columns":4,"formClass":"lni"}},"problemTypes":{"options":{"grid_columns":6,"formClass":"lni"},"$ref":"#\u002Fdefinitions\u002FproblemTypes"},"impacts":{"options":{"grid_columns":6,"formClass":"lni"},"$ref":"#\u002Fdefinitions\u002Fimpacts"},"affected":{"$ref":"#\u002Fdefinitions\u002Faffected"},"descriptions":{"$ref":"#\u002Fdefinitions\u002Fdescriptions","default":{"lang":"en","value":"[PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] on [PLATFORMS] allows [ATTACKER] to [IMPACT] via [VECTOR]","supportingMedia":[{"type":"text\u002Fhtml","base64":false,"value":"[PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] on [PLATFORMS] allows [ATTACKER] to [IMPACT] via [VECTOR]"}]}},"references":{"$ref":"#\u002Fdefinitions\u002Freferences"},"metrics":{"$ref":"#\u002Fdefinitions\u002Fmetrics"},"configurations":{"$ref":"#\u002Fdefinitions\u002Fconfigurations"},"workarounds":{"$ref":"#\u002Fdefinitions\u002Fworkarounds"},"solutions":{"$ref":"#\u002Fdefinitions\u002Fsolutions"},"exploits":{"$ref":"#\u002Fdefinitions\u002Fexploits"},"timeline":{"$ref":"#\u002Fdefinitions\u002Ftimeline"},"credits":{"$ref":"#\u002Fdefinitions\u002Fcredits"},"source":{"$ref":"#\u002Fdefinitions\u002Fsource"},"tags":{"$ref":"#\u002Fdefinitions\u002FcnaTags","options":{"class":"vgi-tag"}},"taxonomyMappings":{"$ref":"#\u002Fdefinitions\u002FtaxonomyMappings"}},"required":["providerMetadata","descriptions","affected","references"],"patternProperties":{"^x_":{}},"additionalProperties":false},"cnaRejectedContainer":{"description":"An object containing the vulnerability information provided by a CVE Numbering Authority (CNA) for a rejected CVE ID. There can only be one CNA container per CVE record since there can only be one assigning CNA.","type":"object","properties":{"providerMetadata":{"$ref":"#\u002Fdefinitions\u002FproviderMetadata"},"rejectedReasons":{"description":"Reasons for rejecting this CVE Record.","$ref":"#\u002Fdefinitions\u002Fdescriptions","default":{"lang":"en","value":"This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.","supportingMedia":[{"type":"text\u002Fhtml","base64":false,"value":"This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."}]}},"replacedBy":{"title":"Replaced by CVE IDs","type":"array","format":"table","options":{"class":"vgi-reuse tgap"},"description":"Contains an array of CVE IDs that this CVE ID was rejected in favor of because the this CVE ID was assigned to the vulnerabilities.","uniqueItems":true,"items":{"$ref":"#\u002Fdefinitions\u002FcveId"}}},"required":["providerMetadata","rejectedReasons"],"patternProperties":{"^x_":{}},"additionalProperties":false},"adpContainer":{"description":"An object containing the vulnerability information provided by an Authorized Data Publisher (ADP). Since multiple ADPs can provide information for a CVE ID, an ADP container must indicate which ADP is the source of the information in the object.","type":"object","properties":{"providerMetadata":{"$ref":"#\u002Fdefinitions\u002FproviderMetadata"},"datePublic":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"If known, the date\u002Ftime the vulnerability was disclosed publicly."},"title":{"type":"string","description":"Short english language title - if the description is long we may want a short title to refer to.","minLength":1,"maxLength":128},"problemTypes":{"$ref":"#\u002Fdefinitions\u002FproblemTypes"},"impacts":{"$ref":"#\u002Fdefinitions\u002Fimpacts"},"descriptions":{"$ref":"#\u002Fdefinitions\u002Fdescriptions"},"affected":{"$ref":"#\u002Fdefinitions\u002Faffected"},"references":{"$ref":"#\u002Fdefinitions\u002Freferences"},"metrics":{"$ref":"#\u002Fdefinitions\u002Fmetrics"},"configurations":{"$ref":"#\u002Fdefinitions\u002Fconfigurations"},"workarounds":{"$ref":"#\u002Fdefinitions\u002Fworkarounds"},"solutions":{"$ref":"#\u002Fdefinitions\u002Fsolutions"},"exploits":{"$ref":"#\u002Fdefinitions\u002Fexploits"},"timeline":{"$ref":"#\u002Fdefinitions\u002Ftimeline"},"credits":{"$ref":"#\u002Fdefinitions\u002Fcredits"},"source":{"$ref":"#\u002Fdefinitions\u002Fsource"},"tags":{"$ref":"#\u002Fdefinitions\u002FadpTags"},"taxonomyMappings":{"$ref":"#\u002Fdefinitions\u002FtaxonomyMappings"}},"required":["providerMetadata"],"minProperties":2,"patternProperties":{"^x_":{}},"additionalProperties":false},"affected":{"type":"array","format":"gird","title":"Affected products","options":{"class":"vgi-cvss-scope-change tgap"},"description":"List of affected products.","minItems":1,"items":{"$ref":"#\u002Fdefinitions\u002Fproduct"}},"description":{"type":"object","id":"desc","description":"Text in a particular language with optional alternate markup or formatted representation (e.g., Markdown) or embedded media.","properties":{"lang":{"$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"type":"string","format":"textarea","description":"Plain text description.","minLength":1,"maxLength":4000,"template":"domhtml(context.sm)","watch":{"sm":"desc.supportingMedia.0.value"},"options":{"hidden":true}},"supportingMedia":{"type":"array","title":" ","description":"Supporting media data for the description such as markdown, diagrams, .. (optional). Similar to RFC 2397 each media object has three main parts: media type, media data value, and an optional boolean flag to indicate if the media data is base64 encoded.","uniqueItems":true,"minItems":1,"options":{"class":"hid","disable_array_add":true},"items":{"title":" ","type":"object","options":{"class":"hid","remove_empty_properties":false},"properties":{"type":{"type":"string","title":"Media type","minLength":1,"default":"text\u002Fhtml","maxLength":255,"description":"RFC2046 compliant IANA Media type for eg., text\u002Fmarkdown, text\u002Fhtml.","examples":["text\u002Fmarkdown","text\u002Fhtml","image\u002Fpng","image\u002Fsvg","audio\u002Fmp3"],"options":{"hidden":true}},"base64":{"type":"boolean","title":"Encoding","description":"If true then the value field contains the media data encoded in base64. If false then the value field contains the UTF-8 media content.","default":false,"options":{"hidden":true}},"value":{"type":"string","format":"simplehtml","options":{"class":"hid"},"title":" ","description":"Supporting media content, up to 16K. If base64 is true, this field stores base64 encoded data.","minLength":1,"maxLength":16384}},"required":["type","value"]}}},"required":["lang","value"],"additionalProperties":false},"englishLanguageDescription":{"type":"object","description":"A description with lang set to an English language (en, en_US, en_UK, and so on).","properties":{"lang":{"$ref":"#\u002Fdefinitions\u002FenglishLanguage"}},"required":["lang"]},"descriptions":{"type":"array","title":"CVE Description","options":{"disable_array_add":true,"disable_array_delete":false,"class":"vgi-text tgap"},"description":"A list of multi-lingual descriptions of the vulnerability. E.g., [PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] on [PLATFORMS] allows [ATTACKER] to [IMPACT] via [VECTOR]. OR [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] [ROOT CAUSE], which allows [ATTACKER] to [IMPACT] via [VECTOR].","minItems":1,"uniqueItems":true,"items":{"$ref":"#\u002Fdefinitions\u002Fdescription","title":" ","options":{"class":"hid"}},"contains":{"$ref":"#\u002Fdefinitions\u002FenglishLanguageDescription"}},"problemTypes":{"type":"array","title":"Problem types","options":{"class":"vgi-bug"},"format":"table","description":"This is problem type information (e.g. CWE identifier). Must contain: At least one entry, can be text, OWASP, CWE, please note that while only one is required you can use more than one (or indeed all three) as long as they are correct). (CNA requirement: [PROBLEMTYPE])","items":{"type":"object","title":"Problem type","description":"text, OWASP, or CWE","required":["descriptions"],"properties":{"descriptions":{"title":" ","type":"array","format":"table","options":{"disable_array_add":true},"items":{"type":"object","id":"problem","required":["lang","description"],"properties":{"lang":{"$ref":"#\u002Fdefinitions\u002Flanguage"},"cweId":{"type":"string","description":"CWE ID of the CWE that best describes this problemType entry.","minLength":5,"maxLength":9,"pattern":"^CWE-[1-9][0-9]+$","options":{"patternmessage":"Enter a valid CWE ID","input_width":"5em","hidden":true},"template":"context.desc ? ((W = context.desc.match(\u002FCWE-[1-9][0-9]+\u002F)) ? W[0] : '') : ''","watch":{"desc":"problem.description"}},"description":{"title":" ","type":"string","description":"string description of problemType, or title from CWE, OWASP","minLength":1,"maxLength":4000,"options":{"inputAttributes":{"placeholder":"eg., CWE-20 Improper Input Validation"}},"$ref":"js\u002Fcwe-frequent.json"},"type":{"type":"string","options":{"hidden":true},"default":"CWE","description":"Problemtype source, text, OWASP, CWE, etc.,","minLength":1,"maxLength":128},"references":{"$ref":"#\u002Fdefinitions\u002Freferences","options":{"hidden":true},"minItems":0}}},"minItems":1,"uniqueItems":true}}},"minItems":1,"uniqueItems":true},"references":{"title":"References","type":"array","options":{"class":"vgi-ext tgap"},"format":"table","description":"This is reference data in the form of URLs or file objects (uuencoded and embedded within the JSON file, exact format to be decided, e.g. we may require a compressed format so the objects require unpacking before they are \"dangerous\").","items":{"$ref":"#\u002Fdefinitions\u002Freference"},"minItems":1,"maxItems":500,"uniqueItems":true},"impacts":{"type":"array","format":"table","title":"Impacts","description":"Collection of impacts of this vulnerability.","minItems":1,"uniqueItems":true,"options":{"class":"vgi-impact"},"items":{"type":"object","id":"impact","title":"Impact","description":"This is impact type information (e.g. a text description","required":["descriptions"],"properties":{"capecId":{"type":"string","description":"CAPEC ID that best relates to this impact.","minLength":7,"maxLength":11,"pattern":"^CAPEC-[1-9][0-9]{0,4}$","options":{"pattentmessage":"Invalid CAPEC ID","hidden":true},"template":"context.ds && context.ds[0] && context.ds[0].value ? ((W = context.ds[0].value.match(\u002FCAPEC-[1-9][0-9]{0,4}\u002F)) ? W[0] : '') : ''","watch":{"ds":"impact.descriptions"}},"descriptions":{"description":"Prose description of the impact scenario. At a minimum provide the description given by CAPEC","title":" ","type":"array","format":"table","minItems":1,"options":{"disable_array_add":true},"items":{"type":"object","options":{"class":"hid"},"description":"Prose description of the impact scenario. At a minimum provide the description given by CAPEC.","properties":{"lang":{"$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"type":"string","title":" ","description":"Plain text description.","minLength":1,"maxLength":4000,"$ref":"js\u002Fcapec.json","options":{"inputAttributes":{"placeholder":"eg., CAPEC-130 Excessive Allocation"}}}},"required":["lang","value"]}}}}},"metrics":{"type":"array","title":" ","description":"Collection of impact scores with attribution.","minItems":1,"uniqueItems":true,"items":{"type":"object","title":"Scoring Metric","options":{"class":"vgi-dial tgap","remove_empty_properties":true},"description":"This is impact type information (e.g. a text description, CVSSv2, CVSSv3, etc.). Must contain: At least one entry, can be text, CVSSv2, CVSSv3, others may be added.","minimumProperties":1,"properties":{"format":{"type":"string","default":"CVSS","options":{"hidden":true},"description":"Name of the score format. This provides a bit future proofing. Additional properties are not prohibitied, so this will support inclusion of proprietary formats. It also provides an easy future conversion mechanism when future score formats become part of the schema. example: cvssV4_4, format = 'cvssV4_4', other = cvssV4_4 json object. In the future the other properties can be converted to score properties when they become part of the schema.","minLength":1,"maxLength":64},"scenarios":{"type":"array","title":"Scoring scenarios","format":"table","description":"Description of the scenarios this metrics object applies to. If no specific scenario is given, GENERAL is used as the default and applies when no more specific metric matches.","minItems":1,"uniqueItems":true,"items":{"type":"object","title":"Scenario","properties":{"lang":{"$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"type":"string","title":" ","default":"GENERAL","description":"Description of the scenario this metrics object applies to. If no specific scenario is given, GENERAL is used as the default and applies when no more specific metric matches.","minLength":1,"maxLength":4000}},"required":["lang","value"]}},"cvssV3_1":{"$schema":"http:\u002F\u002Fjson-schema.org\u002Fdraft-07\u002Fschema#","title":"Common Vulnerability Scoring System (CVSS) 3.1","description":"Capture the principal characteristics of a vulnerability and produce a numerical score (zero to ten) reflecting its severity.","id":"cvss","type":"object","format":"grid","properties":{"version":{"type":"string","enum":["3.1"],"options":{"hidden":"true"}},"attackVector":{"title":"Attack Vector","type":"string","format":"radio","enum":["PHYSICAL","LOCAL","ADJACENT_NETWORK","NETWORK"],"options":{"grid_columns":12,"enum_titles":["Physical","Local","Adjacent","Network"],"icons":{"PHYSICAL":"cvss-physical","LOCAL":"cvss-user","ADJACENT_NETWORK":"cvss-adj","NETWORK":"cvss-net"}}},"attackComplexity":{"title":"Attack Complexity","type":"string","format":"radio","enum":["HIGH","LOW"],"options":{"grid_columns":12,"enum_titles":["High","Low"],"icons":{"HIGH":"rocket","LOW":"paper-plane"}}},"privilegesRequired":{"title":"Privileges Required","type":"string","format":"radio","enum":["HIGH","LOW","NONE"],"options":{"grid_columns":12,"enum_titles":["High","Low","None"],"icons":{"HIGH":"king","LOW":"pawn","NONE":"thief"}}},"userInteraction":{"title":"User Interaction","type":"string","format":"radio","enum":["REQUIRED","NONE"],"options":{"grid_columns":12,"enum_titles":["Required","None"],"icons":{"REQUIRED":"cvss-ui","NONE":"cvss-direct"}}},"scope":{"title":"Scope","type":"string","format":"radio","enum":["UNCHANGED","CHANGED"],"options":{"grid_columns":12,"enum_titles":["Unchanged","Changed"],"icons":{"UNCHANGED":"cvss-direct","CHANGED":"cvss-scope-change"}}},"confidentialityImpact":{"title":"Confidentiality","type":"string","format":"radio","enum":["NONE","LOW","HIGH"],"options":{"grid_columns":12,"enum_titles":["None","Low","High"],"icons":{"HIGH":"eye","LOW":"eye-half","NONE":"eye-close"}}},"integrityImpact":{"title":"Integrity","type":"string","format":"radio","enum":["NONE","LOW","HIGH"],"options":{"grid_columns":12,"enum_titles":["None","Low","High"],"icons":{"HIGH":"box-high","LOW":"box-low","NONE":"box"}}},"availabilityImpact":{"title":"Availability","type":"string","format":"radio","enum":["NONE","LOW","HIGH"],"options":{"grid_columns":12,"enum_titles":["None","Low","High"],"icons":{"HIGH":"signal-1","LOW":"signal-2","NONE":"signal"}}},"baseScore":{"title":"Base Score","type":"number","minimum":0,"maximum":10,"template":"cvssjs.calculate(context)","watch":{"attackVector":"cvss.attackVector","attackComplexity":"cvss.attackComplexity","privilegesRequired":"cvss.privilegesRequired","userInteraction":"cvss.userInteraction","scope":"cvss.scope","confidentialityImpact":"cvss.confidentialityImpact","integrityImpact":"cvss.integrityImpact","availabilityImpact":"cvss.availabilityImpact"},"options":{"grid_columns":2,"class":"vgi-dial"}},"baseSeverity":{"title":"Base Severity","type":"string","format":"string","template":"cvssjs.severity(context.sc).name","watch":{"sc":"cvss.baseScore"},"options":{"grid_columns":3,"class":"vgi-dial"}},"vectorString":{"title":"Vector","type":"string","options":{"grid_columns":7,"class":"vgi-title"},"pattern":"^CVSS:3.[0-1]\u002F((AV:[NALP]|AC:[LH]|PR:[UNLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:[XURC]|[CIA]R:[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XUNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])\u002F)*(AV:[NALP]|AC:[LH]|PR:[UNLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:[XURC]|[CIA]R:[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XUNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])$","template":"cvssjs.vector(context)","watch":{"attackVector":"cvss.attackVector","attackComplexity":"cvss.attackComplexity","privilegesRequired":"cvss.privilegesRequired","userInteraction":"cvss.userInteraction","scope":"cvss.scope","confidentialityImpact":"cvss.confidentialityImpact","integrityImpact":"cvss.integrityImpact","availabilityImpact":"cvss.availabilityImpact"},"links":[{"class":"sml icn extlink","href":"'http:\u002F\u002Fcvssjs.github.io\u002F#' + context.self","title":"'CVSS Calculator'","rel":"'Open in CVSS Calculator'"}]}},"required":["version","vectorString","baseScore","baseSeverity"]},"cvssV3_0":{"type":"object","options":{"hidden":true}},"cvssV2_0":{"type":"object","options":{"hidden":true}},"other":{"options":{"hidden":true},"type":"object","description":"A non-standard impact description, may be prose or JSON block.","oneOf":[{"required":["type","content"]},{"required":[]}],"properties":{"type":{"description":"Name of the non-standard impact metrics format used.","type":"string","minLength":1,"maxLength":128},"content":{"type":"object","description":"JSON object not covered by another metrics format.","minProperties":1}}}}}},"solutions":{"title":"Solution (optional)","format":"table","type":"array","description":"Information about solutions or remediations available for this vulnerability.","uniqueItems":true,"options":{"class":"vgi-safe tgap","disable_array_add":false},"items":{"title":"Solution","options":{"class":"hid","disable_array_add":true},"$ref":"#\u002Fdefinitions\u002Fdescription"}},"workarounds":{"type":"array","format":"table","title":"Workaround (optional)","description":"Workarounds and mitigations for this vulnerability.","uniqueItems":true,"options":{"class":"vgi-avoid tgap","disable_array_delete":false,"disable_array_delete_last_row":false},"items":{"title":"Workaround","options":{"class":"hid","disable_array_add":true},"$ref":"#\u002Fdefinitions\u002Fdescription"}},"configurations":{"type":"array","format":"table","options":{"class":"vgi-cog tgap"},"title":"Required Configuration for Exposure (optional)","description":"Configurations required for exploiting this vulnerability.","uniqueItems":true,"items":{"$ref":"#\u002Fdefinitions\u002Fdescription","title":"Config","options":{"class":"hid","disable_array_add":true}}},"exploits":{"title":"Exploit Status (optional)","options":{"class":"vgi-bomb tgap"},"type":"array","format":"table","description":"Information about exploits of the vulnerability.","uniqueItems":true,"items":{"title":"Exploit Status","options":{"class":"hid"},"$ref":"#\u002Fdefinitions\u002Fdescription"}},"timeline":{"type":"array","title":"Timeline (optional)","format":"table","options":{"class":"vgi-time tgap"},"description":"This is timeline information for significant events about this vulnerability or changes to CVE Record.","uniqueItems":true,"items":{"type":"object","title":"Event","required":["time","lang","value"],"properties":{"time":{"title":"Timestamp","description":"Timestamp representing when the event in the timeline occurred. The timestamp format is based on RFC3339 and ISO ISO8601, with an optional timezone. yyyy-MM-ddTHH:mm:ssZZZZ - if the timezone offset is not given, GMT (0000) is assumed.","$ref":"#\u002Fdefinitions\u002Ftimestamp","options":{"grid_columns":3}},"lang":{"description":"The language used in the description of the event. The language field is included so that CVE Records can support translations. The value must be a BCP 47 language code.","$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"title":"Summary","description":"A summary of the event.","type":"string","minLength":1,"maxLength":4000,"options":{"grid_columns":9}}}}},"credits":{"type":"array","title":"Credits (optional)","options":{"class":"vgi-like tgap"},"format":"table","description":"Statements acknowledging specific people, organizations, or tools recognizing the work done in researching, discovering, remediating or helping with activities related to this CVE.","uniqueItems":true,"items":{"type":"object","title":"Credit","properties":{"lang":{"description":"The language used when describing the credits. The language field is included so that CVE Records can support translations. The value must be a BCP 47 language code.","$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"title":"Name","type":"string","minLength":1,"maxLength":4000},"user":{"options":{"hidden":true},"default":"","description":"UUID of the user being credited if present in the CVE User Registry (optional). This UUID can be used to lookup the user record in the user registry service.","$ref":"#\u002Fdefinitions\u002FuuidType"},"type":{"type":"string","description":"Type or role of the entity being credited (optional). finder: identifies the vulnerability.\nreporter: notifies the vendor of the vulnerability to a CNA.\nanalyst: validates the vulnerability to ensure accuracy or severity.\ncoordinator: facilitates the coordinated response process.\nremediation developer: prepares a code change or other remediation plans.\nremediation reviewer: reviews vulnerability remediation plans or code changes for effectiveness and completeness.\nremediation verifier: tests and verifies the vulnerability or its remediation.\ntool: names of tools used in vulnerability discovery or identification.\nsponsor: supports the vulnerability identification or remediation activities.","default":"finder","enum":["finder","reporter","analyst","coordinator","remediation developer","remediation reviewer","remediation verifier","tool","sponsor","other"]}},"required":["lang","value"]}},"source":{"type":"object","title":"CVE entry is sourced from","format":"grid","description":"This is the source information (who discovered it, who researched it, etc.).","minProperties":1,"options":{"class":"vgi-info tgap"},"properties":{"defects":{"title":"Defects","type":"array","format":"taglist","description":"CNA specific bug or defect tracking IDs (optional).","uniqueItems":true,"items":{"type":"string","maxLength":64},"options":{"class":"vgi-bug","grid_columns":6,"formClass":"lni"}},"advisory":{"title":"Advisory ID","type":"string","description":"CNA specific advisory IDs (optional).","maxLength":64,"options":{"class":"vgi-alert","grid_columns":6,"formClass":"lni"}},"discovery":{"type":"string","title":"Source of vulnerability discovery","format":"radio","enum":["INTERNAL","EXTERNAL","USER","UPSTREAM","UNKNOWN"],"description":"Source of vulnerability discovery. This may be a factor for some consumers in prioritizing vulnerability response. \nINTERNAL: this vulnerability was found by the CNA's internal research.\nEXTERNAL: this vulnerability was found during research external to a CNA.\nUSER: This vulnerability was discovered during product use.\nUPSTREAM: This vulnerability was found by an upstream vendor or producer.\nUNKNOWN: Source of discovery is not defined or is unknown","default":"UNKNOWN","options":{"grid_columns":9,"class":"vgi-bulb","enum_titles":["internal","external","during use","upstream","undefined"],"icons":{"INTERNAL":"hardhat","EXTERNAL":"hat","USER":"cap","UPSTREAM":"in","UNKNOWN":"what"}}},"generator":{"type":"object","properties":{"engine":{"type":"string","default":"Vulnogram 0.1.0-dev"}},"options":{"hidden":"true"}}}},"language":{"type":"string","description":"BCP 47 language code, language-region.","default":"en","pattern":"^[A-Za-z]{2,4}([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$","options":{"hidden":true}},"englishLanguage":{"type":"string","description":"BCP 47 language code, language-region, required to be English.","pattern":"^en([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$"},"taxonomyMappings":{"type":"array","format":"table","description":"List of taxonomy items related to the vulnerability.","minitems":1,"uniqueItems":true,"options":{"class":"vgi-ext tgap"},"items":{"type":"object","description":"","required":["taxonomyName","taxonomyRelations"],"properties":{"taxonomyName":{"type":"string","description":"The name of the taxonomy.","minLength":1,"maxLength":128,"options":{"inputAttributes":{"placeholder":"eg., ATT&CK, CWE, CAPEC"}}},"taxonomyVersion":{"type":"string","description":"The version of taxonomy the identifiers come from.","minLength":1,"maxLength":128,"options":{"inputAttributes":{"placeholder":"eg., 2.3"}}},"taxonomyRelations":{"type":"array","format":"table","description":"","minItems":1,"uniqueItems":true,"items":{"type":"object","description":"List of relationships to the taxonomy for the vulnerability.  Relationships can be between the taxonomy and the CVE or two taxonomy items.","required":["taxonomyId","relationshipName","relationshipValue"],"properties":{"taxonomyId":{"type":"string","description":"Identifier of the item in the taxonomy.  Used as the subject of the relationship.","minLength":1,"maxLength":2000,"options":{"inputAttributes":{"placeholder":"eg., T1234, CWE-123"}}},"relationshipName":{"type":"string","description":"A description of the relationship.","minLength":1,"maxLength":128,"options":{"inputAttributes":{"placeholder":"eg., after, before, requires"}}},"relationshipValue":{"type":"string","description":"The target of the relationship.  Can be the CVE ID or another taxonomy identifier.","minLength":1,"maxLength":2000,"options":{"inputAttributes":{"placeholder":"eg., T1235, CWE-134"}}}}}}}}},"tagExtension":{"type":"string","minLength":2,"maxLength":128,"pattern":"^x_.*$"},"cnaTags":{"type":"array","title":"Tags","format":"select2","description":"Tags describing the CVE entry","uniqueItems":true,"items":{"type":"string","description":"exclusively-hosted-service: All known software and\u002For hardware affected by this CVE Record is known to exist only in the affected hosted service. If the vulnerability affects both hosted and on-prem software and\u002For hardware, then the tag should not be used.\n\nunsupported-when-assigned: Used by the assigning CNA to indicate that when a request for a CVE assignment was received, the product was already end-of-life (EOL) or a product or specific version was deemed not to be supported by the vendor. This tag should only be applied to a CVE Record when all affected products or version lines referenced in the CVE-Record are EOL.\n\ndisputed: When one party disagrees with another party's assertion that a particular issue in software is a vulnerability, a CVE Record assigned to that issue may be tagged as being 'disputed'.","enum":["unsupported-when-assigned","exclusively-hosted-service","disputed"]}},"adpTags":{"type":"array","format":"select2","description":"Tags provided by an ADP describing the CVE Record.","uniqueItems":true,"minItems":1,"items":{"oneOf":[{"$ref":"#\u002Fdefinitions\u002FtagExtension"},{"$schema":"http:\u002F\u002Fjson-schema.org\u002Fdraft-07\u002Fschema#","$id":"https:\u002F\u002Fcve.mitre.org\u002Fcve\u002Fv5_00\u002Ftags\u002Fadp\u002F","type":"string","description":"disputed: When one party disagrees with another party's assertion that a particular issue in software is a vulnerability, a CVE Record assigned to that issue may be tagged as being 'disputed'.","enum":["disputed"]}]}}},"oneOf":[{"title":"Published","description":"When a CNA populates the data associated with a CVE ID as a CVE Record, the state of the CVE Record is Published.","properties":{"dataType":{"$ref":"#\u002Fdefinitions\u002FdataType"},"dataVersion":{"$ref":"#\u002Fdefinitions\u002FdataVersion"},"cveMetadata":{"$ref":"#\u002Fdefinitions\u002FcveMetadataPublished","options":{"class":"hid"}},"containers":{"description":"A set of structures (called containers) used to store vulnerability information related to a specific CVE ID provided by a specific organization participating in the CVE program. Each container includes information provided by a different source.\n\nAt minimum, a 'cna' container containing the vulnerability information provided by the CNA who initially assigned the CVE ID must be included.\n\nThere can only be one 'cna' container, as there can only be one assigning CNA. However, there can be multiple 'adp' containers, allowing multiple organizations participating in the CVE program to add additional information related to the vulnerability. For the most part, the 'cna' and 'adp' containers contain the same properties. The main differences are the source of the information and the 'cna' container requires the CNA include certain fields, while the 'adp' container does not.","type":"object","options":{"class":"hid"},"properties":{"cna":{"$ref":"#\u002Fdefinitions\u002FcnaPublishedContainer"},"adp":{"type":"array","items":{"$ref":"#\u002Fdefinitions\u002FadpContainer"},"uniqueItems":true}},"required":["cna"],"additionalProperties":false}},"required":["dataType","dataVersion","cveMetadata","containers"],"additionalProperties":false},{"title":"Rejected","description":"If the CVE ID and associated CVE Record should no longer be used, the CVE Record is placed in the Rejected state. A Rejected CVE Record remains on the CVE List so that users can know when it is invalid.","properties":{"dataType":{"$ref":"#\u002Fdefinitions\u002FdataType"},"dataVersion":{"$ref":"#\u002Fdefinitions\u002FdataVersion"},"cveMetadata":{"$ref":"#\u002Fdefinitions\u002FcveMetadataRejected"},"containers":{"description":"A set of structures (called containers) used to store vulnerability information related to a specific CVE ID provided by a specific organization participating in the CVE program. Each container includes information provided by a different source.\n\nAt minimum, a 'cna' container containing the vulnerability information provided by the CNA who initially assigned the CVE ID must be included.\n\nThere can only be one 'cna' container, as there can only be one assigning CNA.","type":"object","options":{"class":"hid"},"properties":{"cna":{"$ref":"#\u002Fdefinitions\u002FcnaRejectedContainer"}},"required":["cna"],"additionalProperties":false}},"required":["dataType","dataVersion","cveMetadata","containers"],"additionalProperties":false}]};</script><script src="./js/util.js"></script><script src="/js/wy/simple.js"></script><script src="/js/wy/wysihtml-toolbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/json-editor/2.6.1/jsoneditor.min.js" integrity="sha512-wKxQaNjG9D/GAVUp3sWH/OnnYDQ6NO3rcNGmmZ+YBjSqh7vwKvkBhNvSg91qmz2QSq/rsrrJjOmhdbd/LkbxGw==" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/select2@latest/dist/js/select2.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js" integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g==" crossorigin="anonymous"></script><script src="./js/editor.js"></script><script> if(window.sessionStorage.cveApi) {
+var ajaxBase  = "./";var initJSON = undefined;var docSchema={"$schema":"http:\u002F\u002Fjson-schema.org\u002Fdraft-07\u002Fschema#","$id":"https:\u002F\u002Fcve.org\u002Fcve\u002Frecord\u002Fv5_00\u002F","type":"object","title":"CVE JSON record format","description":"cve-schema specifies the CVE JSON record format. This is the blueprint for a rich set of JSON data that can be submitted by CVE Numbering Authorities (CNAs) and Authorized Data Publishers (ADPs) to describe a CVE Record. Some examples of CVE record data include CVE ID number, affected product(s), affected version(s), and public references. While those specific items are required when assigning a CVE, there are many other optional data in the schema that can be used to enrich CVE Records for community benefit. Learn more about the CVE program at [the official website](https:\u002F\u002Fcve.mitre.org). This CVE JSON record format is defined using JSON Schema. Learn more about JSON Schema [here](https:\u002F\u002Fjson-schema.org\u002F).","options":{"keep_oneof_values":false,"patternmessage":"Enter a valid UUID"},"definitions":{"generator":{},"uriType":{"description":"A universal resource identifier (URI), according to [RFC 3986](https:\u002F\u002Ftools.ietf.org\u002Fhtml\u002Frfc3986).","type":"string","format":"uri","pattern":"^(([^:\u002F?#]+):)?(\u002F\u002F([^\u002F?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?","minLength":1,"maxLength":2048},"uuidType":{"description":"A version 4 (random) universally unique identifier (UUID) as defined by [RFC 4122](https:\u002F\u002Ftools.ietf.org\u002Fhtml\u002Frfc4122#section-4.1.3).","type":"string","pattern":"^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$","options":{"patternmessage":"Enter a valid UUID"},"default":"00000000-0000-4000-9000-000000000000"},"reference":{"type":"object","title":"Reference","required":["url"],"properties":{"url":{"title":"URL","description":"The uniform resource locator (URL), according to [RFC 3986](https:\u002F\u002Ftools.ietf.org\u002Fhtml\u002Frfc3986#section-1.1.3), that can be used to retrieve the referenced resource.","$ref":"#\u002Fdefinitions\u002FuriType","pattern":"^(ftp|http)s?:\u002F\u002F\\S+$","options":{"patternmessage":"Enter a valid URL","inputAttributes":{"placeholder":"eg., https:\u002F\u002Fexample.org\u002FCVE-yyyy-nnnn"}},"default":"https:\u002F\u002F"},"name":{"description":"User created name for the reference, often the title of the page.","type":"string","maxLength":512,"minLength":1,"options":{"hidden":true}},"tags":{"id":"xtag","description":"An array of one or more tags that describe the resource referenced by 'url'.","type":"array","minItems":1,"format":"taglist","uniqueItems":true,"options":{"input_width":"15em"},"items":{"type":"string","description":"broken-link: The reference link is returning a 404 error, or the site is no longer online.\n\ncustomer-entitlement: Similar to Privileges Required, but specific to references that require non-public\u002Fpaid access for customers of the particular vendor.\n\nexploit: Reference contains an in-depth\u002Fdetailed description of steps to exploit a vulnerability OR the reference contains any legitimate Proof of Concept (PoC) code or exploit kit.\n\ngovernment-resource: All reference links that are from a government agency or organization should be given the Government Resource tag.\n\nissue-tracking: The reference is a post from a bug tracking tool such as MantisBT, Bugzilla, JIRA, Github Issues, etc...\n\nmailing-list: The reference is from a mailing list -- often specific to a product or vendor.\n\nmitigation: The reference contains information on steps to mitigate against the vulnerability in the event a patch can't be applied or is unavailable or for EOL product situations.\n\nnot-applicable: The reference link is not applicable to the vulnerability and was likely associated by MITRE accidentally (should be used sparingly).\n\npatch: The reference contains an update to the software that fixes the vulnerability.\n\npermissions-required: The reference link provided is blocked by a logon page. If credentials are required to see any information this tag must be applied.\n\nmedia-coverage: The reference is from a media outlet such as a newspaper, magazine, social media, or weblog. This tag is not intended to apply to any individual's personal social media account. It is strictly intended for public media entities.\n\nproduct: A reference appropriate for describing a product for the purpose of CPE or SWID.\n\nrelated: A reference that is for a related (but not the same) vulnerability.\n\nrelease-notes: The reference is in the format of a vendor or open source project's release notes or change log.\n\nsignature: The reference contains a method to detect or prevent the presence or exploitation of the vulnerability.\n\ntechnical-description: The reference contains in-depth technical information about a vulnerability and its exploitation process, typically in the form of a presentation or whitepaper.\n\nthird-party-advisory: Advisory is from an organization that is not the vulnerable product's vendor\u002Fpublisher\u002Fmaintainer.\n\nvendor-advisory: Advisory is from the vendor\u002Fpublisher\u002Fmaintainer of the product or the parent organization.\n\nvdb-entry: VDBs are loosely defined as sites that provide information about this vulnerability, such as advisories, with identifiers. Included VDBs are free to access, substantially public, and have broad scope and coverage (not limited to a single vendor or research organization). See: https:\u002F\u002Fwww.first.org\u002Fglobal\u002Fsigs\u002Fvrdx\u002Fvdb-catalog","examples":["broken-link","customer-entitlement","exploit","government-resource","issue-tracking","mailing-list","mitigation","not-applicable","patch","permissions-required","media-coverage","product","related","release-notes","signature","technical-description","third-party-advisory","vendor-advisory","vdb-entry"]}}}},"cveId":{"type":"string","title":"CVE ID","pattern":"^CVE-[0-9]{4}-[0-9]{4,19}$","options":{"class":"vgi-tag","formClass":"lni","grid_columns":6,"patternmessage":"Enter CVE-yyyy-nnnn format","remove_empty_properties":false,"inputAttributes":{"placeholder":"CVE-yyyy-nnnn or pick from existing","type":"search"}},"examples":["CVE-yyyy-nnnn"]},"orgId":{"description":"A UUID for an organization participating in the CVE program. This UUID can be used to lookup the organization record in the user registry service.","$ref":"#\u002Fdefinitions\u002FuuidType","template":"cveApi && cveApi.org?cveApi.org.UUID:'00000000-0000-4000-9000-000000000000'"},"userId":{"description":"A UUID for a user participating in the CVE program. This UUID can be used to lookup the user record in the user registry service.","$ref":"#\u002Fdefinitions\u002FuuidType"},"shortName":{"description":"A 2-32 character name that can be used to complement an organization's UUID.","type":"string","minLength":2,"maxLength":32,"options":{"class":"vgi-factory","input_width":"5em","hidden":true}},"datestamp":{"description":"Date\u002Ftime format based on RFC3339 and ISO ISO8601.","type":"string","format":"datetime","pattern":"^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))$","options":{"class":"vgi-cal","grid_columns":4,"patternmessage":"Enter date"}},"timestamp":{"type":"string","format":"datetime","description":"Date\u002Ftime format based on RFC3339 and ISO ISO8601, with an optional timezone in the format 'yyyy-MM-ddTHH:mm:ssZZZZ'. If timezone offset is not given, GMT (0000) is assumed.","pattern":"^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})?$","options":{"class":"vgi-cal","grid_columns":4,"patternmessage":"Enter date"}},"version":{"description":"A single version of a product, as expressed in its own version numbering scheme.","type":"string","minLength":1,"maxLength":1024},"status":{"description":"The vulnerability status of a given version or range of versions of a product. The statuses 'affected' and 'unaffected' indicate that the version is affected or unaffected by the vulnerability. The status 'unknown' indicates that it is unknown or unspecified whether the given version is affected. There can be many reasons for an 'unknown' status, including that an investigation has not been undertaken or that a vendor has not disclosed the status.","type":"string","format":"radio","enum":["affected","unaffected","unknown"],"options":{"icons":{"affected":"impact","unaffected":"safe","unknown":"what"},"enum_titles":["y","n","?"]}},"product":{"type":"object","id":"pE","format":"grid","title":"Product","options":{"class":"vgi-package tgap"},"description":"Provides information about the set of products and services affected by this vulnerability.","properties":{"vendor":{"type":"string","title":"Vendor or project","description":"Name of the organization, project, community, individual, or user that created or maintains this product or hosted service. Can be 'N\u002FA' if none of those apply. When collectionURL and packageName are used, this field may optionally represent the user or account within the package collection associated with the package.","minLength":1,"maxLength":512,"options":{"show_errors":"always","infoText":"Vendor or org or project.","grid_columns":4,"class":"vgi-factory","inputAttributes":{"placeholder":"eg., Linux"}}},"product":{"type":"string","title":"Product name","description":"Name of the affected product.","minLength":1,"maxLength":2048,"options":{"show_errors":"always","infoText":"Name of the affected product.","grid_columns":4,"class":"vgi-package","inputAttributes":{"placeholder":"eg., Linux Kernel"}}},"platforms":{"title":"Platforms","description":"List of specific platforms if the vulnerability is only relevant in the context of these platforms (optional). Platforms may include execution environments, operating systems, virtualization technolgies, hardware models, or computing architectures. Lack of this field or an empty array implies that the other fields are applicable for all relevant platforms.","type":"array","format":"taglist","options":{"grid_columns":4,"class":"vgi-stack","inputAttributes":{"placeholder":"eg., x86, Android, Windows, MacOS, .."}},"uniqueItems":true,"items":{"type":"string","examples":["Windows","MacOS","Liniux","x86","ARM","64 bit","iOS","Android","Big Endian"],"maxLength":1024}},"collectionURL":{"title":"Package collection URL","description":"URL identifying a package collection (determines meaning of packageName).","$ref":"#\u002Fdefinitions\u002FuriType","type":"string","maxLength":512,"minLength":0,"pattern":"^(ftp|http)s?:\u002F\u002F\\S+$","examples":["https:\u002F\u002Faccess.redhat.com\u002Fdownloads\u002Fcontent\u002Fpackage-browser","https:\u002F\u002Faddons.mozilla.org","https:\u002F\u002Faddons.thunderbird.net","https:\u002F\u002Fanaconda.org\u002Fanaconda\u002Frepo","https:\u002F\u002Fapp.vagrantup.com\u002Fboxes\u002Fsearch","https:\u002F\u002Fapps.apple.com","https:\u002F\u002Farchlinux.org\u002Fpackages","https:\u002F\u002Fatmospherejs.meteor.com","https:\u002F\u002Fatom.io\u002Fpackages","https:\u002F\u002Fbitbucket.org","https:\u002F\u002Fbower.io","https:\u002F\u002Fbrew.sh\u002F","https:\u002F\u002Fchocolatey.org\u002Fpackages","https:\u002F\u002Fchrome.google.com\u002Fwebstore","https:\u002F\u002Fclojars.org","https:\u002F\u002Fcocoapods.org","https:\u002F\u002Fcode.dlang.org","https:\u002F\u002Fconan.io\u002Fcenter","https:\u002F\u002Fcpan.org\u002Fmodules","https:\u002F\u002Fcran.r-project.org","https:\u002F\u002Fcrates.io","https:\u002F\u002Fctan.org\u002Fpkg","https:\u002F\u002Fdrupal.org","https:\u002F\u002Fexchange.adobe.com","https:\u002F\u002Fforge.puppet.com\u002Fmodules","https:\u002F\u002Fgithub.com","https:\u002F\u002Fgitlab.com\u002Fexplore","https:\u002F\u002Fgolang.org\u002Fpkg","https:\u002F\u002Fguix.gnu.org\u002Fpackages","https:\u002F\u002Fhackage.haskell.org","https:\u002F\u002Fhelm.sh","https:\u002F\u002Fhub.docker.com","https:\u002F\u002Fjuliahub.com","https:\u002F\u002Flib.haxe.org","https:\u002F\u002Fluarocks.org","https:\u002F\u002Fmarketplace.visualstudio.com","https:\u002F\u002Fmelpa.org","https:\u002F\u002Fmicrosoft.com\u002Fen-us\u002Fstore\u002Fapps","https:\u002F\u002Fnimble.directory","https:\u002F\u002Fnuget.org\u002Fpackages","https:\u002F\u002Fopam.ocaml.org\u002Fpackages","https:\u002F\u002Fopenwrt.org\u002Fpackages\u002Findex","https:\u002F\u002Fpackage.elm-lang.org","https:\u002F\u002Fpackagecontrol.io","https:\u002F\u002Fpackages.debian.org","https:\u002F\u002Fpackages.gentoo.org","https:\u002F\u002Fpackagist.org","https:\u002F\u002Fpear.php.net\u002Fpackages.php","https:\u002F\u002Fpecl.php.net","https:\u002F\u002Fplatformio.org\u002Flib","https:\u002F\u002Fplay.google.com\u002Fstore","https:\u002F\u002Fplugins.gradle.org","https:\u002F\u002Fprojects.eclipse.org","https:\u002F\u002Fpub.dev","https:\u002F\u002Fpypi.python.org","https:\u002F\u002Fregistry.npmjs.org","https:\u002F\u002Fregistry.terraform.io","https:\u002F\u002Frepo.hex.pm","https:\u002F\u002Frepo.maven.apache.org\u002Fmaven2","https:\u002F\u002Frubygems.org","https:\u002F\u002Fsearch.nixos.org\u002Fpackages","https:\u002F\u002Fsourceforge.net","https:\u002F\u002Fwordpress.org\u002Fplugins"],"options":{"show_errors":"always","grid_columns":4,"class":"vgi-ext","patternmessage":"Enter a valid URL","inputAttributes":{"placeholder":"eg., https:\u002F\u002Fwordpress.org\u002Fplugins"}}},"packageName":{"title":"Package name","type":"string","description":"Name or identifier of the affected software package as used in the package collection.","minLength":1,"maxLength":2048,"options":{"show_errors":"always","grid_columns":4,"class":"vgi-package","inputAttributes":{"placeholder":"eg., kernel"}}},"repo":{"title":"Source repository","description":"The URL of the source code repository, for informational purposes and\u002For to resolve git hash version ranges.","$ref":"#\u002Fdefinitions\u002FuriType","options":{"grid_columns":4,"class":"vgi-ext","inputAttributes":{"placeholder":"eg., https:\u002F\u002Fgit.kernel.org"}}},"cpes":{"title":"CPEs","type":"array","format":"table","options":{"hidden":true},"description":"Affected products defined by CPE. This is an array of CPE values (vulnerable and not), we use an array so that we can make multiple statements about the same version and they are separate (if we used a JSON object we'd essentially be keying on the CPE name and they would have to overlap). Also this allows things like cveDataVersion or cveDescription to be applied directly to the product entry. This also allows more complex statements such as \"Product X between versions 10.2 and 10.8\" to be put in a machine-readable format. As well since multiple statements can be used multiple branches of the same product can be defined here.","uniqueItems":true,"items":{"title":"CPE Name","type":"string","description":"Common Platform Enumeration (CPE) Name in either 2.2 or 2.3 format","pattern":"([c][pP][eE]:\u002F[AHOaho]?(:[A-Za-z0-9._\\-~%]*){0,6})|(cpe:2\\.3:[aho*\\-](:(((\\?*|\\*?)([a-zA-Z0-9\\-._]|(\\\\[\\\\*?!\"#$%&'()+,\u002F:;\u003C=\u003E@\\[\\]\\^`{|}~]))+(\\?*|\\*?))|[*\\-])){5}(:(([a-zA-Z]{2,3}(-([a-zA-Z]{2}|[0-9]{3}))?)|[*\\-]))(:(((\\?*|\\*?)([a-zA-Z0-9\\-._]|(\\\\[\\\\*?!\"#$%&'()+,\u002F:;\u003C=\u003E@\\[\\]\\^`{|}~]))+(\\?*|\\*?))|[*\\-])){4})","minLength":1,"maxLength":2048,"options":{"patternmessage":"Enter a valid CPE"}}},"modules":{"type":"array","title":"Modules","format":"taglist","description":"A list of the affected components, features, modules, sub-components, sub-products, APIs, commands, utilities, programs, or functionalities (optional)","uniqueItems":true,"items":{"type":"string","description":"Name of the affected component, feature, module, sub-component, sub-product, API, command, utility, program, or functionality (optional).","minLength":1,"maxLength":4096},"options":{"grid_columns":4,"class":"vgi-square","inputAttributes":{"placeholder":"eg., filesystem"}}},"programFiles":{"type":"array","title":"Source-code file (OSS)","format":"taglist","description":"A list of the affected source code files (optional)","uniqueItems":true,"items":{"description":"Name or path or location of the affected source code file.","type":"string","minLength":1,"maxLength":1024},"options":{"grid_columns":4,"class":"vgi-text","inputAttributes":{"placeholder":"eg., hello.c"}}},"programRoutines":{"title":"Program routines (OSS)","type":"array","format":"table","description":"A list of the affected source code functions, methods, subroutines, or procedures (optional).","uniqueItems":true,"options":{"grid_columns":4,"class":"vgi-edit"},"items":{"type":"object","description":"Object describing program routine.","required":["name"],"properties":{"name":{"type":"string","description":"Name of the affected source code file, function, method, subroutine, or procedure.","minLength":1,"maxLength":4096,"options":{"inputAttributes":{"placeholder":"parse_file()"}}}}}},"versions":{"type":"array","title":"Versions (exact versions or ranges)","options":{"class":"vgi-versions"},"description":"Set of product versions or version ranges related to the vulnerability. The versions satisfy the CNA Rules [8.1.2 requirement](https:\u002F\u002Fcve.mitre.org\u002Fcve\u002Fcna\u002Frules.html#section_8-1_cve_entry_information_requirements). Versions or defaultStatus may be omitted, but not both.","minItems":1,"uniqueItems":true,"format":"table","items":{"type":"object","id":"vE","title":"Version","description":"A single version or a range of versions, with vulnerability status.\n\nAn entry with only 'version' and 'status' indicates the status of a single version.\n\nOtherwise, an entry describes a range; it must include the 'versionType' property, to define the version numbering semantics in use, and 'limit', to indicate the non-inclusive upper limit of the range. The object describes the status for versions V such that 'version' \u003C= V and V \u003C 'limit', using the \u003C= and \u003C semantics defined for the specific kind of 'versionType'. Status changes within the range can be specified by an optional 'changes' list.\n\nThe algorithm to decide the status specified for a version V is:\n\n\tfor entry in product.versions {\n\t\tif entry.lessThan is not present and entry.lessThanOrEqual is not present and v == entry.version {\n\t\t\treturn entry.status\n\t\t}\n\t\tif (entry.lessThan is present and entry.version \u003C= v and v \u003C entry.lessThan) or\n\t\t   (entry.lessThanOrEqual is present and entry.version \u003C= v and v \u003C= entry.lessThanOrEqual) { \u002F\u002F \u003C= and \u003C defined by entry.versionType\n\t\t\tstatus = entry.status\n\t\t\tfor change in entry.changes {\n\t\t\t\tif change.at \u003C= v {\n\t\t\t\t\tstatus = change.status\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn status\n\t\t}\n\t}\n\treturn product.defaultStatus\n\n","properties":{"status":{"title":"Affected?","description":"The vulnerability status for the version or range of versions. For a range, the status may be refined by the 'changes' list.","$ref":"#\u002Fdefinitions\u002Fstatus"},"version":{"title":"Version (or start of range)","description":"The single version being described, or the version at the start of the range. By convention, typically 0 denotes the earliest possible version.","$ref":"#\u002Fdefinitions\u002Fversion","options":{"inputAttributes":{"placeholder":"eg., 1.2.0"}}},"lessThan":{"title":"\u003C version (for range)","description":"The non-inclusive upper limit of the range. This is the least version NOT in the range. The usual version syntax is expanded to allow a pattern to end in an asterisk `(*)`, indicating an arbitrarily large number in the version ordering. For example, `{version: 1.0 lessThan: 1.*}` would describe the entire 1.X branch for most range kinds, and `{version: 2.0, lessThan: *}` describes all versions starting at 2.0, including 3.0, 5.1, and so on. Only one of lessThan and lessThanOrEqual should be specified.","$ref":"#\u002Fdefinitions\u002Fversion","options":{"inputAttributes":{"placeholder":"eg., 1.2.8","size":4}}},"lessThanOrEqual":{"title":"\u003C= version (for range)","description":"The inclusive upper limit of the range. This is the greatest version contained in the range. Only one of lessThan and lessThanOrEqual should be specified. For example, `{version: 1.0, lessThanOrEqual: 1.3}` covers all versions from 1.0 up to and including 1.3.","$ref":"#\u002Fdefinitions\u002Fversion","options":{"inputAttributes":{"placeholder":"eg., 1.2.7","size":4}}},"changes":{"type":"array","title":"status changes (patches, split ranges)","format":"table","description":"A list of status changes that take place during the range. The array should be sorted in increasing order by the 'at' field, according to the versionType, but clients must re-sort the list themselves rather than assume it is sorted.","uniqueItems":true,"items":{"type":"object","description":"The start of a single status change during the range.","required":["at","status"],"properties":{"at":{"description":"The version at which a status change occurs.","$ref":"#\u002Fdefinitions\u002Fversion","options":{"inputAttributes":{"placeholder":"eg., patch 10, 1.2.5a, 1.2.6"}}},"status":{"title":"Affected status changes to","description":"The new status in the range starting at the given version.","$ref":"#\u002Fdefinitions\u002Fstatus"}}}},"versionType":{"type":"string","description":"The version numbering system used for specifying the range. This defines the exact semantics of the comparison (less-than) operation on versions, which is required to understand the range itself. 'Custom' indicates that the version type is unspecified and should be avoided whenever possible. It is included primarily for use in conversion of older data files.","minLength":1,"options":{"inputAttributes":{"placeholder":"eg., patch 10, 1.2.5a, 1.2.6","size":"5"}},"maxLength":128,"examples":["custom","git","maven","python","rpm","semver"]}},"required":["version","status"]}},"defaultStatus":{"title":"Default status (for versions not specified above)","description":"The default status for versions that are not otherwise listed in the versions list. If not specified, defaultStatus defaults to 'unknown'. Versions or defaultStatus may be omitted, but not both.","$ref":"#\u002Fdefinitions\u002Fstatus","default":"unaffected"}}},"replacedBy":{"type":"array","format":"table","description":"Contains an array of CVE IDs that this CVE ID was rejected in favor of because the this CVE ID was assigned to the vulnerabilities","uniqueItems":true,"items":{"$ref":"#\u002Fdefinitions\u002FcveId","title":"Replaced by CVE ID"},"options":{"class":"vgi-reuse"}},"dataType":{"description":"Indicates the type of information represented in the JSON instance.","type":"string","enum":["CVE_RECORD"],"options":{"hidden":"true"}},"dataVersion":{"description":"The version of the schema being used. Used to support multiple versions of this format.","type":"string","enum":["5.0"],"options":{"hidden":"true"}},"cveMetadataPublished":{"description":"This is meta data about the CVE ID such as the CVE ID, who requested it, who assigned it, when it was requested, the current state (PUBLISHED, REJECTED, etc.) and so on.  These fields are controlled by the CVE Services.","title":" ","id":"pubmd","type":"object","format":"grid","options":{},"required":["cveId","assignerOrgId","state"],"properties":{"cveId":{"description":"The CVE identifier that this record pertains to.","$ref":"#\u002Fdefinitions\u002FcveId","options":{"grid_columns":3}},"assignerOrgId":{"$ref":"#\u002Fdefinitions\u002ForgId","description":"The UUID for the organization to which the CVE ID was originally assigned. This UUID can be used to lookup the organization record in the user registry service.","options":{"hidden":true}},"assignerShortName":{"title":"Assigner","$ref":"#\u002Fdefinitions\u002FshortName","description":"The short name for the organization to which the CVE ID was originally assigned."},"requesterUserId":{"$ref":"#\u002Fdefinitions\u002FuserId","description":"The user that requested the CVE identifier.","options":{"hidden":true},"default":""},"dateUpdated":{"description":"The date\u002Ftime the record was last updated.","$ref":"#\u002Fdefinitions\u002Ftimestamp","options":{"hidden":true}},"serial":{"type":"integer","minimum":1,"default":1,"description":"The system of record causes this to start at 1, and increment by 1 each time a submission from a data provider changes this CVE Record. The incremented value moves to the Rejected schema upon a PUBLISHED-\u003EREJECTED transition, and moves to the Published schema upon a REJECTED-\u003EPUBLISHED transition.","options":{"hidden":true}},"dateReserved":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime this CVE ID was reserved in the CVE automation workgroup services system. Disclaimer: This date reflects when the CVE ID was reserved, and does not necessarily indicate when this vulnerability was discovered, shared with the affected vendor, publicly disclosed, or updated in CVE.","options":{"hidden":true}},"datePublished":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime the CVE Record was first published in the CVE List.","options":{"hidden":true}},"state":{"description":"State of CVE - PUBLISHED, REJECTED.","type":"string","enum":["PUBLISHED"],"options":{"hidden":true}}},"additionalProperties":false},"cveMetadataRejected":{"type":"object","format":"gird","title":" ","options":{"class":"hid"},"description":"This is meta data about the CVE ID such as the CVE ID, who requested it, who assigned it, when it was requested, the current state (PUBLISHED, REJECTED, etc.) and so on.  These fields are controlled by the CVE Services.","required":["cveId","assignerOrgId","state"],"properties":{"cveId":{"description":"The CVE identifier that this record pertains to.","$ref":"#\u002Fdefinitions\u002FcveId"},"assignerOrgId":{"$ref":"#\u002Fdefinitions\u002ForgId","description":"The UUID for the organization to which the CVE ID was originally assigned.","options":{"hidden":true}},"assignerShortName":{"$ref":"#\u002Fdefinitions\u002FshortName","description":"The short name for the organization to which the CVE ID was originally assigned.","options":{"hidden":true}},"serial":{"type":"integer","minimum":1,"default":1,"description":"The system of record causes this to start at 1, and increment by 1 each time a submission from a data provider changes this CVE Record. The incremented value moves to the Rejected schema upon a PUBLISHED-\u003EREJECTED transition, and moves to the Published schema upon a REJECTED-\u003EPUBLISHED transition.","options":{"hidden":true}},"updated":{"description":"The date\u002Ftime the record was last updated.","$ref":"#\u002Fdefinitions\u002Ftimestamp","options":{"hidden":true}},"datePublished":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime the CVE Record was first published in the CVE List.","options":{"hidden":true}},"dateRejected":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime the CVE ID was rejected.","options":{"hidden":true}},"state":{"type":"string","description":"State of CVE - PUBLISHED, REJECTED.","enum":["REJECTED"],"options":{"hidden":true}},"dateReserved":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime this CVE ID was reserved in the CVE automation workgroup services system. Disclaimer: This date reflects when the CVE ID was reserved, and does not necessarily indicate when this vulnerability was discovered, shared with the affected vendor, publicly disclosed, or updated in CVE.","options":{"hidden":true}}},"additionalProperties":false},"providerMetadata":{"type":"object","format":"grid","options":{"class":"hid"},"description":"Details related to the information container provider (CNA or ADP)","properties":{"orgId":{"$ref":"#\u002Fdefinitions\u002ForgId","description":"The container provider's organizational UUID.","options":{"hidden":true},"template":"cveApi.org?cveApi.org.UUID:'00000000-0000-4000-9000-000000000000'"},"shortName":{"$ref":"#\u002Fdefinitions\u002FshortName","description":"The container provider's organizational short name.","options":{"hidden":true}},"dateUpdated":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"Timestamp to be set by the system of record at time of submission. If updatedDate is provided to the system of record it will be replaced by the current timestamp at the time of submission.","options":{"hidden":true}}},"required":["orgId"]},"cnaPublishedContainer":{"description":"An object containing the vulnerability information provided by a CVE Numbering Authority (CNA) for a published CVE ID. There can only be one CNA container per CVE record since there can only be one assigning CNA. The CNA container must include the required information defined in the CVE Rules, which includes a product, version, problem type, prose description, and a reference.","type":"object","format":"grid","options":{"class":"hid"},"properties":{"providerMetadata":{"$ref":"#\u002Fdefinitions\u002FproviderMetadata"},"dateAssigned":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"The date\u002Ftime this CVE ID was associated with a vulnerability by a CNA.","options":{"hidden":true}},"title":{"type":"string","title":"Title","description":"Short title - if the description is long we may want a short title to refer to.","minLength":1,"maxLength":256,"options":{"class":"vgi-title","grid_columns":8,"formClass":"lni","inputAttributes":{"placeholder":"eg., Memory leak in Linux Filesystem"}}},"datePublic":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","title":"Public at","description":"If known, the date\u002Ftime the vulnerability was disclosed publicly.","options":{"grid_columns":4,"formClass":"lni"}},"problemTypes":{"options":{"grid_columns":6,"formClass":"lni"},"$ref":"#\u002Fdefinitions\u002FproblemTypes"},"impacts":{"options":{"grid_columns":6,"formClass":"lni"},"$ref":"#\u002Fdefinitions\u002Fimpacts"},"affected":{"$ref":"#\u002Fdefinitions\u002Faffected"},"descriptions":{"$ref":"#\u002Fdefinitions\u002Fdescriptions","default":{"lang":"en","value":"[PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] on [PLATFORMS] allows [ATTACKER] to [IMPACT] via [VECTOR]","supportingMedia":[{"type":"text\u002Fhtml","base64":false,"value":"[PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] on [PLATFORMS] allows [ATTACKER] to [IMPACT] via [VECTOR]"}]}},"references":{"$ref":"#\u002Fdefinitions\u002Freferences"},"metrics":{"$ref":"#\u002Fdefinitions\u002Fmetrics"},"configurations":{"$ref":"#\u002Fdefinitions\u002Fconfigurations"},"workarounds":{"$ref":"#\u002Fdefinitions\u002Fworkarounds"},"solutions":{"$ref":"#\u002Fdefinitions\u002Fsolutions"},"exploits":{"$ref":"#\u002Fdefinitions\u002Fexploits"},"timeline":{"$ref":"#\u002Fdefinitions\u002Ftimeline"},"credits":{"$ref":"#\u002Fdefinitions\u002Fcredits"},"source":{"$ref":"#\u002Fdefinitions\u002Fsource"},"tags":{"$ref":"#\u002Fdefinitions\u002FcnaTags","options":{"class":"vgi-tag"}},"taxonomyMappings":{"$ref":"#\u002Fdefinitions\u002FtaxonomyMappings"},"x_generator":{"type":"object","properties":{"engine":{"type":"string","default":"Vulnogram 0.1.0-dev"}},"options":{"hidden":"true"}}},"required":["providerMetadata","descriptions","affected","references"],"patternProperties":{"^x_":{}},"additionalProperties":false},"cnaRejectedContainer":{"description":"An object containing the vulnerability information provided by a CVE Numbering Authority (CNA) for a rejected CVE ID. There can only be one CNA container per CVE record since there can only be one assigning CNA.","type":"object","properties":{"providerMetadata":{"$ref":"#\u002Fdefinitions\u002FproviderMetadata"},"rejectedReasons":{"description":"Reasons for rejecting this CVE Record.","$ref":"#\u002Fdefinitions\u002Fdescriptions","default":{"lang":"en","value":"This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.","supportingMedia":[{"type":"text\u002Fhtml","base64":false,"value":"This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."}]}},"replacedBy":{"title":"Replaced by CVE IDs","type":"array","format":"table","options":{"class":"vgi-reuse tgap"},"description":"Contains an array of CVE IDs that this CVE ID was rejected in favor of because the this CVE ID was assigned to the vulnerabilities.","uniqueItems":true,"items":{"$ref":"#\u002Fdefinitions\u002FcveId"}}},"required":["providerMetadata","rejectedReasons"],"patternProperties":{"^x_":{}},"additionalProperties":false},"adpContainer":{"description":"An object containing the vulnerability information provided by an Authorized Data Publisher (ADP). Since multiple ADPs can provide information for a CVE ID, an ADP container must indicate which ADP is the source of the information in the object.","type":"object","properties":{"providerMetadata":{"$ref":"#\u002Fdefinitions\u002FproviderMetadata"},"datePublic":{"$ref":"#\u002Fdefinitions\u002Ftimestamp","description":"If known, the date\u002Ftime the vulnerability was disclosed publicly."},"title":{"type":"string","description":"Short english language title - if the description is long we may want a short title to refer to.","minLength":1,"maxLength":256},"problemTypes":{"$ref":"#\u002Fdefinitions\u002FproblemTypes"},"impacts":{"$ref":"#\u002Fdefinitions\u002Fimpacts"},"descriptions":{"$ref":"#\u002Fdefinitions\u002Fdescriptions"},"affected":{"$ref":"#\u002Fdefinitions\u002Faffected"},"references":{"$ref":"#\u002Fdefinitions\u002Freferences"},"metrics":{"$ref":"#\u002Fdefinitions\u002Fmetrics"},"configurations":{"$ref":"#\u002Fdefinitions\u002Fconfigurations"},"workarounds":{"$ref":"#\u002Fdefinitions\u002Fworkarounds"},"solutions":{"$ref":"#\u002Fdefinitions\u002Fsolutions"},"exploits":{"$ref":"#\u002Fdefinitions\u002Fexploits"},"timeline":{"$ref":"#\u002Fdefinitions\u002Ftimeline"},"credits":{"$ref":"#\u002Fdefinitions\u002Fcredits"},"source":{"$ref":"#\u002Fdefinitions\u002Fsource"},"tags":{"$ref":"#\u002Fdefinitions\u002FadpTags"},"taxonomyMappings":{"$ref":"#\u002Fdefinitions\u002FtaxonomyMappings"}},"required":["providerMetadata"],"minProperties":2,"patternProperties":{"^x_":{}},"additionalProperties":false},"affected":{"type":"array","format":"gird","title":"Affected products","options":{"class":"vgi-cvss-scope-change tgap"},"description":"List of affected products.","minItems":1,"items":{"$ref":"#\u002Fdefinitions\u002Fproduct"}},"description":{"type":"object","id":"desc","description":"Text in a particular language with optional alternate markup or formatted representation (e.g., Markdown) or embedded media.","properties":{"lang":{"$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"type":"string","format":"textarea","description":"Plain text description.","minLength":1,"maxLength":4096,"template":"domhtml(context.sm)","watch":{"sm":"desc.supportingMedia.0.value"},"options":{"hidden":true}},"supportingMedia":{"type":"array","title":" ","description":"Supporting media data for the description such as markdown, diagrams, .. (optional). Similar to RFC 2397 each media object has three main parts: media type, media data value, and an optional boolean flag to indicate if the media data is base64 encoded.","uniqueItems":true,"minItems":1,"options":{"class":"hid","disable_array_add":true},"items":{"title":" ","type":"object","options":{"class":"hid","remove_empty_properties":false},"properties":{"type":{"type":"string","title":"Media type","minLength":1,"default":"text\u002Fhtml","maxLength":256,"description":"RFC2046 compliant IANA Media type for eg., text\u002Fmarkdown, text\u002Fhtml.","examples":["text\u002Fmarkdown","text\u002Fhtml","image\u002Fpng","image\u002Fsvg","audio\u002Fmp3"],"options":{"hidden":true}},"base64":{"type":"boolean","title":"Encoding","description":"If true then the value field contains the media data encoded in base64. If false then the value field contains the UTF-8 media content.","default":false,"options":{"hidden":true}},"value":{"type":"string","format":"simplehtml","options":{"class":"hid"},"title":" ","description":"Supporting media content, up to 16K. If base64 is true, this field stores base64 encoded data.","minLength":1,"maxLength":16384}},"required":["type","value"]}}},"required":["lang","value"],"additionalProperties":false},"englishLanguageDescription":{"type":"object","description":"A description with lang set to an English language (en, en_US, en_UK, and so on).","properties":{"lang":{"$ref":"#\u002Fdefinitions\u002FenglishLanguage"}},"required":["lang"]},"descriptions":{"type":"array","title":"CVE Description","options":{"disable_array_add":true,"disable_array_delete":false,"class":"vgi-text tgap"},"description":"A list of multi-lingual descriptions of the vulnerability. E.g., [PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] on [PLATFORMS] allows [ATTACKER] to [IMPACT] via [VECTOR]. OR [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] [ROOT CAUSE], which allows [ATTACKER] to [IMPACT] via [VECTOR].","minItems":1,"uniqueItems":true,"items":{"$ref":"#\u002Fdefinitions\u002Fdescription","title":" ","options":{"class":"hid"}},"contains":{"$ref":"#\u002Fdefinitions\u002FenglishLanguageDescription"}},"problemTypes":{"type":"array","title":"Problem types","options":{"class":"vgi-bug"},"format":"table","description":"This is problem type information (e.g. CWE identifier). Must contain: At least one entry, can be text, OWASP, CWE, please note that while only one is required you can use more than one (or indeed all three) as long as they are correct). (CNA requirement: [PROBLEMTYPE])","items":{"type":"object","title":"Problem type","description":"text, OWASP, or CWE","required":["descriptions"],"properties":{"descriptions":{"title":" ","type":"array","format":"table","options":{"disable_array_add":true},"items":{"type":"object","id":"problem","required":["lang","description"],"properties":{"lang":{"$ref":"#\u002Fdefinitions\u002Flanguage"},"cweId":{"type":"string","description":"CWE ID of the CWE that best describes this problemType entry.","minLength":5,"maxLength":9,"pattern":"^CWE-[1-9][0-9]+$","options":{"patternmessage":"Enter a valid CWE ID","input_width":"5em","hidden":true},"template":"context.desc ? ((W = context.desc.match(\u002FCWE-[1-9][0-9]+\u002F)) ? W[0] : '') : ''","watch":{"desc":"problem.description"}},"description":{"title":" ","type":"string","description":"string description of problemType, or title from CWE, OWASP","minLength":1,"maxLength":4096,"options":{"inputAttributes":{"placeholder":"eg., CWE-20 Improper Input Validation"}},"$ref":"js\u002Fcwe-frequent.json"},"type":{"type":"string","options":{"hidden":true},"default":"CWE","description":"Problemtype source, text, OWASP, CWE, etc.,","minLength":1,"maxLength":128},"references":{"$ref":"#\u002Fdefinitions\u002Freferences","options":{"hidden":true},"minItems":0}}},"minItems":1,"uniqueItems":true}}},"minItems":1,"uniqueItems":true},"references":{"title":"References","type":"array","options":{"class":"vgi-ext tgap"},"format":"table","description":"This is reference data in the form of URLs or file objects (uuencoded and embedded within the JSON file, exact format to be decided, e.g. we may require a compressed format so the objects require unpacking before they are \"dangerous\").","items":{"$ref":"#\u002Fdefinitions\u002Freference"},"minItems":1,"maxItems":512,"uniqueItems":true},"impacts":{"type":"array","format":"table","title":"Impacts","description":"Collection of impacts of this vulnerability.","minItems":1,"uniqueItems":true,"options":{"class":"vgi-impact"},"items":{"type":"object","id":"impact","title":"Impact","description":"This is impact type information (e.g. a text description","required":["descriptions"],"properties":{"capecId":{"type":"string","description":"CAPEC ID that best relates to this impact.","minLength":7,"maxLength":11,"pattern":"^CAPEC-[1-9][0-9]{0,4}$","options":{"pattentmessage":"Invalid CAPEC ID","hidden":true},"template":"context.ds && context.ds[0] && context.ds[0].value ? ((W = context.ds[0].value.match(\u002FCAPEC-[1-9][0-9]{0,4}\u002F)) ? W[0] : '') : ''","watch":{"ds":"impact.descriptions"}},"descriptions":{"description":"Prose description of the impact scenario. At a minimum provide the description given by CAPEC","title":" ","type":"array","format":"table","minItems":1,"options":{"disable_array_add":true},"items":{"type":"object","options":{"class":"hid"},"description":"Prose description of the impact scenario. At a minimum provide the description given by CAPEC.","properties":{"lang":{"$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"type":"string","title":" ","description":"Plain text description.","minLength":1,"maxLength":4096,"$ref":"js\u002Fcapec.json","options":{"inputAttributes":{"placeholder":"eg., CAPEC-130 Excessive Allocation"}}}},"required":["lang","value"]}}}}},"metrics":{"type":"array","title":" ","description":"Collection of impact scores with attribution.","minItems":1,"uniqueItems":true,"items":{"type":"object","title":"Scoring Metric","options":{"class":"vgi-dial tgap","remove_empty_properties":true},"description":"This is impact type information (e.g. a text description, CVSSv2, CVSSv3, etc.). Must contain: At least one entry, can be text, CVSSv2, CVSSv3, others may be added.","minimumProperties":1,"properties":{"format":{"type":"string","default":"CVSS","options":{"hidden":true},"description":"Name of the score format. This provides a bit future proofing. Additional properties are not prohibitied, so this will support inclusion of proprietary formats. It also provides an easy future conversion mechanism when future score formats become part of the schema. example: cvssV4_4, format = 'cvssV4_4', other = cvssV4_4 json object. In the future the other properties can be converted to score properties when they become part of the schema.","minLength":1,"maxLength":64},"scenarios":{"type":"array","title":"Scoring scenarios","format":"table","description":"Description of the scenarios this metrics object applies to. If no specific scenario is given, GENERAL is used as the default and applies when no more specific metric matches.","minItems":1,"uniqueItems":true,"items":{"type":"object","title":"Scenario","properties":{"lang":{"$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"type":"string","title":" ","default":"GENERAL","description":"Description of the scenario this metrics object applies to. If no specific scenario is given, GENERAL is used as the default and applies when no more specific metric matches.","minLength":1,"maxLength":4096}},"required":["lang","value"]}},"cvssV3_1":{"$schema":"http:\u002F\u002Fjson-schema.org\u002Fdraft-07\u002Fschema#","title":"Common Vulnerability Scoring System (CVSS) 3.1","description":"Capture the principal characteristics of a vulnerability and produce a numerical score (zero to ten) reflecting its severity.","id":"cvss","type":"object","format":"grid","properties":{"version":{"type":"string","enum":["3.1"],"options":{"hidden":"true"}},"attackVector":{"title":"Attack Vector","type":"string","format":"radio","enum":["PHYSICAL","LOCAL","ADJACENT_NETWORK","NETWORK"],"options":{"grid_columns":12,"enum_titles":["Physical","Local","Adjacent","Network"],"icons":{"PHYSICAL":"cvss-physical","LOCAL":"cvss-user","ADJACENT_NETWORK":"cvss-adj","NETWORK":"cvss-net"}}},"attackComplexity":{"title":"Attack Complexity","type":"string","format":"radio","enum":["HIGH","LOW"],"options":{"grid_columns":12,"enum_titles":["High","Low"],"icons":{"HIGH":"rocket","LOW":"paper-plane"}}},"privilegesRequired":{"title":"Privileges Required","type":"string","format":"radio","enum":["HIGH","LOW","NONE"],"options":{"grid_columns":12,"enum_titles":["High","Low","None"],"icons":{"HIGH":"king","LOW":"pawn","NONE":"thief"}}},"userInteraction":{"title":"User Interaction","type":"string","format":"radio","enum":["REQUIRED","NONE"],"options":{"grid_columns":12,"enum_titles":["Required","None"],"icons":{"REQUIRED":"cvss-ui","NONE":"cvss-direct"}}},"scope":{"title":"Scope","type":"string","format":"radio","enum":["UNCHANGED","CHANGED"],"options":{"grid_columns":12,"enum_titles":["Unchanged","Changed"],"icons":{"UNCHANGED":"cvss-direct","CHANGED":"cvss-scope-change"}}},"confidentialityImpact":{"title":"Confidentiality","type":"string","format":"radio","enum":["NONE","LOW","HIGH"],"options":{"grid_columns":12,"enum_titles":["None","Low","High"],"icons":{"HIGH":"eye","LOW":"eye-half","NONE":"eye-close"}}},"integrityImpact":{"title":"Integrity","type":"string","format":"radio","enum":["NONE","LOW","HIGH"],"options":{"grid_columns":12,"enum_titles":["None","Low","High"],"icons":{"HIGH":"box-high","LOW":"box-low","NONE":"box"}}},"availabilityImpact":{"title":"Availability","type":"string","format":"radio","enum":["NONE","LOW","HIGH"],"options":{"grid_columns":12,"enum_titles":["None","Low","High"],"icons":{"HIGH":"signal-1","LOW":"signal-2","NONE":"signal"}}},"baseScore":{"title":"Base Score","type":"number","minimum":0,"maximum":10,"template":"cvssjs.calculate(context)","watch":{"attackVector":"cvss.attackVector","attackComplexity":"cvss.attackComplexity","privilegesRequired":"cvss.privilegesRequired","userInteraction":"cvss.userInteraction","scope":"cvss.scope","confidentialityImpact":"cvss.confidentialityImpact","integrityImpact":"cvss.integrityImpact","availabilityImpact":"cvss.availabilityImpact"},"options":{"grid_columns":2,"class":"vgi-dial"}},"baseSeverity":{"title":"Base Severity","type":"string","format":"string","template":"cvssjs.severity(context.sc).name","watch":{"sc":"cvss.baseScore"},"options":{"grid_columns":3,"class":"vgi-dial"}},"vectorString":{"title":"Vector","type":"string","options":{"grid_columns":7,"class":"vgi-title"},"pattern":"^CVSS:3.[0-1]\u002F((AV:[NALP]|AC:[LH]|PR:[UNLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:[XURC]|[CIA]R:[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XUNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])\u002F)*(AV:[NALP]|AC:[LH]|PR:[UNLH]|UI:[NR]|S:[UC]|[CIA]:[NLH]|E:[XUPFH]|RL:[XOTWU]|RC:[XURC]|[CIA]R:[XLMH]|MAV:[XNALP]|MAC:[XLH]|MPR:[XUNLH]|MUI:[XNR]|MS:[XUC]|M[CIA]:[XNLH])$","template":"cvssjs.vector(context)","watch":{"attackVector":"cvss.attackVector","attackComplexity":"cvss.attackComplexity","privilegesRequired":"cvss.privilegesRequired","userInteraction":"cvss.userInteraction","scope":"cvss.scope","confidentialityImpact":"cvss.confidentialityImpact","integrityImpact":"cvss.integrityImpact","availabilityImpact":"cvss.availabilityImpact"},"links":[{"class":"sml icn extlink","href":"'http:\u002F\u002Fcvssjs.github.io\u002F#' + context.self","title":"'CVSS Calculator'","rel":"'Open in CVSS Calculator'"}]}},"required":["version","vectorString","baseScore","baseSeverity"]},"cvssV3_0":{"type":"object","options":{"hidden":true}},"cvssV2_0":{"type":"object","options":{"hidden":true}},"other":{"options":{"hidden":true},"type":"object","description":"A non-standard impact description, may be prose or JSON block.","oneOf":[{"required":["type","content"]},{"required":[]}],"properties":{"type":{"description":"Name of the non-standard impact metrics format used.","type":"string","minLength":1,"maxLength":128},"content":{"type":"object","description":"JSON object not covered by another metrics format.","minProperties":1}}}}}},"solutions":{"title":"Solution (optional)","format":"table","type":"array","description":"Information about solutions or remediations available for this vulnerability.","uniqueItems":true,"options":{"class":"vgi-safe tgap","disable_array_add":false},"items":{"title":"Solution","options":{"class":"hid","disable_array_add":true},"$ref":"#\u002Fdefinitions\u002Fdescription"}},"workarounds":{"type":"array","format":"table","title":"Workaround (optional)","description":"Workarounds and mitigations for this vulnerability.","uniqueItems":true,"options":{"class":"vgi-avoid tgap","disable_array_delete":false,"disable_array_delete_last_row":false},"items":{"title":"Workaround","options":{"class":"hid","disable_array_add":true},"$ref":"#\u002Fdefinitions\u002Fdescription"}},"configurations":{"type":"array","format":"table","options":{"class":"vgi-cog tgap"},"title":"Required Configuration for Exposure (optional)","description":"Configurations required for exploiting this vulnerability.","uniqueItems":true,"items":{"$ref":"#\u002Fdefinitions\u002Fdescription","title":"Config","options":{"class":"hid","disable_array_add":true}}},"exploits":{"title":"Exploit Status (optional)","options":{"class":"vgi-bomb tgap"},"type":"array","format":"table","description":"Information about exploits of the vulnerability.","uniqueItems":true,"items":{"title":"Exploit Status","options":{"class":"hid"},"$ref":"#\u002Fdefinitions\u002Fdescription"}},"timeline":{"type":"array","title":"Timeline (optional)","format":"table","options":{"class":"vgi-time tgap"},"description":"This is timeline information for significant events about this vulnerability or changes to CVE Record.","uniqueItems":true,"items":{"type":"object","title":"Event","required":["time","lang","value"],"properties":{"time":{"title":"Timestamp","description":"Timestamp representing when the event in the timeline occurred. The timestamp format is based on RFC3339 and ISO ISO8601, with an optional timezone. yyyy-MM-ddTHH:mm:ssZZZZ - if the timezone offset is not given, GMT (0000) is assumed.","$ref":"#\u002Fdefinitions\u002Ftimestamp","options":{"grid_columns":3}},"lang":{"description":"The language used in the description of the event. The language field is included so that CVE Records can support translations. The value must be a BCP 47 language code.","$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"title":"Summary","description":"A summary of the event.","type":"string","minLength":1,"maxLength":4096,"options":{"grid_columns":9}}}}},"credits":{"type":"array","title":"Credits (optional)","options":{"class":"vgi-like tgap"},"format":"table","description":"Statements acknowledging specific people, organizations, or tools recognizing the work done in researching, discovering, remediating or helping with activities related to this CVE.","uniqueItems":true,"items":{"type":"object","title":"Credit","properties":{"lang":{"description":"The language used when describing the credits. The language field is included so that CVE Records can support translations. The value must be a BCP 47 language code.","$ref":"#\u002Fdefinitions\u002Flanguage"},"value":{"title":"Name","type":"string","minLength":1,"maxLength":4096},"user":{"options":{"hidden":true},"default":"","description":"UUID of the user being credited if present in the CVE User Registry (optional). This UUID can be used to lookup the user record in the user registry service.","$ref":"#\u002Fdefinitions\u002FuuidType"},"type":{"type":"string","description":"Type or role of the entity being credited (optional). finder: identifies the vulnerability.\nreporter: notifies the vendor of the vulnerability to a CNA.\nanalyst: validates the vulnerability to ensure accuracy or severity.\ncoordinator: facilitates the coordinated response process.\nremediation developer: prepares a code change or other remediation plans.\nremediation reviewer: reviews vulnerability remediation plans or code changes for effectiveness and completeness.\nremediation verifier: tests and verifies the vulnerability or its remediation.\ntool: names of tools used in vulnerability discovery or identification.\nsponsor: supports the vulnerability identification or remediation activities.","default":"finder","enum":["finder","reporter","analyst","coordinator","remediation developer","remediation reviewer","remediation verifier","tool","sponsor","other"]}},"required":["lang","value"]}},"source":{"type":"object","title":"CVE entry is sourced from","format":"grid","description":"This is the source information (who discovered it, who researched it, etc.).","minProperties":1,"options":{"class":"vgi-info tgap"},"properties":{"defect":{"title":"Defects","type":"array","format":"taglist","description":"CNA specific bug or defect tracking IDs (optional).","uniqueItems":true,"items":{"type":"string","maxLength":64},"options":{"class":"vgi-bug","grid_columns":6,"formClass":"lni"}},"advisory":{"title":"Advisory ID","type":"string","description":"CNA specific advisory IDs (optional).","maxLength":64,"options":{"class":"vgi-alert","grid_columns":6,"formClass":"lni"}},"discovery":{"type":"string","title":"Source of vulnerability discovery","format":"radio","enum":["INTERNAL","EXTERNAL","USER","UPSTREAM","UNKNOWN"],"description":"Source of vulnerability discovery. This may be a factor for some consumers in prioritizing vulnerability response. \nINTERNAL: this vulnerability was found by the CNA's internal research.\nEXTERNAL: this vulnerability was found during research external to a CNA.\nUSER: This vulnerability was discovered during product use.\nUPSTREAM: This vulnerability was found by an upstream vendor or producer.\nUNKNOWN: Source of discovery is not defined or is unknown","default":"UNKNOWN","options":{"grid_columns":9,"class":"vgi-bulb","enum_titles":["internal","external","during use","upstream","undefined"],"icons":{"INTERNAL":"hardhat","EXTERNAL":"hat","USER":"cap","UPSTREAM":"in","UNKNOWN":"what"}}}}},"language":{"type":"string","description":"BCP 47 language code, language-region.","default":"en","pattern":"^[A-Za-z]{2,4}([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$","options":{"hidden":true}},"englishLanguage":{"type":"string","description":"BCP 47 language code, language-region, required to be English.","pattern":"^en([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$"},"taxonomyMappings":{"type":"array","format":"table","description":"List of taxonomy items related to the vulnerability.","minitems":1,"uniqueItems":true,"options":{"class":"vgi-ext tgap"},"items":{"type":"object","description":"","required":["taxonomyName","taxonomyRelations"],"properties":{"taxonomyName":{"type":"string","description":"The name of the taxonomy.","minLength":1,"maxLength":128,"options":{"inputAttributes":{"placeholder":"eg., ATT&CK, CWE, CAPEC"}}},"taxonomyVersion":{"type":"string","description":"The version of taxonomy the identifiers come from.","minLength":1,"maxLength":128,"options":{"inputAttributes":{"placeholder":"eg., 2.3"}}},"taxonomyRelations":{"type":"array","format":"table","description":"","minItems":1,"uniqueItems":true,"items":{"type":"object","description":"List of relationships to the taxonomy for the vulnerability.  Relationships can be between the taxonomy and the CVE or two taxonomy items.","required":["taxonomyId","relationshipName","relationshipValue"],"properties":{"taxonomyId":{"type":"string","description":"Identifier of the item in the taxonomy.  Used as the subject of the relationship.","minLength":1,"maxLength":2048,"options":{"inputAttributes":{"placeholder":"eg., T1234, CWE-123"}}},"relationshipName":{"type":"string","description":"A description of the relationship.","minLength":1,"maxLength":128,"options":{"inputAttributes":{"placeholder":"eg., after, before, requires"}}},"relationshipValue":{"type":"string","description":"The target of the relationship.  Can be the CVE ID or another taxonomy identifier.","minLength":1,"maxLength":2048,"options":{"inputAttributes":{"placeholder":"eg., T1235, CWE-134"}}}}}}}}},"tagExtension":{"type":"string","minLength":2,"maxLength":128,"pattern":"^x_.*$"},"cnaTags":{"id":"xtag","type":"array","title":"Tags","format":"taglist","description":"Tags describing the CVE entry","uniqueItems":true,"items":{"type":"string","description":"exclusively-hosted-service: All known software and\u002For hardware affected by this CVE Record is known to exist only in the affected hosted service. If the vulnerability affects both hosted and on-prem software and\u002For hardware, then the tag should not be used.\n\nunsupported-when-assigned: Used by the assigning CNA to indicate that when a request for a CVE assignment was received, the product was already end-of-life (EOL) or a product or specific version was deemed not to be supported by the vendor. This tag should only be applied to a CVE Record when all affected products or version lines referenced in the CVE-Record are EOL.\n\ndisputed: When one party disagrees with another party's assertion that a particular issue in software is a vulnerability, a CVE Record assigned to that issue may be tagged as being 'disputed'.","examples":["unsupported-when-assigned","exclusively-hosted-service","disputed"]}},"adpTags":{"id":"xtag","type":"array","format":"taglist","description":"Tags provided by an ADP describing the CVE Record.","uniqueItems":true,"minItems":1,"items":{"type":"string","description":"disputed: When one party disagrees with another party's assertion that a particular issue in software is a vulnerability, a CVE Record assigned to that issue may be tagged as being 'disputed'.","examples":["disputed"]}}},"oneOf":[{"title":"Published","description":"When a CNA populates the data associated with a CVE ID as a CVE Record, the state of the CVE Record is Published.","properties":{"dataType":{"$ref":"#\u002Fdefinitions\u002FdataType"},"dataVersion":{"$ref":"#\u002Fdefinitions\u002FdataVersion"},"cveMetadata":{"$ref":"#\u002Fdefinitions\u002FcveMetadataPublished","options":{"class":"hid"}},"containers":{"description":"A set of structures (called containers) used to store vulnerability information related to a specific CVE ID provided by a specific organization participating in the CVE program. Each container includes information provided by a different source.\n\nAt minimum, a 'cna' container containing the vulnerability information provided by the CNA who initially assigned the CVE ID must be included.\n\nThere can only be one 'cna' container, as there can only be one assigning CNA. However, there can be multiple 'adp' containers, allowing multiple organizations participating in the CVE program to add additional information related to the vulnerability. For the most part, the 'cna' and 'adp' containers contain the same properties. The main differences are the source of the information and the 'cna' container requires the CNA include certain fields, while the 'adp' container does not.","type":"object","options":{"class":"hid"},"properties":{"cna":{"$ref":"#\u002Fdefinitions\u002FcnaPublishedContainer"},"adp":{"type":"array","items":{"$ref":"#\u002Fdefinitions\u002FadpContainer"},"uniqueItems":true}},"required":["cna"],"additionalProperties":false}},"required":["dataType","dataVersion","cveMetadata","containers"],"additionalProperties":false},{"title":"Rejected","description":"If the CVE ID and associated CVE Record should no longer be used, the CVE Record is placed in the Rejected state. A Rejected CVE Record remains on the CVE List so that users can know when it is invalid.","properties":{"dataType":{"$ref":"#\u002Fdefinitions\u002FdataType"},"dataVersion":{"$ref":"#\u002Fdefinitions\u002FdataVersion"},"cveMetadata":{"$ref":"#\u002Fdefinitions\u002FcveMetadataRejected"},"containers":{"description":"A set of structures (called containers) used to store vulnerability information related to a specific CVE ID provided by a specific organization participating in the CVE program. Each container includes information provided by a different source.\n\nAt minimum, a 'cna' container containing the vulnerability information provided by the CNA who initially assigned the CVE ID must be included.\n\nThere can only be one 'cna' container, as there can only be one assigning CNA.","type":"object","options":{"class":"hid"},"properties":{"cna":{"$ref":"#\u002Fdefinitions\u002FcnaRejectedContainer"}},"required":["cna"],"additionalProperties":false}},"required":["dataType","dataVersion","cveMetadata","containers"],"additionalProperties":false}]};</script><script src="./js/util.js"></script><script src="/js/wy/simple.js"></script><script src="/js/wy/wysihtml-toolbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/json-editor/2.6.1/jsoneditor.min.js" integrity="sha512-wKxQaNjG9D/GAVUp3sWH/OnnYDQ6NO3rcNGmmZ+YBjSqh7vwKvkBhNvSg91qmz2QSq/rsrrJjOmhdbd/LkbxGw==" crossorigin="anonymous"></script><script src="/js/tagify.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js" integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g==" crossorigin="anonymous"></script><script src="./js/editor.js"></script><script> if(window.sessionStorage.cveApi) {
     cveApi = JSON.parse(window.sessionStorage.cveApi);
     if(!cveApi.state) {
         cveApi.state = {}
