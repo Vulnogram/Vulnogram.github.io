@@ -3,6 +3,10 @@
  --hig: #e5ebec;
 }   
 
+#cveUser .pop {
+  right: 2em !important;
+}
+
 .CVSS.NONE {
   background-color: rgb(162, 213, 114);
 }
@@ -121,13 +125,15 @@ table.striped td {
   border : #c1c1c1 1px solid;
 }
 </style><link href="/css/tagify.css" rel="stylesheet" type="text/css"></head><body class="cve" id="body"><div class="stk"><header class="ban pad wht btm"><div class="left"><a class="fbn vgi-logo" title="Making the world safer one CVE at a time, since 2017" href="https://vulnogram.github.io">Vulnogram</a> <a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="../">CVE 4.0</a><a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href=".">CVE 5.0 (beta)</a></div><div class="right"></div></header><header class="ban pad shd hig"><div class="left"><a class="fbn sfe" href="./">NEW</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><a class="fbn vgi-folder" type="file" onclick="importFile(event, this);">Open</a><a class="fbn vgi-download" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download">Download</a><form class="indent out nobr" onsubmit="event.preventDefault();loadCVE(this.git.value);return false;"><input class="txt" type="text" name="git" placeholder="CVE-YYYY-NNNN" pattern=".*CVE-[0-9]{4}-[0-9]{4,12}.*" size="17" title="CVE ID CVE-yyyy-nnnn+" required><button class="btn vgi-in" type="submit">GIT</button></form><button class="fbn sfe vgi-put" id="post1">Post to CVE.org</button><a class="vgi-tweet fbn" type="button" oncontextmenu="tweetJSON(event, this);" onclick="tweetJSON(event, this);" value="Download" target="_blank" title="Share a tweet about this CVE">Tweet</a></div><div class="right"><form class="indent out nobr" onsubmit="cveSelectLoad(event);return false;"><input class="txt lbl" id="cveEditable" type="search" name="id" list="editablelist" placeholder="CVE-yyyy-nnnn.." title="Load CVE for editing" required><datalist id="editablelist"></datalist><button class="btn vgi-in" type="submit">Load</button></form></div></header></div><script>var userUsername = ""
-</script><div class="pad ban messagebar"><div class="left tred" id="errMsg"></div><div class="right" id="infoMsg"></div></div><div class="pad"><script>var iconMap = {"Platforms":"stack","References":"ext","Versions":"versions","Timeline":"time","Solution":"safe","ID":"tag","Tags":"tag","Advisory-ID":"tag","ASSIGNER":"user","ASSIGNER_SHORT_NAME":"user","DATE_PUBLIC":"cal","TITLE":"title","Published":"cal","product_name":"package","Found during":"info","CNA_private":"lock","TYPE":"bucket","unsure":"what","no-vuln":"safe","advisory":"alert","no-advisory":"no","doc":"text","misc":"misc","duplicate":"ext","CVE_data_meta":"info","STATE":"knob","new":"inbox","closed":"closed","open":"inbox1","draft":"text","review":"eye","waiting":"wait","pending":"cal","vectorString":"title","baseScore":"dial","baseSeverity":"knob","scenario":"text","source":"info","descriptions":"text","affected":"impact","Vendors":"factory","references":"ext","impacts":"impact","metrics":"dial","Configuration":"cog","Defect":"bug","INTERNAL":"hardhat","EXTERNAL":"hat","USER":"cap","UNKNOWN":"what"}</script><script>function tweetJSON(event, link) {
+</script><div class="pad ban messagebar"><div class="left tred" id="errMsg"></div><div class="right" id="infoMsg"></div></div><div class="pad"><script>var iconMap = {"Platforms":"stack","References":"ext","Versions":"versions","Timeline":"time","Solution":"safe","ID":"tag","Tags":"tag","Advisory-ID":"tag","ASSIGNER":"user","ASSIGNER_SHORT_NAME":"user","DATE_PUBLIC":"cal","TITLE":"title","Published":"cal","product_name":"package","Found during":"info","CNA_private":"lock","TYPE":"bucket","unsure":"what","no-vuln":"safe","advisory":"alert","no-advisory":"no","doc":"text","misc":"misc","duplicate":"ext","CVE_data_meta":"info","STATE":"knob","new":"inbox","closed":"closed","open":"inbox1","draft":"text","review":"eye","waiting":"wait","pending":"cal","vectorString":"title","baseScore":"dial","baseSeverity":"knob","scenario":"text","source":"info","descriptions":"text","affected":"impact","Vendors":"factory","references":"ext","impacts":"impact","metrics":"dial","Configuration":"cog","Defect":"bug","INTERNAL":"hardhat","EXTERNAL":"hat","USER":"cap","UNKNOWN":"what"}</script><script>var currentYear = new Date().getFullYear();
+
+function tweetJSON(event, link) {
     var j = mainTabGroup.getValue();
     if (!j) {
         event.preventDefault();
         return;
     }
-    var id = j.cveMetadata.id;
+    var id = j.cveMetadata.cveId;
    /* var cvelist = textUtil.deep_value(j, 'CNA_private.CVE_list');
     if (cvelist && cvelist.length > 0) {
         id = '';
@@ -196,7 +202,7 @@ async function draftEmail(event, link, renderId) {
             event.preventDefault();
             return;
         }
-        var id = textUtil.deep_value(j, 'cveMetadata.id');
+        var id = textUtil.deep_value(j, 'cveMetadata.cveId');
        /* var cvelist = textUtil.deep_value(j, 'CNA_private.CVE_list');
         if (cvelist && cvelist.length > 0) {
             id = '';
@@ -296,9 +302,9 @@ var additionalTabs = {
     cveApiTab: {
         title: 'CVE Org',
         setValue: function() {
-            if(cveApi && cveApi.list) {
+        /*    if(cveApi && cveApi.list) {
                 cveRenderList(cveApi.list);
-            }
+            }*/
         }
     }
 }
@@ -396,7 +402,6 @@ function versionStatusTable5(affected) {
         if (p.defaultStatus)
             showCols[p.defaultStatus] = true;
     }
-    console.log(t);
     return({groups:nameAndPlatforms, vals:t, show: showCols});
 }
 
@@ -437,7 +442,6 @@ function domhtml(html) {
     text = htmltoText(html) || "";
     let doc = new DOMParser().parseFromString('<pre>' + text + '</pre>', 'text/html');
     var ret = doc.body.innerText || "";
-    //console.log(html + '\n' + text + '\n' + ret);
     return ret;
 }
 
@@ -547,7 +551,7 @@ var preLogin = "";
 
 function resetClient() {
     cveClient = null;
-    var cveApi = {
+    cveApi = {
         user: null,
         uuid: null,
         org: null,
@@ -555,70 +559,117 @@ function resetClient() {
         state: {}
     } 
 }
-async function cveLogin(URL, type) {
+/*
+async function updateLogin(event, uInput) {
+    var u = uInput.value;
+    if(u && u.includes('|')) {
+        var [user, org] = u.split('|');
+        uInput.form.x.value = user;
+        uInput.form.y.value = org;
+    }
+}*/
+
+async function newCVESession(URL, type, creds) {
+    if(!URL && cveApi) {
+        URL = cveApi.URL;
+    }
+    if(!type && cveApi) {
+        type = cveApi.apiType;
+    }
+    if(!creds && cveApi) {
+        creds = cveApi.creds;
+    }
+
+    cveClient = new CveServices(URL, creds);
+    if(!cveApi || !cveApi.org || !cveApi.creds) { 
+        cveApi.URL = URL; 
+        cveApi.apiType = type;
+        cveApi.user = creds.user;
+        cveApi.short_name = creds.org;
+        cveApi.creds = creds;
+        cveApi.org = await cveClient.getOrgInfo();
+        if(cveApi.org.error) {
+            alert('Error logging in: '+cveApi.org.error + " : "+ cveApi.org.message);
+            resetClient()
+            return false;
+        }
+        cveApi.userInfo = await cveClient.getOrgUser(cveApi.user);
+        if(cveApi.userInfo.error) {
+            alert('Error logging in: '+cveApi.org.error + " : "+ cveApi.org.message);
+            resetClient();
+            return false;
+        }
+        window.sessionStorage.cveApi = JSON.stringify(cveApi);
+    }
+    if(cveApi.org && cveApi.org.UUID) {
+        var pid = docEditor.getEditor('root.containers.cna.providerMetadata.id');
+        if (pid && pid.getValue() == '00000000-0000-4000-9000-000000000000') {
+            pid.setValue(cveApi.org.UUID);
+        }
+        var aid = docEditor.getEditor('root.cveMetadata.assigner');
+        if (aid && aid.getValue() == '00000000-0000-4000-9000-000000000000') {
+            aid.setValue(cveApi.org.UUID);
+        }
+        return true;
+    }
+    return false;
+}
+
+async function cveLogin(en, credForm) {
+    en.preventDefault();
+    var URL=credForm.portal.value;
+    var type = credForm.portal.options[credForm.portal.selectedIndex].text;
     if (!cveClient) {
+        var loggedIn = false;
         try {
-            cveClient = new CveServices(URL);
-            cveApi.apiType = type;
-            cveApi.user = await cveClient._request.userName;
-            cveApi.short_name = await cveClient._request.orgName;
-            cveApi.org = await cveClient.getOrgInfo();
-            if(cveApi.org.error) {
-                alert('Error logging in: '+cveApi.org.error + " : "+ cveApi.org.message);
-                resetClient()
-                return;
+            if(!credForm.checkValidity()) {
+                return(false);
             }
-            cveApi.userInfo = await cveClient.getOrgUser(cveApi.user);
-            if(cveApi.userInfo.error) {
-                alert('Error logging in: '+cveApi.org.error + " : "+ cveApi.org.message);
-                resetClient();
-                return;
-            }
-        } catch (e) {
-            alert('Error logging in!' + e.message);
+            var creds = {
+                key:credForm.key.value,
+                org:credForm.org.value,
+                user:credForm.user.value
+            };
+            loggedIn = await newCVESession(URL, type, creds);
+        } catch (er) {
+            alert('Error logging in!' + er.message);
             resetClient();
             return;
         }
-        if(cveApi.org.UUID) { 
-            var pid = docEditor.getEditor('root.containers.cna.providerMetadata.id');
-            if (pid && pid.getValue() == '00000000-0000-4000-9000-000000000000') {
-                pid.setValue(cveApi.org.UUID);
-            }
-            var aid = docEditor.getEditor('root.cveMetadata.assigner');
-            if (aid && aid.getValue() == '00000000-0000-4000-9000-000000000000') {
-                aid.setValue(cveApi.org.UUID);
-            }
-            document.getElementById('portalName').innerHTML = "<b class=\"lbl tred\">" +  type + "</b> " + URL;
-            preLogin = document.getElementById('cveUser').innerHTML;
-            document.getElementById('cveUser').innerHTML = cveRender({
-                ctemplate: 'userstats',
-                userInfo: cveApi.userInfo,
-                org: cveApi.org
+        //credForm.reset();
+        //preLogin = document.getElementById('cvePortal').innerHTML;
+        if(loggedIn) {
+            document.getElementById('cvePortal').innerHTML = cveRender({
+                    portalType: type,
+                    portalURL: URL, 
+                    ctemplate: 'portal',
+                    userInfo: cveApi.userInfo,
+                    org: cveApi.org
             });
-            document.getElementById('cveToolbar').className = "pad";
             await cveGetList(cveClient);
-            window.sessionStorage.cveApi = JSON.stringify(cveApi);
         }
     }
 }
 
 async function cveLogout(URL) {
     resetClient();
-    window.sessionStorage.cveApi = JSON.stringify(cveApi);
-    document.getElementById('cveUser').innerHTML = preLogin;
-    document.getElementById('portalName').innerText = 'disconnected';
-    document.getElementById('cveToolbar').className = "hid";
-
+    window.sessionStorage.removeItem('cveApi');
+    window.sessionStorage.removeItem('cve-services-creds');
+    document.getElementById('cvePortal').innerHTML = cveRender({
+        ctemplate: 'cveLoginBox'
+    })
 }
 
 async function cveRenderList(l) {
-    if (l) {
-        document.getElementById('cveListTable').innerHTML = cveRender({
+    if (l && document.getElementById('cveList')) {
+        document.getElementById('cveList').innerHTML = cveRender({
             ctemplate: 'listIds',
             cveIds: l,
             editable: (cveApi.apiType == 'test')
         })
-        new Tablesort(document.getElementById('cveListTable'));
+        if(l.length > 0) {
+            new Tablesort(document.getElementById('cveListTable'));
+        }
         docSchema.definitions.cveId.examples = l.map(i=>i.cve_id);
         document.getElementById('root.cveMetadata.cveId-datalist').innerHTML = cveRender({
             ctemplate: 'reserveds',
@@ -636,33 +687,63 @@ async function cveRenderList(l) {
 //var collator = new Intl.Collator(undefined, {numeric: true});
 
 async function cveGetList() {
+    if(!cveClient) {
+        await newCVESession();
+    }
     if(cveClient) {
-        var json = await cveClient.getCveIds();
-
-        cveApi.list = json.sort(function(a,b){return b.reserved > a.reserved});
-
-        for(var i=0; i< json.length; i++) {
-            cveApi.state[json[i].cve_id] = json[i].state;
+        var filter = {
+            state: 'RESERVED',
+            cve_id_year: currentYear
         }
-        cveRenderList(json);
+        var cveForm = document.getElementById("cvePortalFilter");
+        if(cveForm) {
+            if(cveForm.fstate) {
+                if(cveForm.fstate.value) {
+                    filter.state = cveForm.fstate.value;
+                } else {
+                    delete filter.state;
+                }
+            }
+            if(cveForm.y) {
+                filter.cve_id_year = cveForm.y.value;
+            }
+        }
+        if (document.getElementById('cveList')) {
+            document.getElementById('cveList').innerHTML = '<center><div class="spinner"></div></center>';
+        }
+        var json = await cveClient.getCveIds(filter);
+        if(json && json.length > 0) {
+            cveApi.list = json.sort((b,a) => (a.reserved > b.reserved) ? 1 : ((b.reserved > a.reserved) ? -1 : 0));
+
+            for(var i=0; i< json.length; i++) {
+                cveApi.state[json[i].cve_id] = json[i].state;
+            }
+        } else {
+            cveApi.list = [];
+            cveApi.state = {};
+        }
+        cveApi.listUpdated = (new Date()).getTime();
+        window.sessionStorage.cveApi = JSON.stringify(cveApi);
+        cveRenderList(cveApi.list);
     } else {
-        alert('Login to CVE.org first');
+        alert('Login to CVE.org first!');
     }
 }
-
 async function cveReserve(yearOffset) {
+    if(!cveClient) {
+        await newCVESession();
+    }
     if (cveClient) {
-        var year = new Date().getFullYear() + (yearOffset ? yearOffset : 0);
+        var year = currentYear + (yearOffset ? yearOffset : 0);
         try {
             var json = await cveClient.reserveCveIds({
                 amount: 1,
                 cve_year: year,
                 short_name: cveApi.short_name
             });
-            //console.log(json);
             return json;
         } catch (e) {
-            //console.log(e);
+            alert('Error reserving ID: ' + e.message);
         }
     } else {
         alert('Please login to CVE Portal');
@@ -671,6 +752,9 @@ async function cveReserve(yearOffset) {
 
 async function cveSelectLoad(event) {
     event.preventDefault();
+    if(!cveClient) {
+        await newCVESession();
+    }
     if(cveClient){
     cveLoad(event.target.elements.id.value)
     } else {
@@ -726,7 +810,6 @@ function addRichTextCVE(j) {
 function cvssv3_0_to_cvss3_1(j) {
     if(j && j.containers && j.containers.cna && j.containers.cna.metrics) {
         j.containers.cna.metrics.forEach(m => {
-            console.log(m);
             if(m.cvssV3_0) {
                 m.cvssV3_1 = m.cvssV3_0;
                 m.cvssV3_1.version = "3.1";
@@ -755,6 +838,9 @@ async function cveLoad(cveId) {
         mainTabGroup.change(0);
         return res;
     } else {
+        if(!cveClient) {
+            await newCVESession();
+        }
         if(cveClient) {
             var res = await cveClient.getCve(cveId);
             if (res.cveMetadata) {
@@ -778,27 +864,32 @@ async function cveLoad(cveId) {
 }
 
 async function cvePost() {
+    alert('CVE Services Test API is currently not functional: Issue #551')
+    return;
     if(docEditor.validation_results && docEditor.validation_results.length == 0){
         /*if (save != undefined) {
             await save();
         }*/
+        if(!cveApi) {
+            await newCVESession();
+        }
         if(cveClient) {
             if(cveApi.apiType === 'test') {
             //console.log('uploading...');
             var j = await mainTabGroup.getValue();
             var j = textUtil.reduceJSON(j);
             var ret = null;
-            if(cveApi.state[j.cveMetadata.id] == 'RESERVED') {
+            if(cveApi.state[j.cveMetadata.cveId] == 'RESERVED') {
                 //console.log('Creating');
-                ret = await cveClient.createCve(j.cveMetadata.id, j);
+                ret = await cveClient.createCve(j.cveMetadata.cveId, {cnaContainer:j.containers.cna});
             } else {
                 //console.log('uploading');
-                ret = await cveClient.updateCve(j.cveMetadata.id, j);
+                ret = await cveClient.updateCve(j.cveMetadata.cveId, {cnaContainer:j.containers.cna});
             }
             if (ret.ok) {
                 ret = await ret.json();
                 if(ret && ret.cveMetadata && ret.cveMetadata.state)
-                    cveApi.state[j.cveMetadata.id] = ret.cveMetadata.state;
+                    cveApi.state[j.cveMetadata.cveId] = ret.cveMetadata.state;
                 infoMsg.innerText = ret.message;
                 hideJSONerrors();
             } else {
@@ -817,11 +908,11 @@ async function cvePost() {
                 }
             }
         } else {
-            alert('CVE posting is not currently supported by production CVE services! Try Logging to CVE -> AWG Test');
+            alert('CVE posting is not currently supported by production CVE services! Try Logging to Test Portal instance');
         }
         } else {
             //todo enable/disable post button
-            alert('Please login to CVE Portal -> (CVE AWG Test)');
+            alert('Please login to CVE Test Portal');
         }
     } else {
         alert('Please fix errors before posting');
@@ -829,9 +920,19 @@ async function cvePost() {
 }
 
 async function cveReserveAndRender(yearOffset) {
+    if(!cveClient) {
+        await newCVESession();
+    }
     if(cveClient) {
-        await cveReserve(yearOffset);
+        var r = await cveReserve(yearOffset);
+        var m = document.getElementById("cveStatusMessage");
+        if(m && r.length > 0) {
+            m.innerText = "Got " + r.map(x=>x.cve_id).join(', ');
+        } else {
+            m.innerText = "Failed to get a CVE ID";
+        }
         await cveGetList();
+        return r;
     } else {
         alert('Please login to CVE Portal');
     }
@@ -2524,13 +2625,15 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
             errors = out;
         }
         return errors;
-    };</script><script>function tweetJSON(event, link) {
+    };</script><script>var currentYear = new Date().getFullYear();
+
+function tweetJSON(event, link) {
     var j = mainTabGroup.getValue();
     if (!j) {
         event.preventDefault();
         return;
     }
-    var id = j.cveMetadata.id;
+    var id = j.cveMetadata.cveId;
    /* var cvelist = textUtil.deep_value(j, 'CNA_private.CVE_list');
     if (cvelist && cvelist.length > 0) {
         id = '';
@@ -2599,7 +2702,7 @@ async function draftEmail(event, link, renderId) {
             event.preventDefault();
             return;
         }
-        var id = textUtil.deep_value(j, 'cveMetadata.id');
+        var id = textUtil.deep_value(j, 'cveMetadata.cveId');
        /* var cvelist = textUtil.deep_value(j, 'CNA_private.CVE_list');
         if (cvelist && cvelist.length > 0) {
             id = '';
@@ -2699,9 +2802,9 @@ var additionalTabs = {
     cveApiTab: {
         title: 'CVE Org',
         setValue: function() {
-            if(cveApi && cveApi.list) {
+        /*    if(cveApi && cveApi.list) {
                 cveRenderList(cveApi.list);
-            }
+            }*/
         }
     }
 }
@@ -2799,7 +2902,6 @@ function versionStatusTable5(affected) {
         if (p.defaultStatus)
             showCols[p.defaultStatus] = true;
     }
-    console.log(t);
     return({groups:nameAndPlatforms, vals:t, show: showCols});
 }
 
@@ -2840,7 +2942,6 @@ function domhtml(html) {
     text = htmltoText(html) || "";
     let doc = new DOMParser().parseFromString('<pre>' + text + '</pre>', 'text/html');
     var ret = doc.body.innerText || "";
-    //console.log(html + '\n' + text + '\n' + ret);
     return ret;
 }
 
@@ -2950,7 +3051,7 @@ var preLogin = "";
 
 function resetClient() {
     cveClient = null;
-    var cveApi = {
+    cveApi = {
         user: null,
         uuid: null,
         org: null,
@@ -2958,70 +3059,117 @@ function resetClient() {
         state: {}
     } 
 }
-async function cveLogin(URL, type) {
+/*
+async function updateLogin(event, uInput) {
+    var u = uInput.value;
+    if(u && u.includes('|')) {
+        var [user, org] = u.split('|');
+        uInput.form.x.value = user;
+        uInput.form.y.value = org;
+    }
+}*/
+
+async function newCVESession(URL, type, creds) {
+    if(!URL && cveApi) {
+        URL = cveApi.URL;
+    }
+    if(!type && cveApi) {
+        type = cveApi.apiType;
+    }
+    if(!creds && cveApi) {
+        creds = cveApi.creds;
+    }
+
+    cveClient = new CveServices(URL, creds);
+    if(!cveApi || !cveApi.org || !cveApi.creds) { 
+        cveApi.URL = URL; 
+        cveApi.apiType = type;
+        cveApi.user = creds.user;
+        cveApi.short_name = creds.org;
+        cveApi.creds = creds;
+        cveApi.org = await cveClient.getOrgInfo();
+        if(cveApi.org.error) {
+            alert('Error logging in: '+cveApi.org.error + " : "+ cveApi.org.message);
+            resetClient()
+            return false;
+        }
+        cveApi.userInfo = await cveClient.getOrgUser(cveApi.user);
+        if(cveApi.userInfo.error) {
+            alert('Error logging in: '+cveApi.org.error + " : "+ cveApi.org.message);
+            resetClient();
+            return false;
+        }
+        window.sessionStorage.cveApi = JSON.stringify(cveApi);
+    }
+    if(cveApi.org && cveApi.org.UUID) {
+        var pid = docEditor.getEditor('root.containers.cna.providerMetadata.id');
+        if (pid && pid.getValue() == '00000000-0000-4000-9000-000000000000') {
+            pid.setValue(cveApi.org.UUID);
+        }
+        var aid = docEditor.getEditor('root.cveMetadata.assigner');
+        if (aid && aid.getValue() == '00000000-0000-4000-9000-000000000000') {
+            aid.setValue(cveApi.org.UUID);
+        }
+        return true;
+    }
+    return false;
+}
+
+async function cveLogin(en, credForm) {
+    en.preventDefault();
+    var URL=credForm.portal.value;
+    var type = credForm.portal.options[credForm.portal.selectedIndex].text;
     if (!cveClient) {
+        var loggedIn = false;
         try {
-            cveClient = new CveServices(URL);
-            cveApi.apiType = type;
-            cveApi.user = await cveClient._request.userName;
-            cveApi.short_name = await cveClient._request.orgName;
-            cveApi.org = await cveClient.getOrgInfo();
-            if(cveApi.org.error) {
-                alert('Error logging in: '+cveApi.org.error + " : "+ cveApi.org.message);
-                resetClient()
-                return;
+            if(!credForm.checkValidity()) {
+                return(false);
             }
-            cveApi.userInfo = await cveClient.getOrgUser(cveApi.user);
-            if(cveApi.userInfo.error) {
-                alert('Error logging in: '+cveApi.org.error + " : "+ cveApi.org.message);
-                resetClient();
-                return;
-            }
-        } catch (e) {
-            alert('Error logging in!' + e.message);
+            var creds = {
+                key:credForm.key.value,
+                org:credForm.org.value,
+                user:credForm.user.value
+            };
+            loggedIn = await newCVESession(URL, type, creds);
+        } catch (er) {
+            alert('Error logging in!' + er.message);
             resetClient();
             return;
         }
-        if(cveApi.org.UUID) { 
-            var pid = docEditor.getEditor('root.containers.cna.providerMetadata.id');
-            if (pid && pid.getValue() == '00000000-0000-4000-9000-000000000000') {
-                pid.setValue(cveApi.org.UUID);
-            }
-            var aid = docEditor.getEditor('root.cveMetadata.assigner');
-            if (aid && aid.getValue() == '00000000-0000-4000-9000-000000000000') {
-                aid.setValue(cveApi.org.UUID);
-            }
-            document.getElementById('portalName').innerHTML = "<b class=\"lbl tred\">" +  type + "</b> " + URL;
-            preLogin = document.getElementById('cveUser').innerHTML;
-            document.getElementById('cveUser').innerHTML = cveRender({
-                ctemplate: 'userstats',
-                userInfo: cveApi.userInfo,
-                org: cveApi.org
+        //credForm.reset();
+        //preLogin = document.getElementById('cvePortal').innerHTML;
+        if(loggedIn) {
+            document.getElementById('cvePortal').innerHTML = cveRender({
+                    portalType: type,
+                    portalURL: URL, 
+                    ctemplate: 'portal',
+                    userInfo: cveApi.userInfo,
+                    org: cveApi.org
             });
-            document.getElementById('cveToolbar').className = "pad";
             await cveGetList(cveClient);
-            window.sessionStorage.cveApi = JSON.stringify(cveApi);
         }
     }
 }
 
 async function cveLogout(URL) {
     resetClient();
-    window.sessionStorage.cveApi = JSON.stringify(cveApi);
-    document.getElementById('cveUser').innerHTML = preLogin;
-    document.getElementById('portalName').innerText = 'disconnected';
-    document.getElementById('cveToolbar').className = "hid";
-
+    window.sessionStorage.removeItem('cveApi');
+    window.sessionStorage.removeItem('cve-services-creds');
+    document.getElementById('cvePortal').innerHTML = cveRender({
+        ctemplate: 'cveLoginBox'
+    })
 }
 
 async function cveRenderList(l) {
-    if (l) {
-        document.getElementById('cveListTable').innerHTML = cveRender({
+    if (l && document.getElementById('cveList')) {
+        document.getElementById('cveList').innerHTML = cveRender({
             ctemplate: 'listIds',
             cveIds: l,
             editable: (cveApi.apiType == 'test')
         })
-        new Tablesort(document.getElementById('cveListTable'));
+        if(l.length > 0) {
+            new Tablesort(document.getElementById('cveListTable'));
+        }
         docSchema.definitions.cveId.examples = l.map(i=>i.cve_id);
         document.getElementById('root.cveMetadata.cveId-datalist').innerHTML = cveRender({
             ctemplate: 'reserveds',
@@ -3039,33 +3187,63 @@ async function cveRenderList(l) {
 //var collator = new Intl.Collator(undefined, {numeric: true});
 
 async function cveGetList() {
+    if(!cveClient) {
+        await newCVESession();
+    }
     if(cveClient) {
-        var json = await cveClient.getCveIds();
-
-        cveApi.list = json.sort(function(a,b){return b.reserved > a.reserved});
-
-        for(var i=0; i< json.length; i++) {
-            cveApi.state[json[i].cve_id] = json[i].state;
+        var filter = {
+            state: 'RESERVED',
+            cve_id_year: currentYear
         }
-        cveRenderList(json);
+        var cveForm = document.getElementById("cvePortalFilter");
+        if(cveForm) {
+            if(cveForm.fstate) {
+                if(cveForm.fstate.value) {
+                    filter.state = cveForm.fstate.value;
+                } else {
+                    delete filter.state;
+                }
+            }
+            if(cveForm.y) {
+                filter.cve_id_year = cveForm.y.value;
+            }
+        }
+        if (document.getElementById('cveList')) {
+            document.getElementById('cveList').innerHTML = '<center><div class="spinner"></div></center>';
+        }
+        var json = await cveClient.getCveIds(filter);
+        if(json && json.length > 0) {
+            cveApi.list = json.sort((b,a) => (a.reserved > b.reserved) ? 1 : ((b.reserved > a.reserved) ? -1 : 0));
+
+            for(var i=0; i< json.length; i++) {
+                cveApi.state[json[i].cve_id] = json[i].state;
+            }
+        } else {
+            cveApi.list = [];
+            cveApi.state = {};
+        }
+        cveApi.listUpdated = (new Date()).getTime();
+        window.sessionStorage.cveApi = JSON.stringify(cveApi);
+        cveRenderList(cveApi.list);
     } else {
-        alert('Login to CVE.org first');
+        alert('Login to CVE.org first!');
     }
 }
-
 async function cveReserve(yearOffset) {
+    if(!cveClient) {
+        await newCVESession();
+    }
     if (cveClient) {
-        var year = new Date().getFullYear() + (yearOffset ? yearOffset : 0);
+        var year = currentYear + (yearOffset ? yearOffset : 0);
         try {
             var json = await cveClient.reserveCveIds({
                 amount: 1,
                 cve_year: year,
                 short_name: cveApi.short_name
             });
-            //console.log(json);
             return json;
         } catch (e) {
-            //console.log(e);
+            alert('Error reserving ID: ' + e.message);
         }
     } else {
         alert('Please login to CVE Portal');
@@ -3074,6 +3252,9 @@ async function cveReserve(yearOffset) {
 
 async function cveSelectLoad(event) {
     event.preventDefault();
+    if(!cveClient) {
+        await newCVESession();
+    }
     if(cveClient){
     cveLoad(event.target.elements.id.value)
     } else {
@@ -3129,7 +3310,6 @@ function addRichTextCVE(j) {
 function cvssv3_0_to_cvss3_1(j) {
     if(j && j.containers && j.containers.cna && j.containers.cna.metrics) {
         j.containers.cna.metrics.forEach(m => {
-            console.log(m);
             if(m.cvssV3_0) {
                 m.cvssV3_1 = m.cvssV3_0;
                 m.cvssV3_1.version = "3.1";
@@ -3158,6 +3338,9 @@ async function cveLoad(cveId) {
         mainTabGroup.change(0);
         return res;
     } else {
+        if(!cveClient) {
+            await newCVESession();
+        }
         if(cveClient) {
             var res = await cveClient.getCve(cveId);
             if (res.cveMetadata) {
@@ -3181,27 +3364,32 @@ async function cveLoad(cveId) {
 }
 
 async function cvePost() {
+    alert('CVE Services Test API is currently not functional: Issue #551')
+    return;
     if(docEditor.validation_results && docEditor.validation_results.length == 0){
         /*if (save != undefined) {
             await save();
         }*/
+        if(!cveApi) {
+            await newCVESession();
+        }
         if(cveClient) {
             if(cveApi.apiType === 'test') {
             //console.log('uploading...');
             var j = await mainTabGroup.getValue();
             var j = textUtil.reduceJSON(j);
             var ret = null;
-            if(cveApi.state[j.cveMetadata.id] == 'RESERVED') {
+            if(cveApi.state[j.cveMetadata.cveId] == 'RESERVED') {
                 //console.log('Creating');
-                ret = await cveClient.createCve(j.cveMetadata.id, j);
+                ret = await cveClient.createCve(j.cveMetadata.cveId, {cnaContainer:j.containers.cna});
             } else {
                 //console.log('uploading');
-                ret = await cveClient.updateCve(j.cveMetadata.id, j);
+                ret = await cveClient.updateCve(j.cveMetadata.cveId, {cnaContainer:j.containers.cna});
             }
             if (ret.ok) {
                 ret = await ret.json();
                 if(ret && ret.cveMetadata && ret.cveMetadata.state)
-                    cveApi.state[j.cveMetadata.id] = ret.cveMetadata.state;
+                    cveApi.state[j.cveMetadata.cveId] = ret.cveMetadata.state;
                 infoMsg.innerText = ret.message;
                 hideJSONerrors();
             } else {
@@ -3220,11 +3408,11 @@ async function cvePost() {
                 }
             }
         } else {
-            alert('CVE posting is not currently supported by production CVE services! Try Logging to CVE -> AWG Test');
+            alert('CVE posting is not currently supported by production CVE services! Try Logging to Test Portal instance');
         }
         } else {
             //todo enable/disable post button
-            alert('Please login to CVE Portal -> (CVE AWG Test)');
+            alert('Please login to CVE Test Portal');
         }
     } else {
         alert('Please fix errors before posting');
@@ -3232,9 +3420,19 @@ async function cvePost() {
 }
 
 async function cveReserveAndRender(yearOffset) {
+    if(!cveClient) {
+        await newCVESession();
+    }
     if(cveClient) {
-        await cveReserve(yearOffset);
+        var r = await cveReserve(yearOffset);
+        var m = document.getElementById("cveStatusMessage");
+        if(m && r.length > 0) {
+            m.innerText = "Got " + r.map(x=>x.cve_id).join(', ');
+        } else {
+            m.innerText = "Failed to get a CVE ID";
+        }
         await cveGetList();
+        return r;
     } else {
         alert('Please login to CVE Portal');
     }
@@ -3267,22 +3465,24 @@ async function cveReserveAndRender(yearOffset) {
     class NoCredentialsError extends Error {};
 
     class CveServices {
-        constructor(serviceUri) {
+        constructor(serviceUri, creds) {
             if (serviceUri == null) {
                 serviceUri = 'https://cweawg.mitre.org/api';
             }
 
-            this._request = new CveServicesRequest(serviceUri);
+            this._request = new CveServicesRequest(serviceUri, creds);
         }
 
-        getCveIds() {
-            return this._request.get('cve-id')
+        getCveIds(args) {
+            return this._request.get('cve-id', args)
                 .then(data => data.cve_ids);
         };
 
         reserveCveIds(args) {
-            return this._request.post('cve-id', args)
+            var x = this._request.post('cve-id', args)
                 .then(data => data.cve_ids);
+            console.log(x);
+            return x;
         }
 
         reserveCveId(year = new Date().getFullYear()) {
@@ -3343,11 +3543,11 @@ async function cveReserveAndRender(yearOffset) {
         }
 
         createCve(id, schema) {
-            return this._request.post(`cve/${id}`, undefined, schema);
+            return this._request.post(`cve/${id}/cna`, undefined, schema);
         }
 
         updateCve(id, schema) {
-            return this._request.put(`cve/${id}`, undefined, schema);
+            return this._request.put(`cve/${id}/cna`, undefined, schema);
         }
 
         getOrgInfo() {
@@ -3376,8 +3576,8 @@ async function cveReserveAndRender(yearOffset) {
     };
 
     class CveServicesRequest {
-        constructor(serviceUri) {
-            this._clientAuth = null;
+        constructor(serviceUri, creds) {
+            this._clientAuth = creds;
             this._serviceUri = serviceUri;
         }
 
@@ -3451,9 +3651,9 @@ async function cveReserveAndRender(yearOffset) {
                 this._clientAuth = creds;
             }
 
-            if (window.sessionStorage.getItem('cve-services-creds') == null) {
-                sessionStorage.setItem('cve-services-creds', JSON.stringify(creds));
-            }
+            //if (window.sessionStorage.getItem('cve-services-creds') == null) {
+            //    sessionStorage.setItem('cve-services-creds', JSON.stringify(creds));
+            //}
         }
 
         clientLoginLocalStorage() {
@@ -3519,7 +3719,6 @@ async function cveReserveAndRender(yearOffset) {
                     let [user, org] = cred.id.split("|");
                     let key = cred.password;
                     let creds = { key, org, user };
-
                     this.cacheLogin(creds);
 
                     return this._clientAuth;
@@ -3618,7 +3817,8 @@ async function cveReserveAndRender(yearOffset) {
                         opts.body = JSON.stringify(body);
                     }
 
-                    return fetch(`${this._serviceUri}/${path}${queryPath}`, opts);
+                    return fetch(`${this._serviceUri}/${path}${queryPath}`, opts)
+                        .then(res => res.json());
                 });
         }
 
@@ -3657,10 +3857,26 @@ var pug_has_own_property=Object.prototype.hasOwnProperty;
 var pug_match_html=/["&<>]/;function cveRender(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
     var locals_for_with = (locals || {});
     
-    (function (Date, Math, cl, ctemplate, cveIds, editable, isNaN, name, obj, org, t, userInfo) {
-      pug_mixins["userstats"] = pug_interp = function(){
+    (function (Date, Math, cl, ctemplate, cveIds, editable, isNaN, name, obj, org, portalType, t, userInfo) {
+      pug_mixins["cveLoginBox"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Cdetails class=\"lbl popup\"\u003E\u003Csummary class=\"fbn vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo.name ? userInfo.name.first : userInfo.username) ? "" : pug_interp)) + " ▼ \u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd pad\"\u003E\u003Cb class=\"vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo.username) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cdt\u003ERoles:  \u003Cb class=\"vgi-cap\"\u003E" + (pug_escape(null == (pug_interp = userInfo.authority.active_roles) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr\u002F\u003E\u003Cdt\u003EOrg:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.name) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003EShortName:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.short_name) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003ERole:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.authority.active_roles) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr\u002F\u003E\u003Cspan class=\"vgi-exit fbn\" onclick=\"cveLogout()\"\u003ELogout!\u003C\u002Fspan\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E";
+pug_html = pug_html + "\u003Ccenter class=\"sec shd rnd gap2 pad\"\u003E\u003Csvg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http:\u002F\u002Fwww.w3.org\u002F2000\u002Fsvg\" xmlns:xlink=\"http:\u002F\u002Fwww.w3.org\u002F1999\u002Fxlink\" viewBox=\"0 0 320.65 93.91\" width=\"200\" height=\"90\"\u003E\u003Cdefs\u003E\u003Cstyle\u003E.cls-1{fill-rule:evenodd;fill:url(#linear-gradient);}.cls-2{font-size:18px;fill:#ff940e;font-family:ArialMT, Arial;}\u003C\u002Fstyle\u003E\u003ClinearGradient id=\"linear-gradient\" x1=\"152.2\" y1=\"90.17\" x2=\"152.2\" y2=\"5.62\" gradientUnits=\"userSpaceOnUse\"\u003E\u003Cstop offset=\"0\" stop-color=\"#f68826\"\u002F\u003E\u003Cstop offset=\"0.45\" stop-color=\"#faa227\"\u002F\u003E\u003Cstop offset=\"1\" stop-color=\"#fdb714\"\u002F\u003E\u003C\u002FlinearGradient\u003E\u003C\u002Fdefs\u003E\u003Cpath class=\"cls-1\" d=\"M99.83,88.73l13.75-17.79H56.86a38.82,38.82,0,0,1-5.67-.4,34.11,34.11,0,0,1-5.31-1.23,30.85,30.85,0,0,1-4.8-2,24.78,24.78,0,0,1-4.17-2.7h0a22.28,22.28,0,0,1-3.46-3.4,21.7,21.7,0,0,1-2.59-4.06,20.67,20.67,0,0,1-1.62-4.63,23.3,23.3,0,0,1-.54-5,23,23,0,0,1,.56-5.06,20.43,20.43,0,0,1,1.68-4.68,23.07,23.07,0,0,1,6-7.55,24.74,24.74,0,0,1,4.14-2.78,30.15,30.15,0,0,1,4.78-2.05,31.58,31.58,0,0,1,5.33-1.28,36.22,36.22,0,0,1,5.68-.43h41.4v-9h18v-9h9v9h-9v9h9.52l26.61,39.24,1.95,2.88,2-2.84L196.93,5.63H297.85l-13.9,18H210.34l-.73,1L179.25,67.62l-9.7,13.72a23.11,23.11,0,0,1-2.89,3.28,36.14,36.14,0,0,1-3.65,3,12.89,12.89,0,0,1-4,1.89,18.14,18.14,0,0,1-5.12.67,19,19,0,0,1-5-.62,12.63,12.63,0,0,1-3.92-1.79,23.76,23.76,0,0,1-3.48-2.88,25.93,25.93,0,0,1-2.93-3.52L99.31,24.72l-.73-1h8.71V5.62H56.86a73.24,73.24,0,0,0-10.67.75A59.88,59.88,0,0,0,36.43,8.6a52.92,52.92,0,0,0-8.66,3.58A44.37,44.37,0,0,0,20.46,17a39.78,39.78,0,0,0-5.91,5.91,38.75,38.75,0,0,0-4.49,7,33.93,33.93,0,0,0-2.81,7.82,38.33,38.33,0,0,0-.94,8.64A39.24,39.24,0,0,0,7.25,55a35.86,35.86,0,0,0,2.83,8,40.55,40.55,0,0,0,4.5,7.23,41.25,41.25,0,0,0,5.92,6.19h0a45.86,45.86,0,0,0,7.33,5.08,55.52,55.52,0,0,0,8.66,3.89,56.45,56.45,0,0,0,9.74,2.45,65.94,65.94,0,0,0,10.63.82h43ZM134.36,5.62v9h9v-9ZM253,39H214V88.72h70.36L298.1,70.94H236.5V54.16h44.58L292.94,39Z\"\u002F\u003E\u003Ctext class=\"cls-2\" transform=\"translate(303.31 19.09)\"\u003E®\u003C\u002Ftext\u003E\u003C\u002Fsvg\u003E\u003Cbr\u002F\u003E\u003Ci\u003ECVE Services Portal \u003C\u002Fi\u003E\u003Cbr\u002F\u003E\u003Ci\u003EInstantly providing you CVE IDs since 2022\u003C\u002Fi\u003E\u003Cform id=\"cveLoginForm\" method=\"POST\" onsubmit=\"cveLogin(event, this); return false;\"\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003EPortal\u003C\u002Flabel\u003E\u003Cselect class=\"bor txt\" name=\"portal\" style=\"width:11em;\"\u003E\u003Coption" + (" value=\"https:\u002F\u002Fcveawg.mitre.org\u002Fapi\""+pug_attr("selected", true, true, false)) + "\u003Eproduction\u003C\u002Foption\u003E\u003Coption value=\"https:\u002F\u002Fcveawg-test.mitre.org\u002Fapi\"\u003Etest\u003C\u002Foption\u003E\u003C\u002Fselect\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECNA Short Name\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"org\" type=\"text\" autocomplete=\"on\" pattern=\".{2,64}\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECVE User\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"user\" type=\"text\" autocomplete=\"on\" pattern=\".+@.+\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECNA API Key\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"key\" type=\"password\" autocomplete=\"off\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad center\"\u003E\u003Cinput class=\"bor fbn sfe\" type=\"submit\" value=\"Login\"\u002F\u003E\u003C\u002Fdiv\u003E\u003C\u002Fform\u003E\u003C\u002Fcenter\u003E";
+};
+pug_mixins["portal"] = pug_interp = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+var y = new Date().getFullYear()
+pug_html = pug_html + "\u003Cheader class=\"pad ban sec rnd\"\u003E\u003Cdiv class=\"left\"\u003E\u003Clabel class=\"vgi-globe lbl\"\u003EPortal: " + (pug_escape(null == (pug_interp = portalType) ? "" : pug_interp)) + "\u003C\u002Flabel\u003E\u003Cspan class=\"btg\"\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0)\"\u003EReserve One CVE\u003C\u002Fbutton\u003E\u003Cdetails class=\"popup\"\u003E\u003Csummary class=\"btn\"\u003E▼ \u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd pad rows\"\u003E\u003Cdt\u003E \u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(1)\"\u003EReserve one for year " + (pug_escape(null == (pug_interp = y + 1) ? "" : pug_interp)) + "\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003Cdt\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0)\"\u003EReserve 5\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003Cdt\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0)\"\u003EReserve 10\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E\u003C\u002Fspan\u003E\u003Cdiv class=\"lbl\" id=\"cveStatusMessage\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Clabel class=\"right\" id=\"cveUser\"\u003E";
+pug_mixins["userstats"]();
+pug_html = pug_html + "\u003C\u002Flabel\u003E\u003C\u002Fheader\u003E\u003Cform class=\"gap\" id=\"cvePortalFilter\"\u003E\u003Cdiv class=\"lbl\"\u003EState\u003C\u002Fdiv\u003E\u003Cdiv class=\"rdg\"\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput class=\"hid\" id=\"chkall\" type=\"radio\" name=\"fstate\" value=\"\"\u002F\u003E\u003Clabel class=\"lbl vgi-misc\" for=\"chkall\"\u003EAll\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput class=\"hid\" id=\"chkres\" type=\"radio\" name=\"fstate\" value=\"RESERVED\" checked=\"checked\"\u002F\u003E\u003Clabel class=\"lbl vgi-edit\" for=\"chkres\"\u003EReserved\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkpub\" type=\"radio\" name=\"fstate\""+pug_attr("value", (portalType == 'test' ? "PUBLISHED" : "PUBLIC"), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-globe\" for=\"chkpub\"\u003EPublished\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkrej\" type=\"radio\" name=\"fstate\""+pug_attr("value", (portalType == 'test' ? "REJECT" : "REJECTED"), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-no\" for=\"chkrej\"\u003ERejected\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"lbl\"\u003EYear\u003C\u002Fdiv\u003E\u003Cselect class=\"lbl txt\" name=\"y\"\u003E";
+while (y > 1998) {
+pug_html = pug_html + "\u003Coption" + (pug_attr("value", y, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = y) ? "" : pug_interp)) + "\u003C\u002Foption\u003E";
+y--;
+}
+pug_html = pug_html + "\u003C\u002Fselect\u003E \u003Cbutton class=\"btn vgi-reuse\" onclick=\"event.preventDefault();cveGetList();return false;\"\u003EGo\u003C\u002Fbutton\u003E\u003C\u002Fform\u003E\u003Cdiv id=\"cveList\"\u003E\u003C\u002Fdiv\u003E";
+};
+pug_mixins["userstats"] = pug_interp = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary class=\"fbn vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo && userInfo.name ? userInfo.name.first : userInfo.username) ? "" : pug_interp)) + " ▼ \u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd pad\"\u003E\u003Cb class=\"vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo.username) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cdt\u003ERoles:  \u003Cb class=\"vgi-cap\"\u003E" + (pug_escape(null == (pug_interp = userInfo.authority.active_roles) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr\u002F\u003E\u003Cdt\u003EOrg:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.name) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003EShortName:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.short_name) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003ERole:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org.authority.active_roles) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr\u002F\u003E\u003Cspan class=\"vgi-exit fbn\" onclick=\"cveLogout()\"\u003ELogout!\u003C\u002Fspan\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E";
 };
 pug_mixins["htext"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
@@ -3787,8 +4003,9 @@ pug_html = pug_html + "\u003Coption" + (pug_attr("value", c.cve_id, true, false)
 };
 pug_mixins["listIds"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
+if (cveIds && cveIds.length > 0) {
 var stateIcons = {'RESERVED':'vgi-edit', 'PUBLISHED':'vgi-globe', 'REJECTED':'vgi-no'}
-pug_html = pug_html + "\u003Ctable class=\"tbl sortable\"\u003E\u003Cthead\u003E\u003Ctr\u003E\u003Cth\u003EID\u003C\u002Fth\u003E\u003Cth\u003EState\u003C\u002Fth\u003E\u003Cth\u003ERequester\u003C\u002Fth\u003E\u003Cth aria-sort=\"ascending\"\u003ECreated\u003C\u002Fth\u003E\u003Cth\u003EModified\u003C\u002Fth\u003E\u003C\u002Ftr\u003E\u003C\u002Fthead\u003E\u003Ctbody\u003E";
+pug_html = pug_html + "\u003Ctable class=\"tbl sortable\" id=\"cveListTable\"\u003E\u003Cthead\u003E\u003Ctr\u003E\u003Cth\u003EID\u003C\u002Fth\u003E\u003Cth\u003EState\u003C\u002Fth\u003E\u003Cth\u003ERequester\u003C\u002Fth\u003E\u003Cth aria-sort=\"ascending\"\u003ECreated\u003C\u002Fth\u003E\u003Cth\u003EModified\u003C\u002Fth\u003E\u003C\u002Ftr\u003E\u003C\u002Fthead\u003E\u003Ctbody\u003E";
 // iterate cveIds
 ;(function(){
   var $$obj = cveIds;
@@ -3812,7 +4029,9 @@ pug_html = pug_html + "\u003Ca" + (pug_attr("class", pug_classes(["vgi-ext",stat
 pug_html = pug_html + "\u003C\u002Ftd\u003E\u003Ctd\u003E" + (pug_escape(null == (pug_interp = c.requested_by.user) ? "" : pug_interp)) + "\u003C\u002Ftd\u003E\u003Ctd\u003E";
 pug_mixins["date"](c.time.created);
 pug_html = pug_html + "\u003C\u002Ftd\u003E\u003Ctd\u003E";
+if (c.time.modified != c.time.created) {
 pug_mixins["date"](c.time.modified);
+}
 pug_html = pug_html + "\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E";
       }
   } else {
@@ -3837,13 +4056,19 @@ pug_html = pug_html + "\u003Ca" + (pug_attr("class", pug_classes(["vgi-ext",stat
 pug_html = pug_html + "\u003C\u002Ftd\u003E\u003Ctd\u003E" + (pug_escape(null == (pug_interp = c.requested_by.user) ? "" : pug_interp)) + "\u003C\u002Ftd\u003E\u003Ctd\u003E";
 pug_mixins["date"](c.time.created);
 pug_html = pug_html + "\u003C\u002Ftd\u003E\u003Ctd\u003E";
+if (c.time.modified != c.time.created) {
 pug_mixins["date"](c.time.modified);
+}
 pug_html = pug_html + "\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E";
     }
   }
 }).call(this);
 
 pug_html = pug_html + "\u003C\u002Ftbody\u003E\u003C\u002Ftable\u003E";
+}
+else {
+pug_html = pug_html + "\u003Ci\u003ENo CVE IDs found!\u003C\u002Fi\u003E";
+}
 };
 if (ctemplate != undefined) {
 pug_mixins[ctemplate]();
@@ -3868,12 +4093,14 @@ pug_mixins[ctemplate]();
         locals_for_with.obj :
         typeof obj !== 'undefined' ? obj : undefined, "org" in locals_for_with ?
         locals_for_with.org :
-        typeof org !== 'undefined' ? org : undefined, "t" in locals_for_with ?
+        typeof org !== 'undefined' ? org : undefined, "portalType" in locals_for_with ?
+        locals_for_with.portalType :
+        typeof portalType !== 'undefined' ? portalType : undefined, "t" in locals_for_with ?
         locals_for_with.t :
         typeof t !== 'undefined' ? t : undefined, "userInfo" in locals_for_with ?
         locals_for_with.userInfo :
         typeof userInfo !== 'undefined' ? userInfo : undefined));
-    ;;return pug_html;}</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><div class="hid"><button class="lbl sml indent btn vgi-magic sfe" id="auto" style="visibility:hidden">Auto-Text</button></div><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="vgi-download btn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail btn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="mitreTab" value="5"><label class="lbl" for="mitreTab">Preview</label><div class="wht fil bor pad"><div id="mitreweb"></div></div><input class="tab" name="tabs" type="radio" id="cveApiTab" value="6"><label class="lbl" for="cveApiTab">CVE Portal</label><div class="wht fil bor pad"><div class="pad bor rnd sec"><label class="vgi-globe lbl">Portal</label><label class="lbl" id="portalName">disconnected  </label><label id="cveUser"><details class="lbl popup"><summary class="btn vgi-export">CVE Login</summary><dl class="pop wht bor rnd shd pad"><dt><btn class="fbn vgi-king" onclick="cveLogin(&quot;https://cveawg.mitre.org/api&quot;, &quot;production&quot;)">CVE Production</btn></dt><dt><btn class="fbn vgi-hardhat" onclick="cveLogin(&quot;https://cveawg-test.mitre.org/api&quot;, &quot;test&quot;)">CVE AWG Test</btn></dt><!--dt--><!--    btn.fbn.vgi-hardhat(onclick='cveLogin("https://cveawg-dev.mitre.org/api")') CVE AWG Development--></dl></details></label></div><div class="pad hid" id="cveToolbar"><button class="btn vgi-magic" onclick="cveReserveAndRender(0)">Reserve a CVE ID</button><!--button.btn.vgi-magic(onclick='cveReserveAndRender(1)') Reserve one for next year--><button class="btn vgi-reuse" onclick="cveGetList()">Refresh</button></div><div class="gap"><b class="lbl vgi-inbox">My CVE IDs</b></div><div id="cveList"><table class="tbl sortable" id="cveListTable"></table></div><script src="/js/tablesort.min.js"></script></div></div><script>var idpath = "cveMetadata.cveId";
+    ;;return pug_html;}</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><div class="hid"><button class="lbl sml indent btn vgi-magic sfe" id="auto" style="visibility:hidden">Auto-Text</button></div><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="vgi-download btn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail btn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="mitreTab" value="5"><label class="lbl" for="mitreTab">Preview</label><div class="wht fil bor pad"><div id="mitreweb"></div></div><input class="tab" name="tabs" type="radio" id="cveApiTab" value="6"><label class="lbl" for="cveApiTab">CVE Portal</label><div class="wht fil bor pad"><script src="/js/tablesort.min.js"></script><div id="cvePortal"></div></div></div><script>var idpath = "cveMetadata.cveId";
 var allowAjax = "false";
 var schemaName = "cve";
 var postUrl = "";
@@ -3888,10 +4115,34 @@ var ajaxBase  = "./";var initJSON = undefined;var docSchema={"$schema":"http:\u0
             docSchema.definitions.orgId.default = cveApi.org.UUID;
             docSchema.definitions.cveId.examples = cveApi.list.map(i=>i.cve_id);   
         }
+    } else {
+        cveGetList();
     }
 }
 
-document.getElementById('post1').addEventListener('click', cvePost);</script><script>loadJSON(initJSON);</script><script> docEditor.on('ready', ()=> {
-    cveRenderList(cveApi.list)
+document.getElementById('post1').addEventListener('click', cvePost);</script><script>loadJSON(initJSON);</script><script> docEditor.on('ready', async ()=> {
+    if(cveApi && cveApi.userInfo) {
+        document.getElementById('cvePortal').innerHTML = cveRender({
+                portalType: cveApi.apiType,
+                portalURL: cveApi.URL, 
+                ctemplate: 'portal',
+                userInfo: cveApi.userInfo,
+                org: cveApi.org
+        });
+        var t = new Date().getTime();
+        if(cveApi.list && cveApi.listUpdated && ((t - cveApi.listUpdated) < 300000)) {
+            cveRenderList(cveApi.list)
+        } else {
+            if(!cveClient) {
+                await newCVESession(cveApi.URL, cveApi.apiType, cveApi.creds);
+            }
+            if(cveClient)
+                cveGetList();
+        }
+    } else {
+        document.getElementById('cvePortal').innerHTML = cveRender({
+            ctemplate: 'cveLoginBox'
+        })
+    }
 });
 </script></div><span class="pad ban"><div class="pad2 center tgrey"><small> Copyright © Chandan B.N, 2017-2021. Usage of CVE IDs is subject to CVE terms of use. This site does not track you and is safe for working with confidential vulnerability information. Made with Vulnogram 0.1.0-dev</small><br><small> <br><a class="logo" href="https://github.com/Vulnogram/Vulnogram">Vulnogram Project</a></small></div></span></body></html>
