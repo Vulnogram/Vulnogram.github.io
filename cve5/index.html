@@ -138,6 +138,21 @@ table.striped td {
 #cvePage, #showpass {
     display: none;
 }
+
+.sicn {
+  padding: 0.1em 0.4em;
+}
+
+.tr:hover, .tr.active {
+  box-shadow: #e5ebec;
+  background-color:var(--hig);
+}
+
+.t9 {
+  color: gray;
+  padding: 8px;
+  font-size: small;
+}
 </style><link href="./css/tagify.css" rel="stylesheet" type="text/css"></head><body class="cve" id="body"><div class="stk"><header class="ban pad wht btm"><div class="left"><a class="fbn vgi-logo" title="Making the world safer one CVE at a time, since 2017" href="https://vulnogram.github.io">Vulnogram</a> <a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="../">CVE 4.0</a><a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href=".">CVE 5.0 (beta)</a></div><div class="right"></div></header><header class="ban pad shd hig"><div class="left"><a class="fbn sfe" href="./">NEW</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><a class="fbn vgi-folder" type="file" onclick="importFile(event, this);">Open</a><a class="fbn vgi-download" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download">Download</a><form class="indent out nobr" onsubmit="event.preventDefault();loadCVE(this.git.value);return false;"><input class="txt" type="text" name="git" placeholder="CVE-YYYY-NNNN" pattern=".*CVE-[0-9]{4}-[0-9]{4,12}.*" size="17" title="CVE ID CVE-yyyy-nnnn+" required><button class="btn vgi-in" type="submit">GIT</button></form><button class="fbn sfe vgi-put" id="post1">Post to CVE.org</button><a class="vgi-tweet fbn" type="button" oncontextmenu="tweetJSON(event, this);" onclick="tweetJSON(event, this);" value="Download" target="_blank" title="Share a tweet about this CVE">Tweet</a></div><div class="right"><form class="indent out nobr" onsubmit="cveSelectLoad(event);return false;"><input class="txt lbl" id="cveEditable" type="search" name="id" list="editablelist" placeholder="CVE-yyyy-nnnn.." title="Load CVE for editing" required><datalist id="editablelist"></datalist><button class="btn vgi-in" type="submit">Load</button></form></div></header></div><script>var userUsername = ""
 </script><div class="pad ban messagebar"><div class="left tred" id="errMsg"></div><div class="right" id="infoMsg"></div></div><div class="pad"><script>var iconMap = {"Platforms":"stack","References":"ext","Versions":"versions","Timeline":"time","Solution":"safe","ID":"tag","Tags":"tag","Advisory-ID":"tag","ASSIGNER":"user","ASSIGNER_SHORT_NAME":"user","DATE_PUBLIC":"cal","TITLE":"title","Published":"cal","product_name":"package","Found during":"info","CNA_private":"lock","TYPE":"bucket","unsure":"what","no-vuln":"safe","advisory":"alert","no-advisory":"no","doc":"text","misc":"misc","duplicate":"ext","CVE_data_meta":"info","STATE":"knob","new":"inbox","closed":"closed","open":"inbox1","draft":"text","review":"eye","waiting":"wait","pending":"cal","vectorString":"title","baseScore":"dial","baseSeverity":"knob","scenario":"text","source":"info","descriptions":"text","affected":"impact","Vendors":"factory","references":"ext","impacts":"impact","metrics":"dial","Configuration":"cog","Defect":"bug","INTERNAL":"hardhat","EXTERNAL":"hat","USER":"cap","UNKNOWN":"what"}</script><script>var currentYear = new Date().getFullYear();
 
@@ -562,15 +577,6 @@ var cveApi = {
 }
 var preLogin = "";
 
-function resetClient() {
-    cveClient.logout();
-    cveClient = null;
-    cveApi = {
-        user: null,
-        org: null
-    } 
-}
-
 /*
 checks if an existing CVE Services session is active 
 returns orgInfo if true
@@ -583,13 +589,15 @@ async function checkSession() {
             var o = false;
             try{
                 o = await cveClient.getOrgInfo();
+                //console.log('tried to get org info');
+                //console.log(o);
             } catch(e) {
                 console.log(e);
             }
             return o;
         }
     } else {
-        alert('Browser not supported!');
+        alert('Browser not supported for CVE Portal!');
     }
     return false;
 }
@@ -599,7 +607,9 @@ async function cveLogin(elem, credForm) {
         document.getElementById("loginErr").innerText = '';
     }    
     var org = await checkSession();
+    //console.log(org);
     if(org) {
+        //console.log(org);
         // already logged in do nothing?
     } else {
         if(!credForm.checkValidity()) {
@@ -617,37 +627,51 @@ async function cveLogin(elem, credForm) {
                 credForm.user.value,
                 credForm.org.value,
                 credForm.key.value);
-            console.log('Login result ' + ret);
+            //console.log(ret);
             //todo show error if not logged in
+            var org = await cveClient.getOrgInfo();
+            //console.log(org);
+            var userInfo = await cveClient.getOrgUser(credForm.user.value);
+            //console.log(org);
+            //console.log(userInfo);
             document.getElementById('cvePortal').innerHTML = cveRender({
                 portalType: type,
                 portalURL: URL,
                 ctemplate: 'portal',
-                userInfo:await cveClient.getOrgUser(credForm.user.value),
-                org: await cveClient.getOrgInfo()
+                org: org,
+                userInfo: userInfo
             });
             cveApi.user = credForm.user.value;
             cveApi.url = URL;
             cveApi.apiType = type;
             window.sessionStorage.cveApi = JSON.stringify(cveApi);
+            window.localStorage.setItem('portalType', type);
+            window.localStorage.setItem('shortName', credForm.org.value);
             await cveGetList();
-        } catch(e) {
-            if(e == '401') {
+        } catch(err) {
+            if(err == '401') {
                 if(document.getElementById("loginErr")) {
                     document.getElementById("loginErr").innerText = 'Failed to login: Invalid credentials!';
                 }
             } else {
-                console.log(e);
+                cveShowError(err);
             }
         }
     }
 }
 
 async function cveLogout(URL) {
-    resetClient();
+    cveClient.logout();
+    cveClient = null;
+    cveApi = {
+        user: null,
+        org: null
+    } 
     window.sessionStorage.removeItem('cveApi');
     document.getElementById('cvePortal').innerHTML = cveRender({
-        ctemplate: 'cveLoginBox'
+        ctemplate: 'cveLoginBox',
+        prevPortal: window.localStorage.getItem('portalType'),
+        prevOrg: window.localStorage.getItem('shortName')
     })
 }
 
@@ -666,7 +690,7 @@ async function userlistUpdate(elem, event){
                     })
                 }
             } catch (e) {
-                console.log(e);
+                cveShowError(e);
             }
         } else {
             alert('Please login to CVE Portal');
@@ -674,58 +698,119 @@ async function userlistUpdate(elem, event){
     }
 }
 
+// XXX Modals need uniform UI
+// clean up session checks.
+
 async function cveUserKeyReset(elem) {
-    var u = elem.getAttribute('u');
-    var org = await checkSession();
+    var u = elem.form.u.value;
     if (cveClient) {
         try {
             var ret = await cveClient.resetOrgUserApiKey(u);
-            if(ret["API-secret"]) {
-                document.getElementById("userMessage").innerText = "API secret was reset for "+u+"!";
+            if(ret && ret["API-secret"]) {
+                var msg = "API Key was reset for "+u+"!";
+                if(cveApi.user == u) {
+                    msg += " You will need to login again with the new key!";
+                }
+                document.getElementById("userMessage").innerText = msg;
                 document.getElementById("secretDialogForm").pass.value = ret["API-secret"];
                 document.getElementById("secretDialogForm").pass.type = "password";
                 document.getElementById("secretDialog").showModal();
+                /*if(cveApi.user == u) {
+                    cveLogout();
+                }*/
+            } else {
+                cveShowError(ret);  
             }
         } catch(e) {
-            console.log(e);
+            cveShowError(e);
         }
     } else {
         alert('Please login to CVE Portal');
     }
 }
 
-async function cveUserUpdate(elem) {
-    alert('To be done');
+async function cveUserEdit(elem) {
+    f = document.getElementById('userEditForm');
+    f.u.value = elem.getAttribute('u');
+    f.new_username.value = elem.getAttribute('u');
+    f.first.value = elem.getAttribute('f');
+    f.last.value = elem.getAttribute('l');
+    f.admin.checked = elem.getAttribute('ad') ? true : false;
+    f.active.checked = elem.getAttribute('ac') ? true : false;
+    document.getElementById('userEditDialog').showModal();
 }
+
 async function cveAddUser(f) {
-    var org = await checkSession();
-    if (cveClient) {
-        try {
-            var ret = await cveClient.createOrgUser({
-                "username": f.new_username.value,
-                "name": {
-                    "first": f.first.value,
-                    "last":  f.last.value
-                },
-                "authority": {
-                    "active_roles": [
-                        "ADMIN"
-                    ]
-                }
-            });
-            if(ret.created && ret.created.secret) {
-                document.getElementById("secretDialogForm").pass.value = ret.created.secret;
-                document.getElementById("secretDialogForm").pass.type = "password";
-                document.getElementById("secretDialog").showModal();
-                document.getElementById("userMessage").innerText = ret.message;
-                f.reset()
-                userlistUpdate({open:true});
+    try {
+        var args = {
+            "username": f.new_username.value,
+            "name": {
+                "first": f.first.value,
+                "last":  f.last.value
             }
-        } catch (e) {
-            console.log(e);
         }
-    } else {
-        alert('Please login to CVE Portal');
+        if(f.admin.checked) {
+            args.authority = {
+                "active_roles": [
+                    "ADMIN"
+                ]
+            }
+        }
+        var ret = await cveClient.createOrgUser(args);
+        if (ret && ret.created && ret.created.secret) {
+            document.getElementById("userAddDialog").close();
+            document.getElementById("secretDialogForm").pass.value = ret.created.secret;
+            document.getElementById("secretDialogForm").pass.type = "password";
+            document.getElementById("secretDialog").showModal();
+            document.getElementById("userMessage").innerText = ret.message;
+            f.reset()
+            userlistUpdate({open:true});
+        } else {
+            cveShowError(ret); 
+        }
+    } catch (e) {
+        cveShowError(e);
+    }
+}
+
+async function cveUpdateUser(f) {
+    try {
+        params = {
+            "name.first": f.first.value,
+            "name.last":  f.last.value,
+            "active": f.active.checked
+        };
+        if(f.u.value != f.new_username.value) {
+            params.new_username = f.new_username.value
+        }
+        if(f.admin.checked) {
+            params["active_roles.add"]= 'ADMIN'
+        } else {
+            params["active_roles.remove"]= 'ADMIN'
+        }
+        var ret = await cveClient.updateOrgUser(f.u.value, params);
+        if(ret.updated) {
+            document.getElementById("userEditDialog").close();
+            if(document.getElementById("userListPopup")) {
+                userlistUpdate(document.getElementById("userListPopup"));
+            }
+            //the current user is updating self
+            if((cveApi.user == f.u.value) && document.getElementById("cveUser")) {
+                if(cveApi.user != ret.updated.username) {
+                    cveShowError({error:'Username changed!', message:'Username successfully changed to '+ ret.updated.username +'! You will need to login again!'});
+                    cveLogout();
+                    return;
+                }
+                document.getElementById("cveUser").innerHTML = 
+                cveRender({
+                    ctemplate: 'userstats',
+                    userInfo: ret.updated,
+                    org: await cveClient.getOrgInfo()
+                })
+            }
+        }
+    } catch(e) {
+        cveShowError(e);
     }
 }
 
@@ -808,18 +893,30 @@ async function pageShow(ret) {
     else
 	document.getElementById('nextPage').style.display = 'none'; 
 }
+
+async function cveShowError(err) {
+    if(err.error == 'NO_SESSION') {
+        cveLogout();
+    } else {
+        document.getElementById('cveErrors').innerHTML = cveRender({
+            ctemplate: 'cveErrors',
+            err: err
+        })
+        document.getElementById('cveErrorsModal').showModal();
+    }
+}
 async function cveGetList() {
     var org = await checkSession();
-    if(cveClient) {
+    if (cveClient) {
         var currentReserved = true;
         var filter = {
             state: 'RESERVED',
             cve_id_year: currentYear
         }
         var cveForm = document.getElementById("cvePortalFilter");
-        if(cveForm) {
-            if(cveForm.fstate) {
-                if(cveForm.fstate.value) {
+        if (cveForm) {
+            if (cveForm.fstate) {
+                if (cveForm.fstate.value) {
                     filter.state = cveForm.fstate.value + '';
                     if (filter.state != 'RESERVED') {
                         currentReserved = false;
@@ -828,13 +925,13 @@ async function cveGetList() {
                     delete filter.state;
                 }
             }
-            if(cveForm.y) {
+            if (cveForm.y) {
                 filter.cve_id_year = cveForm.y.value + '';
-                if(filter.cve_id_year != currentYear) {
+                if (filter.cve_id_year != currentYear) {
                     currentReserved = false;
                 }
             }
-            if(cveForm.page) {
+            if (cveForm.page) {
                 filter.page = cveForm.page;
             }
         }
@@ -843,32 +940,36 @@ async function cveGetList() {
         }
         try {
             var ret = await cveClient.getCveIds(filter);
-            var idList = [];
-            var idState = {};
-            if(ret && ret.cve_ids) {
-                idList = ret.cve_ids;
-                idList = idList.sort((b,a) => (a.reserved > b.reserved) ? 1 : ((b.reserved > a.reserved) ? -1 : 0));
-                for(var i=0; i< idList.length; i++) {
-                    idState[idList[i].cve_id] = idList[i].state;
+            if (ret.error) {
+                cveShowError(ret);
+            } else {
+                var idList = [];
+                var idState = {};
+                if (ret && ret.cve_ids) {
+                    idList = ret.cve_ids;
+                    idList = idList.sort((b, a) => (a.reserved > b.reserved) ? 1 : ((b.reserved > a.reserved) ? -1 : 0));
+                    for (var i = 0; i < idList.length; i++) {
+                        idState[idList[i].cve_id] = idList[i].state;
+                    }
                 }
+                cveRenderList(idList, currentReserved);
+                if (ret && (ret.nextPage || ret.prevPage)) {
+                    pageShow(ret);
+                } else {
+                    let el = document.getElementById('cvePage');
+                    if (el) {
+                        el.removeAttribute('data-page');
+                        el.style.display = 'none';
+                    }
+                    if (cveForm)
+                        cveForm.page = 0;
+                }
+                return idList;
             }
-            cveRenderList(idList, currentReserved);
-	    if(ret && (ret.nextPage || ret.prevPage)) {
-		pageShow(ret);
-	    } else {
-		let el = document.getElementById('cvePage');
-		if(el) {
-		    el.removeAttribute('data-page');
-		    el.style.display = 'none';
-		}
-		if(cveForm)
-		    cveForm.page = 0;	
-	    }	    
-            return idList;
-        } catch(e) {
-            alert(e);
+        } catch (e) {
+            cveShowError(e);
             cveRenderList([]);
-            return([]);
+            return ([]);
         }
     } else {
         alert('Login to CVE.org first!');
@@ -880,15 +981,18 @@ async function cveReserve(yearOffset, number) {
     if (cveClient) {
         var year = currentYear + (yearOffset ? yearOffset : 0);
         try {
-            var json = await cveClient.reserveCveIds({
-                amount: 1,
+            var args = {
+                amount: number > 0 && number <= 50 ? number : 1,
                 // Request only one at this time to get four digits! Requesting more at time gives the 5 digit ids.
-                // amount: number > 0 && number <= 50 ? number : 1,
                 // batch_type: 'nonsequential',
                 cve_year: year,
                 short_name: org.short_name
-            });
-            return json;
+            };
+            if(number > 1) {
+                args.batch_type = 'sequential';
+            }
+            var json = await cveClient.reserveCveIds(args);
+            return json.cve_ids;
         } catch (e) {
             alert('Error reserving ID: ' + e.message);
         }
@@ -985,12 +1089,11 @@ async function cveLoad(cveId) {
                 mainTabGroup.change(0);
                 return res;
             } else {
-                console.log(res);
                 errMsg.textContent = "Failed to load valid CVE Record";
                 infoMsg.textContent = "";
             }
-        }catch(e) {
-            if(e == '404') {
+        } catch(e) {
+            if(e == '404' || e.error == 'CVE_RECORD_DNE') {
                 var skeleton = {
                     "cveMetadata": {
                       "cveId": cveId,
@@ -1034,64 +1137,74 @@ async function cveReject(elem, event) {
                 m.innerText = "Rejected " + id;
                 await cveGetList();
             }
-            console.log(ret);
         }
     }
 }
 async function cvePost() {
     //alert('CVE Services Test API is currently not functional: Issue #551')
     //return;
-    if(docEditor.validation_results && docEditor.validation_results.length == 0){
+    if (docEditor.validation_results && docEditor.validation_results.length == 0) {
         /*if (save != undefined) {
             await save();
         }*/
         var org = await checkSession();
-        if(cveClient) {
-            if(cveApi.apiType === 'test') {
-            //console.log('uploading...');
-            var j = await mainTabGroup.getValue();
-            var j = textUtil.reduceJSON(j);
-            var ret = null;
-            try{
-                var latestId = await cveClient.getCveId(j.cveMetadata.cveId);
-                if (latestId.state == 'RESERVED') {
-                    console.log('Creating');
-                    ret = await cveClient.createCve(j.cveMetadata.cveId, {cnaContainer:j.containers.cna});
-                } else {
-                    console.log('uploading');
-                    ret = await cveClient.updateCve(j.cveMetadata.cveId, {cnaContainer:j.containers.cna});
-                }
-            } catch(e) {
-                alert('Error publishing! Got error ' + e)
-            }
-            console.log(ret);
-            if (ret != null) {
-                if(ret.error) {
-                    if (ret.details && ret.details.errors) {
-                        alert(ret.error + ': ' + ret.message);
-                        showJSONerrors(ret.details.errors.map(
-                        a => { return({
-                                path: a.instancePath,
-                                message: a.message
-                            });}
-                            ));
+        if (cveClient) {
+            if (cveApi.apiType === 'test') {
+                //console.log('uploading...');
+                var j = await mainTabGroup.getValue();
+                var j = textUtil.reduceJSON(j);
+                var ret = null;
+                try {
+                    var latestId = await cveClient.getCveId(j.cveMetadata.cveId);
+                    if (latestId.state == 'RESERVED') {
+                        //console.log('Creating');
+                        if(j.cveMetadata.state == 'PUBLISHED') {
+                            ret = await cveClient.createCve(j.cveMetadata.cveId, { cnaContainer: j.containers.cna });
+                        } else if (j.cveMetadata.state == 'REJECTED') {
+                            ret = await cveClient.createRejectedCve(j.cveMetadata.cveId, { cnaContainer: j.containers.cna });
+                        }
                     } else {
-                    console.log(ret);
-                        alert(ret.error + ': ' + ret.message);
+                        //console.log('uploading');
+                        if(j.cveMetadata.state == 'PUBLISHED') {
+                            ret = await cveClient.updateCve(j.cveMetadata.cveId, { cnaContainer: j.containers.cna });
+                        } else if (j.cveMetadata.state == 'REJECTED') {
+                            ret = await cveClient.updateRejectedCve(j.cveMetadata.cveId, { cnaContainer: j.containers.cna });
+                        }
                     }
-                } else {
+                } catch (e) {
+                    //console.log('Got error');
+                    //console.log(e);
+                    if (e.error) {
+                        infoMsg.innerText = "";
+                        errMsg.innerText = "Error publishing CVE";
+                        if (e.details && e.details.errors) {
+                            showJSONerrors(e.details.errors.map(
+                                a => {
+                                    return ({
+                                        path: a.instancePath,
+                                        message: a.message
+                                    });
+                                }
+                            ));
+                        } else {
+                            //console.log(e);
+                            alert(e.error + ': ' + e.message);
+                        }
+                        cveShowError(e);
+                    } else {
+                        alert('Error publishing! Got error ' + e)
+                    }
+                }
+                //console.log(ret);
+                if (ret != null && ret.message) {
                     //if(ret && ret.cveMetadata && ret.cveMetadata.state)
                     //    cveApi.state[j.cveMetadata.cveId] = ret.cveMetadata.state;
                     infoMsg.innerText = ret.message;
                     hideJSONerrors();
                 }
             } else {
-                infoMsg.innerText = "";
-                errMsg.innerText = "Error publishing CVE";
+                alert('CVE posting is not currently supported by production CVE services! Try Logging to Test Portal instance');
             }
-        } else {
-            alert('CVE posting is not currently supported by production CVE services! Try Logging to Test Portal instance');
-        }
         } else {
             //todo enable/disable post button
             alert('Please login to CVE Test Portal');
@@ -3228,15 +3341,6 @@ var cveApi = {
 }
 var preLogin = "";
 
-function resetClient() {
-    cveClient.logout();
-    cveClient = null;
-    cveApi = {
-        user: null,
-        org: null
-    } 
-}
-
 /*
 checks if an existing CVE Services session is active 
 returns orgInfo if true
@@ -3249,13 +3353,15 @@ async function checkSession() {
             var o = false;
             try{
                 o = await cveClient.getOrgInfo();
+                //console.log('tried to get org info');
+                //console.log(o);
             } catch(e) {
                 console.log(e);
             }
             return o;
         }
     } else {
-        alert('Browser not supported!');
+        alert('Browser not supported for CVE Portal!');
     }
     return false;
 }
@@ -3265,7 +3371,9 @@ async function cveLogin(elem, credForm) {
         document.getElementById("loginErr").innerText = '';
     }    
     var org = await checkSession();
+    //console.log(org);
     if(org) {
+        //console.log(org);
         // already logged in do nothing?
     } else {
         if(!credForm.checkValidity()) {
@@ -3283,37 +3391,51 @@ async function cveLogin(elem, credForm) {
                 credForm.user.value,
                 credForm.org.value,
                 credForm.key.value);
-            console.log('Login result ' + ret);
+            //console.log(ret);
             //todo show error if not logged in
+            var org = await cveClient.getOrgInfo();
+            //console.log(org);
+            var userInfo = await cveClient.getOrgUser(credForm.user.value);
+            //console.log(org);
+            //console.log(userInfo);
             document.getElementById('cvePortal').innerHTML = cveRender({
                 portalType: type,
                 portalURL: URL,
                 ctemplate: 'portal',
-                userInfo:await cveClient.getOrgUser(credForm.user.value),
-                org: await cveClient.getOrgInfo()
+                org: org,
+                userInfo: userInfo
             });
             cveApi.user = credForm.user.value;
             cveApi.url = URL;
             cveApi.apiType = type;
             window.sessionStorage.cveApi = JSON.stringify(cveApi);
+            window.localStorage.setItem('portalType', type);
+            window.localStorage.setItem('shortName', credForm.org.value);
             await cveGetList();
-        } catch(e) {
-            if(e == '401') {
+        } catch(err) {
+            if(err == '401') {
                 if(document.getElementById("loginErr")) {
                     document.getElementById("loginErr").innerText = 'Failed to login: Invalid credentials!';
                 }
             } else {
-                console.log(e);
+                cveShowError(err);
             }
         }
     }
 }
 
 async function cveLogout(URL) {
-    resetClient();
+    cveClient.logout();
+    cveClient = null;
+    cveApi = {
+        user: null,
+        org: null
+    } 
     window.sessionStorage.removeItem('cveApi');
     document.getElementById('cvePortal').innerHTML = cveRender({
-        ctemplate: 'cveLoginBox'
+        ctemplate: 'cveLoginBox',
+        prevPortal: window.localStorage.getItem('portalType'),
+        prevOrg: window.localStorage.getItem('shortName')
     })
 }
 
@@ -3332,7 +3454,7 @@ async function userlistUpdate(elem, event){
                     })
                 }
             } catch (e) {
-                console.log(e);
+                cveShowError(e);
             }
         } else {
             alert('Please login to CVE Portal');
@@ -3340,58 +3462,119 @@ async function userlistUpdate(elem, event){
     }
 }
 
+// XXX Modals need uniform UI
+// clean up session checks.
+
 async function cveUserKeyReset(elem) {
-    var u = elem.getAttribute('u');
-    var org = await checkSession();
+    var u = elem.form.u.value;
     if (cveClient) {
         try {
             var ret = await cveClient.resetOrgUserApiKey(u);
-            if(ret["API-secret"]) {
-                document.getElementById("userMessage").innerText = "API secret was reset for "+u+"!";
+            if(ret && ret["API-secret"]) {
+                var msg = "API Key was reset for "+u+"!";
+                if(cveApi.user == u) {
+                    msg += " You will need to login again with the new key!";
+                }
+                document.getElementById("userMessage").innerText = msg;
                 document.getElementById("secretDialogForm").pass.value = ret["API-secret"];
                 document.getElementById("secretDialogForm").pass.type = "password";
                 document.getElementById("secretDialog").showModal();
+                /*if(cveApi.user == u) {
+                    cveLogout();
+                }*/
+            } else {
+                cveShowError(ret);  
             }
         } catch(e) {
-            console.log(e);
+            cveShowError(e);
         }
     } else {
         alert('Please login to CVE Portal');
     }
 }
 
-async function cveUserUpdate(elem) {
-    alert('To be done');
+async function cveUserEdit(elem) {
+    f = document.getElementById('userEditForm');
+    f.u.value = elem.getAttribute('u');
+    f.new_username.value = elem.getAttribute('u');
+    f.first.value = elem.getAttribute('f');
+    f.last.value = elem.getAttribute('l');
+    f.admin.checked = elem.getAttribute('ad') ? true : false;
+    f.active.checked = elem.getAttribute('ac') ? true : false;
+    document.getElementById('userEditDialog').showModal();
 }
+
 async function cveAddUser(f) {
-    var org = await checkSession();
-    if (cveClient) {
-        try {
-            var ret = await cveClient.createOrgUser({
-                "username": f.new_username.value,
-                "name": {
-                    "first": f.first.value,
-                    "last":  f.last.value
-                },
-                "authority": {
-                    "active_roles": [
-                        "ADMIN"
-                    ]
-                }
-            });
-            if(ret.created && ret.created.secret) {
-                document.getElementById("secretDialogForm").pass.value = ret.created.secret;
-                document.getElementById("secretDialogForm").pass.type = "password";
-                document.getElementById("secretDialog").showModal();
-                document.getElementById("userMessage").innerText = ret.message;
-                f.reset()
-                userlistUpdate({open:true});
+    try {
+        var args = {
+            "username": f.new_username.value,
+            "name": {
+                "first": f.first.value,
+                "last":  f.last.value
             }
-        } catch (e) {
-            console.log(e);
         }
-    } else {
-        alert('Please login to CVE Portal');
+        if(f.admin.checked) {
+            args.authority = {
+                "active_roles": [
+                    "ADMIN"
+                ]
+            }
+        }
+        var ret = await cveClient.createOrgUser(args);
+        if (ret && ret.created && ret.created.secret) {
+            document.getElementById("userAddDialog").close();
+            document.getElementById("secretDialogForm").pass.value = ret.created.secret;
+            document.getElementById("secretDialogForm").pass.type = "password";
+            document.getElementById("secretDialog").showModal();
+            document.getElementById("userMessage").innerText = ret.message;
+            f.reset()
+            userlistUpdate({open:true});
+        } else {
+            cveShowError(ret); 
+        }
+    } catch (e) {
+        cveShowError(e);
+    }
+}
+
+async function cveUpdateUser(f) {
+    try {
+        params = {
+            "name.first": f.first.value,
+            "name.last":  f.last.value,
+            "active": f.active.checked
+        };
+        if(f.u.value != f.new_username.value) {
+            params.new_username = f.new_username.value
+        }
+        if(f.admin.checked) {
+            params["active_roles.add"]= 'ADMIN'
+        } else {
+            params["active_roles.remove"]= 'ADMIN'
+        }
+        var ret = await cveClient.updateOrgUser(f.u.value, params);
+        if(ret.updated) {
+            document.getElementById("userEditDialog").close();
+            if(document.getElementById("userListPopup")) {
+                userlistUpdate(document.getElementById("userListPopup"));
+            }
+            //the current user is updating self
+            if((cveApi.user == f.u.value) && document.getElementById("cveUser")) {
+                if(cveApi.user != ret.updated.username) {
+                    cveShowError({error:'Username changed!', message:'Username successfully changed to '+ ret.updated.username +'! You will need to login again!'});
+                    cveLogout();
+                    return;
+                }
+                document.getElementById("cveUser").innerHTML = 
+                cveRender({
+                    ctemplate: 'userstats',
+                    userInfo: ret.updated,
+                    org: await cveClient.getOrgInfo()
+                })
+            }
+        }
+    } catch(e) {
+        cveShowError(e);
     }
 }
 
@@ -3474,18 +3657,30 @@ async function pageShow(ret) {
     else
 	document.getElementById('nextPage').style.display = 'none'; 
 }
+
+async function cveShowError(err) {
+    if(err.error == 'NO_SESSION') {
+        cveLogout();
+    } else {
+        document.getElementById('cveErrors').innerHTML = cveRender({
+            ctemplate: 'cveErrors',
+            err: err
+        })
+        document.getElementById('cveErrorsModal').showModal();
+    }
+}
 async function cveGetList() {
     var org = await checkSession();
-    if(cveClient) {
+    if (cveClient) {
         var currentReserved = true;
         var filter = {
             state: 'RESERVED',
             cve_id_year: currentYear
         }
         var cveForm = document.getElementById("cvePortalFilter");
-        if(cveForm) {
-            if(cveForm.fstate) {
-                if(cveForm.fstate.value) {
+        if (cveForm) {
+            if (cveForm.fstate) {
+                if (cveForm.fstate.value) {
                     filter.state = cveForm.fstate.value + '';
                     if (filter.state != 'RESERVED') {
                         currentReserved = false;
@@ -3494,13 +3689,13 @@ async function cveGetList() {
                     delete filter.state;
                 }
             }
-            if(cveForm.y) {
+            if (cveForm.y) {
                 filter.cve_id_year = cveForm.y.value + '';
-                if(filter.cve_id_year != currentYear) {
+                if (filter.cve_id_year != currentYear) {
                     currentReserved = false;
                 }
             }
-            if(cveForm.page) {
+            if (cveForm.page) {
                 filter.page = cveForm.page;
             }
         }
@@ -3509,32 +3704,36 @@ async function cveGetList() {
         }
         try {
             var ret = await cveClient.getCveIds(filter);
-            var idList = [];
-            var idState = {};
-            if(ret && ret.cve_ids) {
-                idList = ret.cve_ids;
-                idList = idList.sort((b,a) => (a.reserved > b.reserved) ? 1 : ((b.reserved > a.reserved) ? -1 : 0));
-                for(var i=0; i< idList.length; i++) {
-                    idState[idList[i].cve_id] = idList[i].state;
+            if (ret.error) {
+                cveShowError(ret);
+            } else {
+                var idList = [];
+                var idState = {};
+                if (ret && ret.cve_ids) {
+                    idList = ret.cve_ids;
+                    idList = idList.sort((b, a) => (a.reserved > b.reserved) ? 1 : ((b.reserved > a.reserved) ? -1 : 0));
+                    for (var i = 0; i < idList.length; i++) {
+                        idState[idList[i].cve_id] = idList[i].state;
+                    }
                 }
+                cveRenderList(idList, currentReserved);
+                if (ret && (ret.nextPage || ret.prevPage)) {
+                    pageShow(ret);
+                } else {
+                    let el = document.getElementById('cvePage');
+                    if (el) {
+                        el.removeAttribute('data-page');
+                        el.style.display = 'none';
+                    }
+                    if (cveForm)
+                        cveForm.page = 0;
+                }
+                return idList;
             }
-            cveRenderList(idList, currentReserved);
-	    if(ret && (ret.nextPage || ret.prevPage)) {
-		pageShow(ret);
-	    } else {
-		let el = document.getElementById('cvePage');
-		if(el) {
-		    el.removeAttribute('data-page');
-		    el.style.display = 'none';
-		}
-		if(cveForm)
-		    cveForm.page = 0;	
-	    }	    
-            return idList;
-        } catch(e) {
-            alert(e);
+        } catch (e) {
+            cveShowError(e);
             cveRenderList([]);
-            return([]);
+            return ([]);
         }
     } else {
         alert('Login to CVE.org first!');
@@ -3546,15 +3745,18 @@ async function cveReserve(yearOffset, number) {
     if (cveClient) {
         var year = currentYear + (yearOffset ? yearOffset : 0);
         try {
-            var json = await cveClient.reserveCveIds({
-                amount: 1,
+            var args = {
+                amount: number > 0 && number <= 50 ? number : 1,
                 // Request only one at this time to get four digits! Requesting more at time gives the 5 digit ids.
-                // amount: number > 0 && number <= 50 ? number : 1,
                 // batch_type: 'nonsequential',
                 cve_year: year,
                 short_name: org.short_name
-            });
-            return json;
+            };
+            if(number > 1) {
+                args.batch_type = 'sequential';
+            }
+            var json = await cveClient.reserveCveIds(args);
+            return json.cve_ids;
         } catch (e) {
             alert('Error reserving ID: ' + e.message);
         }
@@ -3651,12 +3853,11 @@ async function cveLoad(cveId) {
                 mainTabGroup.change(0);
                 return res;
             } else {
-                console.log(res);
                 errMsg.textContent = "Failed to load valid CVE Record";
                 infoMsg.textContent = "";
             }
-        }catch(e) {
-            if(e == '404') {
+        } catch(e) {
+            if(e == '404' || e.error == 'CVE_RECORD_DNE') {
                 var skeleton = {
                     "cveMetadata": {
                       "cveId": cveId,
@@ -3700,64 +3901,74 @@ async function cveReject(elem, event) {
                 m.innerText = "Rejected " + id;
                 await cveGetList();
             }
-            console.log(ret);
         }
     }
 }
 async function cvePost() {
     //alert('CVE Services Test API is currently not functional: Issue #551')
     //return;
-    if(docEditor.validation_results && docEditor.validation_results.length == 0){
+    if (docEditor.validation_results && docEditor.validation_results.length == 0) {
         /*if (save != undefined) {
             await save();
         }*/
         var org = await checkSession();
-        if(cveClient) {
-            if(cveApi.apiType === 'test') {
-            //console.log('uploading...');
-            var j = await mainTabGroup.getValue();
-            var j = textUtil.reduceJSON(j);
-            var ret = null;
-            try{
-                var latestId = await cveClient.getCveId(j.cveMetadata.cveId);
-                if (latestId.state == 'RESERVED') {
-                    console.log('Creating');
-                    ret = await cveClient.createCve(j.cveMetadata.cveId, {cnaContainer:j.containers.cna});
-                } else {
-                    console.log('uploading');
-                    ret = await cveClient.updateCve(j.cveMetadata.cveId, {cnaContainer:j.containers.cna});
-                }
-            } catch(e) {
-                alert('Error publishing! Got error ' + e)
-            }
-            console.log(ret);
-            if (ret != null) {
-                if(ret.error) {
-                    if (ret.details && ret.details.errors) {
-                        alert(ret.error + ': ' + ret.message);
-                        showJSONerrors(ret.details.errors.map(
-                        a => { return({
-                                path: a.instancePath,
-                                message: a.message
-                            });}
-                            ));
+        if (cveClient) {
+            if (cveApi.apiType === 'test') {
+                //console.log('uploading...');
+                var j = await mainTabGroup.getValue();
+                var j = textUtil.reduceJSON(j);
+                var ret = null;
+                try {
+                    var latestId = await cveClient.getCveId(j.cveMetadata.cveId);
+                    if (latestId.state == 'RESERVED') {
+                        //console.log('Creating');
+                        if(j.cveMetadata.state == 'PUBLISHED') {
+                            ret = await cveClient.createCve(j.cveMetadata.cveId, { cnaContainer: j.containers.cna });
+                        } else if (j.cveMetadata.state == 'REJECTED') {
+                            ret = await cveClient.createRejectedCve(j.cveMetadata.cveId, { cnaContainer: j.containers.cna });
+                        }
                     } else {
-                    console.log(ret);
-                        alert(ret.error + ': ' + ret.message);
+                        //console.log('uploading');
+                        if(j.cveMetadata.state == 'PUBLISHED') {
+                            ret = await cveClient.updateCve(j.cveMetadata.cveId, { cnaContainer: j.containers.cna });
+                        } else if (j.cveMetadata.state == 'REJECTED') {
+                            ret = await cveClient.updateRejectedCve(j.cveMetadata.cveId, { cnaContainer: j.containers.cna });
+                        }
                     }
-                } else {
+                } catch (e) {
+                    //console.log('Got error');
+                    //console.log(e);
+                    if (e.error) {
+                        infoMsg.innerText = "";
+                        errMsg.innerText = "Error publishing CVE";
+                        if (e.details && e.details.errors) {
+                            showJSONerrors(e.details.errors.map(
+                                a => {
+                                    return ({
+                                        path: a.instancePath,
+                                        message: a.message
+                                    });
+                                }
+                            ));
+                        } else {
+                            //console.log(e);
+                            alert(e.error + ': ' + e.message);
+                        }
+                        cveShowError(e);
+                    } else {
+                        alert('Error publishing! Got error ' + e)
+                    }
+                }
+                //console.log(ret);
+                if (ret != null && ret.message) {
                     //if(ret && ret.cveMetadata && ret.cveMetadata.state)
                     //    cveApi.state[j.cveMetadata.cveId] = ret.cveMetadata.state;
                     infoMsg.innerText = ret.message;
                     hideJSONerrors();
                 }
             } else {
-                infoMsg.innerText = "";
-                errMsg.innerText = "Error publishing CVE";
+                alert('CVE posting is not currently supported by production CVE services! Try Logging to Test Portal instance');
             }
-        } else {
-            alert('CVE posting is not currently supported by production CVE services! Try Logging to Test Portal instance');
-        }
         } else {
             //todo enable/disable post button
             alert('Please login to CVE Test Portal');
@@ -3840,8 +4051,7 @@ async function cveReserveAndRender(yearOffset, number) {
         };
 
         reserveCveIds(args) {
-            return this._middleware.post('cve-id', args)
-                       .then(data => data.cve_ids);
+            return this._middleware.post('cve-id', args);
         }
 
         reserveCveId(year = new Date().getFullYear()) {
@@ -3903,11 +4113,23 @@ async function cveReserveAndRender(yearOffset, number) {
         }
 
         createCve(id, schema) {
-            return this._middleware.post(`cve/${id}/cna`, undefined, schema);
+            return this._middleware.post('cve/'.concat(id,'/cna'), undefined, schema);
         }
 
         updateCve(id, schema) {
-            return this._middleware.put(`cve/${id}/cna`, undefined, schema);
+            return this._middleware.put('cve/'.concat(id,'/cna'), undefined, schema);
+        }
+
+        createRejectedCve(id, schema) {
+            return this._middleware.post('cve/'.concat(id,'/reject'), undefined, schema);
+        }
+
+        updateRejectedCve(id, schema) {
+            return this._middleware.put('cve/'.concat(id,'/reject'), undefined, schema);
+        }
+
+        getOrg() {
+            return this._middleware.orgName.then(orgName => orgName);
         }
 
         getOrgInfo() {
@@ -3931,7 +4153,7 @@ async function cveReserveAndRender(yearOffset, number) {
         updateOrgUser(username, userInfo) {
             return this._middleware.orgName
                 .then(orgName =>
-                    this._middleware.put(`org/${orgName}/user/${username}`, undefined, userInfo));
+                    this._middleware.put(`org/${orgName}/user/${username}`, userInfo, undefined));
         }
 
         resetOrgUserApiKey(username) {
@@ -4023,10 +4245,10 @@ async function cveReserveAndRender(yearOffset, number) {
         send(msg) {
             return this.worker.then(worker => {
                 return this.simpleMessage(worker, msg).then(res => {
-                    if ('error' in res) {
-                        return Promise.reject(res.error);
+                    if(typeof res === 'object' && 'error' in res) {
+                        return Promise.reject(res);
                     } else {
-                        return res.data;
+                        return res;
                     }
                 });
             });
@@ -4085,8 +4307,8 @@ async function cveReserveAndRender(yearOffset, number) {
             let msg = {
                 type: 'getOrg',
             };
-
-            return this.send(msg);
+            var o = this.send(msg);
+            return o;
         }
 
         destroy() {
@@ -4117,15 +4339,47 @@ var pug_has_own_property=Object.prototype.hasOwnProperty;
 var pug_match_html=/["&<>]/;function cveRender(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
     var locals_for_with = (locals || {});
     
-    (function (Date, Math, cl, ctemplate, cveIds, editable, isNaN, name, obj, org, portalType, t, userInfo, users) {
+    (function (Date, Math, cl, ctemplate, cveIds, editable, err, isNaN, name, obj, org, portalType, prevOrg, prevPortal, t, userInfo, users) {
       pug_mixins["cveLoginBox"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Ccenter class=\"sec shd rnd gap2 pad\"\u003E\u003Csvg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http:\u002F\u002Fwww.w3.org\u002F2000\u002Fsvg\" xmlns:xlink=\"http:\u002F\u002Fwww.w3.org\u002F1999\u002Fxlink\" viewBox=\"0 0 320.65 93.91\" width=\"200\" height=\"90\"\u003E\u003Cdefs\u003E\u003Cstyle\u003E.cls-1{fill-rule:evenodd;fill:url(#linear-gradient);}.cls-2{font-size:18px;fill:#ff940e;font-family:ArialMT, Arial;}\u003C\u002Fstyle\u003E\u003ClinearGradient id=\"linear-gradient\" x1=\"152.2\" y1=\"90.17\" x2=\"152.2\" y2=\"5.62\" gradientUnits=\"userSpaceOnUse\"\u003E\u003Cstop offset=\"0\" stop-color=\"#f68826\"\u002F\u003E\u003Cstop offset=\"0.45\" stop-color=\"#faa227\"\u002F\u003E\u003Cstop offset=\"1\" stop-color=\"#fdb714\"\u002F\u003E\u003C\u002FlinearGradient\u003E\u003C\u002Fdefs\u003E\u003Cpath class=\"cls-1\" d=\"M99.83,88.73l13.75-17.79H56.86a38.82,38.82,0,0,1-5.67-.4,34.11,34.11,0,0,1-5.31-1.23,30.85,30.85,0,0,1-4.8-2,24.78,24.78,0,0,1-4.17-2.7h0a22.28,22.28,0,0,1-3.46-3.4,21.7,21.7,0,0,1-2.59-4.06,20.67,20.67,0,0,1-1.62-4.63,23.3,23.3,0,0,1-.54-5,23,23,0,0,1,.56-5.06,20.43,20.43,0,0,1,1.68-4.68,23.07,23.07,0,0,1,6-7.55,24.74,24.74,0,0,1,4.14-2.78,30.15,30.15,0,0,1,4.78-2.05,31.58,31.58,0,0,1,5.33-1.28,36.22,36.22,0,0,1,5.68-.43h41.4v-9h18v-9h9v9h-9v9h9.52l26.61,39.24,1.95,2.88,2-2.84L196.93,5.63H297.85l-13.9,18H210.34l-.73,1L179.25,67.62l-9.7,13.72a23.11,23.11,0,0,1-2.89,3.28,36.14,36.14,0,0,1-3.65,3,12.89,12.89,0,0,1-4,1.89,18.14,18.14,0,0,1-5.12.67,19,19,0,0,1-5-.62,12.63,12.63,0,0,1-3.92-1.79,23.76,23.76,0,0,1-3.48-2.88,25.93,25.93,0,0,1-2.93-3.52L99.31,24.72l-.73-1h8.71V5.62H56.86a73.24,73.24,0,0,0-10.67.75A59.88,59.88,0,0,0,36.43,8.6a52.92,52.92,0,0,0-8.66,3.58A44.37,44.37,0,0,0,20.46,17a39.78,39.78,0,0,0-5.91,5.91,38.75,38.75,0,0,0-4.49,7,33.93,33.93,0,0,0-2.81,7.82,38.33,38.33,0,0,0-.94,8.64A39.24,39.24,0,0,0,7.25,55a35.86,35.86,0,0,0,2.83,8,40.55,40.55,0,0,0,4.5,7.23,41.25,41.25,0,0,0,5.92,6.19h0a45.86,45.86,0,0,0,7.33,5.08,55.52,55.52,0,0,0,8.66,3.89,56.45,56.45,0,0,0,9.74,2.45,65.94,65.94,0,0,0,10.63.82h43ZM134.36,5.62v9h9v-9ZM253,39H214V88.72h70.36L298.1,70.94H236.5V54.16h44.58L292.94,39Z\"\u002F\u003E\u003Ctext class=\"cls-2\" transform=\"translate(303.31 19.09)\"\u003E®\u003C\u002Ftext\u003E\u003C\u002Fsvg\u003E\u003Cbr\u002F\u003E\u003Ci\u003ECVE Services Portal \u003C\u002Fi\u003E\u003Cbr\u002F\u003E\u003Ci\u003EInstantly providing you CVE IDs since 2022\u003C\u002Fi\u003E\u003Cdiv id=\"loginErr\"\u003E\u003C\u002Fdiv\u003E\u003Cform id=\"cveLoginForm\" method=\"POST\" onsubmit=\"cveLogin(event, this); return false;\"\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003EPortal\u003C\u002Flabel\u003E\u003Cselect class=\"bor txt\" name=\"portal\" style=\"width:11em;\"\u003E\u003Coption" + (" value=\"https:\u002F\u002Fcveawg.mitre.org\u002Fapi\""+pug_attr("selected", true, true, false)) + "\u003Eproduction\u003C\u002Foption\u003E\u003Coption value=\"https:\u002F\u002Fcveawg-test.mitre.org\u002Fapi\"\u003Etest\u003C\u002Foption\u003E\u003Coption value=\"http:\u002F\u002F127.0.0.1:3000\u002Fapi\"\u003Elocal\u003C\u002Foption\u003E\u003C\u002Fselect\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECNA Short Name\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"org\" type=\"text\" autocomplete=\"on\" pattern=\".{2,64}\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECVE User\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"user\" type=\"text\" autocomplete=\"on\" pattern=\".+@.+\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECNA API Key\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"key\" type=\"password\" autocomplete=\"off\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad center\"\u003E\u003Cinput class=\"bor fbn sfe\" type=\"submit\" value=\"Login\"\u002F\u003E\u003C\u002Fdiv\u003E\u003C\u002Fform\u003E\u003C\u002Fcenter\u003E";
+pug_html = pug_html + "\u003Ccenter class=\"sec shd rnd gap2 pad\"\u003E\u003Csvg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http:\u002F\u002Fwww.w3.org\u002F2000\u002Fsvg\" xmlns:xlink=\"http:\u002F\u002Fwww.w3.org\u002F1999\u002Fxlink\" viewBox=\"0 0 320.65 93.91\" width=\"200\" height=\"90\"\u003E\u003Cdefs\u003E\u003Cstyle\u003E.cls-1{fill-rule:evenodd;fill:url(#linear-gradient);}.cls-2{font-size:18px;fill:#ff940e;font-family:ArialMT, Arial;}\u003C\u002Fstyle\u003E\u003ClinearGradient id=\"linear-gradient\" x1=\"152.2\" y1=\"90.17\" x2=\"152.2\" y2=\"5.62\" gradientUnits=\"userSpaceOnUse\"\u003E\u003Cstop offset=\"0\" stop-color=\"#f68826\"\u002F\u003E\u003Cstop offset=\"0.45\" stop-color=\"#faa227\"\u002F\u003E\u003Cstop offset=\"1\" stop-color=\"#fdb714\"\u002F\u003E\u003C\u002FlinearGradient\u003E\u003C\u002Fdefs\u003E\u003Cpath class=\"cls-1\" d=\"M99.83,88.73l13.75-17.79H56.86a38.82,38.82,0,0,1-5.67-.4,34.11,34.11,0,0,1-5.31-1.23,30.85,30.85,0,0,1-4.8-2,24.78,24.78,0,0,1-4.17-2.7h0a22.28,22.28,0,0,1-3.46-3.4,21.7,21.7,0,0,1-2.59-4.06,20.67,20.67,0,0,1-1.62-4.63,23.3,23.3,0,0,1-.54-5,23,23,0,0,1,.56-5.06,20.43,20.43,0,0,1,1.68-4.68,23.07,23.07,0,0,1,6-7.55,24.74,24.74,0,0,1,4.14-2.78,30.15,30.15,0,0,1,4.78-2.05,31.58,31.58,0,0,1,5.33-1.28,36.22,36.22,0,0,1,5.68-.43h41.4v-9h18v-9h9v9h-9v9h9.52l26.61,39.24,1.95,2.88,2-2.84L196.93,5.63H297.85l-13.9,18H210.34l-.73,1L179.25,67.62l-9.7,13.72a23.11,23.11,0,0,1-2.89,3.28,36.14,36.14,0,0,1-3.65,3,12.89,12.89,0,0,1-4,1.89,18.14,18.14,0,0,1-5.12.67,19,19,0,0,1-5-.62,12.63,12.63,0,0,1-3.92-1.79,23.76,23.76,0,0,1-3.48-2.88,25.93,25.93,0,0,1-2.93-3.52L99.31,24.72l-.73-1h8.71V5.62H56.86a73.24,73.24,0,0,0-10.67.75A59.88,59.88,0,0,0,36.43,8.6a52.92,52.92,0,0,0-8.66,3.58A44.37,44.37,0,0,0,20.46,17a39.78,39.78,0,0,0-5.91,5.91,38.75,38.75,0,0,0-4.49,7,33.93,33.93,0,0,0-2.81,7.82,38.33,38.33,0,0,0-.94,8.64A39.24,39.24,0,0,0,7.25,55a35.86,35.86,0,0,0,2.83,8,40.55,40.55,0,0,0,4.5,7.23,41.25,41.25,0,0,0,5.92,6.19h0a45.86,45.86,0,0,0,7.33,5.08,55.52,55.52,0,0,0,8.66,3.89,56.45,56.45,0,0,0,9.74,2.45,65.94,65.94,0,0,0,10.63.82h43ZM134.36,5.62v9h9v-9ZM253,39H214V88.72h70.36L298.1,70.94H236.5V54.16h44.58L292.94,39Z\"\u002F\u003E\u003Ctext class=\"cls-2\" transform=\"translate(303.31 19.09)\"\u003E®\u003C\u002Ftext\u003E\u003C\u002Fsvg\u003E\u003Cbr\u002F\u003E\u003Ci\u003ECVE Services Portal \u003C\u002Fi\u003E\u003Cbr\u002F\u003E\u003Ci\u003EInstantly providing you CVE IDs since 2022\u003C\u002Fi\u003E\u003Cdiv id=\"loginErr\"\u003E\u003C\u002Fdiv\u003E\u003Cform id=\"cveLoginForm\" method=\"POST\" onsubmit=\"cveLogin(event, this); return false;\"\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003EPortal\u003C\u002Flabel\u003E\u003Cselect class=\"bor txt\" name=\"portal\" style=\"width:11em;\"\u003E\u003Coption" + (" value=\"https:\u002F\u002Fcveawg.mitre.org\u002Fapi\""+pug_attr("selected", (prevPortal == 'production'), true, false)) + "\u003Eproduction\u003C\u002Foption\u003E\u003Coption" + (" value=\"https:\u002F\u002Fcveawg-test.mitre.org\u002Fapi\""+pug_attr("selected", (prevPortal == 'test'), true, false)) + "\u003Etest\u003C\u002Foption\u003E\u003Coption" + (" value=\"http:\u002F\u002F127.0.0.1:3000\u002Fapi\""+pug_attr("selected", (prevPortal == 'production'), true, false)) + "\u003Elocal\u003C\u002Foption\u003E\u003C\u002Fselect\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECNA Short Name\u003C\u002Flabel\u003E\u003Cinput" + (" class=\"bor txt\""+" name=\"org\" type=\"text\" autocomplete=\"on\" pattern=\".{2,64}\" required=\"required\""+pug_attr("value", prevOrg?prevOrg:'', true, false)) + "\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECVE User\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"user\" type=\"text\" autocomplete=\"on\" pattern=\".+\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECNA API Key\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"key\" type=\"password\" autocomplete=\"off\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad center\"\u003E\u003Cinput class=\"bor fbn sfe\" type=\"submit\" value=\"Login\"\u002F\u003E\u003C\u002Fdiv\u003E\u003C\u002Fform\u003E\u003C\u002Fcenter\u003E";
+};
+pug_mixins["dlgHeader"] = pug_interp = function(icon, msg){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\u003Cheader class=\"ban sec pad\"\u003E\u003Cb" + (pug_attr("class", pug_classes(["lbl",icon], [false,true]), false, false)) + "\u003E" + (pug_escape(null == (pug_interp = msg) ? "" : pug_interp)) + "\u003C\u002Fb\u003E \u003Ca class=\"sbn right vgi-fail\" onclick=\"this.closest('dialog').close()\"\u003E\u003C\u002Fa\u003E\u003C\u002Fheader\u003E";
+};
+pug_mixins["cveErrors"] = pug_interp = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_mixins["dlgHeader"]('vgi-alert', 'Error '+ err.error);
+pug_html = pug_html + "\u003Ccenter class=\"pad2\"\u003E\u003Ch3\u003E" + (pug_escape(null == (pug_interp = err.message) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E";
+if (err.details) {
+pug_html = pug_html + "\u003Col class=\"gap\"\u003E";
+// iterate err.details
+;(function(){
+  var $$obj = err.details;
+  if ('number' == typeof $$obj.length) {
+      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+        var d = $$obj[i];
+pug_html = pug_html + "\u003Cli\u003E" + (pug_escape(null == (pug_interp = d.location) ? "" : pug_interp)) + "\u002F   " + (pug_escape(null == (pug_interp = d.param) ? "" : pug_interp)) + ":  " + (pug_escape(null == (pug_interp = d.msg) ? "" : pug_interp)) + "\u003C\u002Fli\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var i in $$obj) {
+      $$l++;
+      var d = $$obj[i];
+pug_html = pug_html + "\u003Cli\u003E" + (pug_escape(null == (pug_interp = d.location) ? "" : pug_interp)) + "\u002F   " + (pug_escape(null == (pug_interp = d.param) ? "" : pug_interp)) + ":  " + (pug_escape(null == (pug_interp = d.msg) ? "" : pug_interp)) + "\u003C\u002Fli\u003E";
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\u003C\u002Fol\u003E";
+}
+pug_html = pug_html + "\u003C\u002Fcenter\u003E";
 };
 pug_mixins["portal"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 var y = new Date().getFullYear()
-pug_html = pug_html + "\u003Cheader class=\"pad ban sec rnd\"\u003E\u003Cdiv class=\"left\"\u003E\u003Clabel class=\"vgi-globe lbl\"\u003EPortal: " + (pug_escape(null == (pug_interp = portalType) ? "" : pug_interp)) + "\u003C\u002Flabel\u003E\u003Cspan class=\"btg\"\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0)\"\u003EReserve One CVE\u003C\u002Fbutton\u003E\u003Cdetails class=\"popup\"\u003E\u003Csummary class=\"btn\"\u003E▼ \u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd pad rows\"\u003E\u003Cdt\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0, 5)\"\u003EReserve 5\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003Cdt\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0, 10)\"\u003EReserve 10\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003Cdt\u003E \u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(1)\"\u003EReserve one for the year " + (pug_escape(null == (pug_interp = y + 1) ? "" : pug_interp)) + "\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"flx\"\u003E\u003Clabel id=\"cveUser\"\u003E";
+pug_html = pug_html + "\u003Cheader class=\"pad ban sec\"\u003E\u003Cdiv class=\"left\"\u003E\u003Clabel class=\"vgi-globe lbl\"\u003EPortal: " + (pug_escape(null == (pug_interp = portalType) ? "" : pug_interp)) + "\u003C\u002Flabel\u003E\u003Cspan class=\"btg rnd\"\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0)\"\u003EReserve One CVE\u003C\u002Fbutton\u003E\u003Cdetails class=\"popup\"\u003E\u003Csummary class=\"btn t9\"\u003E▼\u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd rows\"\u003E\u003Cdiv class=\"gap\"\u003E\u003Cdt\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0, 5)\"\u003EReserve 5\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003Cdt\u003E\u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(0, 10)\"\u003EReserve 10\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003Cdt\u003E \u003Cbutton class=\"btn vgi-magic\" onclick=\"cveReserveAndRender(1)\"\u003EReserve one for the year " + (pug_escape(null == (pug_interp = y + 1) ? "" : pug_interp)) + "\u003C\u002Fbutton\u003E\u003C\u002Fdt\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"flx\"\u003E\u003Clabel id=\"cveUser\"\u003E";
 pug_mixins["userstats"]();
 pug_html = pug_html + "\u003C\u002Flabel\u003E";
 if (userInfo && userInfo.authority && userInfo.authority.active_roles && userInfo.authority.active_roles.includes("ADMIN")) {
@@ -4133,18 +4387,22 @@ pug_html = pug_html + "\u003Clabel id=\"userMgmt\"\u003E";
 pug_mixins["usermgmt"]();
 pug_html = pug_html + "\u003C\u002Flabel\u003E";
 }
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fheader\u003E\u003Cdiv class=\"pad\" id=\"cveStatusMessage\"\u003E\u003C\u002Fdiv\u003E";
-pug_mixins["showSecret"]();
-pug_html = pug_html + "\u003Cform class=\"gap\" id=\"cvePortalFilter\"\u003E\u003Cdiv class=\"lbl\"\u003EShow\u003C\u002Fdiv\u003E\u003Cdiv class=\"rdg\"\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput class=\"hid\" id=\"chkall\" type=\"radio\" name=\"fstate\" value=\"\"\u002F\u003E\u003Clabel class=\"lbl vgi-misc\" for=\"chkall\"\u003EAll\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput class=\"hid\" id=\"chkres\" type=\"radio\" name=\"fstate\" value=\"RESERVED\" checked=\"checked\"\u002F\u003E\u003Clabel class=\"lbl vgi-tag\" for=\"chkres\"\u003EReserved\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkpub\" type=\"radio\" name=\"fstate\""+pug_attr("value", (portalType == 'test' ? "PUBLISHED" : "PUBLIC"), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-globe\" for=\"chkpub\"\u003EPublished\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkrej\" type=\"radio\" name=\"fstate\""+pug_attr("value", (portalType == 'test' ? "REJECTED" : "REJECT"), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-no\" for=\"chkrej\"\u003ERejected\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"lbl\"\u003EYear\u003C\u002Fdiv\u003E\u003Cselect class=\"lbl txt\" name=\"y\"\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fheader\u003E\u003Cdiv class=\"pad\" id=\"cveStatusMessage\"\u003E\u003C\u002Fdiv\u003E\u003Cform class=\"gap\" id=\"cvePortalFilter\"\u003E\u003Cdiv class=\"lbl\"\u003EShow\u003C\u002Fdiv\u003E\u003Cdiv class=\"rdg\"\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput class=\"hid\" id=\"chkall\" type=\"radio\" name=\"fstate\" value=\"\"\u002F\u003E\u003Clabel class=\"lbl vgi-misc\" for=\"chkall\"\u003EAll\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput class=\"hid\" id=\"chkres\" type=\"radio\" name=\"fstate\" value=\"RESERVED\" checked=\"checked\"\u002F\u003E\u003Clabel class=\"lbl vgi-tag\" for=\"chkres\"\u003EReserved\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkpub\" type=\"radio\" name=\"fstate\""+pug_attr("value", (portalType == 'test' ? "PUBLISHED" : "PUBLIC"), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-globe\" for=\"chkpub\"\u003EPublished\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkrej\" type=\"radio\" name=\"fstate\""+pug_attr("value", (portalType == 'test' ? "REJECTED" : "REJECT"), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-no\" for=\"chkrej\"\u003ERejected\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"lbl\"\u003EYear\u003C\u002Fdiv\u003E\u003Cselect class=\"lbl txt\" name=\"y\"\u003E";
 while (y > 1998) {
 pug_html = pug_html + "\u003Coption" + (pug_attr("value", y, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = y) ? "" : pug_interp)) + "\u003C\u002Foption\u003E";
 y--;
 }
-pug_html = pug_html + "\u003C\u002Fselect\u003E \u003Cbutton class=\"btn vgi-reuse\" onclick=\"event.preventDefault();cveGetList();return false;\"\u003EGo\u003C\u002Fbutton\u003E\u003C\u002Fform\u003E\u003Cdiv class=\"gap\" id=\"cvePage\"\u003E\u003Cdiv class=\"rdg\"\u003E\u003Cdiv class=\"lbl\" id=\"cvePageInfo\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cbutton class=\"lbl\" id=\"prevPage\" onclick=\"paginate(-1)\"\u003E&#8249;\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cdiv class=\"lbl\" id=\"currentPage\"\u003E1\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cbutton class=\"lbl\" id=\"nextPage\" onclick=\"paginate(1)\"\u003E&#8250;\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv id=\"cveList\"\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fselect\u003E \u003Cbutton class=\"btn vgi-reuse\" onclick=\"event.preventDefault();cveGetList();return false;\"\u003EGo\u003C\u002Fbutton\u003E\u003C\u002Fform\u003E\u003Cdiv class=\"gap\" id=\"cvePage\"\u003E\u003Cdiv class=\"rdg\"\u003E\u003Cdiv class=\"lbl\" id=\"cvePageInfo\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cbutton class=\"lbl\" id=\"prevPage\" onclick=\"paginate(-1)\"\u003E&#8249;\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cdiv class=\"lbl\" id=\"currentPage\"\u003E1\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cbutton class=\"lbl\" id=\"nextPage\" onclick=\"paginate(1)\"\u003E&#8250;\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"gap\" id=\"cveList\"\u003E\u003C\u002Fdiv\u003E";
 };
 pug_mixins["userstats"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary class=\"fbn vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo && userInfo.name ? userInfo.name.first : userInfo.username ? userInfo.username : 'undef') ? "" : pug_interp)) + " ▼ \u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd pad\"\u003E\u003Cb class=\"vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo ? userInfo.username : 'undefined!') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cdt\u003ERoles:  \u003Cb class=\"vgi-cap\"\u003E" + (pug_escape(null == (pug_interp = userInfo && userInfo.authority ? userInfo.authority.active_roles : 'undefined!') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cspan class=\"vgi-edit fbn\" onclick=\"cveUserUpdate()\"\u003EUpdate my details\u003C\u002Fspan\u003E\u003Chr class=\"bort\"\u002F\u003E\u003Cdt\u003EOrg:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org ? org.name : 'undefined') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003EShortName:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org ? org.short_name : 'undefined') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003ERole:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org && org.authority ? org.authority.active_roles : 'undefined') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cspan class=\"vgi-edit fbn\" onclick=\"cveOrgUpdate()\"\u003EUpdate org details\u003C\u002Fspan\u003E\u003Chr class=\"bort\"\u002F\u003E\u003Cspan class=\"vgi-exit fbn\" onclick=\"cveLogout()\"\u003ELogout!\u003C\u002Fspan\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E";
+pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary class=\"fbn vgi-user\"\u003E" + (pug_escape(null == (pug_interp = userInfo && (userInfo.name && userInfo.name.first ? userInfo.name.first : userInfo.username)) ? "" : pug_interp)) + " ▼ \u003C\u002Fsummary\u003E\u003Cdl class=\"pop wht bor rnd shd pad\"\u003E";
+pug_mixins["userDetail"](userInfo);
+pug_html = pug_html + "\u003Chr class=\"bort\"\u002F\u003E\u003Cspan" + (" class=\"vgi-edit fbn\""+" onclick=\"cveUserEdit(this)\""+pug_attr("u", userInfo.username, true, false)+pug_attr("f", userInfo.name.first, true, false)+pug_attr("l", userInfo.name.last, true, false)+pug_attr("ac", userInfo.active, true, false)+pug_attr("ad", userInfo.authority.active_roles.includes('ADMIN'), true, false)+" title=\"Edit Info\"") + "\u003EUpdate my details\u003C\u002Fspan\u003E\u003Chr class=\"bort\"\u002F\u003E\u003Cdt\u003EOrg:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org ? org.name : 'undefined') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003EShortName:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org ? org.short_name : 'undefined') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Cdt\u003ERole:  \u003Cb\u003E" + (pug_escape(null == (pug_interp = org && org.authority ? org.authority.active_roles : 'undefined') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fdt\u003E\u003Chr class=\"bort\"\u002F\u003E\u003Cspan class=\"vgi-exit fbn\" onclick=\"cveLogout()\"\u003ELogout!\u003C\u002Fspan\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E";
+};
+pug_mixins["userDetail"] = pug_interp = function(u){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\u003Ca" + (" class=\"td\""+" onclick=\"cveUserEdit(this)\""+pug_attr("u", u.username, true, false)+pug_attr("f", u.name.first, true, false)+pug_attr("l", u.name.last, true, false)+pug_attr("ac", u.active, true, false)+pug_attr("ad", u.authority.active_roles.includes('ADMIN'), true, false)+" title=\"Edit Info\"") + "\u003E\u003Cb\u003E" + (pug_escape(null == (pug_interp = u.name.first) ? "" : pug_interp)) + " " + (pug_escape(null == (pug_interp = u.name.last) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Ci" + (pug_attr("class", pug_classes(["sicn",u.active?'vgi-ok':'vgi-no'], [false,true]), false, false)+pug_attr("title", u.active? 'active': 'inactive', true, false)) + "\u003E\u003C\u002Fi\u003E\u003Ci" + (pug_attr("class", pug_classes(["sicn",u.authority.active_roles.includes('ADMIN')? 'vgi-king' : 'vgi-cap'], [false,true]), false, false)+pug_attr("title", u.authority.active_roles.includes('ADMIN')?'Admin':'Regular User', true, false)) + "\u003E\u003C\u002Fi\u003E\u003Cbr\u002F\u003E\u003Csmall\u003E" + (pug_escape(null == (pug_interp = u.username) ? "" : pug_interp)) + "\u003C\u002Fsmall\u003E\u003C\u002Fa\u003E";
 };
 pug_mixins["listUsers"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
@@ -4155,27 +4413,27 @@ if (users) {
   if ('number' == typeof $$obj.length) {
       for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
         var u = $$obj[i];
-pug_html = pug_html + "\u003Cdiv class=\"tr\"\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.username) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.name.first) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.name.last) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.authority ? u.authority.active_roles : '') ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.active) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E\u003Cbutton" + (" class=\"btn vgi-reuse\""+" onclick=\"cveUserKeyReset(this)\""+pug_attr("u", u.username, true, false)) + "\u003EReset API Key\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"tr\"\u003E";
+pug_mixins["userDetail"](u);
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
       }
   } else {
     var $$l = 0;
     for (var i in $$obj) {
       $$l++;
       var u = $$obj[i];
-pug_html = pug_html + "\u003Cdiv class=\"tr\"\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.username) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.name.first) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.name.last) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.authority ? u.authority.active_roles : '') ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E" + (pug_escape(null == (pug_interp = u.active) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E\u003Cbutton" + (" class=\"btn vgi-reuse\""+" onclick=\"cveUserKeyReset(this)\""+pug_attr("u", u.username, true, false)) + "\u003EReset API Key\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"tr\"\u003E";
+pug_mixins["userDetail"](u);
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
     }
   }
 }).call(this);
 
 }
 };
-pug_mixins["showSecret"] = pug_interp = function(){
-var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Cdialog class=\"bor rnd shd pad2\" id=\"secretDialog\"\u003E\u003Ccenter\u003E\u003Cform id=\"secretDialogForm\" onsubmit=\"event.preventDefault();this.reset();document.getElementById('secretDialog').close();return false\"\u003E\u003Ch3 class=\"vgi-alert\" id=\"userMessage\"\u003E\u003C\u002Fh3\u003E\u003Cdiv class=\"gap\"\u003EPlease securely store this API key.\u003Cbr\u002F\u003E This key will not be shown again!\u003C\u002Fdiv\u003E\u003Clabel class=\"lbl\"\u003EAPI Secret Key\u003C\u002Flabel\u003E\u003Cinput" + (" class=\"txt bor\""+" type=\"password\" size=\"39\" name=\"pass\""+pug_attr("readonly", true, true, false)) + "\u002F\u003E\u003Cinput id=\"showpass\" name=\"showpass\" type=\"checkbox\" onclick=\"this.form.pass.type = (this.form.pass.type === 'password'? 'text' : 'password')\"\u002F\u003E\u003Clabel class=\"vgi-eye lbl\" for=\"showpass\"\u003E\u003C\u002Flabel\u003E\u003Ccenter class=\"gap\"\u003E\u003Cinput class=\"btn sfe\" type=\"reset\" onclick=\"document.getElementById('secretDialog').close()\" value=\"OK\"\u002F\u003E\u003C\u002Fcenter\u003E\u003C\u002Fform\u003E\u003C\u002Fcenter\u003E\u003C\u002Fdialog\u003E";
-};
 pug_mixins["usermgmt"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Cdetails class=\"popup\" ontoggle=\"userlistUpdate(this, event)\"\u003E\u003Csummary class=\"fbn vgi-user\"\u003EManage Users ▼ \u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht bor rnd shd usermgmt\"\u003E\u003Cdiv class=\"tbl gap\"\u003E\u003Cthead class=\"thead\"\u003E\u003Cdiv class=\"tr\"\u003E\u003Cdiv class=\"th\"\u003EUsername\u003C\u002Fdiv\u003E\u003Cdiv class=\"th\"\u003EFirstname\u003C\u002Fdiv\u003E\u003Cdiv class=\"th\"\u003ELastname\u003C\u002Fdiv\u003E\u003Cdiv class=\"th\"\u003ERoles\u003C\u002Fdiv\u003E\u003Cdiv class=\"th\"\u003Eactive\u003C\u002Fdiv\u003E\u003Cdiv class=\"th\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fthead\u003E\u003Cdiv class=\"tbody\" id=\"userlist\"\u003E\u003Cdiv class=\"tr\"\u003E\u003Cdiv class=\"td\" colspan=\"6\"\u003E\u003Ccenter\u003E\u003Cdiv class=\"spinner\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fcenter\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"tfoot\"\u003E\u003Cform class=\"tr\" onsubmit=\"event.preventDefault();cveAddUser(this)\"\u003E\u003Cdiv class=\"td\"\u003E\u003Cinput class=\"txt\" name=\"new_username\" placeholder=\"username\u002Femail\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E\u003Cinput class=\"txt\" name=\"first\" placeholder=\"First name\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E\u003Cinput class=\"txt\" name=\"last\" placeholder=\"Last name\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E\u003Cinput class=\"txt\" type=\"checkbox\" name=\"admin\"\u002F\u003E\u003Clable class=\"lbl\" for=\"admin\"\u003EAdmin\u003C\u002Flable\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"td\"\u003E\u003Cinput class=\"sfe btn vgi-magic\" type=\"submit\" value=\"Add user\"\u002F\u003E\u003C\u002Fdiv\u003E\u003C\u002Fform\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdetails\u003E";
+pug_html = pug_html + "\u003Cdetails class=\"popup\" id=\"userListPopup\" ontoggle=\"userlistUpdate(this, event)\"\u003E\u003Csummary class=\"fbn vgi-cog\"\u003EUsers ▼ \u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht bor rnd shd usermgmt\"\u003E\u003Cdiv class=\"gap row\"\u003E\u003Cbutton class=\"sfe btn vgi-magic\" onclick=\"document.getElementById('userAddDialog').showModal()\"\u003EAdd a user  \u003C\u002Fbutton\u003E\u003Cbutton class=\"right sbn vgi-fail\" onclick=\"this.closest('details').removeAttribute('open')\"\u003E    \u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"tbl gap\"\u003E\u003Cdiv class=\"tbody\" id=\"userlist\"\u003E\u003Cdiv class=\"tr\"\u003E\u003Cdiv class=\"td\" colspan=\"6\"\u003E\u003Ccenter\u003E\u003Cdiv class=\"spinner\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fcenter\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdetails\u003E";
 };
 pug_mixins["htext"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
@@ -4184,8 +4442,8 @@ if (t) {
 ;(function(){
   var $$obj = t.split(/\n/);
   if ('number' == typeof $$obj.length) {
-      for (var pug_index1 = 0, $$l = $$obj.length; pug_index1 < $$l; pug_index1++) {
-        var line = $$obj[pug_index1];
+      for (var pug_index2 = 0, $$l = $$obj.length; pug_index2 < $$l; pug_index2++) {
+        var line = $$obj[pug_index2];
 if (line) {
 if (line.startsWith('  ')) {
 pug_html = pug_html + "\u003Ccode\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fcode\u003E\u003Cbr\u002F\u003E";
@@ -4197,9 +4455,9 @@ pug_html = pug_html + "\u003Cp\u003E" + (pug_escape(null == (pug_interp = line) 
       }
   } else {
     var $$l = 0;
-    for (var pug_index1 in $$obj) {
+    for (var pug_index2 in $$obj) {
       $$l++;
-      var line = $$obj[pug_index1];
+      var line = $$obj[pug_index2];
 if (line) {
 if (line.startsWith('  ')) {
 pug_html = pug_html + "\u003Ccode\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fcode\u003E\u003Cbr\u002F\u003E";
@@ -4242,8 +4500,8 @@ var block = (this && this.block), attributes = (this && this.attributes) || {};
 ;(function(){
   var $$obj = cveIds;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index2 = 0, $$l = $$obj.length; pug_index2 < $$l; pug_index2++) {
-        var c = $$obj[pug_index2];
+      for (var pug_index3 = 0, $$l = $$obj.length; pug_index3 < $$l; pug_index3++) {
+        var c = $$obj[pug_index3];
 if (c.state == 'PUBLISHED') {
 pug_html = pug_html + ("\u003Coption" + (pug_attr("value", c.cve_id, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = '🌐 Published on ') ? "" : pug_interp)));
 pug_mixins["date"](c.time.modified);
@@ -4257,9 +4515,9 @@ pug_html = pug_html + "\u003C\u002Foption\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index2 in $$obj) {
+    for (var pug_index3 in $$obj) {
       $$l++;
-      var c = $$obj[pug_index2];
+      var c = $$obj[pug_index3];
 if (c.state == 'PUBLISHED') {
 pug_html = pug_html + ("\u003Coption" + (pug_attr("value", c.cve_id, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = '🌐 Published on ') ? "" : pug_interp)));
 pug_mixins["date"](c.time.modified);
@@ -4281,17 +4539,17 @@ var block = (this && this.block), attributes = (this && this.attributes) || {};
 ;(function(){
   var $$obj = cveIds;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index3 = 0, $$l = $$obj.length; pug_index3 < $$l; pug_index3++) {
-        var c = $$obj[pug_index3];
+      for (var pug_index4 = 0, $$l = $$obj.length; pug_index4 < $$l; pug_index4++) {
+        var c = $$obj[pug_index4];
 if (c.state == 'RESERVED') {
 pug_html = pug_html + "\u003Coption" + (pug_attr("value", c.cve_id, true, false)) + "\u003E\u003Ci\u003E" + (pug_escape(null == (pug_interp = '🏷️ Reserved by ' + c.requested_by.user) ? "" : pug_interp)) + "\u003C\u002Fi\u003E\u003C\u002Foption\u003E";
 }
       }
   } else {
     var $$l = 0;
-    for (var pug_index3 in $$obj) {
+    for (var pug_index4 in $$obj) {
       $$l++;
-      var c = $$obj[pug_index3];
+      var c = $$obj[pug_index4];
 if (c.state == 'RESERVED') {
 pug_html = pug_html + "\u003Coption" + (pug_attr("value", c.cve_id, true, false)) + "\u003E\u003Ci\u003E" + (pug_escape(null == (pug_interp = '🏷️ Reserved by ' + c.requested_by.user) ? "" : pug_interp)) + "\u003C\u002Fi\u003E\u003C\u002Foption\u003E";
 }
@@ -4309,8 +4567,8 @@ pug_html = pug_html + "\u003Ctable class=\"tbl sortable\" id=\"cveListTable\"\u0
 ;(function(){
   var $$obj = cveIds;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index4 = 0, $$l = $$obj.length; pug_index4 < $$l; pug_index4++) {
-        var c = $$obj[pug_index4];
+      for (var pug_index5 = 0, $$l = $$obj.length; pug_index5 < $$l; pug_index5++) {
+        var c = $$obj[pug_index5];
 pug_html = pug_html + "\u003Ctr" + (pug_attr("data", c.state, true, false)) + "\u003E\u003Ctd\u003E";
 if (editable) {
 pug_html = pug_html + "\u003Ca" + (pug_attr("class", pug_classes([stateIcons[c.state]?stateIcons[c.state]:''], [true]), false, false)+pug_attr("href", "javascript:cveLoad('"+c.cve_id+"')", true, false)+pug_attr("title", 'Load ' + c.state + ' ' + c.cve_id + ' to edit', true, false)) + "\u003E" + (pug_escape(null == (pug_interp = c.cve_id) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
@@ -4335,9 +4593,9 @@ pug_html = pug_html + "\u003C\u002Ftd\u003E\u003C\u002Ftr\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index4 in $$obj) {
+    for (var pug_index5 in $$obj) {
       $$l++;
-      var c = $$obj[pug_index4];
+      var c = $$obj[pug_index5];
 pug_html = pug_html + "\u003Ctr" + (pug_attr("data", c.state, true, false)) + "\u003E\u003Ctd\u003E";
 if (editable) {
 pug_html = pug_html + "\u003Ca" + (pug_attr("class", pug_classes([stateIcons[c.state]?stateIcons[c.state]:''], [true]), false, false)+pug_attr("href", "javascript:cveLoad('"+c.cve_id+"')", true, false)+pug_attr("title", 'Load ' + c.state + ' ' + c.cve_id + ' to edit', true, false)) + "\u003E" + (pug_escape(null == (pug_interp = c.cve_id) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
@@ -4384,7 +4642,9 @@ pug_mixins[ctemplate]();
         locals_for_with.cveIds :
         typeof cveIds !== 'undefined' ? cveIds : undefined, "editable" in locals_for_with ?
         locals_for_with.editable :
-        typeof editable !== 'undefined' ? editable : undefined, "isNaN" in locals_for_with ?
+        typeof editable !== 'undefined' ? editable : undefined, "err" in locals_for_with ?
+        locals_for_with.err :
+        typeof err !== 'undefined' ? err : undefined, "isNaN" in locals_for_with ?
         locals_for_with.isNaN :
         typeof isNaN !== 'undefined' ? isNaN : undefined, "name" in locals_for_with ?
         locals_for_with.name :
@@ -4394,14 +4654,18 @@ pug_mixins[ctemplate]();
         locals_for_with.org :
         typeof org !== 'undefined' ? org : undefined, "portalType" in locals_for_with ?
         locals_for_with.portalType :
-        typeof portalType !== 'undefined' ? portalType : undefined, "t" in locals_for_with ?
+        typeof portalType !== 'undefined' ? portalType : undefined, "prevOrg" in locals_for_with ?
+        locals_for_with.prevOrg :
+        typeof prevOrg !== 'undefined' ? prevOrg : undefined, "prevPortal" in locals_for_with ?
+        locals_for_with.prevPortal :
+        typeof prevPortal !== 'undefined' ? prevPortal : undefined, "t" in locals_for_with ?
         locals_for_with.t :
         typeof t !== 'undefined' ? t : undefined, "userInfo" in locals_for_with ?
         locals_for_with.userInfo :
         typeof userInfo !== 'undefined' ? userInfo : undefined, "users" in locals_for_with ?
         locals_for_with.users :
         typeof users !== 'undefined' ? users : undefined));
-    ;;return pug_html;}</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><div class="hid"><button class="lbl sml indent btn vgi-magic sfe" id="auto" style="visibility:hidden">Auto-Text</button></div><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="vgi-download btn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail btn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="mitreTab" value="5"><label class="lbl" for="mitreTab">Preview</label><div class="wht fil bor pad"><div id="mitreweb"></div></div><input class="tab" name="tabs" type="radio" id="cveApiTab" value="6"><label class="lbl" for="cveApiTab">CVE Portal</label><div class="wht fil bor pad"><div id="cvePortal"></div></div></div><script>var idpath = "cveMetadata.cveId";
+    ;;return pug_html;}</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><div class="hid"><button class="lbl sml indent btn vgi-magic sfe" id="auto" style="visibility:hidden">Auto-Text</button></div><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="vgi-download btn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail btn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="mitreTab" value="5"><!--label.lbl(for='mitreTab') Preview--><!--.wht.fil.bor.paddiv#mitreweb--><input class="tab" name="tabs" type="radio" id="cveApiTab" value="6"><label class="lbl" for="cveApiTab">CVE Portal</label><div class="wht fil bor"><div id="cvePortal"></div></div></div><script>var idpath = "cveMetadata.cveId";
 var allowAjax = "false";
 var schemaName = "cve";
 var postUrl = "";
@@ -4417,6 +4681,7 @@ var ajaxBase  = "./";var initJSON = undefined;var docSchema={"$schema":"http:\u0
 preloadCve();
 document.getElementById('post1').addEventListener('click', cvePost);</script><script>loadJSON(initJSON);</script><script> docEditor.on('ready', async ()=> {
     var org = await checkSession();
+    //console.log('Org ' + org);
     if(org) {
         document.getElementById('cvePortal').innerHTML = cveRender({
                 portalType: cveApi.apiType,
@@ -4429,8 +4694,10 @@ document.getElementById('post1').addEventListener('click', cvePost);</script><sc
         cveGetList();
     } else {
         document.getElementById('cvePortal').innerHTML = cveRender({
-            ctemplate: 'cveLoginBox'
+            ctemplate: 'cveLoginBox',
+            prevPortal: window.localStorage.getItem('portalType'),
+            prevOrg: window.localStorage.getItem('shortName')
         })
     }
 });
-</script></div><span class="pad ban"><div class="pad2 center tgrey"><small> Copyright © Chandan B.N, 2017-2021. Usage of CVE IDs is subject to CVE terms of use. This site does not track you and is safe for working with confidential vulnerability information. Made with Vulnogram 0.1.0-dev</small><br><small> <br><a class="logo" href="https://github.com/Vulnogram/Vulnogram">Vulnogram Project</a></small></div></span></body></html>
+</script><dialog class="dlg bor rnd shd" id="cveErrorsModal"><div id="cveErrors"></div><center class="pad2"><input class="btn sfe" type="reset" onclick="document.getElementById('cveErrorsModal').close()" value="OK"></center></dialog><dialog class="dlg bor rnd shd" id="secretDialog"><header class="ban sec pad"><b class="lbl vgi-lock">IMPORTANT! New API Secret Key generated!</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><center class="gap"><form id="secretDialogForm" onsubmit="event.preventDefault();this.reset();this.closest('dialog').close();return false"><h3 class="vgi-alert" id="userMessage"></h3><p>Please securely store this API key.<br/> This key will not be shown again!</p><b class="lbl">API Secret Key</b><br/><input class="txt bor" type="password" size="39" name="pass" readonly="readonly"/><input id="showpass" name="showpass" type="checkbox" onclick="this.form.pass.type = (this.form.pass.type === 'password'? 'text' : 'password')"/><label class="vgi-eye lbl sbn" for="showpass"></label><center class="gap"><input class="btn sfe" type="reset" onclick="this.closest('dialog').close()" value="OK"/></center></form></center></dialog><dialog class="dlg bor rnd shd" id="userAddDialog"><header class="ban sec pad"><b class="lbl vgi-user">Add a new user</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><form class="gap" onsubmit="event.preventDefault();cveAddUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt" name="new_username" pattern=".{2,64}" required="required" placeholder="username/email" size="43"/><br/><input class="txt" name="first" pattern=".{2,64}" required="required" placeholder="First name"/><input class="txt" name="last" pattern=".{2,64}" required="required" placeholder="Last name"/><br/><input id="cveUserAdmin" type="checkbox" name="admin" checked="checked"/><label class="vgi-king lbl" for="cveUserAdmin">Admin</label><br/><input class="gap sfe btn vgi-magic" type="submit" value="Add user"/></form></dialog><dialog class="dlg bor rnd shd" id="userEditDialog"><header class="ban sec pad"><b class="lbl vgi-user">Update user details</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><form class="gap" id="userEditForm" onsubmit="event.preventDefault();cveUpdateUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt" name="new_username" pattern=".{2,64}" required="required" placeholder="username/email" size="43"/><br/><input class="txt" name="first" pattern=".{2,64}" required="required" placeholder="First name"/><input class="txt" name="last" pattern=".{2,64}" required="required" placeholder="Last name"/><br/><input id="cveUserAdmin" type="checkbox" name="admin" checked="checked"/><label class="vgi-king lbl" for="cveUserAdmin">Admin</label><input class="lbl" id="cveUserActive" type="checkbox" name="active" checked="checked"/><label class="lbl" for="cveUserActive">Active</label><br/><input class="gap sfe btn vgi-magic" type="submit" value="Update"/> <button class="gap btn vgi-reuse" onclick="cveUserKeyReset(this)">Reset API Key</button></form></dialog></div><span class="pad ban"><div class="pad2 center tgrey"><small> Copyright © Chandan B.N, 2017-2021. Usage of CVE IDs is subject to CVE terms of use. This site does not track you and is safe for working with confidential vulnerability information. Made with Vulnogram 0.1.0-dev</small><br><small> <br><a class="logo" href="https://github.com/Vulnogram/Vulnogram">Vulnogram Project</a></small></div></span></body></html>
