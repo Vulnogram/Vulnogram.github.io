@@ -204,6 +204,7 @@ function loadCVE(value) {
                         res = cvssv3_0_to_cvss3_1(res);
                     }
                     loadJSON(res, id, "Loaded "+id+" from GIT!");
+                    addAutoButton();
                     mainTabGroup.change(0);
                 } else {
                     errMsg.textContent = "Failed to load valid CVE JSON v 5.0 record";
@@ -531,40 +532,38 @@ document.addEventListener("click", function (e) {
     }
 });
 
-/*
-var autoButton = document.getElementById('auto');
 
-autoButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        var d = docEditor.getEditor('root.description.description_data');
-        var docJSON = docEditor.getValue();
-        var desc = d.getValue();
-        if (d) {
-            var i = desc.length;
-            while (i--) {
-                if (desc[i].value.length === 0) {
-                    desc.splice(i, 1);
-                }
-            }
-            var ptstring = textUtil.getProblemTypeString(docJSON);
-            if (ptstring.length == 0) {
-                ptstring = "A"
-            }
-            desc.push({
-                lang: "eng",
-                value: ptstring + " vulnerability in ____COMPONENT____ of " + textUtil.getProductList(docJSON) +
-                    " allows ____ATTACKER/ATTACK____ to cause ____IMPACT____."
-            });
-            desc.push({
-                lang: "eng",
-                value: textUtil.getAffectedProductString(docJSON)
-            });
-            d.setValue(desc);
-        } else {
-
-        }
+function addAutoButton() {
+    docEditor.on('ready', function(){
+            var autoButton = document.createElement('button');
+            autoButton.className = 'btn sfe indent vgi-magic';
+            autoButton.innerText = 'Auto Generate';
+            autoButton.addEventListener('click', autoText);
+            docEditor.getEditor("root.containers.cna.descriptions").header.appendChild(autoButton)
     });
-*/
+}
+
+async function autoText(event) {
+    if(event) {
+        event.preventDefault();
+    }
+    var doc = docEditor.getValue();
+    var text = cveRender({
+        ctemplate: 'autoText',
+        con: doc.containers.cna
+    });
+    // remove extra spaces
+    text = text.trim().replaceAll(/\s+/g, ' ');
+    hE = await docEditor.getEditor('root.containers.cna.descriptions.0.supportingMedia.0.value');
+    
+    // Capitolize sentances.
+    var rg = /(^\w{1}|\.\s*\w{1})/gi;
+    text = text.replace(rg, function(toReplace) {
+        return toReplace.toUpperCase();
+    });
+    hE.setValue(text, '', false);
+}
+
 var cveClient;
 var cveApi = {
     user: null,
@@ -584,7 +583,6 @@ async function checkSession() {
             try{
                 cveApi.org = o = await cveClient.getOrgInfo();
                 console.log('tried to get org info');
-                console.log(o);
             } catch(e) {
                 console.log(e);
             }
@@ -739,7 +737,6 @@ async function cveUserEdit(elem) {
     f.last.value = elem.getAttribute('l');
     f.admin.checked = elem.getAttribute('ad') ? true : false;
     f.active.checked = elem.getAttribute('ac') ? true : false;
-    console.log('User=' + cveApi.user + 'form user=' + f.u.value);
     if(cveApi.user == f.u.value) {
         f.admin.parentElement.setAttribute('class', 'hid');
         f.admin.setAttribute('disabled', true);
@@ -1101,6 +1098,7 @@ async function loadCVEFile(event, elem) {
                     res = cvssv3_0_to_cvss3_1(res);
                     //docEditor.setValue(res);
                     loadJSON(res, null, "Imported file");
+                    addAutoButton();
                 } catch (e) {
                     cveShowError(e);
                 }
@@ -1129,6 +1127,7 @@ async function cveLoad(cveId) {
                     console.log('no containers');
                 }
                 loadJSON(res, cveId, "Loaded " + cveId + " from CVE.org!");
+                addAutoButton();
                 mainTabGroup.change(0);
                 return res;
             } else {
@@ -1153,6 +1152,7 @@ async function cveLoad(cveId) {
                         return {};
                     }
                     loadJSON(skeleton, cveId, "Loaded " + cveId);
+                    addAutoButton();
                     mainTabGroup.change(0);
                     return skeleton;
                 } catch(e2) {
@@ -3036,6 +3036,7 @@ function loadCVE(value) {
                         res = cvssv3_0_to_cvss3_1(res);
                     }
                     loadJSON(res, id, "Loaded "+id+" from GIT!");
+                    addAutoButton();
                     mainTabGroup.change(0);
                 } else {
                     errMsg.textContent = "Failed to load valid CVE JSON v 5.0 record";
@@ -3363,40 +3364,38 @@ document.addEventListener("click", function (e) {
     }
 });
 
-/*
-var autoButton = document.getElementById('auto');
 
-autoButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        var d = docEditor.getEditor('root.description.description_data');
-        var docJSON = docEditor.getValue();
-        var desc = d.getValue();
-        if (d) {
-            var i = desc.length;
-            while (i--) {
-                if (desc[i].value.length === 0) {
-                    desc.splice(i, 1);
-                }
-            }
-            var ptstring = textUtil.getProblemTypeString(docJSON);
-            if (ptstring.length == 0) {
-                ptstring = "A"
-            }
-            desc.push({
-                lang: "eng",
-                value: ptstring + " vulnerability in ____COMPONENT____ of " + textUtil.getProductList(docJSON) +
-                    " allows ____ATTACKER/ATTACK____ to cause ____IMPACT____."
-            });
-            desc.push({
-                lang: "eng",
-                value: textUtil.getAffectedProductString(docJSON)
-            });
-            d.setValue(desc);
-        } else {
-
-        }
+function addAutoButton() {
+    docEditor.on('ready', function(){
+            var autoButton = document.createElement('button');
+            autoButton.className = 'btn sfe indent vgi-magic';
+            autoButton.innerText = 'Auto Generate';
+            autoButton.addEventListener('click', autoText);
+            docEditor.getEditor("root.containers.cna.descriptions").header.appendChild(autoButton)
     });
-*/
+}
+
+async function autoText(event) {
+    if(event) {
+        event.preventDefault();
+    }
+    var doc = docEditor.getValue();
+    var text = cveRender({
+        ctemplate: 'autoText',
+        con: doc.containers.cna
+    });
+    // remove extra spaces
+    text = text.trim().replaceAll(/\s+/g, ' ');
+    hE = await docEditor.getEditor('root.containers.cna.descriptions.0.supportingMedia.0.value');
+    
+    // Capitolize sentances.
+    var rg = /(^\w{1}|\.\s*\w{1})/gi;
+    text = text.replace(rg, function(toReplace) {
+        return toReplace.toUpperCase();
+    });
+    hE.setValue(text, '', false);
+}
+
 var cveClient;
 var cveApi = {
     user: null,
@@ -3416,7 +3415,6 @@ async function checkSession() {
             try{
                 cveApi.org = o = await cveClient.getOrgInfo();
                 console.log('tried to get org info');
-                console.log(o);
             } catch(e) {
                 console.log(e);
             }
@@ -3571,7 +3569,6 @@ async function cveUserEdit(elem) {
     f.last.value = elem.getAttribute('l');
     f.admin.checked = elem.getAttribute('ad') ? true : false;
     f.active.checked = elem.getAttribute('ac') ? true : false;
-    console.log('User=' + cveApi.user + 'form user=' + f.u.value);
     if(cveApi.user == f.u.value) {
         f.admin.parentElement.setAttribute('class', 'hid');
         f.admin.setAttribute('disabled', true);
@@ -3933,6 +3930,7 @@ async function loadCVEFile(event, elem) {
                     res = cvssv3_0_to_cvss3_1(res);
                     //docEditor.setValue(res);
                     loadJSON(res, null, "Imported file");
+                    addAutoButton();
                 } catch (e) {
                     cveShowError(e);
                 }
@@ -3961,6 +3959,7 @@ async function cveLoad(cveId) {
                     console.log('no containers');
                 }
                 loadJSON(res, cveId, "Loaded " + cveId + " from CVE.org!");
+                addAutoButton();
                 mainTabGroup.change(0);
                 return res;
             } else {
@@ -3985,6 +3984,7 @@ async function cveLoad(cveId) {
                         return {};
                     }
                     loadJSON(skeleton, cveId, "Loaded " + cveId);
+                    addAutoButton();
                     mainTabGroup.change(0);
                     return skeleton;
                 } catch(e2) {
@@ -4450,7 +4450,7 @@ var pug_has_own_property=Object.prototype.hasOwnProperty;
 var pug_match_html=/["&<>]/;function cveRender(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
     var locals_for_with = (locals || {});
     
-    (function (Date, Math, cl, ctemplate, cveIds, editable, err, isNaN, name, obj, org, portalType, prevOrg, prevPortal, t, userInfo, users) {
+    (function (Date, Math, Object, cl, con, ctemplate, cveIds, editable, err, isNaN, name, obj, org, portalType, prevOrg, prevPortal, t, userInfo, users) {
       pug_mixins["cveLoginBox"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\u003Ccenter class=\"sec shd rnd gap2 pad\"\u003E\u003Csvg id=\"Layer_1\" data-name=\"Layer 1\" xmlns=\"http:\u002F\u002Fwww.w3.org\u002F2000\u002Fsvg\" xmlns:xlink=\"http:\u002F\u002Fwww.w3.org\u002F1999\u002Fxlink\" viewBox=\"0 0 320.65 93.91\" width=\"200\" height=\"90\"\u003E\u003Cdefs\u003E\u003Cstyle\u003E.cls-1{fill-rule:evenodd;fill:url(#linear-gradient);}.cls-2{font-size:18px;fill:#ff940e;font-family:ArialMT, Arial;}\u003C\u002Fstyle\u003E\u003ClinearGradient id=\"linear-gradient\" x1=\"152.2\" y1=\"90.17\" x2=\"152.2\" y2=\"5.62\" gradientUnits=\"userSpaceOnUse\"\u003E\u003Cstop offset=\"0\" stop-color=\"#f68826\"\u002F\u003E\u003Cstop offset=\"0.45\" stop-color=\"#faa227\"\u002F\u003E\u003Cstop offset=\"1\" stop-color=\"#fdb714\"\u002F\u003E\u003C\u002FlinearGradient\u003E\u003C\u002Fdefs\u003E\u003Cpath class=\"cls-1\" d=\"M99.83,88.73l13.75-17.79H56.86a38.82,38.82,0,0,1-5.67-.4,34.11,34.11,0,0,1-5.31-1.23,30.85,30.85,0,0,1-4.8-2,24.78,24.78,0,0,1-4.17-2.7h0a22.28,22.28,0,0,1-3.46-3.4,21.7,21.7,0,0,1-2.59-4.06,20.67,20.67,0,0,1-1.62-4.63,23.3,23.3,0,0,1-.54-5,23,23,0,0,1,.56-5.06,20.43,20.43,0,0,1,1.68-4.68,23.07,23.07,0,0,1,6-7.55,24.74,24.74,0,0,1,4.14-2.78,30.15,30.15,0,0,1,4.78-2.05,31.58,31.58,0,0,1,5.33-1.28,36.22,36.22,0,0,1,5.68-.43h41.4v-9h18v-9h9v9h-9v9h9.52l26.61,39.24,1.95,2.88,2-2.84L196.93,5.63H297.85l-13.9,18H210.34l-.73,1L179.25,67.62l-9.7,13.72a23.11,23.11,0,0,1-2.89,3.28,36.14,36.14,0,0,1-3.65,3,12.89,12.89,0,0,1-4,1.89,18.14,18.14,0,0,1-5.12.67,19,19,0,0,1-5-.62,12.63,12.63,0,0,1-3.92-1.79,23.76,23.76,0,0,1-3.48-2.88,25.93,25.93,0,0,1-2.93-3.52L99.31,24.72l-.73-1h8.71V5.62H56.86a73.24,73.24,0,0,0-10.67.75A59.88,59.88,0,0,0,36.43,8.6a52.92,52.92,0,0,0-8.66,3.58A44.37,44.37,0,0,0,20.46,17a39.78,39.78,0,0,0-5.91,5.91,38.75,38.75,0,0,0-4.49,7,33.93,33.93,0,0,0-2.81,7.82,38.33,38.33,0,0,0-.94,8.64A39.24,39.24,0,0,0,7.25,55a35.86,35.86,0,0,0,2.83,8,40.55,40.55,0,0,0,4.5,7.23,41.25,41.25,0,0,0,5.92,6.19h0a45.86,45.86,0,0,0,7.33,5.08,55.52,55.52,0,0,0,8.66,3.89,56.45,56.45,0,0,0,9.74,2.45,65.94,65.94,0,0,0,10.63.82h43ZM134.36,5.62v9h9v-9ZM253,39H214V88.72h70.36L298.1,70.94H236.5V54.16h44.58L292.94,39Z\"\u002F\u003E\u003Ctext class=\"cls-2\" transform=\"translate(303.31 19.09)\"\u003E®\u003C\u002Ftext\u003E\u003C\u002Fsvg\u003E\u003Cbr\u002F\u003E\u003Ci\u003ECVE Services Portal \u003C\u002Fi\u003E\u003Cbr\u002F\u003E\u003Ci\u003EInstantly providing you CVE IDs since 2022\u003C\u002Fi\u003E\u003Cdiv id=\"loginErr\"\u003E\u003C\u002Fdiv\u003E\u003Cform id=\"cveLoginForm\" method=\"POST\" onsubmit=\"cveLogin(event, this); return false;\"\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003EPortal\u003C\u002Flabel\u003E\u003Cselect class=\"bor txt\" name=\"portal\" style=\"width:11em;\"\u003E\u003Coption" + (" value=\"https:\u002F\u002Fcveawg.mitre.org\u002Fapi\""+pug_attr("selected", (prevPortal == 'production'), true, false)) + "\u003Eproduction\u003C\u002Foption\u003E\u003Coption" + (" value=\"https:\u002F\u002Fcveawg-test.mitre.org\u002Fapi\""+pug_attr("selected", (prevPortal == 'test'), true, false)) + "\u003Etest\u003C\u002Foption\u003E\u003Coption" + (" value=\"http:\u002F\u002F127.0.0.1:3000\u002Fapi\""+pug_attr("selected", (prevPortal == 'local'), true, false)) + "\u003Elocal\u003C\u002Foption\u003E\u003C\u002Fselect\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECNA Short Name\u003C\u002Flabel\u003E\u003Cinput" + (" class=\"bor txt\""+" name=\"org\" type=\"text\" autocomplete=\"on\" pattern=\".{2,64}\" required=\"required\""+pug_attr("value", prevOrg?prevOrg:'', true, false)) + "\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECVE User\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"user\" type=\"text\" autocomplete=\"on\" pattern=\".+\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad\"\u003E\u003Clabel class=\"lbl\" style=\"width:10em;\"\u003ECNA API Key\u003C\u002Flabel\u003E\u003Cinput class=\"bor txt\" name=\"key\" type=\"password\" autocomplete=\"off\" required=\"required\"\u002F\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"pad center\"\u003E\u003Cinput class=\"bor fbn sfe\" type=\"submit\" value=\"Login\"\u002F\u003E\u003C\u002Fdiv\u003E\u003C\u002Fform\u003E\u003C\u002Fcenter\u003E";
@@ -4738,6 +4738,285 @@ else {
 pug_html = pug_html + "\u003Ci\u003ENo CVE IDs found!\u003C\u002Fi\u003E";
 }
 };
+pug_mixins["autoText"] = pug_interp = function(){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+if (con) {
+if (con.problemTypes) {
+var pts = [];
+// iterate con.problemTypes
+;(function(){
+  var $$obj = con.problemTypes;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index6 = 0, $$l = $$obj.length; pug_index6 < $$l; pug_index6++) {
+        var t = $$obj[pug_index6];
+if (t.descriptions) {
+var prob = t.descriptions.map(x=>x.description).join(', ').replaceAll(/CWE-\d+/g,"").trim().replaceAll(/\s+/g, ' ');
+if (prob) {
+pts.push(prob);
+}
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index6 in $$obj) {
+      $$l++;
+      var t = $$obj[pug_index6];
+if (t.descriptions) {
+var prob = t.descriptions.map(x=>x.description).join(', ').replaceAll(/CWE-\d+/g,"").trim().replaceAll(/\s+/g, ' ');
+if (prob) {
+pts.push(prob);
+}
+}
+    }
+  }
+}).call(this);
+
+if (pts.length > 0) {
+pug_html = pug_html + (pug_escape(null == (pug_interp = pts.join(', ')) ? "" : pug_interp));
+}
+else {
+pug_html = pug_html + "A";
+}
+}
+pug_html = pug_html + " vulnerability";
+var codelist = [];
+if (con.affected) {
+var plist = [];
+// iterate con.affected
+;(function(){
+  var $$obj = con.affected;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index7 = 0, $$l = $$obj.length; pug_index7 < $$l; pug_index7++) {
+        var p = $$obj[pug_index7];
+var pd = [p.vendor, p.vendor != p.product ? p.product : '', p.packageName != p.product ? p.packageName : '', (p.platforms ? 'on ' + p.platforms.join(', ') : ''), p.modules ? '(' + p.modules.join(', ') + ' modules)':''].join(' ').trim().replaceAll(/\s+/g, ' ')
+if (pd) {
+plist.push(pd);
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index7 in $$obj) {
+      $$l++;
+      var p = $$obj[pug_index7];
+var pd = [p.vendor, p.vendor != p.product ? p.product : '', p.packageName != p.product ? p.packageName : '', (p.platforms ? 'on ' + p.platforms.join(', ') : ''), p.modules ? '(' + p.modules.join(', ') + ' modules)':''].join(' ').trim().replaceAll(/\s+/g, ' ')
+if (pd) {
+plist.push(pd);
+}
+    }
+  }
+}).call(this);
+
+var ptext = plist.join(', ');
+if (ptext) {
+pug_html = pug_html + (" in " + (pug_escape(null == (pug_interp = ptext) ? "" : pug_interp)));
+}
+}
+if (con.impacts) {
+var ips = [];
+// iterate con.impacts
+;(function(){
+  var $$obj = con.impacts;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index8 = 0, $$l = $$obj.length; pug_index8 < $$l; pug_index8++) {
+        var t = $$obj[pug_index8];
+if (t.descriptions) {
+var impact = t.descriptions.map(x=>x.value).join(', ').replaceAll(/CAPEC-\d+/g, "").trim().replaceAll(/\s+/g, ' ')
+if (impact) {
+ips.push(impact);
+}
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index8 in $$obj) {
+      $$l++;
+      var t = $$obj[pug_index8];
+if (t.descriptions) {
+var impact = t.descriptions.map(x=>x.value).join(', ').replaceAll(/CAPEC-\d+/g, "").trim().replaceAll(/\s+/g, ' ')
+if (impact) {
+ips.push(impact);
+}
+}
+    }
+  }
+}).call(this);
+
+if (ips.length > 0) {
+pug_html = pug_html + (" allows " + (pug_escape(null == (pug_interp = ips.join(', ')) ? "" : pug_interp)));
+}
+}
+pug_html = pug_html + ".";
+if (con.affected) {
+var fileSet = {};
+var funcSet = {};
+// iterate con.affected
+;(function(){
+  var $$obj = con.affected;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index9 = 0, $$l = $$obj.length; pug_index9 < $$l; pug_index9++) {
+        var p = $$obj[pug_index9];
+if (p.programFiles) {
+// iterate p.programFiles
+;(function(){
+  var $$obj = p.programFiles;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index10 = 0, $$l = $$obj.length; pug_index10 < $$l; pug_index10++) {
+        var pf = $$obj[pug_index10];
+fileSet[pf] = 1
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index10 in $$obj) {
+      $$l++;
+      var pf = $$obj[pug_index10];
+fileSet[pf] = 1
+    }
+  }
+}).call(this);
+
+}
+if (p.programRoutines) {
+// iterate p.programRoutines
+;(function(){
+  var $$obj = p.programRoutines;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index11 = 0, $$l = $$obj.length; pug_index11 < $$l; pug_index11++) {
+        var fn = $$obj[pug_index11];
+funcSet[fn.name] = 1
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index11 in $$obj) {
+      $$l++;
+      var fn = $$obj[pug_index11];
+funcSet[fn.name] = 1
+    }
+  }
+}).call(this);
+
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index9 in $$obj) {
+      $$l++;
+      var p = $$obj[pug_index9];
+if (p.programFiles) {
+// iterate p.programFiles
+;(function(){
+  var $$obj = p.programFiles;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index12 = 0, $$l = $$obj.length; pug_index12 < $$l; pug_index12++) {
+        var pf = $$obj[pug_index12];
+fileSet[pf] = 1
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index12 in $$obj) {
+      $$l++;
+      var pf = $$obj[pug_index12];
+fileSet[pf] = 1
+    }
+  }
+}).call(this);
+
+}
+if (p.programRoutines) {
+// iterate p.programRoutines
+;(function(){
+  var $$obj = p.programRoutines;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index13 = 0, $$l = $$obj.length; pug_index13 < $$l; pug_index13++) {
+        var fn = $$obj[pug_index13];
+funcSet[fn.name] = 1
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index13 in $$obj) {
+      $$l++;
+      var fn = $$obj[pug_index13];
+funcSet[fn.name] = 1
+    }
+  }
+}).call(this);
+
+}
+    }
+  }
+}).call(this);
+
+var files = Object.keys(fileSet);
+var funcs = Object.keys(funcSet);
+if (files.length > 0 || funcs.length > 0) {
+pug_html = pug_html + "\u003Cp\u003E This vulnerability is associated with";
+if (files.length > 0) {
+pug_html = pug_html + " program files ";
+var counter = 0
+// iterate files
+;(function(){
+  var $$obj = files;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index14 = 0, $$l = $$obj.length; pug_index14 < $$l; pug_index14++) {
+        var fn = $$obj[pug_index14];
+counter ++
+pug_html = pug_html + "\u003Ctt\u003E" + (pug_escape(null == (pug_interp = fn) ? "" : pug_interp)) + "\u003C\u002Ftt\u003E";
+if (counter < files.length) {
+pug_html = pug_html + ", ";
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index14 in $$obj) {
+      $$l++;
+      var fn = $$obj[pug_index14];
+counter ++
+pug_html = pug_html + "\u003Ctt\u003E" + (pug_escape(null == (pug_interp = fn) ? "" : pug_interp)) + "\u003C\u002Ftt\u003E";
+if (counter < files.length) {
+pug_html = pug_html + ", ";
+}
+    }
+  }
+}).call(this);
+
+}
+if (funcs.length > 0) {
+if (files.length > 0) {
+pug_html = pug_html + " and";
+}
+pug_html = pug_html + " program routines ";
+var counter = 0
+// iterate funcs
+;(function(){
+  var $$obj = funcs;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index15 = 0, $$l = $$obj.length; pug_index15 < $$l; pug_index15++) {
+        var fn = $$obj[pug_index15];
+counter ++
+pug_html = pug_html + "\u003Ctt\u003E" + (pug_escape(null == (pug_interp = fn) ? "" : pug_interp)) + "\u003C\u002Ftt\u003E";
+if (counter < funcs.length) {
+pug_html = pug_html + ", ";
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index15 in $$obj) {
+      $$l++;
+      var fn = $$obj[pug_index15];
+counter ++
+pug_html = pug_html + "\u003Ctt\u003E" + (pug_escape(null == (pug_interp = fn) ? "" : pug_interp)) + "\u003C\u002Ftt\u003E";
+if (counter < funcs.length) {
+pug_html = pug_html + ", ";
+}
+    }
+  }
+}).call(this);
+
+}
+pug_html = pug_html + ".\u003C\u002Fp\u003E";
+}
+}
+}
+};
 if (ctemplate != undefined) {
 pug_mixins[ctemplate]();
 }
@@ -4745,9 +5024,13 @@ pug_mixins[ctemplate]();
         locals_for_with.Date :
         typeof Date !== 'undefined' ? Date : undefined, "Math" in locals_for_with ?
         locals_for_with.Math :
-        typeof Math !== 'undefined' ? Math : undefined, "cl" in locals_for_with ?
+        typeof Math !== 'undefined' ? Math : undefined, "Object" in locals_for_with ?
+        locals_for_with.Object :
+        typeof Object !== 'undefined' ? Object : undefined, "cl" in locals_for_with ?
         locals_for_with.cl :
-        typeof cl !== 'undefined' ? cl : undefined, "ctemplate" in locals_for_with ?
+        typeof cl !== 'undefined' ? cl : undefined, "con" in locals_for_with ?
+        locals_for_with.con :
+        typeof con !== 'undefined' ? con : undefined, "ctemplate" in locals_for_with ?
         locals_for_with.ctemplate :
         typeof ctemplate !== 'undefined' ? ctemplate : undefined, "cveIds" in locals_for_with ?
         locals_for_with.cveIds :
@@ -4776,7 +5059,7 @@ pug_mixins[ctemplate]();
         typeof userInfo !== 'undefined' ? userInfo : undefined, "users" in locals_for_with ?
         locals_for_with.users :
         typeof users !== 'undefined' ? users : undefined));
-    ;;return pug_html;}</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><div class="hid"><button class="lbl sml indent btn vgi-magic sfe" id="auto" style="visibility:hidden">Auto-Text</button></div><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="vgi-download btn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail btn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="mitreTab" value="5"><!--label.lbl(for='mitreTab') Preview--><!--.wht.fil.bor.paddiv#mitreweb--><input class="tab" name="tabs" type="radio" id="cveApiTab" value="6"><label class="lbl" for="cveApiTab">CVE Portal</label><div class="wht fil bor"><div id="cvePortal"></div></div></div><script>var idpath = "cveMetadata.cveId";
+    ;;return pug_html;}</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="vgi-download btn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail btn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="mitreTab" value="5"><!--label.lbl(for='mitreTab') Preview--><!--.wht.fil.bor.paddiv#mitreweb--><input class="tab" name="tabs" type="radio" id="cveApiTab" value="6"><label class="lbl" for="cveApiTab">CVE Portal</label><div class="wht fil bor"><div id="cvePortal"></div></div></div><script>var idpath = "cveMetadata.cveId";
 var allowAjax = "false";
 var schemaName = "cve";
 var postUrl = "";
@@ -4791,14 +5074,13 @@ var ajaxBase  = "./";var initJSON = undefined;var docSchema={"$schema":"http:\u0
 }
 preloadCve();
 document.getElementById('post1').addEventListener('click', cvePost);</script><script>loadJSON(initJSON);</script><script> docEditor.on('ready', async ()=> {
-
+    addAutoButton();
     defaultTabs.sourceTab.getValue = function () {
         var res = JSON.parse(sourceEditor.getSession().getValue());
         res = addRichTextCVE(res);
         res = cvssv3_0_to_cvss3_1(res);
         return res;
     };
-
     var org = await checkSession();
     //console.log('Org ' + org);
     if(org) {
