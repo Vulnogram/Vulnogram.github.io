@@ -333,8 +333,8 @@ function loadCVE(value) {
                         res = cveFixForVulnogram(res);
                     }
                     var edOpts = (res.cveMetadata.state == 'REJECTED') ? rejectEditorOption : publicEditorOption;
-                    mainTabGroup.change(0);
                     loadJSON(res, id, "Loaded " + id + " from GIT!", edOpts);
+                    mainTabGroup.change(0);
                 } else {
                     errMsg.textContent = "Failed to load valid CVE JSON v 5.0 record";
                     infoMsg.textContent = "";
@@ -358,7 +358,6 @@ async function rejectRecord() {
                 state: 'REJECTED'
             }
         }, id, 'Rejcting ' + id, rejectEditorOption);
-        mainTabGroup.change(0);
     }
 }
 
@@ -777,7 +776,6 @@ async function loadCVEFile(event, elem) {
                         res = cveFixForVulnogram(res);
                         //docEditor.setValue(res);
                         var edOpts = (res.cveMetadata.state == 'REJECTED') ? rejectEditorOption : publicEditorOption;
-                        mainTabGroup.change(0);
                         loadJSON(res, null, "Imported file", edOpts);
                     } else {
                         showAlert("Not a CVE JSON 5.0 file!");
@@ -2501,7 +2499,25 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
                 }
             }
             return errors;
-        }];</script><script>//
+        }];</script><script>var errorFilter = function(errors) {
+        if(errors && errors.length > 0) {
+            var out = [];
+            var oneIndex = {
+                'PUBLISHED': 0,
+                'RESERVED':1,
+                'REJECTED':2
+            }
+            var state = oneIndex[docEditor.getValue().cveMetadata.state];
+            for(i=0; i< errors.length; i++) {
+                if(errors[i].path.indexOf("root.oneOf["+state+"]") == 0) {
+                    errors[i].path = errors[i].path.substr(14);
+                    out.push(errors[i]);
+                }
+            }
+            errors = out;
+        }
+        return errors;
+    };</script><script>//
 // CVE.js
 // Filename: cve.js
 //
