@@ -1,7 +1,6 @@
 <!DOCTYPE html><html><head><title>Vulnogram CVE Editor</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Vulnogram is a tool for creating and editing CVE information in CVE JSON format, and for generating advisories. It can be used for tracking and managing anything that can be expressed with a JSON-Schema."><meta name="keywords" content="psirt, sirt, advisory, CVRF, CSAF, CVE, vulnogram, CVE, JSON"><meta name="csrf-token"><meta name="theme-color" content="#f0f8ff"><meta property="og:type" content="website"><meta property="og:image" content="./css/logo.png"><link rel="apple-touch-icon" sizes="256x256" href="./css/logo.png"><link rel="icon" type="image/png" href="./css/logo.png" sizes="256x256"><link rel="stylesheet" href="./css/min.css"><link rel="stylesheet" href="./css/vg-icons.css"><style>body{
  /*--hig:#f6f6f7;*/
  --hig: #e5ebec;
- --bck:#fafafc;
 }   
 
 #cveUser .pop {
@@ -274,18 +273,7 @@ label[for="cvePortalTab"] {
   border-left: 2px #999999 dotted;
   grid-area: 1 / 2 / 3 / 3;
 }
-}
-
-#render.render p {
-  margin-left: 2em;
-  margin-top: .5em;
-}
-
-#render.render h4 {
-  margin-bottom: 0.3em;
-  margin-top: .3em;
-}
-</style><link href="./css/tagify.css" rel="stylesheet" type="text/css"></head><body class="cve" id="body"><div class="stk" id="vgHead"><header class="ban pad wht btm"><div class="left"><a class="fbn vgi-logo" title="Making the world safer one CVE at a time, since 2017" href="https://vulnogram.github.io">Vulnogram</a> <a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="../">CVE 4.0</a><a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href=".">CVE 5.0 (beta)</a></div><div class="right"></div></header><header class="ban pad shd hig"><div class="left"><a class="fbn sfe" href="./">NEW</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadCVEFile(event,this);"><a class="fbn vgi-folder" type="file" onclick="importFile(event, this);">Open</a><a class="fbn vgi-download" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download">Download</a><form class="indent out nobr" onsubmit="event.preventDefault();loadCVE(this.git.value);return false;"><input class="txt" type="text" name="git" placeholder="CVE-YYYY-NNNN" pattern=".*CVE-[0-9]{4}-[0-9]{4,12}.*" size="17" title="CVE ID CVE-yyyy-nnnn+" required><button class="btn vgi-in" type="submit">GIT</button></form><button class="fbn sfe vgi-put" id="post1">Post to CVE.org</button><a class="vgi-tweet fbn" type="button" oncontextmenu="tweetJSON(event, this);" onclick="tweetJSON(event, this);" value="Download" target="_blank" title="Share a tweet about this CVE">Tweet</a></div><div class="right"><form class="indent out nobr" onsubmit="cveSelectLoad(event);return false;"><input class="txt lbl" id="cveEditable" type="search" name="id" list="editablelist" placeholder="CVE-yyyy-nnnn.." title="Load CVE for editing" required><datalist id="editablelist"></datalist><button class="btn vgi-in" type="submit">Load</button></form></div></header></div><script>var userUsername = ""
+}</style><link href="./css/tagify.css" rel="stylesheet" type="text/css"></head><body class="cve" id="body"><div class="stk" id="vgHead"><header class="ban pad wht btm"><div class="left"><a class="fbn vgi-logo" title="Making the world safer one CVE at a time, since 2017" href="https://vulnogram.github.io">Vulnogram</a> <a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="../">CVE 4.0</a><a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href=".">CVE 5.0 (beta)</a></div><div class="right"></div></header><header class="ban pad shd hig"><div class="left"><a class="fbn sfe" href="./">NEW</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadCVEFile(event,this);"><a class="fbn vgi-folder" type="file" onclick="importFile(event, this);">Open</a><a class="fbn vgi-download" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download">Download</a><form class="indent out nobr" onsubmit="event.preventDefault();loadCVE(this.git.value);return false;"><input class="txt" type="text" name="git" placeholder="CVE-YYYY-NNNN" pattern=".*CVE-[0-9]{4}-[0-9]{4,12}.*" size="17" title="CVE ID CVE-yyyy-nnnn+" required><button class="btn vgi-in" type="submit">GIT</button></form><button class="fbn sfe vgi-put" id="post1">Post to CVE.org</button><a class="vgi-tweet fbn" type="button" oncontextmenu="tweetJSON(event, this);" onclick="tweetJSON(event, this);" value="Download" target="_blank" title="Share a tweet about this CVE">Tweet</a></div><div class="right"><form class="indent out nobr" onsubmit="cveSelectLoad(event);return false;"><input class="txt lbl" id="cveEditable" type="search" name="id" list="editablelist" placeholder="CVE-yyyy-nnnn.." title="Load CVE for editing" required><datalist id="editablelist"></datalist><button class="btn vgi-in" type="submit">Load</button></form></div></header></div><script>var userUsername = ""
 </script><div class="pad ban messagebar"><div class="left tred" id="errMsg"></div><div class="right" id="infoMsg"></div></div><div class="pad"><script>var iconMap = {"Platforms":"stack","References":"ext","Versions":"versions","Timeline":"time","Solution":"safe","ID":"tag","Tags":"tag","Advisory-ID":"tag","ASSIGNER":"user","ASSIGNER_SHORT_NAME":"user","DATE_PUBLIC":"cal","TITLE":"title","Published":"cal","product_name":"package","Found during":"info","CNA_private":"lock","TYPE":"bucket","unsure":"what","no-vuln":"safe","advisory":"alert","no-advisory":"no","doc":"text","misc":"misc","duplicate":"ext","CVE_data_meta":"info","STATE":"knob","new":"inbox","closed":"closed","open":"inbox1","draft":"text","review":"eye","waiting":"wait","pending":"cal","vectorString":"title","baseScore":"dial","baseSeverity":"knob","scenario":"text","source":"info","descriptions":"text","affected":"impact","Vendors":"factory","references":"ext","impacts":"impact","metrics":"dial","Configuration":"cog","Defect":"bug","INTERNAL":"hardhat","EXTERNAL":"hat","USER":"cap","UNKNOWN":"what"}</script><script>var currentYear = new Date().getFullYear();
 const defaultTimeout = 1000 * 60 * 60; // one hour timeout
 
@@ -639,14 +627,14 @@ function htmltoText(html) {
     if (html) {
         let text = html;
         //text = text.replace(/\n/gi, "");
-        text = text.replace(/<style([\s\S]*?)<\/style[^>]*?>/gi, "");
-        text = text.replace(/<script([\s\S]*?)<\/script[^>]*?>/gi, "");
+        text = text.replace(/<style([\s\S]*?)<\/style>/gi, "");
+        text = text.replace(/<script([\s\S]*?)<\/script>/gi, "");
         text = text.replace(/<a.*?href="(.*?)[\?\"].*?>(.*?)<\/a.*?>/gi, " $2 $1 ");
-        text = text.replace(/<\/div[^>]*?>/gi, "\n\n");
-        text = text.replace(/<\/li[^>]*?>/gi, "\n");
+        text = text.replace(/<\/div>/gi, "\n\n");
+        text = text.replace(/<\/li>/gi, "\n");
         text = text.replace(/<li.*?>/gi, "  *  ");
-        text = text.replace(/<\/ul[^>]*?>/gi, "\n\n");
-        text = text.replace(/<\/p[^>]*?>/gi, "\n\n");
+        text = text.replace(/<\/ul>/gi, "\n\n");
+        text = text.replace(/<\/p>/gi, "\n\n");
         text = text.replace(/<br\s*[\/]?>/gi, "\n");
         text = text.replace(/<[^>]+>/gi, "");
         //text = text.replace(/^\s*/gim, "");
@@ -874,7 +862,7 @@ var nonSpec = ['baseScore', 'version', 'vectorString', 'baseSeverity', 'scenario
   if ('number' == typeof $$obj.length) {
       for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
         var cvss = $$obj[i];
-pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary" + (pug_attr("class", pug_classes(["lbl","rnd","sec","CVSS",cvss.baseSeverity ? cvss.baseSeverity : 'gray'], [false,false,false,false,true]), false, false)) + "\u003ECVSS · " + (pug_escape(null == (pug_interp = cvss.baseSeverity) ? "" : pug_interp)) + " · " + (pug_escape(null == (pug_interp = cvss.baseScore) ? "" : pug_interp)) + "\u003Csub\u003E⁄10\u003C\u002Fsub\u003E\u003Cspan style=\"font-size:0px;opacity:0\"\u003E · " + (pug_escape(null == (pug_interp = cvss.vectorString) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht rnd shd pad bor\"\u003E";
+pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary" + (pug_attr("class", pug_classes(["lbl","rnd","sec","CVSS",cvss.baseSeverity ? cvss.baseSeverity : 'gray'], [false,false,false,false,true]), false, false)) + "\u003ECVSS · " + (pug_escape(null == (pug_interp = cvss.baseSeverity) ? "" : pug_interp)) + " · " + (pug_escape(null == (pug_interp = cvss.baseScore) ? "" : pug_interp)) + "\u003Csub\u003E⁄10\u003C\u002Fsub\u003E\u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht rnd shd pad bor\"\u003E";
 if (cvss.scenarios) {
 // iterate cvss.scenarios
 ;(function(){
@@ -931,7 +919,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdet
     for (var i in $$obj) {
       $$l++;
       var cvss = $$obj[i];
-pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary" + (pug_attr("class", pug_classes(["lbl","rnd","sec","CVSS",cvss.baseSeverity ? cvss.baseSeverity : 'gray'], [false,false,false,false,true]), false, false)) + "\u003ECVSS · " + (pug_escape(null == (pug_interp = cvss.baseSeverity) ? "" : pug_interp)) + " · " + (pug_escape(null == (pug_interp = cvss.baseScore) ? "" : pug_interp)) + "\u003Csub\u003E⁄10\u003C\u002Fsub\u003E\u003Cspan style=\"font-size:0px;opacity:0\"\u003E · " + (pug_escape(null == (pug_interp = cvss.vectorString) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht rnd shd pad bor\"\u003E";
+pug_html = pug_html + "\u003Cdetails class=\"popup\"\u003E\u003Csummary" + (pug_attr("class", pug_classes(["lbl","rnd","sec","CVSS",cvss.baseSeverity ? cvss.baseSeverity : 'gray'], [false,false,false,false,true]), false, false)) + "\u003ECVSS · " + (pug_escape(null == (pug_interp = cvss.baseSeverity) ? "" : pug_interp)) + " · " + (pug_escape(null == (pug_interp = cvss.baseScore) ? "" : pug_interp)) + "\u003Csub\u003E⁄10\u003C\u002Fsub\u003E\u003C\u002Fsummary\u003E\u003Cdiv class=\"pop wht rnd shd pad bor\"\u003E";
 if (cvss.scenarios) {
 // iterate cvss.scenarios
 ;(function(){
@@ -995,7 +983,7 @@ if (p[2]) {
 pug_html = pug_html + "\u003Cspan\u003E » " + (pug_escape(null == (pug_interp = p[2]) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
 }
 if (p[1]) {
-pug_html = pug_html + "\u003Ci\u003E on \u003C\u002Fi\u003E \u003Cspan class=\"vgi-stack\"\u003E" + (pug_escape(null == (pug_interp = p[1]) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+pug_html = pug_html + "\u003Ci class=\"lbl\"\u003E on \u003C\u002Fi\u003E \u003Cspan class=\"vgi-stack\"\u003E" + (pug_escape(null == (pug_interp = p[1]) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
 }
 if (p[3]) {
 pug_html = pug_html + "\u003Cbr\u002F\u003E";
@@ -1362,7 +1350,7 @@ pug_html = pug_html + "\u003Cp class=\"sec rnd pad\"\u003E\u003Cb class=\"vgi-al
 };
 pug_mixins["container"] = pug_interp = function(con){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\u003Ch2 id=\"cvetitle\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"cna pad\"\u003E\u003Ch2 id=\"cvetitle\"\u003E";
 var cveShowId = con.cveId.match(/^CVE-[0-9-]+$/)? con.cveId : 'CVE-yyyy-nnnn';
 if (con.source && con.source.advisory) {
 pug_html = pug_html + (pug_escape(null == (pug_interp = con.source.advisory) ? "" : pug_interp)) + " ";
@@ -1371,10 +1359,7 @@ pug_html = pug_html + (pug_escape(null == (pug_interp = cveShowId + ' ' + (con.t
 if (con.shortName) {
 pug_html = pug_html + "\u003Cspan\u003EPublished by \u003Cb\u003E" + (pug_escape(null == (pug_interp = con.shortName) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003C\u002Fspan\u003E  ";
 }
-if (con.datePublic) {
-pug_html = pug_html + "Published ";
 pug_mixins["renderDate"](con.datePublic);
-}
 if (con.dateUpdated && con.dateUpdated != con.datePublic) {
 pug_html = pug_html + " (updated ";
 pug_mixins["renderDate"](con.dateUpdated);
@@ -1382,11 +1367,9 @@ pug_html = pug_html + ")";
 }
 pug_html = pug_html + "\u003C\u002Fp\u003E";
 if (con.cvssList) {
-pug_html = pug_html + "\u003Cp\u003E";
 pug_mixins["cvssList"](con.cvssList);
-pug_html = pug_html + "\u003C\u002Fp\u003E";
 }
-pug_html = pug_html + "\u003Cdiv id=\"description\"\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"desc pad\"\u003E";
 if (con.state == 'REJECTED') {
 pug_html = pug_html + "\u003Cb class=\"tag red\"\u003EREJECTED\u003C\u002Fb\u003E ·  ";
 }
@@ -1396,12 +1379,12 @@ pug_mixins["spara"](con.descriptions);
 pug_mixins["spara"](con.rejectedReasons);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 if (con.configurations) {
-pug_html = pug_html + "\u003Cdiv id=\"configs\"\u003E\u003Ch4 class=\"vgi-cog\"\u003ERequired configuration for exposure: \u003C\u002Fh4\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"configs pad\"\u003E\u003Cb class=\"vgi-cog\"\u003ERequired configuration for exposure: \u003C\u002Fb\u003E";
 pug_mixins["spara"](con.configurations);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.problemTypes) {
-pug_html = pug_html + "\u003Cdiv id=\"problem\"\u003E\u003Ch4 class=\"vgi-bug\"\u003EProblem: \u003C\u002Fh4\u003E\u003Cp\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"problem pad\"\u003E\u003Cb class=\"vgi-bug\"\u003EProblem: \u003C\u002Fb\u003E ";
 // iterate con.problemTypes
 ;(function(){
   var $$obj = con.problemTypes;
@@ -1510,10 +1493,10 @@ pug_html = pug_html + "\u003Ca" + (pug_attr("href", "https://cwe.mitre.org/data/
   }
 }).call(this);
 
-pug_html = pug_html + "\u003C\u002Fp\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.impacts) {
-pug_html = pug_html + "\u003Cdiv id=\"impact\"\u003E\u003Ch4 class=\"vgi-impact\"\u003EImpact:  \u003C\u002Fh4\u003E\u003Cp\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"impact pad\"\u003E\u003Cb class=\"vgi-impact\"\u003EImpact:  \u003C\u002Fb\u003E ";
 // iterate con.impacts
 ;(function(){
   var $$obj = con.impacts;
@@ -1576,42 +1559,42 @@ pug_html = pug_html + "\u003Ca" + (pug_attr("href", "https://capec.mitre.org/dat
   }
 }).call(this);
 
-pug_html = pug_html + "\u003C\u002Fp\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.exploits) {
-pug_html = pug_html + "\u003Cdiv id=\"exploits\"\u003E\u003Ch4 class=\"vgi-bomb\"\u003EExploits:\u003C\u002Fh4\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"exploits pad\"\u003E\u003Cb class=\"vgi-bomb\"\u003EExploits\u003C\u002Fb\u003E";
 pug_mixins["spara"](con.exploits);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.pvstatus) {
-pug_html = pug_html + "\u003Cdiv id=\"status\"\u003E\u003Ch4\u003EAffected Product Status:\u003C\u002Fh4\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"status pad\"\u003E\u003Cb\u003EAffected Product Status\u003C\u002Fb\u003E";
 pug_mixins["statusTable"](con.pvstatus);
-pug_html = pug_html + "\u003Cbr style=\"font-size:0;\"\u002F\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.solutions) {
-pug_html = pug_html + "\u003Cdiv id=\"solution\"\u003E\u003Ch4 class=\"vgi-safe\"\u003ESolution:\u003C\u002Fh4\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"solution pad\"\u003E\u003Cb class=\"vgi-safe\"\u003ESolution\u003C\u002Fb\u003E";
 pug_mixins["spara"](con.solutions);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.workarounds) {
-pug_html = pug_html + "\u003Cdiv id=\"workaround\"\u003E\u003Ch4 class=\"vgi-avoid\"\u003EWorkaround:\u003C\u002Fh4\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"workaround pad\"\u003E\u003Cb class=\"vgi-avoid\"\u003EWorkaround\u003C\u002Fb\u003E";
 pug_mixins["spara"](con.workarounds);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.credits) {
-pug_html = pug_html + "\u003Cdiv class=\"rnd pad sec vgap\" id=\"credits\"\u003E\u003Ch4 class=\"vgi-like\"\u003ECredits:\u003C\u002Fh4\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"credits rnd pad sec\"\u003E\u003Cb class=\"vgi-like\"\u003ECredits\u003C\u002Fb\u003E";
 pug_mixins["creditList"](con.credits);
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 if (con.timeline) {
-pug_html = pug_html + "\u003Cdiv id=\"timeline\"\u003E\u003Cdetails open=\"open\"\u003E \u003Csummary\u003E\u003Ch4 class=\"vgi-cal\"\u003ETimeline:\u003C\u002Fh4\u003E\u003C\u002Fsummary\u003E\u003Cp\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"timeline pad\"\u003E\u003Cdetails open=\"open\"\u003E \u003Csummary\u003E\u003Cb class=\"vgi-cal\"\u003ETimeline\u003C\u002Fb\u003E\u003C\u002Fsummary\u003E";
 pug_mixins["timeList"](con);
-pug_html = pug_html + "\u003C\u002Fp\u003E\u003C\u002Fdetails\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fdetails\u003E\u003C\u002Fdiv\u003E";
 }
 if (con.references) {
-pug_html = pug_html + "\u003Cdiv id=\"references\"\u003E\u003Cdetails open=\"open\"\u003E \u003Csummary\u003E\u003Ch4 class=\"vgi-ext\"\u003EReferences\u003C\u002Fh4\u003E\u003C\u002Fsummary\u003E\u003Cp\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"references pad\"\u003E\u003Cdetails open=\"open\"\u003E \u003Csummary\u003E\u003Cb class=\"vgi-ext\"\u003EReferences\u003C\u002Fb\u003E\u003C\u002Fsummary\u003E";
 pug_mixins["refList"](con.references);
-pug_html = pug_html + "\u003C\u002Fp\u003E\u003C\u002Fdetails\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003C\u002Fdetails\u003E\u003C\u002Fdiv\u003E";
 }
 if (con.json) {
 pug_html = pug_html + "\u003Cpre\u003E" + (pug_escape(null == (pug_interp = JSON.stringify(con.json,1,1)) ? "" : pug_interp)) + "\u003C\u002Fpre\u003E";
@@ -2257,7 +2240,7 @@ pug_html = pug_html + "\u003Cdiv class=\"page wht shd pad2 gap\"\u003E\u003Cb cl
 if (cve.source && cve.source.advisory) {
 pug_html = pug_html + (pug_escape(null == (pug_interp = cve.source.advisory) ? "" : pug_interp)) + "             ";
 }
-pug_html = pug_html + (pug_escape(null == (pug_interp = cve.cveMetadata.title + ' (' + cve.cveMetadata.cveId + ')') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cul class=\"bullets\"\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003ECVSS: \u003C\u002Fb\u003E\u003C!--span.textif cna.metrics && cna.metrics && cna.metrics.length \u003E 0\n    ol\n        each x, i in cna.metrics\n            - cvss = x.cvssV3_1 ? x.cvssV3_1 : x.cvssV3_0 ? x.cvssV3_0 : x.cvssV2_0 ? x.cvssV2_0 : null\n            if cvss\n                li \n                    =x.scenarios\n                    if cvss.baseSeverity\n                        =cvss.baseSeverity\n                    |  \n                    +CVSS(cvss)--\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EPR: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E" + (pug_escape(null == (pug_interp = cve.source.defect) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EAffects: \u003C\u002Fb\u003E\u003C!--span.text= getProductAffected(cna) --\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EProblem Type: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E";
+pug_html = pug_html + (pug_escape(null == (pug_interp = cve.cveMetadata.title + ' (' + cve.cveMetadata.cveId + ')') ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cul class=\"bullets\"\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003ECVSS: \u003C\u002Fb\u003E\u003C!--span.textif cna.metrics && cna.metrics && cna.metrics.length \u003E 0\n    ol\n        each x, i in cna.metrics\n            - cvss = x.cvssV3_1 ? x.cvssV3_1 : x.cvssV3_0 ? x.cvssV3_0 : x.cvssV2_0 ? x.cvssV2_0 : null\n            if cvss\n                li \n                    =x.scenarios\n                    if cvss.baseSeverity\n                        =cvss.baseSeverity\n                    |  \n                    +CVSS(cvss)--\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EPR: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E" + (pug_escape(null == (pug_interp = cve.source.defect) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EAffects: \u003C\u002Fb\u003E\u003C!--span.text= getProductAffected(cna) --\u003E\u003C\u002Fli\u003E\u003Cli\u003E\u003Cb class=\"term\"\u003EProblem: \u003C\u002Fb\u003E\u003Cspan class=\"text\"\u003E";
 pug_mixins["spara"](cve.description.description_data.slice(0,1));
 if (cmap && Object.keys(cmap).length > 0 && cmap.constructor === Object) {
 pug_mixins["spara"](cve.CNA_private.CVE_table_description);
@@ -2934,9 +2917,7 @@ async function initCsClient() {
             portalErrorHandler(e);
         }
     } else {
-        document.getElementById('port').innerHTML = '<h2 class="pad2 tred">Browser does not support Service Workers feature required for this tab.</h2><i class="indent pad2">Are you using Firefox in Private mode? Try normal mode.</i>';
-//        console.log("Browser does not support Service Workers. Are you using Firefox in Private mode?")
-        //cveShowError('Browser not supported!');
+        cveShowError('Browser not supported!');
     }
 }
 
@@ -3002,10 +2983,6 @@ function listenforLogouts() {
 
 async function portalLogin(elem, credForm) {
     try {
-        if (!'serviceWorker' in navigator) {
-            cveShowError('Browser is missing required features. Try a different browser or the normal mode.')
-            return (false);
-        }
         if (!credForm.checkValidity()) {
             return (false);
         }
@@ -4231,7 +4208,7 @@ pug_mixins[ctemplate]();
         typeof userInfo !== 'undefined' ? userInfo : undefined, "users" in locals_for_with ?
         locals_for_with.users :
         typeof users !== 'undefined' ? users : undefined));
-    ;;return pug_html;}</script><dialog class="dlg bor rnd shd" id="cveErrorsModal"><div id="cveErrors"></div><center class="pad2"><input class="btn sfe" type="reset" onclick="document.getElementById('cveErrorsModal').close()" value="OK"></center></dialog><dialog class="dlg bor rnd shd" id="secretDialog"><header class="ban sec pad"><b class="lbl vgi-lock">IMPORTANT! New API Secret Key generated!</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><center class="gap"><form id="secretDialogForm" onsubmit="event.preventDefault();this.reset();this.closest('dialog').close();return false"><h3 class="vgi-alert" id="userMessage"></h3><p>Please securely store this API key.<br/> This key will not be shown again!</p><b class="lbl">API Secret Key</b><br/><input class="txt bor" type="password" size="39" name="pass" readonly="readonly"/><input id="showpass" name="showpass" type="checkbox" onclick="this.form.pass.type = (this.form.pass.type === 'password'? 'text' : 'password')"/><label class="vgi-eye lbl sbn" for="showpass"></label><center class="gap"><input class="btn sfe" type="reset" onclick="this.closest('dialog').close()" value="OK"/></center></form></center></dialog><dialog class="dlg bor rnd shd" id="userAddDialog"><header class="ban sec pad"><b class="lbl vgi-user">Add a new user</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><form class="gap" onsubmit="event.preventDefault();cveAddUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt" name="new_username" pattern="[a-zA-Z0-9-_@.]{3,50}" required="required" placeholder="username/email" size="43" title="username - only alpha-numeric and . _ - @ are allowed (min 3 characters)"/><br/><input class="txt" name="first" pattern=".{1,64}" required="required" placeholder="First name" title="First Name"/><input class="txt" name="last" pattern=".{1,64}" required="required" placeholder="Last name" title="Last Name"/><div><br/><input id="cveUserAdmin" type="checkbox" name="admin"/><label class="vgi-king lbl" for="cveUserAdmin" title="Is this an admin?">Admin</label></div><br/><input class="gap sfe btn vgi-magic" type="submit" value="Add user"/></form></dialog><dialog class="dlg bor rnd shd" id="userEditDialog"><header class="ban sec pad"><b class="lbl vgi-user">Update user details</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><form class="gap" id="userEditForm" onsubmit="event.preventDefault();cveUpdateUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt" name="new_username" pattern="[a-zA-Z0-9-_@.]{3,50}" required="required" placeholder="username/email" size="43" title="username - only alpha-numeric and . _ - @ are allowed (min 3 characters)"/><br/><input class="txt" name="first" pattern=".{1,64}" required="required" placeholder="First name" title="First Name"/><input class="txt" name="last" pattern=".{1,64}" required="required" placeholder="Last name" title="Last Name"/><div><br/><input id="cveUserAdmin" type="checkbox" name="admin"/><label class="vgi-king lbl" for="cveUserAdmin" title="Is this an admin?">Admin</label><input class="lbl" id="cveUserActive" type="checkbox" name="active" checked="checked"/><label class="lbl" for="cveUserActive" title="Is the account active?">Active</label></div><br/><input class="gap sfe btn vgi-magic" type="submit" value="Update"/> <button class="gap btn vgi-reuse" onclick="cveUserKeyReset(this)">Reset API Key</button></form></dialog><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="vgi-download btn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail btn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="cvePortalTab" value="6"><label class="lbl" for="cvePortalTab">CVE Portal</label><div class="wht fil rnd bor" id="port"></div></div><script>var idpath = "cveMetadata.cveId";
+    ;;return pug_html;}</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="vgi-download btn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail btn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="cvePortalTab" value="6"><label class="lbl" for="cvePortalTab">CVE Portal</label><div class="wht fil bor" id="port"></div></div><script>var idpath = "cveMetadata.cveId";
 var allowAjax = "false";
 var schemaName = "cve";
 var postUrl = "";
@@ -4267,4 +4244,4 @@ if (initJSON && initJSON.cveMetadata && initJSON.cveMetadata.state == 'REJECTED'
         return res;
     };
 });
-</script><dialog class="bor rnd shd pad2" id="alertDialog"><center><form onsubmit="event.preventDefault();return false;"><h2 class="vgi-alert" id="alertMessage"></h2><div class="gap" id="smallAlert"> </div><center class="gap"><input class="btn sfe" id="alertOk" type="reset" onclick="document.getElementById('alertDialog').close();" value="OK"/><input class="btn red" id="alertCancel" type="reset" onclick="document.getElementById('alertDialog').close();" value="Cancel" dstyle="display:none"/></center></form></center></dialog></div><center class="pad"><div class="pad2 center tgrey"><small> Copyright © Chandan B.N, 2017-2022. Usage of CVE IDs is subject to CVE terms of use. This site does not track you and is safe for working with confidential vulnerability information. Made with vulnogram 0.1.0-rc1</small><br><small> <br><a class="logo" href="https://github.com/Vulnogram/Vulnogram">Vulnogram Project</a></small></div></center></body></html>
+</script><dialog class="bor rnd shd pad2" id="alertDialog"><center><form onsubmit="event.preventDefault();return false;"><h2 class="vgi-alert" id="alertMessage"></h2><div class="gap" id="smallAlert"> </div><center class="gap"><input class="btn sfe" id="alertOk" type="reset" onclick="document.getElementById('alertDialog').close();" value="OK"/><input class="btn red" id="alertCancel" type="reset" onclick="document.getElementById('alertDialog').close();" value="Cancel" dstyle="display:none"/></center></form></center></dialog><dialog class="dlg bor rnd shd" id="cveErrorsModal"><div id="cveErrors"></div><center class="pad2"><input class="btn sfe" type="reset" onclick="document.getElementById('cveErrorsModal').close()" value="OK"></center></dialog><dialog class="dlg bor rnd shd" id="secretDialog"><header class="ban sec pad"><b class="lbl vgi-lock">IMPORTANT! New API Secret Key generated!</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><center class="gap"><form id="secretDialogForm" onsubmit="event.preventDefault();this.reset();this.closest('dialog').close();return false"><h3 class="vgi-alert" id="userMessage"></h3><p>Please securely store this API key.<br/> This key will not be shown again!</p><b class="lbl">API Secret Key</b><br/><input class="txt bor" type="password" size="39" name="pass" readonly="readonly"/><input id="showpass" name="showpass" type="checkbox" onclick="this.form.pass.type = (this.form.pass.type === 'password'? 'text' : 'password')"/><label class="vgi-eye lbl sbn" for="showpass"></label><center class="gap"><input class="btn sfe" type="reset" onclick="this.closest('dialog').close()" value="OK"/></center></form></center></dialog><dialog class="dlg bor rnd shd" id="userAddDialog"><header class="ban sec pad"><b class="lbl vgi-user">Add a new user</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><form class="gap" onsubmit="event.preventDefault();cveAddUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt" name="new_username" pattern="[a-zA-Z0-9-_@.]{3,50}" required="required" placeholder="username/email" size="43" title="username - only alpha-numeric and . _ - @ are allowed (min 3 characters)"/><br/><input class="txt" name="first" pattern=".{1,64}" required="required" placeholder="First name" title="First Name"/><input class="txt" name="last" pattern=".{1,64}" required="required" placeholder="Last name" title="Last Name"/><div><br/><input id="cveUserAdmin" type="checkbox" name="admin"/><label class="vgi-king lbl" for="cveUserAdmin" title="Is this an admin?">Admin</label></div><br/><input class="gap sfe btn vgi-magic" type="submit" value="Add user"/></form></dialog><dialog class="dlg bor rnd shd" id="userEditDialog"><header class="ban sec pad"><b class="lbl vgi-user">Update user details</b> <a class="sbn right vgi-fail" onclick="this.closest('dialog').close()"></a></header><form class="gap" id="userEditForm" onsubmit="event.preventDefault();cveUpdateUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt" name="new_username" pattern="[a-zA-Z0-9-_@.]{3,50}" required="required" placeholder="username/email" size="43" title="username - only alpha-numeric and . _ - @ are allowed (min 3 characters)"/><br/><input class="txt" name="first" pattern=".{1,64}" required="required" placeholder="First name" title="First Name"/><input class="txt" name="last" pattern=".{1,64}" required="required" placeholder="Last name" title="Last Name"/><div><br/><input id="cveUserAdmin" type="checkbox" name="admin"/><label class="vgi-king lbl" for="cveUserAdmin" title="Is this an admin?">Admin</label><input class="lbl" id="cveUserActive" type="checkbox" name="active" checked="checked"/><label class="lbl" for="cveUserActive" title="Is the account active?">Active</label></div><br/><input class="gap sfe btn vgi-magic" type="submit" value="Update"/> <button class="gap btn vgi-reuse" onclick="cveUserKeyReset(this)">Reset API Key</button></form></dialog></div><span class="pad ban"><div class="pad2 center tgrey"><small> Copyright © Chandan B.N, 2017-2022. Usage of CVE IDs is subject to CVE terms of use. This site does not track you and is safe for working with confidential vulnerability information. Made with Vulnogram 0.1.0-dev</small><br><small> <br><a class="logo" href="https://github.com/Vulnogram/Vulnogram">Vulnogram Project</a></small></div></span></body></html>
