@@ -1,0 +1,276 @@
+<!DOCTYPE html><html><head><title>Vulnogram CVE Editor</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Vulnogram is a tool for creating and editing CVE information in CVE JSON format, and for generating advisories. It can be used for tracking and managing anything that can be expressed with a JSON-Schema."><meta name="keywords" content="psirt, sirt, advisory, CVRF, CSAF, CVE, vulnogram, CVE, JSON"><meta name="csrf-token"><meta name="theme-color" content="#f0f8ff"><meta property="og:type" content="website"><meta property="og:image" content="./css/logo.png"><link rel="apple-touch-icon" sizes="256x256" href="./css/logo.png"><link rel="icon" type="image/png" href="./css/logo.png" sizes="256x256"><link rel="stylesheet" href="./css/min.css"><link rel="stylesheet" href="./css/icns.css"><style>body{
+ --hig: hsla(200, 56%, 95%, 1);
+}   
+
+span.product_data, b.version_data, b.vendor_data, b.reference_data, b.problemtype_data, b span.product, b span.version, b.description_data{
+    display: none;
+}
+
+/* MITRE simulation styles */
+b span.product + div button.json-editor-btn-delete {
+    float: right;
+}
+
+#GeneratedTable { border:1px solid #000000; border-collapse: collapse;}
+#GeneratedTable th { font-weight: bold; padding: 2px 5px 2px 5px; text-align: left;  vertical-align:top; background-color: #999999; color:#ffffff; border-top:1px solid #000000; border-bottom:1px solid #000000 }
+#GeneratedTable td { padding: 5px; font-size: 90%; vertical-align:top; border-bottom:1px solid #e0dbd2 }
+#GeneratedTable .note { font-size: 80%; background-color:#eeeeee; color:#880000; }
+#GeneratedTable .ltgreybackground { border-left:1px solid #cccccc; background-color: #eeeeee; }
+
+
+#GeneratedTable p { font-family: Verdana, Helvetica, sans-serif; margin-top:0px;}
+#GeneratedTable td { font-family: Verdana, Helvetica, sans-serif;}
+#GeneratedTable th { font-family: Verdana, Helvetica, sans-serif; }
+
+#GeneratedTable ul { font-family: Verdana, Helvetica, sans-serif; }
+#GeneratedTable li { font-family: Verdana, Helvetica, sans-serif;  padding-top:2px; padding-bottom:3px }
+#GeneratedTable ol { font-family: Verdana, Helvetica, sans-serif; }
+
+#GeneratedTable h1 { font-family: Verdana, Helvetica, sans-serif;}
+#GeneratedTable h2 { font-family: Verdana, Helvetica, sans-serif; color: #000000; padding:0px 0px 5px 0px; margin:0px; white-space: nowrap;}
+#GeneratedTable h2 a { color: #000000;}
+#GeneratedTable h3 { font-family: Verdana, Helvetica, sans-serif; padding:0px 0px 5px 0px; margin:0px; color:#880000; text-align:left}
+#GeneratedTable h3 a { color:#880000;}
+#GeneratedTable h4 { font-family: Verdana, Helvetica, sans-serif; margin: 10px 0px 10px 0px; color: #000000; padding-bottom:10px; }
+#GeneratedTable h4 a { color: #000000; }
+#GeneratedTable h5 { font-family: Verdana, Helvetica, sans-serif; padding:6px 0px 6px 0px; margin: 6px 0px 6px 0px; color: #000000}
+#GeneratedTable h5 a { color: #880000}
+#GeneratedTable pre { overflow: auto; } /* added on 10-29-2015 to fix the /data/board/archives/ pages  */
+
+/*  REUSABLE ATTRIBUTES  */
+#GeneratedTable a { color:#3377CC }
+#GeneratedTable a:hover { color:#880000; }
+
+#GeneratedTable .larger   { font-size: 120%; }
+#GeneratedTable .smaller   { font-size: 90%; }
+
+
+table.striped {
+        font-size: 100%;
+  border-spacing: 0;
+  border: 1px solid #c1c1c1;
+  border-collapse: collapse;
+}
+
+table.striped th {
+  height: 24px;
+  text-align:center;
+  background-color: #f0f0f0;
+  border : #ababab 1px solid;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+table.striped td {
+  padding:5px;
+  border-width: 0px 1px 0px 1px;
+  border : #c1c1c1 1px solid;
+}
+</style></head><body class="cve" id="body"><div class="stk"><header class="ban pad wht btm"><div class="left"><a class="logo big" title="Making the world safer one CVE at a time, since 2017" href="https://vulnogram.github.io">Vulnogram</a> 
+    <a class="icn fbn icn alert" title="CVE: Common Vulnerabilities and Exposures" href="/">CVE 5</a>
+    <a class="icn fbn icn alert" title="CVE: Common Vulnerabilities and Exposures" href="/cve4">CVE 4 (old)</a> 
+</div><div class="right"></div></header><header class="ban pad shd hig"><div class="left"><a class="fbn sfe" href="./">NEW</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><a class="icn fbn folder" type="file" onclick="importFile(event, this);">Open</a><a class="icn fbn download" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download">Download</a><a class="icn fbn twitter" type="button" oncontextmenu="tweetJSON(event, this);" onclick="tweetJSON(event, this);" value="Download" target="_blank" title="Share a tweet about this CVE">Tweet</a></div><div class="right"><form class="indent out nobr" onsubmit="event.preventDefault();loadCVE(this.git.value);return false;"><input class="icn txt Import" type="text" name="git" placeholder="CVE-YYYY-NNNN" pattern=".*CVE-[0-9]{4}-[0-9]{4,12}.*" size="17" title="CVE ID CVE-yyyy-nnnn+" required><button class="btn icn Import" type="submit">GIT</button></form><form class="indent out nobr" action="https://github.com/CVEProject/cvelist/search" method="GET"><input type="hidden" name="type" value="Code"><input class="icn txt Import" type="text" name="q" placeholder="Search CVElist" title="Search CVElist git repo" required><button class="btn icn Search" type="submit">GIT</button></form></div></header></div><script>var userUsername = ""
+</script><div class="pad ban messagebar"><div class="left tred" id="errMsg"></div><div class="right" id="infoMsg"></div></div><div class="pad"><script>tweetJSON = function(event, link) {
+        var j = mainTabGroup.getValue();
+        if (!j){
+            event.preventDefault();
+            return;
+        }
+        var id = textUtil.deep_value(j, 'CVE_data_meta.ID');
+        var cvelist = textUtil.deep_value(j, 'CNA_private.CVE_list');
+        if(cvelist && cvelist.length > 0) {
+            id = '';
+        }
+        var aka = textUtil.deep_value(j, 'CVE_data_meta.AKA')
+        var text = id + ' ' + textUtil.deep_value(j, 'source.advisory') + ' '
+            + textUtil.getBestTitle(j) + ' '
+            + (aka? ' aka ' + aka : '');
+        text = text.replace(/ +(?= )/g,'');
+        link.href = 'https://twitter.com/intent/tweet?&text=' 
+            + encodeURI(text)
+            + '&url=' + encodeURI(textUtil.deep_value(j, 'references.reference_data.0.url'));
+        //    + '&hashtags=' + encodeURI(id)
+        //via=vulnogram&hashtags=CVE
+    };draftEmail = async function(event, link, renderId) {
+        var subject = ''
+        if(typeof(mainTabGroup) !== 'undefined') {
+            var j = mainTabGroup.getValue();
+            if (!j){
+                event.preventDefault();
+                return;
+            }
+            var id = textUtil.deep_value(j, 'CVE_data_meta.ID');
+            var cvelist = textUtil.deep_value(j, 'CNA_private.CVE_list');
+            if(cvelist && cvelist.length > 0) {
+                id = '';
+            }
+            subject = id +' ' + textUtil.getBestTitle(j);
+        } else {
+            var t = document.getElementById(renderId).getElementsByTagName('h2')[0];
+            if(t) {
+                subject = t.textContent;
+            }
+        }
+        var emailBody = document.getElementById(renderId).innerText;
+        link.href="mailto:?subject=" + encodeURI(subject) + '&body=' + encodeURI(emailBody);
+    };loadCVE = function (value) {    var realId = value.match(/(CVE-(\d{4})-(\d{1,12})(\d{3}))/);
+    if (realId) {
+        var id = realId[1];
+        var year = realId[2];
+        var bucket = realId[3];
+        fetch('https://raw.githubusercontent.com/CVEProject/cvelist/master/' + year + '/' + bucket + 'xxx/' + id + '.json', {
+                method: 'GET',
+                credentials: 'omit',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*'
+                },
+                redirect: 'error'
+            })
+            .then(function (response) {
+                if (!response.ok) {
+                    errMsg.textContent = "Failed to load valid CVE JSON";
+                    infoMsg.textContent = "";
+                    throw Error(id + ' ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(function (res) {
+                if (res.CVE_data_meta) {
+                    loadJSON(res, id, "Loaded "+id+" from GIT!");
+                } else {
+                    errMsg.textContent = "Failed to load valid CVE JSON";
+                    infoMsg.textContent = "";
+                }
+            })
+            .catch(function (error) {
+                errMsg.textContent = error;
+            })
+    } else {
+        errMsg.textContent = "CVE ID required";
+    }
+    return false;
+};</script><script>var custom_validators = [function (schema, value, path) {
+        var errors = [];
+        if (path === "root.references") {
+            var confirms = 0, miscs = 0;
+            var data = value.reference_data;
+            for(r in data) {
+                if(data[r].refsource == 'CONFIRM') {
+                   confirms++; 
+                }
+                if(data[r].refsource == 'MISC' || data[r].refsource == '') {
+                   miscs++; 
+                }
+                if(data[r].refsource == 'CONFIRM' || data[r].refsource == 'MISC') {
+                    if(data[r].url != data[r].name && data[r].name != '') {
+                        errors.push({
+                            path: 'root.references.reference_data.' + r + '.name',
+                            property: 'format',
+                            message: 'name should be same as URL for CONFIRM or MISC backwords compatibility)'
+                        });
+                    }
+                }
+                
+            }
+            if (confirms == 0 && miscs == data.length) {
+                errors.push({
+                    path: 'root.references',
+                    property: 'format',
+                    message: 'There should be atleast one CONFIRM URL or a legacy refsource type!'
+                });
+            }
+        }
+        return errors;
+    }];</script><script>var additionalTabs =  {
+    advisoryTab: {
+        title: 'Advisory',
+        setValue: async function (j) {
+          if (pugRender && document.getElementById("render")) {
+            var cve_list = textUtil.deep_value(j, 'CNA_private.CVE_list');
+            if (cve_list && cve_list.length > 0) {
+                var cSet = new Set();
+                var cMap = {};
+                for (var d of cve_list) {
+                    if (d.CVE) {
+                        for (var x of d.CVE.match(/CVE-\d{4}-[a-zA-Z\d\._-]{4,}/igm)) {
+                            cSet.add(x);
+                            cMap[x] = {
+                                impact: '',
+                                summary: d.summary
+                            }
+                        }
+                    }
+                }
+                if (cSet.size > 0) {
+                    var r = await textUtil.getDocuments('nvd', Array.from(cSet), ['cve.CVE_data_meta', 'cve.description', 'impact']);
+                    for (var c of r) {
+                        var cveid = textUtil.deep_value(c, 'cve.CVE_data_meta.ID');
+                        if (textUtil.deep_value(c, 'impact.baseMetricV3.cvssV3')) {
+                            cMap[cveid].impact = {
+                                cvss: c.impact.baseMetricV3.cvssV3
+                            };
+                        } else if (textUtil.deep_value(c, 'impact.baseMetricV2.cvssV2')) {
+                            cMap[cveid].impact = {
+                                cvss: c.impact.baseMetricV2.cvssV2
+                            };
+                        }
+                        if (!cMap[cveid].summary) {
+                            var title = textUtil.deep_value(c, 'cve.CVE_data_meta.TITLE');
+                            cMap[cveid].summary = title ? title : textUtil.deep_value(c, 'cve.description.description_data')[0].value;
+                        }
+                        cSet.delete(cveid);
+                    }
+                    if (cSet.size > 0) {
+                        var nr = await textUtil.getDocuments('cve', Array.from(cSet), ['body.CVE_data_meta', 'body.impact', 'body.description']);
+                        for (c of nr) {
+                            var cveid = textUtil.deep_value(c, 'body.CVE_data_meta.ID');
+                            if (textUtil.deep_value(c, 'body.impact.cvss')) {
+                                cMap[cveid].impact = c.body.impact;
+                            }
+                            if (!cMap[cveid].summary) {
+                                var desc = textUtil.deep_value(c, 'body.description.description_data')[0].value;
+                                cMap[cveid].summary = desc ? desc : textUtil.deep_value(c, 'body.CVE_data_meta.TITLE');
+                            }
+                        }
+                    }
+                    document.getElementById("render").innerHTML = pugRender({
+                        renderTemplate: 'page',
+                        doc: j,
+                        cmap: cMap,
+                    });
+                } else {
+                    document.getElementById("render").innerHTML = pugRender({
+                        renderTemplate: 'page',
+                        doc: j
+                    });
+                }
+            } else {
+                document.getElementById("render").innerHTML = pugRender({
+                    renderTemplate: 'page',
+                    doc: j
+                });
+            }
+        }
+      }
+    },
+    mitreTab: {
+        title: 'MITRE-Preview',
+        setValue: function(j){
+            document.getElementById("mitreweb").innerHTML = pugRender({
+                renderTemplate: 'mitre',
+                doc: j
+            });
+        }
+    },
+    jsonTab: {
+        title: 'CVE-JSON',
+        setValue: function(j){
+            document.getElementById("outjson").textContent = textUtil.getMITREJSON(textUtil.reduceJSON(j)); 
+        }
+    }
+}</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab">Editor</label><div class="wht fil bor pad"><div class="hid"><button class="lbl sml indent btn icn auto sfe" id="auto" style="visibility:hidden">Auto-Text</button></div><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Advisory</label><div class="wht fil bor pad"><div style="float:right"><a class="icn btn email right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div><input class="tab" name="tabs" type="radio" id="mitreTab" value="5"><label class="lbl" for="mitreTab">MITRE-Preview</label><div class="wht fil bor pad"><div id="mitreweb"></div></div><input class="tab" name="tabs" type="radio" id="jsonTab" value="6"><label class="lbl" for="jsonTab">CVE-JSON            </label><div class="wht fil bor pad"><div style="float:right"><a class="icn right copy btn" onmouseover="this.textContent=&quot;Copy&quot;" onclick="copyText(outjson);this.textContent=&quot;Copied&quot;">Copy</a> <a class="icn right download btn" onclick="downloadText(outjson, this);">Download</a></div><div class="pre" id="outjson"></div></div></div><script>var idpath = "CVE_data_meta.ID";
+var allowAjax = "false";
+var schemaName = "cve";
+var postUrl = "";
+var csrfToken = "";
+var ajaxBase  = "./";var initJSON = undefined;var docSchema={"$schema":"http:\u002F\u002Fjson-schema.org\u002Fdraft-04\u002Fschema#","definitions":{"cve_id":{"type":"string","pattern":"^CVE-[0-9]{4}-[0-9A-Za-z._-]{4,}$","message":"Valid CVE ID is required!","links":[{"class":"btn sml lbl icn extlink","href":"'http:\u002F\u002Fcve.mitre.org\u002Fcgi-bin\u002Fcvename.cgi?name=' + context.self","title":"'MITRE's CVE Entry","rel":"'MITRE'"},{"class":"btn sml lbl icn extlink","href":"'https:\u002F\u002Fnvd.nist.gov\u002Fvuln\u002Fdetail\u002F' + context.self","title":"'NVD's CVE Entry","rel":"'NVD'"}]},"email_address":{"type":"string","pattern":"^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$","message":"Valid email required"},"product":{"type":"object","options":{"layout":"grid"},"required":["product_name","version"],"properties":{"product_name":{"type":"string","minLength":1,"description":"eg., Example Express","message":"A product name is required!","options":{"grid_columns":10}},"version":{"type":"object","required":["version_data"],"properties":{"version_data":{"type":"array","minItems":1,"items":{"title":"version","type":"object","required":["version_value"],"id":"v","properties":{"version_name":{"title":"Version name (X)","type":"string","description":"eg., 4.0"},"version_affected":{"type":"string","enum":["","\u003C","\u003C=","=","\u003E","\u003E=","!\u003C","!\u003C=","!","!\u003E","!\u003E=","?\u003C","?\u003C=","?","?\u003E","?\u003E="],"options":{"enum_titles":["Not Selected","\u003C (affects X versions prior to n)","\u003C= (affects X versions up to n)"," = (affects n)"," \u003E (affects X versions above n)"," \u003E= (affects X versions n and above)","!\u003C (doesn't affect X versions prior to n)","!\u003C= (doesn't affect X versions n and below)","! (doesn't affect n)","!\u003E (doesn't affect X versions above n)","!\u003E= (doesn't affect X versions n and above)","?\u003C (status of X versions prior to n is unknown)","?\u003C= (status of X versions up to n is unknown)","? (status of n is unknown)","?\u003E (status of X versions above n is unknown)","?\u003E= (status of X versions n and above is unknown)"]}},"version_value":{"title":"Version value (n)","type":"string","description":"eg., 4.0 update 2","minLength":1,"message":"Affect version value is required!"},"platform":{"type":"string","description":"eg., x86"}}},"format":"table"}}}}},"reference":{"id":"ref","type":"object","required":["url"],"properties":{"refsource":{"type":"string","default":"CONFIRM","enum":["AIXAPAR","ALLAIRE","APPLE","ATSTAKE","AUSCERT","BEA","BID","BINDVIEW","BUGTRAQ","CALDERA","CERT","CERT-VN","CHECKPOINT","CIAC","CISCO","COMPAQ","CONECTIVA","CONFIRM","DEBIAN","EEYE","ENGARDE","ERS","EXPLOIT-DB","FarmerVenema","FEDORA","FREEBSD","FRSIRT","FULLDISC","GENTOO","HP","HPBUG","IBM","IDEFENSE","IMMUNIX","ISS","JVN","JVNDB","L0PHT","MANDRAKE","MANDRIVA","MISC","MLIST","MS","MSKB","NAI","NETBSD","NTBUGTRAQ","OPENBSD","OPENPKG","OSVDB","OVAL","REDHAT","SCO","SECTRACK","SECUNIA","SF-INCIDENTS","SGI","SLACKWARE","SREASON","SREASONRES","SUN","SUNALERT","SUNBUG","SUSE","TRUSTIX","TURBO","UBUNTU","VIM","VULN-DEV","VULNWATCH","VUPEN","WIN2KSEC","XF"]},"url":{"type":"string","maxLength":500,"pattern":"^(ftp|http)s?:\u002F\u002F\\S+$","message":"Valid URL is required!","links":[{"class":"btn sml icn extlink","href":"context.self","title":"context.self","rel":"'Open link'"}]},"name":{"maxLength":500,"type":"string"}}},"lang_string":{"type":"object","required":["lang","value"],"properties":{"lang":{"type":"string","options":{"hidden":"true"},"default":"eng"},"value":{"title":" ","type":"string","minLength":2,"maxLength":3999,"format":"textarea","options":{"input_height":"9em","expand_height":true}}}}},"type":"object","required":["data_type","data_format","data_version","CVE_data_meta","affects","problemtype","references","description"],"properties":{"data_type":{"type":"string","enum":["CVE"],"options":{"hidden":"true"}},"data_format":{"type":"string","enum":["MITRE"],"options":{"hidden":"true"}},"data_version":{"type":"string","enum":["4.0"],"options":{"hidden":"true"}},"generator":{"type":"object","properties":{"engine":{"type":"string","template":"\"Vulnogram 0.0.9\""}},"options":{"hidden":"true"}},"CVE_data_meta":{"type":"object","required":["ID","ASSIGNER","STATE"],"properties":{"ID":{"$ref":"#\u002Fdefinitions\u002Fcve_id","description":"CVE-yyyy-nnnn","options":{"class":"ID","input_width":"10em","grid_columns":6}},"ASSIGNER":{"$ref":"#\u002Fdefinitions\u002Femail_address","description":"Email of CNA assigning this CVE ID","default":"","options":{"input_width":"12em","grid_columns":6}},"DATE_PUBLIC":{"type":"string","format":"datetime","description":"YYYY-MM-DD","options":{"class":"date","input_width":"18em","grid_columns":6}},"TITLE":{"type":"string","description":"Short summary","options":{"grid_columns":12}},"AKA":{"type":"string","title":"Also known as","description":"eg., HeartBleed, Shellshock","options":{"grid_columns":6}},"STATE":{"type":"string","enum":["PUBLIC","RESERVED","REJECT"],"default":"DRAFT","format":"radio","options":{"grid_columns":12}}},"id":"CDM","options":{"layout":"grid","grid_columns":12}},"source":{"type":"object","properties":{"defect":{"title":"Defect","type":"array","description":"CNA specific bug tracking IDs","format":"taglist","uniqueItems":true,"items":{"type":"string"}},"advisory":{"title":"Advisory-ID","type":"string","description":"CNA specific advisory IDs (Optional)"},"discovery":{"type":"radio","title":"Found during","enum":["INTERNAL","EXTERNAL","USER","UNKNOWN"],"options":{"enum_titles":["internal research","external research","production use","unknown"]},"default":"UNKNOWN"}}},"affects":{"type":"object","required":["vendor"],"properties":{"vendor":{"type":"object","required":["vendor_data"],"properties":{"vendor_data":{"type":"array","minItems":1,"items":{"title":"vendor","type":"object","required":["vendor_name","product"],"properties":{"vendor_name":{"type":"string","description":"eg., Example Org","default":"","minLength":1},"product":{"type":"object","required":["product_data"],"properties":{"product_data":{"type":"array","minItems":1,"items":{"title":"product","$ref":"#\u002Fdefinitions\u002Fproduct"}}}}}},"format":"table"}}}},"format":"table"},"problemtype":{"type":"object","required":["problemtype_data"],"properties":{"problemtype_data":{"type":"array","minItems":1,"items":{"title":"problem type","type":"object","required":["description"],"properties":{"description":{"type":"array","minItems":1,"options":{"disable_array_add":"true"},"items":{"title":"problem type description","type":"object","required":["lang","value"],"properties":{"lang":{"type":"string","options":{"hidden":"true"},"default":"eng"},"value":{"description":"Vulnerability type: can be a CWE or free text","title":" ","type":"string","minLength":2,"maxLength":3999,"$ref":"js\u002Fcwe-frequent.json"}}},"format":"table"}}},"format":"table"}}},"description":{"type":"object","required":["description_data"],"properties":{"description_data":{"type":"array","minItems":1,"items":{"title":"description","$ref":"#\u002Fdefinitions\u002Flang_string"},"format":"table"}}},"references":{"type":"object","required":["reference_data"],"properties":{"reference_data":{"type":"array","minItems":1,"maxItems":500,"items":{"title":"URL","$ref":"#\u002Fdefinitions\u002Freference"},"format":"table"}}},"configuration":{"type":"array","format":"table","items":{"title":"required configuration","$ref":"#\u002Fdefinitions\u002Flang_string"}},"impact":{"type":"object","properties":{"cvss":{"$ref":"js\u002Fcvss.json"}}},"exploit":{"type":"array","format":"table","items":{"title":"Exploit","$ref":"#\u002Fdefinitions\u002Flang_string","default":{"lang":"eng","value":""}}},"work_around":{"type":"array","format":"table","items":{"title":"work around","$ref":"#\u002Fdefinitions\u002Flang_string","default":{"lang":"eng","value":""}}},"solution":{"type":"array","format":"table","items":{"title":"solution","$ref":"#\u002Fdefinitions\u002Flang_string"}},"credit":{"type":"array","format":"table","items":{"title":"credit statement","type":"object","required":["lang","value"],"properties":{"lang":{"type":"string","options":{"hidden":"true"},"default":"eng"},"value":{"description":"Names of people acknowledged for discovering, fixing, or helping with this CVE","title":" ","type":"string","minLength":2,"maxLength":3999}}}}}};</script><script src="./js/util.js"></script><script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@1.2.1/dist/jsoneditor.min.js" integrity="sha384-iSUg2WRV2cauD+nwMuv7ITxwSe+2heHjWFIOjiWk5/Yve5ovwg/t7qp3ht6VlQBL" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js" integrity="sha384-rP/6HzF4Ap08EuRS9yaQsEPDqb8xS5WVTAzL7/LKTnUmJawbKoeSNyqHnNaiXY5X" crossorigin="anonymous"></script><script src="./js/cve/render.js"></script><script src="./js/editor.js"></script><script>loadJSON(initJSON);</script></div><span class="pad ban"><div class="pad2 center tgrey"><small> Copyright © Chandan B.N, 2017-2019. Usage of CVE IDs is subject to CVE terms of use. This site does not track you and is safe for working with confidential vulnerability information. Made with Vulnogram 0.0.9</small><br><small> <br><a class="logo" href="https://github.com/Vulnogram/Vulnogram">Vulnogram Project</a></small></div></span></body></html>
