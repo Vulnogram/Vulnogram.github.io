@@ -639,21 +639,26 @@ async function autoText(event) {
     if (event) {
         event.preventDefault();
     }
-    var doc = docEditor.getValue();
-    var text = cveRender({
-        ctemplate: 'autoText',
-        con: doc.containers.cna
-    });
-    // remove extra spaces
-    text = text.trim().replaceAll(/\s+/g, ' ');
-    hE = await docEditor.getEditor('root.containers.cna.descriptions.0.supportingMedia.0.value');
+    if (docEditor.validation_results && docEditor.validation_results.length == 0) {
 
-    // Capitolize sentances.
-    var rg = /(^\w{1}|\.\s*\w{1})/gi;
-    text = text.replace(rg, function (toReplace) {
-        return toReplace.toUpperCase();
-    });
-    hE.setValue(text, '', false);
+        var doc = docEditor.getValue();
+        var text = cveRender({
+            ctemplate: 'autoText',
+            con: doc.containers.cna
+        });
+        // remove extra spaces
+        text = text.trim().replaceAll(/\s+/g, ' ');
+        hE = await docEditor.getEditor('root.containers.cna.descriptions.0.supportingMedia.0.value');
+
+        // Capitolize sentances.
+        var rg = /(^\w{1}|\.\s*\w{1})/gi;
+        text = text.replace(rg, function (toReplace) {
+            return toReplace.toUpperCase();
+        });
+        hE.setValue(text, '', false);
+    } else {
+        showAlert('Please enter all the required fields first!');
+    }
 }
 
 function addRichText(d) {
@@ -2704,10 +2709,6 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
         }
 
         get worker() {
-            if (this.registration) {
-                return Promise.resolve(this.registration.active);
-            }
-
             let serviceUri = this.serviceUri;
 
             let initWorker = (worker) => {
@@ -2716,6 +2717,11 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
 
                 this.simpleMessage(worker, init_msg);
             };
+
+            if (this.registration) {
+                initWorker(this.registration.active);
+                return Promise.resolve(this.registration.active);
+            }
 
             return navigator.serviceWorker.register(this.swPath)
                 .then(reg => {
@@ -3486,6 +3492,14 @@ async function cvePost() {
                 //console.log('uploading...');
                 var j = await mainTabGroup.getValue();
                 var j = textUtil.reduceJSON(j);
+                /*var pts = j.containers.cna.problemTypes;
+                if(pts && pts.length == 1 && pts[0].descriptions && pts[0].descriptions[0].description == undefined) {
+                    delete j.containers.cna.problemTypes;
+                } 
+                var ims = j.containers.cna.impacts;
+                if(ims && ims.length == 1 && ims[0].descriptions && ims[0].descriptions[0].value == undefined) {
+                    delete j.containers.cna.impacts;
+                }*/
                 var ret = null;
                 try {
                     var latestId = await csClient.getCveId(j.cveMetadata.cveId);
@@ -3929,6 +3943,7 @@ pug_html = pug_html + "A";
 }
 pug_html = pug_html + " vulnerability";
 var codelist = [];
+var relevantList = [];
 if (con.affected) {
 var plist = [];
 // iterate con.affected
@@ -3938,8 +3953,61 @@ var plist = [];
       for (var pug_index7 = 0, $$l = $$obj.length; pug_index7 < $$l; pug_index7++) {
         var p = $$obj[pug_index7];
 var pd = [p.vendor, p.vendor != p.product ? p.product : '', p.packageName != p.product ? p.packageName : '', (p.platforms ? 'on ' + p.platforms.join(', ') : ''), p.modules ? '(' + p.modules.join(', ') + ' modules)':''].join(' ').trim().replaceAll(/\s+/g, ' ')
+var pn = p.product ? p.product : p.packageName;
 if (pd) {
 plist.push(pd);
+}
+if (p.versions) {
+var vlist = [];
+// iterate p.versions
+;(function(){
+  var $$obj = p.versions;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index8 = 0, $$l = $$obj.length; pug_index8 < $$l; pug_index8++) {
+        var v = $$obj[pug_index8];
+if (v.status == 'affected') {
+if (v.lessThan) {
+vlist.push ( (v.version != '0' ? ' from ' + v.version: '') + (v.lessThan != '*' ? ' before ' + v.lessThan:''));
+}
+else
+if (v.lessThanOrEqual) {
+vlist.push ( (v.version != '0' ? ' from ' + v.version: '') + (v.lessThanOrEqual != '*' ? ' through ' + v.lessThanOrEqual:''));
+}
+else
+if (v.version != '0') {
+vlist.push (' ' + v.version)
+}
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index8 in $$obj) {
+      $$l++;
+      var v = $$obj[pug_index8];
+if (v.status == 'affected') {
+if (v.lessThan) {
+vlist.push ( (v.version != '0' ? ' from ' + v.version: '') + (v.lessThan != '*' ? ' before ' + v.lessThan:''));
+}
+else
+if (v.lessThanOrEqual) {
+vlist.push ( (v.version != '0' ? ' from ' + v.version: '') + (v.lessThanOrEqual != '*' ? ' through ' + v.lessThanOrEqual:''));
+}
+else
+if (v.version != '0') {
+vlist.push (' ' + v.version)
+}
+}
+    }
+  }
+}).call(this);
+
+if ((vlist && vlist.length > 0)) {
+relevantList.push(pn + ':' + vlist.join(','));
+}
+else
+if (p.defaultStatus == 'affected') {
+relevantList.push(pn);
+}
 }
       }
   } else {
@@ -3948,8 +4016,61 @@ plist.push(pd);
       $$l++;
       var p = $$obj[pug_index7];
 var pd = [p.vendor, p.vendor != p.product ? p.product : '', p.packageName != p.product ? p.packageName : '', (p.platforms ? 'on ' + p.platforms.join(', ') : ''), p.modules ? '(' + p.modules.join(', ') + ' modules)':''].join(' ').trim().replaceAll(/\s+/g, ' ')
+var pn = p.product ? p.product : p.packageName;
 if (pd) {
 plist.push(pd);
+}
+if (p.versions) {
+var vlist = [];
+// iterate p.versions
+;(function(){
+  var $$obj = p.versions;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index9 = 0, $$l = $$obj.length; pug_index9 < $$l; pug_index9++) {
+        var v = $$obj[pug_index9];
+if (v.status == 'affected') {
+if (v.lessThan) {
+vlist.push ( (v.version != '0' ? ' from ' + v.version: '') + (v.lessThan != '*' ? ' before ' + v.lessThan:''));
+}
+else
+if (v.lessThanOrEqual) {
+vlist.push ( (v.version != '0' ? ' from ' + v.version: '') + (v.lessThanOrEqual != '*' ? ' through ' + v.lessThanOrEqual:''));
+}
+else
+if (v.version != '0') {
+vlist.push (' ' + v.version)
+}
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index9 in $$obj) {
+      $$l++;
+      var v = $$obj[pug_index9];
+if (v.status == 'affected') {
+if (v.lessThan) {
+vlist.push ( (v.version != '0' ? ' from ' + v.version: '') + (v.lessThan != '*' ? ' before ' + v.lessThan:''));
+}
+else
+if (v.lessThanOrEqual) {
+vlist.push ( (v.version != '0' ? ' from ' + v.version: '') + (v.lessThanOrEqual != '*' ? ' through ' + v.lessThanOrEqual:''));
+}
+else
+if (v.version != '0') {
+vlist.push (' ' + v.version)
+}
+}
+    }
+  }
+}).call(this);
+
+if ((vlist && vlist.length > 0)) {
+relevantList.push(pn + ':' + vlist.join(','));
+}
+else
+if (p.defaultStatus == 'affected') {
+relevantList.push(pn);
+}
 }
     }
   }
@@ -3966,8 +4087,8 @@ var ips = [];
 ;(function(){
   var $$obj = con.impacts;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index8 = 0, $$l = $$obj.length; pug_index8 < $$l; pug_index8++) {
-        var t = $$obj[pug_index8];
+      for (var pug_index10 = 0, $$l = $$obj.length; pug_index10 < $$l; pug_index10++) {
+        var t = $$obj[pug_index10];
 if (t.descriptions) {
 var impact = t.descriptions.map(x=>x.value).join(', ').replaceAll(/CAPEC-\d+/g, "").trim().replaceAll(/\s+/g, ' ')
 if (impact) {
@@ -3977,9 +4098,9 @@ ips.push(impact);
       }
   } else {
     var $$l = 0;
-    for (var pug_index8 in $$obj) {
+    for (var pug_index10 in $$obj) {
       $$l++;
-      var t = $$obj[pug_index8];
+      var t = $$obj[pug_index10];
 if (t.descriptions) {
 var impact = t.descriptions.map(x=>x.value).join(', ').replaceAll(/CAPEC-\d+/g, "").trim().replaceAll(/\s+/g, ' ')
 if (impact) {
@@ -4002,54 +4123,8 @@ var funcSet = {};
 ;(function(){
   var $$obj = con.affected;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index9 = 0, $$l = $$obj.length; pug_index9 < $$l; pug_index9++) {
-        var p = $$obj[pug_index9];
-if (p.programFiles) {
-// iterate p.programFiles
-;(function(){
-  var $$obj = p.programFiles;
-  if ('number' == typeof $$obj.length) {
-      for (var pug_index10 = 0, $$l = $$obj.length; pug_index10 < $$l; pug_index10++) {
-        var pf = $$obj[pug_index10];
-fileSet[pf] = 1
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index10 in $$obj) {
-      $$l++;
-      var pf = $$obj[pug_index10];
-fileSet[pf] = 1
-    }
-  }
-}).call(this);
-
-}
-if (p.programRoutines) {
-// iterate p.programRoutines
-;(function(){
-  var $$obj = p.programRoutines;
-  if ('number' == typeof $$obj.length) {
       for (var pug_index11 = 0, $$l = $$obj.length; pug_index11 < $$l; pug_index11++) {
-        var fn = $$obj[pug_index11];
-funcSet[fn.name] = 1
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index11 in $$obj) {
-      $$l++;
-      var fn = $$obj[pug_index11];
-funcSet[fn.name] = 1
-    }
-  }
-}).call(this);
-
-}
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index9 in $$obj) {
-      $$l++;
-      var p = $$obj[pug_index9];
+        var p = $$obj[pug_index11];
 if (p.programFiles) {
 // iterate p.programFiles
 ;(function(){
@@ -4090,6 +4165,52 @@ funcSet[fn.name] = 1
 }).call(this);
 
 }
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index11 in $$obj) {
+      $$l++;
+      var p = $$obj[pug_index11];
+if (p.programFiles) {
+// iterate p.programFiles
+;(function(){
+  var $$obj = p.programFiles;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index14 = 0, $$l = $$obj.length; pug_index14 < $$l; pug_index14++) {
+        var pf = $$obj[pug_index14];
+fileSet[pf] = 1
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index14 in $$obj) {
+      $$l++;
+      var pf = $$obj[pug_index14];
+fileSet[pf] = 1
+    }
+  }
+}).call(this);
+
+}
+if (p.programRoutines) {
+// iterate p.programRoutines
+;(function(){
+  var $$obj = p.programRoutines;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index15 = 0, $$l = $$obj.length; pug_index15 < $$l; pug_index15++) {
+        var fn = $$obj[pug_index15];
+funcSet[fn.name] = 1
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index15 in $$obj) {
+      $$l++;
+      var fn = $$obj[pug_index15];
+funcSet[fn.name] = 1
+    }
+  }
+}).call(this);
+
+}
     }
   }
 }).call(this);
@@ -4105,8 +4226,8 @@ var counter = 0
 ;(function(){
   var $$obj = files;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index14 = 0, $$l = $$obj.length; pug_index14 < $$l; pug_index14++) {
-        var fn = $$obj[pug_index14];
+      for (var pug_index16 = 0, $$l = $$obj.length; pug_index16 < $$l; pug_index16++) {
+        var fn = $$obj[pug_index16];
 counter ++
 pug_html = pug_html + "\u003Ctt\u003E" + (pug_escape(null == (pug_interp = fn) ? "" : pug_interp)) + "\u003C\u002Ftt\u003E";
 if (counter < files.length) {
@@ -4115,9 +4236,9 @@ pug_html = pug_html + ", ";
       }
   } else {
     var $$l = 0;
-    for (var pug_index14 in $$obj) {
+    for (var pug_index16 in $$obj) {
       $$l++;
-      var fn = $$obj[pug_index14];
+      var fn = $$obj[pug_index16];
 counter ++
 pug_html = pug_html + "\u003Ctt\u003E" + (pug_escape(null == (pug_interp = fn) ? "" : pug_interp)) + "\u003C\u002Ftt\u003E";
 if (counter < files.length) {
@@ -4138,8 +4259,8 @@ var counter = 0
 ;(function(){
   var $$obj = funcs;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index15 = 0, $$l = $$obj.length; pug_index15 < $$l; pug_index15++) {
-        var fn = $$obj[pug_index15];
+      for (var pug_index17 = 0, $$l = $$obj.length; pug_index17 < $$l; pug_index17++) {
+        var fn = $$obj[pug_index17];
 counter ++
 pug_html = pug_html + "\u003Ctt\u003E" + (pug_escape(null == (pug_interp = fn) ? "" : pug_interp)) + "\u003C\u002Ftt\u003E";
 if (counter < funcs.length) {
@@ -4148,9 +4269,9 @@ pug_html = pug_html + ", ";
       }
   } else {
     var $$l = 0;
-    for (var pug_index15 in $$obj) {
+    for (var pug_index17 in $$obj) {
       $$l++;
-      var fn = $$obj[pug_index15];
+      var fn = $$obj[pug_index17];
 counter ++
 pug_html = pug_html + "\u003Ctt\u003E" + (pug_escape(null == (pug_interp = fn) ? "" : pug_interp)) + "\u003C\u002Ftt\u003E";
 if (counter < funcs.length) {
@@ -4162,6 +4283,9 @@ pug_html = pug_html + ", ";
 
 }
 pug_html = pug_html + ".\u003C\u002Fp\u003E";
+}
+if (relevantList) {
+pug_html = pug_html + "\u003Cp\u003EThis issue affects " + (pug_escape(null == (pug_interp = relevantList.join('; ')) ? "" : pug_interp)) + ".\u003C\u002Fp\u003E";
 }
 }
 }
