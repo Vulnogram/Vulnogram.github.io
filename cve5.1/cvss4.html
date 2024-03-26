@@ -1,0 +1,365 @@
+<!DOCTYPE html><html><head><title>Vulnogram CVSS Calculator</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Vulnogram is a tool for creating and editing CVE information in CVE JSON format, and for generating advisories. It can be used for tracking and managing anything that can be expressed with a JSON-Schema."><meta name="keywords" content="psirt, sirt, advisory, CVRF, CSAF, CVE, vulnogram, CVE, JSON"><meta name="csrf-token"><meta name="theme-color" content="#f0f8ff"><meta property="og:type" content="website"><meta property="og:image" content="./css/logo.png"><link rel="apple-touch-icon" sizes="256x256" href="./css/logo.png"><link rel="icon" type="image/png" href="./css/logo.png" sizes="256x256"><link rel="stylesheet" href="./css/min.css"><link rel="stylesheet" href="./css/vg-icons.css"><style>body{
+ /*--hig:#f6f6f7;*/
+ --hig: #e5ebec;
+ --bck:#fafafc;
+}   
+
+.rdg .form-control:first-child input[type="radio"]:checked+label {
+  background-color: rgb(162, 213, 114);
+}
+
+.rdg .form-control input[type="radio"]:checked+label {
+  background-color: rgb(250, 230, 120);
+}
+
+.rdg .form-control:nth-child(3) input[type="radio"]:checked+label {
+  background-color: rgb(240, 170, 83);
+}
+
+.rdg .form-control:nth-child(4) input[type="radio"]:checked+label {
+  background-color: rgb(240, 130, 120);
+}
+
+ .rdg .form-control:last-child input[type="radio"]:checked+label {
+  background-color: rgb(240, 130, 120);
+}
+
+ .rdg .form-control:first-child input[value="NOT_DEFINED"]:checked+label {
+  background-color: rgb(202, 202, 202);
+}
+
+div[data-schemaid="cvss4"] .je-indented-panel div div div.row:nth-child(7),
+div[data-schemaid="cvss4"] .je-indented-panel div div div.row:nth-child(8),
+div[data-schemaid="cvss4"] .je-indented-panel div div div.row:nth-child(9)
+{
+  background-color: var(--hig);
+  border-radius: 5px;
+    padding: 3px;
+}
+div[data-schemaid="cvss4"] .je-indented-panel div div div.row:last-child
+{
+  background-color: var(--sec);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}</style><link href="./css/tagify.css" rel="stylesheet" type="text/css"></head><body class="cvss4" id="body"><div class="stk" id="vgHead"><header class="ban pad wht btm"><div class="left"><a class="fbn vgi-logo" title="Making the world safer one CVE at a time, since 2017" href="https://vulnogram.github.io">Vulnogram</a> <a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="/cve5.1">CVE 5.1(beta)</a><a class="fbn vgi-cvss-logo" title="Common Vulnerability Scoring System" href="/cve5.1/cvss4/">CVSS 4.0</a><a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="/">CVE 5 (Current)</a><a class="fbn vgi-alert" title="CVE: Common Vulnerabilities and Exposures" href="/cve4">CVE 4 (old)</a></div><div class="right"></div></header><header class="ban pad ht4 wht shd"><div class="left flx"><svg width="132" height="48" version="1.1" viewBox="0 0 330 120" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#70B62C;}
+	.st3{fill:#669900;}
+	.st4{fill:#CAD31B;}
+	.st5{fill:#FFD51D;}
+	.st6{fill:#F29100;}
+	.st7{fill:#CC0019;}</style><g transform="translate(-20.6 -14.997)"><path d="m306.2 124.2c-4.7 0-9.2-0.5-13.3-1.6-4.2-1-7.8-2.6-11-4.6-3.1-2-5.7-4.5-7.7-7.4s-3.1-6.3-3.5-10.2c-0.1-0.8 0.2-1.5 0.8-2.1s1.3-0.9 2-0.9h14.5c1.2 0 2.1 0.2 2.6 0.5 0.5 0.4 1.1 1.1 1.7 2.3 0.8 1.4 2.3 2.7 4.5 3.8s5.2 1.6 9 1.6c4 0 6.8-0.6 8.3-1.7s2.3-2.3 2.3-3.5c0-1.8-1.1-3.3-3.3-4.6s-5.9-2.8-11-4.5c-3.4-1.1-6.9-2.3-10.5-3.8s-6.9-3.3-9.9-5.4-5.5-4.8-7.5-7.8c-2-3.1-3-6.8-3-11.1 0-4 0.8-7.6 2.4-10.8s3.9-5.9 6.8-8.2 6.4-4 10.4-5.2 8.4-1.8 13.2-1.8c4.9 0 9.3 0.6 13.4 1.8s7.6 2.9 10.6 5.2c3 2.2 5.4 4.9 7.1 8 1.8 3.1 2.8 6.5 3.1 10.3 0.1 0.8-0.2 1.5-0.8 2.1s-1.3 0.9-2 0.9h-14.9c-1 0-1.8-0.2-2.3-0.7s-1-1.2-1.3-2.2c-0.6-1.8-2-3.4-4-4.7-2-1.4-4.9-2-8.4-2-3.7 0-6.3 0.6-7.8 1.8-1.6 1.2-2.4 2.5-2.4 3.9 0 1.6 1.1 3 3.2 4.2 2.1 1.1 5.7 2.6 10.7 4.3 2.9 1 6.1 2.2 9.8 3.7s7.1 3.3 10.3 5.6 5.9 5 8.1 8.3 3.3 7.2 3.3 11.8c0 4.1-0.8 7.7-2.5 10.8s-4 5.7-7 7.8-6.5 3.7-10.5 4.7c-4.3 0.9-8.7 1.4-13.5 1.4z"/><path d="m260.7 88.5c-2.2-3.3-4.9-6-8.1-8.3s-6.6-4.1-10.3-5.6c-3.6-1.5-6.9-2.7-9.8-3.7-5-1.7-8.6-3.1-10.7-4.3-2.1-1.1-3.2-2.5-3.2-4.2 0-1.4 0.8-2.7 2.4-3.9s4.2-1.8 7.8-1.8 6.4 0.7 8.4 2c2 1.4 3.4 2.9 4 4.7 0.4 1 0.8 1.7 1.3 2.2s1.3 0.7 2.3 0.7h15.2c0.8 0 1.5-0.3 2-0.9 0.6-0.6 0.8-1.3 0.8-2.1-0.3-3.7-1.3-7.1-3.1-10.3-1.8-3.1-4.1-5.8-7.1-8s-6.5-3.9-10.6-5.2c-4.1-1.2-8.6-1.8-13.4-1.8-4.4 0-8.4 0.5-12.1 1.5-0.7 8.9-7.2 16.1-15.7 17.9l-4.5 11.3c0.5 2.3 1.3 4.4 2.5 6.3 2 3.1 4.5 5.7 7.5 7.8s6.3 4 9.9 5.4c3.6 1.5 7.1 2.7 10.5 3.8 5.1 1.7 8.7 3.2 11 4.5 2.2 1.3 3.3 2.8 3.3 4.6 0 1.2-0.8 2.4-2.3 3.5s-4.3 1.7-8.3 1.7c-3.8 0-6.8-0.5-9-1.6s-3.7-2.3-4.5-3.8c-0.6-1.1-1.2-1.9-1.7-2.3s-1.4-0.5-2.6-0.5h-14.6c-0.8 0-1.5 0.3-2 0.9-0.6 0.6-0.8 1.3-0.8 2.1 0.4 3.9 1.5 7.3 3.5 10.2s4.5 5.4 7.7 7.4c3.1 2 6.8 3.5 11 4.6 4.1 1 8.6 1.6 13.3 1.6 4.8 0 9.2-0.5 13.3-1.6 4-1.1 7.6-2.6 10.5-4.7 3-2.1 5.3-4.7 7-7.8s2.5-6.7 2.5-10.8c-0.1-4.4-1.2-8.3-3.3-11.5z"/><path d="m74.9 104.4c4 0 7.6-0.9 10.8-2.6 3.2-1.8 5.9-4.1 7.9-7 0.9-1.5 2.2-1.9 3.8-1.2l14.9 6.5c0.6 0.2 1 0.7 1.2 1.3 0.2 0.7 0.1 1.3-0.2 1.9-1.9 3.3-4.2 6.3-6.9 9s-5.7 5-9 6.9-6.9 3.4-10.7 4.4-7.7 1.6-11.8 1.6c-6 0-11.7-1.1-17.1-3.4s-10.1-5.4-14.2-9.3c-4-3.9-7.2-8.5-9.6-13.8s-3.5-10.9-3.5-16.9 1.2-11.6 3.5-16.9c2.4-5.3 5.6-9.9 9.6-13.8s8.8-7 14.2-9.3 11.1-3.4 17.1-3.4c4.1 0 8 0.5 11.8 1.6 3.8 1 7.3 2.5 10.6 4.4s6.2 4.2 9 6.8c2.7 2.6 5 5.6 7 8.8 0.4 0.6 0.4 1.2 0.2 1.9s-0.6 1.2-1.2 1.4l-14.8 6.5c-0.7 0.4-1.4 0.4-2.1 0.3-0.7-0.2-1.2-0.6-1.7-1.3-2.1-2.9-4.7-5.3-8-7-3.3-1.8-6.9-2.6-10.8-2.6-3.1 0-6.1 0.6-8.9 1.8s-5.2 2.8-7.2 4.8c-2.1 2-3.7 4.5-4.9 7.2-1.2 2.8-1.8 5.8-1.8 8.9 0 3.2 0.6 6.1 1.8 8.9s2.8 5.2 4.9 7.2 4.5 3.7 7.2 4.8c2.8 1 5.8 1.6 8.9 1.6z"/><path d="m196.9 25c-7.3-0.2-13.3 5.6-13.5 12.8-0.1 3.7 1.4 7.3 4.1 9.9l-14.5 34.1 1.8 7.5 6.7-3.9 14.5-34.1h0.3c7.3 0.2 13.3-5.6 13.5-12.8 0.2-7.3-5.6-13.3-12.9-13.5zm3.7 13.3c-0.1 2.2-1.9 3.9-4.1 3.9-2.2-0.1-3.9-1.9-3.9-4.1 0.1-2.2 1.9-3.9 4.1-3.9s4 1.9 3.9 4.1z"/><path class="st3" d="m164.4 91.9-17.8 29.7 0.5 1.3c0.4 0.5 0.9 0.6 1.4 0.6h15.5c1.5 0 2.8-0.8 3.3-1.9l9.7-23.9c-4.4-1.5-8.6-3.4-12.6-5.8z"/><path class="st4" d="m147.7 77.2-14.3 11.4 11.8 29.1 17.5-27c-5.8-3.6-10.8-8.2-15-13.5z"/><path class="st5" d="m137.6 59.2c0-0.1-0.1-0.2-0.1-0.3l-14.2 5 8.9 22.1 14.1-10.5c-3.7-4.9-6.6-10.4-8.7-16.3z"/><path class="st6" d="m134.3 45-17.9 2 5.7 14.3 14.6-4.5c-1.1-3.8-1.9-7.7-2.4-11.8z"/><path class="st7" d="m134 38.2v-1.1l-18.9-0.4c-1.5 0-2.4 1-1.9 2.2l2.2 5.5 18.8-1.4c-0.2-1.7-0.2-3.3-0.2-4.8z"/></g></svg>
+<h2 class="indent">CVSS 4.0 Pocket Calc</h2></div></header></div><script>var userUsername = ""
+</script><div class="pad ban messagebar"><div class="left tred" id="errMsg"></div><div class="right" id="infoMsg"></div></div><div class="pad"><script>var iconMap = {};</script><script>function pug_attr(t,e,n,r){if(!1===e||null==e||!e&&("class"===t||"style"===t))return"";if(!0===e)return" "+(r?t:t+'="'+t+'"');var f=typeof e;return"object"!==f&&"function"!==f||"function"!=typeof e.toJSON||(e=e.toJSON()),"string"==typeof e||(e=JSON.stringify(e),n||-1===e.indexOf('"'))?(n&&(e=pug_escape(e))," "+t+'="'+e+'"'):" "+t+"='"+e.replace(/'/g,"&#39;")+"'"}
+function pug_classes(s,r){return Array.isArray(s)?pug_classes_array(s,r):s&&"object"==typeof s?pug_classes_object(s):s||""}
+function pug_classes_array(r,a){for(var s,e="",u="",c=Array.isArray(a),g=0;g<r.length;g++)(s=pug_classes(r[g]))&&(c&&a[g]&&(s=pug_escape(s)),e=e+u+s,u=" ");return e}
+function pug_classes_object(r){var a="",n="";for(var o in r)o&&r[o]&&pug_has_own_property.call(r,o)&&(a=a+n+o,n=" ");return a}
+function pug_escape(e){var a=""+e,t=pug_match_html.exec(a);if(!t)return e;var r,c,n,s="";for(r=t.index,c=0;r<a.length;r++){switch(a.charCodeAt(r)){case 34:n="&quot;";break;case 38:n="&amp;";break;case 60:n="&lt;";break;case 62:n="&gt;";break;default:continue}c!==r&&(s+=a.substring(c,r)),c=r+1,s+=n}return c!==r?s+a.substring(c,r):s}
+var pug_has_own_property=Object.prototype.hasOwnProperty;
+var pug_match_html=/["&<>]/;function pugRender(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
+    var locals_for_with = (locals || {});
+    
+    (function (Array, Date, doc, doc_id, isNaN, renderTemplate) {
+      pug_mixins["para"] = pug_interp = function(t, hypertext){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+if (t) {
+if (hypertext) {
+pug_html = pug_html + "\u003Cp\u003E" + (pug_escape(null == (pug_interp = t) ? "" : pug_interp)) + "\u003C\u002Fp\u003E";
+}
+else {
+// iterate t.split(/\n/)
+;(function(){
+  var $$obj = t.split(/\n/);
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
+        var line = $$obj[pug_index0];
+if (line) {
+if (line.startsWith('  ')) {
+pug_html = pug_html + "\u003Ccode\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fcode\u003E\u003Cbr\u002F\u003E";
+}
+else {
+pug_html = pug_html + "\u003Cp\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fp\u003E";
+}
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index0 in $$obj) {
+      $$l++;
+      var line = $$obj[pug_index0];
+if (line) {
+if (line.startsWith('  ')) {
+pug_html = pug_html + "\u003Ccode\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fcode\u003E\u003Cbr\u002F\u003E";
+}
+else {
+pug_html = pug_html + "\u003Cp\u003E" + (pug_escape(null == (pug_interp = line) ? "" : pug_interp)) + "\u003C\u002Fp\u003E";
+}
+}
+    }
+  }
+}).call(this);
+
+}
+}
+};
+pug_mixins["mpara"] = pug_interp = function(l, hypertext){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+if (l) {
+// iterate l
+;(function(){
+  var $$obj = l;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index1 = 0, $$l = $$obj.length; pug_index1 < $$l; pug_index1++) {
+        var d = $$obj[pug_index1];
+if (d.value) {
+pug_mixins["para"](d.value, hypertext);
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index1 in $$obj) {
+      $$l++;
+      var d = $$obj[pug_index1];
+if (d.value) {
+pug_mixins["para"](d.value, hypertext);
+}
+    }
+  }
+}).call(this);
+
+}
+};
+pug_mixins["aggpara"] = pug_interp = function(l){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+if (l) {
+pug_html = pug_html + "\u003Cul\u003E";
+// iterate l
+;(function(){
+  var $$obj = l;
+  if ('number' == typeof $$obj.length) {
+      for (var v = 0, $$l = $$obj.length; v < $$l; v++) {
+        var k = $$obj[v];
+pug_html = pug_html + "\u003Cli\u003E\u003Cb\u003E" + (pug_escape(null == (pug_interp = k.join(', ')) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cp\u003E";
+pug_mixins["para"](v);
+pug_html = pug_html + "\u003C\u002Fp\u003E\u003C\u002Fli\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var v in $$obj) {
+      $$l++;
+      var k = $$obj[v];
+pug_html = pug_html + "\u003Cli\u003E\u003Cb\u003E" + (pug_escape(null == (pug_interp = k.join(', ')) ? "" : pug_interp)) + "\u003C\u002Fb\u003E\u003Cp\u003E";
+pug_mixins["para"](v);
+pug_html = pug_html + "\u003C\u002Fp\u003E\u003C\u002Fli\u003E";
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\u003C\u002Ful\u003E";
+}
+};
+pug_mixins["linklist"] = pug_interp = function(l, url){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+// iterate l
+;(function(){
+  var $$obj = l;
+  if ('number' == typeof $$obj.length) {
+      for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+        var v = $$obj[i];
+if ((i < l.length-2)) {
+if ((url)) {
+pug_html = pug_html + "\u003Ca" + (pug_attr("href", url+v, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = v) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
+}
+else {
+pug_html = pug_html + (pug_escape(null == (pug_interp = v) ? "" : pug_interp));
+}
+pug_html = pug_html + ", ";
+}
+else {
+if ((i == l.length - 1 && i > 0)) {
+pug_html = pug_html + " and ";
+}
+if ((url)) {
+pug_html = pug_html + "\u003Ca" + (pug_attr("href", url+v, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = v) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
+}
+else {
+pug_html = pug_html + (pug_escape(null == (pug_interp = v) ? "" : pug_interp));
+}
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var i in $$obj) {
+      $$l++;
+      var v = $$obj[i];
+if ((i < l.length-2)) {
+if ((url)) {
+pug_html = pug_html + "\u003Ca" + (pug_attr("href", url+v, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = v) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
+}
+else {
+pug_html = pug_html + (pug_escape(null == (pug_interp = v) ? "" : pug_interp));
+}
+pug_html = pug_html + ", ";
+}
+else {
+if ((i == l.length - 1 && i > 0)) {
+pug_html = pug_html + " and ";
+}
+if ((url)) {
+pug_html = pug_html + "\u003Ca" + (pug_attr("href", url+v, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = v) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
+}
+else {
+pug_html = pug_html + (pug_escape(null == (pug_interp = v) ? "" : pug_interp));
+}
+}
+    }
+  }
+}).call(this);
+
+};
+pug_mixins["CVSS"] = pug_interp = function(value){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+if (value.baseScore) {
+pug_html = pug_html + (pug_escape(null == (pug_interp = value.baseScore.toFixed(1)) ? "" : pug_interp));
+}
+pug_html = pug_html + " ";
+if (value.version >= "3") {
+pug_html = pug_html + "(\u003Ca" + (pug_attr("href", "https://cvss.js.org/#" + value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E)";
+}
+else {
+pug_html = pug_html + "\u003Ca" + (pug_attr("href", 'https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector='+value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
+}
+};
+pug_mixins["renderDate"] = pug_interp = function(value){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+var v = false;
+if (value instanceof Date) { v = value;} else {
+var timestamp = Date.parse(value);
+v = isNaN(timestamp) ? false : new Date(timestamp)
+}
+if (v) {
+pug_html = pug_html + (pug_escape(null == (pug_interp = v.toJSON().substr(0,10)) ? "" : pug_interp));
+}
+};
+pug_mixins["jsondump"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+if (obj !== null) {
+if (typeof obj === 'string') {
+if (obj.length < 20) {
+pug_html = pug_html + "\u003Cspan" + (pug_attr("class", pug_classes([obj], [true]), false, false)) + "\u003E" + (pug_escape(null == (pug_interp = obj) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+}
+else {
+pug_html = pug_html + "\u003Cspan class=\"wrp\"\u003E" + (pug_escape(null == (pug_interp = obj) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+}
+}
+else
+if (obj instanceof Array) {
+if (obj.length > 0) {
+pug_html = pug_html + "\u003Col\u003E";
+// iterate obj
+;(function(){
+  var $$obj = obj;
+  if ('number' == typeof $$obj.length) {
+      for (var k = 0, $$l = $$obj.length; k < $$l; k++) {
+        var v = $$obj[k];
+pug_html = pug_html + "\u003Cli\u003E";
+pug_mixins["jsondump"](v);
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var k in $$obj) {
+      $$l++;
+      var v = $$obj[k];
+pug_html = pug_html + "\u003Cli\u003E";
+pug_mixins["jsondump"](v);
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\u003C\u002Fol\u003E";
+}
+}
+else
+if (typeof obj === 'object') {
+// iterate obj
+;(function(){
+  var $$obj = obj;
+  if ('number' == typeof $$obj.length) {
+      for (var k = 0, $$l = $$obj.length; k < $$l; k++) {
+        var v = $$obj[k];
+if (obj.hasOwnProperty(k)) {
+pug_html = pug_html + "\u003Cdiv class=\"indent\"\u003E\u003Cb" + (pug_attr("class", pug_classes(["ico",k], [false,true]), false, false)) + "\u003E" + (pug_escape(null == (pug_interp = k) ? "" : pug_interp)) + ": \u003C\u002Fb\u003E ";
+pug_mixins["jsondump"](v);
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+}
+      }
+  } else {
+    var $$l = 0;
+    for (var k in $$obj) {
+      $$l++;
+      var v = $$obj[k];
+if (obj.hasOwnProperty(k)) {
+pug_html = pug_html + "\u003Cdiv class=\"indent\"\u003E\u003Cb" + (pug_attr("class", pug_classes(["ico",k], [false,true]), false, false)) + "\u003E" + (pug_escape(null == (pug_interp = k) ? "" : pug_interp)) + ": \u003C\u002Fb\u003E ";
+pug_mixins["jsondump"](v);
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+}
+    }
+  }
+}).call(this);
+
+}
+else {
+pug_html = pug_html + (pug_escape(null == (pug_interp = obj) ? "" : pug_interp));
+}
+}
+};
+pug_mixins["page"] = pug_interp = function(obj){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_mixins["jsondump"](obj);
+};
+pug_html = pug_html + "\u003Cdiv class=\"big\"\u003E" + (pug_escape(null == (pug_interp = doc_id) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E";
+if (doc) {
+if (renderTemplate == 'default') {
+delete doc._id;
+pug_mixins["page"](doc);
+}
+else
+if (renderTemplate != undefined) {
+try {
+{
+pug_mixins[renderTemplate](doc);
+}
+} catch(e) {
+{
+delete doc._id;        
+pug_mixins["page"](doc);
+}
+}
+}
+}
+else {
+pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u002Fdiv\u003E";
+}
+    }.call(this, "Array" in locals_for_with ?
+        locals_for_with.Array :
+        typeof Array !== 'undefined' ? Array : undefined, "Date" in locals_for_with ?
+        locals_for_with.Date :
+        typeof Date !== 'undefined' ? Date : undefined, "doc" in locals_for_with ?
+        locals_for_with.doc :
+        typeof doc !== 'undefined' ? doc : undefined, "doc_id" in locals_for_with ?
+        locals_for_with.doc_id :
+        typeof doc_id !== 'undefined' ? doc_id : undefined, "isNaN" in locals_for_with ?
+        locals_for_with.isNaN :
+        typeof isNaN !== 'undefined' ? isNaN : undefined, "renderTemplate" in locals_for_with ?
+        locals_for_with.renderTemplate :
+        typeof renderTemplate !== 'undefined' ? renderTemplate : undefined));
+    ;;return pug_html;}</script><script>var custom_validators = [];</script><script type="module">import {CVSS40} from './static/cvss40.js';
+window.CVSS40 = CVSS40;</script><div id="mainTabGroup"><span class="lbl">&nbsp;</span><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Calculator<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor shd" id="errList"></div></details></span></label><div class="wht fil bor pad"><iframe name="x" style="display:none" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">JSON</label><div class="wht fil bor pad"><div id="output" rows="40" cols="100%"><p></p></div></div></div><script>var idpath = "vectorString";
+var allowAjax = "false";
+var schemaName = "cvss4";
+var postUrl = "";
+var csrfToken = "";
+var ajaxBase  = "./";var initJSON = undefined;var docSchema={"$schema":"http:\u002F\u002Fjson-schema.org\u002Fdraft-07\u002Fschema#","title":"Common Vulnerability Scoring System (CVSS) 4.0","options":{"class":"gap bld"},"description":"Capture the principal characteristics of a vulnerability and produce a numerical score (zero to ten) reflecting its severity.","id":"cvss4","type":"object","propertyOrder":2,"format":"grid","properties":{"version":{"type":"string","enum":["4.0"],"options":{"hidden":"true"}},"attackVector":{"title":"Attack Vector","type":"string","format":"radio","default":"NETWORK","enum":["PHYSICAL","LOCAL","ADJACENT","NETWORK"],"options":{"infoText":"This metric reflects the context by which vulnerability exploitation is possible. This metric value (and consequently the resulting severity) will be larger the more remote (logically, and physically) an attacker can be in order to exploit the vulnerable system. The assumption is that the number of potential attackers for a vulnerability that could be exploited from across a network is larger than the number of potential attackers that could exploit a vulnerability requiring physical access to a device, and therefore warrants a greater severity.","grid_columns":12,"enum_titles":["Physical","Local","Adjacent","Network"],"tooltips":{"NETWORK":"The vulnerable system is bound to the network stack and the set of possible attackers extends beyond the other options listed below, up to and including the entire Internet. Such a vulnerability is often termed “remotely exploitable” and can be thought of as an attack being exploitable at the protocol level one or more network hops away (e.g., across one or more routers).","ADJACENT":"The vulnerable system is bound to a protocol stack, but the attack is limited at the protocol level to a logically adjacent topology. This can mean an attack must be launched from the same shared proximity (e.g., Bluetooth, NFC, or IEEE 802.11) or logical network (e.g., local IP subnet), or from within a secure or otherwise limited administrative domain (e.g., MPLS, secure VPN within an administrative network zone).","LOCAL":"The vulnerable system is not bound to the network stack and the attacker’s path is via read\u002Fwrite\u002Fexecute capabilities. Either the attacker exploits the vulnerability by accessing the target system locally (e.g., keyboard, console), or through terminal emulation (e.g., SSH); or the attacker relies on User Interaction by another person to perform actions required to exploit the vulnerability (e.g., using social engineering techniques to trick a legitimate user into opening a malicious document).","PHYSICAL":"The attack requires the attacker to physically touch or manipulate the vulnerable system. Physical interaction may be brief (e.g., evil maid attack) or persistent."},"icons":{"PHYSICAL":"cvss-physical","LOCAL":"cvss-user","ADJACENT":"cvss-adj","NETWORK":"cvss-net"}}},"attackComplexity":{"title":"Attack Complexity","type":"string","format":"radio","default":"LOW","enum":["HIGH","LOW"],"options":{"infoText":"This metric captures measurable actions that must be taken by the attacker to actively evade or circumvent existing built-in security-enhancing conditions in order to obtain a working exploit. These are conditions whose primary purpose is to increase security and\u002For increase exploit engineering complexity. A vulnerability exploitable without a target-specific variable has a lower complexity than a vulnerability that would require non-trivial customization. This metric is meant to capture security mechanisms utilized by the vulnerable system.","tooltips":{"LOW":"The attacker must take no measurable action to exploit the vulnerability. The attack requires no target-specific circumvention to exploit the vulnerability. An attacker can expect repeatable success against the vulnerable system.","HIGH":"The successful attack depends on the evasion or circumvention of security-enhancing techniques in place that would otherwise hinder the attack. These include: Evasion of exploit mitigation techniques, for example, circumvention of address space randomization (ASLR) or data execution prevention (DEP) must be performed for the attack to be successful; Obtaining target-specific secrets. The attacker must gather some target-specific secret before the attack can be successful. A secret is any piece of information that cannot be obtained through any amount of reconnaissance. To obtain the secret the attacker must perform additional attacks or break otherwise secure measures (e.g. knowledge of a secret key may be needed to break a crypto channel). This operation must be performed for each attacked target."},"grid_columns":12,"enum_titles":["High","Low"],"icons":{"HIGH":"rocket","LOW":"paper-plane"}}},"attackRequirements":{"title":"Attack Requirements","type":"string","format":"radio","default":"NONE","enum":["PRESENT","NONE"],"options":{"infoText":"This metric captures the prerequisite deployment and execution conditions or variables of the vulnerable system that enable the attack. These differ from security-enhancing techniques\u002Ftechnologies (ref Attack Complexity) as the primary purpose of these conditions is not to explicitly mitigate attacks, but rather, emerge naturally as a consequence of the deployment and execution of the vulnerable system.","tooltips":{"NONE":"The successful attack does not depend on the deployment and execution conditions of the vulnerable system. The attacker can expect to be able to reach the vulnerability and execute the exploit under all or most instances of the vulnerability.","PRESENT":"The successful attack depends on the presence of specific deployment and execution conditions of the vulnerable system that enable the attack. These include: a race condition must be won to successfully exploit the vulnerability (the successfulness of the attack is conditioned on execution conditions that are not under full control of the attacker, or the attack may need to be launched multiple times against a single target before being successful); the attacker must inject themselves into the logical network path between the target and the resource requested by the victim (e.g. vulnerabilities requiring an on-path attacker)."},"grid_columns":12,"enum_titles":["Present","None"],"icons":{"PRESENT":"cvss-required","NONE":"cvss-direct"}}},"privilegesRequired":{"title":"Privileges Required","type":"string","format":"radio","default":"NONE","enum":["HIGH","LOW","NONE"],"options":{"infoText":"This metric describes the level of privileges an attacker must possess prior to successfully exploiting the vulnerability. The method by which the attacker obtains privileged credentials prior to the attack (e.g., free trial accounts), is outside the scope of this metric. Generally, self-service provisioned accounts do not constitute a privilege requirement if the attacker can grant themselves privileges as part of the attack.","tooltips":{"NONE":"The attacker is unauthorized prior to attack, and therefore does not require any access to settings or files of the vulnerable system to carry out an attack.","LOW":"The attacker requires privileges that provide basic capabilities that are typically limited to settings and resources owned by a single low-privileged user. Alternatively, an attacker with Low privileges has the ability to access only non-sensitive resources.","HIGH":"The attacker requires privileges that provide significant (e.g., administrative) control over the vulnerable system allowing full access to the vulnerable system’s settings and files."},"grid_columns":12,"enum_titles":["High","Low","None"],"icons":{"HIGH":"king","LOW":"pawn","NONE":"thief"}}},"userInteraction":{"title":"User Interaction","type":"string","format":"radio","default":"NONE","enum":["ACTIVE","PASSIVE","NONE"],"options":{"grid_columns":12,"infoText":"This metric captures the requirement for a human user, other than the attacker, to participate in the successful compromise of the vulnerable system. This metric determines whether the vulnerability can be exploited solely at the will of the attacker, or whether a separate user (or user-initiated process) must participate in some manner.","tooltips":{"NONE":"The vulnerable system can be exploited without interaction from any human user, other than the attacker.","PASSIVE":"Successful exploitation of this vulnerability requires limited interaction by the targeted user with the vulnerable system and the attacker’s payload. These interactions would be considered involuntary and do not require that the user actively subvert protections built into the vulnerable system.","ACTIVE":"Successful exploitation of this vulnerability requires a targeted user to perform specific, conscious interactions with the vulnerable system and the attacker’s payload, or the user’s interactions would actively subvert protection mechanisms which would lead to exploitation of the vulnerability."},"enum_titles":["Active","Passive","None"],"icons":{"ACTIVE":"alert","PASSIVE":"eye-half","NONE":"cvss-direct"}}},"vulnConfidentialityImpact":{"title":"Product Confidentiality","type":"string","format":"radio","default":"HIGH","enum":["NONE","LOW","HIGH"],"options":{"class":"vgi-cvss-direct","infoText":"This metric measures the impact to the confidentiality of the information managed by the VULNERABLE SYSTEM due to a successfully exploited vulnerability. Confidentiality refers to limiting information access and disclosure to only authorized users, as well as preventing access by, or disclosure to, unauthorized ones.","tooltips":{"HIGH":"There is a total loss of confidentiality, resulting in all information within the Vulnerable System being divulged to the attacker. Alternatively, access to only some restricted information is obtained, but the disclosed information presents a direct, serious impact. For example, an attacker steals the administrator's password, or private encryption keys of a web server.","LOW":"There is some loss of confidentiality. Access to some restricted information is obtained, but the attacker does not have control over what information is obtained, or the amount or kind of loss is limited. The information disclosure does not cause a direct, serious loss to the Vulnerable System.","NONE":"There is no loss of confidentiality within the Vulnerable System."},"grid_columns":6,"enum_titles":["None","Low","High"],"icons":{"HIGH":"eye","LOW":"eye-half","NONE":"eye-close"}}},"subConfidentialityImpact":{"title":"Subsequent Confidentiality","type":"string","format":"radio","default":"HIGH","enum":["NONE","LOW","HIGH"],"options":{"class":"vgi-cvss-scope-change","infoText":"This metric measures the impact to the confidentiality of the information managed by the SUBSEQUENT SYSTEM due to a successfully exploited vulnerability. Confidentiality refers to limiting information access and disclosure to only authorized users, as well as preventing access by, or disclosure to, unauthorized ones.","tooltips":{"HIGH":"There is a total loss of confidentiality, resulting in all resources within the Subsequent System being divulged to the attacker. Alternatively, access to only some restricted information is obtained, but the disclosed information presents a direct, serious impact. For example, an attacker steals the administrator's password, or private encryption keys of a web server.","LOW":"There is some loss of confidentiality. Access to some restricted information is obtained, but the attacker does not have control over what information is obtained, or the amount or kind of loss is limited. The information disclosure does not cause a direct, serious loss to the Subsequent System.","NONE":"There is no loss of confidentiality within the Subsequent System or all confidentiality impact is constrained to the Vulnerable System."},"grid_columns":6,"enum_titles":["None","Low","High"],"icons":{"HIGH":"eye","LOW":"eye-half","NONE":"eye-close"}}},"vulnIntegrityImpact":{"title":"Product Integrity","type":"string","format":"radio","default":"HIGH","enum":["NONE","LOW","HIGH"],"options":{"class":"vgi-cvss-direct","infoText":"This metric measures the impact to integrity of a successfully exploited vulnerability. Integrity refers to the trustworthiness and veracity of information. Integrity of the VULNERABLE SYSTEM is impacted when an attacker makes unauthorized modification of system data. Integrity is also impacted when a system user can repudiate critical actions taken in the context of the system (e.g. due to insufficient logging).","tooltips":{"HIGH":"There is a total loss of integrity, or a complete loss of protection. For example, the attacker is able to modify any\u002Fall files protected by the vulnerable system. Alternatively, only some files can be modified, but malicious modification would present a direct, serious consequence to the vulnerable system.","LOW":"Modification of data is possible, but the attacker does not have control over the consequence of a modification, or the amount of modification is limited. The data modification does not have a direct, serious impact to the Vulnerable System.","NONE":"There is no loss of integrity within the Vulnerable System."},"grid_columns":6,"enum_titles":["None","Low","High"],"icons":{"HIGH":"box-high","LOW":"box-low","NONE":"box"}}},"subIntegrityImpact":{"title":"Subsequent Integrity","type":"string","format":"radio","default":"HIGH","enum":["NONE","LOW","HIGH"],"options":{"class":"vgi-cvss-scope-change","infoText":"This metric measures the impact to integrity of a successfully exploited vulnerability. Integrity refers to the trustworthiness and veracity of information. Integrity of the SUBSEQUENT SYSTEM is impacted when an attacker makes unauthorized modification of system data. Integrity is also impacted when a system user can repudiate critical actions taken in the context of the system (e.g. due to insufficient logging).","tooltips":{"HIGH":"There is a total loss of integrity, or a complete loss of protection. For example, the attacker is able to modify any\u002Fall files protected by the Subsequent System. Alternatively, only some files can be modified, but malicious modification would present a direct, serious consequence to the Subsequent System.","LOW":"Modification of data is possible, but the attacker does not have control over the consequence of a modification, or the amount of modification is limited. The data modification does not have a direct, serious impact to the Subsequent System.","NONE":"There is no loss of integrity within the Subsequent System or all integrity impact is constrained to the Vulnerable System."},"grid_columns":6,"enum_titles":["None","Low","High"],"icons":{"HIGH":"box-high","LOW":"box-low","NONE":"box"}}},"vulnAvailabilityImpact":{"title":"Product Availability","type":"string","format":"radio","default":"HIGH","enum":["NONE","LOW","HIGH"],"options":{"class":"vgi-cvss-direct","infoText":"This metric measures the impact to the availability of the VULNERABLE SYSTEM resulting from a successfully exploited vulnerability. While the Confidentiality and Integrity impact metrics apply to the loss of confidentiality or integrity of data (e.g., information, files) used by the system, this metric refers to the loss of availability of the impacted system itself, such as a networked service (e.g., web, database, email). Since availability refers to the accessibility of information resources, attacks that consume network bandwidth, processor cycles, or disk space all impact the availability of a system.","tooltips":{"HIGH":"There is a total loss of availability, resulting in the attacker being able to fully deny access to resources in the Vulnerable System; this loss is either sustained (while the attacker continues to deliver the attack) or persistent (the condition persists even after the attack has completed). Alternatively, the attacker has the ability to deny some availability, but the loss of availability presents a direct, serious consequence to the Vulnerable System (e.g., the attacker cannot disrupt existing connections, but can prevent new connections; the attacker can repeatedly exploit a vulnerability that, in each instance of a successful attack, leaks a only small amount of memory, but after repeated exploitation causes a service to become completely unavailable).","LOW":"Performance is reduced or there are interruptions in resource availability. Even if repeated exploitation of the vulnerability is possible, the attacker does not have the ability to completely deny service to legitimate users. The resources in the Vulnerable System are either partially available all of the time, or fully available only some of the time, but overall there is no direct, serious consequence to the Vulnerable System.","NONE":"There is no impact to availability within the Vulnerable System."},"grid_columns":6,"enum_titles":["None","Low","High"],"icons":{"HIGH":"signal-1","LOW":"signal-2","NONE":"signal"}}},"subAvailabilityImpact":{"title":"Subsequent System Availability","type":"string","format":"radio","default":"HIGH","enum":["NONE","LOW","HIGH"],"options":{"class":"vgi-cvss-scope-change","infoText":"This metric measures the impact to the availability of the SUBSEQUENT SYSTEM resulting from a successfully exploited vulnerability. While the Confidentiality and Integrity impact metrics apply to the loss of confidentiality or integrity of data (e.g., information, files) used by the system, this metric refers to the loss of availability of the impacted system itself, such as a networked service (e.g., web, database, email). Since availability refers to the accessibility of information resources, attacks that consume network bandwidth, processor cycles, or disk space all impact the availability of a system.","tooltips":{"HIGH":"There is a total loss of availability, resulting in the attacker being able to fully deny access to resources in the Subsequent System; this loss is either sustained (while the attacker continues to deliver the attack) or persistent (the condition persists even after the attack has completed). Alternatively, the attacker has the ability to deny some availability, but the loss of availability presents a direct, serious consequence to the Subsequent System (e.g., the attacker cannot disrupt existing connections, but can prevent new connections; the attacker can repeatedly exploit a vulnerability that, in each instance of a successful attack, leaks a only small amount of memory, but after repeated exploitation causes a service to become completely unavailable).","LOW":"Performance is reduced or there are interruptions in resource availability. Even if repeated exploitation of the vulnerability is possible, the attacker does not have the ability to completely deny service to legitimate users. The resources in the Subsequent System are either partially available all of the time, or fully available only some of the time, but overall there is no direct, serious consequence to the Subsequent System.","NONE":"There is no impact to availability within the Subsequent System or all availability impact is constrained to the Vulnerable System."},"grid_columns":6,"enum_titles":["None","Low","High"],"icons":{"HIGH":"signal-1","LOW":"signal-2","NONE":"signal"}}},"Safety":{"title":"Safety Impact","type":"string","format":"radio","enum":["NOT_DEFINED","NEGLIGIBLE","PRESENT"],"default":"NOT_DEFINED","options":{"infoText":"When a system does have an intended use or fitness of purpose aligned to safety, it is possible that exploiting a vulnerability within that system may have Safety impact which can be represented in the Supplemental Metrics group. Lack of a Safety metric value being supplied does NOT mean that there may not be any Safety-related impacts.","tooltips":{"NOT_DEFINED":"The metric has not been evaluated.","NEGLIGIBLE":"Consequences of the vulnerability meet definition of IEC 61508 consequence category \"negligible.\"","PRESENT":"Consequences of the vulnerability meet definition of IEC 61508 consequence categories of \"marginal,\" \"critical,\" or \"catastrophic.\""},"grid_columns":12,"enum_titles":["Not defined","Negligible","Present"],"icons":{"NOT_DEFINED":"what","NEGLIGIBLE":"bandage","PRESENT":"ambulance"}}},"Automatable":{"title":"Automatable attack","type":"string","format":"radio","enum":["NOT_DEFINED","NO","YES"],"default":"NOT_DEFINED","options":{"infoText":"The “ The “Automatable” metric captures the answer to the question ”Can an attacker automate exploitation events for this vulnerability across multiple targets?” based on steps 1-4 of the kill chain [Hutchins et al., 2011]. These steps are reconnaissance, weaponization, delivery, and exploitation.","tooltips":{"NOT_DEFINED":"The metric has not been evaluated.","NO":"Attackers cannot reliably automate all 4 steps of the kill chain for this vulnerability for some reason. These steps are reconnaissance, weaponization, delivery, and exploitation.","YES":"Attackers can reliably automate all 4 steps of the kill chain. These steps are reconnaissance, weaponization, delivery, and exploitation (e.g., the vulnerability is “wormable”)."},"grid_columns":12,"enum_titles":["Not defined","No","Yes"],"icons":{"NOT_DEFINED":"what","NO":"manual","YES":"cog"}}},"Recovery":{"title":"Recovery","type":"string","format":"radio","enum":["NOT_DEFINED","AUTOMATIC","USER","IRRECOVERABLE"],"default":"NOT_DEFINED","options":{"infoText":"Recovery describes the resilience of a system to recover services, in terms of performance and availability, after an attack has been performed.","tooltips":{"NOT_DEFINED":"The metric has not been evaluated.","AUTOMATIC":"The system recovers services automatically after an attack has been performed.","USER":"The system requires manual intervention by the user to recover services, after an attack has been performed.","IRRECOVERABLE":"The system services are irrecoverable by the user, after an attack has been performed."},"grid_columns":12,"enum_titles":["Not defined","Automatic","User","Irrecoverable"],"icons":{"NOT_DEFINED":"what","AUTOMATIC":"reuse","USER":"manual","IRRECOVERABLE":"bomb"}}},"valueDensity":{"title":"Value Density","type":"string","format":"radio","enum":["NOT_DEFINED","DIFFUSE","CONCENTRATED"],"default":"NOT_DEFINED","options":{"infoText":"Value Density describes the resources that the attacker will gain control over with a single exploitation event.","tooltips":{"NOT_DEFINED":"The metric has not been evaluated.","DIFFUSE":"The vulnerable system has limited resources. That is, the resources that the attacker will gain control over with a single exploitation event are relatively small. An example of Diffuse (think: limited) Value Density would be an attack on a single email client vulnerability.","CONCENTRATED":"The vulnerable system is rich in resources. Heuristically, such systems are often the direct responsibility of “system operators” rather than users. An example of Concentrated (think: broad) Value Density would be an attack on a central email server."},"grid_columns":12,"enum_titles":["Not defined","Diffuse","Concentrated"],"icons":{"NOT_DEFINED":"what","DIFFUSE":"diffuse","CONCENTRATED":"box"}}},"vulnerabilityResponseEffort":{"title":"Vulnerability Response Effort","type":"string","format":"radio","enum":["NOT_DEFINED","LOW","MODERATE","HIGH"],"default":"NOT_DEFINED","options":{"infoText":"The intention of the Vulnerability Response Effort metric is to provide supplemental information on how difficult it is for consumers to provide an initial response to the impact of vulnerabilities for deployed products and services in their infrastructure. The consumer can then take this additional information on effort required into consideration when applying mitigations and\u002For scheduling remediation.","tooltips":{"NOT_DEFINED":"The metric has not been evaluated.","LOW":"The effort required to respond to a vulnerability is low\u002Ftrivial. Examples include: communication on better documentation, configuration workarounds, or guidance from the vendor that does not require an immediate update, upgrade, or replacement by the consuming entity, such as firewall filter configuration.","MODERATE":"The actions required to respond to a vulnerability require some effort on behalf of the consumer and could cause minimal service impact to implement. Examples include: simple remote update, disabling of a subsystem, or a low-touch software upgrade such as a driver update.","HIGH":"The actions required to respond to a vulnerability are significant and\u002For difficult, and may possibly lead to an extended, scheduled service impact.  This would need to be considered for scheduling purposes including honoring any embargo on deployment of the selected response. Alternatively, response to the vulnerability in the field is not possible remotely. The only resolution to the vulnerability involves physical replacement (e.g. units deployed would have to be recalled for a depot level repair or replacement). Examples include: a highly privileged driver update, microcode or UEFI BIOS updates, or software upgrades requiring careful analysis and understanding of any potential infrastructure impact before implementation. A UEFI BIOS update that impacts Trusted Platform Module (TPM) attestation without impacting disk encryption software such as Bit locker is a good recent example. Irreparable failures such as non-bootable flash subsystems, failed disks or solid-state drives (SSD), bad memory modules, network devices, or other non-recoverable under warranty hardware, should also be scored as having a High effort."},"grid_columns":12,"enum_titles":["Not defined","Low","Moderate","High"],"icons":{"NOT_DEFINED":"what","LOW":"feather","MODERATE":"mop","HIGH":"tanker"}}},"providerUrgency":{"title":"Urgency","type":"string","format":"radio","enum":["NOT_DEFINED","CLEAR","GREEN","AMBER","RED"],"default":"NOT_DEFINED","options":{"infoText":"To facilitate a standardized method to incorporate additional provider-supplied assessment, an optional “pass-through” Supplemental Metric called Provider Urgency is available. Note: While any assessment provider along the product supply chain may provide a Provider Urgency rating. The Penultimate Product Provider (PPP) is best positioned to provide a direct assessment of Provider Urgency.","tooltips":{"NOT_DEFINED":"The metric has not been evaluated.","CLEAR":"Provider has assessed the impact of this vulnerability as having no urgency (Informational).","GREEN":"Provider has assessed the impact of this vulnerability as having a reduced urgency.","AMBER":"Provider has assessed the impact of this vulnerability as having a moderate urgency.","RED":"Provider has assessed the impact of this vulnerability as having the highest urgency."},"grid_columns":12,"enum_titles":["Not defined","Informational","Reduced","Moderate","Hightest"],"icons":{"NOT_DEFINED":"what","CLEAR":"info","GREEN":"sit","AMBER":"walk","RED":"run"}}},"baseSeverity":{"title":"Base Severity","type":"string","test_enum":["NONE","LOW","MEDIUM","HIGH","CRITICAL"],"template":"cvssjs.severity(context.sc).name","format":"string","watch":{"sc":"cvss4.baseScore"},"options":{"grid_columns":2,"class":"vgi-dial"}},"baseScore":{"title":"CVSS-B","type":"number","minimum":0,"maximum":10,"default":0,"template":"context.vs && window.CVSS40 && (new window.CVSS40(context.vs)).Score() || 10","watch":{"vs":"cvss4.vectorString"},"options":{"grid_columns":1,"input_width":"3em"}},"vectorString":{"title":"Vector","type":"string","options":{"grid_columns":8,"class":"vgi-title"},"pattern":"^CVSS:4[.]0\u002FAV:[NALP]\u002FAC:[LH]\u002FAT:[NP]\u002FPR:[NLH]\u002FUI:[NPA]\u002FVC:[HLN]\u002FVI:[HLN]\u002FVA:[HLN]\u002FSC:[HLN]\u002FSI:[HLN]\u002FSA:[HLN](\u002FE:[XAPU])?(\u002FCR:[XHML])?(\u002FIR:[XHML])?(\u002FAR:[XHML])?(\u002FMAV:[XNALP])?(\u002FMAC:[XLH])?(\u002FMAT:[XNP])?(\u002FMPR:[XNLH])?(\u002FMUI:[XNPA])?(\u002FMVC:[XNLH])?(\u002FMVI:[XNLH])?(\u002FMVA:[XNLH])?(\u002FMSC:[XNLH])?(\u002FMSI:[XNLHS])?(\u002FMSA:[XNLHS])?(\u002FS:[XNP])?(\u002FAU:[XNY])?(\u002FR:[XAUI])?(\u002FV:[XDC])?(\u002FRE:[XLMH])?(\u002FU:(X|Clear|Green|Amber|Red))?$","template":"cvssjs.vector4(context)","watch":{"attackVector":"cvss4.attackVector","attackComplexity":"cvss4.attackComplexity","attackRequirements":"cvss4.attackRequirements","privilegesRequired":"cvss4.privilegesRequired","userInteraction":"cvss4.userInteraction","vulnConfidentialityImpact":"cvss4.vulnConfidentialityImpact","subConfidentialityImpact":"cvss4.subConfidentialityImpact","vulnIntegrityImpact":"cvss4.vulnIntegrityImpact","subIntegrityImpact":"cvss4.subIntegrityImpact","vulnAvailabilityImpact":"cvss4.vulnAvailabilityImpact","subAvailabilityImpact":"cvss4.subAvailabilityImpact","Safety":"cvss4.Safety","Automatable":"cvss4.Automatable","Recovery":"cvss4.Recovery","valueDensity":"cvss4.valueDensity","vulnerabilityResponseEffort":"cvss4.vulnerabilityResponseEffort","providerUrgency":"cvss4.providerUrgency"},"links":[{"place":"header","class":"vgi-ext indent","href":"'https:\u002F\u002Fwww.first.org\u002Fcvss\u002Fcalculator\u002F4.0#' + context.self","title":"CVSS Calculator","rel":"' Open in CVSS Calculator'"}]}},"additionalProperties":false,"required":["version","vectorString","baseScore","baseSeverity"]};</script><script src="./js/util.js"></script><script src="./js/wy/simple.js"></script><script src="./js/wy/wysihtml-toolbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/json-editor/2.8.0/jsoneditor.min.js" integrity="sha512-8y8kuGFzNGSgACEMNnXJGhOQaLAd4P9MdCXnJ37QjGTBPRrD5FCEVEKj/93xNihQehkO3yVKnOECFWGxxBsveQ==" crossorigin="anonymous"></script><script src="./js/tagify.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js" integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g==" crossorigin="anonymous"></script><script src="./js/editor.js"></script><script src="./js/tablesort.min.js"></script><script>loadJSON(initJSON);</script><dialog class="bor rnd shd pad2" id="alertDialog"><center><form onsubmit="event.preventDefault();return false;"><h2 class="vgi-alert" id="alertMessage"></h2><div class="gap" id="smallAlert"> </div><center class="gap"><input class="btn sfe" id="alertOk" type="reset" onclick="document.getElementById('alertDialog').close();" value="OK"/><input class="btn red" id="alertCancel" type="reset" onclick="document.getElementById('alertDialog').close();" value="Cancel" dstyle="display:none"/></center></form></center></dialog></div><center class="pad"><div class="pad2 center tgrey"><small> Copyright © Chandan B.N, 2017-2024. Usage of CVE IDs is subject to CVE terms of use. This site does not track you and is safe for working with confidential vulnerability information. Made with vulnogram 0.2.0</small><br><small> <br><a class="logo" href="https://github.com/Vulnogram/Vulnogram">Vulnogram Project</a></small></div></center></body></html>
