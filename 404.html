@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Not Found</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      text-align: center;
+      padding: 50px;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      color: #d9534f;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 1.5em;
+    }
+    a {
+      color: #0275d8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .loader {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+
+  <script>
+    (function() {
+      // Get the path from the URL, e.g., "/CVE-2023-12345"
+      const urlPath = window.location.pathname;
+
+      // Regex to find all CVE IDs. Case-insensitive (g) and global (i).
+      // Matches "CVE-" + 4-digit year + "-" + 4+ digit number
+      const cveRegex = /CVE-\d{4}-\d{4,}/gi;
+      const matches = urlPath.match(cveRegex);
+
+      // Check if any CVEs were found
+      if (matches && matches.length > 0) {
+        
+        // Use a Set to get unique CVEs, correcting for case (e.g., cve- vs CVE-)
+        const uniqueMatches = [...new Set(matches.map(cve => cve.toUpperCase()))];
+        
+        // Join the unique CVEs with a comma
+        const cveString = uniqueMatches.join(',');
+        
+        // Construct the redirect URL
+        const redirectUrl = `https://vulnogram.org/seaview?${cveString}`;
+        
+        // Show a message to the user before redirecting
+        document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('cve-redirect').style.display = 'block';
+          document.getElementById('default-404').style.display = 'none';
+        });
+
+        // Perform the redirect
+        window.location.href = redirectUrl;
+
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <div id="cve-redirect" style="display: none;">
+      <p class="loader">CVE ID detected. Redirecting to Vulnogram...</p>
+    </div>
+
+    <div id="default-404">
+      <h1>404 - Not Found</h1>
+      <p>We couldn't find the page you were looking for.</p>
+      <p>If you were trying to view a CVE, make sure it's in the URL (e.g., <code>/CVE-2023-12345</code>).</p>
+      <p><a href="/">Return to homepage</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
