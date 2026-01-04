@@ -150,7 +150,7 @@ var pug_has_own_property=Object.prototype.hasOwnProperty;
 var pug_match_html=/["&<>]/;function pugRender(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
     var locals_for_with = (locals || {});
     
-    (function (Array, Date, doc, doc_id, isNaN, renderTemplate) {
+    (function (Array, Date, doc, isNaN, renderTemplate) {
       pug_mixins["para"] = pug_interp = function(t, hypertext){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 if (t) {
@@ -410,7 +410,6 @@ pug_mixins["page"] = pug_interp = function(obj){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_mixins["jsondump"](obj);
 };
-pug_html = pug_html + "\u003Cdiv class=\"big\"\u003E" + (pug_escape(null == (pug_interp = doc_id) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E";
 if (doc) {
 if (renderTemplate == 'default') {
 delete doc._id;
@@ -439,9 +438,7 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
         locals_for_with.Date :
         typeof Date !== 'undefined' ? Date : undefined, "doc" in locals_for_with ?
         locals_for_with.doc :
-        typeof doc !== 'undefined' ? doc : undefined, "doc_id" in locals_for_with ?
-        locals_for_with.doc_id :
-        typeof doc_id !== 'undefined' ? doc_id : undefined, "isNaN" in locals_for_with ?
+        typeof doc !== 'undefined' ? doc : undefined, "isNaN" in locals_for_with ?
         locals_for_with.isNaN :
         typeof isNaN !== 'undefined' ? isNaN : undefined, "renderTemplate" in locals_for_with ?
         locals_for_with.renderTemplate :
