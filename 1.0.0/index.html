@@ -4354,6 +4354,11 @@ var csCache = {
 }
 var portalBootstrapPromise = null;
 
+function isPortalAuthError(e) {
+    const err = e && e.error ? e.error : null;
+    return err == 'NO_SESSION' || err == 'UNAUTHORIZED';
+}
+
 function normalizePortalUrl(url) {
     if (!url) {
         return defaultPortalUrl;
@@ -4397,7 +4402,27 @@ async function hasActivePortalSession(url) {
     csCache.url = targetUrl;
     csClient = ensureCsClient(targetUrl);
     const restored = await restorePortalCacheFromSession();
-    return !!(restored && csCache.user && csCache.org);
+    if (!(restored && csCache.user && csCache.org)) {
+        return false;
+    }
+    // Verify session against CVE Services, not just cached SW credentials.
+    try {
+        await csClient.getOrgInfo();
+        return true;
+    } catch (e) {
+        if (isPortalAuthError(e)) {
+            if (csClient && typeof csClient.logout === 'function') {
+                try {
+                    await csClient.logout();
+                } catch (e2) {
+                    // ignore cleanup errors
+                }
+            }
+            clearPortalSessionCache();
+            return false;
+        }
+        throw e;
+    }
 }
 
 function setPortalSidebarState(show) {
@@ -4474,7 +4499,13 @@ async function showPortalViewOrLogin() {
     if (!csCache.url) {
         csCache.url = getStoredPortalSettings().portalUrl;
     }
-    const hasSession = await hasActivePortalSession(csCache.url);
+    let hasSession = false;
+    try {
+        hasSession = await hasActivePortalSession(csCache.url);
+    } catch (e) {
+        portalErrorHandler(e);
+        return false;
+    }
     if (!hasSession) {
         showPortalLogin();
         setPortalSidebarState(true);
@@ -4760,11 +4791,16 @@ function portalErrorHandler(e) {
     }
 
     if (isNoSession || isUnauthorized) {
+        if (csClient && typeof csClient.logout === 'function') {
+            csClient.logout().catch(function () { });
+        }
         clearPortalSessionCache();
         const message = isUnauthorized ? 'Valid credentials required' : ((e && e.message) ? e.message : 'Please login.');
         if (document.getElementById("loginErr")) {
             // Login screen exists
             document.getElementById("loginErr").innerText = message;
+        } else if (document.getElementById('port')) {
+            showPortalLogin(message);
         } else {
             cveShowError({ error: err, message: message });
         }
