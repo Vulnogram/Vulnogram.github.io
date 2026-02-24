@@ -23,6 +23,10 @@ table#vgListTable td.cvss span {
   font-weight: 700;
 }
 
+#draftPublishRows tr.dis {
+  opacity: 0.6;
+}
+
 #vgListTable .cvss span[title^="8"],
 #vgListTable .cvss span[title^="7"]
 {
@@ -306,7 +310,7 @@ button.json-editor-btn-delete {
     flex-shrink: 0;
     padding-left: 0.5em;
 }
-</style></head><body class="cve" id="body"><input id="sidebarToggle" type="checkbox" checked><div class="layout-grid"><label class="sidebar-overlay" for="sidebarToggle"></label><aside class="sidebar"><div class="sidebar-head pad"><label class="lbl vgi-logo" for="sidebarToggle">Vulnogram</label><label class="vgi-larrow" for="sidebarToggle"></label></div><nav class="sidebar-nav pad"><a class="lbl vgi-cvev rnd sec " title="CVE: Common Vulnerabilities and Exposures" href="./">CVE</a><a class="lbl vgi-cvss-logo" title="Common Vulnerability Scoring System" href="./cvss4">CVSS 4.0</a><a class="lbl vgi-search" title="Search and Display CVEs" href="https://www.vulnogram.org/seaview/">Seaview - CVE Search</a><a class="lbl vgi-org" id="cvePortalNav" href="#" onclick="return showCvePortal(event);">CVE Portal</a><details class="sidebar-expandable bort" id="draftsGroup"><summary class="lbl vgi-edit">Drafts<span class="pad tgrey" id="draftsCount"></span><a class="right fbn vgi-export" id="draftPublishOpenBtn" href="#" title="Publish multiple cached drafts" onclick="event.stopPropagation();return cveOpenDraftPublishDialog(event);">Publish</a></summary><div class="lbl" id="draftsEmpty">No drafts yet.</div><div class="flx" id="draftsList"></div></details><details class="sidebar-expandable" id="recentGroup"><summary class="lbl vgi-time">Recent <span id="recentOrg"></span></summary><div class="lbl" id="recentEmpty">...</div><div class="flx" id="recentList"></div></details></nav><div class="sidebar-foot"></div></aside><script>document.addEventListener('toggle', function (e) {
+</style></head><body class="cve" id="body"><input id="sidebarToggle" type="checkbox" checked><div class="layout-grid"><label class="sidebar-overlay" for="sidebarToggle"></label><aside class="sidebar"><div class="sidebar-head pad"><label class="lbl vgi-logo" for="sidebarToggle">Vulnogram</label><label class="vgi-larrow" for="sidebarToggle"></label></div><nav class="sidebar-nav pad"><a class="lbl vgi-cvev rnd sec " title="CVE: Common Vulnerabilities and Exposures" href="./">CVE</a><a class="lbl vgi-cvss-logo" title="Common Vulnerability Scoring System" href="./cvss4">CVSS 4.0</a><a class="lbl vgi-wave" title="Search and View CVEs" href="https://www.vulnogram.org/seaview/">Seaview - CVE Search</a><a class="lbl vgi-org" id="cvePortalNav" href="#" onclick="return showCvePortal(event);">CVE Portal</a><details class="sidebar-expandable bort" id="draftsGroup"><summary class="lbl vgi-edit">Drafts<span class="pad tgrey" id="draftsCount"></span><a class="right sfe fbn vgi-export" id="draftPublishOpenBtn" href="#" title="Publish multiple cached drafts" onclick="event.stopPropagation();return cveOpenDraftPublishDialog(event);">Publish</a></summary><div class="lbl" id="draftsEmpty">No drafts yet.</div><div class="flx" id="draftsList"></div></details><details class="sidebar-expandable" id="recentGroup"><summary class="lbl vgi-time">Recent <span id="recentOrg"></span></summary><div class="lbl" id="recentEmpty">...</div><div class="flx" id="recentList"></div></details></nav><div class="sidebar-foot"></div></aside><script>document.addEventListener('toggle', function (e) {
   var d = e && e.target;
   if (!d || !d.matches || !d.matches('details.sidebar-expandable') || !d.open) return;
   var t = document.getElementById('sidebarToggle');
@@ -320,7 +324,7 @@ document.addEventListener('click', function (e) {
   var t = document.getElementById('sidebarToggle');
   if (t) t.checked = true;
 });
-</script><main class="main-area"><div class="stk" id="vgHead"><header class="ban pad wht btm vg-top-header"><div class="left flx"><label class="lbl vgi-logo" id="smallScreenMenu" for="sidebarToggle">Vulnogram</label><a class="fbn sfe" href="./">NEW CVE</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><button class="fbn vgi-folder" type="file" onclick="importFile(event, this);"></button><form class="bor out nobr vgi-cve" onsubmit="cveSelectLoad(event);return false;"><input class="txt" id="cveEditable" type="search" name="id" list="editablelist" placeholder="CVE-yyyy-nnnn" pattern=".*CVE-[0-9]{4}-[0-9]{4,12}.*" size="16" title="Load CVE from CVE.org" required><datalist id="editablelist"></datalist><button class="fbn vgi-import" id="load1" type="submit" title="Import from cve.org">Load</button></form></div><div class="center flx"></div><div class="right flx"><a class="fbn vgi-download" title="Download JSON" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download"></a><button class="sfe fbn vgi-export" id="post1">Publish CVE</button><a class="rbtn vgi-what" href="https://github.com/Vulnogram/Vulnogram/blob/1.0.0/docs/Publish%20CVEs%20with%20Vulnogram.md" target="_blank"></a></div></header><header class="wht stk"><div class="left"></div><div class="right"></div></header></div><script>var userUsername = ""
+</script><main class="main-area"><div class="stk" id="vgHead"><header class="ban pad wht btm vg-top-header"><div class="left flx"><label class="lbl vgi-menu" id="smallScreenMenu" for="sidebarToggle"> </label><a class="fbn sfe" href="./">NEW CVE</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><button class="fbn vgi-folder" type="file" onclick="importFile(event, this);"></button><form class="bor out nobr vgi-cve" onsubmit="cveSelectLoad(event);return false;"><input class="txt" id="cveEditable" type="search" name="id" list="editablelist" placeholder="CVE-yyyy-nnnn" pattern=".*CVE-[0-9]{4}-[0-9]{4,12}.*" size="16" title="Load CVE from CVE.org" required><datalist id="editablelist"></datalist><button class="fbn vgi-import" id="load1" type="submit" title="Import from cve.org">Load</button></form></div><div class="center flx"></div><div class="right flx"><a class="fbn vgi-download" title="Download JSON" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download"></a><button class="sfe fbn vgi-export" id="post1">Publish CVE</button><a class="rbtn vgi-what" href="https://github.com/Vulnogram/Vulnogram/blob/1.0.0/docs/Publish%20CVEs%20with%20Vulnogram.md" target="_blank"></a></div></header><header class="wht stk"><div class="left"></div><div class="right"></div></header></div><script>var userUsername = ""
 </script><div class="pad ban messagebar"><div class="left tred" id="errMsg"></div><div class="right"></div></div><div class="pad"><script>var iconMap = {"Platforms":"stack","References":"ext","Versions":"versions","Timeline":"time","Solution":"safe","ID":"tag","Tags":"tag","Advisory-ID":"tag","ASSIGNER":"user","ASSIGNER_SHORT_NAME":"user","DATE_PUBLIC":"cal","TITLE":"title","Published":"cal","product_name":"package","Found during":"info","CNA_private":"lock","TYPE":"bucket","unsure":"what","no-vuln":"safe","advisory":"alert","no-advisory":"no","doc":"text","misc":"misc","duplicate":"ext","CVE_data_meta":"info","STATE":"knob","new":"inbox","closed":"closed","open":"inbox1","draft":"text","review":"eye","waiting":"wait","pending":"cal","vectorString":"title","baseScore":"dial","baseSeverity":"knob","scenario":"text","source":"info","descriptions":"text","affected":"impact","Vendors":"factory","references":"ext","impacts":"impact","metrics":"dial","Configuration":"cog","Defect":"bug","INTERNAL":"hardhat","EXTERNAL":"hat","USER":"cap","UNKNOWN":"what"}</script><script>var currentYear = new Date().getFullYear();
 const defaultTimeout = 1000 * 60 * 60; // one hour timeout
 var vgExamples = window.vgExamples || {};
@@ -1495,7 +1499,7 @@ var pug_has_own_property=Object.prototype.hasOwnProperty;
 var pug_match_html=/["&<>]/;function pugRender(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
     var locals_for_with = (locals || {});
     
-    (function (Array, Date, JSON, Object, URL, cmap, cna, doc, encodeURIComponent, isNaN, localStorage, renderTemplate, versionStatusTable5) {
+    (function (Array, Date, JSON, Number, Object, URL, cmap, cna, doc, encodeURIComponent, isNaN, localStorage, renderTemplate, versionStatusTable5) {
       pug_mixins["spara"] = pug_interp = function(l, hypertext){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 if (l) {
@@ -3488,15 +3492,24 @@ pug_html = pug_html + (pug_escape(null == (pug_interp = v) ? "" : pug_interp));
 };
 pug_mixins["CVSS"] = pug_interp = function(value){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-if (value.baseScore) {
-pug_html = pug_html + (pug_escape(null == (pug_interp = value.baseScore.toFixed(1)) ? "" : pug_interp));
-}
-pug_html = pug_html + " ";
-if (value.version >= "3") {
-pug_html = pug_html + "(\u003Ca" + (pug_attr("href", "https://cvss.js.org/#" + value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E)";
+if (value && value.baseScore !== undefined && value.baseScore !== null && value.baseScore !== '') {
+var baseScoreNum = Number(value.baseScore)
+if (isNaN(baseScoreNum)) {
+pug_html = pug_html + (pug_escape(null == (pug_interp = value.baseScore) ? "" : pug_interp));
 }
 else {
+pug_html = pug_html + (pug_escape(null == (pug_interp = baseScoreNum.toFixed(1)) ? "" : pug_interp));
+}
+}
+if (!(value && value.baseScoreOnly)) {
+pug_html = pug_html + " ";
+if (value && value.version >= "3") {
+pug_html = pug_html + "(\u003Ca" + (pug_attr("href", "https://cvss.js.org/#" + value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E)";
+}
+else
+if (value && value.vectorString) {
 pug_html = pug_html + "\u003Ca" + (pug_attr("href", 'https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector='+value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
+}
 }
 };
 pug_mixins["renderDate"] = pug_interp = function(value){
@@ -3720,7 +3733,9 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
         locals_for_with.Date :
         typeof Date !== 'undefined' ? Date : undefined, "JSON" in locals_for_with ?
         locals_for_with.JSON :
-        typeof JSON !== 'undefined' ? JSON : undefined, "Object" in locals_for_with ?
+        typeof JSON !== 'undefined' ? JSON : undefined, "Number" in locals_for_with ?
+        locals_for_with.Number :
+        typeof Number !== 'undefined' ? Number : undefined, "Object" in locals_for_with ?
         locals_for_with.Object :
         typeof Object !== 'undefined' ? Object : undefined, "URL" in locals_for_with ?
         locals_for_with.URL :
@@ -5715,21 +5730,24 @@ function cveTeamGetStatusNode(cveId, createIfMissing) {
     if (!row) {
         return null;
     }
-    var idCell = row.querySelector('td.ID');
-    if (!idCell) {
+    var titleCell = row.querySelector('td.title, td.Title, td.TITLE');
+    if (!titleCell) {
         var cells = row.querySelectorAll('td');
-        if (cells.length > 1) {
-            idCell = cells[1];
+        if (cells.length > 0) {
+            var logicalTitleIndex = row.querySelector('td.rowCheckLabel') ? 2 : 1;
+            if (cells.length > logicalTitleIndex) {
+                titleCell = cells[logicalTitleIndex];
+            }
         }
     }
-    if (!idCell) {
+    if (!titleCell) {
         return null;
     }
-    var statusNode = idCell.querySelector('.teamPublishState');
+    var statusNode = titleCell.querySelector('.teamPublishState');
     if (!statusNode && createIfMissing) {
         statusNode = document.createElement('small');
         statusNode.className = 'teamPublishState block sml';
-        idCell.appendChild(statusNode);
+        titleCell.appendChild(statusNode);
     }
     return statusNode;
 }
@@ -5781,35 +5799,35 @@ function cveDraftExtractTitle(doc) {
 }
 
 function cveDraftExtractCvss(doc) {
-    if (!doc || !doc.containers || !doc.containers.cna || !Array.isArray(doc.containers.cna.metrics)) {
+    if (!doc || !doc.containers || !doc.containers.cna || !Array.isArray(doc.containers.cna.metrics) || typeof pugRender !== 'function') {
         return '';
     }
-    var seen = {};
-    var scores = [];
     var metricKeys = ['cvssV4_0', 'cvssV3_1', 'cvssV3_0', 'cvssV2_0'];
-    doc.containers.cna.metrics.forEach(function (metric) {
+    for (var i = 0; i < doc.containers.cna.metrics.length; i++) {
+        var metric = doc.containers.cna.metrics[i];
         if (!metric || typeof metric !== 'object') {
-            return;
+            continue;
         }
-        metricKeys.forEach(function (key) {
+        for (var j = 0; j < metricKeys.length; j++) {
+            var key = metricKeys[j];
             var cvss = metric[key];
             if (!cvss || cvss.baseScore === undefined || cvss.baseScore === null || cvss.baseScore === '') {
-                return;
+                continue;
             }
-            var version = cvss.version ? String(cvss.version) : key.replace('cvssV', '').replace('_', '.');
-            var score = String(cvss.baseScore);
-            var value = 'v' + version + ':' + score;
-            if (cvss.baseSeverity) {
-                value += ' ' + String(cvss.baseSeverity);
+            try {
+                return pugRender({
+                    renderTemplate: 'CVSS',
+                    doc: {
+                        baseScore: cvss.baseScore,
+                        baseScoreOnly: true
+                    }
+                });
+            } catch (e) {
+                return String(cvss.baseScore);
             }
-            if (seen[value]) {
-                return;
-            }
-            seen[value] = true;
-            scores.push(value);
-        });
-    });
-    return scores.join(', ');
+        }
+    }
+    return '';
 }
 
 function cveDraftCanPublish(entry) {
@@ -5827,15 +5845,28 @@ function cveDraftPublishSetStatus(entryId, text, isError) {
         text: text || '',
         isError: !!isError
     };
-    var statusCell = document.getElementById('draftPublishState-' + entryId);
-    if (!statusCell) {
+    var titleCell = document.getElementById('draftPublishTitle-' + entryId);
+    if (!titleCell) {
         return;
     }
-    statusCell.innerText = text || '';
+    var statusNode = titleCell.querySelector('.draftPublishState');
+    if (!statusNode && text) {
+        statusNode = document.createElement('small');
+        statusNode.className = 'draftPublishState block sml';
+        titleCell.appendChild(statusNode);
+    }
+    if (!statusNode) {
+        return;
+    }
+    if (!text) {
+        statusNode.remove();
+        return;
+    }
+    statusNode.innerText = text;
     if (isError) {
-        statusCell.classList.add('tred');
+        statusNode.classList.add('tred');
     } else {
-        statusCell.classList.remove('tred');
+        statusNode.classList.remove('tred');
     }
 }
 
@@ -5892,7 +5923,7 @@ async function cveRefreshDraftPublishDialog() {
         if (entries.length == 0) {
             var emptyRow = document.createElement('tr');
             var emptyCell = document.createElement('td');
-            emptyCell.colSpan = 7;
+            emptyCell.colSpan = 6;
             emptyCell.innerText = 'No drafts found in local cache.';
             emptyRow.appendChild(emptyCell);
             tbody.appendChild(emptyRow);
@@ -5901,11 +5932,15 @@ async function cveRefreshDraftPublishDialog() {
         }
         var readyCount = 0;
         entries.forEach(function (entry) {
+            var warningCount = typeof entry.errorCount === 'number' ? entry.errorCount : 0;
             var canPublish = cveDraftCanPublish(entry);
             if (canPublish) {
                 readyCount++;
             }
             var tr = document.createElement('tr');
+            if (warningCount > 0) {
+                tr.classList.add('dis');
+            }
 
             var tdSelect = document.createElement('td');
             var cb = document.createElement('input');
@@ -5918,25 +5953,50 @@ async function cveRefreshDraftPublishDialog() {
             tr.appendChild(tdSelect);
 
             var tdId = document.createElement('td');
-            tdId.innerText = entry.id;
+            tdId.innerText = entry.id + ' ';
+            var warningBadge = document.createElement('span');
+            warningBadge.className = 'bdg';
+            warningBadge.title = String(warningCount);
+            warningBadge.innerText = String(warningCount);
+            tdId.appendChild(warningBadge);
             tr.appendChild(tdId);
 
             var tdTitle = document.createElement('td');
+            tdTitle.id = 'draftPublishTitle-' + entry.id;
             var title = cveDraftExtractTitle(entry.doc);
             tdTitle.innerText = title || '';
             if (title) {
                 tdTitle.title = title;
             }
+            var status = cveDraftPublishStatusMap[entry.id];
+            if (status && status.text) {
+                var titleStatus = document.createElement('small');
+                titleStatus.className = 'draftPublishState block sml';
+                titleStatus.innerText = status.text;
+                if (status.isError) {
+                    titleStatus.classList.add('tred');
+                }
+                tdTitle.appendChild(titleStatus);
+            }
             tr.appendChild(tdTitle);
 
             var tdCvss = document.createElement('td');
-            tdCvss.innerText = cveDraftExtractCvss(entry.doc);
+            tdCvss.innerHTML = cveDraftExtractCvss(entry.doc);
             tr.appendChild(tdCvss);
 
-            var tdWarn = document.createElement('td');
-            var warningCount = typeof entry.errorCount === 'number' ? entry.errorCount : 0;
-            tdWarn.innerText = warningCount;
-            tr.appendChild(tdWarn);
+            var tdPublicOn = document.createElement('td');
+            var publicOn = entry && entry.doc && entry.doc.containers && entry.doc.containers.cna ? entry.doc.containers.cna.datePublic : null;
+            if (publicOn) {
+                var publicOnDate = new Date(publicOn);
+                if (!isNaN(publicOnDate.getTime())) {
+                    if (typeof textUtil !== 'undefined' && textUtil && typeof textUtil.formatFriendlyDate === 'function') {
+                        tdPublicOn.innerText = textUtil.formatFriendlyDate(publicOnDate);
+                    } else {
+                        tdPublicOn.innerText = publicOnDate.toISOString();
+                    }
+                }
+            }
+            tr.appendChild(tdPublicOn);
 
             var tdTime = document.createElement('td');
             if (entry.updatedAt) {
@@ -5948,19 +6008,6 @@ async function cveRefreshDraftPublishDialog() {
                 }
             }
             tr.appendChild(tdTime);
-
-            var tdStatus = document.createElement('td');
-            tdStatus.id = 'draftPublishState-' + entry.id;
-            var status = cveDraftPublishStatusMap[entry.id];
-            if (status && status.text) {
-                tdStatus.innerText = status.text;
-                if (status.isError) {
-                    tdStatus.classList.add('tred');
-                }
-            } else {
-                tdStatus.innerText = canPublish ? 'Ready' : 'Needs 0 warnings';
-            }
-            tr.appendChild(tdStatus);
             tbody.appendChild(tr);
         });
         cveDraftPublishSetSummary('Found ' + entries.length + ' drafts. Ready to publish: ' + readyCount + '.');
@@ -5997,7 +6044,7 @@ async function cvePublishSelectedDrafts(event) {
     var selected = Array.from(document.querySelectorAll('#draftPublishRows input[name="draftPublishSelection"]:checked'))
         .map(function (el) { return el.value; });
     if (selected.length == 0) {
-        cveDraftPublishSetSummary('Select one or more drafts with 0 warnings.', true);
+        cveDraftPublishSetSummary('Select one or more drafts with 0 errors.', true);
         return false;
     }
     var selectedSet = new Set(selected);
@@ -6045,7 +6092,20 @@ async function cveReserveAndRender(yearOffset, number) {
         } else {
             m.innerText = "Failed to get a CVE ID";
         }
-        cvePortalFilter.reset();
+        var cveForm = document.getElementById("cvePortalFilter");
+        if (cveForm) {
+            if (cveForm.fstate) {
+                cveForm.fstate.value = 'RESERVED';
+            }
+            var reservedState = document.getElementById("chkres");
+            if (reservedState) {
+                reservedState.checked = true;
+            }
+            if (cveForm.y) {
+                cveForm.y.value = String(currentYear + (yearOffset ? yearOffset : 0));
+            }
+            cveForm.page = 0;
+        }
         await cveGetList();
         return r;
     } catch (e) {
@@ -6118,7 +6178,7 @@ pug_html = pug_html + "\u003Clabel id=\"userMgmt\"\u003E";
 pug_mixins["usermgmt"]();
 pug_html = pug_html + "\u003C\u002Flabel\u003E";
 }
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fheader\u003E\u003Cdiv class=\"pad\" id=\"cveStatusMessage\"\u003E\u003C\u002Fdiv\u003E\u003Cform class=\"gap\" id=\"cvePortalFilter\" onchange=\"cveGetList();\"\u003E\u003Cdiv class=\"lbl\"\u003EShow\u003C\u002Fdiv\u003E\u003Cdiv class=\"rdg\"\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkall\" type=\"radio\" name=\"fstate\" value=\"\""+pug_attr("checked", (selectedState == ''), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-misc\" for=\"chkall\"\u003EAll\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkres\" type=\"radio\" name=\"fstate\" value=\"RESERVED\""+pug_attr("checked", (selectedState == 'RESERVED'), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-tag\" for=\"chkres\"\u003EReserved\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkpub\" type=\"radio\" name=\"fstate\" value=\"PUBLISHED\""+pug_attr("checked", (selectedState == 'PUBLISHED'), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-globe\" for=\"chkpub\"\u003EPublished\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkrej\" type=\"radio\" name=\"fstate\" value=\"REJECTED\""+pug_attr("checked", (selectedState == 'REJECTED'), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-no\" for=\"chkrej\"\u003ERejected\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"lbl\"\u003EYear\u003C\u002Fdiv\u003E\u003Cselect class=\"lbl txt\" name=\"y\"\u003E\u003Coption" + (pug_attr("value", nextY, true, false)+pug_attr("selected", (selectedYear == String(nextY)), true, false)) + "\u003E" + (pug_escape(null == (pug_interp = nextY) ? "" : pug_interp)) + "\u003C\u002Foption\u003E\u003Coption" + (pug_attr("value", y, true, false)+pug_attr("selected", (selectedYear == String(y)), true, false)) + "\u003E" + (pug_escape(null == (pug_interp = y) ? "" : pug_interp)) + "\u003C\u002Foption\u003E";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\u003C\u002Fheader\u003E\u003Cdiv class=\"pad\" id=\"cveStatusMessage\"\u003E\u003C\u002Fdiv\u003E\u003Cform class=\"gap\" id=\"cvePortalFilter\" onchange=\"cveGetList();\"\u003E\u003Cdiv class=\"lbl\"\u003EShow\u003C\u002Fdiv\u003E\u003Cdiv class=\"rdg\"\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkall\" type=\"radio\" name=\"fstate\" value=\"\""+pug_attr("checked", (selectedState == ''), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-misc\" for=\"chkall\"\u003EAll\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkres\" type=\"radio\" name=\"fstate\" value=\"RESERVED\""+pug_attr("checked", (selectedState == 'RESERVED'), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-tag\" for=\"chkres\"\u003EReserved\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkpub\" type=\"radio\" name=\"fstate\" value=\"PUBLISHED\""+pug_attr("checked", (selectedState == 'PUBLISHED'), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-globe\" for=\"chkpub\"\u003EPublished\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"form-control\"\u003E\u003Cinput" + (" class=\"hid\""+" id=\"chkrej\" type=\"radio\" name=\"fstate\" value=\"REJECTED\""+pug_attr("checked", (selectedState == 'REJECTED'), true, false)) + "\u002F\u003E\u003Clabel class=\"lbl vgi-del\" for=\"chkrej\"\u003ERejected\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"lbl\"\u003EYear\u003C\u002Fdiv\u003E\u003Cselect class=\"lbl txt\" name=\"y\"\u003E\u003Coption" + (pug_attr("value", nextY, true, false)+pug_attr("selected", (selectedYear == String(nextY)), true, false)) + "\u003E" + (pug_escape(null == (pug_interp = nextY) ? "" : pug_interp)) + "\u003C\u002Foption\u003E\u003Coption" + (pug_attr("value", y, true, false)+pug_attr("selected", (selectedYear == String(y)), true, false)) + "\u003E" + (pug_escape(null == (pug_interp = y) ? "" : pug_interp)) + "\u003C\u002Foption\u003E";
 var i = y-1
 while (i > 1998) {
 pug_html = pug_html + "\u003Coption" + (pug_attr("value", i, true, false)+pug_attr("selected", (selectedYear == String(i)), true, false)) + "\u003E" + (pug_escape(null == (pug_interp = i) ? "" : pug_interp)) + "\u003C\u002Foption\u003E";
@@ -6240,7 +6300,7 @@ pug_mixins["date"](c.time.modified);
 pug_html = pug_html + "\u003C\u002Foption\u003E";
 }
 if (c.state == 'REJECTED') {
-pug_html = pug_html + ("\u003Coption" + (pug_attr("value", c.cve_id, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = '⛔ Rejected on ') ? "" : pug_interp)));
+pug_html = pug_html + ("\u003Coption" + (pug_attr("value", c.cve_id, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = '🗑️ Rejected on ') ? "" : pug_interp)));
 pug_mixins["date"](c.time.modified);
 pug_html = pug_html + "\u003C\u002Foption\u003E";
 }
@@ -6256,7 +6316,7 @@ pug_mixins["date"](c.time.modified);
 pug_html = pug_html + "\u003C\u002Foption\u003E";
 }
 if (c.state == 'REJECTED') {
-pug_html = pug_html + ("\u003Coption" + (pug_attr("value", c.cve_id, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = '⛔ Rejected on ') ? "" : pug_interp)));
+pug_html = pug_html + ("\u003Coption" + (pug_attr("value", c.cve_id, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = '🗑️ Rejected on ') ? "" : pug_interp)));
 pug_mixins["date"](c.time.modified);
 pug_html = pug_html + "\u003C\u002Foption\u003E";
 }
@@ -6293,7 +6353,7 @@ pug_html = pug_html + "\u003Coption" + (pug_attr("value", c.cve_id, true, false)
 pug_mixins["listIds"] = pug_interp = function(){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 if (cveIds && cveIds.length > 0) {
-var stateIcons = {'RESERVED':'vgi-tag', 'PUBLISHED':'vgi-globe', 'REJECTED':'vgi-no', 'PUBLIC':'vgi-globe'}
+var stateIcons = {'RESERVED':'vgi-tag', 'PUBLISHED':'vgi-globe', 'REJECTED':'vgi-del', 'PUBLIC':'vgi-globe'}
 var canInlineLoad = (typeof inlineLoad === 'boolean') ? inlineLoad : true
 var docBase = docPathBase ? docPathBase : '/cve5/'
 pug_html = pug_html + "\u003Ctable class=\"vtbl sortable\" id=\"cveListTable\"\u003E\u003Cthead\u003E\u003Ctr\u003E\u003Cth\u003EID\u003C\u002Fth\u003E\u003Cth\u003ERequester\u003C\u002Fth\u003E\u003Cth aria-sort=\"ascending\"\u003ECreated\u003C\u002Fth\u003E\u003Cth\u003EModified\u003C\u002Fth\u003E\u003Cth\u003EActions\u003C\u002Fth\u003E\u003C\u002Ftr\u003E\u003C\u002Fthead\u003E\u003Ctbody\u003E";
@@ -6327,11 +6387,11 @@ pug_mixins["date"](c.time.modified);
 pug_html = pug_html + "\u003C\u002Ftd\u003E\u003Ctd\u003E";
 if (editable) {
 if (c.state == 'RESERVED') {
-pug_html = pug_html + "\u003Ca" + (" class=\"fbn vgi-x\""+pug_attr("data", c.cve_id, true, false)+" onclick=\"cveReject(this, event)\" title=\"Reject this CVE ID\"") + "\u003E&nbsp;\u003C\u002Fa\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"fbn vgi-del\""+pug_attr("data", c.cve_id, true, false)+" onclick=\"cveReject(this, event)\" title=\"Reject this CVE ID\"") + "\u003E&nbsp;\u003C\u002Fa\u003E";
 }
 else
 if (c.state == 'PUBLISHED') {
-pug_html = pug_html + "\u003Ca" + (" class=\"fbn vgi-x\""+pug_attr("data", c.cve_id, true, false)+" onclick=\"showAlert('Rejecting published record', 'To reject this published record, open this in the editor, click the Reject ID button at the bottom')\" title=\"Reject this CVE ID!\"") + "\u003E&nbsp;\u003C\u002Fa\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"fbn vgi-del\""+pug_attr("data", c.cve_id, true, false)+" onclick=\"showAlert('Rejecting published record', 'To reject this published record, open this in the editor, click the Reject ID button at the bottom')\" title=\"Reject this CVE ID!\"") + "\u003E&nbsp;\u003C\u002Fa\u003E";
 }
 else {
 pug_html = pug_html + "\u003Ci class=\"vgi-no tgrey\" title=\"This ID is already rejected!\"\u003E&nbsp;\u003C\u002Fi\u003E";
@@ -6368,11 +6428,11 @@ pug_mixins["date"](c.time.modified);
 pug_html = pug_html + "\u003C\u002Ftd\u003E\u003Ctd\u003E";
 if (editable) {
 if (c.state == 'RESERVED') {
-pug_html = pug_html + "\u003Ca" + (" class=\"fbn vgi-x\""+pug_attr("data", c.cve_id, true, false)+" onclick=\"cveReject(this, event)\" title=\"Reject this CVE ID\"") + "\u003E&nbsp;\u003C\u002Fa\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"fbn vgi-del\""+pug_attr("data", c.cve_id, true, false)+" onclick=\"cveReject(this, event)\" title=\"Reject this CVE ID\"") + "\u003E&nbsp;\u003C\u002Fa\u003E";
 }
 else
 if (c.state == 'PUBLISHED') {
-pug_html = pug_html + "\u003Ca" + (" class=\"fbn vgi-x\""+pug_attr("data", c.cve_id, true, false)+" onclick=\"showAlert('Rejecting published record', 'To reject this published record, open this in the editor, click the Reject ID button at the bottom')\" title=\"Reject this CVE ID!\"") + "\u003E&nbsp;\u003C\u002Fa\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"fbn vgi-del\""+pug_attr("data", c.cve_id, true, false)+" onclick=\"showAlert('Rejecting published record', 'To reject this published record, open this in the editor, click the Reject ID button at the bottom')\" title=\"Reject this CVE ID!\"") + "\u003E&nbsp;\u003C\u002Fa\u003E";
 }
 else {
 pug_html = pug_html + "\u003Ci class=\"vgi-no tgrey\" title=\"This ID is already rejected!\"\u003E&nbsp;\u003C\u002Fi\u003E";
@@ -6834,7 +6894,7 @@ pug_mixins[ctemplate]();
         typeof userInfo !== 'undefined' ? userInfo : undefined, "users" in locals_for_with ?
         locals_for_with.users :
         typeof users !== 'undefined' ? users : undefined));
-    ;;return pug_html;}</script><dialog class="dlg bor rnd shd" id="cveErrorsModal"><div id="cveErrors"></div><center class="pad2"><input class="btn sfe" type="reset" onclick="document.getElementById('cveErrorsModal').close()" value="OK"></center></dialog><dialog class="dlg bor rnd shd" id="draftPublishDialog"><header class="ban sec pad"><b class="lbl vgi-edit">Draft Publishing</b><a class="right rbtn vgi-x" title="Close draft publishing" onclick="this.closest('dialog').close()"></a></header><div class="pad2"><p class="lbl" id="draftPublishStatus">Select drafts with 0 warnings to publish.</p><table class="vtbl" id="draftPublishTable"><thead><tr><th><input type="checkbox" onclick="cveDraftPublishToggleAll(this.checked)"></th><th>Draft ID</th><th>Title</th><th>CVSS</th><th>Warnings</th><th>Updated</th><th>Status</th></tr></thead><tbody id="draftPublishRows"></tbody></table></div><center class="pad2"><button class="btn sfe vgi-export" type="button" onclick="return cvePublishSelectedDrafts(event);">Publish Selected</button> <button class="btn vgi-reuse" type="button" onclick="cveRefreshDraftPublishDialog()">Refresh</button> <button class="btn" type="button" onclick="this.closest('dialog').close()">Close</button></center></dialog><dialog class="dlg bor rnd shd" id="secretDialog"><header class="ban sec pad"><b class="lbl vgi-lock">IMPORTANT! New API Secret Key generated!</b> <a class="right rbtn vgi-x" onclick="this.closest('dialog').close()"></a></header><center class="gap"><form id="secretDialogForm" onsubmit="event.preventDefault();this.reset();this.closest('dialog').close();return false"><h3 class="vgi-alert" id="userMessage"></h3><p>Please securely store this API key.<br/> This key will not be shown again!</p><b class="lbl">API Secret Key</b><br/><input class="txt bor" type="password" size="39" name="pass" readonly="readonly" autocomplete="off"/><input id="showpass" name="showpass" type="checkbox" onclick="this.form.pass.type = (this.form.pass.type === 'password'? 'text' : 'password')"/><label class="vgi-eye lbl sbn" for="showpass"></label><center class="gap"><input class="btn sfe" type="reset" onclick="this.closest('dialog').close()" value="OK"/></center></form></center></dialog><dialog class="dlg bor rnd shd" id="userAddDialog"><header class="ban sec pad"><b class="lbl vgi-user">Add a new user</b> <a class="right rbtn vgi-x" onclick="this.closest('dialog').close()"></a></header><form class="gap" onsubmit="event.preventDefault();cveAddUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt gap" name="new_username" pattern="^[a-zA-Z0-9\-_@\.]{3,50}$" required="required" placeholder="username/email" size="43" title="username - only alpha-numeric and . _ - @ are allowed (min 3 characters)"/><br/><input class="txt gap" name="first" pattern=".{1,64}" required="required" placeholder="First name" title="First Name"/><input class="txt gap" name="last" pattern=".{1,64}" required="required" placeholder="Last name" title="Last Name"/><div class="gap"><br/><input id="cveUserAdminA" type="checkbox" name="admin"/><label class="vgi-king lbl" for="cveUserAdminA" title="Is this an admin?">Admin</label><input class="lbl" id="cveUserAdminAActive" type="checkbox" name="active" checked="checked"/><label class="lbl" for="cveUserAdminAActive" title="Is the account active?">Active</label></div><br/><input class="gap sfe btn vgi-magic" type="submit" value="Add user"/> <button class="gap btn vgi-reuse" onclick="cveUserKeyReset(this)">Reset API Key</button></form></dialog><dialog class="dlg bor rnd shd" id="userEditDialog"><header class="ban sec pad"><b class="lbl vgi-user">Update user details</b> <a class="right rbtn vgi-x" onclick="this.closest('dialog').close()"></a></header><form class="gap" id="userEditForm" onsubmit="event.preventDefault();cveUpdateUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt gap" name="new_username" pattern="^[a-zA-Z0-9\-_@\.]{3,50}$" required="required" placeholder="username/email" size="43" title="username - only alpha-numeric and . _ - @ are allowed (min 3 characters)"/><br/><input class="txt gap" name="first" pattern=".{1,64}" required="required" placeholder="First name" title="First Name"/><input class="txt gap" name="last" pattern=".{1,64}" required="required" placeholder="Last name" title="Last Name"/><div class="gap"><br/><input id="cveUserAdminU" type="checkbox" name="admin"/><label class="vgi-king lbl" for="cveUserAdminU" title="Is this an admin?">Admin</label><input class="lbl" id="cveUserAdminUActive" type="checkbox" name="active" checked="checked"/><label class="lbl" for="cveUserAdminUActive" title="Is the account active?">Active</label></div><br/><input class="gap sfe btn vgi-magic" type="submit" value="Update"/> <button class="gap btn vgi-reuse" onclick="cveUserKeyReset(this)">Reset API Key</button></form></dialog><dialog class="dlg bor rnd shd" id="cpeNameOverrideDialog"><header class="ban sec pad"><b class="lbl vgi-cog">CPE name and type alias mappings</b> <a class="right rbtn vgi-x" onclick="this.closest('dialog').close()"></a></header><form class="gap" onsubmit="event.preventDefault();return false;"><table id="cpeNameOverrideTable"><thead><tr><th>Normal Name</th><th>CPE Name</th><th>CPE Type</th><th></th></tr></thead><tbody id="cpeNameOverrideRows"></tbody><tfoot><tr colspan="4"><td><button class="btn vgi-add sfe" type="button" onclick="cpeOverrideAddRow()">Add mapping</button></td></tr></tfoot></table><center class="gap"> <button class="btn vgi-fail" type="button" onclick="this.closest('dialog').close();autoCPE()">Close</button></center></form></dialog><dialog class="dlg bor rnd shd" id="cvePortalDialog"><header class="ban sec pad"><b class="lbl vgi-org">CVE CNA Portal</b><a class="right rbtn vgi-x" title="Close CVE Portal" onclick="return closeCvePortal(event);"></a></header><div id="port"></div></dialog><div id="mainTabGroup"><span class="lbl">&nbsp;</span><div class="nobr" id="statusArea"><span class="lbl" id="infoMsg"></span></div><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor rnd shd" id="errList"></div></details></span></label><div class="fil bort tpad" id="editorContent"><iframe class="hid" name="x" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="fil bort pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Preview</label><div class="fil bort pad"><div style="float:right"><a class="vgi-download fbn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail fbn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div></div><script>var idpath = "cveMetadata.cveId";
+    ;;return pug_html;}</script><dialog class="dlg bor rnd shd" id="cveErrorsModal"><div id="cveErrors"></div><center class="pad2"><input class="btn sfe" type="reset" onclick="document.getElementById('cveErrorsModal').close()" value="OK"></center></dialog><dialog class="dlg bor rnd shd" id="draftPublishDialog"><header class="ban sec pad"><b class="lbl vgi-edit">Draft Publishing</b><a class="right rbtn vgi-x" title="Close draft publishing" onclick="this.closest('dialog').close()"></a></header><div class="pad2"><p class="lbl" id="draftPublishStatus">Select drafts with 0 errors to publish.</p><table class="vtbl" id="draftPublishTable"><thead><tr><th><input type="checkbox" onclick="cveDraftPublishToggleAll(this.checked)"></th><th>Draft ID</th><th>Title</th><th>CVSS</th><th>Public at</th><th>Updated</th></tr></thead><tbody id="draftPublishRows"></tbody></table></div><center class="pad2"><button class="btn sfe vgi-export" type="button" onclick="return cvePublishSelectedDrafts(event);">Publish Selected</button> <button class="btn vgi-reuse" type="button" onclick="cveRefreshDraftPublishDialog()">Refresh</button> <button class="btn" type="button" onclick="this.closest('dialog').close()">Close</button></center></dialog><dialog class="dlg bor rnd shd" id="secretDialog"><header class="ban sec pad"><b class="lbl vgi-lock">IMPORTANT! New API Secret Key generated!</b> <a class="right rbtn vgi-x" onclick="this.closest('dialog').close()"></a></header><center class="gap"><form id="secretDialogForm" onsubmit="event.preventDefault();this.reset();this.closest('dialog').close();return false"><h3 class="vgi-alert" id="userMessage"></h3><p>Please securely store this API key.<br/> This key will not be shown again!</p><b class="lbl">API Secret Key</b><br/><input class="txt bor" type="password" size="39" name="pass" readonly="readonly" autocomplete="off"/><input id="showpass" name="showpass" type="checkbox" onclick="this.form.pass.type = (this.form.pass.type === 'password'? 'text' : 'password')"/><label class="vgi-eye lbl sbn" for="showpass"></label><center class="gap"><input class="btn sfe" type="reset" onclick="this.closest('dialog').close()" value="OK"/></center></form></center></dialog><dialog class="dlg bor rnd shd" id="userAddDialog"><header class="ban sec pad"><b class="lbl vgi-user">Add a new user</b> <a class="right rbtn vgi-x" onclick="this.closest('dialog').close()"></a></header><form class="gap" onsubmit="event.preventDefault();cveAddUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt gap" name="new_username" pattern="^[a-zA-Z0-9\-_@\.]{3,50}$" required="required" placeholder="username/email" size="43" title="username - only alpha-numeric and . _ - @ are allowed (min 3 characters)"/><br/><input class="txt gap" name="first" pattern=".{1,64}" required="required" placeholder="First name" title="First Name"/><input class="txt gap" name="last" pattern=".{1,64}" required="required" placeholder="Last name" title="Last Name"/><div class="gap"><br/><input id="cveUserAdminA" type="checkbox" name="admin"/><label class="vgi-king lbl" for="cveUserAdminA" title="Is this an admin?">Admin</label><input class="lbl" id="cveUserAdminAActive" type="checkbox" name="active" checked="checked"/><label class="lbl" for="cveUserAdminAActive" title="Is the account active?">Active</label></div><br/><input class="gap sfe btn vgi-magic" type="submit" value="Add user"/> <button class="gap btn vgi-reuse" onclick="cveUserKeyReset(this)">Reset API Key</button></form></dialog><dialog class="dlg bor rnd shd" id="userEditDialog"><header class="ban sec pad"><b class="lbl vgi-user">Update user details</b> <a class="right rbtn vgi-x" onclick="this.closest('dialog').close()"></a></header><form class="gap" id="userEditForm" onsubmit="event.preventDefault();cveUpdateUser(this)"><input class="txt" type="hidden" name="u"/><input class="txt gap" name="new_username" pattern="^[a-zA-Z0-9\-_@\.]{3,50}$" required="required" placeholder="username/email" size="43" title="username - only alpha-numeric and . _ - @ are allowed (min 3 characters)"/><br/><input class="txt gap" name="first" pattern=".{1,64}" required="required" placeholder="First name" title="First Name"/><input class="txt gap" name="last" pattern=".{1,64}" required="required" placeholder="Last name" title="Last Name"/><div class="gap"><br/><input id="cveUserAdminU" type="checkbox" name="admin"/><label class="vgi-king lbl" for="cveUserAdminU" title="Is this an admin?">Admin</label><input class="lbl" id="cveUserAdminUActive" type="checkbox" name="active" checked="checked"/><label class="lbl" for="cveUserAdminUActive" title="Is the account active?">Active</label></div><br/><input class="gap sfe btn vgi-magic" type="submit" value="Update"/> <button class="gap btn vgi-reuse" onclick="cveUserKeyReset(this)">Reset API Key</button></form></dialog><dialog class="dlg bor rnd shd" id="cpeNameOverrideDialog"><header class="ban sec pad"><b class="lbl vgi-cog">CPE name and type alias mappings</b> <a class="right rbtn vgi-x" onclick="this.closest('dialog').close()"></a></header><form class="gap" onsubmit="event.preventDefault();return false;"><table id="cpeNameOverrideTable"><thead><tr><th>Normal Name</th><th>CPE Name</th><th>CPE Type</th><th></th></tr></thead><tbody id="cpeNameOverrideRows"></tbody><tfoot><tr colspan="4"><td><button class="btn vgi-add sfe" type="button" onclick="cpeOverrideAddRow()">Add mapping</button></td></tr></tfoot></table><center class="gap"> <button class="btn vgi-fail" type="button" onclick="this.closest('dialog').close();autoCPE()">Close</button></center></form></dialog><dialog class="dlg bor rnd shd" id="cvePortalDialog"><header class="ban sec pad"><b class="lbl vgi-org">CVE CNA Portal</b><a class="right rbtn vgi-x" title="Close CVE Portal" onclick="return closeCvePortal(event);"></a></header><div id="port"></div></dialog><div id="mainTabGroup"><span class="lbl">&nbsp;</span><div class="nobr" id="statusArea"><span class="lbl" id="infoMsg"></span></div><input class="tab" name="tabs" type="radio" id="editorTab" value="1" checked><label class="lbl" id="editorLabel" for="editorTab"><span class="flx">Editor<details class="popup" id="errPop"><summary class="sml hid" id="errCount"></summary><div class="wht pop pad bor rnd shd" id="errList"></div></details></span></label><div class="fil bort tpad" id="editorContent"><iframe class="hid" name="x" src="about:blank"></iframe><form class="editor" target="x" action="" id="docEditor"></form></div><input class="tab" name="tabs" type="radio" id="sourceTab" value="2"><label class="lbl" for="sourceTab">Source</label><div class="fil bort pad"><div id="output" rows="40" cols="100%"><p></p></div></div><input class="tab" name="tabs" type="radio" id="advisoryTab" value="4"><label class="lbl" for="advisoryTab">Preview</label><div class="fil bort pad"><div style="float:right"><a class="vgi-download fbn right" type="button" oncontextmenu="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" onclick="downloadHtml(document.getElementById(&quot;cvetitle&quot;).innerText, render, this);" value="Download">Download</a><a class="vgi-mail fbn right" type="button" oncontextmenu="draftEmail(event, this, &quot;render&quot;);" onclick="draftEmail(event, this,&quot;render&quot;);" value="Email">Email</a></div><div class="render" id="render"></div></div></div><script>var idpath = "cveMetadata.cveId";
 var allowAjax = true;
 var soloMode = true;
 var schemaName = "cve";

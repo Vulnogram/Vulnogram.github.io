@@ -128,7 +128,7 @@ transition: 500ms;
   color: white;
   background-color: rgb(204,1,25);
 }
-</style><link href="./css/tagify.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="./css/simplehtml.css"></head><body class="cvss4" id="body"><input id="sidebarToggle" type="checkbox" checked><div class="layout-grid"><label class="sidebar-overlay" for="sidebarToggle"></label><aside class="sidebar"><div class="sidebar-head pad"><label class="lbl vgi-logo" for="sidebarToggle">Vulnogram</label><label class="vgi-larrow" for="sidebarToggle"></label></div><nav class="sidebar-nav pad"><a class="lbl vgi-cvev" title="CVE: Common Vulnerabilities and Exposures" href="./">CVE</a><a class="lbl vgi-cvss-logo rnd sec " title="Common Vulnerability Scoring System" href="./cvss4">CVSS 4.0</a><a class="lbl vgi-search" title="Search and Display CVEs" href="https://www.vulnogram.org/seaview/">Seaview - CVE Search</a></nav><div class="sidebar-foot"></div></aside><script>document.addEventListener('toggle', function (e) {
+</style><link href="./css/tagify.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="./css/simplehtml.css"></head><body class="cvss4" id="body"><input id="sidebarToggle" type="checkbox" checked><div class="layout-grid"><label class="sidebar-overlay" for="sidebarToggle"></label><aside class="sidebar"><div class="sidebar-head pad"><label class="lbl vgi-logo" for="sidebarToggle">Vulnogram</label><label class="vgi-larrow" for="sidebarToggle"></label></div><nav class="sidebar-nav pad"><a class="lbl vgi-cvev" title="CVE: Common Vulnerabilities and Exposures" href="./">CVE</a><a class="lbl vgi-cvss-logo rnd sec " title="Common Vulnerability Scoring System" href="./cvss4">CVSS 4.0</a><a class="lbl vgi-wave" title="Search and View CVEs" href="https://www.vulnogram.org/seaview/">Seaview - CVE Search</a></nav><div class="sidebar-foot"></div></aside><script>document.addEventListener('toggle', function (e) {
   var d = e && e.target;
   if (!d || !d.matches || !d.matches('details.sidebar-expandable') || !d.open) return;
   var t = document.getElementById('sidebarToggle');
@@ -142,7 +142,7 @@ document.addEventListener('click', function (e) {
   var t = document.getElementById('sidebarToggle');
   if (t) t.checked = true;
 });
-</script><main class="main-area"><div class="stk" id="vgHead"><header class="ban pad wht btm vg-top-header"><div class="left flx"><label class="lbl vgi-logo" id="smallScreenMenu" for="sidebarToggle">Vulnogram</label><a class="fbn sfe" href="./">NEW CVSS 4.0</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><button class="fbn vgi-folder" type="file" onclick="importFile(event, this);"></button></div><div class="center flx"></div><div class="right flx"><a class="fbn vgi-download" title="Download JSON" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download"></a></div></header><header class="ban pad ht4 wht shd"><div class="left flx" id="cvssSummary"><svg id="cvssLogo" width="264" height="96" version="1.1" viewBox="0 0 330 120" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}
+</script><main class="main-area"><div class="stk" id="vgHead"><header class="ban pad wht btm vg-top-header"><div class="left flx"><label class="lbl vgi-menu" id="smallScreenMenu" for="sidebarToggle"> </label><a class="fbn sfe" href="./">NEW CVSS 4.0</a><input class="hid" id="importJSON" type="file" accept="application/json" onchange="loadFile(event,this);"><button class="fbn vgi-folder" type="file" onclick="importFile(event, this);"></button></div><div class="center flx"></div><div class="right flx"><a class="fbn vgi-download" title="Download JSON" type="button" oncontextmenu="downloadFile(event, this);" onclick="downloadFile(event, this);" value="Download"></a></div></header><header class="ban pad ht4 wht shd"><div class="left flx" id="cvssSummary"><svg id="cvssLogo" width="264" height="96" version="1.1" viewBox="0 0 330 120" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:none;}
 	.st1{fill:#FFFFFF;}
 	.st2{fill:#70B62C;}
 	.st3{fill:#669900;}
@@ -164,7 +164,7 @@ var pug_has_own_property=Object.prototype.hasOwnProperty;
 var pug_match_html=/["&<>]/;function pugRender(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;
     var locals_for_with = (locals || {});
     
-    (function (Array, Date, doc, isNaN, renderTemplate) {
+    (function (Array, Date, Number, doc, isNaN, renderTemplate) {
       pug_mixins["para"] = pug_interp = function(t, hypertext){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 if (t) {
@@ -324,15 +324,24 @@ pug_html = pug_html + (pug_escape(null == (pug_interp = v) ? "" : pug_interp));
 };
 pug_mixins["CVSS"] = pug_interp = function(value){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-if (value.baseScore) {
-pug_html = pug_html + (pug_escape(null == (pug_interp = value.baseScore.toFixed(1)) ? "" : pug_interp));
-}
-pug_html = pug_html + " ";
-if (value.version >= "3") {
-pug_html = pug_html + "(\u003Ca" + (pug_attr("href", "https://cvss.js.org/#" + value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E)";
+if (value && value.baseScore !== undefined && value.baseScore !== null && value.baseScore !== '') {
+var baseScoreNum = Number(value.baseScore)
+if (isNaN(baseScoreNum)) {
+pug_html = pug_html + (pug_escape(null == (pug_interp = value.baseScore) ? "" : pug_interp));
 }
 else {
+pug_html = pug_html + (pug_escape(null == (pug_interp = baseScoreNum.toFixed(1)) ? "" : pug_interp));
+}
+}
+if (!(value && value.baseScoreOnly)) {
+pug_html = pug_html + " ";
+if (value && value.version >= "3") {
+pug_html = pug_html + "(\u003Ca" + (pug_attr("href", "https://cvss.js.org/#" + value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E)";
+}
+else
+if (value && value.vectorString) {
 pug_html = pug_html + "\u003Ca" + (pug_attr("href", 'https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?vector='+value.vectorString, true, false)) + "\u003E" + (pug_escape(null == (pug_interp = value.vectorString) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
+}
 }
 };
 pug_mixins["renderDate"] = pug_interp = function(value){
@@ -450,7 +459,9 @@ pug_html = pug_html + "\u003Cdiv class=\"tred\"\u003EDocument not found\u003C\u0
         locals_for_with.Array :
         typeof Array !== 'undefined' ? Array : undefined, "Date" in locals_for_with ?
         locals_for_with.Date :
-        typeof Date !== 'undefined' ? Date : undefined, "doc" in locals_for_with ?
+        typeof Date !== 'undefined' ? Date : undefined, "Number" in locals_for_with ?
+        locals_for_with.Number :
+        typeof Number !== 'undefined' ? Number : undefined, "doc" in locals_for_with ?
         locals_for_with.doc :
         typeof doc !== 'undefined' ? doc : undefined, "isNaN" in locals_for_with ?
         locals_for_with.isNaN :
