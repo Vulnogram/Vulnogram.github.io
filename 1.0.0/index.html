@@ -350,7 +350,7 @@ button.json-editor-btn-delete {
     flex-shrink: 0;
     padding-left: 0.5em;
 }
-</style></head><body class="cve" id="body"><input id="sidebarToggle" type="checkbox" checked><div class="layout-grid"><label class="sidebar-overlay" for="sidebarToggle"></label><aside class="sidebar"><div class="sidebar-head pad"><label class="lbl vgi-logo" for="sidebarToggle">Vulnogram</label><label class="vgi-larrow" for="sidebarToggle"></label></div><nav class="sidebar-nav pad"><a class="lbl vgi-cvev rnd sec " title="CVE: Common Vulnerabilities and Exposures" href="./">CVE</a><a class="lbl vgi-cvss-logo" title="Common Vulnerability Scoring System" href="./cvss4">CVSS 4.0</a><a class="lbl vgi-wave" title="Search and View CVEs" href="https://www.vulnogram.org/seaview/">Seaview - CVE Search</a><a class="lbl vgi-org" id="cvePortalNav" href="#" onclick="return showCvePortal(event);">CVE Portal</a><details class="sidebar-expandable bort" id="draftsGroup"><summary class="lbl vgi-edit">Drafts<span class="pad tgrey" id="draftsCount"></span><a class="right sfe fbn vgi-export" id="draftPublishOpenBtn" href="#" title="Manage and publish cached drafts" onclick="event.stopPropagation();return cveOpenDraftPublishDialog(event);">Manage</a></summary><div class="lbl" id="draftsEmpty">No drafts yet.</div><div class="flx" id="draftsList"></div></details><details class="sidebar-expandable" id="recentGroup"><summary class="lbl vgi-time">Recent <span id="recentOrg"></span></summary><div class="lbl" id="recentEmpty">...</div><div class="flx" id="recentList"></div></details></nav><div class="sidebar-foot"></div></aside><script>document.addEventListener('toggle', function (e) {
+</style></head><body class="cve" id="body"><input id="sidebarToggle" type="checkbox" checked><div class="layout-grid"><label class="sidebar-overlay" for="sidebarToggle"></label><aside class="sidebar"><div class="sidebar-head pad"><label class="lbl vgi-logo" for="sidebarToggle">Vulnogram</label><label class="vgi-larrow" for="sidebarToggle"></label></div><nav class="sidebar-nav pad"><a class="lbl vgi-cvev rnd sec " title="CVE: Common Vulnerabilities and Exposures" href="./">CVE</a><a class="lbl vgi-cvss-logo" title="Common Vulnerability Scoring System" href="./cvss4">CVSS 4.0</a><a class="lbl vgi-wave" title="Search and View CVEs" href="https://www.vulnogram.org/seaview/">Seaview - CVE Search</a><a class="lbl vgi-org" id="cvePortalNav" href="#" onclick="return showCvePortal(event);">CVE Portal</a><details class="sidebar-expandable bort" id="draftsGroup"><summary class="lbl vgi-edit">Drafts<span class="pad tgrey" id="draftsCount"></span><a class="right sfe fbn vgi-export" id="draftPublishOpenBtn" href="#" title="Manage and publish cached drafts" onclick="event.stopPropagation();return cveOpenDraftPublishDialog(event);">Manage</a></summary><div class="lbl" id="draftsEmpty">No drafts yet.</div><div class="flx" id="draftsList"></div></details><details class="sidebar-expandable" id="recentGroup"><summary class="lbl vgi-time">Recent <span id="recentOrg"></span></summary><div class="lbl" id="recentEmpty">...</div><div class="flx" id="recentList"></div></details><label class="sidebar-nav-fill" for="sidebarToggle" aria-label="Toggle sidebar"></label></nav><div class="sidebar-foot"></div></aside><script>document.addEventListener('toggle', function (e) {
   var d = e && e.target;
   if (!d || !d.matches || !d.matches('details.sidebar-expandable') || !d.open) return;
   var t = document.getElementById('sidebarToggle');
@@ -5121,7 +5121,12 @@ function validateForm(f) {
 }
 
 async function cveUserEdit(elem) {
-    f = document.getElementById('userEditForm');
+    const f = document.getElementById('userEditForm');
+    const userEditDialog = document.getElementById('userEditDialog');
+    if (!elem || !f || !userEditDialog) {
+        cveShowError({ error: 'UI_ERROR', message: 'User edit form is unavailable on this page.' });
+        return;
+    }
     f.u.value = elem.getAttribute('u');
     f.new_username.value = elem.getAttribute('u');
     f.first.value = elem.getAttribute('f');
@@ -5140,7 +5145,7 @@ async function cveUserEdit(elem) {
         f.admin.removeAttribute('disabled');
         f.active.removeAttribute('disabled');
     }
-    document.getElementById('userEditDialog').showModal();
+    userEditDialog.showModal();
 }
 
 async function cveAddUser(f) {
