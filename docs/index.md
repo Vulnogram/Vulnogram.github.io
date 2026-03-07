@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="https://vulnogram.org/1.0.0/css/min.css" />
 <link rel="stylesheet" href="https://vulnogram.org/1.0.0/css/vg-icons.css" />
-
+<style>body {background-color:var(--wht)}</style>
 This guide is adapted from [Using Vulnogram with CVE Services Portal](https://www.cve.org/Resources/Roles/Cnas/UsingVulnogramCVEServices.pdf) and aligned to the current Vulnogram UI.
 
 ## 1. Access Vulnogram
