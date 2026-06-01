@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>FreeBSD — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <description>Most recent CVEs assigned by FreeBSD (freebsd).</description>
+    <lastBuildDate>Mon, 01 Jun 2026 22:50:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-45254 · 6.5 MEDIUM 🌩️ — Incorrect libcap_net limitation list manipulation</title>
+      <link>https://vulnogram.org/CVE-2026-45254</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45254</guid>
+      <description>In the case of the cap_net service, when a key present in the old limit was omitted from the new limit, the missing key was treated as &quot;allow any&quot; instead of being rejected. In certain scenarios, an application that had previously restricted a subset…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 21 May 2026 09:34:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45255 · 7.5 HIGH — Remote code execution via installer Wi-Fi access point scans</title>
+      <link>https://vulnogram.org/CVE-2026-45255</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45255</guid>
+      <description>When bsdinstall or bsdconfig are prompted to scan for nearby Wi-Fi networks, they build up a list of network names and use bsddialog(1) to prompt the user to select a network. This is implemented using a shell script, and the code which handled netwo…</description>
+      <category>High</category>
+      <pubDate>Thu, 21 May 2026 09:27:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-39461 · 8.8 HIGH — select(2) file descriptor set overflow causes stack overflow</title>
+      <link>https://vulnogram.org/CVE-2026-39461</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39461</guid>
+      <description>libcasper(3) communicates with helper processes via UNIX domain sockets, and uses the select(2) system call to wait for data to become available. However, it does not verify that its socket descriptor fits within select(2)&apos;s descriptor set size limit…</description>
+      <category>High</category>
+      <pubDate>Thu, 21 May 2026 09:20:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45253 · 8.4 HIGH — Missing validation in ptrace(PT_SC_REMOTE)</title>
+      <link>https://vulnogram.org/CVE-2026-45253</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45253</guid>
+      <description>ptrace(PT_SC_REMOTE) failed to properly validate parameters for the syscall(2) and __syscall(2) meta-system calls. As a result, a user with the ability to debug a process may trigger arbitrary code execution in the kernel, even if the target process…</description>
+      <category>High</category>
+      <pubDate>Thu, 21 May 2026 09:17:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45252 · 5.5 MEDIUM — Heap overflow in FUSE_LISTXATTR</title>
+      <link>https://vulnogram.org/CVE-2026-45252</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45252</guid>
+      <description>When a fusefs file system implements extended attributes, the kernel may send a FUSE_LISTXATTR message to the userspace daemon to retrieve the list of extended attributes for a given file. The FUSE protocol requires the daemon to return a packed list…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 21 May 2026 09:08:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45251 · 7.8 HIGH — Kernel use-after-free via file descriptor syscalls</title>
+      <link>https://vulnogram.org/CVE-2026-45251</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45251</guid>
+      <description>A file descriptor can be closed while a thread is blocked in a poll(2) or select(2) call waiting for that descriptor. Because the blocked thread does not hold a reference to the underlying object, this closure may result in the object being freed whi…</description>
+      <category>High</category>
+      <pubDate>Thu, 21 May 2026 09:04:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45250 · 7.8 HIGH — Stack buffer overflow via setcred(2)</title>
+      <link>https://vulnogram.org/CVE-2026-45250</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45250</guid>
+      <description>The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer without first validating it…</description>
+      <category>High</category>
+      <pubDate>Thu, 21 May 2026 08:37:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-35547 · 8.1 HIGH 🌩️ — Heap overflow in libnv</title>
+      <link>https://vulnogram.org/CVE-2026-35547</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35547</guid>
+      <description>When processing the header of an incoming message, libnv failed to properly validate the message size. The lack of validation allows a malicious program to write outside the bounds of a heap allocation. This can trigger a crash or system panic, and i…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Apr 2026 08:08:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-39457 · 7.8 HIGH — Stack overflow via select() file descriptor set overflow</title>
+      <link>https://vulnogram.org/CVE-2026-39457</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39457</guid>
+      <description>When exchanging data over a socket, libnv uses select(2) to wait for data to arrive. However, it does not verify whether the provided socket descriptor fits in select(2)&apos;s file descriptor set size limit of FD_SETSIZE (1024). An attacker who is able t…</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Apr 2026 08:01:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42512 · 8.1 HIGH 🌩️ — Remotely triggerable out-of-bounds heap write in dhclient</title>
+      <link>https://vulnogram.org/CVE-2026-42512</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42512</guid>
+      <description>As dhclient is building an environment to pass to dhclient-script, it may need to resize the array of string pointers. The code which expands the array incorrectly calculates its new size when requesting memory, resulting in a heap buffer overrun. A…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Apr 2026 07:58:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7164 · 7.5 HIGH 🌩️ — pf can overflow the stack parsing crafted SCTP packets</title>
+      <link>https://vulnogram.org/CVE-2026-7164</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7164</guid>
+      <description>Incorrect packet validation allowed unbounded recursion parsing SCTP chunk parameters. This can eventually result in a stack overflow and panic. Remote attackers can craft packets which cause affected systems to panic. This affects any system where p…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Apr 2026 07:23:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7270 · 7.8 HIGH — Local privilege escalation via execve()</title>
+      <link>https://vulnogram.org/CVE-2026-7270</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7270</guid>
+      <description>An operator precedence bug in the kernel results in a scenario where a buffer overflow causes attacker-controlled data to overwrite adjacent execve(2) argument buffers. The bug may be exploitable by an unprivileged user to obtain superuser privileges…</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Apr 2026 07:02:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42511 · 8.1 HIGH 🌩️ — Remote code execution via malicious DHCP options</title>
+      <link>https://vulnogram.org/CVE-2026-42511</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42511</guid>
+      <description>The BOOTP file field is written to the lease file without escaping embedded double-quotes, allowing injection of arbitrary dhclient.conf directives. When the lease file is subsequently re-parsed by dhclient, e.g., after a system restart, an attacker-…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Apr 2026 06:56:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6386 · 6.2 MEDIUM — Missing large page handling in pmap_pkru_update_range()</title>
+      <link>https://vulnogram.org/CVE-2026-6386</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6386</guid>
+      <description>In order to apply a particular protection key to an address range, the kernel must update the corresponding page table entries. The subroutine which handled this failed to take into account the presence of 1GB largepage mappings created using the shm…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 22 Apr 2026 02:33:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5398 · 8.4 HIGH — Kernel use-after-free bug in the TIOCNOTTY handler</title>
+      <link>https://vulnogram.org/CVE-2026-5398</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5398</guid>
+      <description>The implementation of TIOCNOTTY failed to clear a back-pointer from the structure representing the controlling terminal to the calling process&apos; session. If the invoking process then exits, the terminal structure may end up containing a pointer to fre…</description>
+      <category>High</category>
+      <pubDate>Wed, 22 Apr 2026 02:23:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4748 · 7.5 HIGH 🌩️ — pf silently ignores certain rules</title>
+      <link>https://vulnogram.org/CVE-2026-4748</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4748</guid>
+      <description>A regression in the way hashes were calculated caused rules containing the address range syntax (x.x.x.x - y.y.y.y) that only differ in the address range(s) involved to be silently dropped as duplicates. Only the first of such rules is actually loade…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 01 Apr 2026 06:18:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4747 · 8.8 HIGH — Remote code execution via RPCSEC_GSS packet validation</title>
+      <link>https://vulnogram.org/CVE-2026-4747</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4747</guid>
+      <description>Each RPCSEC_GSS data packet is validated by a routine which checks a signature in the packet. This routine copies a portion of the packet into a stack buffer, but fails to ensure that the buffer is sufficiently large, and a malicious client can trigg…</description>
+      <category>High</category>
+      <pubDate>Thu, 26 Mar 2026 06:21:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4652 · 7.5 HIGH 🌩️ — Remote denial of service via null pointer dereference</title>
+      <link>https://vulnogram.org/CVE-2026-4652</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4652</guid>
+      <description>On a system exposing an NVMe/TCP target, a remote client can trigger a kernel panic by sending a CONNECT command for an I/O queue with a bogus or stale CNTLID. An attacker with network access to the NVMe/TCP target can trigger an unauthenticated Deni…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 26 Mar 2026 06:15:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4247 · 7.5 HIGH 🌩️ — TCP: remotely exploitable DoS vector (mbuf leak)</title>
+      <link>https://vulnogram.org/CVE-2026-4247</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4247</guid>
+      <description>When a challenge ACK is to be sent tcp_respond() constructs and sends the challenge ACK and consumes the mbuf that is passed in. When no challenge ACK should be sent the function returns and leaks the mbuf. If an attacker is either on path with an es…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 26 Mar 2026 06:09:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3038 · 7.5 HIGH 🌩️ — Local DoS and possible privilege escalation via routing sockets</title>
+      <link>https://vulnogram.org/CVE-2026-3038</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3038</guid>
+      <description>The rtsock_msg_buffer() function serializes routing information into a buffer. As a part of this, it copies sockaddr structures into a sockaddr_storage structure on the stack. It assumes that the source sockaddr length field had already been validate…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 09 Mar 2026 12:25:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-2261 · 7.5 HIGH 🌩️ — blocklistd(8) socket leak</title>
+      <link>https://vulnogram.org/CVE-2026-2261</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-2261</guid>
+      <description>Due to a programming error, blocklistd leaks a socket descriptor for each adverse event report it receives. Once a certain number of leaked sockets is reached, blocklistd becomes unable to run the helper script: a child process is forked, but this ch…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 09 Mar 2026 12:10:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-15576 · 7.5 HIGH — Jail chroot escape via fd exchange with a different jail</title>
+      <link>https://vulnogram.org/CVE-2025-15576</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15576</guid>
+      <description>If two sibling jails are restricted to separate filesystem trees, which is to say that neither of the two jail root directories is an ancestor of the other, jailed processes may nonetheless be able to access a shared directory via a nullfs mount, if…</description>
+      <category>High</category>
+      <pubDate>Mon, 09 Mar 2026 11:54:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-15547 · 8.8 HIGH — Jail escape by a privileged user via nullfs</title>
+      <link>https://vulnogram.org/CVE-2025-15547</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15547</guid>
+      <description>By default, jailed processes cannot mount filesystems, including nullfs(4). However, the allow.mount.nullfs option enables mounting nullfs filesystems, subject to privilege checks. If a privileged user within a jail is able to nullfs-mount directorie…</description>
+      <category>High</category>
+      <pubDate>Mon, 09 Mar 2026 11:46:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-14769 · 7.5 HIGH 🌩️ — ipfw denial of service</title>
+      <link>https://vulnogram.org/CVE-2025-14769</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-14769</guid>
+      <description>In some cases, the `tcp-setmss` handler may free the packet data and throw an error without halting the rule processing engine. A subsequent rule can then allow the traffic after the packet data is gone, resulting in a NULL pointer dereference. Malic…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 09 Mar 2026 11:34:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-14558 · 7.2 HIGH — Remote code execution via ND6 Router Advertisements</title>
+      <link>https://vulnogram.org/CVE-2025-14558</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-14558</guid>
+      <description>The rtsol(8) and rtsold(8) programs do not validate the domain search list options provided in router advertisement messages; the option body is passed to resolvconf(8) unmodified. resolvconf(8) is a shell script which does not validate its input. A…</description>
+      <category>High</category>
+      <pubDate>Mon, 09 Mar 2026 11:27:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-24934 · 5.4 MEDIUM 🌩️ — SO_REUSEPORT_LB breaks connect(2) for UDP sockets</title>
+      <link>https://vulnogram.org/CVE-2025-24934</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-24934</guid>
+      <description>Software which sets SO_REUSEPORT_LB on a socket and then connects it to a host will not directly observe any problems. However, due to its membership in a load-balancing group, that socket will receive packets originating from any host. This breaks t…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Oct 2025 17:43:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-0662 · 4.9 MEDIUM — Uninitialized kernel memory disclosure via ktrace(2)</title>
+      <link>https://vulnogram.org/CVE-2025-0662</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0662</guid>
+      <description>In some cases, the ktrace facility will log the contents of kernel structures to userspace. In one such case, ktrace dumps a variable-sized sockaddr to userspace. There, the full sockaddr is copied, even when it is shorter than the full size. This ca…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 30 Jan 2025 04:49:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-0374 · 6.5 MEDIUM — Unprivileged access to system files</title>
+      <link>https://vulnogram.org/CVE-2025-0374</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0374</guid>
+      <description>When etcupdate encounters conflicts while merging files, it saves a version containing conflict markers in /var/db/etcupdate/conflicts. This version does not preserve the mode of the input file, and is world-readable. This applies to files that would…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 30 Jan 2025 04:49:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-0373 · 6 MEDIUM — Buffer overflow in some filesystems via NFS</title>
+      <link>https://vulnogram.org/CVE-2025-0373</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0373</guid>
+      <description>On 64-bit systems, the implementation of VOP_VPTOFH() in the cd9660, tarfs and ext2fs filesystems overflows the destination FID buffer by 4 bytes, a stack buffer overflow. A NFS server that exports a cd9660, tarfs, or ext2fs file system can be made t…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 30 Jan 2025 04:48:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-45289 · 7.5 HIGH 🌩️ — Unbounded allocation in ctl(4) CAM Target Layer</title>
+      <link>https://vulnogram.org/CVE-2024-45289</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45289</guid>
+      <description>The fetch(3) library uses environment variables for passing certain information, including the revocation file pathname. The environment variable name used by fetch(1) to pass the filename to the library was incorrect, in effect ignoring the option.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 12 Nov 2024 15:06:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-39281 · 5.3 MEDIUM 🌩️ — Unbounded allocation in ctl(4) CAM Target Layer</title>
+      <link>https://vulnogram.org/CVE-2024-39281</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-39281</guid>
+      <description>The command ctl_persistent_reserve_out allows the caller to specify an arbitrary size which will be passed to the kernel&apos;s memory allocator.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 12 Nov 2024 15:01:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-51566 · 6.5 MEDIUM 🌩️ — bhyve(8) NVMe driver to guest-induced infinite loops.</title>
+      <link>https://vulnogram.org/CVE-2024-51566</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51566</guid>
+      <description>The NVMe driver queue processing is vulernable to guest-induced infinite loops.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 12 Nov 2024 14:58:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-51565 · 6.5 MEDIUM 🌩️ — bhyve(8) hda driver buffer over-read</title>
+      <link>https://vulnogram.org/CVE-2024-51565</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51565</guid>
+      <description>The hda driver is vulnerable to a buffer over-read from a guest-controlled value.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 12 Nov 2024 14:53:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-51564 · 7.5 HIGH 🌩️ — bhyve(8) infinite loop in the hda audio driver</title>
+      <link>https://vulnogram.org/CVE-2024-51564</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51564</guid>
+      <description>A guest can trigger an infinite loop in the hda audio driver.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 12 Nov 2024 14:51:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-51563 · 6.5 MEDIUM 🌩️ — bhyve(8) virtio_vq_recordon time-of-check to time-of-use race</title>
+      <link>https://vulnogram.org/CVE-2024-51563</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51563</guid>
+      <description>The virtio_vq_recordon function is subject to a time-of-check to time-of-use (TOCTOU) race condition.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 12 Nov 2024 14:47:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-51562 · 6.5 MEDIUM 🌩️ — bhyve(8) nvme_opc_get_log_page buffer over-read</title>
+      <link>https://vulnogram.org/CVE-2024-51562</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51562</guid>
+      <description>The NVMe driver function nvme_opc_get_log_page is vulnerable to a buffer over-read from a guest-controlled value.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 12 Nov 2024 14:44:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-41721 · 8.1 HIGH 🌩️ — bhyve(8) out-of-bounds read access via XHCI emulation</title>
+      <link>https://vulnogram.org/CVE-2024-41721</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-41721</guid>
+      <description>An insufficient boundary validation in the USB code could lead to an out-of-bounds read on the heap, which could potentially lead to an arbitrary write and remote code execution.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 20 Sep 2024 07:51:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-43102 · 9.8 CRITICAL 🌩️ — umtx Kernel panic or Use-After-Free</title>
+      <link>https://vulnogram.org/CVE-2024-43102</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-43102</guid>
+      <description>Concurrent removals of certain anonymous shared memory mappings by using the UMTX_SHM_DESTROY sub-request of UMTX_OP_SHM can lead to decreasing the reference count of the object representing the mapping too many times, causing it to be freed too earl…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 05 Sep 2024 04:54:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-32668 · 8.2 HIGH — bhyve(8) privileged guest escape via USB controller</title>
+      <link>https://vulnogram.org/CVE-2024-32668</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-32668</guid>
+      <description>An insufficient boundary validation in the USB code could lead to an out-of-bounds write on the heap, with data controlled by the caller. A malicious, privileged software running in a guest VM can exploit the vulnerability to achieve code execution o…</description>
+      <category>High</category>
+      <pubDate>Thu, 05 Sep 2024 04:42:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-45063 · 9.8 CRITICAL 🌩️ — Multiple issues in ctl(4) CAM Target Layer</title>
+      <link>https://vulnogram.org/CVE-2024-45063</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45063</guid>
+      <description>The function ctl_write_buffer incorrectly set a flag which resulted in a kernel Use-After-Free when a command finished processing. Malicious software running in a guest VM that exposes virtio_scsi can exploit the vulnerabilities to achieve code execu…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 05 Sep 2024 04:31:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-43110 · 8.4 HIGH — Multiple issues in ctl(4) CAM Target Layer</title>
+      <link>https://vulnogram.org/CVE-2024-43110</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-43110</guid>
+      <description>The ctl_request_sense function could expose up to three bytes of the kernel heap to userspace. Malicious software running in a guest VM that exposes virtio_scsi can exploit the vulnerabilities to achieve code execution on the host in the bhyve usersp…</description>
+      <category>High</category>
+      <pubDate>Thu, 05 Sep 2024 04:31:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-42416 · 8.4 HIGH — Multiple issues in ctl(4) CAM Target Layer</title>
+      <link>https://vulnogram.org/CVE-2024-42416</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-42416</guid>
+      <description>The ctl_report_supported_opcodes function did not sufficiently validate a field provided by userspace, allowing an arbitrary write to a limited amount of kernel help memory. Malicious software running in a guest VM that exposes virtio_scsi can exploi…</description>
+      <category>High</category>
+      <pubDate>Thu, 05 Sep 2024 04:31:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-8178 · 9.3 CRITICAL — Multiple issues in ctl(4) CAM Target Layer</title>
+      <link>https://vulnogram.org/CVE-2024-8178</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8178</guid>
+      <description>The ctl_write_buffer and ctl_read_buffer functions allocated memory to be returned to userspace, without initializing it. Malicious software running in a guest VM that exposes virtio_scsi can exploit the vulnerabilities to achieve code execution on t…</description>
+      <category>Critical</category>
+      <pubDate>Thu, 05 Sep 2024 04:31:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-41928 · 8.4 HIGH — bhyve(8) privileged guest escape via TPM device passthrough</title>
+      <link>https://vulnogram.org/CVE-2024-41928</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-41928</guid>
+      <description>Malicious software running in a guest VM can exploit the buffer overflow to achieve code execution on the host in the bhyve userspace process, which typically runs as root. Note that bhyve runs in a Capsicum sandbox, so malicious code is constrained…</description>
+      <category>High</category>
+      <pubDate>Thu, 05 Sep 2024 03:32:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-45288 · 8.4 HIGH — Multiple vulnerabilities in libnv</title>
+      <link>https://vulnogram.org/CVE-2024-45288</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45288</guid>
+      <description>A missing null-termination character in the last element of an nvlist array string can lead to writing outside the allocated buffer.</description>
+      <category>High</category>
+      <pubDate>Thu, 05 Sep 2024 03:18:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-45287 · 9.1 CRITICAL 🌩️ — Multiple vulnerabilities in libnv</title>
+      <link>https://vulnogram.org/CVE-2024-45287</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45287</guid>
+      <description>A malicious value of size in a structure of packed libnv can cause an integer overflow, leading to the allocation of a smaller buffer than required for the parsed data.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 05 Sep 2024 03:18:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-7589 · 8.1 HIGH 🌩️ — OpenSSH pre-authentication async signal safety issue</title>
+      <link>https://vulnogram.org/CVE-2024-7589</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-7589</guid>
+      <description>A signal handler in sshd(8) may call a logging function that is not async-signal-safe. The signal handler is invoked when a client does not authenticate within the LoginGraceTime seconds (120 by default). This signal handler executes in the context o…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 11 Aug 2024 03:15:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6759 · 5.3 MEDIUM 🌩️ — NFS client accepts file names containing path separators</title>
+      <link>https://vulnogram.org/CVE-2024-6759</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6759</guid>
+      <description>When mounting a remote filesystem using NFS, the kernel did not sanitize remotely provided filenames for the path separator character, &quot;/&quot;. This allows readdir(3) and related functions to return filesystem entries with names containing additional pat…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 11 Aug 2024 02:45:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6760 · 7.5 HIGH 🌩️ — ktrace(2) fails to detach when executing a setuid binary</title>
+      <link>https://vulnogram.org/CVE-2024-6760</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6760</guid>
+      <description>A logic bug in the code which disables kernel tracing for setuid programs meant that tracing was not disabled when it should have, allowing unprivileged users to trace and inspect the behavior of setuid programs. The bug may be used by an unprivilege…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 11 Aug 2024 02:40:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6640 · 6.3 MEDIUM — pf incorrectly matches different ICMPv6 states in the state table</title>
+      <link>https://vulnogram.org/CVE-2024-6640</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6640</guid>
+      <description>In ICMPv6 Neighbor Discovery (ND), the ID is always 0. When pf is configured to allow ND and block incoming Echo Requests, a crafted Echo Request packet after a Neighbor Solicitation (NS) can trigger an Echo Reply. The packet has to come from the sam…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 11 Aug 2024 02:33:42 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Xen Project — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <description>Most recent CVEs assigned by Xen Project (xen).</description>
+    <lastBuildDate>Mon, 01 Jun 2026 22:50:34 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-23558 · 7.8 HIGH — grant table v2 race in status page mapping</title>
+      <link>https://vulnogram.org/CVE-2026-23558</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23558</guid>
+      <description>The adjustments made for XSA-379 as well as those subsequently becoming XSA-387 still left a race window, when a HVM or PVH guest does a grant table version change from v2 to v1 in parallel with mapping the status page(s) via XENMEM_add_to_physmap. S…</description>
+      <category>High</category>
+      <pubDate>Tue, 19 May 2026 12:49:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23557 · 6.5 MEDIUM — Xenstored DoS via XS_RESET_WATCHES command</title>
+      <link>https://vulnogram.org/CVE-2026-23557</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23557</guid>
+      <description>Any guest can cause xenstored to crash by issuing a XS_RESET_WATCHES command within a transaction due to an assert() triggering. In case xenstored was built with NDEBUG #defined nothing bad will happen, as assert() is doing nothing in this case. Note…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 19 May 2026 12:49:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23555 · 7.1 HIGH — Xenstored DoS by unprivileged domain</title>
+      <link>https://vulnogram.org/CVE-2026-23555</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23555</guid>
+      <description>Any guest issuing a Xenstore command accessing a node using the (illegal) node path &quot;/local/domain/&quot;, will crash xenstored due to a clobbered error indicator in xenstored when verifying the node path. Note that the crash is forced via a failing asser…</description>
+      <category>High</category>
+      <pubDate>Mon, 23 Mar 2026 06:57:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23554 · 7.8 HIGH — Use after free of paging structures in EPT</title>
+      <link>https://vulnogram.org/CVE-2026-23554</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23554</guid>
+      <description>The Intel EPT paging code uses an optimization to defer flushing of any cached EPT state until the p2m lock is dropped, so that multiple modifications done under the same locked region only issue a single flush. Freeing of paging structures however i…</description>
+      <category>High</category>
+      <pubDate>Mon, 23 Mar 2026 06:56:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23553 · 2.9 LOW — x86: incomplete IBPB for vCPU isolation</title>
+      <link>https://vulnogram.org/CVE-2026-23553</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23553</guid>
+      <description>In the context switch logic Xen attempts to skip an IBPB in the case of a vCPU returning to a CPU on which it was the previous vCPU to run. While safe for Xen&apos;s isolation between vCPUs, this prevents the guest kernel correctly isolating between tasks…</description>
+      <category>Low</category>
+      <pubDate>Wed, 28 Jan 2026 15:33:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-58150 · 8.8 HIGH — x86: buffer overrun with shadow paging + tracing</title>
+      <link>https://vulnogram.org/CVE-2025-58150</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-58150</guid>
+      <description>Shadow mode tracing code uses a set of per-CPU variables to avoid cumbersome parameter passing. Some of these variables are written to with guest controlled data, of guest controllable size. That size can be larger than the variable, and bounding of…</description>
+      <category>High</category>
+      <pubDate>Wed, 28 Jan 2026 15:33:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-58149 · 7.5 HIGH 🌩️ — Incorrect removal of permissions on PCI device unplug</title>
+      <link>https://vulnogram.org/CVE-2025-58149</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-58149</guid>
+      <description>When passing through PCI devices, the detach logic in libxl won&apos;t remove access permissions to any 64bit memory BARs the device might have. As a result a domain can still have access any 64bit memory BAR when such device is no longer assigned to the…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 31 Oct 2025 11:50:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-58148 · 7.5 HIGH 🌩️ — x86: Incorrect input sanitisation in Viridian hypercalls</title>
+      <link>https://vulnogram.org/CVE-2025-58148</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-58148</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Some Viridian hypercalls can specify a mask of vCPU IDs as an input, in one of three formats. Xen has boundary checking b…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 31 Oct 2025 11:50:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-58147 · 7.5 HIGH 🌩️ — x86: Incorrect input sanitisation in Viridian hypercalls</title>
+      <link>https://vulnogram.org/CVE-2025-58147</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-58147</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Some Viridian hypercalls can specify a mask of vCPU IDs as an input, in one of three formats. Xen has boundary checking b…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 31 Oct 2025 11:50:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-58145 · 7.5 HIGH 🌩️ — Arm issues with page refcounting</title>
+      <link>https://vulnogram.org/CVE-2025-58145</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-58145</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] There are two issues related to the mapping of pages belonging to other domains: For one, an assertion is wrong there, wh…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Sep 2025 14:05:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-58144 · 7.5 HIGH 🌩️ — Arm issues with page refcounting</title>
+      <link>https://vulnogram.org/CVE-2025-58144</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-58144</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] There are two issues related to the mapping of pages belonging to other domains: For one, an assertion is wrong there, wh…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Sep 2025 14:05:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-58143 · 9.8 CRITICAL 🌩️ — Mutiple vulnerabilities in the Viridian interface</title>
+      <link>https://vulnogram.org/CVE-2025-58143</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-58143</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] There are multiple issues related to the handling and accessing of guest memory pages in the viridian code: 1. A NULL poi…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Sep 2025 14:05:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-58142 · 9.8 CRITICAL 🌩️ — Mutiple vulnerabilities in the Viridian interface</title>
+      <link>https://vulnogram.org/CVE-2025-58142</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-58142</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] There are multiple issues related to the handling and accessing of guest memory pages in the viridian code: 1. A NULL poi…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Sep 2025 14:05:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-27466 · 9.8 CRITICAL 🌩️ — Mutiple vulnerabilities in the Viridian interface</title>
+      <link>https://vulnogram.org/CVE-2025-27466</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-27466</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] There are multiple issues related to the handling and accessing of guest memory pages in the viridian code: 1. A NULL poi…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Sep 2025 14:05:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-1713 · 7.5 HIGH 🌩️ — deadlock potential with VT-d and legacy PCI device pass-through</title>
+      <link>https://vulnogram.org/CVE-2025-1713</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1713</guid>
+      <description>When setting up interrupt remapping for legacy PCI(-X) devices, including PCI(-X) bridges, a lookup of the upstream bridge is required. This lookup, itself involving acquiring of a lock, is done in a context where acquiring that lock is unsafe. This…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Jul 2025 13:59:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-27465 · 4.3 MEDIUM — x86: Incorrect stubs exception handling for flags recovery</title>
+      <link>https://vulnogram.org/CVE-2025-27465</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-27465</guid>
+      <description>Certain instructions need intercepting and emulating by Xen. In some cases Xen emulates the instruction by replaying it, using an executable stub. Some instructions may raise an exception, which is supposed to be handled gracefully. Certain replayed…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 16 Jul 2025 09:08:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-31144 · 3.8 LOW — Xapi: Metadata injection attack against backup/restore functionality</title>
+      <link>https://vulnogram.org/CVE-2024-31144</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31144</guid>
+      <description>For a brief summary of Xapi terminology, see: https://xapi-project.github.io/xen-api/overview.html#object-model-overview Xapi contains functionality to backup and restore metadata about Virtual Machines and Storage Repositories (SRs). The metadata it…</description>
+      <category>Low</category>
+      <pubDate>Fri, 14 Feb 2025 20:16:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-45819 · 5.5 MEDIUM — libxl leaks data to PVH guests via ACPI tables</title>
+      <link>https://vulnogram.org/CVE-2024-45819</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45819</guid>
+      <description>PVH guests have their ACPI tables constructed by the toolstack. The construction involves building the tables in local memory, which are then copied into guest memory. While actually used parts of the local memory are filled in correctly, excess spac…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Dec 2024 12:00:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-45818 · 6.5 MEDIUM — Deadlock in x86 HVM standard VGA handling</title>
+      <link>https://vulnogram.org/CVE-2024-45818</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45818</guid>
+      <description>The hypervisor contains code to accelerate VGA memory accesses for HVM guests, when the (virtual) VGA is in &quot;standard&quot; mode. Locking involved there has an unusual discipline, leaving a lock acquired past the return from the function that acquired it.…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Dec 2024 12:00:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-45817 · 7.3 HIGH 🌩️ — x86: Deadlock in vlapic_error()</title>
+      <link>https://vulnogram.org/CVE-2024-45817</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45817</guid>
+      <description>In x86&apos;s APIC (Advanced Programmable Interrupt Controller) architecture, error conditions are reported in a status register. Furthermore, the OS can opt to receive an interrupt when a new error occurs. It is possible to configure the error interrupt…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 25 Sep 2024 10:31:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-31146 · 7.5 HIGH — PCI device pass-through with shared resources</title>
+      <link>https://vulnogram.org/CVE-2024-31146</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31146</guid>
+      <description>When multiple devices share resources and one of them is to be passed through to a guest, security of the entire system and of respective guests individually cannot really be guaranteed without knowing internals of any of the involved guests. Therefo…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Sep 2024 10:31:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-31145 · 7.5 HIGH — error handling in x86 IOMMU identity mapping</title>
+      <link>https://vulnogram.org/CVE-2024-31145</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31145</guid>
+      <description>Certain PCI devices in a system might be assigned Reserved Memory Regions (specified via Reserved Memory Region Reporting, &quot;RMRR&quot;) for Intel VT-d or Unity Mapping ranges for AMD-Vi. These are typically used for platform tasks such as legacy USB emula…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Sep 2024 10:31:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-31143 · 7.5 HIGH — double unlock in x86 guest IRQ handling</title>
+      <link>https://vulnogram.org/CVE-2024-31143</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31143</guid>
+      <description>An optional feature of PCI MSI called &quot;Multiple Message&quot; allows a device to use multiple consecutive interrupt vectors. Unlike for MSI-X, the setting up of these consecutive vectors needs to happen all in one go. In this handling an error path could…</description>
+      <category>High</category>
+      <pubDate>Thu, 18 Jul 2024 13:31:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-31142 · 7.5 HIGH — x86: Incorrect logic for BTC/SRSO mitigations</title>
+      <link>https://vulnogram.org/CVE-2024-31142</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31142</guid>
+      <description>Because of a logical error in XSA-407 (Branch Type Confusion), the mitigation is not applied properly when it is intended to be used. XSA-434 (Speculative Return Stack Overflow) uses the same infrastructure, so is equally impacted. For more details,…</description>
+      <category>High</category>
+      <pubDate>Thu, 16 May 2024 13:39:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-46842 · 6.5 MEDIUM — x86 HVM hypercalls may trigger Xen bug check</title>
+      <link>https://vulnogram.org/CVE-2023-46842</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46842</guid>
+      <description>Unlike 32-bit PV guests, HVM guests may switch freely between 64-bit and other modes. This in particular means that they may set registers used to pass 32-bit-mode hypercall arguments to values outside of the range 32-bit code would be able to set th…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 16 May 2024 13:39:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-46841 · 6.5 MEDIUM — x86: shadow stack vs exceptions from emulation stubs</title>
+      <link>https://vulnogram.org/CVE-2023-46841</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46841</guid>
+      <description>Recent x86 CPUs offer functionality named Control-flow Enforcement Technology (CET). A sub-feature of this are Shadow Stacks (CET-SS). CET-SS is a hardware feature designed to protect against Return Oriented Programming attacks. When enabled, traditi…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 20 Mar 2024 10:40:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-46840 · 4.1 MEDIUM — VT-d: Failure to quarantine devices in !HVM builds</title>
+      <link>https://vulnogram.org/CVE-2023-46840</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46840</guid>
+      <description>Incorrect placement of a preprocessor directive in source code results in logic that doesn&apos;t operate as intended when support for HVM guests is compiled out of Xen.</description>
+      <category>Medium</category>
+      <pubDate>Wed, 20 Mar 2024 10:40:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-46839 · 5.3 MEDIUM 🌩️ — pci: phantom functions assigned to incorrect contexts</title>
+      <link>https://vulnogram.org/CVE-2023-46839</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46839</guid>
+      <description>PCI devices can make use of a functionality called phantom functions, that when enabled allows the device to generate requests using the IDs of functions that are otherwise unpopulated. This allows a device to extend the number of outstanding request…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 20 Mar 2024 10:35:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-46838 · 7.5 HIGH 🌩️ — Linux: netback processing of zero-length transmit fragment</title>
+      <link>https://vulnogram.org/CVE-2023-46838</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46838</guid>
+      <description>Transmit requests in Xen&apos;s virtual network protocol can consist of multiple parts. While not really useful, except for the initial part any of them may be of zero length, i.e. carry no data at all. Besides a certain initial portion of the to be trans…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 29 Jan 2024 10:18:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-46837 · 3.3 LOW — arm32: The cache may not be properly cleaned/invalidated (take two)</title>
+      <link>https://vulnogram.org/CVE-2023-46837</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46837</guid>
+      <description>Arm provides multiple helpers to clean &amp; invalidate the cache for a given region. This is, for instance, used when allocating guest memory to ensure any writes (such as the ones during scrubbing) have reached memory before handing over the page to a…</description>
+      <category>Low</category>
+      <pubDate>Fri, 05 Jan 2024 16:36:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-46836 · 4.7 MEDIUM — x86: BTC/SRSO fixes not fully effective</title>
+      <link>https://vulnogram.org/CVE-2023-46836</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46836</guid>
+      <description>The fixes for XSA-422 (Branch Type Confusion) and XSA-434 (Speculative Return Stack Overflow) are not IRQ-safe. It was believed that the mitigations always operated in contexts with IRQs disabled. However, the original XSA-254 fix for Meltdown (XPTI)…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 05 Jan 2024 16:34:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-46835 · 5.5 MEDIUM — x86/AMD: mismatch in IOMMU quarantine page table levels</title>
+      <link>https://vulnogram.org/CVE-2023-46835</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46835</guid>
+      <description>The current setup of the quarantine page tables assumes that the quarantine domain (dom_io) has been initialized with an address width of DEFAULT_DOMAIN_ADDRESS_WIDTH (48) and hence 4 page table levels. However dom_io being a PV domain gets the AMD-V…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 05 Jan 2024 16:34:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34328 · 5.5 MEDIUM — x86/AMD: Debug Mask handling</title>
+      <link>https://vulnogram.org/CVE-2023-34328</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34328</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] AMD CPUs since ~2014 have extensions to normal x86 debugging functionality. Xen supports guests using these extensions. U…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 05 Jan 2024 16:34:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34327 · 5.5 MEDIUM — x86/AMD: Debug Mask handling</title>
+      <link>https://vulnogram.org/CVE-2023-34327</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34327</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] AMD CPUs since ~2014 have extensions to normal x86 debugging functionality. Xen supports guests using these extensions. U…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 05 Jan 2024 16:34:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34325 · 7.8 HIGH — Multiple vulnerabilities in libfsimage disk handling</title>
+      <link>https://vulnogram.org/CVE-2023-34325</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34325</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] libfsimage contains parsing code for several filesystems, most of them based on grub-legacy code. libfsimage is used by p…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jan 2024 16:31:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34326 · 7.8 HIGH — x86/AMD: missing IOMMU TLB flushing</title>
+      <link>https://vulnogram.org/CVE-2023-34326</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34326</guid>
+      <description>The caching invalidation guidelines from the AMD-Vi specification (48882—Rev 3.07-PUB—Oct 2022) is incorrect on some hardware, as devices will malfunction (see stale DMA mappings) if some fields of the DTE are updated but the IOMMU TLB is not flushed…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jan 2024 16:30:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34324 · 4.9 MEDIUM — Possible deadlock in Linux kernel event handling</title>
+      <link>https://vulnogram.org/CVE-2023-34324</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34324</guid>
+      <description>Closing of an event channel in the Linux kernel can result in a deadlock. This happens when the close is being performed in parallel to an unrelated Xen console action and the handling of a Xen console interrupt in an unprivileged guest. The closing…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 05 Jan 2024 16:30:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34323 · 5.5 MEDIUM — xenstored: A transaction conflict can crash C Xenstored</title>
+      <link>https://vulnogram.org/CVE-2023-34323</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34323</guid>
+      <description>When a transaction is committed, C Xenstored will first check the quota is correct before attempting to commit any nodes. It would be possible that accounting is temporarily negative if a node has been removed outside of the transaction. Unfortunatel…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 05 Jan 2024 16:30:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34322 · 7.8 HIGH — top-level shadow reference dropped too early for 64-bit PV guests</title>
+      <link>https://vulnogram.org/CVE-2023-34322</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34322</guid>
+      <description>For migration as well as to work around kernels unaware of L1TF (see XSA-273), PV guests may be run in shadow paging mode. Since Xen itself needs to be mapped when PV guests run, Xen and shadowed PV guests run directly the respective shadow page tabl…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jan 2024 16:18:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34321 · 3.3 LOW — arm32: The cache may not be properly cleaned/invalidated</title>
+      <link>https://vulnogram.org/CVE-2023-34321</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34321</guid>
+      <description>Arm provides multiple helpers to clean &amp; invalidate the cache for a given region. This is, for instance, used when allocating guest memory to ensure any writes (such as the ones during scrubbing) have reached memory before handing over the page to a…</description>
+      <category>Low</category>
+      <pubDate>Fri, 05 Jan 2024 16:17:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34320 — arm: Guests can trigger a deadlock on Cortex-A77</title>
+      <link>https://vulnogram.org/CVE-2023-34320</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34320</guid>
+      <description>Cortex-A77 cores (r0p0 and r1p0) are affected by erratum 1508412 where software, under certain circumstances, could deadlock a core due to the execution of either a load to device or non-cacheable memory, and either a store exclusive or register read…</description>
+      <pubDate>Fri, 08 Dec 2023 20:54:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-34319 · 7.8 HIGH — Linux: buffer overrun in netback due to unusual packet</title>
+      <link>https://vulnogram.org/CVE-2023-34319</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34319</guid>
+      <description>The fix for XSA-423 added logic to Linux&apos;es netback driver to deal with a frontend splitting a packet in a way such that not all of the headers would come in one piece. Unfortunately the logic introduced there didn&apos;t account for the extreme case of t…</description>
+      <category>High</category>
+      <pubDate>Fri, 22 Sep 2023 13:34:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2022-42336 · 3.3 LOW</title>
+      <link>https://vulnogram.org/CVE-2022-42336</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-42336</guid>
+      <description>Mishandling of guest SSBD selection on AMD hardware The current logic to set SSBD on AMD Family 17h and Hygon Family 18h processors requires that the setting of SSBD is coordinated at a core level, as the setting is shared between threads. Logic was…</description>
+      <category>Low</category>
+      <pubDate>Wed, 17 May 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2022-42335</title>
+      <link>https://vulnogram.org/CVE-2022-42335</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-42335</guid>
+      <description>x86 shadow paging arbitrary pointer dereference In environments where host assisted address translation is necessary but Hardware Assisted Paging (HAP) is unavailable, Xen will run guests in so called shadow mode. Due to too lax a check in one of the…</description>
+      <pubDate>Tue, 25 Apr 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2022-42334</title>
+      <link>https://vulnogram.org/CVE-2022-42334</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-42334</guid>
+      <description>x86/HVM pinned cache attributes mis-handling T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] To allow cachability control for HVM guests with passed through devices, an…</description>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2022-42333</title>
+      <link>https://vulnogram.org/CVE-2022-42333</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-42333</guid>
+      <description>x86/HVM pinned cache attributes mis-handling T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] To allow cachability control for HVM guests with passed through devices, an…</description>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2022-42332</title>
+      <link>https://vulnogram.org/CVE-2022-42332</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-42332</guid>
+      <description>x86 shadow plus log-dirty mode use-after-free In environments where host assisted address translation is necessary but Hardware Assisted Paging (HAP) is unavailable, Xen will run guests in so called shadow mode. Shadow mode maintains a pool of memory…</description>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2022-42331</title>
+      <link>https://vulnogram.org/CVE-2022-42331</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-42331</guid>
+      <description>x86: speculative vulnerability in 32bit SYSCALL path Due to an oversight in the very original Spectre/Meltdown security work (XSA-254), one entrypath performs its speculation-safety actions too late. In some configurations, there is an unprotected RE…</description>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2022-42330</title>
+      <link>https://vulnogram.org/CVE-2022-42330</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-42330</guid>
+      <description>Guests can cause Xenstore crash via soft reset When a guest issues a &quot;Soft Reset&quot; (e.g. for performing a kexec) the libxl based Xen toolstack will normally perform a XS_RELEASE Xenstore operation. Due to a bug in xenstored this can result in a crash…</description>
+      <pubDate>Thu, 26 Jan 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2022-42329 · 5.5 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2022-42329</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-42329</guid>
+      <description>Guests can trigger deadlock in Linux netback driver T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] The patch for XSA-392 introduced another issue which might result in…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Dec 2022 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

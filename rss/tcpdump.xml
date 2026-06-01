@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Tcpdump Group — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <description>Most recent CVEs assigned by Tcpdump Group (tcpdump).</description>
+    <lastBuildDate>Mon, 01 Jun 2026 22:50:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2025-11964 · 1.9 LOW — OOBW in utf_16le_to_utf_8_truncated() in libpcap</title>
+      <link>https://vulnogram.org/CVE-2025-11964</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11964</guid>
+      <description>On Windows only, if libpcap needs to convert a Windows error message to UTF-8 and the message includes characters that UTF-8 represents using 4 bytes, utf_16le_to_utf_8_truncated() can write data beyond the end of the provided buffer.</description>
+      <category>Low</category>
+      <pubDate>Wed, 31 Dec 2025 00:58:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-11961 · 1.9 LOW — OOBR and OOBW in pcap_ether_aton() in libpcap</title>
+      <link>https://vulnogram.org/CVE-2025-11961</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11961</guid>
+      <description>pcap_ether_aton() is an auxiliary function in libpcap, it takes a string argument and returns a fixed-size allocated buffer. The string argument must be a well-formed MAC-48 address in one of the supported formats, but this requirement has been poorl…</description>
+      <category>Low</category>
+      <pubDate>Wed, 31 Dec 2025 00:56:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-8006 · 4.4 MEDIUM — NULL pointer dereference in libpcap before 1.10.5 with remote packet capture support</title>
+      <link>https://vulnogram.org/CVE-2024-8006</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8006</guid>
+      <description>Remote packet capture support is disabled by default in libpcap. When a user builds libpcap with remote packet capture support enabled, one of the functions that become available is pcap_findalldevs_ex(). One of the function arguments can be a filesy…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Aug 2024 23:53:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-7256 · 4.4 MEDIUM — Double-free in libpcap before 1.10.5 with remote packet capture support.</title>
+      <link>https://vulnogram.org/CVE-2023-7256</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-7256</guid>
+      <description>In affected libpcap versions during the setup of a remote packet capture the internal function sock_initaddress() calls getaddrinfo() and possibly freeaddrinfo(), but does not clearly indicate to the caller function whether freeaddrinfo() still remai…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Aug 2024 23:44:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-2397 · 6.2 MEDIUM — infinite loop in the PPP printer of tcpdump</title>
+      <link>https://vulnogram.org/CVE-2024-2397</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-2397</guid>
+      <description>Due to a bug in packet data buffers management, the PPP printer in tcpdump can enter an infinite loop when reading a crafted DLT_PPP_SERIAL .pcap savefile. This problem does not affect any tcpdump release, but it affected the git master branch from 2…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 12 Apr 2024 13:22:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-1801</title>
+      <link>https://vulnogram.org/CVE-2023-1801</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-1801</guid>
+      <description>The SMB protocol decoder in tcpdump version 4.99.3 can perform an out-of-bounds write when decoding a crafted network packet.</description>
+      <pubDate>Fri, 07 Apr 2023 20:40:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2021-41043</title>
+      <link>https://vulnogram.org/CVE-2021-41043</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2021-41043</guid>
+      <description>Use after free in tcpslice triggers AddressSanitizer, no other confirmed impact.</description>
+      <pubDate>Wed, 05 Jan 2022 11:34:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2020-8036 — str2tokbuf used incorrectly by print-someip.c</title>
+      <link>https://vulnogram.org/CVE-2020-8036</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2020-8036</guid>
+      <description>The tok2strbuf() function in tcpdump 4.10.0-PRE-GIT was used by the SOME/IP dissector in an unsafe way.</description>
+      <pubDate>Wed, 04 Nov 2020 17:55:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2020-8037 — ppp decapsulator can be convinced to allocate a large amount of memory</title>
+      <link>https://vulnogram.org/CVE-2020-8037</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2020-8037</guid>
+      <description>The ppp decapsulator in tcpdump 4.9.3 can be convinced to allocate a large amount of memory.</description>
+      <pubDate>Wed, 04 Nov 2020 17:55:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2018-16301</title>
+      <link>https://vulnogram.org/CVE-2018-16301</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2018-16301</guid>
+      <description>The command-line argument parser in tcpdump before 4.99.0 has a buffer overflow in tcpdump.c:read_infile(). To trigger this vulnerability the attacker needs to create a 4GB file on the local filesystem and to specify the file name as the value of the…</description>
+      <pubDate>Thu, 03 Oct 2019 15:55:20 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

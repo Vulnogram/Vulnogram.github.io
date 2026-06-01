@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Python Software Foundation — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <description>Most recent CVEs assigned by Python Software Foundation (psf).</description>
+    <lastBuildDate>Mon, 01 Jun 2026 22:50:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-8643 · 4.1 MEDIUM — pip can extract console_scripts and gui_scripts outside installation directory</title>
+      <link>https://vulnogram.org/CVE-2026-8643</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8643</guid>
+      <description>pip would treat console_scripts and gui_scripts as paths instead of file names without sanitizing the resolved absolute path to the installation directory, leading to entry points being installed outside the installation directory.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 01 Jun 2026 15:01:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8328 · 5.9 MEDIUM 🌩️ — FTP PASV SSRF, ftpcp() does not use actual peer address, trusts server-supplied PASV host address</title>
+      <link>https://vulnogram.org/CVE-2026-8328</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8328</guid>
+      <description>The ftpcp() function in Lib/ftplib.py was not updated when CVE-2021-4189 was fixed. While makepasv() was patched to replace server-supplied PASV host addresses with the actual peer address (getpeername()[0]), ftpcp() still calls parse227() directly a…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 13 May 2026 20:14:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7210 · 6.3 MEDIUM 🌩️ — The expat and elementtree parsers use insufficient entropy for XML hash-flooding protection</title>
+      <link>https://vulnogram.org/CVE-2026-7210</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7210</guid>
+      <description>`xml.parsers.expat` and `xml.etree.ElementTree` use insufficient entropy for Expat hash-flooding protection, which allows a crafted XML document to trigger hash flooding.\r\n\r\nFully mitigating this vulnerability requires both updating libexpat to 2…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 11 May 2026 17:19:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3087 · 6 MEDIUM — shutil.unpack_archive() doesn&apos;t check for Windows absolute paths in ZIPs</title>
+      <link>https://vulnogram.org/CVE-2026-3087</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3087</guid>
+      <description>If `shutil.unpack_archive()` is given a ZIP archive with an absolute Windows path containing a drive (`C:\\...`) then the archive will be extracted outside the target directory which is different than other operating systems. Only Windows is affected…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 27 Apr 2026 20:46:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6357 · 5.3 MEDIUM — pip self-update functionality can import newly installed modules after wheel installation</title>
+      <link>https://vulnogram.org/CVE-2026-6357</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6357</guid>
+      <description>pip prior to version 26.1 would run self-update check functionality after installing wheel files which required importing well-known Python modules names. These module imports were intentionally deferred to increase startup time of the pip CLI. The p…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 27 Apr 2026 14:19:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6019 · 2.1 LOW — BaseCookie.js_output() does not neutralize embedded characters</title>
+      <link>https://vulnogram.org/CVE-2026-6019</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6019</guid>
+      <description>http.cookies.Morsel.js_output() returns an inline &lt;script&gt; snippet and only escapes &quot; for JavaScript string context. It does not neutralize the HTML parser-sensitive sequence &lt;/script&gt; inside the generated script element. Mitigation base64-encodes th…</description>
+      <category>Low</category>
+      <pubDate>Wed, 22 Apr 2026 19:28:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3298 · 8.8 HIGH 🌩️ — Out-of-bounds write in Windows asyncio.ProacterEventLoop.sock_recvfrom_into() when using nbytes</title>
+      <link>https://vulnogram.org/CVE-2026-3298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3298</guid>
+      <description>The method &quot;sock_recvfrom_into()&quot; of &quot;asyncio.ProacterEventLoop&quot; (Windows only) was missing a boundary check for the data buffer when using nbytes parameter. This allowed for an out-of-bounds buffer write if data was larger than the buffer size. Non-…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Apr 2026 14:45:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3219 · 4.6 MEDIUM — pip doesn&apos;t reject concatenated ZIP and tar archives</title>
+      <link>https://vulnogram.org/CVE-2026-3219</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3219</guid>
+      <description>pip handles concatenated tar and ZIP files as ZIP files regardless of filename or whether a file is both a tar and ZIP file. This behavior could result in confusing installation behavior, such as installing &quot;incorrect&quot; files according to the filename…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 20 Apr 2026 14:55:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5713 · 5.3 MEDIUM — Out-of-bounds read/write during remote profiling and asyncio process introspection when connecting to malicious target</title>
+      <link>https://vulnogram.org/CVE-2026-5713</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5713</guid>
+      <description>The &quot;profiling.sampling&quot; module (Python 3.15+) and &quot;asyncio introspection capabilities&quot; (3.14+, &quot;python -m asyncio ps&quot; and &quot;python -m asyncio pstree&quot;) features could be used to read and write addresses in a privileged process if that process connecte…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Apr 2026 15:11:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4786 · 7 HIGH — Incomplete mitigation of CVE-2026-4519, %action expansion for command injection to webbrowser.open()</title>
+      <link>https://vulnogram.org/CVE-2026-4786</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4786</guid>
+      <description>Mitgation of CVE-2026-4519 was incomplete. If the URL contained &quot;%action&quot; the mitigation could be bypassed for certain browser types the &quot;webbrowser.open()&quot; API could have commands injected into the underlying shell. See CVE-2026-4519 for details.</description>
+      <category>High</category>
+      <pubDate>Mon, 13 Apr 2026 21:52:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6100 · 9.1 CRITICAL 🌩️ — Use-after-free in lzma.LZMADecompressor, bz2.BZ2Decompressor, and gzip.GzipFile after re-use under memory pressure</title>
+      <link>https://vulnogram.org/CVE-2026-6100</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6100</guid>
+      <description>Use-after-free (UAF) was possible in the `lzma.LZMADecompressor`, `bz2.BZ2Decompressor`, and `gzip.GzipFile` when a memory allocation fails with a `MemoryError` and the decompression instance is re-used. This scenario can be triggered if the process…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 13 Apr 2026 17:15:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3446 · 6 MEDIUM — Base64 decoding stops at first padded quad by default</title>
+      <link>https://vulnogram.org/CVE-2026-3446</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3446</guid>
+      <description>When calling base64.b64decode() or related functions the decoding process would stop after encountering the first padded quad regardless of whether there was more information to be processed. This can lead to data being accepted which may be processe…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 10 Apr 2026 18:17:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1502 · 5.7 MEDIUM — HTTP client proxy tunnel headers not validated for CR/LF</title>
+      <link>https://vulnogram.org/CVE-2026-1502</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1502</guid>
+      <description>CR/LF bytes were not rejected by HTTP client proxy tunnel headers or host.</description>
+      <category>Medium</category>
+      <pubDate>Fri, 10 Apr 2026 17:54:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5271 · 5.6 MEDIUM — Possible to hijack modules in current working directory</title>
+      <link>https://vulnogram.org/CVE-2026-5271</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5271</guid>
+      <description>pymanager included the current working directory in sys.path meaning modules could be shadowed by modules in the current working directory. As a result, if a user executes a pymanager-generated command (e.g., pip, pytest) from an attacker-controlled…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 01 Apr 2026 13:48:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4519 · 7 HIGH — webbrowser.open() allows leading dashes in URLs</title>
+      <link>https://vulnogram.org/CVE-2026-4519</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4519</guid>
+      <description>The webbrowser.open() API would accept leading dashes in the URL which could be handled as command line options for certain web browsers. New behavior rejects leading dashes. Users are recommended to sanitize URLs prior to passing to webbrowser.open(…</description>
+      <category>High</category>
+      <pubDate>Fri, 20 Mar 2026 15:08:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3479 🤔 — pkgutil.get_data() does not enforce documented restrictions</title>
+      <link>https://vulnogram.org/CVE-2026-3479</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3479</guid>
+      <description>DISPUTED: The project has clarified that the documentation was incorrect, and that pkgutil.get_data() has the same security model as open(). The documentation has been updated to clarify this point. There is no vulnerability in the function if follow…</description>
+      <category>Disputed</category>
+      <pubDate>Wed, 18 Mar 2026 18:13:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4224 · 6 MEDIUM — Stack overflow parsing XML with deeply nested DTD content models</title>
+      <link>https://vulnogram.org/CVE-2026-4224</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4224</guid>
+      <description>When an Expat parser with a registered ElementDeclHandler parses an inline document type definition containing a deeply nested content model a C stack overflow occurs.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Mar 2026 17:52:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3644 · 6 MEDIUM — Incomplete control character validation in http.cookies</title>
+      <link>https://vulnogram.org/CVE-2026-3644</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3644</guid>
+      <description>The fix for CVE-2026-0672, which rejected control characters in http.cookies.Morsel, was incomplete. The Morsel.update(), |= operator, and unpickling paths were not patched, allowing control characters to bypass input validation. Additionally, BaseCo…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Mar 2026 17:37:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-13462 · 2 LOW — tarfile: Skip DIRTYPE normalization during GNU LONGNAME/LONGLINK handling</title>
+      <link>https://vulnogram.org/CVE-2025-13462</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-13462</guid>
+      <description>The &quot;tarfile&quot; module would still apply normalization of AREGTYPE (\x00) blocks to DIRTYPE, even while processing a multi-block member such as GNUTYPE_LONGNAME or GNUTYPE_LONGLINK. This could result in a crafted tar archive being misinterpreted by the…</description>
+      <category>Low</category>
+      <pubDate>Thu, 12 Mar 2026 17:59:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-2297 · 5.7 MEDIUM — SourcelessFileLoader does not use io.open_code()</title>
+      <link>https://vulnogram.org/CVE-2026-2297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-2297</guid>
+      <description>The import hook in CPython that handles legacy *.pyc files (SourcelessFileLoader) is incorrectly handled in FileLoader (a base class) and so does not use io.open_code() to read the .pyc files. sys.audit handlers for this audit event therefore do not…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 04 Mar 2026 22:10:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1703 · 2 LOW — Limited path traversal when installing wheel archives</title>
+      <link>https://vulnogram.org/CVE-2026-1703</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1703</guid>
+      <description>When pip is installing and extracting a maliciously crafted wheel archive, files may be extracted outside the installation directory. The path traversal is limited to prefixes of the installation directory, thus isn&apos;t able to inject or overwrite exec…</description>
+      <category>Low</category>
+      <pubDate>Mon, 02 Feb 2026 14:43:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1299 · 6 MEDIUM — email BytesGenerator header injection due to unquoted newlines</title>
+      <link>https://vulnogram.org/CVE-2026-1299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1299</guid>
+      <description>The email module, specifically the &quot;BytesGenerator&quot; class, didn’t properly quote newlines for email headers when serializing an email message allowing for header injection when an email is serialized. This is only applicable if using &quot;LiteralHeader&quot;…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 23 Jan 2026 16:27:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-12781 · 6.3 MEDIUM 🌩️ — base64.b64decode() always accepts &quot;+/&quot; characters, despite setting altchars</title>
+      <link>https://vulnogram.org/CVE-2025-12781</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12781</guid>
+      <description>When passing data to the b64decode(), standard_b64decode(), and urlsafe_b64decode() functions in the &quot;base64&quot; module the characters &quot;+/&quot; will always be accepted, regardless of the value of &quot;altchars&quot; parameter, typically used to establish an &quot;alterna…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Jan 2026 19:34:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-0672 · 6 MEDIUM — Header injection in http.cookies.Morsel</title>
+      <link>https://vulnogram.org/CVE-2026-0672</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0672</guid>
+      <description>When using http.cookies.Morsel, user-controlled cookie values and parameters can allow injecting HTTP headers into messages. Patch rejects all control characters within cookie names, values, and parameters.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Jan 2026 21:52:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-15367 · 5.9 MEDIUM — POP3 command injection in user-controlled commands</title>
+      <link>https://vulnogram.org/CVE-2025-15367</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15367</guid>
+      <description>The poplib module, when passed a user-controlled command, can have additional commands injected using newlines. Mitigation rejects commands containing control characters.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Jan 2026 21:47:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-15366 · 5.9 MEDIUM — IMAP command injection in user-controlled commands</title>
+      <link>https://vulnogram.org/CVE-2025-15366</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15366</guid>
+      <description>The imaplib module, when passed a user-controlled command, can have additional commands injected using newlines. Mitigation rejects commands containing control characters.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Jan 2026 21:40:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-15282 · 6 MEDIUM — Header injection via newlines in data URL mediatype</title>
+      <link>https://vulnogram.org/CVE-2025-15282</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15282</guid>
+      <description>User-controlled data URLs parsed by urllib.request.DataHandler allow injecting headers through newlines in the data URL mediatype.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Jan 2026 21:35:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-0865 · 5.9 MEDIUM — wsgiref.headers.Headers allows header newline injection</title>
+      <link>https://vulnogram.org/CVE-2026-0865</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0865</guid>
+      <description>User-controlled header names and values containing newlines can allow injecting HTTP headers.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Jan 2026 21:26:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-11468 · 5.7 MEDIUM — Folding email comments of unfoldable characters doesn&apos;t preserve parenthesis</title>
+      <link>https://vulnogram.org/CVE-2025-11468</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11468</guid>
+      <description>When folding a long comment in an email header containing exclusively unfoldable characters, the parenthesis would not be preserved. This could be used for injecting headers into email messages where addresses are user-controlled and not sanitized.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Jan 2026 21:09:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-12084 · 6.3 MEDIUM 🌩️ — Quadratic complexity in node ID cache clearing</title>
+      <link>https://vulnogram.org/CVE-2025-12084</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12084</guid>
+      <description>When building nested elements using xml.dom.minidom methods such as appendChild() that have a dependency on _clear_id_cache() the algorithm is quadratic. Availability can be impacted when building excessively nested documents.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 03 Dec 2025 18:55:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-13837 · 2.1 LOW — Out-of-memory when loading Plist</title>
+      <link>https://vulnogram.org/CVE-2025-13837</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-13837</guid>
+      <description>When loading a plist file, the plistlib module reads data in size specified by the file itself, meaning a malicious file can cause OOM and DoS issues</description>
+      <category>Low</category>
+      <pubDate>Mon, 01 Dec 2025 18:13:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-13836 · 6.3 MEDIUM 🌩️ — Excessive read buffering DoS in http.client</title>
+      <link>https://vulnogram.org/CVE-2025-13836</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-13836</guid>
+      <description>When reading an HTTP response from a server, if no read amount is specified, the default behavior will be to use Content-Length. This allows a malicious server to cause the client to read large amounts of data into memory, potentially causing OOM or…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 01 Dec 2025 18:02:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-6075 · 1.8 LOW — Quadratic complexity in os.path.expandvars() with user-controlled template</title>
+      <link>https://vulnogram.org/CVE-2025-6075</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6075</guid>
+      <description>If the value passed to os.path.expandvars() is user-controlled a performance degradation is possible when expanding environment variables.</description>
+      <category>Low</category>
+      <pubDate>Fri, 31 Oct 2025 16:41:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-8291 · 4.3 MEDIUM 🌩️ — ZIP64 End of Central Directory (EOCD) Locator record offset not checked</title>
+      <link>https://vulnogram.org/CVE-2025-8291</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-8291</guid>
+      <description>The &apos;zipfile&apos; module would not check the validity of the ZIP64 End of Central Directory (EOCD) Locator record offset value would not be used to locate the ZIP64 EOCD record, instead the ZIP64 EOCD record would be assumed to be the previous record in…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 07 Oct 2025 18:10:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-8869 · 5.9 MEDIUM 🌩️ — Fallback tar extraction in pip doesn&apos;t check symbolic links point to extraction directory</title>
+      <link>https://vulnogram.org/CVE-2025-8869</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-8869</guid>
+      <description>When extracting a tar archive pip may not check symbolic links point into the extraction directory if the tarfile module doesn&apos;t implement PEP 706. Note that upgrading pip to a &quot;fixed&quot; version for this vulnerability doesn&apos;t fix all known vulnerabilit…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 24 Sep 2025 14:56:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-8194 · 7.5 HIGH 🌩️ — Tarfile infinite loop during parsing with negative member offset</title>
+      <link>https://vulnogram.org/CVE-2025-8194</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-8194</guid>
+      <description>There is a defect in the CPython “tarfile” module affecting the “TarFile” extraction and entry enumeration APIs. The tar implementation would process tar archives with negative offsets without error, resulting in an infinite loop and deadlock during…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Jul 2025 18:42:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-6069 · 4.3 MEDIUM — HTMLParser quadratic complexity when processing malformed inputs</title>
+      <link>https://vulnogram.org/CVE-2025-6069</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6069</guid>
+      <description>The html.parser.HTMLParser class had worse-case quadratic complexity when processing certain crafted malformed inputs potentially leading to amplified denial-of-service.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 17 Jun 2025 13:39:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-12718 · 5.3 MEDIUM 🌩️ — Bypass extraction filter to modify file metadata outside extraction directory</title>
+      <link>https://vulnogram.org/CVE-2024-12718</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-12718</guid>
+      <description>Allows modifying some file metadata (e.g. last modified) with filter=&quot;data&quot; or file permissions (chmod) with filter=&quot;tar&quot; of files outside the extraction directory. You are affected by this vulnerability if using the tarfile module to extract untrust…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Jun 2025 12:59:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-4435 · 7.5 HIGH 🌩️ — Tarfile extracts filtered members when errorlevel=0</title>
+      <link>https://vulnogram.org/CVE-2025-4435</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4435</guid>
+      <description>When using a TarFile.errorlevel = 0 and extracting with a filter the documented behavior is that any filtered members would be skipped and not extracted. However the actual behavior of TarFile.errorlevel = 0 in affected versions is that the member wo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Jun 2025 12:59:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-4138 · 7.5 HIGH 🌩️ — Bypassing extraction filter to create symlinks to arbitrary targets outside extraction directory</title>
+      <link>https://vulnogram.org/CVE-2025-4138</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4138</guid>
+      <description>Allows the extraction filter to be ignored, allowing symlink targets to point outside the destination directory, and the modification of some file metadata. You are affected by this vulnerability if using the tarfile module to extract untrusted tar a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Jun 2025 12:59:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-4330 · 7.5 HIGH 🌩️ — Extraction filter bypass for linking outside extraction directory</title>
+      <link>https://vulnogram.org/CVE-2025-4330</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4330</guid>
+      <description>Allows the extraction filter to be ignored, allowing symlink targets to point outside the destination directory, and the modification of some file metadata. You are affected by this vulnerability if using the tarfile module to extract untrusted tar a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Jun 2025 12:58:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-4517 · 9.4 CRITICAL 🌩️ — Arbitrary writes via tarfile realpath overflow</title>
+      <link>https://vulnogram.org/CVE-2025-4517</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4517</guid>
+      <description>Allows arbitrary filesystem writes outside the extraction directory during extraction with filter=&quot;data&quot;. You are affected by this vulnerability if using the tarfile module to extract untrusted tar archives using TarFile.extractall() or TarFile.extra…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Jun 2025 12:58:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-4516 · 5.9 MEDIUM — Use-after-free in &quot;unicode_escape&quot; decoder with error handler</title>
+      <link>https://vulnogram.org/CVE-2025-4516</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4516</guid>
+      <description>There is an issue in CPython when using `bytes.decode(&quot;unicode_escape&quot;, error=&quot;ignore|replace&quot;)`. If you are not using the &quot;unicode_escape&quot; encoding or an error handler your usage is not affected. To work-around this issue you may stop using the erro…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 15 May 2025 13:29:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-1795 · 2.3 LOW — Mishandling of comma during folding and unicode-encoding of email headers</title>
+      <link>https://vulnogram.org/CVE-2025-1795</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1795</guid>
+      <description>During an address list folding when a separating comma ends up on a folded line and that line is to be unicode-encoded then the separator itself is also unicode-encoded. Expected behavior is that the separating comma remains a plan comma. This can re…</description>
+      <category>Low</category>
+      <pubDate>Fri, 28 Feb 2025 18:59:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-3220 · 2.3 LOW — Default mimetype known files writeable on Windows</title>
+      <link>https://vulnogram.org/CVE-2024-3220</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-3220</guid>
+      <description>There is a defect in the CPython standard library module “mimetypes” where on Windows the default list of known file locations are writable meaning other users can create invalid files to cause MemoryError to be raised on Python runtime startup or ha…</description>
+      <category>Low</category>
+      <pubDate>Fri, 14 Feb 2025 16:18:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-0938 · 6.3 MEDIUM 🌩️ — URL parser allowed square brackets in domain names</title>
+      <link>https://vulnogram.org/CVE-2025-0938</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0938</guid>
+      <description>The Python standard library functions `urllib.parse.urlsplit` and `urlparse` accepted domain names that included square brackets which isn&apos;t valid according to RFC 3986. Square brackets are only meant to be used as delimiters for specifying IPv6 and…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 31 Jan 2025 17:51:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-12254 · 8.7 HIGH 🌩️ — Unbounded memory buffering in SelectorSocketTransport.writelines()</title>
+      <link>https://vulnogram.org/CVE-2024-12254</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-12254</guid>
+      <description>Starting in Python 3.12.0, the asyncio._SelectorSocketTransport.writelines() method would not &quot;pause&quot; writing and signal to the Protocol to drain the buffer to the wire once the write buffer reached the &quot;high-water mark&quot;. Because of this, Protocols w…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 06 Dec 2024 15:19:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-11168 · 6.3 MEDIUM 🌩️ — Improper validation of IPv6 and IPvFuture addresses</title>
+      <link>https://vulnogram.org/CVE-2024-11168</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11168</guid>
+      <description>The urllib.parse.urlsplit() and urlparse() functions improperly validated bracketed hosts (`[]`), allowing hosts that weren&apos;t IPv6 or IPvFuture. This behavior was not conformant to RFC 3986 and potentially enabled SSRF if a URL is processed by more t…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 12 Nov 2024 21:22:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-9287 · 5.3 MEDIUM — Virtual environment (venv) activation scripts don&apos;t quote paths</title>
+      <link>https://vulnogram.org/CVE-2024-9287</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-9287</guid>
+      <description>A vulnerability has been found in the CPython `venv` module and CLI where path names provided when creating a virtual environment were not quoted properly, allowing the creator to inject commands into virtual environment &quot;activation&quot; scripts (ie &quot;sou…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Oct 2024 16:34:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6232 · 7.5 HIGH 🌩️ — Regular-expression DoS when parsing TarFile headers</title>
+      <link>https://vulnogram.org/CVE-2024-6232</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6232</guid>
+      <description>There is a MEDIUM severity vulnerability affecting CPython. Regular expressions that allowed excessive backtracking during tarfile.TarFile header parsing are vulnerable to ReDoS via specifically-crafted tar archives.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Sep 2024 12:29:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

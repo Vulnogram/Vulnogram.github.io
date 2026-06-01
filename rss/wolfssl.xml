@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>wolfSSL Inc. — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <description>Most recent CVEs assigned by wolfSSL Inc. (wolfssl).</description>
+    <lastBuildDate>Mon, 01 Jun 2026 22:50:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-0930 · 2.3 LOW — Potential wolfSSHd Buffer out-of-bounds Read on Windows Handling Terminal Resize</title>
+      <link>https://vulnogram.org/CVE-2026-0930</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0930</guid>
+      <description>Potential read out of bounds case with wolfSSHd on Windows while handling a terminal resize request. An authenticated user could trigger the out of bounds read after establishing a connection which would leak the adjacent stack memory to the pseudo-c…</description>
+      <category>Low</category>
+      <pubDate>Mon, 20 Apr 2026 21:28:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5477 · 8.2 HIGH 🌩️ — Prefix-substitution forgery via integer overflow in wolfCrypt CMAC</title>
+      <link>https://vulnogram.org/CVE-2026-5477</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5477</guid>
+      <description>An integer overflow existed in the wolfCrypt CMAC implementation, that could be exploited to forge CMAC tags. The function wc_CmacUpdate used the guard `if (cmac-&gt;totalSz != 0)` to skip XOR-chaining on the first block (where digest is all-zeros and t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 10 Apr 2026 05:06:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5188 · 2.3 LOW 🌩️ — Integer underflow in X.509 SAN parsing in wolfSSL</title>
+      <link>https://vulnogram.org/CVE-2026-5188</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5188</guid>
+      <description>An integer underflow issue exists in wolfSSL when parsing the Subject Alternative Name (SAN) extension of X.509 certificates. A malformed certificate can specify an entry length larger than the enclosing sequence, causing the internal length counter…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 10 Apr 2026 03:24:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5500 · 8.7 HIGH 🌩️ — Improper Validation of AES-GCM Authentication Tag Length in PKCS#7 Envelope Allows Authentication Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-5500</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5500</guid>
+      <description>wolfSSL&apos;s wc_PKCS7_DecodeAuthEnvelopedData() does not properly sanitize the AES-GCM authentication tag length received and has no lower bounds check. A man-in-the-middle can therefore truncate the mac field from 16 bytes to 1 byte, reducing the tag c…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 10 Apr 2026 03:10:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5501 · 8.6 HIGH — Improper Certificate Signature Verification in X.509 Chain Validation Allows Forged Leaf Certificates</title>
+      <link>https://vulnogram.org/CVE-2026-5501</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5501</guid>
+      <description>wolfSSL_X509_verify_cert in the OpenSSL compatibility layer accepts a certificate chain in which the leaf&apos;s signature is not checked, if the attacker supplies an untrusted intermediate with Basic Constraints `CA:FALSE` that is legitimately signed by…</description>
+      <category>High</category>
+      <pubDate>Fri, 10 Apr 2026 03:07:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5466 · 7.6 HIGH — wc_VerifyEccsiHash missing sanity check</title>
+      <link>https://vulnogram.org/CVE-2026-5466</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5466</guid>
+      <description>wolfSSL&apos;s ECCSI signature verifier `wc_VerifyEccsiHash` decodes the `r` and `s` scalars from the signature blob via `mp_read_unsigned_bin` with no check that they lie in `[1, q-1]`. A crafted forged signature could verify against any message for any…</description>
+      <category>High</category>
+      <pubDate>Fri, 10 Apr 2026 03:00:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5479 · 7.6 HIGH — wolfSSL EVP ChaCha20-Poly1305 AEAD authentication tag</title>
+      <link>https://vulnogram.org/CVE-2026-5479</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5479</guid>
+      <description>In wolfSSL&apos;s EVP layer, the ChaCha20-Poly1305 AEAD decryption path in wolfSSL_EVP_CipherFinal (and related EVP cipher finalization functions) fails to verify the authentication tag before returning plaintext to the caller. When an application uses th…</description>
+      <category>High</category>
+      <pubDate>Fri, 10 Apr 2026 02:38:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5460 · 6.3 MEDIUM 🌩️ — Heap Use-After-Free in PQC Hybrid KeyShare Error Cleanup in wolfSSL TLS 1.3</title>
+      <link>https://vulnogram.org/CVE-2026-5460</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5460</guid>
+      <description>A heap use-after-free exists in wolfSSL&apos;s TLS 1.3 post-quantum cryptography (PQC) hybrid KeyShare processing. In the error handling path of TLSX_KeyShare_ProcessPqcHybridClient() in src/tls.c, the inner function TLSX_KeyShare_ProcessPqcClient_ex() fr…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 09 Apr 2026 23:29:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5448 · 2.3 LOW — 1-2 Byte Buffer Overflow in wolfSSL_X509_notAfter/notBefore</title>
+      <link>https://vulnogram.org/CVE-2026-5448</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5448</guid>
+      <description>X.509 date buffer overflow in wolfSSL_X509_notAfter / wolfSSL_X509_notBefore. A buffer overflow may occur when parsing date fields from a crafted X.509 certificate via the compatibility layer API. This is only triggered when calling these two APIs di…</description>
+      <category>Low</category>
+      <pubDate>Thu, 09 Apr 2026 23:18:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5392 · 2.3 LOW — wolfSSL heap OOB read in PKCS7 SignedData streaming</title>
+      <link>https://vulnogram.org/CVE-2026-5392</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5392</guid>
+      <description>Heap out-of-bounds read in PKCS7 parsing. A crafted PKCS7 message can trigger an OOB read on the heap. The missing bounds check is in the indefinite-length end-of-content verification loop in PKCS7_VerifySignedData().</description>
+      <category>Low</category>
+      <pubDate>Thu, 09 Apr 2026 23:10:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5393 · 6.3 MEDIUM 🌩️ — OOB Read in DoTls13CertificateVerify with WOLFSSL_DUAL_ALG_CERTS</title>
+      <link>https://vulnogram.org/CVE-2026-5393</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5393</guid>
+      <description>Dual-Algorithm CertificateVerify out-of-bounds read. When processing a dual-algorithm CertificateVerify message, an out-of-bounds read can occur on crafted input. This can only occur when --enable-experimental and --enable-dual-alg-certs is used when…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 09 Apr 2026 23:02:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5295 · 5.9 MEDIUM — Stack Buffer Overflow in wolfSSL PKCS7 wc_PKCS7_DecryptOri() via Oversized OID</title>
+      <link>https://vulnogram.org/CVE-2026-5295</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5295</guid>
+      <description>A stack buffer overflow exists in wolfSSL&apos;s PKCS7 implementation in the wc_PKCS7_DecryptOri() function in wolfcrypt/src/pkcs7.c. When processing a CMS EnvelopedData message containing an OtherRecipientInfo (ORI) recipient, the function copies an ASN.…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 09 Apr 2026 22:53:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5503 · 6.9 MEDIUM 🌩️ — out-of-bounds write in TLSX_EchChangeSNI via attacker-controlled publicName</title>
+      <link>https://vulnogram.org/CVE-2026-5503</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5503</guid>
+      <description>In TLSX_EchChangeSNI, the ctx-&gt;extensions branch set extensions unconditionally even when TLSX_Find returned NULL. This caused TLSX_UseSNI to attach the attacker-controlled publicName to the shared WOLFSSL_CTX when no inner SNI was configured. TLSX_E…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 09 Apr 2026 22:35:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5504 · 6.3 MEDIUM 🌩️ — PKCS7 CBC Padding Oracle — Plaintext Recovery</title>
+      <link>https://vulnogram.org/CVE-2026-5504</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5504</guid>
+      <description>A padding oracle exists in wolfSSL&apos;s PKCS7 CBC decryption that could allow an attacker to recover plaintext through repeated decryption queries with modified ciphertext. In previous versions of wolfSSL the interior padding bytes are not validated.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 09 Apr 2026 22:33:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5507 · 4.1 MEDIUM — Session Cache Restore — Arbitrary Free via Deserialized Pointer</title>
+      <link>https://vulnogram.org/CVE-2026-5507</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5507</guid>
+      <description>When restoring a session from cache, a pointer from the serialized session data is used in a free operation without validation. An attacker who can poison the session cache could trigger an arbitrary free. Exploitation requires the ability to inject…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 09 Apr 2026 22:18:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5772 · 2.1 LOW — MatchDomainName 1-Byte Stack Buffer Over-Read in Hostname Validation</title>
+      <link>https://vulnogram.org/CVE-2026-5772</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5772</guid>
+      <description>A 1-byte stack buffer over-read was identified in the MatchDomainName function (src/internal.c) during wildcard hostname validation when the LEFT_MOST_WILDCARD_ONLY flag is active. If a wildcard * exhausts the entire hostname string, the function rea…</description>
+      <category>Low</category>
+      <pubDate>Thu, 09 Apr 2026 21:50:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5778 · 2.1 LOW — Integer underflow leads to out-of-bounds access in sniffer ChaCha decrypt path.</title>
+      <link>https://vulnogram.org/CVE-2026-5778</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5778</guid>
+      <description>Integer underflow in wolfSSL packet sniffer &lt;= 5.9.0 allows an attacker to cause a program crash in the AEAD decryption path by injecting a TLS record shorter than the explicit IV plus authentication tag into traffic inspected by ssl_DecodePacket. Th…</description>
+      <category>Low</category>
+      <pubDate>Thu, 09 Apr 2026 21:45:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5264 · 8.3 HIGH 🌩️ — DTLS 1.3 ACK heap buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-5264</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5264</guid>
+      <description>Heap buffer overflow in DTLS 1.3 ACK message processing. A remote attacker can send a crafted DTLS 1.3 ACK message that triggers a heap buffer overflow.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 09 Apr 2026 21:43:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5263 · 7 HIGH — URI nameConstraints not enforced in ConfirmNameConstraints()</title>
+      <link>https://vulnogram.org/CVE-2026-5263</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5263</guid>
+      <description>URI nameConstraints from constrained intermediate CAs are parsed but not enforced during certificate chain verification in wolfcrypt/src/asn.c. A compromised or malicious sub-CA could issue leaf certificates with URI SAN entries that violate the name…</description>
+      <category>High</category>
+      <pubDate>Thu, 09 Apr 2026 21:15:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5446 · 6 MEDIUM — wolfSSL ARIA-GCM TLS 1.2/DTLS 1.2 GCM nonce reuse</title>
+      <link>https://vulnogram.org/CVE-2026-5446</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5446</guid>
+      <description>In wolfSSL, ARIA-GCM cipher suites used in TLS 1.2 and DTLS 1.2 reuse an identical 12-byte GCM nonce for every application-data record. Because wc_AriaEncrypt is stateless and passes the caller-supplied IV verbatim to the MagicCrypto SDK with no inte…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 09 Apr 2026 21:02:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5447 · 6.3 MEDIUM 🌩️ — Heap buffer overflow in CertFromX509() via AuthorityKeyIdentifier</title>
+      <link>https://vulnogram.org/CVE-2026-5447</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5447</guid>
+      <description>Heap buffer overflow in CertFromX509 via AuthorityKeyIdentifier size confusion. A heap buffer overflow occurs when converting an X.509 certificate internally due to incorrect size handling of the AuthorityKeyIdentifier extension.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 09 Apr 2026 20:13:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5187 · 2.3 LOW — Heap Out-of-Bounds Write in DecodeObjectId() in wolfSSL</title>
+      <link>https://vulnogram.org/CVE-2026-5187</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5187</guid>
+      <description>Two potential heap out-of-bounds write locations existed in DecodeObjectId() in wolfcrypt/src/asn.c. First, a bounds check only validates one available slot before writing two OID arc values (out[0] and out[1]), enabling a 2-byte out-of-bounds write…</description>
+      <category>Low</category>
+      <pubDate>Thu, 09 Apr 2026 19:45:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5194 · 9.3 CRITICAL — wolfSSL ECDSA Certificate Verification</title>
+      <link>https://vulnogram.org/CVE-2026-5194</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5194</guid>
+      <description>Missing hash/digest size and OID checks allow digests smaller than allowed when verifying ECDSA certificates, or smaller than is appropriate for the relevant key type, to be accepted by signature verification functions. This could lead to reduced sec…</description>
+      <category>Critical</category>
+      <pubDate>Thu, 09 Apr 2026 19:30:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4159 · 1.2 LOW — wc_PKCS7_DecodeEnvelopedData 1 byte out-of-bounds read</title>
+      <link>https://vulnogram.org/CVE-2026-4159</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4159</guid>
+      <description>1-byte OOB heap read in wc_PKCS7_DecodeEnvelopedData via zero-length encrypted content. A vulnerability existed in wolfSSL 5.8.4 and earlier, where a 1-byte out-of-bounds heap read in wc_PKCS7_DecodeEnvelopedData could be triggered by a crafted CMS E…</description>
+      <category>Low</category>
+      <pubDate>Thu, 19 Mar 2026 21:17:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3229 · 1.2 LOW — Integer Overflow in Certificate Chain Allocation</title>
+      <link>https://vulnogram.org/CVE-2026-3229</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3229</guid>
+      <description>An integer overflow vulnerability existed in the static function wolfssl_add_to_chain, that caused heap corruption when certificate data was written out of bounds of an insufficiently sized certificate buffer. wolfssl_add_to_chain is called by these…</description>
+      <category>Low</category>
+      <pubDate>Thu, 19 Mar 2026 21:07:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3230 · 1.2 LOW — Improper key_share validation in TLS 1.3 HelloRetryRequest</title>
+      <link>https://vulnogram.org/CVE-2026-3230</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3230</guid>
+      <description>Missing required cryptographic step in the TLS 1.3 client HelloRetryRequest handshake logic in wolfSSL could lead to a compromise in the confidentiality of TLS-protected communications via a crafted HelloRetryRequest followed by a ServerHello message…</description>
+      <category>Low</category>
+      <pubDate>Thu, 19 Mar 2026 20:59:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4395 · 1.3 LOW 🌩️ — Heap-based buffer overflow in wc_ecc_import_x963_ex KCAPI path</title>
+      <link>https://vulnogram.org/CVE-2026-4395</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4395</guid>
+      <description>Heap-based buffer overflow in the KCAPI ECC code path of wc_ecc_import_x963_ex() in wolfSSL wolfcrypt allows a remote attacker to write attacker-controlled data past the bounds of the pubkey_raw buffer via a crafted oversized EC public key point. The…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Mar 2026 20:41:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3849 · 6.9 MEDIUM 🌩️ — Buffer Overflow in HPKE via Oversized ECH Config</title>
+      <link>https://vulnogram.org/CVE-2026-3849</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3849</guid>
+      <description>Stack Buffer Overflow in wc_HpkeLabeledExtract via Oversized ECH Config. A vulnerability existed in wolfSSL 5.8.4 ECH (Encrypted Client Hello) support, where a maliciously crafted ECH config could cause a stack buffer overflow on the client side, lea…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Mar 2026 20:29:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3547 · 7.5 HIGH 🌩️ — wolfSSL: out-of-bounds read (DoS) in ALPN parsing due to incomplete validation</title>
+      <link>https://vulnogram.org/CVE-2026-3547</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3547</guid>
+      <description>Out-of-bounds read in ALPN parsing due to incomplete validation. wolfSSL 5.8.4 and earlier contained an out-of-bounds read in ALPN handling when built with ALPN enabled (HAVE_ALPN / --enable-alpn). A crafted ALPN protocol list could trigger an out-of…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Mar 2026 20:20:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3549 · 8.3 HIGH 🌩️ — ECH parsing heap buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-3549</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3549</guid>
+      <description>Heap Overflow in TLS 1.3 ECH parsing. An integer underflow existed in ECH extension parsing logic when calculating a buffer length, which resulted in writing beyond the bounds of an allocated buffer. Note that in wolfSSL, ECH is off by default, and t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Mar 2026 20:09:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3580 · 2.1 LOW — Compiler-induced timing leak in sp_256_get_entry_256_9 on RISC-V</title>
+      <link>https://vulnogram.org/CVE-2026-3580</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3580</guid>
+      <description>In wolfSSL 5.8.4, constant-time masking logic in sp_256_get_entry_256_9 is optimized into conditional branches (bnez) by GCC when targeting RISC-V RV32I with -O3. This transformation breaks the side-channel resistance of ECC scalar multiplication, po…</description>
+      <category>Low</category>
+      <pubDate>Thu, 19 Mar 2026 19:46:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3579 · 2.1 LOW — Non-constant time multiplication subroutine __muldi3 on RISC-V RV32I</title>
+      <link>https://vulnogram.org/CVE-2026-3579</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3579</guid>
+      <description>wolfSSL 5.8.4 on RISC-V RV32I architectures lacks a constant-time software implementation for 64-bit multiplication. The compiler-inserted __muldi3 subroutine executes in variable time based on operand values. This affects multiple SP math functions…</description>
+      <category>Low</category>
+      <pubDate>Thu, 19 Mar 2026 19:37:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3503 · 4.3 MEDIUM — Fault injection attack with ML-DSA and ML-KEM on ARM</title>
+      <link>https://vulnogram.org/CVE-2026-3503</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3503</guid>
+      <description>Protection mechanism failure in wolfCrypt post-quantum implementations (ML-KEM and ML-DSA) in wolfSSL on ARM Cortex-M microcontrollers allows a physical attacker to compromise key material and/or cryptographic outcomes via induced transient faults th…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Mar 2026 18:12:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3548 · 7.2 HIGH 🌩️ — Buffer overflow in CRL number parsing in wolfSSL</title>
+      <link>https://vulnogram.org/CVE-2026-3548</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3548</guid>
+      <description>Two buffer overflow vulnerabilities existed in the wolfSSL CRL parser when parsing CRL numbers: a heap-based buffer overflow could occur when improperly storing the CRL number as a hexadecimal string, and a stack-based overflow for sufficiently sized…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Mar 2026 17:45:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-2646 · 5 MEDIUM — Heap buffer overflow in session parsing with wolfSSL_d2i_SSL_SESSION() function</title>
+      <link>https://vulnogram.org/CVE-2026-2646</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-2646</guid>
+      <description>A heap-buffer-overflow vulnerability exists in wolfSSL&apos;s wolfSSL_d2i_SSL_SESSION() function. When deserializing session data with SESSION_CERTS enabled, certificate and session id lengths are read from an untrusted input without bounds validation, al…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Mar 2026 17:25:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-2645 · 5.5 MEDIUM — Acceptance of CertificateVerify Message before ClientKeyExchange in TLS 1.2</title>
+      <link>https://vulnogram.org/CVE-2026-2645</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-2645</guid>
+      <description>In wolfSSL 5.8.2 and earlier, a logic flaw existed in the TLS 1.2 server state machine implementation. The server could incorrectly accept the CertificateVerify message before the ClientKeyExchange message had been received. This issue affects wolfSS…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Mar 2026 17:10:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1005 · 2.1 LOW — Integer underflow leads to out-of-bounds access in sniffer AES-GCM/CCM/ARIA-GCM decrypt path</title>
+      <link>https://vulnogram.org/CVE-2026-1005</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1005</guid>
+      <description>Integer underflow in wolfSSL packet sniffer &lt;= 5.8.4 allows an attacker to cause a buffer overflow in the AEAD decryption path by injecting a TLS record shorter than the explicit IV plus authentication tag into traffic inspected by ssl_DecodePacket.…</description>
+      <category>Low</category>
+      <pubDate>Thu, 19 Mar 2026 17:00:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-0819 · 2.2 LOW — Stack buffer overflow in PKCS7 SignedData encoding with custom signed attributes</title>
+      <link>https://vulnogram.org/CVE-2026-0819</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0819</guid>
+      <description>A stack buffer overflow vulnerability exists in wolfSSL&apos;s PKCS7 SignedData encoding functionality. In wc_PKCS7_BuildSignedAttributes(), when adding custom signed attributes, the code passes an incorrect capacity value (esd-&gt;signedAttribsCount) to Enc…</description>
+      <category>Low</category>
+      <pubDate>Thu, 19 Mar 2026 16:54:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-15346 · 9.3 CRITICAL 🌩️ — wolfSSL Python library `CERT_REQUIRED` mode fails to enforce client certificate requirement</title>
+      <link>https://vulnogram.org/CVE-2025-15346</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15346</guid>
+      <description>A vulnerability in the handling of verify_mode = CERT_REQUIRED in the wolfssl Python package (wolfssl-py) causes client certificate requirements to not be fully enforced. Because the WOLFSSL_VERIFY_FAIL_IF_NO_PEER_CERT flag was not included, the beha…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 07 Jan 2026 23:32:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-15382 · 5.1 MEDIUM — Client SCP Request Triggers Buffer Overread by 1 Byte</title>
+      <link>https://vulnogram.org/CVE-2025-15382</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15382</guid>
+      <description>A heap buffer over-read vulnerability exists in the wolfSSH_CleanPath() function in wolfSSH. An authenticated remote attacker can trigger the issue via crafted SCP path input containing &apos;/./&apos; sequences, resulting in a heap over read by 1 byte.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 06 Jan 2026 17:43:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-14942 · 9.4 CRITICAL 🌩️ — Authentication Bypass</title>
+      <link>https://vulnogram.org/CVE-2025-14942</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-14942</guid>
+      <description>wolfSSH’s key exchange state machine can be manipulated to leak the client’s password in the clear, trick the client to send a bogus signature, or trick the client into skipping user authentication. This affects client applications with wolfSSH versi…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 06 Jan 2026 17:26:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-13912 · 1 LOW — Potential non-constant time compiled code with Clang LLVM</title>
+      <link>https://vulnogram.org/CVE-2025-13912</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-13912</guid>
+      <description>Multiple constant-time implementations in wolfSSL before version 5.8.4 may be transformed into non-constant-time binary by LLVM optimizations, which can potentially result in observable timing discrepancies and lead to information disclosure through…</description>
+      <category>Low</category>
+      <pubDate>Thu, 11 Dec 2025 17:09:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-12889 · 2.3 LOW — TLS 1.2 Client Can Downgrade Digest Used</title>
+      <link>https://vulnogram.org/CVE-2025-12889</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12889</guid>
+      <description>With TLS 1.2 connections a client can use any digest, specifically a weaker digest that is supported, rather than those in the CertificateRequest.</description>
+      <category>Low</category>
+      <pubDate>Fri, 21 Nov 2025 23:06:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-11932 · 2.3 LOW — Timing Side-Channel in PSK Binder Verification</title>
+      <link>https://vulnogram.org/CVE-2025-11932</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11932</guid>
+      <description>The server previously verified the TLS 1.3 PSK binder using a non-constant time method which could potentially leak information about the PSK binder</description>
+      <category>Low</category>
+      <pubDate>Fri, 21 Nov 2025 23:01:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-11931 · 2.1 LOW 🌩️ — Integer Underflow Leads to Out-of-Bounds Access in XChaCha20-Poly1305 Decrypt</title>
+      <link>https://vulnogram.org/CVE-2025-11931</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11931</guid>
+      <description>Integer Underflow Leads to Out-of-Bounds Access in XChaCha20-Poly1305 Decrypt. This issue is hit specifically with a call to the function wc_XChaCha20Poly1305_Decrypt() which is not used with TLS connections, only from direct calls from an applicatio…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Nov 2025 22:57:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-12888 · 1 LOW — Constant Time Issue with Xtensa-based ESP32 and X22519</title>
+      <link>https://vulnogram.org/CVE-2025-12888</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12888</guid>
+      <description>Vulnerability in X25519 constant-time cryptographic implementations due to timing side channels introduced by compiler optimizations and CPU architecture limitations, specifically with the Xtensa-based ESP32 chips. If targeting Xtensa it is recommend…</description>
+      <category>Low</category>
+      <pubDate>Fri, 21 Nov 2025 22:50:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-11936 · 6.3 MEDIUM 🌩️ — Potential DoS Vulnerability through Multiple KeyShareEntry with Same Group in TLS 1.3 ClientHello</title>
+      <link>https://vulnogram.org/CVE-2025-11936</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11936</guid>
+      <description>Improper input validation in the TLS 1.3 KeyShareEntry parsing in wolfSSL v5.8.2 on multiple platforms allows a remote unauthenticated attacker to cause a denial-of-service by sending a crafted ClientHello message containing duplicate KeyShareEntry v…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Nov 2025 22:24:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-11933 · 2.3 LOW — DoS Vulnerability in wolfSSL TLS 1.3 CKS Extension</title>
+      <link>https://vulnogram.org/CVE-2025-11933</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11933</guid>
+      <description>Improper Input Validation in the TLS 1.3 CKS extension parsing in wolfSSL 5.8.2 and earlier on multiple platforms allows a remote unauthenticated attacker to potentially cause a denial-of-service via a crafted ClientHello message with duplicate CKS e…</description>
+      <category>Low</category>
+      <pubDate>Fri, 21 Nov 2025 22:19:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-11934 · 2.1 LOW — Improper Validation of Signature Algorithm Used in TLS 1.3 CertificateVerify</title>
+      <link>https://vulnogram.org/CVE-2025-11934</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11934</guid>
+      <description>Improper input validation in the TLS 1.3 CertificateVerify signature algorithm negotiation in wolfSSL 5.8.2 and earlier on multiple platforms allows for downgrading the signature algorithm used. For example when a client sends ECDSA P521 as the suppo…</description>
+      <category>Low</category>
+      <pubDate>Fri, 21 Nov 2025 22:12:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-11935 · 6.3 MEDIUM 🌩️ — Forward Secrecy Violation in WolfSSL TLS 1.3</title>
+      <link>https://vulnogram.org/CVE-2025-11935</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11935</guid>
+      <description>With TLS 1.3 pre-shared key (PSK) a malicious or faulty server could ignore the request for PFS (perfect forward secrecy) and the client would continue on with the connection using PSK without PFS. This happened when a server responded to a ClientHel…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Nov 2025 22:04:52 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

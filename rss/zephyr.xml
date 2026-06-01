@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Zephyr Project — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <description>Most recent CVEs assigned by Zephyr Project (zephyr).</description>
+    <lastBuildDate>Mon, 01 Jun 2026 22:50:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-5071 · 6.1 MEDIUM — can: Local Denial of Service via SocketCAN Send</title>
+      <link>https://vulnogram.org/CVE-2026-5071</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5071</guid>
+      <description>The SocketCAN implementation validates the length of a user-provided buffer containing a socketcan_frame object using only a NET_ASSERT statement in zcan_sendto_ctx() before dereferencing it in socketcan_to_can_frame(). In production builds where ass…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 30 May 2026 07:15:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5072 · 6.5 MEDIUM — ptp: Potential Denial of Service via PTP Interval Shift</title>
+      <link>https://vulnogram.org/CVE-2026-5072</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5072</guid>
+      <description>A bitwise shift vulnerability in Zephyr&apos;s PTP subsystem allows a remote attacker to cause undefined behavior and potential system crashes. An attacker sends a crafted PTP_MSG_MANAGEMENT message to set an unvalidated negative log_announce_interval val…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 22 May 2026 07:00:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1681 · 6.1 MEDIUM — net: Stack Overflow with Ping (to own IP Address) via Shell</title>
+      <link>https://vulnogram.org/CVE-2026-1681</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1681</guid>
+      <description>Issuing an ICMP ping via the `net ping` shell command to a device&apos;s own IPv4 address causes the network stack to recursively re-enter the input path on the same system work-queue stack. Because the destination is recognized as a local address, both t…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 12 May 2026 05:39:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1677 · 5.3 MEDIUM 🌩️ — net:  TLS 1.2 connections allowed  on TLS 1.3 sockets</title>
+      <link>https://vulnogram.org/CVE-2026-1677</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1677</guid>
+      <description>Zephyr sockets created with `IPPROTO_TLS_1_3` can still negotiate a TLS 1.2 connection when both TLS versions are enabled in Kconfig, because the socket-level protocol selection is not propagated to mbedTLS (e.g. via `mbedtls_ssl_conf_min_tls_version…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 11 May 2026 05:52:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5590 · 6.4 MEDIUM — net: ip/tcp: Null pointer dereference can be triggered by a race condition</title>
+      <link>https://vulnogram.org/CVE-2026-5590</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5590</guid>
+      <description>A race condition during TCP connection teardown can cause tcp_recv() to operate on a connection that has already been released. If tcp_conn_search() returns NULL while processing a SYN packet, a NULL pointer derived from stale context data is passed…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 05 Apr 2026 03:34:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1679 · 7.3 HIGH — net: eswifi socket send payload length not bounded</title>
+      <link>https://vulnogram.org/CVE-2026-1679</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1679</guid>
+      <description>The eswifi socket offload driver copies user-provided payloads into a fixed buffer without checking available space; oversized sends overflow `eswifi-&gt;buf`, corrupting kernel memory (CWE-120). Exploit requires local code that can call the socket send…</description>
+      <category>High</category>
+      <pubDate>Fri, 27 Mar 2026 23:21:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4179 · 6.1 MEDIUM — stm32: usb: Infinite while loop in Interrupt Handler</title>
+      <link>https://vulnogram.org/CVE-2026-4179</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4179</guid>
+      <description>Issues in stm32 USB device driver (drivers/usb/device/usb_dc_stm32.c) can lead to an infinite while loop.</description>
+      <category>Medium</category>
+      <pubDate>Sat, 14 Mar 2026 21:51:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-0849 · 3.8 LOW — crypto: ATAES132A response length allows stack buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-0849</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0849</guid>
+      <description>Malformed ATAES132A responses with an oversized length field overflow a 52-byte stack buffer in the Zephyr crypto driver, allowing a compromised device or bus attacker to corrupt kernel memory and potentially hijack execution.</description>
+      <category>Low</category>
+      <pubDate>Sat, 14 Mar 2026 21:05:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1678 · 9.4 CRITICAL 🌩️ — dns: memory‑safety issue in the DNS name parser</title>
+      <link>https://vulnogram.org/CVE-2026-1678</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1678</guid>
+      <description>dns_unpack_name() caches the buffer tailroom once and reuses it while appending DNS labels. As the buffer grows, the cached size becomes incorrect, and the final null terminator can be written past the buffer. With assertions disabled (default), a ma…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 05 Mar 2026 06:21:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-12899 · 6.5 MEDIUM 🌩️ — net: icmp: Out of bound memory read</title>
+      <link>https://vulnogram.org/CVE-2025-12899</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12899</guid>
+      <description>A flaw in Zephyr’s network stack allows an IPv4 packet containing ICMP type 128 to be misclassified as an ICMPv6 Echo Request. This results in an out-of-bounds memory read and creates a potential information-leak vulnerability in the networking subsy…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 30 Jan 2026 05:34:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-12035 · 6.5 MEDIUM — Bluetooth: Integer Overflow in Bluetooth Classic (BR/EDR) L2CAP</title>
+      <link>https://vulnogram.org/CVE-2025-12035</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12035</guid>
+      <description>An integer overflow condition exists in Bluetooth Host stack, within the bt_br_acl_recv routine a critical path for processing inbound BR/EDR L2CAP traffic.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 15 Dec 2025 19:42:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-9557 · 7.6 HIGH — Bluetooth: Mesh: Out-of-Bound Write in gen_prov_cont</title>
+      <link>https://vulnogram.org/CVE-2025-9557</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9557</guid>
+      <description>‭An out-of-bound write can lead to an arbitrary code execution. Even on devices with some form of memory protection, this can still lead to‬ ‭a crash and a resultant denial of service.‬</description>
+      <category>High</category>
+      <pubDate>Wed, 26 Nov 2025 05:43:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-9558 · 7.6 HIGH — Bluetooth: Mesh: Out-of-Bound Write in gen_prov_start</title>
+      <link>https://vulnogram.org/CVE-2025-9558</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9558</guid>
+      <description>There is a potential OOB Write vulnerability in the gen_prov_start function in pb_adv.c. The full length of the received data is copied into the link.rx.buf receiver buffer without any validation on the data size.</description>
+      <category>High</category>
+      <pubDate>Wed, 26 Nov 2025 05:39:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-9408 · 8.2 HIGH — Userspace privilege escalation vulnerability on Cortex M</title>
+      <link>https://vulnogram.org/CVE-2025-9408</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9408</guid>
+      <description>System call entry on Cortex M (and possibly R and A, but I think not) has a race which allows very practical privilege escalation for malicious userspace processes.</description>
+      <category>High</category>
+      <pubDate>Tue, 11 Nov 2025 15:34:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-12890 · 6.5 MEDIUM — Bluetooth: peripheral: Invalid handling of malformed connection request</title>
+      <link>https://vulnogram.org/CVE-2025-12890</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12890</guid>
+      <description>Improper handling of malformed Connection Request with the interval set to be 1 (which supposed to be illegal) and the chM 0x7CFFFFFFFF triggers a crash. The peripheral will not be connectable after it.</description>
+      <category>Medium</category>
+      <pubDate>Fri, 07 Nov 2025 18:40:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-10456 · 7.1 HIGH — Bluetooth: Semi-Arbitrary ability to make the BLE Target send disconnection requests</title>
+      <link>https://vulnogram.org/CVE-2025-10456</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-10456</guid>
+      <description>A vulnerability was identified in the handling of Bluetooth Low Energy (BLE) fixed channels (such as SMP or ATT). Specifically, an attacker could exploit a flaw that causes the BLE target (i.e., the device under attack) to attempt to disconnect a fix…</description>
+      <category>High</category>
+      <pubDate>Fri, 19 Sep 2025 05:21:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-10458 · 7.6 HIGH — Bluetooth: le_conn_rsp does not sanitize CID, MTU, MPS values</title>
+      <link>https://vulnogram.org/CVE-2025-10458</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-10458</guid>
+      <description>Parameters are not validated or sanitized, and are later used in various internal operations.</description>
+      <category>High</category>
+      <pubDate>Fri, 19 Sep 2025 05:20:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-7403 · 7.6 HIGH — Bluetooth: bt_conn_tx_processor unsafe handling</title>
+      <link>https://vulnogram.org/CVE-2025-7403</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-7403</guid>
+      <description>Unsafe handling in bt_conn_tx_processor causes a use-after-free, resulting in a write-before-zero. The written 4 bytes are attacker-controlled, enabling precise memory corruption.</description>
+      <category>High</category>
+      <pubDate>Fri, 19 Sep 2025 05:19:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-10457 · 4.3 MEDIUM — Bluetooth: Out-Of-Context le_conn_rsp Handling</title>
+      <link>https://vulnogram.org/CVE-2025-10457</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-10457</guid>
+      <description>The function responsible for handling BLE connection responses does not verify whether a response is expected—that is, whether the device has initiated a connection request. Instead, it relies solely on identifier matching.</description>
+      <category>Medium</category>
+      <pubDate>Fri, 19 Sep 2025 05:17:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-2962 · 8.2 HIGH 🌩️ — Infinite loop in dns_copy_qname</title>
+      <link>https://vulnogram.org/CVE-2025-2962</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-2962</guid>
+      <description>A denial-of-service issue in the dns implemenation could cause an infinite loop.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Jun 2025 05:32:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-1675 · 8.2 HIGH 🌩️ — Out of bounds read in dns_copy_qname</title>
+      <link>https://vulnogram.org/CVE-2025-1675</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1675</guid>
+      <description>The function dns_copy_qname in dns_pack.c performs performs a memcpy operation with an untrusted field and does not check if the source buffer is large enough to contain the copied data.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Feb 2025 07:22:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-1674 · 8.2 HIGH 🌩️ — Out of bounds read when unpacking DNS answers</title>
+      <link>https://vulnogram.org/CVE-2025-1674</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1674</guid>
+      <description>A lack of input validation allows for out of bounds reads caused by malicious or malformed packets.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Feb 2025 07:18:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-1673 · 8.2 HIGH 🌩️ — Out of bounds read when calling crc16_ansi and strlen in dns_validate_msg</title>
+      <link>https://vulnogram.org/CVE-2025-1673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1673</guid>
+      <description>A malicious or malformed DNS packet without a payload can cause an out-of-bounds read, resulting in a crash (denial of service) or an incorrect computation.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Feb 2025 07:12:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-10395 · 8.6 HIGH 🌩️ — net: lib: http_server: Buffer Under-read</title>
+      <link>https://vulnogram.org/CVE-2024-10395</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-10395</guid>
+      <description>No proper validation of the length of user input in http_server_get_content_type_from_extension.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 03 Feb 2025 06:59:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-8798 · 7.5 HIGH 🌩️ — Bluetooth: classic: avdtp: missing buffer length check</title>
+      <link>https://vulnogram.org/CVE-2024-8798</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8798</guid>
+      <description>No proper validation of the length of user input in olcp_ind_handler in zephyr/subsys/bluetooth/services/ots/ots_client.c.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 15 Dec 2024 23:23:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-11263 · 9.4 CRITICAL — arch: riscv: userspace: potential security risk when CONFIG_RISCV_GP=y</title>
+      <link>https://vulnogram.org/CVE-2024-11263</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11263</guid>
+      <description>When the Global Pointer (GP) relative addressing is enabled (CONFIG_RISCV_GP=y), the gp reg points at 0x800 bytes past the start of the .sdata section which is then used by the linker to relax accesses to global symbols.</description>
+      <category>Critical</category>
+      <pubDate>Fri, 15 Nov 2024 22:53:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6444 · 6.3 MEDIUM — Bluetooth: ots: missing buffer length check</title>
+      <link>https://vulnogram.org/CVE-2024-6444</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6444</guid>
+      <description>No proper validation of the length of user input in olcp_ind_handler in zephyr/subsys/bluetooth/services/ots/ots_client.c.</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Oct 2024 06:14:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6443 · 6.3 MEDIUM — zephyr: out-of-bound read in utf8_trunc</title>
+      <link>https://vulnogram.org/CVE-2024-6443</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6443</guid>
+      <description>In utf8_trunc in zephyr/lib/utils/utf8.c, last_byte_p can point to one byte before the string pointer if the string is empty.</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Oct 2024 05:56:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6442 · 6.3 MEDIUM — Bluetooth: ASCS Unchecked tailroom of the response buffer</title>
+      <link>https://vulnogram.org/CVE-2024-6442</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6442</guid>
+      <description>In ascs_cp_rsp_add in /subsys/bluetooth/audio/ascs.c, an unchecked tailroom could lead to a global buffer overflow.</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Oct 2024 05:36:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6259 · 7.6 HIGH — BT: HCI: adv_ext_report Improper discarding in adv_ext_report</title>
+      <link>https://vulnogram.org/CVE-2024-6259</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6259</guid>
+      <description>BT: HCI: adv_ext_report Improper discarding in adv_ext_report</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Sep 2024 20:17:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6137 · 7.6 HIGH — BT: Classic: SDP OOB access in get_att_search_list</title>
+      <link>https://vulnogram.org/CVE-2024-6137</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6137</guid>
+      <description>BT: Classic: SDP OOB access in get_att_search_list</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Sep 2024 20:06:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6135 · 7.6 HIGH — BT:Classic: Multiple missing buf length checks</title>
+      <link>https://vulnogram.org/CVE-2024-6135</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6135</guid>
+      <description>BT:Classic: Multiple missing buf length checks</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Sep 2024 19:51:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-5931 · 6.3 MEDIUM — BT: Unchecked user input in bap_broadcast_assistant</title>
+      <link>https://vulnogram.org/CVE-2024-5931</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-5931</guid>
+      <description>BT: Unchecked user input in bap_broadcast_assistant</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Sep 2024 19:41:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-6258 · 6.8 MEDIUM — BT: Missing length checks of net_buf in rfcomm_handle_data</title>
+      <link>https://vulnogram.org/CVE-2024-6258</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6258</guid>
+      <description>BT: Missing length checks of net_buf in rfcomm_handle_data</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Sep 2024 19:05:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-5754 · 8.2 HIGH — BT: Encryption procedure host vulnerability</title>
+      <link>https://vulnogram.org/CVE-2024-5754</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-5754</guid>
+      <description>BT: Encryption procedure host vulnerability</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Sep 2024 18:50:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-4785 · 7.6 HIGH — BT: Missing Check in LL_CONNECTION_UPDATE_IND Packet Leads to Division by Zero</title>
+      <link>https://vulnogram.org/CVE-2024-4785</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-4785</guid>
+      <description>BT: Missing Check in LL_CONNECTION_UPDATE_IND Packet Leads to Division by Zero</description>
+      <category>High</category>
+      <pubDate>Mon, 19 Aug 2024 22:10:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-3332 · 6.5 MEDIUM — bt: host/smp: DoS caused by null pointer dereference</title>
+      <link>https://vulnogram.org/CVE-2024-3332</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-3332</guid>
+      <description>A malicious BLE device can send a specific order of packet sequence to cause a DoS attack on the victim BLE device</description>
+      <category>Medium</category>
+      <pubDate>Wed, 03 Jul 2024 16:44:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-3077 · 6.8 MEDIUM — Bluetooth: integer underflow in gatt_find_info_rsp</title>
+      <link>https://vulnogram.org/CVE-2024-3077</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-3077</guid>
+      <description>An malicious BLE device can crash BLE victim device by sending malformed gatt packet</description>
+      <category>Medium</category>
+      <pubDate>Fri, 29 Mar 2024 05:06:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-7060 · 8.6 HIGH 🌩️ — Missing Security Control in Zephyr OS IP Packet Handling</title>
+      <link>https://vulnogram.org/CVE-2023-7060</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-7060</guid>
+      <description>Zephyr OS IP packet handling does not properly drop IP packets arriving on an external interface with a source address equal to 127.0.01 or the destination address.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 15 Mar 2024 18:12:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-6881 · 7.3 HIGH — fs: fuse: buffer overflow vulnerability in the Zephyr FS</title>
+      <link>https://vulnogram.org/CVE-2023-6881</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-6881</guid>
+      <description>Possible buffer overflow in is_mount_point</description>
+      <category>High</category>
+      <pubDate>Tue, 20 Feb 2024 18:25:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-1638 · 8.2 HIGH 🌩️ — Bluetooth characteristic LESC security requirement not enforced without additional flags</title>
+      <link>https://vulnogram.org/CVE-2024-1638</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-1638</guid>
+      <description>The documentation specifies that the BT_GATT_PERM_READ_LESC and BT_GATT_PERM_WRITE_LESC defines for a Bluetooth characteristic: Attribute read/write permission with LE Secure Connection encryption. If set, requires that LE Secure Connections is used…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Feb 2024 21:19:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-5779 · 4.4 MEDIUM — can: out of bounds in remove_rx_filter function</title>
+      <link>https://vulnogram.org/CVE-2023-5779</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5779</guid>
+      <description>can: out of bounds in remove_rx_filter function</description>
+      <category>Medium</category>
+      <pubDate>Sun, 18 Feb 2024 07:46:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-6249 · 8 HIGH — ipm: signed to unsigned conversion problem in esp32_ipm_send</title>
+      <link>https://vulnogram.org/CVE-2023-6249</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-6249</guid>
+      <description>Signed to unsigned conversion esp32_ipm_send</description>
+      <category>High</category>
+      <pubDate>Sun, 18 Feb 2024 07:27:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-6749 · 8 HIGH — Unchecked user input length in the Zephyr Settings Shell</title>
+      <link>https://vulnogram.org/CVE-2023-6749</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-6749</guid>
+      <description>Unchecked length coming from user input in settings shell</description>
+      <category>High</category>
+      <pubDate>Sun, 18 Feb 2024 07:04:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-5055 · 8.3 HIGH — L2CAP: Possible Stack based buffer overflow in le_ecred_reconf_req()</title>
+      <link>https://vulnogram.org/CVE-2023-5055</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5055</guid>
+      <description>Possible variant of CVE-2021-3434 in function le_ecred_reconf_req.</description>
+      <category>High</category>
+      <pubDate>Tue, 21 Nov 2023 18:05:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-4424 · 8.3 HIGH — bt: hci: DoS and possible RCE</title>
+      <link>https://vulnogram.org/CVE-2023-4424</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-4424</guid>
+      <description>An malicious BLE device can cause buffer overflow by sending malformed advertising packet BLE device using Zephyr OS, leading to DoS or potential RCE on the victim BLE device.</description>
+      <category>High</category>
+      <pubDate>Tue, 21 Nov 2023 06:42:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-5139 · 4.4 MEDIUM — Potential buffer overflow vulnerability in the Zephyr STM32 Crypto driver</title>
+      <link>https://vulnogram.org/CVE-2023-5139</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5139</guid>
+      <description>Potential buffer overflow vulnerability at the following location in the Zephyr STM32 Crypto driver</description>
+      <category>Medium</category>
+      <pubDate>Thu, 26 Oct 2023 04:40:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-5753 · 6.3 MEDIUM — Potential buffer overflow vulnerabilities in the Zephyr Bluetooth subsystem</title>
+      <link>https://vulnogram.org/CVE-2023-5753</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5753</guid>
+      <description>Potential buffer overflows in the Bluetooth subsystem due to asserts being disabled in /subsys/bluetooth/host/hci_core.c</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Oct 2023 16:09:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-4257 · 7.6 HIGH — Unchecked user input length in the Zephyr WiFi shell module</title>
+      <link>https://vulnogram.org/CVE-2023-4257</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-4257</guid>
+      <description>Unchecked user input length in /subsys/net/l2/wifi/wifi_shell.c can cause buffer overflows.</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Oct 2023 21:09:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-4263 · 7.6 HIGH — Potential buffer overflow vulnerability in the Zephyr IEEE 802.15.4 nRF 15.4 driver</title>
+      <link>https://vulnogram.org/CVE-2023-4263</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-4263</guid>
+      <description>Potential buffer overflow vulnerability in the Zephyr IEEE 802.15.4 nRF 15.4 driver</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Oct 2023 20:42:11 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
