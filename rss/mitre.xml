@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>MITRE Corporation — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <description>Most recent CVEs assigned by MITRE Corporation (mitre).</description>
+    <lastBuildDate>Mon, 01 Jun 2026 22:50:34 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-38950 · 7.8 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-38950</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-38950</guid>
+      <description>An issue in ESA AnomalyMatch before 1.3.1 allow attackers to execute arbitrary code via crafted model checkpoint files. The affected components load model files from session directories using torch.load() with unrestricted deserialization.</description>
+      <category>High</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37235</title>
+      <link>https://vulnogram.org/CVE-2026-37235</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37235</guid>
+      <description>FlexRIC v2.0.0 trusts the xapp_id field from E42 message payloads without binding it to the sender&apos;s SCTP association. The validation function valid_xapp_id() only checks that the value is within the assigned range. A remote unauthenticated attacker…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37234</title>
+      <link>https://vulnogram.org/CVE-2026-37234</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37234</guid>
+      <description>FlexRIC v2.0.0 allows a single SCTP connection to bind multiple xapp_ids by sending multiple E42_SETUP_REQUESTs. On disconnect, only the first registered xapp_id&apos;s resources are cleaned up; subsequent xapp_ids and their subscriptions remain as stale…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37233</title>
+      <link>https://vulnogram.org/CVE-2026-37233</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37233</guid>
+      <description>FlexRIC v2.0.0 contains an authorization bypass in the iApp&apos;s xApp isolation mechanism. The equality function eq_xapp_ric_gen_id() in src/ric/iApp/xapp_ric_id.c compares m0-&gt;xapp_id against itself (m0-&gt;xapp_id) instead of the other argument (m1-&gt;xapp…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37232</title>
+      <link>https://vulnogram.org/CVE-2026-37232</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37232</guid>
+      <description>An issue was discovered in OpenAirInterface5G 2.4.0 (nr-softmodem) in the E2SM-KPM RAN Function&apos;s PRB utilization metric calculation. The functions fill_RRU_PrbTotDl() and fill_RRU_PrbTotUl() in openair2/E2AP/RAN_FUNCTION/O-RAN/ran_func_kpm_subs.c (l…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37231</title>
+      <link>https://vulnogram.org/CVE-2026-37231</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37231</guid>
+      <description>FlexRIC v2.0.0 uses a uint16_t counter for xapp_id assignment but stores the value in uint32_t message fields. After 65,530+ E42_SETUP_REQUESTs, the 16-bit counter wraps around and produces duplicate xapp_ids. The iApp (port 36422) crashes when attem…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37230</title>
+      <link>https://vulnogram.org/CVE-2026-37230</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37230</guid>
+      <description>FlexRIC v2.0.0 crashes when the near-RT RIC receives a RIC_INDICATION message with a ran_func_id that does not exist in its registry. The lookup returns NULL, triggering assert() in Debug builds (SIGABRT) or NULL pointer dereference in Release builds…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37229</title>
+      <link>https://vulnogram.org/CVE-2026-37229</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37229</guid>
+      <description>FlexRIC v2.0.0 contains a reachable assertion in e2ap_create_pdu() triggered when ASN.1 PER decoding fails. A remote unauthenticated attacker can send any non-PER byte sequence (e.g., a single 0x00 byte) over SCTP to the near-RT RIC (port 36421) or i…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37228</title>
+      <link>https://vulnogram.org/CVE-2026-37228</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37228</guid>
+      <description>FlexRIC v2.0.0 contains a reachable assertion in e2ap_recv_sctp_msg() (src/lib/ep/e2ap_ep.c). The function allocates a fixed 32KB receive buffer and enforces assert(rc &lt; len) on the sctp_recvmsg() return value. A remote unauthenticated attacker can s…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37227 · 7.5 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-37227</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37227</guid>
+      <description>FlexRIC v2.0.0 contains reachable assert(0) calls in stub message handlers for whitelisted but unimplemented E2AP message types in the near-RT RIC. A remote unauthenticated attacker can send a decodable E2AP PDU of such a type (e.g., E2nodeConfigurat…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37226</title>
+      <link>https://vulnogram.org/CVE-2026-37226</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37226</guid>
+      <description>FlexRIC v2.0.0 crashes when the iApp receives an E42_RIC_SUBSCRIPTION_REQUEST referencing a non-existent E2 Node. The lookup function returns NULL, which is enforced by assert() in Debug builds (SIGABRT) and dereferenced in Release builds (SIGSEGV).…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37225 · 7.5 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-37225</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37225</guid>
+      <description>FlexRIC v2.0.0 crashes when the iApp receives an E42_RIC_SUBSCRIPTION_REQUEST with an empty ricEventTriggerDefinition field. The E42 layer decoder accepts this as valid, but the E2AP encoder asserts a non-empty constraint when forwarding the request.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37224 · 7.5 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-37224</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37224</guid>
+      <description>FlexRIC v2.0.0 crashes when receiving a duplicate E2_SETUP_REQUEST from the same or spoofed E2 Node. The iApp registry enforces node ID uniqueness via assert() rather than graceful rejection. A remote unauthenticated attacker can crash the iApp proce…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37223 · 7.5 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-37223</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37223</guid>
+      <description>FlexRIC v2.0.0 contains a reachable assertion in the iApp message dispatcher. The dispatcher validates incoming E2AP messages against a 9-entry whitelist using assert(). A remote unauthenticated attacker can send any decodable E2AP PDU with a message…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37222 · 7.5 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-37222</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37222</guid>
+      <description>FlexRIC v2.0.0 uses hardcoded assertions to validate Information Element (IE) counts in decoded E2AP messages. A remote unauthenticated attacker can send a valid E2AP PDU containing an unexpected number of IEs (e.g., an E2setupRequest with extra opti…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37221 · 7.5 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-37221</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37221</guid>
+      <description>FlexRIC v2.0.0 crashes when receiving a RIC_SUBSCRIPTION_RESPONSE with an unknown ric_id that has no corresponding pending event. The near-RT RIC uses assert() to enforce the existence of a pending event during response processing. A remote unauthent…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37220 · 7.5 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-37220</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37220</guid>
+      <description>FlexRIC v2.0.0 crashes when an SCTP association is closed before an E2_SETUP_REQUEST is sent. The near-RT RIC assumes a mapping between SCTP association and E2 node always exists in the cleanup path and enforces this via assert(). A remote unauthenti…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-70099</title>
+      <link>https://vulnogram.org/CVE-2025-70099</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-70099</guid>
+      <description>A NULL pointer dereference in the ext4_dir_en_get_name_len function in include/ext4_dir.h of lwext4 1.0.0 allows attackers to cause a denial of service by supplying a specially crafted EXT4 filesystem image with malformed directory entries. During di…</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-60495 · 5.5 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2025-60495</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-60495</guid>
+      <description>A segmentation violation in the gf_media_get_color_info function (/media_tools/isom_tools.c) of GPAC Project/MP4Box before 26.02.0 allows attackers to cause a Denial of Service (DoS) via supplying a crafted data file.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-60486 · 5.5 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2025-60486</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-60486</guid>
+      <description>A heap use-after-free in the dasher_process function (/filters/dasher.c) of GPAC Project/MP4Box before 26.02.0 allows attackers to cause a Denial of Service (DoS) via supplying a crafted MPEG-2 file.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-60485 · 5.5 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2025-60485</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-60485</guid>
+      <description>A segmentation violation in the gf_isom_apple_set_tag_ex function (/isomedia/isom_write.c) of GPAC Project/MP4Box before 26.02.0 allows attackers to cause a Denial of Service (DoS) via supplying a crafted MP4 file.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-60483 · 5.5 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2025-60483</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-60483</guid>
+      <description>A NULL pointer dereference in the gf_ac4_pres_b_4_back_channels_present function (/media_tools/av_parsers.c) of GPAC Project/MP4Box before 26.02.0 allows attackers to cause a Denial of Service (DoS) via supplying a crafted AC4 file.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-60481 · 5.5 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2025-60481</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-60481</guid>
+      <description>A NULL pointer dereference in the gf_odf_ac4_cfg_dsi_v1 function (/odf/descriptors.c) of GPAC Project/MP4Box before 26.02.0 allows attackers to cause a Denial of Service (DoS) via supplying a crafted AC4 file.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-55664 · 5.5 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2025-55664</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-55664</guid>
+      <description>A heap buffer overflow in the m2tsdmx_send_packet function (filters/dmx_m2ts.c) of GPAC MP4Box v2.4 allows attackers to cause a Denial of Service (DoS) via supplying a crafted MP4 file.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48840 · 5.3 MEDIUM 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-48840</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48840</guid>
+      <description>Exim 4.88 before 4.99.4, in some proxy configurations, mishandles certain short payloads, leading to disclosure of uninitialized stack memory values to a client.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 30 May 2026 01:50:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-39292 · 7.3 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-39292</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39292</guid>
+      <description>Falco Solutions PHPPageBuilder v0.31.0 contains an unrestricted file upload vulnerability in the pagemanager/pagebuilder module that allows remote attackers to upload arbitrary files and achieve remote code execution. The vulnerability exists due to…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-39276 · 7.2 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-39276</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39276</guid>
+      <description>The template upload feature in Emlog Pro v2.6.9 has a path traversal vulnerability, allowing authenticated administrators to execute arbitrary PHP code. By uploading a malicious ZIP archive containing directory traversal sequences in filenames, an at…</description>
+      <category>High</category>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-39229 · 6.5 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2026-39229</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39229</guid>
+      <description>Bolt CMS through 3.7.0 allows SQL Injection in the &apos;order&apos; parameter of the content listing pages. An authenticated attacker with low-level privileges can exploit this through the OrderDirective component. This allows for the extraction of sensitive…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-36324 · 6.1 MEDIUM 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-36324</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-36324</guid>
+      <description>SourceCodester Doctor Appointment System 1.0 is vulnerable to Cross Site Scripting (XSS) due to improper handling of user supplied input in the user registration functionality in register.php.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49299 · 5.3 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2026-49299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49299</guid>
+      <description>In OpenStack Neutron before 28.0.1, the tagging controller enforces plural policy action names on single-tag write operations while the defined policy rules use singular names. The mismatched names evaluate as allowed under the default policy, permit…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 28 May 2026 21:53:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44394 · 6 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2026-44394</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44394</guid>
+      <description>An issue was discovered in OpenStack Keystone before 29.0.2. The Keystone federated token rescoping mechanism does not propagate the original token&apos;s expiry to the newly issued token. When a federated user rescopes a token via POST /v3/auth/tokens, t…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-43000 · 6 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2026-43000</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-43000</guid>
+      <description>An issue was discovered in OpenStack Keystone before 29.0.2. When combined with an application credential impersonation vulnerability, an attacker with the member role on a project can escalate to admin by chaining unrestricted application credential…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42999 · 6 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2026-42999</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42999</guid>
+      <description>An issue was discovered in OpenStack Keystone before 29.0.2. The Keystone RBAC policy enforcer in enforce_call unconditionally merges the raw JSON request body into the policy enforcement dictionary via policy_dict.update(json_input.copy()), overwrit…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42998 · 6 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2026-42998</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42998</guid>
+      <description>An issue was discovered in OpenStack Keystone before 29.0.2. The Keystone application credential authentication plugin does not verify that the user supplied in the authentication request matches the owner of the application credential. An attacker c…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-38707 · 9.8 CRITICAL 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-38707</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-38707</guid>
+      <description>A command injection vulnerability exists in the IPSec VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315 firmware V1.0.118, IR615 firmware V1.0.118, and earlier versions. Attackers can exploit this vulnerability to…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-38704 · 9.8 CRITICAL 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-38704</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-38704</guid>
+      <description>A command injection vulnerability exists in the WireGuard VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315 firmware V1.0.118, IR615 firmware V1.0.118, and earlier versions. Attackers can exploit this vulnerabilit…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-38703 · 9.8 CRITICAL 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-38703</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-38703</guid>
+      <description>A command injection vulnerability exists in the ZeroTier VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315 firmware V1.0.118, IR615 firmware V1.0.118, and earlier versions. Attackers can exploit this vulnerability…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-38702 · 9.8 CRITICAL 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-38702</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-38702</guid>
+      <description>A command injection vulnerability exists in the Admin Access feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315 firmware V1.0.118, IR615 firmware V1.0.118, and earlier versions. Attackers can exploit this vulnerability…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37579 · 7.3 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-37579</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37579</guid>
+      <description>An issue in SMSGate sms-core&lt;=2.1.13.6 allows a remote attacker to execute arbitrary code via the Cmpp7FDeliverRequestMessageCodec.java component</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-37266 · 8 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-37266</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-37266</guid>
+      <description>An issue in Responsive File Manager Responsive FileManager Version 9.14.0 allows a remote attacker to execute arbitrary code via the force_download.php component</description>
+      <category>High</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-30761 · 7.3 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-30761</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-30761</guid>
+      <description>An arbitrary file upload vulnerability in the pages/admin.uploadmapimg.php component of SourceBans Material Admin v1.1.6 allows attackers to execute arbitrary code via uploading a crafted image file.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-30760 · 7.3 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-30760</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-30760</guid>
+      <description>An issue in SourceBans Material Admin before v.1.1.6 (3ecd95e) allows attackers to manipulate arbitrary user data in the web app via a crafted XAJAX call.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49103 · 9.4 CRITICAL</title>
+      <link>https://vulnogram.org/CVE-2026-49103</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49103</guid>
+      <description>Webmin before 2.640 does not safely construct a filename for saving of an attachment within the mailboxes component. This occurs in mailboxes/detachall.cgi.</description>
+      <category>Critical</category>
+      <pubDate>Wed, 27 May 2026 14:37:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49102 · 6.1 MEDIUM 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-49102</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49102</guid>
+      <description>Webmin before 2.640 allows mailboxes/detach.cgi XSS via an SVG document attachment that is viewed in the mailboxes component, because image/svg+xml is used instead of a safe type (e.g., text/plain).</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 27 May 2026 14:31:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49017 · 7.1 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-49017</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49017</guid>
+      <description>In OpenStack Swift before 2.36.2 and 2.37.2, s3api middleware enters an infinite loop when processing a truncated aws-chunked PUT request body. The StreamingInput class repeatedly appends an empty buffer and re-reads, causing the proxy-server worker…</description>
+      <category>High</category>
+      <pubDate>Wed, 27 May 2026 01:57:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49014 · 7.4 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-49014</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49014</guid>
+      <description>In GDAL 3.1.0 through 3.13.0, scanForGeometryContainers in the netCDF driver allows code execution via a stack-based buffer overflow. It reads a geometry attribute into a fixed-size stack buffer without validating the attribute length. The attacker e…</description>
+      <category>High</category>
+      <pubDate>Wed, 27 May 2026 01:39:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49009 · 3.1 LOW</title>
+      <link>https://vulnogram.org/CVE-2026-49009</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49009</guid>
+      <description>Northern.tech Mender Server v4.1.0, v4.0.1 and below, and fixed in v4.1.1 and v4.0.2 allows Directory Traversal.</description>
+      <category>Low</category>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-38945 · 7.8 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-38945</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-38945</guid>
+      <description>Command injection in Raynet rvia version 12.6 Update 8 and previous versions allows adversaries to execute arbitrary code via a crafted path that matches the improperly terminated search criteria of rvia&apos;s Java search using the find command.</description>
+      <category>High</category>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-38931 · 5.4 MEDIUM</title>
+      <link>https://vulnogram.org/CVE-2026-38931</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-38931</guid>
+      <description>A stored cross-site scripting (XSS) vulnerability in the /admin/config-module.php component of creatorsofcode simplephp GitHub commit 5184cff (Latest as of 2026-02-27) via injecting a crafted payload.</description>
+      <category>Medium</category>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-38930 · 6.5 MEDIUM 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-38930</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-38930</guid>
+      <description>OpenRapid RapidCMS v1.3.1 was discovered to contain an authentication bypass in the /template/default/menu.php component. This vulnerability is exploited via injecting a crafted SQL payload into the name cookie parameter.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 27 May 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
