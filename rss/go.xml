@@ -6,7 +6,28 @@
     <link>https://vulnogram.org/</link>
     <atom:link href="https://vulnogram.org/rss/go.xml" rel="self" type="application/rss+xml"/>
     <description>Most recent CVEs assigned by Go Project (go).</description>
-    <lastBuildDate>Tue, 02 Jun 2026 01:11:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 22:59:37 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-42507 — Arbitrary inputs are included in errors without any escaping in net/textproto</title>
+      <link>https://vulnogram.org/CVE-2026-42507</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42507</guid>
+      <description>When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.</description>
+      <pubDate>Tue, 02 Jun 2026 22:01:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42504 — Quadratic complexity in WordDecoder.DecodeHeader in mime</title>
+      <link>https://vulnogram.org/CVE-2026-42504</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42504</guid>
+      <description>Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.</description>
+      <pubDate>Tue, 02 Jun 2026 22:01:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-27145 — Inefficient candidate hostname parsing in crypto/x509</title>
+      <link>https://vulnogram.org/CVE-2026-27145</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-27145</guid>
+      <description>(*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, &quot;.&quot;) to execute repeatedly on the same input hostname. With a large DNS SAN list, verif…</description>
+      <pubDate>Tue, 02 Jun 2026 22:01:36 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-46599 · 7.5 HIGH 🌩️ — Excessive resource consumption in PackBits decompression in golang.org/x/image/tiff</title>
       <link>https://vulnogram.org/CVE-2026-46599</link>
@@ -418,33 +439,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 07 Apr 2026 15:19:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33815 · 9.8 CRITICAL 🌩️ — CVE-2026-33815 in github.com/jackc/pgx</title>
-      <link>https://vulnogram.org/CVE-2026-33815</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33815</guid>
-      <description>Memory-safety vulnerability in github.com/jackc/pgx/v5.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Apr 2026 15:19:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-32287 · 7.5 HIGH 🌩️ — Infinite loop in github.com/antchfx/xpath</title>
-      <link>https://vulnogram.org/CVE-2026-32287</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-32287</guid>
-      <description>Boolean XPath expressions that evaluate to true can cause an infinite loop in logicalQuery.Select, leading to 100% CPU usage. This can be triggered by top-level selectors such as &quot;1=1&quot; or &quot;true()&quot;.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 26 Mar 2026 19:40:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-32286 · 7.5 HIGH 🌩️ — Denial of service in github.com/jackc/pgproto3/v2</title>
-      <link>https://vulnogram.org/CVE-2026-32286</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-32286</guid>
-      <description>The DataRow.Decode function fails to properly validate field lengths. A malicious or compromised PostgreSQL server can send a DataRow message with a negative field length, causing a slice bounds out of range panic.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 26 Mar 2026 19:40:51 GMT</pubDate>
     </item>
   </channel>
 </rss>
