@@ -6,7 +6,24 @@
     <link>https://vulnogram.org/</link>
     <atom:link href="https://vulnogram.org/rss/apache.xml" rel="self" type="application/rss+xml"/>
     <description>Most recent CVEs assigned by Apache Software Foundation (apache).</description>
-    <lastBuildDate>Tue, 02 Jun 2026 01:11:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 17:18:29 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-46718 · 6.5 MEDIUM 🌩️ — Apache Calcite: A user-controled model can load arbitrary classes, leading to code execution</title>
+      <link>https://vulnogram.org/CVE-2026-46718</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46718</guid>
+      <description>Use of Externally-Controlled Input to Select Classes or Code (&apos;Unsafe Reflection&apos;) vulnerability in Apache Calcite. This issue affects Apache Calcite: from 1.5.0 before 1.42. Users are recommended to upgrade to version 1.42, which fixes the issue.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 02 Jun 2026 09:17:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41115 · 4.3 MEDIUM — Apache Kafka: Improper Authorization in CONSUMER_GROUP_DESCRIBE API</title>
+      <link>https://vulnogram.org/CVE-2026-41115</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41115</guid>
+      <description>An improper authorization vulnerability has been identified in Apache Kafka. The implementation of the CONSUMER_GROUP_DESCRIBE (69) API validates the DESCRIBE operation on the GROUP resource instead of the READ operation that documented in the offici…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 02 Jun 2026 08:56:43 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-49328 · 5.3 MEDIUM 🌩️ — Apache Fesod (Incubating): Improper validation of user-supplied URLs leading to SSRF</title>
       <link>https://vulnogram.org/CVE-2026-49328</link>
@@ -43,17 +60,20 @@
       <pubDate>Mon, 01 Jun 2026 07:57:27 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-40861 — Apache Airflow: Arbitrary File Read via Log Symlink following in FileTaskHandler</title>
+      <title>CVE-2026-40861 · 6.5 MEDIUM — Apache Airflow: Arbitrary File Read via Log Symlink following in FileTaskHandler</title>
       <link>https://vulnogram.org/CVE-2026-40861</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40861</guid>
       <description>A Dag author could either (a) create a symlink under their task&apos;s log directory pointing to an arbitrary file readable by the API server process (read-path attack — e.g. `/etc/passwd` or `airflow.cfg`) or (b) supply a `task_id` containing `..` sequen…</description>
+      <category>Medium</category>
       <pubDate>Mon, 01 Jun 2026 07:55:37 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-40961 — Apache Airflow: Open Redirect Bypass Vulnerability</title>
+      <title>CVE-2026-40961 · 7.2 HIGH 🌩️ — Apache Airflow: Open Redirect Bypass Vulnerability</title>
       <link>https://vulnogram.org/CVE-2026-40961</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40961</guid>
       <description>A bug in the login redirect route in Apache Airflow allowed authenticated users to craft URLs that bypassed the `is_safe_url` check, enabling redirection from a trusted Airflow domain to an attacker-controlled origin. Users are advised to upgrade to…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 01 Jun 2026 07:55:04 GMT</pubDate>
     </item>
     <item>
@@ -65,38 +85,47 @@
       <pubDate>Mon, 01 Jun 2026 07:54:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-41014 — Apache Airflow: per-DAG RBAC bypass on /ui/partitioned_dag_runs endpoints</title>
+      <title>CVE-2026-41014 · 4.3 MEDIUM — Apache Airflow: per-DAG RBAC bypass on /ui/partitioned_dag_runs endpoints</title>
       <link>https://vulnogram.org/CVE-2026-41014</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41014</guid>
       <description>The partitioned_dag_runs endpoints in the Airflow UI enforced only asset-level access control, not per-Dag authorization. An authenticated UI/API user with global Asset:read permission could enumerate partition run state, schedule configuration, and…</description>
+      <category>Medium</category>
       <pubDate>Mon, 01 Jun 2026 07:53:52 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-49267 — Apache Airflow: No certificate validation on SMTP STARTTLS connections</title>
+      <title>CVE-2026-49267 · 5.9 MEDIUM 🌩️ — Apache Airflow: No certificate validation on SMTP STARTTLS connections</title>
       <link>https://vulnogram.org/CVE-2026-49267</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49267</guid>
       <description>Apache Airflow&apos;s EmailOperator and the underlying `airflow.utils.email` helpers established SMTP STARTTLS connections without verifying the remote certificate when the deployment used `[email] smtp_starttls=True` without `[email] smtp_ssl`. An attack…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 01 Jun 2026 07:53:13 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-41017 — Apache Airflow: JWT cookie missing Secure flag in JWTRefreshMiddleware behind HTTPS-terminating proxy</title>
+      <title>CVE-2026-41017 · 5.9 MEDIUM 🌩️ — Apache Airflow: JWT cookie missing Secure flag in JWTRefreshMiddleware behind HTTPS-terminating proxy</title>
       <link>https://vulnogram.org/CVE-2026-41017</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41017</guid>
       <description>Apache Airflow&apos;s `JWTRefreshMiddleware` set the JWT auth cookie without the `Secure` flag, so deployments running the Airflow API server behind an HTTPS-terminating reverse proxy (e.g. nginx / Envoy / a managed load balancer that terminates TLS and f…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 01 Jun 2026 07:52:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-41084 — Apache Airflow: API authorization bypass: bulk TaskInstances allows cross-DAG mutation</title>
+      <title>CVE-2026-41084 · 7.5 HIGH 🌩️ — Apache Airflow: API authorization bypass: bulk TaskInstances allows cross-DAG mutation</title>
       <link>https://vulnogram.org/CVE-2026-41084</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41084</guid>
       <description>A bug in Apache Airflow&apos;s bulk Task Instances API (`PATCH/DELETE /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances`) evaluated authorization against the `dag_id` resolved from the URL path while operating on the `dag_id` / `dag_run_id` extract…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 01 Jun 2026 07:51:56 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-42252 — Apache Airflow: BashOperator Jinja2 injection via dag_run.conf — low-privilege user pattern</title>
+      <title>CVE-2026-42252 · 9.1 CRITICAL 🌩️ — Apache Airflow: BashOperator Jinja2 injection via dag_run.conf — low-privilege user pattern</title>
       <link>https://vulnogram.org/CVE-2026-42252</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42252</guid>
       <description>Apache Airflow&apos;s official documentation at `core-concepts/dag-run.html` (&quot;Passing Parameters when triggering Dags&quot;) showed a verbatim `BashOperator(bash_command=&quot;echo value: {{ dag_run.conf[&apos;conf1&apos;] }}&quot;)` example without any quoting / sanitization wa…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 01 Jun 2026 07:51:19 GMT</pubDate>
     </item>
     <item>
@@ -108,10 +137,11 @@
       <pubDate>Mon, 01 Jun 2026 07:50:37 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-42358 — Apache Airflow: Variable masker depth-limit bypass returns cleartext nested secrets</title>
+      <title>CVE-2026-42358 · 6.5 MEDIUM — Apache Airflow: Variable masker depth-limit bypass returns cleartext nested secrets</title>
       <link>https://vulnogram.org/CVE-2026-42358</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42358</guid>
       <description>A bug in Apache Airflow&apos;s Variable response masker caused nested-key redaction (triggered by secret-suffixed key names like `password`, `token`, `secret`, `api_key`) to be bypassed when the JSON value&apos;s nesting depth exceeded the shared secrets maske…</description>
+      <category>Medium</category>
       <pubDate>Mon, 01 Jun 2026 07:49:57 GMT</pubDate>
     </item>
     <item>
@@ -122,10 +152,12 @@
       <pubDate>Mon, 01 Jun 2026 07:49:17 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-45360 — Apache Airflow: Arbitrary import in custom deadline-reference deserialization</title>
+      <title>CVE-2026-45360 · 7.3 HIGH 🌩️ — Apache Airflow: Arbitrary import in custom deadline-reference deserialization</title>
       <link>https://vulnogram.org/CVE-2026-45360</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45360</guid>
       <description>Apache Airflow&apos;s scheduler-side deadline-reference decoder (`SerializedCustomReference.deserialize_reference`) imported and dispatched arbitrary class paths drawn from DAG-author-controlled serialized state without an allowlist or plugin-registry gat…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 01 Jun 2026 07:48:13 GMT</pubDate>
     </item>
     <item>
@@ -137,24 +169,27 @@
       <pubDate>Mon, 01 Jun 2026 07:47:16 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-46764 — Apache Airflow: Event Log detail endpoint bypasses DAG-scoped event log permission filter</title>
+      <title>CVE-2026-46764 · 4.3 MEDIUM — Apache Airflow: Event Log detail endpoint bypasses DAG-scoped event log permission filter</title>
       <link>https://vulnogram.org/CVE-2026-46764</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46764</guid>
       <description>The Event Log detail endpoint `GET /api/v2/eventLogs/{event_log_id}` in Apache Airflow fetched audit-log rows directly by numeric ID after only the generic Audit Log permission check, while the collection endpoint `GET /api/v2/eventLogs` applied per-…</description>
+      <category>Medium</category>
       <pubDate>Mon, 01 Jun 2026 07:45:48 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-48726 — Apache Airflow: revoke_token() unreachable in FabAuthManager / KeycloakAuthManager logout path</title>
+      <title>CVE-2026-48726 · 6.5 MEDIUM — Apache Airflow: revoke_token() unreachable in FabAuthManager / KeycloakAuthManager logout path</title>
       <link>https://vulnogram.org/CVE-2026-48726</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48726</guid>
       <description>A bug in Apache Airflow&apos;s auth manager logout handling left previously-issued JWT tokens valid after the user clicked logout in the UI: the logout flow for `FabAuthManager` and `KeycloakAuthManager` did not actually reach the underlying `revoke_token…</description>
+      <category>Medium</category>
       <pubDate>Mon, 01 Jun 2026 07:35:19 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-49298 — Apache Airflow: JWT Token Exposure in KubernetesExecutor Command-Line Arguments</title>
+      <title>CVE-2026-49298 · 8.8 HIGH — Apache Airflow: JWT Token Exposure in KubernetesExecutor Command-Line Arguments</title>
       <link>https://vulnogram.org/CVE-2026-49298</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49298</guid>
       <description>A bug in Apache Airflow&apos;s KubernetesExecutor caused JWT tokens used by worker pods to authenticate against the Execution API to be passed to the worker container as command-line arguments visible in the pod spec. An authenticated UI/API user with Kub…</description>
+      <category>High</category>
       <pubDate>Mon, 01 Jun 2026 07:34:32 GMT</pubDate>
     </item>
     <item>
@@ -240,10 +275,11 @@
       <pubDate>Thu, 28 May 2026 08:58:06 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-40564 — Apache Flink Kubernetes Operator: Server-Side Request Forgery and local file access in Kubernetes Operator</title>
+      <title>CVE-2026-40564 · 6.5 MEDIUM — Apache Flink Kubernetes Operator: Server-Side Request Forgery and local file access in Kubernetes Operator</title>
       <link>https://vulnogram.org/CVE-2026-40564</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40564</guid>
       <description>Files or Directories Accessible to External Parties, Server-Side Request Forgery (SSRF) vulnerability in Apache Flink Kubernetes Operator. The FlinkSessionJob jarURI is currently not validated so that it points to user-owned files or addresses. This…</description>
+      <category>Medium</category>
       <pubDate>Tue, 26 May 2026 14:38:21 GMT</pubDate>
     </item>
     <item>
@@ -388,23 +424,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 19 May 2026 12:25:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46586 · 8.8 HIGH — Apache OFBiz: Improper Validation in traverseContent Service Enables Authenticated Groovy Code Execution</title>
-      <link>https://vulnogram.org/CVE-2026-46586</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46586</guid>
-      <description>Improper Control of Generation of Code (&apos;Code Injection&apos;), Improper Neutralization of Directives in Dynamically Evaluated Code (&apos;Eval Injection&apos;) vulnerability in Apache OFBiz. This issue affects Apache OFBiz: before 24.09.06. Users are recommended t…</description>
-      <category>High</category>
-      <pubDate>Tue, 19 May 2026 09:41:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45434 · 9.8 CRITICAL 🌩️ — Apache OFBiz: Authentication Bypass via Password-Change Logic Flaw Leading to RCE</title>
-      <link>https://vulnogram.org/CVE-2026-45434</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45434</guid>
-      <description>Improper Authentication vulnerability in Apache OFBiz via Password-Change Logic Flaw Leading to Remote Code Execution This issue affects Apache OFBiz: before 24.09.06. Users are recommended to upgrade to version 24.09.06, which fixes the issue.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 19 May 2026 09:40:26 GMT</pubDate>
     </item>
   </channel>
 </rss>
