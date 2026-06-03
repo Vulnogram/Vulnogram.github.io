@@ -11,7 +11,7 @@
       <title>Protect AI (formerly huntr.dev) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 03 Jun 2026 19:25:11 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 22:29:32 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-6657 · 6.1 MEDIUM 🌩️ — CORS Origin Validation Bypass in jupyter-server</title>
       <link>https://vulnogram.org/CVE-2026-6657</link>
@@ -29,6 +29,39 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 03 Jun 2026 12:33:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4035 · 9.1 CRITICAL — Environment Variable Resolution Vulnerability in mlflow/mlflow</title>
+      <link>https://vulnogram.org/CVE-2026-4035</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4035</guid>
+      <description>A vulnerability in mlflow/mlflow versions prior to 3.11.0 allows for the resolution of environment variables in AI Gateway secrets, which can be exploited to exfiltrate sensitive server-side environment credentials to an attacker-controlled endpoint.…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 03 Jun 2026 07:18:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5422 · 6.8 MEDIUM — Path Traversal in jupyter/jupyter</title>
+      <link>https://vulnogram.org/CVE-2026-5422</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5422</guid>
+      <description>A path traversal vulnerability exists in jupyter-server version 2.17.0 due to an incorrect root directory boundary check in the _get_os_path() function within jupyter_server/services/contents/fileio.py. The check uses startswith(root) without appendi…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 02 Jun 2026 09:11:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3514 · 7.5 HIGH 🌩️ — Authentication Bypass in prefecthq/prefect</title>
+      <link>https://vulnogram.org/CVE-2026-3514</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3514</guid>
+      <description>In version 3.6.19 of prefecthq/prefect, an authentication bypass vulnerability exists due to the improper handling of URL path exemptions for health check probes. Specifically, the authentication middleware exempts any URL path ending with &apos;health&apos; o…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 02 Jun 2026 07:28:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-3198 · 6.5 MEDIUM — Improper Access Control in mlflow/mlflow</title>
+      <link>https://vulnogram.org/CVE-2026-3198</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3198</guid>
+      <description>MLflow 3.9.0 with basic-auth (`--app-name basic-auth`) fails to enforce authorization checks for multiple Gateway API &apos;list&apos; endpoints. Specifically, the `BEFORE_REQUEST_HANDLERS` dictionary in `mlflow/server/auth/__init__.py` does not include entrie…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 02 Jun 2026 02:50:47 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-4944 · 8.8 HIGH 🌩️ — Hardcoded trust_remote_code=True in vllm-project/vllm Bypasses User Security Control</title>
@@ -407,40 +440,6 @@
       <description>Keras version 3.11.3 is affected by a path traversal vulnerability in the keras.utils.get_file() function when extracting tar archives. The vulnerability arises because the function uses Python&apos;s tarfile.extractall() method without the security-criti…</description>
       <category>High</category>
       <pubDate>Fri, 28 Nov 2025 14:06:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-9803 · 9.3 CRITICAL 🌩️ — Improper Authentication in lunary-ai/lunary</title>
-      <link>https://vulnogram.org/CVE-2025-9803</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9803</guid>
-      <description>lunary-ai/lunary version 1.9.34 is vulnerable to an account takeover due to improper authentication in the Google OAuth integration. The application fails to verify the &apos;aud&apos; (audience) field in the access token issued by Google, which is crucial for…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 25 Nov 2025 00:00:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6176 · 7.5 HIGH 🌩️ — Brotli decompression bomb DoS in scrapy/scrapy</title>
-      <link>https://vulnogram.org/CVE-2025-6176</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6176</guid>
-      <description>Scrapy versions up to 2.13.2 are vulnerable to a denial of service (DoS) attack due to a flaw in its brotli decompression implementation. The protection mechanism against decompression bombs fails to mitigate the brotli variant, allowing remote serve…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Oct 2025 00:00:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-8849 · 5.4 MEDIUM — Denial of Service in danny-avila/librechat</title>
-      <link>https://vulnogram.org/CVE-2025-8849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-8849</guid>
-      <description>LibreChat version 0.7.9 is vulnerable to a Denial of Service (DoS) attack due to unbounded parameter values in the `/api/memories` endpoint. The `key` and `value` parameters accept arbitrarily large inputs without proper validation, leading to a null…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 30 Oct 2025 23:42:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-8850 · 3.1 LOW — Insecure API Design in danny-avila/librechat</title>
-      <link>https://vulnogram.org/CVE-2025-8850</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-8850</guid>
-      <description>In danny-avila/librechat version 0.7.9, there is an insecure API design issue in the 2-Factor Authentication (2FA) flow. The system allows users to disable 2FA without requiring a valid OTP or backup code, bypassing the intended verification process.…</description>
-      <category>Low</category>
-      <pubDate>Thu, 30 Oct 2025 19:59:36 GMT</pubDate>
     </item>
   </channel>
 </rss>

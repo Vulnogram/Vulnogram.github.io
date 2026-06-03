@@ -12,80 +12,69 @@
       <meta charset="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <title><xsl:value-of select="title"/></title>
+      <link rel="stylesheet" href="https://vulnogram.org/seaview/min.css"/>
       <style>
-  :root{--bg:#f6f7fb;--card:#fff;--ink:#1a1a2e;--muted:#5c6270;--line:#e6e8ef;
-    --accent:#3b5bdb;--crit:#b3261e;--high:#d9480f;--med:#9a7400;--low:#2b7a4b}
-  *{box-sizing:border-box}
-  body{margin:0;font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
-  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-  .wrap{max-width:880px;margin:0 auto;padding:1.5rem 1.1rem 3rem}
-  .hero{background:linear-gradient(135deg,#1a1a2e,#26305c);color:#fff;border-radius:14px;
-    padding:1.5rem 1.4rem;box-shadow:0 6px 24px rgba(20,24,60,.18)}
-  .hero .badge{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.04em;
-    text-transform:uppercase;background:rgba(255,255,255,.16);padding:.2rem .55rem;border-radius:999px;margin-bottom:.6rem}
-  .hero h1{margin:.1rem 0;font-size:1.5rem;line-height:1.2}
-  .hero .sub{margin:.35rem 0 0;color:rgba(255,255,255,.85);font-size:.95rem}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:1.1rem 1.2rem;margin-top:1.1rem;box-shadow:0 1px 3px rgba(20,24,60,.05)}
-  .card h2{margin:.1rem 0 .7rem;font-size:1.05rem}
-  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem}
-  .url,.tip code{display:block;background:#0f1226;color:#e8ebff;padding:.55rem .7rem;
-    border-radius:8px;overflow-x:auto;white-space:nowrap;margin:.3rem 0}
-  .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.9rem;margin-top:.6rem}
-  .tip{border:1px solid var(--line);border-radius:10px;padding:.8rem .85rem;background:#fbfcff}
-  .tip h3{margin:0 0 .35rem;font-size:.92rem}
-  .tip p{margin:.3rem 0;font-size:.86rem;color:var(--muted)}
-  .muted{color:var(--muted);font-size:.82rem}
-  .item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem .95rem;margin-top:.7rem}
-  .item .title{font-weight:600;font-size:.98rem}
+  .wrap{max-width:880px;margin:0 auto;padding:1.1rem 1rem 3rem}
+  .hero{display:flex;align-items:center;gap:.9rem;background-color:var(--wht);
+    border:1px solid var(--bor);border-radius:8px;padding:1rem 1.1rem;box-shadow:0 2px 4px rgba(0,0,0,.12)}
+  .hero .logo{width:48px;height:48px;border-radius:8px;object-fit:contain;
+    background-color:var(--hig);border:1px solid var(--bor);flex-shrink:0}
+  .hero .brand{width:46px;height:46px;object-fit:contain;flex-shrink:0}
+  .hero-text{min-width:0}
+  .badge{display:inline-block;font-size:.68rem;font-weight:bold;letter-spacing:.04em;
+    text-transform:uppercase;background-color:#fa582d;color:#fff;padding:.12rem .5rem;border-radius:4px;margin-bottom:.35rem}
+  .hero h1{margin:.1rem 0;font-size:1.3rem;line-height:1.2}
+  .hero .sub{margin:.25rem 0 0;color:var(--key);font-size:.9rem}
+  .card{background-color:var(--wht);border:1px solid var(--bor);border-radius:8px;padding:.9rem 1.1rem;margin-top:1rem}
+  .card h2{margin:.1rem 0 .55rem;font-size:1.02rem}
+  code{font-family:'SFMono-Regular',Consolas,Menlo,monospace;font-size:.84rem}
+  .url{display:block;background-color:var(--hig);border:1px solid var(--bor);color:var(--txt);
+    padding:.5rem .65rem;border-radius:5px;overflow-x:auto;white-space:nowrap;margin:.35rem 0;font-size:.84rem}
+  .tip{margin:.45rem 0 0;color:var(--key);font-size:.84rem;line-height:1.7}
+  .tip code{background-color:var(--hig);border:1px solid var(--bor);border-radius:4px;padding:.05rem .35rem;color:var(--txt)}
+  .muted{color:var(--key);font-size:.84rem}
+  .item{background-color:var(--wht);border:1px solid var(--bor);border-radius:8px;padding:.75rem .9rem;margin-top:.65rem}
+  .item .title{font-weight:bold;font-size:.96rem}
   .cats{margin:.4rem 0 .25rem;display:flex;flex-wrap:wrap;gap:.35rem}
-  .cat{font-size:.72rem;font-weight:600;padding:.13rem .5rem;border-radius:999px;
-    background:#eef0f7;color:#3a4256;border:1px solid var(--line)}
-  .cat-critical{background:#fdecea;color:var(--crit);border-color:#f3c2bd}
-  .cat-high{background:#fdeede;color:var(--high);border-color:#f5cda6}
-  .cat-medium{background:#fbf4d9;color:var(--med);border-color:#ecd98c}
-  .cat-low{background:#e7f6ec;color:var(--low);border-color:#b9e3c6}
-  .desc{margin:.35rem 0 .3rem;color:#333}
-  .meta{color:var(--muted);font-size:.78rem}
-  .foot{margin-top:1.6rem;text-align:center;color:var(--muted);font-size:.8rem}
-  #q{width:100%;margin-top:1.1rem;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+  .cat{font-size:.72rem;font-weight:bold;padding:.12rem .55rem;border-radius:.6em;
+    background-color:var(--hig);color:var(--txt);border:1px solid var(--bor)}
+  .cat-critical{background-color:#b3261e;color:#fff;border-color:#b3261e}
+  .cat-high{background-color:#d9480f;color:#fff;border-color:#d9480f}
+  .cat-medium{background-color:#9a7400;color:#fff;border-color:#9a7400}
+  .cat-low{background-color:#2b7a4b;color:#fff;border-color:#2b7a4b}
+  .desc{margin:.35rem 0 .3rem}
+  .meta{color:var(--key);font-size:.78rem}
+  .foot{margin-top:1.6rem;text-align:center;color:var(--key);font-size:.8rem}
+  .foot p{margin:.35rem 0}
+  .copy-logo{height:1.05em;width:auto;vertical-align:-.18em;opacity:.9;margin:0 .15rem}
+  #q{width:100%;margin-top:1rem;padding:.55rem .75rem;border:1px solid var(--bor);border-radius:8px;
+    background-color:var(--wht);color:var(--txt);font-size:.95rem;box-sizing:border-box}
   .feeds{margin-top:.8rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.6rem}
-  .feed{display:flex;flex-direction:column;gap:.12rem;background:var(--card);
-    border:1px solid var(--line);border-radius:10px;padding:.7rem .85rem}
-  .feed:hover{border-color:var(--accent);text-decoration:none;box-shadow:0 2px 10px rgba(59,91,219,.12)}
-  .feed-name{font-weight:600;color:var(--ink)}
-  .feed-key{font-family:ui-monospace,monospace;font-size:.76rem;color:var(--muted)}
-  .feed-meta{font-size:.76rem;color:var(--muted);margin-top:.15rem}</style>
+  .feed{display:flex;align-items:center;gap:.6rem;background-color:var(--wht);
+    border:1px solid var(--bor);border-radius:8px;padding:.6rem .75rem}
+  .feed:hover{border-color:var(--lnk);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+  .feed .logo{width:28px;height:28px;border-radius:5px;object-fit:contain;background-color:var(--hig);flex-shrink:0}
+  .feed-text{display:flex;flex-direction:column;gap:.1rem;min-width:0}
+  .feed-name{font-weight:bold;color:var(--txt)}
+  .feed-key{font-family:'SFMono-Regular',Consolas,Menlo,monospace;font-size:.74rem;color:var(--key)}
+  .feed-meta{font-size:.74rem;color:var(--key)}</style>
     </head>
     <body>
+      <input type="checkbox" id="theme-toggle"/><label for="theme-toggle" title="Toggle dark mode"><span class="sun">🌞</span><span class="moon">🌙</span></label>
       <div class="wrap">
         <header class="hero">
-          <span class="badge">📡 RSS feed</span>
-          <h1><xsl:value-of select="title"/></h1>
-          <p class="sub"><xsl:value-of select="description"/></p>
+          <img class="logo" src="{image/url}" onerror="this.style.display='none'" alt=""/>
+          <div class="hero-text">
+            <span class="badge">📡 RSS feed</span>
+            <h1><xsl:value-of select="title"/></h1>
+            <p class="sub"><xsl:value-of select="description"/></p>
+          </div>
         </header>
 
         <section class="card">
           <h2>Subscribe</h2>
-          <p class="muted">Feed URL</p>
           <code class="url"><xsl:value-of select="$feedUrl"/></code>
-          <div class="tips">
-            <div class="tip">
-              <h3>Slack</h3>
-              <p>In any channel, run:</p>
-              <code>/feed subscribe <xsl:value-of select="$feedUrl"/></code>
-              <p class="muted">Slack enables the built-in RSS app on first use.</p>
-            </div>
-            <div class="tip">
-              <h3>Microsoft Teams</h3>
-              <p>Channel ▸ <b>+</b> ▸ <b>Workflows</b> ▸ template <b>“Post to a channel when a feed item is published”</b>, then paste the feed URL above.</p>
-              <p class="muted">Legacy tenants: ⋯ ▸ Connectors ▸ RSS.</p>
-            </div>
-            <div class="tip">
-              <h3>Any reader</h3>
-              <p>Paste the URL into Feedly, Inoreader, Thunderbird, NetNewsWire, …</p>
-            </div>
-          </div>
+          <p class="tip"><b>Slack:</b> <code>/feed subscribe <xsl:value-of select="$feedUrl"/></code> · <b>Teams:</b> Workflows ▸ “Post to a channel when a feed item is published” · <b>Any reader:</b> Feedly, Inoreader, NetNewsWire…</p>
         </section>
 
         <section>
@@ -107,10 +96,11 @@
         </section>
 
         <footer class="foot">
-          <a href="https://vulnogram.org/rss/">All CVE feeds</a> ·
-          <a href="https://vulnogram.org/cve-index/">CVE Quality Index</a>
+          <p><a href="https://vulnogram.org/rss/">All CVE feeds</a> · <a href="https://vulnogram.org/cve-index/">CVE Quality Index</a></p>
+          <p class="copy">© Chandan B.N, 2026 · <img class="copy-logo" src="https://vulnogram.org/css/logo.svg" alt=""/> Vulnogram Project · Important vulnerability info for humans</p>
         </footer>
       </div>
+      <script>(function(){var c=document.getElementById('theme-toggle');var s=localStorage.getItem('theme');var d=s?(s==='dark'):window.matchMedia('(prefers-color-scheme: dark)').matches;function a(x){document.body.setAttribute('data-theme',x?'dark':'light');c.checked=x;}a(d);c.onchange=function(){localStorage.setItem('theme',c.checked?'dark':'light');a(c.checked);};})();</script>
     </body>
     </html>
   </xsl:template>
