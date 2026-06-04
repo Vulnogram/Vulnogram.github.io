@@ -11,7 +11,44 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 04 Jun 2026 14:49:27 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 17:42:49 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-49942 — Net::CIDR::Set versions through 0.20 for Perl did not validate network masks</title>
+      <link>https://vulnogram.org/CVE-2026-49942</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49942</guid>
+      <description>Net::CIDR::Set versions through 0.20 for Perl did not validate network masks. The mask portion of a network mask could contain Unicode digits such as the Arabic-Indic One (U+0661), or non-digits, which were ignored. This could allow network masks to…</description>
+      <pubDate>Thu, 04 Jun 2026 16:07:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49941 — Net::CIDR::Set versions through 0.20 for Perl did not validate IP addresses</title>
+      <link>https://vulnogram.org/CVE-2026-49941</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49941</guid>
+      <description>Net::CIDR::Set versions through 0.20 for Perl did not validate IP addresses. The add method called the _encode method to parse addresses. If the addresses did not look like netmasks or network ranges, then they were assumed to single IP addresses and…</description>
+      <pubDate>Thu, 04 Jun 2026 16:07:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49940 · 6.5 MEDIUM 🌩️ — Net::CIDR::Set versions through 0.20 for Perl accept non-ASCII IP addresses and netmasks</title>
+      <link>https://vulnogram.org/CVE-2026-49940</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49940</guid>
+      <description>Net::CIDR::Set versions through 0.20 for Perl accept non-ASCII IP addresses and netmasks. Unicode digits such as the Arabic-Indic One (U+0661) were accepted but not properly parsed as numbers. This could allow network masks to accept larger networks.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 04 Jun 2026 16:07:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46741 — Etsy::StatsD versions through 1.002002 for Perl allow metric injections</title>
+      <link>https://vulnogram.org/CVE-2026-46741</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46741</guid>
+      <description>Etsy::StatsD versions through 1.002002 for Perl allow metric injections. The metric names and values are not checked for newlines, colons or pipes. Metrics generated from untrusted sources could inject additional statsd metrics. Note that the git rep…</description>
+      <pubDate>Thu, 04 Jun 2026 15:54:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46739 — Net::Statsd versions before 0.13 for Perl allow metric injections</title>
+      <link>https://vulnogram.org/CVE-2026-46739</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46739</guid>
+      <description>Net::Statsd versions before 0.13 for Perl allow metric injections. The metric names are not checked for newlines, colons or pipes. Metrics generated from untrusted sources could inject additional statsd metrics. The update_stats (used for updating co…</description>
+      <pubDate>Thu, 04 Jun 2026 15:45:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-8829 · 7.5 HIGH 🌩️ — HTML::Entities versions before 3.84 for Perl read freed heap memory in _decode_entities</title>
       <link>https://vulnogram.org/CVE-2026-8829</link>
@@ -408,51 +445,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Sun, 10 May 2026 20:48:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45191 · 6.5 MEDIUM 🌩️ — Net::CIDR::Lite versions before 0.24 for Perl does not properly consider extraneous zero characters in CIDR mask values, which may allow IP ACL bypass</title>
-      <link>https://vulnogram.org/CVE-2026-45191</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45191</guid>
-      <description>Net::CIDR::Lite versions before 0.24 for Perl does not properly consider extraneous zero characters in CIDR mask values, which may allow IP ACL bypass. Mask forms like &quot;/00&quot; and &quot;/01&quot; pass validation and parse to the same prefix as their unpadded val…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 10 May 2026 20:15:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45190 · 6.5 MEDIUM 🌩️ — Net::CIDR::Lite versions before 0.24 for Perl does not properly validate IP address and CIDR mask inputs, which may allow IP ACL bypass</title>
-      <link>https://vulnogram.org/CVE-2026-45190</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45190</guid>
-      <description>Net::CIDR::Lite versions before 0.24 for Perl does not properly validate IP address and CIDR mask inputs, which may allow IP ACL bypass. Inputs containing a trailing newline or non-ASCII digit characters pass the validators but are then re-encoded by…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 10 May 2026 20:15:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45180 · 7.5 HIGH 🌩️ — Catalyst::Plugin::Statsd versions through 0.10.0 for Perl may leak session ids</title>
-      <link>https://vulnogram.org/CVE-2026-45180</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45180</guid>
-      <description>Catalyst::Plugin::Statsd versions through 0.10.0 for Perl may leak session ids. If the communication channel to the statsd daemon is not secured (for example, by sending UDP packets to a host on another network), then users&apos; session ids may be leaked…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 10 May 2026 20:03:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45179 · 5.3 MEDIUM 🌩️ — Plack::Middleware::Statsd versions before 0.9.0 for Perl may leak user IP addresses</title>
-      <link>https://vulnogram.org/CVE-2026-45179</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45179</guid>
-      <description>Plack::Middleware::Statsd versions before 0.9.0 for Perl may leak user IP addresses. If the communication channel to the statsd daemon is not secured (for example, by sending UDP packets to a host on another network), then users&apos; IP addresses may be…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 10 May 2026 19:10:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6659 · 7.5 HIGH 🌩️ — Crypt::PasswdMD5 versions through 1.42 for Perl generates insecure random values for salts</title>
-      <link>https://vulnogram.org/CVE-2026-6659</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6659</guid>
-      <description>Crypt::PasswdMD5 versions through 1.42 for Perl generates insecure random values for salts. The built-in rand function is predictable, and unsuitable for cryptography.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 08 May 2026 17:17:01 GMT</pubDate>
     </item>
   </channel>
 </rss>
