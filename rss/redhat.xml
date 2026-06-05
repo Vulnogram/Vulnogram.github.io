@@ -11,7 +11,31 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 05 Jun 2026 10:39:21 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 13:46:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-50264 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: out-of-bounds heap write in dri2 drigetbuffers/drigetbufferswithformat</title>
+      <link>https://vulnogram.org/CVE-2026-50264</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50264</guid>
+      <description>An out-of-bounds write flaw was found in the X.Org X server and Xwayland in DRIGetBuffers/DRIGetBuffersWithFormat. A client that requests multiple DRI2BufferBackLeft attachments and one DRI2BufferFrontLeft can trigger an out-of-bounds heap write. Thi…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jun 2026 10:36:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50261 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: use-after-free in syncchangecounter()</title>
+      <link>https://vulnogram.org/CVE-2026-50261</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50261</guid>
+      <description>A use-after-free flaw was found in the X.Org X server and Xwayland in SyncChangeCounter(). A client that sets up multiple SyncCounters can trigger a use-after-free when destroying those counters via a second client connection while changing those cou…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jun 2026 10:36:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50259 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: stack buffer overflow in xkb setmap request via mapwidths indexing</title>
+      <link>https://vulnogram.org/CVE-2026-50259</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50259</guid>
+      <description>A stack-based buffer overflow flaw was found in the X.Org X server and Xwayland. _XkbSetMapChecks() declares a fixed-size stack buffer mapWidths[256] indexed by key type index. The helper function CheckKeyTypes() writes to this buffer at a client-con…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jun 2026 10:31:39 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-50265 · 7 HIGH — Libinput: local privilege escalation via crafted uinput devices</title>
       <link>https://vulnogram.org/CVE-2026-50265</link>
@@ -27,6 +51,14 @@
       <description>A flaw was found in ansible-core. The ansible-galaxy role install command processes dependency specifications from a role&apos;s meta/requirements.yml file. Due to improper neutralization of argument delimiters, a malicious role author can inject arbitrar…</description>
       <category>High</category>
       <pubDate>Fri, 05 Jun 2026 08:21:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9088 · 2.7 LOW — Keycloak: keycloak: information disclosure due to user profile permission bypass</title>
+      <link>https://vulnogram.org/CVE-2026-9088</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9088</guid>
+      <description>A flaw was found in org.keycloak.services. An administrator with delegated access to read group memberships and users can bypass user profile permissions by accessing the group members endpoint. This allows the administrator to view user attributes t…</description>
+      <category>Low</category>
+      <pubDate>Fri, 05 Jun 2026 07:52:52 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-10843 · 7.2 HIGH — Cloud-credential-operator: cco mint-mode credentialsrequest manifests grant account-wide iam access beyond cluster scope on aws</title>
@@ -399,41 +431,6 @@
       <description>A flaw was found in Keycloak. The cross-session verification proof is keyed only by (local userId, idpAlias) and is not bound to the upstream identity that was actually verified, so a second upstream account on the same IdP can consume it and get lin…</description>
       <category>Medium</category>
       <pubDate>Wed, 20 May 2026 16:13:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9064 · 7.5 HIGH 🌩️ — 389-ds-base: 389-ds-base: unbounded ldap controls count in get_ldapmessage_controls_ext() causes cpu and heap amplification (remote dos)</title>
-      <link>https://vulnogram.org/CVE-2026-9064</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9064</guid>
-      <description>A flaw was found in 389-ds-base. The get_ldapmessage_controls_ext() function in the LDAP server does not enforce an upper bound on the number of controls per LDAP message. A remote, unauthenticated attacker can send a specially crafted LDAP request c…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 20 May 2026 09:00:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7571 · 7.1 HIGH — Keycloak: keycloak: access token disclosure and implicit flow bypass via forged client data</title>
-      <link>https://vulnogram.org/CVE-2026-7571</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7571</guid>
-      <description>A flaw was found in Keycloak. A low-privilege user, with knowledge of user credentials and client ID, can bypass a security control intended to disable the implicit flow in OpenID Connect (OIDC) clients. By manipulating client data during a session r…</description>
-      <category>High</category>
-      <pubDate>Tue, 19 May 2026 11:01:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7507 · 7.5 HIGH 🌩️ — Org.keycloak/keycloak-services: session fixation in oidc login flow that can lead to account takeover</title>
-      <link>https://vulnogram.org/CVE-2026-7507</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7507</guid>
-      <description>A session fixation vulnerability was found in Keycloak&apos;s login-actions endpoints. An unauthenticated attacker could exploit this flaw by pre-creating an authentication session and tricking a victim into visiting a maliciously crafted link. By leverag…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 19 May 2026 11:01:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7504 · 8.1 HIGH 🌩️ — Org.keycloak/keycloak-services: open redirect when using wildcard valid redirect uris in keycloak</title>
-      <link>https://vulnogram.org/CVE-2026-7504</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7504</guid>
-      <description>A flaw was found in Keycloak&apos;s URL validation logic during redirect operations. By crafting a malicious request, an attacker could bypass validation to redirect users to unauthorized URLs, potentially leading to the exposure of sensitive information…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 19 May 2026 11:01:19 GMT</pubDate>
     </item>
   </channel>
 </rss>
