@@ -11,7 +11,70 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 09 Jun 2026 08:58:51 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 12:28:20 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-46324 — netfilter: nf_tables: use list_del_rcu for netlink hooks</title>
+      <link>https://vulnogram.org/CVE-2026-46324</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46324</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: netfilter: nf_tables: use list_del_rcu for netlink hooks nft_netdev_unregister_hooks and __nft_unregister_flowtable_net_hooks need to use list_del_rcu(), this list can be walked by c…</description>
+      <pubDate>Tue, 09 Jun 2026 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46323 — net: gro: don&apos;t merge zcopy skbs</title>
+      <link>https://vulnogram.org/CVE-2026-46323</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46323</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: gro: don&apos;t merge zcopy skbs skb_gro_receive() can currently copy frags between the source and GRO skb, without checking the zerocopy status, and in particular the SKBFL_MANAGED_…</description>
+      <pubDate>Tue, 09 Jun 2026 12:11:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46322 — tun: free page on build_skb failure in tun_xdp_one()</title>
+      <link>https://vulnogram.org/CVE-2026-46322</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46322</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: tun: free page on build_skb failure in tun_xdp_one() When build_skb() fails in tun_xdp_one(), the function sets ret to -ENOMEM and jumps to the out label, which returns without freei…</description>
+      <pubDate>Tue, 09 Jun 2026 12:11:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46321 — tun: free page on short-frame rejection in tun_xdp_one()</title>
+      <link>https://vulnogram.org/CVE-2026-46321</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46321</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: tun: free page on short-frame rejection in tun_xdp_one() tun_xdp_one() returns -EINVAL on a frame shorter than ETH_HLEN without freeing the page that vhost_net_build_xdp() allocated…</description>
+      <pubDate>Tue, 09 Jun 2026 12:11:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46320 — tap: free page on error paths in tap_get_user_xdp()</title>
+      <link>https://vulnogram.org/CVE-2026-46320</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46320</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: tap: free page on error paths in tap_get_user_xdp() tap_get_user_xdp() rejects a frame shorter than ETH_HLEN with -EINVAL, and returns -ENOMEM when build_skb() fails. Both paths jump…</description>
+      <pubDate>Tue, 09 Jun 2026 12:11:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46319 — net/sched: act_ct: Only release RCU read lock after ct_ft</title>
+      <link>https://vulnogram.org/CVE-2026-46319</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46319</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net/sched: act_ct: Only release RCU read lock after ct_ft When looking up a flow table in act_ct in tcf_ct_flow_table_get(), rhashtable_lookup_fast() internally opens and closes an R…</description>
+      <pubDate>Tue, 09 Jun 2026 12:11:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46318 — Revert &quot;mm/hugetlbfs: update hugetlbfs to use mmap_prepare&quot;</title>
+      <link>https://vulnogram.org/CVE-2026-46318</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46318</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Revert &quot;mm/hugetlbfs: update hugetlbfs to use mmap_prepare&quot; This reverts commit ea52cb24cd3f (&quot;mm/hugetlbfs: update hugetlbfs to use mmap_prepare&quot;) with conflict resolution to accoun…</description>
+      <pubDate>Tue, 09 Jun 2026 12:11:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46317 — KVM: arm64: Reassign nested_mmus array behind mmu_lock</title>
+      <link>https://vulnogram.org/CVE-2026-46317</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46317</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: arm64: Reassign nested_mmus array behind mmu_lock kvm-&gt;arch.nested_mmus[] is walked under kvm-&gt;mmu_lock, including from the MMU notifier path (kvm_unmap_gfn_range() -&gt; kvm_neste…</description>
+      <pubDate>Tue, 09 Jun 2026 11:52:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46316 — KVM: arm64: vgic-its: Drop the translation cache reference only for the erased entry</title>
+      <link>https://vulnogram.org/CVE-2026-46316</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46316</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: arm64: vgic-its: Drop the translation cache reference only for the erased entry vgic_its_invalidate_cache() walks the per-ITS translation cache with xa_for_each() and drops the…</description>
+      <pubDate>Tue, 09 Jun 2026 11:52:29 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-46315 — io_uring/waitid: clear waitid info before copying it to userspace</title>
       <link>https://vulnogram.org/CVE-2026-46315</link>
@@ -311,74 +374,6 @@
       <description>In the Linux kernel, the following vulnerability has been resolved: netfilter: nft_inner: Fix IPv6 inner_thoff desync In nft_inner_parse_l2l3(), when processing inner IPv6 packets, ipv6_find_hdr() correctly computes the transport header offset traver…</description>
       <category>Critical</category>
       <pubDate>Wed, 03 Jun 2026 15:48:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46243 · 7.8 HIGH — smb: client: reject userspace cifs.spnego descriptions</title>
-      <link>https://vulnogram.org/CVE-2026-46243</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46243</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: smb: client: reject userspace cifs.spnego descriptions cifs.spnego key descriptions contain authority-bearing fields such as pid, uid, creduid, and upcall_target that cifs.upcall tre…</description>
-      <category>High</category>
-      <pubDate>Mon, 01 Jun 2026 16:22:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46242 · 7.8 HIGH — eventpoll: fix ep_remove struct eventpoll / struct file UAF</title>
-      <link>https://vulnogram.org/CVE-2026-46242</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46242</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: eventpoll: fix ep_remove struct eventpoll / struct file UAF ep_remove() (via ep_remove_file()) cleared file-&gt;f_ep under file-&gt;f_lock but then kept using @file inside the critical sec…</description>
-      <category>High</category>
-      <pubDate>Sat, 30 May 2026 12:13:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46241 — spi: mpc52xx: fix use-after-free on registration failure</title>
-      <link>https://vulnogram.org/CVE-2026-46241</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46241</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: spi: mpc52xx: fix use-after-free on registration failure Make sure to disable and free the interrupts in case controller registration fails to avoid a potential use-after-free and re…</description>
-      <pubDate>Thu, 28 May 2026 09:41:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46240 · 7.8 HIGH — media: iris: Fix use-after-free in iris_release_internal_buffers()</title>
-      <link>https://vulnogram.org/CVE-2026-46240</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46240</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: media: iris: Fix use-after-free in iris_release_internal_buffers() The recent change in commit 1dabf00ee206 (&quot;media: iris: gen1: Destroy internal buffers after FW releases&quot;) introduc…</description>
-      <category>High</category>
-      <pubDate>Thu, 28 May 2026 09:41:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46239 — media: i2c: ov5647: Fix runtime PM refcount leak in s_ctrl</title>
-      <link>https://vulnogram.org/CVE-2026-46239</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46239</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: media: i2c: ov5647: Fix runtime PM refcount leak in s_ctrl Three control cases (AUTOGAIN, EXPOSURE_AUTO, ANALOGUE_GAIN) directly return without calling pm_runtime_put(), causing runt…</description>
-      <pubDate>Thu, 28 May 2026 09:41:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46238 · 8.8 HIGH — batman-adv: stop caching unowned originator pointers in BAT IV</title>
-      <link>https://vulnogram.org/CVE-2026-46238</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46238</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: batman-adv: stop caching unowned originator pointers in BAT IV BAT IV keeps the last-hop neighbor address in each neigh_node, but some paths also cache an originator pointer derived…</description>
-      <category>High</category>
-      <pubDate>Thu, 28 May 2026 09:41:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46237 · 7.1 HIGH — drm/amdgpu/vcn3: Avoid overflow on msg bound check</title>
-      <link>https://vulnogram.org/CVE-2026-46237</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46237</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu/vcn3: Avoid overflow on msg bound check As pointed out by SDL, the previous condition may be vulnerable to overflow. (cherry picked from commit db00257ac9e4a51eb2515aaea16…</description>
-      <category>High</category>
-      <pubDate>Thu, 28 May 2026 09:41:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46236 — media: rc: xbox_remote: heed DMA restrictions</title>
-      <link>https://vulnogram.org/CVE-2026-46236</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46236</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: media: rc: xbox_remote: heed DMA restrictions The buffer for IO must not be part of the device structure because that violates the DMA coherency rules.</description>
-      <pubDate>Thu, 28 May 2026 09:41:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46235 — media: saa7164: add ioremap return checks and cleanups</title>
-      <link>https://vulnogram.org/CVE-2026-46235</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46235</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: media: saa7164: add ioremap return checks and cleanups Add checks for ioremap return values in saa7164_dev_setup(). If ioremap for BAR0 or BAR2 fails, release the already allocated P…</description>
-      <pubDate>Thu, 28 May 2026 09:41:04 GMT</pubDate>
     </item>
   </channel>
 </rss>
