@@ -11,7 +11,49 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 08 Jun 2026 16:41:02 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 08:58:51 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-46315 — io_uring/waitid: clear waitid info before copying it to userspace</title>
+      <link>https://vulnogram.org/CVE-2026-46315</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46315</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/waitid: clear waitid info before copying it to userspace IORING_OP_WAITID stores its result fields in struct io_waitid::info and later copies them to userspace siginfo. The…</description>
+      <pubDate>Tue, 09 Jun 2026 07:38:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46311 — drm/amdgpu/userq: fix access to stale wptr mapping</title>
+      <link>https://vulnogram.org/CVE-2026-46311</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46311</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu/userq: fix access to stale wptr mapping Use drm_exec to take both locks i.e vm root bo and wptr_obj bo to access the mapping data properly. This fixes the security issue o…</description>
+      <pubDate>Mon, 08 Jun 2026 15:50:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46302 — selinux: allow multiple opens of /sys/fs/selinux/policy</title>
+      <link>https://vulnogram.org/CVE-2026-46302</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46302</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: selinux: allow multiple opens of /sys/fs/selinux/policy Currently there can only be a single open of /sys/fs/selinux/policy at any time. This allows any process to block any other pr…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46294 — dm: fix a buffer overflow in ioctl processing</title>
+      <link>https://vulnogram.org/CVE-2026-46294</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46294</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: dm: fix a buffer overflow in ioctl processing Tony Asleson (using Claude) found a buffer overflow in dm-ioctl in the function retrieve_status: 1. The code in retrieve_status checks t…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46286 — leds: qcom-lpg: Check for array overflow when selecting the high resolution</title>
+      <link>https://vulnogram.org/CVE-2026-46286</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46286</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: leds: qcom-lpg: Check for array overflow when selecting the high resolution When selecting the high resolution values from the array, FIELD_GET() is used to pull from a 3 bit registe…</description>
+      <pubDate>Mon, 08 Jun 2026 15:41:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46276 — drm/amdgpu: fix zero-size GDS range init on RDNA4</title>
+      <link>https://vulnogram.org/CVE-2026-46276</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46276</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu: fix zero-size GDS range init on RDNA4 RDNA4 (GFX 12) hardware removes the GDS, GWS, and OA on-chip memory resources. The gfx_v12_0 initialisation code correctly leaves ad…</description>
+      <pubDate>Mon, 08 Jun 2026 15:41:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-46275 — Bluetooth: hci_uart: fix UAFs and race conditions in close and init paths</title>
       <link>https://vulnogram.org/CVE-2026-46275</link>
@@ -337,50 +379,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46235</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: media: saa7164: add ioremap return checks and cleanups Add checks for ioremap return values in saa7164_dev_setup(). If ioremap for BAR0 or BAR2 fails, release the already allocated P…</description>
       <pubDate>Thu, 28 May 2026 09:41:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46234 — vsock: fix buffer size clamping order</title>
-      <link>https://vulnogram.org/CVE-2026-46234</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46234</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: vsock: fix buffer size clamping order In vsock_update_buffer_size(), the buffer size was being clamped to the maximum first, and then to the minimum. If a user sets a minimum buffer…</description>
-      <pubDate>Thu, 28 May 2026 09:40:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46233 — batman-adv: bla: only purge non-released claims</title>
-      <link>https://vulnogram.org/CVE-2026-46233</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46233</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: batman-adv: bla: only purge non-released claims When batadv_bla_purge_claims() goes through the list of claims, it is only traversing the hash list with an rcu_read_lock(). Due to a…</description>
-      <pubDate>Thu, 28 May 2026 09:40:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46232 · 8.1 HIGH — HID: playstation: Clamp num_touch_reports</title>
-      <link>https://vulnogram.org/CVE-2026-46232</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46232</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: HID: playstation: Clamp num_touch_reports A device would never lie about the number of touch reports would it? If it does the loop in dualshock4_parse_report will read off the end of…</description>
-      <category>High</category>
-      <pubDate>Thu, 28 May 2026 09:40:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46231 — batman-adv: bla: put backbone reference on failed claim hash insert</title>
-      <link>https://vulnogram.org/CVE-2026-46231</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46231</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: batman-adv: bla: put backbone reference on failed claim hash insert When batadv_bla_add_claim() fails to insert a new claim into the hash, it leaked a reference to the backbone_gw fo…</description>
-      <pubDate>Thu, 28 May 2026 09:40:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46230 · 7.1 HIGH — drm/amdgpu/vcn3: Prevent OOB reads when parsing dec msg</title>
-      <link>https://vulnogram.org/CVE-2026-46230</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46230</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu/vcn3: Prevent OOB reads when parsing dec msg Check bounds against the end of the BO whenever we access the msg.</description>
-      <category>High</category>
-      <pubDate>Thu, 28 May 2026 09:40:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46229 — drm/amdkfd: Clear VRAM on allocation to prevent stale data exposure</title>
-      <link>https://vulnogram.org/CVE-2026-46229</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46229</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdkfd: Clear VRAM on allocation to prevent stale data exposure KFD VRAM allocations set AMDGPU_GEM_CREATE_VRAM_WIPE_ON_RELEASE but not AMDGPU_GEM_CREATE_VRAM_CLEARED, leaving fr…</description>
-      <pubDate>Thu, 28 May 2026 09:40:51 GMT</pubDate>
     </item>
   </channel>
 </rss>
