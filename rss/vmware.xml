@@ -11,7 +11,93 @@
       <title>VMware by Broadcom — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 10 Jun 2026 14:13:11 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 20:02:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-47838 · 6.8 MEDIUM — Unauthorized User Impersonation when Using X.509 Client Certificates</title>
+      <link>https://vulnogram.org/CVE-2026-47838</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47838</guid>
+      <description>SubjectDnX509PrincipalExtractor does not correctly handle certain malformed X.509 certificate CN values, which can lead to reading the wrong value for the username. In a carefully crafted certificate, this can lead to an attacker impersonating anothe…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 09 Jun 2026 23:50:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41837 · 5.3 MEDIUM 🌩️ — Spring Data REST Querydsl integration exposes Jackson-hidden persistent fields as filter keys</title>
+      <link>https://vulnogram.org/CVE-2026-41837</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41837</guid>
+      <description>Spring Data REST&apos;s Querydsl integration accepts arbitrary persistent property paths as request-parameter filter keys and does not consider Jackson customizations before handing them to Querydsl. Affected versions: Spring Data REST 3.7.0 through 3.7.1…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:49:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41732 · 8.1 HIGH 🌩️ — In Spring for Apache Pulsar, overly broad trusted-package matching in header mapper exposes JDK classes to deserialization</title>
+      <link>https://vulnogram.org/CVE-2026-41732</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41732</guid>
+      <description>JsonPulsarHeaderMapper matched type headers against trusted packages using a prefix check, meaning that trusting any package implicitly trusted all of its subpackages. Additionally, an empty trusted-packages configuration fell back to trusting all pa…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:49:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41731 · 8.1 HIGH 🌩️ — In Spring for Apache Kafka, overly broad trusted-package matching in header mappers exposes JDK classes to deserialization</title>
+      <link>https://vulnogram.org/CVE-2026-41731</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41731</guid>
+      <description>JsonKafkaHeaderMapper and the deprecated DefaultKafkaHeaderMapper matched type headers against trusted packages using a prefix check, meaning that trusting any package implicitly trusted all of its subpackages. Combined with Jackson&apos;s default bean de…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:49:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41730 · 5.3 MEDIUM 🌩️ — Spring Data REST exposes persistence-layer internals in error responses</title>
+      <link>https://vulnogram.org/CVE-2026-41730</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41730</guid>
+      <description>Spring Data REST serializes the full exception cause chain into HTTP error response bodies, potentially exposing persistence-layer internals to HTTP clients. Affected versions: Spring Data REST 3.7.0 through 3.7.19; 4.3.0 through 4.3.16; 4.4.0 throug…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:49:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41729 · 8.1 HIGH — Spring Data REST SpEL Injection via Map Key in JSON Patch</title>
+      <link>https://vulnogram.org/CVE-2026-41729</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41729</guid>
+      <description>Spring Data REST is vulnerable to SpEL expression injection through map-typed properties when processing JSON Patch (application/json-patch+json) requests. When a persistent entity exposes a Map-typed property, the JSON Pointer path segment used as t…</description>
+      <category>High</category>
+      <pubDate>Tue, 09 Jun 2026 23:49:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41728 · 7.5 HIGH 🌩️ — Spring Data REST JSON Patch bypasses Jackson read-only property protection on nested objects and collections</title>
+      <link>https://vulnogram.org/CVE-2026-41728</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41728</guid>
+      <description>Spring Data REST&apos;s JSON Patch (application/json-patch+json) implementation does not apply the write-access filter to intermediate path segments when resolving a multi-segment JSON Pointer. Affected versions: Spring Data REST 3.7.0 through 3.7.19; 4.3…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:49:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41727 · 6.5 MEDIUM — In Spring for Apache Kafka, forged retry topic headers subvert retry routing and backoff behavior</title>
+      <link>https://vulnogram.org/CVE-2026-41727</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41727</guid>
+      <description>Spring Kafka&apos;s retry topic infrastructure did not sufficiently validate user-controlled header values before acting on them. A producer could send a record with a crafted retry_topic-attempts header to supply an out-of-range attempt count and cause t…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 09 Jun 2026 23:49:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41726 · 6.5 MEDIUM — In Spring for Apache Kafka, unbounded delegate cache keyed on user-controlled, potentially malicious selector header</title>
+      <link>https://vulnogram.org/CVE-2026-41726</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41726</guid>
+      <description>When an application opts into DelegatingDeserializer, a producer can grow the consumer&apos;s heap without bound by sending records with unique random spring.kafka.serialization.selector header values, eventually causing GC thrash and OutOfMemoryError. Af…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 09 Jun 2026 23:48:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41721 · 5.9 MEDIUM 🌩️ — Spring Data Commons Denial of Service via Data Binding</title>
+      <link>https://vulnogram.org/CVE-2026-41721</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41721</guid>
+      <description>Spring Data Commons contains a vulnerability that can lead to a Denial of Service (DoS) condition if Spring Data Web Support is enabled in conjunction with a Controller method using @ProjectedPayload, when an attacker sends a specially crafted HTTP r…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:48:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-41719 · 6.4 MEDIUM — Spring Data KeyValue - SpEL Injection vulnerability in SpelPropertyComparator</title>
       <link>https://vulnogram.org/CVE-2026-41719</link>
@@ -74,6 +160,59 @@
       <pubDate>Tue, 09 Jun 2026 23:47:54 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-41697 · 4.8 MEDIUM 🌩️ — Spring Data Relational Parameter not Escaped for Query By Example LIKE Pattern</title>
+      <link>https://vulnogram.org/CVE-2026-41697</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41697</guid>
+      <description>Spring Data Relational does not properly escape binding values of externally-controlled input when using StringMatcher (STARTING, ENDING, or CONTAINING) in Query By Example (QBE). An attacker can supply wildcard characters to perform boolean-based bl…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:47:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41696 · 5.9 MEDIUM 🌩️ — Spring Data MongoDB Bind Parameter Literal Quoting Breakout</title>
+      <link>https://vulnogram.org/CVE-2026-41696</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41696</guid>
+      <description>Spring Data MongoDB repository query methods annotated with @Query that use regex parameter binding perform insufficient validation of the bound parameter. An attacker can supply a crafted string to break out of the intended regular expression quotin…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:47:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41695 · 7.5 HIGH 🌩️ — Denial of Service in Spring Data Commons Property Path Resolution</title>
+      <link>https://vulnogram.org/CVE-2026-41695</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41695</guid>
+      <description>Spring Data Commons applications may be vulnerable to denial of service through resource exhaustion when attacker-controlled property path strings are passed to MappingContext property path resolution. Affected versions: Spring Data Commons 4.0.0 thr…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:47:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41694 · 3.7 LOW 🌩️ — SAML Payloads Decrypted Without Valid Signature</title>
+      <link>https://vulnogram.org/CVE-2026-41694</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41694</guid>
+      <description>Since Spring Security SAML decrypts SAML Responses as well as elements of SAML LogoutRequests and LogoutResponses without requiring a valid signature, attackers may be able to craft these SAML payloads and use the Service Provider as a decryption ora…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:47:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41008 · 6.1 MEDIUM 🌩️ — Spring Security Authorization Server Open Redirect via request_uri</title>
+      <link>https://vulnogram.org/CVE-2026-41008</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41008</guid>
+      <description>Spring Security Authorization Server&apos;s authorization endpoint performs insufficient validation of the request_uri parameter. An attacker can craft a malicious authorization request containing an invalid request_uri and an arbitrary, unvalidated redir…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:47:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41003 · 7.6 HIGH — Unencoded HTML Outputs in Spring Security May Allow Cross-Site Scripting</title>
+      <link>https://vulnogram.org/CVE-2026-41003</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41003</guid>
+      <description>An attacker able to influence values in RelyingPartyRegistration may be able to run arbitrary code on HTML forms generated by Spring Security filters. Affected versions: Spring Security 5.7.0 through 5.7.23; 5.8.0 through 5.8.25; 6.3.0 through 6.3.16…</description>
+      <category>High</category>
+      <pubDate>Tue, 09 Jun 2026 23:46:53 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-40993 · 7.3 HIGH — Unfiltered Java Native Deserialization of SAML 2.0 Asserting Party Credentials BLOB Database Entry</title>
       <link>https://vulnogram.org/CVE-2026-40993</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40993</guid>
@@ -89,6 +228,15 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 09 Jun 2026 23:46:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40988 · 7.5 HIGH 🌩️ — Unbounded DEFLATE Inflation in SAML 2.0 Service Provider</title>
+      <link>https://vulnogram.org/CVE-2026-40988</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40988</guid>
+      <description>An application using spring-security-saml2-service-provider and the REDIRECT binding for SAML 2.0 Login or Logout may be vulnerable to a denial of service by way of an unbounded writer that inflates the compressed SAML payload into memory. Affected v…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 09 Jun 2026 23:46:15 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-41007 · 7.5 HIGH 🌩️ — Spring HATEOAS heap exhaustion through unbounded internal caching</title>
@@ -304,146 +452,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 09 Jun 2026 03:47:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40983 · 7.5 HIGH 🌩️ — Micrometer gRPC server instrumentation DoS vulnerability</title>
-      <link>https://vulnogram.org/CVE-2026-40983</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40983</guid>
-      <description>In Micrometer, it is possible for a user to provide specially crafted gRPC requests that may cause a denial-of-service (DoS) condition. Affected versions: Micrometer 1.16.0 through 1.16.5; 1.15.0 through 1.15.11.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:46:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41724 · 8 HIGH — VMSA-2026-0004: VMware Cloud Foundation Operations updates address multiple vulnerabilities (CVE-2026-41722, CVE-2026-41723 and CVE-2026-41724)</title>
-      <link>https://vulnogram.org/CVE-2026-41724</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41724</guid>
-      <description>VMware Cloud Foundation Operations contains multiple stored cross-site scripting vulnerabilities.A malicious actor with privileges to create policies, views or text-widgets may be able to inject scripts to perform administrative actions in VMware Clo…</description>
-      <category>High</category>
-      <pubDate>Mon, 08 Jun 2026 07:07:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41723 · 8 HIGH — VMSA-2026-0004: VMware Cloud Foundation Operations updates address multiple vulnerabilities (CVE-2026-41722, CVE-2026-41723 and CVE-2026-41724)</title>
-      <link>https://vulnogram.org/CVE-2026-41723</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41723</guid>
-      <description>VMware Cloud Foundation Operations contains multiple stored cross-site scripting vulnerabilities.A malicious actor with privileges to create policies, views or text-widgets may be able to inject scripts to perform administrative actions in VMware Clo…</description>
-      <category>High</category>
-      <pubDate>Mon, 08 Jun 2026 07:06:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41722 · 8 HIGH — VMSA-2026-0004: VMware Cloud Foundation Operations updates address multiple vulnerabilities (CVE-2026-41722, CVE-2026-41723 and CVE-2026-41724)</title>
-      <link>https://vulnogram.org/CVE-2026-41722</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41722</guid>
-      <description>VMware Cloud Foundation Operations contains multiple stored cross-site scripting vulnerabilities.A malicious actor with privileges to create policies, views or text-widgets may be able to inject scripts to perform administrative actions in VMware Clo…</description>
-      <category>High</category>
-      <pubDate>Mon, 08 Jun 2026 07:05:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41010 · 8.7 HIGH</title>
-      <link>https://vulnogram.org/CVE-2026-41010</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41010</guid>
-      <description>ReleaseJob#unpack builds job_dir = File.join(@release_dir, &apos;jobs&apos;, name) and job_tgz = File.join(@release_dir, &apos;jobs&apos;, &quot;#{name}.tgz&quot;) where name returns @job_meta[&apos;name&apos;], a value taken verbatim from the jobs: array of the attacker-supplied release.M…</description>
-      <category>High</category>
-      <pubDate>Thu, 04 Jun 2026 02:27:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41011 · 8.7 HIGH</title>
-      <link>https://vulnogram.org/CVE-2026-41011</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41011</guid>
-      <description>PackagePersister.validate_tgz builds &quot;tar -tf #{tgz} 2&gt;&amp;1&quot; where tgz = File.join(release_dir, &apos;packages&apos;, &quot;#{name}.tgz&quot;) and name = package_meta[&apos;name&apos;] comes directly from release.MF inside the uploaded tarball. The string is passed to Bosh::Common:…</description>
-      <category>High</category>
-      <pubDate>Thu, 04 Jun 2026 02:26:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41858 · 6.5 MEDIUM 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-41858</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41858</guid>
-      <description>Weak Randomness / Insecure Cryptographic Primitive (CWE-338) in Get-RandomPassword in BOSH-Ecosystem / windows-utilities-release allows a network attacker to estimate VM boot time and reconstruct a small candidate list to recover the Administrator pa…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 02:10:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41859 · 7.8 HIGH</title>
-      <link>https://vulnogram.org/CVE-2026-41859</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41859</guid>
-      <description>A network man-in-the-middle between nats-sync and the BOSH director can steal the director credentials (Basic auth header or UAA client secret) and can tamper with the VM list that is written into the NATS authorization file. Stolen credentials grant…</description>
-      <category>High</category>
-      <pubDate>Thu, 04 Jun 2026 01:51:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41860 · 8.8 HIGH</title>
-      <link>https://vulnogram.org/CVE-2026-41860</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41860</guid>
-      <description>CWE-326 in BOSH allows a local attacker to steal Basic-auth credentials or redirect UAA token requests via MITM. HttpRequestHelper#create_async_endpoint and #send_http_get_request_synchronous hard-code OpenSSL::SSL::VERIFY_NONE, enabling an attacker…</description>
-      <category>High</category>
-      <pubDate>Thu, 04 Jun 2026 01:40:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40965 · 10 CRITICAL 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-40965</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40965</guid>
-      <description>Cloud Foundry UAA versions v76.12.0 through v78.12.0 are vulnerable to a private key exposure. The server contains a vulnerability where EC (Elliptic Curve) private keys are inadvertently exposed through the public /token_keys endpoint. This endpoint…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 01 Jun 2026 21:22:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40964 · 7.5 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-40964</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40964</guid>
-      <description>Authentication Bypass in cf-auth-proxy in Cloud Foundry Foundation all installations allows an unauthenticated remote attacker to gain read access to every log and metric for every application and platform component via minting a JWT that the cf-auth…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 01 Jun 2026 21:02:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40990 · 5.7 MEDIUM — Unbounded cache for function definitions</title>
-      <link>https://vulnogram.org/CVE-2026-40990</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40990</guid>
-      <description>OOM error is possible while attempting to add infinite amount of functions to Function Registry. Affected Spring Products and Versions: Spring Cloud Function 3.2.x: versions prior to 3.2.16 Spring Cloud Function 4.1.x: versions prior to 4.1.10 Spring…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 01 Jun 2026 17:49:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40989 · 5.7 MEDIUM — Self Routing guard bypassed via function composition</title>
-      <link>https://vulnogram.org/CVE-2026-40989</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40989</guid>
-      <description>Under infinite recursion in the routing layer, request-handling can cause OOM error. Affected Spring Products and Versions: Spring Cloud Function 3.2.x: versions prior to 3.2.16 Spring Cloud Function 4.1.x: versions prior to 4.1.10 Spring Cloud Funct…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 01 Jun 2026 17:49:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41013 · 8.1 HIGH — Tenant-controlled comma smuggles arbitrary CIFS mount options</title>
-      <link>https://vulnogram.org/CVE-2026-41013</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41013</guid>
-      <description>Input validation bypass in SMB volume mount handling in CloudFoundry Foundation diego-release allows low-privileged CF space developer to inject arbitrary kernel CIFS mount options via bypassing the mount-option allowlist, enabling privilege escalati…</description>
-      <category>High</category>
-      <pubDate>Mon, 01 Jun 2026 17:36:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41704 · 6.8 MEDIUM — Compromised VM can make arbitrary blobstore deletes</title>
-      <link>https://vulnogram.org/CVE-2026-41704</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41704</guid>
-      <description>AgentClient#handle_method (lines 264-303) processes every NATS reply. It calls inject_compile_log (line 273) on every response, which reads response[&apos;value&apos;][&apos;result&apos;][&apos;compile_log_id&apos;] (line 332-338) and passes it to download_and_delete_blob. Separa…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 27 May 2026 07:13:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41009 · 4.3 MEDIUM — Local Blobstore may allow arbitrary reads/deletes</title>
-      <link>https://vulnogram.org/CVE-2026-41009</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41009</guid>
-      <description>When the director sends a long-running request (e.g. compile_package), the agent&apos;s reply JSON is consumed by AgentClient. inject_compile_log (line 332-339) reads response[&apos;value&apos;][&apos;result&apos;][&apos;compile_log_id&apos;] and format_exception (line 318-325) reads…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 27 May 2026 06:45:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41863 · 6.5 MEDIUM — LLM-influenced filename used unsanitized in Path.resolve before file write in Spring AI support for Anthropic Skills API</title>
-      <link>https://vulnogram.org/CVE-2026-41863</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41863</guid>
-      <description>Spring AI&apos;s support for Anthropic&apos;s Skills API used LLM-influenced filenames unsanitized in Path.resolve before writing files to disk. This could allow a malicious user to write files outside the intended target directory, including restricted direct…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 25 May 2026 05:45:37 GMT</pubDate>
     </item>
   </channel>
 </rss>
