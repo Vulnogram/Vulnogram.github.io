@@ -11,7 +11,15 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 09 Jun 2026 21:26:32 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 06:12:10 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-11837 · 7.3 HIGH — Ansible-collection-ansible-posix: ansible.posix authorized_key: local privilege escalation via symlink-following chown</title>
+      <link>https://vulnogram.org/CVE-2026-11837</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11837</guid>
+      <description>A local privilege escalation vulnerability was found in the ansible.posix authorized_key module. The module&apos;s keyfile() function uses os.chown() instead of os.lchown() and opens files without O_NOFOLLOW when managing SSH authorized keys. An unprivile…</description>
+      <category>High</category>
+      <pubDate>Wed, 10 Jun 2026 05:03:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-11789 · 4.9 MEDIUM — 389-ds-base: 389-ds-base: smd5 password storage plugin salt length integer underflow crash</title>
       <link>https://vulnogram.org/CVE-2026-11789</link>
@@ -61,6 +69,22 @@
       <pubDate>Fri, 05 Jun 2026 10:36:33 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-50260 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: use-after-free in freecounter()</title>
+      <link>https://vulnogram.org/CVE-2026-50260</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50260</guid>
+      <description>A use-after-free flaw was found in the X.Org X server and Xwayland in FreeCounter(). A client that sets up multiple SyncCounters and awaits on those triggers can trigger a use-after-free when destroying those counters via a second client connection.…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jun 2026 10:36:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50258 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: stack buffer overflow in xkb key types due to unchecked shift levels</title>
+      <link>https://vulnogram.org/CVE-2026-50258</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50258</guid>
+      <description>A stack-based buffer overflow flaw was found in the X.Org X server and Xwayland. The X server has multiple stack buffers sized XkbMaxShiftLevel * XkbNumKbdGroups but CheckKeyTypes() does not verify or clamp non-canonical key types to XkbMaxShiftLevel…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jun 2026 10:31:39 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-50259 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: stack buffer overflow in xkb setmap request via mapwidths indexing</title>
       <link>https://vulnogram.org/CVE-2026-50259</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50259</guid>
@@ -73,6 +97,14 @@
       <link>https://vulnogram.org/CVE-2026-50256</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50256</guid>
       <description>A stack-based buffer overflow flaw was found in the X.Org X server and Xwayland. A mismatch between the X server and the libXfont2 library&apos;s maximum font name length can cause a stack buffer overflow during font alias resolution. The server allocates…</description>
+      <category>High</category>
+      <pubDate>Fri, 05 Jun 2026 10:31:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50257 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: use-after-free in misyncdestroyfence()</title>
+      <link>https://vulnogram.org/CVE-2026-50257</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50257</guid>
+      <description>A use-after-free flaw was found in the X.Org X server and Xwayland in miSyncDestroyFence(). A client that sets up multiple fence triggers can trigger a use-after-free function pointer call. An attacker would connect to the X server to set up a fence…</description>
       <category>High</category>
       <pubDate>Fri, 05 Jun 2026 10:31:22 GMT</pubDate>
     </item>
@@ -393,41 +425,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 26 May 2026 21:29:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42013 · 8.2 HIGH 🌩️ — Gnutls: gnutls: certificate validation bypass due to oversized subject alternative name</title>
-      <link>https://vulnogram.org/CVE-2026-42013</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42013</guid>
-      <description>A flaw was found in gnutls. When validating certificates, an oversized Subject Alternative Name (SAN) could cause the validation process to incorrectly fall back to checking the Common Name (CN) field. This could allow a remote attacker to bypass pro…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 26 May 2026 21:29:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42012 · 7.1 HIGH 🌩️ — Gnutls: gnutls: certificate validation bypass due to improper handling of uri and srv sans</title>
-      <link>https://vulnogram.org/CVE-2026-42012</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42012</guid>
-      <description>A flaw was found in gnutls. A remote attacker could exploit this vulnerability by presenting a specially crafted certificate that contains Uniform Resource Identifier (URI) or Service (SRV) Subject Alternative Names (SANs). This could cause the certi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 26 May 2026 21:29:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5260 · 8.2 HIGH 🌩️ — Gnutls: gnutls: information disclosure via heap overread in rsa key exchange</title>
-      <link>https://vulnogram.org/CVE-2026-5260</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5260</guid>
-      <description>A flaw was found in libgnutls. A remote attacker, by sending an extremely short premaster secret during an RSA key exchange to a server using an RSA key backed by a PKCS#11 token, could trigger a short heap overread. This memory corruption vulnerabil…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 26 May 2026 21:29:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48864 · 7.8 HIGH — Libsolv: heap buffer overflow in libsolv repopagestore via unchecked decompression of malicious .solv page data</title>
-      <link>https://vulnogram.org/CVE-2026-48864</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48864</guid>
-      <description>A flaw was found in libsolv. This heap buffer overflow occurs during the decompression of attacker-controlled compressed data within `.solv` files due to insufficient input validation. An attacker can provide a specially crafted `.solv` file, which,…</description>
-      <category>High</category>
-      <pubDate>Tue, 26 May 2026 16:16:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
