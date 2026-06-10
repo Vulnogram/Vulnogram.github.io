@@ -11,7 +11,72 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 10 Jun 2026 10:45:09 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 17:47:41 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-11884 · 6.5 MEDIUM — 389-ds-base: 389-ds-base: heap buffer overflow in schema objectclass serialization due to missing oc_superior in size calculation</title>
+      <link>https://vulnogram.org/CVE-2026-11884</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11884</guid>
+      <description>A heap buffer overflow flaw was found in 389 Directory Server. When serializing objectclass definitions, the oc_superior (SUP) field length is omitted from buffer size calculations in read_schema_dse() and schema_oc_to_string(), but the field is stil…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 10 Jun 2026 14:07:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53470 · 9.6 CRITICAL — Migration-planner: getsourcedownloadurl missing organization check</title>
+      <link>https://vulnogram.org/CVE-2026-53470</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53470</guid>
+      <description>A flaw was found in migration-planner. An authenticated attacker could exploit an improper access control vulnerability in the `/api/v1/sources/{id}/image-url` endpoint. This flaw allows the attacker to bypass an ownership check and obtain presigned…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 10 Jun 2026 13:55:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53476 · 9.6 CRITICAL — Assisted-migration-agent: vddk tarball chained-symlink arbitrary file write</title>
+      <link>https://vulnogram.org/CVE-2026-53476</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53476</guid>
+      <description>A flaw was found in assisted-migration-agent. An unauthenticated attacker, located on the same local area network (LAN), can exploit a path traversal vulnerability. By crafting a specially designed gzipped tarball, the attacker can bypass security ch…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 10 Jun 2026 13:55:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53475 · 9.3 CRITICAL — Assisted-migration-agent: tls verification disabled on all vcenter connections</title>
+      <link>https://vulnogram.org/CVE-2026-53475</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53475</guid>
+      <description>A flaw was found in assisted-migration-agent. The application hardcodes insecure Transport Layer Security (TLS) connections when communicating with vCenter. This vulnerability allows a Man-in-the-Middle (MITM) attacker to intercept and harvest vCente…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 10 Jun 2026 13:55:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53471 · 9.6 CRITICAL — Migration-planner: agent api ignores jwt source_id claim</title>
+      <link>https://vulnogram.org/CVE-2026-53471</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53471</guid>
+      <description>A flaw was found in migration-planner. The agent-API middleware processes JSON Web Tokens (JWTs) for authentication, but its UpdateSourceInventory and UpdateAgentStatus handlers fail to validate the source_id claim within these tokens against the req…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 10 Jun 2026 13:55:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53474 · 9.6 CRITICAL — Migration-planner: second-order sql injection via rvtools upload</title>
+      <link>https://vulnogram.org/CVE-2026-53474</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53474</guid>
+      <description>A flaw was found in migration-planner. A remote authenticated attacker could exploit this vulnerability by uploading a specially crafted RVTools .xlsx file. Due to improper input sanitization, malicious SQL embedded within a spreadsheet cell is execu…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 10 Jun 2026 13:55:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53473 · 7.3 HIGH — Migration-planner-ui-app: stored xss via javascript: url in agent credential link</title>
+      <link>https://vulnogram.org/CVE-2026-53473</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53473</guid>
+      <description>A flaw was found in migration-planner-ui-app. An attacker can register a malicious discovery agent with a specially crafted credentialUrl containing JavaScript code. When an organizational user clicks this link in the user interface, the embedded mal…</description>
+      <category>High</category>
+      <pubDate>Wed, 10 Jun 2026 13:55:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53469 · 9.1 CRITICAL 🌩️ — Migration-planner: unprotected delete endpoint wipes all tenant data</title>
+      <link>https://vulnogram.org/CVE-2026-53469</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53469</guid>
+      <description>A flaw was found in migration-planner. An authenticated user can exploit this vulnerability by sending a DELETE request to the /api/v1/sources route, which lacks proper authorization and filtering. This allows for the destruction of all customer data…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 10 Jun 2026 13:55:37 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-11837 · 7.3 HIGH — Ansible-collection-ansible-posix: ansible.posix authorized_key: local privilege escalation via symlink-following chown</title>
       <link>https://vulnogram.org/CVE-2026-11837</link>
@@ -358,73 +423,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 28 May 2026 03:44:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9792 · 6.5 MEDIUM 🌩️ — Keycloak: keycloak: security restriction bypass allows unauthorized ropc token acquisition</title>
-      <link>https://vulnogram.org/CVE-2026-9792</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9792</guid>
-      <description>A flaw was found in Keycloak&apos;s Client Policies, specifically within the `org.keycloak.protocol.oidc` component. When certain condition providers (client-type, client-roles, client-attributes, client-scopes) are used to enforce security restrictions,…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 03:44:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9793 · 5.9 MEDIUM 🌩️ — Keycloak: keycloak: security policy bypass in jwe-encrypted request object processing</title>
-      <link>https://vulnogram.org/CVE-2026-9793</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9793</guid>
-      <description>A flaw was found in Keycloak. When a JSON Web Encryption (JWE) encrypted request object is submitted, Keycloak may incorrectly process unsigned claims if the decrypted content is raw JSON, bypassing the configured signature policy. This allows a remo…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 03:44:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9791 · 4.3 MEDIUM — Keycloak-rhel9: organization data leak after feature disabled in keycloak</title>
-      <link>https://vulnogram.org/CVE-2026-9791</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9791</guid>
-      <description>A flaw was found in Keycloak. An authenticated user with existing organization membership can exploit this flaw by accessing user-facing APIs, such as the account API or by requesting an OpenID Connect (OIDC) token with the &apos;organization&apos; scope. This…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 28 May 2026 03:27:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9704 · 6.8 MEDIUM — Keycloak: keycloak: privilege escalation due to oversized subject_token jwt</title>
-      <link>https://vulnogram.org/CVE-2026-9704</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9704</guid>
-      <description>A flaw was found in Keycloak. An authenticated user with low privileges can exploit this vulnerability by sending an oversized subject_token JSON Web Token (JWT) to the TokenEndpoint. When the token exceeds a 4000-character limit, it is silently drop…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 27 May 2026 12:56:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-1933 · 7.1 HIGH — Samba: missing access check on reparse point operations</title>
-      <link>https://vulnogram.org/CVE-2026-1933</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1933</guid>
-      <description>A flaw was found in Samba’s handling of NTFS-style reparse points on shares configured with read only = yes. Due to missing SMB-layer access checks, authenticated users with underlying filesystem write permissions may create or delete reparse point m…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 12:28:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-2340 · 6.5 MEDIUM — Samba: vfs_worm does not block directory modification</title>
-      <link>https://vulnogram.org/CVE-2026-2340</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-2340</guid>
-      <description>A flaw was found in Samba’s vfs_worm module. The module is intended to provide write-once, read-many (WORM) protections by preventing modification of files after a configurable grace period. Due to insufficient validation during rename operations, an…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 27 May 2026 12:09:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9689 · 4.2 MEDIUM 🌩️ — Keycloak: org.keycloak.protocol.oidc: http parameter pollution in oidc redirect uri allows response parameter duplication - #ghi-604</title>
-      <link>https://vulnogram.org/CVE-2026-9689</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9689</guid>
-      <description>A flaw was found in Keycloak, an open-source identity and access management solution. When a client application is configured to accept broad redirect Uniform Resource Identifiers (URIs), a remote attacker can manipulate the authentication process by…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 27 May 2026 10:35:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3012 · 8 HIGH — Samba: group policy certificate enrollment uses http:// without validation</title>
-      <link>https://vulnogram.org/CVE-2026-3012</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3012</guid>
-      <description>A flaw was found in Samba’s certificate auto-enrollment Group Policy handling. When certificate auto-enrollment is enabled, Samba may retrieve a CA certificate over an unencrypted HTTP connection and install it into the local trust store without prop…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 10:02:21 GMT</pubDate>
     </item>
   </channel>
 </rss>

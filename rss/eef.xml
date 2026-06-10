@@ -11,7 +11,67 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 10 Jun 2026 06:12:10 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 17:47:41 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-48856 · 7.1 HIGH 🌩️ — httpc leaks Authorization header to cross-origin redirect targets</title>
+      <link>https://vulnogram.org/CVE-2026-48856</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48856</guid>
+      <description>Sensitive Data Exposure vulnerability in Erlang OTP inets (httpc_response module) allows Retrieve Embedded Sensitive Data. The httpc client forwards the Authorization and Proxy-Authorization request headers to redirect targets without checking whethe…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 10 Jun 2026 14:41:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48860 · 7.5 HIGH — Distribution-over-TLS LAN allowlist silently bypassed due to sockname/peername confusion in inet_tls_dist</title>
+      <link>https://vulnogram.org/CVE-2026-48860</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48860</guid>
+      <description>Reliance on IP Address for Authentication vulnerability in Erlang/OTP ssl (inet_tls_dist module) allows unauthenticated bypass of the distribution-over-TLS LAN allowlist. The inet_tls_dist:check_ip/1 function, which enforces a LAN allowlist for Erlan…</description>
+      <category>High</category>
+      <pubDate>Wed, 10 Jun 2026 14:35:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48855 · 2.3 LOW — SFTP READLINK Leaks Absolute Backend Filesystem Path When Root Is Configured</title>
+      <link>https://vulnogram.org/CVE-2026-48855</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48855</guid>
+      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Erlang OTP ssh (ssh_sftpd module) allows File Discovery. The SSH_FXP_READLINK handler in ssh_sftpd sends the raw result of file:read_link/2 to the client without calling chro…</description>
+      <category>Low</category>
+      <pubDate>Wed, 10 Jun 2026 14:35:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48858 · 6.3 MEDIUM 🌩️ — ftp client PASV response IP not validated against control peer, enabling SSRF and FTP bounce attacks</title>
+      <link>https://vulnogram.org/CVE-2026-48858</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48858</guid>
+      <description>Server-Side Request Forgery (SSRF) vulnerability in Erlang/OTP ftp (ftp_internal module) allows FTP bounce attacks and SSRF via an unvalidated PASV response IP address. The ftp_internal:handle_ctrl_result/2 PASV handler (mode=passive, ipfamily=inet,…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 10 Jun 2026 14:35:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48859 · 6.3 MEDIUM 🌩️ — SSH server timing side-channel in ssh_auth:check_password/3 allows unauthenticated username enumeration</title>
+      <link>https://vulnogram.org/CVE-2026-48859</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48859</guid>
+      <description>Observable Timing Discrepancy vulnerability in Erlang/OTP ssh (ssh_auth, ssh_options modules) allows unauthenticated remote username enumeration via timing side-channel in password authentication. When the SSH daemon is configured with the user_passw…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 10 Jun 2026 14:35:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49759 · 8.8 HIGH 🌩️ — Stack buffer overflow in SCTP error cause parsing in inet_drv allows remote VM crash</title>
+      <link>https://vulnogram.org/CVE-2026-49759</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49759</guid>
+      <description>Stack-based Buffer Overflow vulnerability in Erlang OTP erts (inet_drv) allows an unauthenticated remote attacker to crash the BEAM VM by sending a crafted SCTP ERROR chunk. The sctp_parse_error_chunk function in erts/emulator/drivers/common/inet_drv…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 10 Jun 2026 14:35:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49760 · 6.9 MEDIUM — Stack Buffer Overflow in ei_s_print_term at Very Large Integer</title>
+      <link>https://vulnogram.org/CVE-2026-49760</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49760</guid>
+      <description>Stack-based Buffer Overflow vulnerability in Erlang OTP (erl_interface) allows Stack-based Buffer Overflow. This vulnerability is associated with program file lib/erl_interface/src/misc/ei_printterm.c and program routine ei_s_print_term. The C functi…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 10 Jun 2026 14:35:36 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-49762 · 5.1 MEDIUM — Unbounded integer parsing in the Version module enables CPU and memory exhaustion denial of service</title>
       <link>https://vulnogram.org/CVE-2026-49762</link>
@@ -384,67 +444,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 11 May 2026 18:06:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-43969 · 2.1 LOW — Cookie Request Header Injection via Unvalidated Encoder in cow_cookie:cookie/1</title>
-      <link>https://vulnogram.org/CVE-2026-43969</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-43969</guid>
-      <description>Improper Neutralization of CRLF Sequences (&apos;CRLF Injection&apos;) vulnerability in ninenines cowlib allows HTTP request splitting and cookie smuggling via unvalidated cookie name and value fields. cow_cookie:cookie/1 in cowlib builds a client-side Cookie:…</description>
-      <category>Low</category>
-      <pubDate>Mon, 11 May 2026 18:06:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42793 · 8.2 HIGH 🌩️ — Atom table exhaustion via attacker-controlled GraphQL SDL names in absinthe</title>
-      <link>https://vulnogram.org/CVE-2026-42793</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42793</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in absinthe-graphql absinthe allows unauthenticated denial of service via atom table exhaustion when parsing attacker-controlled GraphQL SDL. Multiple Blueprint.Draft.convert/2 implem…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 08 May 2026 15:42:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42794 · 2.3 LOW 🌩️ — Reflected XSS via backslash bypass in GraphiQL js_escape in absinthe_plug</title>
-      <link>https://vulnogram.org/CVE-2026-42794</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42794</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (XSS) vulnerability in absinthe-graphql absinthe_plug allows reflected cross-site scripting via the GraphiQL interface. &apos;Elixir.Absinthe.Plug.GraphiQL&apos;:js_escape/1 in lib/absinthe/plug/graph…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 08 May 2026 15:42:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-43967 · 8.7 HIGH 🌩️ — Quadratic fragment-name uniqueness check causes denial of service in absinthe</title>
-      <link>https://vulnogram.org/CVE-2026-43967</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-43967</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in absinthe-graphql absinthe allows unauthenticated denial of service via quadratic fragment-name uniqueness validation. &apos;Elixir.Absinthe.Phase.Document.Validation.UniqueFragmentNames&apos;:run/2 iterates o…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 08 May 2026 15:42:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-32686 · 6.9 MEDIUM — Unbounded exponent in decimal enables unauthenticated DoS</title>
-      <link>https://vulnogram.org/CVE-2026-32686</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-32686</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in ericmj decimal allows unauthenticated remote Denial of Service. The decimal library does not bound the exponent on parsed input. Storing a decimal with a very large exponent (e.g. Decimal.new(&quot;1e1000…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 07 May 2026 14:04:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-32689 · 8.7 HIGH 🌩️ — Long-poll NDJSON body splitting causes unbounded memory allocation in Phoenix</title>
-      <link>https://vulnogram.org/CVE-2026-32689</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-32689</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in phoenixframework phoenix allows a denial of service via the long-poll transport&apos;s NDJSON body handling. In &apos;Elixir.Phoenix.Transports.LongPoll&apos;:publish/4, when a POST request is re…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 05 May 2026 15:17:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39805 · 6.3 MEDIUM 🌩️ — CL.CL HTTP request smuggling via duplicate Content-Length in bandit</title>
-      <link>https://vulnogram.org/CVE-2026-39805</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39805</guid>
-      <description>Inconsistent Interpretation of HTTP Requests vulnerability in mtrudel bandit allows HTTP request smuggling via duplicate Content-Length headers. &apos;Elixir.Bandit.Headers&apos;:get_content_length/1 in lib/bandit/headers.ex uses List.keyfind/3, which returns…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 01 May 2026 20:34:29 GMT</pubDate>
     </item>
   </channel>
 </rss>
