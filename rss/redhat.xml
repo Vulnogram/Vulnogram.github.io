@@ -11,7 +11,41 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 11 Jun 2026 13:54:45 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 20:04:14 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-53702 · 6.5 MEDIUM 🌩️ — Gstreamer1-plugins-bad-free: gstreamer: stack buffer overflow in h.265 buffering period sei parser</title>
+      <link>https://vulnogram.org/CVE-2026-53702</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53702</guid>
+      <description>A stack buffer overflow flaw was found in the GStreamer H.265 codec parser library (gst-plugins-bad). When parsing a buffering period SEI message, the parser uses an incorrect loop bound derived from cpb_cnt_minus1[i] (the loop index) instead of the…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 18:15:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53701 · 6.5 MEDIUM 🌩️ — Gstreamer1-plugins-bad-free: gstreamer: out-of-bounds write in h.266/vvc pps picture partition parser</title>
+      <link>https://vulnogram.org/CVE-2026-53701</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53701</guid>
+      <description>An out-of-bounds write vulnerability was found in GStreamer&apos;s H.266/VVC PPS picture partition parser in gst-plugins-bad. In the multi-slice-in-tile processing of gst_h266_parser_parse_picture_partition() (gsth266parser.c), the loop iterates without c…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 18:15:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11774 · 7.6 HIGH — 389-ds-base: 389-ds-base: integer overflow in sasl packet length bypasses size limit leading to heap buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-11774</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11774</guid>
+      <description>An integer overflow flaw was found in the SASL I/O layer of 389 Directory Server (389-ds-base). In sasl_io_start_packet(), adding sizeof(uint32_t) to a crafted SASL packet length prefix of 0xFFFFFFFC causes unsigned wraparound to zero, bypassing the…</description>
+      <category>High</category>
+      <pubDate>Thu, 11 Jun 2026 17:54:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11986 · 4.9 MEDIUM — Keycloak-rest-admin-ui-ext: authorization bypass vulnerability in the admin-ui-ext bulk role-mapping-delete endpoints of keycloak</title>
+      <link>https://vulnogram.org/CVE-2026-11986</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11986</guid>
+      <description>A flaw was found in the admin-ui-ext component of Keycloak, which provides extended administrative user interface capabilities. The issue occurs because certain bulk role-removal endpoints fail to perform granular permission checks when deleting role…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 11 Jun 2026 16:47:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-11850 · 5 MEDIUM — Krb5: krb5: integer underflow in berval2tl_data() leads to heap out-of-bounds read</title>
       <link>https://vulnogram.org/CVE-2026-11850</link>
@@ -141,6 +175,14 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 08 Jun 2026 07:34:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50263 · 5.5 MEDIUM — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: use-after-free information disclosure in createsaverwindow()</title>
+      <link>https://vulnogram.org/CVE-2026-50263</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50263</guid>
+      <description>A use-after-free flaw was found in the X.Org X server and Xwayland in CreateSaverWindow(). A client can trigger a use-after-free read after changing window attributes and forcing the screen saver, leading to information disclosure.</description>
+      <category>Medium</category>
+      <pubDate>Fri, 05 Jun 2026 10:36:46 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-50264 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: out-of-bounds heap write in dri2 drigetbuffers/drigetbufferswithformat</title>
@@ -379,49 +421,6 @@
       <description>A command injection vulnerability was discovered in the `rpmuncompress` utility of RPM. When extracting certain archive formats (ZIP, 7z, GEM) to a specified destination directory, the tool inserts the archive&apos;s top-level folder name into a shell com…</description>
       <category>High</category>
       <pubDate>Thu, 28 May 2026 05:59:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9802 · 6.8 MEDIUM 🌩️ — Keycloak: keycloak: unauthorized account access via replayed refresh tokens after cluster restart</title>
-      <link>https://vulnogram.org/CVE-2026-9802</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9802</guid>
-      <description>A flaw was found in Keycloak. When revokeRefreshToken=true is enabled and persistent session storage is in use, a server restart can reset internal timing mechanisms. This allows a remote attacker, who has previously captured a user&apos;s refresh token,…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 04:47:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9803 · 5.3 MEDIUM 🌩️ — Keycloak: keycloak: denial of service via malformed authorization header</title>
-      <link>https://vulnogram.org/CVE-2026-9803</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9803</guid>
-      <description>A flaw was found in Keycloak&apos;s ClientRegistrationAuth component. A remote unauthenticated attacker can exploit this vulnerability by sending a specially crafted POST request with a malformed &apos;Authorization: Bearer&apos; header to any client registration e…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 04:47:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9801 · 4.9 MEDIUM — Keycloak: keycloak: denial of service via malformed ldap password policy response</title>
-      <link>https://vulnogram.org/CVE-2026-9801</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9801</guid>
-      <description>A flaw was found in Keycloak. A remote attacker with high privileges, such as a realm administrator configuring a malicious Lightweight Directory Access Protocol (LDAP) server or an attacker compromising an upstream LDAP server, could exploit this vu…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 28 May 2026 04:42:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9798 · 4.3 MEDIUM 🌩️ — Keycloak: keycloak: brute-force protection bypass in ciba flow</title>
-      <link>https://vulnogram.org/CVE-2026-9798</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9798</guid>
-      <description>A flaw was found in Keycloak, an open-source identity and access management solution. When a user account is temporarily locked due to repeated failed login attempts, an attacker with valid client credentials can exploit the Client-Initiated Backchan…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 04:37:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9796 · 6.5 MEDIUM — Keycloak: keycloak: privilege escalation via time-of-check to time-of-use (toctou) vulnerability</title>
-      <link>https://vulnogram.org/CVE-2026-9796</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9796</guid>
-      <description>A flaw was found in Keycloak. An authenticated administrator with the `manage-clients` role can exploit a Time-of-check to time-of-use (TOCTOU) vulnerability in the name-based admin role checks. This allows the attacker to escalate their privileges t…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 28 May 2026 04:27:08 GMT</pubDate>
     </item>
   </channel>
 </rss>
