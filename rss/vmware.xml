@@ -11,7 +11,42 @@
       <title>VMware by Broadcom — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 11 Jun 2026 05:16:31 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 17:29:50 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-41001 · 5.3 MEDIUM — Predictable Temp Directory in Artemis Auto-configuration</title>
+      <link>https://vulnogram.org/CVE-2026-41001</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41001</guid>
+      <description>Spring Boot&apos;s ArtemisEmbeddedConfigurationFactory uses a fixed, static path for the embedded Artemis message broker&apos;s data directory when no explicit path is configured. A local attacker on the same host can pre-create this predictable directory or p…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 11 Jun 2026 05:04:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41000 · 3.7 LOW 🌩️ — WSS4J validation does not use configured replay cache</title>
+      <link>https://vulnogram.org/CVE-2026-41000</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41000</guid>
+      <description>Wss4jSecurityInterceptor did not consistently wire Apache WSS4J ReplayCache instances into RequestData for validation-time checks. As a result, protections against replay of UsernameToken nonces and creation timestamps, Timestamp elements, and certai…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 05:04:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40999 · 8.6 HIGH 🌩️ — Spring WS SSRF via unvalidated WS-Addressing reply destinations</title>
+      <link>https://vulnogram.org/CVE-2026-40999</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40999</guid>
+      <description>When WS-Addressing is used with non-anonymous ReplyTo or FaultTo addresses, Spring WS may initiate outbound connections through configured WebServiceMessageSender instances to destinations taken directly from request headers without verifying that th…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 05:04:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40998 · 8.2 HIGH 🌩️ — Jaxp13 XPath XXE via StreamSource and SAXSource</title>
+      <link>https://vulnogram.org/CVE-2026-40998</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40998</guid>
+      <description>Jaxp13XPathTemplate evaluated XPath expressions for StreamSource and SAXSource inputs using a code path that parsed attacker-controlled XML with the JDK&apos;s default DocumentBuilderFactory behavior instead of Spring&apos;s hardened parser configuration. Appl…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 05:04:12 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-40985 · 6.4 MEDIUM — Data Binding Vulnerability in Spring Web Flow with Unified EL Parser</title>
       <link>https://vulnogram.org/CVE-2026-40985</link>
@@ -416,41 +451,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 09 Jun 2026 03:49:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41838 · 4.8 MEDIUM — Spring Framework Predictable Session ID in WebSocket Module</title>
-      <link>https://vulnogram.org/CVE-2026-41838</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41838</guid>
-      <description>IDs for WebSocket sessions in the spring-websocket module are not cryptographically unpredictable, which may be possible to exploit in combination with inadequate authorization rules. Affected versions: Spring Framework 7.0.0 through 7.0.7; 6.2.0 thr…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 09 Jun 2026 03:49:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41720 · 7.4 HIGH 🌩️ — Authentication Bypass with Empty Password in Spring LDAP</title>
-      <link>https://vulnogram.org/CVE-2026-41720</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41720</guid>
-      <description>Spring LDAP&apos;s DirContextAuthenticationStrategy implementations do not reject a bind request where a non-empty username is paired with an empty or null password. Affected versions: Spring LDAP 2.4.0 through 2.4.4; 3.2.0 through 3.2.17; 3.3.0 through 3…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:48:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41715 · 6.1 MEDIUM 🌩️ — Reactor Netty HTTP Client Leaks Credentials On Protocol Downgrade Redirect</title>
-      <link>https://vulnogram.org/CVE-2026-41715</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41715</guid>
-      <description>In specific scenarios involving HTTP redirects from a secure to an insecure endpoint, the Reactor Netty HTTP client may leak credentials. In order for this to happen, the HTTP client must have been explicitly configured to follow redirects. Affected…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:48:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41710 · 5.9 MEDIUM 🌩️ — Cache Exhaustion in Stateful Retries leads to Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-41710</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41710</guid>
-      <description>An attacker can craft a large number of unique requests that trigger a failure, exhausting the capacity of the application-wide stateful retry cache. Once the cache is full, it permanently rejects any further updates, causing all later stateful retri…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:48:15 GMT</pubDate>
     </item>
   </channel>
 </rss>
