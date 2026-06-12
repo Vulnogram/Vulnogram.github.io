@@ -11,7 +11,68 @@
       <title>Cybersecurity and Infrastructure Security Agency (CISA) Industrial Control Systems (ICS) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 12 Jun 2026 16:00:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2026 18:54:58 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-50099 · 5.1 MEDIUM — Naxclow IoT Platform Insertion of sensitive information into Externally-Accessible file or directory</title>
+      <link>https://vulnogram.org/CVE-2026-50099</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50099</guid>
+      <description>During WiFi association, Naxclow device firmware prints the host network’s SSID, PSK, and negotiated WPA keys in cleartext to an exposed UART console on production hardware. The UART pads are labeled, run with default serial settings, and drop to an…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 12 Jun 2026 18:24:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50244 · 6.9 MEDIUM 🌩️ — Naxclow IoT Platform Missing Authorization</title>
+      <link>https://vulnogram.org/CVE-2026-50244</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50244</guid>
+      <description>The Naxclow platform exposes a registration endpoint that accepts signed requests containing a batch prefix and an arbitrary caller-supplied account identifier, without validating any ownership relationship. Each call mints a new sequential device id…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 12 Jun 2026 18:21:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42932 · 6.9 MEDIUM 🌩️ — Naxclow IoT Platform Generation of Predictable Numbers or Identifiers</title>
+      <link>https://vulnogram.org/CVE-2026-42932</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42932</guid>
+      <description>Naxclow device identifiers use fixed manufacturing prefixes combined with sequential counters, producing a fully predictable and enumerable identifier space. Because the platform also exposes an endpoint that reveals the current identifier high-water…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 12 Jun 2026 18:17:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42947 · 8.8 HIGH — Naxclow IoT Platform Authorization bypass through User-Controlled key</title>
+      <link>https://vulnogram.org/CVE-2026-42947</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42947</guid>
+      <description>A flaw in Naxclow&apos;s platform’s onboarding workflow allows an attacker to replay a confirm-then-bind sequence to silently reassign a device to an arbitrary account. Because the affected endpoints validate request signatures but do not confirm legitima…</description>
+      <category>High</category>
+      <pubDate>Fri, 12 Jun 2026 18:13:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50108 · 8.7 HIGH 🌩️ — Naxclow IoT Platform Missing Authorization</title>
+      <link>https://vulnogram.org/CVE-2026-50108</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50108</guid>
+      <description>The Naxclow platform API that returns device relay registration details exposes a persistent credential without verifying that the requester is the legitimate device or owner. An actor able to present a platform-valid request signature can retrieve c…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 12 Jun 2026 18:10:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50101 · 9.2 CRITICAL 🌩️ — Naxclow IoT Platform Not using password aging</title>
+      <link>https://vulnogram.org/CVE-2026-50101</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50101</guid>
+      <description>Naxclow devices use a server-side, per-device relay credential that never rotates and is re-issued to the device on each boot. Because this credential remains valid indefinitely and cannot be reset or revoked by the legitimate owner, any party that o…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 12 Jun 2026 18:07:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-28742 · 9.8 CRITICAL 🌩️ — Naxclow IoT Platform Use of hard-coded cryptographic key</title>
+      <link>https://vulnogram.org/CVE-2026-28742</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28742</guid>
+      <description>Naxclow devices use a uniform request-signing scheme based on a hard-coded, platform-wide salt embedded in every firmware image. Once this salt is recovered from any device, an attacker can generate valid signatures for arbitrary device or account op…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 12 Jun 2026 18:03:53 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10557 · 9.8 CRITICAL 🌩️ — Yarbo Android/iOS Mobile Application and Cloud Infrastructure Use of Hard-coded Credentials</title>
       <link>https://vulnogram.org/CVE-2026-10557</link>
@@ -372,68 +433,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 24 Apr 2026 00:04:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40620 · 9.8 CRITICAL 🌩️ — SenseLive X3050 Missing authentication for critical function</title>
-      <link>https://vulnogram.org/CVE-2026-40620</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40620</guid>
-      <description>A vulnerability in SenseLive X3050’s embedded management service allows full administrative control to be established without any form of authentication or authorization on the SenseLive config application. The service accepts management connections…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 24 Apr 2026 00:02:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-27841 · 8.4 HIGH 🌩️ — SenseLive X3050 Cross-Site request forgery</title>
-      <link>https://vulnogram.org/CVE-2026-27841</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-27841</guid>
-      <description>A vulnerability in SenseLive X3050&apos;s web management interface allows state-changing operations to be triggered without proper Cross-Site Request Forgery (CSRF) protections. Because the application does not enforce server-side validation of request or…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 24 Apr 2026 00:00:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40623 · 8.1 HIGH — SenseLive X3050 Missing Authorization</title>
-      <link>https://vulnogram.org/CVE-2026-40623</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40623</guid>
-      <description>A vulnerability in SenseLive X3050&apos;s web management interface allows critical system and network configuration parameters to be modified without sufficient validation and safety controls. Due to inadequate enforcement of constraints on sensitive func…</description>
-      <category>High</category>
-      <pubDate>Thu, 23 Apr 2026 23:58:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40431 · 6.9 MEDIUM 🌩️ — SenseLive X3050 Cleartext transmission of sensitive information</title>
-      <link>https://vulnogram.org/CVE-2026-40431</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40431</guid>
-      <description>A vulnerability exists in SenseLive X3050’s web management interface due to its reliance on unencrypted HTTP for all administrative communication. Because management traffic, including authentication attempts and configuration data, is transmitted in…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 23 Apr 2026 23:56:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-27843 · 9.2 CRITICAL 🌩️ — SenseLive X3050 Missing authentication for critical function</title>
-      <link>https://vulnogram.org/CVE-2026-27843</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-27843</guid>
-      <description>A vulnerability exists in SenseLive X3050&apos;s web management interface that allows critical configuration parameters to be modified without sufficient authentication or server-side validation. By applying unsupported or disruptive values to recovery me…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 23 Apr 2026 23:54:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39462 · 9.3 CRITICAL 🌩️ — SenseLive X3050 Insufficiently Protected Credentials</title>
-      <link>https://vulnogram.org/CVE-2026-39462</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39462</guid>
-      <description>A vulnerability exists in SenseLive X3050’s web management interface in which password updates are not reliably applied due to improper handling of credential changes on the backend. After the device undergoes a factory restore using the SenseLive Co…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 23 Apr 2026 23:52:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35503 · 9.8 CRITICAL 🌩️ — SenseLive X3050 Use of Hard-coded Credentials</title>
-      <link>https://vulnogram.org/CVE-2026-35503</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35503</guid>
-      <description>A vulnerability in SenseLive X3050’s web management interface allows authentication logic to be performed entirely on the client side, relying on hardcoded values within browser-executed scripts rather than server-side verification. An attacker with…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 23 Apr 2026 23:50:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
