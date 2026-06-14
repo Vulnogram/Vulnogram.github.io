@@ -11,7 +11,7 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 14 Jun 2026 07:10:49 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 19:02:00 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-52907 · 7.8 HIGH — media: rockchip: rkcif: fix off by one bugs</title>
       <link>https://vulnogram.org/CVE-2026-52907</link>
@@ -27,6 +27,20 @@
       <description>In the Linux kernel, the following vulnerability has been resolved: 9p: fix access mode flags being ORed instead of replaced Since commit 1f3e4142c0eb (&quot;9p: convert to the new mount API&quot;), v9fs_apply_options() applies parsed mount flags with |= onto…</description>
       <category>High</category>
       <pubDate>Tue, 09 Jun 2026 12:36:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-52905 — mm/damon/core: disallow non-power of two min_region_sz on damon_start()</title>
+      <link>https://vulnogram.org/CVE-2026-52905</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52905</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: mm/damon/core: disallow non-power of two min_region_sz on damon_start() Commit d8f867fa0825 (&quot;mm/damon: add damon_ctx-&gt;min_sz_region&quot;) introduced a bug that allows unaligned DAMON re…</description>
+      <pubDate>Tue, 09 Jun 2026 12:36:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-52904 — drm/nouveau: fix nvkm_device leak on aperture removal failure</title>
+      <link>https://vulnogram.org/CVE-2026-52904</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52904</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/nouveau: fix nvkm_device leak on aperture removal failure When aperture_remove_conflicting_pci_devices() fails during probe, the error path returns directly without unwinding the…</description>
+      <pubDate>Tue, 09 Jun 2026 12:36:01 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-46332 · 8 HIGH — greybus: gb-beagleplay: bound bootloader receive buffering</title>
@@ -155,12 +169,54 @@
       <pubDate>Tue, 09 Jun 2026 07:38:13 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-46314 — drm/v3d: Reject empty multisync extension to prevent infinite loop</title>
+      <link>https://vulnogram.org/CVE-2026-46314</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46314</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/v3d: Reject empty multisync extension to prevent infinite loop v3d_get_extensions() walks a userspace-provided singly-linked list of ioctl extensions without any bound on the cha…</description>
+      <pubDate>Mon, 08 Jun 2026 15:50:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46313 — media: intel/ipu6: fix error pointer dereference</title>
+      <link>https://vulnogram.org/CVE-2026-46313</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46313</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: intel/ipu6: fix error pointer dereference In a error path isp-&gt;psys is confirmed to be an error pointer not NULL so this condition is true and the error pointer is dereference…</description>
+      <pubDate>Mon, 08 Jun 2026 15:50:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46312 — media: videobuf2: Set vma_flags in vb2_dma_sg_mmap</title>
+      <link>https://vulnogram.org/CVE-2026-46312</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46312</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: videobuf2: Set vma_flags in vb2_dma_sg_mmap vb2_dma_contig sets VMA flags VM_DONTEXPAND and VM_DONTDUMP and I do not see a reason why vb2_dma_sg should behave differently. Thi…</description>
+      <pubDate>Mon, 08 Jun 2026 15:50:42 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-46311 · 7.8 HIGH — drm/amdgpu/userq: fix access to stale wptr mapping</title>
       <link>https://vulnogram.org/CVE-2026-46311</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46311</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu/userq: fix access to stale wptr mapping Use drm_exec to take both locks i.e vm root bo and wptr_obj bo to access the mapping data properly. This fixes the security issue o…</description>
       <category>High</category>
       <pubDate>Mon, 08 Jun 2026 15:50:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46310 — media: renesas: vsp1: Fix NULL pointer deref on module unload</title>
+      <link>https://vulnogram.org/CVE-2026-46310</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46310</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: renesas: vsp1: Fix NULL pointer deref on module unload When unloading the module on gen 4, we hit a NULL pointer dereference. This is caused by the cleanup code calling vsp1_d…</description>
+      <pubDate>Mon, 08 Jun 2026 15:50:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46309 — drm/xe/uapi: Reject coh_none PAT index for CPU cached memory in madvise</title>
+      <link>https://vulnogram.org/CVE-2026-46309</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46309</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/xe/uapi: Reject coh_none PAT index for CPU cached memory in madvise Add validation in xe_vm_madvise_ioctl() to reject PAT indices with XE_COH_NONE coherency mode when applied to…</description>
+      <pubDate>Mon, 08 Jun 2026 15:50:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46308 — pmdomain: mediatek: fix use-after-free in scpsys_get_bus_protection_legacy()</title>
+      <link>https://vulnogram.org/CVE-2026-46308</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46308</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: pmdomain: mediatek: fix use-after-free in scpsys_get_bus_protection_legacy() In scpsys_get_bus_protection_legacy(), of_find_node_with_property() returns a device node with its refere…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:36 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-46307 · 8.3 HIGH — wifi: ath5k: do not access array OOB</title>
@@ -177,6 +233,13 @@
       <description>In the Linux kernel, the following vulnerability has been resolved: flow_dissector: do not dissect PPPoE PFC frames RFC 2516 Section 7 states that Protocol Field Compression (PFC) is NOT RECOMMENDED for PPPoE. In practice, pppd does not support negot…</description>
       <category>High</category>
       <pubDate>Mon, 08 Jun 2026 15:46:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46305 — staging: rtl8723bs: os_dep: avoid NULL pointer dereference in rtw_cbuf_alloc</title>
+      <link>https://vulnogram.org/CVE-2026-46305</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46305</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: staging: rtl8723bs: os_dep: avoid NULL pointer dereference in rtw_cbuf_alloc The return value of kzalloc_flex() is used without ensuring that the allocation succeeded, and the pointe…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:32 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-46304 · 7.5 HIGH — nvmet: avoid recursive nvmet-wq flush in nvmet_ctrl_free</title>
@@ -202,6 +265,13 @@
       <pubDate>Mon, 08 Jun 2026 15:46:29 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-46301 — spi: topcliff-pch: fix use-after-free on unbind</title>
+      <link>https://vulnogram.org/CVE-2026-46301</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46301</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: spi: topcliff-pch: fix use-after-free on unbind Give the driver a chance to flush its queue before releasing the DMA buffers on driver unbind</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:28 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-46299 · 7 HIGH — hfsplus: fix held lock freed on hfsplus_fill_super()</title>
       <link>https://vulnogram.org/CVE-2026-46299</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46299</guid>
@@ -210,11 +280,67 @@
       <pubDate>Mon, 08 Jun 2026 15:46:26 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-46298 — pseries/papr-hvpipe: Fix race with interrupt handler</title>
+      <link>https://vulnogram.org/CVE-2026-46298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46298</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: pseries/papr-hvpipe: Fix race with interrupt handler While executing -&gt;ioctl handler or -&gt;release handler, if an interrupt fires on the same cpu, then we can enter into a deadlock. T…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46297 — net: libwx: use request_irq for VF misc interrupt</title>
+      <link>https://vulnogram.org/CVE-2026-46297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46297</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: libwx: use request_irq for VF misc interrupt Currently, request_threaded_irq() is used with a primary handler but a NULL threaded handler, while also setting the IRQF_ONESHOT fl…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46296 — spi: s3c64xx: fix NULL-deref on driver unbind</title>
+      <link>https://vulnogram.org/CVE-2026-46296</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46296</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: spi: s3c64xx: fix NULL-deref on driver unbind A change moving DMA channel allocation from probe() back to s3c64xx_spi_prepare_transfer() failed to remove the corresponding deallocati…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46295 — KVM: x86: Do IRR scan in __kvm_apic_update_irr even if PIR is empty</title>
+      <link>https://vulnogram.org/CVE-2026-46295</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46295</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: x86: Do IRR scan in __kvm_apic_update_irr even if PIR is empty Fall back to apic_find_highest_vector() when PID.ON is set but PIR turns out to be empty, to correctly report the…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:22 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-46294 — dm: fix a buffer overflow in ioctl processing</title>
       <link>https://vulnogram.org/CVE-2026-46294</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46294</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: dm: fix a buffer overflow in ioctl processing Tony Asleson (using Claude) found a buffer overflow in dm-ioctl in the function retrieve_status: 1. The code in retrieve_status checks t…</description>
       <pubDate>Mon, 08 Jun 2026 15:46:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46293 — clk: microchip: mpfs-ccc: fix out of bounds access during output registration</title>
+      <link>https://vulnogram.org/CVE-2026-46293</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46293</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: clk: microchip: mpfs-ccc: fix out of bounds access during output registration UBSAN reported an out of bounds access during registration of the last two outputs. This out of bounds a…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46292 — pmdomain: core: Fix detach procedure for virtual devices in genpd</title>
+      <link>https://vulnogram.org/CVE-2026-46292</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46292</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: pmdomain: core: Fix detach procedure for virtual devices in genpd If a device is attached to a PM domain through genpd_dev_pm_attach_by_id(), genpd calls pm_runtime_enable() for the…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46291 — crypto: caam - guard HMAC key hex dumps in hash_digest_key</title>
+      <link>https://vulnogram.org/CVE-2026-46291</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46291</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: crypto: caam - guard HMAC key hex dumps in hash_digest_key Use print_hex_dump_devel() for dumping sensitive HMAC key bytes in hash_digest_key() to avoid leaking secrets at runtime wh…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46290 — x86/efi: Fix graceful fault handling after FPU softirq changes</title>
+      <link>https://vulnogram.org/CVE-2026-46290</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46290</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: x86/efi: Fix graceful fault handling after FPU softirq changes Since commit d02198550423 (&quot;x86/fpu: Improve crypto performance by making kernel-mode FPU reliably usable in softirqs&quot;)…</description>
+      <pubDate>Mon, 08 Jun 2026 15:46:17 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-46289 · 9.8 CRITICAL — lib/scatterlist: fix length calculations in extract_kvec_to_sg</title>
@@ -233,6 +359,13 @@
       <pubDate>Mon, 08 Jun 2026 15:41:31 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-46287 — net: txgbe: fix RTNL assertion warning when remove module</title>
+      <link>https://vulnogram.org/CVE-2026-46287</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46287</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: txgbe: fix RTNL assertion warning when remove module For the copper NIC with external PHY, the driver called phylink_connect_phy() during probe and phylink_disconnect_phy() duri…</description>
+      <pubDate>Mon, 08 Jun 2026 15:41:30 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-46286 — leds: qcom-lpg: Check for array overflow when selecting the high resolution</title>
       <link>https://vulnogram.org/CVE-2026-46286</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46286</guid>
@@ -240,164 +373,18 @@
       <pubDate>Mon, 08 Jun 2026 15:41:29 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-46280 · 7.8 HIGH — lib: test_hmm: evict device pages on file close to avoid use-after-free</title>
-      <link>https://vulnogram.org/CVE-2026-46280</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46280</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: lib: test_hmm: evict device pages on file close to avoid use-after-free Patch series &quot;Minor hmm_test fixes and cleanups&quot;. Two bugfixes a cleanup for the HMM kernel selftests. These w…</description>
-      <category>High</category>
-      <pubDate>Mon, 08 Jun 2026 15:41:23 GMT</pubDate>
+      <title>CVE-2026-46285 — mtd: docg3: fix use-after-free in docg3_release()</title>
+      <link>https://vulnogram.org/CVE-2026-46285</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46285</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: mtd: docg3: fix use-after-free in docg3_release() In docg3_release(), the docg3 pointer is obtained from cascade-&gt;floors[0]-&gt;priv before the loop that calls doc_release_device() on e…</description>
+      <pubDate>Mon, 08 Jun 2026 15:41:28 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-46277 · 7.8 HIGH — mm/zone_device: do not touch device folio after calling -&gt;folio_free()</title>
-      <link>https://vulnogram.org/CVE-2026-46277</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46277</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: mm/zone_device: do not touch device folio after calling -&gt;folio_free() The contents of a device folio can immediately change after calling -&gt;folio_free(), as the folio may be realloc…</description>
-      <category>High</category>
-      <pubDate>Mon, 08 Jun 2026 15:41:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46276 — drm/amdgpu: fix zero-size GDS range init on RDNA4</title>
-      <link>https://vulnogram.org/CVE-2026-46276</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46276</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu: fix zero-size GDS range init on RDNA4 RDNA4 (GFX 12) hardware removes the GDS, GWS, and OA on-chip memory resources. The gfx_v12_0 initialisation code correctly leaves ad…</description>
-      <pubDate>Mon, 08 Jun 2026 15:41:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46275 · 7.8 HIGH — Bluetooth: hci_uart: fix UAFs and race conditions in close and init paths</title>
-      <link>https://vulnogram.org/CVE-2026-46275</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46275</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: hci_uart: fix UAFs and race conditions in close and init paths Vulnerabilities leading to Use-After-Free (UAF) and Null Pointer Dereference (NPD) conditions were observed…</description>
-      <category>High</category>
-      <pubDate>Mon, 08 Jun 2026 14:30:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46274 · 7.8 HIGH — io-wq: check that the predecessor is hashed in io_wq_remove_pending()</title>
-      <link>https://vulnogram.org/CVE-2026-46274</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46274</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io-wq: check that the predecessor is hashed in io_wq_remove_pending() io_wq_remove_pending() needs to fix up wq-&gt;hash_tail[] if the cancelled work was the tail of its hash bucket. Wh…</description>
-      <category>High</category>
-      <pubDate>Mon, 08 Jun 2026 14:30:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-71315 — drm/vkms: Convert to DRM&apos;s vblank timer</title>
-      <link>https://vulnogram.org/CVE-2025-71315</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-71315</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/vkms: Convert to DRM&apos;s vblank timer Replace vkms&apos; vblank timer with the DRM implementation. The DRM code is identical in concept, but differs in implementation. Vblank timers are…</description>
-      <pubDate>Mon, 08 Jun 2026 14:30:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46273 · 8.6 HIGH — ibmveth: Disable GSO for packets with small MSS</title>
-      <link>https://vulnogram.org/CVE-2026-46273</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46273</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ibmveth: Disable GSO for packets with small MSS Some physical adapters on Power systems do not support segmentation offload when the MSS is less than 224 bytes. Attempting to send su…</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Jun 2026 16:19:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46272 — coresight: tmc-etr: Fix race condition between sysfs and perf mode</title>
-      <link>https://vulnogram.org/CVE-2026-46272</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46272</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: coresight: tmc-etr: Fix race condition between sysfs and perf mode When trying to run perf and sysfs mode simultaneously, the WARN_ON() in tmc_etr_enable_hw() is triggered sometimes:…</description>
-      <pubDate>Wed, 03 Jun 2026 15:50:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46271 · 7.8 HIGH — wifi: ath12k: do WoW offloads only on primary link</title>
-      <link>https://vulnogram.org/CVE-2026-46271</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46271</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: ath12k: do WoW offloads only on primary link In case of multi-link connection, WCN7850 firmware crashes due to WoW offloads enabled on both primary and secondary links. Change…</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Jun 2026 15:50:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46270 · 8.4 HIGH — power: supply: rt9455: Fix use-after-free in power_supply_changed()</title>
-      <link>https://vulnogram.org/CVE-2026-46270</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46270</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: power: supply: rt9455: Fix use-after-free in power_supply_changed() Using the `devm_` variant for requesting IRQ _before_ the `devm_` variant for allocating/registering the `power_su…</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Jun 2026 15:50:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46269 — pinctrl: canaan: k230: Fix NULL pointer dereference when parsing devicetree</title>
-      <link>https://vulnogram.org/CVE-2026-46269</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46269</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: pinctrl: canaan: k230: Fix NULL pointer dereference when parsing devicetree When probing the k230 pinctrl driver, the kernel triggers a NULL pointer dereference. The crash trace show…</description>
-      <pubDate>Wed, 03 Jun 2026 15:50:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46268 — PCI/P2PDMA: Fix p2pmem_alloc_mmap() warning condition</title>
-      <link>https://vulnogram.org/CVE-2026-46268</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46268</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: PCI/P2PDMA: Fix p2pmem_alloc_mmap() warning condition Commit b7e282378773 has already changed the initial page refcount of p2pdma page from one to zero, however, in p2pmem_alloc_mmap…</description>
-      <pubDate>Wed, 03 Jun 2026 15:50:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46267 — nfc: hci: shdlc: Stop timers and work before freeing context</title>
-      <link>https://vulnogram.org/CVE-2026-46267</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46267</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: nfc: hci: shdlc: Stop timers and work before freeing context llc_shdlc_deinit() purges SHDLC skb queues and frees the llc_shdlc structure while its timers and state machine work may…</description>
-      <pubDate>Wed, 03 Jun 2026 15:50:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46266 · 9.1 CRITICAL — inet: RAW sockets using IPPROTO_RAW MUST drop incoming ICMP</title>
-      <link>https://vulnogram.org/CVE-2026-46266</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46266</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: inet: RAW sockets using IPPROTO_RAW MUST drop incoming ICMP Yizhou Zhao reported that simply having one RAW socket on protocol IPPROTO_RAW (255) was dangerous. socket(AF_INET, SOCK_R…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 03 Jun 2026 15:50:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46265 · 7.5 HIGH — RDMA/hns: Fix WQ_MEM_RECLAIM warning</title>
-      <link>https://vulnogram.org/CVE-2026-46265</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46265</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: RDMA/hns: Fix WQ_MEM_RECLAIM warning When sunrpc is used, if a reset triggered, our wq may lead the following trace: workqueue: WQ_MEM_RECLAIM xprtiod:xprt_rdma_connect_worker [rpcrd…</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Jun 2026 15:50:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46264 · 8.8 HIGH — drm/xe/pf: Fix sysfs initialization</title>
-      <link>https://vulnogram.org/CVE-2026-46264</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46264</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/xe/pf: Fix sysfs initialization In case of devm_add_action_or_reset() failure the provided cleanup action will be run immediately on the not yet initialized kobject. This may lea…</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Jun 2026 15:50:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46263 · 7.8 HIGH — drm/amd/display: Fix out-of-bounds stream encoder index v3</title>
-      <link>https://vulnogram.org/CVE-2026-46263</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46263</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amd/display: Fix out-of-bounds stream encoder index v3 eng_id can be negative and that stream_enc_regs[] can be indexed out of bounds. eng_id is used directly as an index into st…</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Jun 2026 15:50:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46262 — ASoC: fsl_xcvr: Revert fix missing lock in fsl_xcvr_mode_put()</title>
-      <link>https://vulnogram.org/CVE-2026-46262</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46262</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ASoC: fsl_xcvr: Revert fix missing lock in fsl_xcvr_mode_put() This reverts commit f51424872760 (&quot;ASoC: fsl_xcvr: fix missing lock in fsl_xcvr_mode_put()&quot;). The original patch attemp…</description>
-      <pubDate>Wed, 03 Jun 2026 15:49:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46261 — spi: wpcm-fiu: Fix potential NULL pointer dereference in wpcm_fiu_probe()</title>
-      <link>https://vulnogram.org/CVE-2026-46261</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46261</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: spi: wpcm-fiu: Fix potential NULL pointer dereference in wpcm_fiu_probe() platform_get_resource_byname() can return NULL, which would cause a crash when passed the pointer to resourc…</description>
-      <pubDate>Wed, 03 Jun 2026 15:49:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46260 · 7.8 HIGH — ipv6: Fix out-of-bound access in fib6_add_rt2node().</title>
-      <link>https://vulnogram.org/CVE-2026-46260</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46260</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ipv6: Fix out-of-bound access in fib6_add_rt2node(). syzbot reported out-of-bound read in fib6_add_rt2node(). [0] When IPv6 route is created with RTA_NH_ID, struct fib6_info does not…</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Jun 2026 15:49:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46259 · 7.8 HIGH — procfs: fix missing RCU protection when reading real_parent in do_task_stat()</title>
-      <link>https://vulnogram.org/CVE-2026-46259</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46259</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: procfs: fix missing RCU protection when reading real_parent in do_task_stat() When reading /proc/[pid]/stat, do_task_stat() accesses task-&gt;real_parent without proper RCU protection,…</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Jun 2026 15:49:56 GMT</pubDate>
+      <title>CVE-2026-46284 — mm/hugetlb: fix early boot crash on parameters without &apos;=&apos; separator</title>
+      <link>https://vulnogram.org/CVE-2026-46284</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46284</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: mm/hugetlb: fix early boot crash on parameters without &apos;=&apos; separator If hugepages, hugepagesz, or default_hugepagesz are specified on the kernel command line without the &apos;=&apos; separato…</description>
+      <pubDate>Mon, 08 Jun 2026 15:41:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
