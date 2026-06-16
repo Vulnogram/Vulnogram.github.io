@@ -11,7 +11,42 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 15 Jun 2026 15:00:36 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 00:19:55 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-48853 · 9.2 CRITICAL 🌩️ — Remote code execution and denial of service via unsafe Erlang term deserialization in elixir-grpc/grpc</title>
+      <link>https://vulnogram.org/CVE-2026-48853</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48853</guid>
+      <description>Deserialization of Untrusted Data and Allocation of Resources Without Limits or Throttling vulnerabilities in elixir-grpc grpc allow unauthenticated attackers to crash the BEAM node via atom table exhaustion and, when a decoded term flows into a call…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 15 Jun 2026 21:56:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53430 · 8.7 HIGH 🌩️ — grpc gzip decompression bomb in GRPC.Compressor.Gzip.decompress/1</title>
+      <link>https://vulnogram.org/CVE-2026-53430</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53430</guid>
+      <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in elixir-grpc grpc (GRPC.Compressor.Gzip, GRPC.Message modules) allows a denial of service via a gzip decompression bomb. This vulnerability is associated with program fi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 15 Jun 2026 21:55:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48599 · 7.6 HIGH — Authorization bypass via path binding override in elixir-grpc/grpc HTTP transcoding</title>
+      <link>https://vulnogram.org/CVE-2026-48599</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48599</guid>
+      <description>Authorization Bypass Through User-Controlled Key vulnerability in elixir-grpc grpc allows authenticated attackers to access or modify resources belonging to other users by smuggling a conflicting value for any path-bound field via the query string or…</description>
+      <category>High</category>
+      <pubDate>Mon, 15 Jun 2026 21:55:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48854 · 8.7 HIGH 🌩️ — Unbounded request body accumulation causes memory exhaustion in elixir-grpc/grpc</title>
+      <link>https://vulnogram.org/CVE-2026-48854</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48854</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in elixir-grpc grpc allows unauthenticated attackers to exhaust the BEAM&apos;s memory and crash the server by streaming a large or slow-trickle unary request body. &apos;Elixir.GRPC.Server.Ada…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 15 Jun 2026 21:55:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-49757 · 9.2 CRITICAL 🌩️ — OAuth2/OIDC account takeover in AshAuthentication via email-based user matching</title>
       <link>https://vulnogram.org/CVE-2026-49757</link>
@@ -408,41 +443,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 13 May 2026 18:43:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8466 · 8.2 HIGH 🌩️ — Unbounded buffer accumulation in multipart header parsing causes denial of service in cowboy</title>
-      <link>https://vulnogram.org/CVE-2026-8466</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8466</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in ninenines cowboy allows denial of service via unbounded buffer accumulation in multipart header parsing. cowboy_req:read_part/3 in src/cowboy_req.erl accumulates incoming request b…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 13 May 2026 18:26:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39806 · 8.7 HIGH 🌩️ — HTTP/1 chunked decoder infinite loop on requests with trailer fields in bandit</title>
-      <link>https://vulnogram.org/CVE-2026-39806</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39806</guid>
-      <description>Loop with Unreachable Exit Condition (&apos;Infinite Loop&apos;) vulnerability in mtrudel bandit allows unauthenticated remote denial of service via worker process exhaustion. &apos;Elixir.Bandit.HTTP1.Socket&apos;:do_read_chunked_data!/5 in lib/bandit/http1/socket.ex t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 13 May 2026 13:36:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39803 · 8.7 HIGH 🌩️ — HTTP/1 chunked body reader ignores length cap in bandit</title>
-      <link>https://vulnogram.org/CVE-2026-39803</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39803</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in mtrudel bandit allows unauthenticated remote denial of service via memory exhaustion. The chunked clause of &apos;Elixir.Bandit.HTTP1.Socket&apos;:read_data/2 in lib/bandit/http1/socket.ex i…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 13 May 2026 13:36:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-32687 · 7.5 HIGH — SQL injection via channel name in Postgrex.Notifications.listen/3 and unlisten/3</title>
-      <link>https://vulnogram.org/CVE-2026-32687</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-32687</guid>
-      <description>Improper Neutralization of Special Elements used in an SQL Command (&apos;SQL Injection&apos;) vulnerability in elixir-ecto postgrex (&apos;Elixir.Postgrex.Notifications&apos; module) allows SQL Injection. The channel argument passed to &apos;Elixir.Postgrex.Notifications&apos;:l…</description>
-      <category>High</category>
-      <pubDate>Tue, 12 May 2026 14:18:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
