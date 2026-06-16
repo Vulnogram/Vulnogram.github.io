@@ -11,7 +11,47 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 16 Jun 2026 06:18:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 17:52:01 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10640 · 4.2 MEDIUM — Use-after-free reading `net_pkt` `iface` after send in IPv6 Neighbor Discovery (`ipv6_nbr.c`)</title>
+      <link>https://vulnogram.org/CVE-2026-10640</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10640</guid>
+      <description>Zephyr&apos;s IPv6 Neighbor Discovery send paths (net_ipv6_send_na, net_ipv6_send_ns, net_ipv6_send_rs in subsys/net/ip/ipv6_nbr.c) updated the per-interface ICMP-sent statistics by calling net_pkt_iface(pkt) after net_send_data(pkt) had already returned…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 16 Jun 2026 13:28:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10639 · 4.8 MEDIUM — Use-after-free reading `net_pkt_iface()` of a sent ICMPv4 echo-reply packet in `icmpv4_handle_echo_request()`</title>
+      <link>https://vulnogram.org/CVE-2026-10639</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10639</guid>
+      <description>In Zephyr&apos;s native IPv4 stack, icmpv4_handle_echo_request() in subsys/net/ip/icmpv4.c builds an echo-reply packet (reply), hands it to net_try_send_data(), and then, on success, calls net_stats_update_icmp_sent(net_pkt_iface(reply)). net_try_send_dat…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 16 Jun 2026 13:22:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10638 · 5.9 MEDIUM — Use-after-free in Zephyr ICMPv6 RX path when updating statistics after sending an echo reply or error</title>
+      <link>https://vulnogram.org/CVE-2026-10638</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10638</guid>
+      <description>subsys/net/ip/icmpv6.c reads the network interface from a net_pkt after that packet has been handed to net_try_send_data(). In icmpv6_handle_echo_request() and net_icmpv6_send_error(), the post-send statistics update calls net_pkt_iface(reply)/net_pk…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 16 Jun 2026 13:16:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10637 · 5.9 MEDIUM — Use-after-free of net_pkt in IPv6 MLD send path triggerable by a link-local MLD Query</title>
+      <link>https://vulnogram.org/CVE-2026-10637</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10637</guid>
+      <description>subsys/net/ip/ipv6_mld.c:mld_send() read the packet interface via net_pkt_iface(pkt) after net_send_data(pkt) returned successfully. Per the network stack&apos;s ownership contract (include/zephyr/net/net_core.h, and the explicit warning in subsys/net/ip/…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 16 Jun 2026 13:13:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10636 · 3.7 LOW — Use-after-free in Zephyr IPv4 IGMP send path (igmp_send)</title>
+      <link>https://vulnogram.org/CVE-2026-10636</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10636</guid>
+      <description>In Zephyr&apos;s IPv4 IGMP implementation, igmp_send() in subsys/net/ip/igmp.c read the network interface back out of the packet via net_pkt_iface(pkt) after the packet had been handed to net_send_data(). On the successful-send path the packet&apos;s last refe…</description>
+      <category>Low</category>
+      <pubDate>Tue, 16 Jun 2026 13:12:58 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10635 · 6.3 MEDIUM — Dangling memory-domain pointer (use-after-free) in Xtensa MMU page-table code on memory-domain de-init</title>
       <link>https://vulnogram.org/CVE-2026-10635</link>
@@ -381,47 +421,6 @@
       <description>Possible buffer overflow in is_mount_point</description>
       <category>High</category>
       <pubDate>Tue, 20 Feb 2024 18:25:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-1638 · 8.2 HIGH 🌩️ — Bluetooth characteristic LESC security requirement not enforced without additional flags</title>
-      <link>https://vulnogram.org/CVE-2024-1638</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-1638</guid>
-      <description>The documentation specifies that the BT_GATT_PERM_READ_LESC and BT_GATT_PERM_WRITE_LESC defines for a Bluetooth characteristic: Attribute read/write permission with LE Secure Connection encryption. If set, requires that LE Secure Connections is used…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Feb 2024 21:19:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-5779 · 4.4 MEDIUM — can: out of bounds in remove_rx_filter function</title>
-      <link>https://vulnogram.org/CVE-2023-5779</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5779</guid>
-      <description>can: out of bounds in remove_rx_filter function</description>
-      <category>Medium</category>
-      <pubDate>Sun, 18 Feb 2024 07:46:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-6249 · 8 HIGH — ipm: signed to unsigned conversion problem in esp32_ipm_send</title>
-      <link>https://vulnogram.org/CVE-2023-6249</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-6249</guid>
-      <description>Signed to unsigned conversion esp32_ipm_send</description>
-      <category>High</category>
-      <pubDate>Sun, 18 Feb 2024 07:27:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-6749 · 8 HIGH — Unchecked user input length in the Zephyr Settings Shell</title>
-      <link>https://vulnogram.org/CVE-2023-6749</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-6749</guid>
-      <description>Unchecked length coming from user input in settings shell</description>
-      <category>High</category>
-      <pubDate>Sun, 18 Feb 2024 07:04:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-5055 · 8.3 HIGH — L2CAP: Possible Stack based buffer overflow in le_ecred_reconf_req()</title>
-      <link>https://vulnogram.org/CVE-2023-5055</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5055</guid>
-      <description>Possible variant of CVE-2021-3434 in function le_ecred_reconf_req.</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Nov 2023 18:05:10 GMT</pubDate>
     </item>
   </channel>
 </rss>
