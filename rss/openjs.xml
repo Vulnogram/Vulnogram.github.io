@@ -11,7 +11,72 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 15 Jun 2026 19:35:28 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2026 17:41:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-11525 · 3.7 LOW — undici vulnerable to Set-Cookie SameSite attribute downgrade via permissive substring matching</title>
+      <link>https://vulnogram.org/CVE-2026-11525</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11525</guid>
+      <description>Impact: When undici parses a Set-Cookie header, it accepts any SameSite attribute value that contains Strict, Lax, or None as a substring, rather than the case-insensitive exact match specified by RFC 6265. Non-spec values are silently mapped to one…</description>
+      <category>Low</category>
+      <pubDate>Wed, 17 Jun 2026 17:31:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6733 · 3.7 LOW — undici vulnerable to HTTP response queue poisoning via keep-alive socket reuse</title>
+      <link>https://vulnogram.org/CVE-2026-6733</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6733</guid>
+      <description>Impact: Undici&apos;s HTTP/1.1 client is vulnerable to response queue poisoning on reused keep-alive sockets. An attacker-controlled upstream server can inject an unsolicited HTTP/1.1 response onto an idle socket after a request completes. When the client…</description>
+      <category>Low</category>
+      <pubDate>Wed, 17 Jun 2026 17:14:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9678 · 5.9 MEDIUM — undici vulnerable to cross-user information disclosure via shared cache whitespace bypass</title>
+      <link>https://vulnogram.org/CVE-2026-9678</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9678</guid>
+      <description>Impact: Undici&apos;s cache interceptor incorrectly classifies some responses as cacheable when the upstream Cache-Control header uses whitespace-padded qualified private or no-cache field names such as private=&quot; authorization&quot; or no-cache=&quot;\tauthorizatio…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 17 Jun 2026 17:04:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9679 · 5.9 MEDIUM — undici vulnerable to HTTP header injection via Set-Cookie percent-decoding</title>
+      <link>https://vulnogram.org/CVE-2026-9679</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9679</guid>
+      <description>Impact: undici&apos;s cookie parser in parseSetCookie percent-decodes cookie values via qsUnescape, turning encoded sequences like %0D%0A, %00, %3B, and %3D into their literal byte equivalents. RFC 6265 §5.4 does not specify any decoding and browsers do n…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 17 Jun 2026 16:56:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9697 · 7.4 HIGH — undici vulnerable to TLS certificate validation bypass via dropped requestTls in SOCKS5 ProxyAgent</title>
+      <link>https://vulnogram.org/CVE-2026-9697</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9697</guid>
+      <description>Impact: undici&apos;s ProxyAgent silently drops the requestTls option when configured with a SOCKS5 proxy URI (socks5:// or socks://). The target HTTPS connection through the SOCKS5 tunnel falls back to Node&apos;s default trust store, ignoring user-configured…</description>
+      <category>High</category>
+      <pubDate>Wed, 17 Jun 2026 16:46:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6734 · 7.5 HIGH — undici vulnerable to cross-origin request routing via SOCKS5 proxy pool reuse</title>
+      <link>https://vulnogram.org/CVE-2026-6734</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6734</guid>
+      <description>Impact: When using Socks5ProxyAgent, undici reuses a single connection pool across different origins without verifying that the pool&apos;s origin matches the requested origin. All requests are dispatched through the pool connected to the first origin, re…</description>
+      <category>High</category>
+      <pubDate>Wed, 17 Jun 2026 16:36:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9675 · 7.5 HIGH — undici WebSocket client vulnerable to denial of service via cumulative fragment bypass</title>
+      <link>https://vulnogram.org/CVE-2026-9675</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9675</guid>
+      <description>Impact: The undici WebSocket client enforces maxPayloadSize per-frame but does not enforce the cumulative size of fragmented uncompressed messages. A malicious WebSocket server can stream many small fragments that each pass per-frame validation but c…</description>
+      <category>High</category>
+      <pubDate>Wed, 17 Jun 2026 16:20:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12151 · 7.5 HIGH 🌩️ — undici WebSocket client vulnerable to denial of service via fragment count bypass</title>
+      <link>https://vulnogram.org/CVE-2026-12151</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12151</guid>
+      <description>Impact: The undici WebSocket client enforces maxPayloadSize on the cumulative byte count of fragments in a message but does not enforce a limit on the number of fragments. A malicious WebSocket server can stream many small or empty continuation frame…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 17 Jun 2026 16:05:38 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-9595 · 5.3 MEDIUM — webpack-dev-server vulnerable to HMR WebSocket interception via permissive user proxies</title>
       <link>https://vulnogram.org/CVE-2026-9595</link>
