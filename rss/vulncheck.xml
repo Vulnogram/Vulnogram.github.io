@@ -11,7 +11,56 @@
       <title>VulnCheck — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 18 Jun 2026 20:01:55 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2026 22:48:17 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-56078 · 8.8 HIGH — PraisonAI - Arbitrary File Read and Write via Path Traversal in MultiAgentMonitor</title>
+      <link>https://vulnogram.org/CVE-2026-56078</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56078</guid>
+      <description>PraisonAI before 1.5.115 contains a path traversal vulnerability in MultiAgentMonitor that fails to sanitize agent IDs when building file paths. Attackers can include traversal sequences like ../ in agent IDs to read, write, or overwrite arbitrary fi…</description>
+      <category>High</category>
+      <pubDate>Thu, 18 Jun 2026 22:12:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56077 · 7.1 HIGH — PraisonAI - Information Disclosure via Shared MultiAgentLedger State</title>
+      <link>https://vulnogram.org/CVE-2026-56077</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56077</guid>
+      <description>PraisonAI before 1.5.115 contains an information disclosure vulnerability in the MultiAgentLedger component that allows attackers to access sensitive data by registering agents with duplicate IDs. Attackers can exploit the lack of agent ID uniqueness…</description>
+      <category>High</category>
+      <pubDate>Thu, 18 Jun 2026 22:12:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56076 · 8.6 HIGH 🌩️ — PraisonAI - Cross-Origin Agent Execution via Hardcoded Wildcard CORS and Missing Authentication on AGUI Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-56076</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56076</guid>
+      <description>PraisonAI before 1.5.128 contains a cross-origin agent execution vulnerability in the AGUI endpoint that allows remote attackers to trigger arbitrary agent execution. The POST /agui endpoint lacks authentication and hardcodes Access-Control-Allow-Ori…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 18 Jun 2026 22:12:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56075 · 8.8 HIGH — PraisonAI - Arbitrary Shell Command Execution via Hardcoded Approval Mode Override</title>
+      <link>https://vulnogram.org/CVE-2026-56075</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56075</guid>
+      <description>PraisonAI before 4.5.128 contains an arbitrary shell command execution vulnerability where the UI modules hardcode approval_mode to auto, overriding administrator configuration from PRAISON_APPROVAL_MODE environment variable. Authenticated attackers…</description>
+      <category>High</category>
+      <pubDate>Thu, 18 Jun 2026 22:12:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56074 · 6.8 MEDIUM — PraisonAI - Tool Approval Cache Bypass via Coarse-Grained Caching</title>
+      <link>https://vulnogram.org/CVE-2026-56074</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56074</guid>
+      <description>PraisonAI before 1.5.128 caches tool approval decisions by tool name only, not by invocation arguments, allowing subsequent execute_command calls to bypass approval prompts. Attackers can exploit this by obtaining initial approval for a benign comman…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 18 Jun 2026 22:12:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-22674 · 4.8 MEDIUM — Hashgraph Guardian Stored XSS via branding companyName field</title>
+      <link>https://vulnogram.org/CVE-2026-22674</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-22674</guid>
+      <description>Hashgraph Guardian through 3.5.0, fixed in commit ba8c566, contains a stored cross-site scripting vulnerability that allows authenticated users with the STANDARD_REGISTRY role to inject malicious scripts by submitting a crafted companyName value via…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 18 Jun 2026 21:08:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-25865 · 8.5 HIGH — Punto Switcher 4.5.0.583 Unquoted Search Path via WinExec</title>
       <link>https://vulnogram.org/CVE-2026-25865</link>
@@ -389,54 +438,6 @@
       <description>OpenClaw before 2026.4.25 contains a control scope enforcement bypass vulnerability in the focus command that allows authenticated callers to execute the command without proper authorization checks. Attackers can trigger the focus command to change f…</description>
       <category>Medium</category>
       <pubDate>Tue, 16 Jun 2026 18:05:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53849 · 8.6 HIGH — OpenClaw &lt; 2026.5.7 - Privilege Escalation via Mutable Discord Display Names in allowFrom</title>
-      <link>https://vulnogram.org/CVE-2026-53849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53849</guid>
-      <description>OpenClaw before 2026.5.7 contains a privilege escalation vulnerability where the allowFrom feature improperly validates Discord account identity using mutable display names instead of immutable user IDs. Attackers with Discord accounts can change the…</description>
-      <category>High</category>
-      <pubDate>Tue, 16 Jun 2026 18:04:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53847 · 5.4 MEDIUM — OpenClaw &lt; 2026.5.6 - Privilege Escalation via Active Memory Write Scope</title>
-      <link>https://vulnogram.org/CVE-2026-53847</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53847</guid>
-      <description>OpenClaw before 2026.5.6 contains a privilege escalation vulnerability in the Active Memory write scope that allows Gateway operators with operator.write access to modify global configuration without requiring operator.admin privileges. Attackers wit…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 16 Jun 2026 18:04:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53846 · 7.1 HIGH — OpenClaw &lt; 2026.4.29 - Arbitrary Package Manager Execution via Workspace .env npm_execpath</title>
-      <link>https://vulnogram.org/CVE-2026-53846</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53846</guid>
-      <description>OpenClaw before 2026.4.29 contains a path traversal vulnerability in the install helper that allows workspace .env files to override the npm_execpath configuration used for bundled runtime dependency installation. Attackers with workspace access can…</description>
-      <category>High</category>
-      <pubDate>Tue, 16 Jun 2026 18:04:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53845 · 4.3 MEDIUM — OpenClaw &lt; 2026.5.6 - Skill-Command Dispatch Hook Bypass via Before-Tool-Call Hook Skipping</title>
-      <link>https://vulnogram.org/CVE-2026-53845</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53845</guid>
-      <description>OpenClaw before 2026.5.6 contains a hook bypass vulnerability where skill commands routed through the affected dispatch path skip before-tool-call hook coverage. Attackers can exploit this by sending skill commands through the vulnerable dispatch pat…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 16 Jun 2026 18:04:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53844 · 6.5 MEDIUM — OpenClaw &lt; 2026.4.29 - Session Visibility Check Bypass in Shared Memory Search</title>
-      <link>https://vulnogram.org/CVE-2026-53844</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53844</guid>
-      <description>OpenClaw before 2026.4.29 contains a session visibility check bypass vulnerability in shared memory search that allows authenticated callers to access memory entries without proper authorization. Attackers can skip session visibility guards on the se…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 16 Jun 2026 18:04:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53843 · 8.8 HIGH — OpenClaw &lt; 2026.5.26 - Node Token Revocation Bypass via Pairing-Scoped Device Session</title>
-      <link>https://vulnogram.org/CVE-2026-53843</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53843</guid>
-      <description>OpenClaw before 2026.5.26 contains an authorization bypass vulnerability where a surviving pairing-scoped device session can re-establish node token authority after revocation. Attackers with a paired device can regain WebSocket node-level access wit…</description>
-      <category>High</category>
-      <pubDate>Tue, 16 Jun 2026 18:04:55 GMT</pubDate>
     </item>
   </channel>
 </rss>
