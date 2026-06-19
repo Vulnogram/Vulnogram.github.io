@@ -11,7 +11,43 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 18 Jun 2026 17:51:03 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 17:07:10 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-56211 · 8.1 HIGH 🌩️ — Libaom: libaom: remote code execution via svc layer context handling with attacker-controlled frames</title>
+      <link>https://vulnogram.org/CVE-2026-56211</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56211</guid>
+      <description>A remote code execution vulnerability was found in libaom, the reference AV1 codec implementation. Insufficient bounds validation in the AV1 encoder&apos;s SVC (Scalable Video Coding) layer ID control allows an attacker to supply crafted video frame pixel…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 19 Jun 2026 16:28:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56210 · 8.2 HIGH 🌩️ — Libaom: libaom: heap-buffer-overflow read via missing bounds check in ctrl_set_layer_id</title>
+      <link>https://vulnogram.org/CVE-2026-56210</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56210</guid>
+      <description>A heap-buffer-overflow read vulnerability was found in libaom, the reference AV1 codec implementation. A missing bounds check in the SVC (Scalable Video Coding) layer ID control function allows setting a spatial_layer_id exceeding the configured numb…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 19 Jun 2026 16:28:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56208 · 8.6 HIGH 🌩️ — Libaom: libaom: heap buffer overflow in av1 encoder first-pass stats buffer via lap mode</title>
+      <link>https://vulnogram.org/CVE-2026-56208</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56208</guid>
+      <description>A heap buffer overflow vulnerability was found in libaom, the reference AV1 codec implementation. A flaw in the AV1 encoder&apos;s Look-Ahead Processing (LAP) mode causes the first-pass stats ring buffer wrap-around guard to be bypassed when g_lag_in_fram…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 19 Jun 2026 16:28:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56209 · 9.1 CRITICAL 🌩️ — Libaom: libaom: arbitrary address write via svc layer context oob and cyclic refresh map pointer hijack</title>
+      <link>https://vulnogram.org/CVE-2026-56209</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56209</guid>
+      <description>An arbitrary address write vulnerability was found in libaom, the reference AV1 codec implementation. A missing bounds check in the SVC (Scalable Video Coding) layer ID control function allows an attacker to inject an arbitrary pointer into the cycli…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 19 Jun 2026 16:28:26 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-11791 · 5 MEDIUM — 389-ds-base: 389-ds-base: use-after-free in schema reload via attr_syntax_swap_ht()</title>
       <link>https://vulnogram.org/CVE-2026-11791</link>
@@ -391,38 +427,6 @@
       <description>An out-of-bounds write flaw was found in the X.Org X server and Xwayland in DRIGetBuffers/DRIGetBuffersWithFormat. A client that requests multiple DRI2BufferBackLeft attachments and one DRI2BufferFrontLeft can trigger an out-of-bounds heap write. Thi…</description>
       <category>High</category>
       <pubDate>Fri, 05 Jun 2026 10:36:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-50261 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: use-after-free in syncchangecounter()</title>
-      <link>https://vulnogram.org/CVE-2026-50261</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50261</guid>
-      <description>A use-after-free flaw was found in the X.Org X server and Xwayland in SyncChangeCounter(). A client that sets up multiple SyncCounters can trigger a use-after-free when destroying those counters via a second client connection while changing those cou…</description>
-      <category>High</category>
-      <pubDate>Fri, 05 Jun 2026 10:36:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-50260 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: use-after-free in freecounter()</title>
-      <link>https://vulnogram.org/CVE-2026-50260</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50260</guid>
-      <description>A use-after-free flaw was found in the X.Org X server and Xwayland in FreeCounter(). A client that sets up multiple SyncCounters and awaits on those triggers can trigger a use-after-free when destroying those counters via a second client connection.…</description>
-      <category>High</category>
-      <pubDate>Fri, 05 Jun 2026 10:36:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-50258 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: stack buffer overflow in xkb key types due to unchecked shift levels</title>
-      <link>https://vulnogram.org/CVE-2026-50258</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50258</guid>
-      <description>A stack-based buffer overflow flaw was found in the X.Org X server and Xwayland. The X server has multiple stack buffers sized XkbMaxShiftLevel * XkbNumKbdGroups but CheckKeyTypes() does not verify or clamp non-canonical key types to XkbMaxShiftLevel…</description>
-      <category>High</category>
-      <pubDate>Fri, 05 Jun 2026 10:31:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-50259 · 7.8 HIGH — Xorg-x11-server: xorg-x11-server-xwayland: xorg-x11-server: stack buffer overflow in xkb setmap request via mapwidths indexing</title>
-      <link>https://vulnogram.org/CVE-2026-50259</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50259</guid>
-      <description>A stack-based buffer overflow flaw was found in the X.Org X server and Xwayland. _XkbSetMapChecks() declares a fixed-size stack buffer mapWidths[256] indexed by key type index. The helper function CheckKeyTypes() writes to this buffer at a client-con…</description>
-      <category>High</category>
-      <pubDate>Fri, 05 Jun 2026 10:31:39 GMT</pubDate>
     </item>
   </channel>
 </rss>
