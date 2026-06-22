@@ -11,7 +11,47 @@
       <title>Grafana Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 19 Jun 2026 20:57:29 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 17:20:55 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-42127 · 7.5 HIGH — Grafana pre-auth DoS through arbitrarily large input to public dashboard query handler</title>
+      <link>https://vulnogram.org/CVE-2026-42127</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42127</guid>
+      <description>The public dashboard query endpoint does not limit request body size before processing, allowing unauthenticated attackers to trigger excessive memory allocation by sending arbitrarily large JSON payloads. This can lead to denial of service through m…</description>
+      <category>High</category>
+      <pubDate>Mon, 22 Jun 2026 16:31:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-28381 · 9.6 CRITICAL — Local File Read/Write to Potential Privilege Escalation via Snowflake GET/PUT</title>
+      <link>https://vulnogram.org/CVE-2026-28381</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28381</guid>
+      <description>The Snowflake datasource allows for GET/PUT commands, which can allow any user with access to run queries against the data source to read/write files between the local grafana server and the connected Snowflake host.</description>
+      <category>Critical</category>
+      <pubDate>Mon, 22 Jun 2026 13:20:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9029 · 7.3 HIGH — Stored XSS via Geomap Panel Template Variable Attribution Injection</title>
+      <link>https://vulnogram.org/CVE-2026-9029</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9029</guid>
+      <description>The geomap panel&apos;s XYZ tile layer has a sanitize-then-interpolate ordering bug. sanitizeTextPanelContent() runs on the raw template string before getTemplateSrv().replace() substitutes the variable value, which uses the glob format with no HTML escap…</description>
+      <category>High</category>
+      <pubDate>Mon, 22 Jun 2026 13:18:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10601 · 5.4 MEDIUM — Path Traversal in Tempo and Loki Data Source Plugins — Credential Leakage and Admin Endpoint Access</title>
+      <link>https://vulnogram.org/CVE-2026-10601</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10601</guid>
+      <description>The Tempo and Loki datasource plugins construct backend HTTP requests by interpolating user-supplied input into URL paths without sanitization, enabling path traversal. A Viewer-role user can: (1) capture admin-configured datasource credentials (secu…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 13:18:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42129 · 7.7 HIGH — Path Traversal in Loki Datasource leads to Internal Information Disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-42129</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42129</guid>
+      <description>The Loki datasource plugin&apos;s callResource handler contains a path traversal vulnerability. An authenticated Viewer-role user can escape the plugin&apos;s resource sandbox and access administrative Loki endpoints (e.g. /config, /services, /ready) to extrac…</description>
+      <category>High</category>
+      <pubDate>Mon, 22 Jun 2026 13:18:27 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-27878 · 6.5 MEDIUM — Tempo TraceQL query with exemplar hint could result in unbounded memory usage</title>
       <link>https://vulnogram.org/CVE-2026-27878</link>
@@ -374,46 +414,6 @@
       <description>The built-in XY Chart plugin is vulnerable to a DOM XSS vulnerability. A user with Editor permissions is able to modify such a panel in order to make it execute arbitrary JavaScript.</description>
       <category>Medium</category>
       <pubDate>Wed, 23 Apr 2025 11:36:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-11741 · 4.3 MEDIUM</title>
-      <link>https://vulnogram.org/CVE-2024-11741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11741</guid>
-      <description>Grafana is an open-source platform for monitoring and observability. The Grafana Alerting VictorOps integration was not properly protected and could be exposed to users with Viewer permission. Fixed in versions 11.5.0, 11.4.1, 11.3.3, 11.2.6, 11.1.11…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 31 Jan 2025 15:12:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-9476 · 5.1 MEDIUM — Privilege escalation vulnerability for Organizations in Grafana</title>
-      <link>https://vulnogram.org/CVE-2024-9476</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-9476</guid>
-      <description>A vulnerability in Grafana Labs Grafana OSS and Enterprise allows Privilege Escalation allows users to gain access to resources from other organizations within the same Grafana instance via the Grafana Cloud Migration Assistant.This vulnerability wil…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 Nov 2024 16:30:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-10452 · 2.2 LOW</title>
-      <link>https://vulnogram.org/CVE-2024-10452</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-10452</guid>
-      <description>Organization admins can delete pending invites created in an organization they are not part of.</description>
-      <category>Low</category>
-      <pubDate>Tue, 29 Oct 2024 15:16:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-9264 · 9.9 CRITICAL — Grafana SQL Expressions allow for remote code execution</title>
-      <link>https://vulnogram.org/CVE-2024-9264</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-9264</guid>
-      <description>The SQL Expressions experimental feature of Grafana allows for the evaluation of `duckdb` queries containing user input. These queries are insufficiently sanitized before being passed to `duckdb`, leading to a command injection and local file inclusi…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 18 Oct 2024 03:20:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8118 · 5.1 MEDIUM — Grafana alerting wrong permission on datasource rule write endpoint</title>
-      <link>https://vulnogram.org/CVE-2024-8118</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8118</guid>
-      <description>In Grafana, the wrong permission is applied to the alert rule write API endpoint, allowing users with permission to write external alert instances to also write alert rules.</description>
-      <category>Medium</category>
-      <pubDate>Thu, 26 Sep 2024 18:46:07 GMT</pubDate>
     </item>
   </channel>
 </rss>

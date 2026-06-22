@@ -11,7 +11,55 @@
       <title>Mattermost, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 15 Jun 2026 19:35:28 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 17:20:55 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-8823 · 3.8 LOW — User Manager can demote bot accounts to guest without bot-management permission</title>
+      <link>https://vulnogram.org/CVE-2026-8823</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8823</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.0, 10.11.x &lt;= 10.11.17 fail to validate bot targets when demoting users to guests which allows a lower-privileged administrator to degrade arbitrary bot accounts via the standard demote-user API.. Mattermost Advisor…</description>
+      <category>Low</category>
+      <pubDate>Mon, 22 Jun 2026 13:41:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6062 · 6.4 MEDIUM — IDOR in Jira plugin subscription edit endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-6062</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6062</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.0, 11.6.x &lt;= 11.6.2, 11.5.x &lt;= 11.5.5, 10.11.x &lt;= 10.11.17 Fail to validate channel ownership of an existing subscription before applying edits which allows an authenticated attacker to hijack subscriptions from cha…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 13:40:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6673 · 6.4 MEDIUM — Mattermost Jira plugin had unauthenticated {{/ac/installed}} lifecycle callback during pending Jira Cloud install</title>
+      <link>https://vulnogram.org/CVE-2026-6673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6673</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.0, 11.6.x &lt;= 11.6.2, 11.5.x &lt;= 11.5.5, 10.11.x &lt;= 10.11.17 fail to authenticate Atlassian Connect installed callbacks, allowing a remote unauthenticated attacker to inject a rogue sharedSecret and disrupt the Jira i…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 13:38:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8074 · 3.8 LOW — Improper Permission Check Allows User Manager to Deactivate Bot Accounts</title>
+      <link>https://vulnogram.org/CVE-2026-8074</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8074</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.0, 10.11.x &lt;= 10.11.17 fail to enforce bot-specific permission checks on the user active status endpoint, which allows a User Manager with user management write access but no Integrations access to deactivate bot ac…</description>
+      <category>Low</category>
+      <pubDate>Mon, 22 Jun 2026 13:37:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9162 · 4.3 MEDIUM — Global session revocation does not invalidate active WebSocket connections</title>
+      <link>https://vulnogram.org/CVE-2026-9162</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9162</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.0, 11.6.x &lt;= 11.6.2, 11.5.x &lt;= 11.5.5, 10.11.x &lt;= 10.11.17 fail to invalidate cached authentication state for active WebSocket connections during global session revocation, which allows a user with an existing WebSo…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 13:36:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5139 · 5.4 MEDIUM — GitLab Plugin Allows Non-Admin Users to Modify Default Instance Configuration</title>
+      <link>https://vulnogram.org/CVE-2026-5139</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5139</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.0, 11.6.x &lt;= 11.6.2, 11.5.x &lt;= 11.5.5, 10.11.x &lt;= 10.11.17 fail to enforce administrator authorization on the {{setDefaultInstance}} call within the {{/gitlab connect}} command handler, which allows any authenticate…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 13:34:21 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-8683 · 6.5 MEDIUM 🌩️ — Overly long URLs crash the Mattermost Desktop App</title>
       <link>https://vulnogram.org/CVE-2026-8683</link>
@@ -368,59 +416,6 @@
       <description>Mattermost versions 11.5.x &lt;= 11.5.1, 10.11.x &lt;= 10.11.13 fail to enforce the PostEditTimeLimit on non-message post fields which allows an authenticated user to modify post file attachments, props, and pin status after the edit window has expired via…</description>
       <category>Low</category>
       <pubDate>Fri, 15 May 2026 18:42:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4054 · 4.3 MEDIUM 🌩️ — SVG content served through Mattermost image proxy despite Content-Type restrictions causes client-side denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-4054</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4054</guid>
-      <description>Mattermost versions 11.5.x &lt;= 11.5.1, 10.11.x &lt;= 10.11.13, 11.4.x &lt;= 11.4.3 Fail to validate the response body of proxied images, which allows a remote attacker to enact client-side DoS via an SVG file served from an attacker-controlled origin under…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 15 May 2026 18:32:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3590 · 6.5 MEDIUM 🌩️ — Race Condition in Guest Magic Link Authentication Allows Token Reuse</title>
-      <link>https://vulnogram.org/CVE-2026-3590</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3590</guid>
-      <description>Mattermost versions 10.11.x &lt;= 10.11.12, 11.5.x &lt;= 11.5.0, 11.4.x &lt;= 11.4.2, 11.3.x &lt;= 11.3.2 fail to enforce atomic single-use consumption of guest magic link tokens, which allows an attacker with access to a valid magic link to establish multiple i…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 15 Apr 2026 11:00:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28741 · 6.8 MEDIUM 🌩️ — CSRF Protection Bypass Allows Updating a User&apos;s Authentication Method</title>
-      <link>https://vulnogram.org/CVE-2026-28741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28741</guid>
-      <description>Mattermost versions 10.11.x &lt;= 10.11.12, 11.5.x &lt;= 11.5.0, 11.4.x &lt;= 11.4.2, 11.3.x &lt;= 11.3.2 fail to validate CSRF tokens on an authentication endpoint which allows an attacker to update a user&apos;s authentication method via a CSRF attack by tricking a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 15 Apr 2026 10:13:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-27769 · 2.7 LOW — Connected Workspaces: Malicious remote server can manipulate arbitrary user&apos;s status</title>
-      <link>https://vulnogram.org/CVE-2026-27769</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-27769</guid>
-      <description>Mattermost versions 10.11.x &lt;= 10.11.12 fail to validate whether users were correctly owned by the correct Connected Workspace which allows a malicious remote server connected using the Conntexted Workspaces feature to change the displayed status of…</description>
-      <category>Low</category>
-      <pubDate>Wed, 15 Apr 2026 10:11:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-24661 · 3.7 LOW 🌩️ — Unbounded Request Body Read in MS Teams Plugin {{/changes}} Webhook Endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-24661</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-24661</guid>
-      <description>Mattermost Plugins versions &lt;=2.1.3.0 fail to limit the request body size on the {{/changes}} webhook endpoint which allows an authenticated attacker to cause memory exhaustion and denial of service via sending an oversized JSON payload. Mattermost A…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 09 Apr 2026 10:12:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-21388 · 3.7 LOW 🌩️ — Unbounded Request Body Read in MS Teams Plugin {{/lifecycle}} Webhook Endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-21388</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-21388</guid>
-      <description>Mattermost Plugins versions &lt;=2.3.1 fail to limit the request body size on the {{/lifecycle}} webhook endpoint which allows an authenticated attacker to cause memory exhaustion and denial of service via sending an oversized JSON payload. Mattermost A…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 09 Apr 2026 10:09:23 GMT</pubDate>
     </item>
   </channel>
 </rss>

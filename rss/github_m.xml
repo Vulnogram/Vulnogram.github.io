@@ -11,7 +11,435 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 19 Jun 2026 20:57:29 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 17:20:55 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-54289 · 4.8 MEDIUM 🌩️ — Hono: Lambda@Edge adapter keeps only the last value of a repeated request header, dropping the rest</title>
+      <link>https://vulnogram.org/CVE-2026-54289</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54289</guid>
+      <description>Hono is a Web application framework that provides support for any JavaScript runtime. Prior to 4.12.25, on AWS Lambda@Edge, CloudFront delivers a request header that appears more than once as several separate entries. The adapter writes each value wi…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 17:16:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54290 · 7.1 HIGH 🌩️ — Hono: CORS Middleware reflects any Origin with credentials when `origin` defaults to the wildcard</title>
+      <link>https://vulnogram.org/CVE-2026-54290</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54290</guid>
+      <description>Hono is a Web application framework that provides support for any JavaScript runtime. Prior to 4.12.25, with credentials: true and no explicit origin (the default wildcard), the CORS Middleware reflects the request&apos;s Origin and sends Access-Control-A…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 17:15:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54286 · 5.9 MEDIUM 🌩️ — Hono: Path traversal in `serve-static` on Windows via encoded backslash (`%5C`)</title>
+      <link>https://vulnogram.org/CVE-2026-54286</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54286</guid>
+      <description>Hono is a Web application framework that provides support for any JavaScript runtime. Prior to 4.12.25, on Windows hosts, an encoded backslash (%5C) in the request path decodes to \, which the Windows path resolver treats as a separator. serve-static…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 17:14:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54287 · 5.3 MEDIUM 🌩️ — Hono: AWS Lambda adapter merges multiple `Set-Cookie` headers into one value, dropping cookies on ALB single-header and Lattice</title>
+      <link>https://vulnogram.org/CVE-2026-54287</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54287</guid>
+      <description>Hono is a Web application framework that provides support for any JavaScript runtime. Prior to 4.12.25, on AWS Lambda, the ALB single-header response and the VPC Lattice v2 response join multiple Set-Cookie headers into one comma-separated value. Bec…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 17:13:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53540 · 3.7 LOW 🌩️ — Python-Multipart: Negative Content-Length in parse_form buffers the entire body in memory</title>
+      <link>https://vulnogram.org/CVE-2026-53540</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53540</guid>
+      <description>Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.31, parse_form() did not validate the Content-Length header before using it to bound its chunked read of the request body. A negative Content-Length turned the bounded read int…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:58:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53537 · 3.7 LOW 🌩️ — Python-Multipart: Content-Disposition parameter smuggling via RFC 2231/5987 extended parameters</title>
+      <link>https://vulnogram.org/CVE-2026-53537</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53537</guid>
+      <description>Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.30, parse_options_header parsed Content-Disposition (and Content-Type) headers with email.message.Message, which transparently applies RFC 2231/5987 decoding. The extended para…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:57:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53538 · 3.7 LOW 🌩️ — Python-Multipart: Semicolon treated as querystring field separator enables parameter smuggling</title>
+      <link>https://vulnogram.org/CVE-2026-53538</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53538</guid>
+      <description>Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.30, QuerystringParser treated ; as a field separator in application/x-www-form-urlencoded bodies, in addition to &amp;. The WHATWG URL standard, modern browsers, and Python&apos;s urlli…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:56:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53539 · 7.5 HIGH 🌩️ — Python-Multipart: Quadratic-time querystring parsing with semicolon separators causes CPU denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-53539</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53539</guid>
+      <description>Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.30, when parsing application/x-www-form-urlencoded bodies, QuerystringParser located the field separator with a two step lookup: it first scanned the entire remaining buffer fo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:55:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54285 · 5.3 MEDIUM 🌩️ — opentelemetry-js: Unbounded memory allocation in W3C Baggage propagation</title>
+      <link>https://vulnogram.org/CVE-2026-54285</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54285</guid>
+      <description>opentelemetry-js is the OpenTelemetry JavaScript Client. Prior to 2.8.0, W3CBaggagePropagator.extract() in @opentelemetry/core does not enforce size limits when parsing inbound baggage HTTP headers. The W3C Baggage specification recommends a maximum…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:52:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55388 · 8.1 HIGH 🌩️ — piscina: Prototype Pollution Gadget → RCE via inherited options.filename</title>
+      <link>https://vulnogram.org/CVE-2026-55388</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55388</guid>
+      <description>piscina is a node.js worker pool implementation. Prior to 6.0.0-rc.2, 5.2.0, and 4.9.3, piscina&apos;s constructor and run() paths read the filename option via plain member access. Both reads fall through the prototype chain when the caller&apos;s options obje…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:50:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54283 · 7.5 HIGH 🌩️ — Starlette: request.form() limits silently ignored for application/x-www-form-urlencoded enable DoS</title>
+      <link>https://vulnogram.org/CVE-2026-54283</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54283</guid>
+      <description>Starlette is a lightweight ASGI framework/toolkit. From 0.4.1 until 1.3.1, request.form() accepts max_fields and max_part_size to bound resource consumption while parsing form data. These limits are enforced for multipart/form-data, but silently igno…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:46:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54282 · 3.7 LOW 🌩️ — Starlette: Unvalidated request path concatenated into authority poisons request.url.hostname</title>
+      <link>https://vulnogram.org/CVE-2026-54282</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54282</guid>
+      <description>Starlette is a lightweight ASGI framework/toolkit. Prior to 1.3.0, the HTTP request path is not validated before being used to reconstruct request.url. Because request.url is rebuilt by concatenating {scheme}://{host}{path} and re-parsing the result,…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:45:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54273 · 6.6 MEDIUM 🌩️ — AIOHTTP: HTTP/1 Pipelined Requests Queue Without Limit</title>
+      <link>https://vulnogram.org/CVE-2026-54273</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54273</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.1, no limit was present on the number of pipelined requests that could be queued. An attacker may be able to use pipelined requests to use excessive amounts…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:41:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54280 · 1.7 LOW 🌩️ — AIOHTTP: Payload Response Resources Are Not Closed After Mid-Body Disconnect</title>
+      <link>https://vulnogram.org/CVE-2026-54280</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54280</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.1, payload resources are not closed correctly when a client disconnects in the middle of a write. If a payload is using an open file or similar limited reso…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:40:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54278 · 6.6 MEDIUM 🌩️ — AIOHTTP: Unread Compressed Request Bodies Bypass client_max_size During Cleanup</title>
+      <link>https://vulnogram.org/CVE-2026-54278</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54278</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.1, during cleanup it is possible for a compressed request body to be decompressed into memory in one chunk. An attacker may be able to send a compressed pay…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:38:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54277 · 6.6 MEDIUM 🌩️ — AIOHTTP: C HTTP Parser Bypasses max_line_size for Fragmented Lines</title>
+      <link>https://vulnogram.org/CVE-2026-54277</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54277</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.1, it is possible to bypass the max_line_size check in parts of an HTTP request in the C parser. If using the optimised C parser (the default in pre-built w…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:37:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54276 · 6.3 MEDIUM 🌩️ — AIOHTTP: DigestAuthMiddleware Applies Credentials to Cross-Origin Redirect Challenges</title>
+      <link>https://vulnogram.org/CVE-2026-54276</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54276</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.1, DigestAuthMiddleware can send an authentication response after following a cross-origin redirect. This likely requires an open redirect vulnerability or…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:36:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54275 · 2.7 LOW 🌩️ — AIOHTTP: TLS Server Hostname Override Is Ignored When Reusing HTTPS Connections</title>
+      <link>https://vulnogram.org/CVE-2026-54275</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54275</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.1, the server_hostname TLS SNI check can be bypassed when an existing connection is reused. If an application makes multiple requests to the same domain, bu…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:34:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54274 · 6.6 MEDIUM 🌩️ — AIOHTTP: Incomplete websocket frame payloads bypass memory limits</title>
+      <link>https://vulnogram.org/CVE-2026-54274</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54274</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.1, if an attacker sends large incomplete websocket frame payloads, it may be possible to bypass the usual size limits on memory use. This vulnerability is f…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:33:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54279 · 1.3 LOW 🌩️ — AIOHTTP: Host-Only Cookies Become Domain Cookies After CookieJar Persistence</title>
+      <link>https://vulnogram.org/CVE-2026-54279</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54279</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.1, host-only cookies that are saved with CookieJar.save() and then restored later with CookieJar.load() lose their host-only status. This vulnerability is f…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:32:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50269 · 2.7 LOW 🌩️ — AIOHTTP: CRLF injection in multipart headers</title>
+      <link>https://vulnogram.org/CVE-2026-50269</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50269</guid>
+      <description>AIOHTTP is an asynchronous HTTP client/server framework for asyncio and Python. Prior to 3.14.0, attacker-controlled input included into multipart/payload headers can be used to modify a request to inject additional headers or similar. In the unlikel…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:30:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54269 · 5.3 MEDIUM 🌩️ — protobufjs: Schema-derived names can shadow runtime-significant properties</title>
+      <link>https://vulnogram.org/CVE-2026-54269</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54269</guid>
+      <description>protobufjs compiles protobuf definitions into JavaScript (JS) functions. Prior to 8.6.0 and 7.6.3, protobufjs accepted certain schema-derived names that could collide with properties used by protobufjs runtime helpers. The known affected names are fi…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:23:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48712 · 7.5 HIGH 🌩️ — protobufjs: Denial of service through unbounded Any expansion during JSON conversion</title>
+      <link>https://vulnogram.org/CVE-2026-48712</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48712</guid>
+      <description>protobufjs compiles protobuf definitions into JavaScript (JS) functions. Prior to 7.6.1 and 8.4.1, protobufjs could recurse without a depth limit while converting decoded messages to plain objects or JSON. This affected generated toObject() conversio…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:21:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54270 · 5.3 MEDIUM 🌩️ — protobufjs: Memory amplification from preserved unknown fields in binary decode</title>
+      <link>https://vulnogram.org/CVE-2026-54270</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54270</guid>
+      <description>protobufjs compiles protobuf definitions into JavaScript (JS) functions. From 8.2.0 to 8.4.2, protobufjs preserved unknown wire elements in message.$unknowns and did not provide a decode-time option to discard unknown fields before retaining them. A…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:19:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54271 · 8.2 HIGH 🌩️ — protobufjs-cli: Code injection in pbjs static output from crafted JSON descriptor names</title>
+      <link>https://vulnogram.org/CVE-2026-54271</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54271</guid>
+      <description>protobufjs-cli is the command line add-on for protobuf.js. Prior to 1.3.2 and 2.5.0, a previous fix for unsafe name handling in pbjs static / static-module code generation was incomplete. Affected versions of protobufjs-cli could still emit unsafe Ja…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:16:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53571 · 8.2 HIGH 🌩️ — Vite: `server.fs.deny` bypass on Windows alternate paths</title>
+      <link>https://vulnogram.org/CVE-2026-53571</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53571</guid>
+      <description>Vite is a frontend tooling framework for JavaScript. Prior to 8.0.16, 7.3.5, and 6.4.3, the contents of files that are specified by server.fs.deny can be returned to the browser on Windows. Vite’s dev server denies direct access to sensitive files th…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 16:10:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49356 · 3.2 LOW — Babel: Arbitrary File Read via sourceMappingURL Comment in @babel/core</title>
+      <link>https://vulnogram.org/CVE-2026-49356</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49356</guid>
+      <description>Babel is a compiler for writing next generation JavaScript. Prior to 8.0.0-rc.6 and 7.29.6, @babel/core affected by an arbitrary file read via a sourceMappingURL comment. Using @babel/core to compile maliciously crafted code can allow an attacker to…</description>
+      <category>Low</category>
+      <pubDate>Mon, 22 Jun 2026 16:07:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55602 · 6.9 MEDIUM 🌩️ — http-proxy-middleware `router` host+path substring matching allows Host-header-driven backend routing bypass</title>
+      <link>https://vulnogram.org/CVE-2026-55602</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55602</guid>
+      <description>http-proxy-middleware is node.js http-proxy middleware. From 0.16.0 until 2.0.10, 3.0.6, and 4.1.0, http-proxy-middleware documents router proxy-table entries as host, path, or host+path selectors, but the host+path implementation uses unanchored sub…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:58:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53632 · 5.5 MEDIUM 🌩️ — NTLMv2 hash disclosure via UNC path handling on Windows</title>
+      <link>https://vulnogram.org/CVE-2026-53632</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53632</guid>
+      <description>launch-editor allows users to open files with line numbers in editor from Node.js. Prior to 2.14.1, the launch-editor NPM package accesses arbitrary paths including Windows UNC paths. When a UNC path is opened, Windows automatically attempts NTLM aut…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:54:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50171 · 8.2 HIGH 🌩️ — Angular: Denial of Service (DoS) via OOM in Number Formatting (digitsInfo)</title>
+      <link>https://vulnogram.org/CVE-2026-50171</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50171</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, a Denial of Service (DoS) vulnerability exists in the @angular/co…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:49:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50184 · 5.7 MEDIUM — Angular: Request Credential &amp; Cache Policy Stripping in Angular Service Worker</title>
+      <link>https://vulnogram.org/CVE-2026-50184</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50184</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, an issue in the @angular/service-worker package compromises the i…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 15:42:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50169 · 5.7 MEDIUM — Angular Service Worker Policy-Bypass &amp; Credential-Stripping Vulnerabilities</title>
+      <link>https://vulnogram.org/CVE-2026-50169</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50169</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15 20.3.22, and 19.2.23, an issue in the @angular/service-worker package compromises the in…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 15:41:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46417 · 8.8 HIGH 🌩️ — Angular: SSRF via Hostname Hijacking in @angular/platform-server</title>
+      <link>https://vulnogram.org/CVE-2026-46417</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46417</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-next.12, 21.2.13, 20.3.21, and 19.2.22, a Server-Side Request Forgery (SSRF) vulnerability exists in @…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:40:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50168 · 8.8 HIGH 🌩️ — Angular: URL Parser Differential in @angular/platform-server leading to SSRF Allowlist Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-50168</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50168</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, an issue in the @angular/platform-server package allows remote at…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:39:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50170 · 8.2 HIGH 🌩️ — Angular: Information Leak via Default Caching of Credentialed Requests in HttpTransferCache</title>
+      <link>https://vulnogram.org/CVE-2026-50170</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50170</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, a vulnerability was discovered in @angular/common when Server-Sid…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:39:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50556 · 8.6 HIGH 🌩️ — Angular: Missing `&lt;noscript&gt;` Raw-Text Serialization Escaping leads to Cross-Site Scripting (XSS) in Angular SSR</title>
+      <link>https://vulnogram.org/CVE-2026-50556</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50556</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.16, 20.3.24, and 19.2.25, a Cross-Site Scripting (XSS) vulnerability exists in @angular/pla…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:38:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50555 · 8.6 HIGH 🌩️ — Angular: Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;) in @angular/platform-server</title>
+      <link>https://vulnogram.org/CVE-2026-50555</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50555</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.16, 20.3.24, and 19.2.25, a Cross-Site Scripting (XSS) vulnerability exists in @angular/pla…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:37:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54264 · 8.3 HIGH 🌩️ — Angular: Sensitive Header Leakage on Cross-Origin Redirects in Angular Service Worker</title>
+      <link>https://vulnogram.org/CVE-2026-54264</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54264</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, an information disclosure vulnerability exists in the @angular/service-worker p…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:32:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54268 · 8.2 HIGH 🌩️ — Angular: Denial of Service (DoS) via OOM in Date Formatting (formatDate)</title>
+      <link>https://vulnogram.org/CVE-2026-54268</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54268</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, a Denial of Service (DoS) vulnerability exists in the @angular/common package o…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:31:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54267 · 8.6 HIGH 🌩️ — Angular Client Hydration DOM Clobbering &amp; Response-Cache Poisoning</title>
+      <link>https://vulnogram.org/CVE-2026-54267</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54267</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, to optimize client-side bootstrap in Server-Side Rendered (SSR) environments, A…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:30:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54266 · 8.8 HIGH 🌩️ — Angular: Weak 32-Bit Cache Key Hashing in `HttpTransferCache` Leading to Cross-Request Data Leakage and State Poisoning</title>
+      <link>https://vulnogram.org/CVE-2026-54266</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54266</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, Angular&apos;s HttpTransferCache caches HTTP requests made during Server-Side Render…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:28:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54265 · 5.3 MEDIUM 🌩️ — Angular: Two-Way Property Binding Sanitization Bypass (XSS)</title>
+      <link>https://vulnogram.org/CVE-2026-54265</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54265</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, an issue in the @angular/compiler package allows bypassing DOM property sanitiz…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:27:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50178 · 8.7 HIGH 🌩️ — Angular: Remote Code Execution via JSDoc Hover Command Injection in VS Code Angular Language Service Extension</title>
+      <link>https://vulnogram.org/CVE-2026-50178</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50178</guid>
+      <description>The Angular Language Service VS Code Extension provides a rich editing experience for Angular templates. the client-side Angular Language Service VS Code extension configures the tooltip Markdown renderer with the isTrusted: true option (located in c…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:20:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-52725 · 5.3 MEDIUM 🌩️ — Angular Template and Dynamic Component Namespace Bypass leading to Cross-Site Scripting (XSS)</title>
+      <link>https://vulnogram.org/CVE-2026-52725</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52725</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, an issue in the @angular/core package allows bypassing script-exe…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:18:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49241 · 8.7 HIGH 🌩️ — Angular: Multiple Remote Code Execution Vulnerabilities in Angular Language Service VS Code Extension</title>
+      <link>https://vulnogram.org/CVE-2026-49241</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49241</guid>
+      <description>The Angular Language Service VS Code Extension provides a rich editing experience for Angular templates. Prior to 21.2.4, the client-side Angular Language Service VS Code extension reads the custom TypeScript SDK paths typescript.tsdk and js/ts.tsdk.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:16:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50557 · 5.3 MEDIUM 🌩️ — Angular: Template and Attribute Namespace Sanitization Bypass (XSS)</title>
+      <link>https://vulnogram.org/CVE-2026-50557</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50557</guid>
+      <description>Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22 and 19.2.22, an issue in the @angular/compiler and @angular/core packages allow…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 15:11:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53550 · 5.3 MEDIUM 🌩️ — js-yaml: Quadratic-complexity DoS in merge key handling via repeated aliases</title>
+      <link>https://vulnogram.org/CVE-2026-53550</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53550</guid>
+      <description>js-yaml is a JavaScript YAML parser and dumper. Prior to 4.2.0, a crafted YAML document can trigger algorithmic CPU exhaustion in js-yaml merge-key processing (&lt;&lt;) by repeating the same alias many times in a merge sequence. This causes quadratic pars…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 22 Jun 2026 14:59:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53655 · 6.9 MEDIUM — node-tar applies PAX size override to intermediary GNU long-name/long-link headers, causing tar parser interpretation differential (file smuggling)</title>
+      <link>https://vulnogram.org/CVE-2026-53655</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53655</guid>
+      <description>node-tar is a full-featured Tar for Node.js. Prior to 7.5.16, tar (node-tar) applies a PAX extended header&apos;s size= record (and other PAX overrides) to the next header entry of any type, including intermediary metadata headers such as a GNU long-name…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 14:55:50 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-50559 · 7.5 HIGH 🌩️ — Authentication/Authorization Bypass via Advanced Path Normalization Vulnerabilities</title>
       <link>https://vulnogram.org/CVE-2026-50559</link>
@@ -28,413 +456,6 @@
       <description>Authelia is an open-source authentication and authorization server providing two-factor authentication and single sign-on (SSO) for applications via a web portal. In versions 4.36.0 through 4.39.19, due to lack of canonicalization of domains in very…</description>
       <category>Low</category>
       <pubDate>Fri, 19 Jun 2026 20:23:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47203 · 2.9 LOW 🌩️ — Authelia Missing Username Canonicalization in Basic Auth (LDAP)</title>
-      <link>https://vulnogram.org/CVE-2026-47203</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47203</guid>
-      <description>Authelia is an open-source authentication and authorization server providing two-factor authentication and single sign-on (SSO) for applications via a web portal. In versions 4.38.0 through 4.39.19, when a user authenticates via Basic Auth (i.e via t…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 20:19:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48129 · 6.5 MEDIUM 🌩️ — Kestra task inputFiles accepts traversal filenames for worker file writes</title>
-      <link>https://vulnogram.org/CVE-2026-48129</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48129</guid>
-      <description>Kestra is an open-source, event-driven orchestration platform. Prior to versions 1.3.19, 1.2.19, 1.1.19, and 1.0.43, Kestra task `inputFiles` writes rendered file names directly under the task working directory. When a flow forwards untrusted executi…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 20:16:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49346 · 7.1 HIGH 🌩️ — libde265 has a heap buffer overflow in de265_image_get_buffer via SPS dimension integer overflow</title>
-      <link>https://vulnogram.org/CVE-2026-49346</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49346</guid>
-      <description>libde265 is an open source implementation of the h.265 video codec. Prior to version 1.1.0, a crafted H.265 bitstream with large SPS dimensions and 16-bit bit depth causes a signed integer overflow in `de265_image_get_buffer()` (`libde265/image.cc:12…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 20:12:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49295 · 7.1 HIGH 🌩️ — libde265 has an out-of-bounds write in process_reference_picture_set via predicted short-term RPS</title>
-      <link>https://vulnogram.org/CVE-2026-49295</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49295</guid>
-      <description>libde265 is an open source implementation of the h.265 video codec. Prior to version 1.0.20, a crafted H.265 bitstream can cause an out-of-bounds array write in `decoder_context::process_reference_picture_set()` (`libde265/decctx.cc:1376`). The root…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 20:09:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49337 · 4.3 MEDIUM 🌩️ — libde265 has an unbounded memory leak via orphaned slice headers in `read_slice_NAL`</title>
-      <link>https://vulnogram.org/CVE-2026-49337</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49337</guid>
-      <description>libde265 is an open source implementation of the h.265 video codec. Prior to version 1.0.20, a crafted sequence of H.265 NAL units causes `decoder_context::read_slice_NAL()` (`libde265/decctx.cc:481`) to attach slice headers to a finished picture obj…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 19:53:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48787 · 7.4 HIGH — gin-vue-admin vulnerable to RCE</title>
-      <link>https://vulnogram.org/CVE-2026-48787</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48787</guid>
-      <description>gin-vue-admin is an AI-assisted basic development platform. In version 2.9.1, an authenticated attacker with access to the code-generation feature and MCP management interface can exploit this vulnerability by injecting attacker-controlled Go source…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 19:46:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48089 · 7.1 HIGH — DevGuard has improper authorization on public assets</title>
-      <link>https://vulnogram.org/CVE-2026-48089</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48089</guid>
-      <description>DevGuard provides vulnerability management for the full software supply chain. Prior to 1.4.2, on a DevGuard API instance with one or more public assets, any authenticated user — including users from a different organization with no membership or rol…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 19:38:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48774 · 7.5 HIGH 🌩️ — ProxySQL MCP run_sql_readonly executes side-effecting MySQL multi-statements despite read-only contract</title>
-      <link>https://vulnogram.org/CVE-2026-48774</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48774</guid>
-      <description>ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. In versions 3.0.0 through 3.0.8, ProxySQL&apos;s GenAI/MCP `run_sql_readonly` tool violates its documented read-only contract for MySQL targets. The tool validates only the full input str…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 19:34:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48772 · 10 CRITICAL 🌩️ — ProxySQL: PROXY-Protocol-v1 UNKNOWN parses spoofed source IP, bypassing mysql_query_rules.client_addr ACL</title>
-      <link>https://vulnogram.org/CVE-2026-48772</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48772</guid>
-      <description>ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. In versions 2.0.0 through 3.0.8, the ProxySQL MySQL frontend accepts the `PROXY UNKNOWN &lt;addr&gt; &lt;addr&gt; &lt;port&gt; &lt;port&gt;\r\n` PP1 frame as a well-formed PROXY protocol header. The HAProxy…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 19:28:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48773 · 9.8 CRITICAL 🌩️ — ProxySQL pre-auth heap overflow in MySQL and PostgreSQL first-packet handling</title>
-      <link>https://vulnogram.org/CVE-2026-48773</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48773</guid>
-      <description>ProxySQL is a proxy for MySQL and its forks, as well as PostgreSQL. Versions 2.0.18 through 3.0.8 have a pre-authentication heap memory corruption vulnerability in the MySQL and PostgreSQL protocol first-read paths. A remote unauthenticated client ca…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 19:27:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49345 · 5.3 MEDIUM — Mercator CVE Configuration Vulnerable to Server-Side Request Forgery (SSRF)</title>
-      <link>https://vulnogram.org/CVE-2026-49345</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49345</guid>
-      <description>Mercator is an open source web application that enables mapping of the information system. Prior to version 2025.05.19, a Server-Side Request Forgery (SSRF) vulnerability exists in Mercator&apos;s CVE configuration panel (`/admin/config/parameters`). The…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 19 Jun 2026 19:23:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49344 · 7.1 HIGH — Mercator has a Personal Identifiable Information Leak from Query Executor feature</title>
-      <link>https://vulnogram.org/CVE-2026-49344</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49344</guid>
-      <description>Mercator is an open source web application that enables mapping of the information system. Prior to version 2025.05.19, Mercator&apos;s Query Engine (`/admin/queries/execute`) accepts a JSON DSL (`from` / `select` / `filters` / `traverse` / `output`), tra…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 19:21:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48715 · 7.7 HIGH — radvdump&apos;s Route Information Option Parser has a Stack Buffer Overflow</title>
-      <link>https://vulnogram.org/CVE-2026-48715</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48715</guid>
-      <description>radvd is a router advertisement daemon for IPv6. Prior to version 2.21, the `radvdump` utility shipped with radvd contains a stack buffer overflow in the Route Information option parser. When processing a crafted ICMPv6 Router Advertisement, `print_f…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 19:18:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49342 · 5.3 MEDIUM 🌩️ — YARD static cache reads raw traversal paths before router sanitization</title>
-      <link>https://vulnogram.org/CVE-2026-49342</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49342</guid>
-      <description>YARD is a documentation generation tool for the Ruby programming language. Prior to version 0.9.44, YARD&apos;s static cache lookup reads a request path before the router&apos;s path cleanup runs. When a server is configured with a document root, a traversal p…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 19:13:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49340 · 8.1 HIGH — gonic has arbitrary file write in createPlaylist: any authenticated user can write playlist M3U content to attacker-controlled path on the host</title>
-      <link>https://vulnogram.org/CVE-2026-49340</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49340</guid>
-      <description>gonic is a music streaming server / free-software subsonic server API implementation. Prior to version 0.21.0, a logic error in `ServeCreateOrUpdatePlaylist` allows any authenticated Subsonic user (including non-admin) to write playlist M3U content t…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 19:11:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49338 · 7.1 HIGH — Subsonic API: any authenticated user can delete or read any other user&apos;s playlist (IDOR)</title>
-      <link>https://vulnogram.org/CVE-2026-49338</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49338</guid>
-      <description>gonic is a music streaming server / free-software subsonic server API implementation. Prior to version 0.21.0, the Subsonic API endpoints `/rest/deletePlaylist.view` and `/rest/getPlaylist.view` perform no per-resource authorization. Once authenticat…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 19:08:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49339 · 7.1 HIGH — Path traversal in getPlaylist/deletePlaylist bypasses ownership check: any authenticated user can read or delete any other user&apos;s playlist</title>
-      <link>https://vulnogram.org/CVE-2026-49339</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49339</guid>
-      <description>gonic is a music streaming server / free-software subsonic server API implementation. The maintainer&apos;s fix in commit `6dd71e6a3c966867ef8c900d359a7df75789f410` added an ownership check based on `playlist.UserID`. However, `playlist.UserID` is derived…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 18:23:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49336 · 5.5 MEDIUM 🌩️ — @microsoft/kiota-http-fetchlibrary: Bearer token and Cookie leak across origin on redirect due to case-mismatched scrub in fetchRequestAdapter</title>
-      <link>https://vulnogram.org/CVE-2026-49336</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49336</guid>
-      <description>@microsoft/kiota-http-fetchlibrary provides TypeScript libraries for Kiota-generated API clients. In versions 1.0.0-preview.97 through 1.0.0-preview.101, `@microsoft/kiota-http-fetchlibrary`&apos;s `RedirectHandler` is documented as stripping `Authorizati…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 18:19:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49293 · 7.5 HIGH 🌩️ — CPU exhaustion via O(n^2) BigInt construction on radix-prefixed integer literals</title>
-      <link>https://vulnogram.org/CVE-2026-49293</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49293</guid>
-      <description>js-toml is a TOML parser for JavaScript, fully compliant with the TOML 1.0.0 Spec. Versions up to and including 1.1.0 parse hexadecimal / octal / binary integer literals via a hand-written `parseBigInt` loop that multiplies a `BigInt` accumulator by…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 18:14:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49288 · 4.3 MEDIUM — Statamic CMS missing authorization on Control Panel fieldtype endpoints allows disclosure of restricted resources</title>
-      <link>https://vulnogram.org/CVE-2026-49288</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49288</guid>
-      <description>Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.23 and 6.20.0, an authenticated Control Panel user could view metadata and content for resources they don&apos;t have permission to view, including entries, assets, users…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 19 Jun 2026 18:11:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49291 · 8.1 HIGH — mcp-memory-service: OAuth read-only clients can write and delete memories through MCP tools/call</title>
-      <link>https://vulnogram.org/CVE-2026-49291</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49291</guid>
-      <description>mcp-memory-service is a semantic memory layer for AI applications. Prior to version 10.65.3, the HTTP MCP JSON-RPC endpoint at `/mcp` requires only OAuth `read` scope for all requests, then dispatches `tools/call` directly to handlers that include mu…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 17:59:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49287 · 7.4 HIGH 🌩️ — Statamic CMS vulnerable to unsafe method invocation via collection sorting allows data destruction</title>
-      <link>https://vulnogram.org/CVE-2026-49287</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49287</guid>
-      <description>Statamic is a Laravel and Git powered content management system (CMS). Prior to 5.73.23 and 6.20.0, the fix for CVE-2026-41175 was incomplete. It addressed the issue in the query builder, but the same protection was not applied to in-memory collectio…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 17:36:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49290 · 7.6 HIGH — Slopsmith has path traversal in archive extractors that allows arbitrary file write → potential RCE</title>
-      <link>https://vulnogram.org/CVE-2026-49290</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49290</guid>
-      <description>Slopsmith is a self-contained web application for browsing, playing, and practicing Rocksmith 2014 Custom DLC (CDLC). Prior to 0.2.9-alpha.5, a path-traversal vulnerability in Slopsmith&apos;s archive extractors allows an attacker to write arbitrary files…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 17:31:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49271 · 6.5 MEDIUM 🌩️ — libheif: Wrapped icef compressed-unit range check causes out-of-bounds read in uncompressed HEIF decoder</title>
-      <link>https://vulnogram.org/CVE-2026-49271</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49271</guid>
-      <description>libheif is a HEIF and AVIF file format decoder and encoder. Prior to version 1.22.1, the uncompressed HEIF decoder validates explicit icef compressed-unit offsets using unit_offset + unit_size. Because the addition can wrap, a crafted HEIF file can p…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 17:16:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49359 · 6.5 MEDIUM — PhpWeasyPrint vulnerable to SSRF and local file disclosure via the attachment option</title>
-      <link>https://vulnogram.org/CVE-2026-49359</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49359</guid>
-      <description>PhpWeasyPrint is a PHP library allowing PDF generation from a URL or an HTML page. Prior to version 2.6.0, `pontedilana/php-weasyprint` fetches the content of option values server-side via `file_get_contents()` when the value looks like a URL, withou…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 19 Jun 2026 17:06:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49286 · 8.1 HIGH 🌩️ — PhpWeasyPrint vulnerable to PHAR deserialization via output filename (CVE-2023-28115 case-insensitive bypass)</title>
-      <link>https://vulnogram.org/CVE-2026-49286</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49286</guid>
-      <description>PhpWeasyPrint is a PHP library allowing PDF generation from a URL or an HTML page. Prior to version 2.6.0, `pontedilana/php-weasyprint` guarded the output filename against the `phar://` stream wrapper with a case-sensitive blacklist. PHP stream wrapp…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 17:03:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49260 · 8.2 HIGH — PhpWeasyPrint: shell command injection via configurable WeasyPrint binary path due to inverted is_executable() guard (mirror of KnpLabs/snappy GHSA-vpr4-p6fq-85jc)</title>
-      <link>https://vulnogram.org/CVE-2026-49260</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49260</guid>
-      <description>PhpWeasyPrint is a PHP library allowing PDF generation from a URL or an HTML page. Prior to version 2.5.1, `pontedilana/php-weasyprint` builds the shell command for WeasyPrint by passing the binary path through `escapeshellarg()` first and then check…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Jun 2026 16:59:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49357 · 8.8 HIGH 🌩️ — Streamable HTTP mode exposes LINE Desktop read/send tools without MCP authentication</title>
-      <link>https://vulnogram.org/CVE-2026-49357</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49357</guid>
-      <description>Line Desktop MCP is a project that, while unaffiliated with the official line-bot-mcp-server, allows users to directly operate the LINE Desktop application on Windows or Mac via MCP. `line-desktop-mcp` supports a `--http-mode` Streamable HTTP transpo…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 13:11:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49205 · 6.5 MEDIUM — phpMyFAQ: Missing userHasPermission() in 4 API write endpoints (CVE-2026-24421 Incomplete Fix)</title>
-      <link>https://vulnogram.org/CVE-2026-49205</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49205</guid>
-      <description>phpMyFAQ is an open source FAQ web application. Versions prior to 4.1.4 have Missing Authorization in the API CategoryController. CVE-2026-24421 addressed this in the BackupController by adding: $this-&gt;userHasPermission(PermissionType::BACKUP). The s…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 21:12:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54017 · 7.7 HIGH — Open WebUI: Path traversal / SSRF in terminal server proxy via encoded path traversal</title>
-      <link>https://vulnogram.org/CVE-2026-54017</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54017</guid>
-      <description>Open WebUI is a self-hosted artificial intelligence platform designed to operate entirely offline. Prior to 0.9.6, the terminal-server reverse proxy in `backend/open_webui/routers/terminals.py` does not fully confine the user-controlled `path` segmen…</description>
-      <category>High</category>
-      <pubDate>Thu, 18 Jun 2026 21:09:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49257 · 10 CRITICAL 🌩️ — mcp-pinot: Unauthenticated tool invocation via default oauth_enabled=False + host 0.0.0.0 bind</title>
-      <link>https://vulnogram.org/CVE-2026-49257</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49257</guid>
-      <description>mcp-pinot is a Python-based Model Context Protocol (MCP) server for interacting with Apache Pinot. In versions 3.0.1 and below, mcp-pinot defaults to running an HTTP MCP server bound to 0.0.0.0:8080 with no authentication enabled. All MCP tools, incl…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 21:01:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49454 · 9.1 CRITICAL 🌩️ — Relyra SAML SignatureValue not cryptographically verified -&gt; authentication bypass</title>
-      <link>https://vulnogram.org/CVE-2026-49454</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49454</guid>
-      <description>Relyra is a strict-by-default SAML 2.0 Service Provider library for Elixir and Phoenix. Versions 1.0.0 and 1.1.0 accept forged SAML signatures because SignatureValue was not cryptographically verified before the library returned a successful authenti…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 20:52:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46699 · 7.6 HIGH 🌩️ — conda-smithy vulnerable to misrouted repository invitation by conda-forge-webservices[bot] due to GitHub username takeover leading to unintended write access in conda-forge feedstock repository</title>
-      <link>https://vulnogram.org/CVE-2026-46699</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46699</guid>
-      <description>conda-smithy is a tool for combining a conda recipe with configurations to build using freely hosted CI services into a single repository. Prior to version 3.61.0, a vulnerability in the conda-forge automated webservices allowed unintended write acce…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 20:47:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45696 · 8.3 HIGH — OpenEXR HTJ2K decoder heap buffer over-read in ht_undo_impl() (DoS)</title>
-      <link>https://vulnogram.org/CVE-2026-45696</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45696</guid>
-      <description>OpenEXR is the reference implementation and specification for the EXR image format, widely used in the motion picture industry. In versions 3.4.0 through 3.4.11, the HTJ2K (High-Throughput JPEG 2000) decoder, ht_undo_impl() in OpenEXRCore is vulnerab…</description>
-      <category>High</category>
-      <pubDate>Thu, 18 Jun 2026 20:31:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-43915 · 5.4 MEDIUM — Coturn: Stored Cross-Site Scripting (XSS) in web-admin interface via TURN username</title>
-      <link>https://vulnogram.org/CVE-2026-43915</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-43915</guid>
-      <description>Coturn is a free open source implementation of TURN and STUN Server. Versions prior to 4.11.0 contain a stored cross-site scripting (XSS) vulnerability in the web-admin HTTPS interface. An attacker who can create a TURN allocation with a crafted USER…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 19:33:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48980 · 6.3 MEDIUM — pam_usb: getenv() used in PAM context allows environment variable injection into local-check logic</title>
-      <link>https://vulnogram.org/CVE-2026-48980</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48980</guid>
-      <description>pam_usb provides hardware authentication for Linux using removable media. In versions prior to 0.9.2, getenv() environment variables XRDP_SESSION, DISPLAY and TMUX allow environment variable injection into local-check logic. These environment variabl…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 19:26:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48983 · 5.8 MEDIUM — pam_usb: TOCTOU race condition in pad directory creation allows symlink substitution</title>
-      <link>https://vulnogram.org/CVE-2026-48983</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48983</guid>
-      <description>pam_usb provides hardware authentication for Linux using ordinary removable media. In versions prior to 0.9.2, a symlink race condition exists in per-device and per-user pad directory creation. pam_usb uses a check-then-act pattern: it calls lstat()…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 19:07:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48982 · 5.8 MEDIUM — pam_usb: Missing O_EXCL on pad temp file creation allows concurrent update race</title>
-      <link>https://vulnogram.org/CVE-2026-48982</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48982</guid>
-      <description>pam_usb provides hardware authentication for Linux using ordinary removable media. In versions prior to 0.9.2, when updating a one-time pad file, a temporary file is created using open() without the O_EXCL flag. Without O_EXCL, the create operation i…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 19:01:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48981 · 6.7 MEDIUM — pam_usb: xmlReadFile flags=0 permits XXE network entity fetching in conf.c</title>
-      <link>https://vulnogram.org/CVE-2026-48981</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48981</guid>
-      <description>pam_usb provides hardware authentication for Linux using ordinary removable media. In versions prior to 0.9.2, pam_usb calls xmlReadFile() with flags=0 when loading the configuration file, allowing libxml2 to process external entity references (XXE),…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 18:55:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48716 · 8.7 HIGH 🌩️ — nanobot: Path traversal via unsanitized WhatsApp document fileName enables arbitrary file write</title>
-      <link>https://vulnogram.org/CVE-2026-48716</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48716</guid>
-      <description>nanobot is a personal AI assistant. In versions 0.1.5.post3 and prior, the WhatsApp bridge in bridge/src/whatsapp.ts constructs a filesystem path using the fileName field from an incoming WhatsApp document message without sanitization. The WhatsApp b…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 18:46:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48985 · 5.5 MEDIUM — pam_usb: NULL Dereference Crash in pusb_is_loginctl_local when loginctl Returns Empty Remote Field</title>
-      <link>https://vulnogram.org/CVE-2026-48985</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48985</guid>
-      <description>pam_usb provides hardware authentication for Linux using ordinary removable media. In versions 0.9.1 and below, pusb_is_loginctl_local() can cause a NULL dereference crash when parsing loginctl output. The function calls popen() and reads the result;…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 17:30:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48986 · 4.7 MEDIUM — pam_usb: Infinite loop DoS in process-tree walk when parent process exits during authentication</title>
-      <link>https://vulnogram.org/CVE-2026-48986</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48986</guid>
-      <description>pam_usb provides hardware authentication for Linux using removable media. In pam_usb 0.9.1 and earlier, usb_get_process_parent_id() can cause an infinite loop DoS because it does not initialize *ppid on failure. In pusb_local_login(), the same variab…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 17:20:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48984 · 4.7 MEDIUM — pam_usb: xfree() does not call explicit_bzero — sensitive cryptographic material may linger in freed heap</title>
-      <link>https://vulnogram.org/CVE-2026-48984</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48984</guid>
-      <description>pam_usb provides hardware authentication for Linux using ordinary removable media. In versions 0.9.1 and below, the xfree() memory release helper in calls free() without first zeroing the buffer contents, releasing heap-allocated buffers containing s…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 17:06:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-53114 · 7.5 HIGH 🌩️ — CometD has acknowledgement extension out of memory</title>
-      <link>https://vulnogram.org/CVE-2025-53114</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-53114</guid>
-      <description>CometD is a scalable comet implementation for web messaging. In versions 5.0.0 through 5.0.22, 6.0.0 through 6.0.18, 7.0.0 through 7.0.18, and 8.0.0 through 8.0.8, bad clients that always send a fixed batch value when the server is using the acknowle…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 16:25:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55237 · 8.8 HIGH 🌩️ — AutoGPT SignUp Page has DOM-Based XSS and Open Redirect</title>
-      <link>https://vulnogram.org/CVE-2026-55237</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55237</guid>
-      <description>AutoGPT is a workflow automation platform for creating, deploying, and managing continuous artificial intelligence agents. Versions prior to 0.6.62 have a DOM-based Cross-Site Scripting (XSS) vulnerability in AutoGPT&apos;s signup page. The application im…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 16:21:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-32437 · 8.7 HIGH 🌩️ — AutoGPT has a DoS vulnerability in MediaDurationBlock</title>
-      <link>https://vulnogram.org/CVE-2025-32437</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-32437</guid>
-      <description>AutoGPT is a workflow automation platform for creating, deploying, and managing continuous artificial intelligence agents. Prior to 0.6.63, `MediaDurationBlock` will download and store the video in a temporary directory without deleting before all no…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 16:20:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-32436 · 7.1 HIGH — AutoGPT has a DoS vulnerability in AddAudioToVideoBlock</title>
-      <link>https://vulnogram.org/CVE-2025-32436</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-32436</guid>
-      <description>AutoGPT is a workflow automation platform for creating, deploying, and managing continuous artificial intelligence agents. Prior to 0.6.63, `AddAudioToVideoBlock` will download and store the video and audio in a temporary directory without deleting b…</description>
-      <category>High</category>
-      <pubDate>Thu, 18 Jun 2026 16:18:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-32424 · 8.7 HIGH 🌩️ — AutoGPT has a DoS vulnerability in ScreenshotWebPageBlock</title>
-      <link>https://vulnogram.org/CVE-2025-32424</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-32424</guid>
-      <description>AutoGPT is a workflow automation platform for creating, deploying, and managing continuous artificial intelligence agents. Prior to 0.6.63, ScreenshotWebPageBlock will store the captured screenshots in a temporary directory. `StepThroughItemsBlock` c…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 16:14:52 GMT</pubDate>
     </item>
   </channel>
 </rss>
