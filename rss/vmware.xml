@@ -11,7 +11,7 @@
       <title>VMware by Broadcom — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 20 Jun 2026 01:57:44 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 20:58:41 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-47846 · 9.8 CRITICAL 🌩️</title>
       <link>https://vulnogram.org/CVE-2026-47846</link>
@@ -108,6 +108,65 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 11 Jun 2026 05:04:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40997 · 5.3 MEDIUM 🌩️ — SOAP security faults leak Spring Security account state</title>
+      <link>https://vulnogram.org/CVE-2026-40997</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40997</guid>
+      <description>Several Spring WS integration paths with Spring Security could surface detailed account state (for example locked or disabled user semantics) to remote SOAP clients through exception messages or callback outcomes, instead of failing with generic auth…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 05:04:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40996 · 4.8 MEDIUM 🌩️ — Inbound WS-Security allows RSA PKCS#1 v1.5 key transport by default</title>
+      <link>https://vulnogram.org/CVE-2026-40996</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40996</guid>
+      <description>Wss4jSecurityInterceptor defaulted allowRSA15KeyTransportAlgorithm to true, overriding Apache WSS4J&apos;s safer default for validation RequestData. Inbound WS-Security decryption could therefore accept RSA PKCS#1 v1.5 (rsa-1_5) encrypted key material unl…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 05:04:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40995 · 5.4 MEDIUM — X.509 authentication bypasses Spring Security account checks</title>
+      <link>https://vulnogram.org/CVE-2026-40995</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40995</guid>
+      <description>X509AuthenticationProvider could issue a fully authenticated X509AuthenticationToken when a presented certificate mapped to UserDetails, without applying Spring Security&apos;s standard account lifecycle checks (disabled, locked, expired, or credentials-e…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 11 Jun 2026 05:04:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40994 · 8.2 HIGH 🌩️ — Wss4jSecurityInterceptor disables WS-I BSP validation by default</title>
+      <link>https://vulnogram.org/CVE-2026-40994</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40994</guid>
+      <description>Wss4jSecurityInterceptor initialized its BSP (WS-I Basic Security Profile) compliance flag so that inbound validation disabled WSS4J BSP enforcement on RequestData. Services that validate WS-Security on the network could therefore accept messages tha…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 05:03:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40992 · 5 MEDIUM — Mail Auto-Configuration Does Not Enable SSL Hostname Verification</title>
+      <link>https://vulnogram.org/CVE-2026-40992</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40992</guid>
+      <description>Spring Boot&apos;s Mail auto-configuration does not enable hostname verification. Applications that set the relevant JavaMail property, such as spring.mail.properties.mail.smtp.ssl.checkserveridentity=true, are not affected. Affected versions: Spring Boot…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 11 Jun 2026 05:03:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40987 · 7.1 HIGH — Remote-file synchronizer in Spring Integration writes server-supplied filename under localDirectory without canonicalization</title>
+      <link>https://vulnogram.org/CVE-2026-40987</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40987</guid>
+      <description>A malicious or compromised FTP/SFTP/SMB server can write arbitrary files anywhere on the client filesystem (outside the configured local-directory) with attacker-controlled content. Affected versions: Spring Integration 7.0.0 through 7.0.4; 6.5.0 thr…</description>
+      <category>High</category>
+      <pubDate>Thu, 11 Jun 2026 05:03:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-40986 · 4.8 MEDIUM — Spring Web Flow JS RemotingHandler renders non-HTML Response as HTML</title>
+      <link>https://vulnogram.org/CVE-2026-40986</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40986</guid>
+      <description>Spring Web Flow&apos;s JavaScript RemotingHandler renders the body of an error response as HTML even when the response is not &quot;text/html&quot;, which can result in a scripting attack in the user&apos;s browser if the error response from the server contains error de…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 11 Jun 2026 05:03:26 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-40985 · 6.4 MEDIUM — Data Binding Vulnerability in Spring Web Flow with Unified EL Parser</title>
@@ -387,69 +446,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 09 Jun 2026 03:51:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41852 · 3.7 LOW 🌩️ — Spring Framework Arbitrary Method Invocation in SpEL Expressions</title>
-      <link>https://vulnogram.org/CVE-2026-41852</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41852</guid>
-      <description>A vulnerability in Spring Expression Language (SpEL) evaluation logic allows for arbitrary zero-argument method invocation, even within restricted or read-only contexts, which may allow an attacker to invoke unintended application logic. Affected ver…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:51:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41851 · 5.3 MEDIUM 🌩️ — Spring Framework Denial of Service via Unbounded Cache in SpEL</title>
-      <link>https://vulnogram.org/CVE-2026-41851</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41851</guid>
-      <description>Applications which accept user-supplied Spring Expression Language (SpEL) expressions may be vulnerable to a Denial of Service (DoS) attack if the evaluation of a SpEL expression triggers unbounded cache growth. Affected versions: Spring Framework 7.…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:51:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41850 · 7.5 HIGH 🌩️ — Spring Framework Algorithmic Denial of Service via SpEL Expressions</title>
-      <link>https://vulnogram.org/CVE-2026-41850</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41850</guid>
-      <description>Applications that evaluate user-supplied Spring Expression Language (SpEL) expressions are vulnerable to an Algorithmic Denial of Service (DoS). By providing a specially crafted expression, an attacker can trigger excessive resource consumption durin…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:51:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41849 · 7.5 HIGH 🌩️ — Spring Framework Denial of Service via Integer Overflow in SpEL Expressions</title>
-      <link>https://vulnogram.org/CVE-2026-41849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41849</guid>
-      <description>An integer overflow vulnerability exists in the evaluation logic of the Spring Expression Language (SpEL). An attacker can exploit this by supplying a specially crafted SpEL expression that triggers excessive resource consumption, resulting in a Deni…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:51:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41848 · 3.7 LOW 🌩️ — Spring Framework Denial of Service via AntPathMatcher</title>
-      <link>https://vulnogram.org/CVE-2026-41848</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41848</guid>
-      <description>Applications may be vulnerable to a Regular Expression Denial of Service (ReDoS) attack if an attacker is able to provide a pattern which is then directly or indirectly supplied to one of the following methods in AntPathMatcher: match(String pattern,…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:51:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41847 · 4.8 MEDIUM 🌩️ — Spring Framework Security Filter Bypass in WebFlux Kotlin Router DSL</title>
-      <link>https://vulnogram.org/CVE-2026-41847</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41847</guid>
-      <description>Spring WebFlux applications may be vulnerable to a security bypass when using the Kotlin Router DSL. Affected versions: Spring Framework 5.3.0 through 5.3.48.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:51:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41846 · 5.9 MEDIUM 🌩️ — Spring Framework Cross-site Scripting via JSP Form Tags</title>
-      <link>https://vulnogram.org/CVE-2026-41846</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41846</guid>
-      <description>Spring MVC applications which accept user-supplied values in the cssClass, cssErrorClass, or cssStyle attributes of JSP form tags allow arbitrary HTML/JavaScript code injection, potentially resulting in a cross-site scripting (XSS) vulnerability. Aff…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 03:50:56 GMT</pubDate>
     </item>
   </channel>
 </rss>
