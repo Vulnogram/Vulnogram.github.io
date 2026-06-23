@@ -11,7 +11,31 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 18 Jun 2026 17:51:03 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 13:32:14 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10658 · 7.1 HIGH — Bluetooth Host ISO RX Missing SDU Header Length Validation in bt_iso_recv() Leads to DoS</title>
+      <link>https://vulnogram.org/CVE-2026-10658</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10658</guid>
+      <description>A missing length validation in the Zephyr Bluetooth Host ISO receive path can be triggered by malformed HCI ISO data. In bt_iso_recv() (subsys/bluetooth/host/iso.c), when processing PB=START/SINGLE fragments, the code pulls a TS SDU header (8 bytes,…</description>
+      <category>High</category>
+      <pubDate>Mon, 22 Jun 2026 23:58:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10651 · 7.1 HIGH — Bluetooth Classic SDP parser truncation bug in bt_sdp_parse_attribute() leads to reachable assertion and possible out-of-bounds read</title>
+      <link>https://vulnogram.org/CVE-2026-10651</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10651</guid>
+      <description>A malformed Bluetooth Classic SDP attribute can trigger a reachable assertion in Zephyr&apos;s SDP parser. In subsys/bluetooth/host/classic/sdp.c, bt_sdp_parse_attribute() accepts an input buffer once it contains the 1-byte attribute type and 2-byte attri…</description>
+      <category>High</category>
+      <pubDate>Mon, 22 Jun 2026 23:54:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10645 · 4.9 MEDIUM — fs: ext2: Missing structural validation of directory entries can cause out-of-bounds read and zero-progress directory traversal</title>
+      <link>https://vulnogram.org/CVE-2026-10645</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10645</guid>
+      <description>Zephyr&apos;s ext2 directory-entry parser does not fully validate on-disk directory entry structure before copying the entry name and advancing traversal state. In ext2_fetch_direntry() (subsys/fs/ext2/ext2_diskops.c), the code only checks de_name_len &lt;=…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 22 Jun 2026 23:48:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10641 · 7.1 HIGH — Out-of-bounds write in Bluetooth HFP Hands-Free CIND indicator parsing (cind_handle_values)</title>
       <link>https://vulnogram.org/CVE-2026-10641</link>
@@ -396,31 +420,6 @@
       <description>BT: Missing Check in LL_CONNECTION_UPDATE_IND Packet Leads to Division by Zero</description>
       <category>High</category>
       <pubDate>Mon, 19 Aug 2024 22:10:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-3332 · 6.5 MEDIUM — bt: host/smp: DoS caused by null pointer dereference</title>
-      <link>https://vulnogram.org/CVE-2024-3332</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-3332</guid>
-      <description>A malicious BLE device can send a specific order of packet sequence to cause a DoS attack on the victim BLE device</description>
-      <category>Medium</category>
-      <pubDate>Wed, 03 Jul 2024 16:44:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-3077 · 6.8 MEDIUM — Bluetooth: integer underflow in gatt_find_info_rsp</title>
-      <link>https://vulnogram.org/CVE-2024-3077</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-3077</guid>
-      <description>An malicious BLE device can crash BLE victim device by sending malformed gatt packet</description>
-      <category>Medium</category>
-      <pubDate>Fri, 29 Mar 2024 05:06:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-7060 · 8.6 HIGH 🌩️ — Missing Security Control in Zephyr OS IP Packet Handling</title>
-      <link>https://vulnogram.org/CVE-2023-7060</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-7060</guid>
-      <description>Zephyr OS IP packet handling does not properly drop IP packets arriving on an external interface with a source address equal to 127.0.01 or the destination address.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 15 Mar 2024 18:12:36 GMT</pubDate>
     </item>
   </channel>
 </rss>
