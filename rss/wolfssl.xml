@@ -11,7 +11,58 @@
       <title>wolfSSL Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 04 Jun 2026 20:27:50 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 18:58:49 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-11999 · 8.2 HIGH 🌩️ — X.509 trust-chain bypass via path-depth exhaustion in wolfSSL_X509_verify_cert()</title>
+      <link>https://vulnogram.org/CVE-2026-11999</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11999</guid>
+      <description>X.509 trust-chain bypass (path-depth exhaustion) in the OpenSSL compatibility certificate verifier (wolfSSL_X509_verify_cert()). This affects only builds with --enable-opensslextra whose application calls X509_verify_cert() with caller-supplied untru…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 25 Jun 2026 16:56:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55967 · 2 LOW — AES-GCM streaming APIs do not reject &gt;64 GiB cumulative single messages, enabling counter wrap and keystream reuse</title>
+      <link>https://vulnogram.org/CVE-2026-55967</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55967</guid>
+      <description>AES-GCM encryption/decryption with extremely large cumulative single message sizes (&gt;64 GiB) were not properly rejected by the streaming APIs, allowing counter wrap, keystream reuse, and consequent plaintext recovery.</description>
+      <category>Low</category>
+      <pubDate>Thu, 25 Jun 2026 16:53:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55961 · 8.2 HIGH 🌩️ — wolfSSL_PKCS7_verify() reports success for degenerate (certs-only) PKCS#7 with no signer</title>
+      <link>https://vulnogram.org/CVE-2026-55961</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55961</guid>
+      <description>wolfSSL_PKCS7_verify() returning success for a degenerate (certs-only) PKCS#7 object that contains no signer. Such an object has empty signerInfos, so the underlying signed-data verification succeeds without authenticating any content. The compatibil…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 25 Jun 2026 16:51:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6091 · 6 MEDIUM — Partial-chain verification accepts untrusted intermediate as trust anchor</title>
+      <link>https://vulnogram.org/CVE-2026-6091</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6091</guid>
+      <description>Partial-chain certificate verification may accept chains that terminate at a peer-supplied, untrusted intermediate certificate rather than a trusted anchor. An attacker could present a chain that ends at an intermediate they control and have it accep…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 25 Jun 2026 16:46:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6291 · 6 MEDIUM — Bleichenbacher padding oracle in PKCS#7 KTRI RSA PKCS#1 v1.5 decryption</title>
+      <link>https://vulnogram.org/CVE-2026-6291</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6291</guid>
+      <description>Bleichenbacher padding oracle in PKCS#7 KTRI decryption. When decrypting PKCS#7 EnvelopedData using RSA PKCS#1 v1.5 key transport, wolfSSL returned distinguishable error codes depending on whether RSA padding validation failed versus whether the decr…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 25 Jun 2026 16:41:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6094 · 6.3 MEDIUM 🌩️ — Heap buffer overread in wc_PKCS7_DecodeEnvelopedData parsing crafted PKCS7 EnvelopedData</title>
+      <link>https://vulnogram.org/CVE-2026-6094</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6094</guid>
+      <description>Heap buffer overread in wc_PKCS7_DecodeEnvelopedData when parsing crafted PKCS7 EnvelopedData. This could theoretically be triggered by attacker-supplied data delivered via S/MIME or CMS.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 25 Jun 2026 16:35:48 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-0930 · 2.3 LOW — Potential wolfSSHd Buffer out-of-bounds Read on Windows Handling Terminal Resize</title>
       <link>https://vulnogram.org/CVE-2026-0930</link>
@@ -379,57 +430,6 @@
       <description>The server previously verified the TLS 1.3 PSK binder using a non-constant time method which could potentially leak information about the PSK binder</description>
       <category>Low</category>
       <pubDate>Fri, 21 Nov 2025 23:01:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11931 · 2.1 LOW 🌩️ — Integer Underflow Leads to Out-of-Bounds Access in XChaCha20-Poly1305 Decrypt</title>
-      <link>https://vulnogram.org/CVE-2025-11931</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11931</guid>
-      <description>Integer Underflow Leads to Out-of-Bounds Access in XChaCha20-Poly1305 Decrypt. This issue is hit specifically with a call to the function wc_XChaCha20Poly1305_Decrypt() which is not used with TLS connections, only from direct calls from an applicatio…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 21 Nov 2025 22:57:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12888 · 1 LOW — Constant Time Issue with Xtensa-based ESP32 and X22519</title>
-      <link>https://vulnogram.org/CVE-2025-12888</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12888</guid>
-      <description>Vulnerability in X25519 constant-time cryptographic implementations due to timing side channels introduced by compiler optimizations and CPU architecture limitations, specifically with the Xtensa-based ESP32 chips. If targeting Xtensa it is recommend…</description>
-      <category>Low</category>
-      <pubDate>Fri, 21 Nov 2025 22:50:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11936 · 6.3 MEDIUM 🌩️ — Potential DoS Vulnerability through Multiple KeyShareEntry with Same Group in TLS 1.3 ClientHello</title>
-      <link>https://vulnogram.org/CVE-2025-11936</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11936</guid>
-      <description>Improper input validation in the TLS 1.3 KeyShareEntry parsing in wolfSSL v5.8.2 on multiple platforms allows a remote unauthenticated attacker to cause a denial-of-service by sending a crafted ClientHello message containing duplicate KeyShareEntry v…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 21 Nov 2025 22:24:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11933 · 2.3 LOW — DoS Vulnerability in wolfSSL TLS 1.3 CKS Extension</title>
-      <link>https://vulnogram.org/CVE-2025-11933</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11933</guid>
-      <description>Improper Input Validation in the TLS 1.3 CKS extension parsing in wolfSSL 5.8.2 and earlier on multiple platforms allows a remote unauthenticated attacker to potentially cause a denial-of-service via a crafted ClientHello message with duplicate CKS e…</description>
-      <category>Low</category>
-      <pubDate>Fri, 21 Nov 2025 22:19:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11934 · 2.1 LOW — Improper Validation of Signature Algorithm Used in TLS 1.3 CertificateVerify</title>
-      <link>https://vulnogram.org/CVE-2025-11934</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11934</guid>
-      <description>Improper input validation in the TLS 1.3 CertificateVerify signature algorithm negotiation in wolfSSL 5.8.2 and earlier on multiple platforms allows for downgrading the signature algorithm used. For example when a client sends ECDSA P521 as the suppo…</description>
-      <category>Low</category>
-      <pubDate>Fri, 21 Nov 2025 22:12:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11935 · 6.3 MEDIUM 🌩️ — Forward Secrecy Violation in WolfSSL TLS 1.3</title>
-      <link>https://vulnogram.org/CVE-2025-11935</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11935</guid>
-      <description>With TLS 1.3 pre-shared key (PSK) a malicious or faulty server could ignore the request for PFS (perfect forward secrecy) and the client would continue on with the connection using PSK without PFS. This happened when a server responded to a ClientHel…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 21 Nov 2025 22:04:52 GMT</pubDate>
     </item>
   </channel>
 </rss>
