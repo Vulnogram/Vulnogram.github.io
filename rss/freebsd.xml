@@ -11,7 +11,23 @@
       <title>FreeBSD — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 04 Jun 2026 20:27:50 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 16:03:23 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-45257 · 7.8 HIGH — Arbitrary file overwrite via the KTLS receive path</title>
+      <link>https://vulnogram.org/CVE-2026-45257</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45257</guid>
+      <description>The KTLS receive path decrypted each record in place, assuming that the mbufs holding received data were anonymous and safe to modify. This assumption does not hold for data placed on a socket by sendfile(2), which can reference file-backed memory di…</description>
+      <category>High</category>
+      <pubDate>Fri, 26 Jun 2026 14:50:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45256 · 5.5 MEDIUM — Missing permission check in thr_kill2(2)</title>
+      <link>https://vulnogram.org/CVE-2026-45256</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45256</guid>
+      <description>When used to deliver a signal to a specific thread, thr_kill2(2) called p_cansignal() to determine whether the operation was permitted but did not check the result before delivering the signal. The signal was sent even when the permission check faile…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 26 Jun 2026 14:43:22 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-45254 · 6.5 MEDIUM 🌩️ — Incorrect libcap_net limitation list manipulation</title>
       <link>https://vulnogram.org/CVE-2026-45254</link>
@@ -420,23 +436,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Sun, 11 Aug 2024 02:45:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6760 · 7.5 HIGH 🌩️ — ktrace(2) fails to detach when executing a setuid binary</title>
-      <link>https://vulnogram.org/CVE-2024-6760</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6760</guid>
-      <description>A logic bug in the code which disables kernel tracing for setuid programs meant that tracing was not disabled when it should have, allowing unprivileged users to trace and inspect the behavior of setuid programs. The bug may be used by an unprivilege…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 11 Aug 2024 02:40:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6640 · 6.3 MEDIUM — pf incorrectly matches different ICMPv6 states in the state table</title>
-      <link>https://vulnogram.org/CVE-2024-6640</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6640</guid>
-      <description>In ICMPv6 Neighbor Discovery (ND), the ID is always 0. When pf is configured to allow ND and block incoming Echo Requests, a crafted Echo Request packet after a Neighbor Solicitation (NS) can trigger an Echo Reply. The packet has to come from the sam…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 11 Aug 2024 02:33:42 GMT</pubDate>
     </item>
   </channel>
 </rss>
