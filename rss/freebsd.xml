@@ -11,7 +11,56 @@
       <title>FreeBSD — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 27 Jun 2026 05:41:18 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 10:49:08 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-49416 — Integer overflow in vt(4) CONS_HISTORY ioctl</title>
+      <link>https://vulnogram.org/CVE-2026-49416</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49416</guid>
+      <description>The CONS_HISTORY ioctl handler did not adequately validate the requested history size. A large value caused an integer overflow in the buffer size calculation, resulting in a heap allocation smaller than expected. Subsequent initialization of the buf…</description>
+      <pubDate>Sat, 27 Jun 2026 09:25:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49414 — ASLR bypass for setuid executables via procctl(2)</title>
+      <link>https://vulnogram.org/CVE-2026-49414</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49414</guid>
+      <description>The ELF image activator cleared per-process ASLR preference flags for setuid binaries after the code that computes the PIE base address, rather than before. As a result, a user-requested ASLR disable was still in effect at the point where the base ad…</description>
+      <pubDate>Sat, 27 Jun 2026 09:22:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49413 — Flaw in Linuxulator execution of setugid binaries</title>
+      <link>https://vulnogram.org/CVE-2026-49413</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49413</guid>
+      <description>The Linuxulator determined whether a binary was set-user-ID or set-group-ID by checking the P_SUGID process flag. During execve(2), this flag is not yet set at the point where the auxiliary vector is constructed, so AT_SECURE was incorrectly set to z…</description>
+      <pubDate>Sat, 27 Jun 2026 09:08:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49412 — Use-after-free bug in the IPV6_MSFILTER socket option handler</title>
+      <link>https://vulnogram.org/CVE-2026-49412</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49412</guid>
+      <description>The kernel handler for IPV6_MSFILTER dropped a serializing lock in order to copy the source-filter list from userspace, then reacquired the lock. During this window another thread could free the multicast filter structure, leaving the handler with a…</description>
+      <pubDate>Sat, 27 Jun 2026 09:02:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45259 — sigqueue(2) missing capability mode restriction</title>
+      <link>https://vulnogram.org/CVE-2026-45259</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45259</guid>
+      <description>sigqueue(2) was marked as permitted in capability mode with the introduction of Capsicum in 2011, but the implementation of kern_sigqueue did not include a capability mode check restricting signal delivery to the calling process&apos;s own PID. A process…</description>
+      <pubDate>Sat, 27 Jun 2026 08:59:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45258 — Multiple vulnerabilities in the sound(4) mmap path</title>
+      <link>https://vulnogram.org/CVE-2026-45258</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45258</guid>
+      <description>dsp_mmap_single() validated the requested mapping by checking the sum of the user-supplied offset and length against the buffer size. This addition could overflow, so that a large offset and length wrapped around and passed the check. The offset was…</description>
+      <pubDate>Sat, 27 Jun 2026 08:50:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49417 — Multiple vulnerabilities in the sound(4) mmap path</title>
+      <link>https://vulnogram.org/CVE-2026-49417</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49417</guid>
+      <description>Second, the audio buffer backing a mapping could be freed when the device was closed even though the mapping remained valid. The freed memory could then be reused elsewhere while still accessible through the stale mapping. The /dev/dsp device nodes a…</description>
+      <pubDate>Sat, 27 Jun 2026 08:48:30 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-45257 · 7.8 HIGH — Arbitrary file overwrite via the KTLS receive path</title>
       <link>https://vulnogram.org/CVE-2026-45257</link>
@@ -377,65 +426,6 @@
       <description>The ctl_request_sense function could expose up to three bytes of the kernel heap to userspace. Malicious software running in a guest VM that exposes virtio_scsi can exploit the vulnerabilities to achieve code execution on the host in the bhyve usersp…</description>
       <category>High</category>
       <pubDate>Thu, 05 Sep 2024 04:31:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-42416 · 8.4 HIGH — Multiple issues in ctl(4) CAM Target Layer</title>
-      <link>https://vulnogram.org/CVE-2024-42416</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-42416</guid>
-      <description>The ctl_report_supported_opcodes function did not sufficiently validate a field provided by userspace, allowing an arbitrary write to a limited amount of kernel help memory. Malicious software running in a guest VM that exposes virtio_scsi can exploi…</description>
-      <category>High</category>
-      <pubDate>Thu, 05 Sep 2024 04:31:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8178 · 9.3 CRITICAL — Multiple issues in ctl(4) CAM Target Layer</title>
-      <link>https://vulnogram.org/CVE-2024-8178</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8178</guid>
-      <description>The ctl_write_buffer and ctl_read_buffer functions allocated memory to be returned to userspace, without initializing it. Malicious software running in a guest VM that exposes virtio_scsi can exploit the vulnerabilities to achieve code execution on t…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 05 Sep 2024 04:31:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-41928 · 8.4 HIGH — bhyve(8) privileged guest escape via TPM device passthrough</title>
-      <link>https://vulnogram.org/CVE-2024-41928</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-41928</guid>
-      <description>Malicious software running in a guest VM can exploit the buffer overflow to achieve code execution on the host in the bhyve userspace process, which typically runs as root. Note that bhyve runs in a Capsicum sandbox, so malicious code is constrained…</description>
-      <category>High</category>
-      <pubDate>Thu, 05 Sep 2024 03:32:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-45288 · 8.4 HIGH — Multiple vulnerabilities in libnv</title>
-      <link>https://vulnogram.org/CVE-2024-45288</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45288</guid>
-      <description>A missing null-termination character in the last element of an nvlist array string can lead to writing outside the allocated buffer.</description>
-      <category>High</category>
-      <pubDate>Thu, 05 Sep 2024 03:18:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-45287 · 9.1 CRITICAL 🌩️ — Multiple vulnerabilities in libnv</title>
-      <link>https://vulnogram.org/CVE-2024-45287</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45287</guid>
-      <description>A malicious value of size in a structure of packed libnv can cause an integer overflow, leading to the allocation of a smaller buffer than required for the parsed data.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 05 Sep 2024 03:18:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-7589 · 8.1 HIGH 🌩️ — OpenSSH pre-authentication async signal safety issue</title>
-      <link>https://vulnogram.org/CVE-2024-7589</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-7589</guid>
-      <description>A signal handler in sshd(8) may call a logging function that is not async-signal-safe. The signal handler is invoked when a client does not authenticate within the LoginGraceTime seconds (120 by default). This signal handler executes in the context o…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 11 Aug 2024 03:15:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6759 · 5.3 MEDIUM 🌩️ — NFS client accepts file names containing path separators</title>
-      <link>https://vulnogram.org/CVE-2024-6759</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6759</guid>
-      <description>When mounting a remote filesystem using NFS, the kernel did not sanitize remotely provided filenames for the path separator character, &quot;/&quot;. This allows readdir(3) and related functions to return filesystem entries with names containing additional pat…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 11 Aug 2024 02:45:15 GMT</pubDate>
     </item>
   </channel>
 </rss>
