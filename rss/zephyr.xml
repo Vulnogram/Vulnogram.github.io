@@ -11,7 +11,31 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 29 Jun 2026 22:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 23:45:56 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10648 · 6.2 MEDIUM — NULL-pointer dereference in MCUmgr serial/console SMP transport on buffer-pool exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-10648</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10648</guid>
+      <description>mcumgr_serial_process_frag() in subsys/mgmt/mcumgr/transport/src/serial_util.c calls net_buf_reset() on the result of smp_packet_alloc() before checking it for NULL. smp_packet_alloc() uses net_buf_alloc(K_NO_WAIT) against the shared MCUmgr packet po…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 29 Jun 2026 22:51:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8023 · 7.5 HIGH — Path traversal in Zephyr HTTP server static-filesystem resource handler allows unauthenticated remote arbitrary file read</title>
+      <link>https://vulnogram.org/CVE-2026-8023</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8023</guid>
+      <description>Zephyr&apos;s HTTP server (subsys/net/lib/http) provides a static-filesystem resource type (HTTP_RESOURCE_TYPE_STATIC_FS, available when CONFIG_FILE_SYSTEM is enabled) that serves files from a configured root directory. Before this fix, both the HTTP/1 an…</description>
+      <category>High</category>
+      <pubDate>Mon, 29 Jun 2026 22:15:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7656 · 8.1 HIGH — Broken IPv6 Neighbor Discovery input validation allows spoofed RA/NS/NA acceptance in Zephyr net stack</title>
+      <link>https://vulnogram.org/CVE-2026-7656</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7656</guid>
+      <description>The IPv6 Neighbor Discovery handlers in subsys/net/ip/ipv6_nbr.c (handle_ra_input, handle_ns_input, handle_na_input) used an incorrect boolean expression that combined the RFC 4861 validity checks with the ICMPv6 code check using the wrong operator p…</description>
+      <category>High</category>
+      <pubDate>Mon, 29 Jun 2026 22:09:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10647 · 5.3 MEDIUM — Deadlock denial of service in USB CDC-NCM device class on TX enqueue failure</title>
       <link>https://vulnogram.org/CVE-2026-10647</link>
@@ -397,30 +421,6 @@
       <description>When the Global Pointer (GP) relative addressing is enabled (CONFIG_RISCV_GP=y), the gp reg points at 0x800 bytes past the start of the .sdata section which is then used by the linker to relax accesses to global symbols.</description>
       <category>Critical</category>
       <pubDate>Fri, 15 Nov 2024 22:53:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6444 · 6.3 MEDIUM — Bluetooth: ots: missing buffer length check</title>
-      <link>https://vulnogram.org/CVE-2024-6444</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6444</guid>
-      <description>No proper validation of the length of user input in olcp_ind_handler in zephyr/subsys/bluetooth/services/ots/ots_client.c.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 04 Oct 2024 06:14:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6443 · 6.3 MEDIUM — zephyr: out-of-bound read in utf8_trunc</title>
-      <link>https://vulnogram.org/CVE-2024-6443</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6443</guid>
-      <description>In utf8_trunc in zephyr/lib/utils/utf8.c, last_byte_p can point to one byte before the string pointer if the string is empty.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 04 Oct 2024 05:56:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6442 · 6.3 MEDIUM — Bluetooth: ASCS Unchecked tailroom of the response buffer</title>
-      <link>https://vulnogram.org/CVE-2024-6442</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6442</guid>
-      <description>In ascs_cp_rsp_add in /subsys/bluetooth/audio/ascs.c, an unchecked tailroom could lead to a global buffer overflow.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 04 Oct 2024 05:36:10 GMT</pubDate>
     </item>
   </channel>
 </rss>
