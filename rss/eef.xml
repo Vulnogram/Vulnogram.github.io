@@ -11,7 +11,40 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 29 Jun 2026 18:54:54 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 20:45:23 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-53426 · 8.2 HIGH — Atom-table exhaustion denial-of-service via JSON parse_document in MDEx</title>
+      <link>https://vulnogram.org/CVE-2026-53426</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53426</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in leandrocp MDEx allows Excessive Allocation. MDEx.parse_document/2 accepts a {:json, json} source. In lib/mdex.ex, the private json_to_node/1 function passes the attacker-controlled…</description>
+      <category>High</category>
+      <pubDate>Mon, 29 Jun 2026 19:11:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54889 · 5.1 MEDIUM 🌩️ — Unsanitized URL schemes in MDEx Quill Delta output allow javascript: injection (XSS)</title>
+      <link>https://vulnogram.org/CVE-2026-54889</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54889</guid>
+      <description>Improper Neutralization of Input During Web Page Generation (XSS) vulnerability in leandrocp mdex allows cross-site scripting via unsanitized URL schemes in Quill Delta output. &apos;Elixir.MDEx&apos;:to_delta/2 converts Markdown into a Quill Delta. &apos;Elixir.MD…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 29 Jun 2026 19:10:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54888 · 6.9 MEDIUM — Uncontrolled recursion over deeply nested Markdown crashes the BEAM in mdex</title>
+      <link>https://vulnogram.org/CVE-2026-54888</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54888</guid>
+      <description>Uncontrolled Recursion vulnerability in leandrocp mdex allows denial of service via deeply nested Markdown input. mdex converts between an Elixir %MDEx.Document{} struct and Comrak&apos;s internal AST using two mutually recursive Rust functions, ex_docume…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 29 Jun 2026 19:10:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53429 · 6.9 MEDIUM — Unbounded native memory leak in mdex escaped-tag rendering enables unauthenticated denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-53429</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53429</guid>
+      <description>Missing Release of Memory after Effective Lifetime vulnerability in leandrocp mdex and mdex_native allows an attacker who controls a rendered document to cause a denial of service through unbounded native memory exhaustion. The native rendering code…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 29 Jun 2026 19:07:16 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-53428 · 6.9 MEDIUM — Unbounded memory allocation in highlight_lines range expansion in mdex</title>
       <link>https://vulnogram.org/CVE-2026-53428</link>
@@ -405,41 +438,6 @@
       <description>Improper Neutralization of CRLF Sequences vulnerability in benoitc hackney allows HTTP Request Splitting. hackney does not percent-encode carriage return (\r) or line feed (\n) characters in the URL query component before constructing the HTTP/1.1 re…</description>
       <category>Medium</category>
       <pubDate>Mon, 25 May 2026 14:00:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47077 · 8.2 HIGH 🌩️ — Unbounded body accumulation in HTTP/3 response loop in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47077</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47077</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in benoitc hackney allows Flooding. hackney_h3:await_response_loop/6 accumulates the HTTP/3 response body in memory without any size cap. The after Timeout clause is a per-message ina…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 May 2026 14:00:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47071 · 8.2 HIGH 🌩️ — SOCKS5 TLS upgrade ignores caller timeout in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47071</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47071</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in benoitc hackney allows Flooding. The SOCKS5 transport in src/hackney_socks5.erl correctly applies the caller-supplied timeout to the SOCKS5 negotiation phase, but then upgrades the connection to TLS…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 May 2026 14:00:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47066 · 8.7 HIGH 🌩️ — Infinite loop in Alt-Svc header parser in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47066</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47066</guid>
-      <description>Loop with Unreachable Exit Condition (&apos;Infinite Loop&apos;) vulnerability in benoitc hackney allows Excessive Allocation. The Alt-Svc response header parser in src/hackney_altsvc.erl does not guarantee forward progress. When parse_token/2 receives a non-t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 May 2026 14:00:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47069 · 2.1 LOW — CRLF injection in cookie domain/path options in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47069</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47069</guid>
-      <description>Improper Neutralization of CRLF Sequences (&apos;CRLF Injection&apos;) vulnerability in benoitc hackney allows HTTP Response Splitting. The hackney_cookie:setcookie/3 function in src/hackney_cookie.erl validates the Name and Value arguments against CRLF and co…</description>
-      <category>Low</category>
-      <pubDate>Mon, 25 May 2026 14:00:39 GMT</pubDate>
     </item>
   </channel>
 </rss>
