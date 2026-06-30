@@ -11,7 +11,47 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 29 Jun 2026 23:45:56 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 18:25:49 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10655 · 6.5 MEDIUM — Use-after-free race in SNTP async client when closing the socket while the socket service is still polling it</title>
+      <link>https://vulnogram.org/CVE-2026-10655</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10655</guid>
+      <description>The asynchronous SNTP client in Zephyr (subsys/net/lib/sntp/sntp.c, sntp_close_async) closed the UDP socket file descriptor directly from the calling thread immediately after detaching it from the network socket service, without synchronizing with th…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 30 Jun 2026 16:33:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10654 · 3.1 LOW — RFCOMM session-disconnect race leaks session/L2CAP and denies further RFCOMM service in Zephyr Bluetooth Classic</title>
+      <link>https://vulnogram.org/CVE-2026-10654</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10654</guid>
+      <description>A race condition in the Zephyr Bluetooth Classic RFCOMM host stack (subsys/bluetooth/host/classic/rfcomm.c) mishandles a simultaneous bidirectional session disconnect. When the local device has initiated a session teardown (state BT_RFCOMM_STATE_DISC…</description>
+      <category>Low</category>
+      <pubDate>Tue, 30 Jun 2026 16:29:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10653 · 6.4 MEDIUM — Non-atomic `net_buf` reference counts cause double-free / free-list corruption under concurrent unref</title>
+      <link>https://vulnogram.org/CVE-2026-10653</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10653</guid>
+      <description>The Zephyr net_buf library (lib/net_buf/buf.c) manipulated both of its reference counts -- the per-header buf-&gt;ref and the per-data-block ref_count at the start of each variable/heap data allocation -- with plain non-atomic C operators (buf-&gt;ref++, i…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 30 Jun 2026 16:20:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9263 · 6.5 MEDIUM — Out-of-bounds read in Bluetooth Controller ISOAL framed RX reassembly leaks adjacent memory into host HCI ISO packets</title>
+      <link>https://vulnogram.org/CVE-2026-9263</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9263</guid>
+      <description>The Zephyr Bluetooth controller ISO Adaptation Layer (subsys/bluetooth/controller/ll_sw/isoal.c) fails to validate the length field of a framed ISO PDU start segment. Per the Bluetooth specification a start segment (sc=0) always carries a 3-byte time…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 30 Jun 2026 16:01:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10652 · 4.8 MEDIUM — Out-of-bounds read in Zephyr DNS resolver TXT/SRV record parsing (unvalidated `rdlength`)</title>
+      <link>https://vulnogram.org/CVE-2026-10652</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10652</guid>
+      <description>Zephyr&apos;s DNS resolver (subsys/net/lib/dns) parses resource records from DNS responses in dns_unpack_answer(), which validated only the fixed RR header (type, class, TTL, rdlength) and accepted any attacker-declared rdlength, including one extending p…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 30 Jun 2026 15:50:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10648 · 6.2 MEDIUM — NULL-pointer dereference in MCUmgr serial/console SMP transport on buffer-pool exhaustion</title>
       <link>https://vulnogram.org/CVE-2026-10648</link>
@@ -377,50 +417,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 25 Feb 2025 07:22:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1674 · 8.2 HIGH 🌩️ — Out of bounds read when unpacking DNS answers</title>
-      <link>https://vulnogram.org/CVE-2025-1674</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1674</guid>
-      <description>A lack of input validation allows for out of bounds reads caused by malicious or malformed packets.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 25 Feb 2025 07:18:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1673 · 8.2 HIGH 🌩️ — Out of bounds read when calling crc16_ansi and strlen in dns_validate_msg</title>
-      <link>https://vulnogram.org/CVE-2025-1673</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1673</guid>
-      <description>A malicious or malformed DNS packet without a payload can cause an out-of-bounds read, resulting in a crash (denial of service) or an incorrect computation.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 25 Feb 2025 07:12:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-10395 · 8.6 HIGH 🌩️ — net: lib: http_server: Buffer Under-read</title>
-      <link>https://vulnogram.org/CVE-2024-10395</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-10395</guid>
-      <description>No proper validation of the length of user input in http_server_get_content_type_from_extension.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Feb 2025 06:59:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8798 · 7.5 HIGH 🌩️ — Bluetooth: classic: avdtp: missing buffer length check</title>
-      <link>https://vulnogram.org/CVE-2024-8798</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8798</guid>
-      <description>No proper validation of the length of user input in olcp_ind_handler in zephyr/subsys/bluetooth/services/ots/ots_client.c.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 15 Dec 2024 23:23:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-11263 · 9.4 CRITICAL — arch: riscv: userspace: potential security risk when CONFIG_RISCV_GP=y</title>
-      <link>https://vulnogram.org/CVE-2024-11263</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11263</guid>
-      <description>When the Global Pointer (GP) relative addressing is enabled (CONFIG_RISCV_GP=y), the gp reg points at 0x800 bytes past the start of the .sdata section which is then used by the linker to relax accesses to global symbols.</description>
-      <category>Critical</category>
-      <pubDate>Fri, 15 Nov 2024 22:53:58 GMT</pubDate>
     </item>
   </channel>
 </rss>
