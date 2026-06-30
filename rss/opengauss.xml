@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openGauss Community — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <atom:link href="https://vulnogram.org/rss/opengauss" rel="self" type="application/rss+xml"/>
+    <description>Most recent CVEs assigned by openGauss Community (opengauss).</description>
+    <image>
+      <url>https://vulnogram.org/seaview/icons/opengauss.png</url>
+      <title>openGauss Community — recent CVEs</title>
+      <link>https://vulnogram.org/</link>
+    </image>
+    <lastBuildDate>Tue, 30 Jun 2026 16:12:20 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-14178 · 5.9 MEDIUM 🌩️ — openGauss存在非法内存访问导致DoS漏洞</title>
+      <link>https://vulnogram.org/CVE-2026-14178</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14178</guid>
+      <description>openGauss 在处理带 NLS 参数的 to_timestamp 调用时，to_timestamp_with_fmt_nls() 会将 nls_fmt_str 保存到 u_sess-&gt;parser_cxt.nls_fmt_str。在 seqscan + sort 执行路径下，该字符串原本被分配在 SeqScan 的表达式上下文中；当 SeqScan 完成后，该内存上下文会被 reset，但后续结果输出阶段 timestamp_out() 仍会通过 CheckNlsFormat() 访问 u…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 30 Jun 2026 13:56:16 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
