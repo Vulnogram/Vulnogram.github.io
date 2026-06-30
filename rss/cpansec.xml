@@ -11,7 +11,42 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 30 Jun 2026 05:58:52 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 12:59:38 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-13766 — DBIx::QuickORM versions before 0.000026 for Perl allow SQL injection via unquoted SQL identifiers</title>
+      <link>https://vulnogram.org/CVE-2026-13766</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13766</guid>
+      <description>DBIx::QuickORM versions before 0.000026 for Perl allow SQL injection via unquoted SQL identifiers. The default SQL builder, a SQL::Abstract subclass, sets bindtype in its constructor but never quote_char, so SQL::Abstract emits identifiers verbatim.…</description>
+      <pubDate>Tue, 30 Jun 2026 11:20:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-57082 — Net::BitTorrent versions through 2.0.1 for Perl generate the MSE Diffie-Hellman private key with a non-cryptographic PRNG</title>
+      <link>https://vulnogram.org/CVE-2026-57082</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57082</guid>
+      <description>Net::BitTorrent versions through 2.0.1 for Perl generate the MSE Diffie-Hellman private key with a non-cryptographic PRNG. The MSE (Message Stream Encryption) handshake derives its 160-bit Diffie-Hellman private key from Perl&apos;s rand(), a non-cryptogr…</description>
+      <pubDate>Tue, 30 Jun 2026 11:05:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-57081 — Net::BitTorrent versions through 2.0.1 for Perl allow remote memory exhaustion via deeply nested bencoded input</title>
+      <link>https://vulnogram.org/CVE-2026-57081</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57081</guid>
+      <description>Net::BitTorrent versions through 2.0.1 for Perl allow remote memory exhaustion via deeply nested bencoded input. bdecode recurses once per nested list or dictionary level with no depth cap, and each recursive call receives the remaining buffer by val…</description>
+      <pubDate>Tue, 30 Jun 2026 11:05:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-57080 — Net::BitTorrent versions through 2.0.1 for Perl allow remote memory exhaustion via an uncapped peer-wire message-length prefix</title>
+      <link>https://vulnogram.org/CVE-2026-57080</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57080</guid>
+      <description>Net::BitTorrent versions through 2.0.1 for Perl allow remote memory exhaustion via an uncapped peer-wire message-length prefix. The peer-wire framing in _process_messages trusts the 4-byte length prefix sent by a connected peer with no upper bound, w…</description>
+      <pubDate>Tue, 30 Jun 2026 11:04:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-57079 — Net::BitTorrent versions through 2.0.1 for Perl write files outside the download directory via path traversal in peer-supplied metadata</title>
+      <link>https://vulnogram.org/CVE-2026-57079</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57079</guid>
+      <description>Net::BitTorrent versions through 2.0.1 for Perl write files outside the download directory via path traversal in peer-supplied metadata. Net::BitTorrent validates file path components only on the .torrent-file ingest path. The peer and magnet metadat…</description>
+      <pubDate>Tue, 30 Jun 2026 11:04:32 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-13758 — CryptX versions before 0.088_001 for Perl compare AEAD authentication tags in non-constant time in the streaming decrypt_done path</title>
       <link>https://vulnogram.org/CVE-2026-13758</link>
@@ -410,50 +445,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 27 May 2026 02:29:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-15649 · 5.5 MEDIUM — IO::Uncompress::Unzip versions before 2.215 for Perl propagate uncaught exception when parsing zip header with malformed DOS date</title>
-      <link>https://vulnogram.org/CVE-2025-15649</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15649</guid>
-      <description>IO::Uncompress::Unzip versions before 2.215 for Perl propagate uncaught exception when parsing zip header with malformed DOS date. _dosToUnixTime() decodes the local-file-header last-modification date field and calls Time::Local::timelocal() without…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 27 May 2026 02:25:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8647 · 4.8 MEDIUM 🌩️ — Crypt::ScryptKDF versions through 0.010 for Perl uses insecure random number source when no CSPRNG module is available</title>
-      <link>https://vulnogram.org/CVE-2026-8647</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8647</guid>
-      <description>Crypt::ScryptKDF versions through 0.010 for Perl uses insecure random number source when no CSPRNG module is available. The random_bytes function fell back to using the built-in rand() function when none of the Perl modules Crypt::PRNG, Crypt::OpenSS…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 26 May 2026 22:53:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46740 · 5.3 MEDIUM 🌩️ — Mojolicious::Plugin::Statsd versions through 0.04 for Perl allowed metric injections</title>
-      <link>https://vulnogram.org/CVE-2026-46740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46740</guid>
-      <description>Mojolicious::Plugin::Statsd versions through 0.04 for Perl allowed metric injections. The metric names and set values were not checked for newlines, colons or pipes. Metrics generated from untrusted sources could inject additional statsd metrics. Ver…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 26 May 2026 22:48:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9538 · 7.5 HIGH 🌩️ — Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header</title>
-      <link>https://vulnogram.org/CVE-2026-9538</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9538</guid>
-      <description>Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker controlled entry size field in tar header. _read_tar() reads each entry&apos;s payload with $handle-&gt;read($$data, $block), where $block is derived from the entry&apos;s 12-byte siz…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 26 May 2026 00:18:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42497 · 7.5 HIGH 🌩️ — Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory</title>
-      <link>https://vulnogram.org/CVE-2026-42497</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42497</guid>
-      <description>Archive::Tar versions before 3.08 for Perl extract hardlinks to attacker controlled paths outside the extraction directory. _make_special_file() passes the tar header&apos;s linkname to link() without validating it against absolute paths or .. segments, c…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 26 May 2026 00:17:50 GMT</pubDate>
     </item>
   </channel>
 </rss>

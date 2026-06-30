@@ -11,7 +11,49 @@
       <title>CERT.PL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 30 Jun 2026 10:20:23 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 12:59:38 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-53433 · 5.7 MEDIUM — Denial of Service in fzf</title>
+      <link>https://vulnogram.org/CVE-2026-53433</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53433</guid>
+      <description>fzf is vulnerable to a Denial of Service (DoS) due to inefficient HTTP body processing in the --listen mode due to inefficient HTTP body processing using repeated string concatenation, resulting in quadratic time complexity (O(n²)). A crafted POST re…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 30 Jun 2026 12:01:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53432 · 5.6 MEDIUM — Integer Overflow in fzf</title>
+      <link>https://vulnogram.org/CVE-2026-53432</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53432</guid>
+      <description>fzf is vulnerable to Integer Overflow leading to crash in FuzzyMatchV2 function. When input line length is approximately 2,200,000 bytes and pattern length is 999 bytes, the product overflows. The Go runtime detects the invalid slice bounds and termi…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 30 Jun 2026 12:01:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53692 · 5.9 MEDIUM — Weak hahshing algorithm in Redeight CMS</title>
+      <link>https://vulnogram.org/CVE-2026-53692</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53692</guid>
+      <description>Redeight CMS version 1.0 uses the MD5 algorithm without a salt to store user passwords. Because MD5 is a cryptographically broken algorithm and lacks salting, attackers who obtain the password hashes can trivially reverse them using rainbow tables, l…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 30 Jun 2026 11:20:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53691 · 8.6 HIGH 🌩️ — Remote Code Execution in Redeight CMS</title>
+      <link>https://vulnogram.org/CVE-2026-53691</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53691</guid>
+      <description>An Unrestricted File Upload vulnerability in Redeight CMS version 1.0 allows authenticated attackers to achieve Remote Code Execution via the POST &quot;/admin/index.php?module=pages&amp;mode=FileAdd&quot; endpoint. The application fails to validate file extension…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 30 Jun 2026 11:19:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53690 · 9.3 CRITICAL 🌩️ — SQL Injection in Redeight CMS</title>
+      <link>https://vulnogram.org/CVE-2026-53690</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53690</guid>
+      <description>An SQL Injection vulnerability exists in Redeight CMS version 1.0 via the &quot;userEmail&quot; parameter in the POST &quot;/admin/index.php&quot; login endpoint. The application fails to sanitize user input and directly interpolates it into SQL queries without using pr…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 30 Jun 2026 11:19:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-12076 · 9.3 CRITICAL 🌩️ — SQL Injection in Raytha CMS</title>
       <link>https://vulnogram.org/CVE-2026-12076</link>
@@ -394,48 +436,6 @@
       <description>vifm is vulnerable to a heap buffer overflow during the history merge process when saving the state file (vifminfo.json). This flaw occurs because the application lacks a runtime check on the length of history entries in release builds, potentially a…</description>
       <category>Medium</category>
       <pubDate>Fri, 22 May 2026 13:26:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25608 · 2.3 LOW 🌩️ — Lack of traffic encryption in STER</title>
-      <link>https://vulnogram.org/CVE-2026-25608</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25608</guid>
-      <description>STER uses unencrypted TCP traffic to transmit data over the network. It allows an attacker to conduct a Man-In-The-Middle attack and obtain sensitive data such as passwords, personal data, or authentication tokens. This issue was fixed in version 9.5…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 09:14:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25607 · 5.7 MEDIUM — Weak password encoding in STER</title>
-      <link>https://vulnogram.org/CVE-2026-25607</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25607</guid>
-      <description>Use of a weak password encoding algorithm in STER software allows the value of the password to be guessed after analyzing how passwords with known values are encoded. This issue was fixed in version 9.5.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 09:14:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25606 · 8.7 HIGH — SQL Injection in STER</title>
-      <link>https://vulnogram.org/CVE-2026-25606</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25606</guid>
-      <description>A SQL injection vulnerability has been identified in STER. Improper neutralization of input provided by user into multiple Search Filters allows for SQL Injection attacks. It allows an authenticated attacker to view sensitive data such as data belong…</description>
-      <category>High</category>
-      <pubDate>Fri, 22 May 2026 09:14:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6841 · 5.1 MEDIUM 🌩️ — Reflected XSS in Request Tracker</title>
-      <link>https://vulnogram.org/CVE-2026-6841</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6841</guid>
-      <description>Request Tracker is vulnerable to a reflected cross-site scripting (XSS) vulnerability via the &quot;Page&quot; parameter in GET requests. An attacker can craft a URL that, when opened, results in arbitrary JavaScript execution in the victim’s browser. This vul…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 11:49:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42100 · 7.1 HIGH — DoS in Sparx Pro Cloud Server</title>
-      <link>https://vulnogram.org/CVE-2026-42100</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42100</guid>
-      <description>Improper Handling of Syntactically Invalid Structure in Sparx Pro Cloud Server allows Denial of Service (DoS) attack to be executed by sending an specially crafted SQL query. This causes the Pro Cloud Server service to terminate unexpectedly. The ven…</description>
-      <category>High</category>
-      <pubDate>Tue, 19 May 2026 12:59:50 GMT</pubDate>
     </item>
   </channel>
 </rss>
