@@ -11,7 +11,63 @@
       <title>runZero, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 17 Jun 2026 17:41:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 16:21:23 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-6688 · 7.6 HIGH — FatFs Buffer Overflow via Unbounded LFN Filename Copy</title>
+      <link>https://vulnogram.org/CVE-2026-6688</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6688</guid>
+      <description>FatFs R0.16 and earlier contains a downstream-caller vulnerability pattern associated with FatFs long filename handling. With LFN enabled, fno.fname can be up to 255 characters; many callers copy it into short fixed buffers without bounds checks, cau…</description>
+      <category>High</category>
+      <pubDate>Wed, 01 Jul 2026 14:01:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6687 · 7.6 HIGH — FatFs Stack Buffer Overflow via Uncapped exFAT Label Length</title>
+      <link>https://vulnogram.org/CVE-2026-6687</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6687</guid>
+      <description>FatFs R0.16 and earlier contains a stack overflow bug in f_getlabel() because exFAT label length (XDIR_NumLabel) is trusted without enforcing spec maximums. This maps to CWE-121 (Stack-based Buffer Overflow). Estimated CVSS v3.1 vector: CVSS:3.1/AV:P…</description>
+      <category>High</category>
+      <pubDate>Wed, 01 Jul 2026 13:57:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6686 · 4.6 MEDIUM — FatFs Use of Uninitialized Clusters After Seek Past EOF</title>
+      <link>https://vulnogram.org/CVE-2026-6686</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6686</guid>
+      <description>FatFs R0.16 and earlier contains an uninitialized cluster exposure when f_lseek() extends files beyond EOF without zero-filling newly allocated clusters. This maps to CWE-908 (Use of Uninitialized Resource). Estimated CVSS v3.1 vector: CVSS:3.1/AV:P/…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 01 Jul 2026 13:55:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6685 · 6.1 MEDIUM — FatFs Integer Underflow in Dirty-Sector Cache Flush</title>
+      <link>https://vulnogram.org/CVE-2026-6685</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6685</guid>
+      <description>FatFs R0.16 and earlier exhibits a stale dirty-cache skip via unsigned-subtraction wrap in f_read() / f_write() (fp-&gt;sect - sect &lt; cc) during interleaved read/write on fragmented filesystems. This maps to CWE-191 (Integer Underflow). Estimated CVSS v…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 01 Jul 2026 13:47:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6684 · 4.6 MEDIUM — FatFs Infinite Loop in GPT Partition Scan</title>
+      <link>https://vulnogram.org/CVE-2026-6684</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6684</guid>
+      <description>FatFs prior to R0.16 that use GPT scanning with &apos;FF_LBA64 = 1&apos; contains an issue where an unbounded loop count derived from GPT header field GPTH_PtNum, enabling extremely long or effectively infinite mount-time scans. This maps to CWE-835 (Loop with…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 01 Jul 2026 13:45:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6683 · 4.6 MEDIUM — FatFs Divide-by-Zero in exFAT Sync</title>
+      <link>https://vulnogram.org/CVE-2026-6683</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6683</guid>
+      <description>FatFs R0.16 and earlier contains a divide-by-zero in exFAT sync logic bug when crafted metadata causes n_fatent - 2 to be zero during write/sync operations. This maps to CWE-369 (Divide By Zero). Estimated CVSS v3.1 vector: CVSS:3.1/AV:P/AC:L/PR:N/UI…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 01 Jul 2026 13:41:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6682 · 7.6 HIGH — FatFs Integer Overflow in FAT32 Volume Mount</title>
+      <link>https://vulnogram.org/CVE-2026-6682</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6682</guid>
+      <description>In FatFS R0.16 and earlier contains a FAT32 integer overflow bug in mount_volume() where fasize *= fs-&gt;n_fats can wrap, leading to attacker-controlled file-size metadata and unsafe read lengths in downstream callers. This maps to CWE-190 (Integer Ove…</description>
+      <category>High</category>
+      <pubDate>Wed, 01 Jul 2026 13:36:59 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10303 · 7.4 HIGH 🌩️ — ServerCo getssl ACME shell script path injection</title>
       <link>https://vulnogram.org/CVE-2026-10303</link>
