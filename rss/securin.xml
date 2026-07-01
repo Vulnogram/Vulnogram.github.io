@@ -11,7 +11,101 @@
       <title>Securin — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 04 Jun 2026 20:27:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 13:57:55 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-7840 · 9.3 CRITICAL — UltraVNC repeater HTTP server global buffer overflow via long URI (pre-auth RCE)</title>
+      <link>https://vulnogram.org/CVE-2026-7840</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7840</guid>
+      <description>UltraVNC repeater through 1.8.2.2 contains a global buffer overflow in its embedded HTTP administration server. The functions wi_senderr() and wi_replyhdr() in repeater/webgui/webutils.c write the caller-supplied HTTP request URI into a fixed 1000-by…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7839 · 9.1 CRITICAL 🌩️ — UltraVNC repeater ships hardcoded default admin password allowing unauthenticated admin access</title>
+      <link>https://vulnogram.org/CVE-2026-7839</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7839</guid>
+      <description>UltraVNC repeater through 1.8.2.2 initializes the HTTP administration server with a hardcoded default password. In repeater/webgui/settings.c:197, when settings2.txt is absent on first run the repeater writes the literal string &quot;adminadmi2&quot; as the ad…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7838 · 8.7 HIGH — UltraVNC viewer heap buffer overflow via integer overflow in RFB connection-failure reason length</title>
+      <link>https://vulnogram.org/CVE-2026-7838</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7838</guid>
+      <description>UltraVNC viewer through 1.8.2.2 contains an integer overflow leading to a heap buffer overflow in the RFB protocol failure-response parsing path. In vncviewer/ClientConnection.cpp, the 4-byte network-supplied reasonLen field (type CARD32) is passed a…</description>
+      <category>High</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7831 · 7.5 HIGH 🌩️ — UltraVNC viewer off-by-one stack overflow in ServerInit desktop name parsing</title>
+      <link>https://vulnogram.org/CVE-2026-7831</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7831</guid>
+      <description>UltraVNC viewer through 1.8.2.2 contains an off-by-one stack buffer overflow in the RFB ServerInit message handler. In vncviewer/ClientConnection.cpp, when the server-supplied nameLength equals exactly 2024 the code declares a 2024-byte stack buffer…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7830 · 7.4 HIGH 🌩️ — UltraVNC MS-Logon II uses 64-bit Diffie-Hellman and seeded libc rand() enabling credential interception</title>
+      <link>https://vulnogram.org/CVE-2026-7830</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7830</guid>
+      <description>UltraVNC through 1.8.2.2 uses inadequate cryptography in the MS-Logon II authentication scheme (rfbUltraVNC_MsLogonIIAuth). In rfb/dh.cpp the Diffie-Hellman key exchange is performed with parameters that fit in an unsigned 64-bit integer (DH_MAX_BITS…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7829 · 7.2 HIGH — UltraVNC repeater authenticated out-of-bounds write in rule parser via oversized token</title>
+      <link>https://vulnogram.org/CVE-2026-7829</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7829</guid>
+      <description>UltraVNC repeater through 1.8.2.2 contains a post-authentication out-of-bounds write in the allow/deny rule parser. In repeater/webgui/settings.c:225-272, after strncpy_s copies a rule token into temp1[rule1] (25-byte destination) or temp2/temp3 (16-…</description>
+      <category>High</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-7828 · 5.3 MEDIUM 🌩️ — UltraVNC repeater integer overflow in win_log malloc leading to heap overflow</title>
+      <link>https://vulnogram.org/CVE-2026-7828</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7828</guid>
+      <description>UltraVNC repeater through 1.8.2.2 contains an integer overflow in the HTTP request logging path. In repeater/webgui/settings.c:336, the win_log() function allocates list nodes via malloc(sizeof(struct LIST) + strlen(line)), where line is derived from…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44040 · 4.8 MEDIUM 🌩️ — UltraVNC vncauth.c uses time-seeded libc rand() to generate VNC authentication challenge bytes</title>
+      <link>https://vulnogram.org/CVE-2026-44040</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44040</guid>
+      <description>UltraVNC through 1.8.2.2 uses a cryptographically weak pseudo-random number generator to produce VNC authentication challenge bytes. In rfb/vncauth.c:119-129, the vncRandomBytes() function seeds libc rand() with time(0) + getpid() + rand() and genera…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44041 · 4.3 MEDIUM — UltraVNC vncWc2Mb calls wcslen() before validating that the wide string is NUL-terminated</title>
+      <link>https://vulnogram.org/CVE-2026-44041</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44041</guid>
+      <description>UltraVNC through 1.8.2.2 contains an out-of-bounds read in the wide-string to multibyte conversion helper. In rfb/dh.cpp:204, the vncWc2Mb() function passes a caller-supplied WCHAR pointer to wcslen() before any bounds check. If the caller provides a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44042 · 3.7 LOW 🌩️ — UltraVNC repeater wi_uudecode off-by-one in base64 decode boundary check</title>
+      <link>https://vulnogram.org/CVE-2026-44042</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44042</guid>
+      <description>UltraVNC repeater through 1.8.2.2 contains an off-by-one error in the Base64 decode helper used for HTTP Basic authentication. In repeater/webgui/webutils.c:817, the wi_uudecode() function checks whether the input length exceeds the output buffer wit…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 01 Jul 2026 03:33:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14191 · 7.8 HIGH — WinRAR / UnRAR RAR5 recovery-volume (.rev) out-of-bounds heap write in RecVolumes5::ReadHeader</title>
+      <link>https://vulnogram.org/CVE-2026-14191</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14191</guid>
+      <description>An out-of-bounds heap write exists in the RAR5 recovery-volume (.rev) parser in WinRAR and UnRAR (RecVolumes5::ReadHeader in recvol5.cpp). The RecItems vector is sized only when the first .rev file in a set is processed; subsequent .rev files supply…</description>
+      <category>High</category>
+      <pubDate>Wed, 01 Jul 2026 02:41:39 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2024-47097 · 5.1 MEDIUM 🌩️ — Reflected Cross-Site Scripting in Follet School Solutions Destiny</title>
       <link>https://vulnogram.org/CVE-2024-47097</link>
@@ -333,41 +427,6 @@
       <category>Network Exploitable</category>
       <category>Unsupported When Assigned</category>
       <pubDate>Mon, 04 May 2026 15:57:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42372 · 8.8 HIGH 👻 — D-Link DIR-605L A1 Hardcoded Telnet Backdoor Credentials</title>
-      <link>https://vulnogram.org/CVE-2026-42372</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42372</guid>
-      <description>D-Link DIR-605L Hardware Revision A1 (End-of-Life, EOL) contains a hardcoded telnet backdoor. The device starts a telnet daemon at boot via /bin/telnetd.sh with the username &quot;Alphanetworks&quot; and the static password &quot;wrgn35_dlwbr_dir605l&quot; read from /et…</description>
-      <category>High</category>
-      <category>Unsupported When Assigned</category>
-      <pubDate>Mon, 04 May 2026 15:53:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6057 · 9.8 CRITICAL 🌩️ — Unauthenticated Path Traversal in FalkorDB Browser Leads to Remote Code Execution</title>
-      <link>https://vulnogram.org/CVE-2026-6057</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6057</guid>
-      <description>FalkorDB Browser 1.9.3 contains an unauthenticated path traversal vulnerability in the file upload API that allows remote attackers to write arbitrary files and achieve remote code execution.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Apr 2026 09:16:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5525 · 6 MEDIUM — Stack-Based Buffer Overflow in Notepad++ File Drop Handler leads to DoS</title>
-      <link>https://vulnogram.org/CVE-2026-5525</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5525</guid>
-      <description>A stack-based buffer overflow vulnerability exists in Notepad++ version 8.9.3 in the file drop handler component. When a user drags and drops a directory path of exactly 259 characters without a trailing backslash, the application appends a backslash…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 10 Apr 2026 07:40:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-47095 · 5.1 MEDIUM 🌩️ — Reflected Cross-Site Scripting in Follet School Solutions Destiny</title>
-      <link>https://vulnogram.org/CVE-2024-47095</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-47095</guid>
-      <description>Cross Site Scripting vulnerability in Follet School Solutions Destiny before v22.0.1 AU1 allows a remote attacker to run arbitrary client-side code via the expiredSupportMessage parameter of handleloginform.do.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 08 Oct 2024 07:49:56 GMT</pubDate>
     </item>
   </channel>
 </rss>
