@@ -11,7 +11,50 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 30 Jun 2026 23:54:51 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 01:59:36 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-53488 · 9.4 CRITICAL — containerd CRI plugin: — image-config `LABEL` flows to restart-monitor `binary://` logger: host-root command execution from an image pull</title>
+      <link>https://vulnogram.org/CVE-2026-53488</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53488</guid>
+      <description>containerd is an open-source container runtime. In versions prior to 1.7.33, 2.3.2, 2.2.5, 2.1.9, and 2.0.10 the CRI plugin propagates labels from an image config (LABEL instruction in Dockerfile) to a container without validation. This may result in…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 01 Jul 2026 00:11:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-41579 · 3.3 LOW — runc: Malicious image with /dev symlink can trigger limited host filesystem integrity violations</title>
+      <link>https://vulnogram.org/CVE-2026-41579</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41579</guid>
+      <description>runc is a CLI tool for spawning and running containers according to the OCI specification. In versions prior to 1.3.6, 1.4.0-rc.1, 1.4.0-rc.12, 1.5.0-rc.1, and 1.5.0-rc.1, when setting up the container rootfs, setupPtmx and setupDevSymlinks call os.R…</description>
+      <category>Low</category>
+      <pubDate>Wed, 01 Jul 2026 00:02:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54903 · 6.3 MEDIUM 🌩️ — Oj: Integer Overflow in Oj.load 2GB String Handling</title>
+      <link>https://vulnogram.org/CVE-2026-54903</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54903</guid>
+      <description>Oj (Optimized JSON) is a JSON parser and Object marshaller packaged as a Ruby gem. In versions prior to 3.17.2, Oj.load is vulnerable to heap corruption when parsing a JSON string longer than 2 GB. An integer overflow in buf_append_string (buf.h:61)…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 30 Jun 2026 23:42:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54902 · 6.3 MEDIUM 🌩️ — Oj: Use-After-Free in Oj::Parser SAJ Long Key Callback</title>
+      <link>https://vulnogram.org/CVE-2026-54902</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54902</guid>
+      <description>Oj (Optimized JSON) is a JSON parser and Object marshaller packaged as a Ruby gem. Prior to version 3.17.2, is vulnerable to Use-After-Free when in SAJ mode. The Oj::Parser does not protect cached object keys (≥ 35 bytes) from garbage collection, and…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 30 Jun 2026 23:40:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54901 · 6.3 MEDIUM 🌩️ — Oj: Use-After-Free in Oj::Parser array_class/hash_class GC Marking</title>
+      <link>https://vulnogram.org/CVE-2026-54901</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54901</guid>
+      <description>Oj (Optimized JSON) is a JSON parser and Object marshaller packaged as a Ruby gem. In versions prior to 3.17.2, Oj::Parser in usual mode does not mark array_class and hash_class references during garbage collection, leading to Use-After-Free. If GC r…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 30 Jun 2026 23:36:38 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-54900 · 6.3 MEDIUM 🌩️ — Oj: Negative-Size memcpy in Oj::Parser create_id Attribute Handling</title>
       <link>https://vulnogram.org/CVE-2026-54900</link>
@@ -390,47 +433,6 @@
       <description>Notepad++ is a free and open-source source code editor. Prior to 8.9.6.4, NppCommands.cpp checks the HMAC of the on-disk shortcuts.xml at the moment a user command fires (Time-of-Check). However, the command payload is taken from the in-memory _userC…</description>
       <category>High</category>
       <pubDate>Fri, 26 Jun 2026 20:19:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46710 · 7.5 HIGH — Notepad++: Privilege Escalation in the Installer via Uncontrolled Executable Search Path</title>
-      <link>https://vulnogram.org/CVE-2026-46710</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46710</guid>
-      <description>Notepad++ is a free and open-source source code editor. From 8.9.4 until 8.9.6, Notepad++ contains a local privilege escalation vulnerability in the installer. During installation, the installer invokes powershell.exe without using an absolute path a…</description>
-      <category>High</category>
-      <pubDate>Fri, 26 Jun 2026 20:16:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48800 · 7.8 HIGH — Notepad++: Arbitrary Code Execution via shortcuts.xml UserCommand Injection</title>
-      <link>https://vulnogram.org/CVE-2026-48800</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48800</guid>
-      <description>Notepad++ is a free and open-source source code editor. Prior to 8.9.6.1, the &lt;Command&gt; tag text content inside &lt;UserDefinedCommands&gt; in shortcuts.xml is read by NppXml::value(aNode) (Parameters.cpp:3658) in the feedUserCmds() function and stored in…</description>
-      <category>High</category>
-      <pubDate>Fri, 26 Jun 2026 20:12:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-52884 · 7.8 HIGH — Notepad++: CVE-2026-48800 Bypass</title>
-      <link>https://vulnogram.org/CVE-2026-52884</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52884</guid>
-      <description>Notepad++ is a free and open-source source code editor. In v8.9.6.1, isInTrustedDirectory() does NOT canonicalize the path before checking. It uses a prefix-based check (PathIsPrefix() or equivalent) that matches paths starting with trusted directory…</description>
-      <category>High</category>
-      <pubDate>Fri, 26 Jun 2026 20:11:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55188 · 8.2 HIGH — RustFS: ListRemoteTargetHandler authorization bypass leaks replication target credentials</title>
-      <link>https://vulnogram.org/CVE-2026-55188</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55188</guid>
-      <description>RustFS is a distributed object storage system built in Rust. From 1.0.0-alpha.1 until 1.0.0-beta.9, RustFS contains an authorization bypass in the bucket replication admin API. The ListRemoteTargetHandler handler for listing remote replication target…</description>
-      <category>High</category>
-      <pubDate>Fri, 26 Jun 2026 20:03:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49991 · 8.6 HIGH 🌩️ — RustFS Snowball Auto-Extract: Path Traversal allows cross-bucket object injection</title>
-      <link>https://vulnogram.org/CVE-2026-49991</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49991</guid>
-      <description>RustFS is a distributed object storage system built in Rust. In 1.0.0-beta.4, authenticated users with only PutObject permission on their own bucket can exploit a path traversal vulnerability in the Snowball auto-extract feature to write arbitrary ob…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 26 Jun 2026 20:01:29 GMT</pubDate>
     </item>
   </channel>
 </rss>
