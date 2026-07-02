@@ -11,7 +11,58 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 30 Jun 2026 12:59:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 17:29:01 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-54891 · 6.3 MEDIUM 🌩️ — Plaintext APPLICATION_DATA injected during TLS handshake delivered to client application post-handshake in ssl</title>
+      <link>https://vulnogram.org/CVE-2026-54891</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54891</guid>
+      <description>Improper Enforcement of Message Integrity During Transmission in a Communication Channel vulnerability in Erlang/OTP ssl (tls_gen_connection module) allows a network-positioned attacker to inject unauthenticated plaintext that the TLS client applicat…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 02 Jul 2026 16:06:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55950 · 8.7 HIGH — DTLS listener crash via race condition in dtls_packet_demux causes denial of service for all sessions</title>
+      <link>https://vulnogram.org/CVE-2026-55950</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55950</guid>
+      <description>Time-of-check Time-of-use (TOCTOU) race condition vulnerability in Erlang/OTP ssl (dtls_packet_demux module) allows an unauthenticated remote attacker to crash all active DTLS sessions on a listener. A DTLS server listener uses a single shared dtls_p…</description>
+      <category>High</category>
+      <pubDate>Thu, 02 Jul 2026 16:06:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54886 · 5.3 MEDIUM — SSH SFTP server denial of service via extended channel data infinite loop</title>
+      <link>https://vulnogram.org/CVE-2026-54886</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54886</guid>
+      <description>Loop with Unreachable Exit Condition (&apos;Infinite Loop&apos;) vulnerability in Erlang OTP ssh (ssh_sftpd module) allows an authenticated SFTP user to render an SFTP channel permanently unresponsive. The handle_data/4 function in ssh_sftpd contains a catch-a…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 02 Jul 2026 16:06:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55952 · 8.2 HIGH 🌩️ — TLS 1.3 server denial of service via malformed ClientHello pre-shared key extension</title>
+      <link>https://vulnogram.org/CVE-2026-55952</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55952</guid>
+      <description>The Erlang/OTP ssl application does not validate that the PSK identity list and binder list carried in a TLS 1.3 ClientHello pre-shared key extension have equal length before passing them to the session ticket handler. In tls_handshake_1_3:handle_pre…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 02 Jul 2026 16:06:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54887 · 6.3 MEDIUM 🌩️ — DTLS server cookie bypass during startup window due to empty initial cookie secret</title>
+      <link>https://vulnogram.org/CVE-2026-54887</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54887</guid>
+      <description>Use of Default Cryptographic Key vulnerability in Erlang/OTP ssl (DTLS server) allows predictable DTLS cookie computation during the startup window, enabling source address verification bypass. On DTLS server startup, dtls_server_connection:initial_h…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 02 Jul 2026 16:06:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53422 · 2.3 LOW — SFTP REALPATH path-existence oracle allowing filesystem enumeration outside configured root</title>
+      <link>https://vulnogram.org/CVE-2026-53422</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53422</guid>
+      <description>Observable Response Discrepancy vulnerability in Erlang OTP ssh (ssh_sftpd module) allows an authenticated SFTP user to enumerate the existence of files and directories outside the configured root directory. The SSH_FXP_REALPATH handler in ssh_sftpd…</description>
+      <category>Low</category>
+      <pubDate>Thu, 02 Jul 2026 16:06:03 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-53426 · 8.2 HIGH — Atom-table exhaustion denial-of-service via JSON parse_document in MDEx</title>
       <link>https://vulnogram.org/CVE-2026-53426</link>
@@ -386,58 +437,6 @@
       <description>Uncontrolled Resource Consumption vulnerability in oban-bg oban_web (&apos;Elixir.Oban.Web.CronExpr&apos; modules) allows memory exhaustion via unbounded cron range expansion. An attacker with access to schedule cron jobs can submit a malicious cron expression…</description>
       <category>Medium</category>
       <pubDate>Tue, 26 May 2026 19:46:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47073 · 8.7 HIGH 🌩️ — Unbounded memory consumption in WebSocket client in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47073</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47073</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in benoitc hackney allows Flooding. The WebSocket client in src/hackney_ws.erl imposes no upper bound on memory consumption in three code paths. First, read_handshake_response/3 accum…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 May 2026 14:00:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47067 · 8.7 HIGH 🌩️ — Atom table exhaustion via unrecognized URL schemes in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47067</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47067</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in benoitc hackney allows Flooding. The URL parser in src/hackney_url.erl converts every unrecognized URL scheme to a permanent BEAM atom via binary_to_atom/2. BEAM atoms are never ga…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 May 2026 14:00:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47072 · 6.9 MEDIUM 🌩️ — CRLF injection in WebSocket upgrade request in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47072</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47072</guid>
-      <description>Improper Neutralization of CRLF Sequences (&apos;CRLF Injection&apos;) vulnerability in benoitc hackney allows HTTP Request/Response Splitting. The WebSocket upgrade code in src/hackney_ws.erl copies the host, path, headers (ExtraHeaders), and protocols option…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 May 2026 14:00:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47076 · 6.9 MEDIUM — SSRF allowlist bypass via percent-encoded host in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47076</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47076</guid>
-      <description>Interpretation Conflict vulnerability in benoitc hackney allows Server Side Request Forgery. hackney_url:normalize/2 URL-decodes the host component after the URL has been parsed into a #hackney_url{} record. OTP&apos;s uri_string:parse/1 and inet:parse_ad…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 25 May 2026 14:00:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47070 · 6 MEDIUM 🌩️ — HTTP/3 redirect handler leaks Authorization and Cookie headers to cross-origin redirect target in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47070</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47070</guid>
-      <description>Sensitive Data Exposure vulnerability in benoitc hackney allows Retrieve Embedded Sensitive Data. The HTTP/3 redirect handler in src/hackney_h3.erl passes the original request headers unchanged to the redirect target without performing any cross-orig…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 May 2026 14:00:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47075 · 6.8 MEDIUM — CR/LF injection in query parameter in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-47075</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47075</guid>
-      <description>Improper Neutralization of CRLF Sequences vulnerability in benoitc hackney allows HTTP Request Splitting. hackney does not percent-encode carriage return (\r) or line feed (\n) characters in the URL query component before constructing the HTTP/1.1 re…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 25 May 2026 14:00:45 GMT</pubDate>
     </item>
   </channel>
 </rss>
