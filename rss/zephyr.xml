@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 30 Jun 2026 18:25:49 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 22:44:31 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10657 · 3.7 LOW — Out-of-bounds read in Zephyr DNS resolver mDNS suffix check (memcmp past string NUL)</title>
+      <link>https://vulnogram.org/CVE-2026-10657</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10657</guid>
+      <description>Zephyr&apos;s DNS resolver detects mDNS (.local) queries in dns_resolve_name_internal() (subsys/net/lib/dns/resolve.c) with memcmp(strrchr(query, &apos;.&apos;), &quot;.local&quot;, 7), which always reads a fixed 7 bytes from the suffix pointer. When the resolved hostname&apos;s…</description>
+      <category>Low</category>
+      <pubDate>Sun, 05 Jul 2026 22:23:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10656 · 4.6 MEDIUM — NULL-pointer dereference DoS in MAX32 USB device controller transfer-completion handlers</title>
+      <link>https://vulnogram.org/CVE-2026-10656</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10656</guid>
+      <description>The MAX32xxx USB device controller driver (drivers/usb/udc/udc_max32.c, compatible adi_max32_usbhs) dereferenced an endpoint buffer in its OUT and IN transfer-completion handlers without checking it for NULL. udc_event_xfer_out_done() called net_buf_…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 05 Jul 2026 22:23:36 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10655 · 6.5 MEDIUM — Use-after-free race in SNTP async client when closing the socket while the socket service is still polling it</title>
       <link>https://vulnogram.org/CVE-2026-10655</link>
@@ -399,24 +415,6 @@
       <description>The function responsible for handling BLE connection responses does not verify whether a response is expected—that is, whether the device has initiated a connection request. Instead, it relies solely on identifier matching.</description>
       <category>Medium</category>
       <pubDate>Fri, 19 Sep 2025 05:17:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-2962 · 8.2 HIGH 🌩️ — Infinite loop in dns_copy_qname</title>
-      <link>https://vulnogram.org/CVE-2025-2962</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-2962</guid>
-      <description>A denial-of-service issue in the dns implemenation could cause an infinite loop.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 24 Jun 2025 05:32:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1675 · 8.2 HIGH 🌩️ — Out of bounds read in dns_copy_qname</title>
-      <link>https://vulnogram.org/CVE-2025-1675</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1675</guid>
-      <description>The function dns_copy_qname in dns_pack.c performs performs a memcpy operation with an untrusted field and does not check if the source buffer is large enough to contain the copied data.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 25 Feb 2025 07:22:35 GMT</pubDate>
     </item>
   </channel>
 </rss>
