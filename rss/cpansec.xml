@@ -11,7 +11,21 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 06 Jul 2026 06:12:06 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 14:47:24 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-13708 — Imager::File::JPEG versions before 1.003 for Perl leak heap memory when reading a JPEG with repeated APP13 markers in i_readjpeg_wiol</title>
+      <link>https://vulnogram.org/CVE-2026-13708</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13708</guid>
+      <description>Imager::File::JPEG versions before 1.003 for Perl leak heap memory when reading a JPEG with repeated APP13 markers in i_readjpeg_wiol. i_readjpeg_wiol walks the marker list libjpeg returns and, for each APP13 marker, allocates a new buffer with *iptc…</description>
+      <pubDate>Mon, 06 Jul 2026 12:04:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13705 — Imager versions before 1.032 for Perl have a heap out-of-bounds read in the bundled Imager::File::SGI reader via a 16-bit RLE literal run in read_rgb_16_rle</title>
+      <link>https://vulnogram.org/CVE-2026-13705</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13705</guid>
+      <description>Imager versions before 1.032 for Perl have a heap out-of-bounds read in the bundled Imager::File::SGI reader via a 16-bit RLE literal run in read_rgb_16_rle. read_rgb_16_rle guards each literal run with if (count &gt; data_left), but count is a pixel co…</description>
+      <pubDate>Mon, 06 Jul 2026 12:03:38 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-14803 — Mojo::JSON versions before 9.47 for Perl allow memory exhaustion via unbounded recursion in the pure-Perl decoder</title>
       <link>https://vulnogram.org/CVE-2026-14803</link>
@@ -20,17 +34,21 @@
       <pubDate>Mon, 06 Jul 2026 01:34:43 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-14570 — Crypt::DSA versions before 1.22 for Perl draw the DSA signing nonce and private key from a biased random generator, leading to private-key recovery</title>
+      <title>CVE-2026-14570 · 7.5 HIGH 🌩️ — Crypt::DSA versions before 1.22 for Perl draw the DSA signing nonce and private key from a biased random generator, leading to private-key recovery</title>
       <link>https://vulnogram.org/CVE-2026-14570</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14570</guid>
       <description>Crypt::DSA versions before 1.22 for Perl draw the DSA signing nonce and private key from a biased random generator, leading to private-key recovery. &quot;Crypt::DSA::Util::makerandom forces the high bit of every value it returns to obtain an exactly N-bi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 05 Jul 2026 01:30:12 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-12740 — Plack::Middleware::OAuth versions through 0.10 for Perl do not support the OAuth 2.0 state parameter</title>
+      <title>CVE-2026-12740 · 8.1 HIGH 🌩️ — Plack::Middleware::OAuth versions through 0.10 for Perl do not support the OAuth 2.0 state parameter</title>
       <link>https://vulnogram.org/CVE-2026-12740</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12740</guid>
       <description>Plack::Middleware::OAuth versions through 0.10 for Perl do not support the OAuth 2.0 state parameter. RequestTokenV2 builds the provider authorization redirect without issuing a state value, and AccessTokenV2 exchanges the callback code and registers…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sat, 04 Jul 2026 17:58:31 GMT</pubDate>
     </item>
     <item>
@@ -424,24 +442,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 03 Jun 2026 00:15:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9334 · 7.3 HIGH 🌩️ — Cpanel::JSON::XS versions before 4.41 for Perl allow type confusion via duplicate object keys when dupkeys_as_arrayref is enabled</title>
-      <link>https://vulnogram.org/CVE-2026-9334</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9334</guid>
-      <description>Cpanel::JSON::XS versions before 4.41 for Perl allow type confusion via duplicate object keys when dupkeys_as_arrayref is enabled. decode_hv() collapses duplicate object keys into an array reference under dupkeys_as_arrayref. The branch reached for a…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 03 Jun 2026 00:15:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8796 · 8.1 HIGH 🌩️ — Sereal::Decoder versions before 5.005 for Perl allow heap out-of-bounds read via crafted input</title>
-      <link>https://vulnogram.org/CVE-2026-8796</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8796</guid>
-      <description>Sereal::Decoder versions before 5.005 for Perl allow heap out-of-bounds read via crafted input. In Perl/Decoder/srl_decoder.c, srl_read_object() and srl_read_hash() process a COPY tag, a back-reference whose target byte the decoder re-decodes as a fr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 31 May 2026 19:43:22 GMT</pubDate>
     </item>
   </channel>
 </rss>
