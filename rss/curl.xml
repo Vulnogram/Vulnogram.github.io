@@ -11,7 +11,131 @@
       <title>curl — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 06 Jul 2026 17:31:16 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 19:25:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-9547 · 7.4 HIGH 🌩️ — SSH improper host validation</title>
+      <link>https://vulnogram.org/CVE-2026-9547</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9547</guid>
+      <description>When a libcurl-based application performs transfers via `SCP://` or `SFTP://` and utilizes the `CURLOPT_SSH_KEYFUNCTION` callback, it may silently accept an untrusted server. This vulnerability occurs when a server presents a host key type that does…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:18:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9546 · 7.5 HIGH 🌩️ — sending old referer</title>
+      <link>https://vulnogram.org/CVE-2026-9546</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9546</guid>
+      <description>A vulnerability in libcurl caused the HTTP `Referer:` header to persist even when explicitly cleared. While the documentation states that passing NULL to `CURLOPT_REFERER` suppresses the header, the option failed to clear the internal state. As a res…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:18:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9545 · 7.5 HIGH 🌩️ — exposing HTTP/3 early data</title>
+      <link>https://vulnogram.org/CVE-2026-9545</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9545</guid>
+      <description>In this scenario, libcurl first uses a proper HTTP/3 server for the initial transfers, and when it makes a second transfer to the same site it has been replaced by the attacker&apos;s impostor machine - without a valid certificate. When libcurl returns to…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:17:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9080 · 7.3 HIGH 🌩️ — UAF after pause in socket callback</title>
+      <link>https://vulnogram.org/CVE-2026-9080</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9080</guid>
+      <description>Calling `curl_easy_pause()` within the event-based `CURLMOPT_SOCKETFUNCTION` callback triggers a use-after-free vulnerability, where libcurl attempts to store a flag using a dangling struct pointer immediately after that pointer&apos;s memory has been fre…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:17:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9079 · 9.8 CRITICAL 🌩️ — stale proxy password leak</title>
+      <link>https://vulnogram.org/CVE-2026-9079</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9079</guid>
+      <description>libcurl had a flaw that when instructed to clear proxy authentication credentials which made it not do so, leaving the old credentials around to get used for subsequent transfers that should not know nor use them.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:16:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8932 · 7.5 HIGH 🌩️ — incomplete mTLS config matching in conn reuse</title>
+      <link>https://vulnogram.org/CVE-2026-8932</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8932</guid>
+      <description>libcurl would reuse a previously created connection even when some mTLS config related option had been changed that should have prohibited reuse. libcurl keeps previously used connections in a connection pool for subsequent transfers to reuse if one…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:16:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8927 · 9.1 CRITICAL 🌩️ — env-set cross-proxy Digest auth state leak</title>
+      <link>https://vulnogram.org/CVE-2026-8927</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8927</guid>
+      <description>When reusing a libcurl handle for sequential transfers driven by environment-variable proxy configuration, libcurl fails to clear the proxy authentication state between requests. Specifically, if the initial transfer authenticates against `proxyA` us…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:16:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8926 · 9.1 CRITICAL 🌩️ — password leak with netrc and user in URL</title>
+      <link>https://vulnogram.org/CVE-2026-8926</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8926</guid>
+      <description>When asking curl to use a `.netrc` file to find credentials and at the same time specifying a URL with a username(without a password), like `https://user@example.com/`, curl could wrongly get and use the password for *another* user set in the `.netrc…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:15:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8925 · 9.8 CRITICAL 🌩️ — SASL double-free</title>
+      <link>https://vulnogram.org/CVE-2026-8925</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8925</guid>
+      <description>The curl logic that works with SASL authentication could end up cleaning up the GSASL context *twice* without clearing the pointer in between, making it `free()` the same pointer twice.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:15:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8924 · 9.1 CRITICAL 🌩️ — trailing dot domain super cookie</title>
+      <link>https://vulnogram.org/CVE-2026-8924</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8924</guid>
+      <description>A flaw in curl’s cookie parsing logic allows a malicious HTTP server to set &apos;super cookies&apos; that bypass the Public Suffix List check. This enables an attacker-controlled origin to inject cookies that curl subsequently scopes and transmits to unrelate…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:15:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8458 · 6.5 MEDIUM — wrong reuse for different services</title>
+      <link>https://vulnogram.org/CVE-2026-8458</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8458</guid>
+      <description>libcurl might in some circumstances reuse the wrong connection when asked to do Negotiate-authenticated ones, even when they are set to use different &apos;services&apos;. libcurl features a pool of recent connections so that subsequent requests can reuse an e…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 03 Jul 2026 06:14:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8286 · 8.1 HIGH — wrong STARTTLS connection reuse</title>
+      <link>https://vulnogram.org/CVE-2026-8286</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8286</guid>
+      <description>A vulnerability exists where a new transfer that uses STARTTLS to upgrade the connection might reuse an existing live connection even though the TLS configuration mismatches so it should not.</description>
+      <category>High</category>
+      <pubDate>Fri, 03 Jul 2026 06:14:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12064 · 7.5 HIGH 🌩️ — proto-default skips SSH verification</title>
+      <link>https://vulnogram.org/CVE-2026-12064</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12064</guid>
+      <description>When a user invokes curl using a schemeless URL combined with `--proto-default` sftp (or scp), a disconnect occurs between the tool layer and libcurl. The tool layer incorrectly infers the URL scheme, which erroneously bypasses the initialization of…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:13:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11856 · 9.8 CRITICAL 🌩️ — cross-origin Digest auth state leak</title>
+      <link>https://vulnogram.org/CVE-2026-11856</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11856</guid>
+      <description>Successfully using libcurl to do a transfer to a specific HTTP origin (`hostA`) with **Digest** authentication and then changing the origin to a different one (`hostB`) for a second transfer, reusing the same handle, makes libcurl wrongly pass on the…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:13:31 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-11586 · 7.5 HIGH 🌩️ — WS Auto-PONG memory exhaustion</title>
       <link>https://vulnogram.org/CVE-2026-11586</link>
@@ -20,6 +144,33 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 03 Jul 2026 06:13:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11564 · 9.1 CRITICAL 🌩️ — Native CA trust persist</title>
+      <link>https://vulnogram.org/CVE-2026-11564</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11564</guid>
+      <description>libcurl keeps previously used connections in a connection pool for subsequent transfers to reuse if one of them matches the setup. An easy handle that first uses default native CA trust can continue trusting the native platform store after the applic…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:12:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11352 · 7.5 HIGH 🌩️ — QUIC zero-length UDP datagrams busy-loop</title>
+      <link>https://vulnogram.org/CVE-2026-11352</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11352</guid>
+      <description>An issue in curl’s QUIC UDP receive function allows a malicious HTTP/3 server to trigger a remote denial of service against a curl or libcurl client. Because the helper function discards zero-length UDP datagrams before counting them toward the per-c…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:12:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10536 · 9.8 CRITICAL 🌩️ — HTTP/2 stream-dependency tree UAF</title>
+      <link>https://vulnogram.org/CVE-2026-10536</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10536</guid>
+      <description>A use-after-free vulnerability exists in libcurl when an application configures an HTTP/2 stream-dependency tree via `CURLOPT_STREAM_DEPENDS` or `CURLOPT_STREAM_DEPENDS_E`, subsequently invokes `curl_easy_reset()`, and finally terminates the handle w…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 03 Jul 2026 06:11:15 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-7168 · 5.3 MEDIUM 🌩️ — cross-proxy Digest auth state leak</title>
@@ -302,67 +453,6 @@
       <description>libcurl&apos;s ASN1 parser code has the `GTime2str()` function, used for parsing an ASN.1 Generalized Time field. If given an syntactically incorrect field, the parser might end up using -1 for the length of the *time fraction*, leading to a `strlen()` ge…</description>
       <category>Medium</category>
       <pubDate>Wed, 31 Jul 2024 08:08:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6874 · 3.1 LOW — macidn punycode buffer overread</title>
-      <link>https://vulnogram.org/CVE-2024-6874</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6874</guid>
-      <description>libcurl&apos;s URL API function [curl_url_get()](https://curl.se/libcurl/c/curl_url_get.html) offers punycode conversions, to and from IDN. Asking to convert a name that is exactly 256 bytes, libcurl ends up reading outside of a stack based buffer when bu…</description>
-      <category>Low</category>
-      <pubDate>Wed, 24 Jul 2024 07:36:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6197 · 7.5 HIGH 🌩️ — freeing stack buffer in utf8asn1str</title>
-      <link>https://vulnogram.org/CVE-2024-6197</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6197</guid>
-      <description>libcurl&apos;s ASN1 parser has this utf8asn1str() function used for parsing an ASN.1 UTF-8 string. Itcan detect an invalid field and return error. Unfortunately, when doing so it also invokes `free()` on a 4 byte localstack buffer. Most modern malloc impl…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 24 Jul 2024 07:29:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-2466 · 6.5 MEDIUM 🌩️ — TLS certificate check bypass with mbedTLS</title>
-      <link>https://vulnogram.org/CVE-2024-2466</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-2466</guid>
-      <description>libcurl did not check the server certificate of TLS connections done to a host specified as an IP address, when built to use mbedTLS. libcurl would wrongly avoid using the set hostname function when the specified hostname was given as an IP address,…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 27 Mar 2024 07:58:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-2379 · 6.3 MEDIUM 🌩️ — QUIC certificate check bypass with wolfSSL</title>
-      <link>https://vulnogram.org/CVE-2024-2379</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-2379</guid>
-      <description>libcurl skips the certificate verification for a QUIC connection under certain conditions, when built to use wolfSSL. If told to use an unknown/bad cipher or curve, the error path accidentally skips the verification and returns OK, thus ignoring any…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 27 Mar 2024 07:56:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-2398 · 8.6 HIGH 🌩️ — HTTP/2 push headers memory-leak</title>
-      <link>https://vulnogram.org/CVE-2024-2398</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-2398</guid>
-      <description>When an application tells libcurl it wants to allow HTTP/2 server push, and the amount of received headers for the push surpasses the maximum allowed limit (1000), libcurl aborts the server push. When aborting, libcurl inadvertently does not free all…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 27 Mar 2024 07:55:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-2004 · 3.5 LOW — Usage of disabled protocol</title>
-      <link>https://vulnogram.org/CVE-2024-2004</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-2004</guid>
-      <description>When a protocol selection parameter option disables all protocols without adding any then the default set of protocols would remain in the allowed set due to an error in the logic for removing protocols. The below command would perform a request to c…</description>
-      <category>Low</category>
-      <pubDate>Wed, 27 Mar 2024 07:54:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-0853 · 5.3 MEDIUM 🌩️ — OCSP verification bypass with TLS session reuse</title>
-      <link>https://vulnogram.org/CVE-2024-0853</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-0853</guid>
-      <description>curl inadvertently kept the SSL session ID for connections in its cache even when the verify status (*OCSP stapling*) test failed. A subsequent transfer to the same hostname could then succeed if the session ID cache was still fresh, which then skipp…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 03 Feb 2024 13:35:25 GMT</pubDate>
     </item>
   </channel>
 </rss>

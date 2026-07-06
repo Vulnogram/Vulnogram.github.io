@@ -11,7 +11,7 @@
       <title>VulnCheck — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 06 Jul 2026 17:31:16 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 19:25:25 GMT</lastBuildDate>
     <item>
       <title>CVE-2025-71380 · 8.8 HIGH — n8n - Arbitrary Command Execution via Execute Command Node</title>
       <link>https://vulnogram.org/CVE-2025-71380</link>
@@ -19,6 +19,15 @@
       <description>The Execute Command node in n8n allows authenticated users to execute arbitrary commands on the host system where n8n runs. Attackers with user access or compromised credentials can exploit this node to run malicious commands, potentially leading to…</description>
       <category>High</category>
       <pubDate>Sat, 04 Jul 2026 01:23:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-71373 · 8.1 HIGH 🌩️ — picklescan - Remote Code Execution via operator.methodcaller Detection Bypass</title>
+      <link>https://vulnogram.org/CVE-2025-71373</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-71373</guid>
+      <description>picklescan before 0.0.33 fails to detect operator.methodcaller function calls in pickle files, allowing attackers to bypass security checks. Remote attackers can craft malicious pickle payloads using operator.methodcaller that execute arbitrary code…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 04 Jul 2026 01:23:41 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2025-71369 · 8.1 HIGH 🌩️ — picklescan - Unsafe Deserialization via torch.utils.data.datapipes.utils.decoder.basichandlers</title>
@@ -48,6 +57,15 @@
       <pubDate>Sat, 04 Jul 2026 01:23:38 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2025-71362 · 8.1 HIGH 🌩️ — picklescan - Arbitrary Code Execution via Unsafe Deserialization in numpy.f2py.crackfortran</title>
+      <link>https://vulnogram.org/CVE-2025-71362</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-71362</guid>
+      <description>picklescan before 0.0.33 fails to detect unsafe deserialization when numpy.f2py.crackfortran functions call eval on arbitrary strings. Attackers can embed malicious code in pickle files that executes when loaded from untrusted sources.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 04 Jul 2026 01:23:37 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2025-71359 · 8.1 HIGH 🌩️ — picklescan - Unsafe Deserialization via lib2to3.pgen2.grammar.Grammar.loads</title>
       <link>https://vulnogram.org/CVE-2025-71359</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2025-71359</guid>
@@ -73,6 +91,15 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Sat, 04 Jul 2026 01:23:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-71345 · 8.1 HIGH 🌩️ — picklescan - Arbitrary Code Execution via torch.utils.bottleneck.__main__.run_autograd_prof</title>
+      <link>https://vulnogram.org/CVE-2025-71345</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-71345</guid>
+      <description>picklescan before 0.0.30 fails to detect malicious pickle files that invoke torch.utils.bottleneck.__main__.run_autograd_prof function. Attackers can embed undetected code in pickle files that executes during deserialization, enabling remote code exe…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 04 Jul 2026 01:23:33 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2025-71342 · 8.1 HIGH 🌩️ — picklescan - Undetected Remote Code Execution via idlelib.run.Executive.runcode</title>
@@ -425,33 +452,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 01 Jul 2026 16:19:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-34109 · 9.8 CRITICAL 🌩️ — Guardian Language-System Unauthenticated OS Command Injection via id Parameter in speech.php</title>
-      <link>https://vulnogram.org/CVE-2026-34109</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-34109</guid>
-      <description>Guardian language-system passes the id GET parameter directly into a PHP exec() call in speech.php (line 18) without sanitization: exec(\&quot;php jobs/speech_audio.php \&quot;.$login_session.\&quot; \&quot;.$_GET[&apos;id&apos;].\&quot; ...\&quot;). No authentication is required. An unaut…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 01 Jul 2026 16:18:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-34108 · 9.8 CRITICAL 🌩️ — Guardian Language-System Unauthenticated OS Command Injection via id Parameter in text.php</title>
-      <link>https://vulnogram.org/CVE-2026-34108</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-34108</guid>
-      <description>Guardian language-system passes the id GET parameter directly into a PHP exec() call in text.php (line 15) without sanitization: exec(\&quot;php jobs/text.php \&quot;.$login_session.\&quot; \&quot;.$_GET[&apos;id&apos;].\&quot; ...\&quot;). No authentication is required. An unauthenticated…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 01 Jul 2026 16:17:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-34107 · 9.8 CRITICAL 🌩️ — Guardian Language-System Unauthenticated OS Command Injection via id Parameter in translate.php</title>
-      <link>https://vulnogram.org/CVE-2026-34107</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-34107</guid>
-      <description>Guardian language-system passes the id GET parameter directly into a PHP exec() call in translate.php (line 14) without sanitization: exec(\&quot;php jobs/translate.php \&quot;.$login_session.\&quot; \&quot;.$_GET[&apos;id&apos;].\&quot; ...\&quot;). No authentication is required. An unaut…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 01 Jul 2026 16:16:50 GMT</pubDate>
     </item>
   </channel>
 </rss>
