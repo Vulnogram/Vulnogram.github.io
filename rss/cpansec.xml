@@ -11,7 +11,35 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 07 Jul 2026 21:11:50 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 22:46:55 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-14895 — String::Util versions before 1.36 for Perl are susceptible to a regular expression denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-14895</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14895</guid>
+      <description>String::Util versions before 1.36 for Perl are susceptible to a regular expression denial of service. The trim and rtrim functions stripped trailing whitespace with s/\s*$//u. Because \s* matches greedily and the $ anchor fails whenever a non-whitesp…</description>
+      <pubDate>Tue, 07 Jul 2026 22:12:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14740 — DBI versions before 1.650 for Perl read one byte out-of-bounds in preparse when deleting an initial SQL comment</title>
+      <link>https://vulnogram.org/CVE-2026-14740</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14740</guid>
+      <description>DBI versions before 1.650 for Perl read one byte out-of-bounds in preparse when deleting an initial SQL comment. The preparse method normalises SQL and removes comments. When the SQL starts with a comment line, the deletion of that line during normal…</description>
+      <pubDate>Tue, 07 Jul 2026 22:05:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14739 — DBI versions before 1.650 for Perl have a heap overflow when preparsing SQL statements with an extreme number of placeholders</title>
+      <link>https://vulnogram.org/CVE-2026-14739</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14739</guid>
+      <description>DBI versions before 1.650 for Perl have a heap overflow when preparsing SQL statements with an extreme number of placeholders. The fix for CVE-2026-10879 did not allocate enough memory to handle approximately 1.2-million placeholders. DBI version 1.6…</description>
+      <pubDate>Tue, 07 Jul 2026 22:05:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14380 — DBI versions before 1.650 for Perl are vulnerable to code injection via caller-influenced Profile</title>
+      <link>https://vulnogram.org/CVE-2026-14380</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14380</guid>
+      <description>DBI versions before 1.650 for Perl are vulnerable to code injection via caller-influenced Profile. When a string is assigned to a DBI handle&apos;s Profile attribute, DBI splits it into path, package and arguments, and interpolates the package part in a s…</description>
+      <pubDate>Tue, 07 Jul 2026 22:04:49 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-7017 · 7.1 HIGH 🌩️ — HTTP::Tiny versions before 0.095 for Perl forward credential headers to cross-origin redirect targets</title>
       <link>https://vulnogram.org/CVE-2026-7017</link>
@@ -414,42 +442,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 04 Jun 2026 16:07:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49940 · 6.5 MEDIUM 🌩️ — Net::CIDR::Set versions through 0.20 for Perl accept non-ASCII IP addresses and netmasks</title>
-      <link>https://vulnogram.org/CVE-2026-49940</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49940</guid>
-      <description>Net::CIDR::Set versions through 0.20 for Perl accept non-ASCII IP addresses and netmasks. Unicode digits such as the Arabic-Indic One (U+0661) were accepted but not properly parsed as numbers. This could allow network masks to accept larger networks.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 16:07:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46741 · 7.5 HIGH 🌩️ — Etsy::StatsD versions through 1.002002 for Perl allow metric injections</title>
-      <link>https://vulnogram.org/CVE-2026-46741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46741</guid>
-      <description>Etsy::StatsD versions through 1.002002 for Perl allow metric injections. The metric names and values are not checked for newlines, colons or pipes. Metrics generated from untrusted sources could inject additional statsd metrics. Note that the git rep…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 15:54:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46739 · 5.3 MEDIUM 🌩️ — Net::Statsd versions before 0.13 for Perl allow metric injections</title>
-      <link>https://vulnogram.org/CVE-2026-46739</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46739</guid>
-      <description>Net::Statsd versions before 0.13 for Perl allow metric injections. The metric names are not checked for newlines, colons or pipes. Metrics generated from untrusted sources could inject additional statsd metrics. The update_stats (used for updating co…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 15:45:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8829 · 7.5 HIGH 🌩️ — HTML::Entities versions before 3.84 for Perl read freed heap memory in _decode_entities</title>
-      <link>https://vulnogram.org/CVE-2026-8829</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8829</guid>
-      <description>HTML::Entities versions before 3.84 for Perl read freed heap memory in _decode_entities. The XS routine backing HTML::Entities::_decode_entities cached a pointer (repl) into the entity-value SV returned by hv_fetch on the entity2char hash. When the i…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 02:03:46 GMT</pubDate>
     </item>
   </channel>
 </rss>
