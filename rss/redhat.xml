@@ -11,7 +11,42 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 07 Jul 2026 12:18:10 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 17:48:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2025-12799 · 6.5 MEDIUM 🌩️ — Jastow: jastow cross-site scripting attack due to unsanitized uri</title>
+      <link>https://vulnogram.org/CVE-2025-12799</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12799</guid>
+      <description>A flaw was found in Jastow. Jastow is vulnerable to Cross-Site Scripting (XSS) attack. If using a set of combined configuration to allow unescaped characters in URL with embedded Undertow and Jastow, a server might be vulnerable to improper input han…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 07 Jul 2026 16:18:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14969 · 4.4 MEDIUM — 389-ds-base: 389-ds-base: static initialization vector in aes-cbc/3des-cbc attribute encryption</title>
+      <link>https://vulnogram.org/CVE-2026-14969</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14969</guid>
+      <description>A flaw was found in 389-ds-base where the LDBM backend attribute encryption uses a hardcoded static initialization vector for AES-CBC and 3DES-CBC operations, allowing an attacker with privileged filesystem access to detect plaintext equality across…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 07 Jul 2026 15:48:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14935 · 3.7 LOW 🌩️ — Gstreamer: gstreamer: webrtcbin accepts remote sdp without a=fingerprint due to inverted presence check</title>
+      <link>https://vulnogram.org/CVE-2026-14935</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14935</guid>
+      <description>A logic vulnerability was found in GStreamer&apos;s webrtcbin component. The _check_sdp_crypto() function contains an inverted boolean condition that causes it to accept remote SDP offers or answers that lack the required a=fingerprint attribute, while in…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 07 Jul 2026 15:37:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14940 · 5.3 MEDIUM 🌩️ — 389-ds-base: 389-ds-base: heap-buffer-overflow in dn normalization via quoted multivalued rdn</title>
+      <link>https://vulnogram.org/CVE-2026-14940</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14940</guid>
+      <description>A heap-buffer-overflow flaw was found in 389 Directory Server (389-ds-base). When normalizing a Distinguished Name (DN) that contains a legacy-quoted value encoding a multivalued nested Relative Distinguished Name (RDN), the server can write past the…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 07 Jul 2026 13:54:20 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-14476 · 8 HIGH — Sssd: sssd: gpo cache path traversal via unsanitized gpcfilesyspath allows kerberos authentication bypass</title>
       <link>https://vulnogram.org/CVE-2026-14476</link>
@@ -43,6 +78,14 @@
       <description>A flaw was found in GIMP&apos;s PNM file format parser. When parsing a specially crafted PNM file, the pnmscanner_gettoken() function writes a null terminator one byte past the end of a stack-allocated buffer due to an off-by-one error in the loop boundar…</description>
       <category>High</category>
       <pubDate>Mon, 06 Jul 2026 13:58:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9165 · 7.7 HIGH — Stackrox: stackrox: unbounded graphql query depth allows authenticated denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-9165</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9165</guid>
+      <description>A flaw was found in Red Hat Advanced Cluster Security for Kubernetes (RHACS). Central does not limit the depth of GraphQL queries served on the authenticated GraphQL API. An authenticated user with a valid API token can send deeply nested queries tha…</description>
+      <category>High</category>
+      <pubDate>Mon, 06 Jul 2026 08:46:22 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-14781 · 4.8 MEDIUM 🌩️ — Keycloak-services: keycloak-services: oidc email_verified claim incorrectly applied to userinfo email</title>
@@ -384,47 +427,6 @@
       <description>A flaw was found in Apicurio Registry. The DocumentBuilderAccessor correctly blocks external DTD and schema access but does not disable DOCTYPE declarations or enable FEATURE_SECURE_PROCESSING. An attacker with artifact-write permission can upload XM…</description>
       <category>Medium</category>
       <pubDate>Thu, 25 Jun 2026 23:23:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12992 · 7.4 HIGH — Apicurio/apicurio-registry: apicurio-registry: ssrf via wsdl4j import dereference in wsdl full validation</title>
-      <link>https://vulnogram.org/CVE-2026-12992</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12992</guid>
-      <description>A flaw was found in Apicurio Registry. The WSDLReaderAccessor creates a wsdl4j WSDLReader without disabling the javax.wsdl.importDocuments feature. When the VALIDITY rule is set to FULL, an attacker with Developer-role access can upload a WSDL docume…</description>
-      <category>High</category>
-      <pubDate>Thu, 25 Jun 2026 21:16:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12975 · 8.5 HIGH — Apicurio/apicurio-registry: apicurio-registry: unhardened saxparser in content-type detection leads to blind xxe / ssrf / billion-laughs dos</title>
-      <link>https://vulnogram.org/CVE-2026-12975</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12975</guid>
-      <description>A flaw was found in Apicurio Registry. The ContentTypeUtil.isParsableXml() method creates a SAXParserFactory without enabling secure processing features or disabling external entity resolution. An attacker with artifact-write permission (or unauthent…</description>
-      <category>High</category>
-      <pubDate>Thu, 25 Jun 2026 21:12:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11800 · 8.1 HIGH — Org.keycloak:keycloak-services: keycloak: authentication bypass via jwt algorithm confusion</title>
-      <link>https://vulnogram.org/CVE-2026-11800</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11800</guid>
-      <description>A flaw was found in Keycloak. This JWT algorithm confusion vulnerability in the JWT Authorization Grant flow allows an attacker with valid client credentials to bypass signature verification. By forging an assertion, the attacker can create unauthori…</description>
-      <category>High</category>
-      <pubDate>Thu, 25 Jun 2026 20:57:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9083 · 4.9 MEDIUM — Keycloak: keycloak: information disclosure through arbitrary filesystem path probing</title>
-      <link>https://vulnogram.org/CVE-2026-9083</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9083</guid>
-      <description>A flaw was found in Keycloak. A realm administrator with the &quot;manage-realm&quot; role can exploit this vulnerability by submitting an arbitrary filesystem path as a keystore parameter when creating a key provider component. This allows the administrator t…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 25 Jun 2026 16:17:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9705 · 6.5 MEDIUM 🌩️ — Keycloak: keycloak: attacker can re-enable and take over disabled clients via registration access token</title>
-      <link>https://vulnogram.org/CVE-2026-9705</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9705</guid>
-      <description>A flaw was found in Keycloak&apos;s client registration service. A remote attacker, possessing a previously issued Registration Access Token (RAT), could exploit this vulnerability to re-enable a client that an administrator had explicitly disabled. This…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 25 Jun 2026 16:17:46 GMT</pubDate>
     </item>
   </channel>
 </rss>
