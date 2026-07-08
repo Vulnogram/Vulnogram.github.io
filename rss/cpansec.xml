@@ -11,26 +11,53 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 08 Jul 2026 01:14:26 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 15:03:18 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-14895 — String::Util versions before 1.36 for Perl are susceptible to a regular expression denial of service</title>
+      <title>CVE-2026-49147 — App::Ack versions through 3.10.0 for Perl print unsanitised terminal escape sequences from filenames in several output modes</title>
+      <link>https://vulnogram.org/CVE-2026-49147</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49147</guid>
+      <description>App::Ack versions through 3.10.0 for Perl print unsanitised terminal escape sequences from filenames in several output modes. When ack prints a filename whose basename contains terminal control bytes such as ANSI escape sequences, those bytes reach t…</description>
+      <pubDate>Wed, 08 Jul 2026 14:55:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49146 — App::Ack versions before 3.10.0 for Perl allow memory exhaustion via an unbounded context value in a project .ackrc</title>
+      <link>https://vulnogram.org/CVE-2026-49146</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49146</guid>
+      <description>App::Ack versions before 3.10.0 for Perl allow memory exhaustion via an unbounded context value in a project .ackrc. ack searches up the directory hierarchy from the current directory for a project .ackrc and loads its options. The -B and -C context…</description>
+      <pubDate>Wed, 08 Jul 2026 14:55:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49145 — App::Ack versions through 3.10.0 for Perl read arbitrary files via --files-from in a project .ackrc</title>
+      <link>https://vulnogram.org/CVE-2026-49145</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49145</guid>
+      <description>App::Ack versions through 3.10.0 for Perl read arbitrary files via --files-from in a project .ackrc. ack searches up the directory hierarchy from the current directory for a project .ackrc and loads its options. The project-source option blocklist in…</description>
+      <pubDate>Wed, 08 Jul 2026 14:55:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14895 · 7.5 HIGH 🌩️ — String::Util versions before 1.36 for Perl are susceptible to a regular expression denial of service</title>
       <link>https://vulnogram.org/CVE-2026-14895</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14895</guid>
       <description>String::Util versions before 1.36 for Perl are susceptible to a regular expression denial of service. The trim and rtrim functions stripped trailing whitespace with s/\s*$//u. Because \s* matches greedily and the $ anchor fails whenever a non-whitesp…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 07 Jul 2026 22:12:22 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-14740 — DBI versions before 1.650 for Perl read one byte out-of-bounds in preparse when deleting an initial SQL comment</title>
+      <title>CVE-2026-14740 · 9.1 CRITICAL 🌩️ — DBI versions before 1.650 for Perl read one byte out-of-bounds in preparse when deleting an initial SQL comment</title>
       <link>https://vulnogram.org/CVE-2026-14740</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14740</guid>
       <description>DBI versions before 1.650 for Perl read one byte out-of-bounds in preparse when deleting an initial SQL comment. The preparse method normalises SQL and removes comments. When the SQL starts with a comment line, the deletion of that line during normal…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 07 Jul 2026 22:05:45 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-14739 — DBI versions before 1.650 for Perl have a heap overflow when preparsing SQL statements with an extreme number of placeholders</title>
+      <title>CVE-2026-14739 · 9.8 CRITICAL 🌩️ — DBI versions before 1.650 for Perl have a heap overflow when preparsing SQL statements with an extreme number of placeholders</title>
       <link>https://vulnogram.org/CVE-2026-14739</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14739</guid>
       <description>DBI versions before 1.650 for Perl have a heap overflow when preparsing SQL statements with an extreme number of placeholders. The fix for CVE-2026-10879 did not allocate enough memory to handle approximately 1.2-million placeholders. DBI version 1.6…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 07 Jul 2026 22:05:18 GMT</pubDate>
     </item>
     <item>
@@ -415,33 +442,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 05 Jun 2026 14:49:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10879 · 9.8 CRITICAL 🌩️ — DBI versions before 1.648 for Perl have a heap overflow when preparsing SQL statements with more than 9 binders</title>
-      <link>https://vulnogram.org/CVE-2026-10879</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10879</guid>
-      <description>DBI versions before 1.648 for Perl have a heap overflow when preparsing SQL statements with more than 9 binders. The preparse method expands SQL placeholder characters to numbered binders of the form :pN, but only allocates three characters per binde…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 05 Jun 2026 14:30:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49942 · 7.3 HIGH 🌩️ — Net::CIDR::Set versions through 0.20 for Perl did not validate network masks</title>
-      <link>https://vulnogram.org/CVE-2026-49942</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49942</guid>
-      <description>Net::CIDR::Set versions through 0.20 for Perl did not validate network masks. The mask portion of a network mask could contain Unicode digits such as the Arabic-Indic One (U+0661), or non-digits, which were ignored. This could allow network masks to…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 16:07:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49941 · 7.5 HIGH 🌩️ — Net::CIDR::Set versions through 0.20 for Perl did not validate IP addresses</title>
-      <link>https://vulnogram.org/CVE-2026-49941</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49941</guid>
-      <description>Net::CIDR::Set versions through 0.20 for Perl did not validate IP addresses. The add method called the _encode method to parse addresses. If the addresses did not look like netmasks or network ranges, then they were assumed to single IP addresses and…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 16:07:20 GMT</pubDate>
     </item>
   </channel>
 </rss>

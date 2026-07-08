@@ -11,7 +11,57 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 08 Jul 2026 04:53:28 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 15:03:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-55668 · 6.3 MEDIUM — File Browser: ScopedFs follows a dangling symlink on write, letting a scoped user create files outside their scope</title>
+      <link>https://vulnogram.org/CVE-2026-55668</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55668</guid>
+      <description>File Browser provides a web file managing interface. Prior to 2.63.16, ScopedFs validates the nearest existing ancestor of a dangling symlink as in scope and then follows the symlink during file creation, allowing an authenticated user with Create an…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 08 Jul 2026 14:55:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54652 · 8.1 HIGH — Frigate viewer can read logs exposing admin and camera credentials</title>
+      <link>https://vulnogram.org/CVE-2026-54652</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54652</guid>
+      <description>Frigate is an open source network video recorder. In version 0.17.1, the GET /api/logs/{service} endpoint allows any authenticated user including the viewer role to download Frigate and nginx logs, exposing auto-generated admin passwords and camera c…</description>
+      <category>High</category>
+      <pubDate>Wed, 08 Jul 2026 14:52:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55873 · 4.3 MEDIUM — SeaweedFS: Improper authorization in the S3Tables / Iceberg REST management API lets a low-privileged S3 user enumerate administrator-owned table buckets</title>
+      <link>https://vulnogram.org/CVE-2026-55873</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55873</guid>
+      <description>SeaweedFS is a distributed storage system. In versions 4.08 through 4.33, requests signed with SigV4 service s3tables are routed to the S3Tables management API where authorization collapses account-less S3 identities into the shared admin account and…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 08 Jul 2026 14:48:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55874 · 7.7 HIGH — SeaweedFS: Path traversal in the S3 gateway X-Amz-Copy-Source header allows cross-bucket object read</title>
+      <link>https://vulnogram.org/CVE-2026-55874</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55874</guid>
+      <description>SeaweedFS is a distributed storage system. Prior to 4.34, the S3 API gateway does not reject dot-dot path segments in the X-Amz-Copy-Source header used by CopyObject and UploadPartCopy, allowing an authenticated identity scoped to one bucket to read…</description>
+      <category>High</category>
+      <pubDate>Wed, 08 Jul 2026 14:43:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44840 · 7.5 HIGH 🌩️ — Dgraph Vulnerable to DQL Injection via checkUserPassword GraphQL Query</title>
+      <link>https://vulnogram.org/CVE-2026-44840</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44840</guid>
+      <description>Dgraph is an open source distributed GraphQL database. Prior to version 25.3.4, the `checkUserPassword` GraphQL query in Dgraph is vulnerable to DQL (Dgraph Query Language) injection. User-supplied password values are interpolated directly into a DQL…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 08 Jul 2026 13:27:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54061 · 9.1 CRITICAL 🌩️ — Dgraph Alpha group stores can be replaced via unauthenticated external snapshot import</title>
+      <link>https://vulnogram.org/CVE-2026-54061</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54061</guid>
+      <description>Dgraph is an open source distributed GraphQL database. Prior to version 25.3.5, Dgraph Alpha exposes the RPCs used for external snapshot import on the public gRPC port `:9080` without authentication or authorization. As a result, an unauthenticated n…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 08 Jul 2026 13:23:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-55438 · 5.8 MEDIUM — Coder&apos;s workspace app CORS origin check can be bypassed via UUID-based subdomain spoofing</title>
       <link>https://vulnogram.org/CVE-2026-55438</link>
@@ -376,57 +426,6 @@
       <description>DataEase is an open source data visualization and analysis tool. Prior to 2.10.24, the font management module allows authenticated users to submit an arbitrary fileTransName when creating a font record; when the record is later deleted, the backend c…</description>
       <category>High</category>
       <pubDate>Tue, 07 Jul 2026 20:24:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53729 · 8.7 HIGH 🌩️ — DataEase ExportCenter IDOR allows cross-user export task access</title>
-      <link>https://vulnogram.org/CVE-2026-53729</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53729</guid>
-      <description>DataEase is an open source data visualization and analysis tool. Prior to 2.10.24, any authenticated user can download (/exportCenter/download/{id}), delete (/exportCenter/delete), retry (/exportCenter/retry/{id}), or generate download links (/export…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Jul 2026 20:23:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44454 · 8.1 HIGH 🌩️ — Coder vulnerable to workspace auto-creation via crafted URL parameters without user consent</title>
-      <link>https://vulnogram.org/CVE-2026-44454</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44454</guid>
-      <description>Coder allows organizations to provision remote development environments via Terraform. Prior to versions 2.29.7 and 2.30.2, the `dotfiles` registry module passed unsanitized user input to shell commands, allowing arbitrary code execution inside a pro…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Jul 2026 20:16:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55434 · 6.5 MEDIUM — Coder vulnerable to denial of service via unbounded request body in AI Bridge provider endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-55434</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55434</guid>
-      <description>Coder allows organizations to provision remote development environments via Terraform. Starting in version 2.33.0 and prior to versions 2.33.8 and 2.34.2, AI Bridge provider handlers read request bodies with `io.ReadAll` without a maximum size so an…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 07 Jul 2026 20:14:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55417 · 6.9 MEDIUM 🌩️ — Chevereto private profile setting leaks username on /json endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-55417</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55417</guid>
-      <description>Chevereto is a self-hosted media-sharing platform. Starting in version 3.7.5 and prior to version 4.5.4, when a user enables the private profile option, visiting their profile HTML route (`/username`) correctly returns 404. However, the `/json` AJAX…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Jul 2026 20:02:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55435 · 5.4 MEDIUM — Suspended Coder users retain access to AI Bridge LLM proxy endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-55435</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55435</guid>
-      <description>Coder allows organizations to provision remote development environments via Terraform. Starting in version 2.30.0 and prior to versions 2.32.7, 2.33.8, and 2.34.2, AI Bridge proxy endpoints authenticate via `Server.IsAuthorized` in `coderd/aibridgeds…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 07 Jul 2026 17:37:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42201 · 3.3 LOW — Coolify: OS Command Injection via Database Credential Fields in Docker Compose Service Commands</title>
-      <link>https://vulnogram.org/CVE-2026-42201</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42201</guid>
-      <description>Coolify is an open-source and self-hostable tool for managing servers, applications, and databases. Prior to 4.0.0-beta.474, database credential fields (redis_password, keydb_password, dragonfly_password, clickhouse_admin_user, clickhouse_admin_passw…</description>
-      <category>Low</category>
-      <pubDate>Tue, 07 Jul 2026 03:29:13 GMT</pubDate>
     </item>
   </channel>
 </rss>
