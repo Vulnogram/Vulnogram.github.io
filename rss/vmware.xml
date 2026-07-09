@@ -11,7 +11,7 @@
       <title>VMware by Broadcom — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 09 Jul 2026 08:56:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 14:19:11 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-59269 · 3.8 LOW — Privilege Escalation via Active Directory LDAP injection in Pinniped Supervisor can be executed by an attacker who can edit LDAP Group DN entries</title>
       <link>https://vulnogram.org/CVE-2026-59269</link>
@@ -19,6 +19,48 @@
       <description>A user authenticating to Kubernetes clusters via the Pinniped Supervisor could potentially gain elevated permissions in the clusters, only if all the following conditions were true: the Pinniped Supervisor server is running with an ActiveDirectoryIde…</description>
       <category>Low</category>
       <pubDate>Thu, 09 Jul 2026 07:12:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47840 · 8.3 HIGH 🌩️ — LDAP StartTLS unconditionally disables hostname verification</title>
+      <link>https://vulnogram.org/CVE-2026-47840</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47840</guid>
+      <description>A network attacker positioned between UAA and its LDAP directory can impersonate the directory using any certificate from any trusted CA, then harvest the LDAP bind password and every end-user password sent during simple-bind authentication, and retu…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 09 Jul 2026 06:26:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47831 · 7.7 HIGH — Cryptographically Weak Password Generation in bosh-windows-stemcell-builder Allows Remote SSH Brute-Force Attacks</title>
+      <link>https://vulnogram.org/CVE-2026-47831</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47831</guid>
+      <description>Use of a cryptographically weak random number generator in the GenerateRandomPassword function in bosh-windows-stemcell-builder allows a remote attacker to brute-force the resulting SSH login via TCP/22. Affected versions: bosh-windows-stemcell-build…</description>
+      <category>High</category>
+      <pubDate>Thu, 09 Jul 2026 06:26:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47830 · 8.5 HIGH — Incorrect Permission Assignment Allows Local Privilege Escalation to SYSTEM via Executable Overwrite</title>
+      <link>https://vulnogram.org/CVE-2026-47830</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47830</guid>
+      <description>Incorrect Permission Assignment in BOSH.Utils.psm1 in BOSH-Ecosystem bosh-windows-stemcell-builder allows low-privilege authenticated users to overwrite C:\bosh\service_wrapper.exe or C:\bosh\bosh-agent.exe and gain NT AUTHORITY\SYSTEM on the next se…</description>
+      <category>High</category>
+      <pubDate>Thu, 09 Jul 2026 06:25:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47829 · 7.7 HIGH 🌩️ — Argument Injection in BOSH CLI Allows Local Command Execution on Operator Workstations via Compromised Director</title>
+      <link>https://vulnogram.org/CVE-2026-47829</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47829</guid>
+      <description>Argument Injection in bosh-cli allows a compromised BOSH Director to inject arbitrary OpenSSH options into the locally-spawned ssh process when an operator runs bosh ssh -c, bosh logs -f, or other non-interactive SSH paths, leading to local command e…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 09 Jul 2026 06:25:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47828 · 8.9 HIGH — Missing TLS Certificate Verification in BOSH CLI Allows Root Code Execution via Man-in-the-Middle Credential Replay</title>
+      <link>https://vulnogram.org/CVE-2026-47828</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47828</guid>
+      <description>During bosh create-env and bosh delete-env, the CLI uploads compiled CPI packages and rendered job templates to the new VM&apos;s DAV blobstore over HTTPS without verifying the server certificate, even though a CA certificate for that endpoint is availabl…</description>
+      <category>High</category>
+      <pubDate>Thu, 09 Jul 2026 06:07:10 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-41862 · 8.8 HIGH</title>
@@ -401,49 +443,6 @@
       <category>Low</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 09 Jun 2026 23:47:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41008 · 6.1 MEDIUM 🌩️ — Spring Security Authorization Server Open Redirect via request_uri</title>
-      <link>https://vulnogram.org/CVE-2026-41008</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41008</guid>
-      <description>Spring Security Authorization Server&apos;s authorization endpoint performs insufficient validation of the request_uri parameter. An attacker can craft a malicious authorization request containing an invalid request_uri and an arbitrary, unvalidated redir…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 23:47:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41003 · 7.6 HIGH — Unencoded HTML Outputs in Spring Security May Allow Cross-Site Scripting</title>
-      <link>https://vulnogram.org/CVE-2026-41003</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41003</guid>
-      <description>An attacker able to influence values in RelyingPartyRegistration may be able to run arbitrary code on HTML forms generated by Spring Security filters. Affected versions: Spring Security 5.7.0 through 5.7.23; 5.8.0 through 5.8.25; 6.3.0 through 6.3.16…</description>
-      <category>High</category>
-      <pubDate>Tue, 09 Jun 2026 23:46:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40993 · 7.3 HIGH — Unfiltered Java Native Deserialization of SAML 2.0 Asserting Party Credentials BLOB Database Entry</title>
-      <link>https://vulnogram.org/CVE-2026-40993</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40993</guid>
-      <description>An attacker with write permissions to the database table managed by JdbcAssertingPartyMetadataRepository (saml2_asserting_party_metadata) may be able to store malicious serialized payloads in the columns containing the collection of verification or e…</description>
-      <category>High</category>
-      <pubDate>Tue, 09 Jun 2026 23:46:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40991 · 5.9 MEDIUM 🌩️ — XML External Entity (XXE) injection when documenting untrusted XML content</title>
-      <link>https://vulnogram.org/CVE-2026-40991</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40991</guid>
-      <description>When using spring-restdocs-webtestclient or spring-restdocs-restassured to document a remote API accessed over HTTP, an attacker who compromises the API or tricks the user into documenting a malicious API can perform an XXE injection attack when the…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 23:46:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40988 · 7.5 HIGH 🌩️ — Unbounded DEFLATE Inflation in SAML 2.0 Service Provider</title>
-      <link>https://vulnogram.org/CVE-2026-40988</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40988</guid>
-      <description>An application using spring-security-saml2-service-provider and the REDIRECT binding for SAML 2.0 Login or Logout may be vulnerable to a denial of service by way of an unbounded writer that inflates the compressed SAML payload into memory. Affected v…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 23:46:15 GMT</pubDate>
     </item>
   </channel>
 </rss>
