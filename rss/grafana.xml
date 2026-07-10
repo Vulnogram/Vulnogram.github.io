@@ -11,7 +11,31 @@
       <title>Grafana Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 09 Jul 2026 17:08:59 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 16:09:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-8595 · 6.8 MEDIUM — Stored XSS in the table panel (TableNG)</title>
+      <link>https://vulnogram.org/CVE-2026-8595</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8595</guid>
+      <description>A user with Editor permissions can craft a dashboard whose table (TableNG) panel contains a malicious field name that executes as a script in the browser of any user who views the dashboard (stored cross-site scripting).</description>
+      <category>Medium</category>
+      <pubDate>Fri, 10 Jul 2026 14:59:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8609 · 5.3 MEDIUM — Pre-authentication denial of service via the OAuth login route</title>
+      <link>https://vulnogram.org/CVE-2026-8609</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8609</guid>
+      <description>An unauthenticated attacker can repeatedly call Grafana&apos;s OAuth login route with unique values, causing unbounded memory growth that can eventually exhaust memory and crash the Grafana instance (denial of service).</description>
+      <category>Medium</category>
+      <pubDate>Fri, 10 Jul 2026 14:58:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-33382 · 7.5 HIGH — Denial of service via unbounded request body size</title>
+      <link>https://vulnogram.org/CVE-2026-33382</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33382</guid>
+      <description>Several Grafana API endpoints, some of them unauthenticated, do not limit the size of the request body before processing it. An attacker can send very large payloads that force excessive memory allocation, potentially exhausting memory and causing a…</description>
+      <category>High</category>
+      <pubDate>Fri, 10 Jul 2026 14:58:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-28378 · 3.1 LOW — Cross-Organization Public Dashboard Deletion via Missing Org Isolation</title>
       <link>https://vulnogram.org/CVE-2026-28378</link>
@@ -21,7 +45,7 @@
       <pubDate>Tue, 07 Jul 2026 21:08:04 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-42127 · 7.5 HIGH — Grafana pre-auth DoS through arbitrarily large input to public dashboard query handler</title>
+      <title>CVE-2026-42127 · 7.5 HIGH — Pre-authentication denial of service in the public dashboard query endpoint</title>
       <link>https://vulnogram.org/CVE-2026-42127</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42127</guid>
       <description>The public dashboard query endpoint does not limit request body size before processing, allowing unauthenticated attackers to trigger excessive memory allocation by sending arbitrarily large JSON payloads. This can lead to denial of service through m…</description>
@@ -37,26 +61,26 @@
       <pubDate>Mon, 22 Jun 2026 13:20:29 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-9029 · 7.3 HIGH — Stored XSS via Geomap Panel Template Variable Attribution Injection</title>
+      <title>CVE-2026-9029 · 7.3 HIGH — Stored XSS in the Geomap panel tile-layer attribution</title>
       <link>https://vulnogram.org/CVE-2026-9029</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9029</guid>
-      <description>The geomap panel&apos;s XYZ tile layer has a sanitize-then-interpolate ordering bug. sanitizeTextPanelContent() runs on the raw template string before getTemplateSrv().replace() substitutes the variable value, which uses the glob format with no HTML escap…</description>
+      <description>A user with Editor permissions can place a malicious script in the attribution field of a Geomap panel&apos;s XYZ tile layer via a template variable. The script then executes in the browser of any user who views the affected dashboard (stored cross-site s…</description>
       <category>High</category>
       <pubDate>Mon, 22 Jun 2026 13:18:40 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10601 · 5.4 MEDIUM — Path Traversal in Tempo and Loki Data Source Plugins — Credential Leakage and Admin Endpoint Access</title>
+      <title>CVE-2026-10601 · 5.4 MEDIUM — Path traversal in the Tempo and Loki data source plugins</title>
       <link>https://vulnogram.org/CVE-2026-10601</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10601</guid>
-      <description>The Tempo and Loki datasource plugins construct backend HTTP requests by interpolating user-supplied input into URL paths without sanitization, enabling path traversal. A Viewer-role user can: (1) capture admin-configured datasource credentials (secu…</description>
+      <description>A user with Viewer permissions can use specially crafted requests to the Tempo and Loki data source plugins to reach unintended backend endpoints. Depending on the backend configuration this can expose data source credentials, leak internal responses…</description>
       <category>Medium</category>
       <pubDate>Mon, 22 Jun 2026 13:18:31 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-42129 · 7.7 HIGH — Path Traversal in Loki Datasource leads to Internal Information Disclosure</title>
+      <title>CVE-2026-42129 · 7.7 HIGH — Path traversal in the Loki data source plugin</title>
       <link>https://vulnogram.org/CVE-2026-42129</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42129</guid>
-      <description>The Loki datasource plugin&apos;s callResource handler contains a path traversal vulnerability. An authenticated Viewer-role user can escape the plugin&apos;s resource sandbox and access administrative Loki endpoints (e.g. /config, /services, /ready) to extrac…</description>
+      <description>A user with Viewer permissions can use a path traversal in the Loki data source plugin to reach administrative Loki endpoints and read sensitive backend configuration and internal service information.</description>
       <category>High</category>
       <pubDate>Mon, 22 Jun 2026 13:18:27 GMT</pubDate>
     </item>
@@ -72,7 +96,7 @@
       <title>CVE-2026-11769 · 6.4 MEDIUM — Operator - Namespaced User Path Traversal</title>
       <link>https://vulnogram.org/CVE-2026-11769</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11769</guid>
-      <description>We have released version 5.24.0 of the Grafana Operator. This patch includes a CRITICAL severity security fix for a path traversal/privilege escalation vulnerability in the Grafana Operator. ### Summary The Grafana Operator supports loading dashboard…</description>
+      <description>We have released version 5.24.0 of the Grafana Operator. This patch includes a MEDIUM severity security fix for a path traversal/privilege escalation vulnerability in the Grafana Operator. ### Summary The Grafana Operator supports loading dashboards…</description>
       <category>Medium</category>
       <pubDate>Sat, 13 Jun 2026 04:17:41 GMT</pubDate>
     </item>
@@ -394,31 +418,6 @@
       <description>This vulnerability in Grafana&apos;s datasource proxy API allows authorization checks to be bypassed by adding an extra slash character in the URL path. Users with minimal permissions could gain unauthorized read access to GET endpoints in Alertmanager an…</description>
       <category>Medium</category>
       <pubDate>Mon, 02 Jun 2025 10:34:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-3260 · 8.3 HIGH</title>
-      <link>https://vulnogram.org/CVE-2025-3260</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-3260</guid>
-      <description>A security vulnerability in the /apis/dashboard.grafana.app/* endpoints allows authenticated users to bypass dashboard and folder permissions. The vulnerability affects all API versions (v0alpha1, v1alpha1, v2alpha1). Impact: - Viewers can view all d…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Jun 2025 10:06:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-3580 · 5.5 MEDIUM</title>
-      <link>https://vulnogram.org/CVE-2025-3580</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-3580</guid>
-      <description>An access control vulnerability was discovered in Grafana OSS where an Organization administrator could permanently delete the Server administrator account. This vulnerability exists in the DELETE /api/org/users/ endpoint. The vulnerability can be ex…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 23 May 2025 13:44:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-4123 · 7.6 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2025-4123</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4123</guid>
-      <description>A cross-site scripting (XSS) vulnerability exists in Grafana caused by combining a client path traversal and open redirect. This allows attackers to redirect users to a website that hosts a frontend plugin that will execute arbitrary JavaScript. This…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 22 May 2025 07:44:09 GMT</pubDate>
     </item>
   </channel>
 </rss>
