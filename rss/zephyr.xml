@@ -11,7 +11,55 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 11 Jul 2026 18:38:50 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 16:40:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10668 · 2.4 LOW — Host-triggerable control-endpoint wedge (DoS) in Nuvoton NuMaker HSUSBD UDC driver</title>
+      <link>https://vulnogram.org/CVE-2026-10668</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10668</guid>
+      <description>The Nuvoton NuMaker HSUSBD USB device-controller driver (drivers/usb/udc/udc_numaker.c) armed the control Data IN stage unconditionally (base-&gt;CEPTXCNT = len in numaker_hsusbd_ep_trigger). Because the HSUSBD hardware cannot disarm a control Data IN a…</description>
+      <category>Low</category>
+      <pubDate>Sun, 12 Jul 2026 16:16:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10667 · 7.8 HIGH — SMP use-after-free in Zephyr `CONFIG_USERSPACE` dynamic kernel-object tracking, reachable from unprivileged user threads</title>
+      <link>https://vulnogram.org/CVE-2026-10667</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10667</guid>
+      <description>Zephyr&apos;s dynamic kernel-object tracking (kernel/userspace/userspace.c, formerly kernel/userspace.c) maintains a doubly-linked list (obj_list) of dynamically allocated kernel objects. Iteration over this list in k_object_wordlist_foreach() was perform…</description>
+      <category>High</category>
+      <pubDate>Sun, 12 Jul 2026 16:16:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10666 · 8.1 HIGH — Stack buffer overflow in `net_ipaddr_parse()` IPv4 address-with-port parsing in `subsys/net/ip/utils.c`</title>
+      <link>https://vulnogram.org/CVE-2026-10666</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10666</guid>
+      <description>parse_ipv4() in subsys/net/ip/utils.c (reached via net_ipaddr_parse() for strings of the form &quot;a.b.c.d:port&quot;) copies the port substring into a fixed 17-byte stack buffer (char ipaddr[NET_IPV4_ADDR_LEN + 1]) using a length of str_len - end - 1, where…</description>
+      <category>High</category>
+      <pubDate>Sun, 12 Jul 2026 16:16:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10665 · 7.4 HIGH — Heap buffer overflow on WireGuard receive path via unbounded incoming packet length</title>
+      <link>https://vulnogram.org/CVE-2026-10665</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10665</guid>
+      <description>In Zephyr&apos;s WireGuard subsystem (subsys/net/lib/wireguard), wg_process_data_message() in wg_crypto.c linearizes an inbound transport-data payload into a fixed pool buffer of CONFIG_WIREGUARD_BUF_LEN bytes before decryption. The call net_buf_linearize…</description>
+      <category>High</category>
+      <pubDate>Sun, 12 Jul 2026 16:16:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10664 · 5 MEDIUM — Out-of-bounds write in nRF70 Wi-Fi driver power-save event handler (unbounded TWT flow count)</title>
+      <link>https://vulnogram.org/CVE-2026-10664</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10664</guid>
+      <description>The nRF70 Wi-Fi driver&apos;s power-save event handler nrf_wifi_event_proc_get_power_save_info() in drivers/wifi/nrf_wifi/src/wifi_mgmt.c copied TWT (Target Wake Time) flow entries from an nrf_wifi_umac_event_power_save_info event into the fixed-size twt_…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 12 Jul 2026 16:16:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10663 · 6.1 MEDIUM — Use-after-free / double-free of the root USB device in the experimental USB host stack</title>
+      <link>https://vulnogram.org/CVE-2026-10663</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10663</guid>
+      <description>In Zephyr&apos;s experimental USB host stack (CONFIG_USB_HOST_STACK), usbh_device_disconnect() (subsys/usb/host/usbh_device.c) freed the root usb_device slab object without clearing the cached pointer ctx-&gt;root. The bus removal handler dev_removed_handler…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 12 Jul 2026 16:16:48 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10660 · 6.4 MEDIUM — Shared reassembly buffer in Bluetooth BAP Broadcast Assistant enables cross-connection memory corruption</title>
       <link>https://vulnogram.org/CVE-2026-10660</link>
@@ -367,54 +415,6 @@
       <description>‭An out-of-bound write can lead to an arbitrary code execution. Even on devices with some form of memory protection, this can still lead to‬ ‭a crash and a resultant denial of service.‬</description>
       <category>High</category>
       <pubDate>Wed, 26 Nov 2025 05:43:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-9558 · 7.6 HIGH — Bluetooth: Mesh: Out-of-Bound Write in gen_prov_start</title>
-      <link>https://vulnogram.org/CVE-2025-9558</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9558</guid>
-      <description>There is a potential OOB Write vulnerability in the gen_prov_start function in pb_adv.c. The full length of the received data is copied into the link.rx.buf receiver buffer without any validation on the data size.</description>
-      <category>High</category>
-      <pubDate>Wed, 26 Nov 2025 05:39:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-9408 · 8.2 HIGH — Userspace privilege escalation vulnerability on Cortex M</title>
-      <link>https://vulnogram.org/CVE-2025-9408</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9408</guid>
-      <description>System call entry on Cortex M (and possibly R and A, but I think not) has a race which allows very practical privilege escalation for malicious userspace processes.</description>
-      <category>High</category>
-      <pubDate>Tue, 11 Nov 2025 15:34:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12890 · 6.5 MEDIUM — Bluetooth: peripheral: Invalid handling of malformed connection request</title>
-      <link>https://vulnogram.org/CVE-2025-12890</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12890</guid>
-      <description>Improper handling of malformed Connection Request with the interval set to be 1 (which supposed to be illegal) and the chM 0x7CFFFFFFFF triggers a crash. The peripheral will not be connectable after it.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 07 Nov 2025 18:40:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-10456 · 7.1 HIGH — Bluetooth: Semi-Arbitrary ability to make the BLE Target send disconnection requests</title>
-      <link>https://vulnogram.org/CVE-2025-10456</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-10456</guid>
-      <description>A vulnerability was identified in the handling of Bluetooth Low Energy (BLE) fixed channels (such as SMP or ATT). Specifically, an attacker could exploit a flaw that causes the BLE target (i.e., the device under attack) to attempt to disconnect a fix…</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Sep 2025 05:21:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-10458 · 7.6 HIGH — Bluetooth: le_conn_rsp does not sanitize CID, MTU, MPS values</title>
-      <link>https://vulnogram.org/CVE-2025-10458</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-10458</guid>
-      <description>Parameters are not validated or sanitized, and are later used in various internal operations.</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Sep 2025 05:20:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-7403 · 7.6 HIGH — Bluetooth: bt_conn_tx_processor unsafe handling</title>
-      <link>https://vulnogram.org/CVE-2025-7403</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-7403</guid>
-      <description>Unsafe handling in bt_conn_tx_processor causes a use-after-free, resulting in a write-before-zero. The written 4 bytes are attacker-controlled, enabling precise memory corruption.</description>
-      <category>High</category>
-      <pubDate>Fri, 19 Sep 2025 05:19:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
