@@ -11,7 +11,7 @@
       <title>Mattermost, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 13 Jul 2026 13:52:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 16:16:02 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-6541 · 4.3 MEDIUM — Unscoped updates to other playbooks&apos; metric configuration</title>
       <link>https://vulnogram.org/CVE-2026-6541</link>
@@ -35,6 +35,46 @@
       <description>Mattermost versions 11.7.x &lt;= 11.7.2, 11.6.x &lt;= 11.6.4, 10.11.x &lt;= 10.11.19 fail to check the manage_shared_channels permission in the /share-channel autocomplete handler, which allows an authenticated user without that permission to enumerate config…</description>
       <category>Medium</category>
       <pubDate>Mon, 13 Jul 2026 10:47:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9597 · 5.4 MEDIUM — Deactivated guest accounts can authenticate via magic-link token in Mattermost REST API login endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-9597</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9597</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.2, 11.6.x &lt;= 11.6.4 fail to verify whether a guest account is deactivated before creating a session in the magic-link token login path, which allows a deactivated guest user to obtain a fully functional session via…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 13 Jul 2026 08:17:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6850 · 6.5 MEDIUM — Crafted message attachment causes client-side denial of service via markdown parser regex backtracking in Mattermost</title>
+      <link>https://vulnogram.org/CVE-2026-6850</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6850</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.2, 11.6.x &lt;= 11.6.4, 10.11.x &lt;= 10.11.19 fail to validate the length and content of message attachment field values, which allows an authenticated attacker to cause a denial of service for all users in a channel via…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 13 Jul 2026 08:13:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10106 · 6.5 MEDIUM — Unauthorized users can trigger interactive post actions in private channels via action cookie channel mismatch in Mattermost</title>
+      <link>https://vulnogram.org/CVE-2026-10106</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10106</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.2, 11.6.x &lt;= 11.6.4, 10.11.x &lt;= 10.11.19 fail to verify that the channel referenced in an action cookie matches the channel of the target post, which allows an authenticated user without access to a private channel…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 13 Jul 2026 08:09:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10085 · 5.4 MEDIUM — Ordinary group/direct message member can enable group_constrained and remove all channel participants</title>
+      <link>https://vulnogram.org/CVE-2026-10085</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10085</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.2, 11.6.x &lt;= 11.6.4, 10.11.x &lt;= 10.11.19 fail to restrict the group_constrained channel flag to public and private channels that support group synchronization, which allows an ordinary group or direct message member…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 13 Jul 2026 08:05:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9708 · 4.9 MEDIUM — Incoming webhook user attribution via unvalidated webhook owner</title>
+      <link>https://vulnogram.org/CVE-2026-9708</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9708</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.2, 11.6.x &lt;= 11.6.4, 10.11.x &lt;= 10.11.19 fail to validate that an assigned incoming webhook user has access to the target team or channel, which allows a requester with webhook management permissions to create posts…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 13 Jul 2026 08:00:10 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-4339 · 6.5 MEDIUM — SSRF via unvalidated attachment URLs in Mattermost Agents plugin MCP server</title>
@@ -375,46 +415,6 @@
       <description>Mattermost versions 11.5.x &lt;= 11.5.1 fail to verify channel membership when processing AI-assisted message rewrites which allows an authenticated attacker to read the content of threads in private channels and direct messages they do not have access…</description>
       <category>Medium</category>
       <pubDate>Mon, 18 May 2026 08:11:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3117 · 6.5 MEDIUM — Instance and webhook GitLab plugin commands were able to be run by non-admin users</title>
-      <link>https://vulnogram.org/CVE-2026-3117</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3117</guid>
-      <description>Mattermost Plugins versions &lt;=11.5 11.1.5 10.13.11 11.3.4.0 fail to properly check for permissions when processing commands in the Gitlab plugin which allows normal users to uninstall instances or setup webhook connections via the {{gitlab instance {…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 18 May 2026 08:09:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4286 · 3.1 LOW — Playbooks Plugin fails to validate team transfers, allowing unauthorized removal of member access via playbook update</title>
-      <link>https://vulnogram.org/CVE-2026-4286</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4286</guid>
-      <description>Mattermost versions 11.5.x &lt;= 11.5.1, 10.11.x &lt;= 10.11.13 fail to check if {{team_id}} was being changed when updating playbooks, allowing users with only {{Manage Playbook Configurations}} permission to change a playbook&apos;s team, bypassing manage mem…</description>
-      <category>Low</category>
-      <pubDate>Mon, 18 May 2026 08:07:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6339 · 4.3 MEDIUM — Missing request origin validation on burn-on-read reveal endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-6339</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6339</guid>
-      <description>Mattermost versions 11.5.x &lt;= 11.5.1, 11.4.x &lt;= 11.4.3 fail to validate the X-Requested-With header on the burn-on-read reveal endpoint which allows an authenticated channel member to force the reveal of a burn-on-read message without recipient conse…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 18 May 2026 08:05:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6340 · 4.3 MEDIUM — Memory Exhaustion via Malicious 7zip File Upload</title>
-      <link>https://vulnogram.org/CVE-2026-6340</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6340</guid>
-      <description>Mattermost versions 11.5.x &lt;= 11.5.1, 10.11.x &lt;= 10.11.13, 11.4.x &lt;= 11.4.3 fail to validate 7zip archive structure before processing which allows an authenticated attacker to cause server memory exhaustion and denial of service via uploading a speci…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 18 May 2026 07:08:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6341 · 4.3 MEDIUM — Incomplete group locking implementation</title>
-      <link>https://vulnogram.org/CVE-2026-6341</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6341</guid>
-      <description>Mattermost Plugins versions &lt;=11.5 11.1.5 10.13.11 11.3.4.0 fail to have API-level checks on which groups the user can create issues or attach comments to which allows a user that is member of multiple groups to create issues to a locked group via di…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 18 May 2026 07:05:03 GMT</pubDate>
     </item>
   </channel>
 </rss>

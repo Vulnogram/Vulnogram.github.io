@@ -11,7 +11,21 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 13 Jul 2026 13:52:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 16:16:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-59245 — Apache Airflow FAB provider: FAB auth manager: a DAG named &quot;DAGs&quot; hijacks the global all-DAGs permission (access_control privilege escalation via resource_name() collision)</title>
+      <link>https://vulnogram.org/CVE-2026-59245</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59245</guid>
+      <description>In the Apache Airflow FAB auth manager, a DAG whose `dag_id` is `DAGs` collided with the global all-DAGs permission resource name produced by `resource_name()`, so a user granted per-DAG `access_control` on that one DAG was silently granted the globa…</description>
+      <pubDate>Mon, 13 Jul 2026 15:05:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-58065 — Apache Airflow Git provider: Git provider hook defaults to StrictHostKeyChecking=no, disabling SSH host-key verification</title>
+      <link>https://vulnogram.org/CVE-2026-58065</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58065</guid>
+      <description>The Apache Airflow Git provider runs its git-over-SSH operations with `StrictHostKeyChecking=no` by default, disabling SSH host-key verification. An attacker who can intercept the network path between an Airflow worker and the Git server can imperson…</description>
+      <pubDate>Mon, 13 Jul 2026 15:00:49 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-41041 — Apache Gravitino: URL path injection via unencoded user-supplied identifiers in MCP REST client f-string URL construction, enabling path traversal to unintended API endpoints.</title>
       <link>https://vulnogram.org/CVE-2026-41041</link>
@@ -20,10 +34,11 @@
       <pubDate>Mon, 13 Jul 2026 09:08:51 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-49876 — Apache Gravitino: Authenticated SSRF in Gravitino JobManager allows server-side HTTP requests to internal network and cloud metadata endpoints via unvalidated job template URIs</title>
+      <title>CVE-2026-49876 · 6.5 MEDIUM — Apache Gravitino: Authenticated SSRF in Gravitino JobManager allows server-side HTTP requests to internal network and cloud metadata endpoints via unvalidated job template URIs</title>
       <link>https://vulnogram.org/CVE-2026-49876</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49876</guid>
       <description>Authenticated SSRF in Gravitino JobManager allows server-side HTTP requests to internal network and cloud metadata endpoints via unvalidated job template URIs. A vulnerability in Apache Gravitino. This issue affects Apache Gravitino: from 1.0.0 throu…</description>
+      <category>Medium</category>
       <pubDate>Mon, 13 Jul 2026 08:45:35 GMT</pubDate>
     </item>
     <item>
@@ -426,24 +441,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 06 Jul 2026 07:55:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-43865 · 8.1 HIGH 🌩️ — Apache Camel: Camel-Hazelcast: Unsafe Java deserialization in default-configured managed Hazelcast instances enables remote code execution</title>
-      <link>https://vulnogram.org/CVE-2026-43865</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-43865</guid>
-      <description>Deserialization of Untrusted Data vulnerability in Apache Camel Hazelcast component. The camel-hazelcast component creates and manages Hazelcast instances using a default configuration that applies no Java deserialization filter. When Camel builds th…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 06 Jul 2026 07:55:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42527 · 8.1 HIGH 🌩️ — Apache Camel: Permissive default ObjectInputFilter pattern admits java.net.** and enables DNS-based information disclosure</title>
-      <link>https://vulnogram.org/CVE-2026-42527</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42527</guid>
-      <description>Deserialization of Untrusted Data vulnerability in Apache Camel. The default ObjectInputFilter pattern shipped with several Apache Camel components for defense-in-depth deserialization filtering (&apos;java.**;javax.**;org.apache.camel.**;!*&apos;, or the no-&apos;…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 06 Jul 2026 07:55:06 GMT</pubDate>
     </item>
   </channel>
 </rss>
