@@ -11,7 +11,65 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 14 Jul 2026 14:41:56 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 16:05:00 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-59204 · 8.7 HIGH 🌩️ — Pillow JPEG2000 tiled decode retains a growing scratch buffer and can be used for denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-59204</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59204</guid>
+      <description>Pillow is a Python imaging library. From 8.2.0 through 12.2.0, src/libImaging/Jpeg2KDecode.c accumulates total_component_width across every tile in a JPEG2000 image instead of recomputing it per tile, allowing a crafted tiled JPEG2000 file to force s…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 15:38:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55651 · 7.1 HIGH — Easy!Appointments Vulnerable to Appointments Takeover via Excessive Data Exposure</title>
+      <link>https://vulnogram.org/CVE-2026-55651</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55651</guid>
+      <description>Easy!Appointments is a self hosted appointment scheduler. In version 1.5.2, an Excessive Data Exposure vulnerability in the customers search endpoint allows an authenticated user to obtain appointment hashes belonging to other users. Using these hash…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 15:31:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-52841 · 3.1 LOW — Easy!Appointments: Authorization bypass in Google OAuth provider binding lets any backend user rebind a peer provider&apos;s Google sync</title>
+      <link>https://vulnogram.org/CVE-2026-52841</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52841</guid>
+      <description>Easy!Appointments is a self hosted appointment scheduler. In versions prior to 1.6.0, `Google::oauth` at `application/controllers/Google.php:278` stores its URL-supplied `provider_id` in the session, and `oauth_callback` saves the issued Google OAuth…</description>
+      <category>Low</category>
+      <pubDate>Tue, 14 Jul 2026 15:27:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-52840 · 2.7 LOW — Easy!Appointments has server-side request forgery in CalDAV connection test that exposes the deployment&apos;s internal network</title>
+      <link>https://vulnogram.org/CVE-2026-52840</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52840</guid>
+      <description>Easy!Appointments is a self hosted appointment scheduler. In versions prior to 1.6.0, `Caldav::connect_to_server` at `application/controllers/Caldav.php:60` hands the request&apos;s `caldav_url` to a Guzzle `REPORT` call without scheme or host validation.…</description>
+      <category>Low</category>
+      <pubDate>Tue, 14 Jul 2026 15:23:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-52839 · 3.3 LOW — Easy!Appointments appointments/store and appointments/update allow cross-provider appointment injection — Authorization Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-52839</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52839</guid>
+      <description>Easy!Appointments is a self hosted appointment scheduler. Versions prior to 1.6.0 correctly filter provider-scoped appointments in the `appointments/search` response, proving that provider isolation is an intended security boundary. However, the dire…</description>
+      <category>Low</category>
+      <pubDate>Tue, 14 Jul 2026 15:21:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-52838 · 2.6 LOW — Easy!Appointments disable_booking_message rendered as raw HTML on public booking page — Stored XSS</title>
+      <link>https://vulnogram.org/CVE-2026-52838</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52838</guid>
+      <description>Easy!Appointments is a self hosted appointment scheduler. Versions prior to 1.6.0 allow administrators to define a custom &quot;booking disabled&quot; message through the booking settings page. That value is stored in the `disable_booking_message` setting via…</description>
+      <category>Low</category>
+      <pubDate>Tue, 14 Jul 2026 15:07:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-52837 · 6.9 MEDIUM 🌩️ — Easy!Appointments has unauthenticated customer PII disclosure on booking reschedule page</title>
+      <link>https://vulnogram.org/CVE-2026-52837</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52837</guid>
+      <description>Easy!Appointments is a self hosted appointment scheduler. In versions up to and including 1.5.2, the booking reschedule view at `/index.php/booking/reschedule/{appointment_hash}` (handled by `Booking::index()`) embeds the entire customer record as in…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 14:48:26 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-58489 · 6.8 MEDIUM — HedgeDoc: CSRF in GitHub Gist export callback</title>
       <link>https://vulnogram.org/CVE-2026-58489</link>
@@ -373,64 +431,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 10 Jul 2026 20:39:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55229 · 7.5 HIGH 🌩️ — Gotenberg: SSRF via LibreOffice document processing</title>
-      <link>https://vulnogram.org/CVE-2026-55229</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55229</guid>
-      <description>Gotenberg is a Docker-powered stateless API for PDF files. Prior to 8.34.0, Gotenberg&apos;s /forms/libreoffice/convert endpoint allows a specially crafted document to cause LibreOffice to automatically retrieve external HTTP(S) resources and local file r…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Jul 2026 20:35:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55405 · 7.6 HIGH — LangChain4j: SQL injection via metadata filters in langchain4j-mariadb and langchain4j-pgvector</title>
-      <link>https://vulnogram.org/CVE-2026-55405</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55405</guid>
-      <description>LangChain4j is a Java library for building LLM-powered applications on the JVM. Prior to 1.2.1-beta8, 1.5.1-beta11, 1.11.8-beta19, and 1.16.3-beta26, the MariaDB and pgvector embedding stores build metadata-filter SQL by string-concatenating filter k…</description>
-      <category>High</category>
-      <pubDate>Fri, 10 Jul 2026 20:33:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57217 · 7 HIGH — RabbitMQ: Topic authorization can lead to cross-tenant routing-key bypass</title>
-      <link>https://vulnogram.org/CVE-2026-57217</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57217</guid>
-      <description>RabbitMQ is a messaging and streaming broker. Prior to 3.13.15, 4.0.21, 4.1.11, and 4.2.6, RabbitMQ topic authorization can allow restricted topic writes and binds during metadata-store failures because topic-permission lookup errors from Khepri can…</description>
-      <category>High</category>
-      <pubDate>Fri, 10 Jul 2026 20:25:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57221 · 5.3 MEDIUM — RabbitMQ: Passive queue/exchange declaration bypasses authorization checks, leaking queue metadata to unprivileged users</title>
-      <link>https://vulnogram.org/CVE-2026-57221</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57221</guid>
-      <description>RabbitMQ is a messaging and streaming broker. Prior to 3.13.15, 4.0.20, 4.1.11, and 4.2.6, RabbitMQ does not perform authorization checks on passive queue.declare and exchange.declare AMQP 0-9-1 operations, allowing any authenticated user who can con…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 10 Jul 2026 20:24:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57215 · 7 HIGH — RabbitMQ: Direct-reply-to binding persistence can lead to unauthorized reply-channel injection and persistent phantom</title>
-      <link>https://vulnogram.org/CVE-2026-57215</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57215</guid>
-      <description>RabbitMQ is a messaging and streaming broker. Prior to 3.13.15, 4.0.20, 4.1.11, and 4.2.6, RabbitMQ allows foreign bindings to amq.rabbitmq.reply-to destinations because volatile direct-reply-to queues can be accepted at bind and route time but are m…</description>
-      <category>High</category>
-      <pubDate>Fri, 10 Jul 2026 20:23:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57219 · 8.7 HIGH 🌩️ — RabbitMQ: Unauthenticated disclosure of OAuth client credentials via an HTTP API endpoint with certain less common OAuth 2 configurations</title>
-      <link>https://vulnogram.org/CVE-2026-57219</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57219</guid>
-      <description>RabbitMQ is a messaging and streaming broker. Prior to 3.13.15, 4.0.20, 4.1.11, and 4.2.6, the obsolete GET /api/auth endpoint can disclose the OAuth 2 client secret on RabbitMQ installations configured with management.oauth_client_secret, exposing c…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Jul 2026 20:22:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57218 · 4.9 MEDIUM — RabbitMQ: AMQP 0-9-1 in combination with OAuth 2: consumer persistence can lead to post-revocation message disclosure</title>
-      <link>https://vulnogram.org/CVE-2026-57218</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57218</guid>
-      <description>RabbitMQ is a messaging and streaming broker. Prior to 4.2.6, RabbitMQ AMQP 0-9-1 allows an existing consumer to keep receiving messages after OAuth token expiry or connection.update_secret refresh to reduced scopes because existing consumers are not…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 10 Jul 2026 20:21:30 GMT</pubDate>
     </item>
   </channel>
 </rss>

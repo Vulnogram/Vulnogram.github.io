@@ -11,7 +11,39 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 12 Jul 2026 17:45:58 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 16:05:00 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10672 · 8.2 HIGH — Unterminated URI buffer causes out-of-bounds read in LwM2M firmware pull (Package URI)</title>
+      <link>https://vulnogram.org/CVE-2026-10672</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10672</guid>
+      <description>subsys/net/lib/lwm2m/lwm2m_pull_context.c copied the firmware-update Package URI into a fixed static buffer (context.uri, size CONFIG_LWM2M_SWMGMT_PACKAGE_URI_LEN, default 128) with memcpy(context.uri, uri, LWM2M_PACKAGE_URI_LEN), copying exactly the…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 15:02:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10671 · 7.1 HIGH — User thread can re-initialize an in-use `k_pipe`, corrupting kernel wait queues (`CONFIG_USERSPACE`)</title>
+      <link>https://vulnogram.org/CVE-2026-10671</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10671</guid>
+      <description>In Zephyr&apos;s kernel pipe implementation, the userspace syscall verifier z_vrfy_k_pipe_init() in kernel/pipe.c used K_SYSCALL_OBJ() (which requires the kernel object to already be initialized) instead of K_SYSCALL_OBJ_NEVER_INIT() (which rejects an alr…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 15:02:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10670 · 5.5 MEDIUM — User-triggerable kernel NULL-pointer dereference (DoS) in `k_thread_name_copy()` syscall verifier</title>
+      <link>https://vulnogram.org/CVE-2026-10670</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10670</guid>
+      <description>The CONFIG_USERSPACE verification handler for the k_thread_name_copy() system call (z_vrfy_k_thread_name_copy() in kernel/thread.c) calls k_object_find() on the caller-supplied thread pointer and then dereferences the returned struct k_object without…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 15:02:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10669 · 7.8 HIGH — Xtensa MPU `arch_buffer_validate()` integer-overflow lets a user thread bypass syscall pointer validation</title>
+      <link>https://vulnogram.org/CVE-2026-10669</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10669</guid>
+      <description>On Xtensa SoCs built with CONFIG_XTENSA_MPU and CONFIG_USERSPACE, arch_buffer_validate() in arch/xtensa/core/mpu.c — the architecture hook that verifies a user-mode-supplied buffer is accessible to the calling user thread with the requested permissio…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 15:02:02 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10668 · 2.4 LOW — Host-triggerable control-endpoint wedge (DoS) in Nuvoton NuMaker HSUSBD UDC driver</title>
       <link>https://vulnogram.org/CVE-2026-10668</link>
@@ -381,40 +413,6 @@
       <description>Malformed ATAES132A responses with an oversized length field overflow a 52-byte stack buffer in the Zephyr crypto driver, allowing a compromised device or bus attacker to corrupt kernel memory and potentially hijack execution.</description>
       <category>Low</category>
       <pubDate>Sat, 14 Mar 2026 21:05:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-1678 · 9.4 CRITICAL 🌩️ — dns: memory‑safety issue in the DNS name parser</title>
-      <link>https://vulnogram.org/CVE-2026-1678</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1678</guid>
-      <description>dns_unpack_name() caches the buffer tailroom once and reuses it while appending DNS labels. As the buffer grows, the cached size becomes incorrect, and the final null terminator can be written past the buffer. With assertions disabled (default), a ma…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 05 Mar 2026 06:21:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12899 · 6.5 MEDIUM 🌩️ — net: icmp: Out of bound memory read</title>
-      <link>https://vulnogram.org/CVE-2025-12899</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12899</guid>
-      <description>A flaw in Zephyr’s network stack allows an IPv4 packet containing ICMP type 128 to be misclassified as an ICMPv6 Echo Request. This results in an out-of-bounds memory read and creates a potential information-leak vulnerability in the networking subsy…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 30 Jan 2026 05:34:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12035 · 6.5 MEDIUM — Bluetooth: Integer Overflow in Bluetooth Classic (BR/EDR) L2CAP</title>
-      <link>https://vulnogram.org/CVE-2025-12035</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12035</guid>
-      <description>An integer overflow condition exists in Bluetooth Host stack, within the bt_br_acl_recv routine a critical path for processing inbound BR/EDR L2CAP traffic.</description>
-      <category>Medium</category>
-      <pubDate>Mon, 15 Dec 2025 19:42:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-9557 · 7.6 HIGH — Bluetooth: Mesh: Out-of-Bound Write in gen_prov_cont</title>
-      <link>https://vulnogram.org/CVE-2025-9557</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9557</guid>
-      <description>‭An out-of-bound write can lead to an arbitrary code execution. Even on devices with some form of memory protection, this can still lead to‬ ‭a crash and a resultant denial of service.‬</description>
-      <category>High</category>
-      <pubDate>Wed, 26 Nov 2025 05:43:30 GMT</pubDate>
     </item>
   </channel>
 </rss>
