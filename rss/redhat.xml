@@ -11,12 +11,48 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 14 Jul 2026 18:54:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 20:02:39 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-15714 · 6.5 MEDIUM 🌩️ — Libsoup: soupmultipartinputstream: libsoup: out-of-bounds read in soup_multipart_input_stream_read_headers via an oversized multipart boundary string</title>
+      <link>https://vulnogram.org/CVE-2026-15714</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15714</guid>
+      <description>An out-of-bounds read vulnerability was found in libsoup&apos;s multipart processing subsystem. The flaw exists in the soup_multipart_input_stream_read_headers() function inside soup-multipart-input-stream.c, which does not adequately restrict or validate…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 19:50:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15713 · 5.9 MEDIUM 🌩️ — Libsoup: soupcache: libsoup: http/2 frame window exhaustion remote denial of service via memory leak</title>
+      <link>https://vulnogram.org/CVE-2026-15713</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15713</guid>
+      <description>A vulnerability was found in libsoup&apos;s HTTP/2 protocol implementation. The library fails to correctly release memory context blocks under specific stream termination conditions, such as when an HTTP/2 connection encounters window exhaustion or explic…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 19:45:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15711 · 7.5 HIGH 🌩️ — Libsoup: soupwebsocketconnection: libsoup: websocket remote denial of service via oversized control frame protocol violation</title>
+      <link>https://vulnogram.org/CVE-2026-15711</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15711</guid>
+      <description>A vulnerability was found in libsoup&apos;s WebSocket frame parsing implementation. The library fails to validate length rules specified in RFC 6455 §5.5, which mandates that all WebSocket control frames (e.g., PING, PONG, CLOSE) contain a payload of 125…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 19:45:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15709 · 7.5 HIGH 🌩️ — Soupwebsocketextensiondeflate: libsoup: libsoup: websocket permessage-deflate unbounded decompression remote denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-15709</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15709</guid>
+      <description>A flaw was found in libsoup&apos;s WebSocket implementation when using the permessage-deflate extension. The extension&apos;s decompression loop (inflate()) processes data in chunks without enforcing an upper boundary limit on the output buffer size. While lib…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 19:41:37 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15712 · 5.9 MEDIUM 🌩️ — Soupclientmessageiohttp2: libsoup3: libsoup: http/2 goaway frame parsing heap buffer over-read via invalid nul-termination assumption</title>
       <link>https://vulnogram.org/CVE-2026-15712</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15712</guid>
-      <description>A heap buffer over-read vulnerability was discovered in libsoup&apos;s HTTP/2 connection tracking framework. When the library processes an HTTP/2 GOAWAY frame, it improperly handles the &quot;Additional Debug Data&quot; payload by assuming the data stream is a safe…</description>
+      <description>A heap buffer over-read vulnerability was discovered in libsoup&apos;s (versions: libsoup 3.0 to 3.7.0) HTTP/2 connection tracking framework. When the library processes an HTTP/2 GOAWAY frame, it improperly handles the &quot;Additional Debug Data&quot; payload by a…</description>
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 14 Jul 2026 18:11:33 GMT</pubDate>
@@ -399,40 +435,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 30 Jun 2026 12:57:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58011 · 6.5 MEDIUM 🌩️ — Glib: out-of-bounds read in glib/gdatetime.c:g_date_time_get_ymd via invalid gdatetime</title>
-      <link>https://vulnogram.org/CVE-2026-58011</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58011</guid>
-      <description>A flaw was found in GLib. An out-of-bounds read of only 2 bytes can occur in the g_date_time_get_ymd function in the glib/gdatetime.c file when an invalid GDateTime object produced by the g_date_time_add_full function is processed. This flaw can corr…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 30 Jun 2026 12:57:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58010 · 6.5 MEDIUM 🌩️ — Glib: buffer over-read in glib/gvariant-serialiser.c via gvs_tuple_is_normal()</title>
-      <link>https://vulnogram.org/CVE-2026-58010</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58010</guid>
-      <description>A flaw was found in GLib. An off-by-one error can occur in the gvs_tuple_is_normal function in the glib/gvariant-serialiser.c file when doing an alignment padding check because the bounds check uses &gt; instead of &gt;=, causing an out-of-bounds read of o…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 30 Jun 2026 12:57:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12388 · 6.5 MEDIUM — Keycloak-broker: keycloak: privilege escalation to realm administrator via improper authorization in identity provider mapper</title>
-      <link>https://vulnogram.org/CVE-2026-12388</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12388</guid>
-      <description>A flaw was found in the Identity Provider (IdP) mapper component of Keycloak, which is used to manage how user information from external services is mapped to Keycloak users. An administrator with limited permissions to manage identity providers can…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 12:00:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4629 · 6.5 MEDIUM — Keycloak: keycloak: privilege escalation through hardcoded role mapper injection</title>
-      <link>https://vulnogram.org/CVE-2026-4629</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4629</guid>
-      <description>A flaw was found in Keycloak. A highly privileged user with `manage-clients` permission can exploit this vulnerability by injecting a hardcoded role mapper into any client. This action allows the user to bypass existing scope restrictions and inject…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 12:00:28 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,7 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 14 Jul 2026 16:05:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 20:02:39 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-10672 · 8.2 HIGH — Unterminated URI buffer causes out-of-bounds read in LwM2M firmware pull (Package URI)</title>
       <link>https://vulnogram.org/CVE-2026-10672</link>
@@ -101,6 +101,14 @@
       <pubDate>Sat, 11 Jul 2026 17:00:13 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-10659 · 4.7 MEDIUM — NULL pointer dereference in Zephyr Dhara FTL disk driver on flash read error during journal resume</title>
+      <link>https://vulnogram.org/CVE-2026-10659</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10659</guid>
+      <description>The Dhara flash translation layer disk driver (drivers/disk/ftl_dhara.c) implemented the dhara_nand_ callbacks so that, on a flash error, the error code was written unconditionally through the caller-supplied dhara_error_t err pointer (e.g. *err = DH…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 07 Jul 2026 12:58:11 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-10657 · 3.7 LOW — Out-of-bounds read in Zephyr DNS resolver mDNS suffix check (memcmp past string NUL)</title>
       <link>https://vulnogram.org/CVE-2026-10657</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10657</guid>
@@ -184,7 +192,7 @@
       <title>CVE-2026-10647 · 5.3 MEDIUM — Deadlock denial of service in USB CDC-NCM device class on TX enqueue failure</title>
       <link>https://vulnogram.org/CVE-2026-10647</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10647</guid>
-      <description>The USB CDC-NCM device class (subsys/usb/device_next/class/usbd_cdc_ncm.c) ignores the return value of usbd_ep_enqueue() in its ethernet transmit callback cdc_ncm_send(). When the enqueue fails, the function still calls k_sem_take(&amp;data-sync_sem, K_F…</description>
+      <description>The USB CDC-NCM device class (subsys/usb/device_next/class/usbd_cdc_ncm.c) ignores the return value of usbd_ep_enqueue() in its ethernet transmit callback cdc_ncm_send(). When the enqueue fails, the function still calls k_sem_take(&amp;data-&gt;sync_sem, K_…</description>
       <category>Medium</category>
       <pubDate>Mon, 29 Jun 2026 21:39:08 GMT</pubDate>
     </item>
@@ -216,7 +224,7 @@
       <title>CVE-2026-10643 · 8.7 HIGH — Out-of-bounds heap write in Zephyr `recvmsg()` ancillary-data path (`insert_pktinfo` undersizes the control-buffer capacity check)</title>
       <link>https://vulnogram.org/CVE-2026-10643</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10643</guid>
-      <description>Zephyr&apos;s IP socket recvmsg() implementation (subsys/net/lib/sockets/sockets_inet.c, insert_pktinfo()) validated the user-supplied ancillary (msg_control) buffer using only the payload length (msg-msg_controllen &lt; pktinfo_len) before writing a full co…</description>
+      <description>Zephyr&apos;s IP socket recvmsg() implementation (subsys/net/lib/sockets/sockets_inet.c, insert_pktinfo()) validated the user-supplied ancillary (msg_control) buffer using only the payload length (msg-&gt;msg_controllen &lt; pktinfo_len) before writing a full c…</description>
       <category>High</category>
       <pubDate>Sat, 27 Jun 2026 22:59:22 GMT</pubDate>
     </item>
@@ -230,7 +238,7 @@
       <pubDate>Thu, 25 Jun 2026 16:27:17 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10642 · 6.5 MEDIUM — Unbounded TX busy-loop DoS in Zephyr PL011 UART driver under CTS hardware flow control</title>
+      <title>CVE-2026-10642 · 4.6 MEDIUM — Unbounded TX busy-loop DoS in Zephyr PL011 UART driver under CTS hardware flow control</title>
       <link>https://vulnogram.org/CVE-2026-10642</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10642</guid>
       <description>The Zephyr PL011 UART driver (drivers/serial/uart_pl011.c) contains an unbounded software loop in pl011_irq_tx_enable() that repeatedly invokes the interrupt-driven application callback while the TX interrupt mask bit (PL011_IMSC_TXIM) is set, to wor…</description>
@@ -238,26 +246,26 @@
       <pubDate>Wed, 24 Jun 2026 21:32:05 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10658 · 7.1 HIGH — Bluetooth Host ISO RX Missing SDU Header Length Validation in bt_iso_recv() Leads to DoS</title>
+      <title>CVE-2026-10658 · 7.1 HIGH — Out-of-bounds access in Bluetooth ISO receive (`bt_iso_recv`) due to missing SDU-header length validation</title>
       <link>https://vulnogram.org/CVE-2026-10658</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10658</guid>
-      <description>A missing length validation in the Zephyr Bluetooth Host ISO receive path can be triggered by malformed HCI ISO data. In bt_iso_recv() (subsys/bluetooth/host/iso.c), when processing PB=START/SINGLE fragments, the code pulls a TS SDU header (8 bytes,…</description>
+      <description>bt_iso_recv() in subsys/bluetooth/host/iso.c pulled the ISO SDU header (4 bytes) or, when the timestamp flag is set, the timestamped SDU header (8 bytes) from the inbound HCI ISO Data buffer via net_buf_pull_mem() without first checking buf-&gt;len. The…</description>
       <category>High</category>
       <pubDate>Mon, 22 Jun 2026 23:58:47 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10651 · 7.1 HIGH — Bluetooth Classic SDP parser truncation bug in bt_sdp_parse_attribute() leads to reachable assertion and possible out-of-bounds read</title>
+      <title>CVE-2026-10651 · 7.1 HIGH — Out-of-bounds read in Bluetooth Classic SDP attribute parsing (`bt_sdp_parse_attribute`)</title>
       <link>https://vulnogram.org/CVE-2026-10651</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10651</guid>
-      <description>A malformed Bluetooth Classic SDP attribute can trigger a reachable assertion in Zephyr&apos;s SDP parser. In subsys/bluetooth/host/classic/sdp.c, bt_sdp_parse_attribute() accepts an input buffer once it contains the 1-byte attribute type and 2-byte attri…</description>
+      <description>bt_sdp_parse_attribute() in subsys/bluetooth/host/classic/sdp.c validated only that the SDP record buffer held the type-marker byte plus the 2-byte attribute ID (a check of buf-&gt;len &lt; 3) but then read a fourth byte, the data-element descriptor (type)…</description>
       <category>High</category>
       <pubDate>Mon, 22 Jun 2026 23:54:36 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10645 · 4.9 MEDIUM — fs: ext2: Missing structural validation of directory entries can cause out-of-bounds read and zero-progress directory traversal</title>
+      <title>CVE-2026-10645 · 4.9 MEDIUM — Out-of-bounds read in Zephyr ext2 directory entry traversal from a crafted filesystem image</title>
       <link>https://vulnogram.org/CVE-2026-10645</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10645</guid>
-      <description>Zephyr&apos;s ext2 directory-entry parser does not fully validate on-disk directory entry structure before copying the entry name and advancing traversal state. In ext2_fetch_direntry() (subsys/fs/ext2/ext2_diskops.c), the code only checks de_name_len &lt;=…</description>
+      <description>The Zephyr ext2 filesystem driver (subsys/fs/ext2) trusted the on-disk directory entry fields de_rec_len and de_name_len when walking a directory block. ext2_fetch_direntry() guarded only with de_name_len &gt; EXT2_MAX_FILE_NAME, but de_name_len is a ui…</description>
       <category>Medium</category>
       <pubDate>Mon, 22 Jun 2026 23:48:11 GMT</pubDate>
     </item>
@@ -294,7 +302,7 @@
       <pubDate>Tue, 16 Jun 2026 13:16:14 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10637 · 5.9 MEDIUM — Use-after-free of net_pkt in IPv6 MLD send path triggerable by a link-local MLD Query</title>
+      <title>CVE-2026-10637 · 5.9 MEDIUM — Use-after-free of `net_pkt` in IPv6 MLD send path triggerable by a link-local MLD Query</title>
       <link>https://vulnogram.org/CVE-2026-10637</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10637</guid>
       <description>subsys/net/ip/ipv6_mld.c:mld_send() read the packet interface via net_pkt_iface(pkt) after net_send_data(pkt) returned successfully. Per the network stack&apos;s ownership contract (include/zephyr/net/net_core.h, and the explicit warning in subsys/net/ip/…</description>
@@ -302,7 +310,7 @@
       <pubDate>Tue, 16 Jun 2026 13:13:16 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10636 · 3.7 LOW — Use-after-free in Zephyr IPv4 IGMP send path (igmp_send)</title>
+      <title>CVE-2026-10636 · 3.7 LOW — Use-after-free in Zephyr IPv4 IGMP send path (`igmp_send`)</title>
       <link>https://vulnogram.org/CVE-2026-10636</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10636</guid>
       <description>In Zephyr&apos;s IPv4 IGMP implementation, igmp_send() in subsys/net/ip/igmp.c read the network interface back out of the packet via net_pkt_iface(pkt) after the packet had been handed to net_send_data(). On the successful-send path the packet&apos;s last refe…</description>
@@ -318,7 +326,7 @@
       <pubDate>Tue, 16 Jun 2026 05:19:20 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10634 · 4.8 MEDIUM — Use-after-free in Zephyr native TCP net_tcp_foreach() due to dropping tcp_lock during the callback</title>
+      <title>CVE-2026-10634 · 4.8 MEDIUM — Use-after-free in Zephyr native TCP `net_tcp_foreach()` due to dropping `tcp_lock` during the callback</title>
       <link>https://vulnogram.org/CVE-2026-10634</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10634</guid>
       <description>Zephyr&apos;s native TCP stack iterates the global connection list in net_tcp_foreach() (subsys/net/ip/tcp.c) using the SYS_SLIST_FOR_EACH_CONTAINER_SAFE macro, which caches a pointer to the next list node. Prior to this fix the function released tcp_lock…</description>
@@ -405,14 +413,6 @@
       <description>Issues in stm32 USB device driver (drivers/usb/device/usb_dc_stm32.c) can lead to an infinite while loop.</description>
       <category>Medium</category>
       <pubDate>Sat, 14 Mar 2026 21:51:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-0849 · 3.8 LOW — crypto: ATAES132A response length allows stack buffer overflow</title>
-      <link>https://vulnogram.org/CVE-2026-0849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0849</guid>
-      <description>Malformed ATAES132A responses with an oversized length field overflow a 52-byte stack buffer in the Zephyr crypto driver, allowing a compromised device or bus attacker to corrupt kernel memory and potentially hijack execution.</description>
-      <category>Low</category>
-      <pubDate>Sat, 14 Mar 2026 21:05:36 GMT</pubDate>
     </item>
   </channel>
 </rss>
