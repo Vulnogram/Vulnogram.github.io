@@ -11,7 +11,292 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 14 Jul 2026 20:02:39 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 21:44:34 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-45363 · 9.1 CRITICAL 🌩️ — `jwt` (Ruby gem) - empty-key HMAC bypass</title>
+      <link>https://vulnogram.org/CVE-2026-45363</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45363</guid>
+      <description>ruby-jwt is a Ruby implementation of the RFC 7519 OAuth JSON Web Token standard. Prior to 2.10.3 and 3.2.0, JWT.decode(token, &apos;&apos;, true, algorithm: &apos;HS256&apos;) accepts an attacker-forged token because OpenSSL::HMAC.digest(&apos;SHA256&apos;, &apos;&apos;, payload) returns a…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 21:32:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48807 · 7.1 HIGH — Twig: Sandbox `__toString()` policy bypass via `Traversable` in `join` and `replace` filters</title>
+      <link>https://vulnogram.org/CVE-2026-48807</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48807</guid>
+      <description>Twig is a template language for PHP. Prior to 3.27.0, the sandbox __toString() checks do not fully cover Traversable values passed to join and replace filters or operands evaluated by the in and not in operators, allowing contained Stringable objects…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 21:29:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48806 · 7.1 HIGH — Twig: Sandbox `__toString()` policy bypass via dynamic mapping keys</title>
+      <link>https://vulnogram.org/CVE-2026-48806</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48806</guid>
+      <description>Twig is a template language for PHP. Prior to 3.27.0, ArrayExpression does not guard dynamic mapping keys that are coerced to strings, allowing PHP to invoke __toString() on a Stringable object used as a mapping key without calling SandboxExtension::…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 21:28:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48808 · 6 MEDIUM — Twig: Sandbox property allowlist bypass via the `column` filter under `SourcePolicyInterface`</title>
+      <link>https://vulnogram.org/CVE-2026-48808</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48808</guid>
+      <description>Twig is a template language for PHP. Prior to 3.27.0, the column filter passes the active sandbox state as a boolean but does not forward the current Source to SandboxExtension::checkPropertyAllowed(), so SourcePolicyInterface decisions are lost and…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:27:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48805 · 5.3 MEDIUM — Twig: Sandbox state regression in deprecated internal wrappers in `src/Resources/core.php`</title>
+      <link>https://vulnogram.org/CVE-2026-48805</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48805</guid>
+      <description>Twig is a template language for PHP. Prior to 3.27.0, deprecated internal wrappers in src/Resources/core.php do not forward the current sandbox state to CoreExtension::checkArrow(), arraySome(), and arrayEvery(), allowing legacy calls such as twig_ar…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:26:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49981 · 6 MEDIUM — Twig: Sandbox filter, tag and function allow-list bypass when sandbox state changes between renders for a cached `Template`</title>
+      <link>https://vulnogram.org/CVE-2026-49981</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49981</guid>
+      <description>Twig is a template language for PHP. Prior to 3.27.0, the per-template filter, tag, and function allow-list verdict is computed when a Template instance is constructed and can remain cached after sandbox state changes between renders, allowing a late…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:26:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46637 · 5.1 MEDIUM — Twig: HTML-output filters in twig/* extras incorrectly declared `is_safe =&gt; [&apos;all&apos;]`</title>
+      <link>https://vulnogram.org/CVE-2026-46637</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46637</guid>
+      <description>Twig is a template language for PHP. Prior to 3.26.0, several filters in twig/markdown-extra and twig/cssinliner-extra are registered with is_safe =&gt; [all], causing Twig to treat plain text or HTML output as safe in HTML, JavaScript, CSS, URL, and ot…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:25:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46638 · 6 MEDIUM — Twig: `{% sandbox %}{% include %}` skips checkSecurity() on cached templates (incomplete fix for CVE-2024-45411)</title>
+      <link>https://vulnogram.org/CVE-2026-46638</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46638</guid>
+      <description>Twig is a template language for PHP. Prior to 3.26.0, {% sandbox %}{% include %} can include a template that was previously loaded outside the sandbox without re-invoking checkSecurity(), allowing the cached template to use tags, filters, and functio…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:23:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46640 · 8.7 HIGH — Twig: Arbitrary PHP code execution via `_self.(&lt;string&gt;)` macro-reference compilation</title>
+      <link>https://vulnogram.org/CVE-2026-46640</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46640</guid>
+      <description>Twig is a template language for PHP. From 3.15.0 until 3.26.0, _self.(&lt;string&gt;) and import-alias dynamic attribute syntax can concatenate an attacker-controlled string into a MacroReferenceExpression name without identifier validation, causing raw PH…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 21:22:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46629 · 5.3 MEDIUM — Twig: Unbounded formatter memoisation in twig/intl-extra keyed on template-controlled arguments</title>
+      <link>https://vulnogram.org/CVE-2026-46629</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46629</guid>
+      <description>Twig is a template language for PHP. Prior to 3.26.0, twig/intl-extra memoises IntlDateFormatter and NumberFormatter instances in arrays keyed by template-controlled filter arguments such as locale, pattern, and attrs, allowing a template to allocate…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:22:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47730 · 5.1 MEDIUM — Twig: XSS in profiler HtmlDumper via unescaped template and profile names</title>
+      <link>https://vulnogram.org/CVE-2026-47730</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47730</guid>
+      <description>Twig is a template language for PHP. From 3.0.0 until 3.26.0, Twig\Profiler\Dumper\HtmlDumper writes Profile::getTemplate() and Profile::getName() into HTML output without escaping, allowing attacker-controlled template or profile names to inject arb…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:21:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46628 · 5.1 MEDIUM — Twig: The `spaceless` filter implicitly marks its output as safe</title>
+      <link>https://vulnogram.org/CVE-2026-46628</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46628</guid>
+      <description>Twig is a template language for PHP. Prior to 3.26.0, the deprecated spaceless filter is registered as safe for HTML, causing Twig autoescaping to emit attacker-controlled markup unescaped when spaceless is applied to untrusted input. This issue is f…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:19:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46634 · 7.7 HIGH — Twig: `template_from_string()` escapes a SourcePolicy-driven sandbox via synthesized template name</title>
+      <link>https://vulnogram.org/CVE-2026-46634</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46634</guid>
+      <description>Twig is a template language for PHP. From 3.9.0 until 3.26.0, template_from_string() compiles an inner template under a synthesized __string_template__&lt;hash&gt; name that can fall outside a SourcePolicyInterface sandbox decision, allowing a sandboxed te…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 21:19:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46627 · 7.1 HIGH — Twig: Sandbox resource exhaustion via unbounded `for` / `range()`</title>
+      <link>https://vulnogram.org/CVE-2026-46627</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46627</guid>
+      <description>Twig is a template language for PHP. Prior to 3.26.0, the Twig sandbox does not prevent a template from consuming CPU, memory, or wall-clock time, even under the strictest allow-list, allowing untrusted templates to cause resource exhaustion. This is…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 21:15:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46633 · 8.7 HIGH — Twig: PHP code injection via `{% use %}` template name</title>
+      <link>https://vulnogram.org/CVE-2026-46633</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46633</guid>
+      <description>Twig is a template language for PHP. Prior to 3.26.0, Compiler::string() does not escape single quotes when a template name from a {% use %} tag is placed inside a PHP single-quoted string literal, allowing a crafted template name to terminate the st…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 21:14:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46639 · 7.1 HIGH — Twig: Sandbox property and method bypass via object-destructuring assignment</title>
+      <link>https://vulnogram.org/CVE-2026-46639</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46639</guid>
+      <description>Twig is a template language for PHP. From 3.24.0 until 3.26.0, object-destructuring assignment compiles CoreExtension::getAttribute() with the sandbox argument hardcoded to false, disabling property and method policy checks and allowing an attacker w…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 21:13:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46635 · 5.3 MEDIUM — Twig: Sandbox property allowlist bypass via the `column` filter (array_column on objects)</title>
+      <link>https://vulnogram.org/CVE-2026-46635</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46635</guid>
+      <description>Twig is a template language for PHP. Prior to 3.26.0, the column filter passes object arrays to PHP array_column(), which reads public and magic properties without reaching CoreExtension::getAttribute() or SandboxExtension::checkPropertyAllowed(), al…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 21:12:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47732 · 7.1 HIGH — Twig Sandbox: multiple `__toString()` policy bypasses via unguarded string coercion points</title>
+      <link>https://vulnogram.org/CVE-2026-47732</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47732</guid>
+      <description>Twig is a template language for PHP. Prior to 3.26.0, several Twig language constructs trigger PHP string coercion on a Stringable operand without consulting SecurityPolicy::checkMethodAllowed(), allowing a sandboxed template author to invoke __toStr…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 21:12:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48125 · 5.3 MEDIUM 🌩️ — UAParser.js: Unbounded `Sec-CH-UA-Model` parsing can trigger ReDoS in `withClientHints()`</title>
+      <link>https://vulnogram.org/CVE-2026-48125</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48125</guid>
+      <description>UAParser.js is a JavaScript library to detect browsers, operating systems, CPUs, and devices from user-agent data. From 2.0.1 until 2.0.10, a regular expression denial-of-service vulnerability exists when using the Client Hints API. By sending a craf…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:54:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49476 · 7.5 HIGH 🌩️ — Soup Sieve: Memory Exhaustion via Large Comma-Separated Selector Lists in soupsieve</title>
+      <link>https://vulnogram.org/CVE-2026-49476</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49476</guid>
+      <description>Soup Sieve is a CSS selector library designed to be used with Beautiful Soup 4. Prior to 2.8.4, the CSS selector parser in soupsieve allocates unbounded memory when compiling large comma-separated selector lists, allowing an attacker who can supply a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:53:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49477 · 7.5 HIGH 🌩️ — Soup Sieve: Regular Expression Denial of Service (ReDoS) in soupsieve Selector Parser</title>
+      <link>https://vulnogram.org/CVE-2026-49477</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49477</guid>
+      <description>Soup Sieve is a CSS selector library designed to be used with Beautiful Soup 4. Prior to 2.8.4, the CSS selector parser in soupsieve contains a regular expression vulnerable to catastrophic backtracking when processing an attribute selector with an u…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:51:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-46644 · 6.9 MEDIUM 🌩️ — symfony/polyfill-intl-idn accepts xn-- labels whose Punycode payload decodes to ASCII-only: insecure equivalence</title>
+      <link>https://vulnogram.org/CVE-2026-46644</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46644</guid>
+      <description>Symfony Polyfill backports PHP features and provides compatibility layers for extensions and functions. From 1.17.1 until 1.38.1, symfony/polyfill-intl-idn accepts xn-- labels whose Punycode payload is empty or decodes to ASCII-only code points becau…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:48:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49855 · 7.5 HIGH 🌩️ — tornado AsyncHTTPClient accumulates decompressed chunks without size limit (gzip bomb)</title>
+      <link>https://vulnogram.org/CVE-2026-49855</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49855</guid>
+      <description>Tornado is a Python web framework and asynchronous networking library. Prior to 6.5.6, Tornado gzip decompression routines processed limited-size chunks but did not enforce an overall limit on accumulated decompressed chunks, allowing a malicious ser…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:45:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49854 · 5.3 MEDIUM 🌩️ — Tornado: Out-of-bounds memory access in C extension</title>
+      <link>https://vulnogram.org/CVE-2026-49854</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49854</guid>
+      <description>Tornado is a Python web framework and asynchronous networking library. Prior to 6.5.6, the optional native extension tornado.speedups implemented websocket_mask without validating that the mask argument is exactly four bytes, allowing the C function…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:43:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49853 · 7.7 HIGH — Tornado: Authorization header forwarded across cross-origin redirects in SimpleAsyncHTTPClient</title>
+      <link>https://vulnogram.org/CVE-2026-49853</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49853</guid>
+      <description>Tornado is a Python web framework and asynchronous networking library. Prior to 6.5.6, SimpleAsyncHTTPClient shallow-copied redirected requests and removed only the Host header, leaving Authorization, auth_username, auth_password, and auth_mode in pl…</description>
+      <category>High</category>
+      <pubDate>Tue, 14 Jul 2026 20:41:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48816 · 6.5 MEDIUM — sigstore-js: Insufficient Verification of Data Authenticity</title>
+      <link>https://vulnogram.org/CVE-2026-48816</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48816</guid>
+      <description>sigstore-js provides JavaScript libraries for interacting with Sigstore services. Prior to 3.1.1, @sigstore/verify derives a transparency-log timestamp from tlogEntries[].integratedTime for bundle v0.2 inclusionProof-only entries even though the incl…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 20:39:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48758 · 5.4 MEDIUM — sigstore-js: DSSE payloadType type-binding failure</title>
+      <link>https://vulnogram.org/CVE-2026-48758</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48758</guid>
+      <description>sigstore-js provides JavaScript libraries for interacting with Sigstore services. Prior to 3.2.1, the preAuthEncoding function in @sigstore/core uses Node.js ascii encoding when converting the PAE string to bytes, allowing payloadType to be mutated a…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 20:36:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48815 · 7.5 HIGH 🌩️ — sigstore-js: `certificateOIDs` verification constraints are silently dropped and never enforced</title>
+      <link>https://vulnogram.org/CVE-2026-48815</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48815</guid>
+      <description>sigstore-js provides JavaScript libraries for interacting with Sigstore services. Prior to 4.1.1, the documented certificateOIDs option in sigstore.verify() is accepted by the public API but discarded before verification, so required certificate exte…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:27:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53486 · 9.1 CRITICAL 🌩️ — decompress: Archive extraction can create files and links outside the target directory</title>
+      <link>https://vulnogram.org/CVE-2026-53486</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53486</guid>
+      <description>The decompress package for Node.js extracts archives. Prior to 10.2.1 and 11.1.3, archive extraction can create files and links outside the target directory. When extracting an archive to a directory, a crafted archive can read or write files outside…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:07:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48801 · 8.7 HIGH 🌩️ — linkify-it: Quadratic algorithmic complexity in LinkifyIt#match scan loop</title>
+      <link>https://vulnogram.org/CVE-2026-48801</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48801</guid>
+      <description>linkify-it is a links recognition library with full Unicode support. Prior to 5.0.1, LinkifyIt.prototype.match, the package&apos;s primary public API, has O(N²) algorithmic complexity for inputs containing many fuzzy links or emails because the JavaScript…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:03:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49978 · 6.3 MEDIUM 🌩️ — DOMPurify IN_PLACE Sanitization Bypass via Attached Shadow Root Inside &lt;template&gt;.content</title>
+      <link>https://vulnogram.org/CVE-2026-49978</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49978</guid>
+      <description>DOMPurify is a DOM-only cross-site scripting sanitizer for HTML, MathML, and SVG. Prior to 3.4.7, DOMPurify IN_PLACE sanitization could skip shadow contents attached to an element inside &lt;template&gt;.content, allowing attacker-controlled markup such as…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:02:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49459 · 6.1 MEDIUM 🌩️ — DOMPurify: IN_PLACE mode preserves attributes of a clobbered root element, allowing XSS via attacker-controlled root DOM</title>
+      <link>https://vulnogram.org/CVE-2026-49459</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49459</guid>
+      <description>DOMPurify is a DOM-only cross-site scripting sanitizer for HTML, MathML, and SVG. Prior to 3.4.6, DOMPurify.sanitize(root, { IN_PLACE: true }) could preserve event-handler attributes on an attacker-controlled &lt;form&gt; root when a descendant name clobbe…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 20:01:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49458 · 6.1 MEDIUM 🌩️ — DOMPurify: Cross-realm IN_PLACE sanitization leaves executable markup intact via realm-bound `instanceof` checks</title>
+      <link>https://vulnogram.org/CVE-2026-49458</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49458</guid>
+      <description>DOMPurify is a DOM-only cross-site scripting sanitizer for HTML, MathML, and SVG. Prior to 3.4.6, DOMPurify.sanitize(node, { IN_PLACE: true }) accepted same-origin foreign-realm DOM nodes while follow-on checks used parent-realm constructors, causing…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 14 Jul 2026 19:58:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59889 · 6.5 MEDIUM — jackson-databind: @JsonView ypassed for @JsonUnwrapped container properties on deserialization</title>
+      <link>https://vulnogram.org/CVE-2026-59889</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59889</guid>
+      <description>jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.18.0 until 2.18.9, 2.21.5, 2.22.1, 3.1.5, and 3.2.1, UnwrappedPropertyHandler.processUnwrapped() replays buffered JSON for a @J…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 14 Jul 2026 19:57:48 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-47423 · 8.2 HIGH 🌩️ — DOMPurify XSS via `selectedcontent` re-clone</title>
       <link>https://vulnogram.org/CVE-2026-47423</link>
@@ -155,311 +440,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 14 Jul 2026 19:02:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47212 · 6.9 MEDIUM 🌩️ — Symfony: Twilio Notifier Webhook Parser Never Verifies the X-Twilio-Signature HMAC: Unauthenticated Webhook Event Injection</title>
-      <link>https://vulnogram.org/CVE-2026-47212</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47212</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 6.4.40, 7.4.12, and 8.0.12, TwilioRequestParser::doParse() received the configured webhook secret but ignored the X-Twilio-Signature HMAC heade…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:00:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45071 · 8.7 HIGH 🌩️ — Symfony: XXE (Local File Disclosure) in DomCrawler::addXmlContent() via validateOnParse = true</title>
-      <link>https://vulnogram.org/CVE-2026-45071</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45071</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, Crawler::addXmlContent() set DOMDocument::$validateOnParse = true before loadXML(), re-enabling external en…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:58:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45755 · 6.9 MEDIUM 🌩️ — Symfony: Mailtrap Mailer Webhook Parser Never Verifies the X-Mt-Signature HMAC — Unauthenticated Webhook Event Injection</title>
-      <link>https://vulnogram.org/CVE-2026-45755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45755</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 7.4.12 and 8.0.12, MailtrapRequestParser::doParse() received the configured webhook secret but ignored the X-Mt-Signature HMAC header, allowing…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:56:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45754 · 6.9 MEDIUM 🌩️ — Symfony: Mailjet Mailer Webhook Parser Never Verifies the Configured Secret — Unauthenticated Webhook Event Injection</title>
-      <link>https://vulnogram.org/CVE-2026-45754</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45754</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 6.4.40, 7.4.12, and 8.0.12, the Mailjet mailer bridge and LOX24 notifier bridge webhook parsers received configured webhook secrets but did not…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:54:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45305 · 8.7 HIGH 🌩️ — Symfony: YAML Parser ReDoS via Catastrophic Backtracking in Parser::cleanup() Regex</title>
-      <link>https://vulnogram.org/CVE-2026-45305</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45305</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, Symfony\Component\Yaml\Parser::cleanup() used regular expressions with overlapping quantifiers for YAML dir…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:50:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45304 · 8.7 HIGH 🌩️ — Symfony: YAML Parser Exponential Memory Allocation via Recursive Collection-Alias Expansion (&quot;Billion Laughs&quot;)</title>
-      <link>https://vulnogram.org/CVE-2026-45304</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45304</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, Symfony\Component\Yaml\Parser resolved YAML collection aliases recursively, allowing a small untrusted YAML…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:48:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45069 · 8.8 HIGH 🌩️ — Symfony: OidcTokenHandler Accepts JWTs Missing aud/iss/exp Claims</title>
-      <link>https://vulnogram.org/CVE-2026-45069</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45069</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 6.4.40, 7.4.12, and 8.0.12, OidcTokenHandler::verifyClaims() registered audience (aud), issuer (iss), and expiry (exp) checkers but did not pas…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:46:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45133 · 8.2 HIGH 🌩️ — Symfony: [Yaml] Harden the parser when handling untrusted input</title>
-      <link>https://vulnogram.org/CVE-2026-45133</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45133</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, when the parser is exposed to attacker-controlled input, deeply nested mappings or sequences cause both the…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:45:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45075 · 8.3 HIGH 🌩️ — Symfony: HEAD Request Bypasses methods: [&apos;GET&apos;] Filter in #[IsGranted] / #[IsSignatureValid] / #[IsCsrfTokenValid]</title>
-      <link>https://vulnogram.org/CVE-2026-45075</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45075</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 7.4.12 and 8.0.12, method-scoped #[IsGranted], #[IsSignatureValid], and #[IsCsrfTokenValid] attributes can be configured for GET only, but Symf…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:40:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47767 · 8.3 HIGH 🌩️ — Symfony: SymfonyRuntime CVE-2024-50340 Patch Bypass: Web Requests Can Still Set APP_ENV/APP_DEBUG via parse_str/SAPI Argv Mismatch</title>
-      <link>https://vulnogram.org/CVE-2026-47767</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47767</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. From 5.4.46 until 5.4.52, 6.4.40, 7.4.12, and 8.0.12, the CVE-2024-50340 fix gated runtime argv parsing on empty($_GET), but parse_str() and the web SAP…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:38:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45064 · 2.3 LOW 🌩️ — Symfony: HtmlSanitizer URL Attributes Pass Through BiDi Override Characters → Visual href Spoofing</title>
-      <link>https://vulnogram.org/CVE-2026-45064</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45064</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. From 6.1.0-BETA1 until 6.4.40, 7.4.12, and 8.0.12, UrlSanitizer::parse() passes Unicode explicit-direction BiDi formatting characters through into sanit…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:35:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45063 · 9.1 CRITICAL 🌩️ — Symfony: Identity Spoofing via Unanchored DN Regex in X509Authenticator</title>
-      <link>https://vulnogram.org/CVE-2026-45063</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45063</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, X509Authenticator extracts the user identifier from $_SERVER[&apos;SSL_CLIENT_S_DN&apos;] with an unanchored regex th…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:28:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45070 · 6.3 MEDIUM 🌩️ — Symfony: Email Header Injection via Non-Token Characters in Mime Parameter Names</title>
-      <link>https://vulnogram.org/CVE-2026-45070</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45070</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, Symfony\Component\Mime\Header\ParameterizedHeader validates and encodes parameter values but emits paramete…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:25:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45073 · 6.3 MEDIUM 🌩️ — Symfony: SQL Injection in PdoAdapter::doClear() via Unsanitized $prefix</title>
-      <link>https://vulnogram.org/CVE-2026-45073</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45073</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, PdoAdapter::doClear() builds a DELETE statement using a namespace derived from the caller-supplied $prefix…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:23:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45753 · 2.1 LOW 🌩️ — Symfony: HtmlSanitizer UrlAttributeSanitizer Omits action/formaction/poster/cite — javascript: URI Survives Sanitization (XSS)</title>
-      <link>https://vulnogram.org/CVE-2026-45753</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45753</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. From 6.1.0-BETA1 until 6.4.40, 7.4.12, and 8.0.12, UrlAttributeSanitizer::getSupportedAttributes() omits URL-valued attributes including action, formact…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 18:21:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45072 · 2 LOW — Symfony: Stored XSS in WebProfiler CodeExtension::fileExcerpt() — Unescaped Non-PHP File Rendering</title>
-      <link>https://vulnogram.org/CVE-2026-45072</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45072</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. From 6.4.24 until 6.4.40, 7.4.12, and 8.0.12, the development profiler file_excerpt Twig filter escapes PHP files through highlight_string() but interpo…</description>
-      <category>Low</category>
-      <pubDate>Tue, 14 Jul 2026 18:11:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45756 · 8.2 HIGH 🌩️ — Symfony: JsonPath Evaluates Attacker-Controlled Regular Expressions in match()/search() Without Limits — ReDoS</title>
-      <link>https://vulnogram.org/CVE-2026-45756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45756</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. From 7.3.0-BETA1 until 7.4.12 and 8.0.12, the JsonPath component compiles attacker-controlled match() and search() filter patterns directly into preg_ma…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 17:57:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45066 · 2.3 LOW 🌩️ — Symfony: HtmlSanitizer allowLinkHosts() / allowMediaHosts() Bypass via URL-Parser Differentials and &lt;area&gt; Misclassification</title>
-      <link>https://vulnogram.org/CVE-2026-45066</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45066</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. From 6.1.0-BETA1 until 6.4.40, 7.4.12, and 8.0.12, HtmlSanitizer URL sanitization can allow off-allowlist URLs through allowLinkHosts() or allowMediaHos…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 17:53:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45074 · 7.6 HIGH 🌩️ — Symfony: Cas2Handler Derives CAS service URL from Client Host Header → Cross-Service Ticket Replay</title>
-      <link>https://vulnogram.org/CVE-2026-45074</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45074</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. From 7.1.0 until 7.4.12 and 8.0.12, Cas2Handler builds the CAS service parameter from Request::getSchemeAndHttpHost(), which reflects an attacker-contro…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 17:49:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45077 · 8.3 HIGH 🌩️ — Symfony: Unauthenticated PHP Object Deserialization in MonologBridge server:log Listener</title>
-      <link>https://vulnogram.org/CVE-2026-45077</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45077</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, the server:log listener (Symfony\Bridge\Monolog\Command\ServerLogCommand) binds to 0.0.0.0:9911 by default…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 17:46:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45065 · 2.3 LOW 🌩️ — Symfony: UrlGenerator Route-Requirement Bypass via Unanchored Regex Alternation → Off-Site //host URL Injection</title>
-      <link>https://vulnogram.org/CVE-2026-45065</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45065</guid>
-      <description>Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Prior to 5.4.52, 6.4.40, 7.4.12, and 8.0.12, UrlGenerator validates route parameters against a pattern built as ^ plus the raw requirement plus $; with…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 17:43:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45067 · 6.3 MEDIUM 🌩️ — Symfony: Email Header / SMTP Command Injection via CRLF in Symfony\Component\Mime\Address</title>
-      <link>https://vulnogram.org/CVE-2026-45067</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45067</guid>
-      <description>### Description `Symfony\Component\Mime\Address` is the value-object every Symfony Mailer address (to/cc/bcc/from/reply-to) flows through; its constructor is documented as validating the address and throwing on invalid input, so developers treat it a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 17:41:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59891 · 9.6 CRITICAL 🌩️ — Credential confusion in  @sigstore/oci  can leak registry credentials to an attacker-controlled registry</title>
-      <link>https://vulnogram.org/CVE-2026-59891</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59891</guid>
-      <description>sigstore-js provides JavaScript libraries for interacting with Sigstore services. Prior to 0.7.1, getRegistryCredentials() reads credentials from the Docker config file and selects an entry by checking whether any configured auth key contains the tar…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:54:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59888 · 6.5 MEDIUM 🌩️ — jackson-databind: @JsonIgnore on a Record property is bypassed with a PropertyNamingStrategy</title>
-      <link>https://vulnogram.org/CVE-2026-59888</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59888</guid>
-      <description>jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.15.0 until 2.18.8, 2.21.4, and 3.1.4, Java Records using a PropertyNamingStrategy can bypass @JsonIgnore because POJOProperties…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:44:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59884 · 7.5 HIGH 🌩️ — pyasn1 BER/CER/DER decoder denial of service via unbounded long-form tag IDs</title>
-      <link>https://vulnogram.org/CVE-2026-59884</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59884</guid>
-      <description>pyasn1 is a generic ASN.1 library for Python. Prior to 0.6.4, the BER decoder shared by the CER and DER codecs parses long-form tags by accumulating continuation octets without an upper bound on the tag ID size, allowing a crafted input to force cons…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:41:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59885 · 7.5 HIGH 🌩️ — pyasn1: Quadratic complexity in OBJECT IDENTIFIER and RELATIVE-OID processing allows denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-59885</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59885</guid>
-      <description>pyasn1 is a generic ASN.1 library for Python. Prior to 0.6.4, the BER, CER, and DER decoders process OBJECT IDENTIFIER and RELATIVE-OID values in quadratic time relative to the number of arcs, so a small crafted payload containing an OID with many ar…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:40:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59886 · 7.5 HIGH 🌩️ — pyasn1: Uncontrolled resource consumption when converting decoded REAL values</title>
-      <link>https://vulnogram.org/CVE-2026-59886</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59886</guid>
-      <description>pyasn1 is a generic ASN.1 library for Python. Prior to 0.6.4, the univ.Real type converted its mantissa, base, and exponent value to a Python float using exact big-integer exponentiation. A BER, CER, or DER encoded REAL value only a few bytes long ca…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:38:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54058 · 8.3 HIGH 🌩️ — Pillow: Out-of-bounds read via attacker-controlled row stride on Pillow&apos;s mmap path (McIdas AREA files)</title>
-      <link>https://vulnogram.org/CVE-2026-54058</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54058</guid>
-      <description>Pillow is a Python imaging library. Prior to 12.3.0, when Pillow loads an uncompressed McIdas AREA image from a filename through the mmap raw codec path, attacker-controlled header words can set a row stride smaller than the natural row width, causin…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:27:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59197 · 8.2 HIGH 🌩️ — Pillow: Heap out-of-bounds write in Pillow `ImageFilter.RankFilter` via integer overflow in `ImagingExpand`</title>
-      <link>https://vulnogram.org/CVE-2026-59197</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59197</guid>
-      <description>Pillow is a Python imaging library. Prior to 12.3.0, Pillow&apos;s public rank-filter API can trigger a native heap out-of-bounds write when given a very large odd filter size because ImageFilter.RankFilter.filter() calls image.expand(size // 2, size // 2…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:25:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59200 · 7.5 HIGH 🌩️ — Pillow: Decompression Bomb DoS via PdfParser.PdfStream.decode()</title>
-      <link>https://vulnogram.org/CVE-2026-59200</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59200</guid>
-      <description>Pillow is a Python imaging library. From 5.1.0 until 12.3.0, PdfParser.PdfStream.decode() in PIL/PdfParser.py calls zlib.decompress() with bufsize set to the PDF stream Length field without bounding the decompressed output size, allowing a crafted Fl…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:09:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59198 · 6.5 MEDIUM 🌩️ — Pillow TGA RLE encoder can serialize up to ~57 KB of adjacent heap data into generated images</title>
-      <link>https://vulnogram.org/CVE-2026-59198</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59198</guid>
-      <description>Pillow is a Python imaging library. From 5.2.0 until 12.3.0, Pillow&apos;s TGA RLE encoder reads past its packed row buffer when saving a mode 1 image with TGA RLE compression, allowing adjacent process heap bytes to be copied into the generated TGA file.…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 16:07:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59205 · 7.5 HIGH 🌩️ — Pillow: Controlled heap out-of-bounds write in `ImageCmsTransform.apply()` via output mode mismatch</title>
-      <link>https://vulnogram.org/CVE-2026-59205</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59205</guid>
-      <description>Pillow is a Python imaging library. Prior to 12.3.0, Pillow&apos;s ImageCms.ImageCmsTransform.apply(im, imOut) API can trigger controlled native heap corruption when the caller supplies an output image whose mode does not match the transform&apos;s declared ou…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 15:48:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59203 · 5.3 MEDIUM 🌩️ — Pillow EpsImagePlugin negative %%BeginBinary byte count causes infinite loop denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-59203</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59203</guid>
-      <description>Pillow is a Python imaging library. From 12.0.0 through 12.2.0, Pillow&apos;s EPS parser in PIL/EpsImagePlugin.py accepts a negative byte count in the %%BeginBinary directive, allowing a crafted EPS file to cause Image.open() to seek backwards to the same…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 15:43:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59199 · 7.5 HIGH 🌩️ — Pillow: Heap out-of-bounds write `Image.paste()` / `Image.crop()` via signed coordinate overflow</title>
-      <link>https://vulnogram.org/CVE-2026-59199</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59199</guid>
-      <description>Pillow is a Python imaging library. Prior to 12.3.0, Pillow public image coordinate APIs can trigger a native heap out-of-bounds write when given coordinates near the signed 32-bit integer limits in Image.paste(), Image.crop(), or Image.alpha_composi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 15:42:15 GMT</pubDate>
     </item>
   </channel>
 </rss>
