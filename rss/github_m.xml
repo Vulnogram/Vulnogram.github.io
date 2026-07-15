@@ -11,7 +11,117 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 15 Jul 2026 13:00:32 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 15:14:44 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-54560 · 7.6 HIGH — Cloudreve: OAuth access tokens bypass scope enforcement due to missing client_id claim</title>
+      <link>https://vulnogram.org/CVE-2026-54560</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54560</guid>
+      <description>Cloudreve is a self-hosted file management and sharing system. From 4.12.0 until 4.16.1, Cloudreve&apos;s OAuth access tokens are issued without the OAuth client_id claim, so the JWT verifier does not load token scopes into request context and RequiredSco…</description>
+      <category>High</category>
+      <pubDate>Wed, 15 Jul 2026 14:40:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54563 · 7.1 HIGH — Cloudreve: Path Traversal / Broken Access Control in Cloudreve WebDAV (`/dav`) — scoped DAV credential escapes its configured account root</title>
+      <link>https://vulnogram.org/CVE-2026-54563</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54563</guid>
+      <description>Cloudreve is a self-hosted file management and sharing system. Prior to 4.16.1, a Cloudreve WebDAV account rooted at a configured folder can send paths such as /dav/%2e%2e/outside.txt because stripPrefix in pkg/webdav/webdav.go joins the decoded requ…</description>
+      <category>High</category>
+      <pubDate>Wed, 15 Jul 2026 14:38:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54562 · 6.5 MEDIUM — Cloudreve: Non-admin remote download users can SSRF loopback/internal services and read imported responses</title>
+      <link>https://vulnogram.org/CVE-2026-54562</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54562</guid>
+      <description>Cloudreve is a self-hosted file management and sharing system. Prior to 4.16.1, Cloudreve&apos;s remote download workflow accepts user-supplied URLs at POST /api/v4/workflow/download and passes them to the configured downloader without blocking loopback,…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 15 Jul 2026 14:37:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-33213 · 6.1 MEDIUM 🌩️ — Redash: Open redirect vulnerability in post-login redirect handling</title>
+      <link>https://vulnogram.org/CVE-2026-33213</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33213</guid>
+      <description>Redash is a package for data visualization and sharing. From 5.0.2 to 26.3.0, the get_next_path() function in Redash&apos;s authentication module stripped the scheme and netloc from user-supplied next parameters but did not normalize multiple leading slas…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 15 Jul 2026 14:36:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61646 · 6.3 MEDIUM — FastGPT: Shared axios SSRF guard validates only the initial URL before following redirects</title>
+      <link>https://vulnogram.org/CVE-2026-61646</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61646</guid>
+      <description>FastGPT is a knowledge-based AI application platform. Prior to 4.15.0-beta5, FastGPT&apos;s shared SSRF guard validates only the initial request URL before handing the request to axios, and axios follows redirects by default. An authenticated workflow use…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 15 Jul 2026 14:32:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61644 · 7.7 HIGH — FastGPT: /api/core/chat/record/getCollectionQuote can disclose cross-tenant dataset text due to an unbound initialId lookup</title>
+      <link>https://vulnogram.org/CVE-2026-61644</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61644</guid>
+      <description>FastGPT is a knowledge-based AI application platform. From 4.14.17 until 4.15.0-beta5, the POST /api/core/chat/record/getCollectionQuote endpoint authenticates the caller&apos;s chat and collection context, but the initialId center-node lookup is not boun…</description>
+      <category>High</category>
+      <pubDate>Wed, 15 Jul 2026 14:30:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61684 · 8.8 HIGH 🌩️ — FastGPT: Unauthenticated cross-tenant data access via forgeable plugin-invoke JWT (default INVOKE_TOKEN_SECRET=&apos;token&apos;)</title>
+      <link>https://vulnogram.org/CVE-2026-61684</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61684</guid>
+      <description>FastGPT is a knowledge-based AI application platform. In 4.15.0-beta4, FastGPT plugin invoke reverse-call endpoints under /api/invoke/* authenticate only by verifying a JWT signed with INVOKE_TOKEN_SECRET, which defaults to the constant string token…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 15 Jul 2026 14:28:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62294 · 5.1 MEDIUM — Flameshot: OCTOU symlink attack via predictable /tmp path in Flameshot &quot;Open With&quot;</title>
+      <link>https://vulnogram.org/CVE-2026-62294</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62294</guid>
+      <description>Flameshot is powerful yet simple to use screenshot software. Prior to 14.0.0, the Open With feature wrote screenshots to a predictable temporary path and followed symlinks, creating a time-of-check to time-of-use race that allowed a local unprivilege…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 15 Jul 2026 14:20:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61613 · 7.7 HIGH 🌩️ — Cursor: Cloud Agent Browser Sandbox Escape</title>
+      <link>https://vulnogram.org/CVE-2026-61613</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61613</guid>
+      <description>Cursor is a code editor built for programming with AI. Prior to the Cloud Agent fix on 03/31/2026, browser-enabled Cursor Cloud Agent sessions allowed attacker-controlled web content to connect from inside the agent container to an unauthenticated lo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 15 Jul 2026 14:18:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61836 · 8.6 HIGH 🌩️ — Directus: Authorization-dependent response served from unsegmented cache key</title>
+      <link>https://vulnogram.org/CVE-2026-61836</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61836</guid>
+      <description>Directus is a real-time API and App dashboard for managing SQL database content. Prior to 12.0.0, when response caching is enabled, the cache-key derivation in api/src/utils/get-cache-key.ts includes version, path, query, and accountability.user but…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 15 Jul 2026 14:17:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61835 · 7.7 HIGH — Directus: SSRF Protection Bypass via 0.0.0.0 in File Import</title>
+      <link>https://vulnogram.org/CVE-2026-61835</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61835</guid>
+      <description>Directus is a real-time API and App dashboard for managing SQL database content. Prior to 12.0.0, the SSRF protection on Directus&apos;s file-import-from-URL feature can be bypassed using the address 0.0.0.0 because api/src/request/is-denied-ip.ts treats…</description>
+      <category>High</category>
+      <pubDate>Wed, 15 Jul 2026 14:16:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61740 · 9.3 CRITICAL 🌩️ — LightRAG: Authentication bypass: hardcoded DEFAULT_TOKEN_SECRET and public /auth-status defeat LIGHTRAG_API_KEY protection</title>
+      <link>https://vulnogram.org/CVE-2026-61740</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61740</guid>
+      <description>LightRAG provides simple and fast retrieval-augmented generation. Prior to 1.5.4, when LightRAG is deployed with LIGHTRAG_API_KEY set but AUTH_ACCOUNTS unset, X-API-Key protection can be bypassed because lightrag/api/auth.py falls back to a hardcoded…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 15 Jul 2026 14:14:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61736 · 9.3 CRITICAL 🌩️ — LightRAG: CORS Wildcard + Credentials Enables Any-Origin Credentialed Requests</title>
+      <link>https://vulnogram.org/CVE-2026-61736</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61736</guid>
+      <description>LightRAG provides simple and fast retrieval-augmented generation. Prior to 1.5.4, the server defaults to CORS_ORIGINS=* combined with allow_credentials=True in lightrag/api/lightrag_server.py, causing Starlette CORSMiddleware to effectively whitelist…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 15 Jul 2026 14:12:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-54684 · 7 HIGH — jadx: XAPK archive entries with absolute paths can plant drop-in plugins and achieve code execution on the next jadx run</title>
       <link>https://vulnogram.org/CVE-2026-54684</link>
@@ -318,122 +428,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 14 Jul 2026 20:03:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49978 · 6.3 MEDIUM 🌩️ — DOMPurify IN_PLACE Sanitization Bypass via Attached Shadow Root Inside &lt;template&gt;.content</title>
-      <link>https://vulnogram.org/CVE-2026-49978</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49978</guid>
-      <description>DOMPurify is a DOM-only cross-site scripting sanitizer for HTML, MathML, and SVG. Prior to 3.4.7, DOMPurify IN_PLACE sanitization could skip shadow contents attached to an element inside &lt;template&gt;.content, allowing attacker-controlled markup such as…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 20:02:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49459 · 6.1 MEDIUM 🌩️ — DOMPurify: IN_PLACE mode preserves attributes of a clobbered root element, allowing XSS via attacker-controlled root DOM</title>
-      <link>https://vulnogram.org/CVE-2026-49459</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49459</guid>
-      <description>DOMPurify is a DOM-only cross-site scripting sanitizer for HTML, MathML, and SVG. Prior to 3.4.6, DOMPurify.sanitize(root, { IN_PLACE: true }) could preserve event-handler attributes on an attacker-controlled &lt;form&gt; root when a descendant name clobbe…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 20:01:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49458 · 6.1 MEDIUM 🌩️ — DOMPurify: Cross-realm IN_PLACE sanitization leaves executable markup intact via realm-bound `instanceof` checks</title>
-      <link>https://vulnogram.org/CVE-2026-49458</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49458</guid>
-      <description>DOMPurify is a DOM-only cross-site scripting sanitizer for HTML, MathML, and SVG. Prior to 3.4.6, DOMPurify.sanitize(node, { IN_PLACE: true }) accepted same-origin foreign-realm DOM nodes while follow-on checks used parent-realm constructors, causing…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:58:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59889 · 6.5 MEDIUM — jackson-databind: @JsonView ypassed for @JsonUnwrapped container properties on deserialization</title>
-      <link>https://vulnogram.org/CVE-2026-59889</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59889</guid>
-      <description>jackson-databind contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor. From 2.18.0 until 2.18.9, 2.21.5, 2.22.1, 3.1.5, and 3.2.1, UnwrappedPropertyHandler.processUnwrapped() replays buffered JSON for a @J…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 14 Jul 2026 19:57:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47423 · 8.2 HIGH 🌩️ — DOMPurify XSS via `selectedcontent` re-clone</title>
-      <link>https://vulnogram.org/CVE-2026-47423</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47423</guid>
-      <description>DOMPurify is a DOM-only cross-site scripting sanitizer for HTML, MathML, and SVG. In 3.4.4, DOMPurify allowed selectedcontent by default, allowing browsers to re-clone an XSS payload after sanitization so that unsanitized markup inside &lt;selectedconte…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:56:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47736 · 7.5 HIGH 🌩️ — Puma PROXY Protocol v1 Parser Allows Remote Memory Exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-47736</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47736</guid>
-      <description>Puma is a Ruby/Rack web server built for parallelism. From 5.5.0 until 7.2.1 and 8.0.2, when PROXY protocol v1 support is enabled, Puma reads incoming bytes into an internal buffer while waiting for CRLF to determine whether a PROXY v1 line is presen…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:54:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47737 · 7.5 HIGH 🌩️ — Puma PROXY Protocol v1 Accepts Repeated Protocol Headers on Persistent Connections</title>
-      <link>https://vulnogram.org/CVE-2026-47737</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47737</guid>
-      <description>Puma is a Ruby/Rack web server built for parallelism. From 5.5.0 until 7.2.1 and 8.0.2, Puma is vulnerable to source IP spoofing when set_remote_address proxy_protocol: :v1 is enabled and persistent connections are used because Puma incorrectly re-pa…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:45:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48069 · 7.5 HIGH 🌩️ — @grpc/grps-js: An incoming malformed compressed message can cause a client or server crash</title>
-      <link>https://vulnogram.org/CVE-2026-48069</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48069</guid>
-      <description>@grpc/grps-js implements the core functionality of gRPC purely in JavaScript, without a C++ addon. Prior to 1.9.16, 1.10.12, 1.11.4, 1.12.7, 1.13.5, and 1.14.4, an invalid incoming compressed message can cause a client or server process that uses @gr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:42:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48068 · 7.5 HIGH 🌩️ — @grpc/grps-js: A malformed request can cause a server crash</title>
-      <link>https://vulnogram.org/CVE-2026-48068</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48068</guid>
-      <description>@grpc/grps-js implements the core functionality of gRPC purely in JavaScript, without a C++ addon. Prior to 1.9.16, 1.10.12, 1.11.4, 1.12.7, 1.13.5, and 1.14.4, an invalid incoming HTTP/2 stream initiation can cause a server process created using @gr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:39:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53633 · 9.8 CRITICAL 🌩️ — Vitest: Exposed Browser Mode API Can Proxy CDP and Overwrite Config Files, Leading to RCE</title>
-      <link>https://vulnogram.org/CVE-2026-53633</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53633</guid>
-      <description>Vitest is a testing framework powered by Vite. From 3.0.0 until 3.2.5, 4.1.8, and 5.0.0-beta.4, Vitest Browser Mode exposed a cdp() API that forwarded raw Chrome DevTools Protocol methods without being gated by allowWrite or allowExec, allowing a rem…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:35:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47428 · 9.6 CRITICAL 🌩️ — Vitest browser mode serves unsanitized otelCarrier query parameter as inline script</title>
-      <link>https://vulnogram.org/CVE-2026-47428</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47428</guid>
-      <description>Vitest is a testing framework powered by Vite. From 4.0.17 until 4.1.6 and 5.0.0-beta.3, Vitest Browser Mode served /__vitest_test__/ with the otelCarrier query parameter inserted directly into an inline module script, allowing a crafted browser-runn…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:30:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47429 · 9.8 CRITICAL 🌩️ — Vitest: Arbitrary file can be read and executed when Vitest UI server is listening</title>
-      <link>https://vulnogram.org/CVE-2026-47429</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47429</guid>
-      <description>Vitest is a testing framework powered by Vite. Prior to 3.2.5 and 4.1.0, the Vitest UI/API server on Windows used isFileServingAllowed incorrectly for /__vitest_attachment__, allowing \\?\\..\\ path traversal to read files outside the project; expose…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:28:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48038 · 5.3 MEDIUM 🌩️ — joi: Uncaught RangeError on deeply nested input through recursive `link()` schemas</title>
-      <link>https://vulnogram.org/CVE-2026-48038</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48038</guid>
-      <description>joi is a schema description language and data validator for JavaScript. Prior to 17.13.4 and 18.2.1, denial of service is possible via an untrapped exception in services validating user-supplied JSON or object input with recursive link() schemas. Whe…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 19:24:32 GMT</pubDate>
     </item>
   </channel>
 </rss>
