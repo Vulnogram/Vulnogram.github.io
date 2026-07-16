@@ -11,7 +11,43 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 16 Jul 2026 19:51:27 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 20:38:28 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-44982 · 7.2 HIGH 🌩️ — CrowdSec AppSec silently drops request body for chunked / HTTP-2 requests</title>
+      <link>https://vulnogram.org/CVE-2026-44982</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44982</guid>
+      <description>CrowdSec offers crowdsourced protection against malicious IPs. From 1.5.0 until 1.7.8, pkg/appsec/request.go NewParsedRequestFromRequest allocated a request body buffer from max(r.ContentLength, 0), so HTTP/1.1 requests using Transfer-Encoding: chunk…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 16 Jul 2026 19:50:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44981 · 8.2 HIGH 🌩️ — CrowdSec LAPI: Denial of Service via Unbounded Gzip Decompression</title>
+      <link>https://vulnogram.org/CVE-2026-44981</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44981</guid>
+      <description>CrowdSec offers crowdsourced protection against malicious IPs. From 1.7.0 until 1.7.8, the LAPI router used gin-contrib/gzip with DefaultDecompressHandle globally in pkg/apiserver/controllers/controller.go, causing /v1/watchers and /v1/watchers/login…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 16 Jul 2026 19:47:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62299 · 5.3 MEDIUM 🌩️ — CoreDNS: rewrite-plugin EDNS0 response-revert nil-pointer panic (remote DoS) when a downstream plugin returns a response with no OPT record</title>
+      <link>https://vulnogram.org/CVE-2026-62299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62299</guid>
+      <description>CoreDNS is a DNS server written in Go. Prior to 1.14.5, the CoreDNS rewrite plugin supports edns0 rewrite rules with an optional revert flag, and two response rules, edns0SetResponseRule and edns0ReplaceResponseRule[T] in plugin/rewrite/edns0.go, cal…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 16 Jul 2026 19:44:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62309 · 7.5 HIGH 🌩️ — CoreDNS: proxyproto plugin panics on PPv2 datagram with non-UDP transport — single 28-byte packet remote DoS</title>
+      <link>https://vulnogram.org/CVE-2026-62309</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62309</guid>
+      <description>CoreDNS is a DNS server written in Go. Prior to 1.14.4, a single 28-byte UDP datagram can crash the CoreDNS process when the proxyproto plugin is enabled because plugin/pkg/proxyproto/proxyproto.go PacketConn.ReadFrom handles a PROXY v2 header with n…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 16 Jul 2026 19:42:17 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-62994 · 3.7 LOW 🌩️ — CoreDNS `k8s_external` headless AXFR can emit an empty transfer batch that panics the `transfer` plugin</title>
       <link>https://vulnogram.org/CVE-2026-62994</link>
@@ -396,39 +432,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 16 Jul 2026 15:42:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55440 · 6.5 MEDIUM — Microsoft UFO: COMMAND_RESULTS handler creates unowned sessions, allowing authenticated session-squatting denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-55440</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55440</guid>
-      <description>Microsoft UFO open-source framework for intelligent automation across devices and platforms. Prior to 3.0.7, the COMMAND_RESULTS handler in ufo/server/ws/handler.py called get_or_create_session in ufo/server/services/session_manager.py without owner_…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 16 Jul 2026 15:35:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54568 · 4.3 MEDIUM — Microsoft UFO: Missing Authorization in DEVICE_INFO_REQUEST Allows a DEVICE Client to Read Another Device&apos;s system_info</title>
-      <link>https://vulnogram.org/CVE-2026-54568</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54568</guid>
-      <description>Microsoft UFO open-source framework for intelligent automation across devices and platforms. From 3.0.0 until 3.0.6, a client connected to the UFO WebSocket server as a DEVICE could call DEVICE_INFO_REQUEST with another device&apos;s target_id and receive…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 16 Jul 2026 15:32:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57206 · 8.6 HIGH 🌩️ — SimpleChat plugin validation endpoints missing authentication and authorization</title>
-      <link>https://vulnogram.org/CVE-2026-57206</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57206</guid>
-      <description>SimpleChat is a secure AI conversation application with personal and group workspaces for document-grounded interactions. Prior to 0.241.206, several plugin validation routes in application/single_app/plugin_validation_endpoint.py, including `POST /a…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 15:17:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57205 · 4.3 MEDIUM — SimpleChat: Authenticated users can access other users&apos; profile metadata through user IDOR endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-57205</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57205</guid>
-      <description>SimpleChat is a secure AI conversation application with personal and group workspaces for document-grounded interactions. Prior to 0.241.203, the authenticated GET /api/user/info/&lt;user_id&gt; and GET /api/user/profile-image/&lt;user_id&gt; endpoints in applic…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 16 Jul 2026 15:12:46 GMT</pubDate>
     </item>
   </channel>
 </rss>
