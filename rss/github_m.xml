@@ -11,7 +11,122 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 17 Jul 2026 17:52:36 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 18:44:59 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-48487 · 5.3 MEDIUM — Zeroconf: Unvalidated rdlength in record payload readers allows LAN-local cache corruption via crafted mDNS packet</title>
+      <link>https://vulnogram.org/CVE-2026-48487</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48487</guid>
+      <description>Zeroconf is a pure Python implementation of multicast DNS service discovery. Prior to 0.149.16, _read_character_string and _read_string in src/zeroconf/_protocol/incoming.py advanced self.offset by attacker-declared RDLENGTH without checking it again…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 18:28:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48045 · 6.5 MEDIUM — Zeroconf: Unbounded TC-deferred queue allows LAN-local memory exhaustion via spoofed-source flood</title>
+      <link>https://vulnogram.org/CVE-2026-48045</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48045</guid>
+      <description>Zeroconf is a pure Python implementation of multicast DNS service discovery. Prior to 0.149.12, AsyncListener.handle_query_or_defer retained every truncated TC-bit incoming query, each up to _MAX_MSG_ABSOLUTE = 8966 bytes, in self._deferred[addr] and…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 18:26:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47184 · 6.5 MEDIUM — Zeroconf: Unbounded DNS record cache allows LAN-local memory exhaustion via multicast flood</title>
+      <link>https://vulnogram.org/CVE-2026-47184</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47184</guid>
+      <description>Zeroconf is a pure Python implementation of multicast DNS service discovery. Prior to 0.149.7, DNSCache._async_add inserted every response record into cache, _expirations, _expire_heap, and service_cache without a cap, allowing unauthenticated hosts…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 18:25:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47183 · 6.5 MEDIUM — Zeroconf: Unbounded exception-dedup state retains packet buffers via traceback frame locals, enabling LAN-local memory exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-47183</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47183</guid>
+      <description>Zeroconf is a pure Python implementation of multicast DNS service discovery. Prior to 0.149.6, DNSIncoming._log_exception_debug and the four QuietLogger exception-dedup methods stored an unbounded _seen_logs dictionary keyed by attacker-influenced In…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 18:22:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47180 · 6.5 MEDIUM — Zeroconf: Unbounded recursion in DNS compression-pointer decoder allows LAN-local denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-47180</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47180</guid>
+      <description>Zeroconf is a pure Python implementation of multicast DNS service discovery. Prior to 0.149.5, DNSIncoming._decode_labels_at_offset recurses once per DNS-name compression pointer, and a single mDNS packet carrying chained pointers can trigger a Recur…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 18:21:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53712 · 8.2 HIGH 🌩️ — SCRAM: Silent channel-binding authentication downgrade via unsupported certificate algorithms</title>
+      <link>https://vulnogram.org/CVE-2026-53712</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53712</guid>
+      <description>SCRAM (Salted Challenge Response Authentication Mechanism) is part of the family of Simple Authentication and Security Layer (SASL, RFC 4422) authentication mechanisms. Prior to 3.3, a flaw in com.ongres.scram:scram-client and com.ongres.scram:scram-…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 17 Jul 2026 18:19:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49835 · 5.9 MEDIUM 🌩️ — Sigstore Timestamp Authority: OOM due to unbounded metric label cardinality</title>
+      <link>https://vulnogram.org/CVE-2026-49835</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49835</guid>
+      <description>Sigstore Timestamp Authority is a service for issuing RFC 3161 timestamps. Prior to 2.1.0, the global wrapMetrics middleware records raw HTTP request path r.URL.Path and raw HTTP request method r.Method as Prometheus labels for latency and request co…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 17 Jul 2026 18:16:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50273 · 7.5 HIGH 🌩️ — Datadog .NET Tracer: Improper parsing of W3C baggage headers may lead to DoS</title>
+      <link>https://vulnogram.org/CVE-2026-50273</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50273</guid>
+      <description>Datadog .NET Tracer is a client library for Datadog APM for .NET applications. Prior to 3.43.0, Datadog tracing libraries that implement W3C baggage propagation parse incoming baggage HTTP headers without enforcing DD_TRACE_BAGGAGE_MAX_ITEMS or DD_TR…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 17 Jul 2026 18:01:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48009 · 6.8 MEDIUM — Shopware: Admin Account Takeover via User Recovery Hash Exposure</title>
+      <link>https://vulnogram.org/CVE-2026-48009</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48009</guid>
+      <description>Shopware is an open commerce platform. Prior to 6.6.10.18 and 6.7.10.1, a low-privilege admin user with user_recovery:read ACL can take over any admin account by triggering POST /api/_action/user/user-recovery, reading the password recovery hash thro…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 17:58:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48014 · 6.5 MEDIUM — Shopware: Admin API ACL Bypass in Order State Transition Endpoints</title>
+      <link>https://vulnogram.org/CVE-2026-48014</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48014</guid>
+      <description>Shopware is an open commerce platform. Prior to 6.6.10.18 and 6.7.10.1, the order state transition features /api/_action/order/{orderId}/state/{transition} and similar transaction and delivery transition routes in src/Core/Checkout/Order/Api/OrderAct…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 17:56:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48010 · 6.5 MEDIUM — Shopware: Privilege escalation: non-admin user with user:create ACL can create admin accounts</title>
+      <link>https://vulnogram.org/CVE-2026-48010</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48010</guid>
+      <description>Shopware is an open commerce platform. Prior to 6.6.10.18 and 6.7.10.1, UserController::upsertUser() in src/Core/Framework/Api/Controller/UserController.php writes raw user data in SYSTEM_SCOPE without filtering the admin field, so a non-admin API us…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 17:55:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48016 · 4.3 MEDIUM — Shopware: Unauthorized Payment Trigger for Foreign Orders via /store-api/handle-payment</title>
+      <link>https://vulnogram.org/CVE-2026-48016</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48016</guid>
+      <description>Shopware is an open commerce platform. Prior to 6.6.10.18 and 6.7.10.1, the Store API endpoint /store-api/handle-payment in src/Core/Checkout/Payment/SalesChannel/HandlePaymentMethodRoute.php accepts a user-controlled orderId and forwards it to src/C…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 17:54:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48015 · 4.9 MEDIUM — Shopware: Stored XSS via SVG file upload — no SVG sanitization</title>
+      <link>https://vulnogram.org/CVE-2026-48015</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48015</guid>
+      <description>Shopware is an open commerce platform. Prior to 6.6.10.18 and 6.7.10.1, SVG files are in the allowed_extensions whitelist in src/Core/Framework/Resources/config/packages/shopware.yaml and can be uploaded via the media manager without SVG content sani…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 17:53:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48008 · 6.5 MEDIUM — Shopware: Privilege Escalation via Sync API Integration Admin Flag Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-48008</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48008</guid>
+      <description>Shopware is an open commerce platform. Prior to 6.6.10.18 and 6.7.10.1, a non-admin API user with integration:create ACL privilege can escalate to full administrator by creating an integration with admin: true through the Sync API POST /api/_action/s…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 17 Jul 2026 17:47:27 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-54496 · 9.3 CRITICAL 🌩️ — Missing copy constraint in halo2_gadgets variable-base scalar multiplication allows under-constrained base, breaking Orchard Action circuit soundness</title>
       <link>https://vulnogram.org/CVE-2026-54496</link>
@@ -322,127 +437,6 @@
       <description>WWBN AVideo is an open source video platform. In versions prior to 29.0, the Authorize.Net webhook handler at plugin/AuthorizeNet/webhook.php contains a signature verification bypass that allows an attacker to forge webhook requests with arbitrary pa…</description>
       <category>Medium</category>
       <pubDate>Thu, 16 Jul 2026 20:46:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55173 · 8.1 HIGH 🌩️ — AVideo incomplete fix for CVE-2026-33482: sanitizeFFmpegCommand still allows a single &apos;&amp;&apos; (background operator), giving OS command execution at the same execAsync sh -c sink</title>
-      <link>https://vulnogram.org/CVE-2026-55173</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55173</guid>
-      <description>WWBN AVideo is an open source video platform. Versions 29.0 and below remain vulnerable to OS command injection because the fix for CVE-2026-33482 was incomplete and still does not neutralize a single &amp; ( the shell background operator). CVE-2026-3348…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 20:41:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33692 · 7.5 HIGH 🌩️ — AVideo Has Unauthenticated .env File Exposure via Official Docker Compose Configuration</title>
-      <link>https://vulnogram.org/CVE-2026-33692</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33692</guid>
-      <description>WWBN AVideo is an open source video platform. Versions prior to 29.0 expose .env files to unauthenticated users through the official Docker compose configuration. The official docker-compose.yml mounts the entire project root directory as the Apache…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 20:27:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44982 · 7.2 HIGH 🌩️ — CrowdSec AppSec silently drops request body for chunked / HTTP-2 requests</title>
-      <link>https://vulnogram.org/CVE-2026-44982</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44982</guid>
-      <description>CrowdSec offers crowdsourced protection against malicious IPs. From 1.5.0 until 1.7.8, pkg/appsec/request.go NewParsedRequestFromRequest allocated a request body buffer from max(r.ContentLength, 0), so HTTP/1.1 requests using Transfer-Encoding: chunk…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 19:50:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44981 · 8.2 HIGH 🌩️ — CrowdSec LAPI: Denial of Service via Unbounded Gzip Decompression</title>
-      <link>https://vulnogram.org/CVE-2026-44981</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44981</guid>
-      <description>CrowdSec offers crowdsourced protection against malicious IPs. From 1.7.0 until 1.7.8, the LAPI router used gin-contrib/gzip with DefaultDecompressHandle globally in pkg/apiserver/controllers/controller.go, causing /v1/watchers and /v1/watchers/login…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 19:47:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62299 · 5.3 MEDIUM 🌩️ — CoreDNS: rewrite-plugin EDNS0 response-revert nil-pointer panic (remote DoS) when a downstream plugin returns a response with no OPT record</title>
-      <link>https://vulnogram.org/CVE-2026-62299</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62299</guid>
-      <description>CoreDNS is a DNS server written in Go. Prior to 1.14.5, the CoreDNS rewrite plugin supports edns0 rewrite rules with an optional revert flag, and two response rules, edns0SetResponseRule and edns0ReplaceResponseRule[T] in plugin/rewrite/edns0.go, cal…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 19:44:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62309 · 7.5 HIGH 🌩️ — CoreDNS: proxyproto plugin panics on PPv2 datagram with non-UDP transport — single 28-byte packet remote DoS</title>
-      <link>https://vulnogram.org/CVE-2026-62309</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62309</guid>
-      <description>CoreDNS is a DNS server written in Go. Prior to 1.14.4, a single 28-byte UDP datagram can crash the CoreDNS process when the proxyproto plugin is enabled because plugin/pkg/proxyproto/proxyproto.go PacketConn.ReadFrom handles a PROXY v2 header with n…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 19:42:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62994 · 3.7 LOW 🌩️ — CoreDNS `k8s_external` headless AXFR can emit an empty transfer batch that panics the `transfer` plugin</title>
-      <link>https://vulnogram.org/CVE-2026-62994</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62994</guid>
-      <description>CoreDNS is a DNS server written in Go. From 1.9.4 until 1.14.5, a network DNS client allowed to request AXFR for a CoreDNS zone can trigger a panic when CoreDNS is configured with k8s_external headless-service zone transfers and Kubernetes contains a…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 19:39:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62290 · 7.3 HIGH — cert-manager: Direct ACME Challenge resources can bypass Issuer DNS01 solver policy and use ClusterIssuer DNS credentials</title>
-      <link>https://vulnogram.org/CVE-2026-62290</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62290</guid>
-      <description>cert-manager adds certificates and certificate issuers as resource types in Kubernetes clusters, and simplifies the process of obtaining, renewing and using those certificates. From 1.18.0 until 1.19.6 and 1.20.3, Challenge resources under acme.cert-…</description>
-      <category>High</category>
-      <pubDate>Thu, 16 Jul 2026 19:37:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62963 · 8.7 HIGH 🌩️ — Centrifugo: Decompression bomb DoS via permessage-deflate in unidirectional WebSocket transport</title>
-      <link>https://vulnogram.org/CVE-2026-62963</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62963</guid>
-      <description>Centrifugo is an open-source scalable real-time messaging server. Prior to 6.8.4, Centrifugo unidirectional WebSocket transport with uni_websocket.compression enabled enforced uni_websocket.message_size_limit against compressed wire-frame length in i…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 19:34:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49998 · 8.2 HIGH — Centrifugo: Dynamic JWKS key cache keyed only by `kid` allows cross-issuer JWT authentication bypass</title>
-      <link>https://vulnogram.org/CVE-2026-49998</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49998</guid>
-      <description>Centrifugo is an open-source scalable real-time messaging server. Prior to 6.8.1, Centrifugo dynamic JWKS endpoint verification could reuse a key for one allowed issuer to verify a JWT for another allowed issuer because the JWKS cache and singlefligh…</description>
-      <category>High</category>
-      <pubDate>Thu, 16 Jul 2026 19:33:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54728 · 6.1 MEDIUM — bunkerweb: Improper Input Validation and Improper Neutralization of Special Elements in Output Used by a Downstream Component (&apos;Injection&apos;) in BunkerWeb</title>
-      <link>https://vulnogram.org/CVE-2026-54728</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54728</guid>
-      <description>bunkerweb is an Open-source and next-generation Web Application Firewall (WAF). Prior to BunkerWeb 1.6.12 and BunkerWeb PRO 0.57, authenticated Host header handling in the BunkerWeb UI and API improperly validated and neutralized user-controlled inpu…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 16 Jul 2026 19:18:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-61718 · 5.4 MEDIUM — bunkerweb: Read-only Web UI users can delete job cache files due to missing authorization on /cache/ routes</title>
-      <link>https://vulnogram.org/CVE-2026-61718</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61718</guid>
-      <description>bunkerweb is an Open-source and next-generation Web Application Firewall (WAF). From 1.6.2 until 1.6.12, the BunkerWeb web UI BiscuitMiddleware authorization bypass list included the /cache/ URL prefix, so routes in src/ui/app/routes/cache.py protect…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 16 Jul 2026 19:15:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55629 · 8.7 HIGH 🌩️ — Whistle: Path traversal</title>
-      <link>https://vulnogram.org/CVE-2026-55629</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55629</guid>
-      <description>Whistle is an HTTP, HTTP2, HTTPS, and WebSocket debugging proxy. Prior to 2.10.3, lib/service/service.js handles GET /cgi-bin/temp/get by reading req.query.filename, joining it to TEMP_FILES_PATH only when it matches the temporary file pattern, and o…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 19:12:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54526 · 8.9 HIGH — Argo Workflows: Incomplete fix for CVE-2026-31892: ArtifactGC.PodSpecPatch bypass of Strict/Secure templateReferencing</title>
-      <link>https://vulnogram.org/CVE-2026-54526</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54526</guid>
-      <description>Argo Workflows is an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes. Prior to 3.7.15 and 4.0.6, the allow-list fix for CVE-2026-31892 is incomplete because workflow/util/merge.go ValidateUserOverrides and S…</description>
-      <category>High</category>
-      <pubDate>Thu, 16 Jul 2026 19:07:30 GMT</pubDate>
     </item>
   </channel>
 </rss>
