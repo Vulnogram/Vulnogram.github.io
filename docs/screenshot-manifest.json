@@ -42,7 +42,12 @@
     {
       "id": "reject",
       "title": "7. How to Reject a CVE ID",
-      "text": "Use **Reject this CVE ID** and **Reject this ID** controls to retire unused IDs or withdraw published records. The two workflows below show where each reject action lives."
+      "text": "Use **Reject this CVE ID** and **Reject this ID** controls to retire unused IDs or withdraw published records. The workflows below show where each reject action lives."
+    },
+    {
+      "id": "transfer",
+      "title": "8. Transfer CVE IDs to Another CNA",
+      "text": "Select one or more IDs with the checkboxes and use the **Transfer** bulk action in the portal header to move them to another CNA. A single ID can also be transferred with the **Transfer this CVE ID** action in the list's Actions column. In the transfer dialog, pick the receiving CNA and confirm.\n\n> ⚠️ **Warning:** CVE Services does **not** notify the receiving CNA when a CVE ID is transferred to them. Always coordinate offline with the recipient CNA — and get their explicit agreement — before initiating a transfer."
     }
   ],
   "screenshots": [
@@ -581,6 +586,349 @@
           "selector": "#cvePortalNav",
           "attribute": "data-portal-status",
           "value": "connected"
+        },
+        {
+          "action": "waitForTimeout",
+          "ms": 300
+        }
+      ]
+    },
+    {
+      "id": "07c-reject-multiple-select",
+      "file": "07c-reject-multiple-select.png",
+      "section": "reject",
+      "subsection": "c) Rejecting Multiple CVE IDs",
+      "alt": "CVE list in Vulnogram portal with several IDs selected via checkboxes and the bulk Reject button highlighted",
+      "caption": "Select multiple IDs with the checkboxes, then use the **Reject** bulk action in the portal header.",
+      "steps": [
+        {
+          "action": "setViewport",
+          "width": 1600,
+          "height": 980
+        },
+        {
+          "action": "goto"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#mainTabGroup"
+        },
+        {
+          "action": "renderPortalMock",
+          "variant": "member"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#cvePortalDialog[open] #cveList",
+          "state": "attached"
+        },
+        {
+          "action": "renderCveListMock",
+          "count": 10,
+          "year": 2025,
+          "startSequence": 8401,
+          "state": "RESERVED",
+          "requester": "example.cna"
+        },
+        {
+          "action": "setStyle",
+          "selector": "#cvePortalNav",
+          "property": "background",
+          "value": "var(--acc)"
+        },
+        {
+          "action": "setAttribute",
+          "selector": "#cvePortalNav",
+          "attribute": "data-portal-status",
+          "value": "connected"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(2) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(3) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(5) input.cve-select-cb"
+        },
+        {
+          "action": "addCircleOverlay",
+          "selector": "#bulkRejectBtn",
+          "containerSelector": "#cvePortalDialog",
+          "color": "#d90429",
+          "outlineColor": "#ffffff",
+          "width": 8,
+          "outlineWidth": 14,
+          "paddingX": 10,
+          "paddingY": 12
+        },
+        {
+          "action": "waitForTimeout",
+          "ms": 300
+        }
+      ]
+    },
+    {
+      "id": "07d-bulk-reject-dialog",
+      "file": "07d-bulk-reject-dialog.png",
+      "section": "reject",
+      "subsection": "c) Rejecting Multiple CVE IDs",
+      "alt": "Bulk reject confirmation dialog in Vulnogram listing the selected CVE IDs with the Reject All button highlighted",
+      "caption": "Review the listed IDs and confirm with **Reject All**. Rejection cannot be undone.",
+      "steps": [
+        {
+          "action": "setViewport",
+          "width": 1600,
+          "height": 980
+        },
+        {
+          "action": "goto"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#mainTabGroup"
+        },
+        {
+          "action": "renderPortalMock",
+          "variant": "member"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#cvePortalDialog[open] #cveList",
+          "state": "attached"
+        },
+        {
+          "action": "renderCveListMock",
+          "count": 10,
+          "year": 2025,
+          "startSequence": 8401,
+          "state": "RESERVED",
+          "requester": "example.cna"
+        },
+        {
+          "action": "setStyle",
+          "selector": "#cvePortalNav",
+          "property": "background",
+          "value": "var(--acc)"
+        },
+        {
+          "action": "setAttribute",
+          "selector": "#cvePortalNav",
+          "attribute": "data-portal-status",
+          "value": "connected"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(2) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(3) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(5) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#bulkRejectBtn"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#bulkRejectDialog[open]"
+        },
+        {
+          "action": "addCircleOverlay",
+          "selector": "#bulkRejectConfirm",
+          "containerSelector": "#bulkRejectDialog",
+          "color": "#d90429",
+          "outlineColor": "#ffffff",
+          "width": 8,
+          "outlineWidth": 14,
+          "paddingX": 10,
+          "paddingY": 6
+        },
+        {
+          "action": "waitForTimeout",
+          "ms": 300
+        }
+      ]
+    },
+    {
+      "id": "08a-transfer-cve-controls",
+      "file": "08a-transfer-cve-controls.png",
+      "section": "transfer",
+      "alt": "CVE list in Vulnogram portal with several IDs selected and the bulk Transfer button highlighted",
+      "caption": "Select IDs and click **Transfer**, or use the **Transfer this CVE ID** row action for a single ID.",
+      "steps": [
+        {
+          "action": "setViewport",
+          "width": 1600,
+          "height": 980
+        },
+        {
+          "action": "goto"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#mainTabGroup"
+        },
+        {
+          "action": "renderPortalMock",
+          "variant": "member"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#cvePortalDialog[open] #cveList",
+          "state": "attached"
+        },
+        {
+          "action": "renderCveListMock",
+          "count": 10,
+          "year": 2025,
+          "startSequence": 8401,
+          "state": "RESERVED",
+          "requester": "example.cna"
+        },
+        {
+          "action": "setStyle",
+          "selector": "#cvePortalNav",
+          "property": "background",
+          "value": "var(--acc)"
+        },
+        {
+          "action": "setAttribute",
+          "selector": "#cvePortalNav",
+          "attribute": "data-portal-status",
+          "value": "connected"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(2) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(3) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(5) input.cve-select-cb"
+        },
+        {
+          "action": "addCircleOverlay",
+          "selector": "#bulkTransferBtn",
+          "containerSelector": "#cvePortalDialog",
+          "color": "#d90429",
+          "outlineColor": "#ffffff",
+          "width": 8,
+          "outlineWidth": 14,
+          "paddingX": 22,
+          "paddingY": 14
+        },
+        {
+          "action": "waitForTimeout",
+          "ms": 300
+        }
+      ]
+    },
+    {
+      "id": "08b-transfer-cve-dialog",
+      "file": "08b-transfer-cve-dialog.png",
+      "section": "transfer",
+      "alt": "Transfer CVE ID dialog in Vulnogram with the coordinate-before-you-transfer warning highlighted and a CNA selection dropdown",
+      "caption": "The transfer dialog lists the selected IDs and asks for the receiving CNA. Heed the highlighted warning: coordinate with the recipient CNA offline first, because CVE Services does not notify them.",
+      "steps": [
+        {
+          "action": "setViewport",
+          "width": 1600,
+          "height": 980
+        },
+        {
+          "action": "goto"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#mainTabGroup"
+        },
+        {
+          "action": "renderPortalMock",
+          "variant": "member"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#cvePortalDialog[open] #cveList",
+          "state": "attached"
+        },
+        {
+          "action": "renderCveListMock",
+          "count": 10,
+          "year": 2025,
+          "startSequence": 8401,
+          "state": "RESERVED",
+          "requester": "example.cna"
+        },
+        {
+          "action": "setStyle",
+          "selector": "#cvePortalNav",
+          "property": "background",
+          "value": "var(--acc)"
+        },
+        {
+          "action": "setAttribute",
+          "selector": "#cvePortalNav",
+          "attribute": "data-portal-status",
+          "value": "connected"
+        },
+        {
+          "action": "seedCnaList",
+          "entries": [
+            {
+              "shortName": "acme-sec",
+              "n": "Acme Security"
+            },
+            {
+              "shortName": "sample-soft",
+              "n": "Sample Software"
+            },
+            {
+              "shortName": "widget-works",
+              "n": "Widget Works"
+            }
+          ]
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(2) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(3) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#cveListTable tbody tr:nth-child(5) input.cve-select-cb"
+        },
+        {
+          "action": "click",
+          "selector": "#bulkTransferBtn"
+        },
+        {
+          "action": "waitForSelector",
+          "selector": "#transferCveIdDialog[open]"
+        },
+        {
+          "action": "addCircleOverlay",
+          "selector": "#transferCveIdDialog p.vgi-alert",
+          "containerSelector": "#transferCveIdDialog",
+          "color": "#d90429",
+          "outlineColor": "#ffffff",
+          "width": 8,
+          "outlineWidth": 14,
+          "paddingX": 10,
+          "paddingY": 6
         },
         {
           "action": "waitForTimeout",

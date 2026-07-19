@@ -59,7 +59,7 @@ Organization administrators can open <b class="lbl bor vgi-cog">Users</b> in the
 
 ## 7. How to Reject a CVE ID
 
-Use <b class="lbl bor vgi-del">Reject this CVE ID</b> and <b class="lbl bor vgi-no">Reject this ID</b> controls to retire unused IDs or withdraw published records. The two workflows below show where each reject action lives.
+Use <b class="lbl bor vgi-del">Reject this CVE ID</b> and <b class="lbl bor vgi-no">Reject this ID</b> controls to retire unused IDs or withdraw published records. The workflows below show where each reject action lives.
 
 ### a) Rejecting Unused or Unpublished CVEs
 
@@ -70,3 +70,23 @@ Use <b class="lbl bor vgi-del">Reject this CVE ID</b> and <b class="lbl bor vgi-
 
 <img src="./screenshots/07b-reject-published-cve.png" alt="Bottom of a loaded CVE editor form with reject this CVE ID link highlighted"/>
 *Published records are rejected from the editor footer <b class="lbl bor vgi-no">Reject this ID</b> link after loading the CVE.*
+
+### c) Rejecting Multiple CVE IDs
+
+<img src="./screenshots/07c-reject-multiple-select.png" alt="CVE list in Vulnogram portal with several IDs selected via checkboxes and the bulk Reject button highlighted"/>
+*Select multiple IDs with the checkboxes, then use the <b class="lbl bor vgi-del">Reject</b> bulk action in the portal header.*
+
+<img src="./screenshots/07d-bulk-reject-dialog.png" alt="Bulk reject confirmation dialog in Vulnogram listing the selected CVE IDs with the Reject All button highlighted"/>
+*Review the listed IDs and confirm with <b class="lbl bor vgi-del">Reject All</b>. Rejection cannot be undone.*
+
+## 8. Transfer CVE IDs to Another CNA
+
+Select one or more IDs with the checkboxes and use the <b class="lbl bor vgi-forward">Transfer</b> bulk action in the portal header to move them to another CNA. A single ID can also be transferred with the <b class="lbl bor vgi-forward">Transfer this CVE ID</b> action in the list's Actions column. In the transfer dialog, pick the receiving CNA and confirm.
+
+> ⚠️ **Warning:** CVE Services does **not** notify the receiving CNA when a CVE ID is transferred to them. Always coordinate offline with the recipient CNA — and get their explicit agreement — before initiating a transfer.
+
+<img src="./screenshots/08a-transfer-cve-controls.png" alt="CVE list in Vulnogram portal with several IDs selected and the bulk Transfer button highlighted"/>
+*Select IDs and click <b class="lbl bor vgi-forward">Transfer</b>, or use the <b class="lbl bor vgi-forward">Transfer this CVE ID</b> row action for a single ID.*
+
+<img src="./screenshots/08b-transfer-cve-dialog.png" alt="Transfer CVE ID dialog in Vulnogram with the coordinate-before-you-transfer warning highlighted and a CNA selection dropdown"/>
+*The transfer dialog lists the selected IDs and asks for the receiving CNA. Heed the highlighted warning: coordinate with the recipient CNA offline first, because CVE Services does not notify them.*
