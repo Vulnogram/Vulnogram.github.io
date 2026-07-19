@@ -11,7 +11,49 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 18 Jul 2026 16:39:52 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 09:31:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-53372 — iommu/vt-d: Block PASID attachment to nested domain with dirty tracking</title>
+      <link>https://vulnogram.org/CVE-2026-53372</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53372</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: iommu/vt-d: Block PASID attachment to nested domain with dirty tracking Kernel lacks dirty tracking support on nested domain attached to PASID, fails the attachment early if nesting…</description>
+      <pubDate>Sun, 19 Jul 2026 09:10:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53371 — RDMA/ionic: bound node_desc sysfs read with %.64s</title>
+      <link>https://vulnogram.org/CVE-2026-53371</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53371</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: RDMA/ionic: bound node_desc sysfs read with %.64s node_desc[64] in struct ib_device is not guaranteed to be NUL- terminated. The core IB sysfs handler uses &quot;%.64s&quot; for exactly this r…</description>
+      <pubDate>Sun, 19 Jul 2026 09:10:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53370 — perf/x86/intel: Improve validation and configuration of ACR masks</title>
+      <link>https://vulnogram.org/CVE-2026-53370</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53370</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: perf/x86/intel: Improve validation and configuration of ACR masks Currently there are several issues on the user space ACR mask validation and configuration. - The validation for use…</description>
+      <pubDate>Sun, 19 Jul 2026 09:10:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53369 — udf: reject descriptors with oversized CRC length</title>
+      <link>https://vulnogram.org/CVE-2026-53369</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53369</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: udf: reject descriptors with oversized CRC length udf_read_tagged() skips CRC verification when descCRCLength + sizeof(struct tag) exceeds the block size. A crafted UDF image can set…</description>
+      <pubDate>Sun, 19 Jul 2026 09:10:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53368 — f2fs: fix fsck inconsistency caused by incorrect nat_entry flag usage</title>
+      <link>https://vulnogram.org/CVE-2026-53368</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53368</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: f2fs: fix fsck inconsistency caused by incorrect nat_entry flag usage f2fs_need_dentry_mark() reads nat_entry flags without mutual exclusion with the checkpoint path, which can resul…</description>
+      <pubDate>Sun, 19 Jul 2026 09:10:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53367 — selinux: fix avdcache auditing</title>
+      <link>https://vulnogram.org/CVE-2026-53367</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53367</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: selinux: fix avdcache auditing The per-task avdcache was incorrectly saving and reusing the audited vector computed by avc_audit_required() rather than recomputing based on the curre…</description>
+      <pubDate>Sun, 19 Jul 2026 09:10:28 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-53366 · 7.8 HIGH — ipv4: account for fraggap on the paged allocation path</title>
       <link>https://vulnogram.org/CVE-2026-53366</link>
@@ -333,48 +375,6 @@
       <description>In the Linux kernel, the following vulnerability has been resolved: vfio/pci: Clean up DMABUFs before disabling function On device shutdown, make vfio_pci_core_close_device() call vfio_pci_dma_buf_cleanup() before the function is disabled via vfio_pc…</description>
       <category>High</category>
       <pubDate>Fri, 26 Jun 2026 19:41:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53321 — io_uring/napi: cap busy_poll_to 10 msec</title>
-      <link>https://vulnogram.org/CVE-2026-53321</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53321</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/napi: cap busy_poll_to 10 msec Currently there&apos;s no cap on the maximum amount of time that napi is allowed to poll if no events are found, which can lead to kernel complaint…</description>
-      <pubDate>Fri, 26 Jun 2026 19:41:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53320 — nilfs2: reject zero bd_oblocknr in nilfs_ioctl_mark_blocks_dirty()</title>
-      <link>https://vulnogram.org/CVE-2026-53320</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53320</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: nilfs2: reject zero bd_oblocknr in nilfs_ioctl_mark_blocks_dirty() nilfs_ioctl_mark_blocks_dirty() uses bd_oblocknr to detect dead blocks by comparing it with the current block numbe…</description>
-      <pubDate>Fri, 26 Jun 2026 19:41:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53319 — blk-wbt: remove WARN_ON_ONCE from wbt_init_enable_default()</title>
-      <link>https://vulnogram.org/CVE-2026-53319</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53319</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: blk-wbt: remove WARN_ON_ONCE from wbt_init_enable_default() wbt_init_enable_default() uses WARN_ON_ONCE to check for failures from wbt_alloc() and wbt_init(). However, both are expec…</description>
-      <pubDate>Fri, 26 Jun 2026 19:41:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53318 — wifi: mt76: mt7925: prevent NULL pointer dereference in mt7925_tx_check_aggr()</title>
-      <link>https://vulnogram.org/CVE-2026-53318</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53318</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mt76: mt7925: prevent NULL pointer dereference in mt7925_tx_check_aggr() Move the NULL check for &apos;sta&apos; before dereferencing it to prevent a possible crash.</description>
-      <pubDate>Fri, 26 Jun 2026 19:41:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53317 — wifi: mt76: mt7921: Place upper limit on station AID</title>
-      <link>https://vulnogram.org/CVE-2026-53317</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53317</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mt76: mt7921: Place upper limit on station AID Any station configured with an AID over 20 causes a firmware crash. This situation occurred in our testing using an AP interface…</description>
-      <pubDate>Fri, 26 Jun 2026 19:41:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53316 — drm/amd/ras: Fix NULL deref in ras_core_ras_interrupt_detected()</title>
-      <link>https://vulnogram.org/CVE-2026-53316</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53316</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amd/ras: Fix NULL deref in ras_core_ras_interrupt_detected() Fixes a NULL pointer dereference when ras_core is NULL and ras_core-&gt;dev is accessed in the error path. Reported by:…</description>
-      <pubDate>Fri, 26 Jun 2026 19:41:08 GMT</pubDate>
     </item>
   </channel>
 </rss>
