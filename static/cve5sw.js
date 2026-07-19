@@ -38,12 +38,16 @@ const clearSessionTimer = () => {
     }
 };
 
-const destroySession = () => {
+const destroySession = (broadcast) => {
     clearSessionTimer();
     if ('creds' in storage) {
         delete storage['creds'];
-        let bc = new BroadcastChannel('logout');
-        bc.postMessage({ 'error': 'LOGOUT', message: 'The user has logged out' });
+        // broadcast === false: quiet cleanup (e.g. discarding credentials that
+        // failed verification) — don't tell tabs "the user has logged out".
+        if (broadcast !== false) {
+            let bc = new BroadcastChannel('logout');
+            bc.postMessage({ 'error': 'LOGOUT', message: 'The user has logged out' });
+        }
     }
     caches.open(cacheName).then(cache => {
         cache.delete(cacheURL);
@@ -242,7 +246,7 @@ self.onmessage = e => {
             });
             break;
         case 'destroy':
-            destroySession();
+            destroySession(!e.data.silent);
             clientReply(e, "Cleaning up session");
             break;
         default:
