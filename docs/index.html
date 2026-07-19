@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Using Vulnogram with CVE Services</title>
+<link rel="stylesheet" href="https://vulnogram.org/css/min.css" />
+<link rel="stylesheet" href="https://vulnogram.org/css/vg-icons.css" />
+<style>body {background-color:var(--wht);} .doc-hero {margin:1rem 0 2rem;} .doc-hero img {display:block;width:100%;max-width:1200px;height:auto;border-radius:18px;box-shadow:0 12px 32px rgba(15,23,42,0.18);} .doc-hero a {display:inline-block;}</style>
+<style>.doc-content{max-width:1100px;width:100%;box-sizing:border-box;margin:0 auto;padding:0 1.5rem 4rem;} .doc-content img{max-width:100%;height:auto;} blockquote{border-left:4px solid #d90429;background:rgba(217,4,41,0.06);margin:1rem 0;padding:0.5rem 1rem;border-radius:0 8px 8px 0;} .caption{margin-top:0.3rem;color:#475569;}</style>
+</head>
+<body id="body" class="cve">
+<input id="sidebarToggle" type="checkbox" checked>
+<div class="layout-grid">
+<label class="sidebar-overlay" for="sidebarToggle"></label>
+<aside class="sidebar">
+<div class="sidebar-head pad"><label class="lbl vgi-logo" for="sidebarToggle">Vulnogram</label><label class="vgi-larrow" for="sidebarToggle"></label></div>
+<nav class="sidebar-nav pad">
+<a class="lbl vgi-cvev" href="https://www.vulnogram.org/" title="Open the Vulnogram CVE editor">CVE Editor</a>
+<a class="lbl vgi-cvss-logo" href="https://www.vulnogram.org/cvss4" title="Common Vulnerability Scoring System">CVSS 4.0</a>
+<a class="lbl vgi-wave" href="https://www.vulnogram.org/seaview/" title="Search and View CVEs">Seaview - CVE Search</a>
+<a class="lbl vgi-what rnd sec" href="./" title="Using Vulnogram with CVE Services">Documentation</a>
+<label class="sidebar-nav-fill" for="sidebarToggle" aria-label="Toggle sidebar"></label>
+</nav>
+<div class="sidebar-foot"></div>
+</aside>
+<main class="main-area">
+<div class="doc-content">
+<h1>Using <span class="vgi-logo">Vulnogram</span> with CVE Services</h1>
+<p class="doc-hero"><a href="https://www.vulnogram.org/"><img src="https://vulnogram.org/css/Vulnogram-og.jpg" alt="Vulnogram - Reserve, Manage, Publish CVEs."/></a></p>
+<p class="caption"><em>Vulnogram - Reserve, Manage, Publish CVEs.</em></p>
+<h2>1. Access <span class="vgi-logo">Vulnogram</span></h2>
+<p>Open <a href="https://www.vulnogram.org">Vulnogram.org</a> for a quick start. The instance on <a href="https://www.vulnogram.org">Vulnogram.org</a> enables CNAs to use the browser to draft, manage, and publish CVE records. To enable multiple CNA team members to collaborate on drafts in a cental place, download and set up Vulnogram in <a href="https://github.com/Vulnogram/Vulnogram?tab=readme-ov-file#vulnogram-team-deployment">Team server mode</a>.</p>
+<img src="./screenshots/01-access-editor.png" alt="Vulnogram CVE editor workspace shown in a browser window with the URL visible"/>
+<p class="caption"><em>Access Vulnogram at <a href="https://www.vulnogram.org">https://www.vulnogram.org</a>.</em></p>
+<h2>2. Login to CVE Services</h2>
+<p>Open the <b class="lbl bor vgi-org">CVE Portal</b> panel, select the target portal (<code>production</code>, <code>test</code>, <code>adp-test</code>, or local), and authenticate with your CNA short name, CVE user, and API key.</p>
+<img src="./screenshots/02-portal-login.png" alt="CVE Portal login dialog in Vulnogram"/>
+<p class="caption"><em>CVE Services login form from the <b class="lbl bor vgi-org">CVE Portal</b> sidebar action.</em></p>
+<h2>3. Reserve CVE IDs</h2>
+<p>After login, use <b class="lbl bor vgi-magic">Reserve One CVE</b> or the dropdown batch actions to reserve IDs for the current year, next year, or previous year. Use state/year filters to find reserved IDs.</p>
+<img src="./screenshots/03-reserve-cve-ids.png" alt="CVE Portal reserve controls in Vulnogram"/>
+<p class="caption"><em><b class="lbl bor vgi-org">CVE Portal</b> reserve controls with state and year filters.</em></p>
+<h2>4. Enter CVE Record Details</h2>
+<p>Use the <strong>Editor</strong> tab to enter vulnerability details, affected products, references, and metrics. Switch between <strong>Editor</strong>, <strong>Source</strong>, and <strong>Preview</strong> tabs while drafting.</p>
+<p>For repeated CNA or ADP work, open the <strong>Configure Default Settings</strong> dialog from the top-right settings button <span class="rbtn vgi-cog"></span>. It lets you simplify the form for new entries by choosing default set of fields to show and by setting default vendor, product, and version-type values, which helps reduce repetitive edits and keeps new records more consistent.</p>
+<img src="./screenshots/04-enter-cve-details.png" alt="Vulnogram CVE editor detail form area"/>
+<p class="caption"><em>Primary <strong>Editor</strong> form where record content is entered.</em></p>
+<img src="./screenshots/04b-settings-dialog.png" alt="Vulnogram settings dialog for configuring default CNA, ADP, and product fields for new entries"/>
+<p class="caption"><em>The settings dialog configures defaults for new entries.</em></p>
+<h2>5. Publish to CVE Services</h2>
+<p>Use <b class="lbl bor vgi-export">Publish CVE</b> to submit the record to the currently selected portal. In test mode, publishing targets the CVE Services test environment.</p>
+<img src="./screenshots/05-publish-cve.png" alt="Vulnogram header with Publish CVE action"/>
+<p class="caption"><em>Top action bar with <b class="lbl bor vgi-export">Publish CVE</b> control.</em></p>
+<img src="./screenshots/05b-publish-multiple-cve.png" alt="Vulnogram drafts manager dialog showing multiple cached CVE entries"/>
+<p class="caption"><em><b class="lbl bor vgi-edit">Drafts Manager</b> with sample cached CVE entries ready for bulk publish.</em></p>
+<h2>6. Manage Users and API Keys (Admin)</h2>
+<p>Organization administrators can open <b class="lbl bor vgi-cog">Users</b> in the portal view to add users, update profile and role attributes, disable accounts, and reset API secrets.</p>
+<img src="./screenshots/06-admin-user-management.png" alt="CVE Portal user management popup in Vulnogram"/>
+<p class="caption"><em>Admin-oriented <b class="lbl bor vgi-cog">Users</b> management view in the <b class="lbl bor vgi-org">CVE Portal</b>.</em></p>
+<h2>7. How to Reject a CVE ID</h2>
+<p>Use <b class="lbl bor vgi-del">Reject this CVE ID</b> and <b class="lbl bor vgi-no">Reject this ID</b> controls to retire unused IDs or withdraw published records. The workflows below show where each reject action lives.</p>
+<h3>a) Rejecting Unused or Unpublished CVEs</h3>
+<img src="./screenshots/07a-reject-unused-cves.png" alt="CVE list table in Vulnogram portal with reject icon highlighted for an unused CVE ID"/>
+<p class="caption"><em>Unused/unpublished IDs can be rejected directly from <b class="lbl bor vgi-del">Reject this CVE ID</b> in the CVE list action column.</em></p>
+<h3>b) Rejecting Published CVEs</h3>
+<img src="./screenshots/07b-reject-published-cve.png" alt="Bottom of a loaded CVE editor form with reject this CVE ID link highlighted"/>
+<p class="caption"><em>Published records are rejected from the editor footer <b class="lbl bor vgi-no">Reject this ID</b> link after loading the CVE.</em></p>
+<h3>c) Rejecting Multiple CVE IDs</h3>
+<img src="./screenshots/07c-reject-multiple-select.png" alt="CVE list in Vulnogram portal with several IDs selected via checkboxes and the bulk Reject button highlighted"/>
+<p class="caption"><em>Select multiple IDs with the checkboxes, then use the <b class="lbl bor vgi-del">Reject</b> bulk action in the portal header.</em></p>
+<img src="./screenshots/07d-bulk-reject-dialog.png" alt="Bulk reject confirmation dialog in Vulnogram listing the selected CVE IDs with the Reject All button highlighted"/>
+<p class="caption"><em>Review the listed IDs and confirm with <b class="lbl bor vgi-del">Reject All</b>. Rejection cannot be undone.</em></p>
+<h2>8. Transfer CVE IDs to Another CNA</h2>
+<p>Select one or more IDs with the checkboxes and use the <b class="lbl bor vgi-forward">Transfer</b> bulk action in the portal header to move them to another CNA. A single ID can also be transferred with the <b class="lbl bor vgi-forward">Transfer this CVE ID</b> action in the list's Actions column. In the transfer dialog, pick the receiving CNA and confirm.</p>
+<blockquote>
+<p>⚠️ <strong>Warning:</strong> CVE Services does <strong>not</strong> notify the receiving CNA when a CVE ID is transferred to them. Always coordinate offline with the recipient CNA — and get their explicit agreement — before initiating a transfer.</p>
+</blockquote>
+<img src="./screenshots/08a-transfer-cve-controls.png" alt="CVE list in Vulnogram portal with several IDs selected and the bulk Transfer button highlighted"/>
+<p class="caption"><em>Select IDs and click <b class="lbl bor vgi-forward">Transfer</b>, or use the <b class="lbl bor vgi-forward">Transfer this CVE ID</b> row action for a single ID.</em></p>
+<img src="./screenshots/08b-transfer-cve-dialog.png" alt="Transfer CVE ID dialog in Vulnogram with the coordinate-before-you-transfer warning highlighted and a CNA selection dropdown"/>
+<p class="caption"><em>The transfer dialog lists the selected IDs and asks for the receiving CNA. Heed the highlighted warning: coordinate with the recipient CNA offline first, because CVE Services does not notify them.</em></p>
+</div>
+</main>
+</div>
+</body>
+</html>
