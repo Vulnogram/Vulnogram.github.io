@@ -11,7 +11,63 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 19 Jul 2026 09:31:40 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 11:00:28 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-53380 — media: rzv2h-ivc: Fix concurrent buffer list access</title>
+      <link>https://vulnogram.org/CVE-2026-53380</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53380</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: rzv2h-ivc: Fix concurrent buffer list access The list of buffers (`rzv2h_ivc::buffers.queue`) is protected by a spinlock (`rzv2h_ivc::buffers.lock`). However, in `rzv2h_ivc_tr…</description>
+      <pubDate>Sun, 19 Jul 2026 10:02:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53379 — media: i2c: ov8856: free control handler on error in ov8856_init_controls()</title>
+      <link>https://vulnogram.org/CVE-2026-53379</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53379</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: i2c: ov8856: free control handler on error in ov8856_init_controls() The control handler wasn&apos;t freed if adding controls failed, add an error exit label and convert the existi…</description>
+      <pubDate>Sun, 19 Jul 2026 10:02:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53378 — drm/colorop: Fix blob property reference tracking in state lifecycle</title>
+      <link>https://vulnogram.org/CVE-2026-53378</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53378</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/colorop: Fix blob property reference tracking in state lifecycle The colorop state blob property handling had memory leaks during state duplication, destruction, and reset operat…</description>
+      <pubDate>Sun, 19 Jul 2026 10:02:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53377 — drm/msm: always recover the gpu</title>
+      <link>https://vulnogram.org/CVE-2026-53377</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53377</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/msm: always recover the gpu Previously, in case there was no more work to do, recover worker wouldn&apos;t trigger recovery and would instead rely on the gpu going to sleep and then r…</description>
+      <pubDate>Sun, 19 Jul 2026 10:02:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53376 — drm/amdkfd: Add upper bound check for num_of_nodes</title>
+      <link>https://vulnogram.org/CVE-2026-53376</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53376</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdkfd: Add upper bound check for num_of_nodes drm/amdkfd: Add upper bound check for num_of_nodes in kfd_ioctl_get_process_apertures_new. (cherry picked from commit 98ff46a5ea090…</description>
+      <pubDate>Sun, 19 Jul 2026 10:01:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53375 — drm/amdgpu/vce: Prevent partial address patches</title>
+      <link>https://vulnogram.org/CVE-2026-53375</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53375</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu/vce: Prevent partial address patches In the case that only one of lo/hi is valid, the patching could result in a bad address written to in FW.</description>
+      <pubDate>Sun, 19 Jul 2026 10:01:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53374 — drm/amdgpu: zero-initialize GART table on allocation</title>
+      <link>https://vulnogram.org/CVE-2026-53374</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53374</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu: zero-initialize GART table on allocation GART TLB is flushed after unmapping but not after mapping. Since amdgpu_bo_create_kernel() does not zero-initialize the buffer, w…</description>
+      <pubDate>Sun, 19 Jul 2026 10:01:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53373 — mm/vma: do not try to unmap a VMA if mmap_prepare() invoked from mmap()</title>
+      <link>https://vulnogram.org/CVE-2026-53373</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53373</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: mm/vma: do not try to unmap a VMA if mmap_prepare() invoked from mmap() The mmap_prepare hook functionality includes the ability to invoke mmap_prepare() from the mmap() hook of exis…</description>
+      <pubDate>Sun, 19 Jul 2026 10:01:57 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-53372 — iommu/vt-d: Block PASID attachment to nested domain with dirty tracking</title>
       <link>https://vulnogram.org/CVE-2026-53372</link>
@@ -317,64 +373,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53331</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: slimbus: qcom-ngd-ctrl: Avoid ABBA on tx_lock/ctrl-&gt;lock During the SSR/PDR down notification the tx_lock is taken with the intent to provide synchronization with active DMA transfer…</description>
       <pubDate>Wed, 01 Jul 2026 13:32:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53330 — drm/amd/display: Fix out-of-bounds read in dp_get_eq_aux_rd_interval()</title>
-      <link>https://vulnogram.org/CVE-2026-53330</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53330</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amd/display: Fix out-of-bounds read in dp_get_eq_aux_rd_interval() [Why &amp; How] The aux_rd_interval array in struct dc_lttpr_caps is declared with MAX_REPEATER_CNT - 1 (7) element…</description>
-      <pubDate>Wed, 01 Jul 2026 13:32:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53329 · 7 HIGH — drm/amd/display: Use krealloc_array() in dal_vector_reserve()</title>
-      <link>https://vulnogram.org/CVE-2026-53329</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53329</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amd/display: Use krealloc_array() in dal_vector_reserve() [Why &amp; How] dal_vector_reserve() computes the allocation size as &quot;capacity * vector-&gt;struct_size&quot; using uint32_t arithme…</description>
-      <category>High</category>
-      <pubDate>Wed, 01 Jul 2026 13:32:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53328 — sched_ext: Don&apos;t warn on NULL cgrp_moving_from in scx_cgroup_move_task()</title>
-      <link>https://vulnogram.org/CVE-2026-53328</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53328</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: sched_ext: Don&apos;t warn on NULL cgrp_moving_from in scx_cgroup_move_task() A WARN fires when systemd&apos;s user manager writes &quot;+cpu +memory +pids&quot; to its own subtree_control while a sched…</description>
-      <pubDate>Wed, 01 Jul 2026 13:32:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53327 — debugobjects: Do not fill_pool() if pi_blocked_on</title>
-      <link>https://vulnogram.org/CVE-2026-53327</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53327</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: debugobjects: Do not fill_pool() if pi_blocked_on On RT enabled kernels, fill_pool() ends up calling rtlock_lock(), which asserts if current::pi_blocked_on is set, because a task can…</description>
-      <pubDate>Wed, 01 Jul 2026 13:32:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53326 — debugobjects: Don&apos;t call fill_pool() in early boot hardirq context</title>
-      <link>https://vulnogram.org/CVE-2026-53326</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53326</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: debugobjects: Don&apos;t call fill_pool() in early boot hardirq context When booting a debug PREEMPT_RT kernel on an ARM64 system, a &quot;inconsistent {HARDIRQ-ON-W} -&gt; {IN-HARDIRQ-W} usage&quot;…</description>
-      <pubDate>Wed, 01 Jul 2026 13:32:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53324 — net: mana: Use pci_name() for debugfs directory naming</title>
-      <link>https://vulnogram.org/CVE-2026-53324</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53324</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: net: mana: Use pci_name() for debugfs directory naming Use pci_name(pdev) for the per-device debugfs directory instead of hardcoded &quot;0&quot; for PFs and pci_slot_name(pdev-&gt;slot) for VFs.…</description>
-      <pubDate>Fri, 26 Jun 2026 19:41:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53323 — net: dsa: remove redundant netdev_lock_ops() from conduit ethtool ops</title>
-      <link>https://vulnogram.org/CVE-2026-53323</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53323</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: net: dsa: remove redundant netdev_lock_ops() from conduit ethtool ops DSA replaces the conduit (master) device&apos;s ethtool_ops with its own wrappers that aggregate stats from both the…</description>
-      <pubDate>Fri, 26 Jun 2026 19:41:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53322 · 8.8 HIGH — vfio/pci: Clean up DMABUFs before disabling function</title>
-      <link>https://vulnogram.org/CVE-2026-53322</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53322</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: vfio/pci: Clean up DMABUFs before disabling function On device shutdown, make vfio_pci_core_close_device() call vfio_pci_dma_buf_cleanup() before the function is disabled via vfio_pc…</description>
-      <category>High</category>
-      <pubDate>Fri, 26 Jun 2026 19:41:13 GMT</pubDate>
     </item>
   </channel>
 </rss>
