@@ -11,7 +11,21 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 20 Jul 2026 08:30:20 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 19:18:12 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-64194 — Net::DNS versions through 1.55 for Perl allow Denial of Service via deep DNS compression pointer chains</title>
+      <link>https://vulnogram.org/CVE-2026-64194</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64194</guid>
+      <description>Net::DNS versions through 1.55 for Perl allow Denial of Service via deep DNS compression pointer chains. Net::DNS::DomainName::decode follows RFC 1035 compression pointers by recursing into itself with no depth limit. It is possible to construct a na…</description>
+      <pubDate>Mon, 20 Jul 2026 17:55:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64193 — Net::DNS versions through 1.55 for Perl allow remote execution injection via EDNS EXTENDED ERROR</title>
+      <link>https://vulnogram.org/CVE-2026-64193</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64193</guid>
+      <description>Net::DNS versions through 1.55 for Perl allow remote execution injection via EDNS EXTENDED ERROR. Net::DNS::RR::OPT::EXTENDED_ERROR::_decompose parses the EXTRA-TEXT field of an EDNS EXTENDED-ERROR option (RFC 8914) by tokenising the raw bytes and pa…</description>
+      <pubDate>Mon, 20 Jul 2026 17:54:42 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-13577 — Dancer2 versions through 2.1.0 for Perl generate insecure session ids when CSPRNG modules are unavailable</title>
       <link>https://vulnogram.org/CVE-2026-13577</link>
@@ -20,17 +34,21 @@
       <pubDate>Mon, 20 Jul 2026 07:11:10 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-16235 — Crypt::Password versions through 0.28 for Perl generate insecure random values for salts</title>
+      <title>CVE-2026-16235 · 9.8 CRITICAL 🌩️ — Crypt::Password versions through 0.28 for Perl generate insecure random values for salts</title>
       <link>https://vulnogram.org/CVE-2026-16235</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16235</guid>
       <description>Crypt::Password versions through 0.28 for Perl generate insecure random values for salts. These versions use the built-in rand function, which is predictable and unsuitable for cryptography.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 20 Jul 2026 07:02:11 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-6656 — Crypt::Password versions through 0.28 for Perl are susceptible to timing attacks</title>
+      <title>CVE-2026-6656 · 7.5 HIGH 🌩️ — Crypt::Password versions through 0.28 for Perl are susceptible to timing attacks</title>
       <link>https://vulnogram.org/CVE-2026-6656</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6656</guid>
       <description>Crypt::Password versions through 0.28 for Perl are susceptible to timing attacks. The check_password method uses the built-in eq operator. This allows discrepancies in timing to be used to guess the underlying hash.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 20 Jul 2026 07:01:45 GMT</pubDate>
     </item>
     <item>
@@ -425,24 +443,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 30 Jun 2026 11:05:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57080 · 7.5 HIGH 🌩️ — Net::BitTorrent versions through 2.1.0 for Perl allow remote memory exhaustion via an uncapped peer-wire message-length prefix</title>
-      <link>https://vulnogram.org/CVE-2026-57080</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57080</guid>
-      <description>Net::BitTorrent versions through 2.1.0 for Perl allow remote memory exhaustion via an uncapped peer-wire message-length prefix. The peer-wire framing in _process_messages trusts the 4-byte length prefix sent by a connected peer with no upper bound, w…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 30 Jun 2026 11:04:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57079 · 5.3 MEDIUM 🌩️ — Net::BitTorrent versions before 2.1.0 for Perl write files outside the download directory via path traversal in peer-supplied metadata</title>
-      <link>https://vulnogram.org/CVE-2026-57079</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57079</guid>
-      <description>Net::BitTorrent versions before 2.1.0 for Perl write files outside the download directory via path traversal in peer-supplied metadata. Net::BitTorrent validates file path components only on the .torrent-file ingest path. The peer and magnet metadata…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 30 Jun 2026 11:04:32 GMT</pubDate>
     </item>
   </channel>
 </rss>
