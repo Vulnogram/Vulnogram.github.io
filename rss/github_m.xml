@@ -11,7 +11,56 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 20 Jul 2026 20:55:51 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 21:54:52 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-47128 · 6.1 MEDIUM — nono: Sandbox escape on Linux via D-Bus: `systemd-run --user`</title>
+      <link>https://vulnogram.org/CVE-2026-47128</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47128</guid>
+      <description>nono is software that allows users to run AI agents in a zero-latency sandbox. Prior to version 0.55.0, the nono Landlock/seccomp policies allow access to local Unix domain sockets (concrete and abstract). This allows an easy sandbox escape by talkin…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 20 Jul 2026 21:46:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47134 · 6.9 MEDIUM — ClearanceKit: Policy signing key in System Keychain has permissive ACL allowing any local-root process to forge signed policy</title>
+      <link>https://vulnogram.org/CVE-2026-47134</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47134</guid>
+      <description>ClearanceKit intercepts file-system access events on macOS and enforces per-process access policies. The ECDSA private key used to sign the on-disk policy database (`/Library/Application Support/clearancekit/store.db`) is stored in the macOS System K…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 20 Jul 2026 21:17:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47133 · 6.9 MEDIUM — ClearanceKit&apos;s signed policy tables lack monotonic counter, allowing replay of older legitimately-signed snapshots</title>
+      <link>https://vulnogram.org/CVE-2026-47133</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47133</guid>
+      <description>ClearanceKit intercepts file-system access events on macOS and enforces per-process access policies. Prior to version 5.0.10, each table in the on-disk SQLite policy store (`/Library/Application Support/clearancekit/store.db`) is verified using an EC…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 20 Jul 2026 21:12:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44510 · 6.5 MEDIUM 🌩️ — Rsync: Receiver-side out-of-bounds read enables remote DoS from malicious server</title>
+      <link>https://vulnogram.org/CVE-2026-44510</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44510</guid>
+      <description>Rsync is a file-copying tool that uses a delta-transfer algorithm to synchronize remote and local files. In versions prior to 3.4.3, the receiver-side out-of-bounds array read in rsync&apos;s recv_files() lets a malicious rsync server (or any peer acting…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 20 Jul 2026 21:03:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55550 · 7.1 HIGH — NextCRM has RBAC Bypass in MCP Product Tools that Allows Low-Privileged Users to Modify the CRM Product Catalog</title>
+      <link>https://vulnogram.org/CVE-2026-55550</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55550</guid>
+      <description>NextCRM is open-source customer relationship management (CRM) software. The CRM product catalog is an organization-wide business object. Normal application server actions restrict product creation, update, and deletion to `manager` and `admin` roles.…</description>
+      <category>High</category>
+      <pubDate>Mon, 20 Jul 2026 21:02:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55544 · 7.6 HIGH — NextCRM has BOLA/IDOR in MCP Campaign Tools that Allows Cross-User Campaign Disclosure and Tampering</title>
+      <link>https://vulnogram.org/CVE-2026-55544</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55544</guid>
+      <description>NextCRM is open-source customer relationship management (CRM) software. In version 0.12.1, the MCP campaign tools expose campaign read and write operations over the network using user-generated Bearer API tokens (`nxtc__...`). The application has an…</description>
+      <category>High</category>
+      <pubDate>Mon, 20 Jul 2026 20:57:19 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-47130 · 7.1 HIGH — NextCRM has a BOLA/IDOR in PATCH /api/crm/contacts/[id] that allows Cross-Tenant CRM Data Tampering</title>
       <link>https://vulnogram.org/CVE-2026-47130</link>
@@ -379,59 +428,6 @@
       <description>In nanomq versions 0.24.11 and earlier, a NULL pointer dereference in `nni_mqttv5_msg_decode_connect()` allows a malicious MQTT broker to crash any connecting NanoMQ MQTTv5 client (including bridge mode) with a single packet, causing remote denial of…</description>
       <category>Low</category>
       <pubDate>Mon, 20 Jul 2026 16:43:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41521 · 8.2 HIGH 🌩️ — xrdp: lib_framebuffer_update Has Integer Overflow Heap Info Leak &amp; ASLR Bypass</title>
-      <link>https://vulnogram.org/CVE-2026-41521</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41521</guid>
-      <description>xrdp is an open source RDP server. Versions 0.10.6 and prior contain an integer overflow vulnerability when processing screen update messages within the vnc-any connection mode. A malicious remote VNC server can send crafted image dimensions that cau…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 16:41:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35217 · 6.5 MEDIUM 🌩️ — NanoMQ Incorrectly Accepts a Malformed SUBSCRIBE and Can Be Driven into an ASAN-Detectable Out-of-Bounds Read</title>
-      <link>https://vulnogram.org/CVE-2026-35217</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35217</guid>
-      <description>NanoMQ contains a protocol-semantics flaw in its MQTT v5 `SUBSCRIBE` handling: if a subscription entry is missing the final 1-byte `Subscription Options` field, the broker may still accept the malformed packet and install the subscription into intern…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 16:39:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58482 · 5.9 MEDIUM 🌩️ — Network-AI: ApprovalInbox HTTP server has no authentication — anyone can approve pending agent actions</title>
-      <link>https://vulnogram.org/CVE-2026-58482</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58482</guid>
-      <description>Network-AI, a TypeScript/Node.js multi-agent orchestrator, has a shipped, exported, documented feature called `ApprovalInbox` (`lib/approval-inbox.ts`). It is the network surface of the human-in-the-loop Approval Gate, which `ApprovalGate` uses to re…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 16:38:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46701 · 7.6 HIGH 🌩️ — Network-AI: Unauthenticated Cross-Origin MCP Tool Invocation via Empty Default Secret</title>
-      <link>https://vulnogram.org/CVE-2026-46701</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46701</guid>
-      <description>Network-AI is a TypeScript/Node.js multi-agent orchestrator. Prior to version 5.4.5, the MCP SSE server defaults to an empty secret (`process.env[&apos;NETWORK_AI_MCP_SECRET&apos;] ?? &apos;&apos;` at `bin/mcp-server.ts:89`), which causes `_isAuthorized` (`lib/mcp-trans…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 16:33:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58481 · 6.5 MEDIUM — Network-AI: AgentRuntime sandbox path-prefix checks allow file access outside the configured base directory</title>
-      <link>https://vulnogram.org/CVE-2026-58481</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58481</guid>
-      <description>Network-AI is a TypeScript/Node.js multi-agent orchestrator. Prior to version 5.12.2, `AgentRuntime` promises scoped file access under a configured sandbox `basePath`, but its path containment checks use raw string prefix tests. A sandbox base such a…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 20 Jul 2026 16:30:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41252 · 9.8 CRITICAL 🌩️ — xrdp: lib_palette_update Heap Buffer Overflow &amp; RCE</title>
-      <link>https://vulnogram.org/CVE-2026-41252</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41252</guid>
-      <description>xrdp is an open source RDP server. Versions 0.10.6 and prior contain a missing bounds check in xrdp, which allows a heap-based buffer overflow when operating in vnc-any mode. The issue occurs during the handling of RFB protocol color map messages fro…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 16:29:53 GMT</pubDate>
     </item>
   </channel>
 </rss>
