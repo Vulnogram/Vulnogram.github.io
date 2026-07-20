@@ -11,7 +11,70 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 20 Jul 2026 15:41:12 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 17:12:36 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-64207 — net/sched: dualpi2: fix GSO backlog accounting</title>
+      <link>https://vulnogram.org/CVE-2026-64207</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64207</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net/sched: dualpi2: fix GSO backlog accounting When DualPI2 splits a GSO skb into N segments, it propagates N additional packets to its parent before returning NET_XMIT_SUCCESS. The…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64206 — Bluetooth: L2CAP: cancel pending_rx_work before taking conn-&gt;lock</title>
+      <link>https://vulnogram.org/CVE-2026-64206</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64206</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: L2CAP: cancel pending_rx_work before taking conn-&gt;lock l2cap_conn_del() takes conn-&gt;lock and then calls cancel_work_sync() for pending_rx_work. process_pending_rx() takes…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64205 — i2c: i801: fix hardware state machine corruption in error path</title>
+      <link>https://vulnogram.org/CVE-2026-64205</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64205</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: i2c: i801: fix hardware state machine corruption in error path A severe livelock and subsequent Hung Task panic were observed in the i2c-i801 driver during concurrent Fuzzing. The cr…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64192 — bpf: Reject BPF_MAP_TYPE_INODE_STORAGE creation if BPF LSM is uninitialized</title>
+      <link>https://vulnogram.org/CVE-2026-64192</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64192</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: bpf: Reject BPF_MAP_TYPE_INODE_STORAGE creation if BPF LSM is uninitialized When CONFIG_BPF_LSM=y is set, BPF inode storage maps (BPF_MAP_TYPE_INODE_STORAGE) are compiled into the ke…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64191 — i2c: stub: Reject I2C block transfers with invalid length</title>
+      <link>https://vulnogram.org/CVE-2026-64191</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64191</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: i2c: stub: Reject I2C block transfers with invalid length The I2C_SMBUS_I2C_BLOCK_DATA case in stub_xfer() uses data-&gt;block[0] as the transfer length. The existing check only clamps…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64190 — net: team: fix NULL pointer dereference in team_xmit during mode change</title>
+      <link>https://vulnogram.org/CVE-2026-64190</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64190</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: team: fix NULL pointer dereference in team_xmit during mode change __team_change_mode() clears team-&gt;ops with memset() before restoring safe dummy handlers via team_adjust_ops()…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64189 — netfilter: ipset: fix race between dump and ip_set_list resize</title>
+      <link>https://vulnogram.org/CVE-2026-64189</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64189</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: netfilter: ipset: fix race between dump and ip_set_list resize The release path of ip_set_dump_do() and ip_set_dump_done() read inst-&gt;ip_set_list via ip_set_ref_netlink(), a plain rc…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64188 — net: qualcomm: rmnet: fix endpoint use-after-free in rmnet_dellink()</title>
+      <link>https://vulnogram.org/CVE-2026-64188</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64188</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: qualcomm: rmnet: fix endpoint use-after-free in rmnet_dellink() rmnet_dellink() removes the endpoint from the hash table with hlist_del_init_rcu() and then immediately frees it…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64187 — xfs: fail recovery on a committed log item with no regions</title>
+      <link>https://vulnogram.org/CVE-2026-64187</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64187</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: xfs: fail recovery on a committed log item with no regions If the first op of a transaction is a bare transaction header (len == sizeof(struct xfs_trans_header)), xlog_recover_add_to…</description>
+      <pubDate>Mon, 20 Jul 2026 16:27:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-64186 — iommu/amd: Remove latent out-of-bounds access in IOMMU debugfs</title>
       <link>https://vulnogram.org/CVE-2026-64186</link>
@@ -311,74 +374,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64146</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: erofs: fix metabuf leak in inode xattr initialization commit bb88e8da0025 (&quot;erofs: use meta buffers for xattr operations&quot;) converted xattr operations to use on-stack erofs_buf instan…</description>
       <pubDate>Sun, 19 Jul 2026 15:40:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64145 — wifi: wilc1000: fix dma_buffer leak on bus acquire failure</title>
-      <link>https://vulnogram.org/CVE-2026-64145</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64145</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: wilc1000: fix dma_buffer leak on bus acquire failure wilc_wlan_firmware_download() allocates dma_buffer with kmalloc() at the top of the function and uses a &apos;fail:&apos; label to fr…</description>
-      <pubDate>Sun, 19 Jul 2026 15:40:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64144 — Bluetooth: btmtk: fix urb-&gt;setup_packet leak in error paths</title>
-      <link>https://vulnogram.org/CVE-2026-64144</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64144</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: btmtk: fix urb-&gt;setup_packet leak in error paths The setup_packet of control urb is not freed if usb_submit_urb fails or the submitted urb is killed. Add free in these two…</description>
-      <pubDate>Sun, 19 Jul 2026 15:40:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64143 — platform/x86: uniwill-laptop: Do not enable the charging limit even when forced</title>
-      <link>https://vulnogram.org/CVE-2026-64143</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64143</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: platform/x86: uniwill-laptop: Do not enable the charging limit even when forced It seems that on some older models (~2020) the battery charging limit can permanently damage the batte…</description>
-      <pubDate>Sun, 19 Jul 2026 15:40:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64142 · 9.8 CRITICAL — ksmbd: close durable scavenger races against m_fp_list lookups</title>
-      <link>https://vulnogram.org/CVE-2026-64142</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64142</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: close durable scavenger races against m_fp_list lookups ksmbd_durable_scavenger() has two related races against any walker that iterates f_ci-&gt;m_fp_list, including ksmbd_looku…</description>
-      <category>Critical</category>
-      <pubDate>Sun, 19 Jul 2026 15:40:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64141 · 7.5 HIGH — ksmbd: fix null pointer dereference in compare_guid_key()</title>
-      <link>https://vulnogram.org/CVE-2026-64141</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64141</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: fix null pointer dereference in compare_guid_key() session_fd_check() walks the per-inode m_op_list during durable-handle session teardown and sets op-&gt;conn = NULL for every o…</description>
-      <category>High</category>
-      <pubDate>Sun, 19 Jul 2026 15:40:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64140 · 7.5 HIGH — ksmbd: fix null pointer dereference in proc_show_files()</title>
-      <link>https://vulnogram.org/CVE-2026-64140</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64140</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: fix null pointer dereference in proc_show_files() When a SMB2 client opens a file with a durable v2 handle and then issues SMB2 SESSION_LOGOFF, session_fd_check() clears fp-&gt;t…</description>
-      <category>High</category>
-      <pubDate>Sun, 19 Jul 2026 15:40:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64139 — ksmbd: fix SID memory leak in set_posix_acl_entries_dacl() on overflow</title>
-      <link>https://vulnogram.org/CVE-2026-64139</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64139</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: fix SID memory leak in set_posix_acl_entries_dacl() on overflow Commit 299f962c0b02 (&quot;ksmbd: use check_add_overflow() to prevent u16 DACL size overflow&quot;) added check_add_overf…</description>
-      <pubDate>Sun, 19 Jul 2026 15:40:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64138 · 8.8 HIGH — ksmbd: validate SID in parent security descriptor during ACL inheritance</title>
-      <link>https://vulnogram.org/CVE-2026-64138</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64138</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: validate SID in parent security descriptor during ACL inheritance Introduce smb_validate_ntsd_sid() helper to safely validate Owner SID and Group SID inside the NT Security De…</description>
-      <category>High</category>
-      <pubDate>Sun, 19 Jul 2026 15:40:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64137 · 7.8 HIGH — smb: client: require net admin for CIFS SWN netlink</title>
-      <link>https://vulnogram.org/CVE-2026-64137</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64137</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: smb: client: require net admin for CIFS SWN netlink CIFS_GENL_CMD_SWN_NOTIFY is the userspace witness-notify command. The intended sender is the cifs.witness helper, but the generic-…</description>
-      <category>High</category>
-      <pubDate>Sun, 19 Jul 2026 15:40:31 GMT</pubDate>
     </item>
   </channel>
 </rss>
