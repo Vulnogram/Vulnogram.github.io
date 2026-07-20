@@ -11,7 +11,28 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 17 Jul 2026 19:54:06 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 08:30:20 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-13577 — Dancer2 versions through 2.1.0 for Perl generate insecure session ids when CSPRNG modules are unavailable</title>
+      <link>https://vulnogram.org/CVE-2026-13577</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13577</guid>
+      <description>Dancer2 versions through 2.1.0 for Perl generate insecure session ids when CSPRNG modules are unavailable. Dancer2::Core::Role::SessionFactory::generate_id silently falls back to a built-in rand-derived session id when both Math::Random::ISAAC::XS an…</description>
+      <pubDate>Mon, 20 Jul 2026 07:11:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16235 — Crypt::Password versions through 0.28 for Perl generate insecure random values for salts</title>
+      <link>https://vulnogram.org/CVE-2026-16235</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16235</guid>
+      <description>Crypt::Password versions through 0.28 for Perl generate insecure random values for salts. These versions use the built-in rand function, which is predictable and unsuitable for cryptography.</description>
+      <pubDate>Mon, 20 Jul 2026 07:02:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6656 — Crypt::Password versions through 0.28 for Perl are susceptible to timing attacks</title>
+      <link>https://vulnogram.org/CVE-2026-6656</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6656</guid>
+      <description>Crypt::Password versions through 0.28 for Perl are susceptible to timing attacks. The check_password method uses the built-in eq operator. This allows discrepancies in timing to be used to guess the underlying hash.</description>
+      <pubDate>Mon, 20 Jul 2026 07:01:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-9537 — Mojo::JWT versions before 1.02 for Perl verify HMAC signatures with a non-constant-time string comparison</title>
       <link>https://vulnogram.org/CVE-2026-9537</link>
@@ -388,61 +409,40 @@
       <pubDate>Tue, 30 Jun 2026 11:20:35 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-57082 · 5.9 MEDIUM 🌩️ — Net::BitTorrent versions through 2.0.1 for Perl generate the MSE Diffie-Hellman private key with a non-cryptographic PRNG</title>
+      <title>CVE-2026-57082 · 5.9 MEDIUM 🌩️ — Net::BitTorrent versions before 2.1.0 for Perl generate the MSE Diffie-Hellman private key with a non-cryptographic PRNG</title>
       <link>https://vulnogram.org/CVE-2026-57082</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57082</guid>
-      <description>Net::BitTorrent versions through 2.0.1 for Perl generate the MSE Diffie-Hellman private key with a non-cryptographic PRNG. The MSE (Message Stream Encryption) handshake derives its 160-bit Diffie-Hellman private key from Perl&apos;s rand(), a non-cryptogr…</description>
+      <description>Net::BitTorrent versions before 2.1.0 for Perl generate the MSE Diffie-Hellman private key with a non-cryptographic PRNG. The MSE (Message Stream Encryption) handshake derives its 160-bit Diffie-Hellman private key from Perl&apos;s rand(), a non-cryptogra…</description>
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 30 Jun 2026 11:05:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-57081 · 7.5 HIGH 🌩️ — Net::BitTorrent versions through 2.0.1 for Perl allow remote memory exhaustion via deeply nested bencoded input</title>
+      <title>CVE-2026-57081 · 7.5 HIGH 🌩️ — Net::BitTorrent versions through 2.1.0 for Perl allow remote memory exhaustion via deeply nested bencoded input</title>
       <link>https://vulnogram.org/CVE-2026-57081</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57081</guid>
-      <description>Net::BitTorrent versions through 2.0.1 for Perl allow remote memory exhaustion via deeply nested bencoded input. bdecode recurses once per nested list or dictionary level with no depth cap, and each recursive call receives the remaining buffer by val…</description>
+      <description>Net::BitTorrent versions through 2.1.0 for Perl allow remote memory exhaustion via deeply nested bencoded input. bdecode recurses once per nested list or dictionary level with no depth cap, and each recursive call receives the remaining buffer by val…</description>
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 30 Jun 2026 11:05:14 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-57080 — Net::BitTorrent versions through 2.0.1 for Perl allow remote memory exhaustion via an uncapped peer-wire message-length prefix</title>
+      <title>CVE-2026-57080 · 7.5 HIGH 🌩️ — Net::BitTorrent versions through 2.1.0 for Perl allow remote memory exhaustion via an uncapped peer-wire message-length prefix</title>
       <link>https://vulnogram.org/CVE-2026-57080</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57080</guid>
-      <description>Net::BitTorrent versions through 2.0.1 for Perl allow remote memory exhaustion via an uncapped peer-wire message-length prefix. The peer-wire framing in _process_messages trusts the 4-byte length prefix sent by a connected peer with no upper bound, w…</description>
+      <description>Net::BitTorrent versions through 2.1.0 for Perl allow remote memory exhaustion via an uncapped peer-wire message-length prefix. The peer-wire framing in _process_messages trusts the 4-byte length prefix sent by a connected peer with no upper bound, w…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 30 Jun 2026 11:04:56 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-57079 — Net::BitTorrent versions through 2.0.1 for Perl write files outside the download directory via path traversal in peer-supplied metadata</title>
+      <title>CVE-2026-57079 · 5.3 MEDIUM 🌩️ — Net::BitTorrent versions before 2.1.0 for Perl write files outside the download directory via path traversal in peer-supplied metadata</title>
       <link>https://vulnogram.org/CVE-2026-57079</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57079</guid>
-      <description>Net::BitTorrent versions through 2.0.1 for Perl write files outside the download directory via path traversal in peer-supplied metadata. Net::BitTorrent validates file path components only on the .torrent-file ingest path. The peer and magnet metadat…</description>
+      <description>Net::BitTorrent versions before 2.1.0 for Perl write files outside the download directory via path traversal in peer-supplied metadata. Net::BitTorrent validates file path components only on the .torrent-file ingest path. The peer and magnet metadata…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 30 Jun 2026 11:04:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13758 — CryptX versions before 0.088_001 for Perl compare AEAD authentication tags in non-constant time in the streaming decrypt_done path</title>
-      <link>https://vulnogram.org/CVE-2026-13758</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13758</guid>
-      <description>CryptX versions before 0.088_001 for Perl compare AEAD authentication tags in non-constant time in the streaming decrypt_done path. The decrypt_done($tag) form compares it against the computed tag with memNE (memcmp() != 0), which short-circuits on t…</description>
-      <pubDate>Mon, 29 Jun 2026 20:42:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56018 · 7.5 HIGH 🌩️ — JavaScript::Minifier::XS versions before 0.16 for Perl leak memory on every call to minify(), allowing unbounded memory growth</title>
-      <link>https://vulnogram.org/CVE-2026-56018</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56018</guid>
-      <description>JavaScript::Minifier::XS versions before 0.16 for Perl leak memory on every call to minify(), allowing unbounded memory growth. In JsMinify (XS.xs) the cleanup frees only the NodeSet structures and never the per-token contents buffers allocated in Js…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Jun 2026 19:38:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56017 · 7.5 HIGH 🌩️ — JavaScript::Minifier::XS versions before 0.16 for Perl crash with a NULL pointer dereference when the first meaningful token of the input is a slash</title>
-      <link>https://vulnogram.org/CVE-2026-56017</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56017</guid>
-      <description>JavaScript::Minifier::XS versions before 0.16 for Perl crash with a NULL pointer dereference when the first meaningful token of the input is a slash. The regexp versus division disambiguator in JsTokenizeString (XS.xs) inspects the previous token&apos;s l…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Jun 2026 19:38:14 GMT</pubDate>
     </item>
   </channel>
 </rss>
