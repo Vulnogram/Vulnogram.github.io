@@ -11,7 +11,52 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 21 Jul 2026 21:48:37 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 22:43:50 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-56819 · 7.5 HIGH 🌩️ — Netty: HTTP/2 decompression leaks ByteBuf reference count when the decompressor channel is already closed (Direct memory leak / OOM DoS)</title>
+      <link>https://vulnogram.org/CVE-2026-56819</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56819</guid>
+      <description>Netty is a network application framework for development of protocol servers and clients. In versions 4.2.0.Final through 4.2.15.Final and 4.1.0.Final through 4.1.135.Final, a remote unauthenticated peer can leak one direct `ByteBuf` per HTTP/2 `DATA…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 22:11:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56817 · 8.3 HIGH 🌩️ — Netty: XML External Entity (XXE) injection via unconfigured XML factory when DTD and entity processing are enabled</title>
+      <link>https://vulnogram.org/CVE-2026-56817</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56817</guid>
+      <description>Netty is a network application framework for development of protocol servers and clients. In versions 4.2.0.Final through 4.2.15.Final and 4.1.0.Final through 4.1.135.Final, any caller that can deliver bytes to a Netty channel pipeline containing `Xm…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 22:06:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56816 · 7.5 HIGH 🌩️ — Netty: Memory Exhaustion via HTTP/3 Reserved Frame Types</title>
+      <link>https://vulnogram.org/CVE-2026-56816</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56816</guid>
+      <description>Netty is a network application framework for development of protocol servers and clients. Prior to 4.2.16.Final, Netty&apos;s `Http3FrameCodec` buffers incoming data for HTTP/3 reserved frame types up to the wire-specified payload length without limits; `…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 21:56:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47731 · 9.1 CRITICAL 🌩️ — NASA AMMOS Instrument Toolkit: Path traversal resulting in arbitrary file append (can be triggered over the network by unauthenticated attacker)</title>
+      <link>https://vulnogram.org/CVE-2026-47731</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47731</guid>
+      <description>The AMMOS Instrument Toolkit (Formerly the Bespoke Links to Instruments for Surface and Space (BLISS)) is a Python-based software suite developed to handle Ground Data System (GDS), Electronic Ground Support Equipment (EGSE), commanding, telemetry up…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 21:36:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56746 · 6.5 MEDIUM 🌩️ — Netty has a Security Control Bypass via CORS Short-Circuit Failure</title>
+      <link>https://vulnogram.org/CVE-2026-56746</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56746</guid>
+      <description>Netty is a network application framework for development of protocol servers and clients. Versions 4.2.0.Final through 4.2.15.Final and 4.1.0.Final through 4.1.135.Final, are vulnerable to security control bypass during the origin evaluation process.…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 21:36:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-43947 · 8.9 HIGH 🌩️ — FUXA Vulnerable to Unauthenticated Remote Code Execution via Script Test Mode Authorization Bypass</title>
       <link>https://vulnogram.org/CVE-2026-43947</link>
@@ -386,47 +431,6 @@
       <description>PraisonAI Platform is the platform layer for the PraisonAI multi-agent teams system. Prior to version 0.1.4, the Platform server exposes resources under `/api/v1/workspaces/{workspace_id}/...` and protects them with a `require_workspace_member(worksp…</description>
       <category>Critical</category>
       <pubDate>Tue, 21 Jul 2026 16:42:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47406 · 8.1 HIGH — praisonai-platform: Dependency endpoints accept any issue_id and dep_id without workspace ownership check, cross-workspace issue linking + read + delete IDOR</title>
-      <link>https://vulnogram.org/CVE-2026-47406</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47406</guid>
-      <description>PraisonAI Platform is the platform layer for the PraisonAI multi-agent teams system. Versions prior to 0.1.4 have an Insecure Direct Object Reference. The dependency endpoints (`POST/GET /workspaces/{workspace_id}/issues/{issue_id}/dependencies` and…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 16:37:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47405 · 8.8 HIGH — PraisonAI Platform missing role checks let any workspace member become owner and take over workspace membership</title>
-      <link>https://vulnogram.org/CVE-2026-47405</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47405</guid>
-      <description>PraisonAI Platform is the platform layer for the PraisonAI multi-agent teams system. Versions prior to 0.1.4 have a broken workspace authorization check that allows any authenticated low-privilege workspace member to escalate their own role to `owner…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 16:18:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47399 · 8.8 HIGH — PraisonAI Platform workspace-scoped routes allow cross-workspace object access by global object ID</title>
-      <link>https://vulnogram.org/CVE-2026-47399</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47399</guid>
-      <description>PraisonAI Platform is the platform layer for the PraisonAI multi-agent teams system. Prior to version 0.1.4, the workspace-scoped REST routes contain a systemic object-level authorization flaw that allows an authenticated user from one workspace to a…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 16:15:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47398 · 8.1 HIGH 🌩️ — PraisonAI: Arbitrary code execution via unguarded `spec.loader.exec_module` in `agents_generator.py` - sibling of CVE-2026-44334</title>
-      <link>https://vulnogram.org/CVE-2026-47398</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47398</guid>
-      <description>PraisonAI is a multi-agent teams system. The v4.6.32 chokepoint refactor (which patched CVE-2026-44334 / GHSA-xcmw-grxf-wjhj) added the PRAISONAI_ALLOW_LOCAL_TOOLS env-var gate to the tool_override.py sinks. However, two additional spec.loader.exec_m…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 16:01:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47397 · 7.1 HIGH — PraisonAI has an Arbitrary File Write in Python API</title>
-      <link>https://vulnogram.org/CVE-2026-47397</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47397</guid>
-      <description>PraisonAI is a multi-agent teams system. Prior to version 4.6.40, hidden metadata in a webpage causes PraisonAI agents to write attacker-controlled content to arbitrary paths. `write_file` skips path validation when `workspace=None` (always `None` in…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 15:57:25 GMT</pubDate>
     </item>
   </channel>
 </rss>
