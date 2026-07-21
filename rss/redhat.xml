@@ -11,7 +11,49 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 21 Jul 2026 10:09:33 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 12:14:36 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-16461 · 6.5 MEDIUM 🌩️ — Rpcbind: rpcbind: stack buffer overflow in rpcinfo rpcbdump() short-mode version-list formatting</title>
+      <link>https://vulnogram.org/CVE-2026-16461</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16461</guid>
+      <description>A stack-based buffer overflow was found in rpcbind&apos;s rpcinfo utility. In rpcbdump() short mode (used by `rpcinfo -s`), version numbers from a remote RPCBPROC_DUMP reply are written into a fixed-size stack buffer without bounds checking. A user or adm…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 11:42:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59844 · 6.5 MEDIUM — Libssh: libssh: denial of service via oversized sftp read length</title>
+      <link>https://vulnogram.org/CVE-2026-59844</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59844</guid>
+      <description>A flaw was found in libssh. A remote authenticated client can issue SSH_FXP_READ requests with an arbitrarily large length, causing a libssh SFTP server to allocate excessive memory and potentially exhaust it through repeated requests.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 21 Jul 2026 11:32:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59845 · 5.3 MEDIUM — Libssh: libssh: denial of service via unchecked proxycommand fork() failure</title>
+      <link>https://vulnogram.org/CVE-2026-59845</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59845</guid>
+      <description>A flaw was found in libssh. When ProxyCommand is used, an unchecked fork() failure can be stored as process ID -1; during cleanup, signals may then be sent across the caller&apos;s accessible process tree, leading to local denial of service.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 21 Jul 2026 11:26:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59843 · 6.5 MEDIUM — Libssh: libssh: denial of service via zero advertised channel packet size</title>
+      <link>https://vulnogram.org/CVE-2026-59843</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59843</guid>
+      <description>A flaw was found in libssh. A remote authenticated peer can advertise a zero maximum packet size in SSH_MSG_CHANNEL_OPEN, causing later channel writes to loop indefinitely and consume CPU, leading to denial of service.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 21 Jul 2026 11:16:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59842 · 3.7 LOW 🌩️ — Libssh: libssh: information disclosure via short gssapi curve25519 public key</title>
+      <link>https://vulnogram.org/CVE-2026-59842</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59842</guid>
+      <description>A flaw was found in libssh. During server-side GSSAPI key exchange, a client-supplied Curve25519 public key shorter than the expected length is copied without proper length validation, leading to an out-of-bounds heap read. This could allow a remote…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 11:08:30 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15370 · 6.7 MEDIUM — Libssh: libssh: stack buffer overflow in sftp server longname construction</title>
       <link>https://vulnogram.org/CVE-2026-15370</link>
@@ -391,48 +433,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 09 Jul 2026 09:34:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15154 · 6.5 MEDIUM — Guardrails-detectors: guardrails-detectors: unauthenticated regular-expression denial of service (redos) via detector_params.regex</title>
-      <link>https://vulnogram.org/CVE-2026-15154</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15154</guid>
-      <description>A flaw was found in `guardrails-detectors`, a component of Red Hat OpenShift AI. This vulnerability, known as Regular Expression Denial of Service (ReDoS), allows a remote attacker to provide specially crafted regular expressions to the public detect…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 08 Jul 2026 19:50:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15063 · 6.3 MEDIUM — Trustyai-service-operator: trustyai service operator: gorch port bypass when auth is enabled</title>
-      <link>https://vulnogram.org/CVE-2026-15063</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15063</guid>
-      <description>A flaw was found in the gorch service template, which is part of the trustyai-service-operator. Even when authentication is enabled, the gorch service exposes unproxied orchestrator and detector metrics ports. This allows any pod on the cluster netwo…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 08 Jul 2026 14:58:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15044 · 6.3 MEDIUM — Trustyai-service-operator: trustyai service operator: unauthenticated access to ai guardrails and orchestrator apis</title>
-      <link>https://vulnogram.org/CVE-2026-15044</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15044</guid>
-      <description>A flaw was found in the TrustyAI Service Operator. When deploying services like gorch or NemoGuardrails, if a specific security setting is not enabled, these services can expose their communication channels without requiring users to prove their iden…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 08 Jul 2026 14:37:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15041 · 3.7 LOW 🌩️ — 389-ds-base: 389-ds-base: non-constant-time comparison in pbkdf2-sha256 password verification</title>
-      <link>https://vulnogram.org/CVE-2026-15041</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15041</guid>
-      <description>A flaw was found in 389 Directory Server. The PBKDF2-SHA256 password verification function uses standard memcmp() for comparing password hashes instead of a constant-time comparison function. A remote attacker could potentially use timing measurement…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 08 Jul 2026 10:15:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12799 · 6.5 MEDIUM 🌩️ — Jastow: jastow cross-site scripting attack due to unsanitized uri</title>
-      <link>https://vulnogram.org/CVE-2025-12799</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12799</guid>
-      <description>A flaw was found in Jastow. Jastow is vulnerable to Cross-Site Scripting (XSS) attack. If using a set of combined configuration to allow unescaped characters in URL with embedded Undertow and Jastow, a server might be vulnerable to improper input han…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Jul 2026 16:18:57 GMT</pubDate>
     </item>
   </channel>
 </rss>
