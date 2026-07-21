@@ -11,7 +11,55 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 17 Jul 2026 23:38:12 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 21:48:37 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10680 · 7.6 HIGH — Out-of-bounds access in Zephyr BR/EDR L2CAP configuration request handling via `uint16_t` length underflow</title>
+      <link>https://vulnogram.org/CVE-2026-10680</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10680</guid>
+      <description>The Classic (BR/EDR) L2CAP signaling handlers l2cap_br_conf_req() and l2cap_br_conf_rsp() in subsys/bluetooth/host/classic/l2cap_br.c validated the minimum command size against buf-&gt;len (the bytes remaining in the whole received PDU) instead of len (…</description>
+      <category>High</category>
+      <pubDate>Tue, 21 Jul 2026 21:30:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10679 · 3.3 LOW — Divide-by-zero in DesignWare SPI driver reachable from spi_transceive syscall (local DoS)</title>
+      <link>https://vulnogram.org/CVE-2026-10679</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10679</guid>
+      <description>The DesignWare SPI driver (drivers/spi/spi_dw.c) computed the SPI BAUDR clock divider as info-&gt;clock_frequency / config-&gt;frequency without validating config-&gt;frequency. spi_transceive is a Zephyr __syscall and its verify handler (drivers/spi/spi_hand…</description>
+      <category>Low</category>
+      <pubDate>Tue, 21 Jul 2026 21:30:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10678 · 8.1 HIGH — NULL-pointer / out-of-bounds write in Zephyr MCTP I2C+GPIO target binding driven by an unauthenticated I2C controller</title>
+      <link>https://vulnogram.org/CVE-2026-10678</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10678</guid>
+      <description>The MCTP-over-I2C+GPIO target binding in Zephyr (subsys/pmci/mctp/mctp_i2c_gpio_target.c) processes pseudo-register writes from an I2C bus master byte-by-byte in mctp_i2c_gpio_target_write_received() without validating the order or the receive buffer…</description>
+      <category>High</category>
+      <pubDate>Tue, 21 Jul 2026 21:30:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10677 · 6.5 MEDIUM — Kernel heap memory leak in `z_vrfy_k_poll()` lets an unprivileged user thread exhaust the kernel resource pool</title>
+      <link>https://vulnogram.org/CVE-2026-10677</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10677</guid>
+      <description>The CONFIG_USERSPACE syscall verifier z_vrfy_k_poll() in kernel/poll.c allocates a kernel-side copy of the user-supplied k_poll_event[] via z_thread_malloc() and then validates each event&apos;s object handle. Before this fix, validation used K_OOPS(K_SYS…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 21 Jul 2026 21:30:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10675 · 4.3 MEDIUM — Bluetooth Mesh PB-ADV: invalidated provisioning link kept alive indefinitely, blocking (re)provisioning (DoS)</title>
+      <link>https://vulnogram.org/CVE-2026-10675</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10675</guid>
+      <description>In Zephyr&apos;s Bluetooth Mesh PB-ADV provisioning bearer (subsys/bluetooth/mesh/pb_adv.c), prov_msg_recv() rescheduled the provisioning protocol watchdog timer unconditionally at the top of the function, before the FCS check and before the ADV_LINK_INVA…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 21 Jul 2026 21:30:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10674 · 5.5 MEDIUM — DoS (hard fault) in NXP LPUART driver: unsupported runtime UART config leaves clocks disabled</title>
+      <link>https://vulnogram.org/CVE-2026-10674</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10674</guid>
+      <description>The NXP LPUART serial driver (drivers/serial/uart_mcux_lpuart.c), when CONFIG_UART_USE_RUNTIME_CONFIGURE is enabled, called LPUART_Deinit() at the start of mcux_lpuart_configure(), which disables the LPUART peripheral clocks. The requested configurat…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 21 Jul 2026 21:30:53 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10673 · 8.3 HIGH — Out-of-bounds write in ADIN2111/ADIN1110 OA SPI Ethernet RX frame reassembly</title>
       <link>https://vulnogram.org/CVE-2026-10673</link>
@@ -364,55 +412,6 @@
       <description>An integer underflow in bt_mesh_sol_recv() in the Bluetooth Mesh solicitation handling (subsys/bluetooth/mesh/solicitation.c) leads to an out-of-bounds write. When CONFIG_BT_MESH_OD_PRIV_PROXY_SRV is enabled, the function parses solicitation PDUs fro…</description>
       <category>Medium</category>
       <pubDate>Thu, 04 Jun 2026 19:54:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5071 · 6.1 MEDIUM — can: Local Denial of Service via SocketCAN Send</title>
-      <link>https://vulnogram.org/CVE-2026-5071</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5071</guid>
-      <description>The SocketCAN implementation validates the length of a user-provided buffer containing a socketcan_frame object using only a NET_ASSERT statement in zcan_sendto_ctx() before dereferencing it in socketcan_to_can_frame(). In production builds where ass…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 30 May 2026 07:15:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5072 · 6.5 MEDIUM — ptp: Potential Denial of Service via PTP Interval Shift</title>
-      <link>https://vulnogram.org/CVE-2026-5072</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5072</guid>
-      <description>A bitwise shift vulnerability in Zephyr&apos;s PTP subsystem allows a remote attacker to cause undefined behavior and potential system crashes. An attacker sends a crafted PTP_MSG_MANAGEMENT message to set an unvalidated negative log_announce_interval val…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 07:00:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-1681 · 6.1 MEDIUM — net: Stack Overflow with Ping (to own IP Address) via Shell</title>
-      <link>https://vulnogram.org/CVE-2026-1681</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1681</guid>
-      <description>Issuing an ICMP ping via the `net ping` shell command to a device&apos;s own IPv4 address causes the network stack to recursively re-enter the input path on the same system work-queue stack. Because the destination is recognized as a local address, both t…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 12 May 2026 05:39:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-1677 · 5.3 MEDIUM 🌩️ — net:  TLS 1.2 connections allowed  on TLS 1.3 sockets</title>
-      <link>https://vulnogram.org/CVE-2026-1677</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1677</guid>
-      <description>Zephyr sockets created with `IPPROTO_TLS_1_3` can still negotiate a TLS 1.2 connection when both TLS versions are enabled in Kconfig, because the socket-level protocol selection is not propagated to mbedTLS (e.g. via `mbedtls_ssl_conf_min_tls_version…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 11 May 2026 05:52:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5590 · 6.4 MEDIUM — net: ip/tcp: Null pointer dereference can be triggered by a race condition</title>
-      <link>https://vulnogram.org/CVE-2026-5590</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5590</guid>
-      <description>A race condition during TCP connection teardown can cause tcp_recv() to operate on a connection that has already been released. If tcp_conn_search() returns NULL while processing a SYN packet, a NULL pointer derived from stale context data is passed…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 05 Apr 2026 03:34:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-1679 · 7.3 HIGH — net: eswifi socket send payload length not bounded</title>
-      <link>https://vulnogram.org/CVE-2026-1679</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1679</guid>
-      <description>The eswifi socket offload driver copies user-provided payloads into a fixed buffer without checking available space; oversized sends overflow `eswifi-&gt;buf`, corrupting kernel memory (CWE-120). Exploit requires local code that can call the socket send…</description>
-      <category>High</category>
-      <pubDate>Fri, 27 Mar 2026 23:21:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
