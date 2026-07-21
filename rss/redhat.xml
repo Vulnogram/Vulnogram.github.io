@@ -11,7 +11,65 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 21 Jul 2026 12:14:36 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 14:51:35 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-59851 · 8.8 HIGH — Libssh: libssh: authentication bypass via missing gssapi principal check</title>
+      <link>https://vulnogram.org/CVE-2026-59851</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59851</guid>
+      <description>A flaw was found in libssh. On servers with GSSAPIKeyExchange enabled, the gssapi-keyex path does not verify whether the authenticated Kerberos principal is authorized for the requested local user, allowing authenticated clients to log in as arbitrar…</description>
+      <category>High</category>
+      <pubDate>Tue, 21 Jul 2026 14:20:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59850 · 4.3 MEDIUM — Libssh: libssh: use-after-free via data callbacks on closed channels</title>
+      <link>https://vulnogram.org/CVE-2026-59850</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59850</guid>
+      <description>A flaw was found in libssh. If data packets are processed after a channel is closed, channel data callbacks can be invoked after the associated data has already been freed, leading to crashes or possible use-after-free conditions.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 21 Jul 2026 14:15:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59849 · 3.1 LOW — Libssh: libssh: denial of service via automatic certificate authentication loop</title>
+      <link>https://vulnogram.org/CVE-2026-59849</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59849</guid>
+      <description>A flaw was found in libssh. Logic errors in automatic certificate-based public key authentication can cause libssh clients to loop indefinitely when configured certificates are missing or repeatedly rejected by a server, leading to denial of service.</description>
+      <category>Low</category>
+      <pubDate>Tue, 21 Jul 2026 14:08:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59848 · 5.3 MEDIUM 🌩️ — Libssh: libssh: denial of service via sftp responses with unknown request ids</title>
+      <link>https://vulnogram.org/CVE-2026-59848</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59848</guid>
+      <description>A flaw was found in libssh. A malicious SFTP server can send responses for unknown request IDs that libssh clients keep queued indefinitely, causing unbounded memory growth and client-side denial of service.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 13:21:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59847 · 5.9 MEDIUM 🌩️ — Libssh: libssh: integrity downgrade via openssl aes-gcm tag verification</title>
+      <link>https://vulnogram.org/CVE-2026-59847</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59847</guid>
+      <description>A flaw was found in libssh. Incorrect AES-GCM finalization checks in builds using the OpenSSL backend can effectively remove integrity protection, allowing an in-path attacker to modify plaintext on the wire without detection.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 21 Jul 2026 13:18:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59846 · 3.9 LOW — Libssh: libssh: information disclosure via proxycommand %r username expansion</title>
+      <link>https://vulnogram.org/CVE-2026-59846</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59846</guid>
+      <description>A flaw was found in libssh. A malicious username expanded through %r in ProxyCommand handling can inject shell metacharacters, exposing environment variables and causing unintended shell behavior.</description>
+      <category>Low</category>
+      <pubDate>Tue, 21 Jul 2026 12:55:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16445 · 7.5 HIGH — Dracut: dracut: root code execution via dhcp options command injection in networkmanager initrd module</title>
+      <link>https://vulnogram.org/CVE-2026-16445</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16445</guid>
+      <description>A flaw was found in dracut. A remote attacker on the adjacent network can exploit this vulnerability by providing specially crafted DHCP options, such as a malicious root-path, next-server, or bootfile name, to a system using dracut&apos;s NetworkManager-…</description>
+      <category>High</category>
+      <pubDate>Tue, 21 Jul 2026 12:51:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-16461 · 6.5 MEDIUM 🌩️ — Rpcbind: rpcbind: stack buffer overflow in rpcinfo rpcbdump() short-mode version-list formatting</title>
       <link>https://vulnogram.org/CVE-2026-16461</link>
@@ -372,67 +430,6 @@
       <description>A privilege escalation vulnerability was found in the incluster-checks tool for OpenShift. The tool creates privileged debug pods with host filesystem access in the shared default namespace, where any user with the standard edit role can exec into th…</description>
       <category>High</category>
       <pubDate>Mon, 13 Jul 2026 12:01:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62147 · 6.5 MEDIUM — Tempo-operator: tempo operator: query rbac bypass</title>
-      <link>https://vulnogram.org/CVE-2026-62147</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62147</guid>
-      <description>The Tempo Operator&apos;s gateway component failed to consistently apply namespace-scoped redaction on some query API response paths when query RBAC was enabled, allowing an authenticated user to read span attributes belonging to other tenants&apos; namespaces…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 13 Jul 2026 11:43:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15574 · 7.5 HIGH 🌩️ — Vllm-orchestrator-gateway: vllm-orchestrator-gateway: authorization header and full chat payloads logged at hard-coded debug default</title>
-      <link>https://vulnogram.org/CVE-2026-15574</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15574</guid>
-      <description>A flaw was found in the vllm-orchestrator-gateway component. The system&apos;s production binary logs all incoming authorization headers and full chat payloads, which may contain personally identifiable information (PII) and secrets, to persistent logs. T…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 13 Jul 2026 08:01:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15143 · 9.3 CRITICAL 🌩️ — Guardrails-detectors: guardrails-detectors: ssrf and local file read via user-supplied xml schema (xml-with-schema:)</title>
-      <link>https://vulnogram.org/CVE-2026-15143</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15143</guid>
-      <description>A flaw was found in the file_type content detector of guardrails-detectors. This vulnerability allows a remote attacker to supply an arbitrary XML Schema Definition (XSD) string, which is processed without proper restrictions. This can lead to server…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Jul 2026 15:25:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15028 · 3.9 LOW — Libarchive: heap overflow oob read while parsing a tar archive contains a pax extended header</title>
-      <link>https://vulnogram.org/CVE-2026-15028</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15028</guid>
-      <description>A flaw was found in libarchive. This vulnerability allows a remote attacker to trigger a heap overflow by providing a specially crafted tar archive. The issue occurs during the parsing of a PAX extended header containing a malformed SUN.holesdata spa…</description>
-      <category>Low</category>
-      <pubDate>Fri, 10 Jul 2026 09:55:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15378 · 9.3 CRITICAL 🌩️ — Guardrails-detectors: guardrails-detectors: ssrf and local file read via user-supplied xml schema (xml-with-schema:)</title>
-      <link>https://vulnogram.org/CVE-2026-15378</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15378</guid>
-      <description>A flaw was found in the `guardrails-detectors` component. This vulnerability allows a remote attacker to perform a blind Server-Side Request Forgery (SSRF) by submitting a specially crafted XML Schema Definition (XSD) string. This can lead to unautho…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Jul 2026 09:29:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59692 · 7.5 HIGH 🌩️ — Gstreamer: gstreamer: dtls certificate subject dn stack buffer overflow in openssl_verify_callback</title>
-      <link>https://vulnogram.org/CVE-2026-59692</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59692</guid>
-      <description>A stack buffer overflow vulnerability was found in GStreamer&apos;s DTLS plugin. During a DTLS handshake, the peer certificate Subject Distinguished Name is printed into a fixed-size 2048-byte stack buffer without bounds checking. A remote unauthenticated…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 09 Jul 2026 09:35:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59691 · 7.1 HIGH 🌩️ — Gstreamer: gstreamer: rfbsrc/librfb hextile heap out-of-bounds write with 16bpp framebuffer</title>
-      <link>https://vulnogram.org/CVE-2026-59691</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59691</guid>
-      <description>A heap buffer overflow vulnerability was found in GStreamer&apos;s rfbsrc plugin. When a client connects to a malicious RFB/VNC server that advertises a 16bpp framebuffer and sends Hextile-encoded updates, the Hextile background fill path writes 32-bit pi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 09 Jul 2026 09:34:47 GMT</pubDate>
     </item>
   </channel>
 </rss>
