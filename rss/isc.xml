@@ -11,7 +11,88 @@
       <title>Internet Systems Consortium (ISC) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 20 Jul 2026 13:31:17 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 14:49:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-13321 · 8.6 HIGH 🌩️ — DNSSEC Validation Bypass via Out-of-Zone NSEC Next Field</title>
+      <link>https://vulnogram.org/CVE-2026-13321</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13321</guid>
+      <description>The BIND resolver accepts validly-signed NSEC records where the &quot;Next Domain Name&quot; field points outside the signer&apos;s zone. This issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.11.3-S1 through 9.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:16:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13204 · 7.5 HIGH 🌩️ — Unexpected exit in certain situations with NSEC and NSEC3 both present</title>
+      <link>https://vulnogram.org/CVE-2026-13204</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13204</guid>
+      <description>If a provably insecure domain is covered by both an NSEC and NSEC3 record at the parent, and there exist an RRSIG for only one of these types, then BIND may exit unexpectedly with an assertion while validating this proof. This issue affects BIND 9 ve…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:15:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12617 · 7.5 HIGH 🌩️ — Record ordering based unexpected exit with CNAME or DNAME</title>
+      <link>https://vulnogram.org/CVE-2026-12617</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12617</guid>
+      <description>The issue is unexpected program termination based on ordering and/or specific content in responses to queries for CNAME or DNAME, and A records. Specifically, if a client queries for a DNAME and A record below the DNAME to the resolver, and the autho…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:14:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11721 · 7.5 HIGH 🌩️ — Cache poisoning possible with label count discrepancy, RRSIG, and wildcards</title>
+      <link>https://vulnogram.org/CVE-2026-11721</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11721</guid>
+      <description>It is possible for an attacker&apos;s zone to respond to a query with an RRSIG that has a smaller number of labels than the zone in which the RRSIG is contained. This causes `named` to produce a wildcard name for a zone that is shorter than the attacker&apos;s…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:13:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11622 · 7.5 HIGH 🌩️ — Potential memory usage beyond configured limits</title>
+      <link>https://vulnogram.org/CVE-2026-11622</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11622</guid>
+      <description>A DNSSEC validating resolver that is under a random subdomain attack against a DNSSEC-signed zone can suffer from runaway memory usage. The attacker needs to be able to send queries faster than the resolver can perform validation. The increased memor…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:12:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11605 · 7.5 HIGH 🌩️ — Unnecessary validation of DNSSEC signed records</title>
+      <link>https://vulnogram.org/CVE-2026-11605</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11605</guid>
+      <description>The issue is a resource exhaustion vulnerability associated with DNSSEC validation. BIND always validates all RRSIG records in an answer, even if they are not strictly needed. A query to an authoritative server/zone which returns many valid but super…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:11:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11331 · 7.5 HIGH 🌩️ — Potential wildcard CNAME RPZ policy bypass</title>
+      <link>https://vulnogram.org/CVE-2026-11331</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11331</guid>
+      <description>An attacker who knows (or guesses) that a resolver uses RPZ with wildcard CNAME policies can craft query names long enough to trigger a NAMETOOLONG error condition during RPZ processing. This is not handled correctly and may lead to defeating the RPZ…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:10:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10822 · 6.5 MEDIUM 🌩️ — Key Record using PRIVATEDNS algorithm may lead to unexpected exit</title>
+      <link>https://vulnogram.org/CVE-2026-10822</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10822</guid>
+      <description>If BIND encounters a particular invalid data structure in a DNS record, it will accept the invalid data, and may subsequently abort and exit. BIND will first need to store a DNS record for a key (KEY, DNSKEY, etc.). That key must specify a PRIVATEDNS…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:09:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10723 · 6.8 MEDIUM 🌩️ — Incorrect acceptance of NSEC3 records</title>
+      <link>https://vulnogram.org/CVE-2026-10723</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10723</guid>
+      <description>BIND may accept incorrect child-zone NSEC3 records as valid, which could allow an attacker to forge authenticated NXDOMAIN responses. This issue affects BIND 9 versions 9.18.0 through 9.18.50, 9.20.0 through 9.20.24, 9.21.0 through 9.21.23, 9.11.3-S1…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 22 Jul 2026 14:08:19 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-5950 · 5.3 MEDIUM 🌩️ — Unbounded resend loop in BIND 9 resolver</title>
       <link>https://vulnogram.org/CVE-2026-5950</link>
@@ -375,85 +456,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 21 Jun 2023 16:26:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-3924 · 7.5 HIGH 🌩️ — named configured to answer from stale cache may terminate unexpectedly at recursive-clients soft quota</title>
-      <link>https://vulnogram.org/CVE-2022-3924</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-3924</guid>
-      <description>This issue can affect BIND 9 resolvers with `stale-answer-enable yes;` that also make use of the option `stale-answer-client-timeout`, configured with a value greater than zero. If the resolver receives many queries that require recursion, there will…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jan 2023 21:39:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-3736 · 7.5 HIGH 🌩️ — named configured to answer from stale cache may terminate unexpectedly while processing RRSIG queries</title>
-      <link>https://vulnogram.org/CVE-2022-3736</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-3736</guid>
-      <description>BIND 9 resolver can crash when stale cache and stale answers are enabled, option `stale-answer-client-timeout` is set to a positive integer, and the resolver receives an RRSIG query. This issue affects BIND 9 versions 9.16.12 through 9.16.36, 9.18.0…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jan 2023 21:39:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-3488 · 7.5 HIGH 🌩️ — named may terminate unexpectedly when processing ECS options in repeated responses to iterative queries</title>
-      <link>https://vulnogram.org/CVE-2022-3488</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-3488</guid>
-      <description>Processing of repeated responses to the same query, where both responses contain ECS pseudo-options, but where the first is broken in some way, can cause BIND to exit with an assertion failure. &apos;Broken&apos; in this context is anything that would cause th…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jan 2023 21:37:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-3094 · 7.5 HIGH 🌩️ — An UPDATE message flood may cause named to exhaust all available memory</title>
-      <link>https://vulnogram.org/CVE-2022-3094</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-3094</guid>
-      <description>Sending a flood of dynamic DNS updates may cause `named` to allocate large amounts of memory. This, in turn, may cause `named` to exit due to a lack of free memory. We are not aware of any cases where this has been exploited. Memory is allocated prio…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jan 2023 21:34:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-2929 · 6.5 MEDIUM — DHCP memory leak</title>
-      <link>https://vulnogram.org/CVE-2022-2929</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-2929</guid>
-      <description>In ISC DHCP 1.0 -&gt; 4.4.3, ISC DHCP 4.1-ESV-R1 -&gt; 4.1-ESV-R16-P1 a system with access to a DHCP server, sending DHCP packets crafted to include fqdn labels longer than 63 bytes, could eventually cause the server to run out of memory.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 07 Oct 2022 04:45:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-2928 · 6.5 MEDIUM — An option refcount overflow exists in dhcpd</title>
-      <link>https://vulnogram.org/CVE-2022-2928</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-2928</guid>
-      <description>In ISC DHCP 4.4.0 -&gt; 4.4.3, ISC DHCP 4.1-ESV-R1 -&gt; 4.1-ESV-R16-P1, when the function option_code_hash_lookup() is called from add_option(), it increases the option&apos;s refcount field. However, there is not a corresponding call to option_dereference() t…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 07 Oct 2022 04:45:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-3080 · 7.5 HIGH 🌩️ — BIND 9 resolvers configured to answer from stale cache with zero stale-answer-client-timeout may terminate unexpectedly</title>
-      <link>https://vulnogram.org/CVE-2022-3080</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-3080</guid>
-      <description>By sending specific queries to the resolver, an attacker can cause named to crash.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Sep 2022 10:15:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-38178 · 7.5 HIGH 🌩️ — Memory leaks in EdDSA DNSSEC verification code</title>
-      <link>https://vulnogram.org/CVE-2022-38178</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-38178</guid>
-      <description>By spoofing the target resolver with responses that have a malformed EdDSA signature, an attacker can trigger a small memory leak. It is possible to gradually erode available memory to the point where named crashes for lack of resources.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Sep 2022 10:15:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-38177 · 7.5 HIGH 🌩️ — Memory leak in ECDSA DNSSEC verification code</title>
-      <link>https://vulnogram.org/CVE-2022-38177</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-38177</guid>
-      <description>By spoofing the target resolver with responses that have a malformed ECDSA signature, an attacker can trigger a small memory leak. It is possible to gradually erode available memory to the point where named crashes for lack of resources.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Sep 2022 10:15:28 GMT</pubDate>
     </item>
   </channel>
 </rss>
