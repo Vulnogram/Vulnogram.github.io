@@ -11,7 +11,66 @@
       <title>VulnCheck — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 23 Jul 2026 04:59:07 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 12:16:56 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-65897 · 8.8 HIGH — Grav API Plugin 1.0.9 Privilege Escalation via Invitations groups</title>
+      <link>https://vulnogram.org/CVE-2026-65897</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65897</guid>
+      <description>Grav API Plugin versions before 1.0.10 fail to validate the groups field in InvitationsController::create(), allowing authenticated api.users.write callers to assign invited accounts to groups that grant api.super permissions. Attackers can create in…</description>
+      <category>High</category>
+      <pubDate>Thu, 23 Jul 2026 11:42:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65896 · 7.1 HIGH — Grav API Plugin before 1.0.10 Path Traversal via move</title>
+      <link>https://vulnogram.org/CVE-2026-65896</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65896</guid>
+      <description>Grav API Plugin (Composer package getgrav/grav-plugin-api) before 1.0.10 fails to properly validate the slug field in the POST /pages/{route}/move endpoint. PagesController::move() sanitizes the slug only with ltrim($body[&apos;slug&apos;], &apos;.&apos;), which strips…</description>
+      <category>High</category>
+      <pubDate>Thu, 23 Jul 2026 11:42:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65895 · 8.5 HIGH 🌩️ — Grav API Plugin before 1.0.10 Broken Access Control</title>
+      <link>https://vulnogram.org/CVE-2026-65895</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65895</guid>
+      <description>Grav API Plugin versions before 1.0.10 fail to restrict write access to security-critical plugin configuration scopes, allowing authenticated users with api.config.write privilege to modify rate limiting and CORS settings. Attackers can disable rate…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 23 Jul 2026 11:42:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65608 · 8.8 HIGH — Grav before 2.0.9 Remote Code Execution via FlexDirectory</title>
+      <link>https://vulnogram.org/CVE-2026-65608</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65608</guid>
+      <description>Grav versions &gt;= 1.7.0 and before 2.0.9 contain a remote code execution vulnerability. FlexDirectory::dynamicDataField() resolves blueprint data-*@: directives by calling call_user_func_array() on attacker-influenced input, validating only that the t…</description>
+      <category>High</category>
+      <pubDate>Thu, 23 Jul 2026 11:42:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65607 · 7.1 HIGH — SiYuan before v3.7.2 Path Traversal via /export/temp/</title>
+      <link>https://vulnogram.org/CVE-2026-65607</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65607</guid>
+      <description>SiYuan before v3.7.2 contains a path traversal vulnerability in the /export/temp/ short-circuit branch of the serveExport handler (kernel/server/serve.go). Unlike the main export branch, this branch joins the raw, percent-decoded request path with ut…</description>
+      <category>High</category>
+      <pubDate>Thu, 23 Jul 2026 11:42:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65606 · 9.6 CRITICAL 🌩️ — SiYuan before v3.7.2 Cross-Site Scripting to RCE</title>
+      <link>https://vulnogram.org/CVE-2026-65606</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65606</guid>
+      <description>SiYuan before v3.7.2 contains a cross-site scripting vulnerability in the siyuan:// protocol handler. When a siyuan://plugins/&lt;name&gt; link references a name that is not an installed plugin, the application opens a custom tab and inserts the link&apos;s ico…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 23 Jul 2026 11:42:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65605 · 9.6 CRITICAL 🌩️ — SiYuan before v3.7.2 Stored XSS to RCE via Attribute View</title>
+      <link>https://vulnogram.org/CVE-2026-65605</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65605</guid>
+      <description>SiYuan before v3.7.2 contains a stored cross-site scripting vulnerability in Attribute View (database) cell rendering. A Template column value is rendered as HTML via text/template without auto-escaping, and EscapeHTML is only applied when HasUnclose…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 23 Jul 2026 11:42:13 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-64829 · 9.1 CRITICAL 🌩️ — Question2Answer 1.8.8 Session Fixation via Forgot-Password Flow</title>
       <link>https://vulnogram.org/CVE-2026-64829</link>
@@ -376,68 +435,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 21 Jul 2026 20:28:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64822 · 6.9 MEDIUM 🌩️ — djangoSIGE 1.10 User Enumeration via ForgotPasswordView</title>
-      <link>https://vulnogram.org/CVE-2026-64822</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64822</guid>
-      <description>djangoSIGE through 1.10 (commit a6fe7e8) contains a user enumeration vulnerability in ForgotPasswordView within djangosige/apps/login/views.py that allows unauthenticated attackers to identify valid accounts by observing distinct error messages retur…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 20:28:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2016-20096 · 9.8 CRITICAL 🌩️ — Linknat VOS3000/VOS2009 2.1.2.0 SQL Injection via login.jsp</title>
-      <link>https://vulnogram.org/CVE-2016-20096</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2016-20096</guid>
-      <description>Linknat VOS3000 and VOS2009 through version 2.1.2.0 contain an unauthenticated SQL injection vulnerability that allows remote attackers to execute arbitrary SQL commands by manipulating the name parameter in a POST request to the login endpoint. Atta…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 18:59:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64825 · 9.3 CRITICAL 🌩️ — Home Assistant Core &lt; 2026.6.0 Path Traversal File Write via Backup Upload</title>
-      <link>https://vulnogram.org/CVE-2026-64825</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64825</guid>
-      <description>Home Assistant Core before 2026.6.0 contains a path traversal vulnerability that allows unauthenticated attackers to write arbitrary files to any directory on the host filesystem by uploading a crafted backup archive during the initial onboarding win…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 15:40:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64824 · 9.3 CRITICAL — Home Assistant Core &lt; 2026.7.0 Symlink Path Traversal RCE via backup-restore</title>
-      <link>https://vulnogram.org/CVE-2026-64824</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64824</guid>
-      <description>Home Assistant Core before 2026.7.0 contains a path traversal vulnerability in the backup-restore function that allows attackers to write files to arbitrary absolute filesystem paths by supplying a crafted tar archive with a SYMTYPE entry containing…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 21 Jul 2026 15:39:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64823 · 4.7 MEDIUM 🌩️ — Home Assistant Core &lt; 2026.5.4 XSS via Shelly media_player.py thumb URI</title>
-      <link>https://vulnogram.org/CVE-2026-64823</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64823</guid>
-      <description>Home Assistant Core before 2026.5.4 contains a cross-site scripting vulnerability in the Shelly integration&apos;s async_get_media_image() method that allows attackers controlling a Shelly device&apos;s thumb field to serve arbitrary HTML content by supplying…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 15:16:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65052 · 8.7 HIGH 🌩️ — Ninja Forms Calculation and Payment Total Tampering via Fail-Open get_calc_value in ListSelect and ListRadio Fields</title>
-      <link>https://vulnogram.org/CVE-2026-65052</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65052</guid>
-      <description>Ninja Forms WordPress plugin version 3.14.8 and prior contains an improper input validation vulnerability that allows unauthenticated attackers to inject arbitrary numeric values into form calculations and payment totals by submitting values that do…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 14:36:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65051 · 6.9 MEDIUM 🌩️ — Ninja Forms Server-Side Validation Bypass via Client-Controlled Field Metadata Merge in AJAX Submission Handler</title>
-      <link>https://vulnogram.org/CVE-2026-65051</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65051</guid>
-      <description>Ninja Forms WordPress plugin version 3.14.8 contains a client-side enforcement of server-side security vulnerability that allows unauthenticated attackers to bypass all form validation by merging attacker-controlled field metadata over server-loaded…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 14:31:55 GMT</pubDate>
     </item>
   </channel>
 </rss>
