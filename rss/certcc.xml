@@ -11,7 +11,49 @@
       <title>CERT/CC — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 23 Jul 2026 12:16:56 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 16:18:28 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-15611 — Unverified email-based SSO account linking</title>
+      <link>https://vulnogram.org/CVE-2026-15611</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15611</guid>
+      <description>Logto allows unverified email-based SSO account linking, enabling an attacker to register an identity at a permissive IdP using a victim’s email and gain unauthorized access to the victim’s account.</description>
+      <pubDate>Thu, 23 Jul 2026 15:45:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15612 — LOIDC nonce validation bypass</title>
+      <link>https://vulnogram.org/CVE-2026-15612</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15612</guid>
+      <description>Logto bypasses OIDC nonce validation when the nonce claim is absent from the id_token, enabling replay of authentication tokens and weakening session-binding.</description>
+      <pubDate>Thu, 23 Jul 2026 15:45:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15614 — IdP-initiated SAML sessions not reliably invalidated (replay)</title>
+      <link>https://vulnogram.org/CVE-2026-15614</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15614</guid>
+      <description>Logto silently fails to delete IdP-initiated SAML sessions, enabling session replay and reuse within the session’s validity window.</description>
+      <pubDate>Thu, 23 Jul 2026 15:44:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15615 — SAML &lt;Conditions&gt; element not validated</title>
+      <link>https://vulnogram.org/CVE-2026-15615</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15615</guid>
+      <description>Logto omits validation of the SAML &lt;Conditions&gt; element, enabling attackers to strip time and audience restrictions and replay assertions indefinitely.</description>
+      <pubDate>Thu, 23 Jul 2026 15:43:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15616 — Local MFA not enforced during SSO sign-in</title>
+      <link>https://vulnogram.org/CVE-2026-15616</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15616</guid>
+      <description>Logto does not enforce locally configured MFA during SSO authentication, allowing users to bypass second-factor requirements and grants unauthorized access.</description>
+      <pubDate>Thu, 23 Jul 2026 15:43:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15617 — Principal/domain lookup without case normalization</title>
+      <link>https://vulnogram.org/CVE-2026-15617</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15617</guid>
+      <description>Logto performs principal lookup without normalizing email and identifier strings, enabling principal collision and unauthorized account access via case- or Unicode-different identities.</description>
+      <pubDate>Thu, 23 Jul 2026 15:41:29 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-16624 — CVE-2026-16624</title>
       <link>https://vulnogram.org/CVE-2026-16624</link>
@@ -389,60 +431,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 28 May 2026 16:27:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9095 · 8.1 HIGH 🌩️ — CVE-2026-9095</title>
-      <link>https://vulnogram.org/CVE-2026-9095</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9095</guid>
-      <description>Casdoor versions 2.362.0 and earlier map SAML assertions to user sessions without replay protection. The ParseSamlResponse() function in object/saml_sp.go calls sp.RetrieveAssertionInfo() and immediately maps the result to a user session. There is no…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 16:25:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9094 · 9.8 CRITICAL 🌩️ — CVE-2026-9094</title>
-      <link>https://vulnogram.org/CVE-2026-9094</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9094</guid>
-      <description>Casdoor versions 2.362.0 and earlier contain a vulnerability enabling cross-organization token exchange. The GetTokenExchangeToken function in object/token_oauth.go validates JWT signatures but does not verify that the token&apos;s user belongs to the sam…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 16:25:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9093 · 9.8 CRITICAL 🌩️ — CVE-2026-9093</title>
-      <link>https://vulnogram.org/CVE-2026-9093</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9093</guid>
-      <description>In Casdoor versions 2.362.0 and earlier, the SAML service provider implementation does not validate the AudienceRestriction element in SAML assertions. The buildSp function in object/saml_sp.go never sets AudienceURI on the gosaml2 SAMLServiceProvide…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 16:21:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9092 · 9.1 CRITICAL 🌩️ — CVE-2026-9092</title>
-      <link>https://vulnogram.org/CVE-2026-9092</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9092</guid>
-      <description>Casdoor versions 2.362.0 and earlier contain a vulnerability involving unverified email binding that may enable account takeover. The getExistUserByBindingRule function matches users by email without checking the email_verified claim from upstream pr…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 16:20:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9091 · 5.3 MEDIUM 🌩️ — CVE-2026-9091</title>
-      <link>https://vulnogram.org/CVE-2026-9091</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9091</guid>
-      <description>Casdoor versions 2.362.0 and earlier contain a logic flaw in the social‑login binding flow that allows users to bypass configured MFA requirements. The binding‑rule code path in controllers/auth.go calls HandleLoggedIn directly without invoking check…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 16:19:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9090 · 9.1 CRITICAL 🌩️ — CVE-2026-9090</title>
-      <link>https://vulnogram.org/CVE-2026-9090</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9090</guid>
-      <description>Casdoor versions 2.362.0 and earlier contain a vulnerability that allows an attacker to bypass authentication by supplying an arbitrary signing certificate. The buildSpCertificateStore function extracts the X.509 certificate directly from the incomin…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 28 May 2026 16:17:21 GMT</pubDate>
     </item>
   </channel>
 </rss>
