@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 24 Jul 2026 14:29:46 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 14:22:31 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10681 · 6.5 MEDIUM — SMP race in `thread_idx_alloc()` lets concurrent `k_object_alloc(K_OBJ_THREAD)` callers share a kernel-object permission slot</title>
+      <link>https://vulnogram.org/CVE-2026-10681</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10681</guid>
+      <description>In Zephyr&apos;s userspace dynamic-objects subsystem, thread_idx_alloc() in kernel/userspace/userspace.c allocated a new thread permission index from the global _thread_idx_map[] bitmap without holding lists_lock. On SMP systems, two user-mode threads inv…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 25 Jul 2026 13:23:07 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-7007 · 4.6 MEDIUM — Division by zero in Zephyr ext2 superblock parsing allows DoS via crafted filesystem image</title>
       <link>https://vulnogram.org/CVE-2026-7007</link>
@@ -404,14 +412,6 @@
       <description>A remote, unauthenticated BLE peer can trigger a 2-byte out-of-bounds write in the Bluetooth host during L2CAP LE CoC SDU reassembly. When the application enables segmentation (via chan_ops.alloc_buf) and the chosen RX pool has a user_data_size small…</description>
       <category>High</category>
       <pubDate>Tue, 09 Jun 2026 06:20:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5066 · 6.3 MEDIUM — net: sockets: tls: Potential out-of-bounds write/read in socket_op_vtable::connect function</title>
-      <link>https://vulnogram.org/CVE-2026-5066</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5066</guid>
-      <description>A potential out-of-bounds write/read exists in the TLS socket connect path of the network sockets subsystem (subsys/net/lib/sockets/sockets_tls.c). When the TLS session cache is enabled, tls_session_store() and tls_session_restore() memcpy the caller…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 04 Jun 2026 20:31:25 GMT</pubDate>
     </item>
   </channel>
 </rss>
