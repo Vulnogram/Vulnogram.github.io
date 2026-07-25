@@ -11,7 +11,56 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 25 Jul 2026 09:22:43 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 10:57:51 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-64529 — crypto: qat - remove unused character device and IOCTLs</title>
+      <link>https://vulnogram.org/CVE-2026-64529</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64529</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: crypto: qat - remove unused character device and IOCTLs The QAT driver exposes a character device (qat_adf_ctl) with IOCTLs for device configuration, start, stop, status query and en…</description>
+      <pubDate>Sat, 25 Jul 2026 09:24:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64528 — tty: serial: samsung: Remove redundant port lock acquisition in rx helpers</title>
+      <link>https://vulnogram.org/CVE-2026-64528</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64528</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: tty: serial: samsung: Remove redundant port lock acquisition in rx helpers Sashiko identified a deadlock when the console flow is engaged [1]. When console flow control is enabled (U…</description>
+      <pubDate>Sat, 25 Jul 2026 09:20:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64527 — drm/hyperv: validate VMBus packet size in receive callback</title>
+      <link>https://vulnogram.org/CVE-2026-64527</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64527</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/hyperv: validate VMBus packet size in receive callback hyperv_receive_sub() reads msg-&gt;vid_hdr.type and dispatches into one of four message-type branches without knowing how many…</description>
+      <pubDate>Sat, 25 Jul 2026 09:20:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64526 — ethtool: tsconfig: fix missing ethnl_ops_complete()</title>
+      <link>https://vulnogram.org/CVE-2026-64526</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64526</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ethtool: tsconfig: fix missing ethnl_ops_complete() tsconfig_prepare_data() calls ethnl_ops_begin(), we need to call ethnl_ops_complete() before returning the error.</description>
+      <pubDate>Sat, 25 Jul 2026 09:20:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64525 — xfrm: move policy_bydst RCU sync from per-netns .exit to .pre_exit</title>
+      <link>https://vulnogram.org/CVE-2026-64525</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64525</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: xfrm: move policy_bydst RCU sync from per-netns .exit to .pre_exit The struct pernet_operations docstring in include/net/net_namespace.h explicitly warns against blocking RCU primiti…</description>
+      <pubDate>Sat, 25 Jul 2026 09:20:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64524 — drm/hyperv: validate resolution_count and fix WIN8 fallback</title>
+      <link>https://vulnogram.org/CVE-2026-64524</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64524</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/hyperv: validate resolution_count and fix WIN8 fallback A SYNTHVID_RESOLUTION_RESPONSE with resolution_count &gt; 64 walks past the supported_resolution[SYNTHVID_MAX_RESOLUTION_COUN…</description>
+      <pubDate>Sat, 25 Jul 2026 09:20:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64523 — net/handshake: Take a long-lived file reference at submit</title>
+      <link>https://vulnogram.org/CVE-2026-64523</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64523</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net/handshake: Take a long-lived file reference at submit handshake_nl_accept_doit() needs the file pointer backing req-&gt;hr_sk-&gt;sk_socket to survive the window between handshake_req_…</description>
+      <pubDate>Sat, 25 Jul 2026 09:20:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-64522 — net/mlx5e: Fix eswitch mode block underflow on IPsec acquire SA</title>
       <link>https://vulnogram.org/CVE-2026-64522</link>
@@ -312,55 +361,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64480</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: ice1712: check snd_ctl_new1() return value snd_ctl_new1() can return NULL when memory allocation fails. The ice1712 driver calls snd_ctl_new1() without checking the return valu…</description>
       <pubDate>Sat, 25 Jul 2026 08:51:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64479 — ALSA: seq: Fix uninitialised heap leak in snd_seq_event_dup()</title>
-      <link>https://vulnogram.org/CVE-2026-64479</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64479</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: seq: Fix uninitialised heap leak in snd_seq_event_dup() snd_seq_event_dup() copies an incoming event into a pool cell and, in the UMP-enabled build, clears the trailing cell-&gt;u…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64478 — ALSA: usb-audio: avoid kobject path lookup in DualSense match</title>
-      <link>https://vulnogram.org/CVE-2026-64478</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64478</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: usb-audio: avoid kobject path lookup in DualSense match The DualSense jack-detection input handler verifies that a matching input device belongs to the same physical controller…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64477 — x86,fs/resctrl: Prevent out-of-bounds access while offlining CPU when SNC enabled</title>
-      <link>https://vulnogram.org/CVE-2026-64477</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64477</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: x86,fs/resctrl: Prevent out-of-bounds access while offlining CPU when SNC enabled The architecture updates the cpu_mask in a domain&apos;s header to track which online CPUs are associated…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64476 — vfio/pci: Latch disable_idle_d3 per device</title>
-      <link>https://vulnogram.org/CVE-2026-64476</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64476</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: vfio/pci: Latch disable_idle_d3 per device When disable_idle_d3 was introduced in vfio-pci, it directly manipulated the device power state with pci_set_power_state(). There were no r…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64475 — vfio/pci: Release the VGA arbiter client on register_device() failure</title>
-      <link>https://vulnogram.org/CVE-2026-64475</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64475</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: vfio/pci: Release the VGA arbiter client on register_device() failure The re-order in the Fixes commit below displaced vfio_pci_vga_init() as the last failure point of what is now vf…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64474 — vfio: prevent infinite loop in vfio_mig_get_next_state() on blocked arc</title>
-      <link>https://vulnogram.org/CVE-2026-64474</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64474</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: vfio: prevent infinite loop in vfio_mig_get_next_state() on blocked arc vfio_mig_get_next_state() walks vfio_from_fsm_table[] one step at a time, looping to skip optional states the…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64473 — vfio: Remove device debugfs before releasing devres</title>
-      <link>https://vulnogram.org/CVE-2026-64473</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64473</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: vfio: Remove device debugfs before releasing devres VFIO device debugfs files created with debugfs_create_devm_seqfile() store a devres allocated debugfs_devm_entry as inode private…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:36 GMT</pubDate>
     </item>
   </channel>
 </rss>
