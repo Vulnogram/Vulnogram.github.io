@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 27 Jul 2026 17:25:43 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 19:03:57 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10683 · 2.4 LOW — DesignWare I2C target driver can be wedged into a permanent stuck state by an on-bus master (DoS)</title>
+      <link>https://vulnogram.org/CVE-2026-10683</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10683</guid>
+      <description>In the Synopsys DesignWare I2C driver (drivers/i2c/i2c_dw.c) operating in target/slave mode, the rx_full interrupt handler gates the write_requested() callback on dw-&gt;state != CMD_SEND, and dw-&gt;state is only reset to READY on a STOP interrupt. The ST…</description>
+      <category>Low</category>
+      <pubDate>Mon, 27 Jul 2026 18:30:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10682 · 6.6 MEDIUM — Out-of-bounds write in Zephyr `log_filter_set` syscall verifier reachable from userspace</title>
+      <link>https://vulnogram.org/CVE-2026-10682</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10682</guid>
+      <description>The userspace verifier z_vrfy_log_filter_set() for the log_filter_set syscall in subsys/logging/log_mgmt.c performed a signed comparison against the int16_t src_id parameter: src_id &lt; (int16_t)log_src_cnt_get(domain_id). Any negative value for src_id…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 27 Jul 2026 18:30:49 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10681 · 6.5 MEDIUM — SMP race in `thread_idx_alloc()` lets concurrent `k_object_alloc(K_OBJ_THREAD)` callers share a kernel-object permission slot</title>
       <link>https://vulnogram.org/CVE-2026-10681</link>
@@ -396,22 +412,6 @@
       <description>On Xtensa targets with CONFIG_USERSPACE and CONFIG_XTENSA_MMU, the page-table code (arch/xtensa/core/ptables.c) maintains a global list, xtensa_domain_list, of active memory domains using a list node embedded inside the caller-owned struct k_mem_doma…</description>
       <category>Medium</category>
       <pubDate>Tue, 16 Jun 2026 05:19:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10634 · 4.8 MEDIUM — Use-after-free in Zephyr native TCP `net_tcp_foreach()` due to dropping `tcp_lock` during the callback</title>
-      <link>https://vulnogram.org/CVE-2026-10634</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10634</guid>
-      <description>Zephyr&apos;s native TCP stack iterates the global connection list in net_tcp_foreach() (subsys/net/ip/tcp.c) using the SYS_SLIST_FOR_EACH_CONTAINER_SAFE macro, which caches a pointer to the next list node. Prior to this fix the function released tcp_lock…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 15 Jun 2026 14:16:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5068 · 7.6 HIGH — bt: l2cap le coc: remote oob write via seg counter stored in net_buf user_data</title>
-      <link>https://vulnogram.org/CVE-2026-5068</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5068</guid>
-      <description>A remote, unauthenticated BLE peer can trigger a 2-byte out-of-bounds write in the Bluetooth host during L2CAP LE CoC SDU reassembly. When the application enables segmentation (via chan_ops.alloc_buf) and the chosen RX pool has a user_data_size small…</description>
-      <category>High</category>
-      <pubDate>Tue, 09 Jun 2026 06:20:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
