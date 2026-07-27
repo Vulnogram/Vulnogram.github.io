@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 27 Jul 2026 19:03:58 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 20:56:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-12383 · 7.5 HIGH 🌩️ — Eda-server: externaleventstreamviewset trusts subject header without validation and leaks expected dn</title>
+      <link>https://vulnogram.org/CVE-2026-12383</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12383</guid>
+      <description>A flaw was found in the Event-Driven Ansible (EDA) server. The ExternalEventStreamViewSet uses permissive access controls (permission_classes=[AllowAny], authentication_classes=[]) and relies solely on the Subject HTTP header value for mTLS authentic…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 27 Jul 2026 19:12:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66759 · 7.1 HIGH — Gimp: out-of-bounds read in file-icns plugin causes information disclosure or crash on crafted icns images</title>
+      <link>https://vulnogram.org/CVE-2026-66759</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66759</guid>
+      <description>A flaw was found in the file-icns plugin in GIMP. When applying a decompressed mask during ICNS image processing, the plugin reads from the mask data buffer without verifying if the cursor exceeds the allocated resource size. If a crafted file contai…</description>
+      <category>High</category>
+      <pubDate>Mon, 27 Jul 2026 19:12:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66757 · 5.5 MEDIUM — Gimp: signed integer overflow in file-sgi (sgi-lib) causes the plugin to crash on rle sgi images</title>
+      <link>https://vulnogram.org/CVE-2026-66757</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66757</guid>
+      <description>A flaw was found in the file-sgi plugin in GIMP. When processing an RLE-compressed SGI image, the plugin allocates memory for a row table. The image header dimensions (ysize and zsize) are read as 16-bit unsigned integers. If a crafted file sets both…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 27 Jul 2026 19:07:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66758 · 7.8 HIGH — Gimp: integer overflow in file-fits plugin causes a heap-based buffer overflow on crafted fits images</title>
+      <link>https://vulnogram.org/CVE-2026-66758</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66758</guid>
+      <description>A flaw was found in the file-fits plugin in GIMP. When processing a FITS image file, the plugin calculates memory allocation sizes using signed 32-bit integers for width and height. If a crafted file sets both values to large values, their product ex…</description>
+      <category>High</category>
+      <pubDate>Mon, 27 Jul 2026 19:07:12 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15003 · 5.6 MEDIUM — Binutils: gnu binutils: heap-buffer-overflow in linker leads to information disclosure and denial of service</title>
       <link>https://vulnogram.org/CVE-2026-15003</link>
@@ -393,40 +426,6 @@
       <description>A flaw was found in Red Hat Quay&apos;s repository-level mirror configuration feature. The POST and PUT handlers in endpoints/api/mirror.py accept an external_reference parameter without SSRF validation, unlike the organization-level mirror handlers which…</description>
       <category>Medium</category>
       <pubDate>Tue, 21 Jul 2026 04:45:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64612 · 7.5 HIGH 🌩️ — Libcupsfilters: cups-filters: libcupsfilters: cups image filter process abort via malformed png</title>
-      <link>https://vulnogram.org/CVE-2026-64612</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64612</guid>
-      <description>A flaw was found in libcupsfilters and cups-filters. The PNG image reading function creates a libpng reader without installing an error recovery handler, causing the CUPS image filter process to abort when processing a malformed PNG file. An unauthen…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 17:33:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12701 · 9 CRITICAL — Pulpcore: pulpcore: relative_path_validator bypass via directory traversal in filesystemexport</title>
-      <link>https://vulnogram.org/CVE-2026-12701</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12701</guid>
-      <description>A path traversal vulnerability was found in pulpcore. The relative_path_validator function only verifies that content paths do not begin with &quot;/&quot; but fails to block directory traversal sequences such as &quot;../&quot; anywhere in the path. An authenticated ad…</description>
-      <category>Critical</category>
-      <pubDate>Mon, 20 Jul 2026 14:18:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16277 · 6.5 MEDIUM 🌩️ — Rpcbind: rpcbind: stack buffer overflow in rpcinfo rpcbaddrlist()</title>
-      <link>https://vulnogram.org/CVE-2026-16277</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16277</guid>
-      <description>A stack-based buffer overflow was found in rpcbind&apos;s rpcinfo utility. When querying a remote rpcbind service with `rpcinfo -l`, address information returned by the server is copied into a fixed-size buffer without sufficient bounds checking. A malici…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 14:09:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12080 · 7.3 HIGH — Qemu-kvm: qemu-guest-agent: local privilege escalation via symlink attack in guest-ssh-add-authorized-keys</title>
-      <link>https://vulnogram.org/CVE-2026-12080</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12080</guid>
-      <description>A flaw was found in the QEMU Guest Agent (qga). A local unprivileged user can exploit a vulnerability in the guest-ssh-add-authorized-keys command handler by manipulating symbolic links. This can occur either through a deterministic directory-symlink…</description>
-      <category>High</category>
-      <pubDate>Mon, 20 Jul 2026 12:40:45 GMT</pubDate>
     </item>
   </channel>
 </rss>

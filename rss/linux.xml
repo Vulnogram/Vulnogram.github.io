@@ -11,7 +11,140 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 27 Jul 2026 12:46:15 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 20:56:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-64555 — KVM: arm64: nv: Fix SPSR_EL2 restore in kvm_hyp_handle_mops()</title>
+      <link>https://vulnogram.org/CVE-2026-64555</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64555</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: arm64: nv: Fix SPSR_EL2 restore in kvm_hyp_handle_mops() kvm_hyp_handle_mops() resets the single-step state machine as part of rewinding state for a MOPS exception by modifying…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64554 — netfilter: bridge: fix stale prevhdr pointer in br_ip6_fragment()</title>
+      <link>https://vulnogram.org/CVE-2026-64554</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64554</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: netfilter: bridge: fix stale prevhdr pointer in br_ip6_fragment() br_ip6_fragment() gets prevhdr, a pointer into the skb head, from ip6_find_1stfragopt(), then calls skb_checksum_hel…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64553 — net: psample: fix info leak in PSAMPLE_ATTR_DATA</title>
+      <link>https://vulnogram.org/CVE-2026-64553</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64553</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: psample: fix info leak in PSAMPLE_ATTR_DATA psample open codes nla_put() presumably to avoid wiping the data with 0s just to override it with packet data. This open coding is mi…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64552 — virtio-net: fix len check in receive_big()</title>
+      <link>https://vulnogram.org/CVE-2026-64552</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64552</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: virtio-net: fix len check in receive_big() receive_big() bounds the device-announced length by (big_packets_num_skbfrags + 1) * PAGE_SIZE. That is still too loose: add_recvbuf_big()…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64551 — sctp: validate STALE_COOKIE cause length before reading staleness</title>
+      <link>https://vulnogram.org/CVE-2026-64551</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64551</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: sctp: validate STALE_COOKIE cause length before reading staleness When an ERROR chunk with a STALE_COOKIE cause is received in the COOKIE_ECHOED state, sctp_sf_do_5_2_6_stale() reads…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64550 — net: qualcomm: rmnet: validate MAP frame length before ingress parsing</title>
+      <link>https://vulnogram.org/CVE-2026-64550</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64550</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: qualcomm: rmnet: validate MAP frame length before ingress parsing When ingress deaggregation is disabled, rmnet_map_ingress_handler() passes the skb straight to __rmnet_map_ingr…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64549 — Bluetooth: bpa10x: avoid OOB read of revision string in bpa10x_setup()</title>
+      <link>https://vulnogram.org/CVE-2026-64549</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64549</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: bpa10x: avoid OOB read of revision string in bpa10x_setup() bpa10x_setup() sends the vendor command 0xfc0e and passes the response to bt_dev_info() and hci_set_fw_info() a…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64548 — bpf, sockmap: reject overflowing copy + len in bpf_msg_push_data()</title>
+      <link>https://vulnogram.org/CVE-2026-64548</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64548</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: bpf, sockmap: reject overflowing copy + len in bpf_msg_push_data() When the scatterlist ring is full or nearly full, bpf_msg_push_data() enters a copy fallback path and computes copy…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64547 — net: usb: net1080: validate packet_len before pad-byte access in rx_fixup</title>
+      <link>https://vulnogram.org/CVE-2026-64547</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64547</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: usb: net1080: validate packet_len before pad-byte access in rx_fixup For an even packet_len, net1080_rx_fixup() reads the pad byte at skb-&gt;data[packet_len] before the skb-&gt;len !…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64546 — drm/edid: fix OOB read in drm_parse_tiled_block()</title>
+      <link>https://vulnogram.org/CVE-2026-64546</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64546</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/edid: fix OOB read in drm_parse_tiled_block() drm_parse_tiled_block() casts the DisplayID block to a struct displayid_tiled_block and reads the full fixed layout up to tile-&gt;topo…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64545 — net, bpf: check master for NULL in xdp_master_redirect()</title>
+      <link>https://vulnogram.org/CVE-2026-64545</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64545</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net, bpf: check master for NULL in xdp_master_redirect() xdp_master_redirect() dereferences the result of netdev_master_upper_dev_get_rcu() without a NULL check, but that helper retu…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64544 — crypto: asymmetric_keys - fix OOB read in pefile_digest_pe_contents</title>
+      <link>https://vulnogram.org/CVE-2026-64544</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64544</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: crypto: asymmetric_keys - fix OOB read in pefile_digest_pe_contents pefile_digest_pe_contents() computes the trailing-data hash length as pelen - (hashed_bytes + certs_size). A craft…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64543 — tipc: fix use-after-free of the discoverer in tipc_disc_rcv()</title>
+      <link>https://vulnogram.org/CVE-2026-64543</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64543</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: tipc: fix use-after-free of the discoverer in tipc_disc_rcv() bearer_disable() frees b-&gt;disc with tipc_disc_delete()&apos;s plain kfree(), but tipc_disc_rcv() still dereferences b-&gt;disc i…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64542 — ipv6: ndisc: fix NULL deref in accept_untracked_na()</title>
+      <link>https://vulnogram.org/CVE-2026-64542</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64542</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ipv6: ndisc: fix NULL deref in accept_untracked_na() accept_untracked_na() re-fetches the inet6_dev with __in6_dev_get(dev) and dereferences idev-&gt;cnf.accept_untracked_na without a N…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64541 — net/smc: fix UAF in smc_cdc_rx_handler() by pinning the socket</title>
+      <link>https://vulnogram.org/CVE-2026-64541</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64541</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net/smc: fix UAF in smc_cdc_rx_handler() by pinning the socket smc_cdc_rx_handler() looks up the connection by token under the link group&apos;s conns_lock, drops the lock, and then deref…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64540 — usbnet: gl620a: fix out-of-bounds read in genelink_rx_fixup()</title>
+      <link>https://vulnogram.org/CVE-2026-64540</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64540</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: usbnet: gl620a: fix out-of-bounds read in genelink_rx_fixup() genelink_rx_fixup() splits an aggregated RX frame into its individual packets, using a per-packet length taken from devi…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64539 — Bluetooth: eir: Fix stack OOB write when prepending the Flags AD</title>
+      <link>https://vulnogram.org/CVE-2026-64539</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64539</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: eir: Fix stack OOB write when prepending the Flags AD eir_create_adv_data() builds the advertising data into a fixed-size buffer (&quot;size&quot;, 31 for the legacy path). It may p…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64538 — ipv6: Fix null-ptr-deref in fib6_nh_mtu_change().</title>
+      <link>https://vulnogram.org/CVE-2026-64538</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64538</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ipv6: Fix null-ptr-deref in fib6_nh_mtu_change(). fib6_nh_mtu_change() re-fetches idev via __in6_dev_get(arg-&gt;dev) and dereferences idev-&gt;cnf.mtu6 without a NULL check. addrconf_ifdo…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64537 — bridge: cfm: reject invalid CCM interval at configuration time</title>
+      <link>https://vulnogram.org/CVE-2026-64537</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64537</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: bridge: cfm: reject invalid CCM interval at configuration time ccm_tx_work_expired() re-arms itself via queue_delayed_work() using the configured exp_interval converted by interval_t…</description>
+      <pubDate>Mon, 27 Jul 2026 20:10:32 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-64536 — staging: rtl8723bs: fix OOB reads in is_ap_in_tkip() IE loop</title>
       <link>https://vulnogram.org/CVE-2026-64536</link>
@@ -237,143 +370,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64507</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: x86/bugs: Enable IBPB flush on BPF JIT allocation Enable hardening against JIT spraying when Spectre-v2 mitigations are in use. Specifically, issue an IBPB flush on BPF JIT memory re…</description>
       <pubDate>Sat, 25 Jul 2026 08:52:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64506 — wifi: rtw89: correct drop logic for malformed AMPDU frames</title>
-      <link>https://vulnogram.org/CVE-2026-64506</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64506</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: rtw89: correct drop logic for malformed AMPDU frames The previous commit aims to fix issue caused by malformed AMPDU frames. But the drop logic fails to deal with the first AMP…</description>
-      <pubDate>Sat, 25 Jul 2026 08:52:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64505 — usb: gadget: function: rndis: add length check for header</title>
-      <link>https://vulnogram.org/CVE-2026-64505</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64505</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: usb: gadget: function: rndis: add length check for header Add a length check for the rndis header in rndis_rm_hdr, to ensure that MessageType, MessageLength, DataOffset, and DataLeng…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64504 — iio: accel: bmc150: clamp the device-reported FIFO frame count</title>
-      <link>https://vulnogram.org/CVE-2026-64504</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64504</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: accel: bmc150: clamp the device-reported FIFO frame count __bmc150_accel_fifo_flush() copies the number of samples the device reports in its hardware FIFO into an on-stack buffe…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64503 — iio: accel: kxsd9: fix runtime PM imbalance on write_raw() error</title>
-      <link>https://vulnogram.org/CVE-2026-64503</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64503</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: accel: kxsd9: fix runtime PM imbalance on write_raw() error kxsd9_write_raw() takes a runtime PM reference with pm_runtime_get_sync() but returns -EINVAL directly when a scale w…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64502 · 7.8 HIGH — iio: adc: ad_sigma_delta: fix clear_pending_event for registerless devices</title>
-      <link>https://vulnogram.org/CVE-2026-64502</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64502</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: adc: ad_sigma_delta: fix clear_pending_event for registerless devices ad_sigma_delta_clear_pending_event() falls through to the status register read path for devices with has_re…</description>
-      <category>High</category>
-      <pubDate>Sat, 25 Jul 2026 08:51:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64501 · 7.1 HIGH — iio: adc: ad_sigma_delta: fix CS held asserted and state leaks</title>
-      <link>https://vulnogram.org/CVE-2026-64501</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64501</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: adc: ad_sigma_delta: fix CS held asserted and state leaks In ad_sigma_delta_single_conversion(), set_mode(AD_SD_MODE_IDLE) and disable_one() were called from the out: block whil…</description>
-      <category>High</category>
-      <pubDate>Sat, 25 Jul 2026 08:51:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64500 — iio: adc: lpc32xx: Initialize completion before requesting IRQ</title>
-      <link>https://vulnogram.org/CVE-2026-64500</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64500</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: adc: lpc32xx: Initialize completion before requesting IRQ In the report from Jaeyoung Chung: &quot;lpc32xx_adc_probe() in drivers/iio/adc/lpc32xx_adc.c registers its interrupt handle…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64499 — iio: adc: ti-ads1119: fix PM reference leak in buffer preenable</title>
-      <link>https://vulnogram.org/CVE-2026-64499</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64499</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: adc: ti-ads1119: fix PM reference leak in buffer preenable ads1119_triggered_buffer_preenable() resumes the device with pm_runtime_resume_and_get() before starting a conversion.…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64498 — iio: buffer: hw-consumer: free scan_mask on buffer release</title>
-      <link>https://vulnogram.org/CVE-2026-64498</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64498</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: buffer: hw-consumer: free scan_mask on buffer release The scan_mask lifetime changed in commit 9a2e1233d38c (&quot;iio: buffer: hw-consumer: remove redundant scan_mask flexible array…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64497 — iio: chemical: scd30: Cleanup initializations and fix sign-extension bug</title>
-      <link>https://vulnogram.org/CVE-2026-64497</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64497</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: chemical: scd30: Cleanup initializations and fix sign-extension bug Include linux/bitfield.h for FIELD_GET(). Create new macros for bit manipulation in combination with manual b…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64496 · 7.1 HIGH — iio: event: Fix event FIFO reset race</title>
-      <link>https://vulnogram.org/CVE-2026-64496</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64496</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: event: Fix event FIFO reset race `iio_event_getfd()` creates the event file descriptor with `anon_inode_getfd()`, which allocates a new fd, creates the anonymous file and instal…</description>
-      <category>High</category>
-      <pubDate>Sat, 25 Jul 2026 08:51:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64495 — iio: gyro: bmg160: bail out when bandwidth/filter is not in table</title>
-      <link>https://vulnogram.org/CVE-2026-64495</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64495</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: gyro: bmg160: bail out when bandwidth/filter is not in table bmg160_get_filter() walks bmg160_samp_freq_table[] looking for the entry matching the bw_bits value read from the ch…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64494 — iio: light: gp2ap002: fix runtime PM leak on read error</title>
-      <link>https://vulnogram.org/CVE-2026-64494</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64494</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: light: gp2ap002: fix runtime PM leak on read error gp2ap002_read_raw() calls pm_runtime_get_sync() before reading the lux value, but if gp2ap002_get_lux() fails, it returns dire…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64493 — iio: pressure: mpl115: fix runtime PM leak on read error</title>
-      <link>https://vulnogram.org/CVE-2026-64493</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64493</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: pressure: mpl115: fix runtime PM leak on read error mpl115_read_raw() takes a runtime PM reference with pm_runtime_get_sync() before reading the processed pressure or raw temper…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64492 — iio: temperature: tmp006: use devm_iio_trigger_register</title>
-      <link>https://vulnogram.org/CVE-2026-64492</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64492</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: iio: temperature: tmp006: use devm_iio_trigger_register tmp006_probe() allocates the DRDY trigger with devm_iio_trigger_alloc() but registers it with plain iio_trigger_register(). Th…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64491 — ALSA: usx2y: us144mkii: fix work UAF on disconnect</title>
-      <link>https://vulnogram.org/CVE-2026-64491</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64491</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: usx2y: us144mkii: fix work UAF on disconnect tascam_disconnect() cancels capture_work and midi_in_work before usb_kill_anchored_urbs() kills the capture/MIDI-in URBs. Those URB…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64490 · 8.4 HIGH — ALSA: virtio: Validate control metadata from the device</title>
-      <link>https://vulnogram.org/CVE-2026-64490</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64490</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: virtio: Validate control metadata from the device virtio-snd control handling trusts the device-provided control type and value count returned by the device. That metadata is t…</description>
-      <category>High</category>
-      <pubDate>Sat, 25 Jul 2026 08:51:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64489 — ALSA: ymfpci: check snd_ctl_new1() return value</title>
-      <link>https://vulnogram.org/CVE-2026-64489</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64489</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: ymfpci: check snd_ctl_new1() return value snd_ctl_new1() can return NULL when memory allocation fails. snd_ymfpci_create_spdif_controls() does not check the return value before…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64488 — ALSA: aoa: check snd_ctl_new1() return value</title>
-      <link>https://vulnogram.org/CVE-2026-64488</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64488</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: aoa: check snd_ctl_new1() return value snd_ctl_new1() can return NULL when memory allocation fails. In layout.c, the function does not check the return value before dereferenci…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:47 GMT</pubDate>
     </item>
   </channel>
 </rss>
