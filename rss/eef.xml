@@ -11,7 +11,59 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 25 Jul 2026 04:52:46 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 15:32:56 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-59250 · 8.3 HIGH 🌩️ — Megaco flex scanner buffer overflow via oversized property parm name</title>
+      <link>https://vulnogram.org/CVE-2026-59250</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59250</guid>
+      <description>Classic buffer overflow in the Erlang/OTP megaco flex scanner C driver allows a remote unauthenticated attacker to corrupt the driver&apos;s memory (and potentially achieve remote code execution or a denial-of-service crash) by sending a single text-encod…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 27 Jul 2026 15:25:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55953 · 9.1 CRITICAL 🌩️ — TLS 1.2 and DTLS client accepts unoffered anonymous cipher suite, bypassing server authentication</title>
+      <link>https://vulnogram.org/CVE-2026-55953</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55953</guid>
+      <description>The Erlang/OTP ssl TLS 1.2 (and earlier) and DTLS client does not verify that the cipher suite selected by the server in ServerHello was among the suites offered by the client in ClientHello. The client-side tls_handshake:hello/5 handler validates th…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 27 Jul 2026 15:21:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55737 · 5.1 MEDIUM — Heap pointer corruption via signed/unsigned mismatch in LARGE_TUPLE_EXT decoding in erts external term format decoder</title>
+      <link>https://vulnogram.org/CVE-2026-55737</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55737</guid>
+      <description>Signed to Unsigned Conversion Error and Out-of-bounds Write vulnerability in Erlang OTP erts allows an attacker who can supply a crafted Erlang external term format (ETF) binary to binary_to_term/1 to corrupt the BEAM heap pointer and crash the virtu…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 27 Jul 2026 15:13:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47078 · 4.8 MEDIUM — Relative path traversal in zip:unzip/zip:extract via check_dir_level depth-counter bypass</title>
+      <link>https://vulnogram.org/CVE-2026-47078</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47078</guid>
+      <description>Relative Path Traversal vulnerability in Erlang OTP (stdlib zip module) allows writing files outside the intended extraction directory via a crafted zip archive. zip:unzip/1,2 and zip:extract/1,2 validate entry paths using zip:check_dir_level/2, whic…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 27 Jul 2026 15:03:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42792 · 6.3 MEDIUM 🌩️ — epmd permanent DoS via EMFILE on accept(2) in erts</title>
+      <link>https://vulnogram.org/CVE-2026-42792</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42792</guid>
+      <description>Improper Handling of Exceptional Conditions vulnerability in Erlang OTP erts (epmd) allows an unauthenticated remote attacker to permanently terminate the Erlang Port Mapper Daemon (epmd) via connection slot exhaustion. The do_accept function in erts…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 27 Jul 2026 14:58:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-58227 · 8.7 HIGH 🌩️ — TLS/DTLS denial of service via unbounded recursion on cross-signed peer certificate chain</title>
+      <link>https://vulnogram.org/CVE-2026-58227</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58227</guid>
+      <description>The Erlang/OTP ssl application does not detect cycles when reconstructing an incomplete peer certificate chain during a TLS or DTLS handshake. In ssl_certificate:handle_incomplete_chain/5, the received chain is passed to ssl_certificate:build_certifi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 27 Jul 2026 14:39:44 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-65623 · 8.7 HIGH 🌩️ — Quadratic CPU blow-up reassembling fragmented WebSocket messages in Bandit</title>
       <link>https://vulnogram.org/CVE-2026-65623</link>
@@ -391,56 +443,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 10 Jun 2026 14:35:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49760 · 6.9 MEDIUM — Stack Buffer Overflow in ei_s_print_term at Very Large Integer</title>
-      <link>https://vulnogram.org/CVE-2026-49760</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49760</guid>
-      <description>Stack-based Buffer Overflow vulnerability in Erlang OTP (erl_interface) allows Stack-based Buffer Overflow. This vulnerability is associated with program file lib/erl_interface/src/misc/ei_printterm.c and program routine ei_s_print_term. The C functi…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 10 Jun 2026 14:35:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49762 · 5.1 MEDIUM — Unbounded integer parsing in the Version module enables CPU and memory exhaustion denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-49762</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49762</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in the Elixir standard library&apos;s Version module allows an attacker who controls a version string to cause a denial of service through CPU and memory exhaustion. The version parser converts numeric versi…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 09 Jun 2026 14:04:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-43966 · 6.3 MEDIUM 🌩️ — HTTP Response Splitting via Non-VCHAR Bytes in cow_http_struct_hd:escape_string/2</title>
-      <link>https://vulnogram.org/CVE-2026-43966</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-43966</guid>
-      <description>Improper Neutralization of CRLF Sequences in HTTP Headers (&apos;HTTP Request/Response Splitting&apos;) vulnerability in ninenines cowlib allows HTTP response splitting via non-VCHAR bytes in structured-fields string values. cow_http_struct_hd:escape_string/2…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 08 Jun 2026 16:34:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49755 · 8.2 HIGH 🌩️ — Decompression bomb DoS in Req via auto-decoded archive and compressed response bodies</title>
-      <link>https://vulnogram.org/CVE-2026-49755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49755</guid>
-      <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in wojtekmach Req allows attacker-controlled HTTP servers to exhaust memory in a Req client via decompression-bomb response bodies. Req&apos;s default response pipeline include…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 08 Jun 2026 15:20:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49756 · 2.1 LOW — Multipart form-data header injection in Req via unescaped name/filename/content_type</title>
-      <link>https://vulnogram.org/CVE-2026-49756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49756</guid>
-      <description>Improper Neutralization of CRLF Sequences (&apos;CRLF Injection&apos;) vulnerability in wojtekmach Req allows multipart parameter smuggling via attacker-influenced part metadata. Req.Utils.encode_form_part/2 in lib/req/utils.ex builds the per-part headers by i…</description>
-      <category>Low</category>
-      <pubDate>Mon, 08 Jun 2026 15:20:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48596 · 2.1 LOW — CRLF injection in Tesla.Multipart.add_content_type_param/2 allows HTTP header injection</title>
-      <link>https://vulnogram.org/CVE-2026-48596</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48596</guid>
-      <description>Improper Neutralization of CRLF Sequences in HTTP Headers (&apos;HTTP Request/Response Splitting&apos;) vulnerability in elixir-tesla tesla allows HTTP header injection via Tesla.Multipart.add_content_type_param/2. Tesla.Multipart.add_content_type_param/2 appe…</description>
-      <category>Low</category>
-      <pubDate>Tue, 02 Jun 2026 19:09:31 GMT</pubDate>
     </item>
   </channel>
 </rss>

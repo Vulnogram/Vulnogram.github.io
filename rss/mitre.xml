@@ -11,7 +11,63 @@
       <title>MITRE Corporation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 27 Jul 2026 12:46:15 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 15:32:56 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-51304</title>
+      <link>https://vulnogram.org/CVE-2026-51304</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51304</guid>
+      <description>sqlite 3.41 has a use-after-free (UAF) vulnerability in the ORDER BY clause parsing routine. The affected code first releases the memory of an ExprList object via sqlite3ExprListDelete(), then attempts to access the nExpr member of the already freed…</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-51303</title>
+      <link>https://vulnogram.org/CVE-2026-51303</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51303</guid>
+      <description>A use-after-free (UAF) vulnerability was discovered in the core parsing component of SQLite 3.41. The flaw occurs because the program frees an ExprList object via sqlite3ExprListDelete and then subsequently accesses the dangling pointer of the releas…</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-51302</title>
+      <link>https://vulnogram.org/CVE-2026-51302</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51302</guid>
+      <description>SQLite 3.41 has a use-after-free vulnerability exists in the expression evaluation logic. The sqlite3ReleaseTempReg function improperly releases temporary register resources, and the subsequent exprComputeOperands function continues to access the alr…</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-51300</title>
+      <link>https://vulnogram.org/CVE-2026-51300</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51300</guid>
+      <description>A use-after-free vulnerability exists in the expression parsing and memory management logic of SQLite 3.41. After invoking sqlite3ExprDelete to release an expression object, the program still retains the dangling pointer and subsequently accesses mem…</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-51298</title>
+      <link>https://vulnogram.org/CVE-2026-51298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51298</guid>
+      <description>sqlite 3.41 is vulnerable to use after free in the JSON extraction function. After releasing JsonParse object memory via jsonParseFree(), the program still accesses internal member of the freed pointer, which can cause service crash and denial of ser…</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-51297</title>
+      <link>https://vulnogram.org/CVE-2026-51297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51297</guid>
+      <description>sqlite 3.41 has a use-after-free vulnerability in the JSON parsing logic. Remote adversaries can craft malicious JSON payload to trigger memory free followed by illegal memory access, which may lead to arbitrary code execution, sensitive information…</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-51296</title>
+      <link>https://vulnogram.org/CVE-2026-51296</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51296</guid>
+      <description>SQLite 3.41 has a use-after-free vulnerability in jsonRemoveFunc of SQLite JSON module. The parsed JSON object is freed at line 3555, while line 3575 still calls jsonLookupStep with the released pointer. Remote attackers can exploit this flaw to cras…</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-50455</title>
+      <link>https://vulnogram.org/CVE-2025-50455</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-50455</guid>
+      <description>SQL injection vulnerability exists in the order_by parameter of the /customers/search endpoint in Alex Tselegidis EasyAppointments &lt;= 1.5.1. The vulnerability arises from unsanitized user input passed to the order_by method of the CodeIgniter Query B…</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-66374 · 8.1 HIGH 🌩️</title>
       <link>https://vulnogram.org/CVE-2026-66374</link>
@@ -363,76 +419,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51031</guid>
       <description>FlareSolverr before version 3.4.7 contains a server-side request forgery (SSRF) vulnerability in the /v1 API endpoint. This allows a remote attacker to obtain sensitive information</description>
       <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-51027 · 9.9 CRITICAL</title>
-      <link>https://vulnogram.org/CVE-2026-51027</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51027</guid>
-      <description>An issue in FileThingie v.2.5.7 allows a remote attacker to obtain sensitive information via the ft2.php component.</description>
-      <category>Critical</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-51026 · 6.5 MEDIUM</title>
-      <link>https://vulnogram.org/CVE-2026-51026</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51026</guid>
-      <description>Directory Traversal vulnerability in FileThingie v.2.5.7 allows a remote attacker to obtain sensitive information via a crafted request.</description>
-      <category>Medium</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-51025 · 6.1 MEDIUM 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-51025</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-51025</guid>
-      <description>Cross Site Scripting vulnerability in fuint Member Marketing System &lt;=v1.0 allows a remote attacker to execute arbitrary code via the ClientMessageController.java file</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-26483 · 6.1 MEDIUM 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-26483</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-26483</guid>
-      <description>Mettle SendPortal 3.0.1 and earlier contains a stored cross-site scripting (XSS) vulnerability in the template management functionality. The application fails to properly sanitize user-supplied input in the content parameter of the /templates endpoin…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-26081 · 4.8 MEDIUM 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-26081</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-26081</guid>
-      <description>HAProxy Community Edition 3.0 through 3.3 before 3.3.3 lacks a length check for the NEW_TOKEN format. HAProxy Enterprise and ALOHA are also affected.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-26080 · 3.7 LOW 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-26080</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-26080</guid>
-      <description>HAProxy Community Edition 3.2.x through 3.3.x before 3.3.3 can enter a loop or crash because varint is mishandled. HAProxy Enterprise and ALOHA are also affected.</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51316 · 7.5 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2024-51316</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51316</guid>
-      <description>The Tenda TX9 V22.03.02.20 firmware has a denial of service vulnerability in the update_dev_name function of the file /goform/SetOnlineDevName</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51315 · 9.8 CRITICAL 🌩️</title>
-      <link>https://vulnogram.org/CVE-2024-51315</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51315</guid>
-      <description>The Tenda TX9 V22.03.02.20 firmware has a stack overflow vulnerability in the sub_425964 function of the file /goform/SetOnlineDevName</description>
-      <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
     </item>
