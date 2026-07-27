@@ -11,7 +11,49 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 27 Jul 2026 05:33:32 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 08:59:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-64536 — staging: rtl8723bs: fix OOB reads in is_ap_in_tkip() IE loop</title>
+      <link>https://vulnogram.org/CVE-2026-64536</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64536</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: staging: rtl8723bs: fix OOB reads in is_ap_in_tkip() IE loop The loop in is_ap_in_tkip() iterates over IEs without verifying that enough bytes remain before dereferencing the IE head…</description>
+      <pubDate>Mon, 27 Jul 2026 06:36:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64535 — nvmet-tcp: Fix potential UAF when ddgst mismatch</title>
+      <link>https://vulnogram.org/CVE-2026-64535</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64535</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: nvmet-tcp: Fix potential UAF when ddgst mismatch Shivam Kumar found via vulnerability testing: When data digest is enabled on an NVMe/TCP connection and a digest mismatch occurs on a…</description>
+      <pubDate>Mon, 27 Jul 2026 06:32:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64534 — nvmet-tcp: check INIT_FAILED before nvmet_req_uninit in digest error path</title>
+      <link>https://vulnogram.org/CVE-2026-64534</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64534</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: nvmet-tcp: check INIT_FAILED before nvmet_req_uninit in digest error path In nvmet_tcp_try_recv_ddgst(), when a data digest mismatch is detected, nvmet_req_uninit() is called uncondi…</description>
+      <pubDate>Mon, 27 Jul 2026 06:32:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64533 — fs/ntfs3: validate lcns_follow in log_replay conversion</title>
+      <link>https://vulnogram.org/CVE-2026-64533</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64533</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: fs/ntfs3: validate lcns_follow in log_replay conversion log_replay() converts DIR_PAGE_ENTRY_32 records into DIR_PAGE_ENTRY records when replaying version 0 restart tables. During th…</description>
+      <pubDate>Mon, 27 Jul 2026 06:32:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64532 — fs/ntfs3: bound NTFS_DE view.data_off in UpdateRecordData{Root,Allocation}</title>
+      <link>https://vulnogram.org/CVE-2026-64532</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64532</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: fs/ntfs3: bound NTFS_DE view.data_off in UpdateRecordData{Root,Allocation} In do_action()&apos;s UpdateRecordDataRoot (fslog.c:3489) and UpdateRecordDataAllocation (fslog.c:3697) cases, t…</description>
+      <pubDate>Mon, 27 Jul 2026 06:32:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64531 — net: openvswitch: reject oversized nested action attrs</title>
+      <link>https://vulnogram.org/CVE-2026-64531</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64531</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: openvswitch: reject oversized nested action attrs Open vSwitch stores generated flow actions as nlattrs, whose nla_len field is u16. Commit a1e64addf3ff (&quot;net: openvswitch: remo…</description>
+      <pubDate>Mon, 27 Jul 2026 06:32:32 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2024-14040 — net: nexthop: Increase weight to u16</title>
       <link>https://vulnogram.org/CVE-2024-14040</link>
@@ -332,49 +374,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64488</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: aoa: check snd_ctl_new1() return value snd_ctl_new1() can return NULL when memory allocation fails. In layout.c, the function does not check the return value before dereferenci…</description>
       <pubDate>Sat, 25 Jul 2026 08:51:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64487 — ALSA: caiaq: fix out-of-bounds read in the Traktor Kontrol S4 input parser</title>
-      <link>https://vulnogram.org/CVE-2026-64487</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64487</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: caiaq: fix out-of-bounds read in the Traktor Kontrol S4 input parser snd_usb_caiaq_tks4_dispatch() decodes the Traktor Kontrol S4 input stream in fixed 16-byte (TKS4_MSGBLOCK_S…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64486 — ALSA: cmipci: check snd_ctl_new1() return value</title>
-      <link>https://vulnogram.org/CVE-2026-64486</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64486</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: cmipci: check snd_ctl_new1() return value snd_ctl_new1() can return NULL when memory allocation fails. snd_cmipci_spdif_controls() does not check the return value before derefe…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64485 · 7.8 HIGH — ALSA: compress: Fix task creation error unwind</title>
-      <link>https://vulnogram.org/CVE-2026-64485</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64485</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: compress: Fix task creation error unwind snd_compr_task_new() allocates the driver task before validating the returned DMA buffers and reserving file descriptors. When either o…</description>
-      <category>High</category>
-      <pubDate>Sat, 25 Jul 2026 08:51:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64484 — ALSA: es1938: check snd_ctl_new1() return value</title>
-      <link>https://vulnogram.org/CVE-2026-64484</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64484</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: es1938: check snd_ctl_new1() return value snd_ctl_new1() can return NULL when memory allocation fails. snd_es1938_mixer() does not check the return value before dereferencing t…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64483 — ALSA: firewire: isight: bound the sample count to the packet payload</title>
-      <link>https://vulnogram.org/CVE-2026-64483</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64483</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: firewire: isight: bound the sample count to the packet payload isight_packet() takes the frame count from the device iso packet and checks it only against the device claimed is…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64482 — ALSA: gus: check snd_ctl_new1() return value</title>
-      <link>https://vulnogram.org/CVE-2026-64482</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64482</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: gus: check snd_ctl_new1() return value snd_ctl_new1() can return NULL when memory allocation fails. snd_gf1_pcm_volume_control() does not check the return value before derefere…</description>
-      <pubDate>Sat, 25 Jul 2026 08:51:43 GMT</pubDate>
     </item>
   </channel>
 </rss>
