@@ -11,7 +11,70 @@
       <title>Xen Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 10 Jul 2026 05:47:25 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 15:08:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-62434 — PoD: Don&apos;t try to reclaim special pages</title>
+      <link>https://vulnogram.org/CVE-2026-62434</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62434</guid>
+      <description>A guest started with Populated on Demand enabled (PoD) can attempt to reclaim pages which aren&apos;t regular guest RAM. This can cause corruption of memory management state in Xen.</description>
+      <pubDate>Tue, 28 Jul 2026 12:33:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62433 — correct buffer checks for DM_OP hypercalls</title>
+      <link>https://vulnogram.org/CVE-2026-62433</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62433</guid>
+      <description>Parts of the DM_OP handling code assumes the caller has provided the required number of buffers for the given operation without any checking being done. As a result, certain operations might access stack rubble as structures are possibly uninitialize…</description>
+      <pubDate>Tue, 28 Jul 2026 12:32:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62432 — evtchn: Race between FIFO expand and reset</title>
+      <link>https://vulnogram.org/CVE-2026-62432</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62432</guid>
+      <description>The EVTCHNOP_expand_array hypercall checks for whether FIFO event channels are enabled, but without holding the correct lock. It can race with EVTCHNOP_reset, resulting in dereferencing a NULL pointer.</description>
+      <pubDate>Tue, 28 Jul 2026 12:32:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62431 — Viridian STIMER division by zero</title>
+      <link>https://vulnogram.org/CVE-2026-62431</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62431</guid>
+      <description>The logic to handle periodic Viridian STIMERs performs a division with an unchecked user-controlled divisor value, that can be set to zero to cause a #DE fault.</description>
+      <pubDate>Tue, 28 Jul 2026 12:32:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62430 — x86: Out-of-bounds read in vRTC emulation</title>
+      <link>https://vulnogram.org/CVE-2026-62430</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62430</guid>
+      <description>Accesses to the CMOS memory contents are done using an indirect IO port pair. Therefore Xen needs to cache the guest chosen index, and one of the usages of the index didn&apos;t take the necessary locking to avoid concurrent changes. As a result, a guest…</description>
+      <pubDate>Tue, 28 Jul 2026 12:32:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62429 — vNUMA domain cleanup may race other operations</title>
+      <link>https://vulnogram.org/CVE-2026-62429</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62429</guid>
+      <description>Accessing the vNUMA configuration data of a guest is still possible when domain destruction has already started. The cleaning up of that configuration information is not synchronized with its retrieval by a device model controlling the guest.</description>
+      <pubDate>Tue, 28 Jul 2026 12:32:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62428 — grant-table: type confusion in grant-copy</title>
+      <link>https://vulnogram.org/CVE-2026-62428</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62428</guid>
+      <description>When grant-copy operations are processed, the respective grant may or may not already be in use by another operation (a mapping or another copy). For all copy operations the referenced guest frame is looked up. When another operation is already activ…</description>
+      <pubDate>Tue, 28 Jul 2026 12:32:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42492 — vIRQ event channel binding may break Xenstore</title>
+      <link>https://vulnogram.org/CVE-2026-42492</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42492</guid>
+      <description>Xenstore, to have an up-to-date picture of the entire system, wants to know of domains appearing and disappearing. To make this more robust, a new XEN_DOMCTL_get_domain_state was introduced. The management of the bitmap underlying that operation is t…</description>
+      <pubDate>Tue, 28 Jul 2026 12:31:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42493 — x86 shadow paging is deprecated</title>
+      <link>https://vulnogram.org/CVE-2026-42493</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42493</guid>
+      <description>Addressing certain issues, in particular related to operations which may take excessively long and therefore would need preemption, has turned out overly costly. Since alternatives (HVM/PVH: HAP, PV: shim) are commonly available, the decision was to…</description>
+      <pubDate>Tue, 28 Jul 2026 12:31:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-42486 · 9.4 CRITICAL — Multiple RBAC issues in XAPI</title>
       <link>https://vulnogram.org/CVE-2026-42486</link>
@@ -345,80 +408,6 @@
       <description>Recent x86 CPUs offer functionality named Control-flow Enforcement Technology (CET). A sub-feature of this are Shadow Stacks (CET-SS). CET-SS is a hardware feature designed to protect against Return Oriented Programming attacks. When enabled, traditi…</description>
       <category>Medium</category>
       <pubDate>Wed, 20 Mar 2024 10:40:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-46840 · 4.1 MEDIUM — VT-d: Failure to quarantine devices in !HVM builds</title>
-      <link>https://vulnogram.org/CVE-2023-46840</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46840</guid>
-      <description>Incorrect placement of a preprocessor directive in source code results in logic that doesn&apos;t operate as intended when support for HVM guests is compiled out of Xen.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 20 Mar 2024 10:40:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-46839 · 5.3 MEDIUM 🌩️ — pci: phantom functions assigned to incorrect contexts</title>
-      <link>https://vulnogram.org/CVE-2023-46839</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46839</guid>
-      <description>PCI devices can make use of a functionality called phantom functions, that when enabled allows the device to generate requests using the IDs of functions that are otherwise unpopulated. This allows a device to extend the number of outstanding request…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 20 Mar 2024 10:35:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-46838 · 7.5 HIGH 🌩️ — Linux: netback processing of zero-length transmit fragment</title>
-      <link>https://vulnogram.org/CVE-2023-46838</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46838</guid>
-      <description>Transmit requests in Xen&apos;s virtual network protocol can consist of multiple parts. While not really useful, except for the initial part any of them may be of zero length, i.e. carry no data at all. Besides a certain initial portion of the to be trans…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Jan 2024 10:18:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-46837 · 3.3 LOW — arm32: The cache may not be properly cleaned/invalidated (take two)</title>
-      <link>https://vulnogram.org/CVE-2023-46837</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46837</guid>
-      <description>Arm provides multiple helpers to clean &amp; invalidate the cache for a given region. This is, for instance, used when allocating guest memory to ensure any writes (such as the ones during scrubbing) have reached memory before handing over the page to a…</description>
-      <category>Low</category>
-      <pubDate>Fri, 05 Jan 2024 16:36:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-46836 · 4.7 MEDIUM — x86: BTC/SRSO fixes not fully effective</title>
-      <link>https://vulnogram.org/CVE-2023-46836</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46836</guid>
-      <description>The fixes for XSA-422 (Branch Type Confusion) and XSA-434 (Speculative Return Stack Overflow) are not IRQ-safe. It was believed that the mitigations always operated in contexts with IRQs disabled. However, the original XSA-254 fix for Meltdown (XPTI)…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 05 Jan 2024 16:34:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-46835 · 5.5 MEDIUM — x86/AMD: mismatch in IOMMU quarantine page table levels</title>
-      <link>https://vulnogram.org/CVE-2023-46835</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46835</guid>
-      <description>The current setup of the quarantine page tables assumes that the quarantine domain (dom_io) has been initialized with an address width of DEFAULT_DOMAIN_ADDRESS_WIDTH (48) and hence 4 page table levels. However dom_io being a PV domain gets the AMD-V…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 05 Jan 2024 16:34:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-34328 · 5.5 MEDIUM — x86/AMD: Debug Mask handling</title>
-      <link>https://vulnogram.org/CVE-2023-34328</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34328</guid>
-      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] AMD CPUs since ~2014 have extensions to normal x86 debugging functionality. Xen supports guests using these extensions. U…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 05 Jan 2024 16:34:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-34327 · 5.5 MEDIUM — x86/AMD: Debug Mask handling</title>
-      <link>https://vulnogram.org/CVE-2023-34327</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34327</guid>
-      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] AMD CPUs since ~2014 have extensions to normal x86 debugging functionality. Xen supports guests using these extensions. U…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 05 Jan 2024 16:34:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-34325 · 7.8 HIGH — Multiple vulnerabilities in libfsimage disk handling</title>
-      <link>https://vulnogram.org/CVE-2023-34325</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-34325</guid>
-      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] libfsimage contains parsing code for several filesystems, most of them based on grub-legacy code. libfsimage is used by p…</description>
-      <category>High</category>
-      <pubDate>Fri, 05 Jan 2024 16:31:09 GMT</pubDate>
     </item>
   </channel>
 </rss>
