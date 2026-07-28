@@ -11,68 +11,158 @@
       <title>Xen Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 28 Jul 2026 15:08:03 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 17:16:12 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-62434 — PoD: Don&apos;t try to reclaim special pages</title>
+      <title>CVE-2026-62434 · 5.3 MEDIUM 🌩️ — PoD: Don&apos;t try to reclaim special pages</title>
       <link>https://vulnogram.org/CVE-2026-62434</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62434</guid>
       <description>A guest started with Populated on Demand enabled (PoD) can attempt to reclaim pages which aren&apos;t regular guest RAM. This can cause corruption of memory management state in Xen.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 28 Jul 2026 12:33:08 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-62433 — correct buffer checks for DM_OP hypercalls</title>
+      <title>CVE-2026-62433 · 7.3 HIGH 🌩️ — correct buffer checks for DM_OP hypercalls</title>
       <link>https://vulnogram.org/CVE-2026-62433</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62433</guid>
       <description>Parts of the DM_OP handling code assumes the caller has provided the required number of buffers for the given operation without any checking being done. As a result, certain operations might access stack rubble as structures are possibly uninitialize…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 28 Jul 2026 12:32:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-62432 — evtchn: Race between FIFO expand and reset</title>
+      <title>CVE-2026-62432 · 7.3 HIGH 🌩️ — evtchn: Race between FIFO expand and reset</title>
       <link>https://vulnogram.org/CVE-2026-62432</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62432</guid>
       <description>The EVTCHNOP_expand_array hypercall checks for whether FIFO event channels are enabled, but without holding the correct lock. It can race with EVTCHNOP_reset, resulting in dereferencing a NULL pointer.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 28 Jul 2026 12:32:52 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-62431 — Viridian STIMER division by zero</title>
+      <title>CVE-2026-62431 · 7.5 HIGH 🌩️ — Viridian STIMER division by zero</title>
       <link>https://vulnogram.org/CVE-2026-62431</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62431</guid>
       <description>The logic to handle periodic Viridian STIMERs performs a division with an unchecked user-controlled divisor value, that can be set to zero to cause a #DE fault.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 28 Jul 2026 12:32:43 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-62430 — x86: Out-of-bounds read in vRTC emulation</title>
+      <title>CVE-2026-62430 · 7.5 HIGH 🌩️ — x86: Out-of-bounds read in vRTC emulation</title>
       <link>https://vulnogram.org/CVE-2026-62430</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62430</guid>
       <description>Accesses to the CMOS memory contents are done using an indirect IO port pair. Therefore Xen needs to cache the guest chosen index, and one of the usages of the index didn&apos;t take the necessary locking to avoid concurrent changes. As a result, a guest…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 28 Jul 2026 12:32:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-62429 — vNUMA domain cleanup may race other operations</title>
+      <title>CVE-2026-62429 · 6.5 MEDIUM — vNUMA domain cleanup may race other operations</title>
       <link>https://vulnogram.org/CVE-2026-62429</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62429</guid>
       <description>Accessing the vNUMA configuration data of a guest is still possible when domain destruction has already started. The cleaning up of that configuration information is not synchronized with its retrieval by a device model controlling the guest.</description>
+      <category>Medium</category>
       <pubDate>Tue, 28 Jul 2026 12:32:24 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-62428 — grant-table: type confusion in grant-copy</title>
+      <title>CVE-2026-62436 · 6.5 MEDIUM 🌩️ — grant-table: version change racing with other operations</title>
+      <link>https://vulnogram.org/CVE-2026-62436</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62436</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] With the introduction of Grant Table v2 came the requirement to be able to switch between versions. Switching from v1 to…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 28 Jul 2026 12:32:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62435 · 6.5 MEDIUM 🌩️ — grant-table: version change racing with other operations</title>
+      <link>https://vulnogram.org/CVE-2026-62435</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62435</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] With the introduction of Grant Table v2 came the requirement to be able to switch between versions. Switching from v1 to…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 28 Jul 2026 12:32:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62428 · 7.8 HIGH — grant-table: type confusion in grant-copy</title>
       <link>https://vulnogram.org/CVE-2026-62428</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62428</guid>
       <description>When grant-copy operations are processed, the respective grant may or may not already be in use by another operation (a mapping or another copy). For all copy operations the referenced guest frame is looked up. When another operation is already activ…</description>
+      <category>High</category>
       <pubDate>Tue, 28 Jul 2026 12:32:07 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-42492 — vIRQ event channel binding may break Xenstore</title>
+      <title>CVE-2026-62427 · 8.8 HIGH — sysctl and platform-op locks open to abuse</title>
+      <link>https://vulnogram.org/CVE-2026-62427</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62427</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] To manage the system, sysctl and platform operations are used by the control domain or a possible Xenstore domain. Some o…</description>
+      <category>High</category>
+      <pubDate>Tue, 28 Jul 2026 12:31:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62426 · 8.8 HIGH — sysctl and platform-op locks open to abuse</title>
+      <link>https://vulnogram.org/CVE-2026-62426</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62426</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] To manage the system, sysctl and platform operations are used by the control domain or a possible Xenstore domain. Some o…</description>
+      <category>High</category>
+      <pubDate>Tue, 28 Jul 2026 12:31:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62425 · 5.5 MEDIUM — buffer overruns in libfsimage iso9660 handling</title>
+      <link>https://vulnogram.org/CVE-2026-62425</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62425</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] The directory and Rock Ridge / SUSP walk in libfsimage&apos;s iso9660 driver derives several lengths directly from attacker-co…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 28 Jul 2026 12:31:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62424 · 5.5 MEDIUM — buffer overruns in libfsimage iso9660 handling</title>
+      <link>https://vulnogram.org/CVE-2026-62424</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62424</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] The directory and Rock Ridge / SUSP walk in libfsimage&apos;s iso9660 driver derives several lengths directly from attacker-co…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 28 Jul 2026 12:31:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62423 · 5.5 MEDIUM — buffer overruns in libfsimage iso9660 handling</title>
+      <link>https://vulnogram.org/CVE-2026-62423</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62423</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] The directory and Rock Ridge / SUSP walk in libfsimage&apos;s iso9660 driver derives several lengths directly from attacker-co…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 28 Jul 2026 12:31:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42495 · 5.5 MEDIUM — buffer overruns in libfsimage iso9660 handling</title>
+      <link>https://vulnogram.org/CVE-2026-42495</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42495</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] The directory and Rock Ridge / SUSP walk in libfsimage&apos;s iso9660 driver derives several lengths directly from attacker-co…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 28 Jul 2026 12:31:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42494 · 6.1 MEDIUM — buffer overruns in libfsimage iso9660 handling</title>
+      <link>https://vulnogram.org/CVE-2026-42494</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42494</guid>
+      <description>[This CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] The directory and Rock Ridge / SUSP walk in libfsimage&apos;s iso9660 driver derives several lengths directly from attacker-co…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 28 Jul 2026 12:31:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42492 · 7.5 HIGH 🌩️ — vIRQ event channel binding may break Xenstore</title>
       <link>https://vulnogram.org/CVE-2026-42492</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42492</guid>
       <description>Xenstore, to have an up-to-date picture of the entire system, wants to know of domains appearing and disappearing. To make this more robust, a new XEN_DOMCTL_get_domain_state was introduced. The management of the bitmap underlying that operation is t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 28 Jul 2026 12:31:28 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-42493 — x86 shadow paging is deprecated</title>
+      <title>CVE-2026-42493 · 7.5 HIGH 🌩️ — x86 shadow paging is deprecated</title>
       <link>https://vulnogram.org/CVE-2026-42493</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42493</guid>
       <description>Addressing certain issues, in particular related to operations which may take excessively long and therefore would need preemption, has turned out overly costly. Since alternatives (HVM/PVH: HAP, PV: shim) are commonly available, the decision was to…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 28 Jul 2026 12:31:11 GMT</pubDate>
     </item>
     <item>
@@ -335,79 +425,6 @@
       <description>For a brief summary of Xapi terminology, see: https://xapi-project.github.io/xen-api/overview.html#object-model-overview Xapi contains functionality to backup and restore metadata about Virtual Machines and Storage Repositories (SRs). The metadata it…</description>
       <category>Low</category>
       <pubDate>Fri, 14 Feb 2025 20:16:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-45819 · 5.5 MEDIUM — libxl leaks data to PVH guests via ACPI tables</title>
-      <link>https://vulnogram.org/CVE-2024-45819</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45819</guid>
-      <description>PVH guests have their ACPI tables constructed by the toolstack. The construction involves building the tables in local memory, which are then copied into guest memory. While actually used parts of the local memory are filled in correctly, excess spac…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 19 Dec 2024 12:00:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-45818 · 6.5 MEDIUM — Deadlock in x86 HVM standard VGA handling</title>
-      <link>https://vulnogram.org/CVE-2024-45818</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45818</guid>
-      <description>The hypervisor contains code to accelerate VGA memory accesses for HVM guests, when the (virtual) VGA is in &quot;standard&quot; mode. Locking involved there has an unusual discipline, leaving a lock acquired past the return from the function that acquired it.…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 19 Dec 2024 12:00:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-45817 · 7.3 HIGH 🌩️ — x86: Deadlock in vlapic_error()</title>
-      <link>https://vulnogram.org/CVE-2024-45817</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-45817</guid>
-      <description>In x86&apos;s APIC (Advanced Programmable Interrupt Controller) architecture, error conditions are reported in a status register. Furthermore, the OS can opt to receive an interrupt when a new error occurs. It is possible to configure the error interrupt…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Sep 2024 10:31:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-31146 · 7.5 HIGH — PCI device pass-through with shared resources</title>
-      <link>https://vulnogram.org/CVE-2024-31146</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31146</guid>
-      <description>When multiple devices share resources and one of them is to be passed through to a guest, security of the entire system and of respective guests individually cannot really be guaranteed without knowing internals of any of the involved guests. Therefo…</description>
-      <category>High</category>
-      <pubDate>Wed, 25 Sep 2024 10:31:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-31145 · 7.5 HIGH — error handling in x86 IOMMU identity mapping</title>
-      <link>https://vulnogram.org/CVE-2024-31145</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31145</guid>
-      <description>Certain PCI devices in a system might be assigned Reserved Memory Regions (specified via Reserved Memory Region Reporting, &quot;RMRR&quot;) for Intel VT-d or Unity Mapping ranges for AMD-Vi. These are typically used for platform tasks such as legacy USB emula…</description>
-      <category>High</category>
-      <pubDate>Wed, 25 Sep 2024 10:31:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-31143 · 7.5 HIGH — double unlock in x86 guest IRQ handling</title>
-      <link>https://vulnogram.org/CVE-2024-31143</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31143</guid>
-      <description>An optional feature of PCI MSI called &quot;Multiple Message&quot; allows a device to use multiple consecutive interrupt vectors. Unlike for MSI-X, the setting up of these consecutive vectors needs to happen all in one go. In this handling an error path could…</description>
-      <category>High</category>
-      <pubDate>Thu, 18 Jul 2024 13:31:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-31142 · 7.5 HIGH — x86: Incorrect logic for BTC/SRSO mitigations</title>
-      <link>https://vulnogram.org/CVE-2024-31142</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31142</guid>
-      <description>Because of a logical error in XSA-407 (Branch Type Confusion), the mitigation is not applied properly when it is intended to be used. XSA-434 (Speculative Return Stack Overflow) uses the same infrastructure, so is equally impacted. For more details,…</description>
-      <category>High</category>
-      <pubDate>Thu, 16 May 2024 13:39:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-46842 · 6.5 MEDIUM — x86 HVM hypercalls may trigger Xen bug check</title>
-      <link>https://vulnogram.org/CVE-2023-46842</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46842</guid>
-      <description>Unlike 32-bit PV guests, HVM guests may switch freely between 64-bit and other modes. This in particular means that they may set registers used to pass 32-bit-mode hypercall arguments to values outside of the range 32-bit code would be able to set th…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 16 May 2024 13:39:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-46841 · 6.5 MEDIUM — x86: shadow stack vs exceptions from emulation stubs</title>
-      <link>https://vulnogram.org/CVE-2023-46841</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-46841</guid>
-      <description>Recent x86 CPUs offer functionality named Control-flow Enforcement Technology (CET). A sub-feature of this are Shadow Stacks (CET-SS). CET-SS is a hardware feature designed to protect against Return Oriented Programming attacks. When enabled, traditi…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 20 Mar 2024 10:40:36 GMT</pubDate>
     </item>
   </channel>
 </rss>
