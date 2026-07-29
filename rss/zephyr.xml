@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 27 Jul 2026 20:56:32 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 18:44:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10684 · 3 LOW — Out-of-bounds read in coredump shell when printing stored-dump target code</title>
+      <link>https://vulnogram.org/CVE-2026-10684</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10684</guid>
+      <description>In subsys/debug/coredump/coredump_shell.c, print_coredump_hdr() used the 16-bit tgt_code field of a stored Zephyr coredump header directly as an index into coredump_target_code2str[], a fixed 7-element array of string pointers, with no bounds check.…</description>
+      <category>Low</category>
+      <pubDate>Wed, 29 Jul 2026 18:03:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10683 · 2.4 LOW — DesignWare I2C target driver can be wedged into a permanent stuck state by an on-bus master (DoS)</title>
       <link>https://vulnogram.org/CVE-2026-10683</link>
@@ -404,14 +412,6 @@
       <description>In Zephyr&apos;s IPv4 IGMP implementation, igmp_send() in subsys/net/ip/igmp.c read the network interface back out of the packet via net_pkt_iface(pkt) after the packet had been handed to net_send_data(). On the successful-send path the packet&apos;s last refe…</description>
       <category>Low</category>
       <pubDate>Tue, 16 Jun 2026 13:12:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10635 · 6.3 MEDIUM — Dangling memory-domain pointer (use-after-free) in Xtensa MMU page-table code on memory-domain de-init</title>
-      <link>https://vulnogram.org/CVE-2026-10635</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10635</guid>
-      <description>On Xtensa targets with CONFIG_USERSPACE and CONFIG_XTENSA_MMU, the page-table code (arch/xtensa/core/ptables.c) maintains a global list, xtensa_domain_list, of active memory domains using a list node embedded inside the caller-owned struct k_mem_doma…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 16 Jun 2026 05:19:20 GMT</pubDate>
     </item>
   </channel>
 </rss>

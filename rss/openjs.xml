@@ -11,7 +11,31 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 29 Jul 2026 12:52:08 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 18:44:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-16729 · 4.8 MEDIUM — undici vulnerable to cookie attribute injection via unsanitized domain and unparsed setCookie fields</title>
+      <link>https://vulnogram.org/CVE-2026-16729</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16729</guid>
+      <description>undici&apos;s setCookie function does not fully sanitize cookie attributes. In undici before 6.28.0, from 7.0.0 up to before 7.29.0, and from 8.0.0 up to before 8.9.0, a domain value is not checked for semicolons and entries in the unparsed array are not…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 29 Jul 2026 16:45:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13697 · 7.4 HIGH — undici vulnerable to cross-user information disclosure and parse-time crash via degenerate private cache directives</title>
+      <link>https://vulnogram.org/CVE-2026-13697</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13697</guid>
+      <description>undici&apos;s cache interceptor mishandles malformed Cache-Control private directives. In undici 7.0.0 up to before 7.29.0 and 8.0.0 up to before 8.9.0, a response carrying a degenerate qualified private directive, such as private set to an empty value, c…</description>
+      <category>High</category>
+      <pubDate>Wed, 29 Jul 2026 16:32:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15144 · 7.3 HIGH — @fastify/rate-limit vulnerable to rate-limit bypass via IPv6 address rotation</title>
+      <link>https://vulnogram.org/CVE-2026-15144</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15144</guid>
+      <description>@fastify/rate-limit before 11.2.0 keys rate-limit buckets by the verbatim client IP string returned from request.ip. Because a single IPv6 client can control a large address range (a /64 holds 2^64 distinct addresses) and the same address has multipl…</description>
+      <category>High</category>
+      <pubDate>Wed, 29 Jul 2026 16:10:24 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15074 · 7.5 HIGH — @fastify/static vulnerable to route guard bypass via path traversal</title>
       <link>https://vulnogram.org/CVE-2026-15074</link>
@@ -404,32 +428,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 12 Mar 2026 20:27:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-1528 · 7.5 HIGH 🌩️ — undici is vulnerable to Malicious WebSocket 64-bit length overflows undici parser and crashes the client</title>
-      <link>https://vulnogram.org/CVE-2026-1528</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1528</guid>
-      <description>ImpactA server can reply with a WebSocket frame using the 64-bit length form and an extremely large length. undici&apos;s ByteParser overflows internal math, ends up in an invalid state, and throws a fatal TypeError that terminates the process. Patches Pa…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 12 Mar 2026 20:21:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-1527 · 4.6 MEDIUM — undici is vulnerable to CRLF Injection via upgrade option</title>
-      <link>https://vulnogram.org/CVE-2026-1527</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1527</guid>
-      <description>ImpactWhen an application passes user-controlled input to the upgrade option of client.request(), an attacker can inject CRLF sequences (\r\n) to: * Inject arbitrary HTTP headers * Terminate the HTTP request prematurely and smuggle raw data to non-HT…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Mar 2026 20:17:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-2581 · 5.9 MEDIUM 🌩️ — undici is vulnerable to Unbounded Memory Consumption in in Undici&apos;s DeduplicationHandler via Response Buffering leads to DoS</title>
-      <link>https://vulnogram.org/CVE-2026-2581</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-2581</guid>
-      <description>This is an uncontrolled resource consumption vulnerability (CWE-400) that can lead to Denial of Service (DoS). In vulnerable Undici versions, when interceptors.deduplicate() is enabled, response data for deduplicated requests could be accumulated in…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 12 Mar 2026 20:13:19 GMT</pubDate>
     </item>
   </channel>
 </rss>
