@@ -11,7 +11,23 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 30 Jul 2026 12:19:04 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 16:21:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-58216 · 5.3 MEDIUM — Samba: kpasswd service: kpasswd packet that contains malformed asn.1 might cause the server to access 6 bytes of unallocated memory leading server to crash</title>
+      <link>https://vulnogram.org/CVE-2026-58216</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58216</guid>
+      <description>An out-of-bounds read flaw was found in Samba&apos;s Kerberos Key Distribution Center&apos;s (KDC) password change (kpasswd) service. When processing malformed ASN.1-encoded Kerberos password change request, Samba server miscalculates the structure size and at…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 30 Jul 2026 15:40:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-58222 · 8.8 HIGH — Samba: samba ad ldap compare filter injection and trusted-request confusion disclose protected attributes</title>
+      <link>https://vulnogram.org/CVE-2026-58222</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58222</guid>
+      <description>A security flaw combining LDAP filter injection and improper authorization checks was found in Samba Active Directory Domain Controller (AD DC). When processing LDAP Compare requests, Samba fails to properly validate user-supplied attribute names and…</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Jul 2026 15:11:03 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-18382 · 6.8 MEDIUM — Project-koku/koku-metrics-operator: koku-metrics-operator: service-account client credentials sent to user-controlled token_url</title>
       <link>https://vulnogram.org/CVE-2026-18382</link>
@@ -44,6 +60,23 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 30 Jul 2026 10:32:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16531 · 5.3 MEDIUM 🌩️ — Pcp: pcp: arbitrary file creation via path traversal in pmproxy logger servlet</title>
+      <link>https://vulnogram.org/CVE-2026-16531</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16531</guid>
+      <description>An unauthenticated remote attacker can exploit a path traversal vulnerability in the PCP pmproxy logger servlet using a crafted hostname. This allows arbitrary file and directory creation, potentially leading to a denial of service.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 05:41:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16524 · 7.8 HIGH — Pcp: pcp linux_sockets pmda: arbitrary command execution via command injection</title>
+      <link>https://vulnogram.org/CVE-2026-16524</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16524</guid>
+      <description>A command injection flaw in PCP&apos;s linux_sockets PMDA allows malicious shell metacharacters via the network.persocket.filter metric. This failed validation lets attackers execute arbitrary commands as the PMDA user when metrics refresh.</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Jul 2026 05:15:15 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-18255 · 7.2 HIGH — Quay: quay: global read-only superuser can view robot account tokens</title>
@@ -391,38 +424,6 @@
       <description>SoupAuthManager caches proxy authentication credentials without scoping them to the proxy authority (host:port). When the proxy configuration changes (e.g., via system settings or WPAD), cached Proxy-Authorization headers from the previous proxy are…</description>
       <category>Low</category>
       <pubDate>Tue, 21 Jul 2026 18:35:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16493 · 7.8 HIGH — Ansible-core: argument injection in ansible-galaxy collection install via git clone (incomplete fix for cve-2026-11332)</title>
-      <link>https://vulnogram.org/CVE-2026-16493</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16493</guid>
-      <description>A flaw was found in ansible-core. The _extract_collection_from_git() function in ansible-core&apos;s concrete_artifact_manager.py constructs git clone commands without a &apos;--&apos; (end-of-options) separator before user-supplied URLs when installing collections…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 17:26:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59851 · 8.8 HIGH — Libssh: libssh: authentication bypass via missing gssapi principal check</title>
-      <link>https://vulnogram.org/CVE-2026-59851</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59851</guid>
-      <description>A flaw was found in libssh. On servers with GSSAPIKeyExchange enabled, the gssapi-keyex path does not verify whether the authenticated Kerberos principal is authorized for the requested local user, allowing authenticated clients to log in as arbitrar…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 14:20:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59850 · 4.3 MEDIUM — Libssh: libssh: use-after-free via data callbacks on closed channels</title>
-      <link>https://vulnogram.org/CVE-2026-59850</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59850</guid>
-      <description>A flaw was found in libssh. If data packets are processed after a channel is closed, channel data callbacks can be invoked after the associated data has already been freed, leading to crashes or possible use-after-free conditions.</description>
-      <category>Medium</category>
-      <pubDate>Tue, 21 Jul 2026 14:15:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59849 · 3.1 LOW — Libssh: libssh: denial of service via automatic certificate authentication loop</title>
-      <link>https://vulnogram.org/CVE-2026-59849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59849</guid>
-      <description>A flaw was found in libssh. Logic errors in automatic certificate-based public key authentication can cause libssh clients to loop indefinitely when configured certificates are missing or repeatedly rejected by a server, leading to denial of service.</description>
-      <category>Low</category>
-      <pubDate>Tue, 21 Jul 2026 14:08:15 GMT</pubDate>
     </item>
   </channel>
 </rss>

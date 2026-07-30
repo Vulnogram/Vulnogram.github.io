@@ -11,7 +11,77 @@
       <title>CERT@VDE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 29 Jul 2026 07:33:56 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 16:21:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-7849 · 9.8 CRITICAL 🌩️ — Command Injection in SCM (idledisconnect parameter)</title>
+      <link>https://vulnogram.org/CVE-2026-7849</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7849</guid>
+      <description>Due to improper neutralization of special elements, an unauthenticated remote attacker is able to inject a command into the system configuration which is subsequently executed as root.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 06:54:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44107 · 8.7 HIGH 🌩️ — Exposed Reboot via Modbus</title>
+      <link>https://vulnogram.org/CVE-2026-44107</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44107</guid>
+      <description>A reboot of the charging controller can be triggered via Modbus TCP without authentication. Therefore, when the Modbus functionality is enabled by opening the port that CharxModbusServer is listening, an unauthenticated attacker can perform a Denial-…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 06:53:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44104 · 9.8 CRITICAL 🌩️ — ControllerAgent does not perform validation of firmware</title>
+      <link>https://vulnogram.org/CVE-2026-44104</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44104</guid>
+      <description>The firmware update process for the basemodule of the charging controller only validates the CRC32 checksum without cryptographic signature verification. This allows an unauthenticated remote attacker to install a modified firmware, resulting in full…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 06:52:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44102 · 6.9 MEDIUM 🌩️ — OCPP Firmware download is not properly locked</title>
+      <link>https://vulnogram.org/CVE-2026-44102</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44102</guid>
+      <description>An unauthenticated remote attacker can trigger a firmware update download via the OCPP backend by supplying an invalid firmware file. This will cause the file to remain accessible for a short period before it is deleted due to improper locking during…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 06:51:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44099 · 8.5 HIGH — Local Privilege Escalation via pppd password injection</title>
+      <link>https://vulnogram.org/CVE-2026-44099</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44099</guid>
+      <description>A privilege escalation vulnerability in the system configuration allows a low-privileged local user to execute arbitrary commands as root, resulting in full system compromise.</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Jul 2026 06:50:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44097 · 7.1 HIGH — File Upload vulnerability</title>
+      <link>https://vulnogram.org/CVE-2026-44097</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44097</guid>
+      <description>A low-privileged remote attacker with &quot;operator&quot; access can upload arbitrary files via the REST endpoint intended for firmware updates, resulting in persistent storage of attacker-controlled files and potentially exhausting resources, which might lea…</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Jul 2026 06:49:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44094 · 8.6 HIGH 🌩️ — Fallback to second RAUC slot with default credentials</title>
+      <link>https://vulnogram.org/CVE-2026-44094</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44094</guid>
+      <description>An unauthenticated remote attacker can enforce the system to fall back to a firmware partition with an insecure configuration including default credentials. This could allow the attacker to gain SSH access to the system as an unprivileged user &quot;user-…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 06:48:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44092 · 9.1 CRITICAL 🌩️ — Missing input validation / stripping of CRLF characters in SystemConfigManager</title>
+      <link>https://vulnogram.org/CVE-2026-44092</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44092</guid>
+      <description>An unauthenticated remote attacker can inject malicious input into the ModbusServer application because it does not validate the input it fetches from MQTT. This may lead to integrity and availability loss.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 06:47:57 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-35226 · 7.1 HIGH — Out-of-bounds Write in CODESYS PROFINET Controller</title>
       <link>https://vulnogram.org/CVE-2026-35226</link>
@@ -356,70 +426,6 @@
       <description>An low privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the getDeviceScalings function due to improper neutralization of special elements in a SQL SELECT command. This can result in a total loss of confidential…</description>
       <category>High</category>
       <pubDate>Wed, 27 May 2026 07:56:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40837 · 7.1 HIGH — Authenticated SQLi in getProjectScalings function</title>
-      <link>https://vulnogram.org/CVE-2026-40837</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40837</guid>
-      <description>An low privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the getProjectScalings function due to improper neutralization of special elements in a SQL SELECT command. This can result in a total loss of confidentia…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 07:56:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40836 · 7.1 HIGH — Authenticated SQLi in inmessage model</title>
-      <link>https://vulnogram.org/CVE-2026-40836</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40836</guid>
-      <description>An low privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the inmessage model due to improper neutralization of special elements in a SQL DELETE command allowing for reading the whole database and deleting entrie…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 07:56:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40835 · 7.1 HIGH — Authenticated SQLi in saveObjectFromData function</title>
-      <link>https://vulnogram.org/CVE-2026-40835</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40835</guid>
-      <description>An low privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the saveObjectFromData function due to improper neutralization of special elements in a SQL SELECT command. This can result in a total loss of confidentia…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 07:56:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40834 · 7.1 HIGH — Authenticated SQLi in saveDashboardLayout function</title>
-      <link>https://vulnogram.org/CVE-2026-40834</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40834</guid>
-      <description>An low privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the dash_layout.php files saveDashboardLayout function due to improper neutralization of special elements in a SQL INSERT command allowing for reading the…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 07:55:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40833 · 7.1 HIGH — Authenticated SQLi in saveDashboardLayout function</title>
-      <link>https://vulnogram.org/CVE-2026-40833</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40833</guid>
-      <description>An low privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the dash.php files saveDashboardLayout function due to improper neutralization of special elements in a SQL INSERT command allowing for reading the whole…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 07:55:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40832 · 7.1 HIGH — Authenticated SQLi in getDevicegroups function</title>
-      <link>https://vulnogram.org/CVE-2026-40832</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40832</guid>
-      <description>An low privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the getDevicegroups function due to improper neutralization of special elements in a SQL SELECT command. This can result in a total loss of confidentialit…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 07:54:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40831 · 7.1 HIGH — Authenticated SQLi in Easy View</title>
-      <link>https://vulnogram.org/CVE-2026-40831</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40831</guid>
-      <description>An low privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the Easy View due to improper neutralization of special elements in a SQL SELECT command. This can result in a total loss of confidentiality.</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 07:54:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40830 · 7 HIGH — Authenticated SQLi in UpdateParam function</title>
-      <link>https://vulnogram.org/CVE-2026-40830</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40830</guid>
-      <description>A high privileged remote attacker can exploit an unauthenticated SQL Injection vulnerability in the admin.mbnetj.php files UpdateParam function due to improper neutralization of special elements in a SQL UPDATE command allowing for reading the whole…</description>
-      <category>High</category>
-      <pubDate>Wed, 27 May 2026 07:54:13 GMT</pubDate>
     </item>
   </channel>
 </rss>
