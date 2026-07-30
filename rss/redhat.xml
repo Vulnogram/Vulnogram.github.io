@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 30 Jul 2026 10:06:35 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 12:19:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-18382 · 6.8 MEDIUM — Project-koku/koku-metrics-operator: koku-metrics-operator: service-account client credentials sent to user-controlled token_url</title>
+      <link>https://vulnogram.org/CVE-2026-18382</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18382</guid>
+      <description>A flaw was found in koku-metrics-operator. The operator&apos;s CostManagementMetricsConfig custom resource allows a user able to edit the CR to specify an arbitrary OAuth token endpoint. When authentication.type is set to service-account, the operator sen…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 30 Jul 2026 12:00:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18378 · 7.6 HIGH — Project-koku/koku-metrics-operator: koku-metrics-operator: cluster pull-secret token exfiltration via user-controlled api_url (ssrf / confused deputy)</title>
+      <link>https://vulnogram.org/CVE-2026-18378</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18378</guid>
+      <description>A flaw was found in koku-metrics-operator. The operator&apos;s CostManagementMetricsConfig custom resource allows user able to edit the CR to specify an arbitrary upload URL. When authentication.type is set to token (the default), the cluster-global Red H…</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Jul 2026 12:00:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18381 · 7.6 HIGH — Project-koku/koku-metrics-operator: koku-metrics-operator: operator service-account token exfiltration via user-controlled prometheus service_address</title>
+      <link>https://vulnogram.org/CVE-2026-18381</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18381</guid>
+      <description>A flaw was found in the koku-metrics-operator for Red Hat OpenShift. The operator&apos;s CostManagementMetricsConfig custom resource allows a user able to edit the CR to specify an arbitrary upload URL. The operator attaches its own Kubernetes service-acc…</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Jul 2026 12:00:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18369 · 5.8 MEDIUM 🌩️ — Dogtag-pki: pki-core: redhat-pki: pki: acme http-01 validation ssrf via ip literal identifiers and unvalidated redirects</title>
+      <link>https://vulnogram.org/CVE-2026-18369</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18369</guid>
+      <description>A flaw was found in Dogtag PKI&apos;s ACME responder where the HTTP-01 challenge validator accepts IP address literals as dns identifiers and follows HTTP redirects without validating that the target is a public address. An unauthenticated ACME account ho…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 10:32:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-18255 · 7.2 HIGH — Quay: quay: global read-only superuser can view robot account tokens</title>
       <link>https://vulnogram.org/CVE-2026-18255</link>
@@ -390,40 +423,6 @@
       <description>A flaw was found in libssh. Logic errors in automatic certificate-based public key authentication can cause libssh clients to loop indefinitely when configured certificates are missing or repeatedly rejected by a server, leading to denial of service.</description>
       <category>Low</category>
       <pubDate>Tue, 21 Jul 2026 14:08:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59848 · 5.3 MEDIUM 🌩️ — Libssh: libssh: denial of service via sftp responses with unknown request ids</title>
-      <link>https://vulnogram.org/CVE-2026-59848</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59848</guid>
-      <description>A flaw was found in libssh. A malicious SFTP server can send responses for unknown request IDs that libssh clients keep queued indefinitely, causing unbounded memory growth and client-side denial of service.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 13:21:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59847 · 5.9 MEDIUM 🌩️ — Libssh: libssh: integrity downgrade via openssl aes-gcm tag verification</title>
-      <link>https://vulnogram.org/CVE-2026-59847</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59847</guid>
-      <description>A flaw was found in libssh. Incorrect AES-GCM finalization checks in builds using the OpenSSL backend can effectively remove integrity protection, allowing an in-path attacker to modify plaintext on the wire without detection.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 21 Jul 2026 13:18:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59846 · 3.9 LOW — Libssh: libssh: information disclosure via proxycommand %r username expansion</title>
-      <link>https://vulnogram.org/CVE-2026-59846</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59846</guid>
-      <description>A flaw was found in libssh. A malicious username expanded through %r in ProxyCommand handling can inject shell metacharacters, exposing environment variables and causing unintended shell behavior.</description>
-      <category>Low</category>
-      <pubDate>Tue, 21 Jul 2026 12:55:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16445 · 7.5 HIGH — Dracut: dracut: root code execution via dhcp options command injection in networkmanager initrd module</title>
-      <link>https://vulnogram.org/CVE-2026-16445</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16445</guid>
-      <description>A flaw was found in dracut. A remote attacker on the adjacent network can exploit this vulnerability by providing specially crafted DHCP options, such as a malicious root-path, next-server, or bootfile name, to a system using dracut&apos;s NetworkManager-…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 12:51:08 GMT</pubDate>
     </item>
   </channel>
 </rss>
