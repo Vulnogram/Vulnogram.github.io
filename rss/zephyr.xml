@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 29 Jul 2026 20:04:58 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 15:50:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10685 · 7.6 HIGH — Use-after-free of GATT subscribe params in Bluetooth host CCC-write response handler</title>
+      <link>https://vulnogram.org/CVE-2026-10685</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10685</guid>
+      <description>The Zephyr Bluetooth GATT client CCC-write response handler gatt_write_ccc_rsp() in subsys/bluetooth/host/gatt.c invoked the application&apos;s params-&gt;subscribe() callback after it had already called params-&gt;notify(conn, params, NULL, 0). Per the public…</description>
+      <category>High</category>
+      <pubDate>Fri, 31 Jul 2026 14:41:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10684 · 3 LOW — Out-of-bounds read in coredump shell when printing stored-dump target code</title>
       <link>https://vulnogram.org/CVE-2026-10684</link>
@@ -404,14 +412,6 @@
       <description>subsys/net/ip/ipv6_mld.c:mld_send() read the packet interface via net_pkt_iface(pkt) after net_send_data(pkt) returned successfully. Per the network stack&apos;s ownership contract (include/zephyr/net/net_core.h, and the explicit warning in subsys/net/ip/…</description>
       <category>Medium</category>
       <pubDate>Tue, 16 Jun 2026 13:13:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10636 · 3.7 LOW — Use-after-free in Zephyr IPv4 IGMP send path (`igmp_send`)</title>
-      <link>https://vulnogram.org/CVE-2026-10636</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10636</guid>
-      <description>In Zephyr&apos;s IPv4 IGMP implementation, igmp_send() in subsys/net/ip/igmp.c read the network interface back out of the packet via net_pkt_iface(pkt) after the packet had been handed to net_send_data(). On the successful-send path the packet&apos;s last refe…</description>
-      <category>Low</category>
-      <pubDate>Tue, 16 Jun 2026 13:12:58 GMT</pubDate>
     </item>
   </channel>
 </rss>
