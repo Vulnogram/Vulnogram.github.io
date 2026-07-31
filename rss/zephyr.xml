@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 31 Jul 2026 15:50:04 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 17:13:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10686 · 5.8 MEDIUM — Missing hop-limit decrement on IPv6 forwarding path allows unbounded packet looping (DoS) in Zephyr routers</title>
+      <link>https://vulnogram.org/CVE-2026-10686</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10686</guid>
+      <description>Zephyr&apos;s IPv6 forwarding path re-sent routed unicast packets without ever decrementing the IPv6 hop limit. Both routing branches of ipv6_route_packet() (subsys/net/ip) were affected: the explicit-route path (net_route_packet()) and the on-link cross-…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 31 Jul 2026 15:49:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10685 · 7.6 HIGH — Use-after-free of GATT subscribe params in Bluetooth host CCC-write response handler</title>
       <link>https://vulnogram.org/CVE-2026-10685</link>
@@ -404,14 +412,6 @@
       <description>subsys/net/ip/icmpv6.c reads the network interface from a net_pkt after that packet has been handed to net_try_send_data(). In icmpv6_handle_echo_request() and net_icmpv6_send_error(), the post-send statistics update calls net_pkt_iface(reply)/net_pk…</description>
       <category>Medium</category>
       <pubDate>Tue, 16 Jun 2026 13:16:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10637 · 5.9 MEDIUM — Use-after-free of `net_pkt` in IPv6 MLD send path triggerable by a link-local MLD Query</title>
-      <link>https://vulnogram.org/CVE-2026-10637</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10637</guid>
-      <description>subsys/net/ip/ipv6_mld.c:mld_send() read the packet interface via net_pkt_iface(pkt) after net_send_data(pkt) returned successfully. Per the network stack&apos;s ownership contract (include/zephyr/net/net_core.h, and the explicit warning in subsys/net/ip/…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 16 Jun 2026 13:13:16 GMT</pubDate>
     </item>
   </channel>
 </rss>

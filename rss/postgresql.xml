@@ -11,7 +11,64 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 31 Jul 2026 05:19:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 17:13:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-17566 · 9.9 CRITICAL — pgAdmin 4: RCE via backslash-escape mismatch in Import/Export Data query guard (incomplete defense, sibling gap to CVE-2025-13780)</title>
+      <link>https://vulnogram.org/CVE-2026-17566</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17566</guid>
+      <description>pgAdmin 4&apos;s Import/Export Data tool builds a psql \copy (...) command line by interpolating a user-supplied SQL query into a Jinja template and passing the rendered line to psql via --command. To stop an attacker from breaking out of the (...) wrappe…</description>
+      <category>Critical</category>
+      <pubDate>Fri, 31 Jul 2026 16:00:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17351 · 9.4 CRITICAL — pgAdmin 4: AI Assistant read-only transaction bypass via sqlparse/PostgreSQL lexer disagreement (incomplete fix for CVE-2026-12045)</title>
+      <link>https://vulnogram.org/CVE-2026-17351</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17351</guid>
+      <description>The fix for CVE-2026-12045 in pgAdmin 4 9.16 required the LLM-supplied query passed to the AI Assistant&apos;s execute_sql_query tool to parse, via sqlparse, as exactly one non-transaction-control statement before running it inside a BEGIN TRANSACTION REA…</description>
+      <category>Critical</category>
+      <pubDate>Fri, 31 Jul 2026 16:00:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17350 · 5.4 MEDIUM — pgAdmin 4: Tool permission bypass via backend routes and Socket.IO handlers</title>
+      <link>https://vulnogram.org/CVE-2026-17350</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17350</guid>
+      <description>The per-tool permission system (custom roles / role-based tool permissions, introduced in pgAdmin 4 9.3) did not enforce its permission check consistently. In SERVER mode, pgAdmin 4 gates each tool behind a per-tool Flask-Security permission, but the…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 31 Jul 2026 16:00:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17349 · 9.6 CRITICAL — pgAdmin 4: Adhoc server clone leaks another user&apos;s stored database credentials and ownership to a non-owner</title>
+      <link>https://vulnogram.org/CVE-2026-17349</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17349</guid>
+      <description>/misc/workspace/adhoc_connect_server, part of the Workspaces feature introduced in pgAdmin 4 9.0, when passed the id of an existing server, clones that server via Server.clone(), which copies every column from the source row, including user_id, share…</description>
+      <category>Critical</category>
+      <pubDate>Fri, 31 Jul 2026 15:59:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17348 · 6.9 MEDIUM 🌩️ — pgAdmin 4: Missing authentication decorator on Constraints, preferences, Debugger and Schema Diff routes allows unauthenticated access in SERVER mode (incomplete fix for CVE-2026-12046)</title>
+      <link>https://vulnogram.org/CVE-2026-17348</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17348</guid>
+      <description>In SERVER mode, pgAdmin 4 enforces authentication per route via the @pga_login_required decorator; the application&apos;s before_request hook only handles desktop-mode auto-login and the Kerberos/Webserver-auth redirect, so any route shipped without the d…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 31 Jul 2026 15:59:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17347 · 7.7 HIGH — pgAdmin 4: OS command injection in MASTER_PASSWORD_HOOK via untrusted username substitution</title>
+      <link>https://vulnogram.org/CVE-2026-17347</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17347</guid>
+      <description>The MASTER_PASSWORD_HOOK setting, introduced in pgAdmin 4 7.2, lets an administrator configure an external command that returns a per-user encryption key, with %u in the configured string replaced by the current user&apos;s name. The previous implementati…</description>
+      <category>High</category>
+      <pubDate>Fri, 31 Jul 2026 15:59:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17346 · 8.8 HIGH — pgAdmin 4: SQL injection via unescaped object names in index Statistics and publication/subscription dependency views (incomplete fix for CVE-2026-12044)</title>
+      <link>https://vulnogram.org/CVE-2026-17346</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17346</guid>
+      <description>The fix for CVE-2026-12044 in pgAdmin 4 9.16 hardened qtLiteral and switched sixteen COMMENT ON / pgstattuple / pgstatindex templates to it, but missed several sinks that had been placed in test_sql_string_literal_lint.py&apos;s ALLOWLIST on the incorrect…</description>
+      <category>High</category>
+      <pubDate>Fri, 31 Jul 2026 15:59:13 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-18022 · 8.8 HIGH — pgvector buffer overflow via integer wraparound in IVFFlat index build on 32-bit systems</title>
       <link>https://vulnogram.org/CVE-2026-18022</link>
@@ -361,64 +418,6 @@
       <description>pgAdmin versions 9.11 are affected by a Restore restriction bypass via key disclosure vulnerability that occurs when running in server mode and performing restores from PLAIN-format dump files. An attacker with access to the pgAdmin web interface can…</description>
       <category>High</category>
       <pubDate>Thu, 05 Feb 2026 17:30:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-13780 · 9.1 CRITICAL — Remote Code Execution vulnerability when restoring PLAIN-format SQL dumps in server mode (pgAdmin 4)</title>
-      <link>https://vulnogram.org/CVE-2025-13780</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-13780</guid>
-      <description>pgAdmin versions up to 9.10 are affected by a Remote Code Execution (RCE) vulnerability that occurs when running in server mode and performing restores from PLAIN-format dump files. This issue allows attackers to inject and execute arbitrary commands…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 11 Dec 2025 18:30:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12819 · 7.5 HIGH — Untrusted search path in auth_query connection in PgBouncer</title>
-      <link>https://vulnogram.org/CVE-2025-12819</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12819</guid>
-      <description>Untrusted search path in auth_query connection handler in PgBouncer before 1.25.1 allows an unauthenticated attacker to execute arbitrary SQL during authentication via a malicious search_path parameter in the StartupMessage.</description>
-      <category>High</category>
-      <pubDate>Wed, 03 Dec 2025 19:00:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12818 · 5.9 MEDIUM — PostgreSQL libpq undersizes allocations, via integer wraparound</title>
-      <link>https://vulnogram.org/CVE-2025-12818</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12818</guid>
-      <description>Integer wraparound in multiple PostgreSQL libpq client library functions allows an application input provider or network peer to cause libpq to undersize an allocation and write out-of-bounds by hundreds of megabytes. This results in a segmentation f…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Nov 2025 13:00:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12817 · 3.1 LOW — PostgreSQL CREATE STATISTICS does not check for schema CREATE privilege</title>
-      <link>https://vulnogram.org/CVE-2025-12817</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12817</guid>
-      <description>Missing authorization in PostgreSQL CREATE STATISTICS command allows a table owner to achieve denial of service against other CREATE STATISTICS users by creating in any schema. A later CREATE STATISTICS for the same name, from a user having the CREAT…</description>
-      <category>Low</category>
-      <pubDate>Thu, 13 Nov 2025 13:00:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12765 · 7.5 HIGH 🌩️ — pgAdmin 4: LDAP authentication flow vulnerable to TLS certificate verification bypass.</title>
-      <link>https://vulnogram.org/CVE-2025-12765</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12765</guid>
-      <description>pgAdmin &lt;= 9.9 is affected by a vulnerability in the LDAP authentication mechanism allows bypassing TLS certificate verification.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 13 Nov 2025 13:00:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12764 · 7.5 HIGH 🌩️ — pgAdmin 4: LDAP injection vulnerability in LDAP authentication flow.</title>
-      <link>https://vulnogram.org/CVE-2025-12764</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12764</guid>
-      <description>pgAdmin &lt;= 9.9 is affected by an LDAP injection vulnerability in the LDAP authentication flow that allows an attacker to inject special LDAP characters in the username, causing the DC/LDAP server and the client to process an unusual amount of data DO…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 13 Nov 2025 13:00:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12763 · 6.8 MEDIUM — Command injection vulnerability allowing arbitrary command execution on Windows</title>
-      <link>https://vulnogram.org/CVE-2025-12763</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12763</guid>
-      <description>pgAdmin 4 versions up to 9.9 are affected by a command injection vulnerability on Windows systems. This issue is caused by the use of shell=True during backup and restore operations, enabling attackers to execute arbitrary system commands by providin…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Nov 2025 13:00:08 GMT</pubDate>
     </item>
   </channel>
 </rss>
