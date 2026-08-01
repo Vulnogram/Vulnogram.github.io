@@ -11,7 +11,40 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 01 Aug 2026 05:02:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 20:02:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-55734 · 6.9 MEDIUM — guardian atom exhaustion in Guardian.Permissions.encode_permissions!/1</title>
+      <link>https://vulnogram.org/CVE-2026-55734</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55734</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in ueberauth guardian (Guardian.Permissions module) allows a denial of service via BEAM atom-table exhaustion. This vulnerability is associated with program file lib/guardian/permissi…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 01 Aug 2026 18:46:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55733 · 6.9 MEDIUM — Atom-table exhaustion denial of service in Guardian permissions AtomEncoding via unbounded atom creation</title>
+      <link>https://vulnogram.org/CVE-2026-55733</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55733</guid>
+      <description>Allocation of Resources Without Limits or Throttling in ueberauth guardian allows denial of service via unbounded atom creation from attacker-controlled binary input. Guardian.Permissions.AtomEncoding encodes permission scopes by passing arbitrary bi…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 01 Aug 2026 18:46:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54894 · 6.9 MEDIUM — Atom-table exhaustion denial of service in Guardian via unbounded atom creation from binary keys</title>
+      <link>https://vulnogram.org/CVE-2026-54894</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54894</guid>
+      <description>Allocation of Resources Without Limits or Throttling in ueberauth guardian allows denial of service via unbounded atom creation from attacker-influenced binary input. Guardian.Plug.Keys derives connection and session namespace keys by passing arbitra…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 01 Aug 2026 18:46:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55735 · 8.2 HIGH 🌩️ — Guardian.revoke/3 acts on unverified token claims, allowing forged-token session revocation</title>
+      <link>https://vulnogram.org/CVE-2026-55735</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55735</guid>
+      <description>Improper Verification of Cryptographic Signature in ueberauth guardian allows an unauthenticated attacker to revoke a victim&apos;s session with a forged token. Guardian.revoke/3 in lib/guardian.ex decodes the supplied token with peek/1, which performs no…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 01 Aug 2026 18:46:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-65636 · 2.1 LOW — YAML injection via unescaped newlines in ymlr document comments</title>
       <link>https://vulnogram.org/CVE-2026-65636</link>
@@ -410,40 +443,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 23 Jun 2026 12:31:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48591 · 4.8 MEDIUM — Stored XSS via unescaped HTML attribute values in earmark</title>
-      <link>https://vulnogram.org/CVE-2026-48591</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48591</guid>
-      <description>Improper Neutralization of Script in Attributes in a Web Page vulnerability in pragdave earmark allows stored cross-site scripting via unescaped HTML attribute values. &apos;Elixir.Earmark.Transform&apos;:_make_att1/2 in lib/earmark/transform.ex splices attrib…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 17 Jun 2026 16:42:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48853 · 9.2 CRITICAL 🌩️ — Remote code execution and denial of service via unsafe Erlang term deserialization in elixir-grpc/grpc</title>
-      <link>https://vulnogram.org/CVE-2026-48853</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48853</guid>
-      <description>Deserialization of Untrusted Data and Allocation of Resources Without Limits or Throttling vulnerabilities in elixir-grpc grpc allow unauthenticated attackers to crash the BEAM node via atom table exhaustion and, when a decoded term flows into a call…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 15 Jun 2026 21:56:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53430 · 8.7 HIGH 🌩️ — grpc gzip decompression bomb in GRPC.Compressor.Gzip.decompress/1</title>
-      <link>https://vulnogram.org/CVE-2026-53430</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53430</guid>
-      <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in elixir-grpc grpc (GRPC.Compressor.Gzip, GRPC.Message modules) allows a denial of service via a gzip decompression bomb. This vulnerability is associated with program fi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 15 Jun 2026 21:55:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48599 · 7.6 HIGH — Authorization bypass via path binding override in elixir-grpc/grpc HTTP transcoding</title>
-      <link>https://vulnogram.org/CVE-2026-48599</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48599</guid>
-      <description>Authorization Bypass Through User-Controlled Key vulnerability in elixir-grpc grpc allows authenticated attackers to access or modify resources belonging to other users by smuggling a conflicting value for any path-bound field via the query string or…</description>
-      <category>High</category>
-      <pubDate>Mon, 15 Jun 2026 21:55:28 GMT</pubDate>
     </item>
   </channel>
 </rss>
