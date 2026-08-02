@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 01 Aug 2026 14:17:19 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2026 15:46:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10774 · 2.4 LOW — PSA key-slot leak in Bluetooth Mesh subnet deletion leading to resource-exhaustion DoS</title>
+      <link>https://vulnogram.org/CVE-2026-10774</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10774</guid>
+      <description>Zephyr&apos;s Bluetooth Mesh subnet key management leaks one PSA Crypto key slot on every subnet-key teardown. In subsys/bluetooth/mesh/subnet.c, net_keys_create() imports the Private Beacon Key into a PSA key slot under CONFIG_BT_MESH_PRIV_BEACONS (enabl…</description>
+      <category>Low</category>
+      <pubDate>Sun, 02 Aug 2026 14:20:03 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10773 · 5.4 MEDIUM — Out-of-bounds read in DHCPv4 client message-type name lookup (net_dhcpv4_msg_type_name)</title>
       <link>https://vulnogram.org/CVE-2026-10773</link>
@@ -404,14 +412,6 @@
       <description>Zephyr&apos;s Bluetooth Classic Hands-Free Profile (HFP) Hands-Free role parser (subsys/bluetooth/host/classic/hfp_hf.c) contains an out-of-bounds write. During Service Level Connection setup the HF sends AT+CIND=? and parses the AG&apos;s +CIND: response in c…</description>
       <category>High</category>
       <pubDate>Wed, 17 Jun 2026 13:14:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10640 · 4.2 MEDIUM — Use-after-free reading `net_pkt` `iface` after send in IPv6 Neighbor Discovery (`ipv6_nbr.c`)</title>
-      <link>https://vulnogram.org/CVE-2026-10640</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10640</guid>
-      <description>Zephyr&apos;s IPv6 Neighbor Discovery send paths (net_ipv6_send_na, net_ipv6_send_ns, net_ipv6_send_rs in subsys/net/ip/ipv6_nbr.c) updated the per-interface ICMP-sent statistics by calling net_pkt_iface(pkt) after net_send_data(pkt) had already returned…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 16 Jun 2026 13:28:24 GMT</pubDate>
     </item>
   </channel>
 </rss>
