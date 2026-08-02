@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 02 Aug 2026 15:46:45 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2026 16:41:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-10848 · 7 HIGH — Out-of-bounds read in Zephyr OCPP 1.6 RPC message parser (parse_rpc_msg)</title>
+      <link>https://vulnogram.org/CVE-2026-10848</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10848</guid>
+      <description>The OCPP 1.6 client in subsys/net/lib/ocpp parsed inbound WAMP RPC frames in parse_rpc_msg() (subsys/net/lib/ocpp/ocpp_j.c) using a hand-rolled helper, extract_string_field(), that copied the message&apos;s uid and action fields with strncpy(out_buf, toke…</description>
+      <category>High</category>
+      <pubDate>Sun, 02 Aug 2026 16:12:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10774 · 2.4 LOW — PSA key-slot leak in Bluetooth Mesh subnet deletion leading to resource-exhaustion DoS</title>
       <link>https://vulnogram.org/CVE-2026-10774</link>
@@ -404,14 +412,6 @@
       <description>The Zephyr ext2 filesystem driver (subsys/fs/ext2) trusted the on-disk directory entry fields de_rec_len and de_name_len when walking a directory block. ext2_fetch_direntry() guarded only with de_name_len &gt; EXT2_MAX_FILE_NAME, but de_name_len is a ui…</description>
       <category>Medium</category>
       <pubDate>Mon, 22 Jun 2026 23:48:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10641 · 7.1 HIGH — Out-of-bounds write in Bluetooth HFP Hands-Free CIND indicator parsing (cind_handle_values)</title>
-      <link>https://vulnogram.org/CVE-2026-10641</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10641</guid>
-      <description>Zephyr&apos;s Bluetooth Classic Hands-Free Profile (HFP) Hands-Free role parser (subsys/bluetooth/host/classic/hfp_hf.c) contains an out-of-bounds write. During Service Level Connection setup the HF sends AT+CIND=? and parses the AG&apos;s +CIND: response in c…</description>
-      <category>High</category>
-      <pubDate>Wed, 17 Jun 2026 13:14:06 GMT</pubDate>
     </item>
   </channel>
 </rss>
