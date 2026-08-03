@@ -11,19 +11,68 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 03 Aug 2026 15:32:51 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 20:49:04 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-18568 — XML::Sig versions from 0.29 before 0.72 for Perl allow signature verification bypass because verify returns true when every signature was skipped before any cryptographic check</title>
+      <title>CVE-2026-18568 · 7.5 HIGH 🌩️ — XML::Sig versions from 0.29 before 0.72 for Perl allow signature verification bypass because verify returns true when every signature was skipped before any cryptographic check</title>
       <link>https://vulnogram.org/CVE-2026-18568</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18568</guid>
       <description>XML::Sig versions from 0.29 before 0.72 for Perl allow signature verification bypass because verify returns true when every signature was skipped before any cryptographic check. verify in lib/XML/Sig.pm counts the `//dsig:Signature` elements into `$n…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 03 Aug 2026 14:38:52 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-18536 — Data::Entropy versions before 0.010 for Perl read remote entropy sources over plain HTTP</title>
+      <title>CVE-2026-18092 · 8.1 HIGH 🌩️ — Net::SAML2 versions before 0.86 for Perl allow SAML authentication bypass via XML signature wrapping because new_from_xml reads assertion identity with document-wide XPath instead of the signed subtree</title>
+      <link>https://vulnogram.org/CVE-2026-18092</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18092</guid>
+      <description>Net::SAML2 versions before 0.86 for Perl allow SAML authentication bypass via XML signature wrapping because new_from_xml reads assertion identity with document-wide XPath instead of the signed subtree. new_from_xml reads the NameID, attribute values…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 03 Aug 2026 13:24:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9487 · 9.1 CRITICAL 🌩️ — XML::Sig versions before 0.71 for Perl allow signature wrapping via duplicate ID</title>
+      <link>https://vulnogram.org/CVE-2026-9487</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9487</guid>
+      <description>XML::Sig versions before 0.71 for Perl allow signature wrapping via duplicate ID. _get_signed_xml() in lib/XML/Sig.pm, called from verify(), resolves the SignedInfo Reference/@URI to a node with the XPath expression &quot;//*[@ID=&apos;$id&apos;]&quot; and returns the f…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 03 Aug 2026 13:14:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9390 · 9.1 CRITICAL 🌩️ — XML::Sig versions before 0.71 for Perl allow XPath injection in ID lookup</title>
+      <link>https://vulnogram.org/CVE-2026-9390</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9390</guid>
+      <description>XML::Sig versions before 0.71 for Perl allow XPath injection in ID lookup. verify() and _get_signed_xml() in lib/XML/Sig.pm build XPath expressions by concatenating the SignedInfo/Reference/@URI value read from the document being verified. The value…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 03 Aug 2026 13:09:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18108 · 9.8 CRITICAL 🌩️ — Net::SAML2 versions before 0.86 for Perl allow authentication bypass because _verify_encrypted_assertion accepts an EncryptedAssertion whose decrypted content carries no signature</title>
+      <link>https://vulnogram.org/CVE-2026-18108</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18108</guid>
+      <description>Net::SAML2 versions before 0.86 for Perl allow authentication bypass because _verify_encrypted_assertion accepts an EncryptedAssertion whose decrypted content carries no signature. _verify_encrypted_assertion decrypts the EncryptedAssertion and retur…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 03 Aug 2026 13:00:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18089 · 7.5 HIGH 🌩️ — Net::SAML2 versions before 0.86 for Perl allow SAML authentication bypass by verifying responses against the response-embedded certificate in verify_xml when no trust anchor is configured</title>
+      <link>https://vulnogram.org/CVE-2026-18089</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18089</guid>
+      <description>Net::SAML2 versions before 0.86 for Perl allow SAML authentication bypass by verifying responses against the response-embedded certificate in verify_xml when no trust anchor is configured. verify_xml in Net::SAML2::Role::VerifyXML runs &quot;return if !$a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 03 Aug 2026 12:42:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18536 · 7.5 HIGH 🌩️ — Data::Entropy versions before 0.010 for Perl read remote entropy sources over plain HTTP</title>
       <link>https://vulnogram.org/CVE-2026-18536</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18536</guid>
       <description>Data::Entropy versions before 0.010 for Perl read remote entropy sources over plain HTTP. The Data::Entropy::RawSource::RandomOrg and Data::Entropy::RawSource::RandomnumbersInfo remote sources are accessed over plain HTTP. The Data::Entropy::RawSourc…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sat, 01 Aug 2026 10:35:38 GMT</pubDate>
     </item>
     <item>
@@ -386,51 +435,6 @@
       <description>YAML::Syck versions before 1.47 for Perl allow a use-after-free and double-free via an anchor node freed while still on the parser value stack. In the bundled libsyck, when an anchor name is redefined or removed, syck_hdlr_add_anchor and syck_hdlr_re…</description>
       <category>Medium</category>
       <pubDate>Thu, 16 Jul 2026 21:35:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3031 · 9.8 CRITICAL 🌩️ — Image::EPEG versions through 0.15 for Perl embeds an unsupported version of the Epeg library</title>
-      <link>https://vulnogram.org/CVE-2026-3031</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3031</guid>
-      <description>Image::EPEG versions through 0.15 for Perl embeds an unsupported version of the Epeg library. Image::EPEG includes Epeg 0.9.0 that was last updated in 2004. Epeg is a fast JPEG thumbnail library that was once part of the Englightenment Project.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 16:22:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57074 · 9.1 CRITICAL 🌩️ — XML::Bare versions through 0.53 for Perl have an unbounded character lookahead</title>
-      <link>https://vulnogram.org/CVE-2026-57074</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57074</guid>
-      <description>XML::Bare versions through 0.53 for Perl have an unbounded character lookahead. The parserc_parse function attempts to check for multicharacter strings such as &quot;&lt;![CDATA&quot; or element terminators such as &quot;&gt;&quot; without checking that the offsets are within…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 16:15:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57073 · 9.1 CRITICAL 🌩️ — HTML::Bare versions through 0.04 for Perl have an unbounded character lookahead</title>
-      <link>https://vulnogram.org/CVE-2026-57073</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57073</guid>
-      <description>HTML::Bare versions through 0.04 for Perl have an unbounded character lookahead. The parserc_parse function attempts to check for multicharacter strings such as &quot;&lt;![CDATA&quot; or element terminators such as &quot;&gt;&quot; without checking that the offsets are withi…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 16:15:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13401 · 7.5 HIGH 🌩️ — XML::Bare versions through 0.53 for Perl will hang in an infinite loop when parsing malformed attributes</title>
-      <link>https://vulnogram.org/CVE-2026-13401</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13401</guid>
-      <description>XML::Bare versions through 0.53 for Perl will hang in an infinite loop when parsing malformed attributes. The parserc_parse function never advances the attribute-parse state cursor on certain malformed attribute forms, looping forever. Nameless attri…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 16:14:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13397 · 7.5 HIGH 🌩️ — HTML::Bare versions through 0.04 for Perl will hang in an infinite loop when parsing malformed attributes</title>
-      <link>https://vulnogram.org/CVE-2026-13397</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13397</guid>
-      <description>HTML::Bare versions through 0.04 for Perl will hang in an infinite loop when parsing malformed attributes. The parserc_parse function never advances the attribute-parse state cursor on certain malformed attribute forms, looping forever. Nameless attr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 16:14:14 GMT</pubDate>
     </item>
   </channel>
 </rss>
