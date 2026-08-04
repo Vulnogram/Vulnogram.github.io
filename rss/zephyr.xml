@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 03 Aug 2026 22:45:06 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 15:12:30 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-11368 · 7.1 HIGH — Use-after-free in Bluetooth host ATT TX completion on disconnect mid-transfer</title>
+      <link>https://vulnogram.org/CVE-2026-11368</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11368</guid>
+      <description>The Bluetooth host ATT layer (subsys/bluetooth/host/att.c) associates each in-flight ATT TX buffer with its owning channel via the static tx_meta_data_storage[] array (data-&gt;att_chan = chan). When a buffer&apos;s last reference is dropped, its net-buf des…</description>
+      <category>High</category>
+      <pubDate>Tue, 04 Aug 2026 14:23:28 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-10849 · 8.2 HIGH — Heap out-of-bounds write in Zephyr hawkBit OTA client when terminating server response body</title>
       <link>https://vulnogram.org/CVE-2026-10849</link>
@@ -404,14 +412,6 @@
       <description>bt_iso_recv() in subsys/bluetooth/host/iso.c pulled the ISO SDU header (4 bytes) or, when the timestamp flag is set, the timestamped SDU header (8 bytes) from the inbound HCI ISO Data buffer via net_buf_pull_mem() without first checking buf-&gt;len. The…</description>
       <category>High</category>
       <pubDate>Mon, 22 Jun 2026 23:58:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10651 · 7.1 HIGH — Out-of-bounds read in Bluetooth Classic SDP attribute parsing (`bt_sdp_parse_attribute`)</title>
-      <link>https://vulnogram.org/CVE-2026-10651</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10651</guid>
-      <description>bt_sdp_parse_attribute() in subsys/bluetooth/host/classic/sdp.c validated only that the SDP record buffer held the type-marker byte plus the 2-byte attribute ID (a check of buf-&gt;len &lt; 3) but then read a fourth byte, the data-element descriptor (type)…</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 23:54:36 GMT</pubDate>
     </item>
   </channel>
 </rss>
