@@ -11,7 +11,42 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 03 Aug 2026 21:53:59 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 07:27:39 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-64565 — Input: ims-pcu - fix heap-buffer-overflow in ims_pcu_process_data()</title>
+      <link>https://vulnogram.org/CVE-2026-64565</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64565</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Input: ims-pcu - fix heap-buffer-overflow in ims_pcu_process_data() The `ims_pcu_process_data()` processes incoming URB data byte by byte. However, it fails to check if the `read_pos…</description>
+      <pubDate>Tue, 04 Aug 2026 06:23:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64564 — sctp: don&apos;t free the ASCONF&apos;s own transport in DEL-IP processing</title>
+      <link>https://vulnogram.org/CVE-2026-64564</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64564</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: sctp: don&apos;t free the ASCONF&apos;s own transport in DEL-IP processing sctp_process_asconf() caches the transport the ASCONF chunk is processed against in asconf-&gt;transport (== chunk-&gt;tran…</description>
+      <pubDate>Tue, 04 Aug 2026 06:23:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64563 — rhashtable: clear stale iter-&gt;p on table restart</title>
+      <link>https://vulnogram.org/CVE-2026-64563</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64563</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: rhashtable: clear stale iter-&gt;p on table restart rhashtable_walk_start_check() has two restart paths when resuming a walk. When iter-&gt;walker.tbl is valid, it re-validates iter-&gt;p aga…</description>
+      <pubDate>Tue, 04 Aug 2026 06:23:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64562 — KVM: nVMX: Hide shadow VMCS right after VMCLEAR</title>
+      <link>https://vulnogram.org/CVE-2026-64562</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64562</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: nVMX: Hide shadow VMCS right after VMCLEAR free_nested() frees the shadow VMCS while vmcs01 still points to it. But because it is asynchronous with respect to loaded_vmcs_clear(…</description>
+      <pubDate>Tue, 04 Aug 2026 06:23:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64561 — KVM: x86: Check for invalid/obsolete root *after* making MMU pages available</title>
+      <link>https://vulnogram.org/CVE-2026-64561</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64561</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: x86: Check for invalid/obsolete root *after* making MMU pages available Check for a &quot;stale&quot; page fault, i.e. for an invalid and/or obsolete root, after making MMU pages availabl…</description>
+      <pubDate>Tue, 04 Aug 2026 06:23:21 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2022-4994 — KVM: x86: wean fast IN from emulator_pio_in</title>
       <link>https://vulnogram.org/CVE-2022-4994</link>
@@ -335,42 +370,6 @@
       <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu/vce1: Fix VCE 1 firmware size and offsets The VCPU BO contains the actual FW at an offset, but it was not calculated into the VCPU BO size. Subtract this from the FW size…</description>
       <category>High</category>
       <pubDate>Sat, 25 Jul 2026 09:14:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64515 · 8.3 HIGH — wifi: mac80211: fix MLE defragmentation</title>
-      <link>https://vulnogram.org/CVE-2026-64515</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64515</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: fix MLE defragmentation If either reconf or EPCS multi-link element (MLE) is contained in a non-transmitted profile, the defragmentation routine is called with a poin…</description>
-      <category>High</category>
-      <pubDate>Sat, 25 Jul 2026 09:14:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64514 — userfaultfd: gate must_wait writability check on pte_present()</title>
-      <link>https://vulnogram.org/CVE-2026-64514</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64514</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: userfaultfd: gate must_wait writability check on pte_present() userfaultfd_must_wait() and userfaultfd_huge_must_wait() read the PTE without taking the page table lock and then apply…</description>
-      <pubDate>Sat, 25 Jul 2026 08:52:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64513 — KVM: x86: Unconditionally recompute CR8 intercept on PPR update</title>
-      <link>https://vulnogram.org/CVE-2026-64513</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64513</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: x86: Unconditionally recompute CR8 intercept on PPR update The TPR_THRESHOLD field in the VMCS is used by VMX to induce VM exits when the guest&apos;s virtual TPR falls under the spe…</description>
-      <pubDate>Sat, 25 Jul 2026 08:52:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64512 — ACPI: CPPC: Suppress UBSAN warning caused by field misuse</title>
-      <link>https://vulnogram.org/CVE-2026-64512</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64512</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ACPI: CPPC: Suppress UBSAN warning caused by field misuse The definition of reg-&gt;access_width changes depending on the reg-&gt;space_id type. Type ACPI_ADR_SPACE_PLATFORM_COMM uses acce…</description>
-      <pubDate>Sat, 25 Jul 2026 08:52:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64511 — ACPI: NFIT: core: Fix possible NULL pointer dereference</title>
-      <link>https://vulnogram.org/CVE-2026-64511</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64511</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ACPI: NFIT: core: Fix possible NULL pointer dereference After commit 9b311b7313d6 (&quot;ACPI: NFIT: Install Notify() handler before getting NFIT table&quot;), acpi_nfit_probe() installs an AC…</description>
-      <pubDate>Sat, 25 Jul 2026 08:52:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
