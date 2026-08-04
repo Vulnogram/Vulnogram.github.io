@@ -11,7 +11,15 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 04 Aug 2026 17:25:41 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 19:13:38 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-68743 · 5.5 MEDIUM — Sssd: sssd: pam responder out-of-bounds read via unchecked auth_token_length in protocol v1</title>
+      <link>https://vulnogram.org/CVE-2026-68743</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68743</guid>
+      <description>A flaw was found in SSSD. The extract_authtok_v1() function in the PAM responder does not validate the auth_token_length field against the remaining buffer size before processing. A local attacker can exploit this via a crafted protocol v1 request to…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 04 Aug 2026 18:37:21 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-70368 · 6.5 MEDIUM 🌩️ — Stunnel: stack-based out-of-bounds read/write in stunnel s_vlog via oversized log message</title>
       <link>https://vulnogram.org/CVE-2026-70368</link>
@@ -370,6 +378,32 @@
       <pubDate>Thu, 30 Jul 2026 05:41:07 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-16529 · 7.5 HIGH 🌩️ — Pcp: pcp: denial of service due to signed integer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-16529</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16529</guid>
+      <description>A signed integer overflow in the PCP __pmGetPDU() function can be exploited via crafted network packets during PDU processing or SASL negotiation. This permanently blinds the affected daemon, resulting in a total denial of service (DoS) for subsequen…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 05:30:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16527 · 7.3 HIGH 🌩️ — Pcp: pcp pmproxy: unauthenticated access to /store endpoint allows bypassing pmcd access rules</title>
+      <link>https://vulnogram.org/CVE-2026-16527</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16527</guid>
+      <description>An unauthenticated remote attacker can bypass access controls by sending crafted requests to the PCP pmproxy /store endpoint. This allows the attacker to overwrite any PMDA metric, leading to arbitrary code execution and system takeover.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 30 Jul 2026 05:30:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16526 · 8.8 HIGH — Pcp: pcp: privilege escalation to root via linux_sockets pmda vulnerability</title>
+      <link>https://vulnogram.org/CVE-2026-16526</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16526</guid>
+      <description>A flaw in the PCP linux_sockets module exposes an unsecured internal connection. An attacker with initial code execution can exploit this to escalate privileges and execute arbitrary commands as root.</description>
+      <category>High</category>
+      <pubDate>Thu, 30 Jul 2026 05:20:07 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-16524 · 7.8 HIGH — Pcp: pcp linux_sockets pmda: arbitrary command execution via command injection</title>
       <link>https://vulnogram.org/CVE-2026-16524</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16524</guid>
@@ -392,38 +426,6 @@
       <description>An out-of-bounds write vulnerability was found in the BFD library&apos;s DLX ELF backend (bfd/elf32-dlx.c) in GNU binutils. The dlx_rtype_to_howto() function maps ELF relocation types to internal howto structures but fails to perform adequate bounds check…</description>
       <category>High</category>
       <pubDate>Wed, 29 Jul 2026 09:47:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18201 · 5.5 MEDIUM — Keycloak-services: keycloak-services: generic identity-provider creation can bind brokers to organizations without manage-organizations</title>
-      <link>https://vulnogram.org/CVE-2026-18201</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18201</guid>
-      <description>Keycloak provides a way to manage identity providers and organizations through its administrative API. A flaw was discovered where an administrator with permission to manage identity providers could link a new provider to an organization without havi…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 29 Jul 2026 08:34:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18207 · 6.5 MEDIUM — Keycloak-services: keycloak-services: client policy source-group condition bypass via duplicate group name matching</title>
-      <link>https://vulnogram.org/CVE-2026-18207</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18207</guid>
-      <description>A flaw was found in the client policy enforcement mechanism of Keycloak. The issue occurs when the system checks group membership by name instead of a unique identifier. An attacker with client management privileges could bypass security policies by…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 29 Jul 2026 08:34:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18107 · 7.8 HIGH — Criu: criu: container escape via rseq critical section hijack during checkpoint/restore</title>
-      <link>https://vulnogram.org/CVE-2026-18107</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18107</guid>
-      <description>A flaw was found in CRIU&apos;s handling of restartable sequences (rseq) during checkpoint/restore. A malicious process inside a container can register an rseq critical section that hijacks CRIU&apos;s parasite code injection during checkpoint, allowing it to…</description>
-      <category>High</category>
-      <pubDate>Tue, 28 Jul 2026 18:32:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16313 · 7.6 HIGH — Sg3_utils: sg3_utils: arbitrary command execution via udev property injection in sg_inq --export</title>
-      <link>https://vulnogram.org/CVE-2026-16313</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16313</guid>
-      <description>A flaw was found in sg3_utils. The sg_inq command, when invoked with the --export option, outputs device identification data without sanitizing control characters in SCSI name string fields. A newline character embedded in a device-supplied name stri…</description>
-      <category>High</category>
-      <pubDate>Tue, 28 Jul 2026 16:47:06 GMT</pubDate>
     </item>
   </channel>
 </rss>
