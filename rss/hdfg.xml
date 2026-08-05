@@ -11,7 +11,54 @@
       <title>The HDF Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 27 Jul 2026 19:03:58 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 23:43:10 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-19028 · 6.8 MEDIUM — HDF5 integer underflow in Fletcher32 filter leads to massive out-of-bounds read</title>
+      <link>https://vulnogram.org/CVE-2026-19028</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19028</guid>
+      <description>H5Z__filter_fletcher32 in H5Zfletcher32.c in HDF5 through 2.3.0 computes the data length to checksum by subtracting the 4-byte trailing checksum size from the input buffer size without checking that the buffer is at least 4 bytes, allowing a size_t u…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 23:15:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19027 · 6.9 MEDIUM — HDF5 out-of-bounds heap read in N-Bit filter decompression</title>
+      <link>https://vulnogram.org/CVE-2026-19027</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19027</guid>
+      <description>The H5Z__nbit_decompress_one_byte, H5Z__nbit_decompress_one_nooptype, and H5Z__nbit_decompress_one_atomic functions in H5Znbit.c in HDF5 through 2.3.0 advance a read index into the compressed chunk buffer without bounding it against the buffer&apos;s actu…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 23:12:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19026 · 6.8 MEDIUM — Nbit filter NULL/short parameter-array dereference</title>
+      <link>https://vulnogram.org/CVE-2026-19026</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19026</guid>
+      <description>H5Z__filter_nbit in H5Znbit.c in HDF5 through 2.3.0 dereferences cd_values[0] through cd_values[4] without validating that cd_values is non-NULL or that cd_nelmts is at least 5, the fixed size of the filter&apos;s header. This allows attackers to cause a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 22:47:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19025 · 6.8 MEDIUM — HDF5 divide-by-zero (SIGFPE) via mismatched chunk-layout dimensionality and dataspace rank on dataset open</title>
+      <link>https://vulnogram.org/CVE-2026-19025</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19025</guid>
+      <description>H5O__layout_decode in H5Olayout.c in HDF5 through 2.3.0 does not validate that a chunked dataset&apos;s stored chunk-layout dimensionality matches its dataspace rank when an existing dataset is opened, whereas this check is performed only at dataset-creat…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 22:35:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19024 · 8.2 HIGH — HDF5 H5Pget_fill_value NULL Pointer Dereference via Malformed Fill Value Message</title>
+      <link>https://vulnogram.org/CVE-2026-19024</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19024</guid>
+      <description>NULL pointer dereference in H5Pget_fill_value in HDF5 before 2.1.1 allows attackers to cause a denial of service via a dataset whose version 1 or 2 fill value message has the &quot;defined&quot; flag set together with a negative size field, which is not normal…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 22:14:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19023 — HDF5 h5dump Untrusted Pointer Dereference in Binary Output of Variable-Length String Datasets</title>
+      <link>https://vulnogram.org/CVE-2026-19023</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19023</guid>
+      <description>Untrusted pointer dereference in the render_bin_output function in the h5dump tool in HDF5 before 2.1.1 allows attackers to cause a denial of service via a variable-length string dataset with more than one element dumped in binary mode, which corrupt…</description>
+      <pubDate>Wed, 05 Aug 2026 22:13:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-17574 · 5.2 MEDIUM — NULL Pointer Dereference in HDF5 via Invalid Variable-Length Datatype Type Tag</title>
       <link>https://vulnogram.org/CVE-2026-17574</link>
