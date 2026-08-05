@@ -11,7 +11,215 @@
       <title>Turan Security — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 05 Aug 2026 07:28:04 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 12:29:52 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-71256 · 8.1 HIGH — nanoMODBUS Client-Side Out-of-Bounds Read Leading to Wild-Pointer Write via object_id</title>
+      <link>https://vulnogram.org/CVE-2026-71256</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71256</guid>
+      <description>nanoMODBUS through v1.23.0 contains an out-of-bounds stack read leading to a wild-pointer write in nmbs_read_device_identification_basic() / recv_read_device_identification_res() in nanomodbus.c. A fixed 3-element stack array order[3] = {0,1,2} maps…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 11:44:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71255 · 8.2 HIGH — nanoMODBUS Client-Side Out-of-Bounds Write via object_length in recv_read_device_identification_res()</title>
+      <link>https://vulnogram.org/CVE-2026-71255</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71255</guid>
+      <description>nanoMODBUS through v1.23.0 contains an out-of-bounds write in the Modbus client-side recv_read_device_identification_res() function (FC 0x2B/MEI 0x0E, Read Device Identification) in nanomodbus.c. The server-supplied object_length field (0-246) is val…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 11:44:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71254 · 9.1 CRITICAL — nanoMODBUS Server-Side Out-of-Bounds Write in handle_read_file_record()</title>
+      <link>https://vulnogram.org/CVE-2026-71254</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71254</guid>
+      <description>nanoMODBUS through v1.23.0 contains an out-of-bounds write in the Modbus server-side handle_read_file_record() function (FC 0x14, Read File Record) in nanomodbus.c. The function validates that the total request size does not exceed 245 bytes and that…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 11:44:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18933 · 7.2 HIGH — wp-downloadmanager: Unrestricted File Upload via Missing Extension/MIME Validation and Path Traversal</title>
+      <link>https://vulnogram.org/CVE-2026-18933</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18933</guid>
+      <description>The wp-downloadmanager WordPress plugin, in version 1.68.11 (also affecting the 6.9.4 release line), allows an admin-privileged user (current_user_can(&apos;manage_downloads&apos;)) to upload arbitrary files via download-add.php with no extension or MIME-type…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 11:27:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71252 · 8.2 HIGH — toner-management: Unauthenticated State-Changing Admin Actions</title>
+      <link>https://vulnogram.org/CVE-2026-71252</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71252</guid>
+      <description>toner-management&apos;s admin state-changing handlers (add.php, edit.php, delete.php under admin/toners, admin/toner-brands, admin/printers, and related admin subdirectories) executed INSERT/UPDATE/DELETE database operations with no authentication or auth…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:57:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71251 · 6.5 MEDIUM — Akaunting: Cross-Company Media IDOR in Customer Portal Download Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-71251</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71251</guid>
+      <description>Akaunting&apos;s shared download route (app/Http/Controllers/Common/Uploads.php::download(), reachable at uploads/{id}/download behind only generic auth middleware) fetched the requested Media record by ID with no verification that it belonged to the requ…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 10:57:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71250 · 4.3 MEDIUM — Firefly III: Webhook URL Validation Explicitly Allows Loopback and Is Bypassable via DNS Rebinding</title>
+      <link>https://vulnogram.org/CVE-2026-71250</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71250</guid>
+      <description>Firefly III&apos;s webhook URL validator (IsValidWebhookUrl.php) filters most private/reserved IPv4 ranges but contains an explicit early-return that allows any resolved address in 127.0.0.0/8, permitting an authenticated user (with webhooks enabled, whic…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 10:57:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71249 · 6.1 MEDIUM — 299Ko: Unauthenticated Reflected XSS in Public Contact Form</title>
+      <link>https://vulnogram.org/CVE-2026-71249</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71249</guid>
+      <description>299Ko&apos;s public contact form (plugin/contact/controllers/ContactController.php, home()) sets raw POST field values (name, firstname, email, message) into the page template with no sanitization. The template engine&apos;s variable output function (common/Te…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 10:57:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71248 · 9.8 CRITICAL — Inventory-Management-System-PHP: Unauthenticated SQL Injection in Login and Product Deletion</title>
+      <link>https://vulnogram.org/CVE-2026-71248</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71248</guid>
+      <description>Inventory-Management-System-PHP&apos;s login.php constructs its authentication query via direct string concatenation of raw POST parameters: $sql = &quot;select * from user where email = &apos;$email&apos; and password = &apos;$password&apos;&quot;, with no escaping or parameterizatio…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 10:57:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71247 · 6.5 MEDIUM — Documenso: Assistant Recipient Can Forge Another Signer&apos;s Signature in Sequential-Signing Documents</title>
+      <link>https://vulnogram.org/CVE-2026-71247</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71247</guid>
+      <description>Documenso&apos;s sign-field-with-token.ts, used by the live document-signing UI, allows a recipient with the ASSISTANT role to fetch and complete fields belonging to any later-or-equal-order, not-yet-signed recipient in the same envelope, with no restrict…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71246 · 5.7 MEDIUM — Pixelfed: Authenticated SSRF via Remote URL Search</title>
+      <link>https://vulnogram.org/CVE-2026-71246</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71246</guid>
+      <description>Pixelfed&apos;s SearchController (behind the auth middleware) accepts a URL via its remote-search parameters and fetches it server-side through ActivityPubFetchService, whose validateUrl() only blocks the literal hosts 127.0.0.1, localhost, and ::1 and re…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71245 · 7.1 HIGH — Mautic: SQL Injection via field Parameter in Lead-by-Field-Value AJAX Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-71245</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71245</guid>
+      <description>Mautic&apos;s getLeadIdsByFieldValueAction (LeadBundle/Controller/AjaxController.php) reads a field parameter from the request, sanitizes it only with InputHelper::clean() (which HTML-entity-encodes quotes and angle brackets but does not restrict other ch…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71244 · 7.1 HIGH — Paperless-ngx: Mail Account Test Connection Leaks Stored IMAP/OAuth Credentials to Attacker-Controlled Host</title>
+      <link>https://vulnogram.org/CVE-2026-71244</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71244</guid>
+      <description>Paperless-ngx&apos;s MailAccountViewSet.test() action, when called with an existing account&apos;s ID and a masked password field, reuses the stored password, account_type, refresh_token, and expiration from that existing account while allowing the caller to s…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71243 · 8.8 HIGH — backmeup (npm): OS Command Injection via Backup Option Values</title>
+      <link>https://vulnogram.org/CVE-2026-71243</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71243</guid>
+      <description>The backmeup npm package assembles shell command strings by directly concatenating its option values (name, source, destination, filter) - e.g. cmd = &quot;mkdir -p &quot; + path.join(info.destination, info.name) + &quot;; &quot; - and executes the resulting string thro…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71242 · 8.2 HIGH — Crater: Cross-Company IDOR on Notes via Missing Company-Ownership Check in NotePolicy</title>
+      <link>https://vulnogram.org/CVE-2026-71242</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71242</guid>
+      <description>Crater&apos;s NotePolicy checks only a blanket Bouncer ability (manage-all-notes / view-all-notes) with no company-ownership comparison, unlike InvoicePolicy and other sibling policies which additionally verify $user-&gt;hasCompany($model-&gt;company_id). Notes…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71241 · 7.5 HIGH — Book-Management-System: Unauthenticated Disclosure of Student PII and Borrowing History</title>
+      <link>https://vulnogram.org/CVE-2026-71241</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71241</guid>
+      <description>Book-Management-System&apos;s Flask API endpoints /student, /record, /books, /find_stu_book, and /find_not_return_book are missing the @login_required decorator that protects sibling routes (/search_student, /storage) in the same file. This allows any una…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71240 · 5.4 MEDIUM — DjangoCRM: Unauthenticated Open Redirect via toggle_default_sorting next_url Parameter</title>
+      <link>https://vulnogram.org/CVE-2026-71240</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71240</guid>
+      <description>DjangoCRM&apos;s toggle_default_sorting view is the only route in common/urls.py that is not wrapped in login_required or staff_member_required, and it redirects to a caller-supplied next_url GET parameter after only checking secure_url(next_url), which m…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71239 · 8.8 HIGH — DjangoCRM: Server-Side Template Injection in Mass Mail Message Rendering</title>
+      <link>https://vulnogram.org/CVE-2026-71239</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71239</guid>
+      <description>DjangoCRM&apos;s massmail module renders user-controlled EmlMessage fields (subject, content) through Django&apos;s Template() constructor with no sanitization, in at least three locations: message_previews.py builds an f-string embedding message.subject/messa…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71238 · 9.1 CRITICAL — DjangoCRM: Hardcoded Django SECRET_KEY Enables Session and CSRF Token Forgery</title>
+      <link>https://vulnogram.org/CVE-2026-71238</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71238</guid>
+      <description>DjangoCRM ships with its Django SECRET_KEY hardcoded directly in the committed webcrm/settings.py rather than read from an environment variable. Since this key is used for session signing, CSRF token generation, and password reset tokens, anyone who…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71237 · 9.8 CRITICAL — Miantang IoT-PHP: Unauthenticated SQL Injection in /userlogin</title>
+      <link>https://vulnogram.org/CVE-2026-71237</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71237</guid>
+      <description>Miantang/IoT-PHP&apos;s index.php implements a POST /userlogin route that reads the password directly from $_POST[&apos;pwd&apos;] with no sanitization and concatenates it into a raw SQL string: mysql_query(&quot;select * from userlists where username=&apos;$username&apos; and pa…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71236 · 8 HIGH — Grocy: Stored XSS via HTMLPurifier Output Double-Decode</title>
+      <link>https://vulnogram.org/CVE-2026-71236</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71236</guid>
+      <description>Grocy&apos;s API request-body parser (controllers/Api/BaseApiController.php, GetParsedAndFilteredRequestBody) purifies incoming field values with HTMLPurifier, then manually reverses HTML-entity encoding of the resulting output by replacing &amp;amp;lt;, &amp;amp…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71235 · 9.9 CRITICAL — Magistrala IoT Platform: Unrestricted Go/Lua Script Execution in Rules Engine</title>
+      <link>https://vulnogram.org/CVE-2026-71235</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71235</guid>
+      <description>Magistrala&apos;s Rules Engine allows authenticated users to create rules with embedded Go or Lua scripts executed server-side when IoT messages arrive. The Go script engine (re/golang.go) runs scripts through the Yaegi interpreter with stdlib.Symbols, ex…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71234 · 7.5 HIGH — Documize Community: Attachment Download Authorization Bypass via Non-Validated secure Token</title>
+      <link>https://vulnogram.org/CVE-2026-71234</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71234</guid>
+      <description>Documize Community&apos;s attachment download route (domain/attachment/endpoint.go, Download function, registered via AddPublic with no auth middleware) accepts a `secure` query parameter and grants access whenever the parameter is simply non-empty (len(s…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71233 · 8.7 HIGH — InvoiceNinja: Stored XSS via Invoice/Quote Terms Field</title>
+      <link>https://vulnogram.org/CVE-2026-71233</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71233</guid>
+      <description>InvoiceNinja v5-stable renders an invoice or quote&apos;s &quot;terms&quot; field in the client portal using Laravel Blade&apos;s raw output directive {!! $entity-&gt;terms !!} (resources/views/portal/ninja2020/invoices/includes/terms.blade.php) with no HTML sanitization.…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71232 · 7.2 HIGH — MacCMS10: Incomplete Function Blacklist in Template Editor Enables Authenticated RCE</title>
+      <link>https://vulnogram.org/CVE-2026-71232</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71232</guid>
+      <description>MacCMS10&apos;s admin template editor (application/admin/controller/Template.php) blocks dangerous PHP functions in template content via a blacklist regex, but the blacklist omitted exec, passthru, popen, show_source, create_function, register_shutdown_fu…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71231 · 9.8 CRITICAL — IOTSmartHome: Unauthenticated SQL Injection via lastLogin Cookie</title>
+      <link>https://vulnogram.org/CVE-2026-71231</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71231</guid>
+      <description>IOTSmartHome&apos;s gui/login.php checkCookie() function builds an authentication query as SELECT * FROM users WHERE ID=&apos;&lt;decoded lastLogin cookie&gt;&apos; after base64-decoding the client-supplied lastLogin cookie via safe_decode(), which performs URL-safe base…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 10:56:07 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-71215 · 7.5 HIGH — art-template: Path Traversal in Sub-Template Resolution via include()/extend()</title>
       <link>https://vulnogram.org/CVE-2026-71215</link>
@@ -201,233 +409,6 @@
       <description>Koha&apos;s reports/issues_stats.pl (the circulation statistics report) builds its calculation query in sub calculate by concatenating several user-controlled request parameters directly into the SQL string. The PeriodTypeSel, PeriodDaySel, and PeriodMont…</description>
       <category>Medium</category>
       <pubDate>Tue, 04 Aug 2026 13:00:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70372 · 6.5 MEDIUM — Koha: SQL Injection in reports/bor_issues_top.pl</title>
-      <link>https://vulnogram.org/CVE-2026-70372</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70372</guid>
-      <description>Koha&apos;s reports/bor_issues_top.pl builds dynamic SQL in sub calculate by concatenating several user-controlled request parameters directly into the query string. The Criteria parameter is only normalized by a table-name prefix and is never whitelisted…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 13:00:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70371 · 6.5 MEDIUM — Koha: SQL Injection in reports/issues_avg_stats.pl</title>
-      <link>https://vulnogram.org/CVE-2026-70371</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70371</guid>
-      <description>Koha&apos;s reports/issues_avg_stats.pl builds dynamic SQL in sub calculate by concatenating several user-controlled request parameters directly into the query string. The Line and Column parameters are not validated against any whitelist and land verbati…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 13:00:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70370 · 6.5 MEDIUM — Koha: SQL Injection in reports/catalogue_stats.pl</title>
-      <link>https://vulnogram.org/CVE-2026-70370</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70370</guid>
-      <description>Koha&apos;s reports/catalogue_stats.pl builds dynamic SQL in sub calculate by interpolating the user-controlled Line and Column request parameters directly into identifier positions of the query (SELECT DISTINCTROW, GROUP BY, ORDER BY) with no whitelist v…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 13:00:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70369 · 6.5 MEDIUM — Koha: SQL Injection in reports/acquisitions_stats.pl</title>
-      <link>https://vulnogram.org/CVE-2026-70369</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70369</guid>
-      <description>Koha&apos;s reports/acquisitions_stats.pl builds its per-cell statistics query in sub calculate by interpolating the user-controlled Filter request parameters directly into WHERE fragments covering aqbasket.closedate, aqorders.datereceived, aqbooksellers.…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 12:59:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54414 · 9.8 CRITICAL 🌩️ — FileRise shared-folder upload path traversal allows arbitrary file write and admin takeover</title>
-      <link>https://vulnogram.org/CVE-2026-54414</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54414</guid>
-      <description>FileRise before 3.16.0 is vulnerable to path traversal in the shared-folder upload endpoint (/api/folder/uploadToSharedFolder.php), leading to arbitrary file write and administrator account takeover. The upload filename is validated by FolderControll…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 05:41:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54419 · 9.8 CRITICAL 🌩️ — PIAF-HMS multiple unauthenticated SQL injection vulnerabilities via mysql_query</title>
-      <link>https://vulnogram.org/CVE-2026-54419</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54419</guid>
-      <description>claudiopizzillo PIAF-HMS (PBX-In-A-Flash Hotel Management System; no released versions, latest commit 389d2633441b65ced1c104212cd62be2bfca21e5) contains multiple unauthenticated SQL injection vulnerabilities. The application has no authentication mec…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 10:21:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55746 · 7.6 HIGH — Cotonti stored XSS via PFS folder title</title>
-      <link>https://vulnogram.org/CVE-2026-55746</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55746</guid>
-      <description>Cotonti 1.0.0 (master branch, commit f43f1fc3) is vulnerable to stored Cross-Site Scripting in the Personal File Storage (PFS) module. A folder title (pff_title) is imported with the &apos;TXT&apos; filter, which does not strip or encode HTML (the tag check in…</description>
-      <category>High</category>
-      <pubDate>Thu, 18 Jun 2026 06:46:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55745 · 5.4 MEDIUM 🌩️ — Cotonti CSRF in PFS folder edit allows unauthorized folder modification</title>
-      <link>https://vulnogram.org/CVE-2026-55745</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55745</guid>
-      <description>Cotonti 1.0.0 (master branch, commit f43f1fc3) is vulnerable to Cross-Site Request Forgery in the Personal File Storage (PFS) module. In modules/pfs/inc/pfs.editfolder.php, the folder update action (&apos;a=update&apos;) updates folder metadata (title, descrip…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 06:07:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55744 · 8.6 HIGH 🌩️ — Cotonti CSRF in PFS allows forced arbitrary file upload</title>
-      <link>https://vulnogram.org/CVE-2026-55744</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55744</guid>
-      <description>Cotonti 1.0.0 (master branch, commit f43f1fc3) is vulnerable to Cross-Site Request Forgery in the Personal File Storage (PFS) module. In modules/pfs/inc/pfs.main.php, the file upload action (&apos;a=upload&apos;) processes uploaded files without calling cot_ch…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 06:06:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55742 · 9.6 CRITICAL 🌩️ — Cotonti CSRF in admin.rights.php allows privilege escalation</title>
-      <link>https://vulnogram.org/CVE-2026-55742</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55742</guid>
-      <description>Cotonti 1.0.0 (master branch, commit f43f1fc3) is vulnerable to Cross-Site Request Forgery in the administration rights handler. In system/admin/admin.rights.php, the rights update action (&apos;a=update&apos;) modifies group access rights (including via cot_a…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 06:05:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55741 · 8.8 HIGH 🌩️ — Cotonti CSRF in admin.config.php allows unauthorized configuration changes</title>
-      <link>https://vulnogram.org/CVE-2026-55741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55741</guid>
-      <description>Cotonti 1.0.0 (master branch, commit f43f1fc3) is vulnerable to Cross-Site Request Forgery in the administration configuration handler. In system/admin/admin.config.php, the configuration update action (&apos;a=update&apos;) processes POST data via cot_config_…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 06:04:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55740 · 9.8 CRITICAL 🌩️ — SQL Injection in Nur-Alam39 bus-ticket bus_info.php via busid parameter</title>
-      <link>https://vulnogram.org/CVE-2026-55740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55740</guid>
-      <description>Nur-Alam39 bus-ticket (no released versions; latest commit 459cabdbeb99c00225b26e46e3c2c30ae1de7bad) contains an unauthenticated SQL injection vulnerability in bus_info.php. The busid parameter received via HTTP POST is concatenated directly into a M…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 05:48:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55743 · 9.6 CRITICAL 🌩️ — OpenHuman desktop agent shell tool sandbox bypass leads to arbitrary command execution</title>
-      <link>https://vulnogram.org/CVE-2026-55743</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55743</guid>
-      <description>The shell tool command allowlist in the SecurityPolicy of OpenHuman desktop agent through 0.54.0 (default Supervised security policy) can be bypassed to execute arbitrary OS commands with the privileges of the desktop user. Two flaws in src/openhuman…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 17 Jun 2026 14:08:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54415 · 8.6 HIGH — Broken Access Control in Azuriom CMS Server Routes Allows Account Takeover</title>
-      <link>https://vulnogram.org/CVE-2026-54415</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54415</guid>
-      <description>Missing Authorization in the server management routes (routes/admin.php) in Azuriom Azuriom CMS before 1.2.11 on all platforms allows an authenticated attacker with the admin.access permission to create AzLink server tokens and take over non-admin us…</description>
-      <category>High</category>
-      <pubDate>Wed, 17 Jun 2026 14:04:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55738 · 8.8 HIGH 🌩️ — Stack Buffer Overflow in rxi/microtar raw_to_header() via non-null-terminated TAR name field</title>
-      <link>https://vulnogram.org/CVE-2026-55738</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55738</guid>
-      <description>A stack-based buffer overflow exists in the raw_to_header() function in src/microtar.c in rxi microtar 0.1.0. The function copies the 100-byte name and linkname fields of a TAR header with strcpy() without guaranteeing null termination of the source.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 17 Jun 2026 13:45:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54417 · 8.7 HIGH 🌩️ — Integer Overflow in rxi/microtar mtar_next() Causes Infinite Loop DoS</title>
-      <link>https://vulnogram.org/CVE-2026-54417</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54417</guid>
-      <description>An integer overflow in the mtar_next() function in src/microtar.c in rxi microtar 0.1.0 allows a remote attacker to cause a denial of service (uncontrolled CPU consumption / infinite loop) via a crafted tar archive. mtar_next() computes the offset to…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 17 Jun 2026 13:25:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54413 · 8.2 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-54413</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54413</guid>
-      <description>driftregion iso14229 through 0.9.0 contains an integer underflow and downstream out-of-bounds read in the Handle_0x27_SecurityAccess() function in iso14229.c that allows a remote unauthenticated attacker to crash a UDS server and potentially read mem…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 14 Jun 2026 17:38:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54412 · 8.2 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-54412</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54412</guid>
-      <description>LiamBindle MQTT-C through version 1.1.6 contains a heap-based out-of-bounds read and integer underflow in the mqtt_unpack_publish_response() function in src/mqtt.c that allows a remote unauthenticated attacker controlling an MQTT broker - or able to…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 14 Jun 2026 17:26:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54411 · 6.9 MEDIUM 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-54411</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54411</guid>
-      <description>Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in the pam_userdb module&apos;s plaintext-password comparison path in modules/pam_userdb/pam_userdb.c that allows a local or network-adjacent attacker able to repeatedly drive aut…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 14 Jun 2026 17:21:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54410 · 9 CRITICAL 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-54410</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54410</guid>
-      <description>nanoMODBUS through v1.23.0 contains an off-by-one buffer overflow in the recv_msg_header() function of the Modbus/TCP server that allows remote unauthenticated attackers to write one attacker-controlled byte past the end of the 260-byte receive buffe…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 14 Jun 2026 17:10:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12183 · 9.8 CRITICAL 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-12183</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12183</guid>
-      <description>Nefteprodukttekhnika BUK TS-G Gas Station Automation System 2.9.1 through 2.10.2 on Linux contains an Improper Authentication vulnerability (CWE-287) in the system configuration module. The /php/ajax-login.php endpoint returns userid=1 (administrator…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 13 Jun 2026 17:36:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6428 · 7.6 HIGH</title>
-      <link>https://vulnogram.org/CVE-2026-6428</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6428</guid>
-      <description>SQL Injection in reports/catalogue_out.pl in Koha Community Koha through 22.11.37, 23.x, 24.x before 24.11.16, 25.05.x before 25.05.11, 25.11.x before 25.11.05, 26.05.x before 26.05.01, and 26.11.x before 26.11.00 allows an authenticated staff user w…</description>
-      <category>High</category>
-      <pubDate>Sat, 13 Jun 2026 16:34:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31843 · 10 CRITICAL 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-31843</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31843</guid>
-      <description>The goodoneuz/pay-uz Laravel package (&lt;= 2.2.24) contains a critical vulnerability in the /payment/api/editable/update endpoint that allows unauthenticated attackers to overwrite existing PHP payment hook files. The endpoint is exposed via Route::any…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Apr 2026 13:02:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31845 · 9.3 CRITICAL 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-31845</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31845</guid>
-      <description>A reflected cross-site scripting (XSS) vulnerability exists in Rukovoditel CRM version 3.6.4 and earlier in the Zadarma telephony API endpoint (/api/tel/zadarma.php). The application directly reflects user-supplied input from the &apos;zd_echo&apos; GET parame…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 11 Apr 2026 18:26:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31842 · 8.7 HIGH 🌩️ — Tinyproxy HTTP request parsing desynchronization via case-sensitive Transfer-Encoding handling</title>
-      <link>https://vulnogram.org/CVE-2026-31842</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31842</guid>
-      <description>Tinyproxy through 1.11.3 is vulnerable to HTTP request parsing desynchronization due to a case-sensitive comparison of the Transfer-Encoding header in src/reqs.c. The is_chunked_transfer() function uses strcmp() to compare the header value against &quot;c…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Apr 2026 11:17:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5463 · 9.3 CRITICAL 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-5463</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5463</guid>
-      <description>Command injection vulnerability in console.run_module_with_output() in pymetasploit3 through version 1.0.6 allows attackers to inject newline characters into module options such as RHOSTS. This breaks the intended command structure and causes the Met…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 03 Apr 2026 04:32:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
