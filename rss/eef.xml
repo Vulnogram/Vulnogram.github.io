@@ -11,7 +11,49 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 04 Aug 2026 15:12:30 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 20:49:12 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-66885 · 6.8 MEDIUM — Livebook Teams identity callback lacks state binding, allowing login CSRF</title>
+      <link>https://vulnogram.org/CVE-2026-66885</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66885</guid>
+      <description>Cross-Site Request Forgery (CSRF) vulnerability in livebook-dev livebook allows an attacker to authenticate a victim&apos;s browser session under the attacker&apos;s own Livebook Teams identity. When Livebook is configured to use Livebook Teams for identity, L…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 19:44:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66298 · 8.6 HIGH 🌩️ — JS-view sandboxed output can synthesize keyboard events to trigger unconfirmed global shortcuts</title>
+      <link>https://vulnogram.org/CVE-2026-66298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66298</guid>
+      <description>Origin Validation Error vulnerability in livebook-dev livebook allows untrusted notebook output JavaScript to trigger session-wide keyboard shortcuts, including forced evaluation of all cells and runtime restart. Livebook&apos;s JS-view feature renders no…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 05 Aug 2026 19:44:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66297 · 5 MEDIUM — Unescaped deployment environment variables in generated setup commands</title>
+      <link>https://vulnogram.org/CVE-2026-66297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66297</guid>
+      <description>Improper Neutralization of Special Elements used in an OS Command (OS Command Injection) vulnerability in livebook-dev livebook allows command injection into generated deployment setup commands. LivebookWeb.Hub.Teams.DeploymentGroupAgentComponent.doc…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 19:43:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66881 · 7 HIGH 🌩️ — Path traversal in imported file_entries name allows arbitrary file write via URL-type entry download</title>
+      <link>https://vulnogram.org/CVE-2026-66881</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66881</guid>
+      <description>Relative Path Traversal vulnerability in livebook-dev livebook allows an attacker-authored notebook to write a file with attacker-controlled content to an arbitrary path. A .livemd notebook can declare file_entries metadata, each entry carrying a nam…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 05 Aug 2026 19:43:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68746 · 7.7 HIGH — Livebook Teams identity check fails open when the deployment group is unresolvable, allowing unauthenticated access</title>
+      <link>https://vulnogram.org/CVE-2026-68746</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68746</guid>
+      <description>Not Failing Securely (&apos;Failing Open&apos;) vulnerability in livebook-dev livebook allows an unauthenticated network client to obtain full access to a Livebook server that enforces identity through Livebook Teams. A Livebook Agent or App Server connected t…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 19:43:38 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-66883 · 6.3 MEDIUM 🌩️ — Oidcc.Plug.Authorize user agent session binding inert due to case-sensitive header lookup</title>
       <link>https://vulnogram.org/CVE-2026-66883</link>
@@ -403,47 +445,6 @@
       <description>Observable Response Discrepancy vulnerability in Erlang OTP ssh (ssh_sftpd module) allows an authenticated SFTP user to enumerate the existence of files and directories outside the configured root directory. The SSH_FXP_REALPATH handler in ssh_sftpd…</description>
       <category>Low</category>
       <pubDate>Thu, 02 Jul 2026 16:06:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53426 · 8.2 HIGH — Atom-table exhaustion denial-of-service via JSON parse_document in MDEx</title>
-      <link>https://vulnogram.org/CVE-2026-53426</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53426</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in leandrocp MDEx allows Excessive Allocation. MDEx.parse_document/2 accepts a {:json, json} source. In lib/mdex.ex, the private json_to_node/1 function passes the attacker-controlled…</description>
-      <category>High</category>
-      <pubDate>Mon, 29 Jun 2026 19:11:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54889 · 5.1 MEDIUM 🌩️ — Unsanitized URL schemes in MDEx Quill Delta output allow javascript: injection (XSS)</title>
-      <link>https://vulnogram.org/CVE-2026-54889</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54889</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (XSS) vulnerability in leandrocp mdex allows cross-site scripting via unsanitized URL schemes in Quill Delta output. &apos;Elixir.MDEx&apos;:to_delta/2 converts Markdown into a Quill Delta. &apos;Elixir.MD…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Jun 2026 19:10:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54888 · 6.9 MEDIUM — Uncontrolled recursion over deeply nested Markdown crashes the BEAM in mdex</title>
-      <link>https://vulnogram.org/CVE-2026-54888</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54888</guid>
-      <description>Uncontrolled Recursion vulnerability in leandrocp mdex allows denial of service via deeply nested Markdown input. mdex converts between an Elixir %MDEx.Document{} struct and Comrak&apos;s internal AST using two mutually recursive Rust functions, ex_docume…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 29 Jun 2026 19:10:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53429 · 6.9 MEDIUM — Unbounded native memory leak in mdex escaped-tag rendering enables unauthenticated denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-53429</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53429</guid>
-      <description>Missing Release of Memory after Effective Lifetime vulnerability in leandrocp mdex and mdex_native allows an attacker who controls a rendered document to cause a denial of service through unbounded native memory exhaustion. The native rendering code…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 29 Jun 2026 19:07:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53428 · 6.9 MEDIUM — Unbounded memory allocation in highlight_lines range expansion in mdex</title>
-      <link>https://vulnogram.org/CVE-2026-53428</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53428</guid>
-      <description>Memory Allocation with Excessive Size Value vulnerability in leandrocp mdex allows an unauthenticated attacker to cause a denial of service through unbounded memory allocation. comrak_nif::lumis_adapter::LumisAdapter::parse_highlight_lines in native/…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 29 Jun 2026 18:52:36 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,66 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 05 Aug 2026 19:06:37 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 20:49:12 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-71312 · 8 HIGH — rclone: PowerShell Smart-Quote Filename Injection Enables SFTP Server-Side Command Execution</title>
+      <link>https://vulnogram.org/CVE-2026-71312</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71312</guid>
+      <description>rclone is a command-line program to sync files and directories to and from different cloud storage providers. Prior to v1.75.0, rclone interpolates remote SFTP paths into PowerShell hash commands in backend/sftp/sftp.go, and quoteOrEscapeShellPath es…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 20:37:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71311 · 6.4 MEDIUM — rclone: FTP Command Arguments Permit CRLF Injection When Custom Encoding Preserves Newlines</title>
+      <link>https://vulnogram.org/CVE-2026-71311</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71311</guid>
+      <description>rclone is a command-line program to sync files and directories to and from different cloud storage providers. Prior to 1.75.0, a valid but nondefault FTP filename encoding in backend/ftp/ftp.go can restore raw CR/LF immediately before an attacker-con…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 20:33:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71310 · 5.9 MEDIUM 🌩️ — rclone: Unbounded HTTP CONNECT Response Headers Can Exhaust rclone Memory</title>
+      <link>https://vulnogram.org/CVE-2026-71310</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71310</guid>
+      <description>rclone is a command-line program to sync files and directories to and from different cloud storage providers. Prior to 1.75.0, the shared HTTP CONNECT helper in lib/proxy/http.go parses proxy CONNECT responses with http.ReadResponse over an unrestric…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 05 Aug 2026 20:17:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71309 · 8.6 HIGH — rclone: Incomplete path validation allows backend root escape in serve restic</title>
+      <link>https://vulnogram.org/CVE-2026-71309</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71309</guid>
+      <description>rclone is a command-line program to sync files and directories to and from different cloud storage providers. From 1.40.0 until 1.75.0, rclone serve restic does not correctly reject URL paths beginning with ../ in cmd/serve/restic/restic.go WithRemot…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 20:13:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55524 · 7.5 HIGH 🌩️ — PraisonAI: SSRF in web_crawl tool via redirect-following and DNS rebinding (validate-then-fetch gap)</title>
+      <link>https://vulnogram.org/CVE-2026-55524</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55524</guid>
+      <description>PraisonAI is a multi-agent teams system. In versions prior to 1.6.58, the web_crawl tool performs its SSRF check only on the initially supplied URL, allowing the protection to be bypassed so the tool connects to attacker-chosen internal destinations.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 05 Aug 2026 19:58:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55523 · 7.7 HIGH 🌩️ — PraisonAI has a`web_crawl` SSRF protection bypass via unchecked redirect targets</title>
+      <link>https://vulnogram.org/CVE-2026-55523</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55523</guid>
+      <description>PraisonAI is a multi-agent teams system. In versions 1.5.128 through 1.6.57, the praisonaiagents.tools.web_crawl_tools.web_crawl() function is vulnerable to server-side request forgery. While it validates the initially supplied URL and blocks direct…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 05 Aug 2026 19:26:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55522 · 7.8 HIGH — PraisonAI workflow include bypasses tools.py autoload opt-in and executes included recipe code</title>
+      <link>https://vulnogram.org/CVE-2026-55522</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55522</guid>
+      <description>PraisonAI is a multi-agent teams system. In versions 3.9.26 through 4.6.57 of praiseonai and 0.12.12 through 1.6.57 of praiseonaiagents, the workflow &quot;include&quot; feature is vulnerable to code execution. Workflow._execute_include() implicitly imports an…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 19:01:43 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-48168 · 10 CRITICAL 🌩️ — PraisonAI: GitHub Actions Claude workflow command injection via unquoted PR branch name</title>
       <link>https://vulnogram.org/CVE-2026-48168</link>
@@ -376,63 +435,6 @@
       <description>Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform. From 0.8.8 until 0.11.0, inline direct model metadata accepted client-supplied knowledge attachments without filtering them against the caller&apos;s read access. Any au…</description>
       <category>Medium</category>
       <pubDate>Tue, 04 Aug 2026 20:16:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65986 · 8.5 HIGH — CVAT has stored XSS via annotation guide assets</title>
-      <link>https://vulnogram.org/CVE-2026-65986</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65986</guid>
-      <description>CVAT is an open source interactive video and image annotation tool for computer vision. Versions 2.5.0 through 2.66.0 contain a XSS vulnerability that can be accessed through annotation guide assets. When CVAT serves the files attached to an annotati…</description>
-      <category>High</category>
-      <pubDate>Tue, 04 Aug 2026 20:13:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70486 · 8.2 HIGH — Open WebUI: Same-origin XSS to account takeover via terminal file-preview iframe hardcoding allow-same-origin</title>
-      <link>https://vulnogram.org/CVE-2026-70486</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70486</guid>
-      <description>Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform. From 0.9.0 until 0.11.0, the terminal file-preview serveUrl iframe branch always granted allow-same-origin together with allow-scripts for HTML files served from th…</description>
-      <category>High</category>
-      <pubDate>Tue, 04 Aug 2026 20:01:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47682 · 7.1 HIGH — CVAT: Missing path-containment validation in multiple entry points allows arbitrary path writes</title>
-      <link>https://vulnogram.org/CVE-2026-47682</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47682</guid>
-      <description>CVAT is an open source interactive video and image annotation tool for computer vision. In versions 1.6.0 through 2.64.0, an attacker with write access to a cloud storage that&apos;s been added to a CVAT instance, or ability to add new cloud storages, is…</description>
-      <category>High</category>
-      <pubDate>Tue, 04 Aug 2026 20:00:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70485 · 7.1 HIGH — Open WebUI: Any authenticated user can reach internal services and cloud metadata via NAT64-encoded URLs</title>
-      <link>https://vulnogram.org/CVE-2026-70485</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70485</guid>
-      <description>Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform. From 0.9.0 until 0.11.0, Open WebUI checked whether a user-supplied URL destination was globally routable by applying ipaddress.is_global to the literal IPv6 addres…</description>
-      <category>High</category>
-      <pubDate>Tue, 04 Aug 2026 19:59:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70484 · 4.3 MEDIUM — Open WebUI: Users denied the image-generation permission can still generate images via chat completions</title>
-      <link>https://vulnogram.org/CVE-2026-70484</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70484</guid>
-      <description>Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform. From 0.7.0 until 0.11.0, the legacy chat-completions features block trusted a client-supplied image_generation flag and did not re-check the features.image_generati…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 19:56:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70483 · 3.1 LOW — Open WebUI: Any authenticated user can cancel another user&apos;s chat generation via the chat delete endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-70483</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70483</guid>
-      <description>Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform. From 0.9.6 until 0.11.0, DELETE /api/v1/chats/{id} cancelled a chat&apos;s in-flight tasks before checking whether the caller could delete that chat. Any authenticated u…</description>
-      <category>Low</category>
-      <pubDate>Tue, 04 Aug 2026 19:54:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70482 · 8.1 HIGH 🌩️ — Open WebUI: Account takeover via OAuth token exchange accepting tokens issued to any client</title>
-      <link>https://vulnogram.org/CVE-2026-70482</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70482</guid>
-      <description>Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform. From 0.8.0 until 0.11.0, when ENABLE_OAUTH_TOKEN_EXCHANGE=True, /oauth/{provider}/token/exchange accepts a raw provider access token and validates it by calling the…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 04 Aug 2026 19:51:58 GMT</pubDate>
     </item>
   </channel>
 </rss>
