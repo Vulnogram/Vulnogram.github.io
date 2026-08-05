@@ -11,7 +11,189 @@
       <title>Turan Security — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 05 Aug 2026 04:49:36 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 07:28:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-71215 · 7.5 HIGH — art-template: Path Traversal in Sub-Template Resolution via include()/extend()</title>
+      <link>https://vulnogram.org/CVE-2026-71215</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71215</guid>
+      <description>art-template&apos;s sub-template resolution logic (src/compile/adapter/resolve-filename.js), used by both the include() and extend() template directives, resolves the target file path via path.resolve(root, filename) with no check afterward that the resul…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71214 · 9.8 CRITICAL — NASA-AMMOS plandev: Client-Supplied session_variables Bypass Hasura-Origin Authorization in sequencing-server</title>
+      <link>https://vulnogram.org/CVE-2026-71214</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71214</guid>
+      <description>The Aerie/PlanDev sequencing-server&apos;s authorization middleware (sequencing-server/src/app.ts) derives the caller&apos;s Hasura session role via getHasuraSession(), which prefers a session_variables object taken directly from the client-supplied JSON reque…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71213 · 8.1 HIGH — typemill: No Rate Limiting on Login Endpoint Enables Unlimited Password Brute-Force</title>
+      <link>https://vulnogram.org/CVE-2026-71213</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71213</guid>
+      <description>Typemill&apos;s login endpoint (POST /tm/login, ControllerWebAuth::login()) performs no rate-limiting, failed-attempt counting, or account lockout when captcha is disabled, which is the default configuration. An unauthenticated attacker can send unlimited…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71212 · 4.4 MEDIUM — xidown: Argument Injection via Unterminated yt-dlp Command Line Construction</title>
+      <link>https://vulnogram.org/CVE-2026-71212</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71212</guid>
+      <description>xidown (a yt-dlp/ffmpeg GUI wrapper) builds its yt-dlp command-line invocation (xidown/core/scanner.py and downloader.py) by appending the user-provided or scanned URL as a bare trailing positional argument, with no &apos;--&apos; end-of-options marker and no…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71211 · 7.7 HIGH — mlflow: Unvalidated Gateway Secret api_base Enables SSRF via Gateway Proxy Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-71211</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71211</guid>
+      <description>MLflow&apos;s AI Gateway accepts an auth_config.api_base value when creating a gateway secret (mlflow/server/handlers.py, _create_gateway_secret) with no validation of scheme, host, or IP range; the value is stored verbatim. The gateway proxy endpoint (ml…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71210 · 6.5 MEDIUM — mealie: DNS-Rebinding TOCTOU in SSRF Guard Allows Internal Network and Cloud Metadata Access</title>
+      <link>https://vulnogram.org/CVE-2026-71210</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71210</guid>
+      <description>Mealie&apos;s AsyncSafeTransport SSRF guard (mealie/pkgs/safehttp/transport.py) resolves a target hostname once, checks the resolved IP against private-range rules, but then issues the actual outbound HTTP request using the original hostname, which the un…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71209 · 7.5 HIGH — audiobookshelf: %2F Encoding Discrepancy Bypasses Cover/Image Auth Exemption Regex, Enabling Unauthenticated Path Traversal</title>
+      <link>https://vulnogram.org/CVE-2026-71209</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71209</guid>
+      <description>audiobookshelf&apos;s authentication-exemption check (server/routers/Auth.js) matches unauthenticated-allowed GET routes against req.path via a regex requiring a literal /items/:id/cover or /authors/:id/image shape, where req.path retains %2F sequences UR…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71208 · 7.1 HIGH — KubeSphere: SSRF via Unvalidated Cluster CRD Connection Endpoint in Cluster Reconciliation</title>
+      <link>https://vulnogram.org/CVE-2026-71208</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71208</guid>
+      <description>KubeSphere&apos;s cluster-controller reconciliation (pkg/utils/clusterclient/clusterclient.go, addCluster) processes every Cluster custom resource&apos;s connection configuration and immediately calls Discovery().ServerVersion() against the CRD-specified Kuber…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71207 · 9.8 CRITICAL — Stock-Inventory-Management-System: Unauthenticated SQL Injection and Hardcoded Credentials in login.php Enable Full Authentication Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-71207</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71207</guid>
+      <description>The Stock-Inventory-Management-System application&apos;s login.php assigns raw $_POST username/password values to $_SESSION and builds its authentication query by directly concatenating those session values into a SQL statement with no parameterization or…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71206 · 8.2 HIGH — shiori: JWT CheckToken Never Re-Validates Account State, Allowing Stale-Privilege Access After Deletion or Demotion</title>
+      <link>https://vulnogram.org/CVE-2026-71206</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71206</guid>
+      <description>Shiori&apos;s CheckToken function (internal/domains/auth.go) validates only the JWT&apos;s HMAC signature and returns the embedded claims.Account object unmodified, never re-fetching the account from the database. No session store or token-revocation mechanism…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71205 · 5.3 MEDIUM — changedetection.io: No Rate Limiting on /login Enables Unlimited Password Brute-Force</title>
+      <link>https://vulnogram.org/CVE-2026-71205</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71205</guid>
+      <description>changedetection.io&apos;s /login route checks the submitted password against a single PBKDF2-HMAC-SHA256 hash with no per-IP or per-session rate limiting, failed-attempt counter, or lockout (no rate-limiting library is present in requirements.txt). Becaus…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71204 · 6.3 MEDIUM — changedetection.io: Omitted Checkbox in /settings Save Silently Disables API Key Enforcement</title>
+      <link>https://vulnogram.org/CVE-2026-71204</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71204</guid>
+      <description>changedetection.io&apos;s /settings save handler builds an update dict from form.data[&apos;application&apos;] and blind-merges it into the stored application settings via .update(). Because WTForms represents an unchecked checkbox as False rather than &apos;unchanged&apos;,…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 06:59:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71203 · 5.3 MEDIUM — changedetection.io: Missing Authentication on /api/v1/full-spec Discloses Full OpenAPI Schema</title>
+      <link>https://vulnogram.org/CVE-2026-71203</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71203</guid>
+      <description>changedetection.io&apos;s REST API resources are protected by an @auth.check_token decorator validating the caller&apos;s x-api-key header, except the Spec resource registered at /api/v1/full-spec (changedetectionio/api/Spec.py), whose get() method carries nei…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71202 · 7.5 HIGH — raster: Integer Underflow in crop() Offset Handling Causes Capacity-Overflow Panic</title>
+      <link>https://vulnogram.org/CVE-2026-71202</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71202</guid>
+      <description>The raster Rust crate&apos;s crop() function (src/editor.rs) clamps the crop width/height against source dimensions but only clamps the offset_x/offset_y parameters against 0, never against the source width/height. When an offset exceeds the corresponding…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70378 · 7.5 HIGH — imagecli: Negative carve Ratio Bypasses Bounds Check and Crashes Process via Reachable Panic</title>
+      <link>https://vulnogram.org/CVE-2026-70378</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70378</guid>
+      <description>imagecli&apos;s `carve &lt;ratio&gt;` pipeline operation (Carve::apply() in src/image_ops.rs) only asserts `ratio &lt;= 1.0`, never validating that the ratio is positive. A negative ratio (e.g. -5) causes the computed target width to saturate to 0 via Rust&apos;s defin…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70377 · 7.5 HIGH — imagecli: Uncontrolled Memory Allocation via Unbounded scale Ratio Causes Denial of Service</title>
+      <link>https://vulnogram.org/CVE-2026-70377</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70377</guid>
+      <description>imagecli&apos;s `scale &lt;ratio&gt;` pipeline operation (Scale::apply() in src/image_ops.rs) computes output width/height as (dimension as f32 * ratio) as u32 with no upper-bound validation on the CLI-supplied ratio, which is parsed via nom::number::complete::…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70376 · 9.6 CRITICAL — Pluck CMS: CSRF via Spoofable Missing-Referer Bypass Leads to Stored XSS and RCE</title>
+      <link>https://vulnogram.org/CVE-2026-70376</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70376</guid>
+      <description>Pluck CMS&apos;s admin panel relies solely on a Referer-header comparison (requestedByTheSameDomain() in data/inc/functions.admin.php, gating every admin.php action) for CSRF protection, with no per-request anti-CSRF token anywhere in the admin area. When…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55747 · 7.1 HIGH — PocketFlow: Path Traversal in pocketflow-coding-agent Cookbook Example File Tools</title>
+      <link>https://vulnogram.org/CVE-2026-55747</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55747</guid>
+      <description>The pocketflow-coding-agent cookbook example in The-Pocket/PocketFlow implements a `_path(workdir, p)` helper as a thin os.path.join(workdir, p) wrapper with no canonicalization or containment check, used unguarded by the ReadFile, ListFiles, PatchRe…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55739 · 8.2 HIGH — Crater: Missing Tenant-Ownership Check in CustomerPolicy Allows Cross-Company Customer Data Theft and Deletion</title>
+      <link>https://vulnogram.org/CVE-2026-55739</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55739</guid>
+      <description>Crater isolates data per company_id, and its Invoice/Estimate/Payment/Expense policies enforce both a Bouncer ability check and $user-&gt;hasCompany($model-&gt;company_id). CustomerPolicy&apos;s view/update/delete methods omit the company-ownership check entire…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54418 · 8.1 HIGH — Leantime: Missing Authorization on TwoFA JSON-RPC Methods Allows Cross-Account 2FA Secret Disclosure and Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-54418</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54418</guid>
+      <description>Leantime through 3.6.2 exposes the JSON-RPC methods leantime.rpc.TwoFA.TwoFA.getSetupData, saveSecret, verifyAndEnable, and disable2FA, which act on a caller-supplied userId parameter with no ownership check, session pinning, or permission-attribute…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54416 · 7.2 HIGH — Pluck CMS: Unrestricted File Upload via Missing .php8 Extension in Upload Blacklist</title>
+      <link>https://vulnogram.org/CVE-2026-54416</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54416</guid>
+      <description>Pluck CMS through 4.7.21 restricts dangerous file uploads in its admin file-management feature using a fixed blacklist in data/inc/files.php (&apos;.php&apos;,&apos;php3&apos;,&apos;php4&apos;,&apos;php5&apos;,&apos;php6&apos;,&apos;php7&apos;,&apos;phtml&apos;,&apos;.phtm&apos;,&apos;.pht&apos;,&apos;.ph3&apos;,&apos;.ph4&apos;,&apos;.ph5&apos;,&apos;.asp&apos;,&apos;.cgi&apos;,&apos;.phar&apos;)…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 06:58:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70375 — HashBrown CMS: OS Command Injection via Git Deployer Branch Field</title>
+      <link>https://vulnogram.org/CVE-2026-70375</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70375</guid>
+      <description>HashBrown CMS through 1.4.6 contains an OS Command Injection vulnerability (CWE-78) in the Git deployer component. GitDeployer.pullRepo() in src/Server/Entity/Deployer/GitDeployer.js executes AppService.exec(`git checkout ${this.branch || &apos;master&apos;}`)…</description>
+      <pubDate>Wed, 05 Aug 2026 05:46:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70374 — HashBrown CMS: OS Command Injection in Media Upload Thumbnail Generation</title>
+      <link>https://vulnogram.org/CVE-2026-70374</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70374</guid>
+      <description>HashBrown CMS through 1.4.6 contains an OS Command Injection vulnerability (CWE-78) in the media upload thumbnail generation routine. Media.generateThumbnail() in src/Server/Entity/Resource/Media.js builds a temporary file path as &apos;thumbnail&apos; + Path.…</description>
+      <pubDate>Wed, 05 Aug 2026 05:46:19 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-70373 · 6.5 MEDIUM — Koha: SQL Injection in reports/issues_stats.pl</title>
       <link>https://vulnogram.org/CVE-2026-70373</link>
@@ -246,90 +428,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 03 Apr 2026 04:32:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3945 · 8.7 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-3945</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3945</guid>
-      <description>An integer overflow vulnerability in the HTTP chunked transfer encoding parser in tinyproxy up to and including version 1.11.3 allows an unauthenticated remote attacker to cause a denial of service (DoS). The issue occurs because chunk size values ar…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 30 Mar 2026 07:05:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4809 · 10 CRITICAL 🌩️ — Unsafe Client MIME Type Handling Can Enable Arbitrary File Upload in plank/laravel-mediable</title>
-      <link>https://vulnogram.org/CVE-2026-4809</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4809</guid>
-      <description>plank/laravel-mediable through version 6.4.0 can allow upload of a dangerous file type when an application using the package accepts or prefers a client-supplied MIME type during file upload handling. In that configuration, a remote attacker can subm…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 26 Mar 2026 11:03:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31851 · 7.7 HIGH — Lack of Rate Limiting Enables Brute-Force Attacks in Nexxt Nebula 300+</title>
-      <link>https://vulnogram.org/CVE-2026-31851</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31851</guid>
-      <description>Nexxt Solutions Nebula 300+ firmware through version 12.01.01.37 does not implement rate limiting or account lockout mechanisms on authentication interfaces. An attacker can perform unlimited authentication attempts against endpoints that rely on cre…</description>
-      <category>High</category>
-      <pubDate>Mon, 23 Mar 2026 12:21:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31850 · 6.8 MEDIUM — Plaintext Storage of Credentials in Configuration Backup in Nexxt Nebula 300+</title>
-      <link>https://vulnogram.org/CVE-2026-31850</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31850</guid>
-      <description>Nexxt Solutions Nebula 300+ firmware through version 12.01.01.37 stores sensitive information, including administrative credentials and WiFi pre-shared keys, in plaintext within exported configuration backup files. These backup files can be obtained…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 23 Mar 2026 12:21:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31849 · 7.2 HIGH 🌩️ — Missing CSRF Protection on Administrative Endpoints in Nexxt Nebula 300+</title>
-      <link>https://vulnogram.org/CVE-2026-31849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31849</guid>
-      <description>Nexxt Solutions Nebula 300+ firmware through version 12.01.01.37 does not implement CSRF protections on state-changing endpoints such as /goform/setSysTools and other administrative interfaces. As a result, an attacker can craft malicious web request…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 23 Mar 2026 12:16:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31848 · 8.7 HIGH — Reversible ecos_pw Cookie Allows Authentication Bypass in Nexxt Nebula 300+</title>
-      <link>https://vulnogram.org/CVE-2026-31848</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31848</guid>
-      <description>Nexxt Solutions Nebula 300+ firmware through version 12.01.01.37 uses the ecos_pw cookie for authentication, which contains Base64-encoded credential data combined with a static suffix. Because the encoding is reversible and lacks integrity protectio…</description>
-      <category>High</category>
-      <pubDate>Mon, 23 Mar 2026 12:09:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31847 · 8.5 HIGH — Hidden Functionality Enables Remote Telnet Activation via /goform/setSysTools in Nexxt Nebula 300+</title>
-      <link>https://vulnogram.org/CVE-2026-31847</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31847</guid>
-      <description>Hidden functionality in the /goform/setSysTools endpoint in Nexxt Solutions Nebula 300+ firmware through version 12.01.01.37 allows remote enablement of a Telnet service. By sending a crafted POST request with parameters such as telnetManageEn=true a…</description>
-      <category>High</category>
-      <pubDate>Mon, 23 Mar 2026 12:07:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31846 · 7.1 HIGH — Unauthenticated Credential Disclosure via /goform/ate in Nexxt Nebula 300+</title>
-      <link>https://vulnogram.org/CVE-2026-31846</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31846</guid>
-      <description>Missing authentication in the /goform/ate endpoint in Nexxt Solutions Nebula 300+ firmware through version 12.01.01.37 allows an adjacent unauthenticated attacker to retrieve sensitive device information, including the administrator password. The end…</description>
-      <category>High</category>
-      <pubDate>Mon, 23 Mar 2026 12:00:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31844 · 9 CRITICAL — Authenticated SQL Injection in Koha displayby parameter of suggestion.pl</title>
-      <link>https://vulnogram.org/CVE-2026-31844</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31844</guid>
-      <description>An authenticated SQL Injection vulnerability (CWE-89) exists in the Koha staff interface in the /cgi-bin/koha/suggestion/suggestion.pl endpoint due to improper validation of the displayby parameter used by the GetDistinctValues functionality. A low-p…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 11 Mar 2026 06:34:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3843 · 9.8 CRITICAL 🌩️ — SQL Injection in Nefteprodukttekhnika BUK TS-G Allows Remote Code Execution</title>
-      <link>https://vulnogram.org/CVE-2026-3843</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3843</guid>
-      <description>Nefteprodukttekhnika BUK TS-G Gas Station Automation System 2.9.1 on Linux contains a SQL Injection vulnerability (CWE-89) in the system configuration module. A remote attacker can send specially crafted HTTP POST requests to the /php/request.php end…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 10 Mar 2026 11:07:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
