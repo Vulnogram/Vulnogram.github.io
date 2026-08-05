@@ -11,7 +11,64 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 05 Aug 2026 12:29:52 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 15:06:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-16100 · 6.5 MEDIUM — Keycloak-services: keycloak-services: unbounded metric cardinality in user event metrics via request-controlled error text</title>
+      <link>https://vulnogram.org/CVE-2026-16100</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16100</guid>
+      <description>A flaw was found in the user-event metrics recording of Keycloak. When metrics are enabled, the system records raw error messages from failed account operations as Prometheus metric labels. Because these error messages can include user-supplied input…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 13:50:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16071 · 5.4 MEDIUM — Keycloak-services: keycloak-services: ldap entry-dn user search bypasses configured users dn boundary</title>
+      <link>https://vulnogram.org/CVE-2026-16071</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16071</guid>
+      <description>A flaw was found in the LDAP storage provider of Keycloak, which is used to federate user identities from external directories. The issue occurs when a delegated administrator performs a search using a specific LDAP entry Distinguished Name (DN). Due…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 13:50:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16102 · 8.1 HIGH — Keycloak-services: keycloak-services: default dcr policy allows role forgery via user property mappers</title>
+      <link>https://vulnogram.org/CVE-2026-16102</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16102</guid>
+      <description>A flaw was found in the Dynamic Client Registration (DCR) component of Keycloak, an identity and access management solution. The default DCR policy fails to properly validate the claim path for User Property mappers, allowing them to write values to…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 13:50:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15573 · 8.1 HIGH — Keycloak-services: keycloak-services: authorization bypass via unnormalized uri matching in pathmatcher</title>
+      <link>https://vulnogram.org/CVE-2026-15573</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15573</guid>
+      <description>A flaw was found in Keycloak&apos;s Authorization Services. The component responsible for matching request paths to security policies (PathMatcher) does not properly normalize URIs before comparison. By adding extra characters like a trailing slash or mat…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 13:50:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16443 · 7.4 HIGH 🌩️ — Keycloak-services: keycloak-services: saml broker metadata import disables response signature validation</title>
+      <link>https://vulnogram.org/CVE-2026-16443</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16443</guid>
+      <description>A flaw was found in the SAML metadata import functionality of the keycloak-services component, which is the core engine for identity brokering in Red Hat Build of Keycloak. When importing identity provider metadata that lacks specific usage attribute…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 05 Aug 2026 13:44:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71227 · 5.1 MEDIUM — Libkcapi: infinite loop denial of service in libkcapi _kcapi_aio_read_all() due to unhandled io_getevents() timeout return</title>
+      <link>https://vulnogram.org/CVE-2026-71227</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71227</guid>
+      <description>A flaw was found in libkcapi. A local attacker can influence an application that uses the Asynchronous Input/Output (AIO) interface. By reusing an AIO-enabled handle after a prior completion error, the _kcapi_aio_read_all() function can enter a non-t…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 12:42:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71226 · 7.3 HIGH — Libkcapi: memory corruption via uncanceled aio requests on error in libkcapi&apos;s one-shot aio path</title>
+      <link>https://vulnogram.org/CVE-2026-71226</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71226</guid>
+      <description>Memory Corruption via Uncanceled AIO Requests on Error: libkcapi&apos;s one-shot AIO path can return an error before all submitted IOCBs are drained, allowing later kernel writes into caller-owned output buffers.</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 12:37:17 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-71225 · 6.5 MEDIUM 🌩️ — Libkcapi: iv reuse in libkcapi one-shot symmetric cipher chunking causes cipher state reset across chunk boundaries</title>
       <link>https://vulnogram.org/CVE-2026-71225</link>
@@ -367,66 +424,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 30 Jul 2026 14:01:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18382 · 6.8 MEDIUM — Project-koku/koku-metrics-operator: koku-metrics-operator: service-account client credentials sent to user-controlled token_url</title>
-      <link>https://vulnogram.org/CVE-2026-18382</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18382</guid>
-      <description>A flaw was found in koku-metrics-operator. The operator&apos;s CostManagementMetricsConfig custom resource allows a user able to edit the CR to specify an arbitrary OAuth token endpoint. When authentication.type is set to service-account, the operator sen…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 30 Jul 2026 12:00:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18378 · 7.6 HIGH — Project-koku/koku-metrics-operator: koku-metrics-operator: cluster pull-secret token exfiltration via user-controlled api_url (ssrf / confused deputy)</title>
-      <link>https://vulnogram.org/CVE-2026-18378</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18378</guid>
-      <description>A flaw was found in koku-metrics-operator. The operator&apos;s CostManagementMetricsConfig custom resource allows user able to edit the CR to specify an arbitrary upload URL. When authentication.type is set to token (the default), the cluster-global Red H…</description>
-      <category>High</category>
-      <pubDate>Thu, 30 Jul 2026 12:00:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18381 · 7.6 HIGH — Project-koku/koku-metrics-operator: koku-metrics-operator: operator service-account token exfiltration via user-controlled prometheus service_address</title>
-      <link>https://vulnogram.org/CVE-2026-18381</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18381</guid>
-      <description>A flaw was found in the koku-metrics-operator for Red Hat OpenShift. The operator&apos;s CostManagementMetricsConfig custom resource allows a user able to edit the CR to specify an arbitrary upload URL. The operator attaches its own Kubernetes service-acc…</description>
-      <category>High</category>
-      <pubDate>Thu, 30 Jul 2026 12:00:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18369 · 5.8 MEDIUM 🌩️ — Dogtag-pki: pki-core: redhat-pki: pki: acme http-01 validation ssrf via ip literal identifiers and unvalidated redirects</title>
-      <link>https://vulnogram.org/CVE-2026-18369</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18369</guid>
-      <description>A flaw was found in Dogtag PKI&apos;s ACME responder where the HTTP-01 challenge validator accepts IP address literals as dns identifiers and follows HTTP redirects without validating that the target is a public address. An unauthenticated ACME account ho…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 10:32:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16531 · 5.3 MEDIUM 🌩️ — Pcp: pcp: arbitrary file creation via path traversal in pmproxy logger servlet</title>
-      <link>https://vulnogram.org/CVE-2026-16531</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16531</guid>
-      <description>An unauthenticated remote attacker can exploit a path traversal vulnerability in the PCP pmproxy logger servlet using a crafted hostname. This allows arbitrary file and directory creation, potentially leading to a denial of service.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 05:41:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16529 · 7.5 HIGH 🌩️ — Pcp: pcp: denial of service due to signed integer overflow</title>
-      <link>https://vulnogram.org/CVE-2026-16529</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16529</guid>
-      <description>A signed integer overflow in the PCP __pmGetPDU() function can be exploited via crafted network packets during PDU processing or SASL negotiation. This permanently blinds the affected daemon, resulting in a total denial of service (DoS) for subsequen…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 05:30:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16527 · 7.3 HIGH 🌩️ — Pcp: pcp pmproxy: unauthenticated access to /store endpoint allows bypassing pmcd access rules</title>
-      <link>https://vulnogram.org/CVE-2026-16527</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16527</guid>
-      <description>An unauthenticated remote attacker can bypass access controls by sending crafted requests to the PCP pmproxy /store endpoint. This allows the attacker to overwrite any PMDA metric, leading to arbitrary code execution and system takeover.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 05:30:16 GMT</pubDate>
     </item>
   </channel>
 </rss>

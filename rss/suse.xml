@@ -11,7 +11,7 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 05 Aug 2026 10:18:05 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 15:06:04 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-44945 · 9.1 CRITICAL — Cross-Cluster Impersonation Confused-Deputy Privilege Escalation</title>
       <link>https://vulnogram.org/CVE-2026-44945</link>
@@ -28,6 +28,40 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 05 Aug 2026 09:48:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55997 · 8.8 HIGH — Long-lived Rancher registration token exposed in plaintext</title>
+      <link>https://vulnogram.org/CVE-2026-55997</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55997</guid>
+      <description>Rancher issues long-lived registration tokens to authenticate nodes and agents joining a downstream cluster. These tokens were stored and exposed in plaintext with no expiration, so a malicious user could obtain one either through the Rancher API, et…</description>
+      <category>High</category>
+      <pubDate>Wed, 05 Aug 2026 07:53:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55998 · 5.3 MEDIUM 🌩️ — Cluster Existence Oracle via Unauthenticated Import Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-55998</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55998</guid>
+      <description>The endpoint /v3/import/{token}_{clusterId}.yaml retrieves the cluster object before validating the token. When a valid cluster ID references a cluster that has private registry secrets configured, a nil pointer dereference in pkg/systemtemplate/priv…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 05 Aug 2026 07:51:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59675 · 7.5 HIGH 🌩️ — Rancher Audit-Log Middleware Unauthenticated Memory Exhaustion Denial of Service</title>
+      <link>https://vulnogram.org/CVE-2026-59675</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59675</guid>
+      <description>When API audit logging is enabled, the middleware reads the entire HTTP request body into memory without enforcing a size limit on login endpoints. Because the audit middleware is positioned earlier in the handler chain than Rancher&apos;s APIBodyLimiting…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 05 Aug 2026 07:49:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55996 · 4.3 MEDIUM — Unauthenticated Denial-of-Service via TLS SAN Stuffing in Rancher and cattle-cluster-agent</title>
+      <link>https://vulnogram.org/CVE-2026-55996</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55996</guid>
+      <description>A denial-of-service vulnerability was identified in multiple TLS listeners in Rancher. Both the cattle-cluster-agent component running in downstream clusters and the Rancher server itself use the dynamiclistener library to serve TLS traffic. Without…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 05 Aug 2026 07:46:43 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-59678 · 7.1 HIGH — portprotonqt allows any users to mount and unmount arbitrary file systems and modify the network configuration via NetworkManager</title>
@@ -387,39 +421,6 @@
       <description>An Insecure Temporary File vulnerability in openSUSE sdbootutil allows local users to pre-create a directory to achieve various effects like: * gain access to possible private information found in /var/lib/pcrlock.d * manipulate the data backed up in…</description>
       <category>High</category>
       <pubDate>Wed, 25 Feb 2026 10:59:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-62878 · 9.9 CRITICAL — Local Path Provisioner vulnerable to Path Traversal via parameters.pathPattern</title>
-      <link>https://vulnogram.org/CVE-2025-62878</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-62878</guid>
-      <description>A malicious user can manipulate the parameters.pathPattern to create PersistentVolumes in arbitrary locations on the host node, potentially overwriting sensitive files or gaining access to unintended directories.</description>
-      <category>Critical</category>
-      <pubDate>Wed, 25 Feb 2026 10:49:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-67601 · 8.3 HIGH 🌩️ — Rancher CLI skips TLS verification on Rancher CLI login command</title>
-      <link>https://vulnogram.org/CVE-2025-67601</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-67601</guid>
-      <description>A vulnerability has been identified within Rancher Manager, where using self-signed CA certificates and passing the -skip-verify flag to the Rancher CLI login command without also passing the –cacert flag results in the CLI attempting to fetch CA cer…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Feb 2026 10:36:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-67860 · 3.8 LOW — NeuVector scanner insecurely handles passwords as command arguments</title>
-      <link>https://vulnogram.org/CVE-2025-67860</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-67860</guid>
-      <description>A vulnerability has been identified in the NeuVector scanner where the scanner process accepts registry and controller credentials as command-line arguments, potentially exposing sensitive credentials to local users.</description>
-      <category>Low</category>
-      <pubDate>Wed, 25 Feb 2026 10:33:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-14338 · 8.5 HIGH — Polkit authentication dis isabled by default in inputplumber</title>
-      <link>https://vulnogram.org/CVE-2025-14338</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-14338</guid>
-      <description>Polkit authentication dis isabled by default and a race condition in the Polkit authorization check in versions before v0.69.0 can lead to the same issues as in CVE-2025-66005.</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Jan 2026 11:55:31 GMT</pubDate>
     </item>
   </channel>
 </rss>
