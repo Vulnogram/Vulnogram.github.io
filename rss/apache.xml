@@ -11,7 +11,91 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 06 Aug 2026 10:19:32 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 12:31:31 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-57818 — Apache CXF: OAuth2 Authorization Code Replay via TOCTOU in JCacheCodeDataProvider</title>
+      <link>https://vulnogram.org/CVE-2026-57818</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57818</guid>
+      <description>A race condition in JCacheCodeDataProvider allows an attacker to redeem a single authorization code multiple times via concurrent requests, resulting in the issuance of multiple distinct, valid access tokens. Users are recommended to upgrade to versi…</description>
+      <pubDate>Thu, 06 Aug 2026 11:24:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61466 — Apache CXF: OAuth2 Dynamic Client Registration Scope Self-Escalation</title>
+      <link>https://vulnogram.org/CVE-2026-61466</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61466</guid>
+      <description>In Apache CXF&apos;s OAuth2 Dynamic Client Registration endpoint, the authorization server accepts and stores the `scope` value supplied in the client registration request verbatim, without validating it against an AS-defined allowlist. This could lead to…</description>
+      <pubDate>Thu, 06 Aug 2026 11:24:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63687 — Apache CXF: JwtRequestCodeFilter silently overrides outer PKCE and nonce parameters</title>
+      <link>https://vulnogram.org/CVE-2026-63687</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63687</guid>
+      <description>Apache CXF&apos;s JwtRequestCodeFilter copies all claims from a signed request JWT into the authorization parameter map without excluding security-sensitive parameters. A client that can produce a validly-signed request JWT (e.g., one whose client_secret…</description>
+      <pubDate>Thu, 06 Aug 2026 11:23:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65583 — Apache CXF: Self-issued ID token claims validation skipped</title>
+      <link>https://vulnogram.org/CVE-2026-65583</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65583</guid>
+      <description>Apache CXF’s OIDC relying-party token validation could accept self-issued ID tokens without enforcing required claim checks (issuer/subject/audience/time and sub_jwk binding), enabling authentication bypass with crafted tokens. However, note that sel…</description>
+      <pubDate>Thu, 06 Aug 2026 11:23:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68079 — Apache CXF: DefaultEncryptingCodeDataProvider allows unlimited authorization code replay</title>
+      <link>https://vulnogram.org/CVE-2026-68079</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68079</guid>
+      <description>In Apache CXF&apos;s DefaultEncryptingCodeDataProvider, a captured authorization code can be redeemed an unlimited number of times due to a flaw in the implementation of the removeCodeGrant functionality. This violates the RFC requirement that &quot;The author…</description>
+      <pubDate>Thu, 06 Aug 2026 11:22:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68481 — Apache CXF: Revocation bypass in DefaultEncryptingOAuthDataProvider</title>
+      <link>https://vulnogram.org/CVE-2026-68481</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68481</guid>
+      <description>In Apache CXF&apos;s DefaultEncryptingOAuthDataProvider, revoked access tokens still decrypt successfully, and TokenIntrospectionService reports active:true. The same applies to refresh tokens. This violates the RFC stipulations that &apos;The authorization se…</description>
+      <pubDate>Thu, 06 Aug 2026 11:22:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65432 — Apache CXF: XXE via WSDL/XSD import parsing</title>
+      <link>https://vulnogram.org/CVE-2026-65432</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65432</guid>
+      <description>Apache CXF reads a top-level WSDL through its hardened StaxUtils path, which disables XML DTDs and external entities. However, any &lt;wsdl:import&gt; or &lt;xsd:import&gt; referenced from that top-level WSDL is handed off to WSDL4J, which does not disable DOCTY…</description>
+      <pubDate>Thu, 06 Aug 2026 10:26:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-57817 — Apache CXF: The authorization code hash (c_hash) is not enforced for the hybrid OIDC flow</title>
+      <link>https://vulnogram.org/CVE-2026-57817</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57817</guid>
+      <description>The OpenID Connect Core 1.0 specification mandates that the RP MUST validate the `c_hash` parameter when operating in the Hybrid Flow. If an Apache CXF RP is integrated with a non-compliant or misconfigured Identity Provider (IdP) that omits the `c_h…</description>
+      <pubDate>Thu, 06 Aug 2026 10:24:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66909 — Apache CXF: Unsafe deserialization of inbound JMS ObjectMessage</title>
+      <link>https://vulnogram.org/CVE-2026-66909</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66909</guid>
+      <description>Apache CXF&apos;s JMS transport deserializes the body of any inbound JMS ObjectMessage using native Java deserialization, with no type restrictions in place. Any attacker able to place a message on the service&apos;s JMS destination can submit a malicious seri…</description>
+      <pubDate>Thu, 06 Aug 2026 10:23:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64958 — Apache CXF: Denial of service via message header attachments</title>
+      <link>https://vulnogram.org/CVE-2026-64958</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64958</guid>
+      <description>An incomplete fix for CVE-2026-50645 means that it is still possible to perform a denial of service attack on Apache CXF by sending a message with many attachment headers. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which f…</description>
+      <pubDate>Thu, 06 Aug 2026 10:13:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-57819 — Apache CXF: No default restriction on the amount of form parameters per message</title>
+      <link>https://vulnogram.org/CVE-2026-57819</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57819</guid>
+      <description>Apache CXF allows to set a limit on the number of form parameters in a JAX-RS message via the &quot;maxFormParameterCount&quot; configuration option. However, no default limit is set which may lead to denial of service attacks when processing requests with ver…</description>
+      <pubDate>Thu, 06 Aug 2026 10:12:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54225 — Apache CXF: Denial of Service attack via large attachments</title>
+      <link>https://vulnogram.org/CVE-2026-54225</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54225</guid>
+      <description>Apache CXF allows to control the maximum attachment size via the &quot;attachment-max-size&quot;. Prior to Apache CXF 4.2.3 and 4.1.8 and 3.6.12, there was no default placed on this size, meaning that a denial of service attack is possible if the user doesn&apos;t…</description>
+      <pubDate>Thu, 06 Aug 2026 10:11:41 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-64640 · 5.3 MEDIUM — Apache Polaris: register endpoint reads attacker-controlled storage location before allowed-locations validation</title>
       <link>https://vulnogram.org/CVE-2026-64640</link>
@@ -299,108 +383,6 @@
       <description>Authorization handling for Parameter Context validation requests in Apache NiFi 1.10.0 through 2.10.0 allows clients with read access to submit proposed Parameter values. The proposed values override current configuration, enabling users with read ac…</description>
       <category>High</category>
       <pubDate>Mon, 03 Aug 2026 19:57:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68979 · 5.9 MEDIUM — Apache NiFi: Missing Authorization for Components Referenced by Parameter Context Updates</title>
-      <link>https://vulnogram.org/CVE-2026-68979</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68979</guid>
-      <description>Apache NiFI 1.10.0 through 2.10.0 provide a Parameter Context update REST API method that does not enforce authorization checking on components referencing Parameter values. Updating a Parameter Context can change parameter values that affect referen…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 03 Aug 2026 19:56:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-61372 · 7.5 HIGH 🌩️ — Apache Jena Fuseki: Web requests using SPARQL Update can escape file restrictions</title>
-      <link>https://vulnogram.org/CVE-2026-61372</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61372</guid>
-      <description>Improper Limitation of a Pathname to a Restricted Directory (&apos;Path Traversal&apos;) vulnerability in Apache Jena Fuseki. This issue affects Apache Jena Fuseki: through 6.1.0. Users are recommended to upgrade to version 6.2.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 15:41:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44615 · 6.5 MEDIUM — Path traversal in NotebookRepo note and folder path composition</title>
-      <link>https://vulnogram.org/CVE-2026-44615</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44615</guid>
-      <description>Path traversal vulnerability in Apache Zeppelin. When FileSystemNotebookRepo is configured, an authenticated attacker with permission to rename a note, or access to folder operations, could supply traversal segments in note or folder paths. Zeppelin…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 31 Jul 2026 11:05:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64607 · 5.3 MEDIUM 🌩️ — Apache HttpComponents Client: Connection Leak on Content-Encoding Decode Error Leads to Pool Exhaustion DoS</title>
-      <link>https://vulnogram.org/CVE-2026-64607</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64607</guid>
-      <description>HttpClient based on the classic i/o model fails to correctly release the underlying connection back to the connection manager if it encounters an invalid or unsupported `Content-Encoding` header value in the response message. Please note this defect…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 10:12:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62391 · 8.1 HIGH — Apache Kyuubi: kyuubi.session.local.dir.allow.list bypass via unprefixed Spark file-conf aliases</title>
-      <link>https://vulnogram.org/CVE-2026-62391</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62391</guid>
-      <description>The security fix for CVE-2025-66518 is incomplete. Any client who can access to Apache Kyuubi Server via Kyuubi frontend protocols can bypass server-side config kyuubi.session.local.dir.allowlist via unprefixed Spark config aliases. This issue affect…</description>
-      <category>High</category>
-      <pubDate>Fri, 31 Jul 2026 09:58:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66756 · 6.9 MEDIUM 🌩️ — Apache Tika: unpack endpoint in tika-server allows configuration with unsecureFeatures=false</title>
-      <link>https://vulnogram.org/CVE-2026-66756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66756</guid>
-      <description>Improper Protection of Alternate Path vulnerability in Apache Tika. This issue affects Apache Tika: from 4.0.0-alpha-1 before 4.0.0-beta-1. Users are recommended to upgrade to version 4.0.0-beta-1, which fixes the issue.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 19:18:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66755 · 5.9 MEDIUM — Apache Tika: Arbitrary Local File Read in ISArchiveParser</title>
-      <link>https://vulnogram.org/CVE-2026-66755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66755</guid>
-      <description>Relative Path Traversal in the ISA-Tab parser in Apache Software Foundation Apache Tika from 1.8 through 3.3.1, and 4.0.0-alpha-1, allows an attacker who can place files in a directory that the application subsequently parses to read arbitrary files…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 30 Jul 2026 19:16:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-23985 · 5.3 MEDIUM — Apache Superset: Regular Expression Denial of Service (ReDoS) in SQL Parser</title>
-      <link>https://vulnogram.org/CVE-2026-23985</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23985</guid>
-      <description>A Regular Expression Denial of Service (ReDoS) vulnerability exists in Apache Superset versions 1.5.0 through 5.0.0. The vulnerability is located in the sql_parse.py component, specifically within the SQL_REGEX used for parsing SQL statements in the…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 30 Jul 2026 16:09:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-23981 · 5.3 MEDIUM — Apache Superset: Improper Authorization in Chart Update allowing Dashboard Modification</title>
-      <link>https://vulnogram.org/CVE-2026-23981</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23981</guid>
-      <description>An Improper Authorization vulnerability exists in Apache Superset allowing an authenticated user with permissions to update charts to modify dashboards they do not own. When updating a chart&apos;s properties via the REST API, a user can provide a list of…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 30 Jul 2026 16:08:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-52680 · 9.8 CRITICAL 🌩️ — Apache Kyuubi: REST batch multipart upload path traversal allows controlled file write</title>
-      <link>https://vulnogram.org/CVE-2026-52680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52680</guid>
-      <description>Apache Kyuubi REST batch multipart upload handling uses the client-supplied multipart filename when creating a temporary uploaded resource. A remote attacker who can access the REST batch upload endpoint can provide path traversal sequences in the fi…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 16:07:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48910 · 6.5 MEDIUM 🌩️ — Apache JSPWiki: Markdown parser allows XSS injection in Markdown error processing</title>
-      <link>https://vulnogram.org/CVE-2026-48910</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48910</guid>
-      <description>A carefully crafted editing request could trigger an XSS vulnerability on Apache JSPWiki when parsing errors on the markdown renderer, which could allow the attacker to execute javascript in the victim&apos;s browser and get some sensitive information abo…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 15:56:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28814 · 7.5 HIGH 🌩️ — Apache JSPWiki: Pre-Authentication Arbitrary Wiki Markup Rendering</title>
-      <link>https://vulnogram.org/CVE-2026-28814</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28814</guid>
-      <description>Arbitrary Wiki Markup rendering due to lack of authentication in Apache JSPWiki up to 2.12.3 allows attacker to obtain sensitive data stored in JSPWiki variables. Users are recommended to upgrade to version 2.12.4 or 3.0.0, which fixes this issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 15:55:28 GMT</pubDate>
     </item>
   </channel>
 </rss>
