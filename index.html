@@ -5630,6 +5630,7 @@ async function showPortalView(orgInfo, userInfo) {
         });
         updateCvePortalDialogTheme();
         setPortalNavConnectionState(true);
+        cveRefreshQuota();
         var button1 = document.getElementById('post1');
         if(button1) {
             if(csCache.portalType == 'test') {
@@ -6138,6 +6139,50 @@ async function cveShowError(err) {
     }
 }
 
+// Update the CVE ID quota meter in the portal header. Non-critical: hides
+// itself quietly on any error (e.g. quota endpoint unavailable). Call on
+// portal view load and after operations that change RESERVED counts
+// (reserve, reject, transfer).
+async function cveRefreshQuota() {
+    var wrap = document.getElementById('cveQuota');
+    if (!wrap || !csClient || typeof csClient.getOrgIdQuota !== 'function') {
+        return;
+    }
+    try {
+        var q = await csClient.getOrgIdQuota();
+        var quota = q && typeof q.id_quota === 'number' ? q.id_quota : null;
+        var used = q && typeof q.total_reserved === 'number' ? q.total_reserved : null;
+        if (quota === null || used === null || quota <= 0) {
+            wrap.classList.add('hid');
+            return;
+        }
+        var available = (typeof q.available === 'number') ? q.available : (quota - used);
+        var m = document.getElementById('cveQuotaMeter');
+        if (m) {
+            m.max = quota;
+            // optimum below low: <50% used renders green, 50-90% amber, >90% red
+            m.low = quota * 0.5;
+            m.high = quota * 0.9;
+            m.optimum = 0;
+            m.value = used;
+        }
+        var t = document.getElementById('cveQuotaText');
+        if (t) {
+            if(used < quota*.70) {
+                t.innerText = used + ' reserved ';
+            } else {
+                t.innerText = used + ' reserved, ' + (quota - used) + ' remaining.';
+            }
+
+        }
+        wrap.title = 'CVE ID quota: ' + used + ' of ' + quota +
+            ' IDs in RESERVED state; ' + available + ' more can be reserved. Publish or reject some to be able reserve more.';
+        wrap.classList.remove('hid');
+    } catch (e) {
+        wrap.classList.add('hid');
+    }
+}
+
 async function cveGetList() {
     var currentReserved = true;
     var cveListFeedback = new feedback(document.getElementById('cveList'), 'spinner');
@@ -6467,6 +6512,7 @@ async function cveBulkTransfer() {
         var m = document.getElementById('cveStatusMessage');
         if (m) m.innerText = 'Transferred ' + ids.join(', ') + ' to ' + targetOrg;
     }
+    cveRefreshQuota();
     await cveGetList();
 }
 
@@ -6515,6 +6561,7 @@ async function cveBulkReject() {
         var m = document.getElementById('cveStatusMessage');
         if (m) m.innerText = 'Rejected ' + ids.join(', ');
     }
+    cveRefreshQuota();
     await cveGetList();
 }
 
@@ -6526,6 +6573,7 @@ async function cveReject(elem, event) {
             if (ret.updated && ret.updated.state == 'REJECTED') {
                 var m = document.getElementById("cveStatusMessage");
                 m.innerText = "Rejected " + id;
+                cveRefreshQuota();
                 await cveGetList();
             }
         } catch (e) {
@@ -6638,6 +6686,7 @@ async function cveTransfer(elem, event) {
         if (typeof showAlert === 'function') {
             showAlert('Transfer successful', msg);
         }
+        cveRefreshQuota();
         if (typeof cveGetList === 'function') await cveGetList();
     } catch (e) {
         portalErrorHandler(e);
@@ -8286,6 +8335,7 @@ async function cveReserveAndRender(yearOffset, number) {
             }
             cveForm.page = 0;
         }
+        cveRefreshQuota();
         await cveGetList();
         return r;
     } catch (e) {
@@ -8358,7 +8408,7 @@ while (j > 1998) {
 pug_html = pug_html + "\u003Coption" + (pug_attr("value", j, true, false)+pug_attr("selected", (reserveSelectedYear == String(j)), true, false)) + "\u003E" + (pug_escape(null == (pug_interp = j) ? "" : pug_interp)) + "\u003C\u002Foption\u003E";
 j--;
 }
-pug_html = pug_html + "\u003C\u002Fselect\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdt\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E\u003C\u002Fspan\u003E\u003Cbutton" + (" class=\"btn vgi-forward\""+" id=\"bulkTransferBtn\" onclick=\"cveBulkTransfer()\""+pug_attr("disabled", true, true, false)) + "\u003ETransfer\u003C\u002Fbutton\u003E\u003Cbutton" + (" class=\"btn vgi-del\""+" id=\"bulkRejectBtn\" onclick=\"cveBulkReject()\""+pug_attr("disabled", true, true, false)) + "\u003EReject\u003C\u002Fbutton\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"flx\"\u003E\u003Clabel id=\"cveUser\"\u003E";
+pug_html = pug_html + "\u003C\u002Fselect\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdt\u003E\u003C\u002Fdl\u003E\u003C\u002Fdetails\u003E\u003C\u002Fspan\u003E\u003Cbutton" + (" class=\"btn vgi-forward\""+" id=\"bulkTransferBtn\" onclick=\"cveBulkTransfer()\""+pug_attr("disabled", true, true, false)) + "\u003ETransfer\u003C\u002Fbutton\u003E\u003Cbutton" + (" class=\"btn vgi-del\""+" id=\"bulkRejectBtn\" onclick=\"cveBulkReject()\""+pug_attr("disabled", true, true, false)) + "\u003EReject\u003C\u002Fbutton\u003E\u003Clabel class=\"lbl flx nobr hid\" id=\"cveQuota\" title=\"CVE ID reservation quota\"\u003E" + (pug_escape(null == (pug_interp = 'Quota ') ? "" : pug_interp)) + "\u003Cmeter id=\"cveQuotaMeter\" min=\"0\" max=\"1\" value=\"0\"\u003E\u003C\u002Fmeter\u003E" + (pug_escape(null == (pug_interp = ' ') ? "" : pug_interp)) + "\u003Cspan class=\"vgi-info\" id=\"cveQuotaText\"\u003E\u003C\u002Fspan\u003E\u003C\u002Flabel\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"flx\"\u003E\u003Clabel id=\"cveUser\"\u003E";
 pug_mixins["userstats"]();
 pug_html = pug_html + "\u003C\u002Flabel\u003E";
 if (userInfo && userInfo.authority && userInfo.authority.active_roles && userInfo.authority.active_roles.includes("ADMIN")) {
