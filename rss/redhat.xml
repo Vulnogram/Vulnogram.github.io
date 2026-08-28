@@ -11,7 +11,56 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 06 Aug 2026 12:31:31 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 19:38:37 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-82343 · 6.1 MEDIUM — Gimp: heap out-of-bounds read and stack out-of-bounds access in psd loader from channel-count handling</title>
+      <link>https://vulnogram.org/CVE-2026-82343</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82343</guid>
+      <description>A flaw was found in the file-psd plugin in GIMP. When processing a specially crafted PSD image file, the plugin does not properly validate the channel-count parameter. This incorrect validation leads to improper memory bounds checking, resulting in b…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 28 Aug 2026 16:26:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82330 · 6.1 MEDIUM — Gimp: heap out-of-bounds read in pvr vq (compressed) decoder due to missing bounds check</title>
+      <link>https://vulnogram.org/CVE-2026-82330</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82330</guid>
+      <description>A flaw was found in the file-pvr plugin in GIMP. When processing a specially crafted PVR image file, the VQ (compressed) decoder does not properly perform memory bounds checking. This missing validation results in a heap out-of-bounds read. This issu…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 28 Aug 2026 14:51:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82328 · 6.1 MEDIUM — Gimp: heap out-of-bounds read in ico loader via unvalidated used_clrs palette count</title>
+      <link>https://vulnogram.org/CVE-2026-82328</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82328</guid>
+      <description>A flaw was found in the file-ico plugin in GIMP. When processing a specially crafted ICO image file, the plugin does not properly validate the used_clrs (palette count) parameter. This incorrect validation leads to improper memory bounds checking, re…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 28 Aug 2026 14:21:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82327 · 5.5 MEDIUM — Libsolv: libsolv: out-of-bounds write in repo_write() via unvalidated directory id from vertical/paged .solv filelist data</title>
+      <link>https://vulnogram.org/CVE-2026-82327</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82327</guid>
+      <description>A flaw was found in libsolv, a dependency-resolution library used by RPM-based package managers such as dnf and zypper to work with .solv repository cache files. When libsolv rewrites a .solv cache file, it reads directory-id values from the file&apos;s c…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 28 Aug 2026 14:21:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18393 · 5.4 MEDIUM — Ffmpeg: ffmpeg: heap buffer overflow in tdsc_load_cursor() via cur_fmt_mono cursor</title>
+      <link>https://vulnogram.org/CVE-2026-18393</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18393</guid>
+      <description>A flaw was found in FFmpeg. The tdsc_load_cursor() function writes beyond the bounds of a heap-allocated buffer when processing crafted TDSC cursor data. A remote attacker could exploit this by supplying a specially crafted video file, potentially le…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 28 Aug 2026 09:05:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80179 · 5.9 MEDIUM 🌩️ — Jwcrypto: jwcrypto: denial of service via malformed jwe tokens</title>
+      <link>https://vulnogram.org/CVE-2026-80179</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80179</guid>
+      <description>A flaw was found in jwcrypto. A remote attacker can send a specially crafted JSON Web Encryption (JWE) token containing numerous period delimiters. This malformed token can force the JWE.deserialize() function to allocate excessive memory, leading to…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 27 Aug 2026 21:14:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-18649 · 7.5 HIGH 🌩️ — Gst-plugins-good: gst-plugins-good: unbounded memory growth in rtph264depay and rtph265depay rtp depayloaders</title>
       <link>https://vulnogram.org/CVE-2026-18649</link>
@@ -376,56 +425,6 @@
       <description>Keycloak allows users to log in using Google accounts and can be configured to only allow users from specific Google Workspace domains. A flaw was found where the token exchange feature, which allows swapping a Google token for a Keycloak token, does…</description>
       <category>Medium</category>
       <pubDate>Fri, 31 Jul 2026 07:08:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18203 · 6.5 MEDIUM — Keycloak-services: keycloak-services: group policy extendchildren matches sibling group path prefixes</title>
-      <link>https://vulnogram.org/CVE-2026-18203</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18203</guid>
-      <description>A flaw was found in the group policy evaluation logic of Keycloak, an identity and access management solution. When a group policy is set to extend permissions to child groups, the system incorrectly uses a simple text-based prefix check to verify gr…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 31 Jul 2026 07:08:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18211 · 4.2 MEDIUM 🌩️ — Keycloak-services: keycloak-services: secure-client-uris policy bypass via localhost-prefixed domains</title>
-      <link>https://vulnogram.org/CVE-2026-18211</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18211</guid>
-      <description>A flaw was found in the secure-client-uris client policy executor within Keycloak core services. This component is responsible for enforcing security requirements on client configurations, such as requiring encrypted connections for redirect URIs. Du…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 07:08:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18208 · 6.5 MEDIUM — Keycloak-services: keycloak-services: inactive out-of-audience token introspection leaks signed jwt claim</title>
-      <link>https://vulnogram.org/CVE-2026-18208</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18208</guid>
-      <description>A flaw was found in the OIDC token introspection endpoint of the keycloak-services component. Keycloak is an open-source identity and access management solution used to secure modern applications and services. The issue occurs when a confidential cli…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 31 Jul 2026 07:08:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16105 · 4.9 MEDIUM — Keycloak-services: keycloak-services: missing per-role authorization on rolecontainerresource composite endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-16105</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16105</guid>
-      <description>A flaw was found in the RoleContainerResource component of Keycloak. The issue occurs because certain name-based endpoints in the admin REST API do not properly enforce authorization checks when managing composite roles. This allows a delegated admin…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 31 Jul 2026 07:03:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18215 · 6.8 MEDIUM — Keycloak-services: keycloak-services: microsoft external access-token exchange bypasses configured tenant</title>
-      <link>https://vulnogram.org/CVE-2026-18215</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18215</guid>
-      <description>Keycloak provides a way to let users log in using Microsoft accounts while restricting access to a specific organization (tenant). A flaw was discovered where this restriction is ignored when using the token exchange feature. This means an attacker w…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 31 Jul 2026 06:48:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18217 · 3.4 LOW 🌩️ — Keycloak-services: keycloak-services: saml http-redirect binding response preserves query string leading to parameter pollution</title>
-      <link>https://vulnogram.org/CVE-2026-18217</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18217</guid>
-      <description>A flaw was found in the SAML protocol implementation of Keycloak, an open-source identity and access management solution. The issue occurs when Keycloak handles SAML authentication requests using the HTTP-Redirect binding. If a client is configured w…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 06:38:25 GMT</pubDate>
     </item>
   </channel>
 </rss>
