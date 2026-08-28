@@ -11,7 +11,7 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 28 Aug 2026 19:38:37 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-75758 · 5.9 MEDIUM — Unbounded recursion between Inspect.List charlist rendering and List.to_string/1 error path in Elixir</title>
       <link>https://vulnogram.org/CVE-2026-75758</link>
@@ -19,6 +19,258 @@
       <description>Uncontrolled Recursion vulnerability in the Elixir standard library allows an attacker who controls a list passed to inspect/1, List.to_string/1, or List.to_charlist/1 to exhaust a BEAM node&apos;s memory. Inspect.List&apos;s charlist branch in lib/elixir/lib/…</description>
       <category>Medium</category>
       <pubDate>Fri, 28 Aug 2026 11:28:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66353 · 5.3 MEDIUM 🌩️ — Doggo vulnerable to cross-site scripting via unescaped date field values</title>
+      <link>https://vulnogram.org/CVE-2026-66353</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66353</guid>
+      <description>Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;) vulnerability in woylie doggo allows Reflected XSS. Doggo.normalize_value/2 in lib/doggo.ex returned date field values wrapped in {:safe, ...}, the Phoenix.HTML mark…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 27 Aug 2026 16:44:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65633 · 7.6 HIGH 🌩️ — Purpose-limited JWT accepted as full bearer authentication in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-65633</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65633</guid>
+      <description>Improper Authentication vulnerability in team-alembic AshAuthentication allows purpose-limited JWTs to be replayed as full bearer API credentials when a resource uses stateless bearer-token verification. The bearer-token authentication helper AshAuth…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 08:03:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66882 · 2.1 LOW 🌩️ — Reflected XSS in AshAuthentication confirmation and magic link interaction forms</title>
+      <link>https://vulnogram.org/CVE-2026-66882</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66882</guid>
+      <description>Improper Neutralization of Input During Web Page Generation (XSS) vulnerability in team-alembic AshAuthentication allows reflected cross-site scripting via the confirmation and magic link interaction forms. When a strategy is configured with require_…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 08:03:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75554 · 2.3 LOW — Explicit organization scopes survive token refresh after membership ends</title>
+      <link>https://vulnogram.org/CVE-2026-75554</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75554</guid>
+      <description>Insufficient Session Expiration vulnerability in the OAuth token refresh grant in hexpm hexpm allows a user removed from an organization to keep reading its private packages. expand_repositories_scope/3 in lib/hexpm/permissions.ex only rewrites the l…</description>
+      <category>Low</category>
+      <pubDate>Mon, 24 Aug 2026 20:15:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75542 · 8.3 HIGH — OAuth token exchange grants repository scopes for organizations the principal cannot access</title>
+      <link>https://vulnogram.org/CVE-2026-75542</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75542</guid>
+      <description>Incorrect Authorization vulnerability in the OAuth token endpoint in hexpm hexpm allows an API key holding the repositories permission to read another organization&apos;s private packages. When an API key is exchanged for a token through the OAuth client_…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 20:14:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47079 · 2.1 LOW — Round-trip Corruption via Improper Entity Escaping in xml_builder</title>
+      <link>https://vulnogram.org/CVE-2026-47079</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47079</guid>
+      <description>Inappropriate Encoding for Output Context vulnerability in joshnuss xml_builder (XmlBuilder module) allows Content Spoofing, Cross-site Scripting. This vulnerability is associated with program files lib/xml_builder.ex and program routines XmlBuilder.…</description>
+      <category>Low</category>
+      <pubDate>Fri, 21 Aug 2026 09:52:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-48590 · 2.1 LOW — Element and Attribute Names Injected Verbatim into XML Output in xml_builder</title>
+      <link>https://vulnogram.org/CVE-2026-48590</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48590</guid>
+      <description>XML Injection vulnerability in joshnuss xml_builder (XmlBuilder module) allows Content Spoofing, XML Injection. This vulnerability is associated with program files lib/xml_builder.ex and program routines XmlBuilder.generate/1, XmlBuilder.generate/2,…</description>
+      <category>Low</category>
+      <pubDate>Fri, 21 Aug 2026 09:51:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47080 · 2.1 LOW — CDATA Section Breakout via Unsanitised ]]&gt; in xml_builder</title>
+      <link>https://vulnogram.org/CVE-2026-47080</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47080</guid>
+      <description>XML Injection vulnerability in joshnuss xml_builder (XmlBuilder module) allows Content Spoofing, XML Injection. This vulnerability is associated with program files lib/xml_builder.ex and program routines XmlBuilder.generate/1, XmlBuilder.generate/2,…</description>
+      <category>Low</category>
+      <pubDate>Fri, 21 Aug 2026 09:49:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75484 · 6.9 MEDIUM 🌩️ — HTTP/2 header field values containing CR, LF or NUL are passed to the application unvalidated in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-75484</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75484</guid>
+      <description>Improper Neutralization of CRLF Sequences (&apos;CRLF Injection&apos;) vulnerability in mtrudel bandit allows an unauthenticated remote attacker to smuggle CR, LF, or NUL characters into application-visible request headers via HTTP/2. Bandit.HTTP2.Stream.read_…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 20 Aug 2026 21:11:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74836 · 8.7 HIGH 🌩️ — HTTP/2 connection-window starvation pins Plug processes indefinitely in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-74836</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74836</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in mtrudel bandit allows an unauthenticated remote attacker to pin an unbounded number of HTTP/2 stream processes indefinitely via connection-level flow control. When a stream&apos;s respo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 20 Aug 2026 21:11:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53424 · 9.1 CRITICAL 🌩️ — Missing one-time-use enforcement in Samly allows replay of SAML bearer assertions</title>
+      <link>https://vulnogram.org/CVE-2026-53424</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53424</guid>
+      <description>Authentication Bypass by Capture-replay vulnerability in dropbox samly allows an attacker to authenticate as the subject of a captured SAML assertion by resubmitting it. Samly.Helper.decode_idp_auth_resp/3 in lib/samly/helper.ex calls esaml_sp:valida…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 20 Aug 2026 17:27:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53425 · 7.6 HIGH 🌩️ — Missing InResponseTo validation in Samly allows acceptance of unsolicited SAML responses</title>
+      <link>https://vulnogram.org/CVE-2026-53425</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53425</guid>
+      <description>Insufficient Verification of Data Authenticity vulnerability in dropbox samly allows an attacker to establish an authenticated session using a SAML response the service provider never requested. Samly.SPHandler.validate_authresp/3 in lib/samly/sp_han…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 20 Aug 2026 17:26:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67581 · 8.7 HIGH 🌩️ — On-chain transfer proof is not single-use in mpp EVM payment method, enabling cross-challenge replay</title>
+      <link>https://vulnogram.org/CVE-2026-67581</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67581</guid>
+      <description>Authentication Bypass by Capture-replay in ZenHive mpp allows an unauthenticated remote client to obtain paid resources by resubmitting one settled on-chain transfer. MPP.Methods.EVM.verify/2 accepts a transaction-hash credential and matches a transf…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 19 Aug 2026 17:20:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73541 · 8.3 HIGH 🌩️ — Tempo fee sponsorship in mpp bounds each transaction but not aggregate exposure, allowing concurrent sponsor-wallet drain</title>
+      <link>https://vulnogram.org/CVE-2026-73541</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73541</guid>
+      <description>Allocation of Resources Without Limits or Throttling in ZenHive mpp allows an unauthenticated remote client to drain the fee-payer wallet through concurrent sponsored payments, denying service to legitimate payers once it is empty. MPP.Methods.Tempo.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 19 Aug 2026 17:20:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73136 · 8.2 HIGH 🌩️ — Static memo configuration in mpp Tempo disables per-challenge attribution binding, enabling third-party replay</title>
+      <link>https://vulnogram.org/CVE-2026-73136</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73136</guid>
+      <description>Authentication Bypass by Capture-replay in ZenHive mpp allows an unauthenticated third party to obtain paid resources by replaying a transfer settled by an unrelated payer. MPP.Methods.Tempo normally binds a settled TIP-20 TransferWithMemo to the spe…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 19 Aug 2026 17:19:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73829 · 6.3 MEDIUM 🌩️ — Non-atomic hash-credential dedup in mpp Tempo allows replay of a confirmed payment under a concurrent race</title>
+      <link>https://vulnogram.org/CVE-2026-73829</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73829</guid>
+      <description>Time-of-check Time-of-use (TOCTOU) Race Condition in ZenHive mpp allows an unauthenticated remote client to redeem one confirmed on-chain payment for multiple paid-resource accesses. The type=&quot;hash&quot; credential path in MPP.Methods.Tempo.verify/2 guard…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 19 Aug 2026 17:19:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-43971 · 6.3 MEDIUM 🌩️ — Link Header Directive Smuggling via Unescaped target/rel/Attribute Keys in cow_link:link/1</title>
+      <link>https://vulnogram.org/CVE-2026-43971</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-43971</guid>
+      <description>Improper Encoding or Escaping of Output vulnerability in ninenines cowlib allows Link header directive smuggling via unescaped special characters in cow_link:link/1. cow_link:do_link/1 in cowlib interpolates the target URI, rel value, and attribute k…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 18 Aug 2026 09:01:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67579 · 7.5 HIGH — Filter expression injection via forged keyset pagination cursor in Ash</title>
+      <link>https://vulnogram.org/CVE-2026-67579</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67579</guid>
+      <description>Deserialization of Untrusted Data vulnerability in ash-project ash allows an unauthenticated attacker to inject a filter expression through a forged keyset pagination cursor, resulting in SQL injection or code execution depending on the data layer. R…</description>
+      <category>High</category>
+      <pubDate>Wed, 12 Aug 2026 20:04:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64941 · 2.1 LOW 🌩️ — Open redirect in Phoenix.LiveView.validate_local_url!/2 via ASCII tab, LF and CR</title>
+      <link>https://vulnogram.org/CVE-2026-64941</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64941</guid>
+      <description>URL Redirection to Untrusted Site (&apos;Open Redirect&apos;) vulnerability in phoenixframework phoenix_live_view allows an attacker to send a victim&apos;s browser to an origin of the attacker&apos;s choosing via a :to value containing ASCII tab, LF or CR. redirect/2 v…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 10 Aug 2026 11:05:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70395 · 2.1 LOW — Predicate injection in manage_relationship belongs_to lookup discloses secret lookup keys in Ash</title>
+      <link>https://vulnogram.org/CVE-2026-70395</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70395</guid>
+      <description>Improper Neutralization of Special Elements in Data Query Logic vulnerability in ash-project ash allows an attacker to forge a relationship to a record they cannot name, and to recover the secret value used to look it up. When manage_relationship is…</description>
+      <category>Low</category>
+      <pubDate>Sun, 09 Aug 2026 18:17:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-69659 · 5.9 MEDIUM — Memory exhaustion via unbounded deserialization of keyset pagination cursors in Ash.Page.Keyset</title>
+      <link>https://vulnogram.org/CVE-2026-69659</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-69659</guid>
+      <description>Uncontrolled Resource Consumption vulnerability in ash-project ash allows an attacker to exhaust the memory of the node via a crafted keyset pagination cursor. Read actions with keyset pagination deserialize the client-supplied page[:after] or page[:…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 09 Aug 2026 18:01:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67585 · 8.7 HIGH 🌩️ — Atom Exhaustion via _entities Representation Keys in DivvyPayHQ absinthe_federation</title>
+      <link>https://vulnogram.org/CVE-2026-67585</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67585</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in DivvyPayHQ absinthe_federation allows an unauthenticated remote attacker to abort the Erlang VM via crafted _entities representation keys. Every key of every object in the represen…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 07 Aug 2026 16:42:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66838 · 5.9 MEDIUM — SQL injection via the :comment option in Postgrex.stream/4</title>
+      <link>https://vulnogram.org/CVE-2026-66838</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66838</guid>
+      <description>Improper Neutralization of Special Elements used in an SQL Command (&apos;SQL Injection&apos;) vulnerability in elixir-ecto postgrex allows SQL Injection via the :comment option of Postgrex.stream/4. An attacker who can influence that value can close the comme…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 07 Aug 2026 12:20:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68750 · 8.2 HIGH 🌩️ — Quadratic sibling re-flattening in the html_sanitize_ex traversal engine allows CPU-exhaustion denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-68750</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68750</guid>
+      <description>Inefficient Algorithmic Complexity vulnerability in the traversal engine in rrrene html_sanitize_ex allows an unauthenticated remote attacker to exhaust server CPU and memory via a flat run of sibling elements in sanitized HTML. The list clause of Ht…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 06 Aug 2026 14:50:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68749 · 8.2 HIGH 🌩️ — Quadratic regex backtracking in the html_sanitize_ex CSS scrubber allows CPU-exhaustion denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-68749</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68749</guid>
+      <description>Inefficient Regular Expression Complexity vulnerability in the CSS scrubber in rrrene html_sanitize_ex allows an unauthenticated remote attacker to exhaust server CPU via a long CSS declaration in sanitized HTML. The declaration regex in HtmlSanitize…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 06 Aug 2026 14:50:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68747 · 2.3 LOW 🌩️ — CSS sanitizer allowlist bypass in html_sanitize_ex via non-declaration input</title>
+      <link>https://vulnogram.org/CVE-2026-68747</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68747</guid>
+      <description>Improper Neutralization of Special Elements in Output Used by a Downstream Component (&apos;Injection&apos;) vulnerability in the CSS scrubber in rrrene html_sanitize_ex allows an unauthenticated remote attacker to inject CSS at-rules, including an import of a…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 06 Aug 2026 14:50:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66829 · 2.3 LOW 🌩️ — html_sanitize_ex HTML5 scrubber keeps attacker-supplied meta refresh, allowing forced cross-origin redirection</title>
+      <link>https://vulnogram.org/CVE-2026-66829</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66829</guid>
+      <description>URL Redirection to Untrusted Site (&apos;Open Redirect&apos;) vulnerability in the HTML5 scrubber in rrrene html_sanitize_ex allows a remote attacker to force visitors of a page to navigate to a site of the attacker&apos;s choosing via a &lt;meta http-equiv=&quot;refresh&quot;&gt;…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 06 Aug 2026 14:49:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66370 · 4.8 MEDIUM 🌩️ — html_sanitize_ex HTML5 scrubber keeps attacker-supplied form-association attributes, allowing form hijacking</title>
+      <link>https://vulnogram.org/CVE-2026-66370</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66370</guid>
+      <description>URL Redirection to Untrusted Site (&apos;Open Redirect&apos;) vulnerability in the HTML5 scrubber in rrrene html_sanitize_ex allows an unauthenticated remote attacker to retarget a form already on the rendering page and receive whatever the victim submits, inc…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 06 Aug 2026 14:49:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66843 · 2.3 LOW 🌩️ — html_sanitize_ex HTML5 scrubber keeps attacker-supplied `&lt;object&gt;` elements, allowing untrusted content embedding</title>
+      <link>https://vulnogram.org/CVE-2026-66843</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66843</guid>
+      <description>Inclusion of Functionality from Untrusted Control Sphere vulnerability in the HTML5 scrubber in rrrene html_sanitize_ex allows a remote attacker to load a document of their choosing into a trusted page via the data attribute of an &lt;object&gt; element in…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 06 Aug 2026 14:48:20 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-66885 · 6.8 MEDIUM — Livebook Teams identity callback lacks state binding, allowing login CSRF</title>
@@ -191,260 +443,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 27 Jul 2026 15:39:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59251 · 8.7 HIGH 🌩️ — Denial of service via exponential certificate policy tree growth in path validation</title>
-      <link>https://vulnogram.org/CVE-2026-59251</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59251</guid>
-      <description>Allocation of resources without limits in Erlang/OTP public_key certificate path validation allows a remote unauthenticated attacker to cause denial of service by sending a crafted X.509 certificate chain during the TLS handshake. During RFC 5280 pol…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 27 Jul 2026 15:30:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59250 · 8.3 HIGH 🌩️ — Megaco flex scanner buffer overflow via oversized property parm name</title>
-      <link>https://vulnogram.org/CVE-2026-59250</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59250</guid>
-      <description>Classic buffer overflow in the Erlang/OTP megaco flex scanner C driver allows a remote unauthenticated attacker to corrupt the driver&apos;s memory (and potentially achieve remote code execution or a denial-of-service crash) by sending a single text-encod…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 27 Jul 2026 15:25:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55953 · 9.1 CRITICAL 🌩️ — TLS 1.2 and DTLS client accepts unoffered anonymous cipher suite, bypassing server authentication</title>
-      <link>https://vulnogram.org/CVE-2026-55953</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55953</guid>
-      <description>The Erlang/OTP ssl TLS 1.2 (and earlier) and DTLS client does not verify that the cipher suite selected by the server in ServerHello was among the suites offered by the client in ClientHello. The client-side tls_handshake:hello/5 handler validates th…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 27 Jul 2026 15:21:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55737 · 5.1 MEDIUM — Heap pointer corruption via signed/unsigned mismatch in LARGE_TUPLE_EXT decoding in erts external term format decoder</title>
-      <link>https://vulnogram.org/CVE-2026-55737</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55737</guid>
-      <description>Signed to Unsigned Conversion Error and Out-of-bounds Write vulnerability in Erlang OTP erts allows an attacker who can supply a crafted Erlang external term format (ETF) binary to binary_to_term/1 to corrupt the BEAM heap pointer and crash the virtu…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 27 Jul 2026 15:13:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47078 · 4.8 MEDIUM — Relative path traversal in zip:unzip/zip:extract via check_dir_level depth-counter bypass</title>
-      <link>https://vulnogram.org/CVE-2026-47078</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47078</guid>
-      <description>Relative Path Traversal vulnerability in Erlang OTP (stdlib zip module) allows writing files outside the intended extraction directory via a crafted zip archive. zip:unzip/1,2 and zip:extract/1,2 validate entry paths using zip:check_dir_level/2, whic…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 27 Jul 2026 15:03:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42792 · 6.3 MEDIUM 🌩️ — epmd permanent DoS via EMFILE on accept(2) in erts</title>
-      <link>https://vulnogram.org/CVE-2026-42792</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42792</guid>
-      <description>Improper Handling of Exceptional Conditions vulnerability in Erlang OTP erts (epmd) allows an unauthenticated remote attacker to permanently terminate the Erlang Port Mapper Daemon (epmd) via connection slot exhaustion. The do_accept function in erts…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 27 Jul 2026 14:58:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58227 · 8.7 HIGH 🌩️ — TLS/DTLS denial of service via unbounded recursion on cross-signed peer certificate chain</title>
-      <link>https://vulnogram.org/CVE-2026-58227</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58227</guid>
-      <description>The Erlang/OTP ssl application does not detect cycles when reconstructing an incomplete peer certificate chain during a TLS or DTLS handshake. In ssl_certificate:handle_incomplete_chain/5, the received chain is passed to ssl_certificate:build_certifi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 27 Jul 2026 14:39:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65623 · 8.7 HIGH 🌩️ — Quadratic CPU blow-up reassembling fragmented WebSocket messages in Bandit</title>
-      <link>https://vulnogram.org/CVE-2026-65623</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65623</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in mtrudel bandit allows unauthenticated remote denial of service via CPU exhaustion during WebSocket fragment reassembly. The size guard &apos;Elixir.Bandit.WebSocket.Connection&apos;:oversize_message?/2 called…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 24 Jul 2026 16:32:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59252 · 8.2 HIGH 🌩️ — Missing gas_limit validation in mpp Tempo fee-payer enables wallet drain</title>
-      <link>https://vulnogram.org/CVE-2026-59252</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59252</guid>
-      <description>Improper Validation of Specified Quantity in Input in ZenHive mpp allows an unauthenticated remote client to drain the fee-payer wallet, resulting in denial of service for legitimate clients. When the mpp Elixir library is configured as fee payer (fe…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 17 Jul 2026 10:11:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59694 · 8.3 HIGH 🌩️ — Unbounded access list in mpp Tempo fee-payer inflates gas cost per payment</title>
-      <link>https://vulnogram.org/CVE-2026-59694</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59694</guid>
-      <description>Improper Validation of Specified Quantity in Input in ZenHive mpp allows an unauthenticated remote client to inflate the fee-payer&apos;s gas cost per payment by a large multiplier, degrading the sponsor&apos;s operating margin. When the mpp Elixir library is…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 17 Jul 2026 10:11:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59695 · 8.3 HIGH 🌩️ — Unbounded max_fee_per_gas in mpp Tempo fee-payer enables single-request wallet drain</title>
-      <link>https://vulnogram.org/CVE-2026-59695</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59695</guid>
-      <description>Improper Validation of Specified Quantity in Input in ZenHive mpp allows an unauthenticated remote client to drain the fee-payer wallet in a single request by naming an arbitrarily high gas price. When the mpp Elixir library is configured as fee paye…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 17 Jul 2026 10:11:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59249 · 6.3 MEDIUM 🌩️ — Sign-tolerant HTTP/1 chunk-size parser in Mint enables response smuggling against strict intermediaries on pooled connections</title>
-      <link>https://vulnogram.org/CVE-2026-59249</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59249</guid>
-      <description>Inconsistent interpretation of HTTP requests (HTTP response smuggling) vulnerability in elixir-mint mint allows a malicious HTTP/1 server to desynchronize a strict intermediary and the Mint client on the same pooled connection, enabling response-queu…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Jul 2026 11:39:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55954 · 9.1 CRITICAL 🌩️ — Missing ID token claim validation in ueberauth_apple allows account takeover</title>
-      <link>https://vulnogram.org/CVE-2026-55954</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55954</guid>
-      <description>Authentication Bypass by Spoofing vulnerability in ueberauth ueberauth_apple allows account takeover via unvalidated ID token claims. The Ueberauth.Strategy.Apple.Token.payload/2 function verifies the JWT signature of the callback id_token against Ap…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 15:08:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59246 · 6.3 MEDIUM 🌩️ — Zero-length HTTP/2 CONTINUATION frames bypass Mint&apos;s header-block byte-size cap and exhaust client memory</title>
-      <link>https://vulnogram.org/CVE-2026-59246</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59246</guid>
-      <description>Allocation of resources without limits vulnerability in elixir-mint mint allows a remote HTTP/2 server to exhaust memory on the client host and cause a denial of service. The Mint.HTTP2.handle_continuation/3 function in lib/mint/http2.ex accumulates…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 08:37:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58229 · 8.2 HIGH 🌩️ — Unbounded HTTP/1 response-header and chunked-trailer accumulation in Mint causes memory-exhaustion DoS</title>
-      <link>https://vulnogram.org/CVE-2026-58229</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58229</guid>
-      <description>Allocation of resources without limits vulnerability in elixir-mint mint allows a remote HTTP server to exhaust memory on the client host and cause a denial of service. The Mint.HTTP1.decode_headers/5 and Mint.HTTP1.decode_trailer_headers/4 functions…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 08:36:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58228 · 5.1 MEDIUM 🌩️ — Scheme validation bypass in Phoenix.LiveView.Utils leads to XSS via &lt;.link&gt;</title>
-      <link>https://vulnogram.org/CVE-2026-58228</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58228</guid>
-      <description>Cross-site scripting vulnerability in phoenixframework phoenix_live_view allows an attacker to bypass URL scheme validation and execute JavaScript in a victim&apos;s browser session. The Phoenix.LiveView.Utils.valid_destination!/2 and Phoenix.LiveView.Uti…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 13 Jul 2026 18:04:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56813 · 2.1 LOW — Cookie attribute injection in Plug.Conn.Cookies.encode/2</title>
-      <link>https://vulnogram.org/CVE-2026-56813</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56813</guid>
-      <description>Improper Neutralization of Parameter/Argument Delimiters vulnerability in elixir-plug plug allows an attacker to inject or override HTTP cookie attributes. The Plug.Conn.Cookies.encode/2 function in lib/plug/conn/cookies.ex builds the Set-Cookie resp…</description>
-      <category>Low</category>
-      <pubDate>Fri, 10 Jul 2026 12:51:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56814 · 6.9 MEDIUM 🌩️ — Plug: multipart :length limit is not charged for part headers, enabling unbounded temp-file creation (denial of service)</title>
-      <link>https://vulnogram.org/CVE-2026-56814</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56814</guid>
-      <description>Plug.Parsers.MULTIPART, the multipart request-body parser used to handle file uploads and multipart forms, does not enforce its :length budget against all consumed resources, allowing an unauthenticated remote attacker to cause denial of service. The…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Jul 2026 11:14:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58225 · 2.1 LOW — SQL injection via unescaped dollar-quote in Postgrex.Notifications reconnect replay causes notification denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-58225</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58225</guid>
-      <description>SQL Injection vulnerability in elixir-ecto postgrex allows an attacker who can influence a LISTEN channel name to inject SQL into the reconnect replay query, causing a denial of service of the notification connection. Postgrex.Notifications sanitizes…</description>
-      <category>Low</category>
-      <pubDate>Fri, 10 Jul 2026 10:51:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56812 · 6.3 MEDIUM 🌩️ — Phoenix JavaScript presence client crashes on presence keys colliding with Object.prototype members in Presence.syncState/syncDiff</title>
-      <link>https://vulnogram.org/CVE-2026-56812</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56812</guid>
-      <description>Improper Check for Unusual or Exceptional Conditions vulnerability in phoenixframework phoenix (Presence JavaScript client) allows an attacker with ordinary channel access to cause a persistent client-side denial of service against every viewer of a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Jul 2026 15:22:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56811 · 8.7 HIGH 🌩️ — Phoenix transports do not limit channel joins per connection, enabling process-exhaustion denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-56811</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56811</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in phoenixframework phoenix (Phoenix.Socket module) allows an unauthenticated attacker to cause a denial of service against any endpoint that mounts a Phoenix socket with a reachable…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Jul 2026 15:09:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54893 · 2.1 LOW — Email-derived URL path injection in the Swoosh Microsoft Graph adapter</title>
-      <link>https://vulnogram.org/CVE-2026-54893</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54893</guid>
-      <description>URL path injection in the Microsoft Graph adapter of Swoosh. Swoosh.Adapters.MsGraph builds its Microsoft Graph API request URL by interpolating the sender&apos;s email address into the URL path (/users/{from}/sendMail) without percent-encoding or validat…</description>
-      <category>Low</category>
-      <pubDate>Mon, 06 Jul 2026 14:04:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56810 · 8.7 HIGH 🌩️ — mint buffers an entire chunked response chunk in memory in Mint.HTTP1.decode_body/5</title>
-      <link>https://vulnogram.org/CVE-2026-56810</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56810</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in elixir-mint mint (Mint.HTTP1 module) allows a denial of service via an oversized chunked transfer-encoded response. This vulnerability is associated with program files lib/mint/htt…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 06 Jul 2026 09:17:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58226 · 8.7 HIGH 🌩️ — Unauthenticated denial-of-service via unbounded HPACK integer decoding in hpax</title>
-      <link>https://vulnogram.org/CVE-2026-58226</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58226</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in elixir-mint hpax allows unauthenticated denial-of-service via unbounded HPACK integer decoding. hpax decodes HPACK variable-length integers with no upper bound on the decoded value or the number of…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 06 Jul 2026 09:03:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54891 · 6.3 MEDIUM 🌩️ — Plaintext APPLICATION_DATA injected during TLS handshake delivered to client application post-handshake in ssl</title>
-      <link>https://vulnogram.org/CVE-2026-54891</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54891</guid>
-      <description>Improper Enforcement of Message Integrity During Transmission in a Communication Channel vulnerability in Erlang/OTP ssl (tls_gen_connection module) allows a network-positioned attacker to inject unauthenticated plaintext that the TLS client applicat…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 02 Jul 2026 16:06:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55950 · 8.7 HIGH — DTLS listener crash via race condition in dtls_packet_demux causes denial of service for all sessions</title>
-      <link>https://vulnogram.org/CVE-2026-55950</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55950</guid>
-      <description>Time-of-check Time-of-use (TOCTOU) race condition vulnerability in Erlang/OTP ssl (dtls_packet_demux module) allows an unauthenticated remote attacker to crash all active DTLS sessions on a listener. A DTLS server listener uses a single shared dtls_p…</description>
-      <category>High</category>
-      <pubDate>Thu, 02 Jul 2026 16:06:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54886 · 5.3 MEDIUM — SSH SFTP server denial of service via extended channel data infinite loop</title>
-      <link>https://vulnogram.org/CVE-2026-54886</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54886</guid>
-      <description>Loop with Unreachable Exit Condition (&apos;Infinite Loop&apos;) vulnerability in Erlang OTP ssh (ssh_sftpd module) allows an authenticated SFTP user to render an SFTP channel permanently unresponsive. The handle_data/4 function in ssh_sftpd contains a catch-a…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 02 Jul 2026 16:06:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55952 · 8.2 HIGH 🌩️ — TLS 1.3 server denial of service via malformed ClientHello pre-shared key extension</title>
-      <link>https://vulnogram.org/CVE-2026-55952</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55952</guid>
-      <description>The Erlang/OTP ssl application does not validate that the PSK identity list and binder list carried in a TLS 1.3 ClientHello pre-shared key extension have equal length before passing them to the session ticket handler. In tls_handshake_1_3:handle_pre…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 02 Jul 2026 16:06:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54887 · 6.3 MEDIUM 🌩️ — DTLS server cookie bypass during startup window due to empty initial cookie secret</title>
-      <link>https://vulnogram.org/CVE-2026-54887</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54887</guid>
-      <description>Use of Default Cryptographic Key vulnerability in Erlang/OTP ssl (DTLS server) allows predictable DTLS cookie computation during the startup window, enabling source address verification bypass. On DTLS server startup, dtls_server_connection:initial_h…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 02 Jul 2026 16:06:04 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,93 @@
       <title>OpenSSL Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 05 Aug 2026 20:49:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-75803 — AEAD Forgeries with Empty Ciphertext When Using EVP_Cipher()</title>
+      <link>https://vulnogram.org/CVE-2026-75803</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75803</guid>
+      <description>Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function. Impact summary: Applications c…</description>
+      <pubDate>Tue, 25 Aug 2026 13:00:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63076 · 7.5 HIGH 🌩️ — Invalid Pointer Dereference in CMP Server via Crafted protectionAlg</title>
+      <link>https://vulnogram.org/CVE-2026-63076</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63076</guid>
+      <description>Issue summary: OpenSSL CMP password based protection verification only checks whether the protectionAlg parameter was not NULL and not its ASN.1 type, before treating it as a PBMParameter. A crafted message can contain a parameter of a different type…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 13:00:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63075 · 7.5 HIGH 🌩️ — QUIC ACK-only Packet Retention Can Cause Memory Exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-63075</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63075</guid>
+      <description>Issue summary: When OpenSSL processes QUIC traffic from a peer that repeatedly sends ack-eliciting packets while not acknowledging ACK-only responses, the QUIC stack can retain ACK-only packet metadata for the lifetime of the connection. Impact summa…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 13:00:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63074 · 5.9 MEDIUM 🌩️ — CMP Indefinite Cache Growth of ExtraCerts</title>
+      <link>https://vulnogram.org/CVE-2026-63074</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63074</guid>
+      <description>Issue summary: The OpenSSL Certificate Management Protocol (CMP) caches additional certificates (extraCerts) sent in a CMP message, but never expunges them (for instance if they are invalid). If a server reuses an OSSL_CMP_CTX frequently, this cache…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 12:59:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63073 — Untrusted Sender DN Used as Format String in CMP Response Validation</title>
+      <link>https://vulnogram.org/CVE-2026-63073</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63073</guid>
+      <description>Issue summary: OpenSSL CMP response validation passed an unexpected response sender distinguished name directly as the format string to `ERR_raise_data()`. Impact summary: A malicious or intercepted CMP endpoint can crash a CMP client that enforces a…</description>
+      <pubDate>Tue, 25 Aug 2026 12:59:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63072 · 7.5 HIGH 🌩️ — Heap Buffer Overflow in CMS Key Unwrapping</title>
+      <link>https://vulnogram.org/CVE-2026-63072</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63072</guid>
+      <description>Issue summary: OpenSSL CMS decryption sizes the key-unwrap output buffer based on querying the unwrapped key size, but the AES-WRAP-PAD unwrap primitive can write and cleanse more bytes than that query reports, causing an 8-byte out-of-bounds heap wr…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 12:59:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54874 · 7.5 HIGH 🌩️ — Excessive Memory Use Buffering DTLS Records for a Future Epoch</title>
+      <link>https://vulnogram.org/CVE-2026-54874</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54874</guid>
+      <description>Issue summary: Receiving a DTLS record for a future epoch while a handshake is in progress causes OpenSSL to buffer far more memory than the record itself requires. Impact summary: A peer can use a small amount of network traffic to make an OpenSSL D…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 12:59:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18798 · 7.5 HIGH 🌩️ — QUIC Server May Trigger Double Free When Processing INITIAL Packet</title>
+      <link>https://vulnogram.org/CVE-2026-18798</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18798</guid>
+      <description>Issue summary: QUIC server may double free QRX (QUIC record layer RX) object when channel creation fails for initial packet. Impact summary: Double free leads to heap corruption, which typically results in termination of QUIC server process, leading…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 12:59:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14457 · 7.5 HIGH 🌩️ — RPK Server Signature Algorithm Selection Can Dereference a Missing Certificate</title>
+      <link>https://vulnogram.org/CVE-2026-14457</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14457</guid>
+      <description>Issue summary: In a server or client configuration with RFC7250 Raw Public Keys (RPKs) enabled, and only the private key (with no associated certificate) configured locally, a NULL pointer dereference may occur when the remote peer solicits raw publi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 12:58:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14456 · 7.5 HIGH 🌩️ — Unbounded Memory Growth in QUIC Server Incoming Channel Queue</title>
+      <link>https://vulnogram.org/CVE-2026-14456</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14456</guid>
+      <description>Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit. Impact summary: A remote peer t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 13 Aug 2026 13:55:52 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-54876 · 7.5 HIGH 🌩️ — Client-Side Memory Leak in OCSP Response Checking</title>
       <link>https://vulnogram.org/CVE-2026-54876</link>
@@ -362,94 +448,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 30 Sep 2025 13:17:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-9231 · 6.5 MEDIUM 🌩️ — Timing side-channel in SM2 algorithm on 64 bit ARM</title>
-      <link>https://vulnogram.org/CVE-2025-9231</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9231</guid>
-      <description>Issue summary: A timing side-channel which could potentially allow remote recovery of the private key exists in the SM2 algorithm implementation on 64 bit ARM platforms. Impact summary: A timing side-channel in SM2 signature computations on 64 bit AR…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 30 Sep 2025 13:17:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-9230 · 7.5 HIGH 🌩️ — Out-of-bounds read &amp; write in RFC 3211 KEK Unwrap</title>
-      <link>https://vulnogram.org/CVE-2025-9230</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9230</guid>
-      <description>Issue summary: An application trying to decrypt CMS messages encrypted using password based encryption can trigger an out-of-bounds read and write. Impact summary: This out-of-bounds read may trigger a crash which leads to Denial of Service for an ap…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 30 Sep 2025 13:17:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-4575 · 6.5 MEDIUM 🌩️ — The x509 application adds trusted use instead of rejected use</title>
-      <link>https://vulnogram.org/CVE-2025-4575</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4575</guid>
-      <description>Issue summary: Use of -addreject option with the openssl x509 application adds a trusted use instead of a rejected use for a certificate. Impact summary: If a user intends to make a trusted certificate rejected for a particular use it will be instead…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 22 May 2025 13:36:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-12797 · 6.3 MEDIUM 🌩️ — RFC7250 handshakes with unauthenticated servers don&apos;t abort as expected</title>
-      <link>https://vulnogram.org/CVE-2024-12797</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-12797</guid>
-      <description>Issue summary: Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a server may fail to notice that the server was not authenticated, because handshakes don&apos;t abort as expected when the SSL_VERIFY_PEER verification mode is set. Impact summar…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 11 Feb 2025 15:59:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-13176 · 4.1 MEDIUM — Timing side-channel in ECDSA signature computation</title>
-      <link>https://vulnogram.org/CVE-2024-13176</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-13176</guid>
-      <description>Issue summary: A timing side-channel which could potentially allow recovering the private key exists in the ECDSA signature computation. Impact summary: A timing side-channel in ECDSA signature computations could allow recovering the private key by a…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 20 Jan 2025 13:29:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-4741 · 7.5 HIGH 🌩️ — Use After Free with SSL_free_buffers</title>
-      <link>https://vulnogram.org/CVE-2024-4741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-4741</guid>
-      <description>Issue summary: Calling the OpenSSL API function SSL_free_buffers may cause memory to be accessed that was previously freed in some situations Impact summary: A use after free can have a range of potential consequences such as the corruption of valid…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 13 Nov 2024 10:20:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-9143 · 4.3 MEDIUM — Low-level invalid GF(2^m) parameters lead to OOB memory access</title>
-      <link>https://vulnogram.org/CVE-2024-9143</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-9143</guid>
-      <description>Issue summary: Use of the low-level GF(2^m) elliptic curve APIs with untrusted explicit values for the field polynomial can lead to out-of-bounds memory reads or writes. Impact summary: Out of bound memory writes can lead to an application crash or e…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 16 Oct 2024 17:09:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-6119 · 7.5 HIGH 🌩️ — Possible denial of service in X.509 name checks</title>
-      <link>https://vulnogram.org/CVE-2024-6119</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-6119</guid>
-      <description>Issue summary: Applications performing certificate name checks (e.g., TLS clients checking server certificates) may attempt to read an invalid memory address resulting in abnormal termination of the application process. Impact summary: Abnormal termi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Sep 2024 15:58:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-5535 · 9.1 CRITICAL 🌩️ — SSL_select_next_proto buffer overread</title>
-      <link>https://vulnogram.org/CVE-2024-5535</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-5535</guid>
-      <description>Issue summary: Calling the OpenSSL API function SSL_select_next_proto with an empty supported client protocols buffer may cause a crash or memory contents to be sent to the peer. Impact summary: A buffer overread can have a range of potential consequ…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 27 Jun 2024 10:30:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-4603 · 5.3 MEDIUM 🌩️ — Excessive time spent checking DSA keys and parameters</title>
-      <link>https://vulnogram.org/CVE-2024-4603</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-4603</guid>
-      <description>Issue summary: Checking excessively long DSA keys or parameters may be very slow. Impact summary: Applications that use the functions EVP_PKEY_param_check() or EVP_PKEY_public_check() to check a DSA public key or DSA parameters may experience long de…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 May 2024 15:21:20 GMT</pubDate>
     </item>
   </channel>
 </rss>

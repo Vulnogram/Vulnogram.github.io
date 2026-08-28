@@ -11,427 +11,432 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 03 Aug 2026 12:04:36 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-69082 · 8.8 HIGH 🌩️ — Cross-Site Request Forgery in the Administrative User Deletion Endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-69082</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-69082</guid>
-      <description>CTI-Transmute contained a cross-site request forgery vulnerability in the administrative user deletion functionality. The /account/delete/&lt;id&gt; endpoint accepted HTTP GET requests for an operation that modified application state. An unauthenticated re…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 09:43:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-69079 · 8.7 HIGH 🌩️ — Unauthenticated Denial of Service via Unbounded Activity-Timeline Range in CTI-Transmute</title>
-      <link>https://vulnogram.org/CVE-2026-69079</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-69079</guid>
-      <description>CTI-Transmute contains an uncontrolled resource-consumption vulnerability in the unauthenticated /activity_timeline endpoint. The endpoint accepts a user-controlled days query parameter that was not restricted to a reasonable range. A remote, unauthe…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 09:22:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-69078 · 8.8 HIGH 🌩️ — Server-Side Request Forgery and Local File Disclosure in CTI-Transmute Evaluation PDF Rendering</title>
-      <link>https://vulnogram.org/CVE-2026-69078</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-69078</guid>
-      <description>CTI-Transmute is affected by a server-side request forgery vulnerability in the evaluation report PDF-generation functionality. User-controlled CTI content, including conversion names, descriptions, and comments, is converted from Markdown to HTML an…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 09:14:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-69075 · 6.9 MEDIUM — Stored Cross-Site Scripting via Vue Template Injection in FlowIntel</title>
-      <link>https://vulnogram.org/CVE-2026-69075</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-69075</guid>
-      <description>FlowIntel is affected by a stored cross-site scripting vulnerability through multiple user-controlled or administrator-controlled fields. Persisted values—including case titles, ticket identifiers, recurring-case information, user profile attributes,…</description>
+      <title>CVE-2026-81827 · 6.9 MEDIUM 🌩️ — Flowintel Login Email Validation Bypass Allows Log Injection via Crafted Email Input</title>
+      <link>https://vulnogram.org/CVE-2026-81827</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81827</guid>
+      <description>Affected versions of Flowintel incorrectly attempted to validate login email addresses by calling Email(email). That does not perform WTForms field validation; it merely constructs a validator object. Consequently, malformed attacker-controlled email…</description>
       <category>Medium</category>
-      <pubDate>Mon, 03 Aug 2026 08:46:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67178 · 7.8 HIGH 🌩️ — Open Redirect in MISP Installer-Generated Apache Configuration</title>
-      <link>https://vulnogram.org/CVE-2026-67178</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67178</guid>
-      <description>MISP installation scripts generated an Apache HTTP virtual-host configuration containing an incorrectly formatted HTTP-to-HTTPS redirect: Redirect permanent / https://misp.example Apache’s Redirect directive appends any portion of the requested path…</description>
-      <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Tue, 28 Jul 2026 14:30:22 GMT</pubDate>
+      <pubDate>Thu, 27 Aug 2026 13:36:19 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-67174 · 9.2 CRITICAL 🌩️ — DOM-Based Cross-Site Scripting via Unsafe String and SVG Icon Rendering in Pivotick</title>
-      <link>https://vulnogram.org/CVE-2026-67174</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67174</guid>
-      <description>Pivotick contains a DOM-based cross-site scripting vulnerability in its generic UI element resolution and icon-rendering utilities. The tryResolveHTMLElement function treated any resolved string as HTML markup by assigning it to a &lt;template&gt; element…</description>
+      <title>CVE-2026-81826 · 9.1 CRITICAL 🌩️ — Flowintel Fails to Invalidate Active Sessions After Password Change</title>
+      <link>https://vulnogram.org/CVE-2026-81826</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81826</guid>
+      <description>Affected versions of Flowintel do not revoke existing authenticated sessions when a user’s password is changed. This means that if an attacker already possesses a valid session—for example, from prior access or a stolen session token—the victim chang…</description>
       <category>Critical</category>
       <category>Network Exploitable</category>
-      <pubDate>Tue, 28 Jul 2026 13:53:41 GMT</pubDate>
+      <pubDate>Thu, 27 Aug 2026 13:32:48 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-67173 · 5.1 MEDIUM 🌩️ — Pivotick Unvalidated Node Image URLs Allow Unintended Client-Side Requests</title>
-      <link>https://vulnogram.org/CVE-2026-67173</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67173</guid>
-      <description>Pivotick did not validate the URL scheme of node imagePath values derived from graph data before assigning them to SVG image resources. An attacker able to supply crafted graph data could set an image path to a malicious URI. When a victim rendered t…</description>
+      <title>CVE-2026-81820 · 5.1 MEDIUM — Flowintel HTML Injection in MISP Case History Timeline via Crafted Object Attributes</title>
+      <link>https://vulnogram.org/CVE-2026-81820</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81820</guid>
+      <description>Affected versions of Flowintel construct timeline HTML using attacker-controllable MISP object fields such as: * object UUID; * object name; * attribute value; * attribute type; * comment; * first/last seen values; * IDS flag. Those values were conca…</description>
       <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 28 Jul 2026 13:32:13 GMT</pubDate>
+      <pubDate>Thu, 27 Aug 2026 13:25:08 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-66922 · 5.1 MEDIUM 🌩️ — Pivotick Prototype-Key Collision in Tree Layout and Cycle Detection Allows Graph Manipulation and Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-66922</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66922</guid>
-      <description>Pivotick used plain JavaScript objects as lookup tables indexed by caller-controlled graph node identifiers in its tree-layout and cycle-detection components. Node identifiers matching properties inherited from Object.prototype, such as constructor,…</description>
+      <title>CVE-2026-81819 · 5.3 MEDIUM — Flowintel Missing Authorization Allows Regular API Users to View Other Users’ Task Assignments</title>
+      <link>https://vulnogram.org/CVE-2026-81819</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81819</guid>
+      <description>Affected versions of Flowintel expose the /my_assignment/user API endpoint to any authenticated API user. The endpoint accepts a user_id parameter identifying the user whose assignments should be returned, but previously had no role restriction beyon…</description>
       <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 28 Jul 2026 13:20:08 GMT</pubDate>
+      <pubDate>Thu, 27 Aug 2026 13:20:49 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-66921 · 6.3 MEDIUM 🌩️ — Pivotick - Stored DOM-Based Cross-Site Scripting via Unescaped Markdown Node References</title>
-      <link>https://vulnogram.org/CVE-2026-66921</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66921</guid>
-      <description>Pivotick’s Markdown node-reference renderer failed to HTML-escape the attacker-controlled nodeName value before interpolating it into both the data-node-name attribute and the body of a generated &lt;span&gt; element. Because the node-reference tokenizer r…</description>
+      <title>CVE-2026-81818 · 8.6 HIGH — Flowintel Organization Administrator Can Reset Full Administrator Password and Escalate Privileges</title>
+      <link>https://vulnogram.org/CVE-2026-81818</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81818</guid>
+      <description>Affected versions of Flowintel contain an authorization flaw in the administrative user-edit API. The existing authorization check correctly prevented an organization administrator from editing users in another organization, but it did not prevent th…</description>
+      <category>High</category>
+      <pubDate>Thu, 27 Aug 2026 13:14:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81817 · 7.2 HIGH — Flowintel Missing Task-to-Case Authorization Allows Cross-Case Task Modification</title>
+      <link>https://vulnogram.org/CVE-2026-81817</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81817</guid>
+      <description>Affected versions of Flowintel contain an insecure direct object reference / broken object-level authorization issue across numerous task endpoints. The routes generally received both a case identifier and a task identifier, but previously they did n…</description>
+      <category>High</category>
+      <pubDate>Thu, 27 Aug 2026 13:10:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81814 · 5.1 MEDIUM — Flowintel Stored XSS in Calendar via Malicious Case Title</title>
+      <link>https://vulnogram.org/CVE-2026-81814</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81814</guid>
+      <description>Affected versions of Flowintel render calendar event titles using innerHTML. Because those titles are derived from case titles, a user able to create or modify a case title could store HTML or script-capable content that is later interpreted by the b…</description>
       <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 28 Jul 2026 13:05:19 GMT</pubDate>
+      <pubDate>Thu, 27 Aug 2026 12:48:39 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-66920 · 8.2 HIGH 🌩️ — Pivotick - Stack Exhaustion Denial of Service via Deep or Cyclic Graph Data</title>
-      <link>https://vulnogram.org/CVE-2026-66920</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66920</guid>
-      <description>Pivotick contains an uncontrolled-recursion vulnerability when processing caller-supplied graph and node data. The affected graph algorithms recursively traversed graph edges, while the JSON viewer recursively processed each level of a node’s data st…</description>
+      <title>CVE-2026-81753 · 5.1 MEDIUM — Flowintel Stored XSS in Case Notes via Malicious Mermaid Diagram Content</title>
+      <link>https://vulnogram.org/CVE-2026-81753</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81753</guid>
+      <description>Affected versions of Flowintel render Mermaid blocks contained in stored case notes without sufficiently neutralizing attacker-controlled markup. Because Mermaid note content is persisted and later rendered for other users, an attacker with permissio…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 27 Aug 2026 12:06:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81743 · 7.5 HIGH — Flowintel Arbitrary Log File Path Allows Remote Code Execution via Template Injection</title>
+      <link>https://vulnogram.org/CVE-2026-81743</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81743</guid>
+      <description>Affected versions of Flowintel allow the LOG_FILE configuration value to be modified through system settings without restricting it to a filename inside the intended log directory. Because the application constructs the log destination from this conf…</description>
+      <category>High</category>
+      <pubDate>Thu, 27 Aug 2026 11:59:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81662 · 8.6 HIGH — Flowintel Alert Settings Configuration Allows Remote Code Execution via Arbitrary Configuration Keys</title>
+      <link>https://vulnogram.org/CVE-2026-81662</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81662</guid>
+      <description>Affected versions of Flowintel improperly trust configuration keys supplied to the alerts settings update endpoint. While configuration values were normalized to Python literals, the corresponding keys were used directly when constructing and replaci…</description>
+      <category>High</category>
+      <pubDate>Thu, 27 Aug 2026 10:23:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81659 · 7.1 HIGH — Flowintel Note PDF Export Allows Arbitrary Local File Read via Pandoc/XeLaTeX Processing</title>
+      <link>https://vulnogram.org/CVE-2026-81659</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81659</guid>
+      <description>Affected versions of Flowintel allow attacker-controlled note content to be processed by Pandoc and XeLaTeX during PDF export in a way that can cause local files on the Flowintel server to be read and incorporated into the generated export.</description>
+      <category>High</category>
+      <pubDate>Thu, 27 Aug 2026 10:07:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78555 · 9.4 CRITICAL — RansomLook API Key Disclosure Through /admin/apikeys HTML Source</title>
+      <link>https://vulnogram.org/CVE-2026-78555</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78555</guid>
+      <description>RansomLook exposed complete API keys in the HTML source of the authenticated /admin/apikeys administration page. Although the interface displayed only a shortened representation of each key, the full token was embedded in hidden form fields used by t…</description>
+      <category>Critical</category>
+      <pubDate>Mon, 24 Aug 2026 19:38:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78553 · 7 HIGH — Insecure Flask Secret-Key File Permissions Allow Local Administrator Session Forgery in RansomLook</title>
+      <link>https://vulnogram.org/CVE-2026-78553</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78553</guid>
+      <description>RansomLook created its Flask session-signing key without explicitly restricting the file permissions. The secret_key file was created using the process&apos;s default permissions and umask, resulting in permissions such as 0644 under a common 022 umask. C…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 19:28:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78551 · 8.8 HIGH 🌩️ — RansomLook Login Endpoint Allows Timing-Based Username Enumeration and Unthrottled Authentication Attempts</title>
+      <link>https://vulnogram.org/CVE-2026-78551</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78551</guid>
+      <description>RansomLook contains multiple weaknesses in its authentication endpoint that allow an unauthenticated remote attacker to enumerate valid usernames, perform unrestricted password-guessing attacks, and potentially exhaust application worker resources. F…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Tue, 28 Jul 2026 12:57:21 GMT</pubDate>
+      <pubDate>Mon, 24 Aug 2026 19:20:03 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-66913 · 6.9 MEDIUM 🌩️ — Zip Bomb in Lookyloo Capture Upload Allows Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-66913</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66913</guid>
-      <description>Lookyloo did not enforce limits on the decompressed size of uploaded capture archives and compressed HAR files. An attacker could submit a specially crafted ZIP, gzip, or zlib-compressed capture containing data that expands to a very large size durin…</description>
+      <title>CVE-2026-78391 · 8.8 HIGH 🌩️ — Stored Cross-Site Scripting via Untrusted Cryptocurrency Address Rendering in RansomLook</title>
+      <link>https://vulnogram.org/CVE-2026-78391</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78391</guid>
+      <description>RansomLook contains a stored cross-site scripting (XSS) vulnerability in the cryptocurrency wallet detail view. Cryptocurrency addresses and blockchain names originating from external sources, including the public crowd-sourced ransomwhe.re feed, wer…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 14:13:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78387 · 9.4 CRITICAL — RansomLook Missing Authorization in Web Configuration Editor Allows Application Configuration Modification</title>
+      <link>https://vulnogram.org/CVE-2026-78387</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78387</guid>
+      <description>RansomLook contains an authorization weakness in the web-based configuration editor exposed through the /admin/config endpoint. The endpoint requires an authenticated session but does not perform an explicit privilege or administrator authorization c…</description>
+      <category>Critical</category>
+      <pubDate>Mon, 24 Aug 2026 14:04:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78386 · 8.7 HIGH 🌩️ — Unauthenticated Disclosure of Scraping Credentials and Bypass Configuration via RansomLook API</title>
+      <link>https://vulnogram.org/CVE-2026-78386</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78386</guid>
+      <description>RansomLook exposed sensitive operator-side scraping configuration through multiple unauthenticated API responses. Location records associated with ransomware groups and markets were returned largely verbatim to unauthenticated callers whenever the lo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 13:55:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78385 · 8.2 HIGH — RansomLook Analysis PDF Generation Allows Server-Side Request Forgery and Arbitrary Local File Access</title>
+      <link>https://vulnogram.org/CVE-2026-78385</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78385</guid>
+      <description>RansomLook contains insufficient resource validation in the analysis PDF generation functionality. Analysis documents are converted from Markdown to HTML and passed to WeasyPrint for PDF rendering. Prior to the fix, WeasyPrint used its default URL fe…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 13:49:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78381 · 8.2 HIGH — RansomLook Arbitrary File Read via Path Traversal in Post screen Field</title>
+      <link>https://vulnogram.org/CVE-2026-78381</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78381</guid>
+      <description>RansomLook contains a path traversal vulnerability in the handling of the screen field associated with group posts. The GroupPost.get API handler concatenates the database-controlled screen value directly with the application&apos;s source/ directory and…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 13:32:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78380 · 8.7 HIGH 🌩️ — Private Group and Market Posts Disclosed Through Public Notification Channels in RansomLook</title>
+      <link>https://vulnogram.org/CVE-2026-78380</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78380</guid>
+      <description>RansomLook fails to enforce the privacy status of ransomware groups and markets when distributing newly collected victim posts to external notification channels. The post-processing logic checks whether an individual post is marked private but does n…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 13:26:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78378 · 6.9 MEDIUM 🌩️ — Redis Glob Pattern Injection Allows Unauthorized Enumeration of Private Ransomlook Data</title>
+      <link>https://vulnogram.org/CVE-2026-78378</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78378</guid>
+      <description>Ransomlook contains a Redis glob pattern injection vulnerability caused by insufficient neutralization of user-controlled input before it is incorporated into Redis SCAN MATCH patterns. The /api/health/&lt;name&gt; endpoint attempted to resolve the supplie…</description>
       <category>Medium</category>
       <category>Network Exploitable</category>
-      <pubDate>Tue, 28 Jul 2026 12:19:20 GMT</pubDate>
+      <pubDate>Mon, 24 Aug 2026 13:19:02 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-66825 · 6.9 MEDIUM 🌩️ — Cross-Site Scripting via Unsafe URL Schemes in Pivotick Property Links</title>
-      <link>https://vulnogram.org/CVE-2026-66825</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66825</guid>
-      <description>Pivotick contains a cross-site scripting vulnerability in the sidebar property-list component. Values associated with link-like properties, such as url, uri, href, link, website, or homepage, were rendered as hyperlinks without validating their URL s…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 27 Jul 2026 20:20:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66824 · 9.2 CRITICAL 🌩️ — Stored Cross-Site Scripting via Unsafe Capture Tree JSON Embedding</title>
-      <link>https://vulnogram.org/CVE-2026-66824</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66824</guid>
-      <description>A stored cross-site scripting vulnerability existed in the capture tree visualization page. The application embedded the serialized capture tree directly into an inline JavaScript block using the Jinja safe filter. Because the tree data can contain v…</description>
+      <title>CVE-2026-78372 · 9.2 CRITICAL 🌩️ — RansomLook Missing Authorization Allows Disclosure of Private Group and Ransom Note Data</title>
+      <link>https://vulnogram.org/CVE-2026-78372</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78372</guid>
+      <description>RansomLook does not consistently enforce authorization checks when accessing groups, markets, and ransom notes marked as private. An unauthenticated or otherwise unauthorized remote attacker can access information associated with private entities thr…</description>
       <category>Critical</category>
       <category>Network Exploitable</category>
-      <pubDate>Mon, 27 Jul 2026 19:58:28 GMT</pubDate>
+      <pubDate>Mon, 24 Aug 2026 13:09:23 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-63175 · 7.1 HIGH — Cross-Capture Session Data Leakage Due to Shared Mutable State in Looklyloo - PlaywrightCapture</title>
-      <link>https://vulnogram.org/CVE-2026-63175</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63175</guid>
-      <description>PlaywrightCapture stored capture-specific configuration and runtime data as mutable class-level variables rather than instance-level variables. Consequently, multiple Capture objects running within the same Python process could share state, including…</description>
-      <category>High</category>
-      <pubDate>Wed, 15 Jul 2026 21:26:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62143 · 8.3 HIGH — Server-Side Request Forgery protection bypass in misp-modules html_to_markdown via IPv4-mapped IPv6 addresses</title>
-      <link>https://vulnogram.org/CVE-2026-62143</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62143</guid>
-      <description>A Server-Side Request Forgery (SSRF) protection bypass existed in the html_to_markdown expansion module of misp-modules. The module attempts to prevent requests to loopback, private, link-local, and other restricted IP address ranges. However, IP add…</description>
-      <category>High</category>
-      <pubDate>Mon, 13 Jul 2026 07:52:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-61474 · 5.3 MEDIUM — MISP: Improper sharing group authorization check when adding attributes</title>
-      <link>https://vulnogram.org/CVE-2026-61474</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61474</guid>
-      <description>An improper authorization check in MISP’s attribute creation endpoint allowed an authenticated user with permission to add attributes to submit a sharing_group_id without triggering the corresponding sharing group authorization check, as long as the…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 09 Jul 2026 15:06:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-60125 · 5.3 MEDIUM — importModule function in MISP ignores per-organisation import module restrictions</title>
-      <link>https://vulnogram.org/CVE-2026-60125</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-60125</guid>
-      <description>MISP’s importModule() path used getEnabledModule() to resolve a single import module by name, but this lookup did not enforce the per-organisation module restriction checked by getEnabledModules(). As a result, an authenticated user from an organisat…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 08 Jul 2026 13:36:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-60124 · 5.3 MEDIUM — MISP importModule missing authorization allows read-only users to modify events via misp_standard imports</title>
-      <link>https://vulnogram.org/CVE-2026-60124</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-60124</guid>
-      <description>An authorization bypass in MISP’s EventsController::importModule() allowed authenticated users or read-only API keys with event view access to persist data to events they were not allowed to modify. When an import module returned results in the misp_…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 08 Jul 2026 13:30:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59510 · 7.1 HIGH — Authenticated Path Traversal in AIL Framework PDF Object Handling Enables Potential Arbitrary File Read</title>
-      <link>https://vulnogram.org/CVE-2026-59510</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59510</guid>
-      <description>AIL Framework contains a path traversal vulnerability in its PDF object handling. Prior to commit 14c618fce4d1df02358717c48ea903706abecdf2, the PDF.get_filepath() function constructed a file path by joining the configured PDF storage directory with a…</description>
-      <category>High</category>
-      <pubDate>Sun, 05 Jul 2026 17:52:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59509 · 9.2 CRITICAL 🌩️ — Unauthenticated arbitrary MongoDB collection read in cve-search</title>
-      <link>https://vulnogram.org/CVE-2026-59509</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59509</guid>
-      <description>An unauthenticated improper input validation vulnerability in the POST /fetch_cve_data endpoint in cve-search. A remote attacker can manipulate request parameters controlling the MongoDB collection, projected fields, and regular-expression filters to…</description>
+      <title>CVE-2026-78370 · 9.2 CRITICAL 🌩️ — RansomLook Unauthenticated Database Export Exposes Private Data</title>
+      <link>https://vulnogram.org/CVE-2026-78370</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78370</guid>
+      <description>RansomLook contains an authorization flaw in its legacy database export functionality that can allow unauthenticated remote users to retrieve information intended to remain private. The /export/&lt;database&gt; endpoint permits selected internal databases…</description>
       <category>Critical</category>
       <category>Network Exploitable</category>
-      <pubDate>Sun, 05 Jul 2026 12:02:06 GMT</pubDate>
+      <pubDate>Mon, 24 Aug 2026 13:03:23 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-56450 · 5.1 MEDIUM 🌩️ — AIL Framework - Missing Rate Limiting Enables Brute-Force Attacks Against Two-Factor Authentication Codes</title>
-      <link>https://vulnogram.org/CVE-2026-56450</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56450</guid>
-      <description>AIL did not restrict repeated failed attempts to verify a two-factor authentication (OTP) code. An attacker who had reached the 2FA verification step, such as after successfully completing the password-authentication stage, could submit an unlimited…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 22 Jun 2026 13:02:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56448 · 8.3 HIGH — Authenticated Path Traversal in AIL Framework Investigation Downloads Allows Arbitrary File Read</title>
-      <link>https://vulnogram.org/CVE-2026-56448</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56448</guid>
-      <description>A path traversal vulnerability exists in AIL Framework before the release containing commit 0041456af25da0cdea1c1c4624e46baff2731d8f. An authenticated AIL user can supply crafted object identifiers through the investigation workflow to cause file pat…</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 12:54:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56447 · 9.3 CRITICAL — MISP remote code execution via arbitrary rdkafka configuration path</title>
-      <link>https://vulnogram.org/CVE-2026-56447</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56447</guid>
-      <description>MISP allowed an authenticated site administrator to set the Kafka_rdkafka_config setting to an arbitrary filesystem path. MISP subsequently parsed the referenced INI file and passed its options to rdkafka. A crafted attacker-controlled configuration…</description>
-      <category>Critical</category>
-      <pubDate>Mon, 22 Jun 2026 12:39:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56446 · 8.7 HIGH — Authenticated Remote Code Execution via Arbitrary NDJSON Error Log Path in MISP</title>
-      <link>https://vulnogram.org/CVE-2026-56446</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56446</guid>
-      <description>MISP allowed a site administrator to configure an arbitrary filesystem path for the NDJSON error log used by JsonLogTool. Because log entries can include attacker-controlled content, an authenticated attacker with site administrator privileges could…</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 12:31:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56425 · 9.3 CRITICAL — MISP AAD authentication plugin - Improper OAuth State Handling, Missing Session Rotation, Insecure Redirect URI Validation, and Log Injection</title>
-      <link>https://vulnogram.org/CVE-2026-56425</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56425</guid>
-      <description>The Azure Active Directory (AAD) authentication implementation contained multiple weaknesses in its OAuth 2.0 authorization flow that could allow attackers to bypass important security guarantees provided by the protocol. The application used the PHP…</description>
-      <category>Critical</category>
-      <pubDate>Mon, 22 Jun 2026 12:25:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56424 · 7.1 HIGH — Broken access control in MISP core allows cross-organization unauthorized modification or deletion of analyst data, event reports, collections, templates, and decaying models</title>
-      <link>https://vulnogram.org/CVE-2026-56424</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56424</guid>
-      <description>MISP core contained multiple broken access-control flaws where authorization checks were performed against the wrong entity, or where ownership/editability checks were missing on write paths. In affected subsystems, a lower-privileged authenticated u…</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 12:17:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56423 · 9.4 CRITICAL — MISP Core: Broken access control allows instance-wide unauthorized deletion of event reports and sharing groups via bulk deletion endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-56423</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56423</guid>
-      <description>MISP Core contained broken access-control checks in the bulk deletion flows for Event Reports and Sharing Groups. The affected deleteSelection handlers authorized deletion using broad role-level permissions instead of validating authorization for eac…</description>
-      <category>Critical</category>
-      <pubDate>Mon, 22 Jun 2026 11:56:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56422 · 9.4 CRITICAL — MISP Core: Mass Assignment and Object Re-ownership via Unvalidated Request Fields</title>
-      <link>https://vulnogram.org/CVE-2026-56422</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56422</guid>
-      <description>Multiple MISP core controllers and model capture paths accepted client-controlled request fields such as primary keys (id) and ownership/scope foreign keys (event_id, org_id, user_id, sharing_group_id, galaxy_cluster_uuid, organisation_uuid, and rela…</description>
-      <category>Critical</category>
-      <pubDate>Mon, 22 Jun 2026 11:43:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56138 · 5.3 MEDIUM — Authenticated Path Traversal in AIL framework /objects/item/diff Allows Reading Gzip-Compressed Files</title>
-      <link>https://vulnogram.org/CVE-2026-56138</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56138</guid>
-      <description>AIL framework contains a path traversal vulnerability in the /objects/item/diff endpoint. The endpoint accepts item identifiers through the s1 and s2 query parameters and, prior to the fix, attempted to retrieve and compare item contents without firs…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 19 Jun 2026 08:03:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54398 · 5.3 MEDIUM — MISP object edit authorization bypass allows unauthorized sharing group assignment</title>
-      <link>https://vulnogram.org/CVE-2026-54398</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54398</guid>
-      <description>An authorization flaw in MISP’s object add/edit handling allowed an authenticated user with object editing permissions to assign a MISP object, or attributes contained within an object, to a sharing group that the user was not authorized to use or vi…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 12 Jun 2026 21:08:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54397 · 6.1 MEDIUM — MISP event editing allows unauthorized assignment to undisclosed sharing groups</title>
-      <link>https://vulnogram.org/CVE-2026-54397</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54397</guid>
-      <description>A vulnerability in MISP’s non-REST event editing path allowed an authenticated user with event edit permissions to manipulate the submitted form data and set an event’s sharing_group_id to a sharing group they were not authorized to use. When distrib…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 12 Jun 2026 20:55:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54396 · 5.3 MEDIUM — MISP AuthKey edit endpoint allows authenticated user email enumeration</title>
-      <link>https://vulnogram.org/CVE-2026-54396</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54396</guid>
-      <description>An information disclosure vulnerability exists in the MISP AuthKey edit functionality. When a validation error occurs during an AuthKey edit request, the user dropdown was populated using the attacker-controlled AuthKey.user_id value from the submitt…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 12 Jun 2026 20:48:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54395 · 5.3 MEDIUM — MISP UiBeta event index reflected XSS in advanced filter popup</title>
-      <link>https://vulnogram.org/CVE-2026-54395</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54395</guid>
-      <description>MISP contains a reflected cross-site scripting vulnerability in the UiBeta event index view. The urlparams value is inserted into an inline JavaScript handler using HTML escaping inside a single-quoted JavaScript string. Because browsers HTML-decode…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 12 Jun 2026 20:36:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54394 · 5.3 MEDIUM — MISP organisation logo path traversal allows retrieval of arbitrary PNG/SVG files</title>
-      <link>https://vulnogram.org/CVE-2026-54394</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54394</guid>
-      <description>MISP contains a path traversal vulnerability in OrganisationsController::getOrgLogo. The vulnerable code builds organisation logo file paths using organisation-controlled fields such as id, name, and uuid without ensuring that the resolved file remai…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 12 Jun 2026 20:30:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54393 · 5.1 MEDIUM 🌩️ — MISP Overmind theme stored XSS via unvalidated homepage setting</title>
-      <link>https://vulnogram.org/CVE-2026-54393</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54393</guid>
-      <description>A stored cross-site scripting vulnerability exists in MISP when the Overmind theme is used. The setHomePage endpoint previously saved the user-controlled path value through setSettingInternal(), bypassing the normal setSetting() validation logic, inc…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 12 Jun 2026 20:21:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54362 · 5.3 MEDIUM — MISP template builder exposes non-visible custom galaxies across organisations</title>
-      <link>https://vulnogram.org/CVE-2026-54362</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54362</guid>
-      <description>An incorrect visibility condition in the MISP event template builder allowed authenticated non-site-admin users to view galaxies that should not have been visible to their organisation. The custom access-control condition intended to restrict galaxie…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 12 Jun 2026 20:08:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54361 · 8.8 HIGH 🌩️ — MISP mass assignment vulnerabilities allow unauthorized modification of ownership and delegation records</title>
-      <link>https://vulnogram.org/CVE-2026-54361</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54361</guid>
-      <description>MISP contained multiple mass assignment vulnerabilities in the handling of collections, tag collections, event delegations, and shadow attributes. Several controller actions accepted user-supplied fields that should have remained server-controlled, i…</description>
+      <title>CVE-2026-78369 · 8.8 HIGH 🌩️ — Missing Authentication Allows Unauthorized Creation of Crypto Groups in RansomLook</title>
+      <link>https://vulnogram.org/CVE-2026-78369</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78369</guid>
+      <description>RansomLook contains a missing authentication vulnerability in the /admin/crypto/group/new endpoint. While the endpoint provides an administrative function for creating new crypto group entries, it was not protected by the application&apos;s authentication…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Fri, 12 Jun 2026 19:59:58 GMT</pubDate>
+      <pubDate>Mon, 24 Aug 2026 12:58:01 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-54360 · 8.4 HIGH — MISP sharing group creation mass assignment allows unauthorized takeover of existing sharing groups</title>
-      <link>https://vulnogram.org/CVE-2026-54360</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54360</guid>
-      <description>A mass assignment vulnerability exists in MISP’s sharing group creation endpoint. When creating a new sharing group, the controller did not remove a user-supplied id field before saving the submitted data. In CakePHP, supplying a primary key in the s…</description>
+      <title>CVE-2026-78321 · 6 MEDIUM — DJI Drone HTTP Media Server Denial of Service via Connection Pool Exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-78321</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78321</guid>
+      <description>The HTTP media server on DJI drones does not enforce sufficient limits on incoming connections or request rates. An attacker with access to the drone&apos;s internal network can exhaust the server&apos;s connection pool by repeatedly requesting a stored media…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 24 Aug 2026 08:47:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78306 · 8.5 HIGH — DJI Drone Bluetooth Interface Unauthenticated DUML Command Execution</title>
+      <link>https://vulnogram.org/CVE-2026-78306</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78306</guid>
+      <description>DJI drones expose an unauthenticated DUML command interface over Bluetooth that allows an attacker within Bluetooth range to modify Wi-Fi configuration parameters, including the SSID, PSK, MAC address, regulatory country code, and wireless channel. A…</description>
       <category>High</category>
-      <pubDate>Fri, 12 Jun 2026 19:51:44 GMT</pubDate>
+      <pubDate>Mon, 24 Aug 2026 08:08:00 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-54359 · 7.1 HIGH 🌩️ — MISP automation endpoints may be exposed to CSRF when Sec-Fetch-Site protection is disabled by default</title>
-      <link>https://vulnogram.org/CVE-2026-54359</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54359</guid>
-      <description>MISP contains an insecure default configuration in which the Security.check_sec_fetch_site_header control is disabled. When this setting is disabled, state-changing requests such as POST, PUT, or AJAX requests are not restricted based on the browser-…</description>
+      <title>CVE-2026-78255 · 8.7 HIGH 🌩️ — DJI Drone HTTP Media Server Allows Unauthenticated Access to Stored Media</title>
+      <link>https://vulnogram.org/CVE-2026-78255</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78255</guid>
+      <description>The HTTP media server running on DJI drones serves stored photos and videos through the `/v2` endpoint without authenticating the requesting client. Filenames follow a predictable pattern, allowing an attacker who joins the drone&apos;s internal network t…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Fri, 12 Jun 2026 19:44:24 GMT</pubDate>
+      <pubDate>Mon, 24 Aug 2026 07:25:24 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-54358 · 7.5 HIGH — MISP organization administrators can target site administrator accounts for password reset</title>
-      <link>https://vulnogram.org/CVE-2026-54358</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54358</guid>
-      <description>An incorrect authorization vulnerability in MISP allows an organization administrator to target site administrator accounts belonging to the same organization through the administrative email functionality. The affected code restricted organization a…</description>
-      <category>High</category>
-      <pubDate>Fri, 12 Jun 2026 19:34:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54357 · 5.1 MEDIUM — MISP improper authorization allows organization administrators to modify site administrator user settings</title>
-      <link>https://vulnogram.org/CVE-2026-54357</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54357</guid>
-      <description>An improper authorization vulnerability in MISP allowed an authenticated organization administrator to access or modify user settings belonging to site administrator accounts within the same organization. The affected access-control checks scoped adm…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 12 Jun 2026 19:25:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53912 · 5.1 MEDIUM — Cerebrate self-registration password hash exposure via inbox and audit log views</title>
-      <link>https://vulnogram.org/CVE-2026-53912</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53912</guid>
-      <description>Cerebrate before version 1.37 exposed credential material from self-registration requests. The self-registration workflow stored the registrant’s hashed password in the inbox message data payload. This payload was returned unredacted through inbox in…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 11 Jun 2026 10:03:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53911 · 6.3 MEDIUM — Cerebrate primary key mass assignment in CRUD edit operations allows authenticated users to overwrite unrelated records</title>
-      <link>https://vulnogram.org/CVE-2026-53911</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53911</guid>
-      <description>Cerebrate before version 1.37 allowed the id primary key field to be supplied through request input during CRUD edit operations and certain custom entity patching flows. In affected entities that did not explicitly mark id as inaccessible, an authent…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 11 Jun 2026 09:41:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53901 · 8.7 HIGH 🌩️ — Cerebrate before v1.37 allows mass assignment of record identifiers during object creation</title>
-      <link>https://vulnogram.org/CVE-2026-53901</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53901</guid>
-      <description>Cerebrate before version 1.37 contains a mass-assignment vulnerability in the generic CRUD add path. The add() handler attempted to remove an attacker-supplied id from $params before normalizing the request through __massageInput(). Because the norma…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 11 Jun 2026 07:31:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53694 · 7.3 HIGH — Potential local privileges escalation through argument injection in the nxchmod.sh script</title>
-      <link>https://vulnogram.org/CVE-2026-53694</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53694</guid>
-      <description>Improper Neutralization of Argument Delimiters in a Command (&apos;Argument Injection&apos;) vulnerability in Nomachine allows Argument Injection.This issue affects Nomachine: before 9.5.7, before 8.23.2.</description>
-      <category>High</category>
-      <pubDate>Wed, 10 Jun 2026 14:57:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53693 · 6.9 MEDIUM 🌩️ — MISP BSimVis stored cross-site scripting in tag and cluster rendering paths via unescaped tag metadata and UI labels</title>
-      <link>https://vulnogram.org/CVE-2026-53693</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53693</guid>
-      <description>A stored cross-site scripting vulnerability existed in MISP BSimVis tag rendering code. Several client-side rendering paths interpolated tag names, collection names, entity identifiers, cluster names, and tag metadata directly into HTML, HTML attribu…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 10 Jun 2026 14:34:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10868 · 9 CRITICAL 🌩️ — MISP user edit endpoint mass assignment vulnerability allows unauthorized user account modification</title>
-      <link>https://vulnogram.org/CVE-2026-10868</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10868</guid>
-      <description>A mass assignment vulnerability exists in the MISP user edit functionality due to insufficient filtering of user-supplied fields in UsersController::edit(). When processing edit requests, the application accepted a user-controlled User.id value from…</description>
+      <title>CVE-2026-78251 · 9.3 CRITICAL 🌩️ — DJI Drone FTP Service Allows Unrestricted Storage Consumption of the /blackbox Directory</title>
+      <link>https://vulnogram.org/CVE-2026-78251</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78251</guid>
+      <description>DJI drones contain an FTP service that uses hardcoded credentials shared across affected models and permits authenticated users to upload files without limits on file size, file count, or total storage consumed in **/blackbox/upgrade/**, as well as o…</description>
       <category>Critical</category>
       <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 14:39:44 GMT</pubDate>
+      <pubDate>Mon, 24 Aug 2026 07:04:32 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10864 · 5.3 MEDIUM — MISP Dashboard widget field selection may expose restricted user and organisation data</title>
-      <link>https://vulnogram.org/CVE-2026-10864</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10864</guid>
-      <description>A vulnerability in the MISP dashboard widgets allowed an authenticated user to manipulate the fields option and influence which fields were returned by the New Users and New Organisations widgets. In some cases, requesting a field set that became emp…</description>
+      <title>CVE-2026-77812 · 9.4 CRITICAL — Cleartext Exposure of DJI Drone Wi-Fi Credentials via BLE</title>
+      <link>https://vulnogram.org/CVE-2026-77812</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77812</guid>
+      <description>DJI drones transmit DUML (DJI Universal Markup Language) protocol messages over BLE (Bluetooth Low Energy) without encryption. When a client attempts to connect to the drone over Wi-Fi, or when the drone is switched to QuickTransfer mode, the DJI Fly…</description>
+      <category>Critical</category>
+      <pubDate>Fri, 21 Aug 2026 14:06:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77761 · 6.3 MEDIUM 🌩️ — Cross-Document Parser State Contamination in misp-stix</title>
+      <link>https://vulnogram.org/CVE-2026-77761</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77761</guid>
+      <description>A parser state isolation vulnerability in misp-stix could cause data from a previously processed STIX document to be retained and incorporated into the MISP event generated from a subsequent document when the same parser instance is reused. Several S…</description>
       <category>Medium</category>
-      <pubDate>Thu, 04 Jun 2026 13:54:34 GMT</pubDate>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 10:11:54 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10863 · 6.4 MEDIUM — MISP User-controlled order parameter in correlations over-correlation endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-10863</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10863</guid>
-      <description>A security issue was fixed in the correlations over-correlation endpoint where the order query parameter was accepted from user-controlled named request parameters. This allowed an authenticated user to override the server-defined ordering of over-co…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 04 Jun 2026 13:44:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10860 · 7.9 HIGH 🌩️ — MISP CRUDComponent delete validation bypass via operator precedence error</title>
-      <link>https://vulnogram.org/CVE-2026-10860</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10860</guid>
-      <description>A logic error in the MISP CRUD component delete handler allowed validation failures to be bypassed when requests used the HTTP DELETE method. Due to missing parentheses in the delete condition, the expression was evaluated as ($validationError === nu…</description>
+      <title>CVE-2026-77755 · 8.7 HIGH 🌩️ — Denial of Service in MISP-STIX Import via Malformed or Oversized STIX Documents in misp-stix library</title>
+      <link>https://vulnogram.org/CVE-2026-77755</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77755</guid>
+      <description>A denial-of-service vulnerability was identified in misp-stix when processing attacker-controlled STIX 1 or STIX 2 documents. The STIX import code used sys.exit() to handle several parsing and loading failures. Because SystemExit inherits from BaseEx…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 13:34:27 GMT</pubDate>
+      <pubDate>Fri, 21 Aug 2026 09:55:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77751 · 8.8 HIGH 🌩️ — Path Traversal in MISP Object Template Resolution During STIX Import and Export in misp-stix library</title>
+      <link>https://vulnogram.org/CVE-2026-77751</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77751</guid>
+      <description>A path traversal vulnerability existed in the handling of MISP object template names during STIX 2 import and MISP-to-STIX 2 export. MISP object names are passed to PyMISP&apos;s object-template resolution mechanism, which constructs a filesystem path by…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 09:48:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77710 · 6.9 MEDIUM 🌩️ — STIX2 Parser Confusion and Mass Assignment Allow Unauthorized MISP Attribute Metadata Injection in misp-stix library</title>
+      <link>https://vulnogram.org/CVE-2026-77710</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77710</guid>
+      <description>A vulnerability in misp-stix could allow a crafted STIX document to influence security-sensitive MISP attribute metadata during import. The STIX import logic automatically selected between the internal MISP parser and the external STIX parser based o…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:54:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76164 · 7.1 HIGH — Authenticated Server-Side Request Forgery in AIL Framework Crawler Allows Access to Internal Network Resources</title>
+      <link>https://vulnogram.org/CVE-2026-76164</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76164</guid>
+      <description>AIL Framework contains a server-side request forgery (SSRF) vulnerability in its crawler submission functionality. A low-privileged authenticated user with access to the crawler interface can submit an arbitrary URL for crawling without adequate vali…</description>
+      <category>High</category>
+      <pubDate>Wed, 19 Aug 2026 08:53:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75531 · 7 HIGH 🌩️ — Stored Cross-Site Scripting in URL Observables via Lookyloo Submission Handler in Pandora</title>
+      <link>https://vulnogram.org/CVE-2026-75531</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75531</guid>
+      <description>Pandora contains a stored cross-site scripting (XSS) vulnerability in the rendering of URL observables. A URL extracted from or associated with an analyzed file was inserted directly into the inline JavaScript onclick handler used by the Submit to Lo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 17 Aug 2026 21:00:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75529 · 6.9 MEDIUM 🌩️ — Stored Cross-Site Scripting via MIME-Type Confusion in PDF Downloads of Pandora</title>
+      <link>https://vulnogram.org/CVE-2026-75529</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75529</guid>
+      <description>Pandora is affected by a stored cross-site scripting vulnerability in the PDF download functionality. The /task-download/&lt;task_id&gt;/.../pdf endpoint verifies that the submitted file is a PDF using Pandora&apos;s content-based file-type detection, but previ…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 17 Aug 2026 20:52:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74767 · 8.7 HIGH 🌩️ — Unbounded DAA Decompression in Pandora Allows Denial of Service via Decompression Bomb</title>
+      <link>https://vulnogram.org/CVE-2026-74767</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74767</guid>
+      <description>Pandora contains a denial-of-service vulnerability in its handling of DAA (Direct Access Archive) files. When extracting the internal ISO image from a DAA archive, compressed chunks were decompressed using zlib.decompress() without enforcing a limit…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 15 Aug 2026 21:56:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74764 · 10 CRITICAL 🌩️ — Path Traversal in TAR Archive Extraction Allows Arbitrary File Write in Pandora</title>
+      <link>https://vulnogram.org/CVE-2026-74764</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74764</guid>
+      <description>Pandora contains a path traversal vulnerability in its TAR archive extraction functionality. When processing a submitted TAR archive, the extractor passed archive member names directly to Python&apos;s tarfile.TarFile.extract() without applying an extract…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 15 Aug 2026 21:39:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73432 · 5.1 MEDIUM — Stored Server-Side Request Forgery in Remote-Instance Synchronization Allows Access to Internal Services in vulnerability-lookup</title>
+      <link>https://vulnogram.org/CVE-2026-73432</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73432</guid>
+      <description>Vulnerability-Lookup contains a server-side request forgery (SSRF) vulnerability in the remote-instance synchronization functionality. Remote instance addresses were validated only for basic URL syntax before being stored, while the synchronization w…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 14:40:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73431 · 8.8 HIGH — Reusable Account Activation and Recovery Tokens Allow Repeated Account Takeover in vulnerability-lookup</title>
+      <link>https://vulnogram.org/CVE-2026-73431</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73431</guid>
+      <description>Vulnerability-Lookup contains an authentication weakness in its account activation and password-recovery mechanism. Activation and recovery links were generated using stateless signed tokens containing only the user&apos;s login. Although the token signat…</description>
+      <category>High</category>
+      <pubDate>Wed, 12 Aug 2026 14:32:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73405 · 5.3 MEDIUM — Authorization Bypass in SSE Pub/Sub Allows Unconfirmed Accounts to Access Stream Events in vulnerability-lookup</title>
+      <link>https://vulnogram.org/CVE-2026-73405</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73405</guid>
+      <description>An authorization bypass vulnerability in Vulnerability-Lookup allowed inactive or unconfirmed accounts to subscribe to Server-Sent Events (SSE) streams through the /pubsub/subscribe/&lt;topic&gt; endpoint. The token_required decorator used by the Pub/Sub i…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 14:15:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73374 · 6.1 MEDIUM 🌩️ — Stored Cross-Site Scripting (XSS) via Unescaped CNA Reference Tags in vulnerability-lookup</title>
+      <link>https://vulnogram.org/CVE-2026-73374</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73374</guid>
+      <description>A stored cross-site scripting (XSS) vulnerability existed in Vulnerability-Lookup in the render_tag_badges Jinja filter used to display reference tags associated with vulnerability records. Values from containers.cna.references[].tags[] were directly…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 12 Aug 2026 14:05:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73210 · 5.1 MEDIUM 🌩️ — Server-Side Request Forgery via Favicon Retrieval in Lookyloo PlaywrightCapture</title>
+      <link>https://vulnogram.org/CVE-2026-73210</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73210</guid>
+      <description>A Server-Side Request Forgery (SSRF) vulnerability existed in Lookyloo&apos;s PlaywrightCapture when the only_global_lookup option was enabled. PlaywrightCapture implements this option to prevent captures from accessing local, loopback, or otherwise non-p…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 11 Aug 2026 13:59:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73162 · 5.3 MEDIUM 🌩️ — cti-transmute CSRF Allows Unauthorized Follow and Notification State Changes</title>
+      <link>https://vulnogram.org/CVE-2026-73162</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73162</guid>
+      <description>Affected versions of MISP cti-transmute expose several state-changing account operations as GET requests: * /account/follow * /account/delete_notification * /account/mark_notification_read * /account/mark_all_read These endpoints require authenticati…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 11 Aug 2026 09:13:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73161 · 5.1 MEDIUM — cti-transmute Conversion Table Allows XSS via Unescaped Cell Content During Search Highlighting</title>
+      <link>https://vulnogram.org/CVE-2026-73161</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73161</guid>
+      <description>Affected versions of cti-transmute improperly handle conversion-table values passed through the search highlighting feature. The highlight() function previously returned the underlying text directly when no search query was supplied, or performed a r…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 09:07:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73160 · 8.7 HIGH 🌩️ — cti-transmute Unauthenticated SSRF via Hostnames Resolving to Internal IP Addresses</title>
+      <link>https://vulnogram.org/CVE-2026-73160</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73160</guid>
+      <description>Affected versions of cti-transmute contain an SSRF vulnerability in the /fetch_misp_event and /misp_search_events endpoints. The URL validation routine checked whether a supplied hostname was itself an IP literal and rejected private, loopback, link-…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 11 Aug 2026 09:01:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73159 · 5.1 MEDIUM — cti-transmute Stored XSS via Crafted Tag Icon on Admin Triage Interface</title>
+      <link>https://vulnogram.org/CVE-2026-73159</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73159</guid>
+      <description>Affected versions of cti-transmute allow a tag&apos;s icon value to be stored and later interpolated into HTML through Vue&apos;s v-html. The helper mapIcon() previously constructed an HTML string directly from the icon value: &lt;i class=&quot;fas fa-${name}&quot;&gt;&lt;/i&gt; Be…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 08:45:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73158 · 5.1 MEDIUM — cti-transmute Saved Graph Configuration Allows Stored Cross-Site Scripting via svgIcon</title>
+      <link>https://vulnogram.org/CVE-2026-73158</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73158</guid>
+      <description>Affected versions of cti-transmute insufficiently validate saved graph configuration data. Graph configurations can contain style properties that are later consumed by Pivotick, and Pivotick interprets svgIcon as HTML. Because saved configurations ma…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 08:31:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73157 · 2.3 LOW 🌩️ — cti-transmute Remote MISP Event Browser Allows Cross-Site Scripting via Malicious Event Metadata</title>
+      <link>https://vulnogram.org/CVE-2026-73157</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73157</guid>
+      <description>Affected versions of cti-transmute render data obtained from a remote MISP instance into the event-browser interface using HTML interpolation. Because fields such as event IDs, event information, organization names, tags, tag colors, TLP labels, dist…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 11 Aug 2026 08:06:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73156 · 5.3 MEDIUM 🌩️ — cti-transmute Sunburst and Treemap Tooltips Allow Cross-Site Scripting via Crafted Conversion Data</title>
+      <link>https://vulnogram.org/CVE-2026-73156</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73156</guid>
+      <description>Affected versions of cti-transmute fail to HTML-escape attacker-controlled values used in ECharts Sunburst and Treemap tooltip formatters. Slice names may originate directly from STIX or MISP data, including STIX types, relationship_type, pattern pre…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 11 Aug 2026 07:38:04 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,39 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 28 Aug 2026 19:38:37 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:01 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-82333 · 7.5 HIGH — multer vulnerable to Denial of Service via oversized array index in field names</title>
+      <link>https://vulnogram.org/CVE-2026-82333</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82333</guid>
+      <description>multer is a middleware for handling multipart/form-data in Node.js. A small multipart request with two specially crafted text field names can make multer&apos;s field parser synchronously iterate a maximum-length sparse array, blocking the event loop so t…</description>
+      <category>High</category>
+      <pubDate>Fri, 28 Aug 2026 20:12:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77078 · 7.5 HIGH — multer vulnerable to Denial of Service via crafted multipart field names</title>
+      <link>https://vulnogram.org/CVE-2026-77078</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77078</guid>
+      <description>multer is a middleware for handling multipart/form-data in Node.js. A small multipart request containing two specially crafted text field names can cause an uncaught RangeError (Invalid array length) that terminates the Node.js process. The first fie…</description>
+      <category>High</category>
+      <pubDate>Fri, 28 Aug 2026 20:03:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77063 · 3.7 LOW — multer vulnerable to file size limit bypass via async fileFilter race condition</title>
+      <link>https://vulnogram.org/CVE-2026-77063</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77063</guid>
+      <description>multer is a middleware for handling multipart/form-data in Node.js. When an application uses an asynchronous fileFilter together with the fileSize limit, a race condition in multer&apos;s file stream handling can allow a file that exceeds the configured s…</description>
+      <category>Low</category>
+      <pubDate>Fri, 28 Aug 2026 19:54:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77037 · 7.5 HIGH — multer vulnerable to Denial of Service via file descriptor leak on aborted uploads</title>
+      <link>https://vulnogram.org/CVE-2026-77037</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77037</guid>
+      <description>multer is a middleware for handling multipart/form-data in Node.js. In version 2.2.0, when a disk-backed upload is aborted or truncated before the write stream finishes, multer&apos;s disk storage engine removes the visible file but does not close the und…</description>
+      <category>High</category>
+      <pubDate>Fri, 28 Aug 2026 19:44:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15603 · 5.3 MEDIUM — morgan vulnerable to Log Forging via unescaped Unicode line separators</title>
       <link>https://vulnogram.org/CVE-2026-15603</link>
@@ -19,6 +51,126 @@
       <description>morgan is an HTTP request logger middleware for Node.js. In versions prior to 1.12.0, the internal helper that escapes log token values did not neutralize the Unicode line separator characters U+0085 (Next Line), U+2028 (Line Separator), and U+2029 (…</description>
       <category>Medium</category>
       <pubDate>Fri, 28 Aug 2026 13:41:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16231 · 8.1 HIGH — hbs vulnerable to XSS via registerAsyncHelper output-escaping bypass</title>
+      <link>https://vulnogram.org/CVE-2026-16231</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16231</guid>
+      <description>hbs is an Express view engine that wraps Handlebars. Its registerAsyncHelper API bypasses Handlebars&apos; automatic HTML escaping: an async helper returns an opaque placeholder during the first render pass, so the double-brace expression escapes only the…</description>
+      <category>High</category>
+      <pubDate>Tue, 25 Aug 2026 10:00:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76172 · 7.5 HIGH — fast-uri vulnerable to host confusion via percent-encoded scheme normalization</title>
+      <link>https://vulnogram.org/CVE-2026-76172</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76172</guid>
+      <description>fast-uri is a URI parser for Node.js. During parsing it runs a legacy decoding pass over the scheme component and never re-escapes the result, and serialization writes the scheme back out verbatim, unlike the host component which is re-escaped. As a…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 10:07:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75975 · 7.5 HIGH — fast-uri vulnerable to server-side request forgery via malformed IPv6 normalization</title>
+      <link>https://vulnogram.org/CVE-2026-75975</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75975</guid>
+      <description>fast-uri is a URI parser for Node.js. Its custom parser for bracketed IPv6 literals does not validate the complete IPv6 grammar, so invalid trailing text in an authority can be silently discarded and a malformed attacker-controlled host is turned int…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 09:58:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75899 · 7.5 HIGH — fast-uri vulnerable to server-side request forgery via repeated hostname percent-decoding</title>
+      <link>https://vulnogram.org/CVE-2026-75899</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75899</guid>
+      <description>fast-uri is a URI parser for Node.js. It decodes percent escapes in a hostname during parsing and then decodes the parsed hostname a second time during authority recomposition, so a single call to normalize or resolve can turn nested percent-encoded…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 09:40:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75931 · 7.5 HIGH — fast-uri vulnerable to host confusion via skipped IDN canonicalization on scheme-relative references</title>
+      <link>https://vulnogram.org/CVE-2026-75931</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75931</guid>
+      <description>fast-uri is a URI parser for Node.js. It canonicalizes a host to its ASCII form only when the input carries an explicit scheme, so a scheme-relative reference such as a host preceded by two slashes is returned with its host verbatim and no error set.…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 09:30:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74866 · 5.8 MEDIUM — @fastify/busboy vulnerable to CRLF injection via multipart Content-Disposition filename and name</title>
+      <link>https://vulnogram.org/CVE-2026-74866</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74866</guid>
+      <description>@fastify/busboy is a multipart form-data parser for Node.js. Its multipart part-header parser splits header lines only on the two-byte carriage-return line-feed sequence, so a lone carriage return or line feed embedded in a part header is not treated…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 21 Aug 2026 08:20:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16732 · 6.1 MEDIUM — fastify vulnerable to X-Forwarded-* spoofing under trustProxy hop-count</title>
+      <link>https://vulnogram.org/CVE-2026-16732</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16732</guid>
+      <description>fastify is a fast and low overhead web framework for Node.js. Impact: the fix for CVE-2026-3635 added a guard on the forwarded-header reads used to derive the request host, protocol, hostname, ip, and ips values, checking the connecting address. That…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 20:30:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18504 · 5.4 MEDIUM — fastify vulnerable to schema validation bypass via root primitive coercion mismatch</title>
+      <link>https://vulnogram.org/CVE-2026-18504</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18504</guid>
+      <description>fastify is a fast and low overhead web framework for Node.js. Versions of fastify before 5.12.1 are affected by a schema validation bypass when a request body schema targets a root primitive value. When the schema validates a top-level primitive such…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 20:19:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18165 · 4.2 MEDIUM — @fastify/oauth2 vulnerable to Login CSRF via plantable OAuth state cookies</title>
+      <link>https://vulnogram.org/CVE-2026-18165</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18165</guid>
+      <description>@fastify/oauth2 is an OAuth 2.0 plugin for Fastify. In versions from 7.2.0 up to but not including 8.3.0, the plugin validates the OAuth state, and with PKCE the code verifier, by comparing the callback query parameter against an unprefixed, predicta…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 15 Aug 2026 13:45:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19474 · 7.5 HIGH — @fastify/multipart vulnerable to Denial of Service via temporary file leak on aborted upload</title>
+      <link>https://vulnogram.org/CVE-2026-19474</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19474</guid>
+      <description>@fastify/multipart is a multipart form-data parser for Fastify. In versions from 3.0.0 up to but not including 10.1.1, request.saveRequestFiles() can leave completed temporary files on disk when a client disconnects while the parser is advancing betw…</description>
+      <category>High</category>
+      <pubDate>Sat, 15 Aug 2026 13:36:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18549 · 7.5 HIGH — @fastify/multipart vulnerable to Denial of Service via aborted upload after fileSize limit</title>
+      <link>https://vulnogram.org/CVE-2026-18549</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18549</guid>
+      <description>@fastify/multipart is a multipart form-data parser for Fastify. In versions from 5.3.0 up to but not including 10.1.1, when the busboy fileSize limit truncates a file part, the plugin clears its internal current-file reference while the underlying st…</description>
+      <category>High</category>
+      <pubDate>Sat, 15 Aug 2026 13:26:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18500 · 8.1 HIGH — @fastify/jwt vulnerable to authorization bypass via global secret overriding the per-request key</title>
+      <link>https://vulnogram.org/CVE-2026-18500</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18500</guid>
+      <description>@fastify/jwt is a JSON Web Token plugin for Fastify. In versions before 10.2.2, a per-request verification key passed to request.jwtVerify({ key }) is silently overridden by the plugin&apos;s globally configured secret, because the option merge applies th…</description>
+      <category>High</category>
+      <pubDate>Sat, 15 Aug 2026 13:16:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19484 · 7.5 HIGH — @fastify/busboy vulnerable to Denial of Service via oversized multipart boundary</title>
+      <link>https://vulnogram.org/CVE-2026-19484</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19484</guid>
+      <description>@fastify/busboy is a multipart form-data parser. In versions 3.1.0 through 3.2.0, a remote unauthenticated attacker can stall the Node.js event loop by sending a multipart request whose boundary is crafted to a specific length. The vendored streaming…</description>
+      <category>High</category>
+      <pubDate>Thu, 13 Aug 2026 08:50:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19481 · 7.5 HIGH — @fastify/busboy vulnerable to Denial of Service via prototype-named multipart part header</title>
+      <link>https://vulnogram.org/CVE-2026-19481</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19481</guid>
+      <description>@fastify/busboy is a multipart form-data parser. In versions 1.0.0 through 3.2.0, an attacker who can submit multipart form-data can crash the parser by sending a part header whose name is a prototype-inherited property such as __proto__ or construct…</description>
+      <category>High</category>
+      <pubDate>Thu, 13 Aug 2026 08:31:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18427 · 7.5 HIGH — @fastify/static vulnerable to route guard bypass via non-canonical path segments</title>
+      <link>https://vulnogram.org/CVE-2026-18427</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18427</guid>
+      <description>@fastify/static before version 10.1.3 contains an incomplete fix for a previous route guard bypass. The static file handler rejected only parent directory segments, but it did not canonicalize dot segments, duplicate slashes, encoded dots, or backsla…</description>
+      <category>High</category>
+      <pubDate>Thu, 06 Aug 2026 14:52:26 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-18248 · 9.1 CRITICAL — @fastify/aws-lambda vulnerable to Lambda event spoofing via client-controlled x-apigateway-event header</title>
@@ -83,6 +235,14 @@
       <description>@fastify/rate-limit before 11.2.0 keys rate-limit buckets by the verbatim client IP string returned from request.ip. Because a single IPv6 client can control a large address range (a /64 holds 2^64 distinct addresses) and the same address has multipl…</description>
       <category>High</category>
       <pubDate>Wed, 29 Jul 2026 16:10:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18174 · 5.3 MEDIUM — @fastify/forwarded vulnerable to improper input validation via unstripped tab characters in X-Forwarded-For</title>
+      <link>https://vulnogram.org/CVE-2026-18174</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18174</guid>
+      <description>@fastify/forwarded resolves client addresses from the X-Forwarded-For header. In versions before 3.0.2, when the header contains two or more comma separated entries, the parser trims only space characters and does not strip horizontal tabs, even thou…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 29 Jul 2026 13:46:07 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-15074 · 7.5 HIGH — @fastify/static vulnerable to route guard bypass via path traversal</title>
@@ -173,6 +333,14 @@
       <pubDate>Wed, 01 Jul 2026 11:29:20 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-6556 · 9.1 CRITICAL — @fastify/express vulnerable to middleware bypass via non-string mount paths in prefixed plugins</title>
+      <link>https://vulnogram.org/CVE-2026-6556</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6556</guid>
+      <description>@fastify/express versions 4.0.6 and earlier only rewrite the plugin prefix for middleware mount paths when the path argument is a string. Non-string mount paths (arrays of paths and regular expressions) are left unprefixed inside prefixed plugin scop…</description>
+      <category>Critical</category>
+      <pubDate>Tue, 30 Jun 2026 12:48:41 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-13676 · 7.5 HIGH 🌩️ — fast-uri vulnerable to host confusion via failed IDN canonicalization</title>
       <link>https://vulnogram.org/CVE-2026-13676</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13676</guid>
@@ -246,186 +414,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 17 Jun 2026 16:05:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9595 · 5.3 MEDIUM — webpack-dev-server vulnerable to HMR WebSocket interception via permissive user proxies</title>
-      <link>https://vulnogram.org/CVE-2026-9595</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9595</guid>
-      <description>Impact: When a user-configured proxy on webpack-dev-server has a broad context (e.g. /) and ws: true, it also intercepts the dev server&apos;s own HMR WebSocket and forwards it to the proxy target. This leaks the browser&apos;s cookies and Origin header to the…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 15 Jun 2026 15:00:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5038 · 5.3 MEDIUM — multer vulnerable to Denial of Service via incomplete cleanup of aborted uploads</title>
-      <link>https://vulnogram.org/CVE-2026-5038</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5038</guid>
-      <description>Impact: multer versions 2.0.0-alpha.1 through 2.1.1 and 3.0.0-alpha.1 are vulnerable to a Denial of Service when using diskStorage. Aborted or malformed multipart uploads leave orphaned partial files on disk because the Readable.pipe() call does not…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 15 Jun 2026 14:23:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5079 · 7.5 HIGH — multer vulnerable to Denial of Service via deeply nested field names</title>
-      <link>https://vulnogram.org/CVE-2026-5079</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5079</guid>
-      <description>Impact: multer versions 1.0.0 through 2.1.1 and 3.0.0-alpha.1 are vulnerable to a Denial of Service via deeply nested field names in multipart form data. The append-field dependency parses bracket notation in field names with no limit on nesting dept…</description>
-      <category>High</category>
-      <pubDate>Mon, 15 Jun 2026 13:56:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10796 · 7.5 HIGH 🌩️ — nvm executes commands from a malicious Node.js mirror&apos;s version strings</title>
-      <link>https://vulnogram.org/CVE-2026-10796</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10796</guid>
-      <description>nvm (Node Version Manager) through 0.40.4 executes arbitrary commands from version strings supplied by the configured Node.js/io.js mirror. Commands such as `nvm install` read the available versions from the mirror&apos;s index.tab and use the selected ve…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 04 Jun 2026 17:02:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5078 · 5.3 MEDIUM 🌩️ — morgan vulnerable to Log Forging via unneutralized control characters in :remote-user</title>
-      <link>https://vulnogram.org/CVE-2026-5078</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5078</guid>
-      <description>Impact: The morgan logging middleware&apos;s :remote-user token extracts the Basic auth username from the Authorization request header and writes it to the log stream without neutralizing control characters. An unauthenticated attacker can send a crafted…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 03 Jun 2026 05:56:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8162 · 7.5 HIGH 🌩️ — multiparty vulnerable to Denial of Service via Uncaught Exception in filename* parameter parsing</title>
-      <link>https://vulnogram.org/CVE-2026-8162</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8162</guid>
-      <description>multiparty@4.2.3 and lower versions are vulnerable to denial of service via uncaught exception. By sending a multipart/form-data request with a Content-Disposition header whose filename* parameter contains a malformed percent-encoding, the parser inv…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 12 May 2026 09:05:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8161 · 7.5 HIGH 🌩️ — multiparty vulnerable to Denial of Service via Prototype Pollution leading to Uncaught Exception</title>
-      <link>https://vulnogram.org/CVE-2026-8161</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8161</guid>
-      <description>multiparty@4.2.3 and lower versions are vulnerable to denial of service via uncaught exception. By sending a multipart/form-data request with a field name that collides with an inherited Object.prototype property such as __proto__, constructor, or to…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 12 May 2026 08:50:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8159 · 7.5 HIGH 🌩️ — multiparty vulnerable to ReDoS via filename parsing</title>
-      <link>https://vulnogram.org/CVE-2026-8159</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8159</guid>
-      <description>multiparty@4.2.3 and lower versions are vulnerable to denial of service via regular expression backtracking in the Content-Disposition filename parameter parser. A crafted multipart upload with a long header value can cause regex matching to take sec…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 12 May 2026 08:35:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6402 · 5.3 MEDIUM — webpack-dev-server vulnerable to cross-origin source code exposure on non-HTTPS origins</title>
-      <link>https://vulnogram.org/CVE-2026-6402</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6402</guid>
-      <description>webpack-dev-server versions up to and including 5.2.3 are vulnerable to cross-origin source code exposure when serving over a non-potentially trustworthy origin such as plain HTTP. The previous fix relied on the Sec-Fetch-Mode and Sec-Fetch-Site requ…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 12 May 2026 07:45:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6322 · 7.5 HIGH 🌩️ — fast-uri vulnerable to host confusion via percent-encoded authority delimiters</title>
-      <link>https://vulnogram.org/CVE-2026-6322</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6322</guid>
-      <description>fast-uri normalize() decoded percent-encoded authority delimiters inside the host component and then re-emitted them as raw delimiters during serialization. A host that combined an allowed domain, an encoded at-sign, and a different domain was re-emi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 05 May 2026 10:29:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6321 · 7.5 HIGH 🌩️ — fast-uri vulnerable to path traversal via percent-encoded dot segments</title>
-      <link>https://vulnogram.org/CVE-2026-6321</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6321</guid>
-      <description>fast-uri decoded percent-encoded path separators and dot segments before applying dot-segment removal in its normalize() and equal() functions. Encoded path data was treated like real slashes and parent-directory references, so distinct URIs could co…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 04 May 2026 19:31:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7768 · 7.5 HIGH — @fastify/accepts-serializer vulnerable to Denial of Service via Unbounded Accept Header Cache Growth</title>
-      <link>https://vulnogram.org/CVE-2026-7768</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7768</guid>
-      <description>@fastify/accepts-serializer cached serializer-selection results keyed by the request Accept header without a size limit or eviction policy. A remote unauthenticated client could send many distinct but matching Accept header variants to make the cache…</description>
-      <category>High</category>
-      <pubDate>Mon, 04 May 2026 19:14:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33804 · 7.4 HIGH — @fastify/middie vulnerable to middleware bypass via deprecated ignoreDuplicateSlashes option</title>
-      <link>https://vulnogram.org/CVE-2026-33804</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33804</guid>
-      <description>@fastify/middie versions 9.3.1 and earlier are vulnerable to middleware bypass when the deprecated Fastify ignoreDuplicateSlashes option is enabled. The middleware path matching logic does not account for duplicate slash normalization performed by Fa…</description>
-      <category>High</category>
-      <pubDate>Thu, 16 Apr 2026 13:56:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6270 · 9.1 CRITICAL — @fastify/middie vulnerable to middleware authentication bypass in child plugin scopes</title>
-      <link>https://vulnogram.org/CVE-2026-6270</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6270</guid>
-      <description>@fastify/middie versions 9.3.1 and earlier do not register inherited middleware directly on child plugin engine instances. When a Fastify application registers authentication middleware in a parent scope and then registers child plugins with @fastify…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 16 Apr 2026 13:44:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6410 · 5.3 MEDIUM — @fastify/static vulnerable to path traversal in directory listing</title>
-      <link>https://vulnogram.org/CVE-2026-6410</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6410</guid>
-      <description>@fastify/static versions 8.0.0 through 9.1.0 allow path traversal when directory listing is enabled via the list option. The dirList.path() function resolves directories outside the configured static root using path.join() without a containment check…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 16 Apr 2026 13:29:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6414 · 5.9 MEDIUM — @fastify/static vulnerable to route guard bypass via encoded path separators</title>
-      <link>https://vulnogram.org/CVE-2026-6414</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6414</guid>
-      <description>@fastify/static versions 8.0.0 through 9.1.0 decode percent-encoded path separators (%2F) before filesystem resolution, while Fastify&apos;s router treats them as literal characters. This mismatch allows attackers to bypass route-based middleware or guard…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 16 Apr 2026 13:09:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33805 · 9 CRITICAL 🌩️ — @fastify/reply-from vulnerable to connection header abuse enabling stripping of proxy-added headers</title>
-      <link>https://vulnogram.org/CVE-2026-33805</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33805</guid>
-      <description>@fastify/reply-from v12.6.1 and earlier and @fastify/http-proxy v11.4.3 and earlier process the client&apos;s Connection header after the proxy has added its own headers via rewriteRequestHeaders. This allows attackers to retroactively strip proxy-added h…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 15 Apr 2026 10:13:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33807 · 9.1 CRITICAL 🌩️ — @fastify/express vulnerable to middleware path doubling causing authentication bypass in child plugin scopes</title>
-      <link>https://vulnogram.org/CVE-2026-33807</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33807</guid>
-      <description>@fastify/express v4.0.4 and earlier contains a path handling bug in the onRegister function that causes middleware paths to be doubled when inherited by child plugins. When a child plugin is registered with a prefix that matches a middleware path, th…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 15 Apr 2026 09:52:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33808 · 9.1 CRITICAL 🌩️ — @fastify/express vulnerable to middleware authentication bypass via URL normalization gaps (duplicate slashes and semicolons)</title>
-      <link>https://vulnogram.org/CVE-2026-33808</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33808</guid>
-      <description>Impact@fastify/express v4.0.4 and earlier fails to normalize URLs before passing them to Express middleware when Fastify router normalization options are enabled. This allows complete bypass of path-scoped authentication middleware via duplicate slas…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 15 Apr 2026 09:29:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33806 · 7.5 HIGH 🌩️ — fastify vulnerable to Body Schema Validation Bypass via Leading Space in Content-Type Header</title>
-      <link>https://vulnogram.org/CVE-2026-33806</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33806</guid>
-      <description>Impact: Fastify applications using schema.body.content for per-content-type body validation can have validation bypassed entirely by prepending a space to the Content-Type header. The body is still parsed correctly but schema validation is skipped. T…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 15 Apr 2026 00:14:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4800 · 8.1 HIGH 🌩️ — lodash vulnerable to Code Injection via `_.template` imports key names</title>
-      <link>https://vulnogram.org/CVE-2026-4800</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4800</guid>
-      <description>Impact: The fix for CVE-2021-23337 (https://github.com/advisories/GHSA-35jh-r3h4-6jhm) added validation for the variable option in _.template but did not apply the same validation to options.imports key names. Both paths flow into the same Function()…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 31 Mar 2026 19:25:55 GMT</pubDate>
     </item>
   </channel>
 </rss>

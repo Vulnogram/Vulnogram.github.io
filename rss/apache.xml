@@ -11,378 +11,437 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 06 Aug 2026 12:31:31 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-57818 — Apache CXF: OAuth2 Authorization Code Replay via TOCTOU in JCacheCodeDataProvider</title>
-      <link>https://vulnogram.org/CVE-2026-57818</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57818</guid>
-      <description>A race condition in JCacheCodeDataProvider allows an attacker to redeem a single authorization code multiple times via concurrent requests, resulting in the issuance of multiple distinct, valid access tokens. Users are recommended to upgrade to versi…</description>
-      <pubDate>Thu, 06 Aug 2026 11:24:53 GMT</pubDate>
+      <title>CVE-2026-74848 · 7 HIGH 🌩️ — Apache APISIX: Cross-user response poisoning in serverless plugins</title>
+      <link>https://vulnogram.org/CVE-2026-74848</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74848</guid>
+      <description>Inconsistent Interpretation of HTTP Requests (&apos;HTTP Request/Response Smuggling&apos;) vulnerability in Apache APISIX. An attacker could make other clients receive attacker-chosen or other users&apos; responses on serverless-plugin routes. This issue affects Ap…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 27 Aug 2026 09:16:06 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-61466 — Apache CXF: OAuth2 Dynamic Client Registration Scope Self-Escalation</title>
-      <link>https://vulnogram.org/CVE-2026-61466</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61466</guid>
-      <description>In Apache CXF&apos;s OAuth2 Dynamic Client Registration endpoint, the authorization server accepts and stores the `scope` value supplied in the client registration request verbatim, without validating it against an AS-defined allowlist. This could lead to…</description>
-      <pubDate>Thu, 06 Aug 2026 11:24:27 GMT</pubDate>
+      <title>CVE-2026-75005 · 8.7 HIGH 🌩️ — Apache APISIX: Unauthenticated CPU-exhaustion DoS</title>
+      <link>https://vulnogram.org/CVE-2026-75005</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75005</guid>
+      <description>Inefficient Algorithmic Complexity vulnerability in Apache APISIX. A single small request can pin a gateway worker at 100% CPU for an extended period in graphql-limit-count routes. This issue affects Apache APISIX: 3.17.0. Users are recommended to up…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 27 Aug 2026 09:15:32 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-63687 — Apache CXF: JwtRequestCodeFilter silently overrides outer PKCE and nonce parameters</title>
-      <link>https://vulnogram.org/CVE-2026-63687</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63687</guid>
-      <description>Apache CXF&apos;s JwtRequestCodeFilter copies all claims from a signed request JWT into the authorization parameter map without excluding security-sensitive parameters. A client that can produce a validly-signed request JWT (e.g., one whose client_secret…</description>
-      <pubDate>Thu, 06 Aug 2026 11:23:45 GMT</pubDate>
+      <title>CVE-2026-75020 · 7 HIGH 🌩️ — Apache APISIX: ldap-auth plugin cross-subtree identity impersonation</title>
+      <link>https://vulnogram.org/CVE-2026-75020</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75020</guid>
+      <description>Improper Neutralization of Special Elements used in an LDAP Query (&apos;LDAP Injection&apos;) vulnerability in Apache APISIX. A caller who holds valid credentials for one entry in the LDAP directory can authenticate through APISIX as a consumer mapped to a di…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 27 Aug 2026 09:14:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-65583 — Apache CXF: Self-issued ID token claims validation skipped</title>
-      <link>https://vulnogram.org/CVE-2026-65583</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65583</guid>
-      <description>Apache CXF’s OIDC relying-party token validation could accept self-issued ID tokens without enforcing required claim checks (issuer/subject/audience/time and sub_jwk binding), enabling authentication bypass with crafted tokens. However, note that sel…</description>
-      <pubDate>Thu, 06 Aug 2026 11:23:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68079 — Apache CXF: DefaultEncryptingCodeDataProvider allows unlimited authorization code replay</title>
-      <link>https://vulnogram.org/CVE-2026-68079</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68079</guid>
-      <description>In Apache CXF&apos;s DefaultEncryptingCodeDataProvider, a captured authorization code can be redeemed an unlimited number of times due to a flaw in the implementation of the removeCodeGrant functionality. This violates the RFC requirement that &quot;The author…</description>
-      <pubDate>Thu, 06 Aug 2026 11:22:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68481 — Apache CXF: Revocation bypass in DefaultEncryptingOAuthDataProvider</title>
-      <link>https://vulnogram.org/CVE-2026-68481</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68481</guid>
-      <description>In Apache CXF&apos;s DefaultEncryptingOAuthDataProvider, revoked access tokens still decrypt successfully, and TokenIntrospectionService reports active:true. The same applies to refresh tokens. This violates the RFC stipulations that &apos;The authorization se…</description>
-      <pubDate>Thu, 06 Aug 2026 11:22:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65432 — Apache CXF: XXE via WSDL/XSD import parsing</title>
-      <link>https://vulnogram.org/CVE-2026-65432</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65432</guid>
-      <description>Apache CXF reads a top-level WSDL through its hardened StaxUtils path, which disables XML DTDs and external entities. However, any &lt;wsdl:import&gt; or &lt;xsd:import&gt; referenced from that top-level WSDL is handed off to WSDL4J, which does not disable DOCTY…</description>
-      <pubDate>Thu, 06 Aug 2026 10:26:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57817 — Apache CXF: The authorization code hash (c_hash) is not enforced for the hybrid OIDC flow</title>
-      <link>https://vulnogram.org/CVE-2026-57817</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57817</guid>
-      <description>The OpenID Connect Core 1.0 specification mandates that the RP MUST validate the `c_hash` parameter when operating in the Hybrid Flow. If an Apache CXF RP is integrated with a non-compliant or misconfigured Identity Provider (IdP) that omits the `c_h…</description>
-      <pubDate>Thu, 06 Aug 2026 10:24:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66909 — Apache CXF: Unsafe deserialization of inbound JMS ObjectMessage</title>
-      <link>https://vulnogram.org/CVE-2026-66909</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66909</guid>
-      <description>Apache CXF&apos;s JMS transport deserializes the body of any inbound JMS ObjectMessage using native Java deserialization, with no type restrictions in place. Any attacker able to place a message on the service&apos;s JMS destination can submit a malicious seri…</description>
-      <pubDate>Thu, 06 Aug 2026 10:23:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64958 — Apache CXF: Denial of service via message header attachments</title>
-      <link>https://vulnogram.org/CVE-2026-64958</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64958</guid>
-      <description>An incomplete fix for CVE-2026-50645 means that it is still possible to perform a denial of service attack on Apache CXF by sending a message with many attachment headers. Users are recommended to upgrade to versions 4.2.3 or 4.1.8 or 3.6.12, which f…</description>
-      <pubDate>Thu, 06 Aug 2026 10:13:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57819 — Apache CXF: No default restriction on the amount of form parameters per message</title>
-      <link>https://vulnogram.org/CVE-2026-57819</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57819</guid>
-      <description>Apache CXF allows to set a limit on the number of form parameters in a JAX-RS message via the &quot;maxFormParameterCount&quot; configuration option. However, no default limit is set which may lead to denial of service attacks when processing requests with ver…</description>
-      <pubDate>Thu, 06 Aug 2026 10:12:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54225 — Apache CXF: Denial of Service attack via large attachments</title>
-      <link>https://vulnogram.org/CVE-2026-54225</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54225</guid>
-      <description>Apache CXF allows to control the maximum attachment size via the &quot;attachment-max-size&quot;. Prior to Apache CXF 4.2.3 and 4.1.8 and 3.6.12, there was no default placed on this size, meaning that a denial of service attack is possible if the user doesn&apos;t…</description>
-      <pubDate>Thu, 06 Aug 2026 10:11:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64640 · 5.3 MEDIUM — Apache Polaris: register endpoint reads attacker-controlled storage location before allowed-locations validation</title>
-      <link>https://vulnogram.org/CVE-2026-64640</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64640</guid>
-      <description>Apache Polaris did not consistently validate storage locations supplied during table and view registration. An authenticated principal with permission to register a table or view could, depending on the affected release and registration path, cause P…</description>
+      <title>CVE-2026-63041 · 5.3 MEDIUM — Apache APISIX: attach-consumer-label does not strip client-supplied consumer-label headers</title>
+      <link>https://vulnogram.org/CVE-2026-63041</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63041</guid>
+      <description>Reliance on Untrusted Inputs in a Security Decision vulnerability in Apache APISIX. This vulnerability allows an attacker to escalate privilege or perform an authorization bypass by sending certain values that the attach-consumer-label plugin does no…</description>
       <category>Medium</category>
-      <pubDate>Thu, 06 Aug 2026 09:08:06 GMT</pubDate>
+      <pubDate>Wed, 26 Aug 2026 11:34:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-60053 — Apache Answer: Residual Administrative API Key Access After Role or Account Revocation</title>
-      <link>https://vulnogram.org/CVE-2026-60053</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-60053</guid>
-      <description>Insufficient Session Expiration vulnerability in Apache Answer. This issue affects Apache Answer: through 2.0.1. Administrative API keys remained usable after the owning administrator was demoted or the account was marked inactive, suspended, or dele…</description>
-      <pubDate>Wed, 05 Aug 2026 15:13:10 GMT</pubDate>
+      <title>CVE-2026-73180 · 6.8 MEDIUM — Apache Tomcat: Authenticated WebSocket session survives end of HTTP session</title>
+      <link>https://vulnogram.org/CVE-2026-73180</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73180</guid>
+      <description>Insufficient Session Expiration vulnerability in Apache Tomcat meant that if the session ID for an authenticated HTTP session was changed after a WebSocket connection had been established under that authenticated HTTP session, the WebSokcet session w…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 25 Aug 2026 22:01:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-60023 — Apache Answer: Unauthorized disclosure of deleted or pending answer content</title>
-      <link>https://vulnogram.org/CVE-2026-60023</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-60023</guid>
-      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Answer. This issue affects Apache Answer: through 2.0.1. Deleted or pending answers could be retrieved by unauthorized users through the single-answer read path when t…</description>
-      <pubDate>Wed, 05 Aug 2026 15:12:08 GMT</pubDate>
+      <title>CVE-2026-68763 · 7.5 HIGH 🌩️ — Apache Tomcat: DoS via allocation leak in HTTP/2 backlog tracking when a stream is reset</title>
+      <link>https://vulnogram.org/CVE-2026-68763</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68763</guid>
+      <description>Uncontrolled Resource Consumption vulnerability in Apache Tomcat via an allocation leak in the HTTP/2 backlog tracking when a stream is reset This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10.1.0-M1 through 10.1.57, from 9.0.3…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 22:00:37 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-50749 — Apache Answer: Missing authorization in revision audit reject allows authenticated users to reject pending revisions</title>
-      <link>https://vulnogram.org/CVE-2026-50749</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50749</guid>
-      <description>Improper Authorization vulnerability in Apache Answer. This issue affects Apache Answer: through 2.0.1. Any authenticated user can reject arbitrary pending edit-revisions without review permission due to a missing authorization check on the reject op…</description>
-      <pubDate>Wed, 05 Aug 2026 15:11:05 GMT</pubDate>
+      <title>CVE-2026-68569 · 8.1 HIGH — Apache Tomcat: Principal lookup can fail open in some cases</title>
+      <link>https://vulnogram.org/CVE-2026-68569</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68569</guid>
+      <description>Improper Authentication vulnerability in Apache Tomcat meant that in some circumstances (e.g. CLIENT-CERT, SPNEGO) that a user would be authenticated even if the user did not exist in the DataSourceRealm. This issue affects Apache Tomcat: from 11.0.0…</description>
+      <category>High</category>
+      <pubDate>Tue, 25 Aug 2026 21:59:17 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-48912 — Apache Answer: Improper authorization in avatar update cleanup allows authenticated users to delete arbitrary uploaded files by URL</title>
-      <link>https://vulnogram.org/CVE-2026-48912</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48912</guid>
-      <description>Improper Input Validation vulnerability in Apache Answer. This issue affects Apache Answer: through 2.0.1. A missing ownership check in the avatar-cleanup logic allows any authenticated user to delete other users&apos; uploaded files by supplying their fi…</description>
-      <pubDate>Wed, 05 Aug 2026 15:10:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48911 — Apache Answer: Unauthenticated OAuth Email-Binding Account Takeover via Existing User Confirmation Flow</title>
-      <link>https://vulnogram.org/CVE-2026-48911</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48911</guid>
-      <description>Insufficient Verification of Data Authenticity vulnerability in Apache Answer. This issue affects Apache Answer: through 2.0.1. A missing authorization check in the external-login email binding flow allows unauthenticated attackers to take over arbit…</description>
-      <pubDate>Wed, 05 Aug 2026 15:09:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48834 — Apache Answer: Denial of service via crafted Accept-Language header parsing</title>
-      <link>https://vulnogram.org/CVE-2026-48834</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48834</guid>
-      <description>Improper Handling of Length Parameter Inconsistency vulnerability in Apache Answer. This issue affects Apache Answer: through 2.0.1. Unauthenticated attackers can cause a denial of service via a specially crafted Accept-Language header that triggers…</description>
-      <pubDate>Wed, 05 Aug 2026 15:07:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-61486 · 9.8 CRITICAL 🌩️ 👻 — Apache Lucy: stack-buffer-overflow in JSON parser error reporter on malformed input</title>
-      <link>https://vulnogram.org/CVE-2026-61486</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61486</guid>
-      <description>** UNSUPPORTED WHEN ASSIGNED ** Stack-based Buffer Overflow vulnerability in Apache Lucy. This issue affects Apache Lucy: all versions. As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to fi…</description>
+      <title>CVE-2026-68525 · 9.1 CRITICAL 🌩️ — Apache Tomcat: Redirect after FORM auth may bypass method specific constraints</title>
+      <link>https://vulnogram.org/CVE-2026-68525</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68525</guid>
+      <description>Incorrect Authorization vulnerability in Apache Tomcat&apos;s FORM authentication process allows the bypassing of a security constraint that limits user has access to a resource POST but not GET. This issue affects Apache Tomcat: from 11.0.0-M1 through 11…</description>
       <category>Critical</category>
       <category>Network Exploitable</category>
-      <category>Unsupported When Assigned</category>
-      <pubDate>Wed, 05 Aug 2026 06:44:11 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 21:57:18 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-61485 · 7.5 HIGH 🌩️ 👻 — Apache Lucy: Freezer/InStream deserialization bomb - unbounded allocation reading an index</title>
-      <link>https://vulnogram.org/CVE-2026-61485</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61485</guid>
-      <description>** UNSUPPORTED WHEN ASSIGNED ** Memory Allocation with Excessive Size Value vulnerability in Apache Lucy. This issue affects Apache Lucy: all versions. As this project is retired, we do not plan to release a version that fixes this issue. Users are r…</description>
+      <title>CVE-2026-66422 · 8.1 HIGH — Apache Tomcat: Servlet role references can bypass declarative role constraints</title>
+      <link>https://vulnogram.org/CVE-2026-66422</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66422</guid>
+      <description>Improper Authorization vulnerability in Apache Tomcat cause by security-role-ref definitions being incorrectly used as role aliases within the Realm in additional to the correct usage with Request.isUserInRole(). This issue affects Apache Tomcat: fro…</description>
+      <category>High</category>
+      <pubDate>Tue, 25 Aug 2026 21:55:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65927 · 7.5 HIGH 🌩️ — Apache Tomcat: RewriteValve [N] restarts at the second rule and may bypass access control</title>
+      <link>https://vulnogram.org/CVE-2026-65927</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65927</guid>
+      <description>Off-by-one Error vulnerability in Apache Tomcat impacting the [N] flag on the rewrite valves causes rewrite processing to restart at the second rule rather than the first rule. This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, from 10…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <category>Unsupported When Assigned</category>
-      <pubDate>Wed, 05 Aug 2026 06:43:27 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 21:53:05 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-61484 · 9.8 CRITICAL 🌩️ 👻 — Apache Lucy: LucyX::Remote::SearchServer unauthenticated remote Storable::thaw -&gt; RCE/DoS</title>
-      <link>https://vulnogram.org/CVE-2026-61484</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61484</guid>
-      <description>** UNSUPPORTED WHEN ASSIGNED ** Deserialization of Untrusted Data vulnerability in Apache Lucy. This issue affects Apache Lucy: all versions. As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended…</description>
+      <title>CVE-2026-65905 · 9.8 CRITICAL 🌩️ — Apache Tomcat: Limited replay attack possible with DIGEST authentication</title>
+      <link>https://vulnogram.org/CVE-2026-65905</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65905</guid>
+      <description>Authentication Bypass by Capture-replay vulnerability in Apache Tomcat&apos;s DIGEST authenticator. If, before windowSize requests have been made, a client makes a DIGEST authenticated request with a nonceCount on the upper boundary of the replay window t…</description>
       <category>Critical</category>
       <category>Network Exploitable</category>
-      <category>Unsupported When Assigned</category>
-      <pubDate>Wed, 05 Aug 2026 06:42:06 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 21:51:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-61483 👻 — Apache Lucy: QueryParser unbounded recursion on deeply-nested query -&gt; C-stack-overflow DoS</title>
-      <link>https://vulnogram.org/CVE-2026-61483</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61483</guid>
-      <description>** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability in Apache Lucy. This issue affects Apache Lucy: all versions. As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an…</description>
-      <category>Unsupported When Assigned</category>
-      <pubDate>Wed, 05 Aug 2026 06:36:02 GMT</pubDate>
+      <title>CVE-2026-65637 · 9.8 CRITICAL 🌩️ — Apache Tomcat: HTTP/2 no-authority bypass of strict SNI validation - CVE-2026-32990 fix incomplete</title>
+      <link>https://vulnogram.org/CVE-2026-65637</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65637</guid>
+      <description>Improper Input Validation vulnerability in Apache Tomcat due to incomplete fix for CVE-2026-32990. This issue affects Apache Tomcat: from 11.0.20 through 11.0.24, from 10.1.53 through 10.1.57, from 9.0.115 through 9.0.120. Users are recommended to up…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 21:49:13 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-68080 · 6.5 MEDIUM — Apache Qpid Broker-J: Unbounded echo flow responses can lead to denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-68080</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68080</guid>
-      <description>It was not possible to govern the rate at which the broker would respond to an echo flow, enabling an authenticated attacker to cause excessive resource usage and potential denial of service. This issue affects Apache Qpid Broker-J: through 10.0.1. U…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 05:51:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67592 · 7.5 HIGH 🌩️ — Apache Qpid ProtonJ2: Unable to govern the maximum number of transfer frames per incoming delivery</title>
-      <link>https://vulnogram.org/CVE-2026-67592</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67592</guid>
-      <description>It was not possible to govern the maximum number of transfer frames per incoming delivery, enabling an authenticated attacker to cause excessive resource usage and potential denial of service. This issue affects Apache Qpid ProtonJ2: through 1.1.0. U…</description>
+      <title>CVE-2026-65183 · 8.1 HIGH 🌩️ — Apache Tomcat: TOCTOU when setting specific permissions for Unix Domain Sockets</title>
+      <link>https://vulnogram.org/CVE-2026-65183</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65183</guid>
+      <description>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in Apache Tomcat when creating unix domain sockets allows an unauthorised local user to access the unix domain socket. This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.24, f…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 05:44:18 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 21:44:49 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-67555 · 6.5 MEDIUM — Apache Qpid Proton Dotnet: Unable to govern the maximum number of transfer frames per incoming delivery</title>
-      <link>https://vulnogram.org/CVE-2026-67555</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67555</guid>
-      <description>It was not possible to govern the maximum number of transfer frames per incoming delivery, enabling an authenticated attacker to cause excessive resource usage and potential denial of service This issue affects Apache Qpid Proton-Dotnet: through 1.0.…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 05:43:57 GMT</pubDate>
+      <title>CVE-2026-65182 · 9.1 CRITICAL 🌩️ — Apache Tomcat: Bypass longest prefix security constraint</title>
+      <link>https://vulnogram.org/CVE-2026-65182</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65182</guid>
+      <description>Improper Access Control, Incorrect Authorization vulnerability in Apache Tomcat leads to security constraint bypass if a constraint for a longer path is specified before a more restrictive constraint for a shorter sub-path. This issue affects Apache…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 21:43:37 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-68078 · 6.5 MEDIUM — Apache Qpid Broker-J: Unable to govern the maximum number of transfer frames per incoming delivery</title>
-      <link>https://vulnogram.org/CVE-2026-68078</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68078</guid>
-      <description>It was not possible to govern the maximum number of transfer frames per incoming delivery, enabling an authenticated attacker to cause excessive resource usage and potential denial of service. This issue affects Apache Qpid Broker-J: through 10.0.1.…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 05:43:35 GMT</pubDate>
+      <title>CVE-2026-49845 · 9.8 CRITICAL 🌩️ — Apache Hive: SQL Injection vulnerability in HiveMetaStore partition-name direct-SQL paths</title>
+      <link>https://vulnogram.org/CVE-2026-49845</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49845</guid>
+      <description>SQL injection in Hive Metastore direct SQL partition-name resolution in Apache Hive before 4.2.1 on all platforms allows authenticated users with access to Hive Metastore APIs to read, modify, or affect unintended partition metadata (including statis…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 10:13:49 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-66277 · 6.5 MEDIUM — Apache Qpid Proton-J: Unable to govern the maximum number of transfer frames per incoming delivery</title>
-      <link>https://vulnogram.org/CVE-2026-66277</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66277</guid>
-      <description>It was not possible to govern the maximum number of transfer frames per incoming delivery, enabling an authenticated attacker to cause excessive resource usage and potential denial of service. This issue affects Apache Qpid Proton-J: through 0.34.1.…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 05:42:30 GMT</pubDate>
+      <title>CVE-2026-55976 · 9.1 CRITICAL 🌩️ — Apache Hive: SSRF vulnerability in Hive Avro Serde due to Insufficient input validation on avro.schema.url</title>
+      <link>https://vulnogram.org/CVE-2026-55976</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55976</guid>
+      <description>Server-Side Request Forgery (SSRF) in Avro SerDe schema resolution in Apache Hive before 4.2.1 allows an authenticated remote attacker with CREATE TABLE privilege to cause the Hive server to fetch an attacker-controlled URL when resolving the avro.sc…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 10:13:27 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-67554 · 6.5 MEDIUM — Apache Qpid Proton Dotnet: Unbounded disposition range handling can lead to denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-67554</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67554</guid>
-      <description>An authenticated attacker can craft a disposition frame with large or illegal ranges causing excessive CPU usage due to naive range handling, leading to denial of service. This issue affects Apache Qpid Proton-Dotnet: through 1.0.0. Users are recomme…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 05:41:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68077 — Apache Qpid Broker-J: Unbounded disposition range handling can lead to denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-68077</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68077</guid>
-      <description>An authenticated attacker can craft a disposition frame with large or illegal ranges causing excessive CPU usage due to naive range handling, leading to denial of service. This issue affects Apache Qpid Broker-J: through 10.0.1. Users are recommended…</description>
-      <pubDate>Wed, 05 Aug 2026 05:41:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66276 — Apache Qpid Proton-J: Unbounded disposition range handling can lead to denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-66276</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66276</guid>
-      <description>An authenticated attacker can craft a disposition frame with large or illegal ranges causing excessive CPU usage due to naive range handling, leading to denial of service. This issue affects Apache Qpid Proton-J: through 0.34.1. Users are recommended…</description>
-      <pubDate>Wed, 05 Aug 2026 05:39:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67591 — Apache Qpid ProtonJ2: Incoming session flow control window can be exceeded</title>
-      <link>https://vulnogram.org/CVE-2026-67591</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67591</guid>
-      <description>An authenticated attacker could exceed the session flow control incoming window potentially leading to denial of service. This issue affects Apache Qpid ProtonJ2: through 1.1.0. Users are recommended to upgrade to version 1.2.0, which fixes the issue…</description>
-      <pubDate>Wed, 05 Aug 2026 05:38:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67553 — Apache Qpid Proton Dotnet: Incoming session flow control window can be exceeded</title>
-      <link>https://vulnogram.org/CVE-2026-67553</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67553</guid>
-      <description>An authenticated attacker could exceed the session flow control incoming window potentially leading to denial of service. This issue affects Apache Qpid Proton-Dotnet: through 1.0.0. Users are recommended to upgrade to version 1.1.0, which fixes the…</description>
-      <pubDate>Wed, 05 Aug 2026 05:37:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68075 — Apache Qpid Broker-J: Incoming session flow control window can be exceeded</title>
-      <link>https://vulnogram.org/CVE-2026-68075</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68075</guid>
-      <description>An authenticated attacker could exceed the session flow control incoming window potentially leading to denial of service. This issue affects Apache Qpid Broker-J: through 10.0.1. Users are recommended to upgrade to version 10.1.0, which fixes the iss…</description>
-      <pubDate>Wed, 05 Aug 2026 05:36:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66275 — Apache Qpid Proton-J: Incoming session flow control window can be exceeded</title>
-      <link>https://vulnogram.org/CVE-2026-66275</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66275</guid>
-      <description>An authenticated attacker could exceed the session flow control incoming window potentially leading to denial of service. This issue affects Apache Qpid Proton-J: through 0.34.1. Users are recommended to upgrade to version 0.35.0, which fixes the iss…</description>
-      <pubDate>Wed, 05 Aug 2026 05:34:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67590 — Apache Qpid ProtonJ2: Unbounded type nesting can lead to pre-authentication stackoverflow</title>
-      <link>https://vulnogram.org/CVE-2026-67590</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67590</guid>
-      <description>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service. This issue affects Apache Qpid ProtonJ2: through 1.1.0. Users are recommended to upgrade to version 1.2.0, which fixes t…</description>
-      <pubDate>Wed, 05 Aug 2026 05:33:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67552 — Apache Qpid Proton Dotnet: Unbounded type nesting can lead to pre-authentication stackoverflow</title>
-      <link>https://vulnogram.org/CVE-2026-67552</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67552</guid>
-      <description>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service. This issue affects Apache Qpid Proton-Dotnet through 1.0.0. Users are recommended to upgrade to version 1.1.0, which fix…</description>
-      <pubDate>Wed, 05 Aug 2026 05:32:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68073 — Apache Qpid Broker-J: Unbounded type nesting can lead to pre-authentication stack overflow</title>
-      <link>https://vulnogram.org/CVE-2026-68073</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68073</guid>
-      <description>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service. This issue affects Apache Qpid Broker-J: through 10.0.1. Users are recommended to upgrade to version 10.1.0, which fixes…</description>
-      <pubDate>Wed, 05 Aug 2026 05:32:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66274 — Apache Qpid Proton-J: Unbounded type nesting can lead to pre-authentication stackoverflow</title>
-      <link>https://vulnogram.org/CVE-2026-66274</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66274</guid>
-      <description>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service. This issue affects Apache Qpid Proton-J: through 0.34.1. Users are recommended to upgrade to version 0.35.0, which fixes…</description>
-      <pubDate>Wed, 05 Aug 2026 05:29:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67589 — Apache Qpid ProtonJ2: Type size/count handling can lead to excessive allocation pre-authentication</title>
-      <link>https://vulnogram.org/CVE-2026-67589</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67589</guid>
-      <description>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service. This issue affects Apache Qpid ProtonJ2: through 1.1.0. Users are recommended to upgrade to version 1.2.0, whi…</description>
-      <pubDate>Wed, 05 Aug 2026 05:28:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67551 — Apache Qpid Proton Dotnet: Type size/count handling can lead to excessive allocation pre-authentication</title>
-      <link>https://vulnogram.org/CVE-2026-67551</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67551</guid>
-      <description>pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service. This issue affects Apache Qpid Proton-Dotnet: through 1.0.0. Users are recommended to upgrade to version 1.1.0,…</description>
-      <pubDate>Wed, 05 Aug 2026 05:27:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68060 — Apache Qpid Broker-J: Type size/count handling can lead to excessive allocation pre-authentication</title>
-      <link>https://vulnogram.org/CVE-2026-68060</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68060</guid>
-      <description>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service. This issue affects Apache Qpid Broker-J: through 10.0.1. Users are recommended to upgrade to version 10.1.0, w…</description>
-      <pubDate>Wed, 05 Aug 2026 05:26:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66273 — Apache Qpid Proton-J: Type size/count handling can lead to excessive allocation pre-authentication</title>
-      <link>https://vulnogram.org/CVE-2026-66273</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66273</guid>
-      <description>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service. This issue affects Apache Qpid Proton-J: through 0.34.1. Users are recommended to upgrade to version 0.35.0, w…</description>
-      <pubDate>Wed, 05 Aug 2026 05:23:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67588 — Apache Qpid ProtonJ2: Unbounded symbol value caching can lead to pre-authentication resource exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-67588</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67588</guid>
-      <description>A pre-authentication attacker could leverage unbounded symbol value caching to cause resource exhaustion leading to denial of service. This issue affects Apache Qpid ProtonJ2: through 1.1.0. Users are recommended to upgrade to version 1.2.0, which fi…</description>
-      <pubDate>Wed, 05 Aug 2026 05:21:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67465 — Apache Qpid Proton Dotnet: Unbounded symbol value caching can lead to pre-authentication resource exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-67465</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67465</guid>
-      <description>A pre-authentication attacker could leverage unbounded symbol value caching to cause resource exhaustion leading to denial of service. This issue affects Apache Qpid Proton-Dotnet: through 1.0.0. Users are recommended to upgrade to version 1.1.0, whi…</description>
-      <pubDate>Wed, 05 Aug 2026 05:21:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68074 — Apache Qpid Broker-J: Unbounded symbol value caching can lead to pre-authentication resource exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-68074</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68074</guid>
-      <description>A pre-authentication attacker could leverage unbounded symbol value caching to cause resource exhaustion leading to denial of service. This issue affects Apache Qpid Broker-J: through 10.0.1. Users are recommended to upgrade to version 10.1.0, which…</description>
-      <pubDate>Wed, 05 Aug 2026 05:19:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66257 — Apache Qpid Proton-J: Unbounded symbol value caching can lead to pre-authentication resource exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-66257</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66257</guid>
-      <description>A pre-authentication attacker could leverage unbounded symbol value caching to cause resource exhaustion leading to denial of service. This issue affects Apache Qpid Proton-J: through 0.34.1. Users are recommended to upgrade to version 0.35.0, which…</description>
-      <pubDate>Wed, 05 Aug 2026 05:18:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68981 · 8.8 HIGH 🌩️ — Apache NiFi: Uncontrolled Resource Consumption through Decompression of HTTP Requests</title>
-      <link>https://vulnogram.org/CVE-2026-68981</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68981</guid>
-      <description>Apache NiFi 1.5.0 through 2.10.0 support gzip-encoded HTTP requests for the application REST API using a Jersey encoding filter. The framework enforced a configurable maximum request size on the compressed payload rather than the decompressed output,…</description>
+      <title>CVE-2026-53561 · 7.4 HIGH 🌩️ — Apache Hive: Unauthenticated authentication bypass in HiveServer2 HTTP SAML bearer-token validation allows impersonation of any Hive user</title>
+      <link>https://vulnogram.org/CVE-2026-53561</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53561</guid>
+      <description>An improper authentication vulnerability in HiveServer2 SAML bearer-token validation in Apache Hive 4.0.0 through 4.2.0 (and later unreleased branches) on deployments using HTTP transport with hive.server2.authentication=SAML allows an unauthenticate…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 19:59:58 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 10:12:53 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-68980 · 2.3 LOW — Apache NiFi: Authorization Bypass for Parameter Context Asset Deletion</title>
-      <link>https://vulnogram.org/CVE-2026-68980</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68980</guid>
-      <description>Apache NiFi 2.0.0 through 2.10.0 support creating, reading, and deleting Assets associated with Parameter Contexts through the REST API. The framework authorizes asset deletion against the owning Parameter Context using the supplied Parameter Context…</description>
+      <title>CVE-2026-49050 · 8.8 HIGH — Apache DolphinScheduler: General user can mint admin access tokens via /access-tokens</title>
+      <link>https://vulnogram.org/CVE-2026-49050</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49050</guid>
+      <description>General user can mint admin access tokens via /access-tokens This issue affects Apache DolphinScheduler: before 3.4.2. Users are recommended to upgrade to version 3.4.2, which fixes the issue.</description>
+      <category>High</category>
+      <pubDate>Tue, 25 Aug 2026 09:57:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75099 · 5.3 MEDIUM 🌩️ — Apache Allura: Unauthenticated REST disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-75099</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75099</guid>
+      <description>Unauthenticated REST disclosure of certain content items in Apache Allura. This issue affects Apache Allura: through 1.19.1. Users are recommended to upgrade to version 1.20.0, which fixes the issue.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:42:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78329 · 9.8 CRITICAL 🌩️ — Apache Camel: Camel-Undertow: the endpoint discarded the undertow-specific header filter strategy in favour of the base HTTP one, so the undertow filtering never ran on endpoint-configured routes</title>
+      <link>https://vulnogram.org/CVE-2026-78329</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78329</guid>
+      <description>Improper input validation vulnerability in Apache Camel Undertow component. This issue affects Apache Camel: from 4.11.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0. UndertowEndpoint defaulted its headerFilterStrategy field to…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:22:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71300 · 9.8 CRITICAL 🌩️ — Apache Camel: Camel-Atmosphere-Websocket: WebSocket dispatch header injection</title>
+      <link>https://vulnogram.org/CVE-2026-71300</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71300</guid>
+      <description>Improper input validation vulnerability in Apache Camel Atmosphere Websocket component. This issue affects Apache Camel: from 4.0.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0. The camel-atmosphere-websocket producer selects w…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:21:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63621 · 5.3 MEDIUM 🌩️ — Apache Camel: Camel-Knative: CloudEvent extension fields received in structured content mode were mapped onto message headers without applying any header filter strategy</title>
+      <link>https://vulnogram.org/CVE-2026-63621</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63621</guid>
+      <description>Improper Input Validation, Improper Neutralization of Special Elements in Output Used by a Downstream Component (&apos;Injection&apos;) vulnerability in Apache Camel Knative component The Knative consumer in camel-knative maps inbound CloudEvent attributes ont…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:17:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66908 · 7.5 HIGH 🌩️ — Apache Camel: Camel-platform-http-main: when JWT authentication was configured with a keystore but no issuer or audience, the iss and aud claims were never validated, so any unexpired token signed by a trusted key was accepted</title>
+      <link>https://vulnogram.org/CVE-2026-66908</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66908</guid>
+      <description>Improper Authentication vulnerability in Apache Camel Platform HTTP Main component. This issue affects Apache Camel: from 4.8.0 before 4.22.0. The camel-main embedded HTTP server can protect its endpoints with JWT authentication, configured through a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:14:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66907 · 7.5 HIGH 🌩️ — Apache Camel: Camel-Google-Storage: the consumer appended the remote object name to the configured downloadFileName directory without constraining the result</title>
+      <link>https://vulnogram.org/CVE-2026-66907</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66907</guid>
+      <description>Relative path traversal vulnerability in Apache Camel Google Storage component. This issue affects Apache Camel: from 4.0.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0. The camel-google-storage consumer downloads Google Cloud…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:13:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66906 · 9.1 CRITICAL 🌩️ — Apache Camel: Camel-Azure-Storage-Blob: the downloadBlobToFile operation built the local download target from the remote blob name without constraining it to the configured fileDir</title>
+      <link>https://vulnogram.org/CVE-2026-66906</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66906</guid>
+      <description>Relative path traversal vulnerability in Apache Camel Azure Storage Blob component. This issue affects Apache Camel: from 4.0.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0. The camel-azure-storage-blob component can download a…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:12:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-60093 · 5.5 MEDIUM — Apache Camel: Camel-Azure-Storage-DataLake: the downloadToFile operation built the local download target from the remote path name without constraining it to the configured fileDir</title>
+      <link>https://vulnogram.org/CVE-2026-60093</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-60093</guid>
+      <description>Relative path traversal vulnerability in Apache Camel Azure-Storage Datalake component This issue affects Apache Camel: from 4.0.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0. The camel-azure-storage-datalake component can dow…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 24 Aug 2026 16:11:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59230 · 6.5 MEDIUM 🌩️ — Apache Camel: Camel-Mail: the MimeMultipart data format copied MIME headers onto the Camel message without a header filter strategy when unmarshalling with headersInline enabled</title>
+      <link>https://vulnogram.org/CVE-2026-59230</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59230</guid>
+      <description>Improper input validation vulnerability in Apache Camel. This issue affects Apache Camel: from 2.17.0 before 4.14.9, from 4.15.0 before 4.18.4, from 4.19.0 before 4.22.0. The camel-mail component ships a MimeMultipart data format that can unmarshal a…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:09:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59654 · 6.8 MEDIUM — Apache CloudStack: DoS caused by database connections leak</title>
+      <link>https://vulnogram.org/CVE-2026-59654</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59654</guid>
+      <description>Missing Release of Resource after Effective Lifetime vulnerability in Apache CloudStack&apos;s scoped global configuration functionality. It affects different modules and plugins of the CloudStack management server, including Quota, Host-HA, etc., and may…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 21 Aug 2026 12:33:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63046 · 8.8 HIGH — Apache InLong: Agent Installer — Command Injection to RCE via Default Credentials</title>
+      <link>https://vulnogram.org/CVE-2026-63046</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63046</guid>
+      <description>Improper Neutralization of Argument Delimiters in a Command (&apos;Argument Injection&apos;) vulnerability in Apache InLong. Agent Installer&apos;s ModuleManager executes arbitrary shell commands via ExcuteLinux.exeCmd() with no filtering or whitelist validation. T…</description>
+      <category>High</category>
+      <pubDate>Fri, 21 Aug 2026 08:37:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47359 · 8.8 HIGH — Apache CloudStack: OS Command Injection due to unsanitized mount command</title>
+      <link>https://vulnogram.org/CVE-2026-47359</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47359</guid>
+      <description>Improper Neutralization of Special Elements used in an OS Command (&apos;OS Command Injection&apos;) vulnerability in Apache CloudStack&apos;s NAS backup provider plugin. The addBackupRepository API (available since 4.20.0.0) and updateBackupRepository API (introdu…</description>
+      <category>High</category>
+      <pubDate>Fri, 21 Aug 2026 08:30:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50112 · 8.8 HIGH — Apache CloudStack: RCE and SSRF in direct download, metalink and NFS templates</title>
+      <link>https://vulnogram.org/CVE-2026-50112</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50112</guid>
+      <description>SSRF via Metalink Mirror URL Resolution: An authenticated tenant can register a template pointing to an attacker-controlled metalink file containing internal targets. The Secondary Storage VM will retrieve the data and persist it as a template file,…</description>
+      <category>High</category>
+      <pubDate>Fri, 21 Aug 2026 08:29:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-50222 · 7.5 HIGH 🌩️ — Apache CloudStack: Improper access control in Userdata reference APIs</title>
+      <link>https://vulnogram.org/CVE-2026-50222</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50222</guid>
+      <description>Missing Authorization, Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack&apos;s Userdata reference APIs. Several userdata-related APIs in Apache CloudStack, including deleteUserData, linkUserDataToTemplate, rese…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:29:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59085 · 9.1 CRITICAL 🌩️ — Apache CloudStack: Server-Side Request Forgery (SSRF) vulnerability in webhook module</title>
+      <link>https://vulnogram.org/CVE-2026-59085</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59085</guid>
+      <description>Server-Side Request Forgery (SSRF) vulnerability in Apache CloudStack&apos;s webhook module, exploitable via webhook delivery requests. This issue affects Apache CloudStack: from 4.20.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0. Users are reco…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:28:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59655 · 7.5 HIGH 🌩️ — Apache CloudStack: Unauthenticated OAuth provider client-secret disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-59655</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59655</guid>
+      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack&apos;s OAuth authentication plugin while listing OAuth providers. This issue affects Apache CloudStack: from 4.19.0.0 through 4.20.3.0 and from 4.21.0.0 through…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:28:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59657 · 7.5 HIGH 🌩️ — Apache CloudStack: Sensitive Information Disclosure via Cleartext Storage in AsyncJob</title>
+      <link>https://vulnogram.org/CVE-2026-59657</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59657</guid>
+      <description>Cleartext Storage of Sensitive Information vulnerability in Apache CloudStack with AsyncJob storage in the database. This issue affects Apache CloudStack: from 4.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0. Users are recommended to upgrad…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:27:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59780 · 7.5 HIGH 🌩️ — Apache CloudStack: LDAP provider configuration disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-59780</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59780</guid>
+      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack&apos;s LDAP authentication plugin while listing LDAP providers. LDAP configurations can be listed by any authenticated user with access to the listLdapConfigurat…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:27:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59799 · 8.8 HIGH — Apache CloudStack: Missing Privilege Check in Two-Factor Authentication Disable Flow</title>
+      <link>https://vulnogram.org/CVE-2026-59799</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59799</guid>
+      <description>Improper Privilege Management vulnerability in Apache CloudStack&apos;s Two-factor authentication plugin allowing bypass of the two-factor authentication disable flow. This issue affects Apache CloudStack: from 4.18.0.0 through 4.20.3.0 and from 4.21.0.0…</description>
+      <category>High</category>
+      <pubDate>Fri, 21 Aug 2026 08:26:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61397 · 7.5 HIGH 🌩️ — Apache CloudStack: OAuth2 Token Cross-Request Leak</title>
+      <link>https://vulnogram.org/CVE-2026-61397</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61397</guid>
+      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack&apos;s OAuth2 authentication plugin and Google OAuth integration. This issue affects Apache CloudStack: from 4.19.0.0 through 4.20.3.0 and from 4.21.0.0 through…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:26:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61398 · 9.1 CRITICAL 🌩️ — Apache CloudStack: Cross-Site Scripting (XSS) Vulnerability in Instance Reset Password Function in UI</title>
+      <link>https://vulnogram.org/CVE-2026-61398</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61398</guid>
+      <description>Improper Encoding or Escaping of Output vulnerability in Apache CloudStack&apos;s UI while using Instance Reset Password functionality. This issue affects Apache CloudStack: from 4.15.1.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0. Users are reco…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:25:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61399 · 4.8 MEDIUM — Apache CloudStack: Cross-Site Scripting (XSS) Vulnerability in Lock User Function in UI</title>
+      <link>https://vulnogram.org/CVE-2026-61399</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61399</guid>
+      <description>Improper Encoding or Escaping of Output vulnerability in Apache CloudStack&apos;s UI while using Lock User Functionality. This issue affects Apache CloudStack: from 4.20.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.1.0. Users are recommended to upg…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 21 Aug 2026 08:25:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61400 · 8.8 HIGH — Apache CloudStack: Get and Run Diagnostics Command Injection</title>
+      <link>https://vulnogram.org/CVE-2026-61400</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61400</guid>
+      <description>Improper Neutralization of Special Elements used in a Command (&apos;Command Injection&apos;) vulnerability in Apache CloudStack&apos;s run and get diagnostics functionality for the system VMs and virtual routers. An authenticated user holding the permissions requi…</description>
+      <category>High</category>
+      <pubDate>Fri, 21 Aug 2026 08:25:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61422 · 4.3 MEDIUM — Apache CloudStack: Authenticated pre-validation SSRF in registerTemplate</title>
+      <link>https://vulnogram.org/CVE-2026-61422</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61422</guid>
+      <description>Authenticated pre-validation SSRF vulnerability in Apache CloudStack&apos;s template and ISO registration functionality. When registering a template or ISO, CloudStack makes a live HTTP HEAD/GET call to determine file size for secondary storage usage-limi…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 21 Aug 2026 08:24:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62440 · 9.1 CRITICAL 🌩️ — Apache CloudStack: Improper access control in Kubernetes Service (CKS) cluster manipulation</title>
+      <link>https://vulnogram.org/CVE-2026-62440</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62440</guid>
+      <description>Improper Access Control vulnerability in Apache CloudStack&apos;s Kubernetes Service (CKS) plugin, allowing cross-tenant manipulation of the Kubernetes cluster while adding and removing nodes. This issue affects Apache CloudStack: from 4.21.0.0 through 4.…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:23:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65613 · 4.3 MEDIUM — Apache CloudStack: Webhook Deliveries Incorrect Access</title>
+      <link>https://vulnogram.org/CVE-2026-65613</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65613</guid>
+      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache CloudStack&apos;s Webhook module while listing and deleting deliveries. This issue affects Apache CloudStack: from 4.20.0.0 through 4.20.3.0 and from 4.21.0.0 through 4.22.…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 21 Aug 2026 08:23:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66721 · 2.7 LOW — Apache CloudStack: Authorization issue with listHostTags for domain admins</title>
+      <link>https://vulnogram.org/CVE-2026-66721</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66721</guid>
+      <description>Missing authorization issue for domain admins in CloudStack&apos;s host tags listing functionality. Domain Admins, by default, have permission to call the listHostTags API, but the API returns host tags for every host in the environment without domain sco…</description>
       <category>Low</category>
-      <pubDate>Mon, 03 Aug 2026 19:58:56 GMT</pubDate>
+      <pubDate>Fri, 21 Aug 2026 08:23:00 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-62354 · 7.7 HIGH — Apache NiFi: Incorrect Authorization for Parameter Context Validation Requests</title>
-      <link>https://vulnogram.org/CVE-2026-62354</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62354</guid>
-      <description>Authorization handling for Parameter Context validation requests in Apache NiFi 1.10.0 through 2.10.0 allows clients with read access to submit proposed Parameter values. The proposed values override current configuration, enabling users with read ac…</description>
+      <title>CVE-2026-66722 · 7.2 HIGH — Apache CloudStack: ProjectRole &amp; ProjectRolePermission authorization issue</title>
+      <link>https://vulnogram.org/CVE-2026-66722</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66722</guid>
+      <description>Improper authorization for CRUD operations on Project Roles and Project Role permissions for domain admins in CloudStack. A Domain Admin can create, update, delete, and list project roles and project role permissions for projects in any domain, not j…</description>
       <category>High</category>
-      <pubDate>Mon, 03 Aug 2026 19:57:44 GMT</pubDate>
+      <pubDate>Fri, 21 Aug 2026 08:22:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66797 · 5.4 MEDIUM — Apache CloudStack: Unauthorised comment creation and disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-66797</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66797</guid>
+      <description>Improper access control in CloudStack&apos;s annotation functionality allows unauthorized comment creation and disclosure. The addAnnotation and listAnnotation APIs perform an ownership check when an entity&apos;s UUID is specified, but fail to honor its resul…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 21 Aug 2026 08:21:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68745 · 8.1 HIGH 🌩️ — Apache CloudStack: SAML2 Signature Validation Silently Skipped for Cert-less IdP</title>
+      <link>https://vulnogram.org/CVE-2026-68745</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68745</guid>
+      <description>Certificate validation failures in SAML authentication in Apache CloudStack 4.20.3.0 and 4.22.1.0 on all platforms allow a malicious agent to forge a SAML response to the management server. The agent will have to spoof the ip address of the IdP or ge…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 21 Aug 2026 08:21:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63044 · 5.4 MEDIUM — Apache InLong: Authenticated SSRF via POST /api/node/testConnection</title>
+      <link>https://vulnogram.org/CVE-2026-63044</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63044</guid>
+      <description>Server-Side Request Forgery (SSRF) vulnerability in Apache InLong. Any authenticated user (no admin role required) can cause the InLong Manager server to make outbound HTTP requests or TCP connections to arbitrary internal hosts and ports. This issue…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 20 Aug 2026 15:57:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63043 · 7.5 HIGH 🌩️ — Apache InLong: Agent path traversal via unvalidated file source path</title>
+      <link>https://vulnogram.org/CVE-2026-63043</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63043</guid>
+      <description>Relative Path Traversal vulnerability in Apache InLong. Arbitrary file read from the Agent host filesystem. This issue affects Apache InLong: from 2.0.0 before 2.4.0. Users are advised to upgrade to Apache InLong&apos;s 2.4.0 or cherry-pick [1] to solve i…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 20 Aug 2026 15:53:11 GMT</pubDate>
     </item>
   </channel>
 </rss>

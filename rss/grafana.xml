@@ -11,7 +11,7 @@
       <title>Grafana Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 28 Aug 2026 19:38:37 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-75889 · 7.7 HIGH — CVE-2026-75889 CVE Record</title>
       <link>https://vulnogram.org/CVE-2026-75889</link>
@@ -19,6 +19,54 @@
       <description>Grafana Alloy’s prometheus.operator.servicemonitors component allows a user who can create or modify ServiceMonitor resources in a watched namespace to specify an arbitrary local file through bearerTokenFile. Alloy reads the file and sends its conten…</description>
       <category>High</category>
       <pubDate>Thu, 27 Aug 2026 17:22:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19854 · 6.1 MEDIUM — CVE-2026-19854 CVE Record</title>
+      <link>https://vulnogram.org/CVE-2026-19854</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19854</guid>
+      <description>When the ClickHouse plugin uses Native protocol (the default) with PDC or secure SOCKS, it asks for TLS but the connection library ignores that and talks to ClickHouse in the clear. Username, password, queries, and results can be read on the hop afte…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 27 Aug 2026 16:35:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19197 · 6.3 MEDIUM — Broken access control in dashboard snapshots</title>
+      <link>https://vulnogram.org/CVE-2026-19197</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19197</guid>
+      <description>A user with organization administrator permissions can delete dashboard snapshots belonging to other organizations on the same Grafana instance, and can recover a snapshot&apos;s secret delete key using only its public share key (broken access control).</description>
+      <category>Medium</category>
+      <pubDate>Wed, 26 Aug 2026 08:50:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17033 · 6.8 MEDIUM — CVE-2026-17033 CVE Record</title>
+      <link>https://vulnogram.org/CVE-2026-17033</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17033</guid>
+      <description>An authenticated attacker with Editor access or alert.instances.external:write can submit an external Alertmanager alert containing a controlled generatorURL. The attacker is authorized to create the alert, but not to execute script in another user&apos;s…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 24 Aug 2026 13:52:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17183 · 7.1 HIGH — CVE-2026-17183 CVE Record</title>
+      <link>https://vulnogram.org/CVE-2026-17183</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17183</guid>
+      <description>An authenticated user with permission to create or edit alert rules can bypass datasource query authorization by marking an alert rule query as a server-side expression while referencing a real datasource UID (incorrect authorization). This can expos…</description>
+      <category>High</category>
+      <pubDate>Wed, 19 Aug 2026 17:30:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11817 · 5.3 MEDIUM — CVE-2026-11817 CVE Record</title>
+      <link>https://vulnogram.org/CVE-2026-11817</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11817</guid>
+      <description>This vulnerability only affects Grafana stacks configured with multiple organizations; single-organization deployments are not impacted. In a multi-organization stack, a user who is an Org Admin of a single organization can call GET /api/access-contr…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 21:28:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19516 · 9.1 CRITICAL — CVE-2026-19516 CVE Record</title>
+      <link>https://vulnogram.org/CVE-2026-19516</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19516</guid>
+      <description>A caller-supplied X-Grafana-URL request header controls the destination of mcp-grafana&apos;s outbound requests, and the grafana_api_request tool lets the caller also choose the HTTP method, path, and body. Because the destination is not restricted to the…</description>
+      <category>Critical</category>
+      <pubDate>Tue, 11 Aug 2026 05:28:30 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-9765 · 7.1 HIGH — CVE-2026-9765 CVE Record</title>
@@ -250,7 +298,7 @@
       <title>CVE-2026-21727 · 3.3 LOW — Grafana Correlations: Cross-Tenant Data Disclosure and Permanent Deletion via Legacy org_id=0 Record</title>
       <link>https://vulnogram.org/CVE-2026-21727</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-21727</guid>
-      <description>--- title: Cross-Tenant Legacy Correlation Disclosure and Deletion draft: false hero: image: /static/img/heros/hero-legal2.svg content: &quot;# Cross-Tenant Legacy Correlation Disclosure and Deletion&quot; date: 2026-01-29 product: Grafana severity: Low cve: C…</description>
+      <description>A cross-tenant isolation vulnerability was found in Grafana’s Correlations feature affecting legacy correlation records. Due to a backward compatibility condition allowing org_id = 0 records to be returned across organizations, a user with datasource…</description>
       <category>Low</category>
       <pubDate>Wed, 15 Apr 2026 18:57:25 GMT</pubDate>
     </item>
@@ -368,54 +416,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 27 Jan 2026 09:07:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-41115 · 10 CRITICAL — Incorrect privilege assignment</title>
-      <link>https://vulnogram.org/CVE-2025-41115</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-41115</guid>
-      <description>SCIM provisioning was introduced in Grafana Enterprise and Grafana Cloud in April to improve how organizations manage users and teams in Grafana by introducing automated user lifecycle management. In Grafana versions 12.x where SCIM provisioning is e…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 21 Nov 2025 14:25:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-41116 · 2.1 LOW — Incorrect oauth passthrough in Grafana Databricks Datasource</title>
-      <link>https://vulnogram.org/CVE-2025-41116</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-41116</guid>
-      <description>When using the Grafana Databricks Datasource Plugin, if Oauth passthrough is enabled on the datasource, and multiple users are using the same datasource at the same time on a single Grafana instance, it could result in the wrong user identifier being…</description>
-      <category>Low</category>
-      <pubDate>Tue, 11 Nov 2025 20:18:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-3717 · 2.1 LOW — Incorrect oauth passthrough in Grafana Snowflake Datasource</title>
-      <link>https://vulnogram.org/CVE-2025-3717</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-3717</guid>
-      <description>When using the Grafana Snowflake Datasource Plugin, if Oauth passthrough is enabled on the datasource, and multiple users are using the same datasource at the same time on a single Grafana instance, it could result in the wrong user identifier being…</description>
-      <category>Low</category>
-      <pubDate>Tue, 11 Nov 2025 20:17:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11539 · 9.9 CRITICAL — Arbitrary Code Execution in Grafana Image Renderer Plugin</title>
-      <link>https://vulnogram.org/CVE-2025-11539</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11539</guid>
-      <description>Grafana Image Renderer is vulnerable to remote code execution due to an arbitrary file write vulnerability. This is due to the fact that the /render/csv endpoint lacked validation of the filePath parameter that allowed an attacker to save a shared ob…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 09 Oct 2025 07:18:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-10630 · 4.3 MEDIUM — Regex DoS in Grafana Zabbix Plugin</title>
-      <link>https://vulnogram.org/CVE-2025-10630</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-10630</guid>
-      <description>Grafana is an open-source platform for monitoring and observability. Grafana-Zabbix is a plugin for Grafana allowing to visualize monitoring data from Zabbix and create dashboards for analyzing metrics and realtime monitoring. Versions 5.2.1 and belo…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 19 Sep 2025 09:44:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-8341 · 5 MEDIUM — SSRF in Infinity Datasource Plugin</title>
-      <link>https://vulnogram.org/CVE-2025-8341</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-8341</guid>
-      <description>Grafana is an open-source platform for monitoring and observability. The Infinity datasource plugin, maintained by Grafana Labs, allows visualizing data from JSON, CSV, XML, GraphQL, and HTML endpoints. If the plugin was configured to allow only cert…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 04 Aug 2025 08:34:50 GMT</pubDate>
     </item>
   </channel>
 </rss>

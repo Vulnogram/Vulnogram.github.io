@@ -11,7 +11,51 @@
       <title>Python Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 06 Aug 2026 01:09:15 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-15310 · 2.1 LOW 🌩️ — zipfile: bzip2/LZMA/Zstandard members decompress without a max_length bound, defeating chunked-read memory limits</title>
+      <link>https://vulnogram.org/CVE-2026-15310</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15310</guid>
+      <description>When decompressing crafted zip files using the bzip/LZMA/Zstandard compressions, Python could use an attacker-controlled size to pre-allocate memory, possibly resulting in memory exhaustion.</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 25 Aug 2026 15:07:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19672 · 6.3 MEDIUM 🌩️ — tarfile extraction filter bypass allows creation of directories outside the destination</title>
+      <link>https://vulnogram.org/CVE-2026-19672</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19672</guid>
+      <description>The tarfile module&apos;s tar and data extraction filters created directories outside the destination for members whose name leaves the destination and returns to it, such as ../evil/../dest/sub/file. The containment check used the resolved path, but inte…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 19 Aug 2026 15:24:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15806 · 6 MEDIUM 🌩️ — `HTTPPasswordMgr` can send saved HTTPS credentials via HTTP because of incorrect scheme matching</title>
+      <link>https://vulnogram.org/CVE-2026-15806</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15806</guid>
+      <description>The HTTPPasswordMgr class in the urllib.request module, along with its subclasses HTTPPasswordMgrWithDefaultRealm and HTTPPasswordMgrWithPriorAuth, did not take the URL scheme into account when matching stored credentials against a requested URL. Cre…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 18 Aug 2026 15:50:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17084 · 6 MEDIUM 🌩️ — stringprep.map_table_b2() deviates from RFC 3454 Table B.2</title>
+      <link>https://vulnogram.org/CVE-2026-17084</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17084</guid>
+      <description>The &quot;stringprep&quot; module didn&apos;t process characters from RFC 3454 tables B.2 or B.3 correctly: the latest Unicode codepoint attributes were used instead of the specified Unicode 3.2.0. This behavior would cause mismatches when processing domain names u…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 18 Aug 2026 13:57:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18503 · 2.4 LOW — Super-linear CPU usage for unbounded input to csv.Sniffer.sniff()</title>
+      <link>https://vulnogram.org/CVE-2026-18503</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18503</guid>
+      <description>Attacker-controlled CSV samples can trigger super-linear regular-expression work during dialect sniffing and consume significant CPU when applications pass unbounded input to csv.Sniffer.sniff().</description>
+      <category>Low</category>
+      <pubDate>Mon, 10 Aug 2026 13:45:31 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-13346 · 5.6 MEDIUM — pip absolute path traversal during download from malicious package indexes</title>
       <link>https://vulnogram.org/CVE-2026-13346</link>
@@ -387,50 +431,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 07 Oct 2025 18:10:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-8869 · 5.9 MEDIUM 🌩️ — Fallback tar extraction in pip doesn&apos;t check symbolic links point to extraction directory</title>
-      <link>https://vulnogram.org/CVE-2025-8869</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-8869</guid>
-      <description>When extracting a tar archive pip may not check symbolic links point into the extraction directory if the tarfile module doesn&apos;t implement PEP 706. Note that upgrading pip to a &quot;fixed&quot; version for this vulnerability doesn&apos;t fix all known vulnerabilit…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 24 Sep 2025 14:56:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-8194 · 7.5 HIGH 🌩️ — Tarfile infinite loop during parsing with negative member offset</title>
-      <link>https://vulnogram.org/CVE-2025-8194</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-8194</guid>
-      <description>There is a defect in the CPython “tarfile” module affecting the “TarFile” extraction and entry enumeration APIs. The tar implementation would process tar archives with negative offsets without error, resulting in an infinite loop and deadlock during…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Jul 2025 18:42:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6069 · 4.3 MEDIUM — HTMLParser quadratic complexity when processing malformed inputs</title>
-      <link>https://vulnogram.org/CVE-2025-6069</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6069</guid>
-      <description>The html.parser.HTMLParser class had worse-case quadratic complexity when processing certain crafted malformed inputs potentially leading to amplified denial-of-service.</description>
-      <category>Medium</category>
-      <pubDate>Tue, 17 Jun 2025 13:39:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-12718 · 5.3 MEDIUM 🌩️ — Bypass extraction filter to modify file metadata outside extraction directory</title>
-      <link>https://vulnogram.org/CVE-2024-12718</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-12718</guid>
-      <description>Allows modifying some file metadata (e.g. last modified) with filter=&quot;data&quot; or file permissions (chmod) with filter=&quot;tar&quot; of files outside the extraction directory. You are affected by this vulnerability if using the tarfile module to extract untrust…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Jun 2025 12:59:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-4435 · 7.5 HIGH 🌩️ — Tarfile extracts filtered members when errorlevel=0</title>
-      <link>https://vulnogram.org/CVE-2025-4435</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4435</guid>
-      <description>When using a TarFile.errorlevel = 0 and extracting with a filter the documented behavior is that any filtered members would be skipped and not extracted. However the actual behavior of TarFile.errorlevel = 0 in affected versions is that the member wo…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Jun 2025 12:59:06 GMT</pubDate>
     </item>
   </channel>
 </rss>

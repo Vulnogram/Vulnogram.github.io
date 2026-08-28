@@ -11,7 +11,66 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 06 Aug 2026 04:50:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-71402 · 5.4 MEDIUM — wicked: out-of-bounds read in the DHCPv4 option parser due to payload length taken from the IP total length</title>
+      <link>https://vulnogram.org/CVE-2026-71402</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71402</guid>
+      <description>An out-of-bounds read was found in the DHCPv4 packet capture code of wicked. ni_capture_inspect_udp_header() in src/capture.c reports the IP total length as the payload length instead of the length of the remaining UDP payload. Consequently, the DHCP…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 27 Aug 2026 15:09:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71401 · 5.3 MEDIUM — wicked: integer underflow of the UDP length in ni_capture_inspect_udp_header() leads to an out-of-bounds read</title>
+      <link>https://vulnogram.org/CVE-2026-71401</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71401</guid>
+      <description>An integer underflow was found in the DHCPv4 packet capture code of wicked. ni_capture_inspect_udp_header() in src/capture.c does not verify that the IP total length field (ip_len) is at least as large as the IP header length (ihl) before subtracting…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 27 Aug 2026 15:01:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18794 · 8.8 HIGH 🌩️ — OpenRGB: insufficient input data checks lead to Denial-of-Service, memory overread and overwrite</title>
+      <link>https://vulnogram.org/CVE-2026-18794</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18794</guid>
+      <description>The OpenRGB network protocol allows attackers to cause memory exhaustion and out-of-bounds memory reads and writes by passing inconsistent data.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 26 Aug 2026 09:29:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59683 · 9.8 CRITICAL 🌩️ — OpenRGB: local and remote system compromise via arbitrary file write using attacker controlled strings</title>
+      <link>https://vulnogram.org/CVE-2026-59683</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59683</guid>
+      <description>The OpenRGB network protocol allows to write attacker controlled strings into arbitrary file system paths (extension of CVE-2026-59682). This allows either a full system compromise from local or remote (if the daemon is running as root) or a full acc…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 26 Aug 2026 09:24:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59682 · 9.1 CRITICAL 🌩️ — Arbitrary file overwrite and deletion local and remote in OpenRGB</title>
+      <link>https://vulnogram.org/CVE-2026-59682</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59682</guid>
+      <description>Arbitrary file overwrite via SAVE_PROFILE message in OpenRGB. This issue affects OpenRGB through 1.0rc3.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 26 Aug 2026 09:13:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75038 · 6.9 MEDIUM — Predictable temporary file in /tmp allows symlink attack in LACT</title>
+      <link>https://vulnogram.org/CVE-2026-75038</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75038</guid>
+      <description>UNIX symbolic link (symlink) following vulnerability in ilya-zlobintsev/LACT allows for local denial-of-service. This issue affects LACT: through 0.10.0.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 25 Aug 2026 10:00:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75037 · 7.3 HIGH — Polkit authentication bypass in LACT</title>
+      <link>https://vulnogram.org/CVE-2026-75037</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75037</guid>
+      <description>Polkit Authentication Based on UnixProcessSubject / Peer PID in LACT on Linux allows an Authentication Bypass. This issue affects LACT through 0.10.0. Fixed by commit d0478fe42c2219454e272f96b1cbd29ab37ee566.</description>
+      <category>High</category>
+      <pubDate>Tue, 25 Aug 2026 09:52:32 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-44945 · 9.1 CRITICAL — Cross-Cluster Impersonation Confused-Deputy Privilege Escalation</title>
       <link>https://vulnogram.org/CVE-2026-44945</link>
@@ -62,6 +121,32 @@
       <description>A denial-of-service vulnerability was identified in multiple TLS listeners in Rancher. Both the cattle-cluster-agent component running in downstream clusters and the Rancher server itself use the dynamiclistener library to serve TLS traffic. Without…</description>
       <category>Medium</category>
       <pubDate>Wed, 05 Aug 2026 07:46:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55995 · 8.7 HIGH 🌩️ — Double-free in the iSNS attribute decoder in open-iscsi</title>
+      <link>https://vulnogram.org/CVE-2026-55995</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55995</guid>
+      <description>A Double Free vulnerability in open-iscsi allows an unauthenticated MITM attacker to cause DoS. This issue affects open-iscsi: from ? through 56718d4e9d1a4f51c30697b5c0534144bb41c9bb.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 29 Jul 2026 13:43:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44944 · 8.5 HIGH — iscsiuio control-socket authentication bypass in open-iscsi</title>
+      <link>https://vulnogram.org/CVE-2026-44944</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44944</guid>
+      <description>An Incorrect Authorization vulnerability in open-iscsi allows unprivilidged local users to use the isscsiuio control socket. This issue affects open-iscsi: from ? through 668ca1df9c9a1e9bdd5c999ae1d67c9c8909237e.</description>
+      <category>High</category>
+      <pubDate>Wed, 29 Jul 2026 13:04:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44943 · 6.9 MEDIUM 🌩️ — remote limited file-write as root via discovery in open-iscsi</title>
+      <link>https://vulnogram.org/CVE-2026-44943</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44943</guid>
+      <description>An Improper Limitation of a Pathname to a Restricted Directory (&apos;Path Traversal&apos;) vulnerability in open-iscsi allows remote MITM attackers to create root-owned files outside the database and inject lines into the record. This issue affects open-iscsi…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 29 Jul 2026 12:58:49 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-59678 · 7.1 HIGH — portprotonqt allows any users to mount and unmount arbitrary file systems and modify the network configuration via NetworkManager</title>
@@ -340,87 +425,6 @@
       <description>In `src/havegecmd.c`, the `socket_handler` function performs a credential check on the abstract UNIX socket (`\0/sys/entropy/haveged`). However, while it detects if the connecting user is not root (`cred.uid != 0`) and prepares a negative acknowledge…</description>
       <category>High</category>
       <pubDate>Wed, 20 May 2026 08:56:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44933 · 8.5 HIGH — Path Traversal in Plugin Loading in libzypp</title>
-      <link>https://vulnogram.org/CVE-2026-44933</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44933</guid>
-      <description>`PluginScript` attempts to `chroot` the plugin to the `repoManagerRoot`, this root is frequently `/` (the system root) in standard configurations or when using `--root`. If the chroot target is `/`, it is a no-op, allowing the traversed path to execu…</description>
-      <category>High</category>
-      <pubDate>Wed, 20 May 2026 08:51:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25710 · 7 HIGH</title>
-      <link>https://vulnogram.org/CVE-2026-25710</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25710</guid>
-      <description>The new upstream added a privileged D-Bus helper called plasmaloginauthhelper, which suffers from multiple issues, e.g.aA compromised plasmalogin service account can chown() arbitrary files in the system.</description>
-      <category>High</category>
-      <pubDate>Wed, 13 May 2026 08:44:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41051 · 5.1 MEDIUM — csync2 uses insecure temporary directories when compiled with C99 or later</title>
-      <link>https://vulnogram.org/CVE-2026-41051</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41051</guid>
-      <description>csync2 uses insecure temporary directories when compiled with C99 or later, allowing for TOCTOU style attacks on the temporary directories.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 May 2026 08:37:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44931 · 5.1 MEDIUM — malcontent: Disk Space Exhaustion via Globally Accessible D-Bus API</title>
-      <link>https://vulnogram.org/CVE-2026-44931</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44931</guid>
-      <description>The newly introduced RecordUsage D-Bus method https://gitlab.freedesktop.org/pwithnall/malcontent/-/blob/0.14.0/libmalcontent-timer/child-timer-service.c in malcontent-timerd allows arbitrary users in the system to slowly fill up disk space in /var/l…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 May 2026 08:30:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41050 · 9.9 CRITICAL — Helm impersonation bypass of `RESTClientGetter` retains `cluster-admin` during template rendering</title>
-      <link>https://vulnogram.org/CVE-2026-41050</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41050</guid>
-      <description>Fleet&apos;s Helm deployer did not fully apply ServiceAccount impersonation in two code paths, allowing a tenant with git push access to a Fleet-monitored repository to read secrets from any namespace on every downstream cluster targeted by their `GitRepo…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 13 May 2026 08:04:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25705 · 8.4 HIGH — Rancher Extensions have arbitrary file access via path traversal</title>
-      <link>https://vulnogram.org/CVE-2026-25705</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25705</guid>
-      <description>A vulnerability has been identified in [Rancher&apos;s Extensions](https://ranchermanager.docs.rancher.com/integrations-in-rancher/rancher-extensions) where malicious code can be injected in Rancher through a path traversal in the `compressedEndpoint` fie…</description>
-      <category>High</category>
-      <pubDate>Wed, 13 May 2026 08:00:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25704 · 5.8 MEDIUM — Incomplete privilege drop for com.system76.CosmicGreeter.GetUserData</title>
-      <link>https://vulnogram.org/CVE-2026-25704</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25704</guid>
-      <description>A Privilege Dropping / Lowering Errors/Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in cosmic-greeter can allow an attacker to regain privileges that should have been dropped and abuse them in the racy checking logic. This issue af…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 30 Mar 2026 07:44:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25702 · 7.3 HIGH 🌩️ — nftables disabled due to incorrect kernel backport</title>
-      <link>https://vulnogram.org/CVE-2026-25702</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25702</guid>
-      <description>A Improper Access Control vulnerability in the kernel of SUSE SUSE Linux Enterprise Server 12 SP5 breaks nftables, causing firewall rules applied via nftables to not be effective.This issue affects SUSE Linux Enterprise Server: from 9e6d9d4601768c75f…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 05 Mar 2026 07:00:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-62879 · 6.8 MEDIUM — Rancher Backup Operator pod&apos;s logs leak S3 tokens</title>
-      <link>https://vulnogram.org/CVE-2025-62879</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-62879</guid>
-      <description>A vulnerability has been identified within the Rancher Backup Operator, resulting in the leakage of S3 tokens (both accessKey and secretKey) into the rancher-backup-operator pod&apos;s logs.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 04 Mar 2026 15:08:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25701 · 7 HIGH</title>
-      <link>https://vulnogram.org/CVE-2026-25701</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25701</guid>
-      <description>An Insecure Temporary File vulnerability in openSUSE sdbootutil allows local users to pre-create a directory to achieve various effects like: * gain access to possible private information found in /var/lib/pcrlock.d * manipulate the data backed up in…</description>
-      <category>High</category>
-      <pubDate>Wed, 25 Feb 2026 10:59:58 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,39 @@
       <title>NLnet Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 29 Jul 2026 12:52:08 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-19538 · 8.2 HIGH — Bypass of BLOCKED ACL items on proxy protocol port over TCP or TLS</title>
+      <link>https://vulnogram.org/CVE-2026-19538</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19538</guid>
+      <description>The BLOCKED access control list items that are evaluated to deny access on the the proxy protocol port can be bypassed completely when connecting over TCP or TLS and sending the query twice on connection that is kept open.</description>
+      <category>High</category>
+      <pubDate>Wed, 26 Aug 2026 08:47:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19401 · 8.2 HIGH — Remote UDP DoS by sending multiple DNS Cookie options</title>
+      <link>https://vulnogram.org/CVE-2026-19401</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19401</guid>
+      <description>Any remote client can crash a (debugging/non-release build type) NSD serve child by sending it a special crafted message with a specially tuned number of DNS Cookie options (17 when UDP payload size is 512). By continuously crashing the serve childs,…</description>
+      <category>High</category>
+      <pubDate>Wed, 26 Aug 2026 08:44:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18916 · 6.9 MEDIUM — Remote TCP DoS by throttling the TCP receive window</title>
+      <link>https://vulnogram.org/CVE-2026-18916</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18916</guid>
+      <description>Any remote client can crash a NSD serve child, by throttling the TCP receive window after a TCP query. By continuously crashing the serve childs, the remote client can denial all TCP service to this NSD instance.</description>
+      <category>Medium</category>
+      <pubDate>Wed, 26 Aug 2026 08:39:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18664 · 8.2 HIGH — Wrong interpretation of ACL ranges</title>
+      <link>https://vulnogram.org/CVE-2026-18664</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18664</guid>
+      <description>When ranges are used for access control (i.e. of the form 1.2.3.4-1.2.3.25), because NSD wrongly compares the IP address with the range on little endian systems, IPs that were meant to be allowed may be denied, and, IPs that were meant to be denied a…</description>
+      <category>High</category>
+      <pubDate>Wed, 26 Aug 2026 08:34:22 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-56444 · 5.9 MEDIUM — Degradation of resolution service when &apos;discard-timeout&apos; and &apos;serve-expired-client-timeout&apos; are combined in unusual configuration</title>
       <link>https://vulnogram.org/CVE-2026-56444</link>
@@ -385,38 +417,6 @@
       <description>A multi-vendor cache poisoning vulnerability named &apos;Rebirthday Attack&apos; has been discovered in caching resolvers that support EDNS Client Subnet (ECS). Unbound is also vulnerable when compiled with ECS support, i.e., &apos;--enable-subnet&apos;, AND configured…</description>
       <category>High</category>
       <pubDate>Wed, 16 Jul 2025 14:38:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-0638 · 7.5 HIGH — Routinator crashes when illegal characters are present in manifest file names</title>
-      <link>https://vulnogram.org/CVE-2025-0638</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0638</guid>
-      <description>The initial code parsing the manifest did not check the content of the file names yet later code assumed that it was checked and panicked when encountering illegal characters, resulting in a crash of Routinator.</description>
-      <category>High</category>
-      <pubDate>Wed, 22 Jan 2025 15:48:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8508 · 5.3 MEDIUM — Unbounded name compression could lead to Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2024-8508</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8508</guid>
-      <description>NLnet Labs Unbound up to and including version 1.21.0 contains a vulnerability when handling replies with very large RRsets that it needs to perform name compression for. Malicious upstreams responses with very large RRsets can cause Unbound to spend…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 03 Oct 2024 16:27:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-1931 · 7.5 HIGH — Denial of service when trimming EDE text on positive replies</title>
-      <link>https://vulnogram.org/CVE-2024-1931</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-1931</guid>
-      <description>NLnet Labs Unbound version 1.18.0 up to and including version 1.19.1 contain a vulnerability that can cause denial of service by a certain code path that can lead to an infinite loop. Unbound 1.18.0 introduced a feature that removes EDE records from…</description>
-      <category>High</category>
-      <pubDate>Thu, 07 Mar 2024 09:17:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-1622 · 7.5 HIGH — Routinator terminates when RTR connection is reset too quickly after opening</title>
-      <link>https://vulnogram.org/CVE-2024-1622</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-1622</guid>
-      <description>Due to a mistake in error checking, Routinator will terminate when an incoming RTR connection is reset by the peer too quickly after opening.</description>
-      <category>High</category>
-      <pubDate>Mon, 26 Feb 2024 13:35:51 GMT</pubDate>
     </item>
   </channel>
 </rss>

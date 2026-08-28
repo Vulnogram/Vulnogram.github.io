@@ -11,7 +11,375 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 04 Aug 2026 20:57:55 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-13735 · 3.7 LOW — WireGuard keepalive transport-data messages accepted without Poly1305 authentication</title>
+      <link>https://vulnogram.org/CVE-2026-13735</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13735</guid>
+      <description>Zephyr&apos;s WireGuard implementation in subsys/net/lib/wireguard/wg_crypto.c mishandled keepalive packets. In wg_process_data_message(), any type-4 transport-data message whose payload was exactly 16 bytes (an empty plaintext plus a bare Poly1305 tag, i…</description>
+      <category>Low</category>
+      <pubDate>Fri, 28 Aug 2026 20:38:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13734 · 6.5 MEDIUM — Zephyr WireGuard mutates peer state before anti-replay check, enabling capture-replay endpoint hijack</title>
+      <link>https://vulnogram.org/CVE-2026-13734</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13734</guid>
+      <description>Zephyr&apos;s WireGuard VPN data-plane receive handler wg_process_data_message() in subsys/net/lib/wireguard/wg_crypto.c validated the anti-replay counter too late. After AEAD decryption of a MESSAGE_TRANSPORT_DATA packet succeeded, the code committed sev…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 28 Aug 2026 20:38:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13481 · 5.4 MEDIUM — Out-of-bounds read in PTP management TLV TIME parsing in Zephyr net PTP</title>
+      <link>https://vulnogram.org/CVE-2026-13481</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13481</guid>
+      <description>The IEEE 1588 PTP management-message parser in subsys/net/lib/ptp/tlv.c mishandles the PTP_MGMT_TIME management id. In tlv_mgmt_post_recv(), the PTP_MGMT_TIME case casts mgmt_tlv-&gt;data to a 10-byte struct ptp_timestamp and reads it (then byte-swaps a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 26 Aug 2026 14:03:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13480 · 3.1 LOW — Out-of-bounds read in LoRaWAN fragmented data block transport (FUOTA) downlink handler</title>
+      <link>https://vulnogram.org/CVE-2026-13480</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13480</guid>
+      <description>The LoRaWAN TS004 Fragmented Data Block Transport handler frag_transport_package_callback() in subsys/lorawan/services/frag_transport.c parses downlink command bytes without validating that enough payload bytes remain before each access. The loop&apos;s o…</description>
+      <category>Low</category>
+      <pubDate>Wed, 26 Aug 2026 14:03:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13479 · 3.1 LOW — Out-of-bounds read in LoRaWAN clock-sync AppTimeAns downlink handler</title>
+      <link>https://vulnogram.org/CVE-2026-13479</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13479</guid>
+      <description>The LoRaWAN application-layer clock-synchronization service parses downlinks in clock_sync_package_callback() (subsys/lorawan/services/clock_sync.c). Its command loop only guarantees that the one-byte command id is in bounds; for the CLOCK_SYNC_CMD_A…</description>
+      <category>Low</category>
+      <pubDate>Wed, 26 Aug 2026 14:03:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13478 · 5.5 MEDIUM — Out-of-bounds read in Zephyr ext2 block-bitmap validation from a crafted s_blocks_count</title>
+      <link>https://vulnogram.org/CVE-2026-13478</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13478</guid>
+      <description>The Zephyr ext2 filesystem driver validates the on-disk block bitmap in ext2_init_fs() (subsys/fs/ext2/ext2_impl.c) by passing fs_blocks = s_blocks_count - s_first_data_block to ext2_bitmap_count_set(). That helper (subsys/fs/ext2/ext2_bitmap.c) trea…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 25 Aug 2026 16:05:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13217 · 5.9 MEDIUM — NULL-pointer dereference in Zephyr OCPP CALLRESULT parsing via unchecked strtok_r/atoi</title>
+      <link>https://vulnogram.org/CVE-2026-13217</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13217</guid>
+      <description>The OCPP 1.6 client in subsys/net/lib/ocpp/ocpp.c reconstructs a session handle and PDU id from the uid field of a CALLRESULT message. In ocpp_process_server_msg() the code calls atoi(strtok_r(uid, &quot;-&quot;, &amp;tmp)) without checking the strtok_r return val…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 25 Aug 2026 16:05:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13216 · 6.1 MEDIUM — Out-of-bounds stack write in Zephyr virtio PCI driver from unvalidated device-supplied capability length</title>
+      <link>https://vulnogram.org/CVE-2026-13216</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13216</guid>
+      <description>The virtio PCI driver (drivers/virtio/virtio_pci.c) parses a device&apos;s PCI capability list during driver initialization. In virtio_pci_read_cap() the device-supplied capability length byte cap_len (read from PCI config space via pcie_conf_read()) was…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 25 Aug 2026 16:05:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13215 · 6.8 MEDIUM — Zephyr ext2 mount: unvalidated superblock block size causes out-of-bounds write from a crafted filesystem image</title>
+      <link>https://vulnogram.org/CVE-2026-13215</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13215</guid>
+      <description>The Zephyr ext2 filesystem driver fails to validate the s_log_block_size field of the on-disk superblock when mounting a filesystem. ext2_verify_disk_superblock() in subsys/fs/ext2/ext2_impl.c checks the magic number, revision, inode size and group c…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 25 Aug 2026 04:37:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13214 · 9.8 CRITICAL — Stack buffer overflow in OCPP GetConfiguration key parsing</title>
+      <link>https://vulnogram.org/CVE-2026-13214</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13214</guid>
+      <description>The OCPP 1.6 client in subsys/net/lib/ocpp/ocpp_j.c contains a stack buffer overflow in parse_getconfig_msg(). When handling a GetConfiguration request from the central system, the handler copied the attacker-controlled JSON &quot;key&quot; string into the cal…</description>
+      <category>Critical</category>
+      <pubDate>Tue, 25 Aug 2026 04:37:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13213 · 5.3 MEDIUM — Bluetooth HAS: NULL-pointer dereference DoS when a bonded peer reconnects before bt_has_register</title>
+      <link>https://vulnogram.org/CVE-2026-13213</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13213</guid>
+      <description>The Hearing Access Service (HAS) GATT server in subsys/bluetooth/audio/has.c installs a connection-callback set unconditionally via BT_CONN_CB_DEFINE, so security_changed() runs for every connection that establishes security even before the applicati…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 24 Aug 2026 17:10:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13212 · 8.8 HIGH — Zephyr virtio driver calls an arbitrary function pointer from an out-of-range used-ring descriptor id</title>
+      <link>https://vulnogram.org/CVE-2026-13212</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13212</guid>
+      <description>The Zephyr virtio driver does not validate the descriptor-chain head id that the virtio device writes into the used ring. In virtio_isr() (drivers/virtio/virtio_common.c), the device-written vq-&gt;used-&gt;ring[idx].id is used directly as an index into vq…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 15:43:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13343 · 5.3 MEDIUM — Uninitialised stack memory disclosure in the MIDI 2.0 UMP Stream responder</title>
+      <link>https://vulnogram.org/CVE-2026-13343</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13343</guid>
+      <description>The UMP Stream responder library in lib/midi2/ump_stream_responder.c builds reply packets in a 16-byte struct midi_ump (uint32_t data[4]). The builders make_endpoint_info() and make_function_block_info() populate only the first two words (res.data[0]…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 24 Aug 2026 15:43:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9728 · 6.4 MEDIUM — TOCTOU race in mbox_send syscall verifier allows userspace to leak kernel memory</title>
+      <link>https://vulnogram.org/CVE-2026-9728</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9728</guid>
+      <description>The userspace syscall verifier z_vrfy_mbox_send() in drivers/mbox/mbox_handlers.c validated the nested msg-&gt;data/msg-&gt;size fields by reading them directly out of live userspace memory, and then forwarded the original, still-mutable userspace struct m…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 24 Aug 2026 14:28:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12999 · 5.3 MEDIUM — Infineon Airoc Wi-Fi driver leaks TX buffers on send failure, leading to permanent pool exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-12999</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12999</guid>
+      <description>The Infineon Airoc Wi-Fi driver&apos;s transmit callback airoc_mgmt_send() in drivers/wifi/infineon/airoc_wifi.c allocates a net_buf from the fixed airoc_pool for every outbound packet. When whd_network_send_ethernet_data() returns a synchronous failure,…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 22 Aug 2026 20:35:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12634 · 5.3 MEDIUM — Out-of-bounds stack write in the settings NVS backend from over-reported nvs_read length</title>
+      <link>https://vulnogram.org/CVE-2026-12634</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12634</guid>
+      <description>The NVS backend of the Zephyr settings subsystem (subsys/settings/src/settings_nvs.c) reads stored setting-name entries into fixed 74-byte stack buffers and NUL-terminates them with buf[rc] = &apos;\0&apos;, where rc is the return value of nvs_read(). Per its…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 19 Aug 2026 20:37:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12522 · 8.8 HIGH — Stack buffer overflow in Zephyr hl7800 modem driver parsing network-supplied +CGCONTRDP address fields</title>
+      <link>https://vulnogram.org/CVE-2026-12522</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12522</guid>
+      <description>The HL7800 cellular modem driver&apos;s +CGCONTRDP: response handler on_cmd_atcmdinfo_ipaddr() in drivers/modem/vendor_standalone/hl7800.c parses the PDP-context dynamic parameters (local address, subnet mask, gateway, and DNS servers) that the cellular n…</description>
+      <category>High</category>
+      <pubDate>Wed, 19 Aug 2026 20:37:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12633 · 8.1 HIGH — Out-of-bounds write in IPv6 6LoWPAN Context Option handling via unauthenticated Router Advertisement</title>
+      <link>https://vulnogram.org/CVE-2026-12633</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12633</guid>
+      <description>The IPv6 neighbor-discovery code in subsys/net/ip/ipv6_nbr.c processes the 6LoWPAN Context Option (6CO, RFC 6775) carried inside ICMPv6 Router Advertisements. In handle_ra_6co() the 8-bit context_len field is taken directly from the packet and was ne…</description>
+      <category>High</category>
+      <pubDate>Wed, 19 Aug 2026 20:37:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12632 · 6.5 MEDIUM — Out-of-bounds read in Zephyr PTP message parsing from unvalidated message type</title>
+      <link>https://vulnogram.org/CVE-2026-12632</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12632</guid>
+      <description>Zephyr&apos;s Precision Time Protocol receive handler ptp_msg_post_recv() in subsys/net/lib/ptp/msg.c takes the 4-bit message type straight off the wire via ptp_msg_type() (msg-&gt;header.type_major_sdo_id &amp; 0xF, range 0-15) and uses it to index the msg_size…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 20:55:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12631 · 6.5 MEDIUM — Broken access-control denial in k_thread_join/k_thread_abort syscall validation in Zephyr kernel</title>
+      <link>https://vulnogram.org/CVE-2026-12631</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12631</guid>
+      <description>The Zephyr kernel validates the k_thread_join() and k_thread_abort() system calls (declared __syscall in include/zephyr/kernel.h) through thread_obj_validate() in kernel/thread.c. Its default switch branch is the access-denied path, taken when k_obje…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 20:55:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12520 · 6.4 MEDIUM — Stack buffer overflow and off-by-one writes in Zephyr HL7800 modem AT response handlers</title>
+      <link>https://vulnogram.org/CVE-2026-12520</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12520</guid>
+      <description>The Sierra Wireless HL7800 cellular modem driver (drivers/modem/vendor_standalone/hl7800.c, located at drivers/modem/hl7800.c in v4.4.0 and earlier) parses AT responses with roughly twenty handlers that call net_buf_linearize(value, sizeof(value), *b…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 19:41:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12519 · 5 MEDIUM — Out-of-bounds stack read and write in Zephyr WNC-M14A2A modem socket-notify parsing</title>
+      <link>https://vulnogram.org/CVE-2026-12519</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12519</guid>
+      <description>The WNC-M14A2A LTE-M modem driver mishandles unsolicited %NOTIFYEV: events in on_cmd_socknotifyev() (drivers/modem/vendor_standalone/wncm14a2a.c). The response line is linearized into a fixed 40-byte stack buffer via net_buf_linearize(), which caps t…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 16:18:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9771 · 8.8 HIGH — Missing device-pointer validation in flash_copy() syscall allows userspace privilege escalation</title>
+      <link>https://vulnogram.org/CVE-2026-9771</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9771</guid>
+      <description>The flash_copy() system call is verified by z_vrfy_flash_copy() in drivers/flash/flash_util.c. On builds with CONFIG_USERSPACE enabled, this handler is the kernel-side trust boundary for a user-mode caller. Prior to the fix it validated only the outp…</description>
+      <category>High</category>
+      <pubDate>Mon, 17 Aug 2026 16:18:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12630 · 4.3 MEDIUM — 6LoWPAN IPHC uncompression out-of-bounds read on reserved destination addressing mode</title>
+      <link>https://vulnogram.org/CVE-2026-12630</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12630</guid>
+      <description>Zephyr&apos;s 6LoWPAN IP Header Compression (IPHC) uncompression code contains an out-of-bounds read in get_ihpc_inlined_size() (subsys/net/ip/6lo.c). The destination inline size is looked up in da_inline_size_table, which has 13 entries, using an index b…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 16:18:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12629 · 4.6 MEDIUM — PL011 UART error interrupts never cleared, enabling an external-peer interrupt-storm denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-12629</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12629</guid>
+      <description>The ARM PL011 UART driver in drivers/serial/uart_pl011.c fails to acknowledge receive error interrupts. On the PL011, the framing, parity, break, and overrun error interrupts (PL011_IMSC_ERROR_MASK) are cleared only by writing the interrupt-clear reg…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 16:18:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12366 · 8.8 HIGH — Use-after-free freeing an armed dynamically-allocated k_timer in Zephyr userspace object disposal</title>
+      <link>https://vulnogram.org/CVE-2026-12366</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12366</guid>
+      <description>Zephyr&apos;s dynamic kernel-object disposal path unref_check() in kernel/userspace/userspace.c frees an object&apos;s storage (k_free(dyn-&gt;data)) once its reference count reaches zero, after running a per-object-type cleanup. The cleanup switch handled only K…</description>
+      <category>High</category>
+      <pubDate>Fri, 14 Aug 2026 17:52:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12365 · 5.8 MEDIUM — Use-after-free in Zephyr delayable work-queue cancellation under SMP timing race</title>
+      <link>https://vulnogram.org/CVE-2026-12365</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12365</guid>
+      <description>A use-after-free exists in the Zephyr second-generation work queue (kernel/work.c) in the handling of delayable work timeouts. When a delayable work item&apos;s timeout has been dequeued and its handler work_timeout() is in flight (blocked acquiring the w…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 14 Aug 2026 17:52:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12364 · 8.4 HIGH — Missing user-space pointer validation in logging syscall z_log_msg_static_create allows kernel memory disclosure and denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-12364</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12364</guid>
+      <description>The user-space system-call verifier z_vrfy_z_log_msg_static_create() in subsys/logging/log_msg.c was a pure pass-through: it forwarded the caller-supplied source, desc, package, and data arguments directly to the kernel-mode implementation z_impl_z_l…</description>
+      <category>High</category>
+      <pubDate>Fri, 14 Aug 2026 17:52:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12363 · 4.2 MEDIUM — Out-of-bounds write in LoRaWAN fragmented transport from a fragment index of 0</title>
+      <link>https://vulnogram.org/CVE-2026-12363</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12363</guid>
+      <description>The LoRaWAN Fragmented Data Block Transport service (subsys/lorawan/services/frag_transport.c) does not validate the fragment counter in a received DATA_FRAGMENT command before forwarding it to the configured decoder. In frag_transport_package_callba…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 14 Aug 2026 17:52:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12236 · 6.5 MEDIUM — Infinite loop (DoS) in Bluetooth GATT client parsing of Read-By-Type responses with zero data length</title>
+      <link>https://vulnogram.org/CVE-2026-12236</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12236</guid>
+      <description>The Bluetooth host GATT client function parse_read_std_char_desc() in subsys/bluetooth/host/gatt.c parses an ATT Read By Type Response received from a remote GATT server during BT_GATT_DISCOVER_STD_CHAR_DESC discovery. The per-entry stride rsp-&gt;len i…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 13 Aug 2026 17:19:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12235 · 6.3 MEDIUM — Out-of-bounds write in Xtensa llext PLT relocation from malformed ELF (CWE-787)</title>
+      <link>https://vulnogram.org/CVE-2026-12235</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12235</guid>
+      <description>The Linkable Loadable Extensions (llext) subsystem mis-handles PLT/RELA relocation entries when linking a relocatable (partially-linked) ELF extension. In llext_link_plt() (subsys/llext/llext_link.c), the relocatable branch (tgt != NULL, the path use…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 04:55:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12234 · 7.8 HIGH — TOCTOU double-fetch in `zsock_sendmsg`/`recvmsg` userspace verifiers allows kernel-heap out-of-bounds write</title>
+      <link>https://vulnogram.org/CVE-2026-12234</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12234</guid>
+      <description>The userspace syscall verifiers z_vrfy_zsock_sendmsg() and z_vrfy_zsock_recvmsg() in subsys/net/lib/sockets/sockets.c snapshot the caller-supplied struct net_msghdr into a kernel-side copy with k_usermode_from_copy(), but then re-read the still-live…</description>
+      <category>High</category>
+      <pubDate>Wed, 12 Aug 2026 04:39:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12233 · 5.9 MEDIUM — Uninitialized mutex in TLS trusted-credential backend causes kernel NULL-deref DoS under contention</title>
+      <link>https://vulnogram.org/CVE-2026-12233</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12233</guid>
+      <description>The PSA Protected Storage credential backend (subsys/net/lib/tls_credentials/tls_credentials_trusted.c) declared its credential-store mutex as a plain zero-filled static struct k_mutex credential_lock; and never called k_mutex_init() on it. A statica…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 03:54:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12232 · 6.1 MEDIUM — Out-of-bounds read via unvalidated stream_id in Intel ALH DAI get_properties</title>
+      <link>https://vulnogram.org/CVE-2026-12232</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12232</guid>
+      <description>The Intel ALH digital-audio-interface driver function dai_alh_get_properties() in drivers/dai/intel/alh/alh.c used a caller-supplied int stream_id with no range validation. The value indexes the fixed-size static const uint8_t alh_handshake_map[64] a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 03:34:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12052 · 5.2 MEDIUM — Out-of-bounds write in USB CDC NCM control handler when host wLength is smaller than the response</title>
+      <link>https://vulnogram.org/CVE-2026-12052</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12052</guid>
+      <description>The USB device-side CDC NCM class control-to-host handler usbd_cdc_ncm_cth in subsys/usb/device_next/class/usbd_cdc_ncm.c builds a fixed-size response for the GET_NTB_PARAMETERS (28-byte struct ntb_parameters) and GET_NTB_INPUT_SIZE (8-byte struct nt…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 05:51:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12051 · 4.6 MEDIUM — NULL pointer dereference in USB DFU device_next download handler (handle_download)</title>
+      <link>https://vulnogram.org/CVE-2026-12051</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12051</guid>
+      <description>The USB DFU class implementation in Zephyr&apos;s new (experimental) device_next USB device stack contains a NULL pointer dereference in handle_download() (subsys/usb/device_next/class/usbd_dfu.c). The handler computes MIN(setup-&gt;wLength, buf-&gt;len) and pa…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 05:31:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11894 · 5.9 MEDIUM — Double-free / use-after-free in Realtek BEE Bluetooth HCI driver `send()` error paths</title>
+      <link>https://vulnogram.org/CVE-2026-11894</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11894</guid>
+      <description>The Realtek BEE Bluetooth HCI driver&apos;s send callback, bt_hci_bee_send() in drivers/bluetooth/hci/hci_bee.c, violated the bt_hci_driver_api buffer-ownership contract. That contract requires the driver to consume (unref) the transmit net_buf only on su…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 05:08:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11985 · 3.6 LOW — Cross-thread FPU register leak on ARM when FPU enabled without register sharing</title>
+      <link>https://vulnogram.org/CVE-2026-11985</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11985</guid>
+      <description>On the Zephyr ARM port, enabling the hardware FPU (CONFIG_FPU) forces the &quot;Floating point ABI&quot; choice, which defaults to CONFIG_FP_HARDABI. Both FP_HARDABI and FP_SOFTABI permit the compiler to emit hardware FP instructions in any function, even code…</description>
+      <category>Low</category>
+      <pubDate>Tue, 11 Aug 2026 04:56:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11893 · 5.9 MEDIUM — Double free / use-after-free in Bouffalo Lab HCI driver send() error paths (hci_bflb)</title>
+      <link>https://vulnogram.org/CVE-2026-11893</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11893</guid>
+      <description>The Bluetooth HCI driver for Bouffalo Lab on-chip BLE controllers (BL60x/BL70x/BL61x), bt_bflb_send() in drivers/bluetooth/hci/hci_bflb.c, violates the bt_hci_driver_api.send() buffer-ownership contract. That contract (documented at include/zephyr/dr…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 04:42:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11812 · 2.5 LOW — UpdateHub: race condition on shared context causes out-of-bounds write and DoS</title>
+      <link>https://vulnogram.org/CVE-2026-11812</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11812</guid>
+      <description>The UpdateHub management subsystem (subsys/mgmt/updatehub/updatehub.c) drives every update operation through a single file-scope ctx structure that holds the CoAP block context, payload buffer, status code, socket, and a one-element poll-fd array fds…</description>
+      <category>Low</category>
+      <pubDate>Mon, 10 Aug 2026 23:09:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11811 · 3.7 LOW — Socket file-descriptor leak in UpdateHub OTA client start_coap_client() leading to resource-exhaustion DoS</title>
+      <link>https://vulnogram.org/CVE-2026-11811</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11811</guid>
+      <description>The UpdateHub over-the-air update client&apos;s start_coap_client() in subsys/mgmt/updatehub/updatehub.c leaks the CoAP/DTLS socket descriptor on its connection-setup failure paths. The shared error: cleanup gated socket closing on a ret &gt; 0 flag, but ret…</description>
+      <category>Low</category>
+      <pubDate>Mon, 10 Aug 2026 22:55:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-8718 · 8.4 HIGH — Out-of-bounds write in DTLS peer Connection ID getsockopt (`TLS_DTLS_PEER_CID_VALUE`) in Zephyr net sockets/TLS</title>
+      <link>https://vulnogram.org/CVE-2026-8718</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8718</guid>
+      <description>tls_opt_dtls_peer_connection_id_value_get() in subsys/net/lib/sockets/sockets_tls.c, which handles getsockopt(SOL_TLS, TLS_DTLS_PEER_CID_VALUE), passed the caller-supplied optval directly to mbedtls_ssl_get_peer_cid() without verifying the buffer was…</description>
+      <category>High</category>
+      <pubDate>Mon, 10 Aug 2026 22:40:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11809 · 3.7 LOW — UpdateHub probe: uninitialized-heap out-of-bounds read of network-supplied metadata</title>
+      <link>https://vulnogram.org/CVE-2026-11809</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11809</guid>
+      <description>The UpdateHub OTA client in subsys/mgmt/updatehub/updatehub.c contains an out-of-bounds / uninitialized-memory read in z_impl_updatehub_probe(). The probe response from the UpdateHub server is copied into a heap buffer (metadata) that is correctly NU…</description>
+      <category>Low</category>
+      <pubDate>Mon, 10 Aug 2026 20:36:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11810 · 7.5 HIGH — NULL-pointer dereference in UpdateHub OTA agent on empty inner metadata array (remote DoS)</title>
+      <link>https://vulnogram.org/CVE-2026-11810</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11810</guid>
+      <description>The UpdateHub firmware-update agent&apos;s probe handler (z_impl_updatehub_probe() in subsys/mgmt/updatehub/updatehub.c) parses the JSON metadata returned by the update server into a fixed two-level nested-array struct. After parsing it validates only the…</description>
+      <category>High</category>
+      <pubDate>Mon, 10 Aug 2026 20:23:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11743 · 6.6 MEDIUM — Missing negative-offset/overflow check in SF32LB MPI QSPI NOR flash driver allows out-of-bounds read and write</title>
+      <link>https://vulnogram.org/CVE-2026-11743</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11743</guid>
+      <description>The SF32LB MPI QSPI NOR flash driver (drivers/flash/flash_sf32lb_mpi_qspi_nor.c) validated the flash offset and length on its read and write paths with the test (offset + size) &gt; data-&gt;size. Because offset is a signed off_t while size is unsigned, a…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 07 Aug 2026 21:10:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11742 · 3.6 LOW — Use-after-free race in kernel `k_queue_peek_head/tail` due to missing spinlock</title>
+      <link>https://vulnogram.org/CVE-2026-11742</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11742</guid>
+      <description>The kernel queue helper z_queue_node_peek() in kernel/queue.c dereferences a node taken from a queue&apos;s data_q list, reading the node&apos;s flag byte and, for items enqueued via k_queue_alloc_append/alloc_prepend, the data pointer of an internally allocat…</description>
+      <category>Low</category>
+      <pubDate>Fri, 07 Aug 2026 21:10:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-11368 · 7.1 HIGH — Use-after-free in Bluetooth host ATT TX completion on disconnect mid-transfer</title>
       <link>https://vulnogram.org/CVE-2026-11368</link>
@@ -43,375 +411,6 @@
       <description>Zephyr&apos;s Bluetooth Mesh subnet key management leaks one PSA Crypto key slot on every subnet-key teardown. In subsys/bluetooth/mesh/subnet.c, net_keys_create() imports the Private Beacon Key into a PSA key slot under CONFIG_BT_MESH_PRIV_BEACONS (enabl…</description>
       <category>Low</category>
       <pubDate>Sun, 02 Aug 2026 14:20:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10773 · 5.4 MEDIUM — Out-of-bounds read in DHCPv4 client message-type name lookup (net_dhcpv4_msg_type_name)</title>
-      <link>https://vulnogram.org/CVE-2026-10773</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10773</guid>
-      <description>The DHCPv4 client helper net_dhcpv4_msg_type_name() in subsys/net/lib/dhcpv4/dhcpv4.c indexes a static 8-element const char * name table after a faulty bounds check. The guard used msg_type &lt;= sizeof(name) instead of msg_type &lt;= ARRAY_SIZE(name); siz…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 01 Aug 2026 12:21:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-2411 · 6.5 MEDIUM — Bluetooth GATT notify/indicate enforces the wrong attribute&apos;s permissions, bypassing encryption/authentication requirements on characteristic values</title>
-      <link>https://vulnogram.org/CVE-2026-2411</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-2411</guid>
-      <description>Zephyr&apos;s Bluetooth host declares a GATT characteristic as two consecutive attributes: a Characteristic Declaration whose permission is hard-coded to BT_GATT_PERM_READ, and a Characteristic Value attribute that carries the application-specified securi…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 01 Aug 2026 12:06:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10686 · 5.8 MEDIUM — Missing hop-limit decrement on IPv6 forwarding path allows unbounded packet looping (DoS) in Zephyr routers</title>
-      <link>https://vulnogram.org/CVE-2026-10686</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10686</guid>
-      <description>Zephyr&apos;s IPv6 forwarding path re-sent routed unicast packets without ever decrementing the IPv6 hop limit. Both routing branches of ipv6_route_packet() (subsys/net/ip) were affected: the explicit-route path (net_route_packet()) and the on-link cross-…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 31 Jul 2026 15:49:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10685 · 7.6 HIGH — Use-after-free of GATT subscribe params in Bluetooth host CCC-write response handler</title>
-      <link>https://vulnogram.org/CVE-2026-10685</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10685</guid>
-      <description>The Zephyr Bluetooth GATT client CCC-write response handler gatt_write_ccc_rsp() in subsys/bluetooth/host/gatt.c invoked the application&apos;s params-&gt;subscribe() callback after it had already called params-&gt;notify(conn, params, NULL, 0). Per the public…</description>
-      <category>High</category>
-      <pubDate>Fri, 31 Jul 2026 14:41:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10684 · 3 LOW — Out-of-bounds read in coredump shell when printing stored-dump target code</title>
-      <link>https://vulnogram.org/CVE-2026-10684</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10684</guid>
-      <description>In subsys/debug/coredump/coredump_shell.c, print_coredump_hdr() used the 16-bit tgt_code field of a stored Zephyr coredump header directly as an index into coredump_target_code2str[], a fixed 7-element array of string pointers, with no bounds check.…</description>
-      <category>Low</category>
-      <pubDate>Wed, 29 Jul 2026 18:03:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10683 · 2.4 LOW — DesignWare I2C target driver can be wedged into a permanent stuck state by an on-bus master (DoS)</title>
-      <link>https://vulnogram.org/CVE-2026-10683</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10683</guid>
-      <description>In the Synopsys DesignWare I2C driver (drivers/i2c/i2c_dw.c) operating in target/slave mode, the rx_full interrupt handler gates the write_requested() callback on dw-&gt;state != CMD_SEND, and dw-&gt;state is only reset to READY on a STOP interrupt. The ST…</description>
-      <category>Low</category>
-      <pubDate>Mon, 27 Jul 2026 18:30:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10682 · 6.6 MEDIUM — Out-of-bounds write in Zephyr `log_filter_set` syscall verifier reachable from userspace</title>
-      <link>https://vulnogram.org/CVE-2026-10682</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10682</guid>
-      <description>The userspace verifier z_vrfy_log_filter_set() for the log_filter_set syscall in subsys/logging/log_mgmt.c performed a signed comparison against the int16_t src_id parameter: src_id &lt; (int16_t)log_src_cnt_get(domain_id). Any negative value for src_id…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 27 Jul 2026 18:30:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10681 · 6.5 MEDIUM — SMP race in `thread_idx_alloc()` lets concurrent `k_object_alloc(K_OBJ_THREAD)` callers share a kernel-object permission slot</title>
-      <link>https://vulnogram.org/CVE-2026-10681</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10681</guid>
-      <description>In Zephyr&apos;s userspace dynamic-objects subsystem, thread_idx_alloc() in kernel/userspace/userspace.c allocated a new thread permission index from the global _thread_idx_map[] bitmap without holding lists_lock. On SMP systems, two user-mode threads inv…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 25 Jul 2026 13:23:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7007 · 4.6 MEDIUM — Division by zero in Zephyr ext2 superblock parsing allows DoS via crafted filesystem image</title>
-      <link>https://vulnogram.org/CVE-2026-7007</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7007</guid>
-      <description>The Zephyr ext2 file system validates the on-disk superblock in ext2_verify_disk_superblock() (subsys/fs/ext2/ext2_impl.c) before completing a mount. The validator checked the magic number, block size, revision and feature flags, but did not verify t…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 24 Jul 2026 13:48:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10680 · 7.6 HIGH — Out-of-bounds access in Zephyr BR/EDR L2CAP configuration request handling via `uint16_t` length underflow</title>
-      <link>https://vulnogram.org/CVE-2026-10680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10680</guid>
-      <description>The Classic (BR/EDR) L2CAP signaling handlers l2cap_br_conf_req() and l2cap_br_conf_rsp() in subsys/bluetooth/host/classic/l2cap_br.c validated the minimum command size against buf-&gt;len (the bytes remaining in the whole received PDU) instead of len (…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 21:30:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10679 · 3.3 LOW — Divide-by-zero in DesignWare SPI driver reachable from spi_transceive syscall (local DoS)</title>
-      <link>https://vulnogram.org/CVE-2026-10679</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10679</guid>
-      <description>The DesignWare SPI driver (drivers/spi/spi_dw.c) computed the SPI BAUDR clock divider as info-&gt;clock_frequency / config-&gt;frequency without validating config-&gt;frequency. spi_transceive is a Zephyr __syscall and its verify handler (drivers/spi/spi_hand…</description>
-      <category>Low</category>
-      <pubDate>Tue, 21 Jul 2026 21:30:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10678 · 8.1 HIGH — NULL-pointer / out-of-bounds write in Zephyr MCTP I2C+GPIO target binding driven by an unauthenticated I2C controller</title>
-      <link>https://vulnogram.org/CVE-2026-10678</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10678</guid>
-      <description>The MCTP-over-I2C+GPIO target binding in Zephyr (subsys/pmci/mctp/mctp_i2c_gpio_target.c) processes pseudo-register writes from an I2C bus master byte-by-byte in mctp_i2c_gpio_target_write_received() without validating the order or the receive buffer…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Jul 2026 21:30:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10677 · 6.5 MEDIUM — Kernel heap memory leak in `z_vrfy_k_poll()` lets an unprivileged user thread exhaust the kernel resource pool</title>
-      <link>https://vulnogram.org/CVE-2026-10677</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10677</guid>
-      <description>The CONFIG_USERSPACE syscall verifier z_vrfy_k_poll() in kernel/poll.c allocates a kernel-side copy of the user-supplied k_poll_event[] via z_thread_malloc() and then validates each event&apos;s object handle. Before this fix, validation used K_OOPS(K_SYS…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 21 Jul 2026 21:30:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10675 · 4.3 MEDIUM — Bluetooth Mesh PB-ADV: invalidated provisioning link kept alive indefinitely, blocking (re)provisioning (DoS)</title>
-      <link>https://vulnogram.org/CVE-2026-10675</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10675</guid>
-      <description>In Zephyr&apos;s Bluetooth Mesh PB-ADV provisioning bearer (subsys/bluetooth/mesh/pb_adv.c), prov_msg_recv() rescheduled the provisioning protocol watchdog timer unconditionally at the top of the function, before the FCS check and before the ADV_LINK_INVA…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 21 Jul 2026 21:30:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10674 · 5.5 MEDIUM — DoS (hard fault) in NXP LPUART driver: unsupported runtime UART config leaves clocks disabled</title>
-      <link>https://vulnogram.org/CVE-2026-10674</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10674</guid>
-      <description>The NXP LPUART serial driver (drivers/serial/uart_mcux_lpuart.c), when CONFIG_UART_USE_RUNTIME_CONFIGURE is enabled, called LPUART_Deinit() at the start of mcux_lpuart_configure(), which disables the LPUART peripheral clocks. The requested configurat…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 21 Jul 2026 21:30:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10673 · 8.3 HIGH — Out-of-bounds write in ADIN2111/ADIN1110 OA SPI Ethernet RX frame reassembly</title>
-      <link>https://vulnogram.org/CVE-2026-10673</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10673</guid>
-      <description>The Zephyr ADIN2111/ADIN1110 10BASE-T1S/T1L Ethernet driver (drivers/ethernet/eth_adin2111.c) reassembles received Ethernet frames in OPEN Alliance (OA) SPI mode by copying device-supplied 64-byte data chunks into a fixed static buffer ctx-&gt;buf of si…</description>
-      <category>High</category>
-      <pubDate>Wed, 15 Jul 2026 17:36:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10672 · 8.2 HIGH — Unterminated URI buffer causes out-of-bounds read in LwM2M firmware pull (Package URI)</title>
-      <link>https://vulnogram.org/CVE-2026-10672</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10672</guid>
-      <description>subsys/net/lib/lwm2m/lwm2m_pull_context.c copied the firmware-update Package URI into a fixed static buffer (context.uri, size CONFIG_LWM2M_SWMGMT_PACKAGE_URI_LEN, default 128) with memcpy(context.uri, uri, LWM2M_PACKAGE_URI_LEN), copying exactly the…</description>
-      <category>High</category>
-      <pubDate>Tue, 14 Jul 2026 15:02:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10671 · 7.1 HIGH — User thread can re-initialize an in-use `k_pipe`, corrupting kernel wait queues (`CONFIG_USERSPACE`)</title>
-      <link>https://vulnogram.org/CVE-2026-10671</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10671</guid>
-      <description>In Zephyr&apos;s kernel pipe implementation, the userspace syscall verifier z_vrfy_k_pipe_init() in kernel/pipe.c used K_SYSCALL_OBJ() (which requires the kernel object to already be initialized) instead of K_SYSCALL_OBJ_NEVER_INIT() (which rejects an alr…</description>
-      <category>High</category>
-      <pubDate>Tue, 14 Jul 2026 15:02:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10670 · 5.5 MEDIUM — User-triggerable kernel NULL-pointer dereference (DoS) in `k_thread_name_copy()` syscall verifier</title>
-      <link>https://vulnogram.org/CVE-2026-10670</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10670</guid>
-      <description>The CONFIG_USERSPACE verification handler for the k_thread_name_copy() system call (z_vrfy_k_thread_name_copy() in kernel/thread.c) calls k_object_find() on the caller-supplied thread pointer and then dereferences the returned struct k_object without…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 14 Jul 2026 15:02:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10669 · 7.8 HIGH — Xtensa MPU `arch_buffer_validate()` integer-overflow lets a user thread bypass syscall pointer validation</title>
-      <link>https://vulnogram.org/CVE-2026-10669</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10669</guid>
-      <description>On Xtensa SoCs built with CONFIG_XTENSA_MPU and CONFIG_USERSPACE, arch_buffer_validate() in arch/xtensa/core/mpu.c — the architecture hook that verifies a user-mode-supplied buffer is accessible to the calling user thread with the requested permissio…</description>
-      <category>High</category>
-      <pubDate>Tue, 14 Jul 2026 15:02:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10668 · 2.4 LOW — Host-triggerable control-endpoint wedge (DoS) in Nuvoton NuMaker HSUSBD UDC driver</title>
-      <link>https://vulnogram.org/CVE-2026-10668</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10668</guid>
-      <description>The Nuvoton NuMaker HSUSBD USB device-controller driver (drivers/usb/udc/udc_numaker.c) armed the control Data IN stage unconditionally (base-&gt;CEPTXCNT = len in numaker_hsusbd_ep_trigger). Because the HSUSBD hardware cannot disarm a control Data IN a…</description>
-      <category>Low</category>
-      <pubDate>Sun, 12 Jul 2026 16:16:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10667 · 7.8 HIGH — SMP use-after-free in Zephyr `CONFIG_USERSPACE` dynamic kernel-object tracking, reachable from unprivileged user threads</title>
-      <link>https://vulnogram.org/CVE-2026-10667</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10667</guid>
-      <description>Zephyr&apos;s dynamic kernel-object tracking (kernel/userspace/userspace.c, formerly kernel/userspace.c) maintains a doubly-linked list (obj_list) of dynamically allocated kernel objects. Iteration over this list in k_object_wordlist_foreach() was perform…</description>
-      <category>High</category>
-      <pubDate>Sun, 12 Jul 2026 16:16:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10666 · 8.1 HIGH — Stack buffer overflow in `net_ipaddr_parse()` IPv4 address-with-port parsing in `subsys/net/ip/utils.c`</title>
-      <link>https://vulnogram.org/CVE-2026-10666</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10666</guid>
-      <description>parse_ipv4() in subsys/net/ip/utils.c (reached via net_ipaddr_parse() for strings of the form &quot;a.b.c.d:port&quot;) copies the port substring into a fixed 17-byte stack buffer (char ipaddr[NET_IPV4_ADDR_LEN + 1]) using a length of str_len - end - 1, where…</description>
-      <category>High</category>
-      <pubDate>Sun, 12 Jul 2026 16:16:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10665 · 7.4 HIGH — Heap buffer overflow on WireGuard receive path via unbounded incoming packet length</title>
-      <link>https://vulnogram.org/CVE-2026-10665</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10665</guid>
-      <description>In Zephyr&apos;s WireGuard subsystem (subsys/net/lib/wireguard), wg_process_data_message() in wg_crypto.c linearizes an inbound transport-data payload into a fixed pool buffer of CONFIG_WIREGUARD_BUF_LEN bytes before decryption. The call net_buf_linearize…</description>
-      <category>High</category>
-      <pubDate>Sun, 12 Jul 2026 16:16:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10664 · 5 MEDIUM — Out-of-bounds write in nRF70 Wi-Fi driver power-save event handler (unbounded TWT flow count)</title>
-      <link>https://vulnogram.org/CVE-2026-10664</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10664</guid>
-      <description>The nRF70 Wi-Fi driver&apos;s power-save event handler nrf_wifi_event_proc_get_power_save_info() in drivers/wifi/nrf_wifi/src/wifi_mgmt.c copied TWT (Target Wake Time) flow entries from an nrf_wifi_umac_event_power_save_info event into the fixed-size twt_…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 12 Jul 2026 16:16:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10663 · 6.1 MEDIUM — Use-after-free / double-free of the root USB device in the experimental USB host stack</title>
-      <link>https://vulnogram.org/CVE-2026-10663</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10663</guid>
-      <description>In Zephyr&apos;s experimental USB host stack (CONFIG_USB_HOST_STACK), usbh_device_disconnect() (subsys/usb/host/usbh_device.c) freed the root usb_device slab object without clearing the cached pointer ctx-&gt;root. The bus removal handler dev_removed_handler…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 12 Jul 2026 16:16:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10660 · 6.4 MEDIUM — Shared reassembly buffer in Bluetooth BAP Broadcast Assistant enables cross-connection memory corruption</title>
-      <link>https://vulnogram.org/CVE-2026-10660</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10660</guid>
-      <description>The Bluetooth BAP Broadcast Assistant GATT client in subsys/bluetooth/audio/bap_broadcast_assistant.c reassembled remote Broadcast Receive State data into a single file-static net_buf_simple (att_buf, BT_ATT_MAX_ATTRIBUTE_LEN = 512 bytes) shared by a…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 11 Jul 2026 17:00:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10659 · 4.7 MEDIUM — NULL pointer dereference in Zephyr Dhara FTL disk driver on flash read error during journal resume</title>
-      <link>https://vulnogram.org/CVE-2026-10659</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10659</guid>
-      <description>The Dhara flash translation layer disk driver (drivers/disk/ftl_dhara.c) implemented the dhara_nand_ callbacks so that, on a flash error, the error code was written unconditionally through the caller-supplied dhara_error_t err pointer (e.g. *err = DH…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 07 Jul 2026 12:58:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10657 · 3.7 LOW — Out-of-bounds read in Zephyr DNS resolver mDNS suffix check (memcmp past string NUL)</title>
-      <link>https://vulnogram.org/CVE-2026-10657</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10657</guid>
-      <description>Zephyr&apos;s DNS resolver detects mDNS (.local) queries in dns_resolve_name_internal() (subsys/net/lib/dns/resolve.c) with memcmp(strrchr(query, &apos;.&apos;), &quot;.local&quot;, 7), which always reads a fixed 7 bytes from the suffix pointer. When the resolved hostname&apos;s…</description>
-      <category>Low</category>
-      <pubDate>Sun, 05 Jul 2026 22:23:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10656 · 4.6 MEDIUM — NULL-pointer dereference DoS in MAX32 USB device controller transfer-completion handlers</title>
-      <link>https://vulnogram.org/CVE-2026-10656</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10656</guid>
-      <description>The MAX32xxx USB device controller driver (drivers/usb/udc/udc_max32.c, compatible adi_max32_usbhs) dereferenced an endpoint buffer in its OUT and IN transfer-completion handlers without checking it for NULL. udc_event_xfer_out_done() called net_buf_…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 05 Jul 2026 22:23:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10655 · 6.5 MEDIUM — Use-after-free race in SNTP async client when closing the socket while the socket service is still polling it</title>
-      <link>https://vulnogram.org/CVE-2026-10655</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10655</guid>
-      <description>The asynchronous SNTP client in Zephyr (subsys/net/lib/sntp/sntp.c, sntp_close_async) closed the UDP socket file descriptor directly from the calling thread immediately after detaching it from the network socket service, without synchronizing with th…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 16:33:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10654 · 3.1 LOW — RFCOMM session-disconnect race leaks session/L2CAP and denies further RFCOMM service in Zephyr Bluetooth Classic</title>
-      <link>https://vulnogram.org/CVE-2026-10654</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10654</guid>
-      <description>A race condition in the Zephyr Bluetooth Classic RFCOMM host stack (subsys/bluetooth/host/classic/rfcomm.c) mishandles a simultaneous bidirectional session disconnect. When the local device has initiated a session teardown (state BT_RFCOMM_STATE_DISC…</description>
-      <category>Low</category>
-      <pubDate>Tue, 30 Jun 2026 16:29:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10653 · 6.4 MEDIUM — Non-atomic `net_buf` reference counts cause double-free / free-list corruption under concurrent unref</title>
-      <link>https://vulnogram.org/CVE-2026-10653</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10653</guid>
-      <description>The Zephyr net_buf library (lib/net_buf/buf.c) manipulated both of its reference counts -- the per-header buf-&gt;ref and the per-data-block ref_count at the start of each variable/heap data allocation -- with plain non-atomic C operators (buf-&gt;ref++, i…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 16:20:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9263 · 6.5 MEDIUM — Out-of-bounds read in Bluetooth Controller ISOAL framed RX reassembly leaks adjacent memory into host HCI ISO packets</title>
-      <link>https://vulnogram.org/CVE-2026-9263</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9263</guid>
-      <description>The Zephyr Bluetooth controller ISO Adaptation Layer (subsys/bluetooth/controller/ll_sw/isoal.c) fails to validate the length field of a framed ISO PDU start segment. Per the Bluetooth specification a start segment (sc=0) always carries a 3-byte time…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 16:01:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10652 · 4.8 MEDIUM — Out-of-bounds read in Zephyr DNS resolver TXT/SRV record parsing (unvalidated `rdlength`)</title>
-      <link>https://vulnogram.org/CVE-2026-10652</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10652</guid>
-      <description>Zephyr&apos;s DNS resolver (subsys/net/lib/dns) parses resource records from DNS responses in dns_unpack_answer(), which validated only the fixed RR header (type, class, TTL, rdlength) and accepted any attacker-declared rdlength, including one extending p…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 15:50:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10648 · 6.2 MEDIUM — NULL-pointer dereference in MCUmgr serial/console SMP transport on buffer-pool exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-10648</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10648</guid>
-      <description>mcumgr_serial_process_frag() in subsys/mgmt/mcumgr/transport/src/serial_util.c calls net_buf_reset() on the result of smp_packet_alloc() before checking it for NULL. smp_packet_alloc() uses net_buf_alloc(K_NO_WAIT) against the shared MCUmgr packet po…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 29 Jun 2026 22:51:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8023 · 7.5 HIGH — Path traversal in Zephyr HTTP server static-filesystem resource handler allows unauthenticated remote arbitrary file read</title>
-      <link>https://vulnogram.org/CVE-2026-8023</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8023</guid>
-      <description>Zephyr&apos;s HTTP server (subsys/net/lib/http) provides a static-filesystem resource type (HTTP_RESOURCE_TYPE_STATIC_FS, available when CONFIG_FILE_SYSTEM is enabled) that serves files from a configured root directory. Before this fix, both the HTTP/1 an…</description>
-      <category>High</category>
-      <pubDate>Mon, 29 Jun 2026 22:15:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7656 · 8.1 HIGH — Broken IPv6 Neighbor Discovery input validation allows spoofed RA/NS/NA acceptance in Zephyr net stack</title>
-      <link>https://vulnogram.org/CVE-2026-7656</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7656</guid>
-      <description>The IPv6 Neighbor Discovery handlers in subsys/net/ip/ipv6_nbr.c (handle_ra_input, handle_ns_input, handle_na_input) used an incorrect boolean expression that combined the RFC 4861 validity checks with the ICMPv6 code check using the wrong operator p…</description>
-      <category>High</category>
-      <pubDate>Mon, 29 Jun 2026 22:09:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10647 · 5.3 MEDIUM — Deadlock denial of service in USB CDC-NCM device class on TX enqueue failure</title>
-      <link>https://vulnogram.org/CVE-2026-10647</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10647</guid>
-      <description>The USB CDC-NCM device class (subsys/usb/device_next/class/usbd_cdc_ncm.c) ignores the return value of usbd_ep_enqueue() in its ethernet transmit callback cdc_ncm_send(). When the enqueue fails, the function still calls k_sem_take(&amp;data-&gt;sync_sem, K_…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 29 Jun 2026 21:39:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10593 · 6.5 MEDIUM — Remotely triggerable NULL-pointer dereference in Bluetooth LE Audio BAP unicast client QoS-state handling</title>
-      <link>https://vulnogram.org/CVE-2026-10593</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10593</guid>
-      <description>The Zephyr Bluetooth LE Audio Basic Audio Profile (BAP) unicast client mishandles peer-supplied ASE state notifications. In unicast_client_ep_qos_state() (subsys/bluetooth/audio/bap_unicast_client.c), the handler writes attacker-controlled QoS fields…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 28 Jun 2026 04:28:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10646 · 7.4 HIGH — Use-after-return in `zsock_getaddrinfo()` when a timed-out DNS query is retried without cancellation</title>
-      <link>https://vulnogram.org/CVE-2026-10646</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10646</guid>
-      <description>Zephyr&apos;s BSD-sockets getaddrinfo() implementation (subsys/net/lib/sockets/getaddrinfo.c) passes a pointer to a stack-allocated state object (struct getaddrinfo_state ai_state) as the user_data of an asynchronous DNS resolver query. The socket layer w…</description>
-      <category>High</category>
-      <pubDate>Sun, 28 Jun 2026 04:04:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10644 · 4.2 MEDIUM — Out-of-bounds write in Microchip SERCOM-G1 (PIC32CM-JH) async UART RX with 1-byte buffer</title>
-      <link>https://vulnogram.org/CVE-2026-10644</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10644</guid>
-      <description>The Microchip SERCOM-G1 UART driver (drivers/serial/uart_mchp_sercom_g1.c), used by the PIC32CM-JH SoC family, contains an out-of-bounds write in its asynchronous (DMA) receive path. When uart_rx_enable() is invoked with a one-byte receive buffer (le…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 28 Jun 2026 04:02:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10643 · 8.7 HIGH — Out-of-bounds heap write in Zephyr `recvmsg()` ancillary-data path (`insert_pktinfo` undersizes the control-buffer capacity check)</title>
-      <link>https://vulnogram.org/CVE-2026-10643</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10643</guid>
-      <description>Zephyr&apos;s IP socket recvmsg() implementation (subsys/net/lib/sockets/sockets_inet.c, insert_pktinfo()) validated the user-supplied ancillary (msg_control) buffer using only the payload length (msg-&gt;msg_controllen &lt; pktinfo_len) before writing a full c…</description>
-      <category>High</category>
-      <pubDate>Sat, 27 Jun 2026 22:59:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13351 · 7.5 HIGH 🌩️ — net: Maliciously fragmented IPv6 packets can prevent receiving/processing future incoming packets</title>
-      <link>https://vulnogram.org/CVE-2026-13351</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13351</guid>
-      <description>Zephyr&apos;s IPv6 network stack can be prevented from receiving or processing future incoming packets by sending a small number of maliciously fragmented IPv6 packets. When such a packet is handled by the fragment-header processing path, the associated R…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 25 Jun 2026 16:27:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10642 · 4.6 MEDIUM — Unbounded TX busy-loop DoS in Zephyr PL011 UART driver under CTS hardware flow control</title>
-      <link>https://vulnogram.org/CVE-2026-10642</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10642</guid>
-      <description>The Zephyr PL011 UART driver (drivers/serial/uart_pl011.c) contains an unbounded software loop in pl011_irq_tx_enable() that repeatedly invokes the interrupt-driven application callback while the TX interrupt mask bit (PL011_IMSC_TXIM) is set, to wor…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 24 Jun 2026 21:32:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10658 · 7.1 HIGH — Out-of-bounds access in Bluetooth ISO receive (`bt_iso_recv`) due to missing SDU-header length validation</title>
-      <link>https://vulnogram.org/CVE-2026-10658</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10658</guid>
-      <description>bt_iso_recv() in subsys/bluetooth/host/iso.c pulled the ISO SDU header (4 bytes) or, when the timestamp flag is set, the timestamped SDU header (8 bytes) from the inbound HCI ISO Data buffer via net_buf_pull_mem() without first checking buf-&gt;len. The…</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 23:58:47 GMT</pubDate>
     </item>
   </channel>
 </rss>

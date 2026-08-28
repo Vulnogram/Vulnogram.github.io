@@ -11,7 +11,7 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 28 Aug 2026 19:38:37 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:01 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-82343 · 6.1 MEDIUM — Gimp: heap out-of-bounds read and stack out-of-bounds access in psd loader from channel-count handling</title>
       <link>https://vulnogram.org/CVE-2026-82343</link>
@@ -45,6 +45,14 @@
       <pubDate>Fri, 28 Aug 2026 14:21:04 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-82324 · 6.1 MEDIUM — Gimp: heap out-of-bounds reads in iff/ilbm loader from ham row size mismatch and nplanes=0</title>
+      <link>https://vulnogram.org/CVE-2026-82324</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82324</guid>
+      <description>A flaw was found in the file-iff (IFF/ILBM) plugin in GIMP. When processing a specially crafted IFF/ILBM image file, the plugin does not properly validate the HAM row size and improperly handles cases where the number of color planes (nPlanes) is zer…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 28 Aug 2026 13:47:25 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-18393 · 5.4 MEDIUM — Ffmpeg: ffmpeg: heap buffer overflow in tdsc_load_cursor() via cur_fmt_mono cursor</title>
       <link>https://vulnogram.org/CVE-2026-18393</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18393</guid>
@@ -62,369 +70,359 @@
       <pubDate>Thu, 27 Aug 2026 21:14:23 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-18649 · 7.5 HIGH 🌩️ — Gst-plugins-good: gst-plugins-good: unbounded memory growth in rtph264depay and rtph265depay rtp depayloaders</title>
-      <link>https://vulnogram.org/CVE-2026-18649</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18649</guid>
-      <description>A flaw was found in the GStreamer gst-plugins-good package. The rtph264depay and rtph265depay RTP depayloader elements do not enforce a maximum size limit on the reassembly buffer used during fragmented RTP packet processing. A remote, unauthenticate…</description>
+      <title>CVE-2026-81893 · 4.7 MEDIUM — Gdk-pixbuf: gdk-pixbuf: invalid write in jpeg icc profile parser on error recovery</title>
+      <link>https://vulnogram.org/CVE-2026-81893</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81893</guid>
+      <description>A flaw was found in gdk-pixbuf. When loading a specially crafted JPEG image containing chunked ICC profile markers, an error during ICC profile parsing can leave stale size metadata after the profile buffer is freed. A subsequent allocation in the sa…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 27 Aug 2026 18:34:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-5680 · 7.5 HIGH 🌩️ — Undertow-core: undertow: denial of service via websocket permessage-deflate processing</title>
+      <link>https://vulnogram.org/CVE-2026-5680</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5680</guid>
+      <description>A flaw was found in Undertow. A remote attacker could exploit this vulnerability by sending specially crafted WebSocket messages with permessage-deflate negotiated. This could lead to excessive memory consumption due to the PerMessageDeflateFunction.…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Thu, 06 Aug 2026 06:48:10 GMT</pubDate>
+      <pubDate>Thu, 27 Aug 2026 16:25:29 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-18967 · 6.4 MEDIUM — Keycloak-services: keycloak-services: saml onetimeuse assertion replay in idp-initiated broker flow</title>
-      <link>https://vulnogram.org/CVE-2026-18967</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18967</guid>
-      <description>A flaw was found in the SAML broker component of Keycloak, an identity and access management solution. When configured as a SAML broker using the IdP-Initiated flow, Keycloak fails to enforce the OneTimeUse condition in SAML assertions. This allows a…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 06 Aug 2026 05:33:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18839 · 2.2 LOW — Popt-devel: popt-static: size_t underflow in singleoptionhelp</title>
-      <link>https://vulnogram.org/CVE-2026-18839</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18839</guid>
-      <description>An integer underflow was found in the popt library when formatting help text for option tables that exceed the terminal width. A local user who can cause an application to print help under those conditions may cause that application to crash or fail…</description>
-      <category>Low</category>
-      <pubDate>Wed, 05 Aug 2026 20:45:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44605 · 5.5 MEDIUM — Rpm: heap buffer overflow in ndb slot table parsing</title>
-      <link>https://vulnogram.org/CVE-2026-44605</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44605</guid>
-      <description>A flaw was found in the RPM Package Manager (RPM). A local user could be affected by a heap buffer overflow vulnerability when processing a specially crafted NDB database file. This issue arises from an error in how RPM handles certain calculations d…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 17:29:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15572 · 8.8 HIGH — Keycloak-services: keycloak-services: dcr protocol mapper type-swap policy bypass allows privilege escalation</title>
-      <link>https://vulnogram.org/CVE-2026-15572</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15572</guid>
-      <description>A flaw was found in Keycloak&apos;s Dynamic Client Registration (DCR) security policy management. The &quot;Allowed Protocol Mapper Types&quot; policy, which restricts which types of data mappers a client can use, fails to re-validate the mapper type during a clien…</description>
-      <category>High</category>
-      <pubDate>Wed, 05 Aug 2026 15:09:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16442 · 7.4 HIGH 🌩️ — Keycloak-services: keycloak-services: saml idp-initiated broker login bypasses link-only restriction</title>
-      <link>https://vulnogram.org/CVE-2026-16442</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16442</guid>
-      <description>A flaw was found in the SAML broker component of Keycloak, which is used to manage identity federation and user authentication. The issue occurs because the IdP-initiated Single Sign-On endpoint fails to check if a provider is restricted to account l…</description>
+      <title>CVE-2026-78002 · 7.5 HIGH 🌩️ — Rsyslog: rsyslog: denial of service via heap buffer overflow in rainerscript replace() function</title>
+      <link>https://vulnogram.org/CVE-2026-78002</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78002</guid>
+      <description>A flaw was found in rsyslog. An unauthenticated remote attacker can trigger a heap buffer overflow in the RainerScript `replace()` function by sending specially crafted syslog messages. This vulnerability arises from an incorrect buffer size calculat…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 15:00:39 GMT</pubDate>
+      <pubDate>Thu, 27 Aug 2026 16:12:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-49331 · 6.5 MEDIUM 🌩️ — Openshift/oauth-proxy: openshift/oauth-proxy: unauthenticated identity header injection on whitelisted paths</title>
-      <link>https://vulnogram.org/CVE-2026-49331</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49331</guid>
-      <description>A flaw was found in openshift/oauth-proxy. On paths configured to bypass authentication (skip-auth-regex), the proxy forwards client-supplied identity headers (X-Forwarded-User, X-Forwarded-Email, X-Forwarded-Access-Token) to the upstream application…</description>
+      <title>CVE-2026-81668 · 5.4 MEDIUM — Rubygem-katello: cross-tenant content view filter rule access and modification via unauthorized parent filter lookup</title>
+      <link>https://vulnogram.org/CVE-2026-81668</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81668</guid>
+      <description>A flaw was found in Katello where the Content View Filter Rules API does not properly enforce authorization on the parent Content View Filter. An authenticated, low-privileged user with Content View permissions in one organization may be able to acce…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 27 Aug 2026 11:15:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81658 · 6.5 MEDIUM — Foreman: cross-tenant disclosure of template revisions via unauthorized audit lookup</title>
+      <link>https://vulnogram.org/CVE-2026-81658</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81658</guid>
+      <description>A flaw was found in Foreman. The template revision endpoint does not enforce object-level authorization when retrieving an audited template revision. An authenticated, low privileged user with a template-related permission, such as view_ptables, can…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 27 Aug 2026 10:22:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80158 · 5.5 MEDIUM — Ansible-collection-community-general: community.general: ipa_getkeytab does not set no_log on the bind_pw parameter, disclosing the ipa bind password in logs and process listings</title>
+      <link>https://vulnogram.org/CVE-2026-80158</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80158</guid>
+      <description>A flaw was found in the ipa_getkeytab module of the community.general Ansible collection. The module&apos;s bind_pw parameter, used to supply the LDAP simple-bind password when retrieving a Kerberos keytab, is not declared with no_log, unlike the sibling…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 26 Aug 2026 22:06:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79902 · 5.5 MEDIUM — Gimp: stack vla size underflow denial of service in seattle</title>
+      <link>https://vulnogram.org/CVE-2026-79902</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79902</guid>
+      <description>A flaw was found in the Seattle FilmWorks plugin in GIMP. When processing a specially crafted SFW image file, the plugin allocates a Variable-Length Array (VLA) on the stack without integer overflow checks, causing an unbounded stack allocation. This…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 26 Aug 2026 13:34:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79654 · 4.3 MEDIUM — Ketello: katello content view history api cross-organization authorization bypass</title>
+      <link>https://vulnogram.org/CVE-2026-79654</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79654</guid>
+      <description>A flaw was found in Katello where the Content View History API does not properly enforce authorization when accessing a Content View specified by the user. An authenticated user with permission to view Content Views in one organization may be able to…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 26 Aug 2026 05:37:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80185 · 5.7 MEDIUM — Bluez: sdp-xml: bluez 5.86: unprivileged-local and adjacent-le-peer leads to arbitrary code execution as root</title>
+      <link>https://vulnogram.org/CVE-2026-80185</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80185</guid>
+      <description>BlueZ sdp-xml.c type confusion via RegisterProfile(ServiceRecord) can crash bluetoothd (local DoS): a crafted nested ServiceRecord can corrupt the SDP XML parser stack so scalar union data is treated as a sequence pointer, allowing a local caller to…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 25 Aug 2026 21:58:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80186 · 7.6 HIGH — Bluez: stack overflow in name2utf8 causes dos and potential code execution</title>
+      <link>https://vulnogram.org/CVE-2026-80186</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80186</guid>
+      <description>A stack-based buffer overflow vulnerability exists in BlueZ, the Linux Bluetooth protocol stack. A remote user within Bluetooth radio range can send a specially crafted Extended Inquiry Response (EIR) packet that causes a buffer overflow when the tar…</description>
+      <category>High</category>
+      <pubDate>Tue, 25 Aug 2026 21:58:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80101 · 4.4 MEDIUM — Gimp: multiple heap out-of-bounds reads in xwd loader from unrelated width and bytes-per-line validation</title>
+      <link>https://vulnogram.org/CVE-2026-80101</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80101</guid>
+      <description>A flaw was found in the file-xwd plugin in GIMP. When processing a specially crafted XWD image file, the plugin validates the image width and bytes-per-line parameters independently rather than ensuring their combined values are consistent with the a…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 25 Aug 2026 20:36:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77680 · 5.3 MEDIUM 🌩️ — Libsoup3: libsoup: quadratic cpu denial of service in http range coalescing after cve-2025-32907 fix</title>
+      <link>https://vulnogram.org/CVE-2026-77680</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77680</guid>
+      <description>An algorithmic complexity flaw exists in libsoup&apos;s HTTP Range header processing that persists after the CVE-2025-32907 fix. CVE-2025-32907 addressed memory amplification when a client repeated the same range many times in a single Range header. Commi…</description>
       <category>Medium</category>
       <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 14:40:45 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 20:36:45 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-16100 · 6.5 MEDIUM — Keycloak-services: keycloak-services: unbounded metric cardinality in user event metrics via request-controlled error text</title>
-      <link>https://vulnogram.org/CVE-2026-16100</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16100</guid>
-      <description>A flaw was found in the user-event metrics recording of Keycloak. When metrics are enabled, the system records raw error messages from failed account operations as Prometheus metric labels. Because these error messages can include user-supplied input…</description>
+      <title>CVE-2026-79992 · 7.8 HIGH — Emacs: local shell command injection through the user field in emacs tramp</title>
+      <link>https://vulnogram.org/CVE-2026-79992</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79992</guid>
+      <description>A flaw was found in Emacs TRAMP. A local attacker could exploit this vulnerability by processing maliciously crafted filenames. This occurs because TRAMP concatenates login arguments without proper sanitization, which are then passed to a local shell…</description>
+      <category>High</category>
+      <pubDate>Tue, 25 Aug 2026 17:16:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79717 · 6.4 MEDIUM — Galaxy_ng: galaxy_ng: blind ssrf via namespace avatar_url with no private-address restriction</title>
+      <link>https://vulnogram.org/CVE-2026-79717</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79717</guid>
+      <description>A server-side request forgery (SSRF) vulnerability was found in galaxy_ng, the Ansible Galaxy server plugin for Pulp. An authenticated user with namespace management permissions can set a namespace avatar URL to an arbitrary address, including intern…</description>
       <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 13:50:57 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 14:53:45 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-16071 · 5.4 MEDIUM — Keycloak-services: keycloak-services: ldap entry-dn user search bypasses configured users dn boundary</title>
-      <link>https://vulnogram.org/CVE-2026-16071</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16071</guid>
-      <description>A flaw was found in the LDAP storage provider of Keycloak, which is used to federate user identities from external directories. The issue occurs when a delegated administrator performs a search using a specific LDAP entry Distinguished Name (DN). Due…</description>
+      <title>CVE-2026-79655 · 7.8 HIGH — Sos: sos: path traversal in sos clean tar extraction via unvalidated symlink/hardlink targets leads to arbitrary file write</title>
+      <link>https://vulnogram.org/CVE-2026-79655</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79655</guid>
+      <description>A flaw was found in sos clean, a utility within the sos package. This vulnerability allows a local attacker to perform arbitrary file creation or overwrite. By crafting a malicious tar archive, an attacker can exploit a path traversal issue during ta…</description>
+      <category>High</category>
+      <pubDate>Tue, 25 Aug 2026 13:49:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79652 · 5.9 MEDIUM — Keycloak-services: keycloak-services: jwt bearer authorization grant does not enforce consentrequired</title>
+      <link>https://vulnogram.org/CVE-2026-79652</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79652</guid>
+      <description>A flaw was found in the JWT Bearer authorization grant implementation within the keycloak-services component of Red Hat Build of Keycloak. This component handles various OAuth2 and OpenID Connect grant types used for issuing access tokens. The issue…</description>
       <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 13:50:54 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 11:07:48 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-16102 · 8.1 HIGH — Keycloak-services: keycloak-services: default dcr policy allows role forgery via user property mappers</title>
-      <link>https://vulnogram.org/CVE-2026-16102</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16102</guid>
-      <description>A flaw was found in the Dynamic Client Registration (DCR) component of Keycloak, an identity and access management solution. The default DCR policy fails to properly validate the claim path for User Property mappers, allowing them to write values to…</description>
-      <category>High</category>
-      <pubDate>Wed, 05 Aug 2026 13:50:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15573 · 8.1 HIGH — Keycloak-services: keycloak-services: authorization bypass via unnormalized uri matching in pathmatcher</title>
-      <link>https://vulnogram.org/CVE-2026-15573</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15573</guid>
-      <description>A flaw was found in Keycloak&apos;s Authorization Services. The component responsible for matching request paths to security policies (PathMatcher) does not properly normalize URIs before comparison. By adding extra characters like a trailing slash or mat…</description>
-      <category>High</category>
-      <pubDate>Wed, 05 Aug 2026 13:50:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16443 · 7.4 HIGH 🌩️ — Keycloak-services: keycloak-services: saml broker metadata import disables response signature validation</title>
-      <link>https://vulnogram.org/CVE-2026-16443</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16443</guid>
-      <description>A flaw was found in the SAML metadata import functionality of the keycloak-services component, which is the core engine for identity brokering in Red Hat Build of Keycloak. When importing identity provider metadata that lacks specific usage attribute…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 13:44:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71227 · 5.1 MEDIUM — Libkcapi: infinite loop denial of service in libkcapi _kcapi_aio_read_all() due to unhandled io_getevents() timeout return</title>
-      <link>https://vulnogram.org/CVE-2026-71227</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71227</guid>
-      <description>A flaw was found in libkcapi. A local attacker can influence an application that uses the Asynchronous Input/Output (AIO) interface. By reusing an AIO-enabled handle after a prior completion error, the _kcapi_aio_read_all() function can enter a non-t…</description>
+      <title>CVE-2026-78701 · 6.5 MEDIUM — 389-ds-base: 389-ds-base: cve-2026-11610 incomplete fix may introduce a connection-stall dos</title>
+      <link>https://vulnogram.org/CVE-2026-78701</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78701</guid>
+      <description>A flaw was found in 389-ds-base. A remote, authenticated attacker could exploit a vulnerability in the Simple Authentication and Security Layer (SASL) UNBIND process. By sending a specially crafted request, the attacker can cause a connection to stal…</description>
       <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 12:42:10 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 07:33:02 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-71226 · 7.3 HIGH — Libkcapi: memory corruption via uncanceled aio requests on error in libkcapi&apos;s one-shot aio path</title>
-      <link>https://vulnogram.org/CVE-2026-71226</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71226</guid>
-      <description>Memory Corruption via Uncanceled AIO Requests on Error: libkcapi&apos;s one-shot AIO path can return an error before all submitted IOCBs are drained, allowing later kernel writes into caller-owned output buffers.</description>
-      <category>High</category>
-      <pubDate>Wed, 05 Aug 2026 12:37:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71225 · 6.5 MEDIUM 🌩️ — Libkcapi: iv reuse in libkcapi one-shot symmetric cipher chunking causes cipher state reset across chunk boundaries</title>
-      <link>https://vulnogram.org/CVE-2026-71225</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71225</guid>
-      <description>A flaw was found in libkcapi. When performing one-shot symmetric cipher operations on large inputs (over 64 KiB) in stateful modes such as Counter (CTR) or Cipher Block Chaining (CBC), the library improperly reuses the Initialization Vector (IV) for…</description>
+      <title>CVE-2026-78322 · 6.5 MEDIUM 🌩️ — File-roller: file-roller: stack buffer overflow in parse_progress_line for 7z and rar handlers</title>
+      <link>https://vulnogram.org/CVE-2026-78322</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78322</guid>
+      <description>A flaw was found in file-roller. When opening or extracting a malicious 7z or RAR archive containing a file entry with an excessively long path, file-roller&apos;s progress-line parsing copies the path into a fixed-size stack buffer using an unbounded str…</description>
       <category>Medium</category>
       <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 12:16:52 GMT</pubDate>
+      <pubDate>Tue, 25 Aug 2026 07:21:38 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10090 · 9.9 CRITICAL — Multicluster-operators-subscription: multicluster-operators-subscription: namespace edit user can deploy cluster-scoped clusterrolebinding and become cluster-admin via application subscription</title>
-      <link>https://vulnogram.org/CVE-2026-10090</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10090</guid>
-      <description>A flaw was found in the Application Subscription controller (multicluster-operators-subscription) of Red Hat Advanced Cluster Management for Kubernetes (ACM). A user with namespace-scoped &quot;edit&quot; privileges in an ACM hub namespace can create a Channel…</description>
+      <title>CVE-2026-17113 · 6 MEDIUM — Cri-o: cri-o: unvalidated image env var causes daemon crash</title>
+      <link>https://vulnogram.org/CVE-2026-17113</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17113</guid>
+      <description>A flaw was found in CRI-O&apos;s container-creation environment-variable handling (`mergeEnvs` in `server/utils.go`, consumed by `setupContainerEnvironmentAndWorkdir` in `server/container_create.go`). When a `CreateContainer` request supplies a `nil` CRI…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 24 Aug 2026 21:22:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78475 · 6.1 MEDIUM — Gimp: unbounded stack vla and 21-byte stack over-read in pix (esm) loader</title>
+      <link>https://vulnogram.org/CVE-2026-78475</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78475</guid>
+      <description>A flaw was found in the file-pix (ESM) plugin in GIMP. When processing a specially crafted PIX image file, the plugin allocates a Variable-Length Array (VLA) on the stack without proper bounds checking, causing an unbounded stack allocation followed…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 24 Aug 2026 17:20:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78465 · 7 HIGH — Gimp: integer overflow in pcx loader (planes=4) leads to heap overflow on 32-bit</title>
+      <link>https://vulnogram.org/CVE-2026-78465</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78465</guid>
+      <description>A flaw was found in the file-pcx plugin in GIMP, affecting 32-bit builds only. When processing a PCX image file, the plugin calculates memory allocation sizes based on the image dimensions and the number of color planes. If a crafted file sets the nu…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 16:28:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19685 · 9.8 CRITICAL 🌩️ — Networkmanager: networkmanager: 802-1x ca-path and phase2-ca-path bypass private_user restriction, allowing wpa-enterprise server validation bypass (incomplete fix for cve-2025-9615)</title>
+      <link>https://vulnogram.org/CVE-2026-19685</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19685</guid>
+      <description>NetworkManager did not apply the private_user restriction to the 802-1x.ca-path and phase2-ca-path directory-valued connection properties. This incomplete fix for CVE-2025-9615 allows an unprivileged local user to point a private WPA-Enterprise (802.…</description>
       <category>Critical</category>
-      <pubDate>Wed, 05 Aug 2026 08:54:55 GMT</pubDate>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 16:12:38 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-10059 · 9.1 CRITICAL — Cluster-curator-controller: cluster-curator-controller: namespace admin can escalate to cluster-wide curator authority via clustercurator serviceaccount token</title>
-      <link>https://vulnogram.org/CVE-2026-10059</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10059</guid>
-      <description>A flaw was found in the Multicluster Engine for Kubernetes ClusterCurator controller. A tenant administrator with namespace-scoped privileges can exploit this vulnerability by creating a namespaced ClusterCurator. This action inadvertently grants the…</description>
+      <title>CVE-2026-71366 · 7.7 HIGH — Awx: notification backends allow ssrf and credential leakage</title>
+      <link>https://vulnogram.org/CVE-2026-71366</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71366</guid>
+      <description>A server-side request forgery (SSRF) vulnerability was found in multiple AWX notification backends. The webhook, Mattermost, Rocket.Chat, and Grafana notification backends use notification template URLs as direct HTTP request targets without validati…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 15:42:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71364 · 7.2 HIGH — Awx: project archive extraction allows path traversal file writes</title>
+      <link>https://vulnogram.org/CVE-2026-71364</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71364</guid>
+      <description>A path traversal vulnerability was found in AWX&apos;s project archive extraction. The project_archive action plugin extracts zip and tar archive members by joining the project directory path with the member filename without performing path normalization,…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 15:21:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78367 · 7 HIGH — Rpm: rpmbuild gettarspec() crafted tar member name → macro injection</title>
+      <link>https://vulnogram.org/CVE-2026-78367</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78367</guid>
+      <description>A vulnerability was found in RPM&apos;s rpmbuild tarball processing. When processing a crafted source archive, the getTarSpec() function in tools/rpmbuild.cc passes an attacker-controlled tar archive member name to rpmExpand() as part of a %{basename:...}…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 13:48:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78376 · 8.8 HIGH 🌩️ — Webkitgtk: use-after-free of jscvalue function parameters</title>
+      <link>https://vulnogram.org/CVE-2026-78376</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78376</guid>
+      <description>A flaw was found in WebKitGTK. Processing malicious web content can cause a use-after-free issue due to improper memory handling and result in memory corruption.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 13:29:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78323 · 6.5 MEDIUM 🌩️ — Jss: jss: jsstrustmanager does not verify nss trust flags on ca certificates</title>
+      <link>https://vulnogram.org/CVE-2026-78323</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78323</guid>
+      <description>A flaw was found in JSS (Java Security Services). The JSSTrustManager class does not verify NSS trust flags when validating CA certificates, allowing certificates present in the NSS database without TRUSTED_CA flags to be accepted as trust anchors fo…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 24 Aug 2026 11:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73267 · 7.7 HIGH — Clusterclaims-controller: clusterclaims-controller: managedcluster deletion keyed solely on clusterclaim.spec.namespace with no ownership check</title>
+      <link>https://vulnogram.org/CVE-2026-73267</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73267</guid>
+      <description>A flaw was found in the clusterclaims-controller component of multicluster engine (MCE). A tenant with standard permissions to create and delete ClusterClaim resources can exploit this by manipulating the `spec.namespace` field. This allows the tenan…</description>
+      <category>High</category>
+      <pubDate>Fri, 21 Aug 2026 02:43:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73137 · 7.7 HIGH — Multicloud-operators-subscription: multicloud-operators-subscription: cross-namespace secret exfiltration via helmrelease.repo.secretref.namespace</title>
+      <link>https://vulnogram.org/CVE-2026-73137</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73137</guid>
+      <description>A flaw was found in the multicloud-operators-subscription component of Red Hat Advanced Cluster Management (RHACM). A tenant with HelmRelease create permissions can exploit this vulnerability by manipulating the `secretRef.Namespace` field. This allo…</description>
+      <category>High</category>
+      <pubDate>Thu, 20 Aug 2026 20:34:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67567 · 9.9 CRITICAL — Multicloud-operators-subscription: multicloud-operators-subscription: helmrelease chart applied with controller sa without gvk or namespace restriction</title>
+      <link>https://vulnogram.org/CVE-2026-67567</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67567</guid>
+      <description>A flaw was found in the multicloud-operators-subscription component. This vulnerability allows a tenant, who has the ability to create HelmRelease custom resources (CRs), to bypass existing security controls. The system&apos;s HelmRelease controller proce…</description>
       <category>Critical</category>
-      <pubDate>Wed, 05 Aug 2026 08:54:51 GMT</pubDate>
+      <pubDate>Thu, 20 Aug 2026 20:34:10 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-18103 · 4.9 MEDIUM — Dhcp-server: dhcp-server: persistent denial of service due to buffer overflow via omapi</title>
-      <link>https://vulnogram.org/CVE-2026-18103</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18103</guid>
-      <description>A flaw was found in dhcp-server. A remote attacker with network access to the OMAPI (Open Management Application Programming Interface) port, especially if not secured with TSIG (Transaction Signature) key authentication, could send a specially craft…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 23:08:02 GMT</pubDate>
+      <title>CVE-2026-66788 · 9.9 CRITICAL — Lighthouse: lighthouse: arbitrary local-namespace injection via attacker-controlled labelsourcenamespace</title>
+      <link>https://vulnogram.org/CVE-2026-66788</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66788</guid>
+      <description>A flaw was found in Lighthouse. A remote attacker, by compromising a spoke cluster, can exploit a vulnerability where the destination namespace for resource injection is derived from an attacker-controlled label or annotation on the broker object. Th…</description>
+      <category>Critical</category>
+      <pubDate>Thu, 20 Aug 2026 18:15:37 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-68743 · 5.5 MEDIUM — Sssd: sssd: pam responder out-of-bounds read via unchecked auth_token_length in protocol v1</title>
-      <link>https://vulnogram.org/CVE-2026-68743</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68743</guid>
-      <description>A flaw was found in SSSD. The extract_authtok_v1() function in the PAM responder does not validate the auth_token_length field against the remaining buffer size before processing. A local attacker can exploit this via a crafted protocol v1 request to…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 18:37:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70368 · 6.5 MEDIUM 🌩️ — Stunnel: stack-based out-of-bounds read/write in stunnel s_vlog via oversized log message</title>
-      <link>https://vulnogram.org/CVE-2026-70368</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70368</guid>
-      <description>A stack-based out-of-bounds read vulnerability exists in the &quot;s_vlog&quot; function of stunnel, when handling oversized log messages via &quot;vsnprintf&quot;. A remote attacker with network access to a stunnel service can send protocol inputs that trigger a log me…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 04 Aug 2026 13:52:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70367 · 5.4 MEDIUM — Stunnel: ssrf bypass in stunnel socks proxy via ipv4-mapped ipv6 loopback and unspecified addresses allows access to loopback-only services</title>
-      <link>https://vulnogram.org/CVE-2026-70367</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70367</guid>
-      <description>A Server-Side Request Forgery (SSRF) bypass vulnerability exists in “stunnel” 5.79 and lower when configured in SOCKS proxy mode. This flaw allows a client to bypass intended localhost restrictions by using IPv4-mapped IPv6 addresses (e.g., “::ffff:1…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 13:52:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18739 · 2.5 LOW — Popt-devel: popt-static: off-by-one in poptstuffargs</title>
-      <link>https://vulnogram.org/CVE-2026-18739</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18739</guid>
-      <description>A flaw was found in popt, a command-line option parsing library. An off-by-one error in the poptStuffArgs function, when repeatedly called by a host application or through deep alias nesting, can lead to corruption of internal program data. This corr…</description>
-      <category>Low</category>
-      <pubDate>Tue, 04 Aug 2026 05:32:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68744 · 3.3 LOW — Sssd: sssd: nss responder uninitialized heap disclosure in initgroups reply</title>
-      <link>https://vulnogram.org/CVE-2026-68744</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68744</guid>
-      <description>A flaw was found in SSSD. The sss_nss_protocol_fill_initgr() function in the NSS responder pre-allocates reply space for all group entries but does not shrink the packet when groups are skipped, causing uninitialized heap bytes to be transmitted to t…</description>
-      <category>Low</category>
-      <pubDate>Tue, 04 Aug 2026 05:28:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18569 · 3.7 LOW 🌩️ — Keycloak-services: keycloak-services: oidc backchannel logout accepts unsigned forged logout tokens</title>
-      <link>https://vulnogram.org/CVE-2026-18569</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18569</guid>
-      <description>A flaw was found in the backchannel logout endpoint of the keycloak-services component, which is part of the Red Hat Build of Keycloak. This component handles authentication and session management for applications. The issue occurs when an OIDC ident…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 04 Aug 2026 05:13:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42169 · 7.3 HIGH — Gimp: gimp apng loader heap-buffer-overflow when fctl width exceeds ihdr width (file-png.c)</title>
-      <link>https://vulnogram.org/CVE-2026-42169</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42169</guid>
-      <description>A heap-buffer-overflow vulnerability exists in the APNG (Animated PNG) file loader of GIMP. This flaw occurs when the `fcTL` width exceeds the `IHDR` width, leading to pixel data being written past the end of a heap allocation. Additionally, a heap-b…</description>
+      <title>CVE-2026-66787 · 8.7 HIGH — Lighthouse: lighthouse: cross-cluster dns spoofing via unvalidated endpointslice and serviceimport ips</title>
+      <link>https://vulnogram.org/CVE-2026-66787</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66787</guid>
+      <description>A flaw was found in the lighthouse component of Red Hat Advanced Cluster Management for Kubernetes. This vulnerability stems from insufficient validation of advertised IP addresses within EndpointSlice objects. A compromised spoke cluster can exploit…</description>
       <category>High</category>
-      <pubDate>Tue, 04 Aug 2026 03:15:25 GMT</pubDate>
+      <pubDate>Thu, 20 Aug 2026 18:15:23 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-17614 · 4.4 MEDIUM — Wildfly-core: path traversal on wildfly domain controller</title>
-      <link>https://vulnogram.org/CVE-2026-17614</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17614</guid>
-      <description>A path traversal flaw was found in WildFly&apos;s domain mode implementation. The LocalFileRepository.getFile() and getConfigurationFile() methods in wildfly-core/deployment-repository do not validate that the resolved file path remains within the configu…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 04 Aug 2026 02:12:04 GMT</pubDate>
+      <title>CVE-2026-66785 · 9.9 CRITICAL — Submariner: submariner: unvalidated endpoint.spec.subnets propagated into wireguard allowedips / ipsec enables traffic hijack</title>
+      <link>https://vulnogram.org/CVE-2026-66785</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66785</guid>
+      <description>A flaw was found in Submariner. This vulnerability allows a malicious cluster (spoke) to redirect network traffic from other connected clusters (peer clusters) by publishing a specially crafted network endpoint. The system fails to properly validate…</description>
+      <category>Critical</category>
+      <pubDate>Thu, 20 Aug 2026 18:15:06 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-18477 · 4.4 MEDIUM — Tar: tar: toctou in incremental dumpdir &apos;x&apos; rename handling allows restore path escape</title>
-      <link>https://vulnogram.org/CVE-2026-18477</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18477</guid>
-      <description>A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar&apos;s incremental dumpdir &apos;X&apos; rename handling allows a local attacker with write access to a directory being backed up to influence the restore process if the attacker has access to the system…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 03 Aug 2026 15:34:36 GMT</pubDate>
+      <title>CVE-2026-77176 · 8.1 HIGH — Kata-containers: insufficient validation of createcontainer mount and storage rules in genpolicy</title>
+      <link>https://vulnogram.org/CVE-2026-77176</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77176</guid>
+      <description>A flaw was found in Kata Containers. In configurations utilizing genpolicy for Confidential Containers guest protection, a malicious host operator can exploit insufficient validation of CreateContainer mount and storage rules. This allows them to mou…</description>
+      <category>High</category>
+      <pubDate>Thu, 20 Aug 2026 16:20:17 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-18651 · 5.4 MEDIUM — 389-ds-base: 389-ds-base: sasl plain bind installs connection credentials before account-lock check, allowing continued access as a locked account</title>
-      <link>https://vulnogram.org/CVE-2026-18651</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18651</guid>
-      <description>A flaw was found in 389 Directory Server. During SASL PLAIN authentication, the server installs connection-level bind credentials before performing the account-lock check. If the account is subsequently found to be locked, the bind is reported as fai…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 03 Aug 2026 14:55:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18508 · 4.4 MEDIUM — Tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite</title>
-      <link>https://vulnogram.org/CVE-2026-18508</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18508</guid>
-      <description>A flaw was found in GNU tar. When extracting an archive with the --one-top-level option, hardlink targets are not confined to the designated top-level directory and may resolve relative to the extraction working directory. A crafted archive can creat…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 03 Aug 2026 14:51:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68742 · 5.5 MEDIUM — Sssd: sssd: nss responder out-of-bounds read via unchecked addrlen in gethostbyaddr</title>
-      <link>https://vulnogram.org/CVE-2026-68742</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68742</guid>
-      <description>A flaw was found in SSSD. The sss_nss_protocol_parse_addr() function in the NSS responder does not validate the addrlen field against the remaining packet body size. A local attacker can exploit this via a crafted GETHOSTBYADDR request to the NSS res…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 03 Aug 2026 09:53:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6695 · 5.5 MEDIUM — Gimp: gimp: remote code execution via crafted paa file</title>
-      <link>https://vulnogram.org/CVE-2026-6695</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6695</guid>
-      <description>A flaw was found in GIMP. A remote attacker could exploit this by tricking a user into opening a specially crafted PAA (Paint Shop Pro Array) image file. This vulnerability, a heap-based out-of-bounds write in the decode_lzss() function of the PAA fi…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 03 Aug 2026 04:05:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6694 · 5.5 MEDIUM — Gimp: gimp file-png plugin: denial of service via oversized apng trns chunk</title>
-      <link>https://vulnogram.org/CVE-2026-6694</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6694</guid>
-      <description>A flaw was found in GIMP&apos;s file-png plugin. A remote attacker can exploit this by crafting a malicious Animated Portable Network Graphics (APNG) image containing an oversized tRNS chunk. This can lead to a stack-based buffer overflow (CWE-121), causi…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 03 Aug 2026 04:05:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18573 · 6.5 MEDIUM — Keycloak-services: keycloak-services: client access-type policy condition bypass during client update</title>
-      <link>https://vulnogram.org/CVE-2026-18573</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18573</guid>
-      <description>A flaw was found in the keycloak-services component of Keycloak, which is used for managing authentication and authorization flows. The issue occurs when a realm administrator configures client policies to enforce specific authentication requirements…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 02 Aug 2026 05:28:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18572 · 6.5 MEDIUM — Keycloak-services: keycloak-services: uma claim token can override authorization time-policy evaluation attributes</title>
-      <link>https://vulnogram.org/CVE-2026-18572</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18572</guid>
-      <description>Keycloak provides authorization services that allow administrators to restrict access to resources based on time policies (for example, only allowing access during business hours). A flaw was discovered where a user can include a fake time value in t…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 02 Aug 2026 05:18:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18571 · 6.6 MEDIUM — Keycloak-services: keycloak-services: fgap v2 group assignment bypass during user creation</title>
-      <link>https://vulnogram.org/CVE-2026-18571</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18571</guid>
-      <description>A flaw was found in the user creation component of Keycloak when Fine-Grained Admin Permissions V2 (FGAP V2) is enabled. This issue allows a sub-administrator with permission to create users to add those users to any group, even groups the sub-admini…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 02 Aug 2026 05:18:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18570 · 5.4 MEDIUM — Keycloak-services: keycloak-services: full-scope-disabled client policy validation bypass via omitted fullscopeallowed</title>
-      <link>https://vulnogram.org/CVE-2026-18570</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18570</guid>
-      <description>A flaw was found in the full-scope-disabled client-policy executor within the keycloak-services component. This component is responsible for enforcing security policies during client registration and configuration in Red Hat Build of Keycloak. The is…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 02 Aug 2026 05:18:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18141 · 8.2 HIGH 🌩️ — Aap-gateway: aap-gateway: authentication bypass in event-driven ansible via forged http header</title>
-      <link>https://vulnogram.org/CVE-2026-18141</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18141</guid>
-      <description>A flaw was found in aap-gateway, a component of Ansible Automation Platform&apos;s Event-Driven Ansible (EDA). An unauthenticated remote attacker can bypass mutual Transport Layer Security (mTLS) authentication for event streams. This is achieved by manip…</description>
+      <title>CVE-2026-19611 · 7.4 HIGH 🌩️ — Wildfly-elytron: org.wildfly.security/wildfly-elytron-password-impl: wildfly-elytron: password keyspace reduction via nfkc fullwidth folding</title>
+      <link>https://vulnogram.org/CVE-2026-19611</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19611</guid>
+      <description>A flaw was found in WildFly Elytron. Password hashing and verification normalize input with Unicode NFKC, which can collapse fullwidth characters to ASCII equivalents. A remote attacker can more easily guess affected passwords by using an ASCII-only…</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 15:34:16 GMT</pubDate>
+      <pubDate>Thu, 20 Aug 2026 15:58:24 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-18358 · 7.5 HIGH 🌩️ — Gnome-remote-desktop: gnome-remote-desktop system-mode rdp server missing connection throttling allows unauthenticated denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-18358</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18358</guid>
-      <description>A flaw was found in gnome-remote-desktop as shipped in Red Hat Enterprise Linux. When the daemon is running in system mode with RDP enabled, the incoming connection handler bypasses the connection throttler, allowing an unauthenticated remote attacke…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 12:20:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11770 · 7.5 HIGH 🌩️ — 389-ds-base: 389-ds-base: pre-auth ldap filter injection in cleanallruv status check</title>
-      <link>https://vulnogram.org/CVE-2026-11770</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11770</guid>
-      <description>A flaw was found in 389 Directory Server. An unauthenticated remote attacker can inject LDAP search filters into the CleanAllRUV replication status-check extended operation. Because the handler performs the search against cn=config with elevated repl…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 09:18:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15722 · 7.5 HIGH 🌩️ — 389-ds-base: 389-ds-base: pre-authentication stack buffer overflow in get_ruvelement_from_berval() via unbounded replica id parsing</title>
-      <link>https://vulnogram.org/CVE-2026-15722</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15722</guid>
-      <description>A stack buffer overflow flaw was found in 389 Directory Server (389-ds-base). The get_ruvelement_from_berval() function in repl5_ruv.c copies digit characters from a network-supplied RUV berval into a fixed 16-byte stack buffer without bounds checkin…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 09:18:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10079 · 8.5 HIGH — Stackrox: stackrox: deploy-time policy enforcement and visibility bypass via label injection</title>
-      <link>https://vulnogram.org/CVE-2026-10079</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10079</guid>
-      <description>A flaw was found in Red Hat Advanced Cluster Security for Kubernetes (RHACS). When processing Kubernetes Deployments, ACS replaces deployment identity metadata based on the openshift.io/encoded-deployment-config label. A user with permission to creat…</description>
-      <category>High</category>
-      <pubDate>Fri, 31 Jul 2026 09:08:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18209 · 3.4 LOW 🌩️ — Keycloak-services: keycloak-services: oidc redirect_uri fragment bypass in http parameter pollution check</title>
-      <link>https://vulnogram.org/CVE-2026-18209</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18209</guid>
-      <description>A flaw was found in the keycloak-services component of Keycloak, which handles OpenID Connect (OIDC) authentication flows. The issue occurs because the security check designed to prevent HTTP parameter pollution only inspects the query portion of a r…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 07:08:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18206 · 3.7 LOW 🌩️ — Keycloak-services: keycloak-services: client policy source-host wildcard domain matching bypass</title>
-      <link>https://vulnogram.org/CVE-2026-18206</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18206</guid>
-      <description>A flaw was found in the keycloak-services component of Keycloak, which provides identity and access management services. The issue occurs when a realm administrator uses a wildcard domain (like *.example.com) to restrict which hosts can register or u…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 31 Jul 2026 07:08:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18214 · 6.8 MEDIUM — Keycloak-services: keycloak-services: google external access-token exchange bypasses hosted-domain restriction</title>
-      <link>https://vulnogram.org/CVE-2026-18214</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18214</guid>
-      <description>Keycloak allows users to log in using Google accounts and can be configured to only allow users from specific Google Workspace domains. A flaw was found where the token exchange feature, which allows swapping a Google token for a Keycloak token, does…</description>
+      <title>CVE-2026-73199 · 6.5 MEDIUM — Ipa: freeipa: null pointer dereference in `ipa-enrollment` extended operation (`join_oid`) via missing request value</title>
+      <link>https://vulnogram.org/CVE-2026-73199</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73199</guid>
+      <description>A flaw was found in the `ipa-enrollment` SLAPI plugin. A remote authenticated client can exploit a null pointer dereference vulnerability by sending a malformed Lightweight Directory Access Protocol (LDAP) extended operation. By omitting the request…</description>
       <category>Medium</category>
-      <pubDate>Fri, 31 Jul 2026 07:08:26 GMT</pubDate>
+      <pubDate>Thu, 20 Aug 2026 10:39:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11861 · 9.6 CRITICAL — Freeipa: idm: ipa: freeipa: obtaining tgs with impersonating cname through trust relationships</title>
+      <link>https://vulnogram.org/CVE-2026-11861</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11861</guid>
+      <description>A flaw was found in FreeIPA. When a trust relationship is configured between FreeIPA and Active Directory, Active Directory users can bypass authentication for FreeIPA services, including the portal, SMB server, and LDAP directory. This is possible b…</description>
+      <category>Critical</category>
+      <pubDate>Thu, 20 Aug 2026 10:39:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73198 · 7.5 HIGH 🌩️ — Ipa: freeipa: unauthenticated dos in `/ipa/i18n_messages` via unbounded request body read</title>
+      <link>https://vulnogram.org/CVE-2026-73198</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73198</guid>
+      <description>A flaw was found in FreeIPA. A remote, unauthenticated attacker can exploit a vulnerability in the `/ipa/i18n_messages` endpoint by sending an arbitrarily large request body. This can cause the service to consume excessive memory, leading to memory e…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 20 Aug 2026 10:39:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13097 · 8.7 HIGH — Ipa: privilege escalation via krbcanonicalname manipulation due to realm-unaware uniqueness enforcement in freeipa ldap datastore</title>
+      <link>https://vulnogram.org/CVE-2026-13097</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13097</guid>
+      <description>A privilege escalation flaw was found in FreeIPA. The uniqueness constraint enforced on Kerberos principal name attributes in the 389-ds directory server does not properly account for equivalent representations of the same principal name, allowing a…</description>
+      <category>High</category>
+      <pubDate>Thu, 20 Aug 2026 10:37:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73196 · 4.3 MEDIUM — Ipa: freeipa: authenticated dos in `otptoken-add` via unbounded otp key decoding/re-encoding</title>
+      <link>https://vulnogram.org/CVE-2026-73196</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73196</guid>
+      <description>A flaw was found in FreeIPA. A low-privilege authenticated user can exploit this vulnerability by submitting an oversized One-Time Password (OTP) key value. This oversized key is then decoded and re-encoded without proper size limits, consuming exces…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 20 Aug 2026 10:31:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73197 · 7.5 HIGH 🌩️ — Ipa: freeipa: unauthenticated dos in `/ipa/migration/migration.py` via unbounded request body read</title>
+      <link>https://vulnogram.org/CVE-2026-73197</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73197</guid>
+      <description>A flaw was found in FreeIPA. A remote, unauthenticated attacker can exploit this vulnerability by sending oversized form POST requests to the `/ipa/migration/migration.py` endpoint. This can force the migration handler to read attacker-controlled req…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 20 Aug 2026 10:31:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18917 · 7.8 HIGH — Libvirt: integer overflow in nodegetfreepages rpc handler leading to heap buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-18917</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18917</guid>
+      <description>A flaw was found in libvirt. An unprivileged local user could exploit an integer overflow vulnerability in the NodeGetFreePages RPC handler. This flaw allows crafted values to bypass a size check, leading to an undersized memory buffer. Subsequently,…</description>
+      <category>High</category>
+      <pubDate>Thu, 20 Aug 2026 09:54:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77014 · 5.3 MEDIUM 🌩️ — Libsoup: libsoup: integer truncation in sort_ranges() comparator causes silent omission of http range responses</title>
+      <link>https://vulnogram.org/CVE-2026-77014</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77014</guid>
+      <description>A flaw was found in libsoup&apos;s SoupServer HTTP Range header processing. The sort_ranges() comparator in soup-message-headers.c truncates a 64-bit subtraction result to 32-bit int, flipping the sign for range offsets differing by more than INT_MAX. Thi…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 20 Aug 2026 08:21:22 GMT</pubDate>
     </item>
   </channel>
 </rss>

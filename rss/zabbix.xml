@@ -11,7 +11,96 @@
       <title>Zabbix — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 04 Jun 2026 20:27:50 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-59781 · 5.4 MEDIUM — Improper validation of custom installation directories on Windows could allow installation into locations with unsafe permissions, increasing the risk of DLL sideloading.</title>
+      <link>https://vulnogram.org/CVE-2026-59781</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59781</guid>
+      <description>When Zabbix Agent was installed on Windows into a custom installation directory, the installer did not verify whether the selected directory had secure access permissions. If the target directory allowed unauthorized users to modify its contents, an…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 12:21:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23938 · 2.1 LOW — Server DoS via JavaScript preprocessing or script items</title>
+      <link>https://vulnogram.org/CVE-2026-23938</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23938</guid>
+      <description>An authenticated administrator is able to crash Zabbix server or proxy by creating specifically crafted preprocessing/script item JavaScript scripts, leading to potential denial of service.</description>
+      <category>Low</category>
+      <pubDate>Tue, 18 Aug 2026 12:20:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23937 · 6 MEDIUM — Host PSK extraction in Zabbix API</title>
+      <link>https://vulnogram.org/CVE-2026-23937</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23937</guid>
+      <description>The Zabbix API host.get action can be exploited by authenticated users to extract a host&apos;s PSK key leading to potential loss of data integrity.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 12:20:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23935 · 6.8 MEDIUM — Use-after-free read in script item/preprocessing HttpRequest body</title>
+      <link>https://vulnogram.org/CVE-2026-23935</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23935</guid>
+      <description>A Zabbix administrator is able to read out of bounds memory by utilizing a flaw in script item/preprocessing (JavaScript) HttpRequest logic, leading to potential confidentiality loss.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 12:19:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23934 · 5.1 MEDIUM — Frontend DoS via the validate.api.exists action</title>
+      <link>https://vulnogram.org/CVE-2026-23934</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23934</guid>
+      <description>An authenticated user is able to cause disproportionate CPU load on the Frontend webserver by sending specifically crafted requests to the Frontend validate.api.exists action, leading to potential denial of service.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 12:18:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23933 · 7.7 HIGH — Hardcoded session key in Zabbix 7.4</title>
+      <link>https://vulnogram.org/CVE-2026-23933</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23933</guid>
+      <description>In Zabbix 7.4 the cryptographic key used for signing Frontend sessions has been erroneously written to the database seed. Currently the only known exploitation scenario is for deployments that utilize both - SAML authentication and guest users. In su…</description>
+      <category>High</category>
+      <pubDate>Tue, 18 Aug 2026 12:18:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23931 · 5.3 MEDIUM — Frontend plaintext macro value enumeration via the validatate.api.exists action</title>
+      <link>https://vulnogram.org/CVE-2026-23931</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23931</guid>
+      <description>The frontend validatate.api.exists action can be exploited by authenticated users to extract plaintext user macro values leading to potential loss of confidentiality.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 12:17:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23930 · 5.3 MEDIUM — Frontend DoS via the popup.testtriggerexpr action</title>
+      <link>https://vulnogram.org/CVE-2026-23930</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23930</guid>
+      <description>An unauthenticated user is able to cause disproportionate CPU load on the Frontend webserver by sending specifically crafted requests to the Frontend popup.testtriggerexpr action, leading to potential denial of service.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 18 Aug 2026 12:17:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23929 · 8.5 HIGH — Prototype pollution leading to stored XSS</title>
+      <link>https://vulnogram.org/CVE-2026-23929</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23929</guid>
+      <description>Prototype pollution vulnerability in searchParamsToObject() is leading to a persistent XSS in Maps. URL parameter processing was not filtering dangerous properties like __proto__, combined with jQuery&apos;s unsafe element creation that traversed the prot…</description>
+      <category>High</category>
+      <pubDate>Tue, 18 Aug 2026 12:16:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-1199 · 6.9 MEDIUM 🌩️ — API and Frontend login lockout race condition</title>
+      <link>https://vulnogram.org/CVE-2026-1199</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-1199</guid>
+      <description>Zabbix API and Frontend login lockout mechanism has a flaw where several unsuccessful login requests are not properly counted towards the block counter if sent simultaneously, potentially allowing for more password guesses than intended.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 18 Aug 2026 12:15:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-23922 · 2.1 LOW — Email media OAuth secret leak to Super Admin</title>
+      <link>https://vulnogram.org/CVE-2026-23922</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-23922</guid>
+      <description>The email media OAuth field &apos;Client secret&apos; cannot be read after saving, but a Super Admin can leak it by setting a malicious &apos;Token endpoint&apos;. Changes were made to reset the client secret upon changing the token endpoint.</description>
+      <category>Low</category>
+      <pubDate>Tue, 18 Aug 2026 12:13:38 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-23928 · 7.3 HIGH — Stored XSS vulnerability in the Item history/Plain text widget</title>
       <link>https://vulnogram.org/CVE-2026-23928</link>
@@ -327,95 +416,6 @@
       <description>When a URL is added to the map element, it is recorded in the database with sequential IDs. Upon adding a new URL, the system retrieves the last sysmapelementurlid value and increments it by one. However, an issue arises when a user manually changes…</description>
       <category>Low</category>
       <pubDate>Tue, 26 Nov 2024 14:11:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-22123 · 2.7 LOW — Zabbix Arbitrary File Read</title>
-      <link>https://vulnogram.org/CVE-2024-22123</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22123</guid>
-      <description>Setting SMS media allows to set GSM modem file. Later this file is used as Linux device. But due everything is a file for Linux, it is possible to set another file, e.g. log file and zabbix_server will try to communicate with it as modem. As a result…</description>
-      <category>Low</category>
-      <pubDate>Fri, 09 Aug 2024 10:57:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-22116 · 9.9 CRITICAL — Remote code execution within ping script</title>
-      <link>https://vulnogram.org/CVE-2024-22116</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22116</guid>
-      <description>An administrator with restricted permissions can exploit the script execution functionality within the Monitoring Hosts section. The lack of default escaping for script parameters enabled this user ability to execute arbitrary code via the Ping scrip…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 09 Aug 2024 10:16:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-22114 · 4.3 MEDIUM — System Information Widget in Global View Dashboard exposes information about Hosts to Users without Permission</title>
-      <link>https://vulnogram.org/CVE-2024-22114</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22114</guid>
-      <description>User with no permission to any of the Hosts can access and view host count &amp; other statistics through System Information Widget in Global View Dashboard.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 09 Aug 2024 10:15:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-36462 · 7.5 HIGH 🌩️ — Allocation of resources without limits or throttling (uncontrolled resource consumption)</title>
-      <link>https://vulnogram.org/CVE-2024-36462</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-36462</guid>
-      <description>Uncontrolled resource consumption refers to a software vulnerability where a attacker or system uses excessive resources, such as CPU, memory, or network bandwidth, without proper limitations or controls. This can cause a denial-of-service (DoS) atta…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 09 Aug 2024 09:40:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-36461 · 9.1 CRITICAL — Direct access to memory pointers within the JS engine for modification</title>
-      <link>https://vulnogram.org/CVE-2024-36461</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-36461</guid>
-      <description>Within Zabbix, users have the ability to directly modify memory pointers in the JavaScript engine.</description>
-      <category>Critical</category>
-      <pubDate>Fri, 09 Aug 2024 09:33:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-36460 · 8.1 HIGH — Front-end audit log shows passwords in plaintext</title>
-      <link>https://vulnogram.org/CVE-2024-36460</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-36460</guid>
-      <description>The front-end audit log allows viewing of unprotected plaintext passwords, where the passwords are displayed in plain text.</description>
-      <category>High</category>
-      <pubDate>Fri, 09 Aug 2024 09:28:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-22122 · 3 LOW — AT(GSM) Command Injection</title>
-      <link>https://vulnogram.org/CVE-2024-22122</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22122</guid>
-      <description>Zabbix allows to configure SMS notifications. AT command injection occurs on &quot;Zabbix Server&quot; because there is no validation of &quot;Number&quot; field on Web nor on Zabbix server side. Attacker can run test of SMS providing specially crafted phone number and…</description>
-      <category>Low</category>
-      <pubDate>Fri, 09 Aug 2024 08:46:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-22121 · 6.1 MEDIUM — Zabbix Agent MSI Installer Allows Non-Admin User to Access Change Option via msiexec.exe</title>
-      <link>https://vulnogram.org/CVE-2024-22121</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22121</guid>
-      <description>A non-admin user can change or remove important features within the Zabbix Agent application, thus impacting the integrity and availability of the application.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 09 Aug 2024 08:34:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-22120 · 9.1 CRITICAL — Time Based SQL Injection in Zabbix Server Audit Log</title>
-      <link>https://vulnogram.org/CVE-2024-22120</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22120</guid>
-      <description>Zabbix server can perform command execution for configured scripts. After command is executed, audit entry is added to &quot;Audit Log&quot;. Due to &quot;clientip&quot; field is not sanitized, it is possible to injection SQL into &quot;clientip&quot; and exploit time based blind…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 17 May 2024 09:53:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-22119 · 5.5 MEDIUM — Stored XSS in graph items select form</title>
-      <link>https://vulnogram.org/CVE-2024-22119</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22119</guid>
-      <description>The cause of vulnerability is improper validation of form input field “Name” on Graph page in Items section.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 09 Feb 2024 08:26:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-32728 · 4.6 MEDIUM — Code injection in zabbix_agent2 smart.disk.get caused by smartctl plugin</title>
-      <link>https://vulnogram.org/CVE-2023-32728</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-32728</guid>
-      <description>The Zabbix Agent 2 item key smart.disk.get does not sanitize its parameters before passing them to a shell command resulting possible vulnerability for remote code execution.</description>
-      <category>Medium</category>
-      <pubDate>Mon, 18 Dec 2023 09:19:51 GMT</pubDate>
     </item>
   </channel>
 </rss>

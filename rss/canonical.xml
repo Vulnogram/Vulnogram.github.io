@@ -11,7 +11,135 @@
       <title>Canonical Ltd. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 22 Jul 2026 20:03:06 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-79619 · 7.3 HIGH — OpenZFS: user-namespace capability check allows unprivileged local authorization bypass</title>
+      <link>https://vulnogram.org/CVE-2026-79619</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79619</guid>
+      <description>On Linux, several OpenZFS ioctl authorization checks accept a capability held only within a user-created, unprivileged namespace as equivalent to real host privilege, allowing an unprivileged local user to perform operations that should require root.…</description>
+      <category>High</category>
+      <pubDate>Wed, 26 Aug 2026 12:50:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66897 · 9.9 CRITICAL — Instance template path traversal allows arbitrary host file write as root</title>
+      <link>https://vulnogram.org/CVE-2026-66897</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66897</guid>
+      <description>A path traversal vulnerability in LXD&apos;s instance template processing allows an attacker with container edit permissions, or any user launching a crafted image, to overwrite arbitrary files on the host system as root. When processing target template p…</description>
+      <category>Critical</category>
+      <pubDate>Mon, 24 Aug 2026 09:08:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77113 · 6.7 MEDIUM — Path Traversal Vulnerability in apport-unpack</title>
+      <link>https://vulnogram.org/CVE-2026-77113</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77113</guid>
+      <description>Path traversal in apport-unpack in Canonical Apport before 2.36.0, 2.34.2, and 2.28.4 on Linux allows an attacker to create or overwrite arbitrary files with the privileges of the executing user via an attacker controlled key names in crash report fi…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 20 Aug 2026 22:32:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61898 · 7.8 HIGH — accountsservice: shell injection via attacker-controlled ~/.pam_environment in Ubuntu language helper scripts</title>
+      <link>https://vulnogram.org/CVE-2026-61898</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61898</guid>
+      <description>The Ubuntu-specific language helper scripts (save-to-pam-env, update-langlist) shipped with accountsservice before 23.13.9-8ubuntu7 treat the user-controlled LANGUAGE entry in ~/.pam_environment as trusted input. The value is interpolated unescaped i…</description>
+      <category>High</category>
+      <pubDate>Thu, 20 Aug 2026 14:32:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61897 · 7.8 HIGH — accountsservice: incomplete privilege drop when running Ubuntu-specific language helper scripts</title>
+      <link>https://vulnogram.org/CVE-2026-61897</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61897</guid>
+      <description>An Ubuntu-specific patch to AccountsService before 23.13.9-8ubuntu7 only partially drops privileges before launching language helper scripts. It changes the effective UID/GID to the target user but leaves the real UID as 0 (root). A shell spawned by…</description>
+      <category>High</category>
+      <pubDate>Thu, 20 Aug 2026 14:32:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16033 · 8.5 HIGH — Arbitrary file read+write on host via templates/ symlink in malicious image</title>
+      <link>https://vulnogram.org/CVE-2026-16033</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16033</guid>
+      <description>A path traversal vulnerability in LXD allows an attacker to achieve arbitrary host file read or unconstrained file creation. When processing image metadata templates, LXD fails to properly sanitize or restrict template file paths from escaping the in…</description>
+      <category>High</category>
+      <pubDate>Wed, 12 Aug 2026 20:11:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66898 · 9.9 CRITICAL — Path traversal via unvalidated instance name in backup tarball restore enables root file write / RCE</title>
+      <link>https://vulnogram.org/CVE-2026-66898</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66898</guid>
+      <description>A path traversal vulnerability in LXD allows an attacker to manipulate file system paths during backup import and restore operations. When importing or restoring a backup archive, LXD fails to validate instance and storage volume names contained with…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 12 Aug 2026 20:07:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63293 · 9.9 CRITICAL — Arbitrary File Read/Write: metadata.yaml symlink in image allows host filesystem access as root</title>
+      <link>https://vulnogram.org/CVE-2026-63293</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63293</guid>
+      <description>A link following vulnerability in LXD allows an attacker to achieve arbitrary file read and write operations on the host system. When importing or unpacking an image archive, LXD fails to validate whether the metadata.yaml file is a symbolic link. An…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 12 Aug 2026 20:00:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63294 · 9.9 CRITICAL — Root RCE via image backup.yaml symlink</title>
+      <link>https://vulnogram.org/CVE-2026-63294</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63294</guid>
+      <description>A link following vulnerability in LXD allows an attacker to achieve root command execution on the host system. During the import or unpacking of crafted image or backup archives, LXD fails to properly validate and confine the backup.yaml file when it…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 12 Aug 2026 19:57:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63295 · 4.3 MEDIUM — Project restriction `restricted.containers.privilege=isolated` bypassable by omitting `security.idmap.isolated`</title>
+      <link>https://vulnogram.org/CVE-2026-63295</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63295</guid>
+      <description>An authorization bypass vulnerability in LXD allows an authenticated attacker to bypass project-level container isolation restrictions. When a project is configured with restrictions on container privileges (such as enforcing restricted.containers.pr…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 19:31:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63296 · 9.9 CRITICAL — Project restriction bypass via instance migration config override</title>
+      <link>https://vulnogram.org/CVE-2026-63296</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63296</guid>
+      <description>An authorization bypass vulnerability in LXD allows an authenticated attacker to bypass target project restrictions during instance migration. When migrating an instance to a target project, LXD accepts configuration overrides without validating the…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 12 Aug 2026 19:27:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63297 · 9.9 CRITICAL — Cross-project instance copy bypasses target project restrictions via TOCTOU in config merge</title>
+      <link>https://vulnogram.org/CVE-2026-63297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63297</guid>
+      <description>An authorization bypass vulnerability in LXD due to a timing flaw during configuration merging allows an authenticated attacker to bypass target project restrictions during cross-project instance copies. When copying an instance to a target project,…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 12 Aug 2026 19:25:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63298 · 8.7 HIGH — LXD arbitrary lxc.conf directive injection via NVIDIA instance configuration</title>
+      <link>https://vulnogram.org/CVE-2026-63298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63298</guid>
+      <description>An improper neutralization of special elements vulnerability in LXD&apos;s NVIDIA instance configuration handling allows an authenticated attacker to inject arbitrary configuration directives. By supplying newline characters within the &apos;nvidia.driver.capa…</description>
+      <category>High</category>
+      <pubDate>Wed, 12 Aug 2026 19:22:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63299 · 8.5 HIGH — Storage volume cross-project move and snapshot restore bypass project disk limits</title>
+      <link>https://vulnogram.org/CVE-2026-63299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63299</guid>
+      <description>An authorization bypass vulnerability in LXD allows an authenticated user to bypass project-level disk and volume limits. Two related code paths fail to verify resource limits during volume operations: the storagePoolVolumeTypePostMove function omits…</description>
+      <category>High</category>
+      <pubDate>Wed, 12 Aug 2026 19:17:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62420 · 9.9 CRITICAL — Cross-project cluster migration bypasses project restrictions via cluster notification flag</title>
+      <link>https://vulnogram.org/CVE-2026-62420</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62420</guid>
+      <description>An authorization bypass vulnerability in LXD allows an authenticated attacker to bypass target project security restrictions during cross-project instance migrations. When moving an instance cross-project to a different cluster member via POST /1.0/i…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 12 Aug 2026 19:12:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63300 · 9.9 CRITICAL — Cross-project instance move bypasses all project restrictions allowing host command execution</title>
+      <link>https://vulnogram.org/CVE-2026-63300</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63300</guid>
+      <description>An improper validation vulnerability in the instancePostMigration function in lxd/instance_post.go of LXD allows an authenticated attacker with can_create_instances permissions on a restricted project to bypass project-level security restrictions. Wh…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 12 Aug 2026 19:09:04 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-8933 · 7.8 HIGH — snap-confine Local Privilege Escalation via Capabilities Misconfiguration or Flaw in Execution Environment Setup</title>
       <link>https://vulnogram.org/CVE-2026-8933</link>
@@ -286,134 +414,6 @@
       <description>A logic error in the env utility of uutils coreutils causes a failure to correctly parse command-line arguments when utilizing the -S (split-string) option. In GNU env, backslashes within single quotes are treated literally (with the exceptions of \\…</description>
       <category>Low</category>
       <pubDate>Wed, 22 Apr 2026 16:09:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35376 · 4.5 MEDIUM — uutils coreutils chcon Security Bypass and Mandatory Access Control (MAC) Inconsistency via TOCTOU Race Condition</title>
-      <link>https://vulnogram.org/CVE-2026-35376</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35376</guid>
-      <description>A Time-of-Check to Time-of-Use (TOCTOU) vulnerability exists in the chcon utility of uutils coreutils during recursive operations. The implementation resolves recursive targets using a fresh path lookup (via fts_accpath) rather than binding the trave…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:09:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35375 · 3.3 LOW — uutils coreutils split Local Data Integrity Issue via Lossy Filename Encoding</title>
-      <link>https://vulnogram.org/CVE-2026-35375</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35375</guid>
-      <description>A logic error in the split utility of uutils coreutils causes the corruption of output filenames when provided with non-UTF-8 prefix or suffix inputs. The implementation utilizes to_string_lossy() when constructing chunk filenames, which automaticall…</description>
-      <category>Low</category>
-      <pubDate>Wed, 22 Apr 2026 16:09:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35374 · 6.3 MEDIUM — uutils coreutils split Arbitrary File Truncation via Time-of-Check to Time-of-Use (TOCTOU) Race Condition</title>
-      <link>https://vulnogram.org/CVE-2026-35374</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35374</guid>
-      <description>A Time-of-Check to Time-of-Use (TOCTOU) vulnerability exists in the split utility of uutils coreutils. The program attempts to prevent data loss by checking for identity between input and output files using their file paths before initiating the spli…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:09:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35373 · 3.3 LOW — uutils coreutils ln Local Denial of Service via Improper Handling of Non-UTF-8 Filenames</title>
-      <link>https://vulnogram.org/CVE-2026-35373</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35373</guid>
-      <description>A logic error in the ln utility of uutils coreutils causes the program to reject source paths containing non-UTF-8 filename bytes when using target-directory forms (e.g., ln SOURCE... DIRECTORY). While GNU ln treats filenames as raw bytes and creates…</description>
-      <category>Low</category>
-      <pubDate>Wed, 22 Apr 2026 16:09:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35372 · 5 MEDIUM — uutils coreutils ln Security Bypass via Improper Handling of the --no-dereference Flag</title>
-      <link>https://vulnogram.org/CVE-2026-35372</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35372</guid>
-      <description>A logic error in the ln utility of uutils coreutils allows the utility to dereference a symbolic link target even when the --no-dereference (or -n) flag is explicitly provided. The implementation previously only honored the &quot;no-dereference&quot; intent if…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35371 · 3.3 LOW — uutils coreutils id Misleading Identity Reporting in Pretty Print Mode</title>
-      <link>https://vulnogram.org/CVE-2026-35371</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35371</guid>
-      <description>The id utility in uutils coreutils exhibits incorrect behavior in its &quot;pretty print&quot; output when the real UID and effective UID differ. The implementation incorrectly uses the effective GID instead of the effective UID when performing a name lookup f…</description>
-      <category>Low</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35370 · 4.4 MEDIUM — uutils coreutils id Incorrect Access-Control Decisions via Misrepresented Group Membership</title>
-      <link>https://vulnogram.org/CVE-2026-35370</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35370</guid>
-      <description>The id utility in uutils coreutils miscalculates the groups= section of its output. The implementation uses a user&apos;s real GID instead of their effective GID to compute the group list, leading to potentially divergent output compared to GNU coreutils.…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35369 · 5.5 MEDIUM — uutils coreutils kill System-wide Process Termination and Denial of Service via Argument Misinterpretation</title>
-      <link>https://vulnogram.org/CVE-2026-35369</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35369</guid>
-      <description>An argument parsing error in the kill utility of uutils coreutils incorrectly interprets kill -1 as a request to send the default signal (SIGTERM) to PID -1. Sending a signal to PID -1 causes the kernel to terminate all processes visible to the calle…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35368 · 7.2 HIGH — uutils coreutils chroot Local Privilege Escalation and chroot Escape in via Name Service Switch (NSS) Injection</title>
-      <link>https://vulnogram.org/CVE-2026-35368</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35368</guid>
-      <description>A vulnerability exists in the chroot utility of uutils coreutils when using the --userspec option. The utility resolves the user specification via getpwnam() after entering the chroot but before dropping root privileges. On glibc-based systems, this…</description>
-      <category>High</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35367 · 3.3 LOW — uutils coreutils nohup Information Disclosure via Insecure Default Output Permissions</title>
-      <link>https://vulnogram.org/CVE-2026-35367</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35367</guid>
-      <description>The nohup utility in uutils coreutils creates its default output file, nohup.out, without specifying explicit restricted permissions. This causes the file to inherit umask-based permissions, typically resulting in a world-readable file (0644). In mul…</description>
-      <category>Low</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35366 · 4.4 MEDIUM — uutils coreutils printenv Security Inspection Bypass via UTF-8 Enforcement</title>
-      <link>https://vulnogram.org/CVE-2026-35366</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35366</guid>
-      <description>The printenv utility in uutils coreutils fails to display environment variables containing invalid UTF-8 byte sequences. While POSIX permits arbitrary bytes in environment strings, the uutils implementation silently skips these entries rather than pr…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35365 · 6.6 MEDIUM — uutils coreutils mv Denial of Service and Data Duplication via Improper Symlink Expansion</title>
-      <link>https://vulnogram.org/CVE-2026-35365</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35365</guid>
-      <description>The mv utility in uutils coreutils improperly handles directory trees containing symbolic links during moves across filesystem boundaries. Instead of preserving symlinks, the implementation expands them, copying the linked targets as real files or di…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35364 · 6.3 MEDIUM — uutils coreutils mv Arbitrary File Overwrite via Cross-Device TOCTOU Race Condition</title>
-      <link>https://vulnogram.org/CVE-2026-35364</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35364</guid>
-      <description>A Time-of-Check to Time-of-Use (TOCTOU) race condition exists in the mv utility of uutils coreutils during cross-device operations. The utility removes the destination path before recreating it through a copy operation. A local attacker with write ac…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35363 · 5.6 MEDIUM — uutils coreutils rm Safeguard Bypass via Improper Path Normalization</title>
-      <link>https://vulnogram.org/CVE-2026-35363</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35363</guid>
-      <description>A vulnerability in the rm utility of uutils coreutils allows the bypass of safeguard mechanisms intended to protect the current directory. While the utility correctly refuses to delete . or .., it fails to recognize equivalent paths with trailing sla…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35362 · 3.6 LOW — uutils coreutils Missing TOCTOU Protection on Non-Linux Unix Platforms in Safe Traversal Module</title>
-      <link>https://vulnogram.org/CVE-2026-35362</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35362</guid>
-      <description>The safe_traversal module in uutils coreutils, which provides protection against Time-of-Check to Time-of-Use (TOCTOU) symlink races using file-descriptor-relative syscalls, is incorrectly limited to Linux targets. On other Unix-like systems such as…</description>
-      <category>Low</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35361 · 3.4 LOW — uutils coreutils mknod Security Label Inconsistency and Broken Cleanup on SELinux Systems</title>
-      <link>https://vulnogram.org/CVE-2026-35361</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35361</guid>
-      <description>The mknod utility in uutils coreutils fails to handle security labels atomically by creating device nodes before setting the SELinux context. If labeling fails, the utility attempts cleanup using std::fs::remove_dir, which cannot remove device nodes…</description>
-      <category>Low</category>
-      <pubDate>Wed, 22 Apr 2026 16:08:30 GMT</pubDate>
     </item>
   </channel>
 </rss>

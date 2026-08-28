@@ -11,7 +11,144 @@
       <title>Rapid7, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 06 Aug 2026 04:50:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-16895 · 5.1 MEDIUM — Authentication Bypass in Metasploit JSON-RPC Service When DB Health Check Fails</title>
+      <link>https://vulnogram.org/CVE-2026-16895</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16895</guid>
+      <description>A logic vulnerability (fail-open condition) has been identified within the Metasploit Framework&apos;s JSON-RPC web service interface. When an exception occurs during the database health check (db.check) and the environment variable MSF_WS_JSON_RPC_API_TO…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 27 Aug 2026 03:14:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19200 · 8.9 HIGH — Velociraptor Analyst overwrites live built-in artifacts through verify()</title>
+      <link>https://vulnogram.org/CVE-2026-19200</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19200</guid>
+      <description>The Velociraptor verify() VQL function allows a user to verify an artifact for syntatic and other issues. Due to an implementation fault in this VQL function, the global artifact repository is used which allows callers to overwrite existing artifacts…</description>
+      <category>High</category>
+      <pubDate>Mon, 24 Aug 2026 03:22:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15371 · 8.1 HIGH — Velociraptor Stored XSS in URL column types</title>
+      <link>https://vulnogram.org/CVE-2026-15371</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15371</guid>
+      <description>Velociraptor&apos;s web GUI allows specifying a custom type for columns in tables. The URL type takes the cell value and forms a URL which can be clicked in the GUI.The code does not limit the schemes allowed in this URL , allowing an attacker to specify…</description>
+      <category>High</category>
+      <pubDate>Tue, 18 Aug 2026 06:52:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18652 · 6.5 MEDIUM — Velociraptor STACK Type Download Path Bypasses Denied Prefix Check</title>
+      <link>https://vulnogram.org/CVE-2026-18652</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18652</guid>
+      <description>Velociraptor allows reading Stacked result sets from the GUI. Velociraptor&apos;s multi-tenant design stores sub orgs within the datastore directory. The path requested by the GUI is not correctly checked against the prefix deny list, allowing result sets…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 09:56:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64951 · 3.5 LOW — Velociraptor DoS triggered by Divide by Zero panic</title>
+      <link>https://vulnogram.org/CVE-2026-64951</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64951</guid>
+      <description>A rogue Velociraptor client can upload a malformed sparse file such that if the GUI attempts to expand the file, a panic occurs which may crash the server process. The problem is a Divide by Zero bug in the ShouldPadFile() function.</description>
+      <category>Low</category>
+      <pubDate>Wed, 12 Aug 2026 09:49:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64952 · 6.5 MEDIUM — Velociraptor Hunt Deletion With Insufficient Permission Check</title>
+      <link>https://vulnogram.org/CVE-2026-64952</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64952</guid>
+      <description>The hunt_delete() VQL function allows deleting hunts. Velociraptor misapplied the permission check requiring only COLLECT_CLIENT (usually assigned to the &quot;investigator&quot; role) instead of the &quot;DELETE_RESULTS&quot; permission (usually only assigned to &quot;admin…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 09:44:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64955 · 6.1 MEDIUM 🌩️ — Velociraptor CSV Formula Injection in Export Pipeline</title>
+      <link>https://vulnogram.org/CVE-2026-64955</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64955</guid>
+      <description>When Microsoft Excel imports a CSV file, it executes cells beginning with certain characters as formulas, giving such CSV files arbitrary execution. Velociraptor fails to sanitize such cells when exporting to CSV from various places such as the GUI,…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 12 Aug 2026 09:39:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-64954 · 8.2 HIGH — Velociraptor collect_client() Permissions Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-64954</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64954</guid>
+      <description>Velociraptor allows scheduling new collections via VQL queries in notebooks. For a user to schedule a new collection, they require the COLLECT_CLIENT permission. However, this is not enforced when the user can run a VQL query which resets the authori…</description>
+      <category>High</category>
+      <pubDate>Wed, 12 Aug 2026 04:26:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18639 · 7.3 HIGH — Velociraptor OIDC Authenticator susceptible to email spoofing</title>
+      <link>https://vulnogram.org/CVE-2026-18639</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18639</guid>
+      <description>When Velociraptor is configured to use an OIDC IdP for authentication, it uses the email claim as a username. However, some IdP allow users to change the email claim without verification. Some IdPs do not set the &quot;email_verified&quot; claim and do not act…</description>
+      <category>High</category>
+      <pubDate>Tue, 11 Aug 2026 15:05:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18638 · 6.5 MEDIUM — Velociraptor server crash via the SetPassword API</title>
+      <link>https://vulnogram.org/CVE-2026-18638</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18638</guid>
+      <description>Any authenticated Velociraptor user — including one holding only the readerrole — can terminate the entire server process with a single request, by calling SetPassword with a username that does not exist.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 15:00:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18640 · 7.1 HIGH — Velociraptor directory traversal via the NewNotebook API</title>
+      <link>https://vulnogram.org/CVE-2026-18640</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18640</guid>
+      <description>The NewNotebook API does not sufficiently sanitize its parameters allowing an authenticated user with NOTEBOOK_EDIT permission to write the notebook record outside the org&apos;s data store directory. The file written must have an extension of &quot;.json.db&quot;…</description>
+      <category>High</category>
+      <pubDate>Tue, 11 Aug 2026 14:53:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18860 · 8.7 HIGH — Velociraptor incorrect Org deletion permissions check</title>
+      <link>https://vulnogram.org/CVE-2026-18860</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18860</guid>
+      <description>Velociraptor allows multi-tenant deployments named &quot;Orgs&quot;. By default Velociraptor, uses the ROOT org, but users can create child orgs for other tenants within the same deployment. Users can have different permissions in each org. To manage Orgs, Vel…</description>
+      <category>High</category>
+      <pubDate>Tue, 11 Aug 2026 14:52:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17535 · 6.2 MEDIUM — Velociraptor Multiple Crashes in NTFS Parser when applied to invalid NTFS Volumes</title>
+      <link>https://vulnogram.org/CVE-2026-17535</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17535</guid>
+      <description>Velociraptor&apos;s NTFS parsing library mishandles several out of bound and memory exhaustion bugs which may be triggered by maliciously crafted NTFS images. Typically Velociraptor&apos;s NTFS parser is used on live NTFS filesystems, limiting the opportunity…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 14:47:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18636 · 6.8 MEDIUM — Velociraptor VFSGetBuffer API path deny list bypass</title>
+      <link>https://vulnogram.org/CVE-2026-18636</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18636</guid>
+      <description>The Velociraptor gRPC API has a VFSGetBuffer endpoint which allows reading files from the datastore. To prevent users from reading sensitive files or accessing other orgs, the requested path is prefix checked against a list of denied prefixes. This p…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 14:40:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18635 · 7.2 HIGH — Velociraptor query plugin allows impersonation in other orgs</title>
+      <link>https://vulnogram.org/CVE-2026-18635</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18635</guid>
+      <description>Velociraptor&apos;s VQL has a query() plugin which allows running a VQL query in a different org or user context. To be able to run as a different user, the calling user needs to have the IMPERSONATE permission (usually only given to administrators). Velo…</description>
+      <category>High</category>
+      <pubDate>Tue, 11 Aug 2026 14:15:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18972 · 9.6 CRITICAL — Velociraptor authenticated identity-spoofing vulnerability</title>
+      <link>https://vulnogram.org/CVE-2026-18972</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18972</guid>
+      <description>An authenticated attacker can spoof another GUI user&apos;s identity by sending their request with the custom header \&quot;Grpc-Metadata-USER\&quot;. This can lead to an account takeover attack from a user with low privileges to administrator.</description>
+      <category>Critical</category>
+      <pubDate>Tue, 11 Aug 2026 12:30:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18348 · 4.1 MEDIUM — Velociraptor NETWORK ACL bypass via upload_azure / upload_sftp / upload_smb VQL plugins</title>
+      <link>https://vulnogram.org/CVE-2026-18348</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18348</guid>
+      <description>Missing authorization check in the upload_azure, upload_sftp, and upload_smb VQL plugins allows an authenticated analyst-role user can initiate attacker-controlled outbound network connections from the Velociraptor server, bypassing the NETWORK ACL p…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 11 Aug 2026 05:37:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-14172 · 7.8 HIGH — Rapid7 InsightVM, Nexpose, and Insight Agent Local Privilege Escalation via Unvalidated Executable Invocation</title>
       <link>https://vulnogram.org/CVE-2026-14172</link>
@@ -286,152 +423,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 19 Nov 2025 17:41:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-10158 · 4.3 MEDIUM — Rsync: Out of bounds array access via negative index</title>
-      <link>https://vulnogram.org/CVE-2025-10158</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-10158</guid>
-      <description>A malicious client acting as the receiver of an rsync file transfer can trigger an out of bounds read of a heap based buffer, via a negative array index. The malicious rsync client requires at least read access to the remote rsync module in order to…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 18 Nov 2025 14:24:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11195 · 3.3 LOW — Rapid7 AppSpider Project Name Validation Bypass</title>
-      <link>https://vulnogram.org/CVE-2025-11195</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11195</guid>
-      <description>Rapid7 AppSpider Pro versions below 7.5.021 suffer from a project name validation vulnerability, whereby an attacker can change the project name directly in the configuration file to a name that already exists. This issue stems from a lack of effecti…</description>
-      <category>Low</category>
-      <pubDate>Tue, 30 Sep 2025 18:12:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-36857 · 3.3 LOW — Rapid7 Appspider Broken Access Control Vulnerability</title>
-      <link>https://vulnogram.org/CVE-2025-36857</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-36857</guid>
-      <description>Rapid7 Appspider Pro versions below 7.5.021, suffer from a broken access control vulnerability in the application&apos;s configuration file loading mechanism, whereby an attacker can place files in directories belonging to other users or projects. Affecte…</description>
-      <category>Low</category>
-      <pubDate>Thu, 25 Sep 2025 14:41:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-10184 · 8.2 HIGH — OnePlus OxygenOS Telephony provider permission bypass</title>
-      <link>https://vulnogram.org/CVE-2025-10184</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-10184</guid>
-      <description>The vulnerability allows any application installed on the device to read SMS/MMS data and metadata from the system-provided Telephony provider without permission, user interaction, or consent. The user is also not notified that SMS data is being acce…</description>
-      <category>High</category>
-      <pubDate>Tue, 23 Sep 2025 13:02:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6737 · 7.2 HIGH 🌩️ — Securden Unified PAM Shared SSH Key and Cloud Infrastructure</title>
-      <link>https://vulnogram.org/CVE-2025-6737</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6737</guid>
-      <description>Securden’s Unified PAM Remote Vendor Gateway access portal shares infrastructure and access tokens across multiple tenants. A malicious actor can obtain authentication material and access the gateway server with low-privilege permissions.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 Aug 2025 16:17:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-53120 · 9.4 CRITICAL 🌩️ — Securden Unified PAM Path Traversal In File Upload</title>
-      <link>https://vulnogram.org/CVE-2025-53120</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-53120</guid>
-      <description>A path traversal vulnerability in unauthenticated upload functionality allows a malicious actor to upload binaries and scripts to the server’s configuration and web root directories, achieving remote code execution on the Unified PAM server.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 Aug 2025 16:11:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-53119 · 7.5 HIGH 🌩️ — Securden Unified PAM Unauthenticated Unrestricted File Upload</title>
-      <link>https://vulnogram.org/CVE-2025-53119</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-53119</guid>
-      <description>An unauthenticated unrestricted file upload vulnerability allows an attacker to upload malicious binaries and scripts to the server.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 Aug 2025 16:09:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-53118 · 9.8 CRITICAL 🌩️ — Securden Unified PAM Authentication Bypass</title>
-      <link>https://vulnogram.org/CVE-2025-53118</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-53118</guid>
-      <description>An authentication bypass vulnerability exists which allows an unauthenticated attacker to control administrator backup functions, leading to compromise of passwords, secrets, and application session tokens stored by the Unified PAM.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 25 Aug 2025 16:06:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6081 · 6.8 MEDIUM — Pass-back attack in Konica Minolta bizhub 227 multifunctional printers</title>
-      <link>https://vulnogram.org/CVE-2025-6081</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6081</guid>
-      <description>Insufficiently Protected Credentials in LDAP in Konica Minolta bizhub 227 Multifunction printers version GCQ-Y3 or earlier allows an attacker can reconfigure the target device to use an external LDAP service controlled by the attacker. If an LDAP pas…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Jul 2025 03:25:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51984 · 6.8 MEDIUM — Authenticated disclosure of external service passwords via pass-back attack affecting multiple models from Brother Industries, Ltd, FUJIFILM Business Innovation, Ricoh, Toshiba Tec, and Konica Minolta, Inc.</title>
-      <link>https://vulnogram.org/CVE-2024-51984</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51984</guid>
-      <description>An authenticated attacker can reconfigure the target device to use an external service (such as LDAP or FTP) controlled by the attacker. If an existing password is present for an external service, the attacker can force the target device to authentic…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 25 Jun 2025 07:28:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51983 · 7.5 HIGH 🌩️ — Unauthenticated Denial of Service (DoS) via malformed WS-Scan request affecting multiple models from Brother Industries, Ltd, FUJIFILM Business Innovation, Ricoh, Toshiba Tec, and Konica Minolta, Inc.</title>
-      <link>https://vulnogram.org/CVE-2024-51983</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51983</guid>
-      <description>An unauthenticated attacker who can connect to the Web Services feature (HTTP TCP port 80) can issue a WS-Scan SOAP request containing an unexpected JobToken value which will crash the target device. The device will reboot, after which the attacker c…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jun 2025 07:26:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51982 · 7.5 HIGH 🌩️ — Unauthenticated Denial of Service (DoS) via malformed PJL request affecting multiple models from Brother Industries, Ltd, FUJIFILM Business Innovation, and Ricoh.</title>
-      <link>https://vulnogram.org/CVE-2024-51982</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51982</guid>
-      <description>An unauthenticated attacker who can connect to TCP port 9100 can issue a Printer Job Language (PJL) command that will crash the target device. The device will reboot, after which the attacker can reissue the command to repeatedly crash the device. A…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jun 2025 07:25:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51981 · 5.3 MEDIUM 🌩️ — Unauthenticated Server Side Request Forgery (SSRF) via WS-Eventing affecting multiple models from Brother Industries, Ltd, FUJIFILM Business Innovation, Ricoh, and Toshiba Tec, and Konica Minolta, Inc.</title>
-      <link>https://vulnogram.org/CVE-2024-51981</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51981</guid>
-      <description>An unauthenticated attacker may perform a blind server side request forgery (SSRF), due to a CLRF injection issue that can be leveraged to perform HTTP request smuggling. This SSRF leverages the WS-Addressing feature used during a WS-Eventing subscri…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jun 2025 07:23:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51980 · 5.3 MEDIUM 🌩️ — Unauthenticated Server Side Request Forgery (SSRF) via WS-Addressing affecting multiple models from Brother Industries, Ltd, FUJIFILM Business Innovation, Ricoh, Toshiba Tec, and Konica Minolta, Inc.</title>
-      <link>https://vulnogram.org/CVE-2024-51980</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51980</guid>
-      <description>An unauthenticated attacker may perform a limited server side request forgery (SSRF), forcing the target device to open a TCP connection to an arbitrary port number on an arbitrary IP address. This SSRF leverages the WS-Addressing ReplyTo element in…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jun 2025 07:22:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51979 · 7.2 HIGH — Authenticated stack based buffer overflow affecting multiple models from Brother Industries, Ltd, FUJIFILM Business Innovation, Ricoh, and Konica Minolta, Inc.</title>
-      <link>https://vulnogram.org/CVE-2024-51979</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51979</guid>
-      <description>An authenticated attacker may trigger a stack based buffer overflow by performing a malformed request to either the HTTP service (TCP port 80), the HTTPS service (TCP port 443), or the IPP service (TCP port 631). The malformed request will contain an…</description>
-      <category>High</category>
-      <pubDate>Wed, 25 Jun 2025 07:20:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51978 · 9.8 CRITICAL 🌩️ — Authentication bypass via default password generation affecting multiple models from Brother Industries, Ltd, Toshiba Tec, and Konica Minolta, Inc.</title>
-      <link>https://vulnogram.org/CVE-2024-51978</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51978</guid>
-      <description>An unauthenticated attacker who knows the target device&apos;s serial number, can generate the default administrator password for the device. An unauthenticated attacker can first discover the target device&apos;s serial number via CVE-2024-51977 over HTTP/HTT…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jun 2025 07:17:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-51977 · 5.3 MEDIUM 🌩️ — Unauthenticated leak of sensitive information affecting multiple models from Brother Industries, Ltd., FUJIFILM Business Innovation, Ricoh, Toshiba Tec, and Konica Minolta, Inc.</title>
-      <link>https://vulnogram.org/CVE-2024-51977</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-51977</guid>
-      <description>An unauthenticated attacker who can access either the HTTP service (TCP port 80), the HTTPS service (TCP port 443), or the IPP service (TCP port 631), can leak several pieces of sensitive information from a vulnerable device. The URI path /etc/mnt_in…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 25 Jun 2025 07:15:16 GMT</pubDate>
     </item>
   </channel>
 </rss>

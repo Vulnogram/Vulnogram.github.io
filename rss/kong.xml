@@ -11,7 +11,64 @@
       <title>Kong Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 05 Aug 2026 15:06:04 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-18674 · 7 HIGH — Kong Mesh multi-zone: the global control plane attributes KDS-synced resources by an unvalidated in-band zone identifier</title>
+      <link>https://vulnogram.org/CVE-2026-18674</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18674</guid>
+      <description>On a Kong Mesh global control plane, resources received over the zone-to-global KDS sync are attributed using the in-band, sender-controlled ControlPlane.Identifier rather than the authenticated zone identity derived from the connection. Authenticate…</description>
+      <category>High</category>
+      <pubDate>Mon, 17 Aug 2026 12:08:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18679 · 5.8 MEDIUM — Kong Mesh: kuma-dp connects to the control plane without verifying the TLS certificate when no CA is configured</title>
+      <link>https://vulnogram.org/CVE-2026-18679</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18679</guid>
+      <description>When kuma-dp is started against an HTTPS control plane and the operator did not pass a CA certificate, the data plane connects with TLS peer verification disabled, and the dataplane authentication token is sent over that unverified connection. An on-…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 18:52:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18678 · 5.5 MEDIUM — Kong Mesh: kumactl connects to the control plane without verifying the TLS certificate when no CA is configured</title>
+      <link>https://vulnogram.org/CVE-2026-18678</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18678</guid>
+      <description>When an operator adds an HTTPS control plane profile to kumactl without providing a CA certificate, kumactl disables TLS verification and sends API tokens over the unverified connection. An attacker on the network path between the operator and the co…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 18:49:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18677 · 6 MEDIUM — Kong Mesh: a dataplane token without a workload binding can claim any workload&apos;s SPIFFE identity</title>
+      <link>https://vulnogram.org/CVE-2026-18677</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18677</guid>
+      <description>In Kong Mesh running in universal mode with a MeshIdentity whose SPIFFE ID path template derives from the dataplane&apos;s kuma.io/workload label, the XDS authenticator in kuma-cp validates that label only when the dataplane token is bound to a workload.…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 18:47:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18676 · 5.1 MEDIUM 🌩️ — Kong Mesh: default control plane config leaks the admin token cross-origin via a CORS wildcard and localhost admin</title>
+      <link>https://vulnogram.org/CVE-2026-18676</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18676</guid>
+      <description>The default kuma-cp configuration in Kong Mesh reveals the admin bootstrap token and signing keys to any webpage the operator visits while the control plane is reachable from their browser. Due to a CORS misconfiguration a cross-origin fetch() from a…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 12 Aug 2026 18:42:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18675 · 5.3 MEDIUM — Kong Mesh: control plane denial of service via a malformed dataplane token with a non-string JWT kid</title>
+      <link>https://vulnogram.org/CVE-2026-18675</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18675</guid>
+      <description>The dataplane token validator in kuma-cp performs an unchecked Go type assertion on the JWT kid header. A token whose kid is a JSON number decodes as a float64 and triggers a runtime panic before any signature, claims, or authorization check runs. Th…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 18:36:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18673 · 5.3 MEDIUM — Kong Mesh: the kuma-dp readiness service exposes the Envoy admin API without authentication</title>
+      <link>https://vulnogram.org/CVE-2026-18673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18673</guid>
+      <description>When kuma-dp is configured with the Envoy admin API on a Unix domain socket, which is the default, its readiness service on TCP port 9902 - bound to all interfaces - forwards almost the entire Envoy admin API to any caller that can reach the port, wi…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 12 Aug 2026 18:20:33 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-17578 · 2.3 LOW — Kong Event Gateway AES-GCM nonce reuse due to missing key rotation enforcement</title>
       <link>https://vulnogram.org/CVE-2026-17578</link>
@@ -38,6 +95,14 @@
       <pubDate>Wed, 29 Jul 2026 15:29:03 GMT</pubDate>
     </item>
     <item>
+      <title>CVE-2026-15228 · 7.1 HIGH — Kong Kubernetes Ingress Controller cluster-wide ingress configuration DoS via CA-certificate ID collision</title>
+      <link>https://vulnogram.org/CVE-2026-15228</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15228</guid>
+      <description>Kong Kubernetes Ingress Controller (KIC) allows a user with namespace-scoped Secret creation privileges to cause a cluster-wide ingress configuration denial of service. KIC collects CA-certificate Secrets across all watched namespaces using a label s…</description>
+      <category>High</category>
+      <pubDate>Wed, 29 Jul 2026 15:28:30 GMT</pubDate>
+    </item>
+    <item>
       <title>CVE-2026-13341 · 7.4 HIGH 🌩️ — Prompt Injection and Credential Exposure via Untrusted Analytics Data in Kong Konnect MCP</title>
       <link>https://vulnogram.org/CVE-2026-13341</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13341</guid>
@@ -45,6 +110,15 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 03 Jul 2026 10:19:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6338 · 4.9 MEDIUM 🌩️ — HTTP request smuggling in Kong Enteprise Gateway</title>
+      <link>https://vulnogram.org/CVE-2026-6338</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6338</guid>
+      <description>A HTTP request smuggling and desynchronization vulnerability affects Kong Gateway Enterprise 3.4, 3.10, 3.11, 3.12, 3.13, and 3.14 series. The vulnerability is caused by a parsing flaw in Kong’s HTTP request processing pipeline when handling untruste…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 11 Jun 2026 13:47:01 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2025-1087 · 9.3 CRITICAL 🌩️ — Arbitrary Code Execution in Kong Insomnia Desktop Application</title>

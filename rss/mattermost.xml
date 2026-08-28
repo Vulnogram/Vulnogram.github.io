@@ -11,7 +11,119 @@
       <title>Mattermost, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 28 Jul 2026 17:16:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-75587 · 3.6 LOW — Plaintext pre-auth secret exposure via Desktop App diagnostics report</title>
+      <link>https://vulnogram.org/CVE-2026-75587</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75587</guid>
+      <description>Mattermost Desktop App versions &lt;=6.2 6.2.2.0 fail to redact the pre-auth secret when generating a diagnostics report, which allows a local attacker with access to a user&apos;s diagnostics report or log files to obtain the plaintext pre-auth secret confi…</description>
+      <category>Low</category>
+      <pubDate>Mon, 17 Aug 2026 22:09:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9693 · 3.5 LOW — Mattermost thread memberships persist after team removal, exposing private channel thread metadata on re-invite</title>
+      <link>https://vulnogram.org/CVE-2026-9693</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9693</guid>
+      <description>Mattermost versions 10.11.x &lt;= 10.11.20, 11.7.x &lt;= 11.7.5 Mattermost fails to remove thread membership records when a user is removed from or leaves a team, which allows a previously removed user who is later re-invited to the team to view private ch…</description>
+      <category>Low</category>
+      <pubDate>Mon, 17 Aug 2026 22:07:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9859 · 6.5 MEDIUM — Mattermost Boards plugin didn’t enforce role-based authorization on board channel link allowing board editors to expose boards to arbitrary channels</title>
+      <link>https://vulnogram.org/CVE-2026-9859</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9859</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21, 11.8.x &lt;= 11.8.3 fail to enforce PermissionManageBoardRoles on the channelId field of the batch endpoint, which allows an authenticated board editor to relink any board they can edit to an ar…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 22:06:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9816 · 8.3 HIGH — Insufficient server-side validation of board member role fields permits privilege escalation</title>
+      <link>https://vulnogram.org/CVE-2026-9816</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9816</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21, 11.8.x &lt;= 11.8.3 fail to validate BoardMember.Scheme* fields server-side on insert and archive-import paths which allows a board editor or non-guest team member to grant board admin to arbitr…</description>
+      <category>High</category>
+      <pubDate>Mon, 17 Aug 2026 22:05:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10080 · 6.5 MEDIUM — Boards plugin panics on WebSocket command with non-string field types</title>
+      <link>https://vulnogram.org/CVE-2026-10080</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10080</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21, 11.8.x &lt;= 11.8.3 fails to validate WebSocket command field types which allows an authenticated user to crash the plugin process and deny service to all Boards users via a custom_focalboard_SU…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 22:04:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-10527 · 6.3 MEDIUM — Boards plugin retains Board Admin rights for users demoted to System Guest</title>
+      <link>https://vulnogram.org/CVE-2026-10527</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10527</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21, 11.8.x &lt;= 11.8.3 fails to reconcile SchemeAdmin flags with a user&apos;s current role which allows a user demoted to System Guest to retain Board Admin privileges and perform admin-only operations…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 14:37:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15754 · 4.2 MEDIUM — Missing per-channel team-scope check in ABAC access control policy unassign allows cross-team policy removal</title>
+      <link>https://vulnogram.org/CVE-2026-15754</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15754</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 11.8.x &lt;= 11.8.3 The access control policy unassign endpoint fails to re-validate that each target channel still belongs to the requesting admin&apos;s team, which allows an authenticated team administrator to remove…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 14:36:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16044 · 3.9 LOW — Insufficient validation of guest board admin privileges on archive import</title>
+      <link>https://vulnogram.org/CVE-2026-16044</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16044</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21 fail to prevent guest users from receiving Board Admin privileges during board archive import which allows a board member to escalate a guest user to Board Admin via importing a crafted .board…</description>
+      <category>Low</category>
+      <pubDate>Mon, 17 Aug 2026 14:26:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16045 · 2.7 LOW — Delegated OAuth tokens could revoke unrelated OAuth application authorizations</title>
+      <link>https://vulnogram.org/CVE-2026-16045</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16045</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21 Mattermost failed to restrict OAuth deauthorization and personal access token management endpoints to direct user sessions, which allowed an OAuth app with a delegated user token to revoke the…</description>
+      <category>Low</category>
+      <pubDate>Mon, 17 Aug 2026 14:26:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16049 · 3.9 LOW — _GitLab Plugin allows cross-channel post injection and phishing via missing channel permission checks in issue API endpoints_</title>
+      <link>https://vulnogram.org/CVE-2026-16049</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16049</guid>
+      <description>Mattermost Plugins versions &lt;=11.8 10.20.11 11.5.7.0 _The Mattermost GitLab plugin fails to verify channel permissions when processing API requests with a caller-supplied_ {{post_id}}_, and fails to validate the_ {{web_url}} _parameter against the co…</description>
+      <category>Low</category>
+      <pubDate>Mon, 17 Aug 2026 14:25:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16047 · 4.3 MEDIUM — Board channel linking without read channel permission validation</title>
+      <link>https://vulnogram.org/CVE-2026-16047</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16047</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21, 11.8.x &lt;= 11.8.3 fail to validate that users have read access to a channel before linking a board to it, which allows an authenticated attacker to discover the membership of private channels…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 14:25:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16046 · 3.5 LOW — Missing run-state validation on finished playbook runs</title>
+      <link>https://vulnogram.org/CVE-2026-16046</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16046</guid>
+      <description>Mattermost versions 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21 fail to enforce run-state validation on write operations for finished playbook runs which allows a run participant to modify status, checklists, retrospective content, ownership, and participa…</description>
+      <category>Low</category>
+      <pubDate>Mon, 17 Aug 2026 14:24:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16048 · 6.3 MEDIUM — Channel member roles accept out-of-scope roles</title>
+      <link>https://vulnogram.org/CVE-2026-16048</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16048</guid>
+      <description>Mattermost versions 11.8.x &lt;= 11.8.2, 11.7.x &lt;= 11.7.6, 10.11.x &lt;= 10.11.21 fail to restrict channel member role assignment to channel-scoped roles which allows a channel administrator to gain additional channel permissions via the channel member rol…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 17 Aug 2026 14:22:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14298 · 6.5 MEDIUM — Denial of service via resource exhaustion in Mattermost</title>
+      <link>https://vulnogram.org/CVE-2026-14298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14298</guid>
+      <description>Mattermost versions 11.9.x &lt;= 11.9.0, 11.8.x &lt;= 11.8.4, 11.7.x &lt;= 11.7.7, 10.11.x &lt;= 10.11.22 fail to properly limit resource consumption when processing certain user-supplied input, which allows an authenticated user to cause a denial of service. Ma…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 13 Aug 2026 08:03:00 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-7521 · 5.5 MEDIUM — SAML certificate deletion allows path traversal to delete arbitrary files outside the config directory</title>
       <link>https://vulnogram.org/CVE-2026-7521</link>
@@ -300,121 +412,6 @@
       <description>Mattermost Plugins versions &lt;=1.1.5 fail to sanitize filenames received from federated peers before using them to construct export destination paths, which allows an administrator of a remote federated Mattermost server to write files to arbitrary lo…</description>
       <category>High</category>
       <pubDate>Wed, 27 May 2026 14:23:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4915 · 6.5 MEDIUM — Server panic via outgoing webhook responses</title>
-      <link>https://vulnogram.org/CVE-2026-4915</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4915</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to filter nil elements from outgoing webhook attachment payloads before processing, which allows an authenticated user to cause a denial of service (se…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 25 May 2026 07:10:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28735 · 5.4 MEDIUM — GitHub OAuth Scope Validation</title>
-      <link>https://vulnogram.org/CVE-2026-28735</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28735</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to validate the OAuth token scope on the callback which allows an authenticated Mattermost user to gain access to private repositories via modifying th…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 16:26:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4635 · 6.5 MEDIUM — Persistent notification timing attack causing server denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-4635</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4635</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to archive the channel before removing persistent notifications which allows authenticated user to crash the server via timing the creation of persiste…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 10:28:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3473 · 5.9 MEDIUM — Improper file ownership validation in the Boards API allows unauthorised file access</title>
-      <link>https://vulnogram.org/CVE-2026-3473</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3473</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to validate file ownership and access control, which allows an authenticated user to access and download files belonging to other users or teams via cr…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 10:27:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4646 · 4.3 MEDIUM — Insufficient input validation in GitHub plugin API causes denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-4646</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4646</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to validate user-supplied input in API request handlers which allows an authenticated attacker to crash the plugin process via a crafted HTTP request t…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 10:25:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3636 · 4.3 MEDIUM — Sanitize team member data returned by API</title>
-      <link>https://vulnogram.org/CVE-2026-3636</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3636</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to sanitize team member data when returned via API to users without elevated permissions which allows a user without permissions to get data about team…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 10:23:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5740 · 7.5 HIGH 🌩️ — Unauthenticated WebSocket binary frame causes denial of service in Mattermost Server</title>
-      <link>https://vulnogram.org/CVE-2026-5740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5740</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to properly validate msgpack-encoded WebSocket frames before memory allocation which allows an unauthenticated remote attacker to crash the server proc…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 10:22:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5308 · 4.9 MEDIUM — Missing request body size limits on Zoom plugin HTTP endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-5308</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5308</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to enforce request body size limits on plugin HTTP endpoints which allows an attacker to cause a denial of service via crafted oversized HTTP requests.…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 10:20:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5755 · 6.5 MEDIUM — Denial of service via crafted TIFF file upload</title>
-      <link>https://vulnogram.org/CVE-2026-5755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5755</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.2, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to validate the TIFF IFD offset in the image header before allocating memory, which allows authenticated users with file upload or po…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 10:18:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-22880 · 6.1 MEDIUM 🌩️ — Mobile SSO authentication flow allows credential theft via malicious server</title>
-      <link>https://vulnogram.org/CVE-2026-22880</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-22880</guid>
-      <description>Mattermost Mobile Apps versions &lt;=2.37 11.4 2.0.37 11.0.4 11.1.3 11.3.2 10.11.11.0 fail to properly validate the SSO authentication callback origin which allows an attacker controlling a malicious Mattermost server to steal user credentials for a leg…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 08:22:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4858 · 8 HIGH — Path traversal in integration action URL leading to arbitrary API execution via system admin’s auth token.</title>
-      <link>https://vulnogram.org/CVE-2026-4858</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4858</guid>
-      <description>Mattermost versions 11.6.x &lt;= 11.6.0, 11.5.x &lt;= 11.5.3, 11.4.x &lt;= 11.4.4, 10.11.x &lt;= 10.11.14 fail to check integration URL for path traversal which allows an malicious authenticated user to call an arbitrary API via system admin Mattermost auth toke…</description>
-      <category>High</category>
-      <pubDate>Thu, 21 May 2026 08:12:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4055 · 4.3 MEDIUM — Insufficient permission validation on cross-team playbook run creation</title>
-      <link>https://vulnogram.org/CVE-2026-4055</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4055</guid>
-      <description>Mattermost versions 11.5.x &lt;= 11.5.1 fail to validate team-level run_create permission against the target team when creating a playbook run which allows an authenticated team member to create runs in teams where they lack permission via specifying a…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 21 May 2026 07:13:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3471 · 6.5 MEDIUM 🌩️ — Opening a window with {{javascript:alert()}} as URL causes crash in the Mattermost Desktop App</title>
-      <link>https://vulnogram.org/CVE-2026-3471</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3471</guid>
-      <description>Mattermost Desktop App versions &lt;=6.1 6.0.1 5.4.13.0 fail to prevent an invalid URL from loading in a pop-up window in the Mattermost Desktop App which allows a malicious server owner to repeated crash the application via calling {{window.open(&apos;javas…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 18 May 2026 08:45:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4643 · 3.5 LOW — Calling window.close() from server-side content causes crash in the Mattermost Desktop App</title>
-      <link>https://vulnogram.org/CVE-2026-4643</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4643</guid>
-      <description>Mattermost Desktop App versions &lt;=6.1 6.0.1 5.4.13.0 fail to prevent server-rendered content from closing an underlying application view in the Mattermost Desktop App which allows a malicious server or plugin to crash the desktop client via invoking…</description>
-      <category>Low</category>
-      <pubDate>Mon, 18 May 2026 08:43:34 GMT</pubDate>
     </item>
   </channel>
 </rss>

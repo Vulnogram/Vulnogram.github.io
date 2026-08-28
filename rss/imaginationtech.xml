@@ -11,7 +11,55 @@
       <title>Imagination Technologies — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 27 Jul 2026 17:25:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 22:19:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-45202 · 5.5 MEDIUM — GPU DDK - Silent High-Order CMA Memory Leak &amp; Double Free in `_FreeOSPages_Fast`</title>
+      <link>https://vulnogram.org/CVE-2026-45202</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45202</guid>
+      <description>Software installed and run as a non-privileged user may conduct GPU system calls which cause GPU memory leaks and possible kernel heap corruption. Scenario caused by memory free paths not maintaining state data of upgraded higher order allocations. T…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 21 Aug 2026 04:09:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45201 · 7.8 HIGH — GPU DDK - Incorrect page size validation in PhysmemNewRamBackedPMR could lead to OOB read and/or write of arbitrary physical memory</title>
+      <link>https://vulnogram.org/CVE-2026-45201</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45201</guid>
+      <description>Software installed and run as a non-privileged user may conduct improper GPU system calls to pass invalid log2 page size when allocating physical pages leading to OOB read and/or write due to improper validation of the said value. Such crafted log2 p…</description>
+      <category>High</category>
+      <pubDate>Fri, 21 Aug 2026 04:01:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45199 · 7.8 HIGH — GPU DDK - rgxfw_to_ptr() does not reject FW private data pointers</title>
+      <link>https://vulnogram.org/CVE-2026-45199</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45199</guid>
+      <description>Kernel software installed and running inside a Guest VM may post improper commands to the GPU Firmware to trigger a write of data outside the Guest&apos;s virtualised GPU memory. Software installed and run under a Guest VM can send commands to the GPU whi…</description>
+      <category>High</category>
+      <pubDate>Fri, 21 Aug 2026 03:36:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49746 · 7.1 HIGH — GPU DDK - Dimension Mismatch and Integer Truncation in PMRDevPhysAddrOSMem</title>
+      <link>https://vulnogram.org/CVE-2026-49746</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49746</guid>
+      <description>Software installed and run as a non-privileged user may conduct improper GPU system calls to cause OOB read kernel memory access and in certain cases cause GPU UAF of arbitrary pages. Incorrect validation of array index can lead to OOB read and poten…</description>
+      <category>High</category>
+      <pubDate>Fri, 07 Aug 2026 01:59:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45204 · 5.5 MEDIUM — GPU DDK - Out of bounds memory access and kernel NULL pointer dereference in DmaTransfer when pui64Address is a pointer to device memory</title>
+      <link>https://vulnogram.org/CVE-2026-45204</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45204</guid>
+      <description>Software installed and run as a non-privileged user may conduct improper GPU system calls to trigger OOB access and kernel null pointer dereference in an error path. Null pointer dereference occurs in an error path of a function running in kernel thr…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 07 Aug 2026 01:53:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-45198 · 7.8 HIGH — GPU DDK - RGXFWIF_SYSINIT::sCorememDataStore is untrusted</title>
+      <link>https://vulnogram.org/CVE-2026-45198</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45198</guid>
+      <description>Kernel software from a non-secure operating system on a platform with Trusted Execution Environment support, may cause GPU Firmware to boot up using data from non-secure memory. The GPU thread of control (Firmware) uses a pointer from non-secure memo…</description>
+      <category>High</category>
+      <pubDate>Fri, 07 Aug 2026 01:42:54 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-16280 · 9.8 CRITICAL 🌩️ — GPU DDK - Integer overflow in _PMRLogicalOffsetToPhysicalOffset</title>
       <link>https://vulnogram.org/CVE-2026-16280</link>
@@ -126,10 +174,12 @@
       <pubDate>Fri, 12 Jun 2026 21:57:29 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-41157 — GPU DDK - OOB Write in CalculateNPOTTwiddleSparsePageMap3D</title>
+      <title>CVE-2026-41157 · 9.8 CRITICAL 🌩️ — GPU DDK - OOB Write in CalculateNPOTTwiddleSparsePageMap3D</title>
       <link>https://vulnogram.org/CVE-2026-41157</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41157</guid>
       <description>A web page that contains unusual WebGPU content loaded into the GPU GLES render process and can trigger an out-of-bound write in the GPU user-space driver, leading to memory corruption and possible browser/GPU process crash. The software computes a r…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Fri, 12 Jun 2026 21:53:00 GMT</pubDate>
     </item>
     <item>
@@ -371,56 +421,6 @@
       <description>Possible kernel exceptions caused by reading and writing kernel heap data after free.</description>
       <category>Medium</category>
       <pubDate>Mon, 16 Jun 2025 11:13:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-25179 · 7.8 HIGH — GPU DDK - Freelist GPU VA can be remapped to another reservation/PMR to trigger GPU arbitrary write to physical memory</title>
-      <link>https://vulnogram.org/CVE-2025-25179</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-25179</guid>
-      <description>Software installed and run as a non-privileged user may conduct improper GPU system calls to subvert GPU HW to write to arbitrary physical memory pages.</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Jun 2025 04:19:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-47893 · 6.5 MEDIUM 🌩️ — GPU DDK - OOB read and write of the shared KMD/FW memory heap (VZ/TEE setups)</title>
-      <link>https://vulnogram.org/CVE-2024-47893</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-47893</guid>
-      <description>Kernel software installed and running inside a Guest VM may exploit memory shared with the GPU Firmware to read and/or write data outside the Guest&apos;s virtualised GPU memory.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 17 May 2025 00:47:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1706 · 7.5 HIGH 🌩️ — GPU DDK - Improper locking when accessing the pvr_exp_fence  object</title>
-      <link>https://vulnogram.org/CVE-2025-1706</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1706</guid>
-      <description>Software installed and run as a non-privileged user may conduct improper GPU system calls to trigger use-after-free kernel exceptions.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 17 May 2025 00:40:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-0467 · 8.2 HIGH — GPU DDK - rgxfw_hwperf_get_packet_buffer OOB write</title>
-      <link>https://vulnogram.org/CVE-2025-0467</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0467</guid>
-      <description>Kernel software installed and running inside a Guest VM may exploit memory shared with the GPU Firmware to write data outside the Guest&apos;s virtualised GPU memory.</description>
-      <category>High</category>
-      <pubDate>Fri, 18 Apr 2025 00:32:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-25178 · 7.8 HIGH — GPU DDK - PhysmemWrapExtMem uiSize=0 corrupts kernel memory</title>
-      <link>https://vulnogram.org/CVE-2025-25178</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-25178</guid>
-      <description>Software installed and run as a non-privileged user may conduct improper GPU system calls to cause kernel system memory corruption.</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Apr 2025 15:42:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-0468 · 7.1 HIGH — GPU DDK - ui64RobustnessAddress can overwrite Freelist / HWRT (and bypass PMMETA)</title>
-      <link>https://vulnogram.org/CVE-2025-0468</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0468</guid>
-      <description>Software installed and run as a non-privileged user may conduct improper GPU system calls to subvert GPU HW to write to arbitrary physical memory pages. Under certain circumstances this exploit could be used to corrupt data pages not allocated by the…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Apr 2025 15:39:37 GMT</pubDate>
     </item>
   </channel>
 </rss>
