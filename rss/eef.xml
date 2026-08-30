@@ -11,7 +11,82 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 30 Aug 2026 15:22:05 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 19:03:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-78693 · 6.9 MEDIUM 🌩️ — Incomplete redaction re-attaches the original error path in AshGraphql, leaking internal field names</title>
+      <link>https://vulnogram.org/CVE-2026-78693</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78693</guid>
+      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_graphql allows a remote client to read internal field names that an application configured its error_handler to redact. In AshGraphql.Errors, each error is…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 30 Aug 2026 18:28:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80223 · 7.1 HIGH — Cross-tenant subscription disclosure in AshGraphql authorizes notifications in memory without a tenant-scoped read</title>
+      <link>https://vulnogram.org/CVE-2026-80223</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80223</guid>
+      <description>Incorrect Authorization vulnerability in ash-project ash_graphql allows an authenticated subscriber in one tenant to receive another tenant&apos;s records over GraphQL subscriptions. The subscription resolver in AshGraphql.Graphql.Resolver authorizes each…</description>
+      <category>High</category>
+      <pubDate>Sun, 30 Aug 2026 18:27:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81636 · 8.7 HIGH 🌩️ — Query-complexity limit bypass via first/last pagination arguments in AshGraphql enables denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-81636</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81636</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in ash-project ash_graphql allows an unauthenticated client to bypass the configured GraphQL query-complexity limit and force an unbounded database read. AshGraphql.Graphql.Resolver.q…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 30 Aug 2026 18:25:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81633 · 6.9 MEDIUM 🌩️ — Unhandled KeyError in AshGraphql relay node resolution crashes queries via an unknown type segment</title>
+      <link>https://vulnogram.org/CVE-2026-81633</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81633</guid>
+      <description>Improper Input Validation vulnerability in ash-project ash_graphql allows an unauthenticated client to crash a relay node(id: ...) query with an unhandled KeyError. AshGraphql.Graphql.Resolver.resolve_node/2 decodes the client-supplied global ID with…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 30 Aug 2026 18:22:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81643 · 2.3 LOW — Broken access control in AshGraphql subscription batcher applies authorization suppression to only the first notification</title>
+      <link>https://vulnogram.org/CVE-2026-81643</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81643</guid>
+      <description>Incorrect Authorization vulnerability in ash-project ash_graphql delivers GraphQL subscription payloads for records a subscriber is not authorized to see. In AshGraphql.Subscription.Batcher, do_send/5 resolves the first notification of a batch and fi…</description>
+      <category>Low</category>
+      <pubDate>Sun, 30 Aug 2026 18:20:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82367 · 2.3 LOW — Re-entrant synchronous publish in AshGraphql subscription batcher delivers one subscriber&apos;s records to another&apos;s topic</title>
+      <link>https://vulnogram.org/CVE-2026-82367</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82367</guid>
+      <description>Exposure of Data Element to Wrong Session vulnerability in ash-project ash_graphql can deliver one subscription&apos;s resolved records to a different subscriber&apos;s topic. AshGraphql.Subscription.Batcher.do_send/5 reads the resolved batch from the process…</description>
+      <category>Low</category>
+      <pubDate>Sun, 30 Aug 2026 18:17:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81322 · 2.1 LOW — Cloaked plaintext leaks through a non-sensitive action argument in AshCloak</title>
+      <link>https://vulnogram.org/CVE-2026-81322</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81322</guid>
+      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in ash-project ash_cloak allows anyone with access to logs, error trackers, or crash reports, or anyone who can trigger a validation error, to recover the plaintext of a field t…</description>
+      <category>Low</category>
+      <pubDate>Sun, 30 Aug 2026 18:06:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81319 · 5.9 MEDIUM — Unsafe deserialization of decrypted terms enables node DoS in AshCloak</title>
+      <link>https://vulnogram.org/CVE-2026-81319</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81319</guid>
+      <description>Deserialization of Untrusted Data vulnerability in ash-project ash_cloak allows an attacker who can influence the bytes of an encrypted column to crash the BEAM node, by triggering unbounded atom creation or a decompression bomb during decryption. As…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 30 Aug 2026 18:05:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78699 · 7.2 HIGH — rename_tenant returns :ok on a failed rename, enabling cross-tenant access in AshPostgres</title>
+      <link>https://vulnogram.org/CVE-2026-78699</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78699</guid>
+      <description>Unchecked Return Value vulnerability in ash-project ash_postgres allows a user who can drive a tenant rename to a name that collides with an existing tenant&apos;s schema to have their tenant record repointed at that other tenant&apos;s live schema, gaining ac…</description>
+      <category>High</category>
+      <pubDate>Sun, 30 Aug 2026 15:13:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-77454 · 5.9 MEDIUM — exists/2 predicate silently dropped on limited relationships with a parent() filter in AshSql</title>
       <link>https://vulnogram.org/CVE-2026-77454</link>
@@ -359,84 +434,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 06 Aug 2026 14:49:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66843 · 2.3 LOW 🌩️ — html_sanitize_ex HTML5 scrubber keeps attacker-supplied `&lt;object&gt;` elements, allowing untrusted content embedding</title>
-      <link>https://vulnogram.org/CVE-2026-66843</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66843</guid>
-      <description>Inclusion of Functionality from Untrusted Control Sphere vulnerability in the HTML5 scrubber in rrrene html_sanitize_ex allows a remote attacker to load a document of their choosing into a trusted page via the data attribute of an &lt;object&gt; element in…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 06 Aug 2026 14:48:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66885 · 6.8 MEDIUM — Livebook Teams identity callback lacks state binding, allowing login CSRF</title>
-      <link>https://vulnogram.org/CVE-2026-66885</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66885</guid>
-      <description>Cross-Site Request Forgery (CSRF) vulnerability in livebook-dev livebook allows an attacker to authenticate a victim&apos;s browser session under the attacker&apos;s own Livebook Teams identity. When Livebook is configured to use Livebook Teams for identity, L…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 19:44:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66298 · 8.6 HIGH 🌩️ — JS-view sandboxed output can synthesize keyboard events to trigger unconfirmed global shortcuts</title>
-      <link>https://vulnogram.org/CVE-2026-66298</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66298</guid>
-      <description>Origin Validation Error vulnerability in livebook-dev livebook allows untrusted notebook output JavaScript to trigger session-wide keyboard shortcuts, including forced evaluation of all cells and runtime restart. Livebook&apos;s JS-view feature renders no…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 19:44:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66297 · 5 MEDIUM — Unescaped deployment environment variables in generated setup commands</title>
-      <link>https://vulnogram.org/CVE-2026-66297</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66297</guid>
-      <description>Improper Neutralization of Special Elements used in an OS Command (OS Command Injection) vulnerability in livebook-dev livebook allows command injection into generated deployment setup commands. LivebookWeb.Hub.Teams.DeploymentGroupAgentComponent.doc…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 19:43:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66881 · 7 HIGH 🌩️ — Path traversal in imported file_entries name allows arbitrary file write via URL-type entry download</title>
-      <link>https://vulnogram.org/CVE-2026-66881</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66881</guid>
-      <description>Relative Path Traversal vulnerability in livebook-dev livebook allows an attacker-authored notebook to write a file with attacker-controlled content to an arbitrary path. A .livemd notebook can declare file_entries metadata, each entry carrying a nam…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 19:43:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68746 · 7.7 HIGH — Livebook Teams identity check fails open when the deployment group is unresolvable, allowing unauthenticated access</title>
-      <link>https://vulnogram.org/CVE-2026-68746</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68746</guid>
-      <description>Not Failing Securely (&apos;Failing Open&apos;) vulnerability in livebook-dev livebook allows an unauthenticated network client to obtain full access to a Livebook server that enforces identity through Livebook Teams. A Livebook Agent or App Server connected t…</description>
-      <category>High</category>
-      <pubDate>Wed, 05 Aug 2026 19:43:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66883 · 6.3 MEDIUM 🌩️ — Oidcc.Plug.Authorize user agent session binding inert due to case-sensitive header lookup</title>
-      <link>https://vulnogram.org/CVE-2026-66883</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66883</guid>
-      <description>Improper Handling of Case Sensitivity vulnerability in Erlang Ecosystem Foundation oidcc_plug (Oidcc.Plug.Authorize module) renders the user agent session binding inert, removing a defense in depth control against replay of a stolen session. This vul…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 04 Aug 2026 11:46:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66884 · 2.1 LOW 🌩️ — Oidcc.Plug.AuthorizationCallback accepts callbacks with no authorize session or no state parameter, defeating CSRF protection</title>
-      <link>https://vulnogram.org/CVE-2026-66884</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66884</guid>
-      <description>Cross-Site Request Forgery vulnerability in Erlang Ecosystem Foundation oidcc_plug (Oidcc.Plug.AuthorizationCallback module) allows an attacker to make a victim&apos;s browser complete an authorization flow the victim never initiated. This vulnerability i…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 04 Aug 2026 11:45:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66296 · 5.1 MEDIUM 🌩️ — Reflected XSS in oaskit&apos;s default HTML error handler</title>
-      <link>https://vulnogram.org/CVE-2026-66296</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66296</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (XSS) vulnerability in lud oaskit allows reflected cross-site scripting via the default HTML error handler. Oaskit.ErrorHandler.Default.format_reason/4 and Oaskit.ErrorHandler.Default.reason…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 19:04:30 GMT</pubDate>
     </item>
   </channel>
 </rss>
