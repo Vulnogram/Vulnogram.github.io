@@ -11,7 +11,63 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 30 Aug 2026 11:14:57 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 15:22:05 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-77454 · 5.9 MEDIUM — exists/2 predicate silently dropped on limited relationships with a parent() filter in AshSql</title>
+      <link>https://vulnogram.org/CVE-2026-77454</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77454</guid>
+      <description>Incorrect Authorization vulnerability in ash-project ash_sql allows a caller to bypass a scoping or authorization filter expressed as exists/2 over a relationship that declares both a limit (or from_many?) and a parent(...)-referencing filter or sort…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 30 Aug 2026 12:01:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81316 · 2.1 LOW — Same-named aggregates with differing filters are conflated in AshSql</title>
+      <link>https://vulnogram.org/CVE-2026-81316</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81316</guid>
+      <description>Incorrect Authorization vulnerability in ash-project ash_sql allows a caller to receive an aggregate value computed over rows a more restrictive filter should have excluded, disclosing counts, sums, or lists across an authorization or tenancy boundar…</description>
+      <category>Low</category>
+      <pubDate>Sun, 30 Aug 2026 11:59:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81318 · 2.1 LOW — Distinct-query aggregate drops the tenant schema prefix, leaking across tenants in AshSql</title>
+      <link>https://vulnogram.org/CVE-2026-81318</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81318</guid>
+      <description>Incorrect Authorization vulnerability in ash-project ash_sql allows a caller in a schema-based multitenant application to receive aggregate values computed from another tenant&apos;s rows. When an aggregate is computed over a distinct query, AshSql.Aggreg…</description>
+      <category>Low</category>
+      <pubDate>Sun, 30 Aug 2026 11:56:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78691 · 2.1 LOW — Unescaped backslash allows LIKE wildcard injection in AshSql string search</title>
+      <link>https://vulnogram.org/CVE-2026-78691</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78691</guid>
+      <description>Improper Neutralization of Special Elements in Data Query Logic vulnerability in ash-project ash_sql allows a user who supplies a search term to contains/2, string_starts_with/2, or string_ends_with/2 to inject live SQL LIKE wildcards, turning a lite…</description>
+      <category>Low</category>
+      <pubDate>Sun, 30 Aug 2026 11:55:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80227 · 2.1 LOW — SQL string_trim removes only spaces, diverging from in-memory trimming in AshSql</title>
+      <link>https://vulnogram.org/CVE-2026-80227</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80227</guid>
+      <description>Incorrect Comparison vulnerability in ash-project ash_sql allows a user to pad a string field with tab, newline, carriage-return, or form-feed characters and pass a trimmed uniqueness or equality check in the database that the same expression would f…</description>
+      <category>Low</category>
+      <pubDate>Sun, 30 Aug 2026 11:53:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78228 · 5.9 MEDIUM — Unbounded handle_error recursion enables denial of service in AshOban triggers</title>
+      <link>https://vulnogram.org/CVE-2026-78228</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78228</guid>
+      <description>Uncontrolled Recursion vulnerability in ash-project ash_oban allows a user who can drive a trigger&apos;s on_error action to fail on the final attempt to exhaust worker CPU and memory, denying service. The generated worker&apos;s atomic handle_error/4 runs the…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 30 Aug 2026 11:51:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78038 · 5.9 MEDIUM — Job argument injection via :args overrides primary_key and tenant in AshOban</title>
+      <link>https://vulnogram.org/CVE-2026-78038</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78038</guid>
+      <description>Improperly Controlled Modification of Dynamically-Determined Object Attributes vulnerability in ash-project ash_oban allows a user whose input reaches the :args option of AshOban.build_trigger/3 to retarget an update or destroy trigger at another rec…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 30 Aug 2026 11:50:21 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-77846 · 2.1 LOW — JSON path injection via unescaped get_path segments in AshSqlite</title>
       <link>https://vulnogram.org/CVE-2026-77846</link>
@@ -381,65 +437,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 03 Aug 2026 19:04:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55734 · 6.9 MEDIUM — guardian atom exhaustion in Guardian.Permissions.encode_permissions!/1</title>
-      <link>https://vulnogram.org/CVE-2026-55734</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55734</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in ueberauth guardian (Guardian.Permissions module) allows a denial of service via BEAM atom-table exhaustion. This vulnerability is associated with program file lib/guardian/permissi…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 01 Aug 2026 18:46:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55733 · 6.9 MEDIUM — Atom-table exhaustion denial of service in Guardian permissions AtomEncoding via unbounded atom creation</title>
-      <link>https://vulnogram.org/CVE-2026-55733</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55733</guid>
-      <description>Allocation of Resources Without Limits or Throttling in ueberauth guardian allows denial of service via unbounded atom creation from attacker-controlled binary input. Guardian.Permissions.AtomEncoding encodes permission scopes by passing arbitrary bi…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 01 Aug 2026 18:46:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54894 · 6.9 MEDIUM — Atom-table exhaustion denial of service in Guardian via unbounded atom creation from binary keys</title>
-      <link>https://vulnogram.org/CVE-2026-54894</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54894</guid>
-      <description>Allocation of Resources Without Limits or Throttling in ueberauth guardian allows denial of service via unbounded atom creation from attacker-influenced binary input. Guardian.Plug.Keys derives connection and session namespace keys by passing arbitra…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 01 Aug 2026 18:46:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55735 · 8.2 HIGH 🌩️ — Guardian.revoke/3 acts on unverified token claims, allowing forged-token session revocation</title>
-      <link>https://vulnogram.org/CVE-2026-55735</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55735</guid>
-      <description>Improper Verification of Cryptographic Signature in ueberauth guardian allows an unauthenticated attacker to revoke a victim&apos;s session with a forged token. Guardian.revoke/3 in lib/guardian.ex decodes the supplied token with peek/1, which performs no…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 01 Aug 2026 18:46:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65636 · 2.1 LOW — YAML injection via unescaped newlines in ymlr document comments</title>
-      <link>https://vulnogram.org/CVE-2026-65636</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65636</guid>
-      <description>Improper Neutralization of CRLF Sequences vulnerability in ufirstgroup ymlr (Elixir.Ymlr module) allows attackers to inject arbitrary content into generated YAML documents through document comments. Ymlr.document!/2 interpolates each caller-supplied…</description>
-      <category>Low</category>
-      <pubDate>Fri, 31 Jul 2026 13:29:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53431 · 9.1 CRITICAL 🌩️ — Boruta accepts expired JWT client assertions due to missing exp claim validation</title>
-      <link>https://vulnogram.org/CVE-2026-53431</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53431</guid>
-      <description>Authentication Bypass by Capture-replay vulnerability in malach-it Boruta allows an attacker who has obtained a previously valid JWT client assertion to authenticate as the issuing OAuth client after the assertion has expired. Boruta accepts JWT-base…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 14:17:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65635 · 8.3 HIGH 🌩️ — Boruta dynamic client registration allows creation of over-privileged OAuth clients</title>
-      <link>https://vulnogram.org/CVE-2026-65635</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65635</guid>
-      <description>Improper Isolation or Compartmentalization vulnerability in malach-it boruta (Elixir.Boruta.Openid module) allows attackers to register OpenID Connect clients with administrative privileges through the dynamic client registration entry point. Boruta.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Jul 2026 14:17:02 GMT</pubDate>
     </item>
   </channel>
 </rss>
