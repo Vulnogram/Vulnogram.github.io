@@ -11,7 +11,57 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 31 Aug 2026 00:14:17 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 02:45:12 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-75760 · 7.1 HIGH — AshAi vectorize change leaks raw embedding-provider errors, including credentials, in a user-facing error</title>
+      <link>https://vulnogram.org/CVE-2026-75760</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75760</guid>
+      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_ai discloses provider request state and credentials in a user-facing validation error. In AshAi.Changes.Vectorize, when the embedding provider call fails th…</description>
+      <category>High</category>
+      <pubDate>Mon, 31 Aug 2026 01:09:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82580 · 5.3 MEDIUM — AshAi echoes raw tool exception messages into the conversation, disclosing internal details</title>
+      <link>https://vulnogram.org/CVE-2026-82580</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82580</guid>
+      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_ai discloses internal error text to chat users. In AshAi.ToolLoop and AshAi.Tools, an exception raised while executing a tool was serialized verbatim with E…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 31 Aug 2026 01:09:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82579 · 6 MEDIUM — AshAi tool loop never terminates when all tool calls are filtered out, enabling denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-82579</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82579</guid>
+      <description>Loop with Unreachable Exit Condition (Infinite Loop) vulnerability in ash-project ash_ai allows an attacker who can influence a model&apos;s output to hang the tool loop and drive unbounded, repeated model requests. AshAi.ToolLoop classifies a model respo…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 31 Aug 2026 01:07:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82564 · 7.1 HIGH — Identity tool filter in AshAi accepts operator maps, allowing update or destroy of unidentified records</title>
+      <link>https://vulnogram.org/CVE-2026-82564</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82564</guid>
+      <description>Authorization Bypass Through User-Controlled Key vulnerability in ash-project ash_ai allows a caller of an identity-configured tool to update or destroy records it never identified, including every row in the table. In AshAi.Tool.Execution, identity_…</description>
+      <category>High</category>
+      <pubDate>Mon, 31 Aug 2026 01:06:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81315 · 7.4 HIGH 🌩️ — MCP DNS-rebinding origin check in AshAi is bypassed by a spoofed X-Forwarded-Proto header</title>
+      <link>https://vulnogram.org/CVE-2026-81315</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81315</guid>
+      <description>Origin Validation Error vulnerability in ash-project ash_ai allows a malicious web page to bypass the MCP server&apos;s DNS-rebinding protection and issue cross-site requests to a user&apos;s local MCP server with that user&apos;s actor. In AshAi.Mcp.Server, with t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 31 Aug 2026 00:57:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77956 · 10 CRITICAL 🌩️ — EEx template evaluation of prompt content in AshAi enables remote code execution</title>
+      <link>https://vulnogram.org/CVE-2026-77956</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77956</guid>
+      <description>Improper Control of Generation of Code (Code Injection) vulnerability in ash-project ash_ai allows a remote, unauthenticated client to execute arbitrary Elixir code. AshAi.Actions.Prompt evaluates prompt content through EEx.eval_string/2. The documen…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 31 Aug 2026 00:56:26 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-78693 · 6.9 MEDIUM 🌩️ — Incomplete redaction re-attaches the original error path in AshGraphql, leaking internal field names</title>
       <link>https://vulnogram.org/CVE-2026-78693</link>
@@ -381,59 +431,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 07 Aug 2026 16:42:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66838 · 5.9 MEDIUM — SQL injection via the :comment option in Postgrex.stream/4</title>
-      <link>https://vulnogram.org/CVE-2026-66838</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66838</guid>
-      <description>Improper Neutralization of Special Elements used in an SQL Command (&apos;SQL Injection&apos;) vulnerability in elixir-ecto postgrex allows SQL Injection via the :comment option of Postgrex.stream/4. An attacker who can influence that value can close the comme…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 07 Aug 2026 12:20:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68750 · 8.2 HIGH 🌩️ — Quadratic sibling re-flattening in the html_sanitize_ex traversal engine allows CPU-exhaustion denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-68750</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68750</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in the traversal engine in rrrene html_sanitize_ex allows an unauthenticated remote attacker to exhaust server CPU and memory via a flat run of sibling elements in sanitized HTML. The list clause of Ht…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 06 Aug 2026 14:50:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68749 · 8.2 HIGH 🌩️ — Quadratic regex backtracking in the html_sanitize_ex CSS scrubber allows CPU-exhaustion denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-68749</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68749</guid>
-      <description>Inefficient Regular Expression Complexity vulnerability in the CSS scrubber in rrrene html_sanitize_ex allows an unauthenticated remote attacker to exhaust server CPU via a long CSS declaration in sanitized HTML. The declaration regex in HtmlSanitize…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 06 Aug 2026 14:50:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68747 · 2.3 LOW 🌩️ — CSS sanitizer allowlist bypass in html_sanitize_ex via non-declaration input</title>
-      <link>https://vulnogram.org/CVE-2026-68747</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68747</guid>
-      <description>Improper Neutralization of Special Elements in Output Used by a Downstream Component (&apos;Injection&apos;) vulnerability in the CSS scrubber in rrrene html_sanitize_ex allows an unauthenticated remote attacker to inject CSS at-rules, including an import of a…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 06 Aug 2026 14:50:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66829 · 2.3 LOW 🌩️ — html_sanitize_ex HTML5 scrubber keeps attacker-supplied meta refresh, allowing forced cross-origin redirection</title>
-      <link>https://vulnogram.org/CVE-2026-66829</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66829</guid>
-      <description>URL Redirection to Untrusted Site (&apos;Open Redirect&apos;) vulnerability in the HTML5 scrubber in rrrene html_sanitize_ex allows a remote attacker to force visitors of a page to navigate to a site of the attacker&apos;s choosing via a &lt;meta http-equiv=&quot;refresh&quot;&gt;…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 06 Aug 2026 14:49:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66370 · 4.8 MEDIUM 🌩️ — html_sanitize_ex HTML5 scrubber keeps attacker-supplied form-association attributes, allowing form hijacking</title>
-      <link>https://vulnogram.org/CVE-2026-66370</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66370</guid>
-      <description>URL Redirection to Untrusted Site (&apos;Open Redirect&apos;) vulnerability in the HTML5 scrubber in rrrene html_sanitize_ex allows an unauthenticated remote attacker to retarget a form already on the rendering page and receive whatever the victim submits, inc…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 06 Aug 2026 14:49:15 GMT</pubDate>
     </item>
   </channel>
 </rss>
