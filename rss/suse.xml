@@ -11,7 +11,15 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 31 Aug 2026 09:13:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 16:47:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-78422 · 7.3 HIGH — zbus_polkit: polkit authorization bypass via PID reuse due to incorrect D-Bus type for the subject UID</title>
+      <link>https://vulnogram.org/CVE-2026-78422</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78422</guid>
+      <description>Subject::new_for_owner() in the zbus_polkit crate encodes the uid entry of a unix-process polkit subject as an unsigned 32-bit integer (D-Bus type u), whereas the org.freedesktop.PolicyKit1.Authority interface specifies a signed 32-bit integer (D-Bus…</description>
+      <category>High</category>
+      <pubDate>Mon, 31 Aug 2026 14:14:13 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-71402 · 5.4 MEDIUM — wicked: out-of-bounds read in the DHCPv4 option parser due to payload length taken from the IP total length</title>
       <link>https://vulnogram.org/CVE-2026-71402</link>
@@ -417,14 +425,6 @@
       <description>Passing of unsanitized strings from DHCP replies into the wicked dhcp client before wicked 0.6.79 could be used by attackers operating a malicious DHCP server to execute code on the local machine.</description>
       <category>High</category>
       <pubDate>Tue, 16 Jun 2026 15:26:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41054 · 7.8 HIGH — Missing exit out of permission check in haveged could lead to root exploit</title>
-      <link>https://vulnogram.org/CVE-2026-41054</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41054</guid>
-      <description>In `src/havegecmd.c`, the `socket_handler` function performs a credential check on the abstract UNIX socket (`\0/sys/entropy/haveged`). However, while it detects if the connecting user is not root (`cred.uid != 0`) and prepares a negative acknowledge…</description>
-      <category>High</category>
-      <pubDate>Wed, 20 May 2026 08:56:14 GMT</pubDate>
     </item>
   </channel>
 </rss>
