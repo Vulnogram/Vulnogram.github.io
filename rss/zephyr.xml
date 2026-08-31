@@ -11,7 +11,47 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 31 Aug 2026 16:47:03 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 21:57:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-14697 · 6.5 MEDIUM — IPv6 Neighbor Solicitation packet leak causes TX pool exhaustion denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-14697</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14697</guid>
+      <description>net_ipv6_send_ns() in subsys/net/ip/ipv6_nbr.c allocates a transmit net_pkt for a Neighbor Solicitation. When it is called with a data packet pending on an unresolved neighbor and that neighbor&apos;s pending_queue is already non-empty (an NS is already o…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 31 Aug 2026 19:34:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14696 · 6.5 MEDIUM — Ethernet bridge RX packet leak enables denial of service via RX buffer-pool exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-14696</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14696</guid>
+      <description>When Ethernet bridging is enabled (CONFIG_NET_ETHERNET_BRIDGE), eth_bridge_input_process() in subsys/net/l2/ethernet/bridge/bridge_input.c decides how each frame received on a bridge member interface is handled. For frames that must also be delivered…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 31 Aug 2026 18:57:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14368 · 5.4 MEDIUM — Off-by-one out-of-bounds NUL write in Zephyr LwM2M JSON string parser</title>
+      <link>https://vulnogram.org/CVE-2026-14368</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14368</guid>
+      <description>The LwM2M JSON content formatter&apos;s get_string() in subsys/net/lib/lwm2m/lwm2m_rw_json.c copies a parsed JSON string into a caller-supplied buffer and NUL-terminates it. The length guard used if (string_length &gt; buflen), which accepts a string whose l…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 31 Aug 2026 18:45:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14367 · 3.1 LOW — I3C IBI work-node free-list data race between ISR and workqueue thread</title>
+      <link>https://vulnogram.org/CVE-2026-14367</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14367</guid>
+      <description>The I3C IBI subsystem in drivers/i3c/i3c_ibi_workq.c hands out statically-allocated work nodes through a free-list i3c_ibi_work_nodes_free implemented as a plain sys_slist_t, which provides no synchronization. The allocation helpers (i3c_ibi_work_enq…</description>
+      <category>Low</category>
+      <pubDate>Mon, 31 Aug 2026 18:13:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14366 · 6.4 MEDIUM — SiWx91x WiFi driver double-unref / use-after-free of caller-owned TX net_pkt</title>
+      <link>https://vulnogram.org/CVE-2026-14366</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14366</guid>
+      <description>The Silicon Labs SiWx917 WiFi driver&apos;s transmit callback siwx91x_send() in drivers/wifi/siwx91x/siwx91x_wifi.c frees a network packet it does not own. In the Zephyr TX path the net_pkt is owned by the L2/networking stack; the driver only borrows it t…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 31 Aug 2026 16:47:48 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-13735 · 3.7 LOW — WireGuard keepalive transport-data messages accepted without Poly1305 authentication</title>
       <link>https://vulnogram.org/CVE-2026-13735</link>
@@ -371,46 +411,6 @@
       <description>The SF32LB MPI QSPI NOR flash driver (drivers/flash/flash_sf32lb_mpi_qspi_nor.c) validated the flash offset and length on its read and write paths with the test (offset + size) &gt; data-&gt;size. Because offset is a signed off_t while size is unsigned, a…</description>
       <category>Medium</category>
       <pubDate>Fri, 07 Aug 2026 21:10:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11742 · 3.6 LOW — Use-after-free race in kernel `k_queue_peek_head/tail` due to missing spinlock</title>
-      <link>https://vulnogram.org/CVE-2026-11742</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11742</guid>
-      <description>The kernel queue helper z_queue_node_peek() in kernel/queue.c dereferences a node taken from a queue&apos;s data_q list, reading the node&apos;s flag byte and, for items enqueued via k_queue_alloc_append/alloc_prepend, the data pointer of an internally allocat…</description>
-      <category>Low</category>
-      <pubDate>Fri, 07 Aug 2026 21:10:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11368 · 7.1 HIGH — Use-after-free in Bluetooth host ATT TX completion on disconnect mid-transfer</title>
-      <link>https://vulnogram.org/CVE-2026-11368</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11368</guid>
-      <description>The Bluetooth host ATT layer (subsys/bluetooth/host/att.c) associates each in-flight ATT TX buffer with its owning channel via the static tx_meta_data_storage[] array (data-&gt;att_chan = chan). When a buffer&apos;s last reference is dropped, its net-buf des…</description>
-      <category>High</category>
-      <pubDate>Tue, 04 Aug 2026 14:23:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10849 · 8.2 HIGH — Heap out-of-bounds write in Zephyr hawkBit OTA client when terminating server response body</title>
-      <link>https://vulnogram.org/CVE-2026-10849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10849</guid>
-      <description>The hawkBit device management client in subsys/mgmt/hawkbit accumulates the body of an HTTP response from the update server into a heap buffer in response_json_cb() (subsys/mgmt/hawkbit/hawkbit.c). The buffer is sized to hold the received body bytes…</description>
-      <category>High</category>
-      <pubDate>Mon, 03 Aug 2026 21:21:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10848 · 7 HIGH — Out-of-bounds read in Zephyr OCPP 1.6 RPC message parser (parse_rpc_msg)</title>
-      <link>https://vulnogram.org/CVE-2026-10848</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10848</guid>
-      <description>The OCPP 1.6 client in subsys/net/lib/ocpp parsed inbound WAMP RPC frames in parse_rpc_msg() (subsys/net/lib/ocpp/ocpp_j.c) using a hand-rolled helper, extract_string_field(), that copied the message&apos;s uid and action fields with strncpy(out_buf, toke…</description>
-      <category>High</category>
-      <pubDate>Sun, 02 Aug 2026 16:12:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10774 · 2.4 LOW — PSA key-slot leak in Bluetooth Mesh subnet deletion leading to resource-exhaustion DoS</title>
-      <link>https://vulnogram.org/CVE-2026-10774</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10774</guid>
-      <description>Zephyr&apos;s Bluetooth Mesh subnet key management leaks one PSA Crypto key slot on every subnet-key teardown. In subsys/bluetooth/mesh/subnet.c, net_keys_create() imports the Private Beacon Key into a PSA key slot under CONFIG_BT_MESH_PRIV_BEACONS (enabl…</description>
-      <category>Low</category>
-      <pubDate>Sun, 02 Aug 2026 14:20:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
