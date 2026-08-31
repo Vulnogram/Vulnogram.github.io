@@ -11,7 +11,98 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 31 Aug 2026 02:45:12 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 09:13:38 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-82725 · 2.3 LOW — AshPhoenix FilterForm allows filtering across non-public relationships, disclosing private related data</title>
+      <link>https://vulnogram.org/CVE-2026-82725</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82725</guid>
+      <description>Authorization Bypass Through User-Controlled Key vulnerability in ash-project ash_phoenix lets an attacker who controls filter form parameters filter across relationships the resource author marked non-public, turning the returned rows into a boolean…</description>
+      <category>Low</category>
+      <pubDate>Mon, 31 Aug 2026 03:09:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82724 · 7.6 HIGH — Broken access control in AshPhoenix SubdomainHook via a nil tenant in handle_subdomain</title>
+      <link>https://vulnogram.org/CVE-2026-82724</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82724</guid>
+      <description>Incorrect Authorization vulnerability in ash-project ash_phoenix invokes the SubdomainHook authorization callback with a nil tenant, so tenant-scoped access checks never see the tenant they are meant to enforce. AshPhoenix.LiveView.SubdomainHook.on_m…</description>
+      <category>High</category>
+      <pubDate>Mon, 31 Aug 2026 03:07:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82726 · 6.3 MEDIUM 🌩️ — AshPhoenix get_subdomain maps a crafted or differently-cased Host header to an arbitrary tenant</title>
+      <link>https://vulnogram.org/CVE-2026-82726</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82726</guid>
+      <description>Permissive Regular Expression vulnerability in ash-project ash_phoenix lets a remote client select the tenant an Ash application uses, or degrade the request, by sending a crafted Host header. AshPhoenix.Helpers.get_subdomain/2 stripped the root doma…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 31 Aug 2026 03:05:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82727 · 2.3 LOW — AshPhoenix Form.Auto leaks submitted params in an unknown _union_type error message</title>
+      <link>https://vulnogram.org/CVE-2026-82727</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82727</guid>
+      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_phoenix writes the entire raw submitted param map into an exception message, so secrets submitted alongside a union form field leak into logs, crash reports…</description>
+      <category>Low</category>
+      <pubDate>Mon, 31 Aug 2026 03:03:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82673 · 8.3 HIGH — Path traversal in AshAdmin file uploads via unsanitized client filename</title>
+      <link>https://vulnogram.org/CVE-2026-82673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82673</guid>
+      <description>Improper Limitation of a Pathname to a Restricted Directory (Path Traversal) vulnerability in ash-project ash_admin allows writing attacker-controlled bytes to arbitrary paths on the server. AshAdmin.Components.Resource.Form.consume_file_uploads/1 bu…</description>
+      <category>High</category>
+      <pubDate>Mon, 31 Aug 2026 02:33:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81853 · 2.3 LOW — AshAdmin composite primary key decoding accepts arbitrary fields, enabling a secret-attribute oracle</title>
+      <link>https://vulnogram.org/CVE-2026-81853</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81853</guid>
+      <description>Authorization Bypass Through User-Controlled Key vulnerability in ash-project ash_admin turns a record-lookup URL into an equality oracle over sensitive attributes. AshAdmin.Helpers.decode_primary_key/2 decodes the composite-primary-key form (Base64…</description>
+      <category>Low</category>
+      <pubDate>Mon, 31 Aug 2026 02:31:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81852 · 2.1 LOW 🌩️ — AshAdmin ships a hardcoded CSP nonce, allowing nonce-based CSP bypass</title>
+      <link>https://vulnogram.org/CVE-2026-81852</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81852</guid>
+      <description>Use of Insufficiently Random Values vulnerability in ash-project ash_admin ships a hardcoded, publicly known CSP nonce, defeating nonce-based Content-Security-Policy protection. When mounted without :csp_nonce_assign_key, AshAdmin.Router.ash_admin/2…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 31 Aug 2026 02:29:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82681 · 2 LOW — Query-parameter injection in AshAdmin row-action links via unencoded string primary keys</title>
+      <link>https://vulnogram.org/CVE-2026-82681</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82681</guid>
+      <description>Improper Encoding or Escaping of Output vulnerability in ash-project ash_admin lets an attacker who controls a record&apos;s string primary key rewrite the target of AshAdmin&apos;s row-action links. The Table, DataTable, and Show components built row-action U…</description>
+      <category>Low</category>
+      <pubDate>Mon, 31 Aug 2026 02:26:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77850 · 8.4 HIGH — Stored XSS in AshAdmin relationship typeahead via unescaped label_field content</title>
+      <link>https://vulnogram.org/CVE-2026-77850</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77850</guid>
+      <description>Stored Cross-site Scripting vulnerability in ash-project ash_admin executes attacker-supplied record content as script in an administrator&apos;s browser. The relationship typeahead components AshAdmin.Components.Resource.RelationshipField and AshAdmin.Co…</description>
+      <category>High</category>
+      <pubDate>Mon, 31 Aug 2026 02:23:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82722 · 8.3 HIGH — AshAdmin LiveView events intern atoms from client input, exhausting the atom table (node DoS)</title>
+      <link>https://vulnogram.org/CVE-2026-82722</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82722</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in ash-project ash_admin lets any client that can reach the admin LiveView exhaust the BEAM atom table and crash the entire node. Two LiveView event handlers interned atoms from unval…</description>
+      <category>High</category>
+      <pubDate>Mon, 31 Aug 2026 02:22:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75757 · 8.3 HIGH 🌩️ — AshAdmin cookie reader matches names by substring, enabling actor/session shadowing from a sibling subdomain</title>
+      <link>https://vulnogram.org/CVE-2026-75757</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75757</guid>
+      <description>Reliance on Cookies without Validation and Integrity Checking vulnerability in ash-project ash_admin lets an attacker who controls a sibling subdomain rebind an admin&apos;s session to a different actor, tenant, or authorization mode. AshAdmin&apos;s client Ja…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 31 Aug 2026 02:20:17 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-75760 · 7.1 HIGH — AshAi vectorize change leaks raw embedding-provider errors, including credentials, in a user-facing error</title>
       <link>https://vulnogram.org/CVE-2026-75760</link>
@@ -335,102 +426,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 20 Aug 2026 17:27:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53425 · 7.6 HIGH 🌩️ — Missing InResponseTo validation in Samly allows acceptance of unsolicited SAML responses</title>
-      <link>https://vulnogram.org/CVE-2026-53425</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53425</guid>
-      <description>Insufficient Verification of Data Authenticity vulnerability in dropbox samly allows an attacker to establish an authenticated session using a SAML response the service provider never requested. Samly.SPHandler.validate_authresp/3 in lib/samly/sp_han…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 20 Aug 2026 17:26:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67581 · 8.7 HIGH 🌩️ — On-chain transfer proof is not single-use in mpp EVM payment method, enabling cross-challenge replay</title>
-      <link>https://vulnogram.org/CVE-2026-67581</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67581</guid>
-      <description>Authentication Bypass by Capture-replay in ZenHive mpp allows an unauthenticated remote client to obtain paid resources by resubmitting one settled on-chain transfer. MPP.Methods.EVM.verify/2 accepts a transaction-hash credential and matches a transf…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 19 Aug 2026 17:20:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73541 · 8.3 HIGH 🌩️ — Tempo fee sponsorship in mpp bounds each transaction but not aggregate exposure, allowing concurrent sponsor-wallet drain</title>
-      <link>https://vulnogram.org/CVE-2026-73541</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73541</guid>
-      <description>Allocation of Resources Without Limits or Throttling in ZenHive mpp allows an unauthenticated remote client to drain the fee-payer wallet through concurrent sponsored payments, denying service to legitimate payers once it is empty. MPP.Methods.Tempo.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 19 Aug 2026 17:20:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73136 · 8.2 HIGH 🌩️ — Static memo configuration in mpp Tempo disables per-challenge attribution binding, enabling third-party replay</title>
-      <link>https://vulnogram.org/CVE-2026-73136</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73136</guid>
-      <description>Authentication Bypass by Capture-replay in ZenHive mpp allows an unauthenticated third party to obtain paid resources by replaying a transfer settled by an unrelated payer. MPP.Methods.Tempo normally binds a settled TIP-20 TransferWithMemo to the spe…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 19 Aug 2026 17:19:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73829 · 6.3 MEDIUM 🌩️ — Non-atomic hash-credential dedup in mpp Tempo allows replay of a confirmed payment under a concurrent race</title>
-      <link>https://vulnogram.org/CVE-2026-73829</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73829</guid>
-      <description>Time-of-check Time-of-use (TOCTOU) Race Condition in ZenHive mpp allows an unauthenticated remote client to redeem one confirmed on-chain payment for multiple paid-resource accesses. The type=&quot;hash&quot; credential path in MPP.Methods.Tempo.verify/2 guard…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 19 Aug 2026 17:19:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-43971 · 6.3 MEDIUM 🌩️ — Link Header Directive Smuggling via Unescaped target/rel/Attribute Keys in cow_link:link/1</title>
-      <link>https://vulnogram.org/CVE-2026-43971</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-43971</guid>
-      <description>Improper Encoding or Escaping of Output vulnerability in ninenines cowlib allows Link header directive smuggling via unescaped special characters in cow_link:link/1. cow_link:do_link/1 in cowlib interpolates the target URI, rel value, and attribute k…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 18 Aug 2026 09:01:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67579 · 7.5 HIGH — Filter expression injection via forged keyset pagination cursor in Ash</title>
-      <link>https://vulnogram.org/CVE-2026-67579</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67579</guid>
-      <description>Deserialization of Untrusted Data vulnerability in ash-project ash allows an unauthenticated attacker to inject a filter expression through a forged keyset pagination cursor, resulting in SQL injection or code execution depending on the data layer. R…</description>
-      <category>High</category>
-      <pubDate>Wed, 12 Aug 2026 20:04:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64941 · 2.1 LOW 🌩️ — Open redirect in Phoenix.LiveView.validate_local_url!/2 via ASCII tab, LF and CR</title>
-      <link>https://vulnogram.org/CVE-2026-64941</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64941</guid>
-      <description>URL Redirection to Untrusted Site (&apos;Open Redirect&apos;) vulnerability in phoenixframework phoenix_live_view allows an attacker to send a victim&apos;s browser to an origin of the attacker&apos;s choosing via a :to value containing ASCII tab, LF or CR. redirect/2 v…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 10 Aug 2026 11:05:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70395 · 2.1 LOW — Predicate injection in manage_relationship belongs_to lookup discloses secret lookup keys in Ash</title>
-      <link>https://vulnogram.org/CVE-2026-70395</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70395</guid>
-      <description>Improper Neutralization of Special Elements in Data Query Logic vulnerability in ash-project ash allows an attacker to forge a relationship to a record they cannot name, and to recover the secret value used to look it up. When manage_relationship is…</description>
-      <category>Low</category>
-      <pubDate>Sun, 09 Aug 2026 18:17:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-69659 · 5.9 MEDIUM — Memory exhaustion via unbounded deserialization of keyset pagination cursors in Ash.Page.Keyset</title>
-      <link>https://vulnogram.org/CVE-2026-69659</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-69659</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in ash-project ash allows an attacker to exhaust the memory of the node via a crafted keyset pagination cursor. Read actions with keyset pagination deserialize the client-supplied page[:after] or page[:…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 09 Aug 2026 18:01:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67585 · 8.7 HIGH 🌩️ — Atom Exhaustion via _entities Representation Keys in DivvyPayHQ absinthe_federation</title>
-      <link>https://vulnogram.org/CVE-2026-67585</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67585</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in DivvyPayHQ absinthe_federation allows an unauthenticated remote attacker to abort the Erlang VM via crafted _entities representation keys. Every key of every object in the represen…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 07 Aug 2026 16:42:22 GMT</pubDate>
     </item>
   </channel>
 </rss>
