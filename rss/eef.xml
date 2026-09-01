@@ -11,7 +11,150 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 01 Sep 2026 10:50:43 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 15:32:08 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-69664 · 8.7 HIGH 🌩️ — httpd parks a request worker indefinitely on a malformed chunk size sent after the headers</title>
+      <link>https://vulnogram.org/CVE-2026-69664</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-69664</guid>
+      <description>Missing Release of Resource after Effective Lifetime vulnerability in Erlang/OTP inets httpd allows an unauthenticated remote attacker to cause denial of service by sending a request with a chunked body whose chunk-size line is not a hexadecimal numb…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:59:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70409 · 6.3 MEDIUM 🌩️ — eldap does not bound the port component of a referral URL before integer conversion</title>
+      <link>https://vulnogram.org/CVE-2026-70409</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70409</guid>
+      <description>Improper Validation of Specified Quantity in Input vulnerability in Erlang/OTP eldap allows a malicious or compromised LDAP server to degrade availability by returning a referral URL whose port component is a very long run of digits. eldap:parse_port…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:51:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70405 · 6.3 MEDIUM 🌩️ — snmp BER INTEGER decoder applies no size limit to attacker-supplied integer fields</title>
+      <link>https://vulnogram.org/CVE-2026-70405</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70405</guid>
+      <description>Improper Validation of Specified Quantity in Input vulnerability in Erlang/OTP snmp allows a remote attacker to degrade availability by sending an SNMP message containing a BER INTEGER whose length field is arbitrarily large. snmp_pdus:dec_integer_no…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:50:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66835 · 8.2 HIGH 🌩️ — httpd mod_auth directory protection bypassed by a doubled slash in the request path</title>
+      <link>https://vulnogram.org/CVE-2026-66835</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66835</guid>
+      <description>Path Equivalence vulnerability in Erlang/OTP inets httpd allows a remote unauthenticated attacker to read files inside a mod_auth protected directory by prefixing the request path with an extra slash. httpd_request:validate_uri/1 normalises the reque…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:49:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73270 · 8.2 HIGH 🌩️ — httpd mod_auth directory protection bypassed by request path casing on case-insensitive filesystems</title>
+      <link>https://vulnogram.org/CVE-2026-73270</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73270</guid>
+      <description>Improper Handling of Case Sensitivity vulnerability in Erlang/OTP inets httpd allows a remote unauthenticated attacker to read files inside a mod_auth protected directory by requesting them with different casing, on deployments whose filesystem is ca…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:48:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75538 · 8.2 HIGH 🌩️ — A Signed Length Overflow in Erlang/OTP&apos;s inet TCP Driver Overflows the Receive Buffer Into BEAM VM Memory From an Unauthenticated Peer</title>
+      <link>https://vulnogram.org/CVE-2026-75538</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75538</guid>
+      <description>An attacker that connects to an open Erlang TCP port that uses the inet driver with {packet,4} mode can use a signed overflow in an incorrect packet length calculation to overflow the receive buffer into the VM allocator area and beyond up to about 2…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:48:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74994 · 6 MEDIUM — inets, httpd: Authentication Bypass via Directory Namespace Collapse in httpd mod_auth</title>
+      <link>https://vulnogram.org/CVE-2026-74994</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74994</guid>
+      <description>The mod_auth module in OTP&apos;s inets httpd server, when configured with dets or mnesia authentication backends and multiple directory configuration blocks, collapses all directory blocks into a single shared user/group namespace. A user added to one pr…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 01 Sep 2026 14:45:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74835 · 8.7 HIGH 🌩️ — inets,httpd: Memory Exhaustion via Unenforced max_body_size During Chunked Body Reception</title>
+      <link>https://vulnogram.org/CVE-2026-74835</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74835</guid>
+      <description>The inets application HTTP server httpd fails to enforce a configured body-size limit on chunked request. This issue affects OTP from OTP 17.0 before OTP 27.3.4.17, from OTP 28.0 before OTP 28.5.0.6, and from OTP 29.0 before OTP 29.0.6, corresponding…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:45:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73812 · 8.3 HIGH 🌩️ — inets, httpd: HTTP Request Smuggling via Transfer-Encoding and Content-Length</title>
+      <link>https://vulnogram.org/CVE-2026-73812</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73812</guid>
+      <description>httpd function check_header/3 rejects duplicate Content-Length (per CVE-2026-23941) but never checks for the TE+CL co-presence that RFC 9112 §6.3 identifies as a probable smuggling attempt. handle_body/3 frames by chunked and silently discards Conten…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:42:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73276 · 8.3 HIGH 🌩️ — inets, httpd: HTTP Request Smuggling via Whitespace-Before-Colon Header Dropping i</title>
+      <link>https://vulnogram.org/CVE-2026-73276</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73276</guid>
+      <description>Gracefulness code ignored cases that should be rejected, resulting in possible HTTP Request Smuggling opportunities. This issue affects OTP from OTP 22.2 before OTP 27.3.4.17, from OTP 28.0 before OTP 28.5.0.6, and from OTP 29.0 before OTP 29.0.6, co…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:41:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66357 · 8.3 HIGH 🌩️ — inets,httpd:HTTP Request Smuggling via obs-fold Header Continuation</title>
+      <link>https://vulnogram.org/CVE-2026-66357</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66357</guid>
+      <description>httpd has never implemented obs-fold (RFC 2616 §2.2 / RFC 7230 §3.2.4 header continuation lines). Every CRLF followed by a non-CRLF octet unconditionally starts a new header. This missing feature became a security concern as the understanding of HTTP…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:40:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59696 · 6.9 MEDIUM 🌩️ — uri_string does not bound the port component of a URI before integer conversion</title>
+      <link>https://vulnogram.org/CVE-2026-59696</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59696</guid>
+      <description>Improper Validation of Specified Quantity in Input vulnerability in Erlang/OTP stdlib allows a remote attacker to degrade availability by supplying a URI whose port component is a very long run of digits. uri_string:get_port/1 passes the port substri…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:37:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55951 · 8.2 HIGH 🌩️ — httpc memory exhaustion via unbounded response header accumulation</title>
+      <link>https://vulnogram.org/CVE-2026-55951</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55951</guid>
+      <description>The Erlang/OTP httpc HTTP client does not enforce a limit on the total size of response headers received from a server. The max_header_size option defaults to nolimit, and httpc_response:parse_headers/6 accumulates every header into a list before the…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:37:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71380 · 8.7 HIGH 🌩️ — httpd applies no timeout while receiving a request body, parking a worker on a stalled client</title>
+      <link>https://vulnogram.org/CVE-2026-71380</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71380</guid>
+      <description>Missing Release of Resource after Effective Lifetime vulnerability in Erlang/OTP inets httpd allows an unauthenticated remote attacker to cause denial of service by sending valid request headers with a large Content-Length and then stalling before th…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:35:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71562 · 6.3 MEDIUM 🌩️ — httpc does not bound server-supplied numeric header values before integer conversion</title>
+      <link>https://vulnogram.org/CVE-2026-71562</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71562</guid>
+      <description>Improper Validation of Specified Quantity in Input vulnerability in Erlang/OTP inets httpc allows a malicious or compromised HTTP server to degrade availability by returning a numeric header whose value is a very long run of digits. httpc_handler.erl…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:33:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-70399 · 8.7 HIGH 🌩️ — httpd does not enforce the documented default max_clients connection limit</title>
+      <link>https://vulnogram.org/CVE-2026-70399</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70399</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in Erlang/OTP inets httpd allows an unauthenticated remote attacker to cause denial of service by opening and holding open a large number of connections. The max_clients option is doc…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 14:33:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-82747 · 5.9 MEDIUM — Ash.Policy.Authorizer returns records denied by a runtime read policy to any actor</title>
       <link>https://vulnogram.org/CVE-2026-82747</link>
@@ -293,138 +436,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 31 Aug 2026 02:20:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75760 · 7.1 HIGH — AshAi vectorize change leaks raw embedding-provider errors, including credentials, in a user-facing error</title>
-      <link>https://vulnogram.org/CVE-2026-75760</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75760</guid>
-      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_ai discloses provider request state and credentials in a user-facing validation error. In AshAi.Changes.Vectorize, when the embedding provider call fails th…</description>
-      <category>High</category>
-      <pubDate>Mon, 31 Aug 2026 01:09:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82580 · 5.3 MEDIUM — AshAi echoes raw tool exception messages into the conversation, disclosing internal details</title>
-      <link>https://vulnogram.org/CVE-2026-82580</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82580</guid>
-      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_ai discloses internal error text to chat users. In AshAi.ToolLoop and AshAi.Tools, an exception raised while executing a tool was serialized verbatim with E…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 31 Aug 2026 01:09:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82579 · 6 MEDIUM — AshAi tool loop never terminates when all tool calls are filtered out, enabling denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-82579</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82579</guid>
-      <description>Loop with Unreachable Exit Condition (Infinite Loop) vulnerability in ash-project ash_ai allows an attacker who can influence a model&apos;s output to hang the tool loop and drive unbounded, repeated model requests. AshAi.ToolLoop classifies a model respo…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 31 Aug 2026 01:07:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82564 · 7.1 HIGH — Identity tool filter in AshAi accepts operator maps, allowing update or destroy of unidentified records</title>
-      <link>https://vulnogram.org/CVE-2026-82564</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82564</guid>
-      <description>Authorization Bypass Through User-Controlled Key vulnerability in ash-project ash_ai allows a caller of an identity-configured tool to update or destroy records it never identified, including every row in the table. In AshAi.Tool.Execution, identity_…</description>
-      <category>High</category>
-      <pubDate>Mon, 31 Aug 2026 01:06:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81315 · 7.4 HIGH 🌩️ — MCP DNS-rebinding origin check in AshAi is bypassed by a spoofed X-Forwarded-Proto header</title>
-      <link>https://vulnogram.org/CVE-2026-81315</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81315</guid>
-      <description>Origin Validation Error vulnerability in ash-project ash_ai allows a malicious web page to bypass the MCP server&apos;s DNS-rebinding protection and issue cross-site requests to a user&apos;s local MCP server with that user&apos;s actor. In AshAi.Mcp.Server, with t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 31 Aug 2026 00:57:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77956 · 8.9 HIGH — EEx template evaluation of prompt content in AshAi enables remote code execution</title>
-      <link>https://vulnogram.org/CVE-2026-77956</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77956</guid>
-      <description>Improper Control of Generation of Code (Code Injection) vulnerability in ash-project ash_ai allows a remote, unauthenticated client to execute arbitrary Elixir code. AshAi.Actions.Prompt evaluates prompt content through EEx.eval_string/2. The documen…</description>
-      <category>High</category>
-      <pubDate>Mon, 31 Aug 2026 00:56:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78693 · 6.9 MEDIUM 🌩️ — Incomplete redaction re-attaches the original error path in AshGraphql, leaking internal field names</title>
-      <link>https://vulnogram.org/CVE-2026-78693</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78693</guid>
-      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_graphql allows a remote client to read internal field names that an application configured its error_handler to redact. In AshGraphql.Errors, each error is…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 30 Aug 2026 18:28:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80223 · 7.1 HIGH — Cross-tenant subscription disclosure in AshGraphql authorizes notifications in memory without a tenant-scoped read</title>
-      <link>https://vulnogram.org/CVE-2026-80223</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80223</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash_graphql allows an authenticated subscriber in one tenant to receive another tenant&apos;s records over GraphQL subscriptions. The subscription resolver in AshGraphql.Graphql.Resolver authorizes each…</description>
-      <category>High</category>
-      <pubDate>Sun, 30 Aug 2026 18:27:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81636 · 8.7 HIGH 🌩️ — Query-complexity limit bypass via first/last pagination arguments in AshGraphql enables denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-81636</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81636</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in ash-project ash_graphql allows an unauthenticated client to bypass the configured GraphQL query-complexity limit and force an unbounded database read. AshGraphql.Graphql.Resolver.q…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 30 Aug 2026 18:25:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81633 · 6.9 MEDIUM 🌩️ — Unhandled KeyError in AshGraphql relay node resolution crashes queries via an unknown type segment</title>
-      <link>https://vulnogram.org/CVE-2026-81633</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81633</guid>
-      <description>Improper Input Validation vulnerability in ash-project ash_graphql allows an unauthenticated client to crash a relay node(id: ...) query with an unhandled KeyError. AshGraphql.Graphql.Resolver.resolve_node/2 decodes the client-supplied global ID with…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 30 Aug 2026 18:22:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81643 · 2.3 LOW — Broken access control in AshGraphql subscription batcher applies authorization suppression to only the first notification</title>
-      <link>https://vulnogram.org/CVE-2026-81643</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81643</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash_graphql delivers GraphQL subscription payloads for records a subscriber is not authorized to see. In AshGraphql.Subscription.Batcher, do_send/5 resolves the first notification of a batch and fi…</description>
-      <category>Low</category>
-      <pubDate>Sun, 30 Aug 2026 18:20:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82367 · 2.3 LOW — Re-entrant synchronous publish in AshGraphql subscription batcher delivers one subscriber&apos;s records to another&apos;s topic</title>
-      <link>https://vulnogram.org/CVE-2026-82367</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82367</guid>
-      <description>Exposure of Data Element to Wrong Session vulnerability in ash-project ash_graphql can deliver one subscription&apos;s resolved records to a different subscriber&apos;s topic. AshGraphql.Subscription.Batcher.do_send/5 reads the resolved batch from the process…</description>
-      <category>Low</category>
-      <pubDate>Sun, 30 Aug 2026 18:17:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81322 · 2.1 LOW — Cloaked plaintext leaks through a non-sensitive action argument in AshCloak</title>
-      <link>https://vulnogram.org/CVE-2026-81322</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81322</guid>
-      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in ash-project ash_cloak allows anyone with access to logs, error trackers, or crash reports, or anyone who can trigger a validation error, to recover the plaintext of a field t…</description>
-      <category>Low</category>
-      <pubDate>Sun, 30 Aug 2026 18:06:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81319 · 5.9 MEDIUM — Unsafe deserialization of decrypted terms enables node DoS in AshCloak</title>
-      <link>https://vulnogram.org/CVE-2026-81319</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81319</guid>
-      <description>Deserialization of Untrusted Data vulnerability in ash-project ash_cloak allows an attacker who can influence the bytes of an encrypted column to crash the BEAM node, by triggering unbounded atom creation or a decompression bomb during decryption. As…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 30 Aug 2026 18:05:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78699 · 7.2 HIGH — rename_tenant returns :ok on a failed rename, enabling cross-tenant access in AshPostgres</title>
-      <link>https://vulnogram.org/CVE-2026-78699</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78699</guid>
-      <description>Unchecked Return Value vulnerability in ash-project ash_postgres allows a user who can drive a tenant rename to a name that collides with an existing tenant&apos;s schema to have their tenant record repointed at that other tenant&apos;s live schema, gaining ac…</description>
-      <category>High</category>
-      <pubDate>Sun, 30 Aug 2026 15:13:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77454 · 5.9 MEDIUM — exists/2 predicate silently dropped on limited relationships with a parent() filter in AshSql</title>
-      <link>https://vulnogram.org/CVE-2026-77454</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77454</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash_sql allows a caller to bypass a scoping or authorization filter expressed as exists/2 over a relationship that declares both a limit (or from_many?) and a parent(...)-referencing filter or sort…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 30 Aug 2026 12:01:23 GMT</pubDate>
     </item>
   </channel>
 </rss>

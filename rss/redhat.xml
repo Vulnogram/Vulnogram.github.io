@@ -11,7 +11,42 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 01 Sep 2026 10:50:43 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 15:32:08 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-84233 · 7 HIGH — Rpm: command execution via macro expansion in `rpmuncompress -x` for crafted `.gem` filenames</title>
+      <link>https://vulnogram.org/CVE-2026-84233</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84233</guid>
+      <description>A flaw was found in rpm. A local attacker could supply a specially crafted `.gem` filename containing RPM macro syntax. When a user or automated workflow invokes `rpmuncompress -x` on this file, the macro expansion occurs during command construction.…</description>
+      <category>High</category>
+      <pubDate>Tue, 01 Sep 2026 14:53:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84218 · 8.1 HIGH 🌩️ — Org.jolokia/jolokia-core: incomplete jndi denylist in jolokia jsr-160 proxy (bypass of cve-2018-1000130 fix)</title>
+      <link>https://vulnogram.org/CVE-2026-84218</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84218</guid>
+      <description>A flaw was found in Jolokia&apos;s JSR-160 proxy functionality where insufficient validation of client-controlled JMX service URLs allows a bypass of the denylist introduced to mitigate CVE-2018-1000130. The proxy accepts a `target.url` value from a Jolok…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 13:20:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-53682 · 5.3 MEDIUM 🌩️ — Pki-core: dogtag-pki: unauthenticated dogtag ca rest api exposes security domain hosts</title>
+      <link>https://vulnogram.org/CVE-2026-53682</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53682</guid>
+      <description>An unauthenticated client can query the Security Domain hosts inventory via GET /ca/rest/securityDomain/hosts and receive a structured response enumerating internal PKI/CA hosts and roles (security domain topology and participating subsystems), witho…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 12:37:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-11873 · 6.5 MEDIUM 🌩️ — Pki-core: dogtag-pki: empty request to dogtag /ca/rest/certrequests causes http 500, java exception, and stacktrace disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-11873</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11873</guid>
+      <description>An Apache-proxied Dogtag CA REST endpoint exposed by IdM (POST /ca/rest/certrequests) returns HTTP 500 with internal Java stack traces for unauthenticated malformed requests. The same unauthenticated error path emits large multi-line stack traces int…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 11:54:59 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-18743 · 2.5 LOW — Popt-devel: popt-static: short realloc in poptconfigfiletostring</title>
       <link>https://vulnogram.org/CVE-2026-18743</link>
@@ -391,39 +426,6 @@
       <description>A flaw was found in the lighthouse component of Red Hat Advanced Cluster Management for Kubernetes. This vulnerability stems from insufficient validation of advertised IP addresses within EndpointSlice objects. A compromised spoke cluster can exploit…</description>
       <category>High</category>
       <pubDate>Thu, 20 Aug 2026 18:15:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66785 · 9.9 CRITICAL — Submariner: submariner: unvalidated endpoint.spec.subnets propagated into wireguard allowedips / ipsec enables traffic hijack</title>
-      <link>https://vulnogram.org/CVE-2026-66785</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66785</guid>
-      <description>A flaw was found in Submariner. This vulnerability allows a malicious cluster (spoke) to redirect network traffic from other connected clusters (peer clusters) by publishing a specially crafted network endpoint. The system fails to properly validate…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 20 Aug 2026 18:15:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77176 · 8.1 HIGH — Kata-containers: insufficient validation of createcontainer mount and storage rules in genpolicy</title>
-      <link>https://vulnogram.org/CVE-2026-77176</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77176</guid>
-      <description>A flaw was found in Kata Containers. In configurations utilizing genpolicy for Confidential Containers guest protection, a malicious host operator can exploit insufficient validation of CreateContainer mount and storage rules. This allows them to mou…</description>
-      <category>High</category>
-      <pubDate>Thu, 20 Aug 2026 16:20:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19611 · 7.4 HIGH 🌩️ — Wildfly-elytron: org.wildfly.security/wildfly-elytron-password-impl: wildfly-elytron: password keyspace reduction via nfkc fullwidth folding</title>
-      <link>https://vulnogram.org/CVE-2026-19611</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19611</guid>
-      <description>A flaw was found in WildFly Elytron. Password hashing and verification normalize input with Unicode NFKC, which can collapse fullwidth characters to ASCII equivalents. A remote attacker can more easily guess affected passwords by using an ASCII-only…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 20 Aug 2026 15:58:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73199 · 6.5 MEDIUM — Ipa: freeipa: null pointer dereference in `ipa-enrollment` extended operation (`join_oid`) via missing request value</title>
-      <link>https://vulnogram.org/CVE-2026-73199</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73199</guid>
-      <description>A flaw was found in the `ipa-enrollment` SLAPI plugin. A remote authenticated client can exploit a null pointer dereference vulnerability by sending a malformed Lightweight Directory Access Protocol (LDAP) extended operation. By omitting the request…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 20 Aug 2026 10:39:13 GMT</pubDate>
     </item>
   </channel>
 </rss>
