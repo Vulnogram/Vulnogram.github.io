@@ -11,7 +11,59 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 01 Sep 2026 15:32:08 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 19:11:24 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-49329 · 7.5 HIGH 🌩️ — Openshift/oauth-server: openshift/oauth-server: quadratic-time dos via accept-language header underscore bypass on unauthenticated login endpoints</title>
+      <link>https://vulnogram.org/CVE-2026-49329</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49329</guid>
+      <description>A flaw was found in openshift/oauth-server. The OAuth login and error page endpoints pass the unauthenticated Accept-Language header to golang.org/x/text/language.ParseAcceptLanguage() without input validation. A bypass of the CVE-2022-32149 mitigati…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 15:30:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84270 · 4.3 MEDIUM — Gvfs: mtp: out-of-bounds read in do_read()</title>
+      <link>https://vulnogram.org/CVE-2026-84270</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84270</guid>
+      <description>A flaw was found in the MTP backend in gvfs. When reading a file from a mounted MTP device, do_read() in gvfsbackendmtp.c trusts the data length returned by the device without limiting it to the original size requested by the client. If a malicious M…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 01 Sep 2026 15:19:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84269 · 6.5 MEDIUM 🌩️ — Gvfs: afp: heap-based buffer overflow in dsi read path</title>
+      <link>https://vulnogram.org/CVE-2026-84269</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84269</guid>
+      <description>A flaw was found in the AFP backend in gvfs. When mounting a share, a malicious AFP server can cause the DSI read path to process a length that exceeds the size requested by the client. The function does not verify the server-provided length against…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 15:19:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84267 · 4.3 MEDIUM 🌩️ — Gvfs: sftp: uninitialized heap disclosure in read_string()</title>
+      <link>https://vulnogram.org/CVE-2026-84267</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84267</guid>
+      <description>A flaw was found in the SFTP backend in gvfs. When mounting a share, a malicious SFTP server can cause read_string() to allocate a buffer with a certain length but the function does not verify that the buffer is completely filled, leaving the remaind…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 15:19:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84232 · 5.4 MEDIUM — Pulpcore: python-pulpcore: stored cross-site scripting via inline rendering of uploaded html/svg content</title>
+      <link>https://vulnogram.org/CVE-2026-84232</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84232</guid>
+      <description>A flaw was found in pulpcore&apos;s content serving application. Files uploaded to Pulp file-type repositories are served with their original content type (e.g., text/html for .html files, image/svg+xml for .svg files) and without a Content-Disposition: a…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 01 Sep 2026 15:18:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84268 · 8.8 HIGH 🌩️ — Gvfs: sftp: heap-based buffer overflow in read_reply()</title>
+      <link>https://vulnogram.org/CVE-2026-84268</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84268</guid>
+      <description>A flaw was found in the SFTP backend in gvfs. When mounting a share and reading a file, a malicious SFTP server can cause read_reply() to process a length that exceeds the size requested by the client. The function does not verify the server-provided…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 01 Sep 2026 15:15:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-84233 · 7 HIGH — Rpm: command execution via macro expansion in `rpmuncompress -x` for crafted `.gem` filenames</title>
       <link>https://vulnogram.org/CVE-2026-84233</link>
@@ -377,55 +429,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 24 Aug 2026 13:29:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78323 · 6.5 MEDIUM 🌩️ — Jss: jss: jsstrustmanager does not verify nss trust flags on ca certificates</title>
-      <link>https://vulnogram.org/CVE-2026-78323</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78323</guid>
-      <description>A flaw was found in JSS (Java Security Services). The JSSTrustManager class does not verify NSS trust flags when validating CA certificates, allowing certificates present in the NSS database without TRUSTED_CA flags to be accepted as trust anchors fo…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 24 Aug 2026 11:11:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73267 · 7.7 HIGH — Clusterclaims-controller: clusterclaims-controller: managedcluster deletion keyed solely on clusterclaim.spec.namespace with no ownership check</title>
-      <link>https://vulnogram.org/CVE-2026-73267</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73267</guid>
-      <description>A flaw was found in the clusterclaims-controller component of multicluster engine (MCE). A tenant with standard permissions to create and delete ClusterClaim resources can exploit this by manipulating the `spec.namespace` field. This allows the tenan…</description>
-      <category>High</category>
-      <pubDate>Fri, 21 Aug 2026 02:43:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73137 · 7.7 HIGH — Multicloud-operators-subscription: multicloud-operators-subscription: cross-namespace secret exfiltration via helmrelease.repo.secretref.namespace</title>
-      <link>https://vulnogram.org/CVE-2026-73137</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73137</guid>
-      <description>A flaw was found in the multicloud-operators-subscription component of Red Hat Advanced Cluster Management (RHACM). A tenant with HelmRelease create permissions can exploit this vulnerability by manipulating the `secretRef.Namespace` field. This allo…</description>
-      <category>High</category>
-      <pubDate>Thu, 20 Aug 2026 20:34:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67567 · 9.9 CRITICAL — Multicloud-operators-subscription: multicloud-operators-subscription: helmrelease chart applied with controller sa without gvk or namespace restriction</title>
-      <link>https://vulnogram.org/CVE-2026-67567</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67567</guid>
-      <description>A flaw was found in the multicloud-operators-subscription component. This vulnerability allows a tenant, who has the ability to create HelmRelease custom resources (CRs), to bypass existing security controls. The system&apos;s HelmRelease controller proce…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 20 Aug 2026 20:34:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66788 · 9.9 CRITICAL — Lighthouse: lighthouse: arbitrary local-namespace injection via attacker-controlled labelsourcenamespace</title>
-      <link>https://vulnogram.org/CVE-2026-66788</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66788</guid>
-      <description>A flaw was found in Lighthouse. A remote attacker, by compromising a spoke cluster, can exploit a vulnerability where the destination namespace for resource injection is derived from an attacker-controlled label or annotation on the broker object. Th…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 20 Aug 2026 18:15:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66787 · 8.7 HIGH — Lighthouse: lighthouse: cross-cluster dns spoofing via unvalidated endpointslice and serviceimport ips</title>
-      <link>https://vulnogram.org/CVE-2026-66787</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66787</guid>
-      <description>A flaw was found in the lighthouse component of Red Hat Advanced Cluster Management for Kubernetes. This vulnerability stems from insufficient validation of advertised IP addresses within EndpointSlice objects. A compromised spoke cluster can exploit…</description>
-      <category>High</category>
-      <pubDate>Thu, 20 Aug 2026 18:15:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
