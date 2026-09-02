@@ -11,7 +11,21 @@
       <title>Go Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 02 Sep 2026 19:17:01 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 22:19:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-56855 — Prevent DoS on deadlocked established channel in golang.org/x/crypto/ssh</title>
+      <link>https://vulnogram.org/CVE-2026-56855</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56855</guid>
+      <description>Previously, after a channel has been established, a malicious peer could send crafted messages that would deadlock the entire connection. Now, we handle all RFC 4254 channel messages; global requests are handled explicitly. Then, treat all other mess…</description>
+      <pubDate>Wed, 02 Sep 2026 19:37:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78662 — Prevent DoS on deadlocked undecided channel in golang.org/x/crypto/ssh</title>
+      <link>https://vulnogram.org/CVE-2026-78662</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78662</guid>
+      <description>Previously, a channel registered in the mux&apos;s chanList is not usable until it is established. A malicious peer was able flood the channel&apos;s incomingRequests, deadlocking the entire connection. Now, we add an atomic established state, set when a chann…</description>
+      <pubDate>Wed, 02 Sep 2026 19:37:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-56854 · 7.5 HIGH 🌩️ — Source-address critical option not enforced for non-public-key auth callbacks in golang.org/x/crypto/ssh</title>
       <link>https://vulnogram.org/CVE-2026-56854</link>
@@ -435,23 +449,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39817</guid>
       <description>The &quot;go tool pack&quot; subcommand (usually used only by the compiler as an internal tool with known-good inputs) does not sanitize output filenames. Extracting a malicious archive file with the &quot;pack&quot; subcommand can write files to arbitrary locations on…</description>
       <category>Medium</category>
-      <pubDate>Thu, 07 May 2026 19:41:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39819 · 5.3 MEDIUM — Invoking &quot;go bug&quot; follows symlinks in predictable temporary filenames in cmd/go</title>
-      <link>https://vulnogram.org/CVE-2026-39819</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39819</guid>
-      <description>The &quot;go bug&quot; command writes to two files with predictable names in the system temporary directory (for example, &quot;/tmp&quot;). An attacker with access to the temporary directory can create a symlink in one of these names, causing &quot;go bug&quot; to overwrite the…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 07 May 2026 19:41:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42499 · 7.5 HIGH 🌩️ — Quadratic string concatenation in consumePhrase in net/mail</title>
-      <link>https://vulnogram.org/CVE-2026-42499</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42499</guid>
-      <description>Pathological inputs could cause DoS through consumePhrase when parsing an email address according to RFC 5322.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
       <pubDate>Thu, 07 May 2026 19:41:18 GMT</pubDate>
     </item>
   </channel>

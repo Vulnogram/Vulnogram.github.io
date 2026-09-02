@@ -11,7 +11,23 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 02 Sep 2026 19:17:01 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 22:19:46 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-84394 · 7.5 HIGH — fast-uri vulnerable to host confusion via an unclosed bracket in the URI authority</title>
+      <link>https://vulnogram.org/CVE-2026-84394</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84394</guid>
+      <description>fast-uri accepts a host that contains an unbalanced or misplaced authority bracket without reporting an error. A host that starts with an opening bracket but does not end with a closing bracket is neither validated as an IP literal nor canonicalized…</description>
+      <category>High</category>
+      <pubDate>Wed, 02 Sep 2026 20:25:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84292 · 7.5 HIGH — fast-uri vulnerable to authority injection via an unvalidated port in serialize</title>
+      <link>https://vulnogram.org/CVE-2026-84292</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84292</guid>
+      <description>fast-uri serializes the port component of a URI without validating it. When recomposing the authority, the userinfo and host components are escaped but the port is concatenated verbatim, so a port value that is not a sequence of digits can inject aut…</description>
+      <category>High</category>
+      <pubDate>Wed, 02 Sep 2026 20:09:51 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-82333 · 7.5 HIGH — multer vulnerable to Denial of Service via oversized array index in field names</title>
       <link>https://vulnogram.org/CVE-2026-82333</link>
@@ -397,23 +413,6 @@
       <description>Impact: When using Socks5ProxyAgent, undici reuses a single connection pool across different origins without verifying that the pool&apos;s origin matches the requested origin. All requests are dispatched through the pool connected to the first origin, re…</description>
       <category>High</category>
       <pubDate>Wed, 17 Jun 2026 16:36:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9675 · 7.5 HIGH — undici WebSocket client vulnerable to denial of service via cumulative fragment bypass</title>
-      <link>https://vulnogram.org/CVE-2026-9675</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9675</guid>
-      <description>Impact: The undici WebSocket client enforces maxPayloadSize per-frame but does not enforce the cumulative size of fragmented uncompressed messages. A malicious WebSocket server can stream many small fragments that each pass per-frame validation but c…</description>
-      <category>High</category>
-      <pubDate>Wed, 17 Jun 2026 16:20:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12151 · 7.5 HIGH 🌩️ — undici WebSocket client vulnerable to denial of service via fragment count bypass</title>
-      <link>https://vulnogram.org/CVE-2026-12151</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12151</guid>
-      <description>Impact: The undici WebSocket client enforces maxPayloadSize on the cumulative byte count of fragments in a message but does not enforce a limit on the number of fragments. A malicious WebSocket server can stream many small or empty continuation frame…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 17 Jun 2026 16:05:38 GMT</pubDate>
     </item>
   </channel>
 </rss>
