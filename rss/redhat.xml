@@ -11,7 +11,55 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 02 Sep 2026 15:41:01 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 19:17:00 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-66786 · 9.1 CRITICAL — Submariner: submariner: ipsec.conf stanza injection via remote-supplied cablename and subnets</title>
+      <link>https://vulnogram.org/CVE-2026-66786</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66786</guid>
+      <description>A flaw was found in submariner. In cert-auth mode, the connection configuration is built using free-form strings from the Custom Resource Definition (CRD) without proper validation. A malicious cluster can exploit this by publishing a CableName that…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 02 Sep 2026 17:57:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84838 · 7.8 HIGH — Rpm: command injection in rpmuncompress via unescaped filenames passed to popen()</title>
+      <link>https://vulnogram.org/CVE-2026-84838</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84838</guid>
+      <description>A flaw was found in rpmuncompress. This command injection vulnerability allows a local attacker to execute arbitrary commands. This occurs when rpmuncompress processes a specially crafted archive filename containing shell metacharacters, which are no…</description>
+      <category>High</category>
+      <pubDate>Wed, 02 Sep 2026 15:13:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84837 · 7.8 HIGH — Rpm: command injection in `rpmbuild -t*` (`gettarspec`) via unescaped tarball path</title>
+      <link>https://vulnogram.org/CVE-2026-84837</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84837</guid>
+      <description>A flaw was found in rpm. An attacker can exploit a command injection vulnerability by influencing the path or filename of a tarball processed by `rpmbuild -t*` to include shell metacharacters. This is particularly relevant in automated build or conti…</description>
+      <category>High</category>
+      <pubDate>Wed, 02 Sep 2026 15:12:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78409 · 7 HIGH — Util-linux: util-linux: x-mount.subdir detached-tree resolution can escape via intermediate symlinks</title>
+      <link>https://vulnogram.org/CVE-2026-78409</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78409</guid>
+      <description>The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newl…</description>
+      <category>High</category>
+      <pubDate>Wed, 02 Sep 2026 15:11:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78410 · 7.8 HIGH — Util-linux: util-linux: restricted bind mounts do not pin the source, allowing x-mount.owner/group/mode redirection</title>
+      <link>https://vulnogram.org/CVE-2026-78410</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78410</guid>
+      <description>A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mo…</description>
+      <category>High</category>
+      <pubDate>Wed, 02 Sep 2026 15:05:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78408 · 7.9 HIGH — Util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority</title>
+      <link>https://vulnogram.org/CVE-2026-78408</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78408</guid>
+      <description>The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credential…</description>
+      <category>High</category>
+      <pubDate>Wed, 02 Sep 2026 15:05:33 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-53683 · 4.3 MEDIUM 🌩️ — Freeipa: idm: idm/freeipa web ui - client-side open redirect in reset_password.html</title>
       <link>https://vulnogram.org/CVE-2026-53683</link>
@@ -379,56 +427,6 @@
       <description>A flaw was found in 389-ds-base. A remote, authenticated attacker could exploit a vulnerability in the Simple Authentication and Security Layer (SASL) UNBIND process. By sending a specially crafted request, the attacker can cause a connection to stal…</description>
       <category>Medium</category>
       <pubDate>Tue, 25 Aug 2026 07:33:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78322 · 6.5 MEDIUM 🌩️ — File-roller: file-roller: stack buffer overflow in parse_progress_line for 7z and rar handlers</title>
-      <link>https://vulnogram.org/CVE-2026-78322</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78322</guid>
-      <description>A flaw was found in file-roller. When opening or extracting a malicious 7z or RAR archive containing a file entry with an excessively long path, file-roller&apos;s progress-line parsing copies the path into a fixed-size stack buffer using an unbounded str…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 25 Aug 2026 07:21:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-17113 · 6 MEDIUM — Cri-o: cri-o: unvalidated image env var causes daemon crash</title>
-      <link>https://vulnogram.org/CVE-2026-17113</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17113</guid>
-      <description>A flaw was found in CRI-O&apos;s container-creation environment-variable handling (`mergeEnvs` in `server/utils.go`, consumed by `setupContainerEnvironmentAndWorkdir` in `server/container_create.go`). When a `CreateContainer` request supplies a `nil` CRI…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 24 Aug 2026 21:22:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78475 · 6.1 MEDIUM — Gimp: unbounded stack vla and 21-byte stack over-read in pix (esm) loader</title>
-      <link>https://vulnogram.org/CVE-2026-78475</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78475</guid>
-      <description>A flaw was found in the file-pix (ESM) plugin in GIMP. When processing a specially crafted PIX image file, the plugin allocates a Variable-Length Array (VLA) on the stack without proper bounds checking, causing an unbounded stack allocation followed…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 24 Aug 2026 17:20:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78465 · 7 HIGH — Gimp: integer overflow in pcx loader (planes=4) leads to heap overflow on 32-bit</title>
-      <link>https://vulnogram.org/CVE-2026-78465</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78465</guid>
-      <description>A flaw was found in the file-pcx plugin in GIMP, affecting 32-bit builds only. When processing a PCX image file, the plugin calculates memory allocation sizes based on the image dimensions and the number of color planes. If a crafted file sets the nu…</description>
-      <category>High</category>
-      <pubDate>Mon, 24 Aug 2026 16:28:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19685 · 9.8 CRITICAL 🌩️ — Networkmanager: networkmanager: 802-1x ca-path and phase2-ca-path bypass private_user restriction, allowing wpa-enterprise server validation bypass (incomplete fix for cve-2025-9615)</title>
-      <link>https://vulnogram.org/CVE-2026-19685</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19685</guid>
-      <description>NetworkManager did not apply the private_user restriction to the 802-1x.ca-path and phase2-ca-path directory-valued connection properties. This incomplete fix for CVE-2025-9615 allows an unprivileged local user to point a private WPA-Enterprise (802.…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 24 Aug 2026 16:12:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71366 · 7.7 HIGH — Awx: notification backends allow ssrf and credential leakage</title>
-      <link>https://vulnogram.org/CVE-2026-71366</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71366</guid>
-      <description>A server-side request forgery (SSRF) vulnerability was found in multiple AWX notification backends. The webhook, Mattermost, Rocket.Chat, and Grafana notification backends use notification template URLs as direct HTTP request targets without validati…</description>
-      <category>High</category>
-      <pubDate>Mon, 24 Aug 2026 15:42:44 GMT</pubDate>
     </item>
   </channel>
 </rss>

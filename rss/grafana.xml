@@ -11,7 +11,31 @@
       <title>Grafana Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 02 Sep 2026 15:41:02 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 19:17:01 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-14199 · 7.1 HIGH — CVE-2026-14199 CVE Record</title>
+      <link>https://vulnogram.org/CVE-2026-14199</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14199</guid>
+      <description>Only self-managed Grafana instances with Auth Proxy authentication and identity caching enabled (sync_ttl greater than zero) are affected. The Auth Proxy cache key concatenated the username and forwarded identity attributes without a delimiter, so di…</description>
+      <category>High</category>
+      <pubDate>Wed, 02 Sep 2026 16:06:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-12704 · 6.8 MEDIUM — CVE-2026-12704 CVE Record</title>
+      <link>https://vulnogram.org/CVE-2026-12704</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12704</guid>
+      <description>When SAML IdP-initiated login is enabled in Grafana Enterprise, the SAML library skips validation of the InResponseTo field on all SAML responses, including SP-initiated logins. This removes anti-replay protection, allowing an attacker who obtains a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 02 Sep 2026 16:05:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19475 · 6.5 MEDIUM — CVE-2026-19475 CVE Record</title>
+      <link>https://vulnogram.org/CVE-2026-19475</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19475</guid>
+      <description>An authenticated user with permission to query a SQL data source can bypass the fix for CVE-2026-33375 by injecting the timeGroup macro through a WHERE clause, which Grafana&apos;s regex-based macro parsing does not reject. Evaluating the injected macro c…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 02 Sep 2026 15:56:33 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-75889 · 7.7 HIGH — CVE-2026-75889 CVE Record</title>
       <link>https://vulnogram.org/CVE-2026-75889</link>
@@ -391,31 +415,6 @@
       <description>Stack traces in Grafana&apos;s Explore Traces view can be rendered as raw HTML, and thus inject malicious JavaScript in the browser. This would require malicious JavaScript to be entered into the stack trace field. Only datasources with the Jaeger HTTP AP…</description>
       <category>Medium</category>
       <pubDate>Thu, 12 Feb 2026 08:49:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-21722 · 5.3 MEDIUM — Public Dashboards time range restriction on annotations can be bypassed</title>
-      <link>https://vulnogram.org/CVE-2026-21722</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-21722</guid>
-      <description>Public dashboards with annotations enabled did not limit their annotation timerange to the locked timerange of the public dashboard. This means one could read the entire history of annotations visible on the specific dashboard, even those outside the…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Feb 2026 08:49:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-21721 · 8.1 HIGH — Dashboard Permissions Scope Bypass Enables Cross‑Dashboard Privilege Escalation</title>
-      <link>https://vulnogram.org/CVE-2026-21721</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-21721</guid>
-      <description>The dashboard permissions API does not verify the target dashboard scope and only checks the dashboards.permissions:* action. As a result, a user who has permission management rights on one dashboard can read and modify permissions on other dashboard…</description>
-      <category>High</category>
-      <pubDate>Tue, 27 Jan 2026 09:07:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-21720 · 7.5 HIGH 🌩️ — Unauthenticated DoS: avatar cache leaks goroutines when /avatar/:hash requests time out</title>
-      <link>https://vulnogram.org/CVE-2026-21720</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-21720</guid>
-      <description>Every uncached /avatar/:hash request spawns a goroutine that refreshes the Gravatar image. If the refresh sits in the 10-slot worker queue longer than three seconds, the handler times out and stops listening for the result, so that goroutine blocks f…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Jan 2026 09:07:04 GMT</pubDate>
     </item>
   </channel>
 </rss>
