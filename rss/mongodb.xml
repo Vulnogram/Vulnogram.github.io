@@ -11,7 +11,92 @@
       <title>MongoDB, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 03 Sep 2026 15:03:03 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 18:27:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-84968 · 6.9 MEDIUM 🌩️ — Heap out-of-bounds read via corrupt nested BSON in field path error message</title>
+      <link>https://vulnogram.org/CVE-2026-84968</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84968</guid>
+      <description>An out-of-bounds read in the BSON decoding component of the MongoDB PHP driver may allow an unauthenticated party who supplies specially formed input to have a small amount of adjacent process memory copied into an error message that is returned to a…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 17:03:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84967 · 5.1 MEDIUM 🌩️ — Arbitrary command execution via shell-expanded connection string in Launch MongoDB Shell terminal</title>
+      <link>https://vulnogram.org/CVE-2026-84967</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84967</guid>
+      <description>A component of the MongoDB extension for Visual Studio Code does not neutralize special characters in a connection string before that value is placed into a command line the extension composes for an integrated terminal. An unauthenticated remote una…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 15:18:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84962 · 5.7 MEDIUM — Authenticated KMS request forgery via CRLF injection in GCP key identifier strings</title>
+      <link>https://vulnogram.org/CVE-2026-84962</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84962</guid>
+      <description>An unauthorized user with key vault write access may cause an authorized client to issue arbitrary authenticated Google Cloud KMS API calls under the authorized user&apos;s identity, escalating database-level access into cloud key control and defeating cl…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 15:03:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84963 · 6.3 MEDIUM 🌩️ — Silent field truncation via unchecked int cast of huge JSON string values in JSON-to-BSON parser</title>
+      <link>https://vulnogram.org/CVE-2026-84963</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84963</guid>
+      <description>An incorrect numeric conversion in the JSON parsing component of the MongoDB C Driver&apos;s BSON library may cause an unusually large text value to be silently shortened, or the corresponding field to be omitted, while the parsing operation still reports…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 15:03:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84964 · 8.2 HIGH 🌩️ — Heap corruption via OCSP request double free from crafted multi-URL certificate in TLS client</title>
+      <link>https://vulnogram.org/CVE-2026-84964</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84964</guid>
+      <description>A double free in the OpenSSL-based TLS certificate revocation checking path of the MongoDB C Driver can be reached by a TLS endpoint that the client already trusts. During the handshake, specially formed certificate data can cause the same heap objec…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 15:02:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84965 · 5.9 MEDIUM — Heap write primitive via size round-up wrap during JSON parsing on 32-bit builds</title>
+      <link>https://vulnogram.org/CVE-2026-84965</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84965</guid>
+      <description>An integer wraparound in an allocation size calculation in the BSON library&apos;s JSON parsing code can cause a buffer to be released while a following copy operation still writes through the stale pointer. On builds where sizes are 32 bits, an unauthent…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 15:01:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84966 · 5.9 MEDIUM — BSON element injection via NUL-embedded document keys in builder append</title>
+      <link>https://vulnogram.org/CVE-2026-84966</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84966</guid>
+      <description>An incorrect numeric type conversion in the BSON document building component of the MongoDB C++ Driver may cause a length value to be interpreted incorrectly. When an application supplies an extremely large, non-terminated field name to the builder,…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 15:00:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84969 · 6.3 MEDIUM 🌩️ — Heap overflow via truncated base64 encoding of binary fields in length-limited JSON output</title>
+      <link>https://vulnogram.org/CVE-2026-84969</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84969</guid>
+      <description>A memory-handling error in the BSON-to-JSON conversion helpers of the MongoDB C Driver can write a small number of bytes past the end of a heap buffer when a binary field is encoded and the output is cut short at a caller-configured length limit. A p…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 14:59:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84971 · 7.1 HIGH — Persistent client crash loop via undersized FLE2 insert-update ciphertext in decryption path</title>
+      <link>https://vulnogram.org/CVE-2026-84971</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84971</guid>
+      <description>Improper handling of an unexpected value size in the decryption path of a client-side encryption library can cause a failed internal check that terminates the process using the library. A party able to place a suitably formed encrypted value where an…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 14:57:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84970 · 6.2 MEDIUM — Heap over-read or silent misparse via 32-bit truncation of JSON length in BSON JSON parser</title>
+      <link>https://vulnogram.org/CVE-2026-84970</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84970</guid>
+      <description>A numeric truncation weakness exists in the JSON parsing component of the MongoDB C++ Driver&apos;s BSON library. An actor who controls the text that an embedding application hands to the library&apos;s public JSON parsing interface, when that text is very lar…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 14:56:14 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-81533 · 7.1 HIGH — MongoDB BI Connector ODBC Driver Memory-Safety Issue When Parsing Oversized LIMIT Values</title>
       <link>https://vulnogram.org/CVE-2026-81533</link>
@@ -340,87 +425,6 @@
       <description>An issue in MongoDB Server&apos;s geospatial query processing could allow an authenticated user with write privileges to cause certain malformed geometry data to be stored and later processed without proper validation. Subsequent queries against this data…</description>
       <category>High</category>
       <pubDate>Tue, 11 Aug 2026 18:42:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18708 · 6.4 MEDIUM — Improper Neutralization of Input in MongoDB Server&apos;s JavaScript Scripting Engine Leads to Unauthorized Code Execution Within Query Scopes</title>
-      <link>https://vulnogram.org/CVE-2026-18708</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18708</guid>
-      <description>An issue in MongoDB Server&apos;s JavaScript scripting engine could allow an authenticated user with write privileges to cause code they control to be executed within the query scope of other users, through a specially crafted stored value processed durin…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 11 Aug 2026 18:41:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18696 · 7 HIGH — Improper Authorization in MongoDB applyOps Command Handling Allows Unauthorized DDL Operations on Collections</title>
-      <link>https://vulnogram.org/CVE-2026-18696</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18696</guid>
-      <description>An issue in MongoDB Server&apos;s applyOps command could allow an authenticated user with specific non-default privileges to perform certain data-definition operations, such as dropping or modifying collections, against collections they do not have permis…</description>
-      <category>High</category>
-      <pubDate>Tue, 11 Aug 2026 18:40:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18700 · 6.5 MEDIUM — Use-After-Free in MongoDB Geospatial Validation Leads to Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-18700</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18700</guid>
-      <description>An issue in MongoDB Server&apos;s geospatial validation could allow an authenticated user with write privileges to cause an internal reference to be used after the underlying memory has been freed, through concurrent operations against a collection using…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 11 Aug 2026 18:40:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18701 · 7.1 HIGH — Type Confusion in MongoDB Query Subsystem Leads to Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-18701</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18701</guid>
-      <description>An issue in MongoDB Server&apos;s query subsystem could allow an authenticated user with read privileges to cause the server process to terminate unexpectedly by submitting a specially formed query filter. This could result in a denial of service.</description>
-      <category>High</category>
-      <pubDate>Tue, 11 Aug 2026 18:39:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18697 · 8.7 HIGH 🌩️ — Improper Input Validation in MongoDB Aggregation Framework Allows Unauthenticated Denial of Service on mongos</title>
-      <link>https://vulnogram.org/CVE-2026-18697</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18697</guid>
-      <description>An issue in MongoDB Server&apos;s aggregation framework could allow an unauthenticated party to cause a mongos (router) process to terminate unexpectedly by submitting a specially formed aggregation command. This could result in a denial of service, disru…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 11 Aug 2026 18:39:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18693 · 7.6 HIGH — Out-of-Bounds Read/Write in MongoDB Timeseries Bucket Handling Leads to Denial of Service and Potential Memory Disclosure</title>
-      <link>https://vulnogram.org/CVE-2026-18693</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18693</guid>
-      <description>An issue in MongoDB Server&apos;s handling of timeseries collections could allow an authenticated user with write privileges to cause an internal data structure to become inconsistent through certain document insertions. A subsequent insert into the affec…</description>
-      <category>High</category>
-      <pubDate>Tue, 11 Aug 2026 18:38:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18705 · 7.1 HIGH — Improper Authorization in MongoDB Atlas Vector Search Allows Unauthorized Access to Protected View Data</title>
-      <link>https://vulnogram.org/CVE-2026-18705</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18705</guid>
-      <description>An issue in MongoDB Server&apos;s Atlas Vector Search feature could allow an authenticated user with read access to one view to retrieve documents from a different, protected view over the same underlying collection. This is due to insufficient handling o…</description>
-      <category>High</category>
-      <pubDate>Tue, 11 Aug 2026 18:37:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18704 · 7.1 HIGH — Improper Authorization in MongoDB Aggregation Framework Allows Read-Only User to Perform Unauthorized Write Operations</title>
-      <link>https://vulnogram.org/CVE-2026-18704</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18704</guid>
-      <description>An issue in MongoDB Server&apos;s aggregation framework could allow an authenticated user with only read privileges to perform write operations against collections they should not be able to modify. This is due to an internal-use aggregation stage being r…</description>
-      <category>High</category>
-      <pubDate>Tue, 11 Aug 2026 18:37:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18692 · 8.8 HIGH — Use-After-Free in MongoDB Timeseries Bucket Handling Leads to Denial of Service and Potential Remote Code Execution</title>
-      <link>https://vulnogram.org/CVE-2026-18692</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18692</guid>
-      <description>An issue in MongoDB Server&apos;s handling of timeseries bucket lifecycle could allow an authenticated user with write privileges to cause an internal reference to be used after the underlying memory has been freed. Subsequent operations could then result…</description>
-      <category>High</category>
-      <pubDate>Tue, 11 Aug 2026 18:36:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18688 · 7.1 HIGH — Out-of-Bounds Read in MongoDB Aggregation Framework Leads to Denial of Service and Potential Memory Disclosure</title>
-      <link>https://vulnogram.org/CVE-2026-18688</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18688</guid>
-      <description>An issue in MongoDB Server&apos;s aggregation framework could allow an authenticated user to trigger an out-of-bounds memory read by providing a specially formed numeric parameter in a certain aggregation pipeline stage. This could result in a server cras…</description>
-      <category>High</category>
-      <pubDate>Tue, 11 Aug 2026 18:36:21 GMT</pubDate>
     </item>
   </channel>
 </rss>

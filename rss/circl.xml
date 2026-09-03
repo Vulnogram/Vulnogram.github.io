@@ -11,7 +11,66 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 03 Sep 2026 15:03:02 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 18:27:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-85242 · 6.9 MEDIUM 🌩️ — Server-Side Request Forgery via Favicon Redirect to Local Network Resources in PlaywrightCapture</title>
+      <link>https://vulnogram.org/CVE-2026-85242</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85242</guid>
+      <description>PlaywrightCapture contains a server-side request forgery (SSRF) vulnerability in its favicon retrieval functionality. When only_global_lookup is enabled, the application validates the initial favicon URL to prevent requests to localhost, loopback, or…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 16:17:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85239 · 7.1 HIGH — MISP Event Template Definition Validation Bypass Allows Persistent Denial of Service</title>
+      <link>https://vulnogram.org/CVE-2026-85239</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85239</guid>
+      <description>A vulnerability in MISP&apos;s event template handling allowed an authenticated user with permission to create or modify event templates to bypass validation of the template definition field. The EventTemplate::beforeValidate() method only performed seman…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 15:37:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85238 · 7.6 HIGH — Session Fixation in MISP CustomAuth Authentication Allows Session Hijacking</title>
+      <link>https://vulnogram.org/CVE-2026-85238</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85238</guid>
+      <description>MISP contains a session fixation vulnerability in the CustomAuth authentication (a custom configuration) flow. When a user was successfully authenticated through CustomAuth, MISP stored the authenticated user identity in the existing session without…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 15:30:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85237 · 8.6 HIGH — Missing Rate Limiting in Email OTP Verification Allows Brute-Force Authentication Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-85237</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85237</guid>
+      <description>A vulnerability in MISP&apos;s email-based one-time password (OTP) authentication flow allowed an attacker to perform an unrestricted number of OTP verification attempts. The email_otp() endpoint did not apply brute-force protection when validating submit…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 15:22:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85236 · 8.8 HIGH 🌩️ — MISP cullEmptyEvents CSRF Allows Irreversible Deletion of Events via GET Request</title>
+      <link>https://vulnogram.org/CVE-2026-85236</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85236</guid>
+      <description>A cross-site request forgery (CSRF) vulnerability existed in the cullEmptyEvents action of MISP. The endpoint performed a state-changing and irreversible operation while accepting HTTP GET requests. Because bodyless GET requests are not subject to Ca…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 15:13:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85230 · 5.3 MEDIUM — MISP Dashboard Button Widget Allows Persistent JavaScript URL Injection</title>
+      <link>https://vulnogram.org/CVE-2026-85230</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85230</guid>
+      <description>A persistent unsafe URL injection vulnerability exists in the MISP dashboard ButtonWidget configuration. Dashboard widget URLs were validated only when the widget was rendered and were not validated when the configuration was saved. As a result, an a…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 14:48:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85227 · 6.1 MEDIUM 🌩️ — Reflected Cross-Site Scripting in MISP Event Filtering via taggedAttributes and galaxyAttachedAttributes Parameters</title>
+      <link>https://vulnogram.org/CVE-2026-85227</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85227</guid>
+      <description>MISP contains a reflected Cross-Site Scripting (XSS) vulnerability in the event attribute filtering query builder. The taggedAttributes and galaxyAttachedAttributes URL parameters were inserted into the query-builder rules without HTML escaping befor…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 14:42:02 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-85226 · 5.3 MEDIUM — MISP OnDemand Correlation Engine Missing Access Control Allows Disclosure of Restricted Correlations</title>
       <link>https://vulnogram.org/CVE-2026-85226</link>
@@ -376,66 +435,6 @@
       <description>Vulnerability-Lookup contains an authentication weakness in its account activation and password-recovery mechanism. Activation and recovery links were generated using stateless signed tokens containing only the user&apos;s login. Although the token signat…</description>
       <category>High</category>
       <pubDate>Wed, 12 Aug 2026 14:32:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73405 · 5.3 MEDIUM — Authorization Bypass in SSE Pub/Sub Allows Unconfirmed Accounts to Access Stream Events in vulnerability-lookup</title>
-      <link>https://vulnogram.org/CVE-2026-73405</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73405</guid>
-      <description>An authorization bypass vulnerability in Vulnerability-Lookup allowed inactive or unconfirmed accounts to subscribe to Server-Sent Events (SSE) streams through the /pubsub/subscribe/&lt;topic&gt; endpoint. The token_required decorator used by the Pub/Sub i…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 12 Aug 2026 14:15:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73374 · 6.1 MEDIUM 🌩️ — Stored Cross-Site Scripting (XSS) via Unescaped CNA Reference Tags in vulnerability-lookup</title>
-      <link>https://vulnogram.org/CVE-2026-73374</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73374</guid>
-      <description>A stored cross-site scripting (XSS) vulnerability existed in Vulnerability-Lookup in the render_tag_badges Jinja filter used to display reference tags associated with vulnerability records. Values from containers.cna.references[].tags[] were directly…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 12 Aug 2026 14:05:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73210 · 5.1 MEDIUM 🌩️ — Server-Side Request Forgery via Favicon Retrieval in Lookyloo PlaywrightCapture</title>
-      <link>https://vulnogram.org/CVE-2026-73210</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73210</guid>
-      <description>A Server-Side Request Forgery (SSRF) vulnerability existed in Lookyloo&apos;s PlaywrightCapture when the only_global_lookup option was enabled. PlaywrightCapture implements this option to prevent captures from accessing local, loopback, or otherwise non-p…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 11 Aug 2026 13:59:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73162 · 5.3 MEDIUM 🌩️ — cti-transmute CSRF Allows Unauthorized Follow and Notification State Changes</title>
-      <link>https://vulnogram.org/CVE-2026-73162</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73162</guid>
-      <description>Affected versions of MISP cti-transmute expose several state-changing account operations as GET requests: * /account/follow * /account/delete_notification * /account/mark_notification_read * /account/mark_all_read These endpoints require authenticati…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 11 Aug 2026 09:13:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73161 · 5.1 MEDIUM — cti-transmute Conversion Table Allows XSS via Unescaped Cell Content During Search Highlighting</title>
-      <link>https://vulnogram.org/CVE-2026-73161</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73161</guid>
-      <description>Affected versions of cti-transmute improperly handle conversion-table values passed through the search highlighting feature. The highlight() function previously returned the underlying text directly when no search query was supplied, or performed a r…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 11 Aug 2026 09:07:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73160 · 8.7 HIGH 🌩️ — cti-transmute Unauthenticated SSRF via Hostnames Resolving to Internal IP Addresses</title>
-      <link>https://vulnogram.org/CVE-2026-73160</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73160</guid>
-      <description>Affected versions of cti-transmute contain an SSRF vulnerability in the /fetch_misp_event and /misp_search_events endpoints. The URL validation routine checked whether a supplied hostname was itself an IP literal and rejected private, loopback, link-…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 11 Aug 2026 09:01:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73159 · 5.1 MEDIUM — cti-transmute Stored XSS via Crafted Tag Icon on Admin Triage Interface</title>
-      <link>https://vulnogram.org/CVE-2026-73159</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73159</guid>
-      <description>Affected versions of cti-transmute allow a tag&apos;s icon value to be stored and later interpolated into HTML through Vue&apos;s v-html. The helper mapIcon() previously constructed an HTML string directly from the icon value: &lt;i class=&quot;fas fa-${name}&quot;&gt;&lt;/i&gt; Be…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 11 Aug 2026 08:45:59 GMT</pubDate>
     </item>
   </channel>
 </rss>

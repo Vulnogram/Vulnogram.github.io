@@ -11,7 +11,56 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 03 Sep 2026 15:03:04 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 18:27:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-75036 · 5.3 MEDIUM — Fleet: DNS exfiltration via Sprig getHostByName in fleet.yaml Helm template preprocessing</title>
+      <link>https://vulnogram.org/CVE-2026-75036</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75036</guid>
+      <description>A security vulnerability was discovered in Fleet&apos;s Helm template preprocessing where templates evaluated by the Fleet controller could reach network resources outside the management cluster. A user who can supply bundle content to a repository refere…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 15:15:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75035 · 7.7 HIGH — Rancher: ext.cattle.io/v1 Token store: cross-user token disclosure via label-selector scoping bypass</title>
+      <link>https://vulnogram.org/CVE-2026-75035</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75035</guid>
+      <description>A flaw was found in Rancher Manager. When a non-administrative caller supplied a label selector naming a different user, the ext.cattle.io/v1 Token store dropped its internal owner filter instead of returning an empty result. Any authenticated user c…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 15:07:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75034 · 7.4 HIGH 🌩️ — Rancher: SAML Assertion Replay</title>
+      <link>https://vulnogram.org/CVE-2026-75034</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75034</guid>
+      <description>A flaw was found in Rancher Manager. The SAML assertion replay protection introduced by the fix for CVE-2026-44946 recorded consumed assertion IDs in a per-process cache, so each replica only detected replays that reached the same pod. In a high-avai…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 15:01:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75033 · 7.7 HIGH — Rancher: Cross-Cluster Secret Leakage via Namespace projectId Annotation Spoofing</title>
+      <link>https://vulnogram.org/CVE-2026-75033</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75033</guid>
+      <description>A flaw was found in Rancher Manager. Project Secrets were propagated into a namespace based only on its `field.cattle.io/projectId` annotation, without verifying that the referenced project belonged to the same downstream cluster. A user able to crea…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 14:57:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71404 · 8.7 HIGH — Rancher: Ownership-less ClusterRole overwrite via attacker-controlled cr-name annotation on GlobalRole</title>
+      <link>https://vulnogram.org/CVE-2026-71404</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71404</guid>
+      <description>A flaw was found in Rancher Manager. The GlobalRole controller derived the target ClusterRole name from the user-settable `authz.management.cattle.io/cr-name` annotation and overwrote that object&apos;s rules without verifying ownership. A user with deleg…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 14:51:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71403 · 6.1 MEDIUM — Rancher: Identity-field mutation in /v3/users allows account hijack via principal rebind</title>
+      <link>https://vulnogram.org/CVE-2026-71403</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71403</guid>
+      <description>A flaw was found in Rancher Manager. The /v3/users update path did not enforce immutability of a User resource&apos;s `username` and `principalIds` fields. A user holding the `update` verb on `users.management.cattle.io` could inject a foreign identity pr…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 14:45:37 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-25706 · 7.5 HIGH 🌩️ — yast2-samba-client: OS command injection via attacker-controlled Organizational Unit (Active Directory-supplied)</title>
       <link>https://vulnogram.org/CVE-2026-25706</link>
@@ -377,55 +426,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 29 Jun 2026 10:04:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41049 · 8.4 HIGH — Caching of Authentication allows Authentication Bypass between users in qSnapper</title>
-      <link>https://vulnogram.org/CVE-2026-41049</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41049</guid>
-      <description>Incorrect caching of authentication between different users of the qSnapper dbus service before version 1.3.3 allowed any local attacker to use dbus functions after a privileged users has authenticated for them.</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 15:32:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41048 · 8.4 HIGH — Caching of Authentication allows Authentication Bypass in qSnapper</title>
-      <link>https://vulnogram.org/CVE-2026-41048</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41048</guid>
-      <description>Incorrect caching of authentication between different polkit methods in qSnapper before version 1.3.3 allowed a local attacker to use functions like &quot;restore from snapshot&quot; even if only allowed to do &quot;delete snapshot&quot;.</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 15:31:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41047 · 6.9 MEDIUM — Information leak via “diff” methods in qSnapper</title>
-      <link>https://vulnogram.org/CVE-2026-41047</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41047</guid>
-      <description>Lack of authentication when using the &quot;snapshot diff&quot; functions in qSnapper before version 1.3.3 allowed a local attacker to see otherwise read protected information.</description>
-      <category>Medium</category>
-      <pubDate>Mon, 22 Jun 2026 15:25:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41046 · 7.3 HIGH — path traversal via `config` parameter in qSnapper</title>
-      <link>https://vulnogram.org/CVE-2026-41046</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41046</guid>
-      <description>A path traversal attack when using a &quot;configName&quot; parameter in qSnapper before version 1.3.3 allowed a local attacker to use malicious config files for snapper and so cause a denial of service or potentially escalate privileges to root.</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 15:20:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41045 · 8.1 HIGH — Weak polkit authentication check in qSnapper</title>
-      <link>https://vulnogram.org/CVE-2026-41045</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41045</guid>
-      <description>A time-to-check-time-of-use in polkit authentication of qSnapper before version 1.3.3 allowed a local attacker to bypass qSnappers authentication mechanism and operate e.g. as root user.</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 15:16:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44939 · 9.4 CRITICAL 🌩️ — Command injection through unsanitized YAML parameter in Rancher</title>
-      <link>https://vulnogram.org/CVE-2026-44939</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44939</guid>
-      <description>A command injection vulnerability in the Rancher Manager cluster before 2.14.2 import endpoint /v3/import/{token}_{clusterId}.yaml through unsanitized YAML parameters could allow remote attackers to break out of an image, and execute e.g. malicious c…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 19 Jun 2026 12:13:39 GMT</pubDate>
     </item>
   </channel>
 </rss>
