@@ -11,7 +11,56 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 03 Sep 2026 10:27:05 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 15:03:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-71224 · 4.7 MEDIUM — Gfs2-utils: gfs2-utils: stack overflow via alloca(i_height) in metadata walk</title>
+      <link>https://vulnogram.org/CVE-2026-71224</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71224</guid>
+      <description>A stack overflow vulnerability was found in gfs2-utils. The metadata walk code in metawalk.c uses alloca() with an untrusted inode height value from on-disk metadata without bounds validation, causing stack exhaustion and a denial of service when pro…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 12:23:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71222 · 5.3 MEDIUM — Gfs2-utils: gfs2-utils: heap out-of-bounds read via unchecked ea_num_ptrs in extended attribute processing</title>
+      <link>https://vulnogram.org/CVE-2026-71222</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71222</guid>
+      <description>A heap out-of-bounds read vulnerability was found in gfs2-utils. The ea_num_ptrs field from on-disk extended attribute metadata is consumed without bounds validation, causing a heap buffer over-read that may disclose sensitive memory contents or caus…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 12:23:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71221 · 7 HIGH — Gfs2-utils: gfs2-utils: stack out-of-bounds write via unchecked height in savemeta</title>
+      <link>https://vulnogram.org/CVE-2026-71221</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71221</guid>
+      <description>A stack out-of-bounds write vulnerability was found in gfs2-utils. In savemeta, the height value from on-disk inode metadata is used as a loop bound without bounds checking, causing a stack buffer overflow that may lead to arbitrary code execution wh…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 12:23:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71220 · 7 HIGH — Gfs2-utils: gfs2-utils: stack out-of-bounds write via unchecked di_height in gfs2_edit</title>
+      <link>https://vulnogram.org/CVE-2026-71220</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71220</guid>
+      <description>A stack out-of-bounds write vulnerability was found in gfs2-utils. In gfs2_edit, the di_height field from on-disk inode metadata is used as an array index without bounds checking, causing a stack buffer overflow that may lead to arbitrary code execut…</description>
+      <category>High</category>
+      <pubDate>Thu, 03 Sep 2026 12:23:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71219 · 4.7 MEDIUM — Gfs2-utils: gfs2-utils: stack overflow via alloca(1&lt;&lt;di_depth) in hash table traversal</title>
+      <link>https://vulnogram.org/CVE-2026-71219</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71219</guid>
+      <description>A stack overflow vulnerability was found in gfs2-utils. The hash table traversal code in metawalk.c uses alloca() with an exponentially-derived size from the untrusted on-disk di_depth field without bounds validation. A crafted GFS2 filesystem image…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 03 Sep 2026 12:23:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85150 · 7.5 HIGH 🌩️ — Gstreamer1-plugins-base: gstreamer: null/invalid-pointer dereference in gst_rtsp_message_parse_auth_credentials() when parsing a crafted digest authorization/www-authenticate header</title>
+      <link>https://vulnogram.org/CVE-2026-85150</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85150</guid>
+      <description>A NULL pointer dereference flaw was found in GStreamer&apos;s RTSP support library. The vulnerability occurs while parsing an Authorization or WWW-Authenticate header that uses Digest authentication. Specially crafted whitespace placement around a paramet…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 03 Sep 2026 10:47:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-66786 · 9.1 CRITICAL — Submariner: submariner: ipsec.conf stanza injection via remote-supplied cablename and subnets</title>
       <link>https://vulnogram.org/CVE-2026-66786</link>
@@ -378,55 +427,6 @@
       <description>A flaw was found in the file-xwd plugin in GIMP. When processing a specially crafted XWD image file, the plugin validates the image width and bytes-per-line parameters independently rather than ensuring their combined values are consistent with the a…</description>
       <category>Medium</category>
       <pubDate>Tue, 25 Aug 2026 20:36:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77680 · 5.3 MEDIUM 🌩️ — Libsoup3: libsoup: quadratic cpu denial of service in http range coalescing after cve-2025-32907 fix</title>
-      <link>https://vulnogram.org/CVE-2026-77680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77680</guid>
-      <description>An algorithmic complexity flaw exists in libsoup&apos;s HTTP Range header processing that persists after the CVE-2025-32907 fix. CVE-2025-32907 addressed memory amplification when a client repeated the same range many times in a single Range header. Commi…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 25 Aug 2026 20:36:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79992 · 7.8 HIGH — Emacs: local shell command injection through the user field in emacs tramp</title>
-      <link>https://vulnogram.org/CVE-2026-79992</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79992</guid>
-      <description>A flaw was found in Emacs TRAMP. A local attacker could exploit this vulnerability by processing maliciously crafted filenames. This occurs because TRAMP concatenates login arguments without proper sanitization, which are then passed to a local shell…</description>
-      <category>High</category>
-      <pubDate>Tue, 25 Aug 2026 17:16:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79717 · 6.4 MEDIUM — Galaxy_ng: galaxy_ng: blind ssrf via namespace avatar_url with no private-address restriction</title>
-      <link>https://vulnogram.org/CVE-2026-79717</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79717</guid>
-      <description>A server-side request forgery (SSRF) vulnerability was found in galaxy_ng, the Ansible Galaxy server plugin for Pulp. An authenticated user with namespace management permissions can set a namespace avatar URL to an arbitrary address, including intern…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 25 Aug 2026 14:53:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79655 · 7.8 HIGH — Sos: sos: path traversal in sos clean tar extraction via unvalidated symlink/hardlink targets leads to arbitrary file write</title>
-      <link>https://vulnogram.org/CVE-2026-79655</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79655</guid>
-      <description>A flaw was found in sos clean, a utility within the sos package. This vulnerability allows a local attacker to perform arbitrary file creation or overwrite. By crafting a malicious tar archive, an attacker can exploit a path traversal issue during ta…</description>
-      <category>High</category>
-      <pubDate>Tue, 25 Aug 2026 13:49:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79652 · 5.9 MEDIUM — Keycloak-services: keycloak-services: jwt bearer authorization grant does not enforce consentrequired</title>
-      <link>https://vulnogram.org/CVE-2026-79652</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79652</guid>
-      <description>A flaw was found in the JWT Bearer authorization grant implementation within the keycloak-services component of Red Hat Build of Keycloak. This component handles various OAuth2 and OpenID Connect grant types used for issuing access tokens. The issue…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 25 Aug 2026 11:07:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78701 · 6.5 MEDIUM — 389-ds-base: 389-ds-base: cve-2026-11610 incomplete fix may introduce a connection-stall dos</title>
-      <link>https://vulnogram.org/CVE-2026-78701</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78701</guid>
-      <description>A flaw was found in 389-ds-base. A remote, authenticated attacker could exploit a vulnerability in the Simple Authentication and Security Layer (SASL) UNBIND process. By sending a specially crafted request, the attacker can cause a connection to stal…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 25 Aug 2026 07:33:02 GMT</pubDate>
     </item>
   </channel>
 </rss>
