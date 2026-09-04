@@ -11,7 +11,47 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 04 Sep 2026 06:56:40 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 12:06:48 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-84428 · 7.5 HIGH — fastify vulnerable to header validation bypass via incomplete schema case normalization</title>
+      <link>https://vulnogram.org/CVE-2026-84428</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84428</guid>
+      <description>fastify versions before 5.12.2 implement the case-insensitive nature of HTTP header names by lowercasing names in a route&apos;s header schema before compiling it, but the transformation is incomplete: it lowercases the properties keys and the root-level…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 10:24:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84469 · 7.5 HIGH — fastify vulnerable to request validation bypass via skipped boolean false schemas</title>
+      <link>https://vulnogram.org/CVE-2026-84469</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84469</guid>
+      <description>fastify versions before 5.12.2 decide whether to compile a request schema based on JavaScript truthiness, but JSON Schema Draft 7 defines the boolean false as a valid schema that rejects every instance. When an application assigns false to a route&apos;s…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 09:59:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76169 · 7.5 HIGH — fastify vulnerable to authentication bypass via malformed URLs reaching encapsulated not-found handlers</title>
+      <link>https://vulnogram.org/CVE-2026-76169</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76169</guid>
+      <description>fastify versions &gt;= 4.0.0 and before 5.12.2 can route a malformed URL sent under one plugin prefix to the custom not-found handler of a different sibling plugin, and invoke it without the preHandler hook declared for that handler. The internal not-fo…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 09:51:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84504 · 8.1 HIGH — fastify vulnerable to request body replacement via an async validation result collision</title>
+      <link>https://vulnogram.org/CVE-2026-84504</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84504</guid>
+      <description>fastify versions before 5.12.2 treat the object resolved by a successful Ajv async validator as the value result protocol used by custom validator compilers. If a request that passes its route schema contains a property named value at the root, fasti…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 09:40:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85184 · 9.1 CRITICAL — @fastify/middie vulnerable to path-scoped middleware bypass via absolute-form request target</title>
+      <link>https://vulnogram.org/CVE-2026-85184</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85184</guid>
+      <description>@fastify/middie versions &gt;= 9.1.0 and before 9.3.4 decide whether to run path-scoped middleware by matching against the raw request target, while the Fastify router resolves an absolute-form request target to its path before dispatching. Because the…</description>
+      <category>Critical</category>
+      <pubDate>Fri, 04 Sep 2026 09:15:51 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-85124 · 7.5 HIGH — @fastify/http-proxy vulnerable to prefix escape via backslash dot-segments</title>
       <link>https://vulnogram.org/CVE-2026-85124</link>
@@ -372,47 +412,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 29 Jun 2026 13:22:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11525 · 3.7 LOW — undici vulnerable to Set-Cookie SameSite attribute downgrade via permissive substring matching</title>
-      <link>https://vulnogram.org/CVE-2026-11525</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11525</guid>
-      <description>Impact: When undici parses a Set-Cookie header, it accepts any SameSite attribute value that contains Strict, Lax, or None as a substring, rather than the case-insensitive exact match specified by RFC 6265. Non-spec values are silently mapped to one…</description>
-      <category>Low</category>
-      <pubDate>Wed, 17 Jun 2026 17:31:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6733 · 3.7 LOW — undici vulnerable to HTTP response queue poisoning via keep-alive socket reuse</title>
-      <link>https://vulnogram.org/CVE-2026-6733</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6733</guid>
-      <description>Impact: Undici&apos;s HTTP/1.1 client is vulnerable to response queue poisoning on reused keep-alive sockets. An attacker-controlled upstream server can inject an unsolicited HTTP/1.1 response onto an idle socket after a request completes. When the client…</description>
-      <category>Low</category>
-      <pubDate>Wed, 17 Jun 2026 17:14:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9678 · 5.9 MEDIUM — undici vulnerable to cross-user information disclosure via shared cache whitespace bypass</title>
-      <link>https://vulnogram.org/CVE-2026-9678</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9678</guid>
-      <description>Impact: Undici&apos;s cache interceptor incorrectly classifies some responses as cacheable when the upstream Cache-Control header uses whitespace-padded qualified private or no-cache field names such as private=&quot; authorization&quot; or no-cache=&quot;\tauthorizatio…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 17 Jun 2026 17:04:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9679 · 5.9 MEDIUM — undici vulnerable to HTTP header injection via Set-Cookie percent-decoding</title>
-      <link>https://vulnogram.org/CVE-2026-9679</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9679</guid>
-      <description>Impact: undici&apos;s cookie parser in parseSetCookie percent-decodes cookie values via qsUnescape, turning encoded sequences like %0D%0A, %00, %3B, and %3D into their literal byte equivalents. RFC 6265 §5.4 does not specify any decoding and browsers do n…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 17 Jun 2026 16:56:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9697 · 7.4 HIGH 🌩️ — undici vulnerable to TLS certificate validation bypass via dropped requestTls in SOCKS5 ProxyAgent</title>
-      <link>https://vulnogram.org/CVE-2026-9697</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9697</guid>
-      <description>Impact: undici&apos;s ProxyAgent silently drops the requestTls option when configured with a SOCKS5 proxy URI (socks5:// or socks://). The target HTTPS connection through the SOCKS5 tunnel falls back to Node&apos;s default trust store, ignoring user-configured…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 17 Jun 2026 16:46:42 GMT</pubDate>
     </item>
   </channel>
 </rss>

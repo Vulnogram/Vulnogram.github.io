@@ -11,7 +11,40 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 04 Sep 2026 06:56:40 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 12:06:49 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-85547 · 6.2 MEDIUM 🌩️ — Cross-Site Request Forgery via Attacker-Controlled REST Detection in MISP</title>
+      <link>https://vulnogram.org/CVE-2026-85547</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85547</guid>
+      <description>A cross-site request forgery (CSRF) vulnerability exists in MISP due to form-security and CSRF protections being disabled based on whether an incoming request was identified as a REST request. MISP&apos;s REST detection can be influenced by request proper…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 04 Sep 2026 09:40:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85546 · 8.6 HIGH — MISP Sharing Group Quick-Edit Actions Allow CSRF via State-Changing GET Requests</title>
+      <link>https://vulnogram.org/CVE-2026-85546</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85546</guid>
+      <description>MISP contains a cross-site request forgery (CSRF) vulnerability in the sharing group quick-edit functionality. The addOrg, removeOrg, addServer, and removeServer actions share the __initialiseSGQuickEdit() helper, where the HTTP method validation int…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 09:27:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85538 · 8.3 HIGH — MISP Attribute Deletion Authorization Bypass Allows Users Without Modify Permissions to Delete Attributes</title>
+      <link>https://vulnogram.org/CVE-2026-85538</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85538</guid>
+      <description>An incorrect authorization vulnerability in MISP allowed authenticated users to delete attributes from events despite lacking the required perm_modify or perm_modify_org permissions. The affected attribute deletion paths relied on organization member…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 09:05:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85533 · 7.6 HIGH — MISP Sharing Group Authorization Bypass via Omitted Distribution Parameter</title>
+      <link>https://vulnogram.org/CVE-2026-85533</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85533</guid>
+      <description>An authorization flaw in MISP allowed an authenticated user to submit a sharing_group_id without verifying that the user was authorized to use the referenced Sharing Group. In several attribute and Galaxy Cluster creation and editing workflows, valid…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 08:53:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-85242 · 6.9 MEDIUM 🌩️ — Server-Side Request Forgery via Favicon Redirect to Local Network Resources in PlaywrightCapture</title>
       <link>https://vulnogram.org/CVE-2026-85242</link>
@@ -401,40 +434,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 17 Aug 2026 20:52:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74767 · 8.7 HIGH 🌩️ — Unbounded DAA Decompression in Pandora Allows Denial of Service via Decompression Bomb</title>
-      <link>https://vulnogram.org/CVE-2026-74767</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74767</guid>
-      <description>Pandora contains a denial-of-service vulnerability in its handling of DAA (Direct Access Archive) files. When extracting the internal ISO image from a DAA archive, compressed chunks were decompressed using zlib.decompress() without enforcing a limit…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 15 Aug 2026 21:56:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74764 · 10 CRITICAL 🌩️ — Path Traversal in TAR Archive Extraction Allows Arbitrary File Write in Pandora</title>
-      <link>https://vulnogram.org/CVE-2026-74764</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74764</guid>
-      <description>Pandora contains a path traversal vulnerability in its TAR archive extraction functionality. When processing a submitted TAR archive, the extractor passed archive member names directly to Python&apos;s tarfile.TarFile.extract() without applying an extract…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 15 Aug 2026 21:39:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73432 · 5.1 MEDIUM — Stored Server-Side Request Forgery in Remote-Instance Synchronization Allows Access to Internal Services in vulnerability-lookup</title>
-      <link>https://vulnogram.org/CVE-2026-73432</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73432</guid>
-      <description>Vulnerability-Lookup contains a server-side request forgery (SSRF) vulnerability in the remote-instance synchronization functionality. Remote instance addresses were validated only for basic URL syntax before being stored, while the synchronization w…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 12 Aug 2026 14:40:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73431 · 8.8 HIGH — Reusable Account Activation and Recovery Tokens Allow Repeated Account Takeover in vulnerability-lookup</title>
-      <link>https://vulnogram.org/CVE-2026-73431</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73431</guid>
-      <description>Vulnerability-Lookup contains an authentication weakness in its account activation and password-recovery mechanism. Activation and recovery links were generated using stateless signed tokens containing only the user&apos;s login. Although the token signat…</description>
-      <category>High</category>
-      <pubDate>Wed, 12 Aug 2026 14:32:56 GMT</pubDate>
     </item>
   </channel>
 </rss>

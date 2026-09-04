@@ -11,7 +11,41 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 04 Sep 2026 06:56:40 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 12:06:48 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-85534 · 5.9 MEDIUM 🌩️ — Libsoup: libsoup: http/2 client crash in on_data_source_read_callback when settings initial_window_size shrinks during deferred body read</title>
+      <link>https://vulnogram.org/CVE-2026-85534</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85534</guid>
+      <description>A flaw was found in libsoup. When a client sends an HTTP/2 request body from a non-pollable input stream, the library can buffer more data than the current flow-control window later allows. A malicious HTTP/2 server can shrink SETTINGS_INITIAL_WINDOW…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 04 Sep 2026 10:19:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81666 · 6.5 MEDIUM — Corosync: corosync: integer overflow in check_memb_commit_token_sanity may bypass message length validation on 32-bit systems</title>
+      <link>https://vulnogram.org/CVE-2026-81666</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81666</guid>
+      <description>An integer overflow was found in Corosync&apos;s handling of membership commit token messages. The length-validation check for these messages can be bypassed on 32-bit systems due to an integer overflow in the calculation of the expected message length, a…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Sep 2026 09:46:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81665 · 7.5 HIGH — Corosync: corosync: heap-based buffer overflow in totempg assembly buffer during fragmented message reassembly</title>
+      <link>https://vulnogram.org/CVE-2026-81665</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81665</guid>
+      <description>A heap-based buffer overflow was found in Corosync&apos;s Totem Process Group (totempg) message reassembly. When processing fragmented multicast messages, the buffer used to reassemble fragments lacks a runtime bounds check in release builds. A network-ad…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 09:05:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85197 · 7.6 HIGH 🌩️ — Libsoup: libsoup: heap use-after-free in libsoup http/2 client on_data_read() via goaway during body upload</title>
+      <link>https://vulnogram.org/CVE-2026-85197</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85197</guid>
+      <description>A flaw was found in libsoup. A malicious HTTP/2 server or a Man-in-the-Middle (MITM) attacker can exploit a heap use-after-free vulnerability in the HTTP/2 client implementation. This occurs when a GNOME application uploads a file using HTTP/2, and t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 04 Sep 2026 07:34:31 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-84185 · 5.9 MEDIUM — Jwcrypto: jwcrypto: general json jws kid binding bypass during jwkset verification</title>
       <link>https://vulnogram.org/CVE-2026-84185</link>
@@ -395,38 +429,6 @@
       <description>A flaw was found in the ipa_getkeytab module of the community.general Ansible collection. The module&apos;s bind_pw parameter, used to supply the LDAP simple-bind password when retrieving a Kerberos keytab, is not declared with no_log, unlike the sibling…</description>
       <category>Medium</category>
       <pubDate>Wed, 26 Aug 2026 22:06:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79902 · 5.5 MEDIUM — Gimp: stack vla size underflow denial of service in seattle</title>
-      <link>https://vulnogram.org/CVE-2026-79902</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79902</guid>
-      <description>A flaw was found in the Seattle FilmWorks plugin in GIMP. When processing a specially crafted SFW image file, the plugin allocates a Variable-Length Array (VLA) on the stack without integer overflow checks, causing an unbounded stack allocation. This…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 26 Aug 2026 13:34:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79654 · 4.3 MEDIUM — Ketello: katello content view history api cross-organization authorization bypass</title>
-      <link>https://vulnogram.org/CVE-2026-79654</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79654</guid>
-      <description>A flaw was found in Katello where the Content View History API does not properly enforce authorization when accessing a Content View specified by the user. An authenticated user with permission to view Content Views in one organization may be able to…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 26 Aug 2026 05:37:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80185 · 5.7 MEDIUM — Bluez: sdp-xml: bluez 5.86: unprivileged-local and adjacent-le-peer leads to arbitrary code execution as root</title>
-      <link>https://vulnogram.org/CVE-2026-80185</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80185</guid>
-      <description>BlueZ sdp-xml.c type confusion via RegisterProfile(ServiceRecord) can crash bluetoothd (local DoS): a crafted nested ServiceRecord can corrupt the SDP XML parser stack so scalar union data is treated as a sequence pointer, allowing a local caller to…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 25 Aug 2026 21:58:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80186 · 7.6 HIGH — Bluez: stack overflow in name2utf8 causes dos and potential code execution</title>
-      <link>https://vulnogram.org/CVE-2026-80186</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80186</guid>
-      <description>A stack-based buffer overflow vulnerability exists in BlueZ, the Linux Bluetooth protocol stack. A remote user within Bluetooth radio range can send a specially crafted Extended Inquiry Response (EIR) packet that causes a buffer overflow when the tar…</description>
-      <category>High</category>
-      <pubDate>Tue, 25 Aug 2026 21:58:16 GMT</pubDate>
     </item>
   </channel>
 </rss>
