@@ -11,7 +11,95 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 04 Sep 2026 15:27:59 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 18:45:15 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-18149 · 5.9 MEDIUM — undici vulnerable to Denial of Service via orphaned RetryHandler response body</title>
+      <link>https://vulnogram.org/CVE-2026-18149</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18149</guid>
+      <description>undici&apos;s retry handler can leave an already-exposed response body pending forever. When a server returns a successful response that declares a Content-Length, sends only part of the body, and closes the connection, the retry handler retries the reque…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Sep 2026 17:21:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18540 · 3.7 LOW — undici vulnerable to downstream response splitting via retry interceptor</title>
+      <link>https://vulnogram.org/CVE-2026-18540</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18540</guid>
+      <description>undici&apos;s retry interceptor can append the body of a ranged retry response to bytes already delivered from an earlier partial response while still presenting the original response&apos;s status and headers. This happens when an upstream server delivers par…</description>
+      <category>Low</category>
+      <pubDate>Fri, 04 Sep 2026 17:15:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19534 · 7.5 HIGH — undici vulnerable to Denial of Service via unrequested WebSocket subprotocol</title>
+      <link>https://vulnogram.org/CVE-2026-19534</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19534</guid>
+      <description>undici&apos;s WebSocket client crashes the whole Node.js process during the opening handshake when a server responds with a subprotocol that the client never requested. A default WebSocket connection sends no subprotocol, but if the server&apos;s 101 response…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 17:10:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84890 · 5.9 MEDIUM — undici vulnerable to Denial of Service via unbounded decompression of compressed responses</title>
+      <link>https://vulnogram.org/CVE-2026-84890</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84890</guid>
+      <description>undici&apos;s decompress interceptor decompresses response bodies according to the untrusted Content-Encoding header. While the number of content-encoding layers is capped, the total decompressed output size is unbounded and there is no configuration opti…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Sep 2026 17:04:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84933 · 6.5 MEDIUM — undici vulnerable to cross-user cookie disclosure via Set-Cookie caching in shared caches</title>
+      <link>https://vulnogram.org/CVE-2026-84933</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84933</guid>
+      <description>undici&apos;s cache interceptor does not handle the Set-Cookie response header anywhere in its cache path, so it neither refuses to store nor strips that header. In shared cache mode, which is the default, an otherwise cacheable response that carries a Se…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Sep 2026 16:59:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84947 · 3.7 LOW — undici vulnerable to response truncation via oversized chunked responses in the dump interceptor</title>
+      <link>https://vulnogram.org/CVE-2026-84947</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84947</guid>
+      <description>undici&apos;s dump interceptor reads and discards a response body up to a configurable maximum size. When a response declares a Content-Length that exceeds the maximum, the interceptor aborts cleanly, but when a response has no Content-Length and is chunk…</description>
+      <category>Low</category>
+      <pubDate>Fri, 04 Sep 2026 16:53:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84961 · 7.4 HIGH — undici vulnerable to TLS certificate validation bypass via dropped connect options in BalancedPool</title>
+      <link>https://vulnogram.org/CVE-2026-84961</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84961</guid>
+      <description>undici&apos;s BalancedPool constructor passes its entire options object through an internal deep-clone that serializes and reparses the value as JSON. Because JSON cannot represent functions, any function-valued TLS option, such as a caller-supplied check…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 16:47:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85008 · 3.7 LOW — undici vulnerable to caching and replay of unsafe HTTP method responses</title>
+      <link>https://vulnogram.org/CVE-2026-85008</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85008</guid>
+      <description>undici&apos;s cache interceptor documents that only safe HTTP methods are cached, but its logic to skip caching is built by subtracting the configured methods from the set of safe methods, so an unsafe method such as POST, PUT, or DELETE is never placed i…</description>
+      <category>Low</category>
+      <pubDate>Fri, 04 Sep 2026 16:42:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85152 · 7.4 HIGH — undici vulnerable to cross-origin cache poisoning via missing origin isolation in interceptors</title>
+      <link>https://vulnogram.org/CVE-2026-85152</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85152</guid>
+      <description>undici 8.10.0 omits the destination origin from the cache and request-deduplication keys when the cache or deduplicate interceptor is composed directly onto a Client or Pool. Because the internal cache key falls back to an empty origin string, a cach…</description>
+      <category>High</category>
+      <pubDate>Fri, 04 Sep 2026 16:36:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85014 · 5.9 MEDIUM — undici vulnerable to Denial of Service via WebSocketStream unclean close</title>
+      <link>https://vulnogram.org/CVE-2026-85014</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85014</guid>
+      <description>undici&apos;s experimental WebSocketStream client crashes the whole Node.js process when a remote peer closes the TCP connection without a WebSocket close handshake. On an unclean close the internal socket-close handler calls abort on the writable stream…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Sep 2026 16:30:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85024 · 5.9 MEDIUM — undici vulnerable to Denial of Service via unhandled error in WebSocket permessage-deflate decompression</title>
+      <link>https://vulnogram.org/CVE-2026-85024</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85024</guid>
+      <description>undici bundles a WebSocket client whose permessage-deflate size-limit cleanup removes all listeners from the internal zlib inflate stream, including its error listener, while that stream can still emit. When a remote peer sends a compressed payload t…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 04 Sep 2026 16:20:34 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-84428 · 7.5 HIGH — fastify vulnerable to header validation bypass via incomplete schema case normalization</title>
       <link>https://vulnogram.org/CVE-2026-84428</link>
@@ -323,95 +411,6 @@
       <description>@fastify/static evaluates the allowedPath callback before normalizing dot segments and duplicate path separators in the pathname used for file resolution. Versions up to and including 10.1.1 are affected. An unauthenticated attacker can bypass allowe…</description>
       <category>Medium</category>
       <pubDate>Thu, 23 Jul 2026 02:48:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16221 · 7.5 HIGH — fast-uri vulnerable to host confusion via literal backslash authority delimiter</title>
-      <link>https://vulnogram.org/CVE-2026-16221</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16221</guid>
-      <description>Impact: fast-uri versions from 2.3.1 through 4.1.0 (including the 3.x line up to 3.1.3 and the 2.x line up to 2.4.2) do not treat a literal backslash character (U+005C) as an authority delimiter. Node&apos;s native WHATWG URL parser, used by fetch, undici…</description>
-      <category>High</category>
-      <pubDate>Sun, 19 Jul 2026 14:08:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16117 · 10 CRITICAL — @fastify/http-proxy vulnerable to prefix escape via URL-encoded characters</title>
-      <link>https://vulnogram.org/CVE-2026-16117</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16117</guid>
-      <description>Impact: @fastify/http-proxy versions up to and including 11.5.0 fail to rewrite the request prefix when the prefix segment is URL-encoded. Fastify&apos;s router URL-decodes paths for route matching, but request.url retains the original encoded form, and t…</description>
-      <category>Critical</category>
-      <pubDate>Sat, 18 Jul 2026 13:08:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15631 · 8.7 HIGH — @fastify/http-proxy vulnerable to prefix escape via WebSocket path traversal</title>
-      <link>https://vulnogram.org/CVE-2026-15631</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15631</guid>
-      <description>Impact: @fastify/http-proxy versions from 9.4.0 up to and including 11.5.0 fail to validate the resolved WebSocket destination path against the configured rewrite prefix. The WebSocket routing path in WebSocketProxy.findUpstream resolves the destinat…</description>
-      <category>High</category>
-      <pubDate>Sat, 18 Jul 2026 12:46:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16158 · 8.7 HIGH — @fastify/reply-from vulnerable to cross-upstream request routing via URL cache key collision</title>
-      <link>https://vulnogram.org/CVE-2026-16158</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16158</guid>
-      <description>Impact: @fastify/reply-from versions from 8.3.1 up to but not including 12.6.4 build the internal URL cache key by concatenating the destination and source path without a delimiter. Different destination and source pairs can therefore produce the sam…</description>
-      <category>High</category>
-      <pubDate>Sat, 18 Jul 2026 12:28:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12590 · 3.7 LOW — body-parser vulnerable to denial of service when invalid limit value silently disables size enforcement</title>
-      <link>https://vulnogram.org/CVE-2026-12590</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12590</guid>
-      <description>Impact: In body-parser versions prior to 1.20.6 (1.x line) and 2.3.0 (2.x line), when the parser is configured with an invalid limit option value such as an unparseable string or NaN, bytes.parse returns null and the request body size check is silent…</description>
-      <category>Low</category>
-      <pubDate>Thu, 09 Jul 2026 10:21:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14631 · 5.3 MEDIUM — webpack-dev-server vulnerable to denial of service via a malformed Host or Origin header</title>
-      <link>https://vulnogram.org/CVE-2026-14631</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14631</guid>
-      <description>webpack-dev-server versions 5.2.5 and earlier terminate the whole Node.js process when an unauthenticated peer sends either a normal HTTP request with a malformed Host header or a WebSocket upgrade to the default /ws endpoint with a malformed Origin…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 03 Jul 2026 17:23:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14620 · 4.7 MEDIUM — webpack-dev-server vulnerable to cross-site request forgery via internal developer endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-14620</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14620</guid>
-      <description>webpack-dev-server versions 5.2.5 and earlier expose two internal developer endpoints, /webpack-dev-server/open-editor and /webpack-dev-server/invalidate, that perform state-changing actions on any GET request without verifying that the request origi…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 03 Jul 2026 17:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14181 · 7.5 HIGH — @fastify/middie standalone engine vulnerable to Denial of Service via malformed percent-encoded paths</title>
-      <link>https://vulnogram.org/CVE-2026-14181</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14181</guid>
-      <description>@fastify/middie versions 9.1.0 through 9.3.2 fail to guard the URL normalization step used by the standalone engine when incoming request paths contain malformed percent-encoded sequences. Inputs such as an incomplete percent escape or a truncated mu…</description>
-      <category>High</category>
-      <pubDate>Wed, 01 Jul 2026 11:42:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14198 · 9.1 CRITICAL — @fastify/middie vulnerable to authorization bypass via encoded slash in path parameter values</title>
-      <link>https://vulnogram.org/CVE-2026-14198</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14198</guid>
-      <description>@fastify/middie versions 9.1.0 through 9.3.2 decode the encoded slash %2F inside path parameter values before matching middleware paths, while Fastify&apos;s underlying router preserves the encoding during route lookup. The two layers disagree on the cano…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 01 Jul 2026 11:29:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6556 · 9.1 CRITICAL — @fastify/express vulnerable to middleware bypass via non-string mount paths in prefixed plugins</title>
-      <link>https://vulnogram.org/CVE-2026-6556</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6556</guid>
-      <description>@fastify/express versions 4.0.6 and earlier only rewrite the plugin prefix for middleware mount paths when the path argument is a string. Non-string mount paths (arrays of paths and regular expressions) are left unprefixed inside prefixed plugin scop…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 30 Jun 2026 12:48:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13676 · 7.5 HIGH 🌩️ — fast-uri vulnerable to host confusion via failed IDN canonicalization</title>
-      <link>https://vulnogram.org/CVE-2026-13676</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13676</guid>
-      <description>fast-uri versions 2.3.1 through 3.1.2 and 4.0.0 fail to canonicalize Unicode (IDN) hostnames for HTTP-family URLs. The IDN conversion path calls a helper that does not exist on the global URL constructor, silently leaving the host in its original Uni…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Jun 2026 13:22:44 GMT</pubDate>
     </item>
   </channel>
 </rss>
