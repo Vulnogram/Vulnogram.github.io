@@ -11,7 +11,63 @@
       <title>Tcpdump Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 05 Sep 2026 18:58:34 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 21:03:15 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-18238 · 5 MEDIUM — OOBR in rpcap client in libpcap before 1.10.7</title>
+      <link>https://vulnogram.org/CVE-2026-18238</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18238</guid>
+      <description>The rpcap client code that processes a RPCAP_MSG_PACKET message received from the server incorrectly validates its headers. A malicious server can send a crafted message and cause the client to treat up to 20 bytes of the client process memory beyond…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 05 Sep 2026 18:51:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18313 · 4.3 MEDIUM — rpcapd memory leak in libpcap before 1.10.7</title>
+      <link>https://vulnogram.org/CVE-2026-18313</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18313</guid>
+      <description>rpcapd can allocate up to 65536 bytes per each RPCAP_MSG_UPDATEFILTER_REQ or RPCAP_MSG_STARTCAP_REQ message received from the client, but it never frees the memory, so it leaks memory even under normal use. A malicious client can cause the server to…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 05 Sep 2026 18:51:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6554 · 5.5 MEDIUM — infinte loop in libpcap before 1.10.7</title>
+      <link>https://vulnogram.org/CVE-2026-6554</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6554</guid>
+      <description>libpcap BPF interpreter treats the offset in the &apos;ja L&apos; BPF instruction as a signed integer to implement looping via backward jumps, but it does not limit the number of loop iterations. In particular uncommon use cases a crafted filter program can ca…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 05 Sep 2026 18:51:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6244 · 5.5 MEDIUM — division by zero in libpcap before 1.10.7</title>
+      <link>https://vulnogram.org/CVE-2026-6244</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6244</guid>
+      <description>libpcap BPF interpreter for the &apos;div #k&apos; and &apos;mod #k&apos; ALU instructions does not check whether the immediate value is zero. In particular uncommon use cases a crafted filter program can cause a division by zero.</description>
+      <category>Medium</category>
+      <pubDate>Sat, 05 Sep 2026 18:50:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-31911 · 5.5 MEDIUM — abort() in libpcap before 1.10.7 on an invalid BPF opcode</title>
+      <link>https://vulnogram.org/CVE-2026-31911</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31911</guid>
+      <description>libpcap BPF interpreter calls abort() if it encounters a BPF instruction that has an invalid opcode. In particular uncommon use cases a crafted filter program can terminate the OS process.</description>
+      <category>Medium</category>
+      <pubDate>Sat, 05 Sep 2026 18:50:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-31912 · 5.5 MEDIUM — OOBR in libpcap before 1.10.7</title>
+      <link>https://vulnogram.org/CVE-2026-31912</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31912</guid>
+      <description>libpcap BPF interpreter detects neither reaching the end of the filter program buffer due to lack of a return instruction nor executing a jump instruction with an offset that translates to a pointer outside of the buffer. In particular uncommon use c…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 05 Sep 2026 18:49:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-0799 · 8.7 HIGH — OOBR and OOBW in libpcap before 1.10.7</title>
+      <link>https://vulnogram.org/CVE-2026-0799</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0799</guid>
+      <description>In BPF instructions that load/store a value from/to a scratch memory register the register index is an unsigned 32-bit integer and must not exceed 15, but libpcap BPF interpreter does not validate the value. In particular uncommon use cases a crafted…</description>
+      <category>High</category>
+      <pubDate>Sat, 05 Sep 2026 18:48:39 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2025-11964 · 1.9 LOW — OOBW in utf_16le_to_utf_8_truncated() in libpcap</title>
       <link>https://vulnogram.org/CVE-2025-11964</link>

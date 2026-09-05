@@ -11,7 +11,61 @@
       <title>CERT.PL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 05 Sep 2026 18:58:34 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 21:03:15 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-86060 · 9.2 CRITICAL 🌩️ — SSH session privilege manipulation via a crafted username in Mikrotik RouterOS</title>
+      <link>https://vulnogram.org/CVE-2026-86060</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86060</guid>
+      <description>RouterOS contains an argument-handling flaw in the SSH login path involving usernames that begin with a prohibited character, allowing for the trusted RouterOS policy mask to be changed, leading to privilege escalation. Exploitation requires an unaut…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 05 Sep 2026 20:00:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67281 · 8.7 HIGH 🌩️ — Unauthenticated file read in Mikrotik RouterOS</title>
+      <link>https://vulnogram.org/CVE-2026-67281</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67281</guid>
+      <description>RouterOS WebFig contains an unauthenticated file-read vulnerability in the /jsproxy path where a newly allocated session retains a stale uninitialized principal pointer used for file authorization. An unauthenticated attacker can prepare the allocato…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 05 Sep 2026 20:00:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67279 · 6.9 MEDIUM 🌩️ — SSH Pre-Authentication Rekey State Bypass in MikroTik RouterOS</title>
+      <link>https://vulnogram.org/CVE-2026-67279</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67279</guid>
+      <description>RouterOS SSH enters the connection protocol after a client-requested rekey even though user authentication was never attempted, allowing an unauthenticated client to open a session channel and send an exec request. On affected builds the server dispa…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 05 Sep 2026 20:00:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67278 · 6.3 MEDIUM 🌩️ — TLS server impersonation possible in Mikrotik RouterOS</title>
+      <link>https://vulnogram.org/CVE-2026-67278</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67278</guid>
+      <description>MikroTik RouterOS accepts malformed RSA/PKCS#1 v1.5 signatures during X.509 validation. Because its trust store includes an e=3 root CA, an attacker controlling or redirecting an outbound RouterOS TLS connection can use the root’s public certificate…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 05 Sep 2026 20:00:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67277 · 8.8 HIGH 🌩️ — Kernel memory disclosure and denial of service in MikroTik RouterOS btest service</title>
+      <link>https://vulnogram.org/CVE-2026-67277</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67277</guid>
+      <description>RouterOS accepts a &quot;related&quot; btest connection before the corresponding primary session has completed authentication. An unauthenticated client can use this state to start an IPv4 UDP test. With &quot;random-data=false&quot;, the sender transmits an uninitializ…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 05 Sep 2026 20:00:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-67276 · 9.2 CRITICAL 🌩️ — SSH user impersonation possible in Mikrotik RouterOS</title>
+      <link>https://vulnogram.org/CVE-2026-67276</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67276</guid>
+      <description>RouterOS does not compare the complete RSA public key when matching an SSH authentication request to an authorized user key, checking the key type and modulus but omitting the exponent. Because signature verification uses the client-supplied key, an…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 05 Sep 2026 20:00:55 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15933 · 6.9 MEDIUM — Cleartext Storage of Sensitive Credentials in OptimiDoc Server (On-Premise)</title>
       <link>https://vulnogram.org/CVE-2026-15933</link>
@@ -392,54 +446,6 @@
       <description>diff‑so‑fancy does not properly sanitize non‑SGR terminal control sequences before outputting diff data. The application only strips ANSI SGR sequences while allowing other control characters, including carriage return (\r) and escape sequences (e.g.…</description>
       <category>Medium</category>
       <pubDate>Wed, 29 Jul 2026 09:46:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56390 · 4.6 MEDIUM — Arbitrary Output Location Change in GNU Bison</title>
-      <link>https://vulnogram.org/CVE-2026-56390</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56390</guid>
-      <description>GNU Bison improperly handles grammar‑defined output paths. Grammar directives such as %output and %header allow specifying file paths, which are accepted without restriction and override caller‑supplied output options. When processing attacker-suppli…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 29 Jul 2026 09:40:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56389 · 6.8 MEDIUM — Arbitrary Command Execution in GNU Bison</title>
-      <link>https://vulnogram.org/CVE-2026-56389</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56389</guid>
-      <description>GNU Bison allows for an execution of an arbitrary program during HTML report generation due to improper handling of grammar-defined configuration variables. A grammar file can override the executable used for the XML‑to‑HTML transformation step via %…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 29 Jul 2026 09:39:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41874 · 6.8 MEDIUM — Hard-coded admin credentials in Quick.Cart</title>
-      <link>https://vulnogram.org/CVE-2026-41874</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41874</guid>
-      <description>Quick.Cart stores hard-coded, plaintext admin credentials in a configuration file. This flaw allows attackers with access to the server file system to retrieve authentication details, potentially leading to privilege escalation. The vendor assessed t…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 28 Jul 2026 12:02:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-63303 · 5.1 MEDIUM — Path Traversal in Quick.CMS</title>
-      <link>https://vulnogram.org/CVE-2026-63303</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63303</guid>
-      <description>A Path Traversal vulnerability exists in Quick.CMS through the URI path component of HTTP requests, where the server fails to normalize dot-dot-slash (../) sequences before resolving and serving the requested file. An authenticated attacker with admi…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 28 Jul 2026 10:43:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-63302 · 5.1 MEDIUM — Local File Inclusion in Quick.CMS</title>
-      <link>https://vulnogram.org/CVE-2026-63302</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63302</guid>
-      <description>Quick.CMS is vulnerable to Local File Inclusion (LFI) in the admin.php endpoint via the p parameter. An authenticated attacker with admin privileges can include arbitrary files located within the application&apos;s directory structure via a crafted HTTP r…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 28 Jul 2026 10:43:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-63301 · 7 HIGH — Denial of Service in Quick.CMS</title>
-      <link>https://vulnogram.org/CVE-2026-63301</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63301</guid>
-      <description>In Quick.CMS, the administrative user interface restricts deletion of the primary language by omitting the corresponding option from the interface; however, the underlying language-deletion API endpoint does not enforce an equivalent server-side auth…</description>
-      <category>High</category>
-      <pubDate>Tue, 28 Jul 2026 10:42:56 GMT</pubDate>
     </item>
   </channel>
 </rss>
