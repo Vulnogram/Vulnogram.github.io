@@ -11,7 +11,70 @@
       <title>curl — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 06 Sep 2026 16:47:01 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 18:58:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-82209 — domain-scoped PSL domain cookie</title>
+      <link>https://vulnogram.org/CVE-2026-82209</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82209</guid>
+      <description>When libpsl support is enabled, libcurl fails to enforce the Public Suffix List boundary check when processing a `Set-Cookie` header where the `Domain` attribute explicitly matches an origin host that is itself a public suffix (e.g., `Domain=co.uk` s…</description>
+      <pubDate>Sun, 06 Sep 2026 17:49:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82208 — wolfSSL CA-cache hit overrides callback</title>
+      <link>https://vulnogram.org/CVE-2026-82208</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82208</guid>
+      <description>With the wolfSSL backend, when CA caching is enabled and an `CURLOPT_SSL_CTX_FUNCTION` callback replaces the trust store, libcurl can silently reinstall the cached store after the callback returns. A certificate trusted by the cached store but reject…</description>
+      <pubDate>Sun, 06 Sep 2026 17:49:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80255 — secure cookie attribute bypass with tab</title>
+      <link>https://vulnogram.org/CVE-2026-80255</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80255</guid>
+      <description>A `Set-Cookie:` header using tab (horizontal tab, ASCII code 9) instead of space (ascii code 32) immediately before the `Secure` attribute causes curl to store the cookie without its Secure flag. The cookie might then wrongfully be sent over plaintex…</description>
+      <pubDate>Sun, 06 Sep 2026 17:48:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80231 — native CA store conn reuse</title>
+      <link>https://vulnogram.org/CVE-2026-80231</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80231</guid>
+      <description>A flaw in libcurl makes it wrongly reuse an existing HTTPS connection setup for a given hostname even when using a different Native CA Store setting (`CURLSSLOPT_NATIVE_CA`) than when the connection was created.</description>
+      <pubDate>Sun, 06 Sep 2026 17:48:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80230 — OpenSSL pinning bypass</title>
+      <link>https://vulnogram.org/CVE-2026-80230</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80230</guid>
+      <description>When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable standard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and `CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on connections established without a p…</description>
+      <pubDate>Sun, 06 Sep 2026 17:48:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80229 — OpenSSL provider use-after-free</title>
+      <link>https://vulnogram.org/CVE-2026-80229</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80229</guid>
+      <description>When performing transfers via libcurl’s multi interface, pooled TLS connections can outlive their originating easy handles. In OpenSSL 3 provider configurations, libcurl attaches an allocated library context to the easy handle&apos;s state and passes it t…</description>
+      <pubDate>Sun, 06 Sep 2026 17:47:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19931 — Negotiate ambient user conn reuse</title>
+      <link>https://vulnogram.org/CVE-2026-19931</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19931</guid>
+      <description>A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given hostname using Negotiate authentication, when the initial request is done using empty credentials. This can make user B&apos;s request get sent over user A&apos;s previously authenti…</description>
+      <pubDate>Sun, 06 Sep 2026 17:47:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18924 — HTTP/2 server push UAF</title>
+      <link>https://vulnogram.org/CVE-2026-18924</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18924</guid>
+      <description>A flaw in libcurl&apos;s handling of HTTP/2 Server Push streams, when the parent handle is set to share connections with other handles, can lead to use-after-free in the cleanup process.</description>
+      <pubDate>Sun, 06 Sep 2026 17:47:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13608 — OpenLDAP SASL authentication bypass</title>
+      <link>https://vulnogram.org/CVE-2026-13608</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13608</guid>
+      <description>A flaw in the libcurl SASL negotiation for LDAP authentication allows an incomplete handshake sequence to be misinterpreted as a successful cryptographic verification. An attacker executing a Man-in-the-Middle (MITM) attack can inject a premature or…</description>
+      <pubDate>Sun, 06 Sep 2026 17:47:01 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-9547 · 7.4 HIGH 🌩️ — SSH improper host validation</title>
       <link>https://vulnogram.org/CVE-2026-9547</link>
@@ -373,86 +436,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Sat, 07 Jun 2025 07:49:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-5025 · 4.8 MEDIUM 🌩️ — No QUIC certificate pinning with wolfSSL</title>
-      <link>https://vulnogram.org/CVE-2025-5025</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-5025</guid>
-      <description>libcurl supports *pinning* of the server certificate public key for HTTPS transfers. Due to an omission, this check is not performed when connecting with QUIC for HTTP/3, when the TLS backend is wolfSSL. Documentation says the option works with wolfS…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 28 May 2025 06:29:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-4947 · 6.5 MEDIUM 🌩️ — QUIC certificate check skip with wolfSSL</title>
-      <link>https://vulnogram.org/CVE-2025-4947</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4947</guid>
-      <description>libcurl accidentally skips the certificate verification for QUIC connections when connecting to a host specified as an IP address in the URL. Therefore, it does not detect impostors or man-in-the-middle attacks.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 28 May 2025 06:29:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-0725 · 7.3 HIGH 🌩️ — gzip integer overflow</title>
-      <link>https://vulnogram.org/CVE-2025-0725</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0725</guid>
-      <description>When libcurl is asked to perform automatic gzip decompression of content-encoded HTTP responses with the `CURLOPT_ACCEPT_ENCODING` option, **using zlib 1.2.0.3 or older**, an attacker-controlled integer overflow would make libcurl perform a buffer ov…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Feb 2025 09:18:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-0665 · 7 HIGH 🌩️ — eventfd double close</title>
-      <link>https://vulnogram.org/CVE-2025-0665</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0665</guid>
-      <description>libcurl would wrongly close the same eventfd file descriptor twice when taking down a connection channel after having completed a threaded name resolve.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Feb 2025 09:16:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-0167 · 3.4 LOW 🌩️ — netrc and default credential leak</title>
-      <link>https://vulnogram.org/CVE-2025-0167</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0167</guid>
-      <description>When asked to use a `.netrc` file for credentials **and** to follow HTTP redirects, curl could leak the password used for the first host to the followed-to host under certain circumstances. This flaw only manifests itself if the netrc file has a `def…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Feb 2025 09:15:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-11053 · 3.4 LOW 🌩️ — netrc and redirect credential leak</title>
-      <link>https://vulnogram.org/CVE-2024-11053</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11053</guid>
-      <description>When asked to both use a `.netrc` file for credentials and to follow HTTP redirects, curl could leak the password used for the first host to the followed-to host under certain circumstances. This flaw only manifests itself if the netrc file has an en…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 11 Dec 2024 07:34:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-9681 · 5.9 MEDIUM 🌩️ — HSTS subdomain overwrites parent cache entry</title>
-      <link>https://vulnogram.org/CVE-2024-9681</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-9681</guid>
-      <description>When curl is asked to use HSTS, the expiry time for a subdomain might overwrite a parent domain&apos;s cache entry, making it end sooner or later than otherwise intended. This affects curl using applications that enable HSTS and use URLs with the insecure…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 06 Nov 2024 07:47:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8096 · 6.5 MEDIUM 🌩️ — OCSP stapling bypass with GnuTLS</title>
-      <link>https://vulnogram.org/CVE-2024-8096</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8096</guid>
-      <description>When curl is told to use the Certificate Status Request TLS extension, often referred to as OCSP stapling, to verify that the server certificate is valid, it might fail to detect some OCSP problems and instead wrongly consider the response as fine. I…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 11 Sep 2024 10:03:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-7264 · 6.3 MEDIUM — ASN.1 date parser overread</title>
-      <link>https://vulnogram.org/CVE-2024-7264</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-7264</guid>
-      <description>libcurl&apos;s ASN1 parser code has the `GTime2str()` function, used for parsing an ASN.1 Generalized Time field. If given an syntactically incorrect field, the parser might end up using -1 for the length of the *time fraction*, leading to a `strlen()` ge…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 31 Jul 2024 08:08:14 GMT</pubDate>
     </item>
   </channel>
 </rss>
