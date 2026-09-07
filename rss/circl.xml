@@ -11,7 +11,72 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 07 Sep 2026 11:04:26 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 16:24:48 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-86452 · 8.7 HIGH 🌩️ — MISP Unauthenticated Mail Endpoints Allow Unbounded Storage Consumption and Request Flooding</title>
+      <link>https://vulnogram.org/CVE-2026-86452</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86452</guid>
+      <description>Affected versions of MISP permit unauthenticated or weakly constrained request paths to perform persistent work without adequate input bounds or rate limiting. The users/forgot password-reset endpoint accepted an attacker-controlled email value witho…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 13:03:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86451 · 5.3 MEDIUM — MISP Event Graph Object Reference Lookup Exposes References from Unauthorized Objects</title>
+      <link>https://vulnogram.org/CVE-2026-86451</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86451</guid>
+      <description>Affected versions of MISP allow authenticated users to retrieve object-reference records by UUID through EventGraphTool::get_reference_data() without first checking whether the requester is authorized to view the object the reference belongs to. The…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 07 Sep 2026 12:59:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86441 · 2.3 LOW — MISP Dashboard Organisation Widgets Bypass Organisation-Index Restrictions and Expose Hidden Organisation Data</title>
+      <link>https://vulnogram.org/CVE-2026-86441</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86441</guid>
+      <description>Affected versions of MISP contain inconsistent authorization checks across dashboard widgets that display organisation information. Several organisation-related widgets did not honor Security.hide_organisation_index_from_users. As a result, authentic…</description>
+      <category>Low</category>
+      <pubDate>Mon, 07 Sep 2026 12:39:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86440 · 5.1 MEDIUM — MISP Dashboard Button Widget Allows Stored XSS via Unsafe javascript: and Backslash URLs</title>
+      <link>https://vulnogram.org/CVE-2026-86440</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86440</guid>
+      <description>Affected versions of MISP insufficiently validate URLs used by dashboard widgets, particularly the Button widget. The widget&apos;s URL is stored configuration controlled by a user. The previous renderer considered a URL safe if it appeared relative or if…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 07 Sep 2026 12:35:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86419 · 7 HIGH — MISP Insufficient Outbound URL Validation Allows SSRF and Credential Disclosure via Feed Redirects and TAXII Discovery</title>
+      <link>https://vulnogram.org/CVE-2026-86419</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86419</guid>
+      <description>Affected versions of MISP contain insufficient validation of server-side outbound HTTP destinations in feed retrieval and TAXII discovery functionality. In feed processing, redirects were followed without validating the redirect scheme or destination…</description>
+      <category>High</category>
+      <pubDate>Mon, 07 Sep 2026 12:31:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86418 · 2.3 LOW — MISP Dashboard Organisation Picker Exposes Hidden Organisation Metadata to Unauthorized Users</title>
+      <link>https://vulnogram.org/CVE-2026-86418</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86418</guid>
+      <description>Affected versions of MISP expose organisation metadata through the dashboard organisation picker without applying the same visibility restrictions enforced by the normal organisation index and per-organisation view. The affected endpoint returned fie…</description>
+      <category>Low</category>
+      <pubDate>Mon, 07 Sep 2026 12:22:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86417 · 5.3 MEDIUM — MISP Dashboard Template REST API Exposes Template Owner Email Addresses to Unauthorized Users</title>
+      <link>https://vulnogram.org/CVE-2026-86417</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86417</guid>
+      <description>Affected versions of MISP inconsistently enforced email-address visibility in DashboardsController::listTemplates(). The query always fetched User.email, while redaction happened only inside the non-REST rendering branch. As a result, the same authen…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 07 Sep 2026 12:17:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86408 · 7.1 HIGH — MISP Missing Authorization in Cryptographic Key View Exposes Signing Keys from Protected Events</title>
+      <link>https://vulnogram.org/CVE-2026-86408</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86408</guid>
+      <description>Affected versions of MISP do not enforce parent-event visibility when serving cryptographic keys through CryptographicKeysController::view(). The vulnerable handler queried CryptographicKey directly using the supplied key ID and selected sensitive fi…</description>
+      <category>High</category>
+      <pubDate>Mon, 07 Sep 2026 12:11:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-86351 · 5.1 MEDIUM — MISP User Homepage Validation Allows Authenticated Open Redirect via Protocol-Relative URL</title>
       <link>https://vulnogram.org/CVE-2026-86351</link>
@@ -361,75 +426,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 24 Aug 2026 13:03:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78369 · 8.8 HIGH 🌩️ — Missing Authentication Allows Unauthorized Creation of Crypto Groups in RansomLook</title>
-      <link>https://vulnogram.org/CVE-2026-78369</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78369</guid>
-      <description>RansomLook contains a missing authentication vulnerability in the /admin/crypto/group/new endpoint. While the endpoint provides an administrative function for creating new crypto group entries, it was not protected by the application&apos;s authentication…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 24 Aug 2026 12:58:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78321 · 6 MEDIUM — DJI Drone HTTP Media Server Denial of Service via Connection Pool Exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-78321</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78321</guid>
-      <description>The HTTP media server on DJI drones does not enforce sufficient limits on incoming connections or request rates. An attacker with access to the drone&apos;s internal network can exhaust the server&apos;s connection pool by repeatedly requesting a stored media…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 24 Aug 2026 08:47:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78306 · 8.5 HIGH — DJI Drone Bluetooth Interface Unauthenticated DUML Command Execution</title>
-      <link>https://vulnogram.org/CVE-2026-78306</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78306</guid>
-      <description>DJI drones expose an unauthenticated DUML command interface over Bluetooth that allows an attacker within Bluetooth range to modify Wi-Fi configuration parameters, including the SSID, PSK, MAC address, regulatory country code, and wireless channel. A…</description>
-      <category>High</category>
-      <pubDate>Mon, 24 Aug 2026 08:08:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78255 · 8.7 HIGH 🌩️ — DJI Drone HTTP Media Server Allows Unauthenticated Access to Stored Media</title>
-      <link>https://vulnogram.org/CVE-2026-78255</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78255</guid>
-      <description>The HTTP media server running on DJI drones serves stored photos and videos through the `/v2` endpoint without authenticating the requesting client. Filenames follow a predictable pattern, allowing an attacker who joins the drone&apos;s internal network t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 24 Aug 2026 07:25:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78251 · 9.3 CRITICAL 🌩️ — DJI Drone FTP Service Allows Unrestricted Storage Consumption of the /blackbox Directory</title>
-      <link>https://vulnogram.org/CVE-2026-78251</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78251</guid>
-      <description>DJI drones contain an FTP service that uses hardcoded credentials shared across affected models and permits authenticated users to upload files without limits on file size, file count, or total storage consumed in **/blackbox/upgrade/**, as well as o…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 24 Aug 2026 07:04:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77812 · 9.4 CRITICAL — Cleartext Exposure of DJI Drone Wi-Fi Credentials via BLE</title>
-      <link>https://vulnogram.org/CVE-2026-77812</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77812</guid>
-      <description>DJI drones transmit DUML (DJI Universal Markup Language) protocol messages over BLE (Bluetooth Low Energy) without encryption. When a client attempts to connect to the drone over Wi-Fi, or when the drone is switched to QuickTransfer mode, the DJI Fly…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 21 Aug 2026 14:06:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77761 · 6.3 MEDIUM 🌩️ — Cross-Document Parser State Contamination in misp-stix</title>
-      <link>https://vulnogram.org/CVE-2026-77761</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77761</guid>
-      <description>A parser state isolation vulnerability in misp-stix could cause data from a previously processed STIX document to be retained and incorporated into the MISP event generated from a subsequent document when the same parser instance is reused. Several S…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 21 Aug 2026 10:11:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77755 · 8.7 HIGH 🌩️ — Denial of Service in MISP-STIX Import via Malformed or Oversized STIX Documents in misp-stix library</title>
-      <link>https://vulnogram.org/CVE-2026-77755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77755</guid>
-      <description>A denial-of-service vulnerability was identified in misp-stix when processing attacker-controlled STIX 1 or STIX 2 documents. The STIX import code used sys.exit() to handle several parsing and loading failures. Because SystemExit inherits from BaseEx…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 21 Aug 2026 09:55:11 GMT</pubDate>
     </item>
   </channel>
 </rss>

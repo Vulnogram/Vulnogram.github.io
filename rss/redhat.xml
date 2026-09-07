@@ -11,7 +11,83 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 07 Sep 2026 11:04:26 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 16:24:48 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-86469 · 5.3 MEDIUM — Glib2: toctou symlink race in `g_file_create_replace_destination` fallback path</title>
+      <link>https://vulnogram.org/CVE-2026-86469</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86469</guid>
+      <description>A flaw was found in GLib2. When g_file_replace() is used with G_FILE_CREATE_REPLACE_DESTINATION and creating the .goutputstream-XXXXXX temporary file fails, the library unlinks the destination and recreates it without exclusive creation or symlink pr…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 07 Sep 2026 16:00:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19843 · 8.4 HIGH — 389-ds-base: 389-ds-base: command injection via unescaped ldap dn in cockpit 389 console ldap editor</title>
+      <link>https://vulnogram.org/CVE-2026-19843</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19843</guid>
+      <description>A flaw was found in 389-ds-base. The Cockpit 389 Console&apos;s LDAP editor constructs an ldapsearch command by embedding an LDAP entry&apos;s distinguished name (DN) into a shell command string without proper escaping. An LDAP user with delegated privileges t…</description>
+      <category>High</category>
+      <pubDate>Mon, 07 Sep 2026 14:14:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18922 · 9.8 CRITICAL 🌩️ — 389-ds-base: 389-ds-base: sasl plain authentication allows privilege escalation to directory manager via stale identity in cyrus sasl auxiliary property</title>
+      <link>https://vulnogram.org/CVE-2026-18922</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18922</guid>
+      <description>A flaw was found in 389 Directory Server. During SASL PLAIN authentication, a stale identity carried in a Cyrus SASL auxiliary property from a prior failed bind attempt can be installed on a connection following a subsequent, unrelated successful bin…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 14:14:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18453 · 7.5 HIGH 🌩️ — 389-ds-base: 389-ds-base: pre-authentication null pointer dereference via paged results and use_one_backend control in op_shared_search</title>
+      <link>https://vulnogram.org/CVE-2026-18453</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18453</guid>
+      <description>A flaw was found in 389 Directory Server. A missing NULL pointer check in the paged results handling of op_shared_search allows an unauthenticated remote attacker to crash the LDAP server by sending a crafted sequence of search requests using the USE…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 14:14:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18355 · 7.5 HIGH — 389-ds-base: 389-ds-base: heap buffer overflow via sasl wrapped-record length lower-bound underflow in sasl_io_start_packet()</title>
+      <link>https://vulnogram.org/CVE-2026-18355</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18355</guid>
+      <description>A heap buffer overflow flaw was found in the SASL I/O layer of 389 Directory Server (389-ds-base). In sasl_io_start_packet(), the wrapped-record length read from the wire is validated only against an upper bound. A small wire length (0, 1, or 2) prod…</description>
+      <category>High</category>
+      <pubDate>Mon, 07 Sep 2026 14:14:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76560 · 7.5 HIGH 🌩️ — 389-ds-base: 389-ds: anonymous ldap client can defeat selfdn aci bind-rule checks via empty bind dn</title>
+      <link>https://vulnogram.org/CVE-2026-76560</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76560</guid>
+      <description>A flaw was found in 389 Directory Server. The SELFDN ACI bind-rule evaluator incorrectly matches an anonymous LDAP client&apos;s empty bind DN against an empty stored attribute value, allowing an unauthenticated client to satisfy access control checks int…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 13:18:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79678 · 8.1 HIGH — Freeipa: idm: freeipa: idp-add eval() reachable before authorization check allows environment disclosure and denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-79678</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79678</guid>
+      <description>A flaw was found in FreeIPA&apos;s idp-add command, where insufficiently validated --organization/--base-url input reaches a constrained eval() call before the corresponding LDAP access control check is enforced. This allows any authenticated IPA principa…</description>
+      <category>High</category>
+      <pubDate>Mon, 07 Sep 2026 12:02:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76578 · 9.8 CRITICAL 🌩️ — Ipa: freeipa: freeipa: unauthenticated ldap client can obtain administrator credentials via the self-managed-token aci</title>
+      <link>https://vulnogram.org/CVE-2026-76578</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76578</guid>
+      <description>A flaw was found in FreeIPA. The self-managed OTP token ACI does not require authentication and does not restrict which attributes may be added alongside the token entry. An unauthenticated LDAP client can exploit this, combined with a related flaw i…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 12:01:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86404 · 8.8 HIGH — Artemis-server: artemis-jms-client: artemis-core-client: undertow-core: wildfly-messaging-activemq-subsystem: artemis messaging handlers in red hat eap permit deserialization by default</title>
+      <link>https://vulnogram.org/CVE-2026-86404</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86404</guid>
+      <description>EAP&apos;s Artemis deserialization configuration permits deserialization by default. ObjectMessage.getObject() uses ObjectInputStreamWithClassLoader, which implements allow-list/block-list filtering via its checkSecurity()/isTrustedType() method. However,…</description>
+      <category>High</category>
+      <pubDate>Mon, 07 Sep 2026 11:35:04 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-86332 · 6.5 MEDIUM — Odh-dashboard: odh-dashboard: nim credential secret readable by any authenticated user</title>
       <link>https://vulnogram.org/CVE-2026-86332</link>
@@ -354,81 +430,6 @@
       <description>A flaw was found in the file-psd plugin in GIMP. When processing a specially crafted PSD image file, the plugin does not properly validate the channel-count parameter. This incorrect validation leads to improper memory bounds checking, resulting in b…</description>
       <category>Medium</category>
       <pubDate>Fri, 28 Aug 2026 16:26:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82330 · 6.1 MEDIUM — Gimp: heap out-of-bounds read in pvr vq (compressed) decoder due to missing bounds check</title>
-      <link>https://vulnogram.org/CVE-2026-82330</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82330</guid>
-      <description>A flaw was found in the file-pvr plugin in GIMP. When processing a specially crafted PVR image file, the VQ (compressed) decoder does not properly perform memory bounds checking. This missing validation results in a heap out-of-bounds read. This issu…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 28 Aug 2026 14:51:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82328 · 6.1 MEDIUM — Gimp: heap out-of-bounds read in ico loader via unvalidated used_clrs palette count</title>
-      <link>https://vulnogram.org/CVE-2026-82328</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82328</guid>
-      <description>A flaw was found in the file-ico plugin in GIMP. When processing a specially crafted ICO image file, the plugin does not properly validate the used_clrs (palette count) parameter. This incorrect validation leads to improper memory bounds checking, re…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 28 Aug 2026 14:21:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82327 · 5.5 MEDIUM — Libsolv: libsolv: out-of-bounds write in repo_write() via unvalidated directory id from vertical/paged .solv filelist data</title>
-      <link>https://vulnogram.org/CVE-2026-82327</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82327</guid>
-      <description>A flaw was found in libsolv, a dependency-resolution library used by RPM-based package managers such as dnf and zypper to work with .solv repository cache files. When libsolv rewrites a .solv cache file, it reads directory-id values from the file&apos;s c…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 28 Aug 2026 14:21:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82324 · 6.1 MEDIUM — Gimp: heap out-of-bounds reads in iff/ilbm loader from ham row size mismatch and nplanes=0</title>
-      <link>https://vulnogram.org/CVE-2026-82324</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82324</guid>
-      <description>A flaw was found in the file-iff (IFF/ILBM) plugin in GIMP. When processing a specially crafted IFF/ILBM image file, the plugin does not properly validate the HAM row size and improperly handles cases where the number of color planes (nPlanes) is zer…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 28 Aug 2026 13:47:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18393 · 5.4 MEDIUM — Ffmpeg: ffmpeg: heap buffer overflow in tdsc_load_cursor() via cur_fmt_mono cursor</title>
-      <link>https://vulnogram.org/CVE-2026-18393</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18393</guid>
-      <description>A flaw was found in FFmpeg. The tdsc_load_cursor() function writes beyond the bounds of a heap-allocated buffer when processing crafted TDSC cursor data. A remote attacker could exploit this by supplying a specially crafted video file, potentially le…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 28 Aug 2026 09:05:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80179 · 5.9 MEDIUM 🌩️ — Jwcrypto: jwcrypto: denial of service via malformed jwe tokens</title>
-      <link>https://vulnogram.org/CVE-2026-80179</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80179</guid>
-      <description>A flaw was found in jwcrypto. A remote attacker can send a specially crafted JSON Web Encryption (JWE) token containing numerous period delimiters. This malformed token can force the JWE.deserialize() function to allocate excessive memory, leading to…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 27 Aug 2026 21:14:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81893 · 4.7 MEDIUM — Gdk-pixbuf: gdk-pixbuf: invalid write in jpeg icc profile parser on error recovery</title>
-      <link>https://vulnogram.org/CVE-2026-81893</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81893</guid>
-      <description>A flaw was found in gdk-pixbuf. When loading a specially crafted JPEG image containing chunked ICC profile markers, an error during ICC profile parsing can leave stale size metadata after the profile buffer is freed. A subsequent allocation in the sa…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 27 Aug 2026 18:34:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5680 · 7.5 HIGH 🌩️ — Undertow-core: undertow: denial of service via websocket permessage-deflate processing</title>
-      <link>https://vulnogram.org/CVE-2026-5680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5680</guid>
-      <description>A flaw was found in Undertow. A remote attacker could exploit this vulnerability by sending specially crafted WebSocket messages with permessage-deflate negotiated. This could lead to excessive memory consumption due to the PerMessageDeflateFunction.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 27 Aug 2026 16:25:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78002 · 7.5 HIGH 🌩️ — Rsyslog: rsyslog: denial of service via heap buffer overflow in rainerscript replace() function</title>
-      <link>https://vulnogram.org/CVE-2026-78002</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78002</guid>
-      <description>A flaw was found in rsyslog. An unauthenticated remote attacker can trigger a heap buffer overflow in the RainerScript `replace()` function by sending specially crafted syslog messages. This vulnerability arises from an incorrect buffer size calculat…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 27 Aug 2026 16:12:59 GMT</pubDate>
     </item>
   </channel>
 </rss>
