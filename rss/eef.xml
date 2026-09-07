@@ -11,7 +11,87 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 07 Sep 2026 20:32:31 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 23:17:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-82584 · 2.3 LOW 🌩️ — Terminal escape sequence injection in the mix igniter.install confirmation prompt via package metadata</title>
+      <link>https://vulnogram.org/CVE-2026-82584</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82584</guid>
+      <description>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in ash-project igniter allows a malicious package publisher to forge the mix igniter.install confirmation prompt. mix igniter.install prints a confirmation panel (an anti-typ…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 22:54:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82586 · 8.2 HIGH 🌩️ — AshLua read operation aggregate bypasses the exposed-field allow-list, exposing private attributes</title>
+      <link>https://vulnogram.org/CVE-2026-82586</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82586</guid>
+      <description>Improper Protection of Alternate Path vulnerability in ash-project ash_lua allows a user-supplied Lua script to read attributes that are not on the exposed-field allow-list. AshLua exposes Ash resources to Lua scripts, gated by a manifest declaring w…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 22:34:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81638 · 2.1 LOW — Non-canonical ULID spellings are accepted and alias to the same record in ash_double_entry</title>
+      <link>https://vulnogram.org/CVE-2026-81638</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81638</guid>
+      <description>Improper Handling of Alternate Encoding vulnerability in ash-project ash_double_entry allows an attacker to submit several distinct string spellings of the same identifier. AshDoubleEntry.ULID renders a 128-bit ULID as 26 Crockford base-32 characters…</description>
+      <category>Low</category>
+      <pubDate>Mon, 07 Sep 2026 22:33:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82758 · 6.3 MEDIUM 🌩️ — ash_authentication_oauth2_server treats an empty resolved secret as valid, opening the gated Dynamic Client Registration endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-82758</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82758</guid>
+      <description>Improper Authentication vulnerability in ash-project ash_authentication_oauth2_server allows an unauthenticated attacker to register OAuth clients even when Dynamic Client Registration is gated by an initial access token. resolve_secret/3 in AshAuthe…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 22:32:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82757 · 6.3 MEDIUM 🌩️ — ash_authentication_oauth2_server CIMD fetcher classifies IPv4-in-IPv6 and site-local addresses as public, allowing SSRF</title>
+      <link>https://vulnogram.org/CVE-2026-82757</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82757</guid>
+      <description>Server-Side Request Forgery (SSRF) vulnerability in ash-project ash_authentication_oauth2_server allows an attacker who controls a client metadata URL and its DNS to make the server connect to internal or loopback addresses. public_ip?/1 in AshAuthen…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 22:31:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82756 · 6.3 MEDIUM 🌩️ — ash_authentication_oauth2_server interpolates a tenant-derived value into the WWW-Authenticate challenge without escaping, allowing header parameter injection</title>
+      <link>https://vulnogram.org/CVE-2026-82756</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82756</guid>
+      <description>Improper Encoding or Escaping of Output vulnerability in ash-project ash_authentication_oauth2_server allows an unauthenticated attacker to inject arbitrary authentication parameters into the WWW-Authenticate challenge header. BearerPlug and RequireS…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 22:30:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82755 · 6.3 MEDIUM 🌩️ — ash_authentication_oauth2_server serves tenant-specific OAuth metadata as publicly cacheable without Vary, enabling cross-tenant confusion</title>
+      <link>https://vulnogram.org/CVE-2026-82755</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82755</guid>
+      <description>Use of Cache Containing Sensitive Information vulnerability in ash-project ash_authentication_oauth2_server allows a shared HTTP cache to serve one tenant&apos;s OAuth discovery metadata to another tenant&apos;s clients. The RFC 8414 and RFC 9728 metadata endp…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 22:28:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82754 · 6.3 MEDIUM 🌩️ — ash_authentication_oauth2_server aliases every protocol endpoint under /.well-known, bypassing path-scoped controls</title>
+      <link>https://vulnogram.org/CVE-2026-82754</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82754</guid>
+      <description>Improper Protection of Alternate Path vulnerability in ash-project ash_authentication_oauth2_server exposes the state-changing OAuth endpoints under an unintended URL prefix, bypassing controls scoped to the canonical prefix. oauth2_server_protocol_r…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 22:23:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82753 · 8.2 HIGH 🌩️ — Unauthenticated authorize requests create unbounded, never-expiring CIMD client rows and cache entries in ash_authentication_oauth2_server</title>
+      <link>https://vulnogram.org/CVE-2026-82753</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82753</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in ash-project ash_authentication_oauth2_server allows an unauthenticated attacker to exhaust database storage and memory. The /authorize endpoint is unauthenticated by design. With C…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 07 Sep 2026 22:23:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-82750 · 8.3 HIGH 🌩️ — Unbounded EIP-7702 authorization list in mpp Tempo fee-payer sponsorship inflates gas cost and sponsors account delegation</title>
       <link>https://vulnogram.org/CVE-2026-82750</link>
@@ -362,82 +442,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 01 Sep 2026 02:09:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82730 · 8.2 HIGH 🌩️ — Authorization-redacted field values disclosed through AshTypescript result normalization</title>
-      <link>https://vulnogram.org/CVE-2026-82730</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82730</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash_typescript allows an unauthorized RPC caller to read attribute values that Ash field policies denied. When a field policy denies an attribute, Ash substitutes %Ash.ForbiddenField{}, which retai…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 02:09:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77950 · 6.3 MEDIUM 🌩️ — RPC error handler fails open in AshTypescript, disclosing unredacted errors</title>
-      <link>https://vulnogram.org/CVE-2026-77950</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77950</guid>
-      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_typescript allows an unauthenticated attacker to receive unredacted internal error data by provoking an error shape the configured error handler does not ma…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 02:08:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77856 · 8.2 HIGH 🌩️ — Unbounded atom creation from typed struct field names in AshTypescript field selector</title>
-      <link>https://vulnogram.org/CVE-2026-77856</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77856</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in ash-project ash_typescript allows an unauthenticated attacker to exhaust the BEAM atom table and abort the node via client-supplied typed struct field names. resolve_typed_struct_f…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 02:08:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82725 · 2.3 LOW — AshPhoenix FilterForm allows filtering across non-public relationships, disclosing private related data</title>
-      <link>https://vulnogram.org/CVE-2026-82725</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82725</guid>
-      <description>Authorization Bypass Through User-Controlled Key vulnerability in ash-project ash_phoenix lets an attacker who controls filter form parameters filter across relationships the resource author marked non-public, turning the returned rows into a boolean…</description>
-      <category>Low</category>
-      <pubDate>Mon, 31 Aug 2026 03:09:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82724 · 7.6 HIGH — Broken access control in AshPhoenix SubdomainHook via a nil tenant in handle_subdomain</title>
-      <link>https://vulnogram.org/CVE-2026-82724</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82724</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash_phoenix invokes the SubdomainHook authorization callback with a nil tenant, so tenant-scoped access checks never see the tenant they are meant to enforce. AshPhoenix.LiveView.SubdomainHook.on_m…</description>
-      <category>High</category>
-      <pubDate>Mon, 31 Aug 2026 03:07:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82726 · 6.3 MEDIUM 🌩️ — AshPhoenix get_subdomain maps a crafted or differently-cased Host header to an arbitrary tenant</title>
-      <link>https://vulnogram.org/CVE-2026-82726</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82726</guid>
-      <description>Permissive Regular Expression vulnerability in ash-project ash_phoenix lets a remote client select the tenant an Ash application uses, or degrade the request, by sending a crafted Host header. AshPhoenix.Helpers.get_subdomain/2 stripped the root doma…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 31 Aug 2026 03:05:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82727 · 2.3 LOW — AshPhoenix Form.Auto leaks submitted params in an unknown _union_type error message</title>
-      <link>https://vulnogram.org/CVE-2026-82727</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82727</guid>
-      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash_phoenix writes the entire raw submitted param map into an exception message, so secrets submitted alongside a union form field leak into logs, crash reports…</description>
-      <category>Low</category>
-      <pubDate>Mon, 31 Aug 2026 03:03:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82673 · 8.3 HIGH — Path traversal in AshAdmin file uploads via unsanitized client filename</title>
-      <link>https://vulnogram.org/CVE-2026-82673</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82673</guid>
-      <description>Improper Limitation of a Pathname to a Restricted Directory (Path Traversal) vulnerability in ash-project ash_admin allows writing attacker-controlled bytes to arbitrary paths on the server. AshAdmin.Components.Resource.Form.consume_file_uploads/1 bu…</description>
-      <category>High</category>
-      <pubDate>Mon, 31 Aug 2026 02:33:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81853 · 2.3 LOW — AshAdmin composite primary key decoding accepts arbitrary fields, enabling a secret-attribute oracle</title>
-      <link>https://vulnogram.org/CVE-2026-81853</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81853</guid>
-      <description>Authorization Bypass Through User-Controlled Key vulnerability in ash-project ash_admin turns a record-lookup URL into an equality oracle over sensitive attributes. AshAdmin.Helpers.decode_primary_key/2 decodes the composite-primary-key form (Base64…</description>
-      <category>Low</category>
-      <pubDate>Mon, 31 Aug 2026 02:31:29 GMT</pubDate>
     </item>
   </channel>
 </rss>
