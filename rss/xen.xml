@@ -11,7 +11,29 @@
       <title>Xen Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 08 Sep 2026 12:07:42 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 15:41:39 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-79603 · 4.3 MEDIUM — Unconditionally do TLB flushing ahead of page scrubbing</title>
+      <link>https://vulnogram.org/CVE-2026-79603</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79603</guid>
+      <description>x86 PV guests can free memory pages while still keeping a stale TLB entry pointing to them. A TLB flush is only issued by Xen (if needed) when the page is re-used. Since it&apos;s possible for the page to be scrubbed ahead of the TLB flush, there&apos;s a wind…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 08 Sep 2026 12:11:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79602 — x86: improper handling of HVM emulation return codes</title>
+      <link>https://vulnogram.org/CVE-2026-79602</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79602</guid>
+      <description>A guest with a PCI device assigned that has at least a BAR on the IO port space can trigger a BUG() in Xen.</description>
+      <pubDate>Tue, 08 Sep 2026 12:11:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62437 — x86: DMs may cause mem leak by IRQ binding</title>
+      <link>https://vulnogram.org/CVE-2026-62437</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62437</guid>
+      <description>When guests are terminated, various pieces of cleanup need carrying out. The cleaning up of PCI devices which were assigned to guests, and the associated removal of tracking structures for IRQs used by the devices occurs relatively early in the proce…</description>
+      <pubDate>Tue, 08 Sep 2026 12:10:52 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-62434 · 5.3 MEDIUM 🌩️ — PoD: Don&apos;t try to reclaim special pages</title>
       <link>https://vulnogram.org/CVE-2026-62434</link>
@@ -405,31 +427,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 11 Sep 2025 14:05:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1713 · 7.5 HIGH 🌩️ — deadlock potential with VT-d and legacy PCI device pass-through</title>
-      <link>https://vulnogram.org/CVE-2025-1713</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1713</guid>
-      <description>When setting up interrupt remapping for legacy PCI(-X) devices, including PCI(-X) bridges, a lookup of the upstream bridge is required. This lookup, itself involving acquiring of a lock, is done in a context where acquiring that lock is unsafe. This…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Jul 2025 13:59:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-27465 · 4.3 MEDIUM — x86: Incorrect stubs exception handling for flags recovery</title>
-      <link>https://vulnogram.org/CVE-2025-27465</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-27465</guid>
-      <description>Certain instructions need intercepting and emulating by Xen. In some cases Xen emulates the instruction by replaying it, using an executable stub. Some instructions may raise an exception, which is supposed to be handled gracefully. Certain replayed…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 16 Jul 2025 09:08:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-31144 · 3.8 LOW — Xapi: Metadata injection attack against backup/restore functionality</title>
-      <link>https://vulnogram.org/CVE-2024-31144</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-31144</guid>
-      <description>For a brief summary of Xapi terminology, see: https://xapi-project.github.io/xen-api/overview.html#object-model-overview Xapi contains functionality to backup and restore metadata about Virtual Machines and Storage Repositories (SRs). The metadata it…</description>
-      <category>Low</category>
-      <pubDate>Fri, 14 Feb 2025 20:16:39 GMT</pubDate>
     </item>
   </channel>
 </rss>
