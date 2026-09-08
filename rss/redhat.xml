@@ -11,7 +11,55 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 08 Sep 2026 06:52:54 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 12:07:41 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-80219 · 8.7 HIGH — Hawtio-operator: hawtio-operator: oauthclient created with grantmethod auto and no secret enables oauth token theft</title>
+      <link>https://vulnogram.org/CVE-2026-80219</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80219</guid>
+      <description>A flaw was found in hawtio-operator. When deploying Hawtio in cluster mode, the operator creates a cluster-scoped OAuthClient with automatic grant approval (GrantMethod: auto) and no client secret (public client). The redirect URIs are derived from t…</description>
+      <category>High</category>
+      <pubDate>Tue, 08 Sep 2026 11:27:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78234 · 9.9 CRITICAL — Hawtio-operator: hawtio-operator: service-ca signing oracle allows arbitrary-cn certificate issuance to namespace edit users</title>
+      <link>https://vulnogram.org/CVE-2026-78234</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78234</guid>
+      <description>A flaw was found in hawtio-operator. The operator reads the OpenShift Service CA private signing key from the openshift-service-ca namespace and uses it to mint client certificates with a Subject Common Name (CN) supplied by the author of a namespace…</description>
+      <category>Critical</category>
+      <pubDate>Tue, 08 Sep 2026 11:27:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77968 · 8.2 HIGH — Hawtio-operator: hawtio-operator: cluster-wide secrets read/write granted to operator serviceaccount</title>
+      <link>https://vulnogram.org/CVE-2026-77968</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77968</guid>
+      <description>A flaw was found in hawtio-operator. The operator&apos;s ClusterRole grants secrets: [create, get, list, update, watch] across all namespaces. While the operator uses a controller-runtime label-selector cache as a memory optimization, the ServiceAccount t…</description>
+      <category>High</category>
+      <pubDate>Tue, 08 Sep 2026 11:27:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74860 · 8.5 HIGH — Libxml2: double-free/uaf in libxml2 python bindings</title>
+      <link>https://vulnogram.org/CVE-2026-74860</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74860</guid>
+      <description>A flaw was found in libxml2 with Python bindings enabled. A remote attacker could exploit this vulnerability by providing a specially crafted XML document containing a Document Type Definition (DTD) with enumerated attribute values. This triggers a d…</description>
+      <category>High</category>
+      <pubDate>Tue, 08 Sep 2026 11:27:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74859 · 6.8 MEDIUM — Gnome-tweaks: path traversal in theme installer</title>
+      <link>https://vulnogram.org/CVE-2026-74859</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74859</guid>
+      <description>The shell theme installer in gnome-tweaks extracts user-supplied ZIP archives without validating archive member paths. As a result, a crafted theme archive can write files outside ~/.themes by using ../ path traversal, absolute paths, or symlink entr…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 08 Sep 2026 09:01:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76561 · 7.2 HIGH — Pki-core: dogtag/pki: certprofile-import allows code execution via unsanitized profile content (externalprocessconstraint)</title>
+      <link>https://vulnogram.org/CVE-2026-76561</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76561</guid>
+      <description>A flaw was found in Dogtag PKI, as used by FreeIPA&apos;s certificate authority component. The certificate profile import functionality does not fully validate uploaded profile content beyond the profile ID. An authenticated user with CA Administrator pri…</description>
+      <category>High</category>
+      <pubDate>Tue, 08 Sep 2026 07:55:29 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-86469 · 5.3 MEDIUM — Glib2: toctou symlink race in `g_file_create_replace_destination` fallback path</title>
       <link>https://vulnogram.org/CVE-2026-86469</link>
@@ -379,57 +427,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 31 Aug 2026 20:46:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13732 · 7 HIGH — Gdb: gdb: out-of-bounds write in stabs parser read_member_functions() via crafted elf</title>
-      <link>https://vulnogram.org/CVE-2026-13732</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13732</guid>
-      <description>A flaw was found in GDB&apos;s STABS debug format parser. The read_member_functions() function in gdb/stabsread.c contains a linked list removal bug in the code that separates destructor and non-destructor member functions of C++ classes. The bug causes t…</description>
-      <category>High</category>
-      <pubDate>Mon, 31 Aug 2026 19:23:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-17615 · 7.5 HIGH 🌩️ — Resteasy-core: resteasy sourceprovider remote unauthenticated file read</title>
-      <link>https://vulnogram.org/CVE-2026-17615</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17615</guid>
-      <description>A flaw was found in RESTEasy&apos;s SourceProvider. This vulnerability allows an unauthenticated attacker to perform an unauthenticated remote file read. By sending a specially crafted XML body with a DOCTYPE declaration referencing external entities to a…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 31 Aug 2026 16:15:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76763 · 7.5 HIGH 🌩️ — Io.smallrye/smallrye-graphql: smallrye graphql: unauthenticated denial of service via large exponent float literals</title>
-      <link>https://vulnogram.org/CVE-2026-76763</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76763</guid>
-      <description>A flaw was found in SmallRye GraphQL. The number scalar coercion for BigInteger does not properly validate the magnitude of float or string inputs. An unauthenticated remote attacker can exploit this by sending a GraphQL query containing a large expo…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 31 Aug 2026 13:54:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12894 · 8.8 HIGH — Io.quarkus:quarkus-qute: quarkus-qute:server-side template injection (ssti) vulnerability in reflectionvalueresolver of the quarkus qute template engine</title>
-      <link>https://vulnogram.org/CVE-2026-12894</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12894</guid>
-      <description>A flaw was found in the Qute template engine, which is used by Quarkus to generate dynamic content like HTML pages or emails. The issue exists in the component responsible for looking up data values (ReflectionValueResolver), which fails to properly…</description>
-      <category>High</category>
-      <pubDate>Mon, 31 Aug 2026 12:14:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81624 · 7.5 HIGH 🌩️ — Undertow-core: undertow: websocketcontainer defaults for buffers and timeouts are infinite</title>
-      <link>https://vulnogram.org/CVE-2026-81624</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81624</guid>
-      <description>Undertow is a flexible performant web server used in JBoss EAP and WildFly. A flaw was found in how Undertow handles WebSocket connections. Specifically, certain configuration limits like message buffer sizes and session timeouts cannot be adjusted a…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 31 Aug 2026 08:47:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82343 · 6.1 MEDIUM — Gimp: heap out-of-bounds read and stack out-of-bounds access in psd loader from channel-count handling</title>
-      <link>https://vulnogram.org/CVE-2026-82343</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82343</guid>
-      <description>A flaw was found in the file-psd plugin in GIMP. When processing a specially crafted PSD image file, the plugin does not properly validate the channel-count parameter. This incorrect validation leads to improper memory bounds checking, resulting in b…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 28 Aug 2026 16:26:13 GMT</pubDate>
     </item>
   </channel>
 </rss>
