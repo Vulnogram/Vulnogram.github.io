@@ -11,68 +11,86 @@
       <title>curl — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 08 Sep 2026 15:41:39 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 19:19:06 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-82209 — domain-scoped PSL domain cookie</title>
+      <title>CVE-2026-82209 · 8.2 HIGH 🌩️ — domain-scoped PSL domain cookie</title>
       <link>https://vulnogram.org/CVE-2026-82209</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82209</guid>
       <description>When libpsl support is enabled, libcurl fails to enforce the Public Suffix List boundary check when processing a `Set-Cookie` header where the `Domain` attribute explicitly matches an origin host that is itself a public suffix (e.g., `Domain=co.uk` s…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:49:35 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82208 — wolfSSL CA-cache hit overrides callback</title>
+      <title>CVE-2026-82208 · 7.5 HIGH 🌩️ — wolfSSL CA-cache hit overrides callback</title>
       <link>https://vulnogram.org/CVE-2026-82208</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82208</guid>
       <description>With the wolfSSL backend, when CA caching is enabled and an `CURLOPT_SSL_CTX_FUNCTION` callback replaces the trust store, libcurl can silently reinstall the cached store after the callback returns. A certificate trusted by the cached store but reject…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:49:16 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-80255 — secure cookie attribute bypass with tab</title>
+      <title>CVE-2026-80255 · 7.5 HIGH 🌩️ — secure cookie attribute bypass with tab</title>
       <link>https://vulnogram.org/CVE-2026-80255</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80255</guid>
       <description>A `Set-Cookie:` header using tab (horizontal tab, ASCII code 9) instead of space (ascii code 32) immediately before the `Secure` attribute causes curl to store the cookie without its Secure flag. The cookie might then wrongfully be sent over plaintex…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:48:54 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-80231 — native CA store conn reuse</title>
+      <title>CVE-2026-80231 · 7.5 HIGH 🌩️ — native CA store conn reuse</title>
       <link>https://vulnogram.org/CVE-2026-80231</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80231</guid>
       <description>A flaw in libcurl makes it wrongly reuse an existing HTTPS connection setup for a given hostname even when using a different Native CA Store setting (`CURLSSLOPT_NATIVE_CA`) than when the connection was created.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:48:38 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-80230 — OpenSSL pinning bypass</title>
+      <title>CVE-2026-80230 · 7.5 HIGH 🌩️ — OpenSSL pinning bypass</title>
       <link>https://vulnogram.org/CVE-2026-80230</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80230</guid>
       <description>When `CURLOPT_PINNEDPUBLICKEY` is configured alongside options that disable standard peer verification (`CURLOPT_SSL_VERIFYPEER = 0` and `CURLOPT_SSL_VERIFYHOST = 0`), libcurl fails to enforce public key pinning on connections established without a p…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:48:16 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-80229 — OpenSSL provider use-after-free</title>
+      <title>CVE-2026-80229 · 7.5 HIGH 🌩️ — OpenSSL provider use-after-free</title>
       <link>https://vulnogram.org/CVE-2026-80229</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80229</guid>
       <description>When performing transfers via libcurl’s multi interface, pooled TLS connections can outlive their originating easy handles. In OpenSSL 3 provider configurations, libcurl attaches an allocated library context to the easy handle&apos;s state and passes it t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:47:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-19931 — Negotiate ambient user conn reuse</title>
+      <title>CVE-2026-19931 · 9.8 CRITICAL 🌩️ — Negotiate ambient user conn reuse</title>
       <link>https://vulnogram.org/CVE-2026-19931</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19931</guid>
       <description>A flaw in libcurl makes it wrongly reuse an HTTP connection setup for a given hostname using Negotiate authentication, when the initial request is done using empty credentials. This can make user B&apos;s request get sent over user A&apos;s previously authenti…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:47:43 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-18924 — HTTP/2 server push UAF</title>
+      <title>CVE-2026-18924 · 9.1 CRITICAL 🌩️ — HTTP/2 server push UAF</title>
       <link>https://vulnogram.org/CVE-2026-18924</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18924</guid>
       <description>A flaw in libcurl&apos;s handling of HTTP/2 Server Push streams, when the parent handle is set to share connections with other handles, can lead to use-after-free in the cleanup process.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:47:27 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-13608 — OpenLDAP SASL authentication bypass</title>
+      <title>CVE-2026-13608 · 7.4 HIGH 🌩️ — OpenLDAP SASL authentication bypass</title>
       <link>https://vulnogram.org/CVE-2026-13608</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13608</guid>
       <description>A flaw in the libcurl SASL negotiation for LDAP authentication allows an incomplete handshake sequence to be misinterpreted as a successful cryptographic verification. An attacker executing a Man-in-the-Middle (MITM) attack can inject a premature or…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 06 Sep 2026 17:47:01 GMT</pubDate>
     </item>
     <item>
