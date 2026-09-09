@@ -11,7 +11,57 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 09 Sep 2026 15:08:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 18:20:50 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-18147 · 8.1 HIGH 🌩️ — Freeipa: ipa: freeipa/idm: cross-site scripting vulnerability allows arbitrary code execution via crafted url</title>
+      <link>https://vulnogram.org/CVE-2026-18147</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18147</guid>
+      <description>A flaw was found in FreeIPA. An unauthenticated remote attacker could exploit a DOM Cross-Site Scripting (XSS) vulnerability in the FreeIPA/IdM Web UI password reset page. By enticing a victim to click a specially crafted link and complete a password…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 09 Sep 2026 16:39:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87876 · 3 LOW — Cups: openprinting cups: remaining case-insensitive username matching in scheduler side paths (cve-2026-27447 follow-up)</title>
+      <link>https://vulnogram.org/CVE-2026-87876</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87876</guid>
+      <description>Two case-insensitive comparisons on request-derived usernames outside the main authorization path in CUPS&apos;s scheduler (printer ACL validation and private-attribute filtering) could allow bypass of username-based access controls in certain configurati…</description>
+      <category>Low</category>
+      <pubDate>Wed, 09 Sep 2026 16:12:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87872 · 6.8 MEDIUM — Community.general: community.general: ocapi module_utils (ocapi_command, ocapi_info) hardcode validate_certs=false with no override, enabling tls man-in-the-middle and credential disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-87872</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87872</guid>
+      <description>A flaw was found in the OCAPI modules (ocapi_command, ocapi_info) of the community.general Ansible collection. The shared OCAPI request helper disables TLS certificate validation on every request and the modules expose no parameter to re-enable it, w…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 09 Sep 2026 16:06:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87875 · 4.3 MEDIUM — Cups: openprinting cups: heap out-of-bounds read in cupsutf32toutf8() via missing source-length bound</title>
+      <link>https://vulnogram.org/CVE-2026-87875</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87875</guid>
+      <description>The cupsUTF32ToUTF8() function in CUPS&apos;s cups/transcode.c lacks a source-length bound and can read past the end of the source buffer, resulting in a heap out-of-bounds read. This is reachable via SNMP supply-description parsing in backend/snmp-suppli…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 09 Sep 2026 16:06:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87853 · 7.5 HIGH — Sssd: sssd: idp authentication prefix comparison allows cross-user impersonation</title>
+      <link>https://vulnogram.org/CVE-2026-87853</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87853</guid>
+      <description>A flaw was found in SSSD&apos;s IdP authentication provider. The eval_access_token_buf() function compares the OIDC subject identifier using strncmp() with the authenticated user&apos;s identifier length, performing a prefix comparison instead of an exact matc…</description>
+      <category>High</category>
+      <pubDate>Wed, 09 Sep 2026 16:06:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87874 · 8.1 HIGH 🌩️ — Community.general: community.general: memcached cache plugin deserializes untrusted pickle data from memcached, enabling cache-poisoning remote code execution on the ansible controller</title>
+      <link>https://vulnogram.org/CVE-2026-87874</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87874</guid>
+      <description>A flaw was found in the memcached cache plugin of the community.general Ansible collection. Although its documentation states that records are stored in JSON format, the plugin performs no explicit serialization and relies on python-memcached, which…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 09 Sep 2026 16:06:22 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-87766 · 8.8 HIGH — Bubblewrap: bubblewrap: symlink traversal via /oldroot allows writing files outside sandbox during setup</title>
       <link>https://vulnogram.org/CVE-2026-87766</link>
@@ -372,58 +422,6 @@
       <description>A flaw was found in the MTP backend in gvfs. When reading a file from a mounted MTP device, do_read() in gvfsbackendmtp.c trusts the data length returned by the device without limiting it to the original size requested by the client. If a malicious M…</description>
       <category>Medium</category>
       <pubDate>Tue, 01 Sep 2026 15:19:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84269 · 6.5 MEDIUM 🌩️ — Gvfs: afp: heap-based buffer overflow in dsi read path</title>
-      <link>https://vulnogram.org/CVE-2026-84269</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84269</guid>
-      <description>A flaw was found in the AFP backend in gvfs. When mounting a share, a malicious AFP server can cause the DSI read path to process a length that exceeds the size requested by the client. The function does not verify the server-provided length against…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 15:19:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84267 · 4.3 MEDIUM 🌩️ — Gvfs: sftp: uninitialized heap disclosure in read_string()</title>
-      <link>https://vulnogram.org/CVE-2026-84267</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84267</guid>
-      <description>A flaw was found in the SFTP backend in gvfs. When mounting a share, a malicious SFTP server can cause read_string() to allocate a buffer with a certain length but the function does not verify that the buffer is completely filled, leaving the remaind…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 15:19:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84232 · 5.4 MEDIUM — Pulpcore: python-pulpcore: stored cross-site scripting via inline rendering of uploaded html/svg content</title>
-      <link>https://vulnogram.org/CVE-2026-84232</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84232</guid>
-      <description>A flaw was found in pulpcore&apos;s content serving application. Files uploaded to Pulp file-type repositories are served with their original content type (e.g., text/html for .html files, image/svg+xml for .svg files) and without a Content-Disposition: a…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 15:18:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84268 · 8.8 HIGH 🌩️ — Gvfs: sftp: heap-based buffer overflow in read_reply()</title>
-      <link>https://vulnogram.org/CVE-2026-84268</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84268</guid>
-      <description>A flaw was found in the SFTP backend in gvfs. When mounting a share and reading a file, a malicious SFTP server can cause read_reply() to process a length that exceeds the size requested by the client. The function does not verify the server-provided…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 15:15:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84233 · 7 HIGH — Rpm: command execution via macro expansion in `rpmuncompress -x` for crafted `.gem` filenames</title>
-      <link>https://vulnogram.org/CVE-2026-84233</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84233</guid>
-      <description>A flaw was found in rpm. A local attacker could supply a specially crafted `.gem` filename containing RPM macro syntax. When a user or automated workflow invokes `rpmuncompress -x` on this file, the macro expansion occurs during command construction.…</description>
-      <category>High</category>
-      <pubDate>Tue, 01 Sep 2026 14:53:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84218 · 8.1 HIGH 🌩️ — Org.jolokia/jolokia-core: incomplete jndi denylist in jolokia jsr-160 proxy (bypass of cve-2018-1000130 fix)</title>
-      <link>https://vulnogram.org/CVE-2026-84218</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84218</guid>
-      <description>A flaw was found in Jolokia&apos;s JSR-160 proxy functionality where insufficient validation of client-controlled JMX service URLs allows a bypass of the denylist introduced to mitigate CVE-2018-1000130. The proxy accepts a `target.url` value from a Jolok…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 13:20:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
