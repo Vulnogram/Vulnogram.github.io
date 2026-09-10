@@ -11,7 +11,65 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 10 Sep 2026 07:00:15 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 12:10:59 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-88859 · 5.4 MEDIUM 🌩️ — Evolution: evolution: javascript execution via spoofed vcard control bypasses mail script-markup restriction</title>
+      <link>https://vulnogram.org/CVE-2026-88859</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88859</guid>
+      <description>A flaw was found in Evolution. A remote attacker can exploit this vulnerability by sending a specially crafted HTML email containing a spoofed vCard control. When a victim clicks on this control, Evolution&apos;s trusted JavaScript handler incorrectly ass…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 10 Sep 2026 11:24:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84828 · 6.5 MEDIUM — Pcs: pcs: non-root haclient users can read arbitrary files via pcs host auth --token</title>
+      <link>https://vulnogram.org/CVE-2026-84828</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84828</guid>
+      <description>A flaw was found in PCS (Pacemaker Configuration System). A local attacker with membership in the &apos;haclient&apos; group can exploit the &apos;pcs host auth --token&apos; command to read the contents of arbitrary files on the filesystem, provided the files are short…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 10 Sep 2026 11:20:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88265 · 5.6 MEDIUM — Crun: crun: /dev/null symlink follow during stdio reopen allows host bind-mount write and chown</title>
+      <link>https://vulnogram.org/CVE-2026-88265</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88265</guid>
+      <description>A flaw was found in crun. After pivot_root, reopening /dev/null for stdio can follow a symlink and attach a host file to container stdio, then change that file&apos;s ownership. Affected versions are crun 1.29.1 and earlier. Default configurations that mo…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 10 Sep 2026 08:57:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88264 · 5.6 MEDIUM — Crun: crun: /dev/console symlink follow allows root-owned file creation outside the rootfs</title>
+      <link>https://vulnogram.org/CVE-2026-88264</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88264</guid>
+      <description>A flaw was found in crun. When the container configuration does not give /dev a dedicated mount, terminal setup can redirect /dev/console onto an attacker-controlled path, including via the read-only-rootfs bind-mount fallback. Affected versions are…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 10 Sep 2026 08:40:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84042 · 7.8 HIGH — Crun: crun: rootful krun with passt executes container payload as host root</title>
+      <link>https://vulnogram.org/CVE-2026-84042</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84042</guid>
+      <description>A flaw was found in crun. When crun is built with libkrun and a container is started rootful with passt networking (krun.use_passt), crun can execute attacker-controlled payload from the container image with host root privileges. The issue is a regre…</description>
+      <category>High</category>
+      <pubDate>Thu, 10 Sep 2026 08:24:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88770 · 6.5 MEDIUM — Keycloak-services: keycloak-services: device authorization grant issues tokens to brute-force-locked accounts</title>
+      <link>https://vulnogram.org/CVE-2026-88770</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88770</guid>
+      <description>A flaw was found in the Device Authorization Grant flow of Keycloak, an identity and access management solution. The issue occurs because the token redemption process fails to check if a user account is currently locked due to brute-force protection.…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 10 Sep 2026 07:18:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88763 · 5.9 MEDIUM 🌩️ — Skupper-router: skupper-router: unbounded recursion in amqp field parser leads to denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-88763</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88763</guid>
+      <description>A flaw was found in the skupper-router component of Red Hat Service Interconnect, which is used to provide secure communication between distributed services. The issue occurs when the router processes a specially crafted network message using its AMQ…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 10 Sep 2026 07:09:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-18147 · 8.1 HIGH 🌩️ — Freeipa: ipa: freeipa/idm: cross-site scripting vulnerability allows arbitrary code execution via crafted url</title>
       <link>https://vulnogram.org/CVE-2026-18147</link>
@@ -364,64 +422,6 @@
       <description>The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newl…</description>
       <category>High</category>
       <pubDate>Wed, 02 Sep 2026 15:11:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78410 · 7.8 HIGH — Util-linux: util-linux: restricted bind mounts do not pin the source, allowing x-mount.owner/group/mode redirection</title>
-      <link>https://vulnogram.org/CVE-2026-78410</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78410</guid>
-      <description>A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mo…</description>
-      <category>High</category>
-      <pubDate>Wed, 02 Sep 2026 15:05:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78408 · 7.9 HIGH — Util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority</title>
-      <link>https://vulnogram.org/CVE-2026-78408</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78408</guid>
-      <description>The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credential…</description>
-      <category>High</category>
-      <pubDate>Wed, 02 Sep 2026 15:05:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53683 · 4.3 MEDIUM 🌩️ — Freeipa: idm: idm/freeipa web ui - client-side open redirect in reset_password.html</title>
-      <link>https://vulnogram.org/CVE-2026-53683</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53683</guid>
-      <description>reset_password.html parses query string parameters and uses the &apos;url&apos; parameter as a redirection target (window.location = url) after password reset, optionally delayed by a &apos;delay&apos; parameter. No validation or allowlisting is performed on url, enabli…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 02 Sep 2026 08:54:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82968 · 6.4 MEDIUM — Keycloak-services: keycloak-services: cross-session email verification proof not bound to upstream identity for social providers</title>
-      <link>https://vulnogram.org/CVE-2026-82968</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82968</guid>
-      <description>A flaw was found in the first-broker-login flow of the Keycloak identity management service. When a user links a social identity provider account to their local account, the verification proof generated is not strictly bound to the specific upstream…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 02 Sep 2026 01:39:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84470 · 6.4 MEDIUM — Automation-controller: automation-controller-container: automation-controller/awx: bulk job launch checks instance_groups at read level instead of use level, allowing execution-placement authorization bypass</title>
-      <link>https://vulnogram.org/CVE-2026-84470</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84470</guid>
-      <description>A flaw was found in Ansible Automation Platform&apos;s automation-controller (AWX). The Bulk Job Launch API (POST /api/v2/bulk/job_launch/) authorizes the requested instance_groups with only a read-level permission check, whereas the standard single-job l…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 20:57:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49329 · 7.5 HIGH 🌩️ — Openshift/oauth-server: openshift/oauth-server: quadratic-time dos via accept-language header underscore bypass on unauthenticated login endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-49329</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49329</guid>
-      <description>A flaw was found in openshift/oauth-server. The OAuth login and error page endpoints pass the unauthenticated Accept-Language header to golang.org/x/text/language.ParseAcceptLanguage() without input validation. A bypass of the CVE-2022-32149 mitigati…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 15:30:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84270 · 4.3 MEDIUM — Gvfs: mtp: out-of-bounds read in do_read()</title>
-      <link>https://vulnogram.org/CVE-2026-84270</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84270</guid>
-      <description>A flaw was found in the MTP backend in gvfs. When reading a file from a mounted MTP device, do_read() in gvfsbackendmtp.c trusts the data length returned by the device without limiting it to the original size requested by the client. If a malicious M…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 15:19:14 GMT</pubDate>
     </item>
   </channel>
 </rss>
