@@ -11,7 +11,47 @@
       <title>HashiCorp Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 10 Sep 2026 19:01:24 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 21:33:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-87993 · 7.7 HIGH — Consul-template vulnerable to an information disclosure issue in error handling</title>
+      <link>https://vulnogram.org/CVE-2026-87993</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87993</guid>
+      <description>The consul-template library is vulnerable to an information disclosure issue in its error handling path that may allow Vault secret values to appear in template error messages, log output, and downstream surfaces such as Nomad task events. This vulne…</description>
+      <category>High</category>
+      <pubDate>Thu, 10 Sep 2026 19:00:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88021 · 7.5 HIGH — Consul vulnerable to an authorization bypass in the Connect service mesh</title>
+      <link>https://vulnogram.org/CVE-2026-88021</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88021</guid>
+      <description>Consul and Consul Enterprise are vulnerable to an authorization bypass in the Connect service mesh that may allow a service to reach a destination it is not authorized to access. When building Envoy RBAC rules to enforce Connect intentions, Consul di…</description>
+      <category>High</category>
+      <pubDate>Thu, 10 Sep 2026 18:58:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87107 · 5.4 MEDIUM — Consul vulnerable to an authorization bypass in the catalog deregistration path</title>
+      <link>https://vulnogram.org/CVE-2026-87107</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87107</guid>
+      <description>Consul and Consul Enterprise are vulnerable to an authorization bypass in the catalog deregistration path that may allow a local ACL token to delete peer-imported catalog objects. A caller with {{service:write}} or {{node:write}} permission may explo…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 10 Sep 2026 18:57:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87106 · 6.5 MEDIUM — Consul vulnerable to a denial of service in the native RPC listener</title>
+      <link>https://vulnogram.org/CVE-2026-87106</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87106</guid>
+      <description>Consul and Consul Enterprise are vulnerable to a denial of service in the native RPC listener that may allow an authenticated client to exhaust server memory before ACL authorization is evaluated. A client that can complete the internal RPC mTLS hand…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 10 Sep 2026 18:55:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87090 · 8.3 HIGH — Consul vulnerable to an authorization bypass in the catalog node-write path</title>
+      <link>https://vulnogram.org/CVE-2026-87090</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87090</guid>
+      <description>Consul and Consul Enterprise are vulnerable to an authorization bypass in the catalog node-write path that may allow an authenticated attacker to delete another node&apos;s catalog registration and take over its node identity. An attacker with a token gra…</description>
+      <category>High</category>
+      <pubDate>Thu, 10 Sep 2026 18:54:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-5006 · 6.8 MEDIUM — Vault Vulnerable to Privilege Escalation via Slash Injection in Templated Policy Paths</title>
       <link>https://vulnogram.org/CVE-2026-5006</link>
@@ -373,46 +413,6 @@
       <description>HashiCorp&apos;s go-getter library subdirectory download feature is vulnerable to symlink attacks leading to unauthorized read access beyond the designated directory boundaries. This vulnerability, identified as CVE-2025-8959, is fixed in go-getter 1.7.9.</description>
       <category>High</category>
       <pubDate>Fri, 15 Aug 2025 20:32:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6013 · 6.5 MEDIUM — Vault LDAP MFA Enforcement Bypass When Using Username As Alias</title>
-      <link>https://vulnogram.org/CVE-2025-6013</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6013</guid>
-      <description>Vault and Vault Enterprise’s (“Vault”) ldap auth method may not have correctly enforced MFA if username_as_alias was set to true and a user had multiple CNs that are equal but with leading or trailing spaces. Fixed in Vault Community Edition 1.20.2 a…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 06 Aug 2025 10:06:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6015 · 5.7 MEDIUM — Vault Login MFA Bypass of Rate Limiting and TOTP Code Reuse</title>
-      <link>https://vulnogram.org/CVE-2025-6015</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6015</guid>
-      <description>Vault and Vault Enterprise’s (“Vault”) login MFA rate limits could be bypassed and TOTP tokens could be reused. Fixed in Vault Community Edition 1.20.1 and Vault Enterprise 1.20.1, 1.19.7, 1.18.12, and 1.16.23.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 01 Aug 2025 18:03:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6011 · 3.7 LOW — Timing Side-Channel in Vault’s Userpass Auth Method</title>
-      <link>https://vulnogram.org/CVE-2025-6011</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6011</guid>
-      <description>A timing side channel in Vault and Vault Enterprise’s (“Vault”) userpass auth method allowed an attacker to distinguish between existing and non-existing users, and potentially enumerate valid usernames for Vault’s Userpass auth method. Fixed in Vaul…</description>
-      <category>Low</category>
-      <pubDate>Fri, 01 Aug 2025 18:00:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6004 · 5.3 MEDIUM — Vault Userpass and LDAP User Lockout Bypass</title>
-      <link>https://vulnogram.org/CVE-2025-6004</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6004</guid>
-      <description>Vault and Vault Enterprise’s (“Vault”) user lockout feature could be bypassed for Userpass and LDAP authentication methods. Fixed in Vault Community Edition 1.20.1 and Vault Enterprise 1.20.1, 1.19.7, 1.18.12, and 1.16.23.</description>
-      <category>Medium</category>
-      <pubDate>Fri, 01 Aug 2025 17:56:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6037 · 6.8 MEDIUM — Vault Certificate Auth Method Did Not Validate Common Name For Non-CA Certificates</title>
-      <link>https://vulnogram.org/CVE-2025-6037</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6037</guid>
-      <description>Vault and Vault Enterprise (“Vault”) TLS certificate auth method did not correctly validate client certificates when configured with a non-CA certificate as [+trusted certificate+|https://developer.hashicorp.com/vault/api-docs/auth/cert#certificate].…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 01 Aug 2025 17:52:48 GMT</pubDate>
     </item>
   </channel>
 </rss>
