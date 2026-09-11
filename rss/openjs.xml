@@ -11,7 +11,39 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 11 Sep 2026 06:53:26 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 12:01:35 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-87776 · 7.5 HIGH — compression vulnerable to Denial of Service via memory leak on premature response close</title>
+      <link>https://vulnogram.org/CVE-2026-87776</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87776</guid>
+      <description>compression is a Node.js and Express compression middleware. In versions before 1.8.2, when a client aborts the connection while a compressed response is still being sent, the zlib stream created to compress that response is never destroyed, so each…</description>
+      <category>High</category>
+      <pubDate>Fri, 11 Sep 2026 11:24:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87123 · 5.9 MEDIUM — hbs vulnerable to Denial of Service via unhandled exception in async helper output escaping</title>
+      <link>https://vulnogram.org/CVE-2026-87123</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87123</guid>
+      <description>hbs is an Express view engine wrapper for Handlebars. Version 4.3.0 can crash the Node.js process during output escaping when an async helper, registered with registerAsyncHelper, resolves to an object whose toHTML property is truthy but not callable…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 11 Sep 2026 09:50:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87859 · 5.3 MEDIUM — morgan vulnerable to Log Injection via unescaped double quote in quoted log fields</title>
+      <link>https://vulnogram.org/CVE-2026-87859</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87859</guid>
+      <description>morgan is an HTTP request logger middleware for Node.js. In versions before 1.12.1, its escapeLogField() function does not escape the double quote character, which delimits the quoted fields of the Apache combined log format that morgan emits. An una…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 11 Sep 2026 09:15:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87908 · 7.5 HIGH — multiparty vulnerable to Denial of Service via unbounded part-header accumulation</title>
+      <link>https://vulnogram.org/CVE-2026-87908</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87908</guid>
+      <description>multiparty is a Node.js library for parsing multipart/form-data request bodies. In versions from 2.1.0 up to but not including 4.3.1, the parser does not bound the amount of memory used while accumulating the headers of a single multipart part. An un…</description>
+      <category>High</category>
+      <pubDate>Fri, 11 Sep 2026 06:37:51 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-88038 · 4.8 MEDIUM — cookies vulnerable to Set-Cookie attribute injection via unvalidated domain and path options</title>
       <link>https://vulnogram.org/CVE-2026-88038</link>
@@ -379,38 +411,6 @@
       <description>undici&apos;s retry interceptor can deliver a response whose body length does not match the Content-Length header exposed to the application after a retry or resume of a partial response. In undici before 6.28.0, from 7.0.0 up to before 7.29.0, and from 8…</description>
       <category>Medium</category>
       <pubDate>Wed, 29 Jul 2026 20:59:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16729 · 4.8 MEDIUM — undici vulnerable to cookie attribute injection via unsanitized domain and unparsed setCookie fields</title>
-      <link>https://vulnogram.org/CVE-2026-16729</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16729</guid>
-      <description>undici&apos;s setCookie function does not fully sanitize cookie attributes. In undici before 6.28.0, from 7.0.0 up to before 7.29.0, and from 8.0.0 up to before 8.9.0, a domain value is not checked for semicolons and entries in the unparsed array are not…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 29 Jul 2026 16:45:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13697 · 7.4 HIGH — undici vulnerable to cross-user information disclosure and parse-time crash via degenerate private cache directives</title>
-      <link>https://vulnogram.org/CVE-2026-13697</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13697</guid>
-      <description>undici&apos;s cache interceptor mishandles malformed Cache-Control private directives. In undici 7.0.0 up to before 7.29.0 and 8.0.0 up to before 8.9.0, a response carrying a degenerate qualified private directive, such as private set to an empty value, c…</description>
-      <category>High</category>
-      <pubDate>Wed, 29 Jul 2026 16:32:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15144 · 7.3 HIGH — @fastify/rate-limit vulnerable to rate-limit bypass via IPv6 address rotation</title>
-      <link>https://vulnogram.org/CVE-2026-15144</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15144</guid>
-      <description>@fastify/rate-limit before 11.2.0 keys rate-limit buckets by the verbatim client IP string returned from request.ip. Because a single IPv6 client can control a large address range (a /64 holds 2^64 distinct addresses) and the same address has multipl…</description>
-      <category>High</category>
-      <pubDate>Wed, 29 Jul 2026 16:10:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18174 · 5.3 MEDIUM — @fastify/forwarded vulnerable to improper input validation via unstripped tab characters in X-Forwarded-For</title>
-      <link>https://vulnogram.org/CVE-2026-18174</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18174</guid>
-      <description>@fastify/forwarded resolves client addresses from the X-Forwarded-For header. In versions before 3.0.2, when the header contains two or more comma separated entries, the parser trims only space characters and does not strip horizontal tabs, even thou…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 29 Jul 2026 13:46:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
