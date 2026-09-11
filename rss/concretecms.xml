@@ -11,7 +11,48 @@
       <title>Concrete CMS — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 11 Sep 2026 15:34:47 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 19:05:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-81910 · 5.9 MEDIUM — Concrete CMS 9 through 9.5.2 is vulnerable to Server-Side Template Injection (SSTI) in Theme Customizer via Unvalidated Style Values</title>
+      <link>https://vulnogram.org/CVE-2026-81910</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81910</guid>
+      <description>Concrete CMS 9 through 9.5.2 is vulnerable to Server-Side Template Injection (SSTI) in Theme Customizer via Unvalidated Style Values. Values submitted through the customizer (color channels and other style properties handled by ColorStyle and sibling…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 11 Sep 2026 18:20:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81909 · 5.9 MEDIUM — Concrete CMS 9 through 9.5.2 is vulnerable to Missing Authorization in the orphaned-block alias route, allowing an authenticated editor to disclose and force-delete arbitrary blocks</title>
+      <link>https://vulnogram.org/CVE-2026-81909</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81909</guid>
+      <description>Concrete CMS 9 through 9.5.2 is vulnerable to Missing Authorization in the block alias route (Process::alias() in concrete/controllers/backend/block/process.php).It does not verify that the referenced block is genuinely orphaned on the target page, n…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 11 Sep 2026 17:49:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68528 · 6 MEDIUM 🌩️ — Concrete CMS 9.5.2 and below is vulnerable to Stored XSS in RSS Displayer Block via Unescaped Remote Feed Item title</title>
+      <link>https://vulnogram.org/CVE-2026-68528</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68528</guid>
+      <description>Concrete CMS RSS Displayer block below version 9.5.3 rendered remote feed item titles without HTML escaping, resulting in stored cross-site scripting. An attacker able to control a title in a syndicated feed could execute script in the site origin fo…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 11 Sep 2026 17:34:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18122 · 6 MEDIUM — Concrete CMS 9.2.0 to 9.5.2 Express REST API list endpoint exposes restricted Express entries via Missing Authorization</title>
+      <link>https://vulnogram.org/CVE-2026-18122</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18122</guid>
+      <description>Concrete CMS 9.2.0 to 9.5.2 Express REST API list endpoint exposes restricted Express entries via Missing Authorization; the Concrete CMS REST API&apos;s Express entry collection endpoint disabled the per-entry view permission check. An OAuth token with r…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 11 Sep 2026 17:15:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81908 · 6 MEDIUM — Missing Authorization in Concrete CMS 9.2.0 to 9.5.2  REST API Groups List Endpoint Allows Authenticated Users to Enumerate All Groups</title>
+      <link>https://vulnogram.org/CVE-2026-81908</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81908</guid>
+      <description>Concrete CMS 9.2.0 to 9.5.2 contain a missing authorization vulnerability in the REST API Groups list endpoint. The listGroups() method in concrete/src/Api/Controller/Groups.php registers a permissions checker callback that unconditionally returns tr…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 11 Sep 2026 17:09:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-81906 · 6.3 MEDIUM 🌩️ — [UNREVIEWED] OAuth Callback Login Bypasses Deactivated-Account Checks</title>
       <link>https://vulnogram.org/CVE-2026-81906</link>
@@ -403,51 +444,6 @@
       <description>Concrete CMS 9.5.0 and below is vulnerable to missing authorization in the bulk_user_assignment.php which can lead to privilege escalation to Administrative Group. Any authenticated user with access to the bulk user assignment dashboard page can add…</description>
       <category>High</category>
       <pubDate>Thu, 21 May 2026 20:28:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8421 · 7.5 HIGH 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to CSRF on install_package() with conditional token bypass leading to RCE</title>
-      <link>https://vulnogram.org/CVE-2026-8421</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8421</guid>
-      <description>Concrete CMS 9.5.0 and below contains a CSRF vulnerability in the install_package() method of concrete/controllers/single_page/dashboard/extend/install.php. An attacker who can cause an authenticated administrator to visit a crafted page, and who has…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 20:25:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8428 · 7.5 HIGH 🌩️ — CSRF token is not validated in the core CMS update controller for Concrete CMS 9.5.0 and below</title>
-      <link>https://vulnogram.org/CVE-2026-8428</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8428</guid>
-      <description>Concrete CMS 9.5.0 and below emits a CSRF token in the local_available_update.php view ($token-&gt;output(&apos;do_update&apos;)) but the corresponding do_update() method in concrete/controllers/single_page/dashboard/system/update/update.php never calls $this-&gt;to…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 20:24:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8426 · 7.5 HIGH 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to CSRF on prepare_remote_upgrade() leading to one-request RCE via package overwrite</title>
-      <link>https://vulnogram.org/CVE-2026-8426</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8426</guid>
-      <description>Concrete CMS 9.5.0 and below does not validate a CSRF token before processing requests to /dashboard/extend/update/prepare_remote_upgrade/&lt;remoteMPID&gt;. An attacker who controls the remote package returned for a known marketplace item ID can overwrite…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 20:22:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8140 · 7.5 HIGH 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to CSRF on download() in the package install controller</title>
-      <link>https://vulnogram.org/CVE-2026-8140</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8140</guid>
-      <description>Concrete CMS 9.5.0 and below does not validate a CSRF token before processing requests to /dashboard/extend/install/download/&lt;remoteId&gt;. The download() method in concrete/controllers/single_page/dashboard/extend/install.php checks only the canInstall…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 20:20:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8417 · 7.5 HIGH 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to CSRF in do_update() in the package update controller</title>
-      <link>https://vulnogram.org/CVE-2026-8417</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8417</guid>
-      <description>Concrete CMS 9.5.0 and below does not validate a CSRF token before processing requests to /dashboard/extend/update/do_update/&lt;pkgHandle&gt;. The do_update() method in concrete/controllers/single_page/dashboard/extend/update.php checks only canInstallPac…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 20:19:42 GMT</pubDate>
     </item>
   </channel>
 </rss>
