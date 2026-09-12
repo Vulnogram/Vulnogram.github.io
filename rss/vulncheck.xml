@@ -11,7 +11,50 @@
       <title>VulnCheck — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 12 Sep 2026 17:46:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 19:59:48 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-90560 · 8.8 HIGH 🌩️ — zstd-jni 1.2.0 through 1.5.7-13 Out-of-Bounds Read via ZstdDictDecompress</title>
+      <link>https://vulnogram.org/CVE-2026-90560</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90560</guid>
+      <description>zstd-jni versions 1.2.0 through 1.5.7-13 contain an out-of-bounds read vulnerability in the ZstdDictDecompress constructor because offset and length arguments are never validated against the dictionary array bounds. Attackers can supply arbitrary off…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 12 Sep 2026 18:06:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90559 · 8.7 HIGH 🌩️ — snappy-java through 1.1.10.8 Out-of-Bounds Write via uncompress</title>
+      <link>https://vulnogram.org/CVE-2026-90559</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90559</guid>
+      <description>snappy-java through 1.1.10.8 contains an out-of-bounds write vulnerability in Snappy.uncompress(ByteBuffer, ByteBuffer) because destination buffer capacity is never validated against decompressed size. Attackers can supply valid compressed data that…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 12 Sep 2026 18:06:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90558 · 9.8 CRITICAL 🌩️ — sngrep through 1.8.4 Stack Buffer Overflow via SIP Headers</title>
+      <link>https://vulnogram.org/CVE-2026-90558</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90558</guid>
+      <description>sngrep through 1.8.4 contains stack buffer overflow vulnerabilities in SIP attribute formatting routines when header values exceed the 255-byte buffer limit. Attackers can craft malicious SIP packets with oversized Call-ID, X-Call-ID, or other header…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 12 Sep 2026 18:06:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90557 · 6.9 MEDIUM — Freeciv 3.1.0 through 3.2.5 Out-of-Bounds Read via Savegame</title>
+      <link>https://vulnogram.org/CVE-2026-90557</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90557</guid>
+      <description>Freeciv versions 3.1.0 through 3.2.5 contain an out-of-bounds read vulnerability in sg_load_player_unit() when processing savegame files with invalid unit activity indices. An attacker can craft a malicious savegame file with an out-of-range activity…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 12 Sep 2026 18:06:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90556 · 8.5 HIGH — Freeciv before 3.2.6 Heap Buffer Overflow via worklist_load</title>
+      <link>https://vulnogram.org/CVE-2026-90556</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90556</guid>
+      <description>Freeciv versions before 3.2.6 contain a heap buffer overflow in worklist_load() when processing savegame files with declared worklist lengths exceeding the fixed array bound of 64 elements. Attackers can craft malicious savegame files that write past…</description>
+      <category>High</category>
+      <pubDate>Sat, 12 Sep 2026 18:06:41 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-90555 · 7.1 HIGH — vLLM before 0.28.0 Denial of Service via Audio Header</title>
       <link>https://vulnogram.org/CVE-2026-90555</link>
@@ -401,48 +444,6 @@
       <description>NetBSD contains an information disclosure vulnerability in mm_open() within sys/dev/mm.c that allows unprivileged local users to obtain real kernel virtual addresses by opening world-accessible devices such as /dev/null or /dev/zero, which incorrectl…</description>
       <category>Medium</category>
       <pubDate>Fri, 11 Sep 2026 13:50:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57842 · 7.3 HIGH — NetBSD COMPAT_NETBSD32 Double Free / Use-After-Free via recvmsg() msg_iovlen</title>
-      <link>https://vulnogram.org/CVE-2026-57842</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57842</guid>
-      <description>NetBSD contains a use-after-free and double-free vulnerability in msg_recv_copyin() within the COMPAT_NETBSD32 compatibility layer due to a missing return statement before the cleanup label on the success path. Any local user able to execute a 32-bit…</description>
-      <category>High</category>
-      <pubDate>Fri, 11 Sep 2026 13:48:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89259 · 9.8 CRITICAL 🌩️ — Hugo before v0.165.0 Insufficient Permission Restriction via TailwindCSS</title>
-      <link>https://vulnogram.org/CVE-2026-89259</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89259</guid>
-      <description>Hugo is a static site generator. From v0.161.0, Hugo executes Node tools under Node&apos;s permission model, but TailwindCSS — included in the default security.exec.allow list — requires a highly permissive configuration (--allow-addons, --allow-child-pro…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 11 Sep 2026 11:15:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89258 · 9.3 CRITICAL 🌩️ — Hugo before v0.165.0 Symlink Confinement Bypass via resources.Get</title>
-      <link>https://vulnogram.org/CVE-2026-89258</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89258</guid>
-      <description>Hugo is a static site generator. In versions after v0.123.0 and before v0.165.0, symlinks in parent directories were not dropped during direct resource lookups, allowing path confinement to be bypassed. An attacker who can place — or who convinces a…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 11 Sep 2026 11:15:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89257 · 5.4 MEDIUM — AVideo through 29.0 Cross-User Category Asset Deletion via Missing Ownership Check</title>
-      <link>https://vulnogram.org/CVE-2026-89257</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89257</guid>
-      <description>AVideo through 29.0 contains an insecure direct object reference (IDOR) vulnerability in objects/categoryDeleteAssets.json.php. The endpoint validates only the Category::canCreateCategory() capability and a CSRF nonce before passing the attacker-supp…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 11:15:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89256 · 9.3 CRITICAL — AVideo Bookmark Plugin Stored XSS via Chapter Names</title>
-      <link>https://vulnogram.org/CVE-2026-89256</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89256</guid>
-      <description>AVideo through commit c3edcc274c389816d434acadac07ee78eaf330c1 contains a stored cross-site scripting vulnerability in the Bookmark plugin where chapter names are not encoded before being concatenated into public watch-page HTML. A video owner can in…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 11 Sep 2026 11:15:32 GMT</pubDate>
     </item>
   </channel>
 </rss>
