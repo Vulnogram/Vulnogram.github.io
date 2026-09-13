@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 13 Sep 2026 22:03:02 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 23:56:43 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-15892 · 5.3 MEDIUM — Heap memory leak in mcumgr settings-management handlers on access-hook rejection leads to denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-15892</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15892</guid>
+      <description>The mcumgr SMP settings-management group handlers settings_mgmt_read(), settings_mgmt_write(), and settings_mgmt_delete() in subsys/mgmt/mcumgr/grp/settings_mgmt/src/settings_mgmt.c allocate a key_name buffer (and, for read, a data buffer) via k_mall…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 13 Sep 2026 22:46:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15891 · 7.5 HIGH — NULL pointer dereference in Zephyr MQTT-SN client when removing a non-responsive gateway</title>
+      <link>https://vulnogram.org/CVE-2026-15891</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15891</guid>
+      <description>The MQTT-SN client keepalive handler process_ping() in subsys/net/lib/mqtt_sn/mqtt_sn.c removes the gateway record after PINGREQ retries are exhausted. It invoked SYS_SLIST_PEEK_HEAD_CONTAINER(&amp;client-&gt;gateways, gw, next) but discarded the result. Th…</description>
+      <category>High</category>
+      <pubDate>Sun, 13 Sep 2026 22:46:15 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15461 · 5.3 MEDIUM — Type confusion in Zephyr HL78xx GNSS NMEA driver causes wild-pointer write from GNSS input</title>
       <link>https://vulnogram.org/CVE-2026-15461</link>
@@ -395,22 +411,6 @@
       <description>The UpdateHub over-the-air update client&apos;s start_coap_client() in subsys/mgmt/updatehub/updatehub.c leaks the CoAP/DTLS socket descriptor on its connection-setup failure paths. The shared error: cleanup gated socket closing on a ret &gt; 0 flag, but ret…</description>
       <category>Low</category>
       <pubDate>Mon, 10 Aug 2026 22:55:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8718 · 8.4 HIGH — Out-of-bounds write in DTLS peer Connection ID getsockopt (`TLS_DTLS_PEER_CID_VALUE`) in Zephyr net sockets/TLS</title>
-      <link>https://vulnogram.org/CVE-2026-8718</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8718</guid>
-      <description>tls_opt_dtls_peer_connection_id_value_get() in subsys/net/lib/sockets/sockets_tls.c, which handles getsockopt(SOL_TLS, TLS_DTLS_PEER_CID_VALUE), passed the caller-supplied optval directly to mbedtls_ssl_get_peer_cid() without verifying the buffer was…</description>
-      <category>High</category>
-      <pubDate>Mon, 10 Aug 2026 22:40:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11809 · 3.7 LOW — UpdateHub probe: uninitialized-heap out-of-bounds read of network-supplied metadata</title>
-      <link>https://vulnogram.org/CVE-2026-11809</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11809</guid>
-      <description>The UpdateHub OTA client in subsys/mgmt/updatehub/updatehub.c contains an out-of-bounds / uninitialized-memory read in z_impl_updatehub_probe(). The probe response from the UpdateHub server is copied into a heap buffer (metadata) that is correctly NU…</description>
-      <category>Low</category>
-      <pubDate>Mon, 10 Aug 2026 20:36:33 GMT</pubDate>
     </item>
   </channel>
 </rss>
