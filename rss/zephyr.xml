@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 14 Sep 2026 14:49:53 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 19:56:12 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-15893 · 6.5 MEDIUM — Zephyr IPv6 Neighbor Discovery zero reachable time from crafted Router Advertisement causes assertion/DoS</title>
+      <link>https://vulnogram.org/CVE-2026-15893</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15893</guid>
+      <description>net_if_ipv6_calc_reachable_time() in subsys/net/ip/net_if.c derives a randomized ND reachable time from ipv6-&gt;base_reachable_time as min_reachable + sys_rand32_get() % (max_reachable - min_reachable), where min_reachable = base/2 and max_reachable =…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 18:49:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15923 · 4.6 MEDIUM — Infinite loop denial of service in Zephyr SDIO byte-I/O from a card-supplied zero max_blk_size</title>
+      <link>https://vulnogram.org/CVE-2026-15923</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15923</guid>
+      <description>The Zephyr SDIO subsystem function sdio_io_rw_extended_helper() in subsys/sd/sdio.c finishes transfers with a byte-I/O loop that uses size = MIN(remaining, func-&gt;cis.max_blk_size) as the per-iteration step. The value func-&gt;cis.max_blk_size is decoded…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 16:12:52 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15892 · 5.3 MEDIUM — Heap memory leak in mcumgr settings-management handlers on access-hook rejection leads to denial of service</title>
       <link>https://vulnogram.org/CVE-2026-15892</link>
@@ -395,22 +411,6 @@
       <description>The Bluetooth HCI driver for Bouffalo Lab on-chip BLE controllers (BL60x/BL70x/BL61x), bt_bflb_send() in drivers/bluetooth/hci/hci_bflb.c, violates the bt_hci_driver_api.send() buffer-ownership contract. That contract (documented at include/zephyr/dr…</description>
       <category>Medium</category>
       <pubDate>Tue, 11 Aug 2026 04:42:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11812 · 2.5 LOW — UpdateHub: race condition on shared context causes out-of-bounds write and DoS</title>
-      <link>https://vulnogram.org/CVE-2026-11812</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11812</guid>
-      <description>The UpdateHub management subsystem (subsys/mgmt/updatehub/updatehub.c) drives every update operation through a single file-scope ctx structure that holds the CoAP block context, payload buffer, status code, socket, and a one-element poll-fd array fds…</description>
-      <category>Low</category>
-      <pubDate>Mon, 10 Aug 2026 23:09:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11811 · 3.7 LOW — Socket file-descriptor leak in UpdateHub OTA client start_coap_client() leading to resource-exhaustion DoS</title>
-      <link>https://vulnogram.org/CVE-2026-11811</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11811</guid>
-      <description>The UpdateHub over-the-air update client&apos;s start_coap_client() in subsys/mgmt/updatehub/updatehub.c leaks the CoAP/DTLS socket descriptor on its connection-setup failure paths. The shared error: cleanup gated socket closing on a ret &gt; 0 flag, but ret…</description>
-      <category>Low</category>
-      <pubDate>Mon, 10 Aug 2026 22:55:17 GMT</pubDate>
     </item>
   </channel>
 </rss>

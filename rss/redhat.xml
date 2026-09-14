@@ -11,7 +11,47 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 14 Sep 2026 14:49:53 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 19:56:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-90996 · 4 MEDIUM — Sssd: sssd: denial of service in nss responder via crafted zero-length requests</title>
+      <link>https://vulnogram.org/CVE-2026-90996</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90996</guid>
+      <description>A flaw was found in sssd. A local unprivileged user could send a specially crafted request with a zero-length body to the Network Security Services (NSS) responder. This could lead to a denial-of-service condition, causing the NSS responder to become…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 15:55:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90995 · 5.5 MEDIUM — Sssd: sssd: local denial of service due to null pointer dereference in pam responder</title>
+      <link>https://vulnogram.org/CVE-2026-90995</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90995</guid>
+      <description>A flaw was found in SSSD (System Security Services Daemon). A local attacker with privileges to connect to the PAM (Pluggable Authentication Modules) responder socket can send a specially crafted protocol request. If the `pam_app_services` configurat…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 15:55:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90994 · 4 MEDIUM — Sssd: sssd: denial of service via malformed pam v1 requests</title>
+      <link>https://vulnogram.org/CVE-2026-90994</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90994</guid>
+      <description>A flaw was found in sssd, specifically within the PAM (Pluggable Authentication Modules) responder&apos;s protocol v1 parser, pam_parse_in_data(). A local client with access to the PAM responder&apos;s UNIX socket can exploit this by negotiating protocol v1 an…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 15:55:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90463 · 4 MEDIUM — Sssd: local oob read in nss service request parsers (`sss_nss_protocol_parse_svc_name` / `sss_nss_protocol_parse_svc_port`)</title>
+      <link>https://vulnogram.org/CVE-2026-90463</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90463</guid>
+      <description>A flaw was found in the sssd NSS responder. This input validation vulnerability allows a local attacker, by sending specially crafted service lookup requests to the NSS responder&apos;s UNIX socket, to cause an out-of-bounds read. This out-of-bounds read…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 15:21:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90947 · 7.8 HIGH — Gimp: gimp: out-of-bounds write in lighting effects plugin via crafted preset file</title>
+      <link>https://vulnogram.org/CVE-2026-90947</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90947</guid>
+      <description>A flaw was found in GIMP. When processing a specially crafted lighting preset file, the Lighting Effects filter does not properly validate the number of light sources. This can lead to an out-of-bounds write, corrupting memory. An attacker could expl…</description>
+      <category>High</category>
+      <pubDate>Mon, 14 Sep 2026 15:15:14 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-90949 · 7.8 HIGH — Gimp: gimp: heap-based buffer overflow in psp loader due to selection-channel geometry mismatch</title>
       <link>https://vulnogram.org/CVE-2026-90949</link>
@@ -380,47 +420,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 04 Sep 2026 10:19:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81666 · 6.5 MEDIUM — Corosync: corosync: integer overflow in check_memb_commit_token_sanity may bypass message length validation on 32-bit systems</title>
-      <link>https://vulnogram.org/CVE-2026-81666</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81666</guid>
-      <description>An integer overflow was found in Corosync&apos;s handling of membership commit token messages. The length-validation check for these messages can be bypassed on 32-bit systems due to an integer overflow in the calculation of the expected message length, a…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 04 Sep 2026 09:46:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81665 · 7.5 HIGH — Corosync: corosync: heap-based buffer overflow in totempg assembly buffer during fragmented message reassembly</title>
-      <link>https://vulnogram.org/CVE-2026-81665</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81665</guid>
-      <description>A heap-based buffer overflow was found in Corosync&apos;s Totem Process Group (totempg) message reassembly. When processing fragmented multicast messages, the buffer used to reassemble fragments lacks a runtime bounds check in release builds. A network-ad…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Sep 2026 09:05:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85197 · 7.6 HIGH 🌩️ — Libsoup: libsoup: heap use-after-free in libsoup http/2 client on_data_read() via goaway during body upload</title>
-      <link>https://vulnogram.org/CVE-2026-85197</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85197</guid>
-      <description>A flaw was found in libsoup. A malicious HTTP/2 server or a Man-in-the-Middle (MITM) attacker can exploit a heap use-after-free vulnerability in the HTTP/2 client implementation. This occurs when a GNOME application uploads a file using HTTP/2, and t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 04 Sep 2026 07:34:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84185 · 5.9 MEDIUM — Jwcrypto: jwcrypto: general json jws kid binding bypass during jwkset verification</title>
-      <link>https://vulnogram.org/CVE-2026-84185</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84185</guid>
-      <description>A flaw was found in the jwcrypto library, which is used for implementing Javascript Object Signing and Encryption (JOSE) standards. The issue occurs when the library verifies a General JSON Serialization JWS using a set of keys. Due to a coding error…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 03 Sep 2026 20:46:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71224 · 4.7 MEDIUM — Gfs2-utils: gfs2-utils: stack overflow via alloca(i_height) in metadata walk</title>
-      <link>https://vulnogram.org/CVE-2026-71224</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71224</guid>
-      <description>A stack overflow vulnerability was found in gfs2-utils. The metadata walk code in metawalk.c uses alloca() with an untrusted inode height value from on-disk metadata without bounds validation, causing stack exhaustion and a denial of service when pro…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 03 Sep 2026 12:23:31 GMT</pubDate>
     </item>
   </channel>
 </rss>
