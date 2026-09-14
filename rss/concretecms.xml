@@ -11,7 +11,64 @@
       <title>Concrete CMS — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 14 Sep 2026 19:56:12 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 23:01:46 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-81900 · 7.3 HIGH — Concrete CMS before 9.5.3 is vulnerable to Stored XSS in the YouTube block (vWidth/vHeight)</title>
+      <link>https://vulnogram.org/CVE-2026-81900</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81900</guid>
+      <description>Concrete CMS before 9.5.3 applied only trim() to the YouTube block&apos;s stored width and height values and printed them into iframe HTML attributes without escaping or integer casting, resulting in stored cross-site scripting. A user with edit_block per…</description>
+      <category>High</category>
+      <pubDate>Mon, 14 Sep 2026 22:07:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18116 · 7.3 HIGH — Concrete CMS 8.3.0 to 9.5.2 is vulnerable to Stored XSS in Calendar Event Name via Workflow Approval Notifications</title>
+      <link>https://vulnogram.org/CVE-2026-18116</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18116</guid>
+      <description>Concrete CMS 8.3.0 to 9.5.2 stored calendar event names without sanitization and rendered them without HTML escaping in the workflow approval and deletion notifications shown in the dashboard &quot;Waiting For Me&quot; block. A registered user permitted to add…</description>
+      <category>High</category>
+      <pubDate>Mon, 14 Sep 2026 22:05:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18117 · 7.3 HIGH — Concrete CMS 9.0.0 to 9.5.2 is vulnerable to Stored XSS in Custom Page Alias Name</title>
+      <link>https://vulnogram.org/CVE-2026-18117</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18117</guid>
+      <description>Concrete CMS 9.0.0 through 9.5.3 is vulnerable to stored XSS via the custom page alias name (customAliasName) because the Edit Alias dialog applied only trim() to the submitted value and performed no input neutralization. An authenticated user holdin…</description>
+      <category>High</category>
+      <pubDate>Mon, 14 Sep 2026 21:27:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81901 · 7.2 HIGH — Concrete CMS 9.2.0 to 9.5.2 is vulnerable to stored XSS due to missing authorization in the `PUT /pages/{cID}` endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-81901</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81901</guid>
+      <description>In Concrete CMS 9.2.0 through 9.5.2, the REST API page update endpoint (PUT /ccm/api/1.0/pages/{cID}) did not enforce page-property, page-template, or page-type authorization. A user granted only content-editing rights on a page could therefore alter…</description>
+      <category>High</category>
+      <pubDate>Mon, 14 Sep 2026 20:38:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81902 · 7.1 HIGH 🌩️ — Concrete CMS 9.0.0 to 9.5.2 is vulnerable to CSRF on Orphan Block Cleanup</title>
+      <link>https://vulnogram.org/CVE-2026-81902</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81902</guid>
+      <description>Concrete CMS 9 through 9.5.2 did not validate a CSRF token in the orphaned block removal panel action (removeOrphanedBlocks). A remote attacker could craft a request that, when loaded by an authenticated user holding edit permission on the target pag…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 14 Sep 2026 20:34:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81903 · 7 HIGH — Concrete CMS 9.0.0 to 9.5.2 is vulnerable to Stored XSS via Page Container icon</title>
+      <link>https://vulnogram.org/CVE-2026-81903</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81903</guid>
+      <description>Concrete CMS versions 9.0.0 to 9.5.2 stored the Page Container icon value submitted through the dashboard without validating it against the set of known container icons. The unvalidated value was later concatenated into the src attribute of an img ta…</description>
+      <category>High</category>
+      <pubDate>Mon, 14 Sep 2026 20:14:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18119 · 7 HIGH — Concrete CMS below 9.5.3 is vulnerable to Stored XSS via unsanitized inline block custom style values</title>
+      <link>https://vulnogram.org/CVE-2026-18119</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18119</guid>
+      <description>Concrete CMS below 9.5.3 did not sanitize custom style values in the Block Design dialog before writing them into page CSS via a DOM sink, permitting stored cross-site scripting. An editor-level user could execute script in an administrator&apos;s session…</description>
+      <category>High</category>
+      <pubDate>Mon, 14 Sep 2026 19:54:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-81907 · 6.1 MEDIUM 🌩️ — Concrete CMS 9.5.2 and below is vulnerable to Cross-Site Request Forgery (CSRF) vin Express delete_entries allowing mass deletion of all entity records</title>
       <link>https://vulnogram.org/CVE-2026-81907</link>
@@ -378,68 +435,6 @@
       <description>Concrete CMS 9.5.0 and below is vulnerable to IDOR in AddMessage/UpdateMessage via attachments[] parameter which can lead to file permission bypass. The `AddMessage` and `UpdateMessage` conversation controllers accept user-supplied file attachment ID…</description>
       <category>Low</category>
       <pubDate>Thu, 21 May 2026 21:18:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7882 · 2.3 LOW 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to CSRF via the DeleteFile controller</title>
-      <link>https://vulnogram.org/CVE-2026-7882</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7882</guid>
-      <description>Concrete CMS 9.5.0 and below is vulnerable to unauthorized file deletion due to an Inverted CSRF token check in the DeleteFile controller. The code throws an error when the token IS valid and proceeds with file deletion when the token is invalid or m…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 21:17:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8327 · 5.3 MEDIUM — Concrete CMS below 9.5.0 and below is vulnerable to password change without reauthorization and session-hardening bypass.</title>
-      <link>https://vulnogram.org/CVE-2026-8327</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8327</guid>
-      <description>Concrete CMS below 9.5.0 and below is vulnerable to password change without reauthorization and session-hardening bypass. The user-profile edit controller passes the entire raw POST array to UserInfo::update() without field whitelisting resulting in…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 21 May 2026 21:15:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8245 · 6 MEDIUM 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to Reflected XSS in Legacy Pagination via HTML attribute injection</title>
-      <link>https://vulnogram.org/CVE-2026-8245</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8245</guid>
-      <description>Concrete CMS 9.5.0 and below is vulnerable to Reflected XSS in Legacy Pagination via HTML attribute injection. Concrete\Core\Legacy\Pagination builds pagination links by raw-interpolating its $URL field into href=&quot;&quot; (&lt;a href=&quot;{$linkURL}&quot; …&gt;). Any aut…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 21:14:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8337 · 6.3 MEDIUM 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to IDOR in surveys when sites are running concurrent public surveys and private surveys</title>
-      <link>https://vulnogram.org/CVE-2026-8337</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8337</guid>
-      <description>Concrete CMS 9.5.0 and below is vulnerable to IDOR in surveys. To be vulnerable, a site would have to be configured in such a way that both public and private surveys are present on the site. An unauthenticated attacker can vote in the restricted sur…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 21:13:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8240 · 6.3 MEDIUM 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to unauthenticated page metadata disclosure in Backend\SummaryTemplate</title>
-      <link>https://vulnogram.org/CVE-2026-8240</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8240</guid>
-      <description>Concrete CMS 9.5.0 and below is vulnerable to unauthenticated page metadata disclosure across every page with a configured summary template, revealing the existence of private, draft, and restricted pages while leaking title, path, description, and a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 21:11:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7881 · 6.3 MEDIUM 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to IDOR in the Express Entry Detail block</title>
-      <link>https://vulnogram.org/CVE-2026-7881</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7881</guid>
-      <description>Concrete CMS 9.5.0 and below is subject to Insecure Direct Object Reference (IDOR) in the Express Entry Detail block via the exEntryID parameter. This IDOR leads to unauthorized access to all Express form submissions. The Concrete CMS security team g…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 21:09:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7879 · 6.3 MEDIUM 🌩️ — Concrete CMS 9.5.0 and below is vulnerable to File Download Authorization Bypass in submit_password()</title>
-      <link>https://vulnogram.org/CVE-2026-7879</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7879</guid>
-      <description>In Concrete CMS 9.5.0 and below, the submit_password() method in concrete/controllers/single_page/download_file.php allows unauthorized file access since downloading permission-restricted files bypasses the view_file permission check. Files without p…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 21:07:58 GMT</pubDate>
     </item>
   </channel>
 </rss>

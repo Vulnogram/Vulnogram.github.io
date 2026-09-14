@@ -11,54 +11,62 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 14 Sep 2026 19:56:12 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 23:01:46 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-82427 — Apache Storm Nimbus: Path Traversal as the Supervisor User via Unsanitised Blobstore Map Local Name</title>
+      <title>CVE-2026-82427 · 7.8 HIGH — Apache Storm Nimbus: Path Traversal as the Supervisor User via Unsanitised Blobstore Map Local Name</title>
       <link>https://vulnogram.org/CVE-2026-82427</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82427</guid>
       <description>Description A topology&apos;s `topology.blobstore.map` lets the submitter choose a local name for each blob that the supervisor localises. That name was used to build a path under the topology&apos;s working directory without normalisation, in both `AsyncLocal…</description>
+      <category>High</category>
       <pubDate>Mon, 14 Sep 2026 14:19:16 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82428 — Apache Storm Client: Cross-Tenant Dependency Jar Substitution via Predictable Blob Keys</title>
+      <title>CVE-2026-82428 · 8.8 HIGH — Apache Storm Client: Cross-Tenant Dependency Jar Substitution via Predictable Blob Keys</title>
       <link>https://vulnogram.org/CVE-2026-82428</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82428</guid>
       <description>Description Dependency artifacts uploaded with `storm jar --artifacts` were stored under a blob key derived only from the Maven coordinate, for example `dep---.jar`. The key was therefore identical for every user of the cluster and predictable in adv…</description>
+      <category>High</category>
       <pubDate>Mon, 14 Sep 2026 14:18:09 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82429 — Apache Storm Worker Launcher: Local Privilege Escalation to Root via a Time-of-Check Race in the Worker Launcher</title>
+      <title>CVE-2026-82429 · 7.8 HIGH — Apache Storm Worker Launcher: Local Privilege Escalation to Root via a Time-of-Check Race in the Worker Launcher</title>
       <link>https://vulnogram.org/CVE-2026-82429</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82429</guid>
       <description>Description The setuid-root `worker-launcher` binary adjusts ownership and permissions of worker directories by walking the tree with FTS and calling `lchown` and `chmod` on each entry&apos;s full pathname while running with an effective uid of 0. Both sy…</description>
+      <category>High</category>
       <pubDate>Mon, 14 Sep 2026 14:16:45 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82430 — Apache Storm Worker Launcher: Local Privilege Escalation to Root via Container Command Files Chowned to the Tenant</title>
+      <title>CVE-2026-82430 · 7.8 HIGH — Apache Storm Worker Launcher: Local Privilege Escalation to Root via Container Command Files Chowned to the Tenant</title>
       <link>https://vulnogram.org/CVE-2026-82430</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82430</guid>
       <description>Description When launching a Docker or OCI worker, the setuid-root `worker-launcher` first changes ownership of the entire worker directory to the untrusted topology user, and only afterwards reads and acts on the command file that the supervisor wro…</description>
+      <category>High</category>
       <pubDate>Mon, 14 Sep 2026 14:15:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82431 — Apache Storm Client: Authorization Bypass When nimbus.groups Is Configured Without nimbus.users</title>
+      <title>CVE-2026-82431 · 9.8 CRITICAL 🌩️ — Apache Storm Client: Authorization Bypass When nimbus.groups Is Configured Without nimbus.users</title>
       <link>https://vulnogram.org/CVE-2026-82431</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82431</guid>
       <description>Description `SimpleACLAuthorizer` evaluated the user-level command set by returning early when `nimbus.users` was empty, before `nimbus.groups` was considered. An operator who restricted cluster access by group alone, leaving `nimbus.users` unset, th…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 14:14:48 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82433 — Apache Storm Nimbus, Apache Storm UI: Disclosure of Unredacted Daemon Configuration via Nimbus and the UI</title>
+      <title>CVE-2026-82433 · 6.5 MEDIUM — Apache Storm Nimbus, Apache Storm UI: Disclosure of Unredacted Daemon Configuration via Nimbus and the UI</title>
       <link>https://vulnogram.org/CVE-2026-82433</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82433</guid>
       <description>Description `getNimbusConf` returned the complete daemon configuration without redaction after only a user-level authorization check. Where the cluster is configured with them, that response includes `storm.zookeeper.auth.payload` and the keystore an…</description>
+      <category>Medium</category>
       <pubDate>Mon, 14 Sep 2026 14:12:23 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82432 — Apache Storm Nimbus: Blobstore Authorization Bypass via Rebalance Configuration Overrides</title>
+      <title>CVE-2026-82432 · 8.1 HIGH — Apache Storm Nimbus: Blobstore Authorization Bypass via Rebalance Configuration Overrides</title>
       <link>https://vulnogram.org/CVE-2026-82432</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82432</guid>
       <description>Description Nimbus validated `topology.blobstore.map` against the calling subject at submission time only. The rebalance operation accepts configuration overrides and stripped a small set of keys from them, but never re-ran that validation, so a call…</description>
+      <category>High</category>
       <pubDate>Mon, 14 Sep 2026 14:11:27 GMT</pubDate>
     </item>
     <item>
@@ -71,59 +79,71 @@
       <pubDate>Mon, 14 Sep 2026 14:10:15 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82435 — Apache Storm Worker: Unauthenticated Remote Memory Exhaustion in the Worker Messaging Decoder</title>
+      <title>CVE-2026-82435 · 9.8 CRITICAL 🌩️ — Apache Storm Worker: Unauthenticated Remote Memory Exhaustion in the Worker Messaging Decoder</title>
       <link>https://vulnogram.org/CVE-2026-82435</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82435</guid>
       <description>Description The worker&apos;s Netty message decoder is installed ahead of the SASL authentication handlers in the pipeline and acts on frames before any authentication has taken place. It allocated buffers sized from a length field carried in the frame, s…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 14:09:20 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82437 — Apache Storm Logviewer: Log Access Controls Not Enforced by Logviewer</title>
+      <title>CVE-2026-82437 · 4.3 MEDIUM — Apache Storm Logviewer: Log Access Controls Not Enforced by Logviewer</title>
       <link>https://vulnogram.org/CVE-2026-82437</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82437</guid>
       <description>Description The Logviewer offers `logs.users` and `logs.groups` so operators can control who may read log content. For daemon logs those settings were not applied: the access decision combined the &quot;this is a daemon log&quot; flag with the authorizer resul…</description>
+      <category>Medium</category>
       <pubDate>Mon, 14 Sep 2026 14:05:07 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82426 — Apache Storm Nimbus: Arbitrary File Read on Nimbus via Unvalidated Uploaded Jar Location</title>
+      <title>CVE-2026-82426 · 6.5 MEDIUM — Apache Storm Nimbus: Arbitrary File Read on Nimbus via Unvalidated Uploaded Jar Location</title>
       <link>https://vulnogram.org/CVE-2026-82426</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82426</guid>
       <description>Description Nimbus accepted the `uploadedJarLocation` argument of `submitTopology` / `submitTopologyWithOpts` as a server-side path and opened it directly, without checking that it referred to a file the caller had actually uploaded. The intended flo…</description>
+      <category>Medium</category>
       <pubDate>Mon, 14 Sep 2026 14:04:16 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82438 — Apache Storm Webapp: Authenticated API Responses Exposed to Arbitrary Web Origins</title>
+      <title>CVE-2026-82438 · 8.1 HIGH — Apache Storm Webapp: Authenticated API Responses Exposed to Arbitrary Web Origins</title>
       <link>https://vulnogram.org/CVE-2026-82438</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82438</guid>
       <description>Description Three separate mechanisms allowed a web page on an unrelated origin to read responses that Storm&apos;s HTTP components served to an authenticated user. The Logviewer reflected the request&apos;s `Origin` header back in `Access-Control-Allow-Origin…</description>
+      <category>High</category>
       <pubDate>Mon, 14 Sep 2026 14:02:07 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82439 — Apache Storm DRPC: Unauthenticated Unbounded Memory Growth in DRPC</title>
+      <title>CVE-2026-82439 · 9.8 CRITICAL 🌩️ — Apache Storm DRPC: Unauthenticated Unbounded Memory Growth in DRPC</title>
       <link>https://vulnogram.org/CVE-2026-82439</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82439</guid>
       <description>Description The DRPC server kept a map from function name to request queue and created an entry the first time a function name was seen. No code path ever removed an entry: request cleanup removed the request from its queue, and the shutdown path dra…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 14:00:09 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82441 — Apache Storm Nimbus: Cross-Tenant Blob Deletion and Cluster Denial of Service via Unvalidated Topology Dependency Keys</title>
+      <title>CVE-2026-82441 · 9.1 CRITICAL 🌩️ — Apache Storm Nimbus: Cross-Tenant Blob Deletion and Cluster Denial of Service via Unvalidated Topology Dependency Keys</title>
       <link>https://vulnogram.org/CVE-2026-82441</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82441</guid>
       <description>Description A submitted topology carries two lists of blobstore keys, `dependency_jars` and `dependency_artifacts`, which the client fills in after uploading the corresponding blobs. Nimbus performed no validation of their contents on the submission…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 13:58:56 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-84179 — Apache Storm Nimbus, Apache Storm UI: Disclosure of Unredacted Merged Daemon Configuration via the Topology Page</title>
+      <title>CVE-2026-84179 · 6.5 MEDIUM — Apache Storm Nimbus, Apache Storm UI: Disclosure of Unredacted Merged Daemon Configuration via the Topology Page</title>
       <link>https://vulnogram.org/CVE-2026-84179</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84179</guid>
       <description>Description getTopologyPageInfo merged the Nimbus daemon configuration with the topology&apos;s own configuration and returned the result without redaction in the topology_conf field of TopologyPageInfo. The Storm UI copied that value verbatim into the co…</description>
+      <category>Medium</category>
       <pubDate>Mon, 14 Sep 2026 13:57:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-73191 — Apache Syncope: CAS service URL injection via Forwarded HTTP headers</title>
+      <title>CVE-2026-73191 · 6.1 MEDIUM 🌩️ — Apache Syncope: CAS service URL injection via Forwarded HTTP headers</title>
       <link>https://vulnogram.org/CVE-2026-73191</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73191</guid>
       <description>URL Redirection to Untrusted Site (&apos;Open Redirect&apos;) vulnerability in Apache Syncope. When the Syncope SRA is configured for CAS authentication, the target Apereo CAS instance&apos;s URL is calculated by unconditionally looking at client-supplied forwarded…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 13:24:22 GMT</pubDate>
     </item>
     <item>
@@ -135,10 +155,12 @@
       <pubDate>Mon, 14 Sep 2026 13:23:47 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-73236 — Apache Syncope: Cross-Realm authorization bypass in delegated administration</title>
+      <title>CVE-2026-73236 · 7.5 HIGH 🌩️ — Apache Syncope: Cross-Realm authorization bypass in delegated administration</title>
       <link>https://vulnogram.org/CVE-2026-73236</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73236</guid>
       <description>Incorrect Authorization vulnerability in Apache Syncope. Delegated administration security checks are based on Realm hierarchy and enforced via prefix matches. Due to incorrect implementation, two sibling Realms whose names begin with the same string…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 13:23:17 GMT</pubDate>
     </item>
     <item>
@@ -265,52 +287,64 @@
       <pubDate>Mon, 14 Sep 2026 12:23:51 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-82232 — Apache Syncope: SQL injection via sort parameter in Task search</title>
+      <title>CVE-2026-82232 · 9.8 CRITICAL 🌩️ — Apache Syncope: SQL injection via sort parameter in Task search</title>
       <link>https://vulnogram.org/CVE-2026-82232</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82232</guid>
       <description>Improper neutralization of special elements used in an SQL command (&apos;SQL injection&apos;) vulnerability in Apache Syncope. An administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized sort…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 10:45:44 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-86460 — Apache Syncope: Cypher Injection via FIQL Search on Neo4j Persistence</title>
+      <title>CVE-2026-86460 · 9.8 CRITICAL 🌩️ — Apache Syncope: Cypher Injection via FIQL Search on Neo4j Persistence</title>
       <link>https://vulnogram.org/CVE-2026-86460</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86460</guid>
       <description>Cypher injection vulnerability in the Neo4j persistence layer when processing some FIQL search conditions. This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2. Users are recommende…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 10:43:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-87779 — Apache Syncope: AES Secret Key disclosure via log output</title>
+      <title>CVE-2026-87779 · 7.5 HIGH 🌩️ — Apache Syncope: AES Secret Key disclosure via log output</title>
       <link>https://vulnogram.org/CVE-2026-87779</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87779</guid>
       <description>Insertion of sensitive information into log file vulnerability in Apache Syncope. When AES key of non-standard length (not 16/24/32 bytes) is configured, Syncope will pad the provided value with random characters. The resulting key value is logged. T…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 10:42:56 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-87785 — Apache Syncope: JWT subject spoofing</title>
+      <title>CVE-2026-87785 · 9.1 CRITICAL 🌩️ — Apache Syncope: JWT subject spoofing</title>
       <link>https://vulnogram.org/CVE-2026-87785</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87785</guid>
       <description>Authentication bypass by spoofing vulnerability in Apache Syncope. When the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can spoof another user&apos;s privileges after completing a success…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 10:38:12 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-87802 — Apache Syncope: SRA OAuth2 JWT signature verification bypass</title>
+      <title>CVE-2026-87802 · 9.1 CRITICAL 🌩️ — Apache Syncope: SRA OAuth2 JWT signature verification bypass</title>
       <link>https://vulnogram.org/CVE-2026-87802</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87802</guid>
       <description>Improper verification of cryptographic signature vulnerability in Apache Syncope. When SRA is configured for OAuth 2.0 without JWKS set URI assigned, an attacker can forge arbitrary JWTs to impersonate any user identity and permissions, gaining full…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 10:22:29 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-68570 — Apache Doris: Authorization bypass leading to unauthorized data access</title>
+      <title>CVE-2026-68570 · 6.5 MEDIUM — Apache Doris: Authorization bypass leading to unauthorized data access</title>
       <link>https://vulnogram.org/CVE-2026-68570</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68570</guid>
       <description>Incorrect Authorization vulnerability in Apache Doris allows an authenticated user to bypass privilege checks and access data they are not authorized to read, resulting in unauthorized disclosure of information. This issue affects Apache Doris: from…</description>
+      <category>Medium</category>
       <pubDate>Mon, 14 Sep 2026 10:00:20 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-72524 — Apache Doris: Authorization bypass allowing a low-privilege user to read/write/drop arbitrary tables</title>
+      <title>CVE-2026-72524 · 8.8 HIGH — Apache Doris: Authorization bypass allowing a low-privilege user to read/write/drop arbitrary tables</title>
       <link>https://vulnogram.org/CVE-2026-72524</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72524</guid>
       <description>Incorrect Authorization vulnerability in Apache Doris allows an authenticated user to bypass privilege checks and access or modify data they are not authorized to. This issue affects Apache Doris: from 3.1.0 through 3.1.*, from 4.0.0 through 4.0.7, a…</description>
+      <category>High</category>
       <pubDate>Mon, 14 Sep 2026 09:58:50 GMT</pubDate>
     </item>
     <item>

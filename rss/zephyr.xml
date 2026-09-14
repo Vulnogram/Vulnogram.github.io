@@ -11,7 +11,39 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 14 Sep 2026 19:56:12 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 23:01:46 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-14986 · 6.8 MEDIUM — Out-of-bounds write in it51xxx I2C target FIFO ISR on oversized write transaction</title>
+      <link>https://vulnogram.org/CVE-2026-14986</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14986</guid>
+      <description>The ITE it51xxx I2C driver, when operating as an I2C target (slave) in buffer mode (CONFIG_I2C_TARGET + CONFIG_I2C_TARGET_BUFFER_MODE), copies host-supplied write data into the fixed-size data-&gt;target_in_buffer inside its target FIFO interrupt handle…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 22:07:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16148 · 4.6 MEDIUM — Kernel panic in the it82xx2 USB device controller driver via re-initialization of a busy delayable work item</title>
+      <link>https://vulnogram.org/CVE-2026-16148</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16148</guid>
+      <description>The ITE it82xx2 USB device-controller driver initialized its bus-suspend detection work with k_work_init_delayable(&amp;priv-&gt;suspended_work, suspended_handler) inside it82xx2_enable() (the driver&apos;s .enable op) in drivers/usb/udc/udc_it82xx2.c. This work…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 19:33:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16147 · 6.8 MEDIUM — it82xx2 USB device controller submits incomplete OUT transfer buffers, causing use-after-free and event-list corruption</title>
+      <link>https://vulnogram.org/CVE-2026-16147</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16147</guid>
+      <description>The ITE IT82xx2 USB device-controller driver (drivers/usb/udc/udc_it82xx2.c) mishandles multi-packet OUT transfers on non-control endpoints. In work_handler_out() the active transfer buffer is obtained with udc_buf_peek() (which does not dequeue it);…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 19:33:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15924 · 5.9 MEDIUM — Use-after-free / double-free from unsynchronized concurrent access to the TLS client session cache in Zephyr sockets</title>
+      <link>https://vulnogram.org/CVE-2026-15924</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15924</guid>
+      <description>Zephyr&apos;s TLS socket layer in subsys/net/lib/sockets/sockets_tls.c keeps a single process-global array, client_cache, of cached client sessions that is shared by every TLS socket context. The functions that mutate and read it — tls_session_save(), tls…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 14 Sep 2026 19:33:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15893 · 6.5 MEDIUM — Zephyr IPv6 Neighbor Discovery zero reachable time from crafted Router Advertisement causes assertion/DoS</title>
       <link>https://vulnogram.org/CVE-2026-15893</link>
@@ -379,38 +411,6 @@
       <description>The USB device-side CDC NCM class control-to-host handler usbd_cdc_ncm_cth in subsys/usb/device_next/class/usbd_cdc_ncm.c builds a fixed-size response for the GET_NTB_PARAMETERS (28-byte struct ntb_parameters) and GET_NTB_INPUT_SIZE (8-byte struct nt…</description>
       <category>Medium</category>
       <pubDate>Tue, 11 Aug 2026 05:51:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12051 · 4.6 MEDIUM — NULL pointer dereference in USB DFU device_next download handler (handle_download)</title>
-      <link>https://vulnogram.org/CVE-2026-12051</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12051</guid>
-      <description>The USB DFU class implementation in Zephyr&apos;s new (experimental) device_next USB device stack contains a NULL pointer dereference in handle_download() (subsys/usb/device_next/class/usbd_dfu.c). The handler computes MIN(setup-&gt;wLength, buf-&gt;len) and pa…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 11 Aug 2026 05:31:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11894 · 5.9 MEDIUM — Double-free / use-after-free in Realtek BEE Bluetooth HCI driver `send()` error paths</title>
-      <link>https://vulnogram.org/CVE-2026-11894</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11894</guid>
-      <description>The Realtek BEE Bluetooth HCI driver&apos;s send callback, bt_hci_bee_send() in drivers/bluetooth/hci/hci_bee.c, violated the bt_hci_driver_api buffer-ownership contract. That contract requires the driver to consume (unref) the transmit net_buf only on su…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 11 Aug 2026 05:08:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11985 · 3.6 LOW — Cross-thread FPU register leak on ARM when FPU enabled without register sharing</title>
-      <link>https://vulnogram.org/CVE-2026-11985</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11985</guid>
-      <description>On the Zephyr ARM port, enabling the hardware FPU (CONFIG_FPU) forces the &quot;Floating point ABI&quot; choice, which defaults to CONFIG_FP_HARDABI. Both FP_HARDABI and FP_SOFTABI permit the compiler to emit hardware FP instructions in any function, even code…</description>
-      <category>Low</category>
-      <pubDate>Tue, 11 Aug 2026 04:56:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11893 · 5.9 MEDIUM — Double free / use-after-free in Bouffalo Lab HCI driver send() error paths (hci_bflb)</title>
-      <link>https://vulnogram.org/CVE-2026-11893</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11893</guid>
-      <description>The Bluetooth HCI driver for Bouffalo Lab on-chip BLE controllers (BL60x/BL70x/BL61x), bt_bflb_send() in drivers/bluetooth/hci/hci_bflb.c, violates the bt_hci_driver_api.send() buffer-ownership contract. That contract (documented at include/zephyr/dr…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 11 Aug 2026 04:42:39 GMT</pubDate>
     </item>
   </channel>
 </rss>
