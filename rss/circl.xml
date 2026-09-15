@@ -11,7 +11,73 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 15 Sep 2026 07:04:36 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 12:33:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-92003 · 6.9 MEDIUM 🌩️ — MISP Unthrottled Authentication Failure Log Writes Enable Resource Exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-92003</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92003</guid>
+      <description>Affected versions of MISP do not consistently apply the existing authentication-failure logging throttle. Two API authentication failure branches wrote directly to the Log model: - API requests with no authentication key; - requests supplying an API…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 15 Sep 2026 11:43:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92002 · 5.1 MEDIUM — MISP: Authentication failure logging suppressed during Redis unavailability</title>
+      <link>https://vulnogram.org/CVE-2026-92002</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92002</guid>
+      <description>Affected versions of MISP use Redis to throttle repeated authentication-failure log entries. The intent is to avoid excessive duplicate logs while still recording failed authentication activity. However, User-&gt;setupRedis() returns false when Redis ca…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 15 Sep 2026 11:24:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91859 · 5.3 MEDIUM — MISP Access Log Entry Overwritten by Error Controller&apos;s Second beforeFilter Pass</title>
+      <link>https://vulnogram.org/CVE-2026-91859</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91859</guid>
+      <description>Affected versions of MISP can record incorrect access-log data for requests that terminate in an exception. Because CakeErrorController extends AppController, exception rendering runs the application startup path a second time. As a result, __accessM…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 15 Sep 2026 09:26:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91857 · 5.3 MEDIUM 🌩️ — MISP: State-changing actions accessible via GET request enabling CSRF</title>
+      <link>https://vulnogram.org/CVE-2026-91857</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91857</guid>
+      <description>Affected versions of MISP expose several state-changing controller actions without restricting them to POST. The affected actions are: - EventReportsController::purgeUnusedPictures() - NoticelistsController::enableNoticelist() - ServersController::re…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 15 Sep 2026 09:14:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91851 · 5.3 MEDIUM — MISP Dashboard Template ACL Bypass Due to VARCHAR-to-Integer Type Coercion in Permission Flag Comparison</title>
+      <link>https://vulnogram.org/CVE-2026-91851</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91851</guid>
+      <description>Affected versions of MISP incorrectly filter dashboard templates that are restricted to a specific permission flag. DashboardsController::listTemplates() allowed a template when either: - its restrict_to_permission_flag matched one of the current use…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 15 Sep 2026 08:50:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91846 · 7.1 HIGH — MISP Collection Element Add Missing Authorization on Referenced Object UUID</title>
+      <link>https://vulnogram.org/CVE-2026-91846</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91846</guid>
+      <description>Affected versions of MISP allow a collection element to be created from a bare UUID without consistently checking whether the acting user is allowed to access the referenced object. The commit explains that collection elements themselves only store U…</description>
+      <category>High</category>
+      <pubDate>Tue, 15 Sep 2026 08:36:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91825 · 7.1 HIGH — MISP: Missing Authorization Check for Event Sharing Group When Distribution Field Is Omitted During Edit</title>
+      <link>https://vulnogram.org/CVE-2026-91825</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91825</guid>
+      <description>Affected versions of MISP fail to authorize a submitted sharing group in a specific event-edit path. The vulnerable logic checked whether the acting user could use a sharing_group_id only when the request explicitly supplied distribution = 4. If the…</description>
+      <category>High</category>
+      <pubDate>Tue, 15 Sep 2026 08:06:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91819 · 6.9 MEDIUM — MISP: HTTP Method Override Bypasses CSRF and Form Validation in BetterSecurityComponent</title>
+      <link>https://vulnogram.org/CVE-2026-91819</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91819</guid>
+      <description>Affected versions of MISP rely on CakePHP request-method override processing in a way that can disable CSRF and form-security validation. CakePHP honors a _method field or X-HTTP-Method-Override header by rewriting the effective request method. For o…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 15 Sep 2026 07:41:37 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-90961 · 9.3 CRITICAL 🌩️ — MISP LdapAuth and LinOTPAuth Authentication Bypass via Empty or Non-String Credentials</title>
       <link>https://vulnogram.org/CVE-2026-90961</link>
@@ -359,71 +425,6 @@
       <description>Affected versions of Flowintel contain an insecure direct object reference / broken object-level authorization issue across numerous task endpoints. The routes generally received both a case identifier and a task identifier, but previously they did n…</description>
       <category>High</category>
       <pubDate>Thu, 27 Aug 2026 13:10:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81814 · 5.1 MEDIUM — Flowintel Stored XSS in Calendar via Malicious Case Title</title>
-      <link>https://vulnogram.org/CVE-2026-81814</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81814</guid>
-      <description>Affected versions of Flowintel render calendar event titles using innerHTML. Because those titles are derived from case titles, a user able to create or modify a case title could store HTML or script-capable content that is later interpreted by the b…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 27 Aug 2026 12:48:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81753 · 5.1 MEDIUM — Flowintel Stored XSS in Case Notes via Malicious Mermaid Diagram Content</title>
-      <link>https://vulnogram.org/CVE-2026-81753</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81753</guid>
-      <description>Affected versions of Flowintel render Mermaid blocks contained in stored case notes without sufficiently neutralizing attacker-controlled markup. Because Mermaid note content is persisted and later rendered for other users, an attacker with permissio…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 27 Aug 2026 12:06:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81743 · 7.5 HIGH — Flowintel Arbitrary Log File Path Allows Remote Code Execution via Template Injection</title>
-      <link>https://vulnogram.org/CVE-2026-81743</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81743</guid>
-      <description>Affected versions of Flowintel allow the LOG_FILE configuration value to be modified through system settings without restricting it to a filename inside the intended log directory. Because the application constructs the log destination from this conf…</description>
-      <category>High</category>
-      <pubDate>Thu, 27 Aug 2026 11:59:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81662 · 8.6 HIGH — Flowintel Alert Settings Configuration Allows Remote Code Execution via Arbitrary Configuration Keys</title>
-      <link>https://vulnogram.org/CVE-2026-81662</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81662</guid>
-      <description>Affected versions of Flowintel improperly trust configuration keys supplied to the alerts settings update endpoint. While configuration values were normalized to Python literals, the corresponding keys were used directly when constructing and replaci…</description>
-      <category>High</category>
-      <pubDate>Thu, 27 Aug 2026 10:23:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81659 · 7.1 HIGH — Flowintel Note PDF Export Allows Arbitrary Local File Read via Pandoc/XeLaTeX Processing</title>
-      <link>https://vulnogram.org/CVE-2026-81659</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81659</guid>
-      <description>Affected versions of Flowintel allow attacker-controlled note content to be processed by Pandoc and XeLaTeX during PDF export in a way that can cause local files on the Flowintel server to be read and incorporated into the generated export.</description>
-      <category>High</category>
-      <pubDate>Thu, 27 Aug 2026 10:07:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78555 · 9.4 CRITICAL — RansomLook API Key Disclosure Through /admin/apikeys HTML Source</title>
-      <link>https://vulnogram.org/CVE-2026-78555</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78555</guid>
-      <description>RansomLook exposed complete API keys in the HTML source of the authenticated /admin/apikeys administration page. Although the interface displayed only a shortened representation of each key, the full token was embedded in hidden form fields used by t…</description>
-      <category>Critical</category>
-      <pubDate>Mon, 24 Aug 2026 19:38:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78553 · 7 HIGH — Insecure Flask Secret-Key File Permissions Allow Local Administrator Session Forgery in RansomLook</title>
-      <link>https://vulnogram.org/CVE-2026-78553</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78553</guid>
-      <description>RansomLook created its Flask session-signing key without explicitly restricting the file permissions. The secret_key file was created using the process&apos;s default permissions and umask, resulting in permissions such as 0644 under a common 022 umask. C…</description>
-      <category>High</category>
-      <pubDate>Mon, 24 Aug 2026 19:28:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78551 · 8.8 HIGH 🌩️ — RansomLook Login Endpoint Allows Timing-Based Username Enumeration and Unthrottled Authentication Attempts</title>
-      <link>https://vulnogram.org/CVE-2026-78551</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78551</guid>
-      <description>RansomLook contains multiple weaknesses in its authentication endpoint that allow an unauthenticated remote attacker to enumerate valid usernames, perform unrestricted password-guessing attacks, and potentially exhaust application worker resources. F…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 24 Aug 2026 19:20:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
