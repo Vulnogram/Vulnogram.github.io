@@ -11,7 +11,31 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 15 Sep 2026 12:33:02 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 17:38:34 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-79699 · 4.4 MEDIUM — Podman: buildah: skopeo: containers/storage: malicious tar whiteout header allows replacement of extraction destination directory</title>
+      <link>https://vulnogram.org/CVE-2026-79699</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79699</guid>
+      <description>A flaw was found in the containers/storage library. A crafted tar archive containing a malicious whiteout header (e.g. victim/.wh.) can cause the extraction destination directory to be replaced with an arbitrary file when processed by storage/pkg/arc…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 15 Sep 2026 16:25:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79705 · 4.5 MEDIUM — Podman: buildah: buildah/copier: directory escape via crafted tar symlinks when used outside buildah by non-root callers</title>
+      <link>https://vulnogram.org/CVE-2026-79705</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79705</guid>
+      <description>A flaw was found in the buildah/copier Go package. When used outside of Buildah by a non-root caller, a crafted tar archive containing malicious symlinks can escape the target extraction directory and create files outside the intended destination. Bu…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 15 Sep 2026 16:23:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85013 · 7.3 HIGH — Environment-modules: command injection in environment-modules bash completion via malicious module names containing shell metacharacters</title>
+      <link>https://vulnogram.org/CVE-2026-85013</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85013</guid>
+      <description>A flaw was found in environment-modules. A local attacker can exploit this vulnerability by placing a maliciously named modulefile in a location visible to the victim&apos;s `MODULEPATH`. When the victim uses Bash completion for `module` or `ml` commands,…</description>
+      <category>High</category>
+      <pubDate>Tue, 15 Sep 2026 15:08:33 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-91926 · 3.7 LOW 🌩️ — Gss-ntlmssp: gss-ntlmssp: memory leak in ntlm_decode_target_info via duplicated av_pair entries in ntlm challenge</title>
       <link>https://vulnogram.org/CVE-2026-91926</link>
@@ -394,32 +418,6 @@
       <description>A heap buffer overflow flaw was found in the SASL I/O layer of 389 Directory Server (389-ds-base). In sasl_io_start_packet(), the wrapped-record length read from the wire is validated only against an upper bound. A small wire length (0, 1, or 2) prod…</description>
       <category>High</category>
       <pubDate>Mon, 07 Sep 2026 14:14:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76560 · 7.5 HIGH 🌩️ — 389-ds-base: 389-ds: anonymous ldap client can defeat selfdn aci bind-rule checks via empty bind dn</title>
-      <link>https://vulnogram.org/CVE-2026-76560</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76560</guid>
-      <description>A flaw was found in 389 Directory Server. The SELFDN ACI bind-rule evaluator incorrectly matches an anonymous LDAP client&apos;s empty bind DN against an empty stored attribute value, allowing an unauthenticated client to satisfy access control checks int…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 07 Sep 2026 13:18:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79678 · 8.1 HIGH — Freeipa: idm: freeipa: idp-add eval() reachable before authorization check allows environment disclosure and denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-79678</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79678</guid>
-      <description>A flaw was found in FreeIPA&apos;s idp-add command, where insufficiently validated --organization/--base-url input reaches a constrained eval() call before the corresponding LDAP access control check is enforced. This allows any authenticated IPA principa…</description>
-      <category>High</category>
-      <pubDate>Mon, 07 Sep 2026 12:02:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76578 · 9.8 CRITICAL 🌩️ — Ipa: freeipa: freeipa: unauthenticated ldap client can obtain administrator credentials via the self-managed-token aci</title>
-      <link>https://vulnogram.org/CVE-2026-76578</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76578</guid>
-      <description>A flaw was found in FreeIPA. The self-managed OTP token ACI does not require authentication and does not restrict which attributes may be added alongside the token entry. An unauthenticated LDAP client can exploit this, combined with a related flaw i…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 07 Sep 2026 12:01:36 GMT</pubDate>
     </item>
   </channel>
 </rss>
