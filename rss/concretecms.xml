@@ -11,7 +11,57 @@
       <title>Concrete CMS — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 16 Sep 2026 12:27:58 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 17:29:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-18120 · 6.3 MEDIUM 🌩️ — Missing Authorization in legacy Express entries search endpoint allows disclosure of Express entry data</title>
+      <link>https://vulnogram.org/CVE-2026-18120</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18120</guid>
+      <description>Concrete CMS before 9.5.3 exposed a legacy Express entry search endpoint that returned entry result JSON without invoking the canViewExpressEntries() permission check applied by the normal dashboard and CSV Export flow. An unauthenticated visitor who…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 17:16:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85387 · 2 LOW — Concrete CMS before 9.5.4 allows a deactivated user to retain OAuth-authenticated REST API access</title>
+      <link>https://vulnogram.org/CVE-2026-85387</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85387</guid>
+      <description>Concrete CMS before 9.5.4 re-authorized OAuth REST API requests from the bearer token alone and did not re-check the state of the account the token had been issued to. The resource server&apos;s authorization validator confirmed only that a token existed,…</description>
+      <category>Low</category>
+      <pubDate>Wed, 16 Sep 2026 17:12:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87031 · 2.1 LOW — Missing authorization in the REST API user creation endpoint in Concrete CMS 9.2.0 through 9.5.3 allows arbitrary account creation</title>
+      <link>https://vulnogram.org/CVE-2026-87031</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87031</guid>
+      <description>n Concrete CMS 9.2.0 through 9.5.3, the REST API user creation endpoint (POST /ccm/api/1.0/users, the add() method of concrete/src/Api/Controller/Users.php) did not perform a permission check before creating an account. As a result, any valid OAuth t…</description>
+      <category>Low</category>
+      <pubDate>Wed, 16 Sep 2026 16:40:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87028 · 5.3 MEDIUM — Cross-Board IDOR in the Board Custom Slot Preview in Concrete CMS 9.0.0 through 9.5.3 Discloses Restricted Page Summary Fields</title>
+      <link>https://vulnogram.org/CVE-2026-87028</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87028</guid>
+      <description>Concrete CMS 9 through 9.5.3 did not confirm that a board InstanceItem submitted to the custom-slot preview endpoint belonged to the board instance the requesting user was authorized to edit, and did not enforce page-view permission before generating…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 16 Sep 2026 16:36:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85386 · 7.3 HIGH — Concrete CMS before 9.5.4 stored is vulneratble to cross-site scripting via unauthenticated XML/XSLT file upload in the Form Block</title>
+      <link>https://vulnogram.org/CVE-2026-85386</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85386</guid>
+      <description>Concrete CMS before 9.5.4 did not sanitize XML and XSLT documents uploaded through a public Form Block file-upload question. Plain XML uploads were validated by file extension only and stored as publicly accessible files that were served inline from…</description>
+      <category>High</category>
+      <pubDate>Wed, 16 Sep 2026 16:33:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85385 · 7.7 HIGH 🌩️ — Concrete CMS below 9.5.4 is vulnerable to Stored XSS via User Timezone Field</title>
+      <link>https://vulnogram.org/CVE-2026-85385</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85385</guid>
+      <description>Concrete CMS below 9.5.4 did not validate the user timezone value (uTimezone) on write and rendered it without output encoding on the Dashboard user management page, where Date::getTimezoneDisplayName() returns any non-IANA value unchanged. A stored…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 16:30:28 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-81927 · 1.8 LOW — Concrete CMS before 9.5.3 is vulnerable to Stored XSS via SVG upload in &quot;Reject&quot; sanitization mode</title>
       <link>https://vulnogram.org/CVE-2026-81927</link>
@@ -371,56 +421,6 @@
       <description>Concrete CMS below 9.5.3 does not perform an object-level authorization check when a Page Type was updated. The Types::submit() dashboard controller loaded and saved the Page Type identified by a user-supplied ptID without calling canEditPageType(),…</description>
       <category>Medium</category>
       <pubDate>Fri, 11 Sep 2026 19:39:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68526 · 5.3 MEDIUM 🌩️ — Concrete CMS before 9.5.3 is vulnerable to CSRF in the Calendar event duplicate dialog controller</title>
-      <link>https://vulnogram.org/CVE-2026-68526</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68526</guid>
-      <description>Concrete CMS before 9.5.3 did not validate an anti-CSRF token in the Calendar event duplicate dialog controller (concrete/controllers/dialog/event/duplicate.php) submit() action, which duplicated a calendar event after checking only canAccess() and t…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 11 Sep 2026 19:35:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81913 · 5.3 MEDIUM 🌩️ — Concrete CMS versions 9.5.0 through 9.5.2 are vulnerable to Open Redirect via the rcURL parameter.</title>
-      <link>https://vulnogram.org/CVE-2026-81913</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81913</guid>
-      <description>Concrete CMS versions 9.5.0 through 9.5.2 are vulnerable to Open Redirect via the rcURL parameter. An attacker can craft a single link on the site&apos;s own domain that sends a user to an arbitrary external site immediately after authentication, facilita…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 11 Sep 2026 19:30:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81912 · 5.7 MEDIUM — Concrete CMS before 9.5.3 is vulnerable to Cross-Site Request Forgery in the Move Multiple Groups feature</title>
-      <link>https://vulnogram.org/CVE-2026-81912</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81912</guid>
-      <description>Concrete CMS before 9.5.3 is vulnerable to Cross-Site Request Forgery in the Move Multiple Groups feature. The dashboard/users/groups/bulkupdate/confirm() endpoint moved the selected group tree nodes without validating an action token, so a state-cha…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 19:27:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81911 · 5.8 MEDIUM — Concrete CMS versions 9.0.0 to 9.5.2 is vulnerable to Stored XSS in Board Custom Slot save_template via Unescaped Summary Description</title>
-      <link>https://vulnogram.org/CVE-2026-81911</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81911</guid>
-      <description>Concrete CMS versions 9.0.0 to 9.5.2 is vulnerable to Stored XSS in Board Custom Slot dialog. The custom_slot save_template endpoint authorizes the request only against the target board instance (canEditBoardContents()) and then persists the client-s…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 19:24:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81910 · 5.9 MEDIUM — Concrete CMS 9 through 9.5.2 is vulnerable to Server-Side Template Injection (SSTI) in Theme Customizer via Unvalidated Style Values</title>
-      <link>https://vulnogram.org/CVE-2026-81910</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81910</guid>
-      <description>Concrete CMS 9 through 9.5.2 is vulnerable to Server-Side Template Injection (SSTI) in Theme Customizer via Unvalidated Style Values. Values submitted through the customizer (color channels and other style properties handled by ColorStyle and sibling…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 18:20:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81909 · 5.9 MEDIUM — Concrete CMS 9 through 9.5.2 is vulnerable to Missing Authorization in the orphaned-block alias route, allowing an authenticated editor to disclose and force-delete arbitrary blocks</title>
-      <link>https://vulnogram.org/CVE-2026-81909</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81909</guid>
-      <description>Concrete CMS 9 through 9.5.2 is vulnerable to Missing Authorization in the block alias route (Process::alias() in concrete/controllers/backend/block/process.php).It does not verify that the referenced block is genuinely orphaned on the target page, n…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 17:49:47 GMT</pubDate>
     </item>
   </channel>
 </rss>

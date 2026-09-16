@@ -11,7 +11,132 @@
       <title>Internet Systems Consortium (ISC) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 16 Sep 2026 12:27:58 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 17:29:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-77119 · 5.9 MEDIUM 🌩️ — NSEC3 insecure-referral proof can use unrelated cached NSEC3 RRsets</title>
+      <link>https://vulnogram.org/CVE-2026-77119</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77119</guid>
+      <description>A validly signed NSEC3 from an unrelated sibling zone may be accepted as an insecurity proof, downgrading a secure delegation and letting a forged unsigned answer through. This issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 through 9.20…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 14:17:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75029 · 5.3 MEDIUM 🌩️ — Message parser retains every identical singleton RDATA, enabling wire-to-work amplification</title>
+      <link>https://vulnogram.org/CVE-2026-75029</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75029</guid>
+      <description>In a query response, an attacker may send `named` multiple copies of a record that should only exist once (such as an SOA record). If the RDATA is the same on all the copies, the record is appended to the in-memory RDATA set, which can cause increase…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 14:15:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19668 · 5.3 MEDIUM 🌩️ — Resource Exhaustion via Excessive DNSSEC Cryptographic Material Matching</title>
+      <link>https://vulnogram.org/CVE-2026-19668</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19668</guid>
+      <description>A BIND recursive resolver may experience excessive resource consumption if it encounters large numbers of a particular kind of invalid DNSSEC record. Default limits on &quot;max-records-per-type&quot; and &quot;max-types-per-name&quot; help mitigate the exposure. This i…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 14:12:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19033 · 6.5 MEDIUM 🌩️ — Unauthenticated IXFR deltas are applied to the live zone before TSIG verification</title>
+      <link>https://vulnogram.org/CVE-2026-19033</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19033</guid>
+      <description>For a secondary zone with transfers restricted by TSIG, `named` may start to serve the data provided in a zone transfer before the final message with the TSIG signature arrives. This could allow an attacker that does not actually possess a valid TSIG…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 14:10:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80274 · 7.5 HIGH 🌩️ — Validating resolver can abort while caching a mismatched NOQNAME proof</title>
+      <link>https://vulnogram.org/CVE-2026-80274</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80274</guid>
+      <description>If a BIND resolver sends a query for a DNSSEC-signed authoritative zone, and the authoritative server replies with a valid wildcard answer and signed NSEC3 proof, followed by an unsigned NSEC at the same owner name, it will trigger an unexpected prog…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 14:07:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76163 · 7.5 HIGH 🌩️ — named aborts on a TKEY query when the user configuration has no global options statement</title>
+      <link>https://vulnogram.org/CVE-2026-76163</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76163</guid>
+      <description>If BIND is loaded with a &quot;`named.conf`&quot; file that contains no global &quot;`options`&quot; block, an attacker can send a query of QTYPE TKEY which may cause an assertion failure and subsequent unexpected program exit. This issue affects BIND 9 versions 9.20.0…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 14:05:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19666 · 7.5 HIGH 🌩️ — Use-after-free in query_addnoqnameproof() via the DNS64 filter64 path</title>
+      <link>https://vulnogram.org/CVE-2026-19666</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19666</guid>
+      <description>On a resolver configured to use ``dns64``, if an applicable answer from the authoritative server is malformed in a specific way, the resolver `named` process will exit unexpectedly. This issue affects BIND 9 versions 9.11.0 through 9.18.50, 9.20.0 th…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 14:02:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81563 · 7.5 HIGH 🌩️ — SVCB AliasMode additional-data error leaks qpcache references</title>
+      <link>https://vulnogram.org/CVE-2026-81563</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81563</guid>
+      <description>A BIND resolver encountering an SVCB/HTTPS AliasMode record referencing 14 or more SVCB/HTTPS ServiceMode records may fail to properly deallocate internal resources. If this happens repeatedly, resource exhaustion will eventually prevent the resolver…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 14:00:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78301 · 5.8 MEDIUM — Out-of-zone database nodes can become authoritative zone cuts</title>
+      <link>https://vulnogram.org/CVE-2026-78301</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78301</guid>
+      <description>A malformed zone may contain an NS or DNAME node above its origin, which `named` treats as a zone cut. If an attacker inserts a malformed zone into a BIND authoritative server (e.g., via zone transfer), queries for names inside the configured zone th…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 16 Sep 2026 13:58:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77692 · 7.5 HIGH 🌩️ — Unauthenticated remote crash of named via a single DoH SIG(0) request</title>
+      <link>https://vulnogram.org/CVE-2026-77692</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77692</guid>
+      <description>An attacker can cause `named` to abort by sending a crafted DNS-over-HTTPS request with a cryptographically invalid SIG(0) record, and then closing the transport connection prematurely. This issue affects BIND 9 versions 9.20.0 through 9.20.27, 9.21.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 13:55:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19941 · 5.9 MEDIUM 🌩️ — checkwildcard() accepts an out-of-zone NSEC as a wildcard-nonexistence proof</title>
+      <link>https://vulnogram.org/CVE-2026-19941</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19941</guid>
+      <description>An inapplicable NSEC record may be accepted by a `named` resolver as proof that no wildcard exists, which could allow an attacker at the same or an upstream level of the zone name to mask the existence of a victim&apos;s wildcard record. This issue affect…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 13:52:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19662 · 5.9 MEDIUM 🌩️ — qpcache NOQNAME proof use-after-free crashes recursive resolver</title>
+      <link>https://vulnogram.org/CVE-2026-19662</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19662</guid>
+      <description>An attacker may be able to cause a `named` resolver to abort. The attack requires inducing the victim resolver to send multiple queries for a DNSSEC-signed zone hosted by an authoritative server under the control of the attacker. If the auth responds…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 13:50:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19667 · 7.5 HIGH 🌩️ — Remote assertion failure via 16-bit length truncation in `dns_ncache_add()`</title>
+      <link>https://vulnogram.org/CVE-2026-19667</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19667</guid>
+      <description>If an attacker-controlled authoritative server can produce a negative answer that is exactly 65536 bytes, then a flaw in `named` results in a negative cache entry of 0 bytes. When this entry is subsequently read, `named` aborts. This issue affects BI…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 13:46:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81736 · 7.5 HIGH 🌩️ — Remote CPU denial of service through cached SVCB/HTTPS AliasMode trees</title>
+      <link>https://vulnogram.org/CVE-2026-81736</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81736</guid>
+      <description>If a BIND resolver has cached a tree of SVCB/HTTPS AliasMode records, and is then queried for the root of that tree, the resolver will spend disproportionate CPU time constructing the response. This issue affects BIND 9 versions 9.18.0 through 9.18.5…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 13:44:28 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-13321 · 8.6 HIGH 🌩️ — DNSSEC Validation Bypass via Out-of-Zone NSEC Next Field</title>
       <link>https://vulnogram.org/CVE-2026-13321</link>
@@ -330,132 +455,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 23 Jul 2024 14:40:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-1975 · 7.5 HIGH 🌩️ — SIG(0) can be used to exhaust CPU resources</title>
-      <link>https://vulnogram.org/CVE-2024-1975</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-1975</guid>
-      <description>If a server hosts a zone containing a &quot;KEY&quot; Resource Record, or a resolver DNSSEC-validates a &quot;KEY&quot; Resource Record from a DNSSEC-signed domain in cache, a client can exhaust resolver CPU resources by sending a stream of SIG(0) signed requests. This…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 23 Jul 2024 14:38:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-1737 · 7.5 HIGH 🌩️ — BIND&apos;s database will be slow if a very large number of RRs exist at the same name</title>
-      <link>https://vulnogram.org/CVE-2024-1737</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-1737</guid>
-      <description>Resolver caches and authoritative zone databases that hold significant numbers of RRs for the same hostname (of any RTYPE) can suffer from degraded performance as content is being added or updated, and also when handling client queries for this name.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 23 Jul 2024 14:34:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-0760 · 7.5 HIGH 🌩️ — A flood of DNS messages over TCP may make the server unstable</title>
-      <link>https://vulnogram.org/CVE-2024-0760</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-0760</guid>
-      <description>A malicious client can send many DNS messages over TCP, potentially causing the server to become unstable while the attack is in progress. The server may recover after the attack ceases. Use of ACLs will not mitigate the attack. This issue affects BI…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 23 Jul 2024 14:26:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-28872 · 8.9 HIGH 🌩️ — Incorrect TLS certificate validation can lead to escalated privileges</title>
-      <link>https://vulnogram.org/CVE-2024-28872</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-28872</guid>
-      <description>The TLS certificate validation code is flawed. An attacker can obtain a TLS certificate from the Stork server and use it to connect to the Stork agent. Once this connection is established with the valid certificate, the attacker can send malicious co…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 11 Jul 2024 14:49:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-6516 · 7.5 HIGH 🌩️ — Specific recursive query patterns may lead to an out-of-memory condition</title>
-      <link>https://vulnogram.org/CVE-2023-6516</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-6516</guid>
-      <description>To keep its cache database efficient, `named` running as a recursive resolver occasionally attempts to clean up the database. It uses several methods, including some that are asynchronous: a small chunk of memory pointing to the cache element that ca…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Feb 2024 14:05:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-5680 · 5.3 MEDIUM 🌩️ — Cleaning an ECS-enabled cache may cause excessive CPU load</title>
-      <link>https://vulnogram.org/CVE-2023-5680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5680</guid>
-      <description>If a resolver cache has a very large number of ECS records stored for the same name, the process of cleaning the cache database node for this name can significantly impair query performance. This issue affects BIND 9 versions 9.11.3-S1 through 9.11.3…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Feb 2024 14:05:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-5679 · 7.5 HIGH 🌩️ — Enabling both DNS64 and serve-stale may cause an assertion failure during recursive resolution</title>
-      <link>https://vulnogram.org/CVE-2023-5679</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5679</guid>
-      <description>A bad interaction between DNS64 and serve-stale may cause `named` to crash with an assertion failure during recursive resolution, when both of these features are enabled. This issue affects BIND 9 versions 9.16.12 through 9.16.45, 9.18.0 through 9.18…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Feb 2024 14:05:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-5517 · 7.5 HIGH 🌩️ — Querying RFC 1918 reverse zones may cause an assertion failure when &quot;nxdomain-redirect&quot; is enabled</title>
-      <link>https://vulnogram.org/CVE-2023-5517</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5517</guid>
-      <description>A flaw in query-handling code can cause `named` to exit prematurely with an assertion failure when: - `nxdomain-redirect &lt;domain&gt;;` is configured, and - the resolver receives a PTR query for an RFC 1918 address that would normally result in an author…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Feb 2024 14:04:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-4408 · 7.5 HIGH 🌩️ — Parsing large DNS messages may cause excessive CPU load</title>
-      <link>https://vulnogram.org/CVE-2023-4408</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-4408</guid>
-      <description>The DNS message parsing code in `named` includes a section whose computational complexity is overly high. It does not cause problems for typical DNS traffic, but crafted queries and responses may cause excessive CPU load on the affected `named` insta…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Feb 2024 14:04:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-4236 · 7.5 HIGH 🌩️ — named may terminate unexpectedly under high DNS-over-TLS query load</title>
-      <link>https://vulnogram.org/CVE-2023-4236</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-4236</guid>
-      <description>A flaw in the networking code handling DNS-over-TLS queries may cause `named` to terminate unexpectedly due to an assertion failure. This happens when internal data structures are incorrectly reused under significant DNS-over-TLS query load. This iss…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 20 Sep 2023 12:32:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-3341 · 7.5 HIGH 🌩️ — A stack exhaustion flaw in control channel code may cause named to terminate unexpectedly</title>
-      <link>https://vulnogram.org/CVE-2023-3341</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-3341</guid>
-      <description>The code that processes control channel messages sent to `named` calls certain functions recursively during packet parsing. Recursion depth is only limited by the maximum accepted packet size; depending on the environment, this may cause the packet-p…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 20 Sep 2023 12:32:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-2911 · 7.5 HIGH 🌩️ — Exceeding the recursive-clients quota may cause named to terminate unexpectedly when stale-answer-client-timeout is set to 0</title>
-      <link>https://vulnogram.org/CVE-2023-2911</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-2911</guid>
-      <description>If the `recursive-clients` quota is reached on a BIND 9 resolver configured with both `stale-answer-enable yes;` and `stale-answer-client-timeout 0;`, a sequence of serve-stale-related lookups could cause `named` to loop and terminate unexpectedly du…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Jun 2023 16:26:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-2829 · 7.5 HIGH 🌩️ — Malformed NSEC records can cause named to terminate unexpectedly when synth-from-dnssec is enabled</title>
-      <link>https://vulnogram.org/CVE-2023-2829</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-2829</guid>
-      <description>A `named` instance configured to run as a DNSSEC-validating recursive resolver with the Aggressive Use of DNSSEC-Validated Cache (RFC 8198) option (`synth-from-dnssec`) enabled can be remotely terminated using a zone with a malformed NSEC record. Thi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Jun 2023 16:26:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-2828 · 7.5 HIGH 🌩️ — named&apos;s configured cache size limit can be significantly exceeded</title>
-      <link>https://vulnogram.org/CVE-2023-2828</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-2828</guid>
-      <description>Every `named` instance configured to run as a recursive resolver maintains a cache database holding the responses to the queries it has recently sent to authoritative servers. The size limit for that cache database can be configured using the `max-ca…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Jun 2023 16:26:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
