@@ -11,12 +11,67 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 16 Sep 2026 17:29:32 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 20:46:24 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-84501 — Apache ZooKeeper: Operational log forgery via newline injection in EnsembleAuthenticationProvider</title>
+      <title>CVE-2026-70469 — Apache NiFi: Improper Handling of Case Sensitivity for Content-Encoding in HTTP Requests</title>
+      <link>https://vulnogram.org/CVE-2026-70469</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70469</guid>
+      <description>Apache NiFi 2.11.0 disabled support for gzip-encoded HTTP requests for the application REST API and rejected requests that included the standard Content-Encoding header indicating gzip encoding. The framework enforcement filter did not check multiple…</description>
+      <pubDate>Wed, 16 Sep 2026 19:38:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81866 · 0.5 LOW — Apache NiFi: Missing Authorization for Assets and Secrets Referenced by Connector Configuration</title>
+      <link>https://vulnogram.org/CVE-2026-81866</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81866</guid>
+      <description>Apache NiFi 2.9.0 through 2.11.0 provide Connector configuration update and verification REST API methods that do not enforce authorization checking on Assets and Secrets referenced in proposed configuration. Updating or verifying a Connector configu…</description>
+      <category>Low</category>
+      <pubDate>Wed, 16 Sep 2026 19:38:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82561 · 5.9 MEDIUM — Apache NiFi: Missing Authorization for Components Referenced in Flow Update Methods</title>
+      <link>https://vulnogram.org/CVE-2026-82561</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82561</guid>
+      <description>Apache NiFi 1.5.0 through 2.11.0 provide REST API methods that replace the entire contents of a Process Group using a client-supplied flow definition, covering Process Group flow replacement together with versioned flow update and rebase operations.…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 16 Sep 2026 19:37:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86089 · 2.3 LOW — Apache NiFi: Missing Process Group Authorization for Connector Migration</title>
+      <link>https://vulnogram.org/CVE-2026-86089</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86089</guid>
+      <description>Apache NiFi 2.11.0 supports migrating the contents of a version-controlled Process Group into a Connector using REST API methods that list eligible migration sources and submit migration requests. The framework authorized both methods against the tar…</description>
+      <category>Low</category>
+      <pubDate>Wed, 16 Sep 2026 19:35:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87976 · 7.2 HIGH — Apache NiFi Registry: Improper Limitation of Pathname in Persisted Extension Bundles</title>
+      <link>https://vulnogram.org/CVE-2026-87976</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87976</guid>
+      <description>Apache NiFi Registry 0.4.0 through 2.11.0 are subject to path manipulation when storing extension bundle content using group, artifact, and version coordinates from uploaded NAR manifests. The default file persistence provider used coordinates as fil…</description>
+      <category>High</category>
+      <pubDate>Wed, 16 Sep 2026 19:32:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76646 — Apache MyFaces: Denial of Service via Unbounded Request Parsing</title>
+      <link>https://vulnogram.org/CVE-2026-76646</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76646</guid>
+      <description>A remote attacker could cause excessive resource consumption by supplying specially crafted request parameters, potentially resulting in a denial of service condition. Older unsupported versions may also be affected. Users are recommended to upgrade…</description>
+      <pubDate>Wed, 16 Sep 2026 19:17:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68536 — Apache MyFaces: Server-Side Request Forgery / Local File Inclusion Vulnerability</title>
+      <link>https://vulnogram.org/CVE-2026-68536</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68536</guid>
+      <description>Server-Side Request Forgery / Local File Inclusion in Apache MyFace Core. Older unsupported versions may also be affected. Users are recommended to upgrade to versions 2.3.12, 2.3-next-M9, 3.0.4, 4.0.4, or 4.1.4, which fix this issue.</description>
+      <pubDate>Wed, 16 Sep 2026 18:40:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84501 · 5.3 MEDIUM 🌩️ — Apache ZooKeeper: Operational log forgery via newline injection in EnsembleAuthenticationProvider</title>
       <link>https://vulnogram.org/CVE-2026-84501</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84501</guid>
       <description>An unauthenticated attacker can inject arbitrary fake log lines into Apache ZooKeeper&apos;s operational log by sending a crafted add_auth(&quot;ensemble&quot;, ...) request containing newline characters (\n). When the ensemble name doesn&apos;t match, EnsembleAuthentic…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Wed, 16 Sep 2026 09:28:10 GMT</pubDate>
     </item>
     <item>
@@ -358,69 +413,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 12:29:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78330 · 9.8 CRITICAL 🌩️ — Apache Syncope: Privilege escalation for admin user via JWT authentication</title>
-      <link>https://vulnogram.org/CVE-2026-78330</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78330</guid>
-      <description>Incorrect privilege assignment vulnerability in Apache Syncope. When the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can obtain admin privileges after completing a successful authent…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 12:24:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78336 · 7.5 HIGH 🌩️ — Apache Syncope: OIDCC4UI provider list discloses client secrets to any authenticated user</title>
-      <link>https://vulnogram.org/CVE-2026-78336</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78336</guid>
-      <description>Insertion of sensitive information into sent data vulnerability in Apache Syncope. Any authenticated user can query for the list of available OIDC providers configured for SSO with Console and Enduser. The returned payload contains all configuration…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 12:23:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82232 · 9.8 CRITICAL 🌩️ — Apache Syncope: SQL injection via sort parameter in Task search</title>
-      <link>https://vulnogram.org/CVE-2026-82232</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82232</guid>
-      <description>Improper neutralization of special elements used in an SQL command (&apos;SQL injection&apos;) vulnerability in Apache Syncope. An administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized sort…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 10:45:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86460 · 9.8 CRITICAL 🌩️ — Apache Syncope: Cypher Injection via FIQL Search on Neo4j Persistence</title>
-      <link>https://vulnogram.org/CVE-2026-86460</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86460</guid>
-      <description>Cypher injection vulnerability in the Neo4j persistence layer when processing some FIQL search conditions. This issue affects Apache Syncope: from 3.0.0-M0 through 3.0.16, from 4.0.0-M0 through 4.0.7, from 4.1.0-M0 through 4.1.2. Users are recommende…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 10:43:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87779 · 7.5 HIGH 🌩️ — Apache Syncope: AES Secret Key disclosure via log output</title>
-      <link>https://vulnogram.org/CVE-2026-87779</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87779</guid>
-      <description>Insertion of sensitive information into log file vulnerability in Apache Syncope. When AES key of non-standard length (not 16/24/32 bytes) is configured, Syncope will pad the provided value with random characters. The resulting key value is logged. T…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 10:42:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87785 · 9.1 CRITICAL 🌩️ — Apache Syncope: JWT subject spoofing</title>
-      <link>https://vulnogram.org/CVE-2026-87785</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87785</guid>
-      <description>Authentication bypass by spoofing vulnerability in Apache Syncope. When the configured JWKS settings for internal JWT authentication are disclosed (at least protocol and key), an attacker can spoof another user&apos;s privileges after completing a success…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 10:38:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87802 · 9.1 CRITICAL 🌩️ — Apache Syncope: SRA OAuth2 JWT signature verification bypass</title>
-      <link>https://vulnogram.org/CVE-2026-87802</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87802</guid>
-      <description>Improper verification of cryptographic signature vulnerability in Apache Syncope. When SRA is configured for OAuth 2.0 without JWKS set URI assigned, an attacker can forge arbitrary JWTs to impersonate any user identity and permissions, gaining full…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 10:22:29 GMT</pubDate>
     </item>
   </channel>
 </rss>
