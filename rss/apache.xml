@@ -11,7 +11,98 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 16 Sep 2026 07:11:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 12:27:58 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-84501 — Apache ZooKeeper: Operational log forgery via newline injection in EnsembleAuthenticationProvider</title>
+      <link>https://vulnogram.org/CVE-2026-84501</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84501</guid>
+      <description>An unauthenticated attacker can inject arbitrary fake log lines into Apache ZooKeeper&apos;s operational log by sending a crafted add_auth(&quot;ensemble&quot;, ...) request containing newline characters (\n). When the ensemble name doesn&apos;t match, EnsembleAuthentic…</description>
+      <pubDate>Wed, 16 Sep 2026 09:28:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84439 — Apache ZooKeeper: Audit log injection via unsanitized output from multiple sources</title>
+      <link>https://vulnogram.org/CVE-2026-84439</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84439</guid>
+      <description>When audit logging is enabled (zookeeper.audit.enable=true), an unauthenticated attacker can inject arbitrary fields into Apache ZooKeeper&apos;s audit log by sending a digest authentication request with tab characters (\t) embedded in the username. Becau…</description>
+      <pubDate>Wed, 16 Sep 2026 09:27:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79993 — Apache ZooKeeper: Missing ACL check on deleteContainer opcode allows unauthorized deletion of any empty persistent/container znode</title>
+      <link>https://vulnogram.org/CVE-2026-79993</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79993</guid>
+      <description>The `deleteContainer` opcode (0x14/20) is processed without verifying the caller&apos;s ACL permissions, allowing any authenticated client to delete specific znodes in the data tree regardless of the ACL restrictions on the znode or its parent. This opcod…</description>
+      <pubDate>Wed, 16 Sep 2026 09:27:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59969 — Apache ZooKeeper: Improper validation of certificate with host mismatch in FIPS mode</title>
+      <link>https://vulnogram.org/CVE-2026-59969</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59969</guid>
+      <description>Apache ZooKeeper quorum TLS fails to enforce peer hostname verification in FIPS-mode deployments. When sslQuorum=true, zookeeper.fips-mode=true, ssl.quorum.hostnameVerification=true, and ssl.quorum.clientHostnameVerification=true are enabled, the Jav…</description>
+      <pubDate>Wed, 16 Sep 2026 09:27:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59739 — Apache ZooKeeper: Information disclosure via SetWatches reconnect replay</title>
+      <link>https://vulnogram.org/CVE-2026-59739</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59739</guid>
+      <description>Information disclosure via SetWatches reconnect replay in Apache ZooKeeper due to missing ACL check. An attacker can discover ACL-restricted paths by registering exists-watches on non-existent paths, then reconnecting after the paths are created with…</description>
+      <pubDate>Wed, 16 Sep 2026 09:26:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86466 — Apache Airflow FAB provider: FAB Authentik provider: id_token issuer/audience not validated</title>
+      <link>https://vulnogram.org/CVE-2026-86466</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86466</guid>
+      <description>Apache Airflow FAB provider: the Authentik OAuth path in the FAB auth manager does not validate the issuer or audience claims of the id_token it accepts. An attacker holding a token that the same Authentik identity provider minted for a different cli…</description>
+      <pubDate>Wed, 16 Sep 2026 09:12:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76187 — Apache Airflow Keycloak provider: Any realm client&apos;s credentials mint an Airflow session JWT</title>
+      <link>https://vulnogram.org/CVE-2026-76187</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76187</guid>
+      <description>Apache Airflow Keycloak provider: the unauthenticated token endpoint accepts a client-credentials grant for any confidential client registered in the Keycloak realm, not only the client configured for Airflow. No allowlist restricts which client ids…</description>
+      <pubDate>Wed, 16 Sep 2026 09:10:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76186 — Apache Airflow Keycloak provider: Keycloak token cookies not bound to Airflow session identity</title>
+      <link>https://vulnogram.org/CVE-2026-76186</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76186</guid>
+      <description>Apache Airflow Keycloak provider: from Airflow 3.3 the Keycloak auth manager takes a user&apos;s identity from the signed Airflow session token but takes the Keycloak access and refresh tokens used for every authorization decision from separate, unauthent…</description>
+      <pubDate>Wed, 16 Sep 2026 09:09:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82310 — Apache Airflow FAB provider: FAB auth manager: deactivated users retain and renew Core API JWT access</title>
+      <link>https://vulnogram.org/CVE-2026-82310</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82310</guid>
+      <description>Apache Airflow FAB provider: deactivating a user account does not stop tokens issued to that account before deactivation. Password authentication correctly rejects the disabled account, but the Core API continues to accept an existing, unexpired toke…</description>
+      <pubDate>Wed, 16 Sep 2026 09:09:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86792 — Apache Airflow Apache Kafka provider: Connection-editor remote code execution on the Scheduler via Kafka connection callback configuration</title>
+      <link>https://vulnogram.org/CVE-2026-86792</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86792</guid>
+      <description>Apache Airflow Apache Kafka provider versions 1.15.0 before 2.0.0 resolve dotted-path strings found in a Kafka connection&apos;s `extra` field into Python callables via `import_string`, with no allowlist, and hand them to the confluent-kafka client which…</description>
+      <pubDate>Wed, 16 Sep 2026 09:08:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86462 — Apache Airflow FAB provider: FAB Admin password PATCH does not invalidate database-backed sessions</title>
+      <link>https://vulnogram.org/CVE-2026-86462</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86462</guid>
+      <description>Apache Airflow FAB provider: changing a user&apos;s password through the Admin user-edit PATCH endpoint does not invalidate that user&apos;s existing database-backed sessions. An attacker who already holds a copy of the victim&apos;s session cookie keeps full acces…</description>
+      <pubDate>Wed, 16 Sep 2026 09:05:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82311 — Apache Airflow FAB provider: FAB password reset never invalidates sessions: string/int _user_id comparison is always false</title>
+      <link>https://vulnogram.org/CVE-2026-82311</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82311</guid>
+      <description>Apache Airflow FAB provider: resetting a user&apos;s password does not delete that user&apos;s existing database-backed sessions, despite documented behaviour that it does. The cleanup compares the string identifier Flask-Login stores in the session against th…</description>
+      <pubDate>Wed, 16 Sep 2026 09:00:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86465 — Apache Airflow Akeyless provider: Akeyless secrets backend: team-scope guard bypass via user-controlled key</title>
+      <link>https://vulnogram.org/CVE-2026-86465</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86465</guid>
+      <description>Apache Airflow Akeyless provider: the Akeyless secrets backend&apos;s team-scope guard can be bypassed with a user-controlled key. In a multi-team deployment, a Dag author scoped to one team can supply a Variable key containing a path separator that cause…</description>
+      <pubDate>Wed, 16 Sep 2026 08:58:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-82427 · 7.8 HIGH — Apache Storm Nimbus: Path Traversal as the Supervisor User via Unsanitised Blobstore Map Local Name</title>
       <link>https://vulnogram.org/CVE-2026-82427</link>
@@ -330,119 +421,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 10:22:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68570 · 6.5 MEDIUM — Apache Doris: Authorization bypass leading to unauthorized data access</title>
-      <link>https://vulnogram.org/CVE-2026-68570</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68570</guid>
-      <description>Incorrect Authorization vulnerability in Apache Doris allows an authenticated user to bypass privilege checks and access data they are not authorized to read, resulting in unauthorized disclosure of information. This issue affects Apache Doris: from…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 10:00:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-72524 · 8.8 HIGH — Apache Doris: Authorization bypass allowing a low-privilege user to read/write/drop arbitrary tables</title>
-      <link>https://vulnogram.org/CVE-2026-72524</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72524</guid>
-      <description>Incorrect Authorization vulnerability in Apache Doris allows an authenticated user to bypass privilege checks and access or modify data they are not authorized to. This issue affects Apache Doris: from 3.1.0 through 3.1.*, from 4.0.0 through 4.0.7, a…</description>
-      <category>High</category>
-      <pubDate>Mon, 14 Sep 2026 09:58:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82617 · 10 CRITICAL 🌩️ — Apache OpenNLP, Apache OpenNLP: ReDoS / stack exhaustion in RegexNameFinderFactory built-in EMAIL and URL patterns</title>
-      <link>https://vulnogram.org/CVE-2026-82617</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82617</guid>
-      <description>The two built-in name-finder patterns exposed by opennlp.tools.namefind.RegexNameFinderFactory - DEFAULT_REGEX_NAME_FINDER.EMAIL and DEFAULT_REGEX_NAME_FINDER.URL - contain ambiguous nested quantifiers. An application that obtains these finders throu…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 11 Sep 2026 17:50:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-67211 · 7.5 HIGH 🌩️ — Apache OpenNLP: OOM DoS via Unbounded Array Allocation in SymSpellModelSerializer</title>
-      <link>https://vulnogram.org/CVE-2026-67211</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-67211</guid>
-      <description>OOM Denial of Service via Unbounded Map Pre-Sizing in Apache OpenNLP SymSpellModelSerializer Versions Affected: - 3.0.0-M4 - 3.0.0-M5 (The opennlp-spellcheck extension was introduced in 3.0.0-M4. Releases 1.x and 2.x do not contain the affected code.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 11 Sep 2026 17:49:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80354 · 8.1 HIGH — Apache Camel K: Camel K Builder trait mavenProfiles ValueSources resolve tenant-named secrets in operator namespace</title>
-      <link>https://vulnogram.org/CVE-2026-80354</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80354</guid>
-      <description>Authorization bypass through User-Controlled key vulnerability in Apache Camel K. An authorization vulnerability in custom resource resolution allows a tenant to reference secrets by name in the operator namespace, potentially exposing secrets belong…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 07:43:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80351 · 9.8 CRITICAL 🌩️ — Apache Camel K: Camel K Tenant repositories reach Maven execution inside operator pod</title>
-      <link>https://vulnogram.org/CVE-2026-80351</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80351</guid>
-      <description>Improper neutralization of directives in dynamically evaluated code (&apos;eval injection&apos;) vulnerability in Apache Camel K. An improper neutralization of directives in dynamically evaluated Maven configuration allows tenant-controlled repository content…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 07:42:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80352 · 9.8 CRITICAL 🌩️ — Apache Camel K: Camel K Master trait serviceAccountName YAML injection lets CR author apply arbitrary objects</title>
-      <link>https://vulnogram.org/CVE-2026-80352</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80352</guid>
-      <description>Improper Control of Generation of Code (&apos;Code Injection&apos;) vulnerability in Apache Camel K. A YAML injection vulnerability in custom resource configuration allows an authorized CR author to inject arbitrary Kubernetes objects, potentially enabling una…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 07:41:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84939 · 9.1 CRITICAL 🌩️ — Apache FreeMarker, Apache FreeMarker: A malformed locale may be exploitable for path traversal attacks</title>
-      <link>https://vulnogram.org/CVE-2026-84939</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84939</guid>
-      <description>Path traversal vulnerability in Apache FreeMarker template loading mechanism, if the attacker can specify an arbitrary malformed locale identifier to FreeMarker, and the localized lookup configuration setting is enabled (it&apos;s by default enabled). Thi…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 05:07:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49362 · 7.5 HIGH 🌩️ — Apache Artemis, Apache ActiveMQ Artemis: Missing Authentication in CORE Protocol Handler Allows Unauthorized Queue Creation</title>
-      <link>https://vulnogram.org/CVE-2026-49362</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49362</guid>
-      <description>An unauthenticated remote attacker can create arbitrary durable queues via the CORE protocol, leading to unauthorized broker state manipulation and potential denial of service. This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache Act…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 04:56:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49363 · 7.5 HIGH 🌩️ — Apache Artemis, Apache ActiveMQ Artemis: Pre-Authentication Information Disclosure in CORE Protocol Topology Subscription</title>
-      <link>https://vulnogram.org/CVE-2026-49363</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49363</guid>
-      <description>An unauthenticated remote attacker connecting with the CORE protocol can discover cluster node details by sending a SUBSCRIBE_TOPOLOGY request prior to authentication. This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Art…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 04:51:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49364 · 9.1 CRITICAL 🌩️ — Apache Artemis, Apache Artemis, Apache ActiveMQ Artemis, Apache ActiveMQ Artemis: Pre-Authentication Cluster Credential Exposure to Discovered Peers</title>
-      <link>https://vulnogram.org/CVE-2026-49364</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49364</guid>
-      <description>An unauthenticated network-adjacent attacker can leverage discovery to capture cluster administrative credentials during the initial cluster connection handshake. This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apache ActiveMQ Artemis:…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 04:49:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57822 · 6.5 MEDIUM — Apache Artemis, Apache ActiveMQ Artemis: Message-based management parameter deserialization may lead to denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-57822</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57822</guid>
-      <description>When the broker is processing message-based management requests, sent by an authenticated messaging client that is authorized with MANAGE permission to perform management-via-messaging, the parameter processing can trigger Java deserialization of cer…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 10 Sep 2026 04:46:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57967 · 9.8 CRITICAL 🌩️ — Apache Artemis, Apache ActiveMQ Artemis: Missing authentication on CORE protocol session reattachment</title>
-      <link>https://vulnogram.org/CVE-2026-57967</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57967</guid>
-      <description>An unauthenticated remote attacker can craft a CORE protocol SESSION_REATTACH packet to steal an existing session and assume ongoing execution of the previously authenticated session. This issue affects Apache Artemis: from 2.50.0 through 2.56.0; Apa…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 04:43:10 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,33 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 16 Sep 2026 07:11:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 12:27:58 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-86338 · 6 MEDIUM — Ash field policies do not filter-nil forbidden calculations and aggregates, enabling an information-disclosure oracle</title>
+      <link>https://vulnogram.org/CVE-2026-86338</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86338</guid>
+      <description>Ash field_policies are documented to protect against filter-based information disclosure: when a field the actor may not see is referenced in a filter, it is replaced with an expression that evaluates to nil, so a filter cannot be used as a yes/no or…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 16 Sep 2026 08:28:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88255 · 6.3 MEDIUM 🌩️ — mpp Tempo keys its pre-broadcast dedup reserve on the caller-supplied transaction encoding, so a re-encoded signed transaction reserves a second slot</title>
+      <link>https://vulnogram.org/CVE-2026-88255</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88255</guid>
+      <description>Improper Validation of Unsafe Equivalence in Input in ZenHive mpp allows an unauthenticated remote client to pass the Tempo duplicate-submission gate twice with one signed transaction. MPP.Methods.Tempo reserves the pre-broadcast dedup slot on the ca…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 08:24:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89186 · 6.3 MEDIUM 🌩️ — mpp writes Payment-Receipt and Cache-Control before the wrapped application runs, letting a consumer&apos;s own Cache-Control expose paid responses to shared caches</title>
+      <link>https://vulnogram.org/CVE-2026-89186</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89186</guid>
+      <description>Use of Cache Containing Sensitive Information in ZenHive mpp allows a shared HTTP cache to store a paid response and serve it to clients that never paid. MPP.Plug.verify_credential in lib/mpp/plug.ex sets payment-receipt and cache-control: private on…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 16 Sep 2026 08:24:15 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-77866 · 9 CRITICAL 🌩️ — SSRF protection bypass in safeurl via IPv6 addresses and unresolvable hosts</title>
       <link>https://vulnogram.org/CVE-2026-77866</link>
@@ -417,30 +443,6 @@
       <description>Improper Input Validation vulnerability in ash-project ash allows an attacker to persistently deny reads of a record by storing a non-version-7 UUID in an Ash.Type.UUIDv7 attribute. Ash.Type.UUIDv7.cast_input/2 accepts any well-formed UUID string, in…</description>
       <category>Medium</category>
       <pubDate>Tue, 01 Sep 2026 03:26:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82737 · 5.9 MEDIUM — Ash.Vector wraps the 16-bit dimension header for vectors over 65,535 elements, corrupting data and crashing reads</title>
-      <link>https://vulnogram.org/CVE-2026-82737</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82737</guid>
-      <description>Integer Overflow or Wraparound vulnerability in ash-project ash lets an attacker corrupt a stored vector and crash later reads of it by submitting a vector with more than 65,535 elements. Ash.Vector.new/1 (lib/ash/vector.ex) encodes a vector as &lt;&lt;dim…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 03:24:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82736 · 2.1 LOW — Ash.Type.CiString validates length and match constraints before case folding, allowing constraint bypass</title>
-      <link>https://vulnogram.org/CVE-2026-82736</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82736</guid>
-      <description>Incorrect Behavior Order: Validate Before Canonicalize vulnerability in ash-project ash lets an attacker store a case-insensitive string value that violates its length or match constraints. Ash.Type.CiString.apply_constraints/2 (lib/ash/type/ci_strin…</description>
-      <category>Low</category>
-      <pubDate>Tue, 01 Sep 2026 03:21:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82735 · 5.9 MEDIUM — Match regex runs on over-length input in Ash.Type.String, enabling regex denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-82735</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82735</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in ash-project ash allows an attacker to force an expensive regular expression to run on input that a length constraint should have already rejected. Ash.Type.String.apply_constraints/2 (lib/ash/type/st…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 03:19:36 GMT</pubDate>
     </item>
   </channel>
 </rss>
