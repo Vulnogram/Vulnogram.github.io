@@ -11,7 +11,49 @@
       <title>MongoDB, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 17 Sep 2026 17:40:47 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 20:54:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-93394 · 6.3 MEDIUM 🌩️ — libmongoc SCRAM client nonce-validation bypass</title>
+      <link>https://vulnogram.org/CVE-2026-93394</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93394</guid>
+      <description>A flaw in libmongoc&apos;s SCRAM authentication implementation caused the client to continue the authentication handshake and transmit the client proof even when a nonce mismatch was detected in the server&apos;s first message. An unauthorized party with a man…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 20:31:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93393 · 9.2 CRITICAL 🌩️ — Heap overflow via oversized decrypted TLS record sequence in Windows Secure Channel stream</title>
+      <link>https://vulnogram.org/CVE-2026-93393</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93393</guid>
+      <description>A heap-based buffer overflow exists in the TLS transport layer of the MongoDB C Driver when built with the Windows platform TLS backend. A remote endpoint that the client connects to, or an attacker able to impersonate or redirect the client&apos;s connec…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 20:26:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92757 · 6.8 MEDIUM — Malformed connection string may disable field level encryption</title>
+      <link>https://vulnogram.org/CVE-2026-92757</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92757</guid>
+      <description>Applications built on MongoDB Entity Framework Core Provider which place a database name in the connection string may inadvertently disable field level encryption.</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 19:20:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92758 · 5.7 MEDIUM — Logs may collect sensitive information</title>
+      <link>https://vulnogram.org/CVE-2026-92758</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92758</guid>
+      <description>If logging mode is set to DEBUG or a malformed MongoDB connection string is used, application logs may collect sensitive information (if in use) such as passwords and AWS secure access keys.</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 19:16:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92756 · 6.8 MEDIUM — Combining encryption settings may disable encryption</title>
+      <link>https://vulnogram.org/CVE-2026-92756</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92756</guid>
+      <description>Applications built on MongoDB Entity Framework Core Provider which combine independent encryption settings and this provider&apos;s encryption settings may silently lose TLS and schema-map settings leading to protected fields being stored unencrypted in t…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 19:04:51 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-89099 · 7.7 HIGH — Race Condition in MongoDB Server Document Value Layer Leads to Memory Corruption</title>
       <link>https://vulnogram.org/CVE-2026-89099</link>
@@ -380,47 +422,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 03 Sep 2026 15:02:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84965 · 5.9 MEDIUM — Heap write primitive via size round-up wrap during JSON parsing on 32-bit builds</title>
-      <link>https://vulnogram.org/CVE-2026-84965</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84965</guid>
-      <description>An integer wraparound in an allocation size calculation in the BSON library&apos;s JSON parsing code can cause a buffer to be released while a following copy operation still writes through the stale pointer. On builds where sizes are 32 bits, an unauthent…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 03 Sep 2026 15:01:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84966 · 5.9 MEDIUM — BSON element injection via NUL-embedded document keys in builder append</title>
-      <link>https://vulnogram.org/CVE-2026-84966</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84966</guid>
-      <description>An incorrect numeric type conversion in the BSON document building component of the MongoDB C++ Driver may cause a length value to be interpreted incorrectly. When an application supplies an extremely large, non-terminated field name to the builder,…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 03 Sep 2026 15:00:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84969 · 6.3 MEDIUM 🌩️ — Heap overflow via truncated base64 encoding of binary fields in length-limited JSON output</title>
-      <link>https://vulnogram.org/CVE-2026-84969</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84969</guid>
-      <description>A memory-handling error in the BSON-to-JSON conversion helpers of the MongoDB C Driver can write a small number of bytes past the end of a heap buffer when a binary field is encoded and the output is cut short at a caller-configured length limit. A p…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 03 Sep 2026 14:59:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84971 · 7.1 HIGH — Persistent client crash loop via undersized FLE2 insert-update ciphertext in decryption path</title>
-      <link>https://vulnogram.org/CVE-2026-84971</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84971</guid>
-      <description>Improper handling of an unexpected value size in the decryption path of a client-side encryption library can cause a failed internal check that terminates the process using the library. A party able to place a suitably formed encrypted value where an…</description>
-      <category>High</category>
-      <pubDate>Thu, 03 Sep 2026 14:57:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84970 · 6.2 MEDIUM — Heap over-read or silent misparse via 32-bit truncation of JSON length in BSON JSON parser</title>
-      <link>https://vulnogram.org/CVE-2026-84970</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84970</guid>
-      <description>A numeric truncation weakness exists in the JSON parsing component of the MongoDB C++ Driver&apos;s BSON library. An actor who controls the text that an embedding application hands to the library&apos;s public JSON parsing interface, when that text is very lar…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 03 Sep 2026 14:56:14 GMT</pubDate>
     </item>
   </channel>
 </rss>
