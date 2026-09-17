@@ -11,7 +11,40 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 17 Sep 2026 12:32:57 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 17:40:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-86864 · 8.8 HIGH — pgAdmin 4: Argument and connection-string injection via the database field in the Backup tool</title>
+      <link>https://vulnogram.org/CVE-2026-86864</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86864</guid>
+      <description>pgAdmin 4&apos;s Backup tool appended the client-supplied &apos;database&apos; field from the /backup/job/&lt;sid&gt;/object request to the pg_dump argument vector as a bare trailing positional argument, without validation. Because pg_dump parses its options with getopt_…</description>
+      <category>High</category>
+      <pubDate>Thu, 17 Sep 2026 15:31:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86863 · 9.8 CRITICAL 🌩️ — pgAdmin 4: Authentication bypass via a client-controlled identity header in Webserver authentication mode</title>
+      <link>https://vulnogram.org/CVE-2026-86863</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86863</guid>
+      <description>pgAdmin 4&apos;s Webserver authentication source is intended to accept an identity asserted by the web server or reverse proxy in front of pgAdmin, delivered through the WSGI/CGI environment. WebserverAuthentication.get_user() read config.WEBSERVER_REMOTE…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 15:30:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86862 · 7.1 HIGH — pgAdmin 4: Connection-string injection via the database field in the Restore and Maintenance tools</title>
+      <link>https://vulnogram.org/CVE-2026-86862</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86862</guid>
+      <description>pgAdmin 4&apos;s Restore and Maintenance tools passed the client-supplied &apos;database&apos; field directly as the value of the --dbname option given to pg_restore and psql. libpq expands a database name containing an equals sign into a full connection string, an…</description>
+      <category>High</category>
+      <pubDate>Thu, 17 Sep 2026 15:30:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86861 · 6 MEDIUM — pgAdmin 4: File Manager save_file writes through a symbolic link planted after the containment check</title>
+      <link>https://vulnogram.org/CVE-2026-86861</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86861</guid>
+      <description>pgAdmin 4&apos;s File Manager save_file endpoint, which backs saving from the Query Tool and ERD, validated the requested path with Filemanager.check_access_permission() and then opened the file for writing with a plain open() call. CVE-2026-7819 had prev…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 15:30:51 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-83534 · 6.4 MEDIUM — PostgreSQL Anonymizer: Privilege escalation to superuser via anon.anonymize_database_parallel()</title>
       <link>https://vulnogram.org/CVE-2026-83534</link>
@@ -383,38 +416,6 @@
       <description>SQL injection in pgAdmin 4&apos;s named restore point endpoint (POST /browser/server/restore_point/{gid}/{sid}). The user-supplied &apos;value&apos; field was interpolated directly into the SQL string with str.format() instead of being passed as a bound parameter,…</description>
       <category>Medium</category>
       <pubDate>Thu, 18 Jun 2026 23:37:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12044 · 8.8 HIGH — pgAdmin 4: SQL injection in COMMENT ON ... IS &apos;&lt;description&gt;&apos; rendering across dialog templates</title>
-      <link>https://vulnogram.org/CVE-2026-12044</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12044</guid>
-      <description>SQL injection in pgAdmin 4 across every dialog template that renders ``COMMENT ON ... IS &apos;&lt;description&gt;&apos;`` for a user-supplied description field. The Jinja templates for Domains (and their constraints), Foreign Tables, Languages, and Event Triggers,…</description>
-      <category>High</category>
-      <pubDate>Thu, 18 Jun 2026 23:37:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11945 · 6.4 MEDIUM — PostgreSQL Anonymizer: SQL injection in the rules import functions</title>
-      <link>https://vulnogram.org/CVE-2026-11945</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11945</guid>
-      <description>PostgreSQL Anonymizer contains a vulnerability that allows a user to gain superuser privileges by creating a JSON document and placing malicious code inside a particular key-value pair. If a superuser calls the import_database_rules() or import_roles…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 11 Jun 2026 15:53:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9617 · 6.8 MEDIUM — PostgreSQL Anonymizer: malicious column name allows SQL injection via anon.k_anonymity() function</title>
-      <link>https://vulnogram.org/CVE-2026-9617</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9617</guid>
-      <description>PostgreSQL Anonymizer contains a vulnerability that allows a user to gain superuser privileges by creating a table and placing malicious code inside a column identifier. If a superuser calls the k-anonymity function, the malicious code is executed wi…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 27 May 2026 13:55:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6638 · 3.7 LOW — PostgreSQL REFRESH PUBLICATION allows SQL injection via table name</title>
-      <link>https://vulnogram.org/CVE-2026-6638</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6638</guid>
-      <description>SQL injection in PostgreSQL logical replication ALTER SUBSCRIPTION ... REFRESH PUBLICATION allows a subscriber table creator to execute arbitrary SQL with the subscription&apos;s publication-side credentials. The attack takes effect at the next REFRESH PU…</description>
-      <category>Low</category>
-      <pubDate>Thu, 14 May 2026 13:00:15 GMT</pubDate>
     </item>
   </channel>
 </rss>

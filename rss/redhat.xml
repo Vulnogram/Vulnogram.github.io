@@ -11,13 +11,47 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 17 Sep 2026 12:32:56 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 17:40:47 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-92925 · 6 MEDIUM — Out-of-Bounds Read in Cluster Bus</title>
+      <title>CVE-2026-76781 · 5.5 MEDIUM — Libxml2: libxml2: null pointer dereference parsing nextcatalog without catalog attribute</title>
+      <link>https://vulnogram.org/CVE-2026-76781</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76781</guid>
+      <description>A flaw was found in libxml2. A local user or an attacker providing a specially crafted XML catalog can trigger a NULL pointer dereference during XML catalog parsing. This occurs when a `nextCatalog` element lacks its mandatory `catalog` attribute, le…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 15:11:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87742 · 7.5 HIGH 🌩️ — Quarkus-websockets-next: denial of service (oom) in quarkus-websockets-next via unbounded message buffering</title>
+      <link>https://vulnogram.org/CVE-2026-87742</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87742</guid>
+      <description>A flaw was found in quarkus-websockets-next. This vulnerability allows a remote attacker to cause a Denial of Service (DoS) by streaming messages over a single connection faster than the application can process them. Due to unbounded message bufferin…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 14:57:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81829 · 5.3 MEDIUM 🌩️ — Smallrye-jwt: quarkus-smallrye-jwt: smallrye-jwt: unauthenticated same-origin ssrf via unsanitized jwt kid header in awsalbkeyresolver</title>
+      <link>https://vulnogram.org/CVE-2026-81829</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81829</guid>
+      <description>A flaw was found in SmallRye JWT&apos;s AwsAlbKeyResolver, which is used by applications to verify JSON Web Tokens signed by AWS Application Load Balancers. When the AWS_ALB key provider is configured, the resolver constructs the key-fetch URL by directly…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 14:01:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92904 · 4.3 MEDIUM — Rubygem-foreman_remote_execution: job output readable without object-level view_job_invocations check</title>
+      <link>https://vulnogram.org/CVE-2026-92904</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92904</guid>
+      <description>A flaw was found in the foreman_remote_execution plugin&apos;s template invocations controller. The show_template_invocation_by_host action resolves the job invocation by ID without evaluating the caller&apos;s view_job_invocations permission filter against th…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 12:42:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92925 · 7.1 HIGH — Redis: redis: out-of-bounds read via crafted cluster bus packets</title>
       <link>https://vulnogram.org/CVE-2026-92925</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92925</guid>
-      <description>In Redis community the cluster bus PING/PONG/MEET packet parser validated extension padding and total length but never checked that string-carrying extensions are properly null-terminated, allowing a crafted packet to trigger out-of-bounds reads when…</description>
-      <category>Medium</category>
+      <description>A flaw was found in Redis community. The cluster bus packet parser, responsible for handling PING, PONG, and MEET packets, fails to properly validate string-carrying extensions for null-termination. This oversight allows a remote attacker to craft a…</description>
+      <category>High</category>
       <pubDate>Thu, 17 Sep 2026 11:48:04 GMT</pubDate>
     </item>
     <item>
@@ -388,39 +422,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 10 Sep 2026 07:09:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18147 · 8.1 HIGH 🌩️ — Freeipa: ipa: freeipa/idm: cross-site scripting vulnerability allows arbitrary code execution via crafted url</title>
-      <link>https://vulnogram.org/CVE-2026-18147</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18147</guid>
-      <description>A flaw was found in FreeIPA. An unauthenticated remote attacker could exploit a DOM Cross-Site Scripting (XSS) vulnerability in the FreeIPA/IdM Web UI password reset page. By enticing a victim to click a specially crafted link and complete a password…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 09 Sep 2026 16:39:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87876 · 3 LOW — Cups: openprinting cups: remaining case-insensitive username matching in scheduler side paths (cve-2026-27447 follow-up)</title>
-      <link>https://vulnogram.org/CVE-2026-87876</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87876</guid>
-      <description>Two case-insensitive comparisons on request-derived usernames outside the main authorization path in CUPS&apos;s scheduler (printer ACL validation and private-attribute filtering) could allow bypass of username-based access controls in certain configurati…</description>
-      <category>Low</category>
-      <pubDate>Wed, 09 Sep 2026 16:12:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87872 · 6.8 MEDIUM — Community.general: community.general: ocapi module_utils (ocapi_command, ocapi_info) hardcode validate_certs=false with no override, enabling tls man-in-the-middle and credential disclosure</title>
-      <link>https://vulnogram.org/CVE-2026-87872</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87872</guid>
-      <description>A flaw was found in the OCAPI modules (ocapi_command, ocapi_info) of the community.general Ansible collection. The shared OCAPI request helper disables TLS certificate validation on every request and the modules expose no parameter to re-enable it, w…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 09 Sep 2026 16:06:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87875 · 4.3 MEDIUM — Cups: openprinting cups: heap out-of-bounds read in cupsutf32toutf8() via missing source-length bound</title>
-      <link>https://vulnogram.org/CVE-2026-87875</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87875</guid>
-      <description>The cupsUTF32ToUTF8() function in CUPS&apos;s cups/transcode.c lacks a source-length bound and can read past the end of the source buffer, resulting in a heap out-of-bounds read. This is reachable via SNMP supply-description parsing in backend/snmp-suppli…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 09 Sep 2026 16:06:27 GMT</pubDate>
     </item>
   </channel>
 </rss>

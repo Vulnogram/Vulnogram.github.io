@@ -11,7 +11,128 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 17 Sep 2026 12:32:57 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 17:40:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-91039 · 9.1 CRITICAL 🌩️ — dynamic_oidc identities are not namespaced by connection in ash_authentication, allowing cross-connection account takeover</title>
+      <link>https://vulnogram.org/CVE-2026-91039</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91039</guid>
+      <description>Authentication Bypass by Spoofing vulnerability in team-alembic ash_authentication allows an attacker who operates one identity-provider connection of a dynamic_oidc strategy to be signed in as a local user established through a different connection.…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 15:19:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88952 · 9.1 CRITICAL 🌩️ — OAuth2 sign-in attached to an existing account without an email comparison in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-88952</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88952</guid>
+      <description>Improper Authentication vulnerability in team-alembic AshAuthentication allows an attacker to be signed in as another user by linking an OAuth2 identity to an account that is not theirs. AshAuthentication.Strategy.OAuth2.UserResolver.resolve/3 matche…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 14:15:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85500 · 9.1 CRITICAL 🌩️ — `require_confirmed_with` is not enforced on the action and fails open on an unreadable attribute in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-85500</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85500</guid>
+      <description>Authentication Bypass by Primary Weakness vulnerability in team-alembic AshAuthentication allows an unconfirmed user to obtain a session, defeating a mandatory email confirmation requirement. AshAuthentication.Strategy.Password.Actions.check_user/2 d…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 13:09:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86533 · 9.1 CRITICAL 🌩️ — Revoked session accepted because the session jti is never checked in AshAuthentication and AshAuthentication Phoenix</title>
+      <link>https://vulnogram.org/CVE-2026-86533</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86533</guid>
+      <description>Insufficient Session Expiration vulnerability in team-alembic AshAuthentication and AshAuthentication Phoenix allows a revoked session to remain fully authenticated. A resource configured with session_identifier :jti and require_token_presence_for_au…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 13:09:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81632 · 7.2 HIGH — Single-use sign-in token placed in a redirect query string in AshAuthenticationPhoenix</title>
+      <link>https://vulnogram.org/CVE-2026-81632</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81632</guid>
+      <description>Use of HTTP Request With Sensitive Query String vulnerability in team-alembic AshAuthenticationPhoenix allows someone able to read access logs, proxy logs or browser history to recover a single-use sign-in token and authenticate as its owner. After a…</description>
+      <category>High</category>
+      <pubDate>Thu, 17 Sep 2026 13:09:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80218 · 7.6 HIGH — Sign-in token minted for one resource accepted by another in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-80218</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80218</guid>
+      <description>Improper Authentication vulnerability in team-alembic AshAuthentication allows an attacker holding a sign-in token for one authenticated resource to be signed in as a user of a different resource. AshAuthentication.Strategy.Password.SignInWithTokenPr…</description>
+      <category>High</category>
+      <pubDate>Thu, 17 Sep 2026 13:09:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78223 · 6.9 MEDIUM 🌩️ — Token revocation record built from unverified JWT claims in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-78223</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78223</guid>
+      <description>Improper Verification of Cryptographic Signature vulnerability in team-alembic AshAuthentication allows a caller of the token revocation action to neutralise a revocation or write arbitrary rows into the token resource. AshAuthentication.TokenResourc…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 13:09:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86522 · 6.3 MEDIUM 🌩️ — Log injection via an unescaped password reset identity in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-86522</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86522</guid>
+      <description>Improper Output Neutralization for Logs vulnerability in team-alembic AshAuthentication allows an unauthenticated attacker to forge application log entries by submitting a password reset identity containing newlines or control characters. AshAuthenti…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 13:09:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81637 · 2.3 LOW 🌩️ — Replayable OAuth2 CSRF state retained after a failed callback in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-81637</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81637</guid>
+      <description>Insufficient Session Expiration vulnerability in team-alembic AshAuthentication allows an attacker who obtains a victim&apos;s OAuth2 state value to replay the callback and sign that victim into an attacker-controlled account. AshAuthentication.Strategy.O…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 13:09:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82761 · 9.1 CRITICAL 🌩️ — Magic link single-use tokens replayable via TOCTOU race in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-82761</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82761</guid>
+      <description>Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability in team-alembic AshAuthentication allows an attacker holding a leaked magic link to replay its single-use token and authenticate as the target subject. A magic link configured with singl…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 13:09:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82685 · 7.6 HIGH — Confirmation token accepted on any record in AshAuthentication</title>
+      <link>https://vulnogram.org/CVE-2026-82685</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82685</guid>
+      <description>Authorization Bypass Through User-Controlled Key vulnerability in team-alembic AshAuthentication allows an authenticated attacker to overwrite and confirm another user&apos;s email address, and so take over that account. A confirmation token issued to one…</description>
+      <category>High</category>
+      <pubDate>Thu, 17 Sep 2026 13:08:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82760 · 8.2 HIGH 🌩️ — Superlinear base62 decoding exhausts CPU and memory in AshAuthentication API key sign-in</title>
+      <link>https://vulnogram.org/CVE-2026-82760</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82760</guid>
+      <description>Inefficient Algorithmic Complexity vulnerability in team-alembic AshAuthentication allows an unauthenticated attacker to exhaust CPU and memory via an oversized base62 segment in a submitted API key. AshAuthentication.Base.decode62/1 in lib/ash_authe…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 13:08:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82759 · 1.8 LOW — Reversible IP address pseudonymisation in AshAuthentication audit log hash mode</title>
+      <link>https://vulnogram.org/CVE-2026-82759</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82759</guid>
+      <description>Use of a One-Way Hash with a Predictable Salt vulnerability in team-alembic AshAuthentication allows readers of the audit store to recover the client IP addresses that the audit log add-on&apos;s :hash privacy mode is meant to pseudonymise. AshAuthenticat…</description>
+      <category>Low</category>
+      <pubDate>Thu, 17 Sep 2026 13:08:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82723 · 1.8 LOW — Actor record with password digest stored in AshAuthentication audit log entries</title>
+      <link>https://vulnogram.org/CVE-2026-82723</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82723</guid>
+      <description>Insertion of Sensitive Information into Log File vulnerability in team-alembic AshAuthentication allows disclosure of user password digests to readers of the audit store. The audit_log add-on builds each entry&apos;s extra_data in AshAuthentication.AddOn.…</description>
+      <category>Low</category>
+      <pubDate>Thu, 17 Sep 2026 13:08:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-86338 · 6 MEDIUM — Ash field policies do not filter-nil forbidden calculations and aggregates, enabling an information-disclosure oracle</title>
       <link>https://vulnogram.org/CVE-2026-86338</link>
@@ -329,120 +450,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 01 Sep 2026 14:35:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71562 · 6.3 MEDIUM 🌩️ — httpc does not bound server-supplied numeric header values before integer conversion</title>
-      <link>https://vulnogram.org/CVE-2026-71562</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71562</guid>
-      <description>Improper Validation of Specified Quantity in Input vulnerability in Erlang/OTP inets httpc allows a malicious or compromised HTTP server to degrade availability by returning a numeric header whose value is a very long run of digits. httpc_handler.erl…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 14:33:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70399 · 8.7 HIGH 🌩️ — httpd does not enforce the documented default max_clients connection limit</title>
-      <link>https://vulnogram.org/CVE-2026-70399</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70399</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in Erlang/OTP inets httpd allows an unauthenticated remote attacker to cause denial of service by opening and holding open a large number of connections. The max_clients option is doc…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 14:33:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82747 · 5.9 MEDIUM — Ash.Policy.Authorizer returns records denied by a runtime read policy to any actor</title>
-      <link>https://vulnogram.org/CVE-2026-82747</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82747</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash returns records that a runtime read policy denies to any actor. When a resource has an access_type :runtime read policy (a check evaluated per record rather than compiled to a filter), Ash.Poli…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 04:14:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82749 · 5.9 MEDIUM — Ash relationship parent(...) filter degrades to an IS NULL match when the parent field is unresolved, leaking scoped records</title>
-      <link>https://vulnogram.org/CVE-2026-82749</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82749</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash widens a relationship&apos;s parent(...) scoping filter to match unintended records when the referenced parent field cannot be resolved. Loading a relationship whose filter references parent(...) re…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 03:54:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82748 · 2.1 LOW — Ash.Actions.Aggregate authorizes an aggregate under one action but computes it under another</title>
-      <link>https://vulnogram.org/CVE-2026-82748</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82748</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash authorizes an aggregate under one read action while computing it under another, so an aggregate can run with policies that do not match the action it was authorized against. Ash.Actions.Aggrega…</description>
-      <category>Low</category>
-      <pubDate>Tue, 01 Sep 2026 03:52:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82746 · 5.9 MEDIUM — Ash.update_many/4 atomic path skips resource policy authorization, allowing updates to forbidden records</title>
-      <link>https://vulnogram.org/CVE-2026-82746</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82746</guid>
-      <description>Missing Authorization vulnerability in ash-project ash allows an actor to update records forbidden by resource policies through the atomic path of Ash.update_many/4. Ash.update_many/4 runs as a single atomic statement (a data-layer update_many, for e…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 03:47:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82745 · 5.9 MEDIUM — ETS and Mnesia data layers overwrite an existing record on create instead of enforcing primary-key uniqueness</title>
-      <link>https://vulnogram.org/CVE-2026-82745</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82745</guid>
-      <description>Improper Access Control vulnerability in ash-project ash lets a create action overwrite an existing record when the ETS or Mnesia data layer is used, because neither enforced primary-key uniqueness on insert. Unlike a SQL data layer, whose unique pri…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 03:42:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82744 · 2.1 LOW — Ash.Reactor change step fails open, skipping a change when its where guard raises</title>
-      <link>https://vulnogram.org/CVE-2026-82744</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82744</guid>
-      <description>Not Failing Securely (Failing Open) vulnerability in ash-project ash skips an Ash.Reactor change when the guard controlling it raises, so a change meant to run does not. An Ash.Reactor change step can be gated by where validations that decide whether…</description>
-      <category>Low</category>
-      <pubDate>Tue, 01 Sep 2026 03:39:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82743 · 2.1 LOW — Ash.Actions.Read.AsyncLimiter busy-spins a scheduler while awaiting slow async reads</title>
-      <link>https://vulnogram.org/CVE-2026-82743</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82743</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in ash-project ash lets a slow asynchronous read spin a scheduler thread at full CPU while the framework waits for it. Ash.Actions.Read.AsyncLimiter.await_at_least_one/1 (lib/ash/actions/read/async_limi…</description>
-      <category>Low</category>
-      <pubDate>Tue, 01 Sep 2026 03:37:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82742 · 5.9 MEDIUM — Ash.Filter.Runtime materializes a combinatorial cross-product over to-many relationships, exhausting memory</title>
-      <link>https://vulnogram.org/CVE-2026-82742</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82742</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in ash-project ash lets an attacker exhaust node memory by matching a filter that spans multiple to-many relationships in memory. Ash.Filter.Runtime matches a filter against an in-memory record by first…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 03:35:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82741 · 2.1 LOW — Ash.Type.Union with :map_with_tag does not force the tag on dump, enabling tag confusion</title>
-      <link>https://vulnogram.org/CVE-2026-82741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82741</guid>
-      <description>Improper Validation of Specified Type of Input vulnerability in ash-project ash lets an attacker confuse the stored type tag of an Ash.Type.Union value that uses storage: :map_with_tag, bypassing that member&apos;s validation and any tag-based authorizati…</description>
-      <category>Low</category>
-      <pubDate>Tue, 01 Sep 2026 03:33:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82740 · 2.1 LOW — Ash.Type ignores outer array constraints on nested {:array, {:array, type}} inputs</title>
-      <link>https://vulnogram.org/CVE-2026-82740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82740</guid>
-      <description>Improper Input Validation vulnerability in ash-project ash fails to enforce the outer array constraints on a doubly-nested {:array, {:array, type}} attribute, letting invalid input pass validation. Ash.Type.apply_constraints/3 (lib/ash/type/type.ex)…</description>
-      <category>Low</category>
-      <pubDate>Tue, 01 Sep 2026 03:29:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82739 · 2.1 LOW — Ash.Resource.Validation.Confirm leaks a confirmed field&apos;s stored value in the atomic mismatch error</title>
-      <link>https://vulnogram.org/CVE-2026-82739</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82739</guid>
-      <description>Generation of Error Message Containing Sensitive Information vulnerability in ash-project ash discloses the stored value of a confirmed field to an actor who fails its confirmation check. Ash.Resource.Validation.Confirm&apos;s atomic implementation (atomi…</description>
-      <category>Low</category>
-      <pubDate>Tue, 01 Sep 2026 03:27:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82738 · 5.9 MEDIUM — Ash.Type.UUIDv7 accepts non-v7 UUIDs that then fail to load, causing persistent denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-82738</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82738</guid>
-      <description>Improper Input Validation vulnerability in ash-project ash allows an attacker to persistently deny reads of a record by storing a non-version-7 UUID in an Ash.Type.UUIDv7 attribute. Ash.Type.UUIDv7.cast_input/2 accepts any well-formed UUID string, in…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 03:26:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
