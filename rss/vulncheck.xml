@@ -11,7 +11,60 @@
       <title>VulnCheck — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 17 Sep 2026 07:05:29 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 12:32:56 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-92917 · 8.7 HIGH 🌩️ — Grav 2.0.0-rc.1 through 2.0.21 Configuration Disclosure via print_r</title>
+      <link>https://vulnogram.org/CVE-2026-92917</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92917</guid>
+      <description>Grav is a flat-file CMS. In versions 2.0.0-rc.1 through 2.0.21, the Twig content sandbox fails to restrict the dump and serialize filters (print_r, vardump, json_encode, yaml_encode, string): GravExtension::assertSandboxDumpSafe() determines sandbox…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 11:16:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92916 · 8.7 HIGH 🌩️ — Grav through 2.0.21 Unauthenticated Information Disclosure via Clockwork</title>
+      <link>https://vulnogram.org/CVE-2026-92916</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92916</guid>
+      <description>Grav is a flat-file CMS. In Grav 1.7.0 through 1.7.53.2 and 2.0.0 through 2.0.21, when the debugger is enabled (system.debugger.enabled: true, which is not the default), the Clockwork profiler endpoint is exposed without authentication: InitializePro…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 11:16:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92915 · 7.3 HIGH 🌩️ — WWBN AVideo userVerifyEmail.php Unauthenticated Access Control</title>
+      <link>https://vulnogram.org/CVE-2026-92915</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92915</guid>
+      <description>WWBN AVideo through commit e01e41ecc (no patched version available) contains a broken access control flaw in objects/userVerifyEmail.php. The script disables the login requirement ($global[&apos;ignoreUserMustBeLoggedIn&apos;] = 1), takes users_id directly fro…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 11:16:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92914 · 8.6 HIGH — AVideo LoginControl PGP Second Factor Authentication Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-92914</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92914</guid>
+      <description>AVideo LoginControl contains an authentication bypass vulnerability in the PGP second factor verification that compares challenge responses using loose equality against an uninitialized session variable. Attackers with a victim&apos;s password can bypass…</description>
+      <category>High</category>
+      <pubDate>Thu, 17 Sep 2026 11:16:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92913 · 9.1 CRITICAL 🌩️ — AVideo Weak PRNG Activation Code Authentication Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-92913</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92913</guid>
+      <description>AVideo through commit c3edcc274c389816d434acadac07ee78eaf330c1 uses a cryptographically weak pseudo-random number generator when creating account activation / login pairing codes. getRandomCode() in objects/functions.php derives the code entirely fro…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 11:16:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92912 · 8.3 HIGH 🌩️ — AVideo Cryptographically Weak PRNG via uniqid Stream Key</title>
+      <link>https://vulnogram.org/CVE-2026-92912</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92912</guid>
+      <description>AVideo through c3edcc274c389816d434acadac07ee78eaf330c1 uses cryptographically weak uniqid() values for RTMP publish keys in LiveTransmition, reducing key entropy to approximately one million possibilities per creation second. Attackers who know the…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 11:16:41 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-92599 · 8.7 HIGH 🌩️ — Joi before 17.13.7 and 18.2.6 ReDoS via isoDate</title>
       <link>https://vulnogram.org/CVE-2026-92599</link>
@@ -384,58 +437,6 @@
       <description>GoAdmin through 1.2.26 fails to properly anchor the logout pattern when checking permissions, allowing authenticated users to bypass permission checks by appending a query parameter. Attackers can append a query string containing the admin prefix fol…</description>
       <category>High</category>
       <pubDate>Wed, 16 Sep 2026 20:32:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92792 · 8.7 HIGH 🌩️ — OpenNHP through 1.0.2 Authentication Bypass via Fallback Verifier</title>
-      <link>https://vulnogram.org/CVE-2026-92792</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92792</guid>
-      <description>OpenNHP through 1.0.2 selects its trusted-execution attestation verifier based on attacker-supplied evidence containing a test_purpose key, causing the FallbackVerifier to execute unconditionally. Attackers can bypass attestation verification by incl…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 16 Sep 2026 20:32:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92791 · 8.7 HIGH 🌩️ — Uber Kraken through 0.1.29 Path Traversal via tag parameter</title>
-      <link>https://vulnogram.org/CVE-2026-92791</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92791</guid>
-      <description>Uber Kraken through 0.1.29 fails to validate the tag parameter in the /tags/{tag} endpoint, allowing unauthenticated attackers to traverse outside the configured storage root. Attackers can use percent-encoded parent-directory segments in the tag par…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 16 Sep 2026 20:32:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92790 · 6.9 MEDIUM 🌩️ — Higress before 2.2.4 Rate Limit Bypass via Malformed Cookie Header</title>
-      <link>https://vulnogram.org/CVE-2026-92790</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92790</guid>
-      <description>Higress before 2.2.4 panics when processing a Cookie header segment without an equals sign, causing the plugin wrapper to recover and return a continue action that bypasses AI token rate limiting. Unauthenticated attackers can craft a malformed Cooki…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 16 Sep 2026 20:32:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92789 · 7.1 HIGH — Graylog through 7.1.4 Server-Side Request Forgery via HTTP Redirect</title>
-      <link>https://vulnogram.org/CVE-2026-92789</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92789</guid>
-      <description>Graylog through 7.1.4 validates outbound URLs against an allowlist before making requests but fails to re-validate after following HTTP redirects. Attackers with lookup table or event notification permissions can craft allowlisted endpoints that redi…</description>
-      <category>High</category>
-      <pubDate>Wed, 16 Sep 2026 20:32:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92788 · 8.8 HIGH — Coze Studio through 0.5.1 Cross-Tenant Database Access via Workflow SQL Node</title>
-      <link>https://vulnogram.org/CVE-2026-92788</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92788</guid>
-      <description>Coze Studio through 0.5.1 fails to validate that table names in workflow SQL customization nodes belong to the caller&apos;s workspace. Authenticated attackers can enumerate predictable table identifiers and execute SQL statements against other workspaces…</description>
-      <category>High</category>
-      <pubDate>Wed, 16 Sep 2026 20:32:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92787 · 9.8 CRITICAL 🌩️ — Feast through 0.66.0 Authentication Bypass via Unverified Token</title>
-      <link>https://vulnogram.org/CVE-2026-92787</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92787</guid>
-      <description>Feast through 0.66.0 fails to verify JWT token signatures before establishing user identity, allowing attackers to bypass all role-based access control by presenting an unverified token with a hardcoded claim value. Attackers can obtain trusted inter…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 16 Sep 2026 20:32:43 GMT</pubDate>
     </item>
   </channel>
 </rss>

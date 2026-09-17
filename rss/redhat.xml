@@ -11,7 +11,39 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 17 Sep 2026 07:05:29 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 12:32:56 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-92925 · 6 MEDIUM — Out-of-Bounds Read in Cluster Bus</title>
+      <link>https://vulnogram.org/CVE-2026-92925</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92925</guid>
+      <description>In Redis community the cluster bus PING/PONG/MEET packet parser validated extension padding and total length but never checked that string-carrying extensions are properly null-terminated, allowing a crafted packet to trigger out-of-bounds reads when…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 11:48:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92893 · 4.3 MEDIUM — Rubygem-foreman_ansible: ansible inventory api ignores view_hosts permission filters, exposes hidden parameters</title>
+      <link>https://vulnogram.org/CVE-2026-92893</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92893</guid>
+      <description>A flaw was found in the foreman_ansible plugin&apos;s Ansible inventory API. The controller builds its host query using an unscoped Host.where call that does not enforce the search filter associated with the caller&apos;s view_hosts permission. An authenticate…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 10:28:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92894 · 4.3 MEDIUM — Rubygem-foreman_ansible: unscoped lookupvalue deletion allows cross-model override value destruction</title>
+      <link>https://vulnogram.org/CVE-2026-92894</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92894</guid>
+      <description>A flaw was found in the foreman_ansible plugin&apos;s Ansible override values API. The destroy action resolves the target LookupValue record by ID without verifying it belongs to an AnsibleVariable the caller is authorized to edit. An authenticated user w…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 10:08:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86320 · 7.8 HIGH — Flatpak-builder: host code execution via `git am` hook execution in patch source extraction (`use-git-am`)</title>
+      <link>https://vulnogram.org/CVE-2026-86320</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86320</guid>
+      <description>A flaw was found in flatpak-builder where Git hooks are not disabled when applying patch sources with use-git-am: true. An attacker who can provide a malicious source containing a Git post-applypatch hook can cause the hook to execute on the host dur…</description>
+      <category>High</category>
+      <pubDate>Thu, 17 Sep 2026 07:27:33 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-85469 · 8 HIGH — Quay-builder-qemu: quay-builder-qemu: release workflow uses third-party action pinned to mutable @master with registry credentials in scope</title>
       <link>https://vulnogram.org/CVE-2026-85469</link>
@@ -389,39 +421,6 @@
       <description>The cupsUTF32ToUTF8() function in CUPS&apos;s cups/transcode.c lacks a source-length bound and can read past the end of the source buffer, resulting in a heap out-of-bounds read. This is reachable via SNMP supply-description parsing in backend/snmp-suppli…</description>
       <category>Medium</category>
       <pubDate>Wed, 09 Sep 2026 16:06:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87853 · 7.5 HIGH — Sssd: sssd: idp authentication prefix comparison allows cross-user impersonation</title>
-      <link>https://vulnogram.org/CVE-2026-87853</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87853</guid>
-      <description>A flaw was found in SSSD&apos;s IdP authentication provider. The eval_access_token_buf() function compares the OIDC subject identifier using strncmp() with the authenticated user&apos;s identifier length, performing a prefix comparison instead of an exact matc…</description>
-      <category>High</category>
-      <pubDate>Wed, 09 Sep 2026 16:06:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87874 · 8.1 HIGH 🌩️ — Community.general: community.general: memcached cache plugin deserializes untrusted pickle data from memcached, enabling cache-poisoning remote code execution on the ansible controller</title>
-      <link>https://vulnogram.org/CVE-2026-87874</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87874</guid>
-      <description>A flaw was found in the memcached cache plugin of the community.general Ansible collection. Although its documentation states that records are stored in JSON format, the plugin performs no explicit serialization and relies on python-memcached, which…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 09 Sep 2026 16:06:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87766 · 8.8 HIGH — Bubblewrap: bubblewrap: symlink traversal via /oldroot allows writing files outside sandbox during setup</title>
-      <link>https://vulnogram.org/CVE-2026-87766</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87766</guid>
-      <description>A flaw was found in bubblewrap. During sandbox setup, creating files or directories under the new root can follow a parent symlink onto the host via /oldroot, writing attacker-chosen paths outside the sandbox as the launching user. This happens befor…</description>
-      <category>High</category>
-      <pubDate>Wed, 09 Sep 2026 08:34:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19729 · 4.9 MEDIUM — Keycloak-services: keycloak-services: incomplete fix for arbitrary filesystem path probing via keystore parameters</title>
-      <link>https://vulnogram.org/CVE-2026-19729</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19729</guid>
-      <description>A flaw was found in the key provider component of the keycloak-services library, which is the core engine for the Red Hat Build of Keycloak. The issue occurs because a previous fix for path probing was incomplete, allowing a realm administrator to st…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 09 Sep 2026 07:03:35 GMT</pubDate>
     </item>
   </channel>
 </rss>

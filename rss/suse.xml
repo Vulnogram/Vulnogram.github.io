@@ -11,7 +11,48 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 17 Sep 2026 07:05:31 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 12:32:57 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-78427 · 4.3 MEDIUM — Admission Control Bypass via Hardcoded Sidecar Image Exemption</title>
+      <link>https://vulnogram.org/CVE-2026-78427</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78427</guid>
+      <description>The NeuVector admission webhook silently excludes containers from policy evaluation when their image path matches one of three hardcoded service mesh sidecar images. Since the image path is entirely controlled by the workload author, any user capable…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 09:33:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78425 · 7.6 HIGH — SAML Audience Confusion Allows Cross-SP Authentication</title>
+      <link>https://vulnogram.org/CVE-2026-78425</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78425</guid>
+      <description>Authorised users of outside applications behind the same corporate identity provider (IdP), for example, a wiki, a ticketing system, an expenses tool, or anything they legitimately hold an account on can log into their system via SAML SSO. The IdP is…</description>
+      <category>High</category>
+      <pubDate>Thu, 17 Sep 2026 09:32:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78426 · 3.7 LOW — Logout bypass via alternate JWT spelling</title>
+      <link>https://vulnogram.org/CVE-2026-78426</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78426</guid>
+      <description>The NeuVector JWT verifier accepts noncanonical Base64URL encodings of the same RSA signature field. An attacker holding a valid JWT that has not expired, but was logged out of NeuVector, can continue using the non-expired token with equivalent spell…</description>
+      <category>Low</category>
+      <pubDate>Thu, 17 Sep 2026 09:28:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78428 · 8 HIGH 🌩️ — Flaw in Nuevector can result in one user receiving another user&apos;s authenticated session when multiple SSO login attempts occur concurrently</title>
+      <link>https://vulnogram.org/CVE-2026-78428</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78428</guid>
+      <description>For users authenticated through SAML or OpenID Connect (OIDC), this vulnerability can result in one user receiving another user&apos;s authenticated session when multiple SSO login attempts occur concurrently</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 17 Sep 2026 09:19:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-44940 · 5.7 MEDIUM — Service token exposure and potential privilege escalation in SUSE Observability</title>
+      <link>https://vulnogram.org/CVE-2026-44940</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44940</guid>
+      <description>The rancher-extension-stackstate extension in SUSE Observability exposes service tokens in plain configuration or insecure locations rather than managing them securely. An attacker with minimal access could obtain the token to gain unauthorized acces…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 17 Sep 2026 06:43:19 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-44950 · 9.5 CRITICAL 🌩️ — fs_read_glyphs() heap buffer overflow via cumulative glyph data overflow in libXfont2</title>
       <link>https://vulnogram.org/CVE-2026-44950</link>
@@ -385,48 +426,6 @@
       <description>A relative path traversal in the &quot;keyhint&quot; option in repomd.xml parsing of libzypp before 17.38.12 can be used by attackers able to supply a malicious repository to inject or overwrite files in the target system as root.</description>
       <category>High</category>
       <pubDate>Thu, 02 Jul 2026 15:19:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56004 · 10 CRITICAL 🌩️ — obs-service-tar_scm: command injection via mercurial handler</title>
-      <link>https://vulnogram.org/CVE-2026-56004</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56004</guid>
-      <description>A shellcode injection in the mercurial handler of the obs tar_scm source service before version 0.12.4 could be used by attackers able to provide a _service file to execute code as the source service or the local user checking out the malicious servi…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 02 Jul 2026 14:54:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44948 · 5.3 MEDIUM — Path Traversal in Rancher Fleet ImageScan GitRepo Path Handler</title>
-      <link>https://vulnogram.org/CVE-2026-44948</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44948</guid>
-      <description>A path traversal vulnerability was found in Fleet&apos;s ImageScan subsystem in Rancher Fleet 0.12.0 up to 0.12.16, 0.13.0 up to 0.13.12, 0.14.0 up to 0.14.7 and 0.15.0 up to 0.15.3 could be used to traverse outside of the intended directory, causing a de…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 15:12:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44949 · 7 HIGH — Unauthenticated namespace creation and RBAC injection via rancher-webhook FleetWorkspace mutating webhook</title>
-      <link>https://vulnogram.org/CVE-2026-44949</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44949</guid>
-      <description>A Rancher FleetWorkspace admission path allowed side effects to occur in the Rancher webhook handler for versions 0.7.0 up to 0.7.10, 0.8.0 up to 0.8.7, 0.9.0 up to 0.9.6 and 0.10.0 up to 0.10.7. An unauthenticated attacker with network access to the…</description>
-      <category>High</category>
-      <pubDate>Tue, 30 Jun 2026 14:41:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44947 · 6.9 MEDIUM — Stale PSA ClusterRoleBinding Persists After RoleTemplate Downgrade in Rancher</title>
-      <link>https://vulnogram.org/CVE-2026-44947</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44947</guid>
-      <description>A missing clean-up in the legacy Project Role Template Binding (PRTB) reconciler in Rancher versions 2.13.0 up to 2.13.7 and 2.14.0 up to 2.14.3 allowed users to retain unauthorized Pod Security Admission (PSA) permissions after an administrator remo…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 14:21:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44946 · 9.5 CRITICAL 🌩️ — SAML Authentication Replay in Rancher</title>
-      <link>https://vulnogram.org/CVE-2026-44946</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44946</guid>
-      <description>A SAML authentication replay vulnerability in Rancher&apos;s Assertion Consumer Service (ACS) handler did not enforce one-time use of SAML assertion, potentially allowing person in the middle attacks against Rancher, affecting Rancher 2.14.0 before 2.14.3…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 30 Jun 2026 12:14:54 GMT</pubDate>
     </item>
   </channel>
 </rss>
