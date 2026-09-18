@@ -11,7 +11,31 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 18 Sep 2026 12:12:32 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 15:32:51 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-16515 · 4.7 MEDIUM — ICMPv6 error messages sent for multicast-destined packets and non-unique source addresses enable network amplification in Zephyr&apos;s IPv6 stack</title>
+      <link>https://vulnogram.org/CVE-2026-16515</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16515</guid>
+      <description>net_icmpv6_send_error() in subsys/net/ip/icmpv6.c implemented only one of the three RFC 4443 section 2.4 suppression rules (do not answer an ICMPv6 error with an ICMPv6 error). It did not check whether the triggering packet&apos;s source address identifie…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 18 Sep 2026 14:30:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16514 · 4.3 MEDIUM — Out-of-bounds read in gPTP Announce path-trace validation via unvalidated stepsRemoved</title>
+      <link>https://vulnogram.org/CVE-2026-16514</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16514</guid>
+      <description>gptp_mi_qualify_announce() in subsys/net/l2/ethernet/gptp/gptp_mi.c walks the Path Trace TLV of a received IEEE 802.1AS Announce message, comparing each clock identity against the local one. The loop bound was taken solely from the attacker-controlle…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 18 Sep 2026 14:30:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16512 · 3.1 LOW — Out-of-bounds read in the Zephyr gPTP receive path when handling short Ethernet frames</title>
+      <link>https://vulnogram.org/CVE-2026-16512</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16512</guid>
+      <description>gptp_handle_msg() in subsys/net/l2/ethernet/gptp/gptp.c dereferenced the gPTP header returned by GPTP_HDR() and switched on hdr-&gt;message_type without first checking that the received frame carries at least sizeof(struct gptp_hdr) (34) bytes of payloa…</description>
+      <category>Low</category>
+      <pubDate>Fri, 18 Sep 2026 14:30:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-14986 · 6.8 MEDIUM — Out-of-bounds write in it51xxx I2C target FIFO ISR on oversized write transaction</title>
       <link>https://vulnogram.org/CVE-2026-14986</link>
@@ -387,30 +411,6 @@
       <description>The userspace syscall verifiers z_vrfy_zsock_sendmsg() and z_vrfy_zsock_recvmsg() in subsys/net/lib/sockets/sockets.c snapshot the caller-supplied struct net_msghdr into a kernel-side copy with k_usermode_from_copy(), but then re-read the still-live…</description>
       <category>High</category>
       <pubDate>Wed, 12 Aug 2026 04:39:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12233 · 5.9 MEDIUM — Uninitialized mutex in TLS trusted-credential backend causes kernel NULL-deref DoS under contention</title>
-      <link>https://vulnogram.org/CVE-2026-12233</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12233</guid>
-      <description>The PSA Protected Storage credential backend (subsys/net/lib/tls_credentials/tls_credentials_trusted.c) declared its credential-store mutex as a plain zero-filled static struct k_mutex credential_lock; and never called k_mutex_init() on it. A statica…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 12 Aug 2026 03:54:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12232 · 6.1 MEDIUM — Out-of-bounds read via unvalidated stream_id in Intel ALH DAI get_properties</title>
-      <link>https://vulnogram.org/CVE-2026-12232</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12232</guid>
-      <description>The Intel ALH digital-audio-interface driver function dai_alh_get_properties() in drivers/dai/intel/alh/alh.c used a caller-supplied int stream_id with no range validation. The value indexes the fixed-size static const uint8_t alh_handshake_map[64] a…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 12 Aug 2026 03:34:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12052 · 5.2 MEDIUM — Out-of-bounds write in USB CDC NCM control handler when host wLength is smaller than the response</title>
-      <link>https://vulnogram.org/CVE-2026-12052</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12052</guid>
-      <description>The USB device-side CDC NCM class control-to-host handler usbd_cdc_ncm_cth in subsys/usb/device_next/class/usbd_cdc_ncm.c builds a fixed-size response for the GET_NTB_PARAMETERS (28-byte struct ntb_parameters) and GET_NTB_INPUT_SIZE (8-byte struct nt…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 11 Aug 2026 05:51:40 GMT</pubDate>
     </item>
   </channel>
 </rss>
