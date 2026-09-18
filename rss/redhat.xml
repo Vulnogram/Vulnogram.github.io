@@ -11,7 +11,50 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 18 Sep 2026 15:32:50 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 18:12:41 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-91142 · 3.6 LOW — Cockpit: integer overflow in `do_lastlog()` offset calculation can misaddress `lastlog` entries on ilp32 builds</title>
+      <link>https://vulnogram.org/CVE-2026-91142</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91142</guid>
+      <description>A flaw was found in Cockpit. An integer overflow vulnerability in the `do_lastlog()` function, specifically in the offset calculation for `lastlog` entries on ILP32 (Integer, Long, Pointer 32-bit) builds, can be exploited. A low-privileged authentica…</description>
+      <category>Low</category>
+      <pubDate>Fri, 18 Sep 2026 16:44:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91147 · 5.9 MEDIUM 🌩️ — Cockpit: cockpit: denial of service in `cockpit-ws` due to url-root handling without a trailing slash</title>
+      <link>https://vulnogram.org/CVE-2026-91147</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91147</guid>
+      <description>A flaw was found in `cockpit-ws`. This vulnerability allows a remote, unauthenticated attacker to cause a Denial of Service (DoS) by sending a specially crafted request. When the `WebService.UrlRoot` is configured and a request is made to the exact U…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 16:43:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91149 · 7.5 HIGH 🌩️ — Cockpit: cockpit: denial of service via unbounded connection thread spawning</title>
+      <link>https://vulnogram.org/CVE-2026-91149</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91149</guid>
+      <description>A flaw was found in Cockpit. An unauthenticated remote attacker can exploit this vulnerability by initiating and sustaining numerous simultaneous connections to the `cockpit-tls` service. This forces the service to create an unbounded number of detac…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 16:43:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93579 · 6.5 MEDIUM 🌩️ — Io.netty/netty-codec-http2: netty: http/2 header field values are not validated by default (cr/lf/nul passthrough)</title>
+      <link>https://vulnogram.org/CVE-2026-93579</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93579</guid>
+      <description>A flaw was found in Netty&apos;s HTTP/2 stack. This vulnerability allows a remote attacker to inject prohibited characters, such as NUL, Line Feed, and Carriage Return, into HTTP/2 header field values due to insufficient validation. When these values cros…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 16:38:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75883 · 6.8 MEDIUM — PPPD buffer overflow in PEAP response code</title>
+      <link>https://vulnogram.org/CVE-2026-75883</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75883</guid>
+      <description>The code in pppd that formats a response to a PEAP Request packet in peap_response() copies an entire TLS record of up to 16384 bytes into the fixed global buffer outpacket_buf without checking the available space and without implementing outgoing PE…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 18 Sep 2026 15:29:07 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-93685 · 5.4 MEDIUM — Multicluster-observability-addon: multicluster-observability-addon: possible unauthenticated debug/metrics endpoint via cmdfactory.newcontrollercommandconfig (confirmed exposed by engineering)</title>
       <link>https://vulnogram.org/CVE-2026-93685</link>
@@ -191,7 +234,7 @@
       <title>CVE-2026-93578 · 5.9 MEDIUM 🌩️ — Io.netty/netty-handler-ssl-ocsp: netty: missing extended key usage (eku) check in ocsp client allows certificate revocation bypass</title>
       <link>https://vulnogram.org/CVE-2026-93578</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93578</guid>
-      <description>Missing Extended Key Usage (EKU) check in OCSP Client allows certificate revocation bypass</description>
+      <description>A flaw was found in Netty&apos;s Online Certificate Status Protocol (OCSP) Client. The client fails to verify the &apos;id-kp-OCSPSigning&apos; Extended Key Usage (EKU) in OCSP responder certificates. A remote attacker, holding any valid certificate issued by the s…</description>
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 18 Sep 2026 10:53:59 GMT</pubDate>
@@ -400,48 +443,6 @@
       <description>Keycloak provides a policy enforcer to protect applications by matching incoming web requests against defined security policies. A flaw was found where the enforcer fails to correctly normalize web addresses that contain special encoded characters, s…</description>
       <category>High</category>
       <pubDate>Wed, 16 Sep 2026 14:54:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18212 · 7.5 HIGH 🌩️ — Keycloak-services: keycloak-services: saml redirect deflate helpers leak native zlib state</title>
-      <link>https://vulnogram.org/CVE-2026-18212</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18212</guid>
-      <description>A flaw was found in the SAML Redirect Binding implementation of Keycloak, an open-source identity and access management solution. The issue occurs because the custom DEFLATE compression and decompression helpers fail to release native zlib memory aft…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 16 Sep 2026 14:54:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92091 · 5.9 MEDIUM 🌩️ — Jwcrypto: jwcrypto: denial of service via o(n^2) duplicate check on unbounded jwk key_ops array</title>
-      <link>https://vulnogram.org/CVE-2026-92091</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92091</guid>
-      <description>A flaw was found in jwcrypto. The JWK.import_key() function validates the key_ops JWK member for duplicate values using an algorithm with O(n^2) time complexity, and the length of key_ops is not bounded. A remote, unauthenticated attacker can supply…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 16 Sep 2026 07:34:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92358 · 6.4 MEDIUM — Keycloak-services: keycloak-services: residual cross-browser account-link proof allows silent re-linking</title>
-      <link>https://vulnogram.org/CVE-2026-92358</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92358</guid>
-      <description>A flaw was found in the first broker login flow of Keycloak. When a user confirms an account-linking request from a different browser, a temporary proof is created to validate the link. However, this proof is not properly cleared after the link is es…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 16 Sep 2026 05:50:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11395 · 5.5 MEDIUM — Podman: arbitrary file write when importing oci archive</title>
-      <link>https://vulnogram.org/CVE-2025-11395</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11395</guid>
-      <description>A flaw was found in Podman. If an attacker can pass a crafted tar archive to the `podman load` command, they can create files on the host machine with the privileges of the user running Podman.</description>
-      <category>Medium</category>
-      <pubDate>Tue, 15 Sep 2026 22:59:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92248 · 7.8 HIGH — Gimp: integer overflow when generating a thumbnail preview for a psd file</title>
-      <link>https://vulnogram.org/CVE-2026-92248</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92248</guid>
-      <description>A flaw was found in the file-psd plugin in GIMP. When generating a thumbnail preview for a specially crafted PSD (Photoshop Document) image file, an integer overflow occurs during the multiplication of values from an embedded JPEG header. This leads…</description>
-      <category>High</category>
-      <pubDate>Tue, 15 Sep 2026 22:10:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
