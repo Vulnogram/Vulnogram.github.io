@@ -11,7 +11,104 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 18 Sep 2026 07:02:19 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 12:12:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-93488 · 7.5 HIGH 🌩️ — Io.netty/netty-codec-http: netty: denial of service via unbounded concurrent spdy streams</title>
+      <link>https://vulnogram.org/CVE-2026-93488</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93488</guid>
+      <description>A flaw was found in Netty. SpdySessionHandler accepts an unlimited number of concurrent remote-initiated streams because localConcurrentStreams defaults to Integer.MAX_VALUE and the handler provides no API to change it. A remote peer can open a SPDY…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 11:47:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93563 — Netty: netty-codec-smtp: io.netty/netty-codec-smtp: netty: unbounded multi-line response accumulation in smtpresponsedecoder leads to memory-exhaustion dos</title>
+      <link>https://vulnogram.org/CVE-2026-93563</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93563</guid>
+      <description>Unbounded multi-line response accumulation in SmtpResponseDecoder leads to memory-exhaustion DoS</description>
+      <pubDate>Fri, 18 Sep 2026 10:58:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81627 · 6.7 MEDIUM — Qemu-kvm: vapic writable rom alias can escape the option-rom window and expose locked smram</title>
+      <link>https://vulnogram.org/CVE-2026-81627</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81627</guid>
+      <description>A flaw was found in QEMU. The VAPIC setup hypercall in hw/i386/vapic.c does not validate that the writable RAM alias remains within the option ROM window. A privileged guest user on a Q35/KVM machine can position this alias over locked SMRAM, bypassi…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 18 Sep 2026 10:54:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93578 — Netty: netty-handler-ssl-ocsp: io.netty/netty-handler-ssl-ocsp: netty: missing extended key usage (eku) check in ocsp client allows certificate revocation bypass</title>
+      <link>https://vulnogram.org/CVE-2026-93578</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93578</guid>
+      <description>Missing Extended Key Usage (EKU) check in OCSP Client allows certificate revocation bypass</description>
+      <pubDate>Fri, 18 Sep 2026 10:53:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93572 — Netty: netty-codec-redis: io.netty/netty-codec-redis: netty: redisarrayaggregator nested resp headers multiply patched preallocation limits</title>
+      <link>https://vulnogram.org/CVE-2026-93572</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93572</guid>
+      <description>## Summary `RedisArrayAggregator` recently added `maxElements` and `maxNestedArrayDepth` limits to fix public Redis resource-exhaustion advisories. The limits are independent, but the allocator remains eager: every positive nested RESP array header c…</description>
+      <pubDate>Fri, 18 Sep 2026 10:53:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93575 — Netty: netty-codec-mqtt: io.netty/netty-codec-mqtt: netty: resource exhaustion in mqttdecoder</title>
+      <link>https://vulnogram.org/CVE-2026-93575</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93575</guid>
+      <description>### Summary Netty&apos;s fix for CVE-2026-44248 is incomplete. The decoder checks if the MQTT packet&apos;s `Remaining Length` exceeds `maxBytesInMessage`, but fails to validate the `Properties Length` against the `Remaining Length`. An attacker can bypass the…</description>
+      <pubDate>Fri, 18 Sep 2026 10:53:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93561 — Netty: netty-codec-memcache: io.netty/netty-codec-memcache: netty: memcache binary codec signed/unsigned type mismatch causes frame desynchronization and response smuggling</title>
+      <link>https://vulnogram.org/CVE-2026-93561</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93561</guid>
+      <description>Memcache binary codec signed/unsigned type mismatch causes frame desynchronization and response smuggling</description>
+      <pubDate>Fri, 18 Sep 2026 10:02:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87743 · 7.5 HIGH 🌩️ — Quarkus-vertx-http: authorization bypass via path normalization discrepancy in quarkus http security</title>
+      <link>https://vulnogram.org/CVE-2026-87743</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87743</guid>
+      <description>A flaw was found in Quarkus HTTP security. An unauthenticated attacker can exploit a discrepancy in how paths are normalized between the security matcher and HTTP request dispatchers. This allows the attacker to craft a URL that the security matcher…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 09:38:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93493 · 5.9 MEDIUM 🌩️ — Io.netty/netty-handler-ssl-ocsp: netty: ocsp validation silently skipped when a response omits the optional nextupdate field</title>
+      <link>https://vulnogram.org/CVE-2026-93493</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93493</guid>
+      <description>A flaw was found in Netty&apos;s `netty-handler-ssl-ocsp` component. A remote attacker can exploit this vulnerability by providing an Online Certificate Status Protocol (OCSP) response that omits the optional `nextUpdate` field. This omission causes the O…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 08:01:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93494 · 7.5 HIGH 🌩️ — Io.netty/netty-codec-stomp: netty: bytebuf leak in stompsubframedecoder when a frame body is never terminated</title>
+      <link>https://vulnogram.org/CVE-2026-93494</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93494</guid>
+      <description>A flaw was found in Netty&apos;s StompSubframeDecoder component. A remote attacker can exploit this vulnerability by sending a specially crafted STOMP frame body without its terminating null byte. This causes the decoder to allocate a ByteBuf (a buffer fo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 07:39:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89058 · 7.4 HIGH 🌩️ — Resteasy-core: resteasy: corsfilter reflects arbitrary origin with credentials under wildcard config</title>
+      <link>https://vulnogram.org/CVE-2026-89058</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89058</guid>
+      <description>A flaw was found in RESTEasy&apos;s CorsFilter, which, when configured to allow all origins (&quot;*&quot;), reflects the request&apos;s Origin header back in the Access-Control-Allow-Origin response together with Access-Control-Allow-Credentials: true. This permissive…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 07:20:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89059 · 7.5 HIGH 🌩️ — Resteasy-core: resteasy: iioimageprovider unbounded image decode (decompression-bomb dos)</title>
+      <link>https://vulnogram.org/CVE-2026-89059</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89059</guid>
+      <description>A flaw was found in RESTEasy&apos;s IIOImageProvider, which decodes attacker-supplied image request bodies without enforcing any limit on the declared image dimensions or pixel count. A remote, unauthenticated attacker can send a small crafted image decla…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 18 Sep 2026 07:13:39 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-90997 · 7.4 HIGH — Keycloak: Replay protection bypass leads to unauthorized access via database driver semantics mismatch</title>
       <link>https://vulnogram.org/CVE-2026-90997</link>
@@ -324,103 +421,6 @@
       <description>A flaw was found in `multipathd`. A local attacker with access to the `multipathd` UNIX control socket can exploit this vulnerability by sending valid commands and then ceasing to read replies. This action can cause the `multipathd` listener thread t…</description>
       <category>Medium</category>
       <pubDate>Fri, 11 Sep 2026 18:42:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18495 · 6.1 MEDIUM — Libtiff: libtiff: heap-buffer overflow via numeric truncation in the jpeg raw passthrough</title>
-      <link>https://vulnogram.org/CVE-2026-18495</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18495</guid>
-      <description>A flaw was found in libtiff. A heap-buffer overflow vulnerability exists in the `tiff2pdf` utility due to an integer truncation error when processing crafted BigTIFF files. An attacker can provide a specially crafted BigTIFF file, causing a 64-bit `S…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 17:41:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89298 · 4.9 MEDIUM — Keycloak-services: keycloak-services: confidential client secret disclosed to view-clients role via client registration get</title>
-      <link>https://vulnogram.org/CVE-2026-89298</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89298</guid>
-      <description>A flaw was found in the Dynamic Client Registration service of Keycloak, an open-source identity and access management solution. The issue occurs when a user with the view-clients role accesses the client registration endpoint to retrieve client deta…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 13:25:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77159 · 5.5 MEDIUM — Libvirt: unsafe chown in qemutpmemulatorpreparehost() allows arbitrary file ownership change via symlink</title>
-      <link>https://vulnogram.org/CVE-2026-77159</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77159</guid>
-      <description>A symlink-following flaw was found in libvirt&apos;s qemuTPMEmulatorPrepareHost() function. The function uses a path-based chown() on the swtpm logfile without checking for symbolic links. A local attacker with access to the swtpm account can replace the…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 10:32:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89060 · 7.7 HIGH — Stolostron/multicluster-observability-addon: cross-namespace secret disclosure in multicluster-observability-addon via unvalidated configuration references</title>
-      <link>https://vulnogram.org/CVE-2026-89060</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89060</guid>
-      <description>A cross-namespace authorization flaw in multicluster-observability-addon allows a user with permission to modify a managed cluster’s ManagedClusterAddOn configuration to reference ClusterLogForwarder or OpenTelemetryCollector resources outside the pe…</description>
-      <category>High</category>
-      <pubDate>Fri, 11 Sep 2026 04:22:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88914 · 4.4 MEDIUM — Gstreamer1-plugins-good: gstreamer: integer overflow and out-of-bounds read in qtdemux cea-608 closed-caption parser</title>
-      <link>https://vulnogram.org/CVE-2026-88914</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88914</guid>
-      <description>A flaw was found in GStreamer&apos;s gst-plugins-good isomp4 plugin. When processing a specially crafted MP4 or MOV file containing CEA-608 closed-caption data, an integer overflow in 32-bit unsigned arithmetic can bypass a bounds check in the caption par…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 01:48:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88924 · 7 HIGH — Gvfs: gvfs-admin socket ownership race permits local root</title>
-      <link>https://vulnogram.org/CVE-2026-88924</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88924</guid>
-      <description>A flaw was found in the admin backend of gvfs. The privileged gvfsd-admin daemon changes the ownership of newly created private D-Bus sockets by calling the link-following chown() function on a pathname inside a user-controlled directory. A local att…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 14:32:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88859 · 6.3 MEDIUM 🌩️ — Evolution: evolution: javascript execution via spoofed vcard control bypasses mail script-markup restriction</title>
-      <link>https://vulnogram.org/CVE-2026-88859</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88859</guid>
-      <description>A flaw was found in Evolution. A remote attacker can exploit this vulnerability by sending a specially crafted HTML email containing a spoofed vCard control. When a victim clicks on this control, Evolution&apos;s trusted JavaScript handler incorrectly ass…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 11:24:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84828 · 6.5 MEDIUM — Pcs: pcs: non-root haclient users can read arbitrary files via pcs host auth --token</title>
-      <link>https://vulnogram.org/CVE-2026-84828</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84828</guid>
-      <description>A flaw was found in PCS (Pacemaker Configuration System). A local attacker with membership in the &apos;haclient&apos; group can exploit the &apos;pcs host auth --token&apos; command to read the contents of arbitrary files on the filesystem, provided the files are short…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 10 Sep 2026 11:20:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88265 · 5.6 MEDIUM — Crun: crun: /dev/null symlink follow during stdio reopen allows host bind-mount write and chown</title>
-      <link>https://vulnogram.org/CVE-2026-88265</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88265</guid>
-      <description>A flaw was found in crun. After pivot_root, reopening /dev/null for stdio can follow a symlink and attach a host file to container stdio, then change that file&apos;s ownership. Affected versions are crun 1.29.1 and earlier. Default configurations that mo…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 10 Sep 2026 08:57:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88264 · 5.6 MEDIUM — Crun: crun: /dev/console symlink follow allows root-owned file creation outside the rootfs</title>
-      <link>https://vulnogram.org/CVE-2026-88264</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88264</guid>
-      <description>A flaw was found in crun. When the container configuration does not give /dev a dedicated mount, terminal setup can redirect /dev/console onto an attacker-controlled path, including via the read-only-rootfs bind-mount fallback. Affected versions are…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 10 Sep 2026 08:40:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84042 · 7.8 HIGH — Crun: crun: rootful krun with passt executes container payload as host root</title>
-      <link>https://vulnogram.org/CVE-2026-84042</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84042</guid>
-      <description>A flaw was found in crun. When crun is built with libkrun and a container is started rootful with passt networking (krun.use_passt), crun can execute attacker-controlled payload from the container image with host root privileges. The issue is a regre…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 08:24:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88770 · 6.5 MEDIUM — Keycloak-services: keycloak-services: device authorization grant issues tokens to brute-force-locked accounts</title>
-      <link>https://vulnogram.org/CVE-2026-88770</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88770</guid>
-      <description>A flaw was found in the Device Authorization Grant flow of Keycloak, an identity and access management solution. The issue occurs because the token redemption process fails to check if a user account is currently locked due to brute-force protection.…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 10 Sep 2026 07:18:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
