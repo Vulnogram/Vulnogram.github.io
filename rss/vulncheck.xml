@@ -11,7 +11,66 @@
       <title>VulnCheck — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 19 Sep 2026 11:56:47 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 15:09:43 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-93987 · 4.6 MEDIUM — rclone serve docker Path Traversal via Volume Name</title>
+      <link>https://vulnogram.org/CVE-2026-93987</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93987</guid>
+      <description>rclone versions 1.56.0 through 1.75.0 contain a path traversal vulnerability in the `rclone serve docker` volume plugin. newVolume() in cmd/serve/docker/volume.go computes a volume&apos;s mountpoint as filepath.Join(drv.root, name) from the attacker-suppl…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 19 Sep 2026 11:53:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93986 · 3.1 LOW 🌩️ — rclone before 1.75.1 Path Traversal via Directory Listing Names</title>
+      <link>https://vulnogram.org/CVE-2026-93986</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93986</guid>
+      <description>rclone before 1.75.1 fails to confine names from server and third-party listing responses to the listed directory, allowing path traversal sequences in object names. Attackers can craft special names containing forward slashes and parent directory re…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 19 Sep 2026 11:53:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93985 · 9.9 CRITICAL — OpenPanel js-runtime JavaScript Template Sandbox Escape RCE</title>
+      <link>https://vulnogram.org/CVE-2026-93985</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93985</guid>
+      <description>OpenPanel js-runtime through commit bad75bdd contains a sandbox escape vulnerability in the JavaScript webhook template validator that fails to block computed member access to constructor chains. Attackers with project write access can create webhook…</description>
+      <category>Critical</category>
+      <pubDate>Sat, 19 Sep 2026 11:53:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93984 · 6.9 MEDIUM 🌩️ — OpenPanel API Authentication Bypass via Unverified Client Secret</title>
+      <link>https://vulnogram.org/CVE-2026-93984</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93984</guid>
+      <description>OpenPanel tracking API through commit bad75bddc74d12d36cfb843f4531d3b830a8d994 fails to verify client secret cryptographic hash before authorizing revenue events and bot filtering. Attackers with only a public client ID can supply arbitrary dummy sec…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 19 Sep 2026 11:53:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93983 · 5.3 MEDIUM — OpenPanel SQL Injection via ClickHouse Property Key Filter</title>
+      <link>https://vulnogram.org/CVE-2026-93983</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93983</guid>
+      <description>OpenPanel through commit bad75bdd fails to escape property keys in ClickHouse SQL queries, allowing authenticated users to inject boolean SQL terms. Attackers can supply crafted filter names to bypass project isolation and access metrics from other p…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 19 Sep 2026 11:53:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93982 · 4.8 MEDIUM — OpenPanel MCP Authentication Token in Query Parameter Logged Plaintext</title>
+      <link>https://vulnogram.org/CVE-2026-93982</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93982</guid>
+      <description>OpenPanel through commit bad75bdd writes Model Context Protocol authentication tokens from URL query parameters to plaintext application logs without redaction. Attackers with access to application stdout or centralized logging systems can capture ba…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 19 Sep 2026 11:53:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93981 · 4.7 MEDIUM 🌩️ — hono/jsx before 4.13.7 Cross-Site Scripting via Unescaped Strings</title>
+      <link>https://vulnogram.org/CVE-2026-93981</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93981</guid>
+      <description>hono before 4.13.7 fails to HTML-escape plain strings rendered by hono/jsx as a child or fallback of Suspense, as a string child of ErrorBoundary alongside an asynchronous sibling, as the single child of a Context.Provider, or as the root value passe…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 19 Sep 2026 11:53:34 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-93923 · 8.8 HIGH 🌩️ — SiYuan through 3.8.4 Stored XSS via Heading Style Attribute</title>
       <link>https://vulnogram.org/CVE-2026-93923</link>
@@ -384,66 +443,6 @@
       <description>ClipBucket v5 before 5.5.3-#182 contains a blind SQL injection vulnerability that allows authenticated users to extract arbitrary data from the database by submitting the check_photo parameter as an array to bypass the clean_requests() sanitization f…</description>
       <category>High</category>
       <pubDate>Fri, 18 Sep 2026 14:17:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93606 · 10 CRITICAL 🌩️ — vm2 before 3.12.1 Sandbox Escape via Promise Symbol.species</title>
-      <link>https://vulnogram.org/CVE-2026-93606</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93606</guid>
-      <description>vm2 (npm) versions 3.12.0 and earlier contain a sandbox escape in `VM` and `NodeVM`. When an embedder exposes a host API that returns a host-realm Promise, the bridge&apos;s rejection sanitizer (hostPromiseSanitizeReject / makeSanitizedPromiseCallback / n…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 13:20:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93605 · 10 CRITICAL 🌩️ — vm2 NodeVM before 3.12.1 Remote Code Execution via child_process</title>
-      <link>https://vulnogram.org/CVE-2026-93605</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93605</guid>
-      <description>vm2 NodeVM versions before 3.12.1 contain a sandbox escape vulnerability where the DANGEROUS_BUILTINS denylist omits child_process despite blocking other host-spawning modules. Attackers can require child_process and execute arbitrary commands on the…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 13:20:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93604 · 7.2 HIGH 🌩️ — vm2 3.11.8 Sandbox Escape via crypto.setFips</title>
-      <link>https://vulnogram.org/CVE-2026-93604</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93604</guid>
-      <description>vm2 through 3.12.0 exposes Node.js&apos;s crypto.setFips() function to untrusted guest code when an embedder explicitly allowlists the crypto builtin for a NodeVM (require.builtin: [&apos;crypto&apos;]). The builtin sanitizer (sanitizeCryptoModule in lib/builtin.js…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 13:20:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93603 · 10 CRITICAL 🌩️ — vm2 before 3.12.1 Sandbox Escape RCE via Non-Strict Host Function</title>
-      <link>https://vulnogram.org/CVE-2026-93603</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93603</guid>
-      <description>vm2 through 3.12.0 (fixed in 3.12.1) does not correctly handle a nullish `this` receiver in the apply trap of its bridge (lib/bridge.js): when sandboxed code calls a host-provided non-strict (sloppy-mode) function without a receiver — e.g. `fn()`, a…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 13:20:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93602 · 5.9 MEDIUM — rustls-webpki before 0.103.10 CRL Revocation Check Bypass</title>
-      <link>https://vulnogram.org/CVE-2026-93602</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93602</guid>
-      <description>rustls-webpki versions before 0.103.10 and 0.104.0-alpha.5 contain faulty CRL authority-matching logic that compares only the first distributionPoint against each CRL&apos;s IssuingDistributionPoint, ignoring additional distributionPoints. Attackers with…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 18 Sep 2026 13:20:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93601 · 2.2 LOW — rustls webpki 0.101.0 before 0.103.12 Name Constraint Bypass</title>
-      <link>https://vulnogram.org/CVE-2026-93601</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93601</guid>
-      <description>rustls-webpki (the Rust webpki fork used by rustls) versions &gt;= 0.101.0 and prior to 0.103.12 and 0.104.0-alpha.6 incorrectly accepted permitted-subtree DNS name constraints for certificates asserting a wildcard name. For example, a name constraint o…</description>
-      <category>Low</category>
-      <pubDate>Fri, 18 Sep 2026 13:20:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93600 · 2.2 LOW — rustls webpki Name Constraints URI Validation Bypass</title>
-      <link>https://vulnogram.org/CVE-2026-93600</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93600</guid>
-      <description>rustls-webpki (rustls/webpki) versions 0.101.0 through 0.103.11 and 0.104.0-alpha releases before 0.104.0-alpha.6 ignore X.509 name constraints that apply to URI names, causing such constraints to be accepted rather than enforced. Because name constr…</description>
-      <category>Low</category>
-      <pubDate>Fri, 18 Sep 2026 13:20:10 GMT</pubDate>
     </item>
   </channel>
 </rss>
