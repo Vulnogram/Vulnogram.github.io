@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 21 Sep 2026 20:00:36 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 22:40:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-17054 · 5.3 MEDIUM — Out-of-bounds read and permanent loss of Wi-Fi reception in the ESP-hosted SPI driver&apos;s frame reassembly</title>
+      <link>https://vulnogram.org/CVE-2026-17054</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17054</guid>
+      <description>The Espressif ESP-hosted Wi-Fi driver (drivers/wifi/esp_hosted/) parses frames received over SPI from the ESP co-processor in esp_hosted_event_task(). For control frames it took the 16-bit TLV field data_length straight off the wire and passed it to…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 21 Sep 2026 21:16:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15890 · 5.3 MEDIUM — AEAD nonce reuse in Zephyr secure_storage ITS default nonce provider due to missing thread synchronization</title>
+      <link>https://vulnogram.org/CVE-2026-15890</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15890</guid>
+      <description>The default AEAD nonce provider for the PSA Internal Trusted Storage transform module, secure_storage_its_transform_aead_get_nonce() in subsys/secure_storage/src/its/transform/aead_get.c, stores its nonce counter in unsynchronized function-local stat…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 21 Sep 2026 21:16:04 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-17052 · 7.8 HIGH — Missing user-pointer validation in tgpio_pin_read_ts_ec syscall handler allows arbitrary supervisor-memory write from userspace</title>
       <link>https://vulnogram.org/CVE-2026-17052</link>
@@ -395,22 +411,6 @@
       <description>A use-after-free exists in the Zephyr second-generation work queue (kernel/work.c) in the handling of delayable work timeouts. When a delayable work item&apos;s timeout has been dequeued and its handler work_timeout() is in flight (blocked acquiring the w…</description>
       <category>Medium</category>
       <pubDate>Fri, 14 Aug 2026 17:52:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12364 · 8.4 HIGH — Missing user-space pointer validation in logging syscall z_log_msg_static_create allows kernel memory disclosure and denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-12364</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12364</guid>
-      <description>The user-space system-call verifier z_vrfy_z_log_msg_static_create() in subsys/logging/log_msg.c was a pure pass-through: it forwarded the caller-supplied source, desc, package, and data arguments directly to the kernel-mode implementation z_impl_z_l…</description>
-      <category>High</category>
-      <pubDate>Fri, 14 Aug 2026 17:52:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12363 · 4.2 MEDIUM — Out-of-bounds write in LoRaWAN fragmented transport from a fragment index of 0</title>
-      <link>https://vulnogram.org/CVE-2026-12363</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12363</guid>
-      <description>The LoRaWAN Fragmented Data Block Transport service (subsys/lorawan/services/frag_transport.c) does not validate the fragment counter in a received DATA_FRAGMENT command before forwarding it to the configured decoder. In frag_transport_package_callba…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 14 Aug 2026 17:52:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
