@@ -11,7 +11,42 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 21 Sep 2026 14:52:54 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 20:00:35 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-94301 · 9.8 CRITICAL 🌩️ — Apache MINA: CVE-2026-47065 resolveProxyClass fix missing from 2.0.X and 2.1.X branches (2.0.30 / 2.1.14) ZDRES-232</title>
+      <link>https://vulnogram.org/CVE-2026-94301</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94301</guid>
+      <description>The fix for CVE-2026-47065/ZDRES-232 (&quot;resolveProxyClass Not Overridden - acceptMatchers Filter Bypass via java.lang.reflect.Proxy&quot;), released on 2026-06-02 and announced as &quot;Fully addressed&quot; in MINA 2.2.8, 2.1.13 and 2.0.29, was committed to the 2.2…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 14:35:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86473 · 9.1 CRITICAL 🌩️ — Apache Airflow: Logout ignores a presented Authorization bearer token, leaving it revocable only by expiry</title>
+      <link>https://vulnogram.org/CVE-2026-86473</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86473</guid>
+      <description>Apache Airflow: the Core API logout endpoint revokes only a session token presented as the _token cookie. When a client logs out presenting its credential as an Authorization bearer header instead, the endpoint returns its normal logout response but…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 14:33:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75158 · 4.3 MEDIUM — Apache Airflow: Assets events API returns asset events for every Dag with no per-Dag authorization filter</title>
+      <link>https://vulnogram.org/CVE-2026-75158</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75158</guid>
+      <description>Apache Airflow&apos;s `/assets/events` API returned asset events for every Dag in the deployment, with no filter restricting them to the Dags the caller is authorized to read. Any authenticated user holding asset-read access could therefore enumerate asse…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 21 Sep 2026 14:32:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82355 · 4.2 MEDIUM 🌩️ — Apache Airflow: Session cookie silently overrides explicit Authorization bearer header, enabling session fixation</title>
+      <link>https://vulnogram.org/CVE-2026-82355</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82355</guid>
+      <description>When a request to the Airflow core API carries both a session cookie and an explicit `Authorization: Bearer` token, Airflow resolves the caller from the cookie and ignores the bearer token, inverting the intended precedence of bearer over cookie. The…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 14:32:04 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-91867 · 4.3 MEDIUM 🌩️ — Apache Neethi: Remote policy fetch lacks a total timeout, allowing a slow server to hang the request indefinitely</title>
       <link>https://vulnogram.org/CVE-2026-91867</link>
@@ -404,42 +439,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 13:23:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73370 · 9.8 CRITICAL 🌩️ — Apache Syncope: Cross-Realm boundaries reconciliation bypass</title>
-      <link>https://vulnogram.org/CVE-2026-73370</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73370</guid>
-      <description>Incorrect Authorization vulnerability in Apache Syncope. Delegated administration security checks performed by Reconciliation service&apos;s pull and push, being incomplete, could accept calls by administrator not provided with adequate entitlements. This…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 13:07:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73178 · 7.5 HIGH 🌩️ — Apache Syncope: JWT Access Token takeover</title>
-      <link>https://vulnogram.org/CVE-2026-73178</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73178</guid>
-      <description>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache Syncope. An administrator with adequate entitlements can get access via REST to the list of existing Access Tokens, including their signed JWT body. These values can b…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 13:06:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73470 · 9.8 CRITICAL 🌩️ — Apache Syncope: Delegating users can grant unowned Roles</title>
-      <link>https://vulnogram.org/CVE-2026-73470</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73470</guid>
-      <description>Improper Privilege Management vulnerability in Apache Syncope. Delegations can be created or updated with Roles not owned by the delegating User, or not for the same Realm subtree under the delegation management was granted for. This issue affects Ap…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 12:58:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73579 · 9.8 CRITICAL 🌩️ — Apache Syncope: Non-recursive Any search could skip Realms restrictions</title>
-      <link>https://vulnogram.org/CVE-2026-73579</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73579</guid>
-      <description>Incorrect Authorization vulnerability in Apache Syncope. Any search requests are transformed into SQL, Neo4J or Elasticsearch / Opensearch queries, depending on the actual deployment configuration. An important component of such transformation is the…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 12:56:31 GMT</pubDate>
     </item>
   </channel>
 </rss>

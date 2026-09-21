@@ -11,7 +11,31 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 21 Sep 2026 14:52:54 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 20:00:36 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-17052 · 7.8 HIGH — Missing user-pointer validation in tgpio_pin_read_ts_ec syscall handler allows arbitrary supervisor-memory write from userspace</title>
+      <link>https://vulnogram.org/CVE-2026-17052</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17052</guid>
+      <description>The Time-aware GPIO syscall verification handler z_vrfy_tgpio_pin_read_ts_ec() in drivers/timeaware_gpio/timeaware_gpio_handlers.c validated only the port device object and passed the caller-supplied timestamp and event_count output pointers to the d…</description>
+      <category>High</category>
+      <pubDate>Mon, 21 Sep 2026 18:35:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17051 · 6 MEDIUM — Out-of-bounds write in the Intel SEDI IPM driver from an unvalidated inbound doorbell length</title>
+      <link>https://vulnogram.org/CVE-2026-17051</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17051</guid>
+      <description>The Intel SEDI IPM (inter-processor mailbox) driver in drivers/ipm/ipm_sedi.c handles an inbound message interrupt in ipm_event_dispose(). It read the peer-written doorbell register, extracted the payload length with IPC_HEADER_GET_LENGTH(), and pass…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 21 Sep 2026 16:41:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17050 · 5.7 MEDIUM — Double free of the USB host configuration descriptor when device enumeration fails</title>
+      <link>https://vulnogram.org/CVE-2026-17050</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17050</guid>
+      <description>The experimental USB host stack allocates a per-device configuration-descriptor buffer, udev-&gt;cfg_desc, from the dedicated usb_device_heap in usbh_device_set_configuration() (subsys/usb/host/usbh_device.c). On three failure paths — a failed full-leng…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 21 Sep 2026 16:41:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-16515 · 4.7 MEDIUM — ICMPv6 error messages sent for multicast-destined packets and non-unique source addresses enable network amplification in Zephyr&apos;s IPv6 stack</title>
       <link>https://vulnogram.org/CVE-2026-16515</link>
@@ -387,30 +411,6 @@
       <description>The LoRaWAN Fragmented Data Block Transport service (subsys/lorawan/services/frag_transport.c) does not validate the fragment counter in a received DATA_FRAGMENT command before forwarding it to the configured decoder. In frag_transport_package_callba…</description>
       <category>Medium</category>
       <pubDate>Fri, 14 Aug 2026 17:52:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12236 · 6.5 MEDIUM — Infinite loop (DoS) in Bluetooth GATT client parsing of Read-By-Type responses with zero data length</title>
-      <link>https://vulnogram.org/CVE-2026-12236</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12236</guid>
-      <description>The Bluetooth host GATT client function parse_read_std_char_desc() in subsys/bluetooth/host/gatt.c parses an ATT Read By Type Response received from a remote GATT server during BT_GATT_DISCOVER_STD_CHAR_DESC discovery. The per-entry stride rsp-&gt;len i…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Aug 2026 17:19:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12235 · 6.3 MEDIUM — Out-of-bounds write in Xtensa llext PLT relocation from malformed ELF (CWE-787)</title>
-      <link>https://vulnogram.org/CVE-2026-12235</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12235</guid>
-      <description>The Linkable Loadable Extensions (llext) subsystem mis-handles PLT/RELA relocation entries when linking a relocatable (partially-linked) ELF extension. In llext_link_plt() (subsys/llext/llext_link.c), the relocatable branch (tgt != NULL, the path use…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 12 Aug 2026 04:55:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12234 · 7.8 HIGH — TOCTOU double-fetch in `zsock_sendmsg`/`recvmsg` userspace verifiers allows kernel-heap out-of-bounds write</title>
-      <link>https://vulnogram.org/CVE-2026-12234</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12234</guid>
-      <description>The userspace syscall verifiers z_vrfy_zsock_sendmsg() and z_vrfy_zsock_recvmsg() in subsys/net/lib/sockets/sockets.c snapshot the caller-supplied struct net_msghdr into a kernel-side copy with k_usermode_from_copy(), but then re-read the still-live…</description>
-      <category>High</category>
-      <pubDate>Wed, 12 Aug 2026 04:39:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
