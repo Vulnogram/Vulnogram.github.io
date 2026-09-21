@@ -11,7 +11,76 @@
       <title>Temporal Technologies Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 21 Sep 2026 07:35:37 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 14:52:54 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-89139 · 8.7 HIGH — Temporal Server worker deployment compute provider executes a caller-supplied command on the Worker Service host</title>
+      <link>https://vulnogram.org/CVE-2026-89139</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89139</guid>
+      <description>Temporal Server compiles a Worker Controller Instance module into its Worker Service, and that module registers a compute provider named subprocess whose function is to launch a worker by running a command on the machine hosting the Worker Service. T…</description>
+      <category>High</category>
+      <pubDate>Mon, 21 Sep 2026 11:41:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87858 · 7.2 HIGH — Temporal Server completion callback source header can direct attacker-chosen requests to the internal frontend with administrator authorization</title>
+      <link>https://vulnogram.org/CVE-2026-87858</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87858</guid>
+      <description>Temporal Server decided whether a Workflow completion callback was internal by reading a caller-supplied HTTP header. An authenticated caller holding only write permission in a single namespace could attach a completion callback whose URL host matche…</description>
+      <category>High</category>
+      <pubDate>Mon, 21 Sep 2026 11:39:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65654 · 8.7 HIGH 🌩️ — temporalio/ringpop-go fails to enforce configured label limits on inbound membership gossip</title>
+      <link>https://vulnogram.org/CVE-2026-65654</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65654</guid>
+      <description>github.com/temporalio/ringpop-go enforces configured LabelOptions limits when an application changes the local node&apos;s labels, but affected versions do not apply those limits to label maps received in SWIM membership changes. A network peer that can r…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:38:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65653 · 8.7 HIGH 🌩️ — temporalio/tchannel-go zero-chunk call fragment causes process termination</title>
+      <link>https://vulnogram.org/CVE-2026-65653</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65653</guid>
+      <description>github.com/temporalio/tchannel-go did not reject TChannel call fragments containing checksum metadata but no length-prefixed argument chunks. The fragment reader left its chunk slice empty and then unconditionally selected the first element. A networ…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:36:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65652 · 8.7 HIGH 🌩️ — temporalio/tchannel-go malformed checksum type causes process termination</title>
+      <link>https://vulnogram.org/CVE-2026-65652</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65652</guid>
+      <description>github.com/temporalio/tchannel-go did not validate the one-byte checksum-type field in inbound TChannel call frames. A network peer that can reach a listener can complete the standard initialization handshake and send a call request with an unsupport…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:35:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65651 · 8.7 HIGH 🌩️ — temporalio/sqlparser deeply nested unary expressions can cause a fatal stack overflow during AST traversal</title>
+      <link>https://vulnogram.org/CVE-2026-65651</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65651</guid>
+      <description>temporalio/sqlparser accepts SQL containing deeply nested unary expressions and can return a correspondingly deep abstract syntax tree without enforcing an applicable nesting limit. The library&apos;s String and Walk operations recursively traverse that t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:34:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16651 · 8.7 HIGH 🌩️ — temporalio/sqlparser malformed MySQL version comments can cause a panic</title>
+      <link>https://vulnogram.org/CVE-2026-16651</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16651</guid>
+      <description>temporalio/sqlparser can panic when Parse, ParseStrictDDL, or ParseNext processes a MySQL version comment whose contents are empty or consist only of one to five decimal digits. ExtractMysqlComment does not check the -1 result returned by strings.Ind…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:32:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16652 · 7.1 HIGH — Temporal Server Schedule exclusion search can cause excessive CPU consumption</title>
+      <link>https://vulnogram.org/CVE-2026-16652</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16652</guid>
+      <description>Temporal Server did not bound the work performed while searching for a Schedule&apos;s next action time. An authenticated caller with namespace write permission could create or update a Schedule that combines a fine-grained cadence with an exclusion calen…</description>
+      <category>High</category>
+      <pubDate>Mon, 21 Sep 2026 11:23:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-65655 · 2.3 LOW 🌩️ — Temporal UI Server may set OAuth credential cookies without Secure behind a TLS-terminating reverse proxy</title>
       <link>https://vulnogram.org/CVE-2026-65655</link>

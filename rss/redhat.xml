@@ -11,7 +11,57 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 21 Sep 2026 07:35:36 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 14:52:53 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-94184 · 8.1 HIGH 🌩️ — Fetchmail: fetchmail: stack-based buffer overflow in ntlm authentication (fetchmail-sa-2026-01)</title>
+      <link>https://vulnogram.org/CVE-2026-94184</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94184</guid>
+      <description>A stack-based buffer overflow flaw was found in fetchmail when built with NTLM support. A malicious or compromised mail server advertising NTLM authentication can send a crafted Type 2 challenge that causes fetchmail to write past a fixed stack buffe…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 14:17:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-80110 · 8.1 HIGH — Pki-core: dogtag pki v2 rest acl filter&apos;s reverse-lexicographic tie-break lets a ca agent invoke the admin-only raw profile creation endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-80110</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80110</guid>
+      <description>A flaw was found in pki-core. The v2 REST ACL filter selects a tie-breaking permission for colliding literal and wildcard ACL keys using lexicographic string comparison rather than specificity, causing a wildcard-mapped permission to override a more…</description>
+      <category>High</category>
+      <pubDate>Mon, 21 Sep 2026 14:05:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75939 · 7.4 HIGH 🌩️ — Openshift/oc-mirror: release signature verification: openpgp signatureerror checked before signed body is consumed</title>
+      <link>https://vulnogram.org/CVE-2026-75939</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75939</guid>
+      <description>A flaw was found in openshift/oc-mirror. The tool incorrectly verifies PGP (Pretty Good Privacy) release image signatures by checking for signature errors before the entire signed body is processed, leading to a bypass of the signature verification.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 14:05:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94368 · 7.1 HIGH — Noobaa-core: noobaa-core: presigned put url escalation to copyobject via unsigned x-amz-copy-source header</title>
+      <link>https://vulnogram.org/CVE-2026-94368</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94368</guid>
+      <description>A flaw was found in the signature verification logic of noobaa-core, the core component of the NooBaa Multicloud Object Gateway. The issue occurs when the service processes S3 presigned URLs using Signature Version 4 (SigV4). Due to improper validati…</description>
+      <category>High</category>
+      <pubDate>Mon, 21 Sep 2026 11:45:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92574 · 8.8 HIGH — Cri-o: cri-o checkpoint restore bypasses destination security context</title>
+      <link>https://vulnogram.org/CVE-2026-92574</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92574</guid>
+      <description>A vulnerability in CRI-O checkpoint restore allows a user who can create a pod from a malicious checkpointed container to bypass the destination Kubernetes security context. The restored process may retain credentials, Linux capabilities, no_new_priv…</description>
+      <category>High</category>
+      <pubDate>Mon, 21 Sep 2026 09:49:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15801 · 8 HIGH — Cri-o: cri-o: insufficient validation during container checkpoint restore</title>
+      <link>https://vulnogram.org/CVE-2026-15801</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15801</guid>
+      <description>A vulnerability was found in CRI-O related to the container checkpoint and restore feature. When CRI-O is configured to restore containers from checkpoint archives, insufficient validation of restore metadata may allow a user with sufficient privileg…</description>
+      <category>High</category>
+      <pubDate>Mon, 21 Sep 2026 08:15:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-94218 · 3.1 LOW — Keycloak-services: keycloak-services: 2fa setup enforcement bypass via authentication session restart endpoint</title>
       <link>https://vulnogram.org/CVE-2026-94218</link>
@@ -363,11 +413,11 @@
       <pubDate>Fri, 18 Sep 2026 10:58:35 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-81627 · 6.7 MEDIUM — Qemu-kvm: vapic writable rom alias can escape the option-rom window and expose locked smram</title>
+      <title>CVE-2026-81627 · 8.2 HIGH — Qemu-kvm: vapic writable rom alias can escape the option-rom window and expose locked smram</title>
       <link>https://vulnogram.org/CVE-2026-81627</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81627</guid>
       <description>A flaw was found in QEMU. The VAPIC setup hypercall in hw/i386/vapic.c does not validate that the writable RAM alias remains within the option ROM window. A privileged guest user on a Q35/KVM machine can position this alias over locked SMRAM, bypassi…</description>
-      <category>Medium</category>
+      <category>High</category>
       <pubDate>Fri, 18 Sep 2026 10:54:03 GMT</pubDate>
     </item>
     <item>
@@ -387,60 +437,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 18 Sep 2026 10:53:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93575 · 7.5 HIGH 🌩️ — Io.netty/netty-codec-mqtt: netty: resource exhaustion in mqttdecoder</title>
-      <link>https://vulnogram.org/CVE-2026-93575</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93575</guid>
-      <description>A flaw was found in Netty&apos;s MqttDecoder. An unauthenticated remote attacker can exploit this vulnerability by sending a specially crafted MQTT CONNECT packet. The decoder fails to properly validate the &apos;Properties Length&apos; against the &apos;Remaining Lengt…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 10:53:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93561 · 6.5 MEDIUM 🌩️ — Io.netty/netty-codec-memcache: netty: memcache binary codec signed/unsigned type mismatch causes frame desynchronization and response smuggling</title>
-      <link>https://vulnogram.org/CVE-2026-93561</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93561</guid>
-      <description>A flaw was found in io.netty/netty-codec-memcache. The Memcache binary protocol codec incorrectly reads `keyLength` and `extrasLength` as signed Java types instead of unsigned, as specified by the protocol. A malicious Memcache server can exploit thi…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 10:02:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87743 · 7.5 HIGH 🌩️ — Quarkus-vertx-http: authorization bypass via path normalization discrepancy in quarkus http security</title>
-      <link>https://vulnogram.org/CVE-2026-87743</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87743</guid>
-      <description>A flaw was found in Quarkus HTTP security. An unauthenticated attacker can exploit a discrepancy in how paths are normalized between the security matcher and HTTP request dispatchers. This allows the attacker to craft a URL that the security matcher…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 09:38:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93493 · 5.9 MEDIUM 🌩️ — Io.netty/netty-handler-ssl-ocsp: netty: ocsp validation silently skipped when a response omits the optional nextupdate field</title>
-      <link>https://vulnogram.org/CVE-2026-93493</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93493</guid>
-      <description>A flaw was found in Netty&apos;s `netty-handler-ssl-ocsp` component. A remote attacker can exploit this vulnerability by providing an Online Certificate Status Protocol (OCSP) response that omits the optional `nextUpdate` field. This omission causes the O…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 08:01:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93494 · 7.5 HIGH 🌩️ — Io.netty/netty-codec-stomp: netty: bytebuf leak in stompsubframedecoder when a frame body is never terminated</title>
-      <link>https://vulnogram.org/CVE-2026-93494</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93494</guid>
-      <description>A flaw was found in Netty&apos;s StompSubframeDecoder component. A remote attacker can exploit this vulnerability by sending a specially crafted STOMP frame body without its terminating null byte. This causes the decoder to allocate a ByteBuf (a buffer fo…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 07:39:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89058 · 7.4 HIGH 🌩️ — Resteasy-core: resteasy: corsfilter reflects arbitrary origin with credentials under wildcard config</title>
-      <link>https://vulnogram.org/CVE-2026-89058</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89058</guid>
-      <description>A flaw was found in RESTEasy&apos;s CorsFilter, which, when configured to allow all origins (&quot;*&quot;), reflects the request&apos;s Origin header back in the Access-Control-Allow-Origin response together with Access-Control-Allow-Credentials: true. This permissive…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 07:20:29 GMT</pubDate>
     </item>
   </channel>
 </rss>

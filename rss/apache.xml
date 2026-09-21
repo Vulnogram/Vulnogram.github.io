@@ -11,7 +11,61 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 21 Sep 2026 07:35:36 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 14:52:54 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-91867 · 4.3 MEDIUM 🌩️ — Apache Neethi: Remote policy fetch lacks a total timeout, allowing a slow server to hang the request indefinitely</title>
+      <link>https://vulnogram.org/CVE-2026-91867</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91867</guid>
+      <description>When Neethi fetches a remote policy reference, it only limits the time per read, not the whole transfer, so a server that trickles bytes slowly can keep the fetch alive indefinitely and tie up the calling thread (denial of service). Users are recomme…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:27:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91866 · 7.5 HIGH 🌩️ — Apache Neethi: Crafted policies cause unbounded work during intersection leading to denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-91866</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91866</guid>
+      <description>A specially crafted pair of WS-Policy documents can force Neethi&apos;s policy-intersection to do exponential amounts of work, pinning the CPU for a long time (denial of service). Users are recommended to upgrade to version 3.2.4, which fixes this issue.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:27:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91865 · 7.5 HIGH 🌩️ — Apache Neethi: Crafted policy references cause exponential expansion during normalization leading to denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-91865</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91865</guid>
+      <description>A small WS-Policy document using repeated policy references can force Neethi to re-expand the same references exponentially during normalization, consuming huge amounts of CPU and memory (denial of service). Users are recommended to upgrade to versio…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:26:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91864 · 7.5 HIGH 🌩️ — Apache Neethi: Crafted WS-Policy documents bypass element/attribute limits causing memory exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-91864</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91864</guid>
+      <description>A specially crafted WS-Policy document can pack unlimited content inside a policy assertion, which Neethi copies into memory without counting it against its size limits, exhausting the heap (denial of service). Users are recommended to upgrade to ver…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:26:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91863 · 7.5 HIGH 🌩️ — Apache Neethi: Uncontrolled recursion while parsing crafted WS-Policy documents allows denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-91863</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91863</guid>
+      <description>A specially crafted WS-Policy document with deeply nested policy elements can bypass Neethi&apos;s nesting-depth limit and exhaust the thread stack, crashing the parser (denial of service). Users are recommended to upgrade to version 3.2.4, which fixes th…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 11:25:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-47321 · 7.5 HIGH 🌩️ — Apache MINA: Unbounded Decompression Amplification DoS in Zlib.inflate</title>
+      <link>https://vulnogram.org/CVE-2026-47321</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47321</guid>
+      <description>The CompressionFilter class uses ZLib to deflate and inflate data sent and received. When we inflate incoming data, the filter does not control the resulting size, and create a buffer no matter what. Some compressed data may have a compression ration…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 21 Sep 2026 07:43:24 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-75157 — Apache Airflow: Asset queued-events DELETE endpoints gated on Dag READ instead of Dag EDIT (asset-triggered scheduling suppression)</title>
       <link>https://vulnogram.org/CVE-2026-75157</link>
@@ -386,58 +440,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 14 Sep 2026 12:56:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75015 · 4.9 MEDIUM — Apache Syncope: Nested secrets leak cleartext into audit records readable</title>
-      <link>https://vulnogram.org/CVE-2026-75015</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75015</guid>
-      <description>Insufficiently Protected Credentials vulnerability in Apache Syncope. Audit events, when sent to the configured store, are not sufficiently masked for the sensitive values they might carry on their payloads, thus allowing administrators to access suc…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 12:55:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75030 · 9.8 CRITICAL 🌩️ — Apache Syncope: Incomplete authorization checks for Group members deprovisioning</title>
-      <link>https://vulnogram.org/CVE-2026-75030</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75030</guid>
-      <description>Missing Authorization vulnerability in Apache Syncope. An administrator with task execution entitlements might be able to mass (de)provision group members, regardless of their group-related administration capabilities. This issue affects Apache Synco…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 12:54:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77051 · 9.8 CRITICAL 🌩️ — Apache Syncope: SQL injection via unsanitized entityKey and opEvent in Audit Events search</title>
-      <link>https://vulnogram.org/CVE-2026-77051</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77051</guid>
-      <description>Improper Neutralization of Special Elements used in an SQL Command (&apos;SQL Injection&apos;) vulnerability in Apache Syncope. An administrator with adequate entitlements can achieve execution of arbitrary SQL via stacked queries, leveraging unsanitized entit…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 12:52:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73668 · 9.8 CRITICAL 🌩️ — Apache Syncope: Cross-realm disclosure of confidential ConnId bundles configuration values</title>
-      <link>https://vulnogram.org/CVE-2026-73668</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73668</guid>
-      <description>Incorrect Authorization vulnerability in Apache Syncope. An administrator with adequate entitlements in a given Realm may be able to read via REST the full Connector configuration, confidential properties included, scoped in another Realm and thus be…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 12:51:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77147 · 6.5 MEDIUM — Apache Syncope: Groovy Sandbox escape for empty CommandArgs</title>
-      <link>https://vulnogram.org/CVE-2026-77147</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77147</guid>
-      <description>Improper Control of Generation of Code (&apos;Code Injection&apos;) vulnerability in Apache Syncope. An administrator with adequate entitlements for Implementations can create a malicious Groovy Command class containing untrusted code in their CommandArgs stat…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 12:49:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77181 · 9.8 CRITICAL 🌩️ — Apache Syncope: ClientApp update entitlement not effective</title>
-      <link>https://vulnogram.org/CVE-2026-77181</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77181</guid>
-      <description>Incorrect Authorization vulnerability in Apache Syncope. An administrator with ClientApp&apos;s update entitlement is unable to perform the related operation, while ClientApp&apos;s create entitlement is checked both for create and update operations on ClientA…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 14 Sep 2026 12:48:01 GMT</pubDate>
     </item>
   </channel>
 </rss>
