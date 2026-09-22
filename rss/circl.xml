@@ -11,7 +11,164 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 22 Sep 2026 12:24:49 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 17:36:21 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-95806 · 7.7 HIGH — MISP: PHP phar stream wrapper enables deserialization and code execution via caller-influenced filesystem paths</title>
+      <link>https://vulnogram.org/CVE-2026-95806</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95806</guid>
+      <description>MISP ships with PHP&apos;s phar stream wrapper registered in both its web entry point and its console entry point. The phar stream wrapper causes PHP to treat a phar archive as a directory, which has two security consequences: - any filesystem operation o…</description>
+      <category>High</category>
+      <pubDate>Tue, 22 Sep 2026 15:09:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95805 · 5.3 MEDIUM — MISP ACLComponent: Typo in previewEventAttributes ACL key bypasses intended access restriction</title>
+      <link>https://vulnogram.org/CVE-2026-95805</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95805</guid>
+      <description>A typo in the MISP ACLComponent access control configuration caused the ACL rule for the previewEventAttributes action to reference the permission string &apos;theming_enabled*&apos; (with a trailing asterisk) instead of the correct &apos;theming_enabled&apos;. In the M…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 14:59:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95754 · 6.9 MEDIUM 🌩️ — MISP: Disabled-user check ineffective in pre-authentication TOTP login branch</title>
+      <link>https://vulnogram.org/CVE-2026-95754</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95754</guid>
+      <description>In MISP&apos;s UsersController login() method, the pre-authentication database query used for the TOTP (two-factor authentication) verification branch did not include the User.disabled column in its SELECT fields list. The query selected only User.passwor…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 14:53:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95703 · 5.1 MEDIUM — MISP OrganisationsController File Existence and Image-Type Oracle via Forged Upload tmp_name</title>
+      <link>https://vulnogram.org/CVE-2026-95703</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95703</guid>
+      <description>In MISP, the OrganisationsController::__uploadLogo method processed a caller-supplied tmp_name value with filesystem probes (file_exists, MIME type detection, EXIF reading) before verifying that the value corresponded to a genuine PHP file upload via…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 14:49:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95701 · 5.1 MEDIUM — MISP Path Traversal via Organization Name in Org-Statistics Logo Check</title>
+      <link>https://vulnogram.org/CVE-2026-95701</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95701</guid>
+      <description>In MISP, the __statisticsOrgs method in UsersController.php used the organization name directly as a file-system path component when checking for the existence of an organization logo image. The original code called file_exists() with a path construc…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 14:44:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95698 · 5.3 MEDIUM — MISP Path Traversal in OrgImgHelper findOrgImage via Crafted Organization Name</title>
+      <link>https://vulnogram.org/CVE-2026-95698</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95698</guid>
+      <description>The findOrgImage method in MISP&apos;s OrgImgHelper constructs a filesystem path by concatenating a user-supplied organization identifier with a fixed image directory and a file extension, then calls file_exists() on the resulting path. The organization n…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 14:36:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95697 · 5.3 MEDIUM — MISP: Insufficient Authorization Allows Sharing Group Editors to Overwrite Organization Metadata</title>
+      <link>https://vulnogram.org/CVE-2026-95697</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95697</guid>
+      <description>MISP contains an authorization flaw in the Organisation model&apos;s captureOrg method. When the $force parameter is set to true, the method unconditionally overwrites organization metadata fields without verifying that the invoking user holds sufficient…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 14:31:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95693 · 5.3 MEDIUM — MISP Information Disclosure via Forged Upload Path</title>
+      <link>https://vulnogram.org/CVE-2026-95693</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95693</guid>
+      <description>In MISP, the EventReport::uploadPicture method in processed a caller-supplied tmp_name field by invoking file_exists(), mime_content_type(), and exif_imagetype() on the supplied path before verifying that the value was a genuine PHP upload via is_upl…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 14:22:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95685 · 5.3 MEDIUM — MISP Missing Authorization on replaceSuggestionInReport Event Report Action</title>
+      <link>https://vulnogram.org/CVE-2026-95685</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95685</guid>
+      <description>MISP contains an access control flaw in the EventReports functionality. The replaceSuggestionInReport action, which allows modification of suggestion content within an event report, was incorrectly mapped to the wildcard permission (&apos;*&apos;) in the ACLCo…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 14:13:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95683 · 5.3 MEDIUM — MISP Overmind Event View Discloses Report Content Bypassing Report-Level ACL</title>
+      <link>https://vulnogram.org/CVE-2026-95683</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95683</guid>
+      <description>In MISP, the Overmind event view enriches an event with its most recent attached report for preview purposes. The enrichment logic fetched the report using only the event ID as the lookup condition, without applying the report&apos;s own distribution/ACL…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 14:06:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95682 · 4.8 MEDIUM — MISP Stored Cross-Site Scripting via Unescaped Organization Name in Admin Email View</title>
+      <link>https://vulnogram.org/CVE-2026-95682</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95682</guid>
+      <description>MISP contains a stored cross-site scripting (XSS) vulnerability in the admin email composition screen. The MISP.org organization name setting was interpolated directly into a JavaScript string literal using an unescaped PHP echo: var org = &quot;&lt;?php ech…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 13:56:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95679 · 6.9 MEDIUM 🌩️ — MISP Unauthenticated Blind SSRF via XML Body Processing</title>
+      <link>https://vulnogram.org/CVE-2026-95679</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95679</guid>
+      <description>MISP&apos;s RequestHandlerComponent automatically decodes XML request bodies on all write requests. The underlying Xml::build() library contains a logic error in its readFile guard condition (readFile &amp;&amp; http || https), where PHP operator precedence cause…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 13:50:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95674 · 5.3 MEDIUM — MISP EventsController queryEnrichment allows querying unavailable or legacy modules without validation</title>
+      <link>https://vulnogram.org/CVE-2026-95674</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95674</guid>
+      <description>In MISP, the queryEnrichment method in EventsController.php accepted a module name parameter and iterated over the list of enabled modules to find a match. If the specified module was not present in the enabled modules list, the code silently continu…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 13:44:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95671 · 5.3 MEDIUM — MISP Collections: Missing Authorization Check for Sharing Group on PUT Request in collections/add</title>
+      <link>https://vulnogram.org/CVE-2026-95671</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95671</guid>
+      <description>In MISP, the CollectionsController add() method enforced the sharing-group usability authorization check and element capture only when the HTTP request method was POST. However, the underlying CRUDComponent::add() method persists data on both POST an…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 13:20:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95667 · 6.9 MEDIUM — MISP Installer Log and FIFO Created World-Readable, Exposing Sensitive Credentials</title>
+      <link>https://vulnogram.org/CVE-2026-95667</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95667</guid>
+      <description>The MISP installer scripts (for Debian 12, Debian 13, Ubuntu 24.04, and RHEL 9.4) create a log file at /var/log/misp_install.log and a named pipe (FIFO) at /var/log/misp_install.log.pipe to capture all installer output. The log captures highly sensit…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 13:11:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95665 · 5.1 MEDIUM 🌩️ — MISP Reflected Cross-Site Scripting in Event Export Confirmation Form via Unescaped JSON</title>
+      <link>https://vulnogram.org/CVE-2026-95665</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95665</guid>
+      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the event REST search export confirmation form. The view template app/View/Events/ajax/eventRestSearchExportConfirmationForm.ctp renders a URL-supplied event ID list into a single-…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 13:01:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95661 · 5.1 MEDIUM 🌩️ — MISP Reflected Cross-Site Scripting in Attribute Histogram via Unescaped URL-Supplied Type List</title>
+      <link>https://vulnogram.org/CVE-2026-95661</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95661</guid>
+      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the attribute histogram view. The $selectedTypes variable, which is derived from the URL path segment , was interpolated directly into a JavaScript array literal inside an onClick…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 12:54:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95659 · 4.8 MEDIUM — MISP Reflected XSS via Unvalidated Object Type in AnalystData Overmind Thread</title>
+      <link>https://vulnogram.org/CVE-2026-95659</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95659</guid>
+      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the AnalystDataController::viewForObject action. The method accepted a parent object type parameter from the URL without validation and passed it to the Overmind-themed AnalystData…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 12:40:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95658 · 6.9 MEDIUM 🌩️ — MISP CSRF vulnerability in workflow moduleStatelessExecution allows cross-site execution of workflow modules</title>
+      <link>https://vulnogram.org/CVE-2026-95658</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95658</guid>
+      <description>MISP&apos;s WorkflowsController exposed the moduleStatelessExecution action in the Security component&apos;s unlockedActions list. In CakePHP, listing an action in unlockedActions disables both the CSRF token check and the field hash validation for that action…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 12:31:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-94404 · 7.1 HIGH 🌩️ — MISP CSRF vulnerability allows unauthorized attribute modification</title>
       <link>https://vulnogram.org/CVE-2026-94404</link>
@@ -267,161 +424,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 09 Sep 2026 10:54:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86452 · 8.7 HIGH 🌩️ — MISP Unauthenticated Mail Endpoints Allow Unbounded Storage Consumption and Request Flooding</title>
-      <link>https://vulnogram.org/CVE-2026-86452</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86452</guid>
-      <description>Affected versions of MISP permit unauthenticated or weakly constrained request paths to perform persistent work without adequate input bounds or rate limiting. The users/forgot password-reset endpoint accepted an attacker-controlled email value witho…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 07 Sep 2026 13:03:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86451 · 5.3 MEDIUM — MISP Event Graph Object Reference Lookup Exposes References from Unauthorized Objects</title>
-      <link>https://vulnogram.org/CVE-2026-86451</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86451</guid>
-      <description>Affected versions of MISP allow authenticated users to retrieve object-reference records by UUID through EventGraphTool::get_reference_data() without first checking whether the requester is authorized to view the object the reference belongs to. The…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 07 Sep 2026 12:59:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86441 · 2.3 LOW — MISP Dashboard Organisation Widgets Bypass Organisation-Index Restrictions and Expose Hidden Organisation Data</title>
-      <link>https://vulnogram.org/CVE-2026-86441</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86441</guid>
-      <description>Affected versions of MISP contain inconsistent authorization checks across dashboard widgets that display organisation information. Several organisation-related widgets did not honor Security.hide_organisation_index_from_users. As a result, authentic…</description>
-      <category>Low</category>
-      <pubDate>Mon, 07 Sep 2026 12:39:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86440 · 5.1 MEDIUM — MISP Dashboard Button Widget Allows Stored XSS via Unsafe javascript: and Backslash URLs</title>
-      <link>https://vulnogram.org/CVE-2026-86440</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86440</guid>
-      <description>Affected versions of MISP insufficiently validate URLs used by dashboard widgets, particularly the Button widget. The widget&apos;s URL is stored configuration controlled by a user. The previous renderer considered a URL safe if it appeared relative or if…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 07 Sep 2026 12:35:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86419 · 7 HIGH — MISP Insufficient Outbound URL Validation Allows SSRF and Credential Disclosure via Feed Redirects and TAXII Discovery</title>
-      <link>https://vulnogram.org/CVE-2026-86419</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86419</guid>
-      <description>Affected versions of MISP contain insufficient validation of server-side outbound HTTP destinations in feed retrieval and TAXII discovery functionality. In feed processing, redirects were followed without validating the redirect scheme or destination…</description>
-      <category>High</category>
-      <pubDate>Mon, 07 Sep 2026 12:31:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86418 · 2.3 LOW — MISP Dashboard Organisation Picker Exposes Hidden Organisation Metadata to Unauthorized Users</title>
-      <link>https://vulnogram.org/CVE-2026-86418</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86418</guid>
-      <description>Affected versions of MISP expose organisation metadata through the dashboard organisation picker without applying the same visibility restrictions enforced by the normal organisation index and per-organisation view. The affected endpoint returned fie…</description>
-      <category>Low</category>
-      <pubDate>Mon, 07 Sep 2026 12:22:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86417 · 5.3 MEDIUM — MISP Dashboard Template REST API Exposes Template Owner Email Addresses to Unauthorized Users</title>
-      <link>https://vulnogram.org/CVE-2026-86417</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86417</guid>
-      <description>Affected versions of MISP inconsistently enforced email-address visibility in DashboardsController::listTemplates(). The query always fetched User.email, while redaction happened only inside the non-REST rendering branch. As a result, the same authen…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 07 Sep 2026 12:17:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86408 · 7.1 HIGH — MISP Missing Authorization in Cryptographic Key View Exposes Signing Keys from Protected Events</title>
-      <link>https://vulnogram.org/CVE-2026-86408</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86408</guid>
-      <description>Affected versions of MISP do not enforce parent-event visibility when serving cryptographic keys through CryptographicKeysController::view(). The vulnerable handler queried CryptographicKey directly using the supplied key ID and selected sensitive fi…</description>
-      <category>High</category>
-      <pubDate>Mon, 07 Sep 2026 12:11:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86351 · 5.1 MEDIUM — MISP User Homepage Validation Allows Authenticated Open Redirect via Protocol-Relative URL</title>
-      <link>https://vulnogram.org/CVE-2026-86351</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86351</guid>
-      <description>Affected versions of MISP validate the user-configurable homepage by checking only whether the supplied path begins with /. That check is insufficient because protocol-relative URLs such as //attacker.example also begin with / but resolve to an exter…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 07 Sep 2026 09:59:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86347 · 7.1 HIGH — MISP Missing Authorization on Template File Upload Allows Authenticated Disk Exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-86347</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86347</guid>
-      <description>Affected versions of MISP allow any authenticated user to access TemplatesController::uploadFile() because the ACL entry for templates/uploadFile used the wildcard *. This bypasses the intended role restrictions applied to neighboring template-manage…</description>
-      <category>High</category>
-      <pubDate>Mon, 07 Sep 2026 09:30:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86342 · 5.3 MEDIUM — MISP Freetext Feed Preview Improper Authorization Exposes Restricted Event and Feed Information</title>
-      <link>https://vulnogram.org/CVE-2026-86342</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86342</guid>
-      <description>Affected versions of MISP contain improper authorization checks in the freetext feed preview functionality. The preview performed correlation lookups against attributes from events without applying the requesting user&apos;s ACL, allowing restricted event…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 07 Sep 2026 09:02:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86283 · 7.1 HIGH — MISP UiBeta Collection View Bypasses Event ACL, Exposing Unauthorized Event Data</title>
-      <link>https://vulnogram.org/CVE-2026-86283</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86283</guid>
-      <description>MISP&apos;s UiBeta theme collection view (app/View/Themed/UiBeta/Collections/view.ctp) performed a secondary query of member events by UUID without applying the caller&apos;s access control list (ACL). The CollectionsController::view() action correctly resolve…</description>
-      <category>High</category>
-      <pubDate>Sun, 06 Sep 2026 14:15:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85649 · 7.9 HIGH</title>
-      <link>https://vulnogram.org/CVE-2026-85649</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85649</guid>
-      <description>(Holloway) Chew, Kean Ho&apos;s Actualizer v1.2.0 and earlier contains a fail-open password validation vulnerability in the Alpha user and root user password loops of Shell/debian-minbase-install.sh. The installer invokes mkpasswd to generate yescrypt pas…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Sep 2026 12:59:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85547 · 6.2 MEDIUM 🌩️ — Cross-Site Request Forgery via Attacker-Controlled REST Detection in MISP</title>
-      <link>https://vulnogram.org/CVE-2026-85547</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85547</guid>
-      <description>A cross-site request forgery (CSRF) vulnerability exists in MISP due to form-security and CSRF protections being disabled based on whether an incoming request was identified as a REST request. MISP&apos;s REST detection can be influenced by request proper…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 04 Sep 2026 09:40:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85546 · 8.6 HIGH — MISP Sharing Group Quick-Edit Actions Allow CSRF via State-Changing GET Requests</title>
-      <link>https://vulnogram.org/CVE-2026-85546</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85546</guid>
-      <description>MISP contains a cross-site request forgery (CSRF) vulnerability in the sharing group quick-edit functionality. The addOrg, removeOrg, addServer, and removeServer actions share the __initialiseSGQuickEdit() helper, where the HTTP method validation int…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Sep 2026 09:27:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85538 · 8.3 HIGH — MISP Attribute Deletion Authorization Bypass Allows Users Without Modify Permissions to Delete Attributes</title>
-      <link>https://vulnogram.org/CVE-2026-85538</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85538</guid>
-      <description>An incorrect authorization vulnerability in MISP allowed authenticated users to delete attributes from events despite lacking the required perm_modify or perm_modify_org permissions. The affected attribute deletion paths relied on organization member…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Sep 2026 09:05:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85533 · 7.6 HIGH — MISP Sharing Group Authorization Bypass via Omitted Distribution Parameter</title>
-      <link>https://vulnogram.org/CVE-2026-85533</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85533</guid>
-      <description>An authorization flaw in MISP allowed an authenticated user to submit a sharing_group_id without verifying that the user was authorized to use the referenced Sharing Group. In several attribute and Galaxy Cluster creation and editing workflows, valid…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Sep 2026 08:53:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85242 · 6.9 MEDIUM 🌩️ — Server-Side Request Forgery via Favicon Redirect to Local Network Resources in PlaywrightCapture</title>
-      <link>https://vulnogram.org/CVE-2026-85242</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85242</guid>
-      <description>PlaywrightCapture contains a server-side request forgery (SSRF) vulnerability in its favicon retrieval functionality. When only_global_lookup is enabled, the application validates the initial favicon URL to prevent requests to localhost, loopback, or…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 03 Sep 2026 16:17:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85239 · 7.1 HIGH — MISP Event Template Definition Validation Bypass Allows Persistent Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-85239</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85239</guid>
-      <description>A vulnerability in MISP&apos;s event template handling allowed an authenticated user with permission to create or modify event templates to bypass validation of the template definition field. The EventTemplate::beforeValidate() method only performed seman…</description>
-      <category>High</category>
-      <pubDate>Thu, 03 Sep 2026 15:37:47 GMT</pubDate>
     </item>
   </channel>
 </rss>

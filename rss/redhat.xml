@@ -11,7 +11,41 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 22 Sep 2026 12:24:49 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 17:36:20 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-13087 · 8.8 HIGH — Kernel: heap out-of-bounds write in the linux kernel rpc-over-rdma server reply path...</title>
+      <link>https://vulnogram.org/CVE-2026-13087</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13087</guid>
+      <description>A heap out-of-bounds write vulnerability was found in the Linux kernel&apos;s RPC-over-RDMA server reply path in net/sunrpc/xprtrdma/svc_rdma_sendto.c. When a crafted RPC-over-RDMA client sends a large NFS READ request with an empty Write list and no Repl…</description>
+      <category>High</category>
+      <pubDate>Tue, 22 Sep 2026 16:51:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90462 · 5.4 MEDIUM — Sssd: sssd: fail-open in ldap ppolicy access check allows continued authorization</title>
+      <link>https://vulnogram.org/CVE-2026-90462</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90462</guid>
+      <description>A flaw was found in SSSD. When configured with the LDAP access provider and `ldap_access_order` including `ppolicy` or `lockout`, a fail-open condition in the LDAP ppolicy access check can occur if a user lookup returns zero results. This can incorre…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 22 Sep 2026 15:50:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94640 · 7.5 HIGH 🌩️ — Rpcbind: unbounded memory allocation in rpcbind statistics tracking allows unauthenticated remote denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-94640</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94640</guid>
+      <description>A flaw was found in rpcbind. This vulnerability allows a remote, unauthenticated attacker to cause a Denial of Service (DoS) by sending a large number of unique requests. The rpcbind service records previously unseen RPC (Remote Procedure Call) stati…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 15:39:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95619 · 7.7 HIGH 🌩️ — Gcc: libstdc++ integer overflow in `new` operator</title>
+      <link>https://vulnogram.org/CVE-2026-95619</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95619</guid>
+      <description>A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or appli…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 12:52:02 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-95508 · 7.4 HIGH 🌩️ — Libslirp: libslirp: heap buffer overflow in dhcpv6/tftp response builders on small interface mtu</title>
       <link>https://vulnogram.org/CVE-2026-95508</link>
@@ -20,14 +54,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 22 Sep 2026 08:36:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95511 · 8.2 HIGH — Cups: cups-filters: cups-filters: lpadmin can escalate to root via privileged serial backend (cups2root)</title>
-      <link>https://vulnogram.org/CVE-2026-95511</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95511</guid>
-      <description>A privilege escalation vulnerability was found in CUPS when used with the cups-filters serial backend. A local user who is a member of the lpadmin group can configure a printer that uses a privileged serial backend. The CUPS scheduler does not restri…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 08:35:18 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-95503 · 6.8 MEDIUM — Keycloak-services: keycloak-services: potential kdc spoofing bypass when kerberos password authentication is enabled</title>
@@ -407,33 +433,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 18 Sep 2026 14:13:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93558 · 7.5 HIGH 🌩️ — Io.netty/netty-codec-http: netty: unbounded per-connection queue growth in websocketserverextensionhandler leads to denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-93558</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93558</guid>
-      <description>A flaw was found in Netty&apos;s WebSocketServerExtensionHandler. A remote, unauthenticated attacker can exploit this vulnerability by using HTTP/1.1 pipelining to send requests faster than the application can respond. This leads to an unbounded growth of…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 14:09:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93560 · 7.5 HIGH 🌩️ — Io.netty/netty-codec-stomp: netty: stomp codec content-length long-to-int truncation causes infinite decode loop dos</title>
-      <link>https://vulnogram.org/CVE-2026-93560</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93560</guid>
-      <description>A flaw was found in the Netty STOMP codec. A remote attacker could send a specially crafted STOMP frame with a content-length header exceeding the maximum integer value. This integer truncation vulnerability could lead to an infinite decode loop, cau…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 13:44:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93492 · 5.3 MEDIUM 🌩️ — Io.netty/netty-codec-http2: netty: http/2 hpackencoder dos with large table size</title>
-      <link>https://vulnogram.org/CVE-2026-93492</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93492</guid>
-      <description>A flaw was found in Netty&apos;s HTTP/2 HpackEncoder. A remote attacker can exploit this by sending HTTP/2 SETTINGS frames with a very large MAX_HEADER_TABLE_SIZE. This causes the HpackEncoder to store an excessive number of unique headers, leading to inc…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 12:49:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
