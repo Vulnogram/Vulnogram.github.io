@@ -11,7 +11,50 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 22 Sep 2026 07:09:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 12:24:50 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-87119 · 8.2 HIGH 🌩️ — mpp Tempo subscription key authorization is not bound to the issuing challenge, allowing a captured activation credential to be replayed</title>
+      <link>https://vulnogram.org/CVE-2026-87119</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87119</guid>
+      <description>Authentication Bypass by Capture-replay in ZenHive mpp allows an attacker holding a captured subscription activation credential to charge the payer repeatedly. The payer signs a Tempo KeyAuthorization over the chain id, key type, key id, expiry, limi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 11:16:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89420 · 7.1 HIGH — Session voucher adding no new funds is accepted without a charge in mpp, serving paid resources for free</title>
+      <link>https://vulnogram.org/CVE-2026-89420</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89420</guid>
+      <description>Improper Validation of Specified Quantity in Input in ZenHive mpp allows a client holding an open payment channel to obtain paid resources without being charged. MPP.Session.Actions.accept_voucher/3 in lib/mpp/session/actions.ex treats a voucher whos…</description>
+      <category>High</category>
+      <pubDate>Tue, 22 Sep 2026 11:16:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65634 · 8.2 HIGH 🌩️ — Superlinear CPU denial of service in Erlang/OTP ASN.1 OBJECT IDENTIFIER decoder</title>
+      <link>https://vulnogram.org/CVE-2026-65634</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65634</guid>
+      <description>Inefficient algorithmic complexity in the Erlang/OTP asn1 OBJECT IDENTIFIER decoder allows a remote unauthenticated attacker to cause denial of service by sending a crafted OID during the TLS handshake. The BER OID decoder asn1rtt_ber:dec_subidentifi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 08:49:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68956 · 7.1 HIGH — SSH daemon allocates unbounded idle session channels, bypassing max_channels</title>
+      <link>https://vulnogram.org/CVE-2026-68956</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68956</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in Erlang/OTP ssh allows an authenticated remote attacker to exhaust node memory by repeatedly opening session channels that are never assigned a handler. The &quot;session&quot; clause of ssh_…</description>
+      <category>High</category>
+      <pubDate>Tue, 22 Sep 2026 08:49:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89422 · 9.3 CRITICAL 🌩️ — TLS 1.3 client skips server authentication when ServerHello carries an unsolicited pre_shared_key extension</title>
+      <link>https://vulnogram.org/CVE-2026-89422</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89422</guid>
+      <description>Key Exchange without Entity Authentication vulnerability in Erlang/OTP ssl allows a peer that answers a TLS 1.3 client connection to impersonate the intended server. A pre_shared_key extension in the ServerHello that the client never offered causes t…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 22 Sep 2026 08:49:16 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-82672 · 6.3 MEDIUM 🌩️ — Unvalidated chunk-size line tail in Mint HTTP/1 client enables response smuggling against strict intermediaries on pooled connections</title>
       <link>https://vulnogram.org/CVE-2026-82672</link>
@@ -406,50 +449,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 01 Sep 2026 14:48:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74994 · 6 MEDIUM — inets, httpd: Authentication Bypass via Directory Namespace Collapse in httpd mod_auth</title>
-      <link>https://vulnogram.org/CVE-2026-74994</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74994</guid>
-      <description>The mod_auth module in OTP&apos;s inets httpd server, when configured with dets or mnesia authentication backends and multiple directory configuration blocks, collapses all directory blocks into a single shared user/group namespace. A user added to one pr…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 01 Sep 2026 14:45:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74835 · 8.7 HIGH 🌩️ — inets,httpd: Memory Exhaustion via Unenforced max_body_size During Chunked Body Reception</title>
-      <link>https://vulnogram.org/CVE-2026-74835</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74835</guid>
-      <description>The inets application HTTP server httpd fails to enforce a configured body-size limit on chunked request. This issue affects OTP from OTP 17.0 before OTP 27.3.4.17, from OTP 28.0 before OTP 28.5.0.6, and from OTP 29.0 before OTP 29.0.6, corresponding…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 14:45:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73812 · 8.3 HIGH 🌩️ — inets, httpd: HTTP Request Smuggling via Transfer-Encoding and Content-Length</title>
-      <link>https://vulnogram.org/CVE-2026-73812</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73812</guid>
-      <description>httpd function check_header/3 rejects duplicate Content-Length (per CVE-2026-23941) but never checks for the TE+CL co-presence that RFC 9112 §6.3 identifies as a probable smuggling attempt. handle_body/3 frames by chunked and silently discards Conten…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 14:42:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73276 · 8.3 HIGH 🌩️ — inets, httpd: HTTP Request Smuggling via Whitespace-Before-Colon Header Dropping i</title>
-      <link>https://vulnogram.org/CVE-2026-73276</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73276</guid>
-      <description>Gracefulness code ignored cases that should be rejected, resulting in possible HTTP Request Smuggling opportunities. This issue affects OTP from OTP 22.2 before OTP 27.3.4.17, from OTP 28.0 before OTP 28.5.0.6, and from OTP 29.0 before OTP 29.0.6, co…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 14:41:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66357 · 8.3 HIGH 🌩️ — inets,httpd:HTTP Request Smuggling via obs-fold Header Continuation</title>
-      <link>https://vulnogram.org/CVE-2026-66357</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66357</guid>
-      <description>httpd has never implemented obs-fold (RFC 2616 §2.2 / RFC 7230 §3.2.4 header continuation lines). Every CRLF followed by a non-CRLF octet unconditionally starts a new header. This missing feature became a security concern as the understanding of HTTP…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 14:40:50 GMT</pubDate>
     </item>
   </channel>
 </rss>
