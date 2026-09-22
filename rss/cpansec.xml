@@ -11,7 +11,35 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 21 Sep 2026 23:06:07 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 01:34:41 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-93712 — Dancer2 versions from 2.1.0 before 2.2.0 for Perl serve files from outside public_dir via relative path segments in the File route handler</title>
+      <link>https://vulnogram.org/CVE-2026-93712</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93712</guid>
+      <description>Dancer2 versions from 2.1.0 before 2.2.0 for Perl serve files from outside public_dir via relative path segments in the File route handler. The handler joins the request path onto public_dir without collapsing relative segments, and checks only that…</description>
+      <pubDate>Tue, 22 Sep 2026 00:52:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93711 — Dancer2 versions before 2.2.0 for Perl do not strip CR and LF from response header names in headers_to_array</title>
+      <link>https://vulnogram.org/CVE-2026-93711</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93711</guid>
+      <description>Dancer2 versions before 2.2.0 for Perl do not strip CR and LF from response header names in headers_to_array. The routine removes CR and LF from each header value but not from the name. A name carrying them therefore reaches the PSGI server intact. A…</description>
+      <pubDate>Tue, 22 Sep 2026 00:52:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93710 — Dancer2 versions from 2.0.0 before 2.2.0 for Perl dispatch a route that a dying hook refused when the exception handler halts the response in compile_hooks</title>
+      <link>https://vulnogram.org/CVE-2026-93710</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93710</guid>
+      <description>Dancer2 versions from 2.0.0 before 2.2.0 for Perl dispatch a route that a dying hook refused when the exception handler halts the response in compile_hooks. A hook that dies fires core.app.hook_exception, then calls cleanup unless the failing hook is…</description>
+      <pubDate>Tue, 22 Sep 2026 00:51:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93709 — Dancer2 versions before 2.2.0 for Perl serve a layout as a page when an equivalent spelling of its path misses the guard in the AutoPage handler</title>
+      <link>https://vulnogram.org/CVE-2026-93709</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93709</guid>
+      <description>Dancer2 versions before 2.2.0 for Perl serve a layout as a page when an equivalent spelling of its path misses the guard in the AutoPage handler. The handler compares the request path against the layout directory name as text, while the lookup that f…</description>
+      <pubDate>Tue, 22 Sep 2026 00:50:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-93012 — Email::Sender::Transport::Sendmail versions before 2.602 for Perl allow arbitrary command execution on Windows sending a message whose envelope address reaches the shell in _sendmail_pipe</title>
       <link>https://vulnogram.org/CVE-2026-93012</link>
@@ -411,41 +439,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Sun, 09 Aug 2026 01:21:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-17435 · 2.5 LOW — File::Rotate::Simple versions before 0.4.0 for Perl create the target of dangling symlinks when rotating files</title>
-      <link>https://vulnogram.org/CVE-2026-17435</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17435</guid>
-      <description>File::Rotate::Simple versions before 0.4.0 for Perl create the target of dangling symlinks when rotating files. When the file to be rotated is a symbolic link to a missing file, and the touch option is enabled, then the rotate method assumes that the…</description>
-      <category>Low</category>
-      <pubDate>Fri, 07 Aug 2026 19:03:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19082 · 7.5 HIGH 🌩️ — Imager versions from 0.45_02 before 1.034 for Perl may expose adjacent heap bytes via strlen() over-read from zero-count ASCII EXIF entries in copy_string_tags</title>
-      <link>https://vulnogram.org/CVE-2026-19082</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19082</guid>
-      <description>Imager versions from 0.45_02 before 1.034 for Perl may expose adjacent heap bytes via strlen() over-read from zero-count ASCII EXIF entries in copy_string_tags. copy_string_tags() computes an ASCII EXIF tag&apos;s length as `entry-&gt;size - 1` to strip the…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 07 Aug 2026 17:56:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66902 · 9.8 CRITICAL 🌩️ — Google::Auth versions before 0.06 for Perl run a command named in an external_account credentials JSON via an ungated system call</title>
-      <link>https://vulnogram.org/CVE-2026-66902</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66902</guid>
-      <description>Google::Auth versions before 0.06 for Perl run a command named in an external_account credentials JSON via an ungated system call. The Pluggable subclass reads credential_source.executable.command from the credentials JSON and runs it as `system($com…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 04 Aug 2026 20:49:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66901 · 7.5 HIGH 🌩️ — Google::Auth versions before 0.09 for Perl allow server side request forgery and credential exfiltration via unvalidated URLs taken from the credentials JSON</title>
-      <link>https://vulnogram.org/CVE-2026-66901</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66901</guid>
-      <description>Google::Auth versions before 0.09 for Perl allow server side request forgery and credential exfiltration via unvalidated URLs taken from the credentials JSON. The URLs the library requests are read from the credentials JSON, and their hosts were not…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 04 Aug 2026 20:49:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
