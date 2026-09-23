@@ -11,7 +11,31 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 23 Sep 2026 12:39:19 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 17:49:19 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-19888 · 7.5 HIGH — NULL pointer dereference in SCRAM client-final-message parsing in PgBouncer</title>
+      <link>https://vulnogram.org/CVE-2026-19888</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19888</guid>
+      <description>Missing validation of a mandatory attribute in the SCRAM client-final-message parser in PgBouncer through 1.25.2 allows an unauthenticated remote attacker to crash the process. A malformed message can make the parser report success while leaving a re…</description>
+      <category>High</category>
+      <pubDate>Wed, 23 Sep 2026 16:04:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6669 · 5.9 MEDIUM — Unbounded SCRAM iteration count causes CPU exhaustion in PgBouncer</title>
+      <link>https://vulnogram.org/CVE-2026-6669</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6669</guid>
+      <description>Missing upper bound on the key derivation iteration count accepted during SCRAM authentication to a backend server in PgBouncer through 1.25.2 allows a malicious or compromised PostgreSQL backend to cause uncontrolled CPU consumption in PgBouncer. Th…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 23 Sep 2026 16:04:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6668 · 7.5 HIGH — Integer overflow causes an infinite loop in packet buffer growth in PgBouncer</title>
+      <link>https://vulnogram.org/CVE-2026-6668</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6668</guid>
+      <description>Integer overflow in the packet buffer growth logic in PgBouncer through 1.25.2 allows an unauthenticated remote attacker to cause a denial of service. Sufficiently large input makes the buffer size computation overflow, leaving the growth loop unable…</description>
+      <category>High</category>
+      <pubDate>Wed, 23 Sep 2026 16:04:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-86864 · 8.8 HIGH — pgAdmin 4: Argument and connection-string injection via the database field in the Backup tool</title>
       <link>https://vulnogram.org/CVE-2026-86864</link>
@@ -391,31 +415,6 @@
       <description>HTML injection in pgAdmin 4&apos;s cloud deployment module. The verify_credentials, deploy, regions, and update-server endpoints under /rds/, /azure/, /google/, and the top-level /cloud/ blueprint propagated AWS / Azure / Google SDK exception text — and t…</description>
       <category>Medium</category>
       <pubDate>Thu, 18 Jun 2026 23:37:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12046 · 9.5 CRITICAL 🌩️ — pgAdmin 4: Unauthenticated pickle deserialization in SQL Editor close / update_connection routes enables remote code execution</title>
-      <link>https://vulnogram.org/CVE-2026-12046</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12046</guid>
-      <description>Two state-mutating endpoints in pgAdmin 4&apos;s SQL Editor blueprint -- DELETE /sqleditor/close/&lt;trans_id&gt; and POST /sqleditor/initialize/sqleditor/update_connection/&lt;sgid&gt;/&lt;sid&gt;/&lt;did&gt; -- were the only routes in the module missing the @pga_login_required…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 18 Jun 2026 23:37:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12045 · 9.4 CRITICAL — pgAdmin 4: AI Assistant read-only transaction bypass allows unauthorised writes and remote code execution</title>
-      <link>https://vulnogram.org/CVE-2026-12045</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12045</guid>
-      <description>Read-only transaction bypass in the pgAdmin 4 AI Assistant allows an attacker who can influence database content that the assistant reads to execute arbitrary SQL with the privileges of the pgAdmin user&apos;s database role. The AI Assistant&apos;s execute_sql…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 18 Jun 2026 23:37:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12050 · 5.3 MEDIUM — pgAdmin 4: SQL injection in named restore point endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-12050</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12050</guid>
-      <description>SQL injection in pgAdmin 4&apos;s named restore point endpoint (POST /browser/server/restore_point/{gid}/{sid}). The user-supplied &apos;value&apos; field was interpolated directly into the SQL string with str.format() instead of being passed as a bound parameter,…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 18 Jun 2026 23:37:19 GMT</pubDate>
     </item>
   </channel>
 </rss>

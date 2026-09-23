@@ -11,7 +11,50 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 23 Sep 2026 12:39:18 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 17:49:19 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-88832 · 7.3 HIGH — Busybox: busybox: romfs volume id parsing performs unbounded memcpy into fixed-size label buffer, causing heap overflow</title>
+      <link>https://vulnogram.org/CVE-2026-88832</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88832</guid>
+      <description>BusyBox romfs volume ID parsing uses unbounded strlen on attacker-controlled metadata, causing a heap buffer overflow when processing crafted filesystem images.</description>
+      <category>High</category>
+      <pubDate>Wed, 23 Sep 2026 17:05:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88830 · 7.5 HIGH 🌩️ — Busybox: busybox: tls montgomery reduction allocates bytes instead of digits, causing a pre-auth heap buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-88830</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88830</guid>
+      <description>A unit confusion in BusyBox TLS Montgomery reduction buffer allocation causes a pre-authentication heap buffer overflow when processing a crafted ClientKeyExchange message.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 17:04:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96276 · 9.8 CRITICAL 🌩️ — Flatpak: flatpak: arbitrary write in host context via flatpak build-init</title>
+      <link>https://vulnogram.org/CVE-2026-96276</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96276</guid>
+      <description>If a malicious SDK container declares an extension point with a crafted `directory` path, and a developer runs `flatpak build-init --writable-sdk --sdk-extension` with that SDK, attacker-chosen files could be written outside the working directory, si…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 15:01:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96275 · 8.8 HIGH 🌩️ — Flatpak: flatpak: arbitrary write access as root via extra-data extraction</title>
+      <link>https://vulnogram.org/CVE-2026-96275</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96275</guid>
+      <description>A malicious or compromised Flatpak repository can write attacker-controlled content to arbitrary locations on the host filesystem via extract_extra_data(). On system installs, the write happens as root. Two issues combine: `files/extra` is resolved v…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 15:01:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96512 · 7.8 HIGH — Sudo: sudo: tz environment variable allows bypass of notbefore/notafter time-based authorization</title>
+      <link>https://vulnogram.org/CVE-2026-96512</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96512</guid>
+      <description>A flaw was found in sudo. When sudoers rules use NOTBEFORE or NOTAFTER time-based access restrictions with timestamps that omit the trailing &apos;Z&apos; timezone indicator, the time evaluation relies on the TZ environment variable inherited from the calling…</description>
+      <category>High</category>
+      <pubDate>Wed, 23 Sep 2026 13:22:33 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-96445 · 6.8 MEDIUM — Keycloak-services: keycloak-services: conditional otp skip-header policy evaluated against untrusted proxy headers</title>
       <link>https://vulnogram.org/CVE-2026-96445</link>
@@ -385,50 +428,6 @@
       <description>A flaw was found in EAP&apos;s Elytron. An EAP application whose security domain is backed by an Elytron token-realm with oauth2-introspection would allow parameter substitution due to missing URL encoding.</description>
       <category>Medium</category>
       <pubDate>Fri, 18 Sep 2026 14:29:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93569 · 8.2 HIGH 🌩️ — Io.netty/netty-codec-http2: http/1 absolute-form host mismatch is translated to http/2 :authority, overriding the request-target authority</title>
-      <link>https://vulnogram.org/CVE-2026-93569</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93569</guid>
-      <description>A flaw was found in Netty. A remote unauthenticated attacker can exploit a vulnerability in Netty&apos;s HTTP/1 to HTTP/2 conversion process. When an HTTP/1 request includes both an absolute-form request-target and a conflicting Host header, Netty incorre…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 14:27:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93567 · 7.5 HIGH 🌩️ — Io.netty/netty-codec-http2: http/1 authority-form connect is translated to malformed http/2 connect with host-controlled :authority</title>
-      <link>https://vulnogram.org/CVE-2026-93567</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93567</guid>
-      <description>A flaw was found in Netty&apos;s HTTP/2 codec. When converting HTTP/1 CONNECT requests to HTTP/2, the component incorrectly uses the Host header instead of the CONNECT authority-form request-target for the tunnel authority. A remote attacker can exploit t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 14:23:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93676 · 3.2 LOW — Xdg-dbus-proxy: xdg-dbus-proxy: filtering for broadcast messages bypasses path/interface/member checks</title>
-      <link>https://vulnogram.org/CVE-2026-93676</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93676</guid>
-      <description>xdg-dbus-proxy incorrectly filters D-Bus broadcast messages, bypassing configured path, interface, and member restrictions. This allows a sandboxed Flatpak application to intercept broadcast signals on the D-Bus session bus and AT-SPI bus that should…</description>
-      <category>Low</category>
-      <pubDate>Fri, 18 Sep 2026 14:19:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10832 · 5.9 MEDIUM 🌩️ — Org.wildfly.security/wildfly-elytron-asn1: unbounded memory allocation in wildfly elytron asn.1 derdecoder via crafted der payload</title>
-      <link>https://vulnogram.org/CVE-2026-10832</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10832</guid>
-      <description>A flaw was found in the DERDecoder class within wildfly-elytron-asn1. A remote attacker can exploit this resource exhaustion vulnerability by sending a specially crafted DER (Distinguished Encoding Rules) payload. The decoder attempts to allocate exc…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 14:19:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93566 · 6.5 MEDIUM 🌩️ — Io.netty/netty-codec-http: netty: http request smuggling due to control characters in the chunk-size line</title>
-      <link>https://vulnogram.org/CVE-2026-93566</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93566</guid>
-      <description>A flaw was found in Netty. A remote attacker could exploit this by sending a specially crafted HTTP request that includes control characters within the chunk-size line. This bypasses the intended strict validation, allowing the attacker to inject arb…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 14:19:29 GMT</pubDate>
     </item>
   </channel>
 </rss>

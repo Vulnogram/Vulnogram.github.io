@@ -11,7 +11,162 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 23 Sep 2026 12:39:19 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 17:49:19 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-95848 · 9.3 CRITICAL 🌩️ — Moquette fails open when configured authentication or authorization classes cannot load</title>
+      <link>https://vulnogram.org/CVE-2026-95848</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95848</guid>
+      <description>Moquette is a lightweight Java MQTT broker. Prior to 0.18.1, when a configured authenticator or authorizator class cannot be loaded, Server.initializeAuthenticator and Server.initializeAuthorizatorPolicy treat the failure as though no custom class wa…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 16:29:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95847 · 8.8 HIGH 🌩️ — Moquette client IDs can cause cross-session H2 durable-queue corruption</title>
+      <link>https://vulnogram.org/CVE-2026-95847</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95847</guid>
+      <description>Moquette is a lightweight Java MQTT broker. Prior to 0.18.1, H2PersistentQueue derives a session&apos;s message-map name as queue_ plus the client ID and its metadata-map name as queue_ plus the client ID plus _meta. A durable session whose client ID ends…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 16:29:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95846 · 8.7 HIGH 🌩️ — Moquette publishes Last-Will messages without enforcing write authorization</title>
+      <link>https://vulnogram.org/CVE-2026-95846</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95846</guid>
+      <description>Moquette is a lightweight Java MQTT broker. Prior to 0.18.1, PostOffice.publishWill publishes a client&apos;s Last-Will message without applying the canWrite authorization and reserved-topic checks used for a normal PUBLISH. A client can configure a Will…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 16:29:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95845 · 8.7 HIGH 🌩️ — Moquette unbounded per-session message queues allow memory exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-95845</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95845</guid>
+      <description>Moquette is a lightweight Java MQTT broker. Prior to 0.18.1, the broker does not enforce a maximum length for pending per-session message queues. When a fast publisher sends messages to a slow subscriber whose in-flight window is full, queued message…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 16:29:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95844 · 8.7 HIGH 🌩️ — Moquette deeply nested MQTT topics can cause stack exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-95844</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95844</guid>
+      <description>Moquette is a lightweight Java MQTT broker. Prior to 0.18.1, Moquette does not limit the depth of topic names and topic filters before processing them through recursive CTrie insertion and matching operations. A remote client can publish or subscribe…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 16:29:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95843 · 8.7 HIGH 🌩️ — Moquette malformed shared subscriptions can crash command processing</title>
+      <link>https://vulnogram.org/CVE-2026-95843</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95843</guid>
+      <description>Moquette is a lightweight Java MQTT broker. Prior to 0.18.1, PostOffice.subscribe parses a shared-subscription filter through SharedSubscriptionUtils.extractShareName before validating the complete $share/{shareName}/{topicFilter} structure. A remote…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 16:29:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95842 · 8.7 HIGH 🌩️ — Moquette uncaught MQTT command exceptions can terminate shared session event loops</title>
+      <link>https://vulnogram.org/CVE-2026-95842</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95842</guid>
+      <description>Moquette is a lightweight Java MQTT broker. Prior to 0.18.1, SessionEventLoop.run catches only InterruptedException, and SessionEventLoopGroup does not restart a terminated loop. An MQTT command that raises an uncaught exception can terminate an even…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 16:29:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85724 · 9.6 CRITICAL — Moquette pattern ACL wildcard injection allows cross-tenant authorization bypass</title>
+      <link>https://vulnogram.org/CVE-2026-85724</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85724</guid>
+      <description>Moquette is a lightweight Java MQTT broker. Prior to 0.18.1, when pattern-based ACL rules are configured, AuthorizationsCollector.canDoOperation substitutes client ID and username values directly into rules containing %c or %u and then treats the res…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 23 Sep 2026 16:29:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-55610 · 8.7 HIGH — InvoiceShelf has cross-company user read/update IDOR that enables cross-tenant account takeover</title>
+      <link>https://vulnogram.org/CVE-2026-55610</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55610</guid>
+      <description>InvoiceShelf is an open-source web &amp; mobile app that helps track expenses, payments and create professional invoices and estimates. Prior to version 2.4.1, in InvoiceShelf&apos;s multi-company installations, any user who is an Owner of one company can rea…</description>
+      <category>High</category>
+      <pubDate>Wed, 23 Sep 2026 14:38:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92164 · 6.5 MEDIUM 🌩️ — Streamlink: HTTPSession follows HTTP redirects into file:// URLs, reading local files</title>
+      <link>https://vulnogram.org/CVE-2026-92164</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92164</guid>
+      <description>Streamlink is a CLI utility which pipes video streams from various services into a video player. Prior to 8.6.0, HTTPSession mounts a FileAdapter for the file scheme and inherits redirect handling from requests.Session without rejecting cross-protoco…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 14:32:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73858 · 5.3 MEDIUM 🌩️ — Solspace Freeform: Limited Twig template injection via submitted field values</title>
+      <link>https://vulnogram.org/CVE-2026-73858</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73858</guid>
+      <description>Solspace Freeform plugin for Craft CMS 5.x is a super flexible form-building tool. From 5.0.0 through 5.10.13, submitted values from public Freeform forms can be evaluated by the isolated Twig renderer when rendered into HTML attributes. An unauthent…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 14:30:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88974 · 5.4 MEDIUM — WPGraphQL: Contributor can publish and modify posts without the required capabilities via updatePost</title>
+      <link>https://vulnogram.org/CVE-2026-88974</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88974</guid>
+      <description>WPGraphQL provides a GraphQL API for WordPress sites. Prior to 2.22.2, the updatePost mutation in src/Mutation/PostObjectUpdate.php checks only the collection-level edit_posts capability and the post author, but does not enforce the object-level edit…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 23 Sep 2026 14:11:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63000 · 6.4 MEDIUM 🌩️ — REDAXO: Missing CSRF Protection on Package Update Action Allows Forced Addon Updates</title>
+      <link>https://vulnogram.org/CVE-2026-63000</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63000</guid>
+      <description>REDAXO is a PHP-based content management system. Prior to 5.21.2, rex_api_install_package_update in redaxo/src/addons/install/lib/api/api_package_update.php inherits the false default from rex_api_function::requiresCsrfProtection() instead of requiri…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 14:08:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62998 · 4.3 MEDIUM — REDAXO: Unwhitelisted ORDER BY Column in rex_list Allows Authenticated Column Enumeration</title>
+      <link>https://vulnogram.org/CVE-2026-62998</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62998</guid>
+      <description>REDAXO is a PHP-based content management system. Prior to 5.21.2, rex_list::getSortColumn() in redaxo/src/core/lib/list.php accepts the sort request parameter without checking whether setColumnSortable() registered the requested column. An authentica…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 23 Sep 2026 14:07:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63002 · 4.8 MEDIUM — REDAXO: Stored XSS in Mediapool Sync Page via Unescaped Filesystem Filenames</title>
+      <link>https://vulnogram.org/CVE-2026-63002</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63002</guid>
+      <description>REDAXO is a PHP-based content management system. Prior to 5.21.2, redaxo/src/addons/mediapool/pages/sync.php inserts filenames held in $diffFiles from the media filesystem into the Mediapool Sync page without rex_escape(). An attacker who can place a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 23 Sep 2026 14:05:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63001 · 4.8 MEDIUM — REDAXO: Stored XSS via Unescaped Media Manager Type Name in `mediaIsInUse()`</title>
+      <link>https://vulnogram.org/CVE-2026-63001</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63001</guid>
+      <description>REDAXO is a PHP-based content management system. Prior to 5.21.2, the mediaIsInUse() handler in redaxo/src/addons/media_manager/lib/media_manager.php inserts a Media Manager type name into raw backend warning HTML without escaping it when invoked thr…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 23 Sep 2026 14:03:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-61834 · 4.3 MEDIUM — scim-patch: Mutation of Inherited Built-in Method Objects</title>
+      <link>https://vulnogram.org/CVE-2026-61834</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61834</guid>
+      <description>scim-patch is a library for applying SCIM patch operations. Prior to 0.9.2, navigate() reads inherited properties and assign() uses prototype-chain membership checks while resolving attacker-controlled SCIM PATCH paths. A path or one of the dotted va…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 23 Sep 2026 14:02:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59167 · 10 CRITICAL 🌩️ — SunEditor: Critical XSS vulnerability - sanitizer bypass</title>
+      <link>https://vulnogram.org/CVE-2026-59167</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59167</guid>
+      <description>SunEditor is a lightweight and powerful WYSIWYG editor in vanilla JavaScript with no dependencies. Prior to 2.47.11, the sanitizer in src/lib/core.js does not consistently reject namespaced or custom HTML elements, allowing event-handler attributes t…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 13:52:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-61685 · 7.5 HIGH 🌩️ — ReactPress has SQL injection via dynamic column names in TypeORM query builders</title>
       <link>https://vulnogram.org/CVE-2026-61685</link>
@@ -280,156 +435,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 22 Sep 2026 18:33:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77269 · 6.5 MEDIUM — MCP Atlassian: Path traversal in upload_attachment allows arbitrary file read (incomplete fix for CVE-2026-27825)</title>
-      <link>https://vulnogram.org/CVE-2026-77269</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77269</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, the remediation for CVE-2026-27825 protects download destinations but does not constrain source paths used by attachment uploads. A…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 22 Sep 2026 18:32:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77266 · 6.5 MEDIUM — MCP Atlassian: Path traversal in upload_attachment allows arbitrary file read and exfiltration via MCP tool call</title>
-      <link>https://vulnogram.org/CVE-2026-77266</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77266</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, upload_attachment accepts absolute paths and traversal sequences without constraining the resolved path to the server workspace. An…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 22 Sep 2026 18:30:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77255 · 8.6 HIGH 🌩️ — MCP Atlassian: Arbitrary File Read &amp; Exfiltration (Confused Deputy) in JIRA update_issue</title>
-      <link>https://vulnogram.org/CVE-2026-77255</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77255</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, the Jira update_issue attachments argument is converted into local paths and routed to the attachment upload implementation without…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 18:29:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77262 · 8.6 HIGH 🌩️ — MCP Atlassian: Path Traversal / Arbitrary File Read in confluence_upload_attachment MCP tool (incomplete fix of CVE-2026-27825)</title>
-      <link>https://vulnogram.org/CVE-2026-77262</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77262</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, confluence_upload_attachment accepts an attacker-controlled file_path and does not apply the path restriction added for the earlier…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 18:13:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77254 · 9.1 CRITICAL 🌩️ — MCP Atlassian: Unauthenticated HTTP MCP requests can use globally configured Jira and Confluence credentials</title>
-      <link>https://vulnogram.org/CVE-2026-77254</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77254</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, requests to the HTTP MCP endpoint without a per-user identity are allowed to reach tool handlers, which then use globally configured…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 18:11:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77253 · 7.1 HIGH — MCP Atlassian: Jira and Confluence attachment upload tools can read arbitrary server-local files</title>
-      <link>https://vulnogram.org/CVE-2026-77253</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77253</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, Jira and Confluence attachment upload tools accept arbitrary local filesystem paths and send the selected bytes to Atlassian. In HTT…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 18:10:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77257 · 8.3 HIGH — MCP Atlassian: HTTP upload tools accept arbitrary server-local file paths</title>
-      <link>https://vulnogram.org/CVE-2026-77257</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77257</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, HTTP-exposed Jira and Confluence upload tools pass a caller-provided file_path to local file operations without restricting it to th…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 18:08:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77261 · 7.1 HIGH — MCP Atlassian: SSRF redirect protection missing for basic-auth and OAuth authentication branches</title>
-      <link>https://vulnogram.org/CVE-2026-77261</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77261</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, _make_ssrf_safe_hook is omitted from JiraFetcher and ConfluenceFetcher sessions created through the basic-auth and oauth_pat branche…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 18:06:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77260 · 8.3 HIGH — MCP Atlassian: Arbitrary local file READ via unconstrained file_path in upload_attachment (Confluence + Jira)</title>
-      <link>https://vulnogram.org/CVE-2026-77260</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77260</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, the Confluence and Jira upload_attachment implementations accept an unconstrained file_path and open the referenced server-local fil…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 18:03:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77271 · 8.3 HIGH — MCP Atlassian: Incomplete path traversal fix allows intra-CWD module overwrite and RCE (bypass of CVE-2026-27825)</title>
-      <link>https://vulnogram.org/CVE-2026-77271</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77271</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, validate_safe_path defaults its base directory to os.getcwd(), and affected Confluence attachment call sites omit base_dir, allowing…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 18:00:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77242 · 7.5 HIGH 🌩️ — MCP Atlassian: Incomplete fix for CVE-2026-27826: DNS rebinding bypasses SSRF validation (validated IP not pinned)</title>
-      <link>https://vulnogram.org/CVE-2026-77242</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77242</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, validate_url_for_ssrf checks a hostname&apos;s resolved addresses, but Requests and urllib3 resolve the hostname again when connecting. A…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 17:58:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77243 · 8.8 HIGH — MCP Atlassian: ENABLED_TOOLS / Toolset authorization bypass</title>
-      <link>https://vulnogram.org/CVE-2026-77243</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77243</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, ENABLED_TOOLS and TOOLSETS are applied when tools are listed but are not rechecked when a tools/call request is dispatched. A client…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 17:57:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77251 · 8.3 HIGH — MCP Atlassian: JIRA_PROJECTS_FILTER / CONFLUENCE_SPACES_FILTER allow forbidden-project content exfiltration (one LIVE-proven on Atlassian Cloud)</title>
-      <link>https://vulnogram.org/CVE-2026-77251</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77251</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, Jira search accepts a forbidden project clause because it checks only for the presence of project syntax, Confluence search uses an…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 17:55:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77252 · 6.5 MEDIUM — MCP Atlassian: JIRA_PROJECTS_FILTER and CONFLUENCE_SPACES_FILTER can be bypassed in search tools</title>
-      <link>https://vulnogram.org/CVE-2026-77252</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77252</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, caller-supplied projects_filter and spaces_filter arguments can replace administrator-configured allowlists, and caller-provided pro…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 22 Sep 2026 17:54:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77267 · 8.3 HIGH — mcp-atlassian has an incomplete SSRF remediation</title>
-      <link>https://vulnogram.org/CVE-2026-77267</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77267</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, the X-Atlassian-Jira-Url and X-Atlassian-Confluence-Url headers are processed by _process_authentication_headers and used to constru…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 17:52:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77250 · 6.1 MEDIUM — MCP Atlassian: OAuth fallback token storage writes plaintext access and refresh tokens with group-readable permissions</title>
-      <link>https://vulnogram.org/CVE-2026-77250</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77250</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, OAuthConfig writes a plaintext fallback file containing access and refresh tokens under the user&apos;s .mcp-atlassian directory using pr…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 22 Sep 2026 17:51:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77244 · 10 CRITICAL 🌩️ — [mcp-atlassian] Authentication bypass in HTTP transport: AtlassianOpaqueTokenVerifier accepts any non-empty token</title>
-      <link>https://vulnogram.org/CVE-2026-77244</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77244</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, the HTTP transport accepts requests without a verified user identity and downstream fetcher construction falls back to the operator&apos;…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 17:49:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77265 · 5.9 MEDIUM 🌩️ — MCP Atlassian: SSRF via DNS Rebinding in Header-Based Authentication Flow</title>
-      <link>https://vulnogram.org/CVE-2026-77265</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77265</guid>
-      <description>MCP Atlassian is a Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). Prior to 0.22.0, header-supplied Jira or Confluence URLs are resolved and validated before the HTTP client resolves the hostname again for the connec…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 17:47:58 GMT</pubDate>
     </item>
   </channel>
 </rss>
