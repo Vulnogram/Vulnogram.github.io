@@ -11,7 +11,57 @@
       <title>JFrog — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 23 Sep 2026 07:01:46 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 12:39:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-96456 · 6.3 MEDIUM — Reachy Mini Bluetooth PIN authentication can be bypassed by racing an authenticated device</title>
+      <link>https://vulnogram.org/CVE-2026-96456</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96456</guid>
+      <description>The Reachy Mini Bluetooth service asks a connecting device for a PIN before it will accept commands. The check protects the session but not the caller, so an attacker in Bluetooth range can ride along on someone else&apos;s successful authentication. The…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 23 Sep 2026 10:03:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96455 · 8.8 HIGH — Reachy Mini daemon allows unauthenticated remote code execution through the app installation endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-96455</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96455</guid>
+      <description>The Reachy Mini daemon exposes an HTTP API for managing the robot. Its app installation endpoint, POST /apps/install in src/reachy_mini/daemon/app/routers/apps.py, has no authentication. The handler&apos;s only dependency is Depends(get_app_manager), whic…</description>
+      <category>High</category>
+      <pubDate>Wed, 23 Sep 2026 10:01:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96454 · 8.2 HIGH 🌩️ — Pake grants unrestricted IPC access to every HTTPS origin loaded in generated applications</title>
+      <link>https://vulnogram.org/CVE-2026-96454</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96454</guid>
+      <description>Pake turns a website into a desktop application built on Tauri. Every application it generates inherits two settings from the upstream template, and together they hand native functionality to untrusted web content. The first is in src-tauri/capabilit…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 09:56:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95627 · 7.7 HIGH — Tauri framework v2 Dialog plugin auto-expands the filesystem scope with attacker-controlled recursion</title>
+      <link>https://vulnogram.org/CVE-2026-95627</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95627</guid>
+      <description>When a Tauri application uses the dialog plugin&apos;s file or folder picker, an attacker with JavaScript execution (XSS) can force the scope expansion to be recursive, granting read/write access to an entire directory tree after a single user click on a…</description>
+      <category>High</category>
+      <pubDate>Wed, 23 Sep 2026 09:43:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95626 · 8.3 HIGH 🌩️ — Tauri framework v2 CSP nonce protection bypass via data and blob URI schemes allows an XSS to RCE chains</title>
+      <link>https://vulnogram.org/CVE-2026-95626</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95626</guid>
+      <description>Tauri&apos;s Content Security Policy hardening, which injects a random nonce to restrict script execution, provides zero protection when an application includes data: or blob: in its script-src directive. Per the CSP Level 3 specification, these scheme so…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 23 Sep 2026 09:33:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95625 · 5.9 MEDIUM — Tauri framework v2 missing updater signature version number validation can be exploited into forced downgrade</title>
+      <link>https://vulnogram.org/CVE-2026-95625</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95625</guid>
+      <description>The Tauri updater plugin verifies update binaries using minisign signatures, but the signature covers only the raw binary bytes. The update manifest -- which contains the version number, download URL, and signature -- is fetched over TLS but is never…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 23 Sep 2026 08:51:53 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-95624 · 6.8 MEDIUM 🌩️ — Tauri framework v2 malicious downgrade via allow_downgrades from frontend code</title>
       <link>https://vulnogram.org/CVE-2026-95624</link>
@@ -377,55 +427,6 @@
       <description>An authenticated privilege-escalation vulnerability in JFrog Platform may be exploited under admin-provisioned account conditions. Successful exploitation may grant temporary platform administrator access.</description>
       <category>High</category>
       <pubDate>Mon, 27 Jul 2026 19:33:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65618 · 6.5 MEDIUM — Improper URL validation when handling specific URLs Pub, Terraform and Docker packages might lead to SSRF vulnerability</title>
-      <link>https://vulnogram.org/CVE-2026-65618</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65618</guid>
-      <description>Improper URL validation when handling specific URLs, allows an attacker, under certain conditions, to make unauthorized requests from JFrog Artifactory, potentially exposing internal services and cached response data.</description>
-      <category>Medium</category>
-      <pubDate>Mon, 27 Jul 2026 19:32:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66018 · 6.5 MEDIUM — JFrog Artifactory build environment properties exposure</title>
-      <link>https://vulnogram.org/CVE-2026-66018</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66018</guid>
-      <description>Build readers can access another repository&apos;s environment properties. A caller with read access to an ordinary repository can select a readable repository parameter while retrieving environment properties for a protected build, exposing build environ…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 27 Jul 2026 19:31:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66014 · 8.8 HIGH — Potential authentication bypass leading to privilege escalation in Artifactory</title>
-      <link>https://vulnogram.org/CVE-2026-66014</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66014</guid>
-      <description>JFrog Artifactory contains an authentication handling weakness in internal request processing that, under specific conditions, may allow an attacker to escalate privileges beyond the intended access level.</description>
-      <category>High</category>
-      <pubDate>Mon, 27 Jul 2026 19:29:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65921 · 8.8 HIGH — Potential path traversal leading to unauthorized file writes</title>
-      <link>https://vulnogram.org/CVE-2026-65921</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65921</guid>
-      <description>A path validation weakness in archive extraction/write handling allows entries with traversal sequences to be written outside the intended build artifacts location.</description>
-      <category>High</category>
-      <pubDate>Mon, 27 Jul 2026 19:27:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42017 · 8.8 HIGH — Privilege escalation via JFrog Worker event token exposure</title>
-      <link>https://vulnogram.org/CVE-2026-42017</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42017</guid>
-      <description>An event-handling weakness in JFrog Artifactory could expose privileged authorization material to a lower-privileged user under specific conditions.</description>
-      <category>High</category>
-      <pubDate>Mon, 27 Jul 2026 19:26:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42016 · 8.1 HIGH 💥 — Incorrect authorization validation of user token in JFrog Artifactory allows Privilege Escalation</title>
-      <link>https://vulnogram.org/CVE-2026-42016</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42016</guid>
-      <description>JFrog Artifactory (Self Hosted) versions before 7.133.11 are vulnerable to a privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope.</description>
-      <category>High</category>
-      <category>Known Exploited</category>
-      <pubDate>Mon, 27 Jul 2026 19:20:56 GMT</pubDate>
     </item>
   </channel>
 </rss>
