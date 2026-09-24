@@ -11,7 +11,39 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 24 Sep 2026 12:34:50 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 17:50:28 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-90959 · 8.1 HIGH — Pulpcore: pulpcore: file:// scheme allowlist bypass in content upload file_url field enables arbitrary file read and pulp container registry signing key theft</title>
+      <link>https://vulnogram.org/CVE-2026-90959</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90959</guid>
+      <description>A path traversal vulnerability was found in pulpcore. The content upload API accepts a &apos;file_url&apos; parameter that allows users with file repository privileges to specify a local file URL for Pulp to download and store. A URL scheme validation check us…</description>
+      <category>High</category>
+      <pubDate>Thu, 24 Sep 2026 14:49:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95521 · 7.8 HIGH — Rpm: rpm: shell command injection via macro expansion of source/spec file basenames when installing a source rpm</title>
+      <link>https://vulnogram.org/CVE-2026-95521</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95521</guid>
+      <description>A command injection flaw was found in rpm. Installing or rebuilding a source RPM whose source or spec file basenames contain a %() macro construct causes rpm to execute an attacker-controlled shell command via popen() while relocating the source file…</description>
+      <category>High</category>
+      <pubDate>Thu, 24 Sep 2026 13:26:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95519 · 7.8 HIGH — Rpm: code execution via macro expansion of manifest entries in `rpmgi` (`-q -p` / verify manifest flows)</title>
+      <link>https://vulnogram.org/CVE-2026-95519</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95519</guid>
+      <description>A flaw was found in rpm. An attacker can supply a crafted manifest file that, when processed by a user or automation using `rpm -q -p` or similar manifest-processing flows, leads to arbitrary code execution. This occurs because manifest entries are u…</description>
+      <category>High</category>
+      <pubDate>Thu, 24 Sep 2026 13:26:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94416 · 6.8 MEDIUM — Aap-gateway: aap-gateway: authorization bypass via workload identity token forgery</title>
+      <link>https://vulnogram.org/CVE-2026-94416</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94416</guid>
+      <description>An authorization bypass was found in the Ansible Automation Platform (AAP) gateway. The gateway API allows an authenticated administrator to create a new service key for the Controller service cluster. Because service-key creation is not restricted t…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 24 Sep 2026 12:25:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-97311 · 4.3 MEDIUM — Keycloak-services: keycloak-services: admin rest api role-groups endpoint discloses groups without authorization</title>
       <link>https://vulnogram.org/CVE-2026-97311</link>
@@ -390,39 +422,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 23 Sep 2026 15:01:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96275 · 8.8 HIGH 🌩️ — Flatpak: flatpak: arbitrary write access as root via extra-data extraction</title>
-      <link>https://vulnogram.org/CVE-2026-96275</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96275</guid>
-      <description>A malicious or compromised Flatpak repository can write attacker-controlled content to arbitrary locations on the host filesystem via extract_extra_data(). On system installs, the write happens as root. Two issues combine: `files/extra` is resolved v…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 15:01:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96512 · 7.8 HIGH — Sudo: sudo: tz environment variable allows bypass of notbefore/notafter time-based authorization</title>
-      <link>https://vulnogram.org/CVE-2026-96512</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96512</guid>
-      <description>A flaw was found in sudo. When sudoers rules use NOTBEFORE or NOTAFTER time-based access restrictions with timestamps that omit the trailing &apos;Z&apos; timezone indicator, the time evaluation relies on the TZ environment variable inherited from the calling…</description>
-      <category>High</category>
-      <pubDate>Wed, 23 Sep 2026 13:22:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96445 · 6.8 MEDIUM — Keycloak-services: keycloak-services: conditional otp skip-header policy evaluated against untrusted proxy headers</title>
-      <link>https://vulnogram.org/CVE-2026-96445</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96445</guid>
-      <description>A flaw was found in the Conditional OTP authenticator of Keycloak, an identity and access management solution. The issue occurs when the system evaluates specific HTTP headers to determine if a one-time password (OTP) should be skipped, but fails to…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 11:12:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96446 · 4.2 MEDIUM — Keycloak-services: keycloak-services: par single-use bypass via prompt=none silent authentication path</title>
-      <link>https://vulnogram.org/CVE-2026-96446</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96446</guid>
-      <description>A flaw was found in the Pushed Authorization Request PAR implementation of Keycloak. The issue occurs when the silent authentication path prompt=none is used, which allows the authorization process to skip certain steps if a user is already logged in…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 11:03:50 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,41 @@
       <title>MongoDB, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 24 Sep 2026 12:34:51 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 17:50:28 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-96745 · 6.3 MEDIUM 🌩️ — PHP object injection via unsuppressible __pclass class inference in command monitoring events</title>
+      <link>https://vulnogram.org/CVE-2026-96745</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96745</guid>
+      <description>Deserialization of untrusted data in the command monitoring support of the MongoDB PHP Driver can cause class names embedded in document content to be honored when the driver builds monitoring event objects. When an application registers a command mo…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 24 Sep 2026 15:51:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96746 · 8.3 HIGH 🌩️ — Heap buffer overflow via mid-scan command list growth in client topology monitoring</title>
+      <link>https://vulnogram.org/CVE-2026-96746</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96746</guid>
+      <description>An out-of-bounds write in the connection-monitoring logic of the MongoDB C Driver may allow an unauthenticated party who controls name resolution and the responses of the hosts named in a client&apos;s connection string to write beyond the end of a heap b…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 24 Sep 2026 15:51:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96750 · 7.3 HIGH — Shell script injection via server-supplied database name in Open MongoDB shell</title>
+      <link>https://vulnogram.org/CVE-2026-96750</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96750</guid>
+      <description>MongoDB Compass can interpolate a database name without escaping into the initial input of its embedded MongoDB shell when a user opens the shell from that database&apos;s view. A user with privileges to create databases on a server that a Compass user co…</description>
+      <category>High</category>
+      <pubDate>Thu, 24 Sep 2026 15:51:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96744 · 7.1 HIGH — Unauthorized cache lock takeover via expression injection in lock owner values in MongoDB integration for Laravel</title>
+      <link>https://vulnogram.org/CVE-2026-96744</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96744</guid>
+      <description>Improper neutralization of special elements in data query logic in the cache lock implementation of the MongoDB integration for Laravel can cause a caller-supplied lock owner value to be evaluated as an aggregation expression rather than as a literal…</description>
+      <category>High</category>
+      <pubDate>Thu, 24 Sep 2026 15:51:12 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-93759 · 8.8 HIGH 🌩️ — Server-side JavaScript injection via string query criteria bypassing the strict operator allowlist</title>
       <link>https://vulnogram.org/CVE-2026-93759</link>
@@ -392,38 +426,6 @@
       <description>In MongoDB, insufficient validation of shard key values during document insertion allowed authenticated users to store documents with specially crafted, operator-shaped objects as shard key values in sharded collections. When change stream events for…</description>
       <category>Medium</category>
       <pubDate>Tue, 08 Sep 2026 16:12:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82059 · 6 MEDIUM — Improper Access Restriction of Internal Aggregation Expression in MongoDB Server Leads to Assertion Failure and Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-82059</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82059</guid>
-      <description>An internal aggregation expression in MongoDB Server was incorrectly registered as accessible to any authenticated user rather than being restricted to internal cluster operations. By crafting a malformed index specification within this expression, a…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 08 Sep 2026 16:12:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82058 · 7.1 HIGH — Unhandled Exception in MongoDB Server JSON Schema Validation Error Generation Leads to Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-82058</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82058</guid>
-      <description>A flaw in MongoDB&apos;s JSON Schema validation error generation code allows an authenticated user with readWrite privileges to crash the mongod server. When a BSON document containing an array with a malformed numeric field name fails a $jsonSchema items…</description>
-      <category>High</category>
-      <pubDate>Tue, 08 Sep 2026 16:12:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82057 · 7.1 HIGH — Type Confusion in MongoDB Server WiredTiger Storage Engine via Custom Collection Configuration Leads to Persistent Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-82057</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82057</guid>
-      <description>A security issue was discovered in MongoDB where an authenticated user with readWrite privileges could crash the mongod server process. By specifying a custom WiredTiger storage configuration option with an incompatible value during collection creati…</description>
-      <category>High</category>
-      <pubDate>Tue, 08 Sep 2026 16:12:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82056 · 6 MEDIUM — Race Condition in MongoDB Server Text Index Query Parsing Leads to Heap Use-After-Free and Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-82056</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82056</guid>
-      <description>A race condition in MongoDB server&apos;s text index query parsing can cause a heap use-after-free read when handling upsert retry paths. Under certain concurrent index lifecycle operations, a raw pointer to internal text index metadata may be dereference…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 08 Sep 2026 16:12:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
