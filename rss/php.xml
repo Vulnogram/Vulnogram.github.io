@@ -11,7 +11,101 @@
       <title>PHP Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 25 Sep 2026 19:17:17 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 23:06:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-92842 · 5.9 MEDIUM 🌩️ — OOB read / info leak in convert.* stream filters when line-break-chars contains NUL</title>
+      <link>https://vulnogram.org/CVE-2026-92842</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92842</guid>
+      <description>The convert.base64-encode, convert.quoted-printable-encode and convert.quoted-printable-decode stream filters accept a line-break-chars option whose length is tracked separately from the string itself. The filter constructors duplicate the value with…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 25 Sep 2026 21:11:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91768 · 6.5 MEDIUM — IPv6 ACL bypass in FastCGI listen.allowed_clients due to partial address comparison (memcmp 12 bytes)</title>
+      <link>https://vulnogram.org/CVE-2026-91768</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91768</guid>
+      <description>The IPv6 branch of the FastCGI client access check compares only the first 12 bytes of a 16-byte IPv6 address, so listen.allowed_clients matches on a /96 prefix instead of the exact address. An attacker who can source an address sharing the first 96…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 25 Sep 2026 21:07:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91769 · 4.3 MEDIUM — TLS Hostname Verification Falls Back to CN After SAN Mismatch</title>
+      <link>https://vulnogram.org/CVE-2026-91769</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91769</guid>
+      <description>PHP&apos;s OpenSSL stream peer verification checks the certificate&apos;s subjectAltName entries first and, whenever no entry matches, falls back to the Common Name. RFC 6125 requires the CN to be ignored once the certificate presents any service identity, so…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 25 Sep 2026 20:59:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91767 · 6.5 MEDIUM — Heap-buffer-overflow in php_openssl_matches_wildcard_name on crafted server cert wildcard CN</title>
+      <link>https://vulnogram.org/CVE-2026-91767</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91767</guid>
+      <description>php_openssl_matches_wildcard_name() in ext/openssl/xp_ssl.c underflows the length argument passed to memchr() when a TLS server certificate presents a wildcard name whose literal characters are together longer than the hostname being verified. A mali…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 25 Sep 2026 20:53:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-1218 · 3.4 LOW — Various packet overreads in mysqlnd_writeprotocol.c</title>
+      <link>https://vulnogram.org/CVE-2025-1218</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1218</guid>
+      <description>The mysqlnd wire protocol parser reads fields out of server packets before checking that the packet still holds enough bytes for them. A malicious or compromised MySQL server can send a truncated packet and make the client read past the end of the pa…</description>
+      <category>Low</category>
+      <pubDate>Fri, 25 Sep 2026 20:48:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91766 · 5.9 MEDIUM 🌩️ — Cross-origin credential leak in HTTP stream wrapper redirects</title>
+      <link>https://vulnogram.org/CVE-2026-91766</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91766</guid>
+      <description>When the http:// stream wrapper follows a redirect it forwards the user-supplied Authorization, Cookie and Proxy-Authorization headers unchanged, even when the redirect target is a different host, a different port, or a downgrade from HTTPS to HTTP.…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 25 Sep 2026 20:40:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91765 · 7.5 HIGH 🌩️ — SOAP: Unbounded Recursion in Server-Side cleanup_xml_node</title>
+      <link>https://vulnogram.org/CVE-2026-91765</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91765</guid>
+      <description>cleanup_xml_node() in the SOAP XML parser recurses once per XML nesting level with no depth limit. An unauthenticated attacker can post a SOAP request containing tens of thousands of nested elements to any SoapServer endpoint, exhaust the stack and c…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 25 Sep 2026 20:33:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-14181 · 6.5 MEDIUM 🌩️ — Integer overflow to buffer overflow in soap HTTP parsing</title>
+      <link>https://vulnogram.org/CVE-2025-14181</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-14181</guid>
+      <description>The SOAP HTTP client guards its response buffer growth with a check that relies on signed integer overflow, which is undefined behaviour and is not guaranteed to trigger. When the check is optimised away, a malicious SOAP server can make the client a…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 25 Sep 2026 20:26:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17545 · 6.9 MEDIUM 🌩️ — PHP on Windows: Reserved Device Names Are Not Rejected Before File/Stream I/O which can cause DoS</title>
+      <link>https://vulnogram.org/CVE-2026-17545</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17545</guid>
+      <description>On Windows, PHP&apos;s filesystem and stream APIs do not reject reserved device names such as CON, PRN, AUX, NUL, COM1 to COM9, LPT1 to LPT9, CONIN$ and CONOUT$ when they appear as a component of a path. An attacker-controlled filename therefore reaches C…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 25 Sep 2026 20:18:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-6103 · 4.3 MEDIUM — Phar TAR phar_tar_number() Integer Overflow - Archive Entry Injection</title>
+      <link>https://vulnogram.org/CVE-2026-6103</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6103</guid>
+      <description>phar_tar_number() parses the octal size field of a TAR header into a uint32_t with no overflow check. The field is 11 octal digits wide and holds values up to 0x1FFFFFFFF, so a size above 0xFFFFFFFF silently wraps. The parser then skips the wrong num…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 25 Sep 2026 20:08:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93682 · 5.8 MEDIUM 🌩️ — Out-of-bounds read in the HTTP stream wrapper when following a redirect with an empty Location header</title>
+      <link>https://vulnogram.org/CVE-2026-93682</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93682</guid>
+      <description>When the HTTP stream wrapper follows a redirect and the response carries a Location header with an empty value, the redirect code reads one byte past the end of the heap buffer holding the location. The value of that out-of-bounds byte decides which…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 25 Sep 2026 20:02:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-7260 · 5.4 MEDIUM — Stack overflow in phar with circular symlinks</title>
       <link>https://vulnogram.org/CVE-2026-7260</link>
@@ -359,103 +453,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Sun, 09 Jun 2024 18:36:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-5458 · 5.3 MEDIUM 🌩️ — Filter bypass in filter_var (FILTER_VALIDATE_URL)</title>
-      <link>https://vulnogram.org/CVE-2024-5458</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-5458</guid>
-      <description>In PHP versions 8.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, due to a code logic error, filtering functions such as filter_var when validating URLs (FILTER_VALIDATE_URL) for certain types of URLs the function will result in invalid u…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 09 Jun 2024 18:26:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-1874 · 9.4 CRITICAL 🌩️ — Command injection via array-ish $command parameter of proc_open()</title>
-      <link>https://vulnogram.org/CVE-2024-1874</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-1874</guid>
-      <description>In PHP versions 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, when using proc_open() command with array syntax, due to insufficient escaping, if the arguments of the executed command are controlled by a malicious user, the user can su…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Apr 2024 03:57:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-2757 · 7.5 HIGH 🌩️ — PHP mb_encode_mimeheader runs endlessly for some inputs</title>
-      <link>https://vulnogram.org/CVE-2024-2757</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-2757</guid>
-      <description>In PHP 8.3.* before 8.3.5, function mb_encode_mimeheader() runs endlessly for some inputs that contain long strings of non-space characters followed by a space. This could lead to a potential DoS attack if a hostile user sends data to an application…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Apr 2024 03:49:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-3096 · 6.5 MEDIUM 🌩️ — PHP function password_verify can erroneously return true when argument contains NUL</title>
-      <link>https://vulnogram.org/CVE-2024-3096</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-3096</guid>
-      <description>In PHP version 8.1.* before 8.1.28, 8.2.* before 8.2.18, 8.3.* before 8.3.5, if a password stored with password_hash() starts with a null byte (\x00), testing a blank string as the password via password_verify() will incorrectly return true.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Apr 2024 03:42:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-2756 · 6.5 MEDIUM 🌩️ — __Host-/__Secure- cookie bypass due to partial CVE-2022-31629 fix</title>
-      <link>https://vulnogram.org/CVE-2024-2756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-2756</guid>
-      <description>Due to an incomplete fix to CVE-2022-31629 https://github.com/advisories/GHSA-c43m-486j-j32p , network and same-site attackers can set a standard insecure cookie in the victim&apos;s browser which is treated as a __Host- or __Secure- cookie by PHP applica…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 29 Apr 2024 03:34:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-3824 · 9.4 CRITICAL 🌩️ — Buffer overflow and overread in phar_dir_read()</title>
-      <link>https://vulnogram.org/CVE-2023-3824</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-3824</guid>
-      <description>In PHP version 8.0.* before 8.0.30, 8.1.* before 8.1.22, and 8.2.* before 8.2.8, when loading phar file, while reading PHAR directory entries, insufficient length checking may lead to a stack buffer overflow, leading potentially to memory corruption…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 11 Aug 2023 05:48:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-3823 · 8.6 HIGH 🌩️ — Security issue with external entity loading in XML without enabling it</title>
-      <link>https://vulnogram.org/CVE-2023-3823</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-3823</guid>
-      <description>In PHP versions 8.0.* before 8.0.30, 8.1.* before 8.1.22, and 8.2.* before 8.2.8 various XML functions rely on libxml global state to track configuration variables, like whether external entities are loaded. This state is assumed to be unchanged unle…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 11 Aug 2023 05:42:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-3247 · 2.6 LOW — Missing error check and insufficient random bytes in HTTP Digest authentication for SOAP</title>
-      <link>https://vulnogram.org/CVE-2023-3247</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-3247</guid>
-      <description>In PHP versions 8.0.* before 8.0.29, 8.1.* before 8.1.20, 8.2.* before 8.2.7 when using SOAP HTTP Digest Authentication, random value generator was not checked for failure, and was using narrower range of values than it should have. In case of random…</description>
-      <category>Low</category>
-      <pubDate>Sat, 22 Jul 2023 04:17:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-0568 · 7.5 HIGH 🌩️ — Array overrun in common path resolve code</title>
-      <link>https://vulnogram.org/CVE-2023-0568</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-0568</guid>
-      <description>In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, core path resolution function allocate buffer one byte too small. When resolving paths with lengths close to system MAXPATHLEN setting, this may lead to the byte after the alloca…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Feb 2023 06:34:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-0662 · 7.5 HIGH 🌩️ — DoS vulnerability when parsing multipart request body</title>
-      <link>https://vulnogram.org/CVE-2023-0662</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-0662</guid>
-      <description>In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, excessive number of parts in HTTP form upload can cause high resource consumption and excessive number of log entries. This can cause denial of service on the affected server by…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 16 Feb 2023 06:24:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-0567 · 8.1 HIGH — password_verify() always returns true for some invalid hashes</title>
-      <link>https://vulnogram.org/CVE-2023-0567</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-0567</guid>
-      <description>In PHP 8.0.X before 8.0.28, 8.1.X before 8.1.16 and 8.2.X before 8.2.3, password_verify() function may accept some invalid Blowfish hashes as valid. If such invalid hash ever ends up in the password database, it may lead to an application allowing an…</description>
-      <category>High</category>
-      <pubDate>Thu, 16 Feb 2023 06:15:50 GMT</pubDate>
     </item>
   </channel>
 </rss>
