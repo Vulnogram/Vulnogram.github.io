@@ -11,7 +11,33 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 27 Sep 2026 18:56:06 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 21:59:05 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-96281 · 6.2 MEDIUM — Flatpak: flatpak: unprivileged active user can bypass anti-downgrade checks for system apps/runtimes</title>
+      <link>https://vulnogram.org/CVE-2026-96281</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96281</guid>
+      <description>On a multi-user system, a user with an active local login session could downgrade a system-wide Flatpak app to an older version by removing the app&apos;s remote ref via the unprivileged system-helper RemoveLocalRef method, causing the anti-downgrade chec…</description>
+      <category>Medium</category>
+      <pubDate>Sun, 27 Sep 2026 21:00:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96280 · 7.5 HIGH 🌩️ — Flatpak: flatpak: buffer overflow in oci delta stream path names on 32-bit systems</title>
+      <link>https://vulnogram.org/CVE-2026-96280</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96280</guid>
+      <description>The OCI delta stream parser read sizes as guint64 but passed them to GLib I/O and allocation functions expecting gsize (32 bits on 32-bit systems), causing undersized allocations while subsequent operations use the original 64-bit size, leading to he…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 20:19:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96279 · 6.5 MEDIUM 🌩️ — Flatpak: flatpak: path traversal issue in oci archive extraction via hardlinks</title>
+      <link>https://vulnogram.org/CVE-2026-96279</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96279</guid>
+      <description>A malicious OCI registry can hardlink arbitrary host files into the extraction directory when a user installs or updates a Flatpak application from an OCI remote, allowing disclosure of arbitrary host file contents. For system-wide installs running a…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 19:49:17 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-93834 · 8.8 HIGH — Qemu-kvm: 9pfs: use-after-free race in tlcreate/twalk allows vm guest escape</title>
       <link>https://vulnogram.org/CVE-2026-93834</link>
@@ -394,32 +420,6 @@
       <description>BusyBox passwd/group tokenize() references a stale endpoint pointer after trimming, causing an out-of-bounds write of heap pointers.</description>
       <category>Medium</category>
       <pubDate>Wed, 23 Sep 2026 17:45:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88837 · 6.5 MEDIUM 🌩️ — Busybox: busybox: httpd misidentifies yescrypt password hashes as plaintext, inverting authentication</title>
-      <link>https://vulnogram.org/CVE-2026-88837</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88837</guid>
-      <description>BusyBox httpd treats yescrypt ($y$) password hashes as plaintext during Basic Authentication, inverting the authentication check.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 17:45:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88835 · 6.1 MEDIUM — Busybox: busybox: dpkg read_package_field() steps past nul terminator, causing out-of-bounds read on malformed .deb packages</title>
-      <link>https://vulnogram.org/CVE-2026-88835</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88835</guid>
-      <description>BusyBox dpkg read_package_field() steps past a NUL terminator on malformed .deb packages, causing an out-of-bounds heap read.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 17:45:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88831 · 5.3 MEDIUM 🌩️ — Busybox: busybox: httpd silently fails open when ip deny rules contain invalid cidr prefix lengths</title>
-      <link>https://vulnogram.org/CVE-2026-88831</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88831</guid>
-      <description>BusyBox httpd IP deny rules with invalid CIDR prefix lengths fail open, leaving a parsed IP with a zeroed mask so the rule matches no clients.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 17:45:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
