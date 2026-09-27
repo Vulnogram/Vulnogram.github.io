@@ -11,7 +11,102 @@
       <title>wolfSSL Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 27 Sep 2026 08:54:38 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 14:39:17 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-15442 · 2.3 LOW — Heap use-after-free on read during bidirectional (D)TLS shutdown</title>
+      <link>https://vulnogram.org/CVE-2026-15442</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15442</guid>
+      <description>In all builds that make use of (D)TLS, including default builds, there is a series of conditional states during the TLS shutdown which could lead to a heap-use-after free. If an application ended up getting a partial wolfSSL_read() which is sometimes…</description>
+      <category>Low</category>
+      <pubDate>Sun, 27 Sep 2026 09:24:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89102 · 8.3 HIGH 🌩️ — OCSP stapling v2 multi accepts non-CA chain certificates as issuers</title>
+      <link>https://vulnogram.org/CVE-2026-89102</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89102</guid>
+      <description>In wolfSSL versions 5.7.2 through 5.9.2 there is a client-side implementation flaw in RFC 6961, multiple OCSP response stapling, which can lead to certificate forgery. When a wolfSSL client enables OCSP stapling with the HAVE_CERTIFICATE_STATUS_REQUE…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 09:22:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89133 · 6.3 MEDIUM 🌩️ — NameConstraints not enforced across unconstrained intermediate CA</title>
+      <link>https://vulnogram.org/CVE-2026-89133</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89133</guid>
+      <description>wolfSSL versions 5.9.2 and earlier contain a flaw in the X.509 certificate validation logic where it fails to properly enforce NameConstraints extensions when there is an unconstrained CA tier between a name-constrained intermediate CA and the leaf c…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 09:18:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89134 · 6.3 MEDIUM 🌩️ — Subject CN name-constraint check bypassed when non-DNS SAN present</title>
+      <link>https://vulnogram.org/CVE-2026-89134</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89134</guid>
+      <description>A certificate with no dNSName SAN but another SAN type present (e.g. registeredID or iPAddress) bypassed the Subject CN dNSName name-constraint check. The CN-as-DNS fallback was gated on cert-&gt;subjectCN != NULL &amp;&amp; cert-&gt;altNames == NULL &amp;&amp; !cert-&gt;isC…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 09:16:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89135 · 6.3 MEDIUM 🌩️ — Failed X509_verify_cert leaves unverified CA in shared CertManager</title>
+      <link>https://vulnogram.org/CVE-2026-89135</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89135</guid>
+      <description>A failed X509_verify_cert call permanently plants an unverified attacker CA in the shared CertManager, bypassing certificate validation in every type-blind sibling consumer (native TLS, OCSP, CRL, direct CM verify). This affects version 5.8.4 through…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 09:14:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89136 · 8.3 HIGH 🌩️ — Client accepts unsolicited RawPublicKey server certificate type</title>
+      <link>https://vulnogram.org/CVE-2026-89136</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89136</guid>
+      <description>When using RPK (Raw Public Key), the client side of a TLS 1.2, 1.3 and DTLS 1.2 connection could accept an unsolicited server_cert_type=RawPublicKey which allowed a malicious or misbehaving server to bypass authentication. RPK is off by default and o…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 09:12:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93302 · 8.3 HIGH 🌩️ — Trusted peer certificate match ignores public key, allowing forged CA clones</title>
+      <link>https://vulnogram.org/CVE-2026-93302</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93302</guid>
+      <description>MatchTrustedPeer ignores the public key used, leading to forged CA clones passing verification. Affected builds are any that enable the macro WOLFSSL_TRUST_PEER_CERT and load CA certificates with wolfSSL_CTX_trust_peer_cert() or wolfSSL_trust_peer_ce…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 09:07:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93304 · 6.3 MEDIUM 🌩️ — (D)TLS 1.2 client accepts early ChangeCipherSpec before ClientKeyExchange</title>
+      <link>https://vulnogram.org/CVE-2026-93304</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93304</guid>
+      <description>A (D)TLS 1.2 client can accept a ChangeCipherSpec message before it has sent its ClientKeyExchange. No master secret has been derived at that point, so the client installs read keys derived from a known (deterministic) key and checks the server&apos;s Fin…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 09:05:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94417 · 2.3 LOW — CRL check skipped when OCSP enabled and certificate has no OCSP URL</title>
+      <link>https://vulnogram.org/CVE-2026-94417</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94417</guid>
+      <description>When an application enables both OCSP and CRL revocation checking on one WOLFSSL_CTX or certificate manager, wolfSSL skips the CRL check for any peer certificate that carries no Authority Information Access OCSP URL, and accepts a certificate the loa…</description>
+      <category>Low</category>
+      <pubDate>Sun, 27 Sep 2026 09:00:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94418 · 2.3 LOW — Signature failure masked by date error under WOLFSSL_SMALL_CERT_VERIFY</title>
+      <link>https://vulnogram.org/CVE-2026-94418</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94418</guid>
+      <description>Under WOLFSSL_SMALL_CERT_VERIFY, ProcessPeerCertParse() runs the certificate signature check separately from the parse to keep peak memory down, then merges the two results, but it merged the signature result back only when the parse returned 0, so a…</description>
+      <category>Low</category>
+      <pubDate>Sun, 27 Sep 2026 08:58:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94419 · 2.3 LOW — Client session cache reference poisoning allows resumption with wrong server</title>
+      <link>https://vulnogram.org/CVE-2026-94419</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94419</guid>
+      <description>Without NO_SESSION_CACHE_REF, wolfSSL_get_session() does not return a session object but a ClientSession reference of the form {row, index, hash(sessionID)} into the process-global SessionCache, and ClientSessionToSession() validates it against that…</description>
+      <category>Low</category>
+      <pubDate>Sun, 27 Sep 2026 08:54:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-81341 · 6.5 MEDIUM 🌩️ — wolfEngine reuses the AES-CCM nonce on TLS 1.2 / DTLS 1.2 records</title>
       <link>https://vulnogram.org/CVE-2026-81341</link>
@@ -343,98 +438,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 10 Apr 2026 03:10:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5501 · 8.6 HIGH — Improper Certificate Signature Verification in X.509 Chain Validation Allows Forged Leaf Certificates</title>
-      <link>https://vulnogram.org/CVE-2026-5501</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5501</guid>
-      <description>wolfSSL_X509_verify_cert in the OpenSSL compatibility layer accepts a certificate chain in which the leaf&apos;s signature is not checked, if the attacker supplies an untrusted intermediate with Basic Constraints `CA:FALSE` that is legitimately signed by…</description>
-      <category>High</category>
-      <pubDate>Fri, 10 Apr 2026 03:07:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5466 · 7.6 HIGH — wc_VerifyEccsiHash missing sanity check</title>
-      <link>https://vulnogram.org/CVE-2026-5466</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5466</guid>
-      <description>wolfSSL&apos;s ECCSI signature verifier `wc_VerifyEccsiHash` decodes the `r` and `s` scalars from the signature blob via `mp_read_unsigned_bin` with no check that they lie in `[1, q-1]`. A crafted forged signature could verify against any message for any…</description>
-      <category>High</category>
-      <pubDate>Fri, 10 Apr 2026 03:00:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5479 · 7.6 HIGH — wolfSSL EVP ChaCha20-Poly1305 AEAD authentication tag</title>
-      <link>https://vulnogram.org/CVE-2026-5479</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5479</guid>
-      <description>In wolfSSL&apos;s EVP layer, the ChaCha20-Poly1305 AEAD decryption path in wolfSSL_EVP_CipherFinal (and related EVP cipher finalization functions) fails to verify the authentication tag before returning plaintext to the caller. When an application uses th…</description>
-      <category>High</category>
-      <pubDate>Fri, 10 Apr 2026 02:38:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5460 · 6.3 MEDIUM 🌩️ — Heap Use-After-Free in PQC Hybrid KeyShare Error Cleanup in wolfSSL TLS 1.3</title>
-      <link>https://vulnogram.org/CVE-2026-5460</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5460</guid>
-      <description>A heap use-after-free exists in wolfSSL&apos;s TLS 1.3 post-quantum cryptography (PQC) hybrid KeyShare processing. In the error handling path of TLSX_KeyShare_ProcessPqcHybridClient() in src/tls.c, the inner function TLSX_KeyShare_ProcessPqcClient_ex() fr…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 09 Apr 2026 23:29:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5448 · 2.3 LOW — 1-2 Byte Buffer Overflow in wolfSSL_X509_notAfter/notBefore</title>
-      <link>https://vulnogram.org/CVE-2026-5448</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5448</guid>
-      <description>X.509 date buffer overflow in wolfSSL_X509_notAfter / wolfSSL_X509_notBefore. A buffer overflow may occur when parsing date fields from a crafted X.509 certificate via the compatibility layer API. This is only triggered when calling these two APIs di…</description>
-      <category>Low</category>
-      <pubDate>Thu, 09 Apr 2026 23:18:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5392 · 2.3 LOW — wolfSSL heap OOB read in PKCS7 SignedData streaming</title>
-      <link>https://vulnogram.org/CVE-2026-5392</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5392</guid>
-      <description>Heap out-of-bounds read in PKCS7 parsing. A crafted PKCS7 message can trigger an OOB read on the heap. The missing bounds check is in the indefinite-length end-of-content verification loop in PKCS7_VerifySignedData().</description>
-      <category>Low</category>
-      <pubDate>Thu, 09 Apr 2026 23:10:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5393 · 6.3 MEDIUM 🌩️ — OOB Read in DoTls13CertificateVerify with WOLFSSL_DUAL_ALG_CERTS</title>
-      <link>https://vulnogram.org/CVE-2026-5393</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5393</guid>
-      <description>Dual-Algorithm CertificateVerify out-of-bounds read. When processing a dual-algorithm CertificateVerify message, an out-of-bounds read can occur on crafted input. This can only occur when --enable-experimental and --enable-dual-alg-certs is used when…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 09 Apr 2026 23:02:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5295 · 5.9 MEDIUM — Stack Buffer Overflow in wolfSSL PKCS7 wc_PKCS7_DecryptOri() via Oversized OID</title>
-      <link>https://vulnogram.org/CVE-2026-5295</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5295</guid>
-      <description>A stack buffer overflow exists in wolfSSL&apos;s PKCS7 implementation in the wc_PKCS7_DecryptOri() function in wolfcrypt/src/pkcs7.c. When processing a CMS EnvelopedData message containing an OtherRecipientInfo (ORI) recipient, the function copies an ASN.…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 09 Apr 2026 22:53:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5503 · 6.9 MEDIUM 🌩️ — out-of-bounds write in TLSX_EchChangeSNI via attacker-controlled publicName</title>
-      <link>https://vulnogram.org/CVE-2026-5503</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5503</guid>
-      <description>In TLSX_EchChangeSNI, the ctx-&gt;extensions branch set extensions unconditionally even when TLSX_Find returned NULL. This caused TLSX_UseSNI to attach the attacker-controlled publicName to the shared WOLFSSL_CTX when no inner SNI was configured. TLSX_E…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 09 Apr 2026 22:35:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5504 · 6.3 MEDIUM 🌩️ — PKCS7 CBC Padding Oracle — Plaintext Recovery</title>
-      <link>https://vulnogram.org/CVE-2026-5504</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5504</guid>
-      <description>A padding oracle exists in wolfSSL&apos;s PKCS7 CBC decryption that could allow an attacker to recover plaintext through repeated decryption queries with modified ciphertext. In previous versions of wolfSSL the interior padding bytes are not validated.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 09 Apr 2026 22:33:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5507 · 4.1 MEDIUM — Session Cache Restore — Arbitrary Free via Deserialized Pointer</title>
-      <link>https://vulnogram.org/CVE-2026-5507</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5507</guid>
-      <description>When restoring a session from cache, a pointer from the serialized session data is used in a free operation without validation. An attacker who can poison the session cache could trigger an arbitrary free. Exploitation requires the ability to inject…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 09 Apr 2026 22:18:44 GMT</pubDate>
     </item>
   </channel>
 </rss>
