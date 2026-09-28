@@ -11,7 +11,34 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 28 Sep 2026 06:17:59 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 14:54:22 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-94194 · 6.3 MEDIUM 🌩️ — Mint HTTP/1 client applies chunked framing when chunked is not the final transfer coding, enabling response smuggling through intermediaries</title>
+      <link>https://vulnogram.org/CVE-2026-94194</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94194</guid>
+      <description>Inconsistent Interpretation of HTTP Requests (&apos;HTTP Request/Response Smuggling&apos;) vulnerability in elixir-mint mint allows a malicious HTTP/1 server to desynchronize an intermediary and the Mint client on a pooled connection, poisoning the responses t…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Sep 2026 11:15:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92103 · 6.3 MEDIUM 🌩️ — Mint HTTP/2 client buffers oversized frames up to 16 MiB before enforcing max_frame_size</title>
+      <link>https://vulnogram.org/CVE-2026-92103</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92103</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in elixir-mint mint allows a malicious HTTP/2 server to make the client hold up to about 16 MiB per connection in frames it should reject, consuming client memory. Mint.HTTP2.Frame.de…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Sep 2026 11:15:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91043 · 8.2 HIGH 🌩️ — HPACK-indexed cookie fields in Mint HTTP/2 responses bypass max_header_list_size and exhaust client memory</title>
+      <link>https://vulnogram.org/CVE-2026-91043</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91043</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in elixir-mint mint allows a malicious HTTP/2 server to exhaust memory on the client host and cause a denial of service. Mint.HTTP2 enforces the client&apos;s max_header_list_size setting…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Sep 2026 11:15:09 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-92106 · 2.3 LOW 🌩️ — lazy_html serializes SVG and MathML style and script text unescaped, allowing mutation XSS</title>
       <link>https://vulnogram.org/CVE-2026-92106</link>
@@ -420,33 +447,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 04 Sep 2026 14:31:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82729 · 6.3 MEDIUM 🌩️ — Quadratic chunk-size parsing in Mint.HTTP1.Parse allows CPU-exhaustion DoS</title>
-      <link>https://vulnogram.org/CVE-2026-82729</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82729</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in elixir-mint mint allows a remote HTTP server to exhaust CPU on the client host and cause a denial of service. parse_hex_prefix/2 in lib/mint/http1/parse.ex folds each hex digit of a chunked response…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 04 Sep 2026 14:31:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-69664 · 8.7 HIGH 🌩️ — httpd parks a request worker indefinitely on a malformed chunk size sent after the headers</title>
-      <link>https://vulnogram.org/CVE-2026-69664</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-69664</guid>
-      <description>Missing Release of Resource after Effective Lifetime vulnerability in Erlang/OTP inets httpd allows an unauthenticated remote attacker to cause denial of service by sending a request with a chunked body whose chunk-size line is not a hexadecimal numb…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 14:59:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70409 · 6.3 MEDIUM 🌩️ — eldap does not bound the port component of a referral URL before integer conversion</title>
-      <link>https://vulnogram.org/CVE-2026-70409</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70409</guid>
-      <description>Improper Validation of Specified Quantity in Input vulnerability in Erlang/OTP eldap allows a malicious or compromised LDAP server to degrade availability by returning a referral URL whose port component is a very long run of digits. eldap:parse_port…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 01 Sep 2026 14:51:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
