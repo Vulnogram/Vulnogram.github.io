@@ -11,7 +11,41 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 28 Sep 2026 14:54:21 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 21:11:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-88804 · 9.6 CRITICAL 🌩️ — Unauthenticated update of public UI settings leading to stored cross-site scripting in Rancher</title>
+      <link>https://vulnogram.org/CVE-2026-88804</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88804</guid>
+      <description>An unauthenticated update of public UI settings could be used by remote attackers to execute a stored cross-site scripting attack in the Rancher UI, in SUSE Rancher 2.15 before 2.15.2, 2.14 before 2.14.6, 2.13 before 2.13.10, 2.12 before 2.12.14 and…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Sep 2026 15:58:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88805 · 8.1 HIGH 🌩️ — Session Not Revoked Server-Side on Logout in Rancher</title>
+      <link>https://vulnogram.org/CVE-2026-88805</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88805</guid>
+      <description>Incorrect credential cleaning on logout could be used by remote attackers to keep access credentials even after the account was logged out. Affected is SUSE Rancher 2.15 before 2.15.2.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Sep 2026 15:50:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88808 · 8.8 HIGH — Fleet agent copies downstream resources with cluster-admin privileges, allowing cross-namespace writes on downstream clusters</title>
+      <link>https://vulnogram.org/CVE-2026-88808</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88808</guid>
+      <description>A vulnerability has been identified within Rancher Manager where the Fleet agent wrote resources to downstream clusters using its own cluster-admin credentials instead of the ServiceAccount pinned to the deployment. It affects multi-tenancy environme…</description>
+      <category>High</category>
+      <pubDate>Mon, 28 Sep 2026 15:36:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93540 · 6.5 MEDIUM — Fleet applies namespace labels and annotations without the bundle&apos;s service account privileges</title>
+      <link>https://vulnogram.org/CVE-2026-93540</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93540</guid>
+      <description>A privilege mismatch was found in Fleet. When a bundle requested namespace labels or annotations through the namespaceLabels and namespaceAnnotations options, the resulting namespace metadata update was not subject to the same authorization as the re…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 28 Sep 2026 14:45:42 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-93539 · 5.4 MEDIUM — Unauthenticated GitRepo Spec Mutation via Fleet Git Webhook Receiver</title>
       <link>https://vulnogram.org/CVE-2026-93539</link>
@@ -399,41 +433,6 @@
       <description>Rancher issues long-lived registration tokens to authenticate nodes and agents joining a downstream cluster. These tokens were stored and exposed in plaintext with no expiration, so a malicious user could obtain one either through the Rancher API, et…</description>
       <category>High</category>
       <pubDate>Wed, 05 Aug 2026 07:53:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55998 · 5.3 MEDIUM 🌩️ — Cluster Existence Oracle via Unauthenticated Import Endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-55998</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55998</guid>
-      <description>The endpoint /v3/import/{token}_{clusterId}.yaml retrieves the cluster object before validating the token. When a valid cluster ID references a cluster that has private registry secrets configured, a nil pointer dereference in pkg/systemtemplate/priv…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 07:51:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59675 · 7.5 HIGH 🌩️ — Rancher Audit-Log Middleware Unauthenticated Memory Exhaustion Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-59675</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59675</guid>
-      <description>When API audit logging is enabled, the middleware reads the entire HTTP request body into memory without enforcing a size limit on login endpoints. Because the audit middleware is positioned earlier in the handler chain than Rancher&apos;s APIBodyLimiting…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 07:49:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55996 · 4.3 MEDIUM — Unauthenticated Denial-of-Service via TLS SAN Stuffing in Rancher and cattle-cluster-agent</title>
-      <link>https://vulnogram.org/CVE-2026-55996</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55996</guid>
-      <description>A denial-of-service vulnerability was identified in multiple TLS listeners in Rancher. Both the cattle-cluster-agent component running in downstream clusters and the Rancher server itself use the dynamiclistener library to serve TLS traffic. Without…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 05 Aug 2026 07:46:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55995 · 8.7 HIGH 🌩️ — Double-free in the iSNS attribute decoder in open-iscsi</title>
-      <link>https://vulnogram.org/CVE-2026-55995</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55995</guid>
-      <description>A Double Free vulnerability in open-iscsi allows an unauthenticated MITM attacker to cause DoS. This issue affects open-iscsi: from ? through 56718d4e9d1a4f51c30697b5c0534144bb41c9bb.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 29 Jul 2026 13:43:22 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,47 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 28 Sep 2026 14:54:20 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 21:11:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-18416 · 3.7 LOW — Out-of-bounds read in CoAP well-known-core Uri-Query href matching (match_path_uri)</title>
+      <link>https://vulnogram.org/CVE-2026-18416</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18416</guid>
+      <description>The CoAP link-format helper match_path_uri() in subsys/net/lib/coap/coap_link_format.c compares a registered resource path against the URI carried in a Uri-Query href= option. That URI is not NUL terminated, but the inner character loop advanced its…</description>
+      <category>Low</category>
+      <pubDate>Mon, 28 Sep 2026 20:00:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18415 · 6.3 MEDIUM — Out-of-bounds write in the IEEE 802.15.4 L2 transmit path for oversized non-6LoWPAN frames</title>
+      <link>https://vulnogram.org/CVE-2026-18415</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18415</guid>
+      <description>ieee802154_send() in subsys/net/l2/ieee802154/ieee802154.c copies the outgoing packet into a single fixed 125-byte transmit buffer (tx_frame_buf_pool, sized IEEE802154_MTU). In builds with CONFIG_NET_L2_IEEE802154_FRAGMENT enabled (the default whenev…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 28 Sep 2026 20:00:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18414 · 7.8 HIGH — Out-of-bounds write in the ADI MAX32 ADC driver due to incorrect adc_sequence buffer size validation</title>
+      <link>https://vulnogram.org/CVE-2026-18414</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18414</guid>
+      <description>The ADC API requires each driver to reject a sampling sequence whose destination buffer is too small: the buffer_size field of struct adc_sequence in include/zephyr/drivers/adc.h documents that &quot;the driver must ensure that samples are not written bey…</description>
+      <category>High</category>
+      <pubDate>Mon, 28 Sep 2026 20:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18413 · 7.8 HIGH — Out-of-bounds write in the NXP MCUX LPADC ADC driver due to missing adc_sequence buffer size validation</title>
+      <link>https://vulnogram.org/CVE-2026-18413</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18413</guid>
+      <description>The ADC API requires each driver to reject a sampling sequence whose destination buffer is too small: the buffer_size field of struct adc_sequence in include/zephyr/drivers/adc.h documents that &quot;the driver must ensure that samples are not written bey…</description>
+      <category>High</category>
+      <pubDate>Mon, 28 Sep 2026 19:59:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16513 · 7.8 HIGH — Missing write validation of user-supplied handle pointer in the RTIO syscall verifier allows arbitrary kernel write</title>
+      <link>https://vulnogram.org/CVE-2026-16513</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16513</guid>
+      <description>The userspace verifier z_vrfy_rtio_sqe_copy_in_get_handles() in subsys/rtio/rtio_syscalls.c (subsys/rtio/rtio_handlers.c before v4.3.0) validated the RTIO object handle and the sqes input array, but not the handle out-parameter. On the first loop ite…</description>
+      <category>High</category>
+      <pubDate>Mon, 28 Sep 2026 19:59:57 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-17054 · 5.3 MEDIUM — Out-of-bounds read and permanent loss of Wi-Fi reception in the ESP-hosted SPI driver&apos;s frame reassembly</title>
       <link>https://vulnogram.org/CVE-2026-17054</link>
@@ -371,46 +411,6 @@
       <description>The WNC-M14A2A LTE-M modem driver mishandles unsolicited %NOTIFYEV: events in on_cmd_socknotifyev() (drivers/modem/vendor_standalone/wncm14a2a.c). The response line is linearized into a fixed 40-byte stack buffer via net_buf_linearize(), which caps t…</description>
       <category>Medium</category>
       <pubDate>Mon, 17 Aug 2026 16:18:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9771 · 8.8 HIGH — Missing device-pointer validation in flash_copy() syscall allows userspace privilege escalation</title>
-      <link>https://vulnogram.org/CVE-2026-9771</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9771</guid>
-      <description>The flash_copy() system call is verified by z_vrfy_flash_copy() in drivers/flash/flash_util.c. On builds with CONFIG_USERSPACE enabled, this handler is the kernel-side trust boundary for a user-mode caller. Prior to the fix it validated only the outp…</description>
-      <category>High</category>
-      <pubDate>Mon, 17 Aug 2026 16:18:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12630 · 4.3 MEDIUM — 6LoWPAN IPHC uncompression out-of-bounds read on reserved destination addressing mode</title>
-      <link>https://vulnogram.org/CVE-2026-12630</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12630</guid>
-      <description>Zephyr&apos;s 6LoWPAN IP Header Compression (IPHC) uncompression code contains an out-of-bounds read in get_ihpc_inlined_size() (subsys/net/ip/6lo.c). The destination inline size is looked up in da_inline_size_table, which has 13 entries, using an index b…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 17 Aug 2026 16:18:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12629 · 4.6 MEDIUM — PL011 UART error interrupts never cleared, enabling an external-peer interrupt-storm denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-12629</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12629</guid>
-      <description>The ARM PL011 UART driver in drivers/serial/uart_pl011.c fails to acknowledge receive error interrupts. On the PL011, the framing, parity, break, and overrun error interrupts (PL011_IMSC_ERROR_MASK) are cleared only by writing the interrupt-clear reg…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 17 Aug 2026 16:18:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12366 · 8.8 HIGH — Use-after-free freeing an armed dynamically-allocated k_timer in Zephyr userspace object disposal</title>
-      <link>https://vulnogram.org/CVE-2026-12366</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12366</guid>
-      <description>Zephyr&apos;s dynamic kernel-object disposal path unref_check() in kernel/userspace/userspace.c frees an object&apos;s storage (k_free(dyn-&gt;data)) once its reference count reaches zero, after running a per-object-type cleanup. The cleanup switch handled only K…</description>
-      <category>High</category>
-      <pubDate>Fri, 14 Aug 2026 17:52:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12365 · 5.8 MEDIUM — Use-after-free in Zephyr delayable work-queue cancellation under SMP timing race</title>
-      <link>https://vulnogram.org/CVE-2026-12365</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12365</guid>
-      <description>A use-after-free exists in the Zephyr second-generation work queue (kernel/work.c) in the handling of delayable work timeouts. When a delayable work item&apos;s timeout has been dequeued and its handler work_timeout() is in flight (blocked acquiring the w…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 14 Aug 2026 17:52:05 GMT</pubDate>
     </item>
   </channel>
 </rss>

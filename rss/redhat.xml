@@ -11,7 +11,50 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 28 Sep 2026 14:54:20 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 21:11:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-102010 · 7 HIGH 🌩️ — Gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: denial of service via use-after-free in binary heap erase_if</title>
+      <link>https://vulnogram.org/CVE-2026-102010</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102010</guid>
+      <description>A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation ca…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Sep 2026 18:54:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97023 · 7.1 HIGH 🌩️ — Flatpak: flatpak: arbitrary file deletion in root context via path traversal in deploy directory export/bin</title>
+      <link>https://vulnogram.org/CVE-2026-97023</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97023</guid>
+      <description>A path traversal vulnerability in Flatpak&apos;s handling of the export/bin directory during app deployment allows a malicious Flatpak app to cause deletion of attacker-chosen files outside the deployment directory when the app is installed or upgraded. I…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Sep 2026 18:53:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96740 · 6.5 MEDIUM — Streamshub/console: console-operator: streams for apache kafka console: unfiltered kafka client properties → sa-token exfiltration via config.providers</title>
+      <link>https://vulnogram.org/CVE-2026-96740</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96740</guid>
+      <description>A flaw was found in the StreamsHub Console for Apache Kafka. Tenant-supplied Kafka client properties from the Console custom resource are copied into the console-api AdminClient configuration without filtering security-sensitive keys, allowing a Cons…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 28 Sep 2026 17:27:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87114 · 7.1 HIGH — Kube-compare: container:// reference extraction runs the image entrypoint and silently escalates to sudo</title>
+      <link>https://vulnogram.org/CVE-2026-87114</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87114</guid>
+      <description>A flaw was found in kube-compare. When processing a &apos;container://&apos; reference path, the tool incorrectly executes an untrusted container image&apos;s entrypoint instead of merely extracting data from a stopped container. This allows a remote attacker to ac…</description>
+      <category>High</category>
+      <pubDate>Mon, 28 Sep 2026 16:49:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101333 · 3.7 LOW 🌩️ — Keycloak-services: keycloak-services: unbounded metric series creation via idp tag on broker login endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-101333</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101333</guid>
+      <description>A flaw was found in the Micrometer user-event metrics listener of Keycloak, a solution for integrated identity and access management. The issue occurs when the listener is configured to include the idp tag. An unauthenticated attacker can send reques…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 28 Sep 2026 14:38:15 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-101292 · 8.2 HIGH 🌩️ — Artemis-core-client: unsafe reflection in apache activemq artemis federation message deserialization</title>
       <link>https://vulnogram.org/CVE-2026-101292</link>
@@ -380,46 +423,6 @@
       <description>Notification template Jinja AST whitelist only inspects static Getattr nodes. Dynamic subscripts (job[&apos;job&apos;+&apos;_env&apos;]) and {% if job.id &gt; 100 %} conditional gating bypass both the AST check and the test-render (stub has small job.id). At runtime, the g…</description>
       <category>Low</category>
       <pubDate>Wed, 23 Sep 2026 18:28:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96545 · 4.4 MEDIUM — Gimp: gimp: out-of-bounds heap read in the 4bpp tim image loader</title>
-      <link>https://vulnogram.org/CVE-2026-96545</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96545</guid>
-      <description>An out-of-bounds heap read flaw was found in GIMP&apos;s TIM image loader. When a user opens a crafted 4bpp TIM image that causes promotion to an RGBA layer, the file-tim plug-in allocates an undersized row buffer but processes it using the larger RGBA ro…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 18:25:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71462 · 4.1 MEDIUM — Automation-controller: automation-controller-container: automation-controller: custom_venv_path setting provides filesystem path-existence oracle on control pod</title>
-      <link>https://vulnogram.org/CVE-2026-71462</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71462</guid>
-      <description>StringListPathField.to_internal_value() calls os.path.exists() on unbounded user-supplied paths. 200 vs 400 response reveals existence of arbitrary absolute paths on the controller-web pod. Tenant superuser can confirm /etc/tower/SECRET_KEY, k8s serv…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 18:25:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71461 · 4.3 MEDIUM — Automation-controller: automation-controller-container: automation-controller: verbose internal exception               disclosure via hostlist bare-exception handler</title>
-      <link>https://vulnogram.org/CVE-2026-71461</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71461</guid>
-      <description>HostList.list() catches bare Exception and returns str(e) verbatim. Via host_filter, any authenticated user triggers Django FieldError (leaking complete Host model relation graph including internal reverse accessors) or PostgreSQL DataError (leaking…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 18:25:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71460 · 4.3 MEDIUM — Automation-controller: automation-controller-container: automation-controller: any authenticated user reads red hat subscription/license details via /config/</title>
-      <link>https://vulnogram.org/CVE-2026-71460</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71460</guid>
-      <description>/api/v2/config/ is protected only by IsAuthenticated. license_info (account_number, subscription_id, pool_id, sku, support_level, instance counts) returned to any authenticated user. The superuser/auditor gate only covers project_base_dir/project_loc…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 18:25:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76648 · 8.5 HIGH — Automation-controller: automation-controller-container: aap controller: copyapiview.post() missing read                 authorization check enables job template secret                 recovery</title>
-      <link>https://vulnogram.org/CVE-2026-76648</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76648</guid>
-      <description>CopyAPIView (awx/awx/api/generics.py:873) sets permission_classes = (IsAuthenticated,), so DRF&apos;s get_object() performs no object-level RBAC. The get() handler (lines 988–991) explicitly guards with request.user.can_access(obj._class_, &apos;read&apos;, obj) —…</description>
-      <category>High</category>
-      <pubDate>Wed, 23 Sep 2026 18:24:44 GMT</pubDate>
     </item>
   </channel>
 </rss>
