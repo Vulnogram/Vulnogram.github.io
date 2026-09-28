@@ -11,7 +11,32 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 27 Sep 2026 21:59:05 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 00:20:27 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-96284 · 2.5 LOW — Flatpak: flatpak: arbitrary read-access to files in the system-helper context via oci symlink following</title>
+      <link>https://vulnogram.org/CVE-2026-96284</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96284</guid>
+      <description>A malicious user can get read-access to files in the flatpak-system-helper context if a system OCI repository is configured, because the OCI code paths in the system helper follow symlinks when importing OCI images that are under the user&apos;s control.</description>
+      <category>Low</category>
+      <pubDate>Sun, 27 Sep 2026 22:04:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96282 · 3.1 LOW 🌩️ — Flatpak: flatpak: extension metadata path traversal file existence oracle</title>
+      <link>https://vulnogram.org/CVE-2026-96282</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96282</guid>
+      <description>A malicious Flatpak extension can probe the host filesystem to determine what files and directories exist at arbitrary paths, and host directory listings can be disclosed to sandboxed applications using the extension. Additionally, unvalidated extens…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 27 Sep 2026 21:53:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96283 · 3.3 LOW — Flatpak: flatpak: flatpak-system-helper cross-user cancelpull orphans another user&apos;s ongoing pull</title>
+      <link>https://vulnogram.org/CVE-2026-96283</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96283</guid>
+      <description>By calling org.freedesktop.Flatpak.SystemHelper.CancelPull on another user&apos;s pull, the pull is not actually cancelled but removed from internal tracking, making it impossible for the owning user to stop it. Ongoing pulls cannot be stopped.</description>
+      <category>Low</category>
+      <pubDate>Sun, 27 Sep 2026 21:53:40 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-96281 · 6.2 MEDIUM — Flatpak: flatpak: unprivileged active user can bypass anti-downgrade checks for system apps/runtimes</title>
       <link>https://vulnogram.org/CVE-2026-96281</link>
@@ -395,31 +420,6 @@
       <description>JobJobEventsChildrenSummary view has no model/parent_model. ModelAccessPermission.check_get_permissions() falls through (returns True) for any authenticated user. The view uses raw get_object_or_404(Job, pk) without DRF object-level permission check.…</description>
       <category>Medium</category>
       <pubDate>Wed, 23 Sep 2026 18:08:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71458 · 5 MEDIUM — Automation-controller: automation-controller-container: automation-controller: named-url 404 body oracle enables cross-tenant resource name enumeration</title>
-      <link>https://vulnogram.org/CVE-2026-71458</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71458</guid>
-      <description>URLModificationMiddleware resolves named-URL lookups against unfiltered Model.objects before RBAC. The 403→404 shim only rewrites 403 responses, leaving the pk=0 miss path with a different 404 detail string. Differential &quot;Not found.&quot; vs &quot;No &lt;Model&gt; m…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 18:07:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88840 · 5.3 MEDIUM 🌩️ — Busybox: busybox: tls ssl_server reads one byte out of bounds when parsing truncated clienthello</title>
-      <link>https://vulnogram.org/CVE-2026-88840</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88840</guid>
-      <description>BusyBox TLS get_client_hello() reads past the end of the input buffer when parsing a truncated ClientHello message.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 17:45:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88839 · 6.7 MEDIUM — Busybox: busybox: passwd/group parser writes heap pointers out of bounds due to stale tokenize() endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-88839</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88839</guid>
-      <description>BusyBox passwd/group tokenize() references a stale endpoint pointer after trimming, causing an out-of-bounds write of heap pointers.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 23 Sep 2026 17:45:33 GMT</pubDate>
     </item>
   </channel>
 </rss>
