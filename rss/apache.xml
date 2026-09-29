@@ -11,7 +11,54 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 29 Sep 2026 13:44:25 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 19:14:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-97395 — Apache Polaris: Allows authorized table writers to redirect server-side Iceberg FileIO requests to attacker-controlled endpoints using operation-scoped storage credentials</title>
+      <link>https://vulnogram.org/CVE-2026-97395</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97395</guid>
+      <description>Apache Polaris allows an authenticated principal with permission to create or update Iceberg table properties to set FileIO client settings such as s3.endpoint in table metadata. In versions &lt; 1.8.0, when Polaris performs server-side Iceberg operatio…</description>
+      <pubDate>Tue, 29 Sep 2026 13:57:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71897 · 4.3 MEDIUM — Apache DolphinScheduler: Allows unauthorized workflow operations through batch-copy and batch-move endpoints</title>
+      <link>https://vulnogram.org/CVE-2026-71897</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71897</guid>
+      <description>An improper authorization check in Apache DolphinScheduler allows an authenticated user to use the batch-copy and batch-move endpoints to operate on workflows in projects for which they lack the required permissions. This may allow the user to copy o…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 13:14:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71898 · 4.3 MEDIUM — Apache DolphinScheduler: Improper Authorization Allows Project Read-Only Users to Execute Workflows and Tamper with Workflow Definitions</title>
+      <link>https://vulnogram.org/CVE-2026-71898</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71898</guid>
+      <description>An incorrect authorization check in Apache DolphinScheduler allows an authenticated user with only read permission for a project to modify a workflow instance in that project through the PUT /projects/{projectCode}/workflow-instances/{id} endpoint. T…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 13:11:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71899 — Apache DolphinScheduler: Missing Authorization in query-dynamic-sub-workflows API Leads to Information Disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-71899</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71899</guid>
+      <description>A missing authorization vulnerability exists in the `query-dynamic-sub-workflows` API of Apache DolphinScheduler. The API does not properly verify whether the authenticated user has permission to access the workflows being queried. An authenticated u…</description>
+      <pubDate>Tue, 29 Sep 2026 13:09:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78214 · 5.3 MEDIUM 🌩️ — Apache DolphinScheduler: Actuator Endpoint Authentication Bypass via Percent-Encoded Paths</title>
+      <link>https://vulnogram.org/CVE-2026-78214</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78214</guid>
+      <description>An authentication bypass vulnerability exists in the protection of Actuator endpoints. The application determines whether authentication is required by matching the incoming request path against protected Actuator paths. By sending a specially crafte…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 13:07:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81569 · 4.3 MEDIUM — Apache DolphinScheduler: Improper Authorization in Sub-Workflow Tasks Allows Unauthorized Workflow Execution</title>
+      <link>https://vulnogram.org/CVE-2026-81569</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81569</guid>
+      <description>An improper authorization vulnerability exists in the handling of sub-workflow tasks. An authenticated user who does not have permission to access a target project can reference and invoke a workflow belonging to that project through a sub-workflow t…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 13:05:36 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-82804 — Apache DolphinScheduler: Command Injection in the Alert Script Plugin</title>
       <link>https://vulnogram.org/CVE-2026-82804</link>
@@ -48,17 +95,19 @@
       <pubDate>Tue, 29 Sep 2026 11:33:51 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-86843 — Apache Airflow Teradata provider: SQL injection via unvalidated Dag Params in the compute-cluster example Dag</title>
+      <title>CVE-2026-86843 · 6.3 MEDIUM — Apache Airflow Teradata provider: SQL injection via unvalidated Dag Params in the compute-cluster example Dag</title>
       <link>https://vulnogram.org/CVE-2026-86843</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86843</guid>
       <description>The Apache Airflow Teradata provider&apos;s compute-cluster example Dag declared every one of its Dag Params as unconstrained free text and templated them straight into the compute-cluster operators, which interpolate those values into Teradata DDL. A use…</description>
+      <category>Medium</category>
       <pubDate>Tue, 29 Sep 2026 10:00:34 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-81930 — Apache Airflow Snowflake provider: Unvalidated account field redirects SQL API bearer token off-domain</title>
+      <title>CVE-2026-81930 · 6.3 MEDIUM — Apache Airflow Snowflake provider: Unvalidated account field redirects SQL API bearer token off-domain</title>
       <link>https://vulnogram.org/CVE-2026-81930</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81930</guid>
       <description>Apache Airflow&apos;s Snowflake provider did not validate the connection&apos;s `account` and `region` fields before interpolating them into request URLs. The SQL API endpoint is built as `https://{account}.snowflakecomputing.com/api/v2/statements`, so an `acc…</description>
+      <category>Medium</category>
       <pubDate>Tue, 29 Sep 2026 10:00:23 GMT</pubDate>
     </item>
     <item>
@@ -298,10 +347,12 @@
       <pubDate>Fri, 25 Sep 2026 08:11:12 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-92564 — Apache Qpid Broker-J: Unbounded type nesting can lead to stack overflow pre-authentication in AMQP 0-8/0-9/0-9-1 field-table processing</title>
+      <title>CVE-2026-92564 · 7.5 HIGH 🌩️ — Apache Qpid Broker-J: Unbounded type nesting can lead to stack overflow pre-authentication in AMQP 0-8/0-9/0-9-1 field-table processing</title>
       <link>https://vulnogram.org/CVE-2026-92564</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92564</guid>
       <description>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service. This issue affects Apache Qpid Broker-J: through 10.1.0. Users are recommended to upgrade to version 10.1.1, which fixes…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Fri, 25 Sep 2026 07:59:30 GMT</pubDate>
     </item>
     <item>
@@ -364,60 +415,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 23 Sep 2026 12:24:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87022 · 7.5 HIGH 🌩️ — Apache Tomcat: WebSocket message smuggling with per-message-deflate</title>
-      <link>https://vulnogram.org/CVE-2026-87022</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87022</guid>
-      <description>Improper handling of length parameter inconsistency vulnerability in Apache Tomcat allows WebSocket message smuggling when per-message-deflate is used. This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59,…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:32:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86350 · 9.1 CRITICAL 🌩️ — Apache Tomcat: Regression in fix for CVE-2026-41293 can trigger request header mix-up</title>
-      <link>https://vulnogram.org/CVE-2026-86350</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86350</guid>
-      <description>Inconsistent interpretation of HTTP/2 requests (&apos;HTTP Request/Response smuggling&apos;) vulnerability in Apache Tomcat caused by a regression in fix for CVE-2026-41293 can trigger request header mix-up. This issue affects Apache Tomcat: from 11.0.22 throu…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:31:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86248 · 9.8 CRITICAL 🌩️ — Apache Tomcat: Fix for CVE-2026-34500 was incomplete. OCSP checks sometimes soft-fail with FFM even when soft-fail is disabled</title>
-      <link>https://vulnogram.org/CVE-2026-86248</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86248</guid>
-      <description>CLIENT_CERT authentication does not fail as expected for some scenarios when soft fail is disabled vulnerability in Apache Tomcat. This issue affects Apache Tomcat: from 11.0.0-M14 through 11.0.25, from 10.1.22 through 10.1.59, from 9.0.92 through 9.…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:29:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79677 · 7.5 HIGH 🌩️ — Apache Tomcat: WebSocket DoS due to lost asynchronous write timeout</title>
-      <link>https://vulnogram.org/CVE-2026-79677</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79677</guid>
-      <description>Missing release of resource after effective lifetime, Comparison using wrong factors vulnerability in Apache Tomcat allows a denial of service as a result of lost time outs for asynchronous WebSocket writes. This issue affects Apache Tomcat: from 11.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:28:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78437 · 7.3 HIGH 🌩️ — Apache Tomcat: HTTP/2 DoS via malformed request</title>
-      <link>https://vulnogram.org/CVE-2026-78437</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78437</guid>
-      <description>Incomplete cleanup vulnerability in Apache Tomcat allows a malformed request to potentially (depends on timing) cause one request from another user to fail. This issue affects Apache Tomcat: from 11.0.19 through 11.0.25, from 10.1.53 through 10.1.59,…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:26:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78383 · 7.5 HIGH 🌩️ — Apache Tomcat: AJP DoS via missing request body</title>
-      <link>https://vulnogram.org/CVE-2026-78383</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78383</guid>
-      <description>Allocation of resources without limits or throttling vulnerability in Apache Tomcat allows an unauthenticated AJP request to pin an AJP processing thread leading to denial of service. This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25,…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:23:15 GMT</pubDate>
     </item>
   </channel>
 </rss>

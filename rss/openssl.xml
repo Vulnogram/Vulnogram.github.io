@@ -11,7 +11,125 @@
       <title>OpenSSL Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 29 Sep 2026 13:44:25 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 19:14:12 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-84784 · 7.5 HIGH 🌩️ — QUIC: Unbounded RETIRE_CONNECTION_ID Backlog</title>
+      <link>https://vulnogram.org/CVE-2026-84784</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84784</guid>
+      <description>Issue summary: A malicious remote peer may flood the local QUIC stack with NEW_CONNECTION_ID frames by avoiding a limit check on how many connection IDs the remote QUIC stack can use. Impact summary: The local QUIC stack sends a RETIRE_CONN_ID frame…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84783 · 7.5 HIGH 🌩️ — Use-After-Free in X.509 Extension Cache Under Concurrent Use</title>
+      <link>https://vulnogram.org/CVE-2026-84783</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84783</guid>
+      <description>Issue summary: The first concurrent use of the same X.509 certificate by several threads may cause its cached extension data to be freed while another thread is still using it. Impact summary: A remote, unauthenticated peer could crash a multi-thread…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84782 · 8.2 HIGH 🌩️ — DTLS Retransmits Handshake Messages From a Stale Buffer Offset</title>
+      <link>https://vulnogram.org/CVE-2026-84782</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84782</guid>
+      <description>Issue summary: The DTLS retransmission logic does not correctly handle a handshake message write that is suspended part-way through. The retransmitted message can be read past the message buffer and the retransmission overwrites the internal state th…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77696 · 3.7 LOW 🌩️ — Timing Side-Channel in SM2 Signature Generation</title>
+      <link>https://vulnogram.org/CVE-2026-77696</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77696</guid>
+      <description>Issue summary: SM2 signature generation uses non-constant-time arithmetic on secret values, forming a timing side-channel. Impact summary: An attacker able to measure SM2 signing times may learn information about the per-signature secret nonce, which…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75806 · 5.3 MEDIUM 🌩️ — Unauthenticated and Undersized DTLS 1.2 AEAD Record Causes DoS</title>
+      <link>https://vulnogram.org/CVE-2026-75806</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75806</guid>
+      <description>Issue summary: An established DTLS 1.2 association using an AEAD cipher suite can be terminated by a single unauthenticated datagram whose encrypted fragment is shorter than the mandatory explicit IV and authentication tag overhead. Impact summary: A…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75805 · 5.3 MEDIUM 🌩️ — NULL Pointer Dereference in CMP Client Revocation Response Handling</title>
+      <link>https://vulnogram.org/CVE-2026-75805</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75805</guid>
+      <description>Issue summary: A CMP client that requests certificate revocation on the basis of a PKCS#10 CSR may dereference a NULL pointer and terminate abnormally when processing a crafted revocation response. Impact summary: The NULL pointer dereference happens…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75804 · 5.3 MEDIUM 🌩️ — QUIC Connection-Level Flow Control is Not Enforced for Streams</title>
+      <link>https://vulnogram.org/CVE-2026-75804</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75804</guid>
+      <description>Issue summary: OpenSSL QUIC stack does not enforce connection level flow control for streams. Remote peers may send more bytes as long as they fit within the stream flow control limits. Impact summary: A malicious remote peer may exploit the lack of…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-72897 · 7.5 HIGH 🌩️ — Out-of-Bounds Access After SSL_set_SSL_CTX() During a Handshake</title>
+      <link>https://vulnogram.org/CVE-2026-72897</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72897</guid>
+      <description>Issue summary: A TLS server that calls SSL_set_SSL_CTX() to switch a connection to a different SSL_CTX part way through a handshake may access memory beyond the end of an internal array if the replacement context knows about more provider signature a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54875 · 3.7 LOW 🌩️ — Non-Constant-Time SM2 Scalar Multiplication on ARM64 and RISC-V</title>
+      <link>https://vulnogram.org/CVE-2026-54875</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54875</guid>
+      <description>Issue summary: A non-constant-time optimized implementation of scalar point multiplication is used for SM2 private key operations on ARM64 and RISC-V platforms. Impact summary: An attacker able to measure the time taken by, or to observe the cache-li…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54873 — QUIC STREAM Fragment Metadata DoS</title>
+      <link>https://vulnogram.org/CVE-2026-54873</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54873</guid>
+      <description>Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary. Impact summary: Remote peer can exploit this vulnerability by sending maliciously crafted packets, making the local QUIC stack to keep the memor…</description>
+      <pubDate>Tue, 29 Sep 2026 15:32:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-54872 · 3.7 LOW 🌩️ — Timing Side-Channel in Scalar Multiplication for Non-NIST EC Curves</title>
+      <link>https://vulnogram.org/CVE-2026-54872</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54872</guid>
+      <description>Issue summary: The generic elliptic-curve scalar multiplication used for ECDSA and SM2 signature operations with curves that do not have a dedicated implementation leaks information about the secret nonce through timing. Impact summary: An attacker a…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-42772 — Potential CPU DoS via O(n^2) Fragment Reassembly in QUIC</title>
+      <link>https://vulnogram.org/CVE-2026-42772</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42772</guid>
+      <description>Issue summary: The QUIC stream reassembly algorithm performance deteriorates progressively as packets are arriving out of order. The worst case has a quadratic complexity proportional to the number of stream frames kept in the buffer for the received…</description>
+      <pubDate>Tue, 29 Sep 2026 15:32:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-35191 — QUIC Unvalidated Amplification Credit may be Over Accounted</title>
+      <link>https://vulnogram.org/CVE-2026-35191</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35191</guid>
+      <description>Issue summary: The OpenSSL QUIC server, when configured to not preform address validation, can be forced to count incoming packets multiple times in its unvalidated credit computation, leading to a violation of the RFC 9000 unvalidated connection amp…</description>
+      <pubDate>Tue, 29 Sep 2026 15:32:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-35189 — Excessive Memory Allocation in Relative CRLDP Processing</title>
+      <link>https://vulnogram.org/CVE-2026-35189</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35189</guid>
+      <description>Issue summary: A certificate with many nameRelativeToCRLIssuer CRL distribution points causes disproportionate heap growth when OpenSSL caches X.509 extensions. Impact summary: Receiving a crafted certificate from a malicious peer can lead to signifi…</description>
+      <pubDate>Tue, 29 Sep 2026 15:32:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-75803 · 9.1 CRITICAL 🌩️ — AEAD Forgeries with Empty Ciphertext When Using EVP_Cipher()</title>
       <link>https://vulnogram.org/CVE-2026-75803</link>
@@ -331,127 +449,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 07 Apr 2026 22:00:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-2673 · 6.5 MEDIUM 🌩️ — OpenSSL TLS 1.3 server may choose unexpected key agreement group</title>
-      <link>https://vulnogram.org/CVE-2026-2673</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-2673</guid>
-      <description>Issue summary: An OpenSSL TLS 1.3 server may fail to negotiate the expected preferred key exchange group when its key exchange group configuration includes the default by using the &apos;DEFAULT&apos; keyword. Impact summary: A less preferred key exchange may…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 13 Mar 2026 13:23:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-22796 · 5.3 MEDIUM 🌩️ — ASN1_TYPE Type Confusion in the PKCS7_digest_from_attributes() function</title>
-      <link>https://vulnogram.org/CVE-2026-22796</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-22796</guid>
-      <description>Issue summary: A type confusion vulnerability exists in the signature verification of signed PKCS#7 data where an ASN1_TYPE union member is accessed without first validating the type, causing an invalid or NULL pointer dereference when processing mal…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-22795 · 5.5 MEDIUM — Missing ASN1_TYPE validation in PKCS#12 parsing</title>
-      <link>https://vulnogram.org/CVE-2026-22795</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-22795</guid>
-      <description>Issue summary: An invalid or NULL pointer dereference can happen in an application processing a malformed PKCS#12 file. Impact summary: An application processing a malformed PKCS#12 file can be caused to dereference an invalid or NULL pointer on memo…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-69421 · 7.5 HIGH 🌩️ — NULL Pointer Dereference in PKCS12_item_decrypt_d2i_ex function</title>
-      <link>https://vulnogram.org/CVE-2025-69421</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-69421</guid>
-      <description>Issue summary: Processing a malformed PKCS#12 file can trigger a NULL pointer dereference in the PKCS12_item_decrypt_d2i_ex() function. Impact summary: A NULL pointer dereference can trigger a crash which leads to Denial of Service for an application…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-69420 · 7.5 HIGH 🌩️ — Missing ASN1_TYPE validation in TS_RESP_verify_response() function</title>
-      <link>https://vulnogram.org/CVE-2025-69420</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-69420</guid>
-      <description>Issue summary: A type confusion vulnerability exists in the TimeStamp Response verification code where an ASN1_TYPE union member is accessed without first validating the type, causing an invalid or NULL pointer dereference when processing a malformed…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-69419 · 7.4 HIGH 🌩️ — Out of bounds write in PKCS12_get_friendlyname() UTF-8 conversion</title>
-      <link>https://vulnogram.org/CVE-2025-69419</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-69419</guid>
-      <description>Issue summary: Calling PKCS12_get_friendlyname() function on a maliciously crafted PKCS#12 file with a BMPString (UTF-16BE) friendly name containing non-ASCII BMP code point can trigger a one byte write before the allocated buffer. Impact summary: Th…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-69418 · 4 MEDIUM — Unauthenticated/unencrypted trailing bytes with low-level OCB function calls</title>
-      <link>https://vulnogram.org/CVE-2025-69418</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-69418</guid>
-      <description>Issue summary: When using the low-level OCB API directly with AES-NI or&lt;br&gt;other hardware-accelerated code paths, inputs whose length is not a multiple&lt;br&gt;of 16 bytes can leave the final partial block unencrypted and unauthenticated.&lt;br&gt;&lt;br&gt;Impact su…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-68160 · 4.7 MEDIUM — Heap out-of-bounds write in BIO_f_linebuffer on short writes</title>
-      <link>https://vulnogram.org/CVE-2025-68160</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-68160</guid>
-      <description>Issue summary: Writing large, newline-free data into a BIO chain using the line-buffering filter where the next BIO performs short writes can trigger a heap-based out-of-bounds write. Impact summary: This out-of-bounds write can cause memory corrupti…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-66199 · 5.9 MEDIUM 🌩️ — TLS 1.3 CompressedCertificate excessive memory allocation</title>
-      <link>https://vulnogram.org/CVE-2025-66199</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-66199</guid>
-      <description>Issue summary: A TLS 1.3 connection using certificate compression can be forced to allocate a large buffer before decompression without checking against the configured certificate size limit. Impact summary: An attacker can cause per-connection memor…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-15469 · 5.5 MEDIUM — &apos;openssl dgst&apos; one-shot codepath silently truncates inputs &gt;16MB</title>
-      <link>https://vulnogram.org/CVE-2025-15469</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15469</guid>
-      <description>Issue summary: The &apos;openssl dgst&apos; command-line tool silently truncates input data to 16MB when using one-shot signing algorithms and reports success instead of an error. Impact summary: A user signing or verifying files larger than 16MB with one-shot…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-15468 · 5.9 MEDIUM 🌩️ — NULL dereference in SSL_CIPHER_find() function on unknown cipher ID</title>
-      <link>https://vulnogram.org/CVE-2025-15468</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15468</guid>
-      <description>Issue summary: If an application using the SSL_CIPHER_find() function in a QUIC protocol client or server receives an unknown cipher suite from the peer, a NULL dereference occurs. Impact summary: A NULL pointer dereference leads to abnormal terminat…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-15467 · 9.8 CRITICAL 🌩️ — Stack buffer overflow in CMS (Auth)EnvelopedData parsing</title>
-      <link>https://vulnogram.org/CVE-2025-15467</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-15467</guid>
-      <description>Issue summary: Parsing CMS AuthEnvelopedData or EnvelopedData message with maliciously crafted AEAD parameters can trigger a stack buffer overflow. Impact summary: A stack buffer overflow may lead to a crash, causing Denial of Service, or potentially…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Jan 2026 16:01:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11187 · 6.1 MEDIUM — Improper validation of PBMAC1 parameters in PKCS#12 MAC verification</title>
-      <link>https://vulnogram.org/CVE-2025-11187</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11187</guid>
-      <description>Issue summary: PBMAC1 parameters in PKCS#12 files are missing validation which can trigger a stack-based buffer overflow, invalid pointer or NULL pointer dereference during MAC verification. Impact summary: The stack buffer overflow or NULL pointer d…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 27 Jan 2026 15:59:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-9232 · 5.9 MEDIUM 🌩️ — Out-of-bounds read in HTTP client no_proxy handling</title>
-      <link>https://vulnogram.org/CVE-2025-9232</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-9232</guid>
-      <description>Issue summary: An application using the OpenSSL HTTP client API functions may trigger an out-of-bounds read if the &apos;no_proxy&apos; environment variable is set and the host portion of the authority component of the HTTP URL is an IPv6 address. Impact summa…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 30 Sep 2025 13:17:19 GMT</pubDate>
     </item>
   </channel>
 </rss>

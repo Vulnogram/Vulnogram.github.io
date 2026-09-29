@@ -11,7 +11,69 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 29 Sep 2026 13:44:25 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 19:14:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-102560 · 8.6 HIGH 🌩️ — Libsoup: libsoup: heap buffer overflow during outgoing permessage-deflate buffer growth</title>
+      <link>https://vulnogram.org/CVE-2026-102560</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102560</guid>
+      <description>A flaw was found in libsoup. When the permessage-deflate WebSocket extension compresses a very large outgoing message, truncated size calculations used for GByteArray growth could wrap, causing zlib to write past the allocated buffer and resulting in…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 17:15:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102559 · 8.6 HIGH 🌩️ — Libsoup: libsoup: heap buffer overflow during websocket client-frame masking</title>
+      <link>https://vulnogram.org/CVE-2026-102559</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102559</guid>
+      <description>A flaw was found in libsoup. When constructing a masked WebSocket client frame for a very large outgoing payload, size values passed to GByteArray allocation APIs could be truncated while the masking routine still used the full length, causing a heap…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 17:15:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102558 · 8.6 HIGH 🌩️ — Libsoup: libsoup: heap buffer overflow during websocket receive-buffer growth</title>
+      <link>https://vulnogram.org/CVE-2026-102558</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102558</guid>
+      <description>A flaw was found in libsoup. When max-incoming-payload-size is unlimited (0), SoupWebsocketConnection could grow its incoming GByteArray based on an attacker-controlled frame length until the length wrapped, causing a heap buffer overflow while readi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 17:15:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102555 · 8.2 HIGH 🌩️ — Libsoup: libsoup: heap buffer overflow via uninitialized length in data-uri base64 decoding</title>
+      <link>https://vulnogram.org/CVE-2026-102555</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102555</guid>
+      <description>A flaw was found in libsoup. The soup_uri_decode_data_uri() function incorrectly treated base64 data-URI payloads as NUL-terminated strings when calling g_base64_decode_inplace(). If the percent-decoded payload contained embedded NUL bytes, the decod…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 17:15:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102623 · 6.5 MEDIUM — Kubevirt: kubevirt: virt-controller nil-pointer dereference via malformed ephemeral volume</title>
+      <link>https://vulnogram.org/CVE-2026-102623</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102623</guid>
+      <description>A flaw was found in KubeVirt. An authenticated user with permission to create Virtual Machine Instances (VMIs) can cause a Denial of Service (DoS) by submitting a virtual machine definition with an empty ephemeral volume. The virt-controller componen…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 17:06:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102557 · 8.6 HIGH 🌩️ — Libsoup: libsoup: heap buffer overflow during websocket message reassembly</title>
+      <link>https://vulnogram.org/CVE-2026-102557</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102557</guid>
+      <description>A flaw was found in libsoup. When reassembling fragmented WebSocket messages into a GByteArray, libsoup did not adequately cap total message size against the limits of the underlying buffer type. A remote peer could send fragments that caused size tr…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 16:11:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102556 · 8.6 HIGH 🌩️ — Libsoup: libsoup: heap buffer overflow from websocket pong signal type confusion</title>
+      <link>https://vulnogram.org/CVE-2026-102556</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102556</guid>
+      <description>A flaw was found in libsoup. When handling an incoming WebSocket Pong frame, SoupWebsocketConnection emitted the ::pong signal with a GByteArray pointer even though the signal is declared to pass a GBytes. Applications connecting a handler that follo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 16:11:50 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-95520 · 7.1 HIGH — Rpm: rpm: integer overflow in iterreadarchivenext() leads to heap-based buffer overflow when parsing untrusted rpm packages</title>
       <link>https://vulnogram.org/CVE-2026-95520</link>
@@ -367,62 +429,6 @@
       <description>A flaw was found in librsvg. When processing an SVG document containing nested XML inclusions (Xincludes) with duplicate entity declarations, a use-after-free error can occur. This vulnerability arises because the library incorrectly frees an XML ent…</description>
       <category>High</category>
       <pubDate>Wed, 23 Sep 2026 19:40:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85475 · 7.2 HIGH — Automation-controller: automation-controller-container: automation-controller: rsyslog configuration injection via log_aggregator_* settings leads to remote code execution in the control-plane rsyslog component</title>
-      <link>https://vulnogram.org/CVE-2026-85475</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85475</guid>
-      <description>A flaw was found in the Ansible Automation Platform automation controller. The external logging (rsyslog) configuration is generated by interpolating user-controlled settings — LOG_AGGREGATOR_HOST, LOG_AGGREGATOR_MAX_DISK_USAGE_PATH and LOG_AGGREGATO…</description>
-      <category>High</category>
-      <pubDate>Wed, 23 Sep 2026 19:40:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84719 · 9.9 CRITICAL — Automation-controller: automation-controller: workflowjobtemplate /copy/ deep-copy sanitizer omits instance_groups authorization (instancegroup use_role bypass to control-plane)</title>
-      <link>https://vulnogram.org/CVE-2026-84719</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84719</guid>
-      <description>A flaw was found in the Ansible Automation Platform automation-controller. When a WorkflowJobTemplate is copied, the deep-copy permission sanitizer validates only the inventory, unified_job_template, and credentials of each cloned node and fails to c…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 23 Sep 2026 19:40:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84714 · 7.1 HIGH — Automation-controller: automation-controller: incomplete sanitize_jinja() regex allows jinja template injection into ad-hoc module_args, machine-credential fields, and host names, reaching ansible-core templating in the execution environment</title>
-      <link>https://vulnogram.org/CVE-2026-84714</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84714</guid>
-      <description>A flaw was found in the automation-controller input-validation guard sanitize_jinja(). The function uses two regular expressions to reject user-supplied Jinja, but the patterns stop at the first interior &apos;}&apos; or &apos;%&apos; character, so a Jinja expression co…</description>
-      <category>High</category>
-      <pubDate>Wed, 23 Sep 2026 19:40:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84706 · 7.6 HIGH — Automation-controller: automation-controller-container: automation-controller: credential type env-injector deny-list omits process-hijacking variables (bash_env/ld_preload) allowing code execution in the execution environment</title>
-      <link>https://vulnogram.org/CVE-2026-84706</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84706</guid>
-      <description>A flaw was found in Ansible Automation Platform&apos;s automation-controller. The custom Credential Type environment-variable injector validates variable names against a deny-list (an ANSIBLE_* prefix check plus a fixed ENV_BLOCKLIST) that omits process-h…</description>
-      <category>High</category>
-      <pubDate>Wed, 23 Sep 2026 19:39:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75884 · 9.1 CRITICAL — Awx: awx: privilege escalation to openshift namespace via pod_spec_override injection in container groups</title>
-      <link>https://vulnogram.org/CVE-2026-75884</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75884</guid>
-      <description>A flaw was found in AWX. The container group pod_spec_override field uses an incomplete blocklist that only restricts automountServiceAccountToken, allowing injection of initContainers, serviceAccountName overrides, and projected service account toke…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 23 Sep 2026 19:39:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84691 · 8.7 HIGH — Automation-controller: automation-controller-container: automation-controller: format string injection in the api 4xx error log setting discloses django secret_key and database credentials to an administrator</title>
-      <link>https://vulnogram.org/CVE-2026-84691</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84691</guid>
-      <description>A flaw was found in Red Hat Ansible Automation Platform&apos;s automation- controller. The setting that formats the log message emitted for API 4XX errors is an administrator-controlled Python format-string template that is rendered with a live user objec…</description>
-      <category>High</category>
-      <pubDate>Wed, 23 Sep 2026 19:02:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84683 · 8.7 HIGH — Automation-controller: automation-controller-container: automation-controller: stored cross-site scripting in the job stdout html view via ansi osc 8 hyperlink sequences (javascript: anchor) enabling session takeover</title>
-      <link>https://vulnogram.org/CVE-2026-84683</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84683</guid>
-      <description>A flaw was found in Red Hat Ansible Automation Platform&apos;s automation- controller. The HTML view of job, ad hoc command, project update, and inventory update standard output escapes HTML metacharacters but does not remove ANSI terminal escape sequence…</description>
-      <category>High</category>
-      <pubDate>Wed, 23 Sep 2026 19:02:18 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,244 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 29 Sep 2026 13:44:25 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 19:14:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-102828 · 9.2 CRITICAL 🌩️ — simple-git unsafe-operation guard does not block trailer command configuration</title>
+      <link>https://vulnogram.org/CVE-2026-102828</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102828</guid>
+      <description>simple-git, an interface for running git commands in any node.js application, enables applications to execute Git operations from JavaScript. From 3.15.0 until 4.0.1, the default blockUnsafeOperationsPlugin does not classify trailer.&lt;token&gt;.cmd as un…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 18:43:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102827 · 8.1 HIGH 🌩️ — simple-git: unsafe-operations plugin bypass via git long-option abbreviation (--receive-p/--exe) -&gt; command execution (residual of CVE-2026-28291)</title>
+      <link>https://vulnogram.org/CVE-2026-102827</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102827</guid>
+      <description>simple-git, an interface for running git commands in any node.js application, enables applications to execute Git operations from JavaScript. Prior to 4.0.0, the default blockUnsafeOperationsPlugin compares parsed option names with literal dangerous…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 18:39:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102826 · 8.1 HIGH 🌩️ — simple-git allows command execution through unblocked Git configuration includes</title>
+      <link>https://vulnogram.org/CVE-2026-102826</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102826</guid>
+      <description>simple-git, an interface for running git commands in any node.js application, enables applications to execute Git operations from JavaScript. Prior to 4.0.0, the default blockUnsafeOperationsPlugin does not completely reject configuration includes su…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 18:37:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102825 · 3.7 LOW 🌩️ — Russh: Configured server auth-attempt cap is not enforced in the USERAUTH_REQUEST runtime path</title>
+      <link>https://vulnogram.org/CVE-2026-102825</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102825</guid>
+      <description>Russh is a Rust SSH client and server library. Prior to 0.62.6, the USERAUTH_REQUEST path reached from server::run_stream in russh/src/server/encrypted.rs increments self.common.auth_attempts but never compares it with server::Config.max_auth_attempt…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 18:31:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102824 · 4.3 MEDIUM — Russh: Missing X25519 zero-point validation in hybrid ML-KEM key exchange</title>
+      <link>https://vulnogram.org/CVE-2026-102824</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102824</guid>
+      <description>Russh is a Rust SSH client and server library. Prior to 0.63.0, the hybrid ML-KEM 768 and X25519 implementation in russh/src/kex/hybrid_mlkem.rs accepts an all-zero 32-byte peer X25519 public key in both server_dh and compute_shared_secret, forcing t…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 18:27:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102823 · 7.5 HIGH 🌩️ — russh: Client-side channel-scoped Handler callbacks fire for channel IDs the client never opened</title>
+      <link>https://vulnogram.org/CVE-2026-102823</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102823</guid>
+      <description>Russh is a Rust SSH client and server library. Prior to 0.63.1, client_read_authenticated in russh/src/client/encrypted.rs forwards CHANNEL_DATA, CHANNEL_EXTENDED_DATA, CHANNEL_EOF, CHANNEL_CLOSE, CHANNEL_OPEN_FAILURE, CHANNEL_SUCCESS, CHANNEL_FAILUR…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 18:25:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102822 · 3.7 LOW 🌩️ — russh: negotiating a MAC-requiring block cipher (CTR/CBC) with mac=none causes a slice-index-out-of-range panic</title>
+      <link>https://vulnogram.org/CVE-2026-102822</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102822</guid>
+      <description>Russh is a Rust SSH client and server library. Prior to 0.63.1, a connection configured to permit mac=none can negotiate it with a MAC-requiring CTR or CBC block cipher because the selection logic validates needs_mac() only when MAC selection fails.…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 18:23:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102821 · 6.5 MEDIUM — Russh: Unbounded memory exhaustion via CHANNEL_OPEN flood during a client-stalled rekey</title>
+      <link>https://vulnogram.org/CVE-2026-102821</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102821</guid>
+      <description>Russh is a Rust SSH client and server library. Prior to 0.63.2, an authenticated remote peer can send SSH_MSG_KEXINIT without the required SSH_MSG_KEX_ECDH_INIT and then flood SSH_MSG_CHANNEL_OPEN messages while SessionKexState::InProgress prevents p…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 18:21:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102820 · 6.2 MEDIUM — pageant: Out-of-bounds read / oversized allocation in `pageant` MemoryMap::read via a malicious Pageant agent (Windows)</title>
+      <link>https://vulnogram.org/CVE-2026-102820</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102820</guid>
+      <description>pageant provides a [PageantStream] type that implements [AsyncRead] and [AsyncWrite] traits and can be used to talk to a running Pageant instance. Prior to pageant 0.2.3, the Windows pageant crate&apos;s pageant/src/wmmessage.rs MemoryMap::read function t…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 18:18:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102677 · 7.8 HIGH — Electron: Sandboxed preload code cache can be poisoned by a compromised renderer</title>
+      <link>https://vulnogram.org/CVE-2026-102677</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102677</guid>
+      <description>Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. From 42.3.3 until 42.10.0, 43.5.0, and 44.0.0-beta.6, Electron&apos;s sandboxed preload code cache did not verify that a cached entry matched the prelo…</description>
+      <category>High</category>
+      <pubDate>Tue, 29 Sep 2026 17:43:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102676 · 8.3 HIGH 🌩️ — Electron: &lt;webview&gt; can enable Node.js integration in Web Workers despite embedder restrictions</title>
+      <link>https://vulnogram.org/CVE-2026-102676</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102676</guid>
+      <description>Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. Prior to 41.10.6, 42.9.2, 43.4.1, and 44.0.0-beta.5, an Electron &lt;webview&gt; guest could enable nodeIntegrationInWorker for its Web Workers even whe…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 16:56:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102675 · 7.4 HIGH 🌩️ — Electron: File and HTTP protocol handlers allow cross-origin reads without corsEnabled</title>
+      <link>https://vulnogram.org/CVE-2026-102675</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102675</guid>
+      <description>Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. Prior to 41.10.6, 42.9.2, 43.4.1, and 44.0.0-beta.5, responses served through protocol.registerFileProtocol or protocol.registerHttpProtocol for a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 16:54:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102674 · 8.2 HIGH 🌩️ — Electron: Windows opened from a sandboxed top-level document do not inherit its sandbox restrictions</title>
+      <link>https://vulnogram.org/CVE-2026-102674</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102674</guid>
+      <description>Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. Prior to 41.10.6, 42.9.2, 43.4.1, and 44.0.0-beta.5, windows opened from a sandboxed top-level document did not inherit that document&apos;s active HTM…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 16:51:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102673 · 8.2 HIGH 🌩️ — Electron drops inherited HTML sandbox restrictions for popups opened through OpenURLFromTab</title>
+      <link>https://vulnogram.org/CVE-2026-102673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102673</guid>
+      <description>Electron is a framework for writing cross-platform desktop applications using JavaScript, HTML and CSS. Prior to 41.10.4, 42.5.2, and 43.0.0, popups opened from a sandboxed iframe through Electron&apos;s OpenURLFromTab navigation path, including links usi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 16:38:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97711 · 2.3 LOW 🌩️ — Serialize JavaScript: Cross-site scripting (XSS) via unescaped &lt;/script&gt; in serialized function bodies</title>
+      <link>https://vulnogram.org/CVE-2026-97711</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97711</guid>
+      <description>Serialize JavaScript serializes JavaScript values to a superset of JSON that includes regular expressions and functions. From 7.1.1 until 7.1.2, function values serialized by serialize-javascript are not fully protected against script-closing tags in…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 16:00:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97689 · 8.9 HIGH 🌩️ — urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory</title>
+      <link>https://vulnogram.org/CVE-2026-97689</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97689</guid>
+      <description>urllib3 is an HTTP client library for Python. From 1.10.3 until 2.8.0, the HTTPResponse.read_chunked and HTTPResponse.stream methods can allocate unbounded memory because the streaming chunk parser buffers the chunk-size field until newline or EOF wi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:36:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97688 · 6.9 MEDIUM 🌩️ — urllib3: Chunked Deflate streaming can enter an infinite loop</title>
+      <link>https://vulnogram.org/CVE-2026-97688</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97688</guid>
+      <description>urllib3 is an HTTP client library for Python. From 2.6.2 until 2.8.0, HTTPResponse.stream and HTTPResponse.read_chunked can enter an infinite loop because the Deflate decoder retains trailing bytes as unconsumed input after reaching end-of-stream and…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:32:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97687 · 7.6 HIGH 🌩️ — urllib3: HTTPS proxy TLS configuration may be ignored or overridden</title>
+      <link>https://vulnogram.org/CVE-2026-97687</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97687</guid>
+      <description>urllib3 is an HTTP client library for Python. From 1.26.0 until 2.8.0, the proxy_ssl_context, proxy_assert_hostname, proxy_assert_fingerprint, ssl_context, cert_reqs, verify_mode, use_forwarding_for_https=True, and CERT_NONE configuration paths fail…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:30:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102601 · 3.5 LOW — Flysystem: WhitespacePathNormalizer&apos;s control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter</title>
+      <link>https://vulnogram.org/CVE-2026-102601</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102601</guid>
+      <description>Flysystem is an open source file storage library for PHP. Prior to 3.35.3, the default WhitespacePathNormalizer in src/WhitespacePathNormalizer.php used by Filesystem across adapters calls preg_match with the u modifier and treats both false and 0 as…</description>
+      <category>Low</category>
+      <pubDate>Tue, 29 Sep 2026 15:26:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102600 · 7.5 HIGH 🌩️ — Socket.IO: Prototype Pollution via Unsafe Client Session Lookup</title>
+      <link>https://vulnogram.org/CVE-2026-102600</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102600</guid>
+      <description>Socket.IO enables bidirectional and low-latency communication for every platform. Prior to 0.1.1, @socket.io/cluster-engine uses inherited object properties when looking up attacker-controlled session IDs in clustered deployments. Special property na…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:23:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102598 · 6.3 MEDIUM 🌩️ — Werkzeug safe_join() allows Windows special device names</title>
+      <link>https://vulnogram.org/CVE-2026-102598</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102598</guid>
+      <description>Werkzeug is a comprehensive WSGI web application library. Prior to 3.1.9, the safe_join function used by send_from_directory can allow a NUL: special-device path because safe_join checks the Windows device name without first removing an empty NTFS AD…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 15:16:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-68911 · 8.7 HIGH 🌩️ — Nicotine+: Decompression of peer messages can exhaust available memory</title>
+      <link>https://vulnogram.org/CVE-2026-68911</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68911</guid>
+      <description>Nicotine+ is a graphical client for the Soulseek peer-to-peer network. Prior to version 3.3.11, a modified remote client can send zlib-compressed peer messages containing a decompression bomb, exhausting available memory of the recipient&apos;s operating…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 14:59:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63209 · 7.5 HIGH 🌩️ — Integer Overflow or Wraparound and Out-of-bounds Write in compress</title>
+      <link>https://vulnogram.org/CVE-2026-63209</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63209</guid>
+      <description>compress provides various compression algorithms. Prior to version 1.18.7, a signed integer overflow vulnerability in s2.NewDict() allows an attacker to bypass repeat index validation by supplying a dictionary with a uvarint-encoded repeat value exce…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 14:58:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86035 · 8.5 HIGH — Weblate: Mercurial argument injection via repository filenames allows authenticated command execution</title>
+      <link>https://vulnogram.org/CVE-2026-86035</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86035</guid>
+      <description>Weblate is a web-based continuous localization platform used to manage software translations. Weblate 4.11.1 through 2026.7.1 contains an argument-injection vulnerability in its Mercurial backend. Repository filenames beginning with - could be interp…</description>
+      <category>High</category>
+      <pubDate>Tue, 29 Sep 2026 14:58:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-49243 · 5.1 MEDIUM 🌩️ — Webmin: Reflected XSS in the Configuration module</title>
+      <link>https://vulnogram.org/CVE-2026-49243</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49243</guid>
+      <description>Webmin is a web-based system administration tool for Unix-like servers. Prior to version 2.650, Webmin users who click on a malicious link to their server are vulnerable to this XSS vulnerability that could be used to execute attacker-controlled comm…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 14:57:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102521 · 8.6 HIGH 🌩️ — lib0 `readFromDataView` out-of-bounds read</title>
+      <link>https://vulnogram.org/CVE-2026-102521</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102521</guid>
+      <description>The decoder in `readFromDataView` in lib0 before 0.2.119 can be tricked into reading more than it should from a buffer. The vulnerability allows reading past the decoders&apos; view, thus exposing adjacent process memory. This can be anything that is curr…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 13:14:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102360 · 8.6 HIGH 🌩️ — lib0 `readUint8Array` performs an unbounded read past the end of the decoder’s view, disclosing adjacent process memory</title>
+      <link>https://vulnogram.org/CVE-2026-102360</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102360</guid>
+      <description>A missing bounds check in the binary decoder in lib0, versions 0.2.1-0.2.117 and earlier and 1.0.0-rc.32 and earlier, lets any unauthenticated remote peer read adjacent process memory and receive it back. `readUint8Array` never compares the wire-supp…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 29 Sep 2026 13:11:55 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-102281 · 7.5 HIGH 🌩️ — Nest: Remote process termination via a deeply nested microservice message pattern</title>
       <link>https://vulnogram.org/CVE-2026-102281</link>
@@ -216,240 +453,6 @@
       <category>Low</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 28 Sep 2026 19:48:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101914 · 6.5 MEDIUM 🌩️ — @grpc/grpc-js: The exact path match matcher incorrectly only applies a prefix match for case-insensitive matches</title>
-      <link>https://vulnogram.org/CVE-2026-101914</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101914</guid>
-      <description>@grpc/grpc-js implements the core functionality of gRPC purely in JavaScript, without a C++ addon. Prior to 1.13.1 and 1.14.1, the exact path (method name) matcher used by RBAC performs a prefix comparison instead of an equality comparison when case-…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 19:36:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49994 · 9.1 CRITICAL 🌩️ — Bluehood: Missing authentication on Bluehood API routes when web auth is enabled</title>
-      <link>https://vulnogram.org/CVE-2026-49994</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49994</guid>
-      <description>Bluehood monitors local bluetooth activity. Prior to version 0.7.1, when auth_enabled is set in Bluehood, only the HTML page handlers enforced session validation. The /api/* handlers (settings, devices, groups, per-device endpoints including /api/dev…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:55:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55160 · 7.6 HIGH — Authenticated Server-Side Request Forgery (SSRF) via feed URL in Stringer</title>
-      <link>https://vulnogram.org/CVE-2026-55160</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55160</guid>
-      <description>Stringer is a self-hosted, anti-social RSS reader. Prior to commit 75cb095, an unrestricted Server-Side Request Forgery (SSRF) vulnerability allows any authenticated user to force the Stringer server to send arbitrary HTTP/HTTPS requests to internal…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:52:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101913 · 6.3 MEDIUM 🌩️ — ip-address: Address6.isLinkLocal() recognizes fe80::/64 rather than fe80::/10, allowing SSRF and trust-boundary bypass to on-link hosts</title>
-      <link>https://vulnogram.org/CVE-2026-101913</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101913</guid>
-      <description>ip-address is a library for parsing and manipulating IPv4 and IPv6 addresses in JavaScript. Prior to 10.5.1, the Address6 isLinkLocal method in src/ipv6.ts recognizes only fe80::/64 instead of the complete fe80::/10 IPv6 link-local range. An attacker…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:49:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55156 · 5.3 MEDIUM 🌩️ — Token Optimizer MCP: Unauthenticated Path Traversal in Dashboard Session Log API Endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-55156</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55156</guid>
-      <description>Token Optimizer MCP measures token savings per AI coding agent, optimizes context, and shares a live local knowledge graph across 16 CLI clients. Prior to version 5.1.0, the dashboard HTTP server in token-optimizer-mcp exposes /api/session-summary an…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:48:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55157 · 8.4 HIGH — Token Optimizer MCP: OS command injection in smart_user via username in get-user-info</title>
-      <link>https://vulnogram.org/CVE-2026-55157</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55157</guid>
-      <description>Token Optimizer MCP measures token savings per AI coding agent, optimizes context, and shares a live local knowledge graph across 16 CLI clients. Prior to version 5.1.0, token-optimizer-mcp is vulnerable to OS command injection in the smart_user tool…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:48:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101912 · 6.3 MEDIUM 🌩️ — ip-address: isInSubnet() and isHostInSubnet() compare addresses of different families as if they shared an address space, allowing an allowlist check to admit an address outside its range</title>
-      <link>https://vulnogram.org/CVE-2026-101912</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101912</guid>
-      <description>ip-address is a library for parsing and manipulating IPv4 and IPv6 addresses in JavaScript. Prior to 10.7.1, the isInSubnet and isHostInSubnet methods in src/common.ts compare masked binary strings without validating that both operands use the same I…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:48:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101911 · 6.3 MEDIUM 🌩️ — ip-address: Address6 builds a parse diagnostic proportional to the input with no length bound, allowing a single long string to stall or crash the process</title>
-      <link>https://vulnogram.org/CVE-2026-101911</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101911</guid>
-      <description>ip-address is a library for parsing and manipulating IPv4 and IPv6 addresses in JavaScript. Prior to 10.7.1, the Address6 constructor, Address6.isValid, and parse code in src/ipv6.ts accept unbounded strings and expand invalid characters through RE_B…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:46:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101910 · 6.9 MEDIUM 🌩️ — ip-address: no classifier recognizes the NAT64 local-use range 64:ff9b:1::/48, allowing SSRF and trust-boundary bypass</title>
-      <link>https://vulnogram.org/CVE-2026-101910</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101910</guid>
-      <description>ip-address is a library for parsing and manipulating IPv4 and IPv6 addresses in JavaScript. From 10.2.0 until 10.5.1, the Address6 isPrivate classifier in src/ipv6.ts does not recognize the NAT64 local-use range 64:ff9b:1::/48. Applications that comb…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:45:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101909 · 8.3 HIGH 🌩️ — Axios: Prototype Pollution Gadget in axios toFormData Options</title>
-      <link>https://vulnogram.org/CVE-2026-101909</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101909</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 0.28.0 until 0.34.0 and 1.15.1 until 1.20.0, ToFormData processes inherited serialization options and visitor properties supplied through prototype pollution. A separate same-proc…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:42:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75600 · 8.6 HIGH — FreePBX: Authenticated API generatedocs Host Command Injection</title>
-      <link>https://vulnogram.org/CVE-2026-75600</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75600</guid>
-      <description>FreePBX is an open source IP PBX. Prior to version 17.0.9, authenticated users who are authorized to access the GraphQL api module interface of FreePBX are able to execute arbitrary shell commands. Authenticated access to the api module is required.…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:41:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54710 · 8.6 HIGH — FreePBX: Authenticated Superfecta Arbitrary PHP Code Execution (RCE via Unsafe File Inclusion)</title>
-      <link>https://vulnogram.org/CVE-2026-54710</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54710</guid>
-      <description>FreePBX is an open source IP PBX. Prior to versions 16.0.40 and 17.0.7, a critical remote code execution (RCE) vulnerability exists in the superfecta module due to unsafe inclusion of arbitrary PHP files, allowing authenticated attackers to execute a…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:41:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54708 · 8.6 HIGH — Authenticated Remote Code Execution via Path Traversal in FreePBX Backup Module</title>
-      <link>https://vulnogram.org/CVE-2026-54708</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54708</guid>
-      <description>FreePBX is an open source IP PBX. Prior to versions 16.0.72 and 17.0.7, a critical vulnerability exists in the FreePBX backup Module that allows authenticated attackers to execute arbitrary code on the server. Authentication with a known username tha…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:40:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54675 · 8.7 HIGH — FreePBX: Authenticated Remote Code Execution via File Upload and Convert in Soundlang Module</title>
-      <link>https://vulnogram.org/CVE-2026-54675</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54675</guid>
-      <description>FreePBX is an open source IP PBX. Prior to versions 16.0.10 and 17.0.5, a critical vulnerability exists in the sound language upload and conversion functionality that allows an authenticated attacker to perform arbitrary file writes, leading directly…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:40:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101908 · 6.9 MEDIUM 🌩️ — Axios: Prototype pollution gadget in fetch adapter can alter outbound requests</title>
-      <link>https://vulnogram.org/CVE-2026-101908</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101908</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.7.0 until 1.20.0, the fetch adapter constructs a Request with sanitized resolvedOptions but then calls fetch with the original fetchOptions. A separate same-process prototype-po…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:38:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54674 · 8.6 HIGH — Authenticated Command Injection in FreePBX UCP Interface</title>
-      <link>https://vulnogram.org/CVE-2026-54674</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54674</guid>
-      <description>FreePBX is an open source IP PBX. Prior to versions 16.0.39 and 17.0.7, users authenticated via User Control Panel (UCP) are able to execute arbitrary commands on the PBX as the webserver user (typically asterisk) using specially crafted HTTP strings…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:37:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45562 · 7.7 HIGH — FreePBX: Authenticated Remote Code Execution in FreePBX Music on Hold (MoH) Module</title>
-      <link>https://vulnogram.org/CVE-2026-45562</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45562</guid>
-      <description>FreePBX is an open source IP PBX. Prior to versions 16.0.4 and 17.0.6, the FreePBX Music on Hold (MoH) module contains a critical security flaw that allows authenticated attackers to execute arbitrary system commands with the privileges of the Asteri…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:36:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101907 · 7 HIGH 🌩️ — Axios: maxRedirects: 0 is not enforced by the fetch adapter, allowing redirect-based SSRF</title>
-      <link>https://vulnogram.org/CVE-2026-101907</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101907</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.17.0 until 1.20.0, the fetch adapter bypasses the maxRedirects: 0 redirect policy. An Axios request uses the fetch adapter with maxRedirects set to zero and receives a redirect…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:36:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101906 · 8.2 HIGH 🌩️ — Axios: ReDoS (O(N²)) in shouldBypassProxy host normalization, reachable via untrusted redirect Location</title>
-      <link>https://vulnogram.org/CVE-2026-101906</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101906</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.15.0 until 1.20.0, Axios shouldBypassProxy applies a quadratic trailing-dot regular expression to redirect hostnames. HTTP_PROXY or HTTPS_PROXY is configured, NO_PROXY or no_pro…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:32:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101905 · 7.6 HIGH — Axios: Node HTTP adapter prototype-pollution gadget allows request socket hijack via inherited createConnection</title>
-      <link>https://vulnogram.org/CVE-2026-101905</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101905</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.15.2 until 1.20.0, the Node HTTP adapter in lib/adapters/http.js supplies request options without an own createConnection value. A separate same-process prototype-pollution flaw…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 17:31:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101904 · 6.9 MEDIUM 🌩️ — Axios: Header Injection via Inherited headers After Minimal Interceptor</title>
-      <link>https://vulnogram.org/CVE-2026-101904</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101904</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.0.0 until 1.20.0, the dispatchRequest function normalizes inherited Object.prototype.headers from a replacement request configuration. A separate same-process prototype-pollutio…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:29:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101903 · 8.2 HIGH 🌩️ — Axios: ReDoS in fromDataURI data: URL parser freezes the Node event loop (DoS)</title>
-      <link>https://vulnogram.org/CVE-2026-101903</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101903</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.16.1 until 1.20.0, the RFC 2397 regular expression allows slash characters on both sides of the media-type separator. An application passes an attacker-controlled malformed data…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:25:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101902 · 6.9 MEDIUM 🌩️ — Axios: Prototype-Pollution Gadget in the Default Instance Allows Inherited Object.prototype.method to Override HTTP Method</title>
-      <link>https://vulnogram.org/CVE-2026-101902</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101902</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 0.27.2 until 0.34.0 and 1.20.0, Axios default-instance requests that omit an explicit method can read an inherited method value from Object.prototype. If another vulnerability in…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:22:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101901 · 8.2 HIGH 🌩️ — Axios: Denial of Service  via Unhandled &apos;error&apos; Event in HTTP/2 ClientHttp2Session Initialization</title>
-      <link>https://vulnogram.org/CVE-2026-101901</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101901</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.13.0 until 1.20.0, Http2Sessions does not install adequate error handling for a ClientHttp2Session during Axios HTTP/2 session initialization or reuse. A request uses httpVersio…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:16:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101900 · 6.9 MEDIUM 🌩️ — Axios: Fetch Adapter Header Injection via Inherited FormData getHeaders</title>
-      <link>https://vulnogram.org/CVE-2026-101900</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101900</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.12.0 until 1.20.0, ResolveConfig reads inherited Symbol.toStringTag, append, and getHeaders properties while resolving FormData headers. A separate same-process prototype-pollut…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:14:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101898 · 7 HIGH 🌩️ — Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls</title>
-      <link>https://vulnogram.org/CVE-2026-101898</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101898</guid>
-      <description>Axios is a promise-based HTTP client for the browser and Node.js. From 1.13.0 until 1.20.0, Axios HTTP/2 request setup does not consistently apply proxy settings and caller-supplied DNS lookup policy. An HTTPS request uses httpVersion: 2 with explici…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 17:10:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101894 · 9.1 CRITICAL 🌩️ — @xhmikosr/decompress: Path traversal via symlink chain</title>
-      <link>https://vulnogram.org/CVE-2026-101894</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101894</guid>
-      <description>The decompress package for Node.js extracts archives. Prior to 10.2.2 and 11.1.4, the default decompress(input, output) API relies on lexical containment checks that do not account for the kernel following a planted symlink chain. An attacker can sup…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 16:57:11 GMT</pubDate>
     </item>
   </channel>
 </rss>
