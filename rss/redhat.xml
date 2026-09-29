@@ -11,7 +11,31 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 29 Sep 2026 06:36:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 13:44:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-95520 · 7.1 HIGH — Rpm: rpm: integer overflow in iterreadarchivenext() leads to heap-based buffer overflow when parsing untrusted rpm packages</title>
+      <link>https://vulnogram.org/CVE-2026-95520</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95520</guid>
+      <description>A heap-based buffer overflow flaw was found in rpm. Parsing a symlink entry in an untrusted RPM package whose declared RPMTAG_LONGFILESIZES value is 0xFFFFFFFFFFFFFFFF causes an integer overflow in iterReadArchiveNext() that shrinks a buffer allocati…</description>
+      <category>High</category>
+      <pubDate>Tue, 29 Sep 2026 11:02:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102474 · 4 MEDIUM — Dash: dash: heap out-of-bounds write in conv_escape via undersized unicode escape reservation</title>
+      <link>https://vulnogram.org/CVE-2026-102474</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102474</guid>
+      <description>A flaw was found in dash. The printf builtin reserves four bytes before converting a Unicode \u or \U escape, but the multi-byte token can need five or six bytes. A local user who can supply such an escape to dash printf or echo %b, including through…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 09:23:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102473 · 5.5 MEDIUM — Dash: dash: super-polynomial backtracking in pmatch when libc fnmatch is disabled</title>
+      <link>https://vulnogram.org/CVE-2026-102473</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102473</guid>
+      <description>A flaw was found in dash. When built without libc fnmatch, the internal pmatch() matcher implements * by unbounded recursion over candidate positions. A local user who can plant filenames, or otherwise feed that matcher, can make a short multi-star p…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 29 Sep 2026 09:22:54 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-97029 · 5.7 MEDIUM — Flatpak: flatpak: sandboxed app can signal unsandboxed processes in the same process group</title>
       <link>https://vulnogram.org/CVE-2026-97029</link>
@@ -399,30 +423,6 @@
       <description>A flaw was found in Red Hat Ansible Automation Platform&apos;s automation- controller. The HTML view of job, ad hoc command, project update, and inventory update standard output escapes HTML metacharacters but does not remove ANSI terminal escape sequence…</description>
       <category>High</category>
       <pubDate>Wed, 23 Sep 2026 19:02:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84499 · 7.7 HIGH — Automation-controller: automation-controller-container: automation-controller: write-only survey password recovered in plaintext via schedule/workflowjobtemplatenode survey min/max validation error message</title>
-      <link>https://vulnogram.org/CVE-2026-84499</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84499</guid>
-      <description>A flaw was found in Red Hat Ansible Automation Platform&apos;s automation- controller. Survey questions of type password are write-only and stored encrypted, displayed only as a placeholder on read. When a schedule or workflow job template node is revalid…</description>
-      <category>High</category>
-      <pubDate>Wed, 23 Sep 2026 18:47:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84502 · 9.9 CRITICAL — Automation-controller: automation-controller-container: automation-controller: project scm_url argument injection into `git ls-remote --upload-pack` yields rce on the controller-task control-plane pod</title>
-      <link>https://vulnogram.org/CVE-2026-84502</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84502</guid>
-      <description>A flaw was found in Red Hat Ansible Automation Platform&apos;s automation- controller. The Project scm_url field is not validated against values that begin with a dash and is stored and passed verbatim to the git SCM module. Because the module runs git ls…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 23 Sep 2026 18:47:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84474 · 9.9 CRITICAL — Automation-controller: automation-controller-container: automation-controller: view_jobtemplate to execute privilege escalation via host_config_key exposure and x-forwarded-for spoofing of provisioning-callback host match</title>
-      <link>https://vulnogram.org/CVE-2026-84474</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84474</guid>
-      <description>A flaw was found in Red Hat Ansible Automation Platform&apos;s automation- controller. The provisioning-callback secret (host_config_key) is exposed to users holding only the read-level view_jobtemplate permission -- both in the job template API represent…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 23 Sep 2026 18:41:18 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,98 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 29 Sep 2026 06:36:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 13:44:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-82804 — Apache DolphinScheduler: Command Injection in the Alert Script Plugin</title>
+      <link>https://vulnogram.org/CVE-2026-82804</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82804</guid>
+      <description>The scriptPath parameter is incorporated into a /bin/sh -c command without sufficient neutralization of shell metacharacters, allowing shell command substitution and execution. An authenticated user can exploit this behavior by creating a resource wh…</description>
+      <pubDate>Tue, 29 Sep 2026 13:01:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66083 — Apache DolphinScheduler: Unauthorized Disclosure of Data Source Information via /datasources/unauth-datasource</title>
+      <link>https://vulnogram.org/CVE-2026-66083</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66083</guid>
+      <description>The /datasources/unauth-datasource endpoint does not properly enforce data source authorization. An authenticated user can invoke this endpoint to obtain information about data sources they are not authorized to access. This may expose data source co…</description>
+      <pubDate>Tue, 29 Sep 2026 11:46:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102497 — Apache XMLSchema: Denial of service through cyclic schema definitions in the schema walker</title>
+      <link>https://vulnogram.org/CVE-2026-102497</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102497</guid>
+      <description>The Apache XmlSchema walker (xmlschema-walker) doesn&apos;t detect cycles in type derivation, substitution groups, model groups or attribute groups. A malicious schema with such a cycle can make the walker recurse until the stack overflows, causing a deni…</description>
+      <pubDate>Tue, 29 Sep 2026 11:34:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102496 — Apache XMLSchema: Denial of service through deeply nested schema structures</title>
+      <link>https://vulnogram.org/CVE-2026-102496</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102496</guid>
+      <description>Apache XmlSchema doesn&apos;t limit how deeply schema structures can be nested when it builds its schema model, so a malicious schema can make parsing recurse until the stack overflows. This causes a denial of service. Users are recommended to upgrade to…</description>
+      <pubDate>Tue, 29 Sep 2026 11:34:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102495 — Apache XMLSchema: Denial of service through unbounded recursion when resolving schema imports and includes</title>
+      <link>https://vulnogram.org/CVE-2026-102495</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102495</guid>
+      <description>Apache XmlSchema doesn&apos;t limit how deeply schema imports and includes can be nested, so a malicious schema can make parsing recurse until the stack overflows. This causes a denial of service. Users are recommended to upgrade to version 2.3.3, which f…</description>
+      <pubDate>Tue, 29 Sep 2026 11:33:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86843 — Apache Airflow Teradata provider: SQL injection via unvalidated Dag Params in the compute-cluster example Dag</title>
+      <link>https://vulnogram.org/CVE-2026-86843</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86843</guid>
+      <description>The Apache Airflow Teradata provider&apos;s compute-cluster example Dag declared every one of its Dag Params as unconstrained free text and templated them straight into the compute-cluster operators, which interpolate those values into Teradata DDL. A use…</description>
+      <pubDate>Tue, 29 Sep 2026 10:00:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81930 — Apache Airflow Snowflake provider: Unvalidated account field redirects SQL API bearer token off-domain</title>
+      <link>https://vulnogram.org/CVE-2026-81930</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81930</guid>
+      <description>Apache Airflow&apos;s Snowflake provider did not validate the connection&apos;s `account` and `region` fields before interpolating them into request URLs. The SQL API endpoint is built as `https://{account}.snowflakecomputing.com/api/v2/statements`, so an `acc…</description>
+      <pubDate>Tue, 29 Sep 2026 10:00:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81862 — Apache Airflow Teradata provider: Teradata transfer operators embed cloud storage credentials in SQL text, task logs and Teradata query logs</title>
+      <link>https://vulnogram.org/CVE-2026-81862</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81862</guid>
+      <description>Apache Airflow&apos;s Teradata provider embedded cloud storage credentials directly into SQL statements. `S3ToTeradataOperator` and `AzureBlobStorageToTeradataOperator` interpolate the source bucket&apos;s credentials as plain string literals into the `CREATE…</description>
+      <pubDate>Tue, 29 Sep 2026 09:59:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81914 — Apache Airflow Google provider: Google Drive query injection via unescaped file and folder names</title>
+      <link>https://vulnogram.org/CVE-2026-81914</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81914</guid>
+      <description>Apache Airflow&apos;s Google provider built Google Drive search expressions by interpolating file and folder names directly into single-quoted string literals, without escaping the quote character that delimits them. A name containing an apostrophe theref…</description>
+      <pubDate>Tue, 29 Sep 2026 09:58:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92142 — Apache Karaf: Authorization bypass in JMX MBean lifecycle operations</title>
+      <link>https://vulnogram.org/CVE-2026-92142</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92142</guid>
+      <description>Apache Karaf exposes a JMX MBeanServer guarded by KarafMBeanServerGuard, which enforces role-based access control (RBAC) on MBean operations invoked over the remote JMX connector (RMI registry/server, enabled by default on ports 1099 and 44444). The…</description>
+      <pubDate>Tue, 29 Sep 2026 08:40:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91085 — Apache Karaf: config:install missing ACL entry allows privilege escalation to admin</title>
+      <link>https://vulnogram.org/CVE-2026-91085</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91085</guid>
+      <description>Apache Karaf&apos;s shell/SSH command security is enforced by per-scope ACL configuration files (etc/org.apache.karaf.command.acl.&lt;scope&gt;.cfg). SecuredSessionFactoryImpl.checkSecurity() resolves the roles required for an invocation and, when no ACL rule m…</description>
+      <pubDate>Tue, 29 Sep 2026 08:39:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91048 — Apache Karaf: Missing authorization on the jdbc:* shell command scope allows privilege escalation to remote code execution via jdbc:ds-create</title>
+      <link>https://vulnogram.org/CVE-2026-91048</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91048</guid>
+      <description>The jdbc shell command scope shipped no org.apache.karaf.command.acl.jdbc.cfg. Karaf&apos;s command guard (SecuredSessionFactoryImpl) treats a command with no matching ACL rule as allowed, so any authenticated shell session (including one holding only the…</description>
+      <pubDate>Tue, 29 Sep 2026 08:34:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91012 — Apache Karaf: Path Traversal in Config Service Allows Manager-to-Admin Privilege Escalation</title>
+      <link>https://vulnogram.org/CVE-2026-91012</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91012</guid>
+      <description>org.apache.karaf.config.core.impl.ConfigRepositoryImpl#update(pid, properties), which backs the &quot;config&quot; MBean and the config:* shell commands, derives the file it writes a configuration to from caller-supplied input without checking that the result…</description>
+      <pubDate>Tue, 29 Sep 2026 08:34:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-91006 — Apache Karaf: OS Command Injection in Child-Instance Launch (instance:* / InstancesMBean)</title>
       <link>https://vulnogram.org/CVE-2026-91006</link>
@@ -327,123 +418,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 23 Sep 2026 11:23:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77791 · 7.5 HIGH 🌩️ — Apache Tomcat: DoS via busy wait during WebSocket close</title>
-      <link>https://vulnogram.org/CVE-2026-77791</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77791</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in Apache Tomcat during sending of WebSocket close message enabled a DoS attack. This issue affects Apache Tomcat: from 11.0.0-M5 through 11.0.25, from 10.1.8 through 10.1.59, from 9.0.74 through 9.0.12…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:20:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77762 · 8.1 HIGH 🌩️ — Apache Tomcat: Stale HPACK emitter injects trailers into recycled pooled Request</title>
-      <link>https://vulnogram.org/CVE-2026-77762</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77762</guid>
-      <description>Concurrent Execution using Shared Resource with Improper Synchronization (&apos;Race Condition&apos;) vulnerability in Apache Tomcat allows an attacker to inject trailer fields into another HTTP/2 request. This issue affects Apache Tomcat: from 11.0.0-M1 throu…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:19:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77756 · 3.7 LOW 🌩️ — Apache Tomcat: Transfer-Encoding honored for HTTP/1.0 requests</title>
-      <link>https://vulnogram.org/CVE-2026-77756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77756</guid>
-      <description>Inconsistent Interpretation of HTTP Requests (&apos;HTTP Request/Response Smuggling&apos;) vulnerability in Apache Tomcat caused by processing the transfer-encoding header for an HTTP/1.0 request may allow an attacker to cause one request from another user to…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:18:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76183 · 9.8 CRITICAL 🌩️ — Apache Tomcat: Bypass of security constraints for WebSocket endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-76183</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76183</guid>
-      <description>Authentication Bypass by Alternate Name vulnerability in Apache Tomcat allowed the security constraints for any WebSocket endpoint to be bypassed. This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0-M1 through 10.1.59, from…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:16:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75973 · 7.3 HIGH 🌩️ — Apache Tomcat: Cross-context authentication mix-up with Jakarta Authentication configured</title>
-      <link>https://vulnogram.org/CVE-2026-75973</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75973</guid>
-      <description>Improper Authentication vulnerability in Apache Tomcat. When Jakarta Authentication was configured with SimpleAuthConfigProvider as the default provider and multiple web application used that provider, the realm for the first web application to authe…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:14:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73581 · 6.5 MEDIUM 🌩️ — Apache Tomcat: OpenSSL and OpenSSL-FFM TLS implementations ignore CRLs when certificate uses a keystore</title>
-      <link>https://vulnogram.org/CVE-2026-73581</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73581</guid>
-      <description>Improper Check for Certificate Revocation vulnerability in Apache Tomcat. Both the OpenSSL and OpenSSL-FFM TLS implementations ignore CRLs when certificate uses a keystore. This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.25, from 10.1.0…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 11:08:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94243 · 7.3 HIGH 🌩️ — Apache Sling Security Bundle: RefererFilter accepts weaker-than-origin evidence</title>
-      <link>https://vulnogram.org/CVE-2026-94243</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94243</guid>
-      <description>A vulnerability in Apache Sling Security Bundle: the ReferrerFilter accepts weaker-than-orgin evidence. This issue affects Apache Sling Security Bundle: before 1.3.2. Users are recommended to upgrade to version 1.3.2, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 09:43:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94251 · 6.5 MEDIUM 🌩️ — Apache Sling Security Bundle: ContentDispositionFilter mediates only one address/API shape of a resource</title>
-      <link>https://vulnogram.org/CVE-2026-94251</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94251</guid>
-      <description>A vulnerability in Apache Sling Security Bundle: ContentDispositionFilter mediates only one address/API shape of a resource This issue affects Apache Sling Security Bundle: before 1.3.12. Users are recommended to upgrade to version 1.3.12, which fixe…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 09:42:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91928 · 6.1 MEDIUM 🌩️ — Apache Sling XSS: Sanitizer bypass, uncontrolled resource consumption and failure pf protection mechanisms</title>
-      <link>https://vulnogram.org/CVE-2026-91928</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91928</guid>
-      <description>Improper neutralization of input during web page generation (&apos;cross-site scripting&apos;) vulnerability in Apache Sling XSS. This issue affects Apache Sling XSS: before 2.4.12. Users are recommended to upgrade to version 2.4.12, which fixes the issue.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 09:37:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96443 · 6.5 MEDIUM 🌩️ — Apache Doris: JDBC driver URL validation bypass leads to remote code execution</title>
-      <link>https://vulnogram.org/CVE-2026-96443</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96443</guid>
-      <description>Insufficient validation of the JDBC driver URL in Apache Doris allows a privileged user to achieve remote code execution on the FE.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 09:35:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91852 · 6.1 MEDIUM 🌩️ — Apache Sling XSS: CWE-79 multiple raw-string break-outs and ReDOS in XSSImpl</title>
-      <link>https://vulnogram.org/CVE-2026-91852</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91852</guid>
-      <description>Improper neutralization of input during web page generation (&apos;cross-site scripting&apos;) vulnerability in Apache Sling XSS. This issue affects Apache Sling XSS: before 2.4.12. Users are recommended to upgrade to version 2.4.12, which fixes the issue.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 09:29:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91999 · 6.1 MEDIUM 🌩️ — Apache Sling XSS: Improper escaping in the XSS Webconsole plugin</title>
-      <link>https://vulnogram.org/CVE-2026-91999</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91999</guid>
-      <description>Improper neutralization of input during web page generation (&apos;cross-site scripting&apos;) vulnerability in Apache Sling XSS. This issue affects Apache Sling XSS: before 2.4.12. Users are recommended to upgrade to version 2.4.12, which fixes the issue.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 09:23:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92001 · 6.1 MEDIUM 🌩️ — Apache Sling XSS: Missing parser resource limits</title>
-      <link>https://vulnogram.org/CVE-2026-92001</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92001</guid>
-      <description>Improper restriction of recursive entity references in DTDs (&apos;XML entity expansion&apos;) vulnerability in Apache Sling XSS. This issue affects Apache Sling XSS: before 2.4.12. Users are recommended to upgrade to version 2.4.12, which fixes the issue.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 09:20:52 GMT</pubDate>
     </item>
   </channel>
 </rss>
