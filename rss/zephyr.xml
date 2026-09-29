@@ -11,7 +11,31 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 28 Sep 2026 21:11:11 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 00:58:01 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-18747 · 6.8 MEDIUM — Integer underflow of net_buf length in the MCUmgr serial (SMP over console) transport leads to out-of-bounds read</title>
+      <link>https://vulnogram.org/CVE-2026-18747</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18747</guid>
+      <description>The MCUmgr SMP-over-console transport decodes a base64 frame, reads a 16-bit packet length from it, verifies a CRC and then unconditionally strips the trailing CRC with rx_ctxt-&gt;nb-&gt;len -= 2U; in mcumgr_serial_process_frag() (subsys/mgmt/mcumgr/trans…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 28 Sep 2026 23:25:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18746 · 5.9 MEDIUM — NULL pointer dereference in Zephyr LwM2M client when the CoAP Block1 context pool is exhausted</title>
+      <link>https://vulnogram.org/CVE-2026-18746</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18746</guid>
+      <description>parse_write_op() in subsys/net/lib/lwm2m/lwm2m_message_handling.c handles inbound CoAP WRITE/CREATE requests that carry a Block1 option. For the first block of a transfer it called init_block_ctx() and then immediately stored the peer-selected block…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 28 Sep 2026 23:25:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18417 · 6.5 MEDIUM — Wild pointer dereference in Zephyr BSD sockets when a TCP listening socket reports an asynchronous error</title>
+      <link>https://vulnogram.org/CVE-2026-18417</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18417</guid>
+      <description>The native BSD-socket layer recorded a pending asynchronous socket error by type-punning it into struct net_context&apos;s void user_data field (ctx-&gt;user_data = INT_TO_POINTER(-status) in zsock_accepted_cb(), zsock_received_cb(), zsock_connected_cb() and…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 28 Sep 2026 23:25:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-18416 · 3.7 LOW — Out-of-bounds read in CoAP well-known-core Uri-Query href matching (match_path_uri)</title>
       <link>https://vulnogram.org/CVE-2026-18416</link>
@@ -387,30 +411,6 @@
       <description>Zephyr&apos;s Precision Time Protocol receive handler ptp_msg_post_recv() in subsys/net/lib/ptp/msg.c takes the 4-bit message type straight off the wire via ptp_msg_type() (msg-&gt;header.type_major_sdo_id &amp; 0xF, range 0-15) and uses it to index the msg_size…</description>
       <category>Medium</category>
       <pubDate>Tue, 18 Aug 2026 20:55:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12631 · 6.5 MEDIUM — Broken access-control denial in k_thread_join/k_thread_abort syscall validation in Zephyr kernel</title>
-      <link>https://vulnogram.org/CVE-2026-12631</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12631</guid>
-      <description>The Zephyr kernel validates the k_thread_join() and k_thread_abort() system calls (declared __syscall in include/zephyr/kernel.h) through thread_obj_validate() in kernel/thread.c. Its default switch branch is the access-denied path, taken when k_obje…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 18 Aug 2026 20:55:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12520 · 6.4 MEDIUM — Stack buffer overflow and off-by-one writes in Zephyr HL7800 modem AT response handlers</title>
-      <link>https://vulnogram.org/CVE-2026-12520</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12520</guid>
-      <description>The Sierra Wireless HL7800 cellular modem driver (drivers/modem/vendor_standalone/hl7800.c, located at drivers/modem/hl7800.c in v4.4.0 and earlier) parses AT responses with roughly twenty handlers that call net_buf_linearize(value, sizeof(value), *b…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 18 Aug 2026 19:41:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12519 · 5 MEDIUM — Out-of-bounds stack read and write in Zephyr WNC-M14A2A modem socket-notify parsing</title>
-      <link>https://vulnogram.org/CVE-2026-12519</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12519</guid>
-      <description>The WNC-M14A2A LTE-M modem driver mishandles unsolicited %NOTIFYEV: events in on_cmd_socknotifyev() (drivers/modem/vendor_standalone/wncm14a2a.c). The response line is linearized into a fixed 40-byte stack buffer via net_buf_linearize(), which caps t…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 17 Aug 2026 16:18:53 GMT</pubDate>
     </item>
   </channel>
 </rss>

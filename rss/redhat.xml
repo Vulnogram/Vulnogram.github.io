@@ -11,7 +11,31 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 28 Sep 2026 21:11:11 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 00:58:00 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-97027 · 3.6 LOW — Flatpak: flatpak: denial of service via unsanitized keys in exported desktop entry / d-bus service files</title>
+      <link>https://vulnogram.org/CVE-2026-97027</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97027</guid>
+      <description>Flatpak passes through arbitrary vendor-extension keys unmodified when exporting an application&apos;s Desktop Entry (.desktop) and D-Bus Service (.service) files, instead of validating against an allowlist. A malicious Flatpak app can use this to cause d…</description>
+      <category>Low</category>
+      <pubDate>Mon, 28 Sep 2026 20:57:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97026 · 3.9 LOW — Flatpak: flatpak: world-writable temporary child repositories in system-helper cache path</title>
+      <link>https://vulnogram.org/CVE-2026-97026</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97026</guid>
+      <description>Flatpak creates temporary child repository directories under the user cache with world-writable permissions (0777). On multi-user systems with a permissive umask, other local users could read or modify the temporary directory used while installing ap…</description>
+      <category>Low</category>
+      <pubDate>Mon, 28 Sep 2026 20:57:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97025 · 3.2 LOW — Flatpak: flatpak: world-readable oci authentication token in system-helper cache path</title>
+      <link>https://vulnogram.org/CVE-2026-97025</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97025</guid>
+      <description>Flatpak writes the OCI repository authentication token with world-readable permissions (0644) in the system-helper&apos;s cache directory, allowing other local users on a multi-user system to read the token and impersonate the authenticated user against t…</description>
+      <category>Low</category>
+      <pubDate>Mon, 28 Sep 2026 20:57:01 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-102010 · 7 HIGH 🌩️ — Gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: denial of service via use-after-free in binary heap erase_if</title>
       <link>https://vulnogram.org/CVE-2026-102010</link>
@@ -399,30 +423,6 @@
       <description>A one-byte out-of-bounds heap read flaw was found in GIMP&apos;s uncompressed DDS image loader. When a user opens an uncompressed DDS image, the file-dds plug-in performs an unconditional one-byte look-ahead after processing the final pixel. This may caus…</description>
       <category>Low</category>
       <pubDate>Wed, 23 Sep 2026 18:29:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71465 · 3.1 LOW — Automation-controller: automation-controller-container: automation-controller: ad-hoc command limit field allows cli argument injection into ansible executable</title>
-      <link>https://vulnogram.org/CVE-2026-71465</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71465</guid>
-      <description>RunAdHocCommand.build_args() appends limit as bare positional (args.append(limit)) instead of using args.extend([&apos;-l&apos;, limit]) like RunJob. A limit beginning with - is parsed as an ansible CLI option. Currently limited to short-circuit flags (--versi…</description>
-      <category>Low</category>
-      <pubDate>Wed, 23 Sep 2026 18:29:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71464 · 3.1 LOW — Automation-controller: automation-controller-container: automation-controller: schedule and workflowjobtemplatenode scm_branch prompt bypasses leading-dash git-argument guard</title>
-      <link>https://vulnogram.org/CVE-2026-71464</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71464</guid>
-      <description>LaunchConfigurationBaseSerializer.scm_branch has no validate_scm_branch() leading-dash check, unlike Project/JobTemplate/JobLaunch serializers. Schedule and WFJT Node accept --upload-pack=/bin/id as scm_branch. Currently blocked at runtime by jobs.py…</description>
-      <category>Low</category>
-      <pubDate>Wed, 23 Sep 2026 18:29:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71463 · 2.7 LOW — Automation-controller: automation-controller-container: automation-controller: notification template jinja whitelist bypass via conditional gating leaks tracebacks</title>
-      <link>https://vulnogram.org/CVE-2026-71463</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71463</guid>
-      <description>Notification template Jinja AST whitelist only inspects static Getattr nodes. Dynamic subscripts (job[&apos;job&apos;+&apos;_env&apos;]) and {% if job.id &gt; 100 %} conditional gating bypass both the AST check and the test-render (stub has small job.id). At runtime, the g…</description>
-      <category>Low</category>
-      <pubDate>Wed, 23 Sep 2026 18:28:59 GMT</pubDate>
     </item>
   </channel>
 </rss>
