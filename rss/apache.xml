@@ -11,7 +11,163 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 30 Sep 2026 07:51:08 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 14:35:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-95616 · 7.5 HIGH 🌩️ — Apache WSS4J: Unauthenticated denial of service via integer overflow in DER parsing of X.509 certificate extensions</title>
+      <link>https://vulnogram.org/CVE-2026-95616</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95616</guid>
+      <description>An integer overflow in WSS4J&apos;s DER bounds check lets an oversized allocation pass validation. An unauthenticated attacker can send a SOAP message carrying an X.509 certificate whose SubjectKeyIdentifier extension declares a length of 0x7FFFFFFF; WSS4…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 12:25:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92899 · 4.8 MEDIUM 🌩️ — Apache WSS4J: UsernameToken replay protection bypassed by re-encoding the Nonce</title>
+      <link>https://vulnogram.org/CVE-2026-92899</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92899</guid>
+      <description>Apache WSS4J remembers the Nonce of each UsernameToken it accepts, so a captured token cannot be reused. It stored the Nonce as raw base64 text, but authentication decodes that text and uses the bytes.The same bytes can be written as base64 in severa…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 12:02:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92121 — Apache WSS4J: WS-SecurityPolicy signature checks skipped in the streaming code after an STR-Transform reference</title>
+      <link>https://vulnogram.org/CVE-2026-92121</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92121</guid>
+      <description>In the WSS4J streaming (StAX) code, a signature reference using the WS-Security STR-Transform leaves an internal &quot;inside signed content&quot; flag permanently set. The WS-SecurityPolicy enforcer uses that flag to decide whether an element needs checking,…</description>
+      <pubDate>Wed, 30 Sep 2026 12:01:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89238 — Apache WSS4J: WSS4J EncryptedHeader child confusion causing wrong protected-header selection</title>
+      <link>https://vulnogram.org/CVE-2026-89238</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89238</guid>
+      <description>WSS4J EncryptedHeader child confusion could promote an attacker-controlled plaintext element as the decrypted header, leading to incorrect confidentiality coverage and possible policy bypass. Users are recommended to upgrade to versions 4.0.2 or 3.0.…</description>
+      <pubDate>Wed, 30 Sep 2026 11:59:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88920 — Apache WSS4J: SAML Sender-Vouches Authentication Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-88920</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88920</guid>
+      <description>An authentication bypass in the DOM security processor in Apache WSS4J allows unauthenticated remote attackers to forge authenticated SOAP messages via a crafted unsigned SAML sender-vouches assertion containing an attacker-controlled key. Users are…</description>
+      <pubDate>Wed, 30 Sep 2026 11:58:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87830 — Apache WSS4J: Streaming WS-SecurityPolicy validation may skip element-protection checks.</title>
+      <link>https://vulnogram.org/CVE-2026-87830</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87830</guid>
+      <description>In the StAX streaming WS-SecurityPolicy validator, certain relative or unsupported XPath expressions can be converted into paths that never match the actual XML element path. A remote SOAP peer may therefore send a required element without the expect…</description>
+      <pubDate>Wed, 30 Sep 2026 11:57:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85532 — Apache WSS4J: Insufficient Validation of Derived-Key Parameters</title>
+      <link>https://vulnogram.org/CVE-2026-85532</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85532</guid>
+      <description>Apache WSS4J accepted attacker-controlled derived-key lengths and offsets without adequate bounds. This could permit cryptographically weak keys or excessive CPU and memory consumption when processing crafted WS-Security messages. The fixes enforce a…</description>
+      <pubDate>Wed, 30 Sep 2026 11:55:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77185 · 9.1 CRITICAL 🌩️ — Apache MINA SSHD: Asynchronous authentication can bypass signature verification</title>
+      <link>https://vulnogram.org/CVE-2026-77185</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77185</guid>
+      <description>Authentication bypass in sshd-core in Apache MINA SSHD versions 2.0.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5 for a certain (presumed rare) way to implement an SSH server. Apache MINA SSHD is a Java library for client- and server-side SSH. In the server p…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 09:47:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93994 · 8.1 HIGH — Apache MINA SSHD: Repeated-publickey policy bypass on server</title>
+      <link>https://vulnogram.org/CVE-2026-93994</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93994</guid>
+      <description>Apache MINA SSHD is a Java library for client-side and server-side SSH. SSH servers can be configured to require multi-authentication schemes, for instance two different public keys, not just one. In OpenSSH, this would be done by setting in sshd_con…</description>
+      <category>High</category>
+      <pubDate>Wed, 30 Sep 2026 09:45:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94053 · 9.1 CRITICAL 🌩️ — Apache MINA SSHD: LDAP injection in sshd-ldap</title>
+      <link>https://vulnogram.org/CVE-2026-94053</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94053</guid>
+      <description>Authentication bypass via LDAP injection in component sshd-ldap in Apache MINA SSHD versions 1.2.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5. Apache MINA SSHD is a Java library for client-side and server-side SSH. The optional sshd-ldap component provides s…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 09:43:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93995 · 6.5 MEDIUM — Apache MINA SSHD: Remote execution of JGit &quot;archive -o=file.zip&quot; can write file on the server</title>
+      <link>https://vulnogram.org/CVE-2026-93995</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93995</guid>
+      <description>Improper input validation in sshd-git in Apache MINA SSHD, versions up to 2.19.0 and 3.0.0-M1 to 3.0.0-M5. Apache MINA SSHD is a Java library for client-side and server-side SSH. Component org.apache.sshd:sshd-git provides though class GitPgmCommandF…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 30 Sep 2026 09:38:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93996 · 6.5 MEDIUM — Apache MINA SSHD: Memory exhaustion DoS via unbounded SCP command line read</title>
+      <link>https://vulnogram.org/CVE-2026-93996</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93996</guid>
+      <description>Uncontrolled resource consumption in component ssd-scp in Apache MINA SSHD versions up to 2.19.0 or 3.0.0-M1 to 3.0.0-M5. Apache MINA SSHD is a Java library for client-side and server-side SSH. Component sshd-scp of Apache MINA SSHD provides a Java i…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 30 Sep 2026 09:37:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94002 · 7.5 HIGH 🌩️ — Apache MINA SSHD: Memory exhaustion in SFTP client via unsolicited SFTP replies</title>
+      <link>https://vulnogram.org/CVE-2026-94002</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94002</guid>
+      <description>Possible memory exhaustion in SFTP clients (DefaultSftpClient) in component sshd-sftp in Apache MINA SSHD versions 0.9.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5. Apache MINA SSHD is a Java library for client-side and server-side SSH. The sshd-sftp compone…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 09:37:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94029 · 6.5 MEDIUM — Apache MINA SSHD: Memory exhaustion in SFTP v6 check-file-name/check-file-handle extension</title>
+      <link>https://vulnogram.org/CVE-2026-94029</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94029</guid>
+      <description>Server-side memory exhaustion in Apache MINA SSHD 1.0.0 to 2.19.0 and 3.0.0-M1 to 3.0.0-M5, component sshd-sftp, in the SFTP v6 check-file-name/check-file-handle extension. Apache MINA SSHD is a Java library for client-side and server-side SSH. Using…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 30 Sep 2026 09:35:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94052 · 9.1 CRITICAL 🌩️ — Apache MINA SSHD: LDAP password authentication ineffective</title>
+      <link>https://vulnogram.org/CVE-2026-94052</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94052</guid>
+      <description>A missing check in LdapPasswordAuthenticator in component sshd-ldap in Apache MINA SSHD versions 1.2.0 to 2.19.0 or 3.0.0-M1 to 3.0.0-M5 bypassed authentication checks. Apache MINA SSHD is a Java library for client-side and server-side SSH. The optio…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 09:34:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102511 · 8.5 HIGH — Apache PLC4X, Apache PLC4X, Apache PLC4X, Apache PLC4X: ADS discovery accepts spoofed responses and derives the connection target from them</title>
+      <link>https://vulnogram.org/CVE-2026-102511</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102511</guid>
+      <description>Improper Verification of Source of a Communication Channel in the ADS discovery of the Go implementation of Apache PLC4X (PLC4Go) allows an attacker able to send UDP datagrams to the discovering host to redirect subsequent connections to an arbitrary…</description>
+      <category>High</category>
+      <pubDate>Wed, 30 Sep 2026 08:03:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102510 · 8.7 HIGH 🌩️ — Apache PLC4X: Go binding: unbounded allocation and framing failures on wire-controlled lengths</title>
+      <link>https://vulnogram.org/CVE-2026-102510</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102510</guid>
+      <description>Integer Overflow, Improper Validation of Array Index, Uncontrolled Recursion and Memory Allocation with Excessive Size Value in the Go implementation of Apache PLC4X (PLC4Go) allow a malicious device, or an attacker able to inject network traffic, to…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 08:01:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102509 · 8.7 HIGH 🌩️ — Apache PLC4X, Apache PLC4X: Pre-authentication resource exhaustion in the OPC UA driver and the Java SPI parser</title>
+      <link>https://vulnogram.org/CVE-2026-102509</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102509</guid>
+      <description>Memory Allocation with Excessive Size Value, Allocation of Resources Without Limits, and Uncontrolled Recursion in the Java implementation of Apache PLC4X (PLC4J) allow a malicious or impersonated device to exhaust the memory or stack of the client a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 08:00:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102508 · 9.2 CRITICAL 🌩️ — Apache PLC4X: OPC UA secure channel: integrity bypass, unverifiable server certificate, and silent downgrade</title>
+      <link>https://vulnogram.org/CVE-2026-102508</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102508</guid>
+      <description>Improper Verification of Cryptographic Signature and Improper Certificate Validation in the OPC UA driver of Apache PLC4X (PLC4J) allows an attacker in a network position between client and server to impersonate the OPC UA server and to read, forge o…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 30 Sep 2026 07:42:43 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-97395 — Apache Polaris: Allows authorized table writers to redirect server-side Iceberg FileIO requests to attacker-controlled endpoints using operation-scoped storage credentials</title>
       <link>https://vulnogram.org/CVE-2026-97395</link>
@@ -262,170 +418,6 @@
       <description>Missing Authorization in Apache Roller 6.1.5 allows an authenticated user to read, modify, or delete weblog content belonging to other weblogs through the legacy XML-RPC Blogger and MetaWeblog APIs, because the handlers authenticate the caller but do…</description>
       <category>Critical</category>
       <pubDate>Mon, 28 Sep 2026 07:45:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82378 · 9 CRITICAL 🌩️ — Apache Roller: OAuth authorization endpoint trusts request-supplied identity</title>
-      <link>https://vulnogram.org/CVE-2026-82378</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82378</guid>
-      <description>Incorrect Authorization in the OAuth 1.0a authorization endpoint of Apache Roller 6.1.5 allows an unauthenticated remote attacker who learns an outstanding request token for a configured site-wide consumer to bind that token to an arbitrary user acco…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 07:45:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82385 · 6.5 MEDIUM — Apache Roller: Weblog template include escapes the Velocity sandbox and reads classpath files</title>
-      <link>https://vulnogram.org/CVE-2026-82385</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82385</guid>
-      <description>Exposure of Sensitive Information to an Unauthorized Actor in Apache Roller 6.1.5 allows a weblog administrator to read files on the application classpath, including Roller configuration files containing secrets, by authoring a Velocity template that…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 28 Sep 2026 07:44:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82386 · 7.7 HIGH — Apache Roller: XML external entity processing in OPML bookmark import</title>
-      <link>https://vulnogram.org/CVE-2026-82386</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82386</guid>
-      <description>Improper Restriction of XML External Entity Reference in Apache Roller 6.1.5 allows a weblog administrator to read files readable by the Roller process and reach internal network addresses by importing a crafted OPML document, because the bookmark im…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 07:43:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82348 · 7.7 HIGH — Apache Roller: Cross-weblog resource tampering via unscoped authoring lookups</title>
-      <link>https://vulnogram.org/CVE-2026-82348</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82348</guid>
-      <description>Authorization Bypass Through User-Controlled Key in Apache Roller 6.1.5 allows an authenticated user with authoring rights on one weblog to read, modify, or delete resources belonging to another weblog through unscoped identifier-based lookups. This…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 07:36:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82387 · 5.4 MEDIUM — Apache Roller: Stored cross-site scripting via uploaded media content type</title>
-      <link>https://vulnogram.org/CVE-2026-82387</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82387</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;) in Apache Roller 6.1.5 allows a user with media-upload rights to store active content on Roller&apos;s origin, because the media upload feature trusts the upload-supplied…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 28 Sep 2026 07:36:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82546 · 6.1 MEDIUM 🌩️ — Apache Roller: Stored cross-site scripting through incoming Trackback links</title>
-      <link>https://vulnogram.org/CVE-2026-82546</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82546</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;) in Apache Roller 6.1.5 allows an unauthenticated remote attacker to store a crafted comment-author URL through the incoming Trackback endpoint when a published entry…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 07:35:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91204 · 6.1 MEDIUM 🌩️ — Apache Roller: Stored javascript: URI in HTML comments</title>
-      <link>https://vulnogram.org/CVE-2026-91204</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91204</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;) in Apache Roller 6.1.5 allows an anonymous remote attacker to store a comment containing a javascript: URI link that survives HTML comment formatting and can execute…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 07:34:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91206 · 6.1 MEDIUM 🌩️ — Apache Roller: Reflected XSS in the optional LDAP comment authenticator</title>
-      <link>https://vulnogram.org/CVE-2026-91206</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91206</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;) in Apache Roller 6.1.5 allows a remote attacker to perform reflected cross-site scripting through the optional LDAP comment authenticator, which writes request param…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 07:33:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92550 · 7.5 HIGH 🌩️ — Apache Qpid Broker-J: Type size/count handling can lead to excessive allocation pre-authentication in the AMQP 0-8/0-9/0-9-1 decoder</title>
-      <link>https://vulnogram.org/CVE-2026-92550</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92550</guid>
-      <description>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service. This issue affects Apache Qpid Broker-J: through 10.1.0. Users are recommended to upgrade to version 10.1.1, w…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 25 Sep 2026 08:17:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92560 · 7.5 HIGH 🌩️ — Apache Qpid Broker-J: Type size/count handling can lead to excessive allocation pre-authentication in the AMQP 0-10 decoder</title>
-      <link>https://vulnogram.org/CVE-2026-92560</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92560</guid>
-      <description>A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service. This issue affects Apache Qpid Broker-J: through 10.1.0. Users are recommended to upgrade to version 10.1.1, w…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 25 Sep 2026 08:17:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92573 · 6.5 MEDIUM — Apache Qpid Broker-J: Uncontrolled resource consumption during AMQP delivery decompression, message conversion and HTTP management JSON rendering</title>
-      <link>https://vulnogram.org/CVE-2026-92573</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92573</guid>
-      <description>Improper handling of compressed data in the shared GZIP decompressor used for AMQP 0-8/0-9/0-9-1 and AMQP 0-10 message delivery, message conversion and HTTP management JSON rendering allows authenticated message producers to exhaust memory and disrup…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 25 Sep 2026 08:11:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92564 · 7.5 HIGH 🌩️ — Apache Qpid Broker-J: Unbounded type nesting can lead to stack overflow pre-authentication in AMQP 0-8/0-9/0-9-1 field-table processing</title>
-      <link>https://vulnogram.org/CVE-2026-92564</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92564</guid>
-      <description>A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service. This issue affects Apache Qpid Broker-J: through 10.1.0. Users are recommended to upgrade to version 10.1.1, which fixes…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 25 Sep 2026 07:59:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92608 · 7.5 HIGH 🌩️ — Apache Qpid Broker-J: Incomplete property conversion handling from AMQP 1.0 to AMQP 0-10</title>
-      <link>https://vulnogram.org/CVE-2026-92608</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92608</guid>
-      <description>Improper handling of property-encoding exceptions in AMQP 1.0-to-AMQP 0-10 message conversion allows authenticated message producers to disrupt delivery to AMQP 0-10 consumers via message properties that the target encoder does not handle correctly.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 25 Sep 2026 07:44:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92609 · 9.8 CRITICAL 🌩️ — Apache Qpid Broker-J: Missing HTTP-session renewal after successful authentication</title>
-      <link>https://vulnogram.org/CVE-2026-92609</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92609</guid>
-      <description>Session fixation in HTTP management authentication allows remote attackers to gain unauthorized access to an authenticated management session via reuse of a session identifier retained across successful authentication. This issue affects Apache Qpid…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 25 Sep 2026 07:44:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97636 · 6.5 MEDIUM — Apache Airflow HashiCorp provider: HashiCorp Vault secrets backend: team-scope guard bypass via user-controlled key</title>
-      <link>https://vulnogram.org/CVE-2026-97636</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97636</guid>
-      <description>Apache Airflow HashiCorp provider: the HashiCorp Vault secrets backend&apos;s team-scope guard can be bypassed with a user-controlled key. In a multi-team deployment, a Dag author scoped to one team can supply a Variable key containing a path separator th…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 24 Sep 2026 21:54:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-57590 · 8.1 HIGH — Apache DolphinScheduler: Missing Authorization in Task Group APIs Allows Unauthorized Cross-Project Operations</title>
-      <link>https://vulnogram.org/CVE-2026-57590</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-57590</guid>
-      <description>A missing authorization vulnerability exists in the Task Group APIs of Apache DolphinScheduler. The affected APIs do not properly verify whether the authenticated user has permission to access the project associated with the target Task Group. This i…</description>
-      <category>High</category>
-      <pubDate>Thu, 24 Sep 2026 09:13:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86247 · 7.4 HIGH 🌩️ — Apache Tomcat Native: Client certificate requirements can be down-graded</title>
-      <link>https://vulnogram.org/CVE-2026-86247</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86247</guid>
-      <description>Race condition within a thread vulnerability in Apache Tomcat Native allowed client certificate verification requirements to be down-graded for some configurations. This issue affects Apache Tomcat Native: from 2.0.0 through 2.0.15, from 1.3.0 throug…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 12:31:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86246 · 9.1 CRITICAL 🌩️ — Apache Tomcat Native: Insecure OpenSSL options enabled</title>
-      <link>https://vulnogram.org/CVE-2026-86246</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86246</guid>
-      <description>Initialization of a resource with an insecure default vulnerability in Apache Tomcat Native enabled insecure options by default including ALLOW_CLIENT_RENEGOTIATION, NO_EXTENDED_MASTER_SECRET, IGNORE_UNEXPECTED_EOF and ALLOW_NO_DHE_KEX. This issue af…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 12:26:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86243 · 7.5 HIGH 🌩️ — Apache Tomcat Native: DoS via TLS handshake</title>
-      <link>https://vulnogram.org/CVE-2026-86243</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86243</guid>
-      <description>Buffer over-read vulnerability in Apache Tomcat Native during the TLS handshake permits a malicious user to trigger a DoS via a JVM crash. This issue affects Apache Tomcat Native: from 2.0.0 through 2.0.15, from 1.3.0 through 1.3.8. Earlier, unsuppor…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 23 Sep 2026 12:24:55 GMT</pubDate>
     </item>
   </channel>
 </rss>
