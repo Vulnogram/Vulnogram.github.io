@@ -11,7 +11,49 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 01 Oct 2026 02:53:33 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 09:46:57 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-103664 · 4.8 MEDIUM — MISP Reflected Cross-Site Scripting via Unsanitized Analyst Data Seed Parameter</title>
+      <link>https://vulnogram.org/CVE-2026-103664</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103664</guid>
+      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the analyst data notes panel. The seed path parameter, supplied by the user via the URL, was passed directly into inline JavaScript within the rendered HTML response without any sa…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 01 Oct 2026 08:55:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103662 · 5.1 MEDIUM 🌩️ — MISP Reflected XSS in Taxonomy Tag Confirmation Forms</title>
+      <link>https://vulnogram.org/CVE-2026-103662</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103662</guid>
+      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the legacy taxonomy tag management confirmation forms (add tag and disable tag). The affected forms echoed a user-supplied tag name value from the request unescaped into the render…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 01 Oct 2026 08:48:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103659 · 7.1 HIGH — MISP: Object Distribution ACL Bypass via Event Flattening Exposes Organisation-Only Attributes</title>
+      <link>https://vulnogram.org/CVE-2026-103659</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103659</guid>
+      <description>MISP contains an authorization bypass in the event flattening feature. When a user requests an event with the flatten option enabled, the application removes the Object containment from the query and returns object attributes as top-level event attri…</description>
+      <category>High</category>
+      <pubDate>Thu, 01 Oct 2026 08:33:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103655 · 9.3 CRITICAL 🌩️ — MISP TOTP Code Replay Allows Duplicate Authentication Within Validity Period</title>
+      <link>https://vulnogram.org/CVE-2026-103655</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103655</guid>
+      <description>MISP contains a vulnerability in its two-factor authentication (TOTP) verification process that permits a valid one-time code to be accepted more than once within its time-based validity window. The issue exists in the user login flow where a TOTP co…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 01 Oct 2026 08:08:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103651 · 7.6 HIGH — MISP HOTP Token Replay via Stale Session-Cached Counter Allows Second-Factor Authentication Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-103651</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103651</guid>
+      <description>MISP contains a vulnerability in its one-time password (OTP) authentication flow that allows replay of a consumed HOTP (paper) token and rewinding of the token counter. The HOTP verification logic compared the submitted token against a counter value…</description>
+      <category>High</category>
+      <pubDate>Thu, 01 Oct 2026 07:34:02 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-103389 · 6.2 MEDIUM — MISP Stored Cross-Site Scripting via Unvalidated Galaxy Icon Field in Correlation Graph</title>
       <link>https://vulnogram.org/CVE-2026-103389</link>
@@ -383,47 +425,6 @@
       <description>MISP&apos;s galaxy matrix statistics view (app/View/Users/statistics_galaxymatrix.ctp) renders the galaxy name directly into HTML output via sprintf() without any HTML encoding. An authenticated user holding the perm_galaxy_editor permission can create or…</description>
       <category>Medium</category>
       <pubDate>Mon, 21 Sep 2026 09:25:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93296 · 8.5 HIGH — MISP Overmind: Stored Cross-Site Scripting via Unescaped Object Names in Statistics Legends</title>
-      <link>https://vulnogram.org/CVE-2026-93296</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93296</guid>
-      <description>MISP contains a stored cross-site scripting (XSS) vulnerability in the Overmind theme&apos;s statistics views. The event General card and the server/feed preview card constructed donut chart legend labels by directly concatenating object name or category…</description>
-      <category>High</category>
-      <pubDate>Thu, 17 Sep 2026 16:29:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93295 · 8.7 HIGH — MISP Background Job Argument Injection via Console Path Switches Enables Remote Code Execution</title>
-      <link>https://vulnogram.org/CVE-2026-93295</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93295</guid>
-      <description>MISP contains a vulnerability in its background job dispatch mechanism that allows remote code execution as the web user. Background job arguments are passed directly as the argv of the CakePHP console process. CakePHP&apos;s ShellDispatcher::_parsePaths(…</description>
-      <category>High</category>
-      <pubDate>Thu, 17 Sep 2026 16:25:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92932 · 5.1 MEDIUM — MISP sachertortephp Xml::build() Operator Precedence Bypass Allows Unintended HTTPS SSRF When readFile Is Disabled</title>
-      <link>https://vulnogram.org/CVE-2026-92932</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92932</guid>
-      <description>In the MISP sachertortephp library, the Xml::build() static method in lib/Cake/Utility/Xml.php contains a logic error in the conditional that gates network-based XML fetching. The original condition was written as: $options[&apos;readFile&apos;] &amp;&amp; strpos($inp…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 17 Sep 2026 12:33:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92003 · 6.9 MEDIUM 🌩️ — MISP Unthrottled Authentication Failure Log Writes Enable Resource Exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-92003</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92003</guid>
-      <description>Affected versions of MISP do not consistently apply the existing authentication-failure logging throttle. Two API authentication failure branches wrote directly to the Log model: - API requests with no authentication key; - requests supplying an API…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 15 Sep 2026 11:43:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92002 · 5.1 MEDIUM — MISP: Authentication failure logging suppressed during Redis unavailability</title>
-      <link>https://vulnogram.org/CVE-2026-92002</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92002</guid>
-      <description>Affected versions of MISP use Redis to throttle repeated authentication-failure log entries. The intent is to avoid excessive duplicate logs while still recording failed authentication activity. However, User-&gt;setupRedis() returns false when Redis ca…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 15 Sep 2026 11:24:21 GMT</pubDate>
     </item>
   </channel>
 </rss>
