@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 01 Oct 2026 09:46:57 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 17:02:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-17053 · 4.4 MEDIUM — SMBus callback-removal syscalls accept an unvalidated user pointer, letting user threads manipulate kernel callback state</title>
+      <link>https://vulnogram.org/CVE-2026-17053</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17053</guid>
+      <description>The SMBus driver API exposed smbus_smbalert_remove_cb() and smbus_host_notify_remove_cb() as Zephyr syscalls. Their verifiers in drivers/smbus/smbus_handlers.c validated only the dev argument with K_SYSCALL_OBJ(dev, K_OBJ_DRIVER_SMBUS) and forwarded…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 01 Oct 2026 15:08:52 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-18747 · 6.8 MEDIUM — Integer underflow of net_buf length in the MCUmgr serial (SMP over console) transport leads to out-of-bounds read</title>
       <link>https://vulnogram.org/CVE-2026-18747</link>
@@ -403,14 +411,6 @@
       <description>The IPv6 neighbor-discovery code in subsys/net/ip/ipv6_nbr.c processes the 6LoWPAN Context Option (6CO, RFC 6775) carried inside ICMPv6 Router Advertisements. In handle_ra_6co() the 8-bit context_len field is taken directly from the packet and was ne…</description>
       <category>High</category>
       <pubDate>Wed, 19 Aug 2026 20:37:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12632 · 6.5 MEDIUM — Out-of-bounds read in Zephyr PTP message parsing from unvalidated message type</title>
-      <link>https://vulnogram.org/CVE-2026-12632</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12632</guid>
-      <description>Zephyr&apos;s Precision Time Protocol receive handler ptp_msg_post_recv() in subsys/net/lib/ptp/msg.c takes the 4-bit message type straight off the wire via ptp_msg_type() (msg-&gt;header.type_major_sdo_id &amp; 0xF, range 0-15) and uses it to index the msg_size…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 18 Aug 2026 20:55:43 GMT</pubDate>
     </item>
   </channel>
 </rss>
