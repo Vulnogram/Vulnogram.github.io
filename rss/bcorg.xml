@@ -11,7 +11,96 @@
       <title>Legion of the Bouncy Castle Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 03 Oct 2026 08:55:22 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 14:17:23 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-71890 · 8.7 HIGH 🌩️ — MLS external commit can remove an arbitrary group member</title>
+      <link>https://vulnogram.org/CVE-2026-71890</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71890</guid>
+      <description>In Bouncy Castle for Java before 1.86, validation of an MLS (RFC 9420) external commit&apos;s proposal list, org.bouncycastle.mls.protocol.Group.validateExternalCachedProposals, counted the proposals by type and bounded the removed leaf index but never es…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:57:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71891 · 7.1 HIGH 🌩️ — BLS12-381 key validation accepts a public key built on a foreign curve</title>
+      <link>https://vulnogram.org/CVE-2026-71891</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71891</guid>
+      <description>In Bouncy Castle for Java before 1.86, BLS12_381BasicScheme.keyValidate, and so BLSPublicKeyParameters and every BasicScheme, MessageAugmentation and ProofOfPossession verify and aggregateVerify that gate on it, accepted a public key built on a forei…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:56:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-18040 · 5.9 MEDIUM — HQC leaks private key information through secret-indexed GF(2^8) tables and a secret-dependent fixed-weight sampler</title>
+      <link>https://vulnogram.org/CVE-2026-18040</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18040</guid>
+      <description>In Bouncy Castle for Java before 1.86, HQC leaked secret-derived data through two side channels: its GF(2^8) arithmetic used lookup tables indexed by field elements, making the cache line touched a function of the operand, and its fixed-weight suppor…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 03 Oct 2026 08:55:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71885 · 9.2 CRITICAL 🌩️ — MLS X.509 credential not bound to the LeafNode signature key</title>
+      <link>https://vulnogram.org/CVE-2026-71885</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71885</guid>
+      <description>In Bouncy Castle for Java before 1.86, the Messaging Layer Security (MLS, RFC 9420) implementation did not bind an X.509 credential to a LeafNode&apos;s signature_key. LeafNode.verify() checked a leaf&apos;s signature against the signature_key carried in the l…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:51:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71886 · 8.2 HIGH 🌩️ — OpenPGP certification accepted from a subkey without certification authority</title>
+      <link>https://vulnogram.org/CVE-2026-71886</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71886</guid>
+      <description>In Bouncy Castle for Java before 1.86, the high-level OpenPGP certificate API accepted a third-party certification or trust delegation from any component key of the issuing certificate, without requiring that component to have been granted the author…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:46:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71887 · 8.2 HIGH 🌩️ — OpenPGP data signature accepted from a signing subkey without cross-certification</title>
+      <link>https://vulnogram.org/CVE-2026-71887</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71887</guid>
+      <description>In Bouncy Castle for Java before 1.86, the high-level OpenPGP API accepted a data signature made by a signing subkey whose Subkey Binding signature carried no embedded Primary Key Binding (cross-certification) signature, in the case where that bindin…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:39:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71883 · 8.2 HIGH 🌩️ — Native AES packet cipher returns the raw AES key on an alias</title>
+      <link>https://vulnogram.org/CVE-2026-71883</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71883</guid>
+      <description>In Bouncy Castle for Java LTS before 2.73.13, the one-shot native packet ciphers for AES-CBC, CCM, CFB, CTR, GCM and GCM-SIV released the caller&apos;s key, IV and additional authenticated data arrays with JNI&apos;s ReleaseByteArrayElements in mode 0, which c…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:38:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71888 · 8.7 HIGH 🌩️ — CMS AuthenticatedData exposes attacker-inserted authAttrs when digestAlgorithm is absent</title>
+      <link>https://vulnogram.org/CVE-2026-71888</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71888</guid>
+      <description>In Bouncy Castle for Java before 1.86, the streaming CMS AuthenticatedData parser accepted a message whose digestAlgorithm and authAttrs fields disagreed about whether authenticated attributes were present. RFC 5652 sec. 9.1 pairs the two, requiring…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:36:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71889 · 8.7 HIGH 🌩️ — PKIXCertPathReviewer does not apply X.509 name constraints to the target certificate</title>
+      <link>https://vulnogram.org/CVE-2026-71889</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71889</guid>
+      <description>In Bouncy Castle for Java before 1.86, neither copy of PKIXCertPathReviewer - org.bouncycastle.pkix.jcajce.PKIXCertPathReviewer nor the legacy org.bouncycastle.x509.PKIXCertPathReviewer - applied X.509 name constraints to the end-entity certificate.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:31:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71892 · 6.9 MEDIUM 🌩️ — CMS key-transport recipient key-size validation never runs for RFC 9709 HKDF-derived keys</title>
+      <link>https://vulnogram.org/CVE-2026-71892</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71892</guid>
+      <description>In Bouncy Castle for Java before 1.86, the opt-in key-size validation on CMS key-transport recipients, org.bouncycastle.cms.jcajce.JceKeyTransRecipient.setKeySizeValidation(true), never ran for a message using RFC 9709 content-encryption key derivati…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 03 Oct 2026 08:30:26 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-85515 · 8.2 HIGH 🌩️ — OpenPGP message truncation not reported, bypassing the SEIPDv1 integrity check</title>
       <link>https://vulnogram.org/CVE-2026-85515</link>
@@ -371,96 +460,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 03 Aug 2026 02:36:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58062 · 9.3 CRITICAL 🌩️ — Stapled OCSP response accepted without binding to the checked certificate</title>
-      <link>https://vulnogram.org/CVE-2026-58062</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58062</guid>
-      <description>In Bouncy Castle for Java before 1.85, Stapled OCSP response accepted without binding to the checked certificate. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bc-fips 2.0.2 (2.0.X…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 02:35:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58063 · 5.3 MEDIUM 🌩️ — BCFKS keystore load honours unbounded KDF cost from untrusted file</title>
-      <link>https://vulnogram.org/CVE-2026-58063</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58063</guid>
-      <description>In Bouncy Castle for Java before 1.85, BCFKS keystore load honours unbounded KDF cost from untrusted file. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bc-fips 1.0.2.7 (1.0.X serie…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 02:29:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59638 · 9.3 CRITICAL 🌩️ — JSSE hostname verifier CN-fallback enabled by default despite documented opt-in</title>
-      <link>https://vulnogram.org/CVE-2026-59638</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59638</guid>
-      <description>In Bouncy Castle for Java before 1.85, JSSE hostname verifier CN-fallback enabled by default despite documented opt-in. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bctls-fips 1.0.…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 00:57:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59639 · 8.7 HIGH 🌩️ — CMS verifySignatures returns true for SignedData with zero signers</title>
-      <link>https://vulnogram.org/CVE-2026-59639</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59639</guid>
-      <description>In Bouncy Castle for Java before 1.85, CMS verifySignatures returns true for SignedData with zero signers. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bcpkix-fips 1.0.12 (1.0.X se…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 00:56:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59640 · 8.7 HIGH 🌩️ — OpenPGP CFB quick-check oracle active on symmetric/session-key paths</title>
-      <link>https://vulnogram.org/CVE-2026-59640</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59640</guid>
-      <description>In Bouncy Castle for Java before 1.85, OpenPGP CFB quick-check oracle active on symmetric/session-key paths. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bcpg-fips 1.0.13 (1.0.X se…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 00:55:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59641 · 8.7 HIGH 🌩️ — S/MIME validator trusts signer-asserted signingTime for path validation</title>
-      <link>https://vulnogram.org/CVE-2026-59641</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59641</guid>
-      <description>In Bouncy Castle for Java before 1.85, S/MIME validator trusts signer-asserted signingTime for path validation. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bcmail-fips and bcjmail…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 00:54:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59642 · 8.7 HIGH 🌩️ — CMS AuthenticatedData content not bound to MAC when authAttrs present</title>
-      <link>https://vulnogram.org/CVE-2026-59642</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59642</guid>
-      <description>In Bouncy Castle for Java before 1.85, CMS AuthenticatedData content not bound to MAC when authAttrs present. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bcpkix-fips 1.0.12 (1.0.X…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 00:53:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59643 · 8.7 HIGH 🌩️ — OpenPGP inline-signature policy failures silently ignored</title>
-      <link>https://vulnogram.org/CVE-2026-59643</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59643</guid>
-      <description>In Bouncy Castle for Java before 1.85, OpenPGP inline-signature policy failures silently ignored. This issue also affects Bouncy Castle for Java FIPS (BC-FJA) before bcpg-fips 2.0.13.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 00:51:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59644 · 8.7 HIGH 🌩️ — MLS hash-ratchet honours arbitrary 32-bit generation counter from sender</title>
-      <link>https://vulnogram.org/CVE-2026-59644</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59644</guid>
-      <description>In Bouncy Castle for Java before 1.85, MLS hash-ratchet honours arbitrary 32-bit generation counter from sender.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 00:50:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59645 · 8.7 HIGH 🌩️ — OER parser recurses without depth limit on self-referential IEEE 1609.2 schema</title>
-      <link>https://vulnogram.org/CVE-2026-59645</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59645</guid>
-      <description>In Bouncy Castle for Java before 1.85, OER parser recurses without depth limit on self-referential IEEE 1609.2 schema. This issue also affects Bouncy Castle for Java LTS before 2.73.12, and Bouncy Castle for Java FIPS (BC-FJA) before bcutil-fips 2.0.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 03 Aug 2026 00:49:41 GMT</pubDate>
     </item>
   </channel>
 </rss>
