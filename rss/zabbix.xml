@@ -11,7 +11,56 @@
       <title>Zabbix — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 05 Oct 2026 09:57:50 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 19:08:16 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-59788 · 5.6 MEDIUM — Stored XSS vulnerability in OAuth configuration form</title>
+      <link>https://vulnogram.org/CVE-2026-59788</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59788</guid>
+      <description>The email media type OAuth form passes the Authorization endpoint value to window.open() without validating the URL scheme, so a javascript: URL is executed in the browser. This means a crafted media type configuration, deliverable as an import file,…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 10:29:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59787 · 5.3 MEDIUM — SNMP trap injection in zabbix_trap_receiver.pl</title>
+      <link>https://vulnogram.org/CVE-2026-59787</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59787</guid>
+      <description>The Perl SNMP trap receiver script shipped with Zabbix does not properly neutralize the ZBXTRAP record delimiter in trap content. This means someone able to send SNMP traps can inject a record targeting another host, resulting in a loss of integrity.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 10:29:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59786 · 6.9 MEDIUM 🌩️ — Active agent heartbeat missing TLS check</title>
+      <link>https://vulnogram.org/CVE-2026-59786</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59786</guid>
+      <description>Zabbix Server and Proxy accept the active agent heartbeat message regardless of the configured PSK or certificate authentication. This means someone with access to the Zabbix trapper port can report an arbitrary host using an active agent as availabl…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 10:29:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59785 · 5.1 MEDIUM — Hidden host credentials inferable via multiselect.get filtering</title>
+      <link>https://vulnogram.org/CVE-2026-59785</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59785</guid>
+      <description>Host search in Frontend allows filtering by fields that are not displayed, including stored IPMI and PSK credentials. A user with read access can guess a credential and see from the search result whether the guess was right, letting them uncover it.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 10:28:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59783 · 2.3 LOW — Server DoS via binary items</title>
+      <link>https://vulnogram.org/CVE-2026-59783</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59783</guid>
+      <description>The Zabbix Server/Proxy has a vulnerability where binary items can crash the Server/Proxy on certain NULL byte input leading to potential loss of availability. This only affects deployments where MySQL/MariaDB database is used as the Zabbix database.</description>
+      <category>Low</category>
+      <pubDate>Mon, 05 Oct 2026 10:28:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59782 · 6.9 MEDIUM — JavaScript preprocessing memory disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-59782</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59782</guid>
+      <description>The JavaScript preprocessing (Duktape) engine on Zabbix server has a vulnerability where a limited administrator is able to read raw heap data potentially resulting in leaked data from other running preprocessors not available to said administrator.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 10:27:34 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-59781 · 5.4 MEDIUM — Improper validation of custom installation directories on Windows could allow installation into locations with unsafe permissions, increasing the risk of DLL sideloading.</title>
       <link>https://vulnogram.org/CVE-2026-59781</link>
@@ -367,55 +416,6 @@
       <description>When the webdriver for the Browser object downloads data from a HTTP server, the data pointer is set to NULL and is allocated only in curl_write_cb when receiving data. If the server&apos;s response is an empty document, then wd-&gt;data in the code below wi…</description>
       <category>Low</category>
       <pubDate>Wed, 27 Nov 2024 12:04:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-42327 · 9.9 CRITICAL — SQL injection in user.get API</title>
-      <link>https://vulnogram.org/CVE-2024-42327</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-42327</guid>
-      <description>A non-admin user account on the Zabbix frontend with the default User role, or with any other role that gives API access can exploit this vulnerability. An SQLi exists in the CUser class in the addRelatedObjects function, this function is being calle…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 27 Nov 2024 12:04:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-42326 · 4.4 MEDIUM — Use after free vulnerability in browser.c</title>
-      <link>https://vulnogram.org/CVE-2024-42326</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-42326</guid>
-      <description>There was discovered a use after free bug in browser.c in the es_browser_get_variant function</description>
-      <category>Medium</category>
-      <pubDate>Wed, 27 Nov 2024 12:03:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-36468 · 3 LOW — Stack buffer overflow in zbx_snmp_cache_handle_engineid</title>
-      <link>https://vulnogram.org/CVE-2024-36468</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-36468</guid>
-      <description>The reported vulnerability is a stack buffer overflow in the zbx_snmp_cache_handle_engineid function within the Zabbix server/proxy code. This issue occurs when copying data from session-&gt;securityEngineID to local_record.engineid without proper bound…</description>
-      <category>Low</category>
-      <pubDate>Wed, 27 Nov 2024 12:03:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-36467 · 7.5 HIGH 🌩️ — Authentication privilege escalation via user groups due to missing authorization checks</title>
-      <link>https://vulnogram.org/CVE-2024-36467</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-36467</guid>
-      <description>An authenticated user with API access (e.g.: user with default User role), more specifically a user with access to the user.update API endpoint is enough to be able to add themselves to any group (e.g.: Zabbix Administrators), except to groups that a…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 27 Nov 2024 06:16:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-36463 · 6.5 MEDIUM</title>
-      <link>https://vulnogram.org/CVE-2024-36463</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-36463</guid>
-      <description>The implementation of atob in &quot;Zabbix JS&quot; allows to create a string with arbitrary content and use it to access internal properties of objects.</description>
-      <category>Medium</category>
-      <pubDate>Tue, 26 Nov 2024 15:06:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-22117 · 2.2 LOW — Value of sysmap_element_url can be de-synchronized causing the map element to crash when new URLs is added</title>
-      <link>https://vulnogram.org/CVE-2024-22117</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22117</guid>
-      <description>When a URL is added to the map element, it is recorded in the database with sequential IDs. Upon adding a new URL, the system retrieves the last sysmapelementurlid value and increments it by one. However, an issue arises when a user manually changes…</description>
-      <category>Low</category>
-      <pubDate>Tue, 26 Nov 2024 14:11:57 GMT</pubDate>
     </item>
   </channel>
 </rss>

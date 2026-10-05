@@ -11,7 +11,353 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 05 Oct 2026 09:57:50 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 19:08:15 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-105642 · 8.8 HIGH 🌩️ — Ghost: Remote Code Execution via Bookmark Card Images</title>
+      <link>https://vulnogram.org/CVE-2026-105642</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105642</guid>
+      <description>Ghost is a Node.js content management system. From 6.56.0 until 6.67.0, an image processing library bundled with Ghost contained a vulnerability in its SVG handling. Any staff user, including Contributors, could create a bookmark card for an attacker…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 18:31:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105641 · 9.8 CRITICAL 🌩️ — Plane: Hardcoded SECRET_KEY and LIVE_SERVER_SECRET_KEY shipped in aio/cli community deployment manifests — session forgery and live-server auth bypass</title>
+      <link>https://vulnogram.org/CVE-2026-105641</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105641</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the deployments/aio/community/ and deployments/cli/community/ manifests provide fixed, publicly known SECRET_KEY and LIVE_SERVER_SECRET_KEY defaults that remain active when operators do…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 18:12:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105640 · 9.1 CRITICAL 🌩️ — Plane: Account Takeover via Unverified OAuth Email Match (Gitea, self-managed GitLab)</title>
+      <link>https://vulnogram.org/CVE-2026-105640</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105640</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane trusts email addresses returned by Gitea OAuth and by self-managed GitLab OAuth deployments where email confirmation is disabled, without verifying that the provider authenticated…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 18:11:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105639 · 9.8 CRITICAL 🌩️ — Plane: Pre-auth workspace invitation hijack via email-squat and self-served invitation token leak in Plane</title>
+      <link>https://vulnogram.org/CVE-2026-105639</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105639</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane&apos;s signup flow creates a logged-in User row for any submitted email without an out-of-band ownership check, while User.email is unique=True. The authenticated user can call GET /ap…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 18:10:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105638 · 9.1 CRITICAL 🌩️ — Plane: Magic-code verifier endpoint has no rate limit, enabling 6-digit OTP brute force</title>
+      <link>https://vulnogram.org/CVE-2026-105638</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105638</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane&apos;s magic-code email login uses a six-digit numeric OTP with approximately 20 bits of entropy. The verifier has no per-code failed-attempt counter, and an incorrect code does not in…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 18:09:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105637 · 9.6 CRITICAL — Plane: Cross-Project Asset Hijacking via &apos;ProjectBulkAssetEndpoint&apos; (sibling of CVE-2026-46558)</title>
+      <link>https://vulnogram.org/CVE-2026-105637</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105637</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, ProjectBulkAssetEndpoint.post in apps/api/plane/app/views/asset/v2.py retrieves assets using id__in=asset_ids and workspace__slug=slug but does not constrain the query with project_id f…</description>
+      <category>Critical</category>
+      <pubDate>Mon, 05 Oct 2026 18:04:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105636 · 9.9 CRITICAL — Plane: SSRF via HTTP redirect in webhook delivery (allow_redirects not set)</title>
+      <link>https://vulnogram.org/CVE-2026-105636</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105636</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the webhook delivery task in apps/api/plane/bgtasks/webhook_task.py calls requests.post() without allow_redirects=False and does not validate redirect targets. validate_url() blocks pri…</description>
+      <category>Critical</category>
+      <pubDate>Mon, 05 Oct 2026 18:02:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105635 · 7.4 HIGH 🌩️ — Plane: Unauthenticated Project Invitation Email Disclosure Enables Unauthorized Project Join Without Token</title>
+      <link>https://vulnogram.org/CVE-2026-105635</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105635</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, ProjectJoinEndpoint at GET /api/workspaces/{slug}/projects/{project_id}/join/{pk}/ uses permission_classes = [AllowAny] and returns the full ProjectMemberInvite record, including its em…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 18:01:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105634 · 8.1 HIGH — Plane: Privilege Escalation: Project Guest Can Demote Admin/Member Roles</title>
+      <link>https://vulnogram.org/CVE-2026-105634</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105634</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.3.0, the ProjectMemberViewSet.partial_update method allows any project member, including a user with the lowest GUEST role, to modify another project member&apos;s role. The authorization check p…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 18:00:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105633 · 7.1 HIGH — Plane: Issue Attachment Ownership Hijacking via Missing `issue_id` Scope</title>
+      <link>https://vulnogram.org/CVE-2026-105633</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105633</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the V2 issue-attachment PATCH endpoint accepts issue_id in the URL but omits it from the database query. A project member can use an issue_id they control in the URL while targeting ano…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:58:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105632 · 8.7 HIGH — Plane: Broken Access Control - joinProject GraphQL mutation allows self-join into private (secret) projects</title>
+      <link>https://vulnogram.org/CVE-2026-105632</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105632</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the GraphQL joinProject mutation lets any workspace member add themselves to any project in that workspace including network=0 (secret/private) projects they were never invited to and g…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:57:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105631 · 7.5 HIGH 🌩️ — Plane: asset download endpoints scope file lookups to the workspace (not the project / published entity) → cross-project &amp; unauthenticated private-file disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-105631</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105631</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, WorkspaceFileAssetEndpoint.get and WorkspaceAssetDownloadEndpoint.get resolve FileAsset records within a workspace without checking membership in the asset&apos;s project, allowing a workspa…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 17:55:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105630 · 8.7 HIGH — Plane: Stored XSS via SVG attachment served inline on the application origin (account takeover)</title>
+      <link>https://vulnogram.org/CVE-2026-105630</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105630</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, an authenticated low-privilege workspace member, including a Guest, can upload an image/svg+xml file as a generic or issue attachment. The file retains the attacker-controlled Content-T…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:54:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105629 · 7.1 HIGH — Plane: Cross-Tenant Destructive IDOR: Estimate Point Deletion via Unscoped Primary Key Lookup</title>
+      <link>https://vulnogram.org/CVE-2026-105629</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105629</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, BulkEstimatePointEndpoint.destroy resolves an estimate point through a bare primary-key lookup without workspace, project, or estimate scoping. An administrator or member of one workspa…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:53:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105628 · 7.6 HIGH — Plane: OAuth Avatar Redirect SSRF Leads to Internal Data Exfiltration via Static Asset Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-105628</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105628</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane&apos;s OAuth avatar synchronization flow fetches avatar_url from provider user data through a server-side HTTP request without internal IP validation and follows redirects by default.…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:51:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104979 · 8.7 HIGH — Plane: Cross-tenant stored XSS in intake enables account takeover</title>
+      <link>https://vulnogram.org/CVE-2026-104979</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104979</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, IntakeIssuePublicViewSet.create in Plane v1.3.1 writes description_html through Issue.objects.create(...) without calling validate_html_content from nh3. Any authenticated user, includi…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:49:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104978 · 8.2 HIGH — Plane: Invitation Hijack in Project Join Flow via Missing Authorization and Email-Only Acceptance</title>
+      <link>https://vulnogram.org/CVE-2026-104978</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104978</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane&apos;s project invitation list endpoint is accessible to any authenticated user who knows the workspace slug and project ID, while the public project invitation join endpoint accepts a…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:48:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104977 · 7.7 HIGH — Plane: Incomplete fix of CVE-2026-27706 — SSRF still reachable on: missing is_blocked_ip (CGNAT/multicast) + DNS-rebinding TOCTOU</title>
+      <link>https://vulnogram.org/CVE-2026-104977</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104977</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the fix for CVE-2026-27706 and GHSA-jcc6-f9v6-f7jw, an SSRF in work-item link unfurling shipped in v1.2.2, remains incomplete in the v1.3.1 GA release. Any authenticated project member…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:47:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104976 · 8.7 HIGH — Plane: SSRF in Gitea OAuth</title>
+      <link>https://vulnogram.org/CVE-2026-104976</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104976</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane validates GITEA_HOST only for its URL scheme and does not reject hosts that resolve to private or internal IP addresses. The four outbound requests in the Gitea OAuth flow are der…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:45:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104975 · 7.1 HIGH — Plane: Cross-tenant asset authorization bypass in Plane Spaces public-board endpoints</title>
+      <link>https://vulnogram.org/CVE-2026-104975</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104975</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane&apos;s dashboard asset endpoints in plane/app/views/asset/v2.py were remediated for two cross-tenant asset IDORs, CVE-2026-27705 and CVE-2026-46558. Those fixes added a membership chec…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:44:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104974 · 8.1 HIGH — Plane: Disabled User Auto-Reactivation on Login</title>
+      <link>https://vulnogram.org/CVE-2026-104974</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104974</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, a user whose account has been deactivated by setting is_active=False can still log in with existing credentials. Successful authentication silently changes is_active back to True, react…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:42:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104973 · 7.6 HIGH — Plane: DNS Rebinding Bypass of CVE-2026-30242 SSRF Fix in Webhook Delivery</title>
+      <link>https://vulnogram.org/CVE-2026-104973</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104973</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the fix for CVE-2026-30242 validates webhook IP addresses only when the webhook is created in apps/api/plane/app/serializers/webhook.py. The delivery task in apps/api/plane/bgtasks/webh…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:41:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104971 · 8.5 HIGH — Plane: Cross-Workspace Asset Duplication IDOR + WorkspaceFileAssetEndpoint and FileAssetEndpoint Missing Authorization</title>
+      <link>https://vulnogram.org/CVE-2026-104971</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104971</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, DuplicateAssetEndpoint fetches a source FileAsset without limiting it to the caller&apos;s workspace, allowing cross-workspace asset duplication. WorkspaceFileAssetEndpoint and the legacy Fi…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:04:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102282 · 7.1 HIGH — adm-zip extraction preserves SUID/SGID bits from untrusted ZIPs -&gt; local privilege escalation</title>
+      <link>https://vulnogram.org/CVE-2026-102282</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102282</guid>
+      <description>adm-zip is a JavaScript library for creating and extracting ZIP archives in Node.js. Prior to 0.6.1, adm-zip applies the Unix permission bits stored in a zip entry directly to the extracted file via `fs.chmodSync()` when `keepOriginalPermission=true`…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104970 · 8.1 HIGH 🌩️ — Plane: InstanceAdminSignUpEndpoint TOCTOU race allows two concurrent unauthenticated callers to both bootstrap as Plane instance admins</title>
+      <link>https://vulnogram.org/CVE-2026-104970</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104970</guid>
+      <description>Plane is an open-source project management tool. From 0.13 until 1.4.0, InstanceAdminSignUpEndpoint in apps/api/plane/license/api/views/admin.py:89-117, 173-229 uses InstanceAdmin.objects.first() for the first-admin check and performs account creatio…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 16:58:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104969 · 6.5 MEDIUM — Plane: Cross-Tenant Cycle Issue Hijack via IDOR</title>
+      <link>https://vulnogram.org/CVE-2026-104969</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104969</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the cycle-issues endpoint accepts issue UUIDs in the request body without validating that they belong to the caller&apos;s workspace. An authenticated user can add issues from any workspace…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:57:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104968 · 8.7 HIGH — Plane: Cross-workspace member enumeration via /api/workspaces/{slug}/entity-search/</title>
+      <link>https://vulnogram.org/CVE-2026-104968</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104968</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, GET /api/workspaces/{slug}/entity-search/?query_type=user_mention returns workspace-member display names, UUIDs, and avatar URLs to any authenticated user who knows the workspace slug,…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 16:56:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104967 · 5.4 MEDIUM — Plane: Cross-workspace association destruction and issue mutation/read via unscoped queries in BulkDeleteIssuesEndpoint and SubIssuesEndpoint</title>
+      <link>https://vulnogram.org/CVE-2026-104967</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104967</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, BulkDeleteIssuesEndpoint and SubIssuesEndpoint in apps/api/plane/app/views/issue/ accept body- or URL-supplied issue IDs and operate on them without checking that the IDs belong to the…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:55:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104966 · 8.7 HIGH — Plane: Cross-Workspace IDOR in Estimate and Comment Endpoints Allows Read, Modify, and Inject Across Workspaces</title>
+      <link>https://vulnogram.org/CVE-2026-104966</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104966</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, two endpoint families fail to verify that nested resource identifiers belong to the workspace and project named in the URL. An authenticated user can read or modify estimates from anoth…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 16:54:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104965 · 5.4 MEDIUM — Plane: Cross-Tenant Issue Relation Creation via IDOR</title>
+      <link>https://vulnogram.org/CVE-2026-104965</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104965</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the issue-relation endpoint accepts issue UUIDs in the request body without validating that they belong to the caller&apos;s workspace. An authenticated user can create relations linking the…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:53:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104964 · 6.8 MEDIUM — Plane: Cross-Workspace Project Modification via Unscoped Project Lookup</title>
+      <link>https://vulnogram.org/CVE-2026-104964</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104964</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane&apos;s project update endpoint authorizes the caller against the workspace slug in the request URL but loads the target project globally by UUID without binding it to that workspace. A…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:52:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104963 · 4.3 MEDIUM — Plane: Workspace cycle and module endpoints missing project-membership filter expose private project metadata to any workspace member</title>
+      <link>https://vulnogram.org/CVE-2026-104963</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104963</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, GET /api/workspaces/{slug}/cycles/ through WorkspaceCyclesEndpoint and GET /api/workspaces/{slug}/modules/ through WorkspaceModulesEndpoint return records from every project in a worksp…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:51:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104962 · 6.5 MEDIUM — Plane: Cross-project member roster IDOR in ProjectMemberListCreateAPIEndpoint (missing project scope on reads)</title>
+      <link>https://vulnogram.org/CVE-2026-104962</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104962</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, GET /api/v1/workspaces/{slug}/projects/{project_id}/members/ returns the complete project-member roster, including each member&apos;s email address, first and last name, display name, avatar…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:50:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104961 · 5.4 MEDIUM — Plane: WorkspaceOwnerPermission missing is_active check allows deactivated users to retain owner access</title>
+      <link>https://vulnogram.org/CVE-2026-104961</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104961</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, WorkspaceOwnerPermission does not require is_active=True when checking whether a user is a workspace owner. A deactivated user can therefore remain authorized as the workspace owner and…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:49:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104960 · 6.5 MEDIUM — Plane: Authorization bypass in workspace-scoped asset download endpoint exposes secret project file assets to non-project workspace users</title>
+      <link>https://vulnogram.org/CVE-2026-104960</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104960</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, Plane exposes the workspace-scoped GET /api/assets/v2/workspaces/{workspace_slug}/download/{asset_id}/ endpoint for project-bound FileAsset objects without enforcing access to the asset…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:48:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104956 · 5.3 MEDIUM 🌩️ — Plane: Unauthenticated ORM field-name injection via `group_by`/`sub_group_by` on public deploy boards (DoS + blind oracle)</title>
+      <link>https://vulnogram.org/CVE-2026-104956</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104956</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the unauthenticated public issues endpoint accepts group_by and sub_group_by query parameters and passes them without an allowlist to grouped paginators, where they are used as ORM fiel…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 16:47:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104955 · 5.4 MEDIUM — Plane: Project Member can escalate Project Guest to Member via PATCH /project-members/{pk} (BAC / Privilege Escalation)</title>
+      <link>https://vulnogram.org/CVE-2026-104955</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104955</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, a Project Member with role 15 can send a PATCH request to the project-member update endpoint at /api/workspaces/{workspace_slug}/projects/{project_id}/members/{member_pk}/ to change ano…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:42:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104894 · 4.3 MEDIUM — Plane: Cross-Tenant Module Issue Linking via IDOR</title>
+      <link>https://vulnogram.org/CVE-2026-104894</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104894</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, the modules endpoint accepts issue UUIDs in the URL path without validating that they belong to the caller&apos;s workspace. An authenticated user can link issues from any workspace to modul…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:41:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104893 · 5.4 MEDIUM — Plane: Improper validation allows arbitrary modification of API token rate limits</title>
+      <link>https://vulnogram.org/CVE-2026-104893</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104893</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, GET /api/users/api-tokens/ allows an authenticated user to retrieve API-token records, while PATCH /api/users/api-tokens/{token_id}/ allows the user to modify the token&apos;s allowed_rate_l…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 16:40:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104892 · 8.7 HIGH — Plane: Plaintext logging of API token</title>
+      <link>https://vulnogram.org/CVE-2026-104892</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104892</guid>
+      <description>Plane is an open-source project management tool. Prior to 1.4.0, aPITokenLogMiddleware logs API keys in plaintext. This allows someone with low privileges to steal user API keys and further escalate their privileges. This issue is fixed in 1.4.0.</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 16:00:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104891 · 7.5 HIGH 🌩️ — mppx-condition-gate: Free-access path grants on a self-declared wallet without proving control</title>
+      <link>https://vulnogram.org/CVE-2026-104891</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104891</guid>
+      <description>mppx-condition-gate provides conditional free-access wrappers for mppx payment methods. Prior to @insumermodel/mppx-condition-gate 3.0.0 and @insumermodel/mppx-token-gate 1.0.4, the packages read a wallet address from the client-supplied credential.s…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 15:55:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104890 · 7.2 HIGH — Kunstmaan CMS: MediaBundle extension blacklist bypass allows authenticated administrators to upload executable PHP files leading to remote code execution</title>
+      <link>https://vulnogram.org/CVE-2026-104890</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104890</guid>
+      <description>Kunstmaan CMS is an open source content management system based on the Symfony framework. Prior to 7.3.2, src/Kunstmaan/MediaBundle/Helper/File/FileHandler.php performs the blacklisted_extensions check case-sensitively in FileHandler::getFilePath and…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 15:46:21 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-104874 · 5.3 MEDIUM 🌩️ — Multidict: Reference leak in CIMultiDict/MultiDict items-view union and subtraction</title>
       <link>https://vulnogram.org/CVE-2026-104874</link>
@@ -81,366 +427,6 @@
       <description>Nx is a monorepo solution for TypeScript and polyglot codebases. From 21.4.0 until 22.7.8 and from 23.0.0 until 23.1.1, the @nx/docker release pipeline builds docker tag, image lookup, and docker push invocations as shell command strings. The release…</description>
       <category>High</category>
       <pubDate>Fri, 02 Oct 2026 17:49:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104855 · 2 LOW — Wasmtime: Preemption and traps during bulk operations enable breaking internal VM state</title>
-      <link>https://vulnogram.org/CVE-2026-104855</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104855</guid>
-      <description>Wasmtime is a runtime for WebAssembly. From 46.0.0 until 46.0.2 and 47.0.3, fuel and epoch preemption checks inside bulk operations including memory.copy, table.grow, and array.copy can expose invalid intermediate state when an embedder mutates a Sto…</description>
-      <category>Low</category>
-      <pubDate>Fri, 02 Oct 2026 17:37:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104854 · 8.5 HIGH — Nx daemon and plugin worker sockets are accessible to other local users</title>
-      <link>https://vulnogram.org/CVE-2026-104854</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104854</guid>
-      <description>Nx is a monorepo solution for TypeScript and polyglot codebases. From 14.6.0 until 22.7.9 and 23.1.2, Nx creates Unix domain sockets for its daemon and isolated plugin workers in shared temporary locations without owner-only directory and socket perm…</description>
-      <category>High</category>
-      <pubDate>Fri, 02 Oct 2026 16:59:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104853 · 5.8 MEDIUM — Nx: Path traversal in nx migrate package-migrations extraction</title>
-      <link>https://vulnogram.org/CVE-2026-104853</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104853</guid>
-      <description>Nx is a monorepo solution for TypeScript and polyglot codebases. From 13.10.0 until 22.7.10 and 23.2.1, Nx migration planning reads the nx-migrations.migrations value from a target package manifest without validating that it is a contained relative p…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 02 Oct 2026 16:52:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104851 · 8.8 HIGH 🌩️ — fsspec: Server-Side Template Injection in ReferenceFileSystem leads to Remote Code Execution</title>
-      <link>https://vulnogram.org/CVE-2026-104851</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104851</guid>
-      <description>fsspec is a specification and Python implementation framework for filesystem interfaces. From 0.9.0 until 2026.6.0, fsspec.implementations.reference.ReferenceFileSystem evaluates fields from Kerchunk reference JSON documents through unrestricted jinj…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 16:36:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104849 · 9.5 CRITICAL 🌩️ — Tinypool: Prototype Pollution Gadget to RCE in run() options</title>
-      <link>https://vulnogram.org/CVE-2026-104849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104849</guid>
-      <description>Tinypool is a minimal Node.js worker thread pool implementation. Prior to 2.1.2, Tinypool reads filename from a caller-supplied options object in pool.run(task, options) without requiring an own property, so a polluted Object.prototype.filename can r…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 16:17:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104848 · 9.5 CRITICAL 🌩️ — Tinypool: Prototype Pollution gadget in worker options leads to Remote Code Execution</title>
-      <link>https://vulnogram.org/CVE-2026-104848</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104848</guid>
-      <description>Tinypool is a minimal Node.js worker thread pool implementation. Prior to 2.1.1, Tinypool constructs ThreadPool.options from a normal options object and reads the execArgv and env worker options in dist/index.js, allowing values inherited from a poll…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 16:15:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104847 · 8.5 HIGH 🌩️ — ProseMirror: XSS vulnerability in prosemirror-view&apos;s paste handling</title>
-      <link>https://vulnogram.org/CVE-2026-104847</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104847</guid>
-      <description>ProseMirror&apos;s view component renders and manages the editable browser interface for ProseMirror documents. Prior to 1.42.3, prosemirror-view paste handling accepts attacker-provided HTML whose clipboard slice context contains attributes that are not…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 16:02:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104846 · 9.8 CRITICAL 🌩️ — Seroval: `fromJSON()` Promise thenable assimilation invokes plugin-produced callables (bypass of CVE-2026-59940)</title>
-      <link>https://vulnogram.org/CVE-2026-104846</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104846</guid>
-      <description>Seroval facilitates JS value stringification, including complex structures beyond JSON.stringify capabilities. From 0.12.0 until 1.6.2, fromJSON deserialization of a fulfilled Promise control node can pass a plugin-produced callable-bearing thenable…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:59:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104845 · 7.5 HIGH 🌩️ — Seroval: Memory exhaustion via unchecked TypedArray length in JSON deserialization</title>
-      <link>https://vulnogram.org/CVE-2026-104845</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104845</guid>
-      <description>Seroval facilitates JS value stringification, including complex structures beyond JSON.stringify capabilities. Prior to 1.6.3, deserializeTypedArray in fromJSON and fromCrossJSON trusts a deserialized source value as an ArrayBuffer and does not bound…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:55:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104844 · 5.9 MEDIUM 🌩️ — PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-104844</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104844</guid>
-      <description>PostCSS Selector Parser is a CSS selector parser that integrates with PostCSS but does not require it. Prior to 7.1.6, src/parser.js splitWord() can receive a flat selector as one word token carrying many class or ID indexes because period and hash c…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:43:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104843 · 5.9 MEDIUM 🌩️ — uv: Path traversal on Windows through wheel extraction</title>
-      <link>https://vulnogram.org/CVE-2026-104843</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104843</guid>
-      <description>uv is a Python package and project manager written in Rust. From 0.12.7 until 0.12.18, uv wheel extraction on Windows can process a malicious wheel in a way that writes a file outside the installation prefix, including an executable in a directory al…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:29:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94484 · 6.3 MEDIUM 🌩️ — Next.js: Cache poisoning in Next.js SSG/ISR rendering leads to cross-user content substitution and persistent denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-94484</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94484</guid>
-      <description>Next.js is a React framework for building full-stack web applications. From 15.0.0 until 15.5.27 and 16.3.8, applications with a root-level catch-all page and statically generated or Incremental Static Regeneration routes can use a shared response ca…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:26:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94485 · 6.3 MEDIUM 🌩️ — Next.js: Information disclosure in Next.js App Router metadata image routes via dynamicParams bypass</title>
-      <link>https://vulnogram.org/CVE-2026-94485</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94485</guid>
-      <description>Next.js is a React framework for building full-stack web applications. From 16.0.0 until 16.3.8, the `next dev` development server exposes a Model Context Protocol endpoint without reliably restricting cross-site requests. A malicious website visited…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:23:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94483 · 8.3 HIGH 🌩️ — Next.js: Server-Side Request Forgery in Image Optimization</title>
-      <link>https://vulnogram.org/CVE-2026-94483</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94483</guid>
-      <description>Next.js is a React framework for building full-stack web applications. From 16.0.0 until 16.3.8, Image Optimization can follow attacker-controlled DNS resolution for a remote URL that matches images.remotePatterns, allowing the optimized image fetch…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:18:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94543 · 6.3 MEDIUM 🌩️ — Next.js: Cache poisoning of SSG and ISR pages in self-hosted Next.js applications</title>
-      <link>https://vulnogram.org/CVE-2026-94543</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94543</guid>
-      <description>Next.js is a React framework for building full-stack web applications. From 15.0.0 until 15.5.27 and 16.3.8, self-hosted applications using the Pages Router with statically generated or Incremental Static Regeneration pages can key a response cache e…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:16:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94544 · 6.3 MEDIUM 🌩️ — Next.js: Pending `use cache` fill can leak Draft Mode content into regular responses and persisted pages</title>
-      <link>https://vulnogram.org/CVE-2026-94544</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94544</guid>
-      <description>Next.js is a React framework for building full-stack web applications. From 16.3.0 until 16.3.8, pending use cache fills for the same key are shared without separating Draft Mode requests from regular requests. An overlapping regular request can rece…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:14:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94486 · 2.3 LOW 🌩️ — Next.js: Information disclosure in the Next.js development server&apos;s Model Context Protocol endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-94486</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94486</guid>
-      <description>Next.js is a React framework for building full-stack web applications. From 16.0.0 until 16.3.8, the next dev development server exposes a Model Context Protocol endpoint without reliably restricting cross-site requests. A malicious website visited b…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:12:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96780 · 8.2 HIGH 🌩️ — figlet is vulnerable to denial of service via unbounded loop when whitespaceBreak is used with a small width</title>
-      <link>https://vulnogram.org/CVE-2026-96780</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96780</guid>
-      <description>figlet.js is a FIG driver written in JavaScript that aims to implement the FIGfont specification. Prior to 1.11.3, text() and textSync() can enter an unbounded loop when whitespaceBreak is enabled and width is smaller than the rendered width of a sin…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 20:21:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104183 · 5.1 MEDIUM — stream-json: Prototype pollution: Assembler writes this.current[this.key] on plain objects</title>
-      <link>https://vulnogram.org/CVE-2026-104183</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104183</guid>
-      <description>stream-json is a micro-library of stream components for processing JSON and JSONC with a minimal memory footprint. Prior to 3.6.0, Assembler materializes object properties with plain assignment, so an input key named __proto__ invokes the inherited s…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 01 Oct 2026 20:17:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104182 · 6.2 MEDIUM — stream-json: JSONC parser and verifier re-scan the whole accumulated comment on every input chunk</title>
-      <link>https://vulnogram.org/CVE-2026-104182</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104182</guid>
-      <description>stream-json is a micro-library of stream components for processing JSON and JSONC with a minimal memory footprint. Prior to 3.6.0, the JSONC parser at stream-json/jsonc/parser.js and verifier at stream-json/jsonc/verifier.js restart comment-terminato…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 01 Oct 2026 20:15:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104181 · 5.4 MEDIUM — Filament: Multi-factor authentication (app) management actions do not require password reauthentication</title>
-      <link>https://vulnogram.org/CVE-2026-104181</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104181</guid>
-      <description>Filament is a collection of full-stack components for accelerated Laravel development. From 4.0.0 until 4.13.3 and 5.8.3, app-based multi-factor authentication management actions do not consistently require confirmation of the current password. An at…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 01 Oct 2026 20:02:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53964 · 7.2 HIGH — Document Merge Service vulnerable to RCE via SSTI (xlsx tempaltes)</title>
-      <link>https://vulnogram.org/CVE-2026-53964</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53964</guid>
-      <description>Document Merge Service is a document template merge service providing an API to manage templates and merge them with given data. Prior to version 9.1.0, a remote code execution (RCE) via server-side template injection (SSTI) allows for user supplied…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 19:55:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55252 · 5.1 MEDIUM 🌩️ — OpenRun: Redirect URL validation bypass using  //host  paths leads to Open Redirect</title>
-      <link>https://vulnogram.org/CVE-2026-55252</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55252</guid>
-      <description>OpenRun is an open-source, self-hosted GitOps platform for deploying web apps and internal tools to Docker or Kubernetes. Prior to version 0.17.7, the restrictions on redirect URLs in openrun can be bypassed by attackers, leading to open redirect att…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 19:52:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55251 · 6.5 MEDIUM 🌩️ — NetBox Device Type Library: Arbitrary Code Execution on CI Runner Through Malicious requirements.txt, .pre-commit-hooks-config.yaml, and .gitmodules Files</title>
-      <link>https://vulnogram.org/CVE-2026-55251</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55251</guid>
-      <description>NetBox Device Type Library is a collection of community-sourced device type definitions for import into NetBox. Prior to commit f41fc1e, the CI workflow .github/workflows/validation.yml runs on pull_request and executes code supplied by the pull requ…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 19:49:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54049 · 8.7 HIGH — Sakai Conversations has a Stored XSS Issue</title>
-      <link>https://vulnogram.org/CVE-2026-54049</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54049</guid>
-      <description>Sakai is a Collaboration and Learning Environment (CLE). From versions 23.0 to before 23.5, and versions 25.0 to before 25.3, the Sakai Conversations tool stores topic and post messages without HTML sanitization, and the frontend renders them using L…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 19:42:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71542 · 8.7 HIGH 🌩️ — GetSimple CMS: Stored Cross-Site Scripting (XSS) via the &quot;title&quot; parameter in admin/components.php</title>
-      <link>https://vulnogram.org/CVE-2026-71542</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71542</guid>
-      <description>GetSimple CMS is a content management system (CMS), and GetSimple CMS CE is the community edition of that CMS. In versions 3.3.22 and prior, GetSimpleCMS-CE is vulnerable to stored Cross-Site Scripting (XSS) in the &quot;Theme to Components&quot; functionality…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 19:40:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71426 · 7.1 HIGH — GetSimple CMS: Authenticated Stored Local File Inclusion (LFI) via page &quot;template&quot; field</title>
-      <link>https://vulnogram.org/CVE-2026-71426</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71426</guid>
-      <description>GetSimple CMS is a content management system (CMS), and GetSimple CMS CE is the community edition of that CMS. In versions 3.3.22 and prior, an authenticated user with page-editing rights can store an arbitrary filesystem path in a page&apos;s template at…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 19:39:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70650 · 8.8 HIGH 🌩️ — GetSimple CMS: Authenticated Stored XSS in backup viewer (backup-edit.php) via output decoding of page meta fields and content</title>
-      <link>https://vulnogram.org/CVE-2026-70650</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70650</guid>
-      <description>GetSimple CMS is a content management system (CMS), and GetSimple CMS CE is the community edition of that CMS. In versions 3.3.22 and prior, an authenticated stored Cross-Site Scripting (XSS) vulnerability exists in the page backup viewer (admin/back…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 19:39:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56662 · 9.6 CRITICAL 🌩️ — GetSimple CMS: Missing CSRF protection in UpdateCE allows forging a privileged server-side update request</title>
-      <link>https://vulnogram.org/CVE-2026-56662</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56662</guid>
-      <description>GetSimple CMS is a content management system (CMS), and GetSimple CMS CE is the community edition of that CMS. Prior to version 1.5, the UpdateCE update form contained no anti-CSRF token, and the POST handler performed no token or request-origin veri…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 19:38:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56661 · 7.5 HIGH — GetSimple CMS: Server-Side Request Forgery in the UpdateCE update endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-56661</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56661</guid>
-      <description>GetSimple CMS is a content management system (CMS), and GetSimple CMS CE is the community edition of that CMS. Prior to version 1.5, the update handler fetches a user-supplied URL with file_get_contents() after only format validation (FILTER_VALIDATE…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 19:38:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56660 · 9.1 CRITICAL — GetSimple CMS: CSRF, SSRF, and Unrestricted Zip Extraction</title>
-      <link>https://vulnogram.org/CVE-2026-56660</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56660</guid>
-      <description>GetSimple CMS is a content management system (CMS), and GetSimple CMS CE is the community edition of that CMS. Prior to version 1.5, the update handler in UpdateCE.php downloads a ZIP archive and extracts its contents into the web root without valida…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 01 Oct 2026 19:37:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-53953 · 9.1 CRITICAL 🌩️ — GetSimple CMS: Predictable Password Reset Password Allows Administrator Account Takeover</title>
-      <link>https://vulnogram.org/CVE-2026-53953</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-53953</guid>
-      <description>GetSimple CMS is a content management system (CMS), and GetSimple CMS CE is the community edition of that CMS. In version 3.3.22, the password reset endpoint can be accessed without authentication. When a reset request is submitted for an existing us…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 19:36:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55232 · 7.6 HIGH — Vvveb: Server-side request forgery in Vvveb via IPv6 bypass of validateUrl() in editor oEmbed proxy</title>
-      <link>https://vulnogram.org/CVE-2026-55232</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55232</guid>
-      <description>Vvveb is a powerful and easy to use CMS with page builder to build websites, blogs or ecommerce stores. Prior to version 1.0.8.6, Vvveb&apos;s SSRF guard resolves a host with an IPv4-only function and never inspects IPv6, so any host that lacks an A recor…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 18:43:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55230 · 8.7 HIGH — Vvveb: Stored XSS in Vvveb via sanitizeHTML() filter bypass using a quoted greater-than character</title>
-      <link>https://vulnogram.org/CVE-2026-55230</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55230</guid>
-      <description>Vvveb is a powerful and easy to use CMS with page builder to build websites, blogs or ecommerce stores. Prior to version 1.0.8.6, Vvveb&apos;s HTML sanitizer fails to strip event-handler attributes when a tag carries a greater-than character inside a quot…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 18:42:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55231 · 7.2 HIGH — Vvveb: Path traversal in Vvveb via sanitizeFileName() bypass enables arbitrary file read and delete through backup tools</title>
-      <link>https://vulnogram.org/CVE-2026-55231</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55231</guid>
-      <description>Vvveb is a powerful and easy to use CMS with page builder to build websites, blogs or ecommerce stores. Prior to version 1.0.8.6, a flawed central path sanitizer lets an authenticated admin-panel user who holds backup access (default role site_admin…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 18:42:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55083 · 9.1 CRITICAL — DHIS2: Unsafe Java Deserialization - Remote Code Execution (RCE)</title>
-      <link>https://vulnogram.org/CVE-2026-55083</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55083</guid>
-      <description>DHIS2 is a flexible information system for data capture, management, validation, analytics and visualization. From versions 2.42.0 to before 2.42.5.1, and from versions 2.43.0 to before 2.43.0.1, DHIS2 is vulnerable to remote code execution (RCE) via…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 01 Oct 2026 18:00:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103923 · 2.1 LOW 🌩️ — KaTeX: Existing prototype pollution can bypass trust restrictions</title>
-      <link>https://vulnogram.org/CVE-2026-103923</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103923</guid>
-      <description>KaTeX is a fast, easy-to-use JavaScript library for TeX math rendering on the web. From 0.11.0 until 0.18.2, KaTeX uses ordinary JavaScript property access for the renderer options object, the trust setting, default and processor setting metadata, an…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 17:37:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103922 · 9.3 CRITICAL 🌩️ — Capacitor Android and iOS: remote content can be loaded at the app origin via the internal HTTP proxy path</title>
-      <link>https://vulnogram.org/CVE-2026-103922</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103922</guid>
-      <description>Capacitor is a cross-platform native runtime for web applications. From 6.0.0 until 6.2.2, 7.6.9, 8.3.5, 8.4.3, and 8.5.1, the Android and iOS WebView navigation guard validates a target URL&apos;s host and scheme but not its path, allowing a victim who a…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 17:27:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73976 · 7.1 HIGH — djehuty: Unauthenticated SPARQL injection in the search API (`order`, `operator`, `key`)</title>
-      <link>https://vulnogram.org/CVE-2026-73976</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73976</guid>
-      <description>djehuty is a research data repository system developed by 4TU.ResearchData. Prior to version 26.3.2, An unauthenticated attacker can inject SPARQL into the search/listing queries through three separate parameters. Because the affected queries are rea…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 17:08:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73975 · 8.4 HIGH — djehuty: Authenticated SPARQL injection in session editing allows writing arbitrary RDF triples</title>
-      <link>https://vulnogram.org/CVE-2026-73975</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73975</guid>
-      <description>djehuty is a research data repository system developed by 4TU.ResearchData. Prior to version 26.3.2, an authenticated depositor can inject arbitrary SPARQL into a state-modifying (DELETE/INSERT) query by supplying a crafted session name, letting them…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 16:41:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77387 · 4 MEDIUM — geopy: Regular Expression Denial of Service (ReDoS) in geopy.Point</title>
-      <link>https://vulnogram.org/CVE-2026-77387</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77387</guid>
-      <description>geopy is a geocoding library for Python. Prior to 2.5.0, geopy.Point and Point.from_string() can spend excessive CPU time due to inefficient regular-expression behavior when an application passes a long malformed coordinate string without the 256-cha…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 01 Oct 2026 16:38:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103921 · 7.4 HIGH 🌩️ — GraphQL Tools: TLS Certificate Validation Disabled in Legacy GraphQL WebSocket Executor</title>
-      <link>https://vulnogram.org/CVE-2026-103921</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103921</guid>
-      <description>GraphQL Tools provides utilities for building, stitching, and mocking GraphQL schemas. Prior to 1.1.35, the executor-legacy-ws buildWSLegacyExecutor() function hardcodes TLS certificate rejection off for Node.js connections to wss:// endpoints. Appli…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 16:32:37 GMT</pubDate>
     </item>
   </channel>
 </rss>

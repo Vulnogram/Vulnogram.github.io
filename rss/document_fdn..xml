@@ -11,7 +11,55 @@
       <title>Document Foundation, The — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 05 Oct 2026 09:57:50 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 19:08:16 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-63270 · 6.7 MEDIUM — Environment/ini-file leaks</title>
+      <link>https://vulnogram.org/CVE-2026-63270</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63270</guid>
+      <description>URLs could be constructed which expanded environment variable or INI file values, so potentially sensitive information could be exfiltrated to a remote server on opening a document containing such links. The check added for CVE-2024-12426 did not cov…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 11:17:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63269 · 6.7 MEDIUM — LFI and GET SSRF via GStreamer and HLS playlists</title>
+      <link>https://vulnogram.org/CVE-2026-63269</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63269</guid>
+      <description>LibreOffice can link to audio and video files from a document, and on Linux it plays them with GStreamer. A linked media file could be an HLS playlist that made GStreamer read the local files and remote URLs it listed while the document loaded, and t…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 11:17:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63268 · 6.7 MEDIUM — LFI via calcext:data-mappings, sql provider and sdbc:flat:file:// db href</title>
+      <link>https://vulnogram.org/CVE-2026-63268</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63268</guid>
+      <description>LibreOffice Calc can link a cell range to an external data source, and the link is saved in the document. A link of the sql type could name a folder of local text files as a database, so opening a document could read a local text file into the sheet.…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 11:17:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63267 · 6.7 MEDIUM — LFI and GET SSRF via calcext:data-mappings and csv provider</title>
+      <link>https://vulnogram.org/CVE-2026-63267</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63267</guid>
+      <description>LibreOffice Calc can link a cell range to an external csv data source, and the link is saved in the document. Such a link was fetched while the document loaded, so opening a document could read a local file into the sheet, or make a request to a host…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 11:17:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63266 · 6.8 MEDIUM — Arbitrary file write via calcext:data-mappings, sql provider and Firebird backup functionality</title>
+      <link>https://vulnogram.org/CVE-2026-63266</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63266</guid>
+      <description>LibreOffice Calc can link a cell range to an external data source, and the link is saved in the document. Through such a link a document could open an embedded Firebird database that wrote a file to any location the user could write to. In fixed vers…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 11:17:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63277 · 8.5 HIGH — RCE via calcext:data-mappings, sql provider and jdbc connector</title>
+      <link>https://vulnogram.org/CVE-2026-63277</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63277</guid>
+      <description>LibreOffice Calc can link a cell range to an external data source, and the link is saved in the document. A document could name a Java database driver for such a link to be loaded from a remote location, so opening the document could run Java code fr…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 11:17:20 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-63279 · 5.4 MEDIUM — Out of bounds read in PICT image import</title>
       <link>https://vulnogram.org/CVE-2026-63279</link>
@@ -350,48 +398,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2019-9855</guid>
       <description>LibreOffice is typically bundled with LibreLogo, a programmable turtle vector graphics script, which can execute arbitrary python commands contained with the document it is launched from. LibreOffice also has a feature where documents can specify tha…</description>
       <pubDate>Fri, 06 Sep 2019 18:40:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2019-9854 — Unsafe URL assembly flaw in allowed script location check</title>
-      <link>https://vulnogram.org/CVE-2019-9854</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2019-9854</guid>
-      <description>LibreOffice has a feature where documents can specify that pre-installed macros can be executed on various script events such as mouse-over, document-open etc. Access is intended to be restricted to scripts under the share/Scripts/python, user/Script…</description>
-      <pubDate>Fri, 06 Sep 2019 18:30:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2019-9852 — Insufficient URL encoding flaw in allowed script location check</title>
-      <link>https://vulnogram.org/CVE-2019-9852</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2019-9852</guid>
-      <description>LibreOffice has a feature where documents can specify that pre-installed macros can be executed on various script events such as mouse-over, document-open etc. Access is intended to be restricted to scripts under the share/Scripts/python, user/Script…</description>
-      <pubDate>Thu, 15 Aug 2019 21:40:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2019-9851 — LibreLogo global-event script execution</title>
-      <link>https://vulnogram.org/CVE-2019-9851</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2019-9851</guid>
-      <description>LibreOffice is typically bundled with LibreLogo, a programmable turtle vector graphics script, which can execute arbitrary python commands contained with the document it is launched from. Protection was added, to address CVE-2019-9848, to block calli…</description>
-      <pubDate>Thu, 15 Aug 2019 21:35:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2019-9850 — Insufficient url validation allowing LibreLogo script execution</title>
-      <link>https://vulnogram.org/CVE-2019-9850</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2019-9850</guid>
-      <description>LibreOffice is typically bundled with LibreLogo, a programmable turtle vector graphics script, which can execute arbitrary python commands contained with the document it is launched from. LibreOffice also has a feature where documents can specify tha…</description>
-      <pubDate>Thu, 15 Aug 2019 21:30:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2019-9849</title>
-      <link>https://vulnogram.org/CVE-2019-9849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2019-9849</guid>
-      <description>LibreOffice has a &apos;stealth mode&apos; in which only documents from locations deemed &apos;trusted&apos; are allowed to retrieve remote resources. This mode is not the default mode, but can be enabled by users who want to disable LibreOffice&apos;s ability to include rem…</description>
-      <pubDate>Wed, 17 Jul 2019 11:26:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2019-9848</title>
-      <link>https://vulnogram.org/CVE-2019-9848</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2019-9848</guid>
-      <description>LibreOffice has a feature where documents can specify that pre-installed scripts can be executed on various document events such as mouse-over, etc. LibreOffice is typically also bundled with LibreLogo, a programmable turtle vector graphics script, w…</description>
-      <pubDate>Wed, 17 Jul 2019 11:21:57 GMT</pubDate>
     </item>
   </channel>
 </rss>

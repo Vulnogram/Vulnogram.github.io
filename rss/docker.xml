@@ -11,7 +11,65 @@
       <title>Docker Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 05 Oct 2026 09:57:50 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 19:08:16 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-93323 · 6.8 MEDIUM — Oversized Dockerfile or .dockerignore can exhaust buildkitd memory</title>
+      <link>https://vulnogram.org/CVE-2026-93323</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93323</guid>
+      <description>The Dockerfile frontend loaded the Dockerfile and .dockerignore files of a build context into memory without a size limit. A build context containing an oversized file could make buildkitd allocate memory proportional to that file, potentially exhaus…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 17:57:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93322 · 6.9 MEDIUM — Malformed MergeOp can crash the BuildKit daemon</title>
+      <link>https://vulnogram.org/CVE-2026-93322</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93322</guid>
+      <description>A malicious frontend can submit an LLB definition that causes buildkitd to panic and terminate, interrupting all builds running on that daemon.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 17:53:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93320 · 6 MEDIUM — BuildKit improperly handles special files in build snapshots</title>
+      <link>https://vulnogram.org/CVE-2026-93320</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93320</guid>
+      <description>BuildKit may be tricked into performing file actions with special file inodes where regular files are expected. Special files may block operations or, on rootful workers, allow unintended host device access.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 17:50:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93319 · 5.7 MEDIUM — A malicious frontend can cause a daemon panic</title>
+      <link>https://vulnogram.org/CVE-2026-93319</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93319</guid>
+      <description>A malicious external BuildKit frontend can send requests using the internal API that can create conditions for a data race that can cause the BuildKit daemon to panic.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 17:47:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93318 · 7.5 HIGH 🌩️ — Cache poisoning via unvalidated image layer DiffIDs</title>
+      <link>https://vulnogram.org/CVE-2026-93318</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93318</guid>
+      <description>A malicious image can advertise DiffIDs from another image while containing different layer contents. In affected versions, BuildKit could use the advertised DiffIDs to derive cache and snapshot identity without validating that they matched the actua…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 17:45:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93317 · 5.9 MEDIUM 🌩️ — Container blob cache can accept unverified content</title>
+      <link>https://vulnogram.org/CVE-2026-93317</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93317</guid>
+      <description>An unauthenticated attacker controlling a registry or OCI-layout blob source could provide blob contents that did not match the claimed digest. The resulting snapshot could be cached under that digest and reused by a later victim build, compromising…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 17:43:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93316 · 7.1 HIGH — Starting daemon with --cdi-disabled flag can lead to panic on specific builds</title>
+      <link>https://vulnogram.org/CVE-2026-93316</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93316</guid>
+      <description>If BuildKit daemon is started with --cdi-disabled it can lead to daemon panic when builds try to use CDI devices. This can happen maliciously or by accident.</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 17:42:12 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-79994 · 8.7 HIGH — Docker Sandboxes UDS forwarder can reach arbitrary host Unix sockets through a symlink race</title>
       <link>https://vulnogram.org/CVE-2026-79994</link>
