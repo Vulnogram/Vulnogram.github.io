@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 05 Oct 2026 02:46:09 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 09:57:49 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-19185 · 7.8 HIGH — Unvalidated user-supplied buffer pointers in the I3C do_ccc system call handler allow kernel memory read/write from user mode</title>
+      <link>https://vulnogram.org/CVE-2026-19185</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19185</guid>
+      <description>The system-call verifier for i3c_do_ccc() in drivers/i3c/i3c_handlers.c validated the outer struct i3c_ccc_payload, the broadcast ccc.data buffer and the targets.payloads[] array, but did not validate the per-target data buffers those array elements…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 08:06:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19184 · 8.4 HIGH — Out-of-bounds write in the NXP GAU ADC driver due to byte-versus-sample buffer size validation mismatch</title>
+      <link>https://vulnogram.org/CVE-2026-19184</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19184</guid>
+      <description>The NXP GAU ADC driver (drivers/adc/adc_mcux_gau_adc.c) validated the caller-supplied sequence-&gt;buffer_size, which is expressed in bytes, against the number of active channels, which is a sample count. It then stored that byte count directly in data-…</description>
+      <category>High</category>
+      <pubDate>Mon, 05 Oct 2026 08:06:22 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-17053 · 4.4 MEDIUM — SMBus callback-removal syscalls accept an unvalidated user pointer, letting user threads manipulate kernel callback state</title>
       <link>https://vulnogram.org/CVE-2026-17053</link>
@@ -395,22 +411,6 @@
       <description>The NVS backend of the Zephyr settings subsystem (subsys/settings/src/settings_nvs.c) reads stored setting-name entries into fixed 74-byte stack buffers and NUL-terminates them with buf[rc] = &apos;\0&apos;, where rc is the return value of nvs_read(). Per its…</description>
       <category>Medium</category>
       <pubDate>Wed, 19 Aug 2026 20:37:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12522 · 8.8 HIGH — Stack buffer overflow in Zephyr hl7800 modem driver parsing network-supplied +CGCONTRDP address fields</title>
-      <link>https://vulnogram.org/CVE-2026-12522</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12522</guid>
-      <description>The HL7800 cellular modem driver&apos;s +CGCONTRDP: response handler on_cmd_atcmdinfo_ipaddr() in drivers/modem/vendor_standalone/hl7800.c parses the PDP-context dynamic parameters (local address, subnet mask, gateway, and DNS servers) that the cellular n…</description>
-      <category>High</category>
-      <pubDate>Wed, 19 Aug 2026 20:37:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12633 · 8.1 HIGH — Out-of-bounds write in IPv6 6LoWPAN Context Option handling via unauthenticated Router Advertisement</title>
-      <link>https://vulnogram.org/CVE-2026-12633</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12633</guid>
-      <description>The IPv6 neighbor-discovery code in subsys/net/ip/ipv6_nbr.c processes the 6LoWPAN Context Option (6CO, RFC 6775) carried inside ICMPv6 Router Advertisements. In handle_ra_6co() the 8-bit context_len field is taken directly from the packet and was ne…</description>
-      <category>High</category>
-      <pubDate>Wed, 19 Aug 2026 20:37:34 GMT</pubDate>
     </item>
   </channel>
 </rss>
