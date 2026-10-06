@@ -11,7 +11,23 @@
       <title>The HDF Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 06 Oct 2026 19:28:33 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 23:41:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-106547 · 8.5 HIGH — HDF5 heap buffer overflow in H5VM_array_fill via crafted fill-value metadata</title>
+      <link>https://vulnogram.org/CVE-2026-106547</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106547</guid>
+      <description>A heap-based buffer overflow in H5VM_array_fill() in src/H5VM.c in HDF5 before 2.2.0 lets a remote attacker cause an application crash and possibly execute arbitrary code with a crafted HDF5 file. When a dataset&apos;s unallocated chunks are read, H5D__fi…</description>
+      <category>High</category>
+      <pubDate>Tue, 06 Oct 2026 20:14:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19029 · 6.8 MEDIUM — HDF5 scale-offset filter heap buffer over-read via crafted chunk</title>
+      <link>https://vulnogram.org/CVE-2026-19029</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19029</guid>
+      <description>A heap-based buffer over-read in H5Z__filter_scaleoffset() in src/H5Zscaleoffset.c in HDF5 through 2.2.0 lets an attacker cause a denial of service (application crash) with a crafted HDF5 file. When the stored minimum bits equal the full precision of…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 06 Oct 2026 20:01:36 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-92627 · 4.6 MEDIUM — Heap Use-After-Free in H5T__conv_f_f</title>
       <link>https://vulnogram.org/CVE-2026-92627</link>
@@ -24,7 +40,7 @@
       <title>CVE-2026-19028 · 6.8 MEDIUM — HDF5 integer underflow in Fletcher32 filter leads to massive out-of-bounds read</title>
       <link>https://vulnogram.org/CVE-2026-19028</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19028</guid>
-      <description>H5Z__filter_fletcher32 in H5Zfletcher32.c in HDF5 through 2.3.0 computes the data length to checksum by subtracting the 4-byte trailing checksum size from the input buffer size without checking that the buffer is at least 4 bytes, allowing a size_t u…</description>
+      <description>H5Z__filter_fletcher32 in H5Zfletcher32.c in HDF5 prior to 2.3.0 computes the data length to checksum by subtracting the 4-byte trailing checksum size from the input buffer size without checking that the buffer is at least 4 bytes, allowing a size_t…</description>
       <category>Medium</category>
       <pubDate>Wed, 05 Aug 2026 23:15:09 GMT</pubDate>
     </item>
@@ -32,7 +48,7 @@
       <title>CVE-2026-19027 · 6.9 MEDIUM — HDF5 out-of-bounds heap read in N-Bit filter decompression</title>
       <link>https://vulnogram.org/CVE-2026-19027</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19027</guid>
-      <description>The H5Z__nbit_decompress_one_byte, H5Z__nbit_decompress_one_nooptype, and H5Z__nbit_decompress_one_atomic functions in H5Znbit.c in HDF5 through 2.3.0 advance a read index into the compressed chunk buffer without bounding it against the buffer&apos;s actu…</description>
+      <description>The H5Z__nbit_decompress_one_byte, H5Z__nbit_decompress_one_nooptype, and H5Z__nbit_decompress_one_atomic functions in H5Znbit.c in HDF5 prior to 2.3.0 advance a read index into the compressed chunk buffer without bounding it against the buffer&apos;s act…</description>
       <category>Medium</category>
       <pubDate>Wed, 05 Aug 2026 23:12:20 GMT</pubDate>
     </item>
@@ -40,7 +56,7 @@
       <title>CVE-2026-19026 · 6.8 MEDIUM — Nbit filter NULL/short parameter-array dereference</title>
       <link>https://vulnogram.org/CVE-2026-19026</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19026</guid>
-      <description>H5Z__filter_nbit in H5Znbit.c in HDF5 through 2.3.0 dereferences cd_values[0] through cd_values[4] without validating that cd_values is non-NULL or that cd_nelmts is at least 5, the fixed size of the filter&apos;s header. This allows attackers to cause a…</description>
+      <description>H5Z__filter_nbit in H5Znbit.c in HDF5 prior to 2.3.0 dereferences cd_values[0] through cd_values[4] without validating that cd_values is non-NULL or that cd_nelmts is at least 5, the fixed size of the filter&apos;s header. This allows attackers to cause a…</description>
       <category>Medium</category>
       <pubDate>Wed, 05 Aug 2026 22:47:58 GMT</pubDate>
     </item>
