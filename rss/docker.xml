@@ -11,7 +11,40 @@
       <title>Docker Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 05 Oct 2026 19:08:16 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 00:44:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-93321 · 6.9 MEDIUM — Malformed LLB file operation can crash buildkitd</title>
+      <link>https://vulnogram.org/CVE-2026-93321</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93321</guid>
+      <description>A malicious frontend can submit an LLB definition that causes buildkitd to panic and terminate, interrupting all builds running on that daemon.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 22:00:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93315 · 5.8 MEDIUM — BuildKit proxy CA cleanup can be disrupted by build steps</title>
+      <link>https://vulnogram.org/CVE-2026-93315</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93315</guid>
+      <description>When proxy networking with CA injection is enabled, a build can modify its CA bundle before cleanup. This may cause cleanup to block, operate outside the build rootfs, or fail without failing the build.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 21:57:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103433 · 6.9 MEDIUM 🌩️ — Bake filesystem entitlement consent is skipped for certain secret and oci-layout definitions</title>
+      <link>https://vulnogram.org/CVE-2026-103433</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103433</guid>
+      <description>Docker Buildx Bake does not request the expected fs.read approval for certain filesystem inputs. An untrusted Bake definition can expose a readable file through a pathless secret whose ID is interpreted as a client-side pathname, or consume a local O…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 21:54:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93326 · 6 MEDIUM — Crafted Git build source can bypass certain policy validation</title>
+      <link>https://vulnogram.org/CVE-2026-93326</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93326</guid>
+      <description>A build step for a Git source, crafted in a specific way, can bypass some policy validation rules. A malicious build definition can make the repository look like it is coming from a different remote URL than it really is when Git clone is happening.…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 20:13:27 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-93323 · 6.8 MEDIUM — Oversized Dockerfile or .dockerignore can exhaust buildkitd memory</title>
       <link>https://vulnogram.org/CVE-2026-93323</link>
@@ -384,39 +417,6 @@
       <description>Docker Desktop before 4.23.0 allows Access Token theft via a crafted extension icon URL. This issue affects Docker Desktop: before 4.23.0.</description>
       <category>High</category>
       <pubDate>Mon, 25 Sep 2023 15:30:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-5165 · 7.1 HIGH — Docker Desktop before 4.23.0 allows Enhanced Container Isolation bypass via debug shell</title>
-      <link>https://vulnogram.org/CVE-2023-5165</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-5165</guid>
-      <description>Docker Desktop before 4.23.0 allows an unprivileged user to bypass Enhanced Container Isolation (ECI) restrictions via the debug shell which remains accessible for a short time window after launching Docker Desktop. The affected functionality is avai…</description>
-      <category>High</category>
-      <pubDate>Mon, 25 Sep 2023 15:29:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-1802 · 5.9 MEDIUM 🌩️ — In Docker Desktop 4.17.x the Artifactory Integration falls back to sending registry credentials over plain HTTP if the HTTPS health check has failed</title>
-      <link>https://vulnogram.org/CVE-2023-1802</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-1802</guid>
-      <description>In Docker Desktop 4.17.x the Artifactory Integration falls back to sending registry credentials over plain HTTP if the HTTPS health check has failed. A targeted network sniffing attack can lead to a disclosure of sensitive information. Only users who…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 06 Apr 2023 08:52:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-0629 · 7.1 HIGH — Docker Desktop before 4.17.0 allows an unprivileged user to bypass Enhanced Container Isolation restrictions via the raw Docker socket and launch privileged containers</title>
-      <link>https://vulnogram.org/CVE-2023-0629</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-0629</guid>
-      <description>Docker Desktop before 4.17.0 allows an unprivileged user to bypass Enhanced Container Isolation (ECI) restrictions by setting the Docker host to docker.raw.sock, or npipe:////.pipe/docker_engine_linux on Windows, via the -H (--host) CLI flag or the D…</description>
-      <category>High</category>
-      <pubDate>Mon, 13 Mar 2023 11:16:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-0628 · 6.1 MEDIUM — Docker Desktop before 4.17.0 allows an attacker to execute an arbitrary command inside a Dev Environments container during initialization by tricking a user to open a crafted malicious docker-desktop:// URL</title>
-      <link>https://vulnogram.org/CVE-2023-0628</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-0628</guid>
-      <description>Docker Desktop before 4.17.0 allows an attacker to execute an arbitrary command inside a Dev Environments container during initialization by tricking a user to open a crafted malicious docker-desktop:// URL.</description>
-      <category>Medium</category>
-      <pubDate>Mon, 13 Mar 2023 11:16:30 GMT</pubDate>
     </item>
   </channel>
 </rss>

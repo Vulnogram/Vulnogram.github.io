@@ -11,7 +11,64 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 05 Oct 2026 19:08:15 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 00:44:39 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-105447 · 5.5 MEDIUM — Quay: quay: global read-only superuser can access build trigger write credentials</title>
+      <link>https://vulnogram.org/CVE-2026-105447</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105447</guid>
+      <description>A flaw was found in Quay. When handling build trigger requests, the application incorrectly exposes trigger configuration details containing repository write tokens to global read-only administrative users. An authenticated user with read-only privil…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 20:29:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71297 · 5.4 MEDIUM — Maestro: maestro: grpc broker has no auth interceptor and client mtls is optional</title>
+      <link>https://vulnogram.org/CVE-2026-71297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71297</guid>
+      <description>A flaw was found in the maestro gRPC broker. This vulnerability allows a remote attacker, with a valid client certificate, to bypass authentication. This bypass enables the attacker to subscribe to other consumers&apos; event streams, leading to unauthori…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 19:55:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104029 · 3.3 LOW — Sssd: sssd: denial of service via out-of-bounds read in autofs responder</title>
+      <link>https://vulnogram.org/CVE-2026-104029</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104029</guid>
+      <description>A flaw was found in SSSD. A local attacker can exploit this vulnerability by sending a specially crafted request to the autofs responder UNIX socket. Due to improper buffer offset calculation during request parsing, the service performs an out-of-bou…</description>
+      <category>Low</category>
+      <pubDate>Mon, 05 Oct 2026 19:13:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104030 · 5.5 MEDIUM — Sssd: sssd: denial of service via out-of-bounds read during passkey parsing</title>
+      <link>https://vulnogram.org/CVE-2026-104030</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104030</guid>
+      <description>A flaw was found in sssd. This vulnerability allows a local user to cause a Denial of Service (DoS) by submitting a specially crafted passkey authentication token that lacks null terminators. The authentication service reads past the end of the provi…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 19:07:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71299 · 6.5 MEDIUM 🌩️ — Maestro: maestro: rest api write endpoints registered without authentication middleware</title>
+      <link>https://vulnogram.org/CVE-2026-71299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71299</guid>
+      <description>A flaw was found in Maestro. Its REST API write endpoints were registered without proper authentication middleware. This allows a remote attacker to perform unauthorized write operations, such as creating, modifying, or deleting consumers and resourc…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 05 Oct 2026 19:06:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71298 · 6.4 MEDIUM — Maestro: sql identifier injection via properties.* search filter and orderby field</title>
+      <link>https://vulnogram.org/CVE-2026-71298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71298</guid>
+      <description>A flaw was found in maestro. A remote attacker could exploit a SQL injection vulnerability in the `orderBy` query parameter of its REST API list endpoints. This flaw, which does not require authentication, allows for read-only blind extraction of dat…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 05 Oct 2026 19:06:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105326 · 2.5 LOW — Cups: cups: argument injection in mailto notifier via notify-recipient-uri</title>
+      <link>https://vulnogram.org/CVE-2026-105326</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105326</guid>
+      <description>An argument injection flaw was found in CUPS. When email notification is configured, the CUPS scheduler accepts printer subscription requests that supply a mailto notify-recipient-uri. The mailto notifier passes the recipient address to the configure…</description>
+      <category>Low</category>
+      <pubDate>Mon, 05 Oct 2026 18:58:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-101919 · 8.8 HIGH — Hypershift: hypershift: unsanitized kubeconfig passthrough from tenant namespace to control plane</title>
       <link>https://vulnogram.org/CVE-2026-101919</link>
@@ -372,64 +429,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 29 Sep 2026 03:23:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97027 · 3.6 LOW — Flatpak: flatpak: denial of service via unsanitized keys in exported desktop entry / d-bus service files</title>
-      <link>https://vulnogram.org/CVE-2026-97027</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97027</guid>
-      <description>Flatpak passes through arbitrary vendor-extension keys unmodified when exporting an application&apos;s Desktop Entry (.desktop) and D-Bus Service (.service) files, instead of validating against an allowlist. A malicious Flatpak app can use this to cause d…</description>
-      <category>Low</category>
-      <pubDate>Mon, 28 Sep 2026 20:57:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97026 · 3.9 LOW — Flatpak: flatpak: world-writable temporary child repositories in system-helper cache path</title>
-      <link>https://vulnogram.org/CVE-2026-97026</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97026</guid>
-      <description>Flatpak creates temporary child repository directories under the user cache with world-writable permissions (0777). On multi-user systems with a permissive umask, other local users could read or modify the temporary directory used while installing ap…</description>
-      <category>Low</category>
-      <pubDate>Mon, 28 Sep 2026 20:57:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97025 · 3.2 LOW — Flatpak: flatpak: world-readable oci authentication token in system-helper cache path</title>
-      <link>https://vulnogram.org/CVE-2026-97025</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97025</guid>
-      <description>Flatpak writes the OCI repository authentication token with world-readable permissions (0644) in the system-helper&apos;s cache directory, allowing other local users on a multi-user system to read the token and impersonate the authenticated user against t…</description>
-      <category>Low</category>
-      <pubDate>Mon, 28 Sep 2026 20:57:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102010 · 7 HIGH 🌩️ — Gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: denial of service via use-after-free in binary heap erase_if</title>
-      <link>https://vulnogram.org/CVE-2026-102010</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102010</guid>
-      <description>A flaw was found in GCC. When an application calls the erase_if function on a binary heap priority queue in libstdc++, the library reallocates storage but fails to update its internal entry pointer. An attacker capable of triggering this operation ca…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 18:54:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97023 · 7.1 HIGH 🌩️ — Flatpak: flatpak: arbitrary file deletion in root context via path traversal in deploy directory export/bin</title>
-      <link>https://vulnogram.org/CVE-2026-97023</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97023</guid>
-      <description>A path traversal vulnerability in Flatpak&apos;s handling of the export/bin directory during app deployment allows a malicious Flatpak app to cause deletion of attacker-chosen files outside the deployment directory when the app is installed or upgraded. I…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 18:53:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96740 · 6.5 MEDIUM — Streamshub/console: console-operator: streams for apache kafka console: unfiltered kafka client properties → sa-token exfiltration via config.providers</title>
-      <link>https://vulnogram.org/CVE-2026-96740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96740</guid>
-      <description>A flaw was found in the StreamsHub Console for Apache Kafka. Tenant-supplied Kafka client properties from the Console custom resource are copied into the console-api AdminClient configuration without filtering security-sensitive keys, allowing a Cons…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 28 Sep 2026 17:27:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87114 · 7.1 HIGH — Kube-compare: container:// reference extraction runs the image entrypoint and silently escalates to sudo</title>
-      <link>https://vulnogram.org/CVE-2026-87114</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87114</guid>
-      <description>A flaw was found in kube-compare. When processing a &apos;container://&apos; reference path, the tool incorrectly executes an untrusted container image&apos;s entrypoint instead of merely extracting data from a stopped container. This allows a remote attacker to ac…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 16:49:04 GMT</pubDate>
     </item>
   </channel>
 </rss>
