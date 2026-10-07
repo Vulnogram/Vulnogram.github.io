@@ -11,7 +11,39 @@
       <title>HashiCorp Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 07 Oct 2026 17:19:37 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 22:37:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-89322 · 7.2 HIGH — Vault ACL Policy Evaluation May Allow Bypass of Deny Restrictions</title>
+      <link>https://vulnogram.org/CVE-2026-89322</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89322</guid>
+      <description>Vault and Vault Enterprise did not consistently evaluate ACL policies against the canonical form of resource and policy names. This may allow an authenticated user with delegated permissions to bypass an explicit deny restriction and access a protect…</description>
+      <category>High</category>
+      <pubDate>Wed, 07 Oct 2026 22:01:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105820 · 5.4 MEDIUM — Vault ACL Policy Cache Vulnerable to Cross-Namespace Policy Resolution</title>
+      <link>https://vulnogram.org/CVE-2026-105820</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105820</guid>
+      <description>Vault&apos;s ACL policy cache allowed namespace traversal when policy names contained path traversal constructs. This may allow a token assigned specially crafted policy names to use the capabilities of policies defined in other namespaces, including the…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 21:48:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105816 · 8 HIGH — Vault Vulnerable to Arbitrary Code Execution via Plugin Catalog Entries Restored From Raft Snapshots</title>
+      <link>https://vulnogram.org/CVE-2026-105816</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105816</guid>
+      <description>Vault and Vault Enterprise did not consistently verify that stored plugin catalog entries reference binaries within the configured plugin directory. When Vault uses Shamir seals and has an external plugin directory configured, a privileged operator a…</description>
+      <category>High</category>
+      <pubDate>Wed, 07 Oct 2026 21:37:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105818 · 5.9 MEDIUM — Vault PKI ACME Issues Certificate With Unvalidated SANs</title>
+      <link>https://vulnogram.org/CVE-2026-105818</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105818</guid>
+      <description>Vault&apos;s PKI secrets engine ACME server did not restrict certificate identities that ACME challenges do not validate when issuing certificates under the default directory policy. This may allow an ACME client to obtain a certificate containing unverif…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 21:21:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-88922 · 6.7 MEDIUM — Go-getter vulnerable to a privilege escalation issue in its archive decompression handling</title>
       <link>https://vulnogram.org/CVE-2026-88922</link>
@@ -381,38 +413,6 @@
       <description>Consul and Consul Enterprise’s (“Consul”) key/value endpoint is vulnerable to denial of service (DoS) due to incorrect Content Length header validation. This vulnerability, CVE-2025-11374, is fixed in Consul Community Edition 1.22.0 and Consul Enterp…</description>
       <category>Medium</category>
       <pubDate>Tue, 28 Oct 2025 20:19:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11375 · 6.5 MEDIUM — Consul&apos;s event endpoint is vulnerable to denial of service</title>
-      <link>https://vulnogram.org/CVE-2025-11375</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11375</guid>
-      <description>Consul and Consul Enterprise’s (“Consul”) event endpoint is vulnerable to denial of service (DoS) due to lack of maximum value on the Content Length header. This vulnerability, CVE-2025-11375, is fixed in Consul Community Edition 1.22.0 and Consul En…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 28 Oct 2025 20:12:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12044 · 7.5 HIGH — Vault Vulnerable to Denial of Service Due to Rate Limit Regression</title>
-      <link>https://vulnogram.org/CVE-2025-12044</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12044</guid>
-      <description>Vault and Vault Enterprise (“Vault”) are vulnerable to an unauthenticated denial of service when processing JSON payloads. This occurs due to a regression from a previous fix for [+HCSEC-2025-24+|https://discuss.hashicorp.com/t/hcsec-2025-24-vault-de…</description>
-      <category>High</category>
-      <pubDate>Thu, 23 Oct 2025 19:15:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-11621 · 8.1 HIGH — Vault AWS auth method bypass due to AWS client cache</title>
-      <link>https://vulnogram.org/CVE-2025-11621</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-11621</guid>
-      <description>Vault and Vault Enterprise’s (“Vault”) AWS Auth method may be susceptible to authentication bypass if the role of the configured bound_principal_iam is the same across AWS accounts, or uses a wildcard. This vulnerability, CVE-2025-11621, is fixed in…</description>
-      <category>High</category>
-      <pubDate>Thu, 23 Oct 2025 19:08:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-6203 · 7.5 HIGH — Vault unauthenticated denial of service through complex json payload</title>
-      <link>https://vulnogram.org/CVE-2025-6203</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-6203</guid>
-      <description>A malicious user may submit a specially-crafted complex payload that otherwise meets the default request size limit which results in excessive memory and CPU consumption of Vault. This may lead to a timeout in Vault’s auditing subroutine, potentially…</description>
-      <category>High</category>
-      <pubDate>Thu, 28 Aug 2025 19:36:09 GMT</pubDate>
     </item>
   </channel>
 </rss>

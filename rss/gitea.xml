@@ -11,12 +11,13 @@
       <title>Gitea Limited — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 07 Oct 2026 17:19:37 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 22:37:45 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-97626 — Gitea profile feed disclosure bypassing user visibility</title>
+      <title>CVE-2026-97626 · 4.3 MEDIUM — Gitea profile feed disclosure bypassing user visibility</title>
       <link>https://vulnogram.org/CVE-2026-97626</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97626</guid>
       <description>Requesting a user or organization profile page (`GET /{username}`) with an `Accept: application/rss+xml` or `Accept: application/atom+xml` header returned the owner&apos;s activity feed without the visibility check that the profile page and the `.rss` and…</description>
+      <category>Medium</category>
       <pubDate>Tue, 06 Oct 2026 21:36:48 GMT</pubDate>
     </item>
     <item>
@@ -45,10 +46,11 @@
       <pubDate>Tue, 06 Oct 2026 21:35:40 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-105267 — Gitea tag delete route deletes releases without release permission</title>
+      <title>CVE-2026-105267 · 8.1 HIGH — Gitea tag delete route deletes releases without release permission</title>
       <link>https://vulnogram.org/CVE-2026-105267</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105267</guid>
       <description>The Gitea web route for deleting tags (`POST /{owner}/{repo}/tags/delete`) requires only write access to the Code unit, but shares its handler with release deletion and did not check that the target was a plain tag. A collaborator with Code write acc…</description>
+      <category>High</category>
       <pubDate>Tue, 06 Oct 2026 21:35:35 GMT</pubDate>
     </item>
     <item>
@@ -60,31 +62,37 @@
       <pubDate>Tue, 06 Oct 2026 21:35:26 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-101023 — Gitea OAuth2 refresh token grant accepts access tokens</title>
+      <title>CVE-2026-101023 · 9.1 CRITICAL 🌩️ — Gitea OAuth2 refresh token grant accepts access tokens</title>
       <link>https://vulnogram.org/CVE-2026-101023</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101023</guid>
       <description>Gitea&apos;s OAuth2 token endpoint verified the signature and grant of a token submitted with the `refresh_token` grant type, but not that the token was a refresh token. An unexpired access token for the same OAuth2 application and grant could be exchange…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 21:34:53 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-97208 — Gitea push mirror API bypass of DISABLE_NEW_PUSH policy</title>
+      <title>CVE-2026-97208 · 4.9 MEDIUM — Gitea push mirror API bypass of DISABLE_NEW_PUSH policy</title>
       <link>https://vulnogram.org/CVE-2026-97208</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97208</guid>
       <description>The Gitea API endpoint for creating push mirrors (`POST /api/v1/repos/{owner}/{repo}/push_mirrors`) checked only whether mirroring was enabled and not the `[mirror] DISABLE_NEW_PUSH` setting that the web interface enforces. A repository administrator…</description>
+      <category>Medium</category>
       <pubDate>Tue, 06 Oct 2026 21:17:46 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-86684 — Gitea push mirror local path check uses the repository owner</title>
+      <title>CVE-2026-86684 · 7.1 HIGH — Gitea push mirror local path check uses the repository owner</title>
       <link>https://vulnogram.org/CVE-2026-86684</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86684</guid>
       <description>The Gitea push mirror API checked whether the repository owner, instead of the requesting user, may use local file system paths. On instances with `[security] IMPORT_LOCAL_PATHS = true`, a repository administrator who is not allowed to import local p…</description>
+      <category>High</category>
       <pubDate>Tue, 06 Oct 2026 21:17:09 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-73278 — Gitea WebAuthn bypass during OAuth and OIDC sign-in</title>
+      <title>CVE-2026-73278 · 9.8 CRITICAL 🌩️ — Gitea WebAuthn bypass during OAuth and OIDC sign-in</title>
       <link>https://vulnogram.org/CVE-2026-73278</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73278</guid>
       <description>Gitea&apos;s OAuth2 and OpenID Connect sign-in paths do not require a WebAuthn challenge when WebAuthn is the account&apos;s only configured second factor. A party able to authenticate through the affected external identity flow can obtain a full session witho…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 19:33:54 GMT</pubDate>
     </item>
     <item>
@@ -96,10 +104,12 @@
       <pubDate>Tue, 06 Oct 2026 19:25:38 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-96580 — Gitea Actions memory exhaustion through large static matrices</title>
+      <title>CVE-2026-96580 · 7.5 HIGH 🌩️ — Gitea Actions memory exhaustion through large static matrices</title>
       <link>https://vulnogram.org/CVE-2026-96580</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96580</guid>
       <description>Gitea expanded a workflow&apos;s static `strategy.matrix` into its full Cartesian product without a size limit when creating a run, before the fork pull request approval gate applied. A user who can open a pull request from a fork could submit a small wor…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 19:25:33 GMT</pubDate>
     </item>
     <item>
@@ -120,10 +130,12 @@
       <pubDate>Tue, 06 Oct 2026 19:25:23 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-96399 — Gitea denial of service through external issue tracker patterns</title>
+      <title>CVE-2026-96399 · 7.5 HIGH 🌩️ — Gitea denial of service through external issue tracker patterns</title>
       <link>https://vulnogram.org/CVE-2026-96399</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96399</guid>
       <description>A repository&apos;s external issue tracker regular expression containing alternating capture groups could produce invalid slice indexes when Gitea rendered issue references, causing a runtime panic that terminated the Gitea process. A user who can edit a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 19:25:18 GMT</pubDate>
     </item>
     <item>
@@ -134,10 +146,12 @@
       <pubDate>Tue, 06 Oct 2026 19:25:12 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-94205 — Gitea fork workflow approval bypass through maintainer-triggered events</title>
+      <title>CVE-2026-94205 · 9.8 CRITICAL 🌩️ — Gitea fork workflow approval bypass through maintainer-triggered events</title>
       <link>https://vulnogram.org/CVE-2026-94205</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94205</guid>
       <description>Gitea Actions decided whether a fork pull request run needed approval based on the user who triggered the event rather than the pull request author. For `pull_request` activity triggered by a maintainer during ordinary triage, such as adding a label,…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 19:25:04 GMT</pubDate>
     </item>
     <item>
@@ -149,38 +163,46 @@
       <pubDate>Tue, 06 Oct 2026 19:24:55 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-70357 — Gitea repository migration SSRF through DNS rebinding</title>
+      <title>CVE-2026-70357 · 7.5 HIGH 🌩️ — Gitea repository migration SSRF through DNS rebinding</title>
       <link>https://vulnogram.org/CVE-2026-70357</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70357</guid>
       <description>Gitea validates a repository migration hostname against its network allow and block lists before invoking Git, but the Git subprocess independently resolves the hostname when connecting. An attacker who can start a migration and control the destinati…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 19:24:50 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-104636 — Gitea SSRF through Git HTTP redirects in mirrors and fetches</title>
+      <title>CVE-2026-104636 · 7.5 HIGH 🌩️ — Gitea SSRF through Git HTTP redirects in mirrors and fetches</title>
       <link>https://vulnogram.org/CVE-2026-104636</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104636</guid>
       <description>Gitea validated the initial remote URL for push mirrors, wiki remote checks, and fetches of migrated pull request heads, but the subsequent raw Git operations followed HTTP redirects without revalidating the destination. A repository administrator us…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 19:24:45 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-103504 — Gitea API team demotion not applied to unit permissions</title>
+      <title>CVE-2026-103504 · 8.1 HIGH — Gitea API team demotion not applied to unit permissions</title>
       <link>https://vulnogram.org/CVE-2026-103504</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103504</guid>
       <description>Changing an organization team&apos;s permission through the API with only the `permission` field did not rebuild the team&apos;s per-unit access, and the requested level was not applied as a cap. After an organization owner demoted a team, for example from adm…</description>
+      <category>High</category>
       <pubDate>Tue, 06 Oct 2026 19:24:26 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-95106 — Gitea review and execution mismatch through duplicate tree entries</title>
+      <title>CVE-2026-95106 · 9.1 CRITICAL 🌩️ — Gitea review and execution mismatch through duplicate tree entries</title>
       <link>https://vulnogram.org/CVE-2026-95106</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95106</guid>
       <description>Gitea accepted pushed Git trees containing two entries with the same name, which Git&apos;s own consistency checks reject. Gitea&apos;s web views resolved such a path to the first entry, while `git checkout`, Gitea Actions, and release archives use the last. A…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 19:23:57 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-89430 — Gitea push mirror SSRF and forced writes to internal Git hosts</title>
+      <title>CVE-2026-89430 · 8.1 HIGH — Gitea push mirror SSRF and forced writes to internal Git hosts</title>
       <link>https://vulnogram.org/CVE-2026-89430</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89430</guid>
       <description>Gitea validated a push mirror&apos;s remote address against the `[migrations]` allow and block lists only when the mirror was created. Each synchronization passed the stored address directly to `git push`, so a name that later resolved to a blocked or int…</description>
+      <category>High</category>
       <pubDate>Tue, 06 Oct 2026 19:23:52 GMT</pubDate>
     </item>
     <item>
@@ -193,17 +215,19 @@
       <pubDate>Tue, 06 Oct 2026 19:23:40 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-103667 — Gitea container registry stored XSS through blob media type</title>
+      <title>CVE-2026-103667 · 5.4 MEDIUM — Gitea container registry stored XSS through blob media type</title>
       <link>https://vulnogram.org/CVE-2026-103667</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103667</guid>
       <description>Gitea&apos;s container registry served blob downloads with a `Content-Type` taken from the media type declared in pushed image manifests, without a `Content-Disposition` or restrictive content security policy. A user who can push container images can publ…</description>
+      <category>Medium</category>
       <pubDate>Tue, 06 Oct 2026 19:23:34 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-101029 — Gitea migration and pull mirror SSRF through multi-answer DNS</title>
+      <title>CVE-2026-101029 · 4.3 MEDIUM — Gitea migration and pull mirror SSRF through multi-answer DNS</title>
       <link>https://vulnogram.org/CVE-2026-101029</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101029</guid>
       <description>Gitea&apos;s repository migration and pull mirror egress checks could be bypassed with a hostname that returns multiple DNS answers, because the address that was validated was not necessarily the address Git later connected to. A low-privileged user who c…</description>
+      <category>Medium</category>
       <pubDate>Tue, 06 Oct 2026 19:23:26 GMT</pubDate>
     </item>
     <item>
@@ -215,10 +239,11 @@
       <pubDate>Tue, 06 Oct 2026 19:23:20 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-104626 — Gitea fork workflow job revival through later approval</title>
+      <title>CVE-2026-104626 · 8.8 HIGH — Gitea fork workflow job revival through later approval</title>
       <link>https://vulnogram.org/CVE-2026-104626</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104626</guid>
       <description>A user who can open a fork pull request can place workflow content with a shared run-level concurrency group into a Gitea Actions run that is awaiting approval. When a later run in that group cancels the blocked job, the run becomes terminal while st…</description>
+      <category>High</category>
       <pubDate>Tue, 06 Oct 2026 19:23:03 GMT</pubDate>
     </item>
     <item>
@@ -231,10 +256,11 @@
       <pubDate>Tue, 06 Oct 2026 19:22:57 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-104632 — Gitea fork workflow approval bypass through cancel and rerun</title>
+      <title>CVE-2026-104632 · 8.8 HIGH — Gitea fork workflow approval bypass through cancel and rerun</title>
       <link>https://vulnogram.org/CVE-2026-104632</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104632</guid>
       <description>Gitea Actions blocks the jobs of workflow runs from first-time fork pull request contributors until a maintainer approves the run. The rerun path only required a run to be finished and built the new attempt&apos;s jobs without considering the pending appr…</description>
+      <category>High</category>
       <pubDate>Tue, 06 Oct 2026 19:22:04 GMT</pubDate>
     </item>
     <item>
