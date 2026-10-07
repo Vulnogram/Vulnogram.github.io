@@ -11,7 +11,24 @@
       <title>wolfSSL Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 07 Oct 2026 03:07:52 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 09:37:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-84897 · 6.9 MEDIUM 🌩️ — wolfSSH server accepts server-to-client DH group exchange messages from an unauthenticated client, causing pre-authentication primality-test CPU exhaustion and key exchange role confusion</title>
+      <link>https://vulnogram.org/CVE-2026-84897</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84897</guid>
+      <description>src/internal.c in wolfSSL wolfSSH through 1.5.0 admits the server-to-client Diffie-Hellman group exchange messages SSH_MSG_KEX_DH_GEX_GROUP (31) and SSH_MSG_KEX_DH_GEX_REPLY (33) when a server receives them from an unauthenticated client. IsMessageAl…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 07 Oct 2026 02:42:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-83742 · 5.3 MEDIUM — wstrncat() unsigned integer underflow leads to an off-by-one null write in wolfSSH on non-Windows platforms</title>
+      <link>https://vulnogram.org/CVE-2026-83742</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-83742</guid>
+      <description>Unsigned integer underflow in wstrncat() in src/port.c in wolfSSL wolfSSH from v1.4.11 through v1.5.0 on non-Windows platforms allows an authenticated remote attacker to write one out-of-bounds null byte past the end of a stack buffer by sending a cr…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 02:41:48 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-83540 · 7.7 HIGH — wolfSSHd on Windows race condition leading to logon token reused across connections</title>
       <link>https://vulnogram.org/CVE-2026-83540</link>
@@ -420,23 +437,6 @@
       <description>Bleichenbacher padding oracle in PKCS#7 KTRI decryption. When decrypting PKCS#7 EnvelopedData using RSA PKCS#1 v1.5 key transport, wolfSSL returned distinguishable error codes depending on whether RSA padding validation failed versus whether the decr…</description>
       <category>Medium</category>
       <pubDate>Thu, 25 Jun 2026 16:41:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6094 · 6.3 MEDIUM 🌩️ — Heap buffer overread in wc_PKCS7_DecodeEnvelopedData parsing crafted PKCS7 EnvelopedData</title>
-      <link>https://vulnogram.org/CVE-2026-6094</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6094</guid>
-      <description>Heap buffer overread in wc_PKCS7_DecodeEnvelopedData when parsing crafted PKCS7 EnvelopedData. This could theoretically be triggered by attacker-supplied data delivered via S/MIME or CMS.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 25 Jun 2026 16:35:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-0930 · 2.3 LOW — Potential wolfSSHd Buffer out-of-bounds Read on Windows Handling Terminal Resize</title>
-      <link>https://vulnogram.org/CVE-2026-0930</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0930</guid>
-      <description>Potential read out of bounds case with wolfSSHd on Windows while handling a terminal resize request. An authenticated user could trigger the out of bounds read after establishing a connection which would leak the adjacent stack memory to the pseudo-c…</description>
-      <category>Low</category>
-      <pubDate>Mon, 20 Apr 2026 21:28:33 GMT</pubDate>
     </item>
   </channel>
 </rss>

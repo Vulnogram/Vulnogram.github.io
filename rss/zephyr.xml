@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 07 Oct 2026 03:07:51 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 09:37:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-15894 · 8.8 HIGH — Bluetooth Mesh solicitation PDU stack buffer overflow via oversized advertisement</title>
+      <link>https://vulnogram.org/CVE-2026-15894</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15894</guid>
+      <description>The Bluetooth Mesh On-Demand Private Proxy solicitation handler in subsys/bluetooth/mesh/solicitation.c copies a received Solicitation PDU into a fixed 17-byte stack buffer without bounding the source length. In sol_pdu_decrypt(), out is allocated as…</description>
+      <category>High</category>
+      <pubDate>Wed, 07 Oct 2026 08:55:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19186 · 8.1 HIGH — Integer underflow in IEEE 802.15.4 frame decryption leads to out-of-bounds read and write</title>
+      <link>https://vulnogram.org/CVE-2026-19186</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19186</guid>
+      <description>ieee802154_decipher_data_frame() in subsys/net/l2/ieee802154/ieee802154_frame.c computed payload_len = net_pkt_get_len(pkt) - ll_hdr_len - authtag_len without first checking that the received frame is at least ll_hdr_len + authtag_len bytes long. All…</description>
+      <category>High</category>
+      <pubDate>Wed, 07 Oct 2026 08:55:22 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-19185 · 7.8 HIGH — Unvalidated user-supplied buffer pointers in the I3C do_ccc system call handler allow kernel memory read/write from user mode</title>
       <link>https://vulnogram.org/CVE-2026-19185</link>
@@ -395,22 +411,6 @@
       <description>The userspace syscall verifier z_vrfy_mbox_send() in drivers/mbox/mbox_handlers.c validated the nested msg-&gt;data/msg-&gt;size fields by reading them directly out of live userspace memory, and then forwarded the original, still-mutable userspace struct m…</description>
       <category>Medium</category>
       <pubDate>Mon, 24 Aug 2026 14:28:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12999 · 5.3 MEDIUM — Infineon Airoc Wi-Fi driver leaks TX buffers on send failure, leading to permanent pool exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-12999</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12999</guid>
-      <description>The Infineon Airoc Wi-Fi driver&apos;s transmit callback airoc_mgmt_send() in drivers/wifi/infineon/airoc_wifi.c allocates a net_buf from the fixed airoc_pool for every outbound packet. When whd_network_send_ethernet_data() returns a synchronous failure,…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 22 Aug 2026 20:35:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12634 · 5.3 MEDIUM — Out-of-bounds stack write in the settings NVS backend from over-reported nvs_read length</title>
-      <link>https://vulnogram.org/CVE-2026-12634</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12634</guid>
-      <description>The NVS backend of the Zephyr settings subsystem (subsys/settings/src/settings_nvs.c) reads stored setting-name entries into fixed 74-byte stack buffers and NUL-terminates them with buf[rc] = &apos;\0&apos;, where rc is the return value of nvs_read(). Per its…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 19 Aug 2026 20:37:36 GMT</pubDate>
     </item>
   </channel>
 </rss>

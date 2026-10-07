@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 07 Oct 2026 03:07:51 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 09:37:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-107121 · 6.5 MEDIUM 🌩️ — Keycloak-services: keycloak-services: smtp starttls plaintext credential and message downgrade</title>
+      <link>https://vulnogram.org/CVE-2026-107121</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107121</guid>
+      <description>A flaw was found in the SMTP email configuration handling of the keycloak-services component. When the STARTTLS option is enabled, Keycloak fails to strictly enforce an encrypted connection, allowing it to fall back to unencrypted communication if th…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 07 Oct 2026 07:42:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103870 · 5 MEDIUM — Pulp-rpm: distribution tree publish creates directories from .treeinfo ids</title>
+      <link>https://vulnogram.org/CVE-2026-103870</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103870</guid>
+      <description>A flaw was found in pulp-rpm when it publishes a distribution tree. Addon and variant ids from .treeinfo are used as directory names. A user who can sync or upload that tree can make the publish task create a new directory outside the task work area…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 05:46:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103869 · 6.5 MEDIUM — Pulp-ansible: bearer tokens are reused across remotes in a worker</title>
+      <link>https://vulnogram.org/CVE-2026-103869</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103869</guid>
+      <description>A flaw was found in pulp-ansible&apos;s bearer-token refresh for collection remotes. The access token is kept in one module-level variable and reused for every token download in that worker. A user who can sync an Ansible remote that uses token refresh, a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 05:46:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103868 · 6.5 MEDIUM — Pulp-container: registry credentials are reused across remotes in a worker</title>
+      <link>https://vulnogram.org/CVE-2026-103868</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103868</guid>
+      <description>A flaw was found in pulp-container when it authenticates to an upstream registry. Basic and bearer credentials from one remote are reused for later downloads in the same worker. A user who can sync a container remote, and can point that remote at a s…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 05:46:12 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-106061 · 5.5 MEDIUM — Gimp: gimp: heap buffer over-read in x cursor (xmc) thumbnail loader on crafted file</title>
       <link>https://vulnogram.org/CVE-2026-106061</link>
@@ -384,41 +417,6 @@
       <description>A flaw was found in FreeType, specifically within its CID font loader. A remote attacker could exploit this vulnerability by tricking a user into opening content that embeds or references a specially crafted CID-keyed font. This crafted font can caus…</description>
       <category>Medium</category>
       <pubDate>Fri, 02 Oct 2026 09:05:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86345 · 9 CRITICAL 🌩️ — 389-ds-base: 389-ds-base: starttls plaintext-buffer retention allows on-path attacker to forge an ldap client&apos;s authentication result</title>
-      <link>https://vulnogram.org/CVE-2026-86345</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86345</guid>
-      <description>A flaw was found in 389-ds-base. The server does not discard plaintext bytes already buffered from a client connection when negotiating StartTLS, allowing an on-path attacker to inject a crafted LDAP message that is processed after the TLS upgrade an…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 23:27:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86344 · 7.5 HIGH 🌩️ — 389-ds-base: 389-ds-base: unauthenticated worker-thread-pool exhaustion via completed-operation-then-incomplete-pdu connection requeue</title>
-      <link>https://vulnogram.org/CVE-2026-86344</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86344</guid>
-      <description>A flaw was found in 389-ds-base. An unauthenticated remote attacker can send a complete LDAP operation followed by the first bytes of an incomplete LDAPMessage on the same connection, causing the server to hand that connection to a second worker thre…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 21:29:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103884 · 6.5 MEDIUM 🌩️ — Keycloak-services: keycloak-services: path traversal in x.509 crl distribution point allows arbitrary local file read</title>
-      <link>https://vulnogram.org/CVE-2026-103884</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103884</guid>
-      <description>A flaw was found in the X.509 client certificate authenticator of Keycloak. When CRL Distribution Point checking is enabled, the server fails to properly validate the file paths provided in a client certificate. An attacker can provide a specially cr…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 17:16:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56098 · 4.3 MEDIUM — Rubygem-katello: improper authorization logic allows resource enumeration</title>
-      <link>https://vulnogram.org/CVE-2026-56098</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56098</guid>
-      <description>A flaw was found in rubygem-katello. The RegistryProxiesController in Katello contains an authorization bypass vulnerability due to an execution fall-through in the registry_authorize filter. While the application identifies unauthorized requests and…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 01 Oct 2026 17:14:56 GMT</pubDate>
     </item>
   </channel>
 </rss>
