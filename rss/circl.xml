@@ -11,7 +11,40 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 07 Oct 2026 09:37:48 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 17:19:37 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-107278 · 5.3 MEDIUM — MISP Object Sync Drops Objects and Attributes When Description Is Empty</title>
+      <link>https://vulnogram.org/CVE-2026-107278</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107278</guid>
+      <description>MISP contains a validation flaw in its object synchronization logic. When a MISP Object is created without a description, it is stored correctly on the originating instance. However, when that object is replicated to another MISP instance via the syn…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 15:42:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107276 · 6.3 MEDIUM 🌩️ — MISP Email OTP Race Condition Allows One-Time Password to Be Consumed by Multiple Concurrent Requests</title>
+      <link>https://vulnogram.org/CVE-2026-107276</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107276</guid>
+      <description>MISP contains a race condition in the email-based one-time password (OTP) login flow. When two HTTP requests carrying the same valid OTP are submitted concurrently, both can successfully authenticate and establish a session. The root cause is that th…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 07 Oct 2026 15:36:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107180 · 7.1 HIGH — MISP: Forced TOTP Enrolment Bypassed via Non-Browser Request Types on otp_required Instances</title>
+      <link>https://vulnogram.org/CVE-2026-107180</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107180</guid>
+      <description>On MISP instances configured to require TOTP enrolment (Security.otp_required), the enforcement of the mandatory two-factor authentication setup applied only to standard browser requests. An authenticated user who had not yet enrolled in TOTP could b…</description>
+      <category>High</category>
+      <pubDate>Wed, 07 Oct 2026 12:49:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107175 · 5.3 MEDIUM — MISP Correlation Engine Fails to Refresh When Event Distribution or Sharing Group Changes</title>
+      <link>https://vulnogram.org/CVE-2026-107175</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107175</guid>
+      <description>MISP contains a defect in its event save workflow that prevents the correlation engine from recalculating correlations when an event&apos;s distribution level or sharing group is modified. When a user edits an existing event and changes its distribution o…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 12:38:44 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-106513 · 6.9 MEDIUM — MISP: Site-Admin Can Repoint Redis Workers to Attacker-Controlled Server via UI/API Configuration Change</title>
       <link>https://vulnogram.org/CVE-2026-106513</link>
@@ -389,41 +422,6 @@
       <description>The MISP installer scripts (for Debian 12, Debian 13, Ubuntu 24.04, and RHEL 9.4) create a log file at /var/log/misp_install.log and a named pipe (FIFO) at /var/log/misp_install.log.pipe to capture all installer output. The log captures highly sensit…</description>
       <category>Medium</category>
       <pubDate>Tue, 22 Sep 2026 13:11:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95665 · 5.1 MEDIUM 🌩️ — MISP Reflected Cross-Site Scripting in Event Export Confirmation Form via Unescaped JSON</title>
-      <link>https://vulnogram.org/CVE-2026-95665</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95665</guid>
-      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the event REST search export confirmation form. The view template app/View/Events/ajax/eventRestSearchExportConfirmationForm.ctp renders a URL-supplied event ID list into a single-…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 13:01:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95661 · 5.1 MEDIUM 🌩️ — MISP Reflected Cross-Site Scripting in Attribute Histogram via Unescaped URL-Supplied Type List</title>
-      <link>https://vulnogram.org/CVE-2026-95661</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95661</guid>
-      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the attribute histogram view. The $selectedTypes variable, which is derived from the URL path segment , was interpolated directly into a JavaScript array literal inside an onClick…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 12:54:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95659 · 4.8 MEDIUM — MISP Reflected XSS via Unvalidated Object Type in AnalystData Overmind Thread</title>
-      <link>https://vulnogram.org/CVE-2026-95659</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95659</guid>
-      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the AnalystDataController::viewForObject action. The method accepted a parent object type parameter from the URL without validation and passed it to the Overmind-themed AnalystData…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 22 Sep 2026 12:40:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95658 · 6.9 MEDIUM 🌩️ — MISP CSRF vulnerability in workflow moduleStatelessExecution allows cross-site execution of workflow modules</title>
-      <link>https://vulnogram.org/CVE-2026-95658</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95658</guid>
-      <description>MISP&apos;s WorkflowsController exposed the moduleStatelessExecution action in the Security component&apos;s unlockedActions list. In CakePHP, listing an action in unlockedActions disables both the CSRF token check and the field hash validation for that action…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 12:31:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
