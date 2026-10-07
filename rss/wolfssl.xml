@@ -11,7 +11,33 @@
       <title>wolfSSL Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 06 Oct 2026 23:41:45 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 03:07:52 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-83540 · 7.7 HIGH — wolfSSHd on Windows race condition leading to logon token reused across connections</title>
+      <link>https://vulnogram.org/CVE-2026-83540</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-83540</guid>
+      <description>When password or public key authentication is used with the Windows port of wolfSSHd, the Windows logon token acquired for one authenticated connection is not released before a token is acquired for a subsequent connection, resulting in user login po…</description>
+      <category>High</category>
+      <pubDate>Wed, 07 Oct 2026 02:40:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81535 · 6.3 MEDIUM 🌩️ — wolfSSH SSH client accepts unsolicited forwarded-tcpip channel opens without an authorization check</title>
+      <link>https://vulnogram.org/CVE-2026-81535</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81535</guid>
+      <description>In wolfSSH through 1.5.0 built with --enable-fwd, DoChannelOpen() in src/internal.c gates only direct-tcpip channel opens with the forwarding policy callback. forwarded-tcpip opens are admitted without an authorization check and are not capped in num…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 07 Oct 2026 02:39:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16516 · 9 CRITICAL 🌩️ — wolfSSH ECDSA host key curve not validated against negotiated algorithm</title>
+      <link>https://vulnogram.org/CVE-2026-16516</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16516</guid>
+      <description>wolfSSH does not validate that the ECDSA curve identifier in a KEXDH_REPLY host key blob matches the algorithm negotiated during key exchange. In ParseECCPubKey() (src/internal.c), the blob&apos;s algorithm string is used to derive the curve via NameToId/…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 07 Oct 2026 02:38:23 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15442 · 2.3 LOW — Heap use-after-free on read during bidirectional (D)TLS shutdown</title>
       <link>https://vulnogram.org/CVE-2026-15442</link>
@@ -411,33 +437,6 @@
       <description>Potential read out of bounds case with wolfSSHd on Windows while handling a terminal resize request. An authenticated user could trigger the out of bounds read after establishing a connection which would leak the adjacent stack memory to the pseudo-c…</description>
       <category>Low</category>
       <pubDate>Mon, 20 Apr 2026 21:28:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5477 · 8.2 HIGH 🌩️ — Prefix-substitution forgery via integer overflow in wolfCrypt CMAC</title>
-      <link>https://vulnogram.org/CVE-2026-5477</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5477</guid>
-      <description>An integer overflow existed in the wolfCrypt CMAC implementation, that could be exploited to forge CMAC tags. The function wc_CmacUpdate used the guard `if (cmac-&gt;totalSz != 0)` to skip XOR-chaining on the first block (where digest is all-zeros and t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Apr 2026 05:06:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5188 · 2.3 LOW 🌩️ — Integer underflow in X.509 SAN parsing in wolfSSL</title>
-      <link>https://vulnogram.org/CVE-2026-5188</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5188</guid>
-      <description>An integer underflow issue exists in wolfSSL when parsing the Subject Alternative Name (SAN) extension of X.509 certificates. A malformed certificate can specify an entry length larger than the enclosing sequence, causing the internal length counter…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Apr 2026 03:24:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5500 · 8.7 HIGH 🌩️ — Improper Validation of AES-GCM Authentication Tag Length in PKCS#7 Envelope Allows Authentication Bypass</title>
-      <link>https://vulnogram.org/CVE-2026-5500</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5500</guid>
-      <description>wolfSSL&apos;s wc_PKCS7_DecodeAuthEnvelopedData() does not properly sanitize the AES-GCM authentication tag length received and has no lower bounds check. A man-in-the-middle can therefore truncate the mac field from 16 bytes to 1 byte, reducing the tag c…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 10 Apr 2026 03:10:25 GMT</pubDate>
     </item>
   </channel>
 </rss>
