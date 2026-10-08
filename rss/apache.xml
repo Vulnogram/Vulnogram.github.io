@@ -11,7 +11,49 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 08 Oct 2026 02:30:15 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 09:48:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-71896 — Apache DolphinScheduler: Missing Authorization Checks Allow Unauthorized Disclosure of User Account Information</title>
+      <link>https://vulnogram.org/CVE-2026-71896</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71896</guid>
+      <description>An authorization vulnerability in Apache DolphinScheduler allows authenticated users to retrieve other users&apos; account information through the /dolphinscheduler/users/list-all endpoint without the required permissions. The endpoint fails to enforce th…</description>
+      <pubDate>Thu, 08 Oct 2026 08:39:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71895 — Apache DolphinScheduler: Missing Authorization Checks Allow Non-Admin Users to Retrieve Kubernetes Credentials</title>
+      <link>https://vulnogram.org/CVE-2026-71895</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71895</guid>
+      <description>An authorization vulnerability in Apache DolphinScheduler allows authenticated non-admin users to retrieve Kubernetes configuration data intended for administrator-managed cluster configuration. The exposed kubeconfig data contains credentials that m…</description>
+      <pubDate>Thu, 08 Oct 2026 08:37:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71183 — Apache DolphinScheduler: Missing Authorization Checks Allow Disclosure of Data Source Information and Passwords</title>
+      <link>https://vulnogram.org/CVE-2026-71183</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71183</guid>
+      <description>An authorization vulnerability in Apache DolphinScheduler allows authenticated users to obtain information about data sources they are not authorized to access through the /unauth-datasource and /authed-datasource endpoints. These endpoints fail to e…</description>
+      <pubDate>Thu, 08 Oct 2026 08:34:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66087 — Apache DolphinScheduler: Project Authorization Bypass in the Task instance stop/savepoint Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-66087</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66087</guid>
+      <description>An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to operate task instance in projects they are not authorized to access through the * /dolphinscheduler/projects/{projectCode}/task-instances/{taskInstanceId}/…</description>
+      <pubDate>Thu, 08 Oct 2026 08:29:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66084 — Apache DolphinScheduler: Project Authorization Bypass in the Task Definition with-upstream Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-66084</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66084</guid>
+      <description>An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to modify task definitions in projects they are not authorized to access through the /dolphinscheduler/projects/{projectCode}/task-definition/{code}/with-upst…</description>
+      <pubDate>Thu, 08 Oct 2026 08:18:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66082 — Apache DolphinScheduler: Cross-project authorization bypasses in DolphinScheduler API (schedule / workflow）</title>
+      <link>https://vulnogram.org/CVE-2026-66082</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66082</guid>
+      <description>An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to perform unauthorized operations on workflow schedules, workflow definitions, and task instances in other projects. The affected endpoints check permissions…</description>
+      <pubDate>Thu, 08 Oct 2026 08:16:38 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-103371 — Apache Geode: Management REST API: Insertion of Sensitive Information into Log File</title>
       <link>https://vulnogram.org/CVE-2026-103371</link>
@@ -150,10 +192,10 @@
       <pubDate>Tue, 06 Oct 2026 19:44:18 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-94114 · 8.2 HIGH 🌩️ — Apache Commons BCEL: Nested Code/Record attributes drive unbounded parse-time recursion in ClassParser</title>
+      <title>CVE-2026-94114 · 8.2 HIGH 🌩️ — Apache Commons BCEL: Class repositories cache class files under their self-declared names, enabling cache poisoning</title>
       <link>https://vulnogram.org/CVE-2026-94114</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94114</guid>
-      <description>Symbolic name not mapping to correct object vulnerability in Apache Commons. BCEL caches attacker-controlled classes under their self-declared names without validating the requested name, allowing subsequent lookups and name-keyed verification result…</description>
+      <description>Symbolic name not mapping to correct class. BCEL caches attacker-controlled classes under their self-declared names without validating the requested name, allowing subsequent lookups and name-keyed verification results to refer to a different class.…</description>
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 06 Oct 2026 19:42:30 GMT</pubDate>
@@ -397,60 +439,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 02 Oct 2026 11:59:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94654 · 8.2 HIGH 🌩️ — Apache Thrift: Python `TNonblockingServer` busy-loops and stops selecting all fds after an 8192-byte-boundary frame</title>
-      <link>https://vulnogram.org/CVE-2026-94654</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94654</guid>
-      <description>Loop with unreachable exit condition (&apos;infinite loop&apos;) vulnerability in Apache Thrift python bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 11:58:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94653 · 8.2 HIGH 🌩️ — Apache Thrift: PHP framed/memory/HTTP transports re-slice the buffer on every read (quadratic)</title>
-      <link>https://vulnogram.org/CVE-2026-94653</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94653</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in Apache Thrift PHP bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 11:56:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94652 · 6.3 MEDIUM 🌩️ — Apache Thrift: C++ `TEvhttpServer` leaks its `RequestContext` when the processor throws before calling back</title>
-      <link>https://vulnogram.org/CVE-2026-94652</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94652</guid>
-      <description>Missing release of memory after effective lifetime vulnerability in Apache Thrift c++ bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 11:54:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94648 · 8.2 HIGH 🌩️ — Apache Thrift: dart `TJsonProtocol`/`TJSONProtocol` has no string size bound</title>
-      <link>https://vulnogram.org/CVE-2026-94648</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94648</guid>
-      <description>Allocation of resources without limits or throttling vulnerability in Apache Thrift dart bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 11:52:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94646 · 8.7 HIGH 🌩️ — Apache Thrift: Node.js `server.js` ends the process on any per-connection error (+ two triggers)</title>
-      <link>https://vulnogram.org/CVE-2026-94646</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94646</guid>
-      <description>Uncaught exception, Improper validation of specified quantity in input, Improperly controlled modification of object prototype attributes (&apos;prototype pollution&apos;) vulnerability in Apache Thrift nodejs bindings. This issue affects Apache Thrift: before…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 11:52:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94638 · 6.3 MEDIUM 🌩️ — Apache Thrift: PHP `thrift_protocol` C extension ignores the configured `maxStringSize`</title>
-      <link>https://vulnogram.org/CVE-2026-94638</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94638</guid>
-      <description>Allocation of resources without limits or throttling vulnerability in Apache Thrift PHP bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 11:49:43 GMT</pubDate>
     </item>
   </channel>
 </rss>
