@@ -11,7 +11,39 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 08 Oct 2026 09:48:46 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 17:20:59 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-107623 · 4.3 MEDIUM — Keycloak-services: keycloak-services: oidc dcr read-modify-write silently disables offline token revocation</title>
+      <link>https://vulnogram.org/CVE-2026-107623</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107623</guid>
+      <description>A flaw was found in the OIDC Dynamic Client Registration (DCR) component of Keycloak. A bug in the response serialization causes the backchannel logout offline token revocation setting to be omitted from responses. When a client performs a standard u…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 08 Oct 2026 14:39:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107604 · 4.9 MEDIUM — Keycloak-services: keycloak-services: view-clients role allows retrieval of active client secrets via installation provider endpoints</title>
+      <link>https://vulnogram.org/CVE-2026-107604</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107604</guid>
+      <description>A flaw was found in the installation provider and client registration endpoints of the Keycloak identity management service. A realm administrator with only the read-only view-clients role can access the active primary secret of any confidential clie…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 08 Oct 2026 14:39:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107565 · 5.1 MEDIUM — Luksmeta: incomplete gap-boundary and overlap checks in luks1 metadata allocator allow data corruption</title>
+      <link>https://vulnogram.org/CVE-2026-107565</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107565</guid>
+      <description>A flaw was found in luksmeta. A local attacker with administrative privileges can cause data corruption when saving metadata to a Linux Unified Key Setup (LUKS) device. Due to incorrect boundary calculations and flawed overlap detection, new metadata…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 08 Oct 2026 14:39:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93017 · 7.7 HIGH — Insights-operator: gather serviceaccount has cluster-wide secret read plus nodes/proxy and cluster-reader</title>
+      <link>https://vulnogram.org/CVE-2026-93017</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93017</guid>
+      <description>The `insights-operator-gather` ClusterRole grants the operator&apos;s service account read access to secrets in the core API group with no namespace or resourceNames restriction — therefore, access to every secret in every namespace in the cluster. Ref: h…</description>
+      <category>High</category>
+      <pubDate>Thu, 08 Oct 2026 14:31:58 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-107466 · 6.1 MEDIUM — Flatpak-builder: local file exfiltration via `file</title>
       <link>https://vulnogram.org/CVE-2026-107466</link>
@@ -383,38 +415,6 @@
       <description>A flaw was found in SSSD. A use-after-free vulnerability exists in the Kerberos Credential Manager (KCM) responder during Kerberos ticket-granting ticket (TGT) renewal, where a deferred callback accesses memory that has already been released. An auth…</description>
       <category>Medium</category>
       <pubDate>Tue, 06 Oct 2026 00:12:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104033 · 5.4 MEDIUM — Sssd: sssd: access control bypass via improper ldap shadow expiration check</title>
-      <link>https://vulnogram.org/CVE-2026-104033</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104033</guid>
-      <description>A flaw was found in SSSD. When configured to enforce account expiration using LDAP (Lightweight Directory Access Protocol) shadow attributes, SSSD fails to treat an expiration value of zero as an expired account. A user with valid credentials for an…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 06 Oct 2026 00:12:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104032 · 5.5 MEDIUM — Sssd: sssd: denial of service via unprivileged autofs cache invalidation</title>
-      <link>https://vulnogram.org/CVE-2026-104032</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104032</guid>
-      <description>A flaw was found in SSSD. An unprivileged local user can repeatedly request master automount map updates through the autofs responder due to missing authorization checks. This triggers global cache invalidation and forces repeated lookups to backend…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 06 Oct 2026 00:12:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104031 · 5.5 MEDIUM — Sssd: sssd: denial of service via memory exhaustion in autofs responder</title>
-      <link>https://vulnogram.org/CVE-2026-104031</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104031</guid>
-      <description>A flaw was found in SSSD. In configurations where the autofs responder service is enabled, memory allocated during successful request processing is not released until the client connection terminates. A local attacker can exploit this vulnerability b…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 06 Oct 2026 00:10:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105447 · 5.5 MEDIUM — Quay: quay: global read-only superuser can access build trigger write credentials</title>
-      <link>https://vulnogram.org/CVE-2026-105447</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105447</guid>
-      <description>A flaw was found in Quay. When handling build trigger requests, the application incorrectly exposes trigger configuration details containing repository write tokens to global read-only administrative users. An authenticated user with read-only privil…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 05 Oct 2026 20:29:45 GMT</pubDate>
     </item>
   </channel>
 </rss>
