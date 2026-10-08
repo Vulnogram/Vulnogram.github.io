@@ -11,7 +11,24 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 07 Oct 2026 22:37:45 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 02:30:16 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-107315 · 5.3 MEDIUM — pgjdbc pads a value shorter than its declared length with bytes of earlier statements (rather than zeros)</title>
+      <link>https://vulnogram.org/CVE-2026-107315</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107315</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, versions 42.7.4 through 42.7.13 pads a value that is shorter than its declared length with bytes left in its send buffer instead of zeros, and the server stores those bytes as part of the value. The bytes are messa…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 07 Oct 2026 23:03:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107314 · 5.9 MEDIUM 🌩️ — pgjdbc does not enforce requireAuth when the value excludes every authentication method</title>
+      <link>https://vulnogram.org/CVE-2026-107314</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107314</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, versions 42.7.11 through 42.7.13 enforce no restriction when the requireAuth connection property excludes all six authentication methods the driver knows, for example requireAuth=!password,!md5,!gss,!sspi,!scram-sh…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 07 Oct 2026 23:03:01 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-107313 · 4.2 MEDIUM — pgjdbc stores bytes of earlier messages in place of a large value on GSS-encrypted connections</title>
       <link>https://vulnogram.org/CVE-2026-107313</link>
@@ -397,22 +414,6 @@
       <description>The fix for CVE-2026-12044 in pgAdmin 4 9.16 hardened qtLiteral and switched sixteen COMMENT ON / pgstattuple / pgstatindex templates to it, but missed several sinks that had been placed in test_sql_string_literal_lint.py&apos;s ALLOWLIST on the incorrect…</description>
       <category>High</category>
       <pubDate>Fri, 31 Jul 2026 15:59:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18022 · 8.8 HIGH — pgvector buffer overflow via integer wraparound in IVFFlat index build on 32-bit systems</title>
-      <link>https://vulnogram.org/CVE-2026-18022</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18022</guid>
-      <description>Integer wraparound in IVFFlat index build in pgvector before 0.8.6 allows a database user to write data out-of-bounds, which could lead to arbitrary code execution. Only 32-bit systems are affected.</description>
-      <category>High</category>
-      <pubDate>Wed, 29 Jul 2026 18:55:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13455 · 4.3 MEDIUM — PostgreSQL Anonymizer: Unrestricted function can leak the secret salt</title>
-      <link>https://vulnogram.org/CVE-2026-13455</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13455</guid>
-      <description>PostgreSQL Anonymizer contains a vulnerability that allows unprivileged masked users to repeatedly call the anon.hash() function and collects (seed, hash_output) pairs to perform an offline brute-force attack and deduce the salt. The problem is resol…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 30 Jun 2026 15:19:57 GMT</pubDate>
     </item>
   </channel>
 </rss>
