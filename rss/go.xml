@@ -11,7 +11,112 @@
       <title>Go Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 08 Oct 2026 22:41:57 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 02:56:00 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-97032 — HTTP/2 server crash due to HPACK encoder race in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-97032</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97032</guid>
+      <description>HTTP/2 servers could end up crashing due to inadvertently modifying its HPACK encoder concurrently. This happens because the server modifies the HPACK encoder from two goroutines without synchronization: one uses the encoder to encode a HEADERS frame…</description>
+      <pubDate>Thu, 08 Oct 2026 22:54:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94439 — HTTP/1 server connection desynchronization after 2xx CONNECT response in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-94439</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94439</guid>
+      <description>When an HTTP server handler sends a 2xx response to an HTTP/1 CONNECT request and returns without hijacking the connection, the server improperly continues to read and serve requests from the connection. Since a 2xx response to an HTTP/1 CONNECT conv…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78663 — Double flow control refund on HTTP/2 server streams in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-78663</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78663</guid>
+      <description>The HTTP/2 server can refund connection-level flow control twice for the same data: Once when a client resets a stream (refunding data for any sent-but-unread portion of the stream), and again when a request handler reads the buffered data. A malicio…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78669 — Excessive CPU consumption from repeated initial window changes in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-78669</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78669</guid>
+      <description>A malicious HTTP/2 peer can cause excessive CPU consumption in the client or server by opening a large number of streams and then sending many small SETTINGS frames containing SETTINGS_INITIAL_WINDOW_SIZE values.</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78660 — HTTP/2 transport accepts malformed framing-related headers in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-78660</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78660</guid>
+      <description>Historically, we have been rather lax about malformed framing-related headers in our HTTP/2 implementation, as they cannot interfere with HTTP/2 framing. However, this makes it possible for our HTTP/2 implementation to forward responses containing su…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78667 — Lack of limit on size of parsed Range headers in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-78667</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78667</guid>
+      <description>When parsing a Range header containing a large number of small ranges, FileServer(FS), ServeContent, and ServeFile(FS) can consume an excessive amount of CPU.</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94440 — Memory limit bypass when parsing MIME headers in net/textproto, mime/multipart</title>
+      <link>https://vulnogram.org/CVE-2026-94440</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94440</guid>
+      <description>Parsing a multipart form can bypass memory limits and read an arbitrarily long line into memory when the remaining limit at the start of a part is less than 400 bytes.</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97031 — Reject malformed ECH outer extension references in crypto/tls</title>
+      <link>https://vulnogram.org/CVE-2026-97031</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97031</guid>
+      <description>Multiple ECH outer extension references are not permitted under RFC 9849; previously, a client could send a well-crafted packet that could trigger memory exhaustion in the server process by specifying multiple references. We now reject these as malfo…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56866 — HTTP/1 client connection desynchronization after CONNECT rejection in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-56866</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56866</guid>
+      <description>When http.Transport sends an HTTP/1 CONNECT request with a non-empty Request.Body, it writes the body directly to the connection without framing after the request headers. If the server rejects the CONNECT request with a non-2xx keep-alive response,…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-56857 — Root.Mkdir(All) can follow junctions out of the root on Windows in os</title>
+      <link>https://vulnogram.org/CVE-2026-56857</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56857</guid>
+      <description>On Windows, when the target of Root.Mkdir or Root.MkdirAll is a junction pointing to an empty location, the operation can create a directory at the junction target even when that target is located outside the root. This only applies to operations whe…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78659 — HTTP/2 server memory exhaustion due to Trailer headers in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-78659</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78659</guid>
+      <description>When &quot;Trailer&quot; headers are sent by a client, the HTTP server internally uses the header values to populate the Request.Trailer map passed to the server handler. Because Request.Trailer is a map, each entry incurs memory overhead. For HTTP/2 servers,…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94447 — Checksum database bypass for golang.org/toolchain in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-94447</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94447</guid>
+      <description>Previously, a user operating inside of a malicious Go project that defines a bogus golang.org/toolchain go.sum entry and operates a malicious GOMODPROXY the user chooses to use can bypass the intended checksum. We now ensure that golang.org/toolchain…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94444 — Checksum bypass for golang.org/fips140 in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-94444</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94444</guid>
+      <description>Previously, a user operating inside of a malicious Go project that defines a bogus golang.org/fips140 and operates a malicious GOMODPROXY the user chooses to connect to can serve an arbitrary module in its place. We now unpack the trusted ziphash for…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97030 — Recognize yield as regexp preceder keyword in html/template</title>
+      <link>https://vulnogram.org/CVE-2026-97030</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97030</guid>
+      <description>A trusted template author may have previously written a valid template wherein the use of the &apos;yield&apos; keyword would not be correctly escaped. We now ensure that valid keyword uses are escaped and non-keyword uses are not escaped.</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94448 — Reset context tracking on consecutive template expressions in html/template</title>
+      <link>https://vulnogram.org/CVE-2026-94448</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94448</guid>
+      <description>When a JavaScript template literal contains consecutive expressions, the context tracking state was not properly reset upon entering a new expression. We now ensure that template-literal expression entries correctly reset context variables so all sub…</description>
+      <pubDate>Thu, 08 Oct 2026 22:53:57 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-56851 · 7.5 HIGH 🌩️ — Panic parsing crafted input in x/text/secure/precis in golang.org/x/text</title>
       <link>https://vulnogram.org/CVE-2026-56851</link>
@@ -322,139 +427,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 22 May 2026 02:31:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42508 · 9.1 CRITICAL 🌩️ — Invoking  auth bypass via unenforced @revoked status in golang.org/x/crypto/ssh/knownhosts</title>
-      <link>https://vulnogram.org/CVE-2026-42508</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42508</guid>
-      <description>Previously, a revoked &apos;SignatureKey&apos; belonging to a CA was not correctly checked for revocation. Now, both the &apos;key&apos; and &apos;key.SignatureKey&apos; are checked for @revoked.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39834 · 9.1 CRITICAL 🌩️ — Invoking  infinite loop on large channel writes in golang.org/x/crypto/ssh</title>
-      <link>https://vulnogram.org/CVE-2026-39834</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39834</guid>
-      <description>When writing data larger than 4GB in a single Write call on an SSH channel, an integer overflow in the internal payload size calculation caused the write loop to spin indefinitely, sending empty packets without making progress. The size comparison no…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39831 · 9.1 CRITICAL 🌩️ — Invoking  bypass of FIDO/U2F security keys physical interaction in golang.org/x/crypto/ssh</title>
-      <link>https://vulnogram.org/CVE-2026-39831</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39831</guid>
-      <description>The Verify() method for FIDO/U2F security key types (sk-ecdsa-sha2-nistp256@openssh.com, sk-ssh-ed25519@openssh.com) did not check the User Presence flag. Signatures generated without physical touch were accepted, allowing unattended use of a hardwar…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39829 · 7.5 HIGH 🌩️ — Invoking  pathological RSA/DSA parameters may cause DoS in golang.org/x/crypto/ssh</title>
-      <link>https://vulnogram.org/CVE-2026-39829</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39829</guid>
-      <description>The RSA and DSA public key parsers did not enforce size limits on key parameters. A crafted public key with an excessively large modulus or DSA parameter could cause several minutes of CPU consumption during signature verification. This could be trig…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39830 · 9.1 CRITICAL 🌩️ — Invoking  client can cause server deadlock on unexpected responses in golang.org/x/crypto/ssh</title>
-      <link>https://vulnogram.org/CVE-2026-39830</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39830</guid>
-      <description>A malicious SSH peer could send unsolicited global request responses to fill an internal buffer, blocking the connection&apos;s read loop. The blocked goroutine could not be released by calling Close(), resulting in a resource leak per connection. Unsolic…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39827 · 6.5 MEDIUM — Invoking  memory leak when rejecting channels can lead to DoS in golang.org/x/crypto/ssh</title>
-      <link>https://vulnogram.org/CVE-2026-39827</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39827</guid>
-      <description>An authenticated SSH client that repeatedly opened channels which were rejected by the server caused unbounded memory growth, eventually crashing the server process and affecting all connected users. Rejected channels are now properly removed from th…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 May 2026 02:31:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39835 · 7.5 HIGH 🌩️ — Invoking  server panic during CheckHostKey/Authenticate in golang.org/x/crypto/ssh</title>
-      <link>https://vulnogram.org/CVE-2026-39835</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39835</guid>
-      <description>SSH servers which use CertChecker as a public key callback without setting IsUserAuthority or IsHostAuthority could be caused to panic by a client presenting a certificate. CertChecker now returns an error instead of panicking when these callbacks ar…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39828 · 8.8 HIGH — Invoking  bypass of certificate restrictions in golang.org/x/crypto/ssh</title>
-      <link>https://vulnogram.org/CVE-2026-39828</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39828</guid>
-      <description>When an SSH server authentication callback returned PartialSuccessError with non-nil Permissions, those permissions were silently discarded, potentially dropping certificate restrictions such as force-command after a second factor succeeded. Returnin…</description>
-      <category>High</category>
-      <pubDate>Fri, 22 May 2026 02:31:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46597 · 7.5 HIGH 🌩️ — Invoking  byte arithmetic causes underflow and panic in golang.org/x/crypto/ssh</title>
-      <link>https://vulnogram.org/CVE-2026-46597</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46597</guid>
-      <description>An incorrectly placed cast from bytes to int allowed for server-side panic in the AES-GCM packet decoder for well-crafted inputs.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39832 · 9.1 CRITICAL 🌩️ — Invoking  agent constraints dropped when forwarding keys in golang.org/x/crypto/ssh/agent</title>
-      <link>https://vulnogram.org/CVE-2026-39832</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39832</guid>
-      <description>When adding a key to a remote agent constraint extensions such as restrict-destination-v00@openssh.com were not serialized in the request. Destination restrictions were silently stripped when forwarding keys, allowing unrestricted use of the key on t…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39833 · 9.1 CRITICAL 🌩️ — Invoking  key constraints not enforced in golang.org/x/crypto/ssh/agent</title>
-      <link>https://vulnogram.org/CVE-2026-39833</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39833</guid>
-      <description>The in-memory keyring returned by NewKeyring() silently accepted keys with the ConfirmBeforeUse constraint but never enforced it. The key would sign without any confirmation prompt, with no indication to the caller that the constraint was not in effe…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39820 · 7.5 HIGH 🌩️ — Quadratic string concatentation in consumeComment in net/mail</title>
-      <link>https://vulnogram.org/CVE-2026-39820</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39820</guid>
-      <description>Well-crafted inputs reaching ParseAddress, ParseAddressList, and ParseDate were able to trigger excessive CPU exhaustion and memory allocations.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 07 May 2026 19:41:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42501 · 7.5 HIGH 🌩️ — Malicious module proxy can bypass checksum database in cmd/go</title>
-      <link>https://vulnogram.org/CVE-2026-42501</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42501</guid>
-      <description>A malicious module proxy can exploit a flaw in the go command&apos;s validation of module checksums to bypass checksum database validation. This vulnerability affects any user using an untrusted module proxy (GOMODPROXY) or checksum database (GOSUMDB). A…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 07 May 2026 19:41:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39823 · 6.1 MEDIUM 🌩️ — Bypass of meta content URL escaping causes XSS in html/template</title>
-      <link>https://vulnogram.org/CVE-2026-39823</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39823</guid>
-      <description>CVE-2026-27142 fixed a vulnerability in which URLs were not correctly escaped inside of a &lt;meta&gt; tag&apos;s &lt;content&gt; attribute. If the URL content were to insert ASCII whitespaces around the &apos;=&apos; rune inside of the &lt;content&gt; attribute, the escaper would f…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 07 May 2026 19:41:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33811 · 7.5 HIGH 🌩️ — Crash when handling long CNAME response in net</title>
-      <link>https://vulnogram.org/CVE-2026-33811</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33811</guid>
-      <description>When using LookupCNAME with the cgo DNS resolver, a very long CNAME response can trigger a double-free of C memory and a crash.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 07 May 2026 19:41:19 GMT</pubDate>
     </item>
   </channel>
 </rss>
