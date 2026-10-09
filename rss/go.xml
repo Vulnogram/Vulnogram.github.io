@@ -11,7 +11,7 @@
       <title>Go Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 09 Oct 2026 10:00:18 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 16:50:44 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-97032 — HTTP/2 server crash due to HPACK encoder race in net/http</title>
       <link>https://vulnogram.org/CVE-2026-97032</link>
@@ -34,59 +34,75 @@
       <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-78669 — Excessive CPU consumption from repeated initial window changes in net/http</title>
+      <title>CVE-2026-78669 · 7.5 HIGH 🌩️ — Excessive CPU consumption from repeated initial window changes in net/http</title>
       <link>https://vulnogram.org/CVE-2026-78669</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78669</guid>
       <description>A malicious HTTP/2 peer can cause excessive CPU consumption in the client or server by opening a large number of streams and then sending many small SETTINGS frames containing SETTINGS_INITIAL_WINDOW_SIZE values.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-78660 — HTTP/2 transport accepts malformed framing-related headers in net/http</title>
+      <title>CVE-2026-78660 · 7.5 HIGH 🌩️ — HTTP/2 transport accepts malformed framing-related headers in net/http</title>
       <link>https://vulnogram.org/CVE-2026-78660</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78660</guid>
       <description>Historically, we have been rather lax about malformed framing-related headers in our HTTP/2 implementation, as they cannot interfere with HTTP/2 framing. However, this makes it possible for our HTTP/2 implementation to forward responses containing su…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-78667 — Lack of limit on size of parsed Range headers in net/http</title>
+      <title>CVE-2026-78667 · 7.5 HIGH 🌩️ — Lack of limit on size of parsed Range headers in net/http</title>
       <link>https://vulnogram.org/CVE-2026-78667</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78667</guid>
       <description>When parsing a Range header containing a large number of small ranges, FileServer(FS), ServeContent, and ServeFile(FS) can consume an excessive amount of CPU.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Thu, 08 Oct 2026 22:53:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-94440 — Memory limit bypass when parsing MIME headers in net/textproto, mime/multipart</title>
+      <title>CVE-2026-94440 · 7.5 HIGH 🌩️ — Memory limit bypass when parsing MIME headers in net/textproto, mime/multipart</title>
       <link>https://vulnogram.org/CVE-2026-94440</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94440</guid>
       <description>Parsing a multipart form can bypass memory limits and read an arbitrarily long line into memory when the remaining limit at the start of a part is less than 400 bytes.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-97031 — Reject malformed ECH outer extension references in crypto/tls</title>
+      <title>CVE-2026-97031 · 7.5 HIGH 🌩️ — Reject malformed ECH outer extension references in crypto/tls</title>
       <link>https://vulnogram.org/CVE-2026-97031</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97031</guid>
       <description>Multiple ECH outer extension references are not permitted under RFC 9849; previously, a client could send a well-crafted packet that could trigger memory exhaustion in the server process by specifying multiple references. We now reject these as malfo…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-56866 — HTTP/1 client connection desynchronization after CONNECT rejection in net/http</title>
+      <title>CVE-2026-56866 · 7.5 HIGH 🌩️ — HTTP/1 client connection desynchronization after CONNECT rejection in net/http</title>
       <link>https://vulnogram.org/CVE-2026-56866</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56866</guid>
       <description>When http.Transport sends an HTTP/1 CONNECT request with a non-empty Request.Body, it writes the body directly to the connection without framing after the request headers. If the server rejects the CONNECT request with a non-2xx keep-alive response,…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-56857 — Root.Mkdir(All) can follow junctions out of the root on Windows in os</title>
+      <title>CVE-2026-56857 · 9.8 CRITICAL 🌩️ — Root.Mkdir(All) can follow junctions out of the root on Windows in os</title>
       <link>https://vulnogram.org/CVE-2026-56857</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56857</guid>
       <description>On Windows, when the target of Root.Mkdir or Root.MkdirAll is a junction pointing to an empty location, the operation can create a directory at the junction target even when that target is located outside the root. This only applies to operations whe…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-78659 — HTTP/2 server memory exhaustion due to Trailer headers in net/http</title>
+      <title>CVE-2026-78659 · 7.5 HIGH 🌩️ — HTTP/2 server memory exhaustion due to Trailer headers in net/http</title>
       <link>https://vulnogram.org/CVE-2026-78659</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78659</guid>
       <description>When &quot;Trailer&quot; headers are sent by a client, the HTTP server internally uses the header values to populate the Request.Trailer map passed to the server handler. Because Request.Trailer is a map, each entry incurs memory overhead. For HTTP/2 servers,…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Thu, 08 Oct 2026 22:53:58 GMT</pubDate>
     </item>
     <item>

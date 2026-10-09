@@ -11,7 +11,100 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 09 Oct 2026 10:00:17 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 16:50:44 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-103413 · 8.8 HIGH — Apache Camel Karavan: unvalidated Kubernetes resources applied from a project&apos;s kubernetes.yaml</title>
+      <link>https://vulnogram.org/CVE-2026-103413</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103413</guid>
+      <description>Improper input validation vulnerability in Apache Camel Karavan. When a deployment was started, Karavan unmarshalled a project&apos;s `kubernetes.yaml` and applied every resource it contained to the cluster without restricting the resource kinds, without…</description>
+      <category>High</category>
+      <pubDate>Fri, 09 Oct 2026 12:53:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103412 · 8.8 HIGH — Apache Camel Karavan: project file name path traversal when committing a project to Git</title>
+      <link>https://vulnogram.org/CVE-2026-103412</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103412</guid>
+      <description>Improper limitation of a pathname to a restricted directory (&apos;path traversal&apos;) vulnerability in Apache Camel Karavan. A project file name supplied through the project file API was used verbatim as a path segment when the project was written to the wo…</description>
+      <category>High</category>
+      <pubDate>Fri, 09 Oct 2026 12:53:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-108039 — Apache CXF: Prevent unbounded XML document size in StaxUtils by adding default element and character limits</title>
+      <link>https://vulnogram.org/CVE-2026-108039</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108039</guid>
+      <description>By default, StaxUtils placed no limit on the total number of elements or the total number of characters in an XML document. A very large request could therefore use a lot of memory and CPU during parsing, especially where CXF builds a DOM from the in…</description>
+      <pubDate>Fri, 09 Oct 2026 10:22:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107938 — Apache CXF: The Netty HTTP client transport does not perform TLS hostname verification.</title>
+      <link>https://vulnogram.org/CVE-2026-107938</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107938</guid>
+      <description>In Apache CXF, the Netty-based HTTP client transport (cxf-rt-transports-http-netty-client) did not verify that the hostname in the server’s TLS certificate matched the host being called. This applied over both HTTP/1.1 and HTTP/2, even when disableCN…</description>
+      <pubDate>Fri, 09 Oct 2026 10:20:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107937 — Apache CXF: The attachment header size and count limits can be bypassed, which allows denial of service through memory exhaustion.</title>
+      <link>https://vulnogram.org/CVE-2026-107937</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107937</guid>
+      <description>In Apache CXF, the parser for multipart/MTOM attachment part headers did not fully enforce the configured attachment-max-header-size (default 300 characters) and attachment-headers-max-count (default 500) limits. The size limit was applied only to ea…</description>
+      <pubDate>Fri, 09 Oct 2026 10:19:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-100227 — Apache CXF: XML Signature wrapping in JAX-RS XML Security</title>
+      <link>https://vulnogram.org/CVE-2026-100227</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100227</guid>
+      <description>Improper Verification of Cryptographic Signature vulnerability in Apache CXF&apos;s JAX-RS XML Security module. The JAX-RS XML Signature interceptors (XmlSigInHandler, XmlSigInInterceptor and the streaming XmlSecInInterceptor) did not ensure that the XML…</description>
+      <pubDate>Fri, 09 Oct 2026 10:19:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97791 — Apache CXF: STSTokenValidator can accept untrusted SAML assertions because it shares validation state between requests</title>
+      <link>https://vulnogram.org/CVE-2026-97791</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97791</guid>
+      <description>In Apache CXF, STSTokenValidator checks whether a SAML assertion is signed by a trusted certificate before deciding to send it to the STS. That result was stored in one object shared by all requests, so one request could read another&apos;s result. A remo…</description>
+      <pubDate>Fri, 09 Oct 2026 10:19:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97468 — Apache CXF: Authentication bypass via weak cache keys for validated STS tokens</title>
+      <link>https://vulnogram.org/CVE-2026-97468</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97468</guid>
+      <description>Apache CXF&apos;s STSTokenValidator and Security Token Service (STS) cached validated security tokens under a non-cryptographic 32-bit hash of the token (Java Arrays.hashCode/hashCode()), and treated a cache hit as proof that the presented token had alrea…</description>
+      <pubDate>Fri, 09 Oct 2026 10:18:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86463 — Apache CXF: FIQL Query Parser Denial of Service</title>
+      <link>https://vulnogram.org/CVE-2026-86463</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86463</guid>
+      <description>Apache CXF&apos;s FIQL query parser has a vulnerability in how it searches for operators in query expressions. The search pattern can get stuck trying many combinations when it encounters a long string without an operator, causing the parser to consume ex…</description>
+      <pubDate>Fri, 09 Oct 2026 10:18:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79650 — Apache CXF: OIDC RP Open Redirect</title>
+      <link>https://vulnogram.org/CVE-2026-79650</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79650</guid>
+      <description>Apache CXF’s OIDC relying-party component could redirect users to an attacker-controlled URL after successful authentication. The issue occurs because attacker-controlled state parameters are preserved and later used as redirect targets without valid…</description>
+      <pubDate>Fri, 09 Oct 2026 10:18:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78384 — Apache CXF: Unbounded DEFLATE Decompression in CXF JOSE/JWE and SAML Processing (Decompression Bomb)</title>
+      <link>https://vulnogram.org/CVE-2026-78384</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78384</guid>
+      <description>CompressionUtils.inflate() decompressed attacker-controlled DEFLATE data with no output-size cap. A small (~KB) crafted payload could expand to gigabytes on the heap. Reachable via JWE decryption when zip=DEF (e.g. JoseSessionTokenProvider with RSA-O…</description>
+      <pubDate>Fri, 09 Oct 2026 10:18:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-73179 — Apache CXF: JPA authorization-code consume is non-atomic</title>
+      <link>https://vulnogram.org/CVE-2026-73179</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73179</guid>
+      <description>Improper enforcement of single-use authorization code semantics in the JPA OAuth2 authorization code grant provider in Apache CXFallows a remote attacker to obtain multiple valid access tokens from a single authorization code via concurrent token exc…</description>
+      <pubDate>Fri, 09 Oct 2026 10:17:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71575 — Apache CXF: Inoperative max_age authentication-freshness check in OidcClientCodeRequestFilter</title>
+      <link>https://vulnogram.org/CVE-2026-71575</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71575</guid>
+      <description>The max_age authentication-freshness check in OidcClientCodeRequestFilter was inoperative due to a milliseconds/seconds unit mismatch and an inverted comparison polarity. Any relying party using setMaxAgeOffset to enforce re-authentication would sile…</description>
+      <pubDate>Fri, 09 Oct 2026 10:17:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-71896 · 6.5 MEDIUM — Apache DolphinScheduler: Missing Authorization Checks Allow Unauthorized Disclosure of User Account Information</title>
       <link>https://vulnogram.org/CVE-2026-71896</link>
@@ -330,123 +423,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 02 Oct 2026 12:27:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66859 · 8.7 HIGH 🌩️ — Apache Thrift: c_glib multiplexed processor crashes on a message it cannot route</title>
-      <link>https://vulnogram.org/CVE-2026-66859</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66859</guid>
-      <description>NULL Pointer Dereference, Use of Uninitialized Variable vulnerability in Apache Thrift c_glib bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:23:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-83632 · 9.2 CRITICAL 🌩️ — Apache Thrift: C++ THttpTransport grows its line buffer without bound</title>
-      <link>https://vulnogram.org/CVE-2026-83632</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-83632</guid>
-      <description>Allocation of resources without limits or throttling, Integer overflow or wraparound, Heap-based buffer overflow vulnerability in Apache Thrift. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, whic…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:22:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-83663 · 8.7 HIGH 🌩️ — Apache Thrift: TFramedTransport and THeaderTransport re-enter Read once per frame that carries no payload (Go)</title>
-      <link>https://vulnogram.org/CVE-2026-83663</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-83663</guid>
-      <description>Uncontrolled Recursion vulnerability in Apache Thrift go bindings. Both Go transports satisfy a read out of a buffered frame and, when that frame yields no payload bytes, read the next frame and call `Read` again instead of looping. A peer produces s…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:18:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-83745 · 8.7 HIGH 🌩️ — Apache Thrift, Apache Thrift: WebSocket frame decoders allocate the payload buffer from the declared length, not the bytes received (Node.js, D)</title>
-      <link>https://vulnogram.org/CVE-2026-83745</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-83745</guid>
-      <description>Memory allocation with excessive size value, Improper handling of length parameter inconsistency vulnerability in Apache Thrift nodejs and D lang bindings. Both bindings&apos; WebSocket server transports read the payload length out of the frame header and…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:16:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85476 · 8.2 HIGH 🌩️ — Apache Thrift: c_glib `read_all` spins when the underlying read returns 0</title>
-      <link>https://vulnogram.org/CVE-2026-85476</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85476</guid>
-      <description>Loop with unreachable exit condition (&apos;infinite loop&apos;) vulnerability in Apache Thrift c_glib bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:12:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96289 · 8.2 HIGH 🌩️ — Apache Thrift: php `--gen php:inlined` struct readers (and `TProtocol::skipBinary`) have no recursion-depth guard</title>
-      <link>https://vulnogram.org/CVE-2026-96289</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96289</guid>
-      <description>Uncontrolled Recursion vulnerability in Apache Thrift PHP bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:07:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96287 · 8.2 HIGH 🌩️ — Apache Thrift: Perl `FramedTransport` reads and TLS socket writes re-slice the remaining buffer on every call (quadratic)</title>
-      <link>https://vulnogram.org/CVE-2026-96287</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96287</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in Apache Thrift Perl bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:05:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96286 · 8.2 HIGH 🌩️ — Apache Thrift: Perl servers end `serve()` when serving one connection fails</title>
-      <link>https://vulnogram.org/CVE-2026-96286</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96286</guid>
-      <description>Uncaught exception vulnerability in Apache Thrift Perl bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:04:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96277 · 8.7 HIGH 🌩️ — Apache Thrift: Ruby `SimpleServer` ends `serve()` on any non-Transport/Protocol exception</title>
-      <link>https://vulnogram.org/CVE-2026-96277</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96277</guid>
-      <description>Uncaught exception, Improper Handling of Exceptional Conditions vulnerability in Apache Thrift Ruby bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:03:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94658 · 8.7 HIGH 🌩️ — Apache Thrift: Lua `TFramedTransport`/`THttpTransport` re-slice the buffer on every read (quadratic)</title>
-      <link>https://vulnogram.org/CVE-2026-94658</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94658</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in Apache Thrift Lua bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:02:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94657 · 8.2 HIGH 🌩️ — Apache Thrift: javame `TJsonProtocol`/`TJSONProtocol` has no string size bound</title>
-      <link>https://vulnogram.org/CVE-2026-94657</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94657</guid>
-      <description>Allocation of resources without limits or throttling vulnerability in Apache Thrift JavaME bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:01:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94656 · 8.2 HIGH 🌩️ — Apache Thrift: rb `TJsonProtocol`/`TJSONProtocol` has no string size bound</title>
-      <link>https://vulnogram.org/CVE-2026-94656</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94656</guid>
-      <description>Allocation of resources without limits or throttling vulnerability in Apache Thrift ruby bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:00:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94655 · 8.2 HIGH 🌩️ — Apache Thrift: Lua `TJsonProtocol` string/number readers have no size bound and are quadratic</title>
-      <link>https://vulnogram.org/CVE-2026-94655</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94655</guid>
-      <description>Allocation of resources without limits or throttling, Inefficient Algorithmic Complexity vulnerability in Apache Thrift Lua bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 11:59:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
