@@ -11,7 +11,77 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 09 Oct 2026 02:55:59 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 10:00:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-98384 — bpf: Fix out-of-bounds read of sk_protocol in bpf_sock_destroy()</title>
+      <link>https://vulnogram.org/CVE-2026-98384</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98384</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: bpf: Fix out-of-bounds read of sk_protocol in bpf_sock_destroy() sk_protocol lives in struct sock, not in struct sock_common. A timewait or request sock handed to bpf_sock_destroy()…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98383 — bpf: Disallow bpf_skb_pull_data() for LWT_SEG6LOCAL</title>
+      <link>https://vulnogram.org/CVE-2026-98383</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98383</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: bpf: Disallow bpf_skb_pull_data() for LWT_SEG6LOCAL An LWT_SEG6LOCAL program can invalidate its cached SRH with bpf_lwt_seg6_adjust_srh() and then call bpf_skb_pull_data(). The latte…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98382 — bpf: Reject dev-bound-only programs on other devices</title>
+      <link>https://vulnogram.org/CVE-2026-98382</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98382</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: bpf: Reject dev-bound-only programs on other devices __bpf_offload_dev_match() falls back to comparing offdev pointers after an exact netdev mismatch. Bound-only programs normally ha…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98381 — veth: manage XDP program pointers during channel resize</title>
+      <link>https://vulnogram.org/CVE-2026-98381</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98381</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: veth: manage XDP program pointers during channel resize veth_set_channels() tears down XDP resources for removed RX queues without clearing rq-&gt;xdp_prog. If the program is then detac…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98380 — net/sched: reject IDR error pointers when deleting actions</title>
+      <link>https://vulnogram.org/CVE-2026-98380</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98380</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net/sched: reject IDR error pointers when deleting actions tcf_action_delete() drops the reference held by its lookup before calling tcf_idr_delete_index() with the saved action inde…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98379 — netfilter: ip6t_rpfilter: reject routes without inet6_dev</title>
+      <link>https://vulnogram.org/CVE-2026-98379</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98379</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: netfilter: ip6t_rpfilter: reject routes without inet6_dev ip6_route_lookup() can return an error-free route whose rt6i_idev is NULL. Lowering an external nexthop device&apos;s MTU below I…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98378 — bpf: Skip unsettled links in link iterator</title>
+      <link>https://vulnogram.org/CVE-2026-98378</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98378</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: bpf: Skip unsettled links in link iterator bpf_link_prime() inserts a link into link_idr before anon_inode_getfile() succeeds and before bpf_link_settle() publishes the ID in link-&gt;i…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98377 — vlan: require the MAC header to be present in __vlan_insert_inner_tag()</title>
+      <link>https://vulnogram.org/CVE-2026-98377</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98377</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: vlan: require the MAC header to be present in __vlan_insert_inner_tag() __vlan_insert_inner_tag() only guarantees head room via skb_cow_head(), never that mac_len bytes of MAC header…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98376 — bpf: Use array_map_meta_equal for percpu array inner map replacement</title>
+      <link>https://vulnogram.org/CVE-2026-98376</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98376</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: bpf: Use array_map_meta_equal for percpu array inner map replacement percpu_array_map_ops.map_meta_equal points to the generic bpf_map_meta_equal(), which does not compare max_entrie…</description>
+      <pubDate>Fri, 09 Oct 2026 07:34:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98375 — xen/netfront: drop RX packets with a short Ethernet header</title>
+      <link>https://vulnogram.org/CVE-2026-98375</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98375</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: xen/netfront: drop RX packets with a short Ethernet header handle_incoming_queue() pulls pull_to bytes into the head before calling eth_type_trans(). pull_to is the length of the fir…</description>
+      <pubDate>Fri, 09 Oct 2026 07:10:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-98374 — tcp: fix use-after-free of retransmit_skb_hint in tcp_send_synack()</title>
       <link>https://vulnogram.org/CVE-2026-98374</link>
@@ -305,78 +375,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98335</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: abort chanswitch when leaving a mesh The code in ieee80211_stop_mesh() leaves CSA active, but leaving the mesh released the channel context, so the CSA finalize work…</description>
       <pubDate>Tue, 06 Oct 2026 08:46:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98334 — wifi: mac80211: reset state when starting AP fails</title>
-      <link>https://vulnogram.org/CVE-2026-98334</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98334</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: reset state when starting AP fails ieee80211_start_ap() can set enable_beacon (and beacon_int) and fail later, leaving it set forever. Scanning can then attempt to re…</description>
-      <pubDate>Tue, 06 Oct 2026 08:46:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98333 — wifi: mac80211: reset the LED state when ifup fails</title>
-      <link>https://vulnogram.org/CVE-2026-98333</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98333</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: reset the LED state when ifup fails When the first interface comes up, the radio LED is turned on. This can start the TPT trigger timer, which continues running. But…</description>
-      <pubDate>Tue, 06 Oct 2026 08:46:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98332 — wifi: mac80211: only operate on TDLS peers in the TDLS code</title>
-      <link>https://vulnogram.org/CVE-2026-98332</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98332</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: only operate on TDLS peers in the TDLS code ieee80211_tdls_oper() can operate on the AP station, which then yields various warnings when the AP station is removed the…</description>
-      <pubDate>Tue, 06 Oct 2026 08:46:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98331 · 7 HIGH — wifi: mac80211: unlist vifs when their netdev is unregistered</title>
-      <link>https://vulnogram.org/CVE-2026-98331</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98331</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: unlist vifs when their netdev is unregistered mac80211 only removes vifs from the local-&gt;interfaces list when an interface is removed via ieee80211_if_remove(), befor…</description>
-      <category>High</category>
-      <pubDate>Tue, 06 Oct 2026 08:46:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98330 · 7 HIGH — wifi: cfg80211: get the wiphy out of a dying network namespace</title>
-      <link>https://vulnogram.org/CVE-2026-98330</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98330</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: cfg80211: get the wiphy out of a dying network namespace When a network namespace is destroyed, cfg80211_pernet_exit() moves any wiphy back to the initial namespace, and just w…</description>
-      <category>High</category>
-      <pubDate>Tue, 06 Oct 2026 08:46:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98329 — wifi: mac80211: don&apos;t allow injecting frames wider than the chanctx</title>
-      <link>https://vulnogram.org/CVE-2026-98329</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98329</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: don&apos;t allow injecting frames wider than the chanctx Frames injected on a monitor interface can carry a radiotap field requesting a bandwidth, which mac80211 passes do…</description>
-      <pubDate>Tue, 06 Oct 2026 08:46:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98328 — wifi: mac80211: add HE 6 GHz capability in the scan elems len</title>
-      <link>https://vulnogram.org/CVE-2026-98328</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98328</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: add HE 6 GHz capability in the scan elems len The HE 6 GHz Band Capability element is in the probe request for every band if 6 GHz is supported, so add the size to sc…</description>
-      <pubDate>Tue, 06 Oct 2026 08:46:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98327 — wifi: mac80211: mesh: reset the CSA state when leaving</title>
-      <link>https://vulnogram.org/CVE-2026-98327</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98327</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: mesh: reset the CSA state when leaving ifmsh-&gt;csa is allocated in ieee80211_mesh_csa_beacon() and only freed in ieee80211_mesh_finish_csa(), i.e. when the channel swi…</description>
-      <pubDate>Tue, 06 Oct 2026 08:46:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98326 — wifi: mac80211: mesh: release the channel if start fails</title>
-      <link>https://vulnogram.org/CVE-2026-98326</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98326</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: mesh: release the channel if start fails ieee80211_join_mesh() acquires a channel context and then calls ieee80211_start_mesh(), which can fail. In that case, the cha…</description>
-      <pubDate>Tue, 06 Oct 2026 08:46:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98325 — wifi: mac80211: set up the TX info early to fix failure paths</title>
-      <link>https://vulnogram.org/CVE-2026-98325</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98325</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: wifi: mac80211: set up the TX info early to fix failure paths The previous commit 2c51457d930f (&quot;wifi: mac80211: free ack status frame on TX header build failure&quot;) cleaned up the lea…</description>
-      <pubDate>Tue, 06 Oct 2026 08:46:18 GMT</pubDate>
     </item>
   </channel>
 </rss>

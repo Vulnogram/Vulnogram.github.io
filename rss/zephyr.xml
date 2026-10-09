@@ -11,7 +11,47 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 09 Oct 2026 02:56:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 10:00:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-19575 · 7.8 HIGH — Type confusion in the device_deinit system call allows user-mode threads to execute arbitrary kernel code</title>
+      <link>https://vulnogram.org/CVE-2026-19575</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19575</guid>
+      <description>The user-mode verification handler for the device_deinit() system call, z_vrfy_device_deinit() in kernel/device.c, validated its dev argument with K_SYSCALL_OBJ_INIT(dev, K_OBJ_ANY). k_object_validate() short-circuits its type comparison when the req…</description>
+      <category>High</category>
+      <pubDate>Fri, 09 Oct 2026 07:16:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19569 · 8.8 HIGH — Integer overflow in dynamic kernel object allocation allows user-mode threads to corrupt the kernel heap</title>
+      <link>https://vulnogram.org/CVE-2026-19569</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19569</guid>
+      <description>dynamic_object_create() in kernel/userspace/userspace.c computed the backing allocation for a dynamically allocated kernel object as obj_size_get(otype) + size, and for thread stack elements as STACK_ELEMENT_DATA_SIZE(size) (a round-up plus fixed ove…</description>
+      <category>High</category>
+      <pubDate>Fri, 09 Oct 2026 07:16:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19574 · 7 HIGH — ARM64 MMU can assign an in-use ASID to a new memory domain, breaking user-mode memory isolation</title>
+      <link>https://vulnogram.org/CVE-2026-19574</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19574</guid>
+      <description>The ARM64 MMU back-end allocated address space identifiers (ASIDs) for memory domains with a bare round-robin counter in arch_mem_domain_init() (arch/arm64/core/mmu.c). VM_ASID_BITS is 8, so only 255 ASIDs exist; once the counter wrapped, arch_mem_do…</description>
+      <category>High</category>
+      <pubDate>Fri, 09 Oct 2026 07:16:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19571 · 6.7 MEDIUM — Race condition in ITE IT8xxx2 SHI host-command backend lets a second SPI request write an unvalidated length into the in-flight request buffer</title>
+      <link>https://vulnogram.org/CVE-2026-19571</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19571</guid>
+      <description>The ITE IT8xxx2 SHI host-command backend (subsys/mgmt/ec_host_cmd/backends/ec_host_cmd_backend_shi_ite.c) copied the 8-byte host-command request header from the SPI Rx FIFO directly into the shared receive buffer data-&gt;in_msg and only afterwards chec…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 09 Oct 2026 07:16:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19570 · 8.8 HIGH — Out-of-bounds write in LE Audio Broadcast Sink when copying BASE subgroup metadata into the BASS receive state</title>
+      <link>https://vulnogram.org/CVE-2026-19570</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19570</guid>
+      <description>The LE Audio Broadcast Sink in subsys/bluetooth/audio/bap_broadcast_sink.c copies subgroup metadata from a received Basic Audio Announcement (BASE) into the static Broadcast Audio Scan Service parameter structure mod_src_param without any bounds chec…</description>
+      <category>High</category>
+      <pubDate>Fri, 09 Oct 2026 07:16:38 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-15894 · 8.8 HIGH — Bluetooth Mesh solicitation PDU stack buffer overflow via oversized advertisement</title>
       <link>https://vulnogram.org/CVE-2026-15894</link>
@@ -371,46 +411,6 @@
       <description>The Zephyr ext2 filesystem driver fails to validate the s_log_block_size field of the on-disk superblock when mounting a filesystem. ext2_verify_disk_superblock() in subsys/fs/ext2/ext2_impl.c checks the magic number, revision, inode size and group c…</description>
       <category>Medium</category>
       <pubDate>Tue, 25 Aug 2026 04:37:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13214 · 9.8 CRITICAL — Stack buffer overflow in OCPP GetConfiguration key parsing</title>
-      <link>https://vulnogram.org/CVE-2026-13214</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13214</guid>
-      <description>The OCPP 1.6 client in subsys/net/lib/ocpp/ocpp_j.c contains a stack buffer overflow in parse_getconfig_msg(). When handling a GetConfiguration request from the central system, the handler copied the attacker-controlled JSON &quot;key&quot; string into the cal…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 25 Aug 2026 04:37:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13213 · 5.3 MEDIUM — Bluetooth HAS: NULL-pointer dereference DoS when a bonded peer reconnects before bt_has_register</title>
-      <link>https://vulnogram.org/CVE-2026-13213</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13213</guid>
-      <description>The Hearing Access Service (HAS) GATT server in subsys/bluetooth/audio/has.c installs a connection-callback set unconditionally via BT_CONN_CB_DEFINE, so security_changed() runs for every connection that establishes security even before the applicati…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 24 Aug 2026 17:10:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13212 · 8.8 HIGH — Zephyr virtio driver calls an arbitrary function pointer from an out-of-range used-ring descriptor id</title>
-      <link>https://vulnogram.org/CVE-2026-13212</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13212</guid>
-      <description>The Zephyr virtio driver does not validate the descriptor-chain head id that the virtio device writes into the used ring. In virtio_isr() (drivers/virtio/virtio_common.c), the device-written vq-&gt;used-&gt;ring[idx].id is used directly as an index into vq…</description>
-      <category>High</category>
-      <pubDate>Mon, 24 Aug 2026 15:43:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13343 · 5.3 MEDIUM — Uninitialised stack memory disclosure in the MIDI 2.0 UMP Stream responder</title>
-      <link>https://vulnogram.org/CVE-2026-13343</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13343</guid>
-      <description>The UMP Stream responder library in lib/midi2/ump_stream_responder.c builds reply packets in a 16-byte struct midi_ump (uint32_t data[4]). The builders make_endpoint_info() and make_function_block_info() populate only the first two words (res.data[0]…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 24 Aug 2026 15:43:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9728 · 6.4 MEDIUM — TOCTOU race in mbox_send syscall verifier allows userspace to leak kernel memory</title>
-      <link>https://vulnogram.org/CVE-2026-9728</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9728</guid>
-      <description>The userspace syscall verifier z_vrfy_mbox_send() in drivers/mbox/mbox_handlers.c validated the nested msg-&gt;data/msg-&gt;size fields by reading them directly out of live userspace memory, and then forwarded the original, still-mutable userspace struct m…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 24 Aug 2026 14:28:46 GMT</pubDate>
     </item>
   </channel>
 </rss>
