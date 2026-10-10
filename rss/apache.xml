@@ -11,7 +11,35 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 10 Oct 2026 08:06:28 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 14:11:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-103636 — Apache DataSketches: datasketches-cpp: Out-of-bounds read in VarOpt union deserialization allows denial of service via a truncated sketch</title>
+      <link>https://vulnogram.org/CVE-2026-103636</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103636</guid>
+      <description>Out-of-bounds read in the VarOpt union deserialization of Apache DataSketches C++ (repo: datasketches-cpp). var_opt_union::deserialize() read the 32-byte preamble of a non-empty union after checking that only 8 bytes were available, so a truncated se…</description>
+      <pubDate>Sat, 10 Oct 2026 10:23:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103635 — Apache DataSketches: datasketches-cpp: Out-of-bounds read in compact Theta sketch deserialization allows denial of service via a crafted sketch</title>
+      <link>https://vulnogram.org/CVE-2026-103635</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103635</guid>
+      <description>Out-of-bounds read in the compact Theta sketch deserialization of Apache DataSketches C++ (repo: datasketches-cpp). compact_theta_sketch::deserialize() and wrapped_compact_theta_sketch::wrap() read header fields before checking that the input was lon…</description>
+      <pubDate>Sat, 10 Oct 2026 10:23:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103513 — Apache DataSketches: datasketches-cpp: Out-of-bounds read and write in the CPC sketch deserialization allows memory corruption via a crafted sketch</title>
+      <link>https://vulnogram.org/CVE-2026-103513</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103513</guid>
+      <description>Out-of-bounds read and write in the CPC sketch deserialization of Apache DataSketches C++ (repo: datasketches-cpp). A crafted serialized CPC sketch passed to cpc_sketch::deserialize(), from either a byte buffer or a stream, can cause the decompressor…</description>
+      <pubDate>Sat, 10 Oct 2026 10:23:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103501 — Apache DataSketches: datasketches-cpp: HLL CouponList Deserialization Buffer Overflow allows memory corruption via a crafted sketch</title>
+      <link>https://vulnogram.org/CVE-2026-103501</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103501</guid>
+      <description>Heap buffer overflow in the HLL sketch deserialization of Apache DataSketches C++ (repo: datasketches-cpp). When deserializing a sketch in LIST mode, from either a byte buffer or a stream, the coupon count was read from the input and used as the numb…</description>
+      <pubDate>Sat, 10 Oct 2026 10:22:55 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-103413 · 8.8 HIGH — Apache Camel Karavan: unvalidated Kubernetes resources applied from a project&apos;s kubernetes.yaml</title>
       <link>https://vulnogram.org/CVE-2026-103413</link>
@@ -387,42 +415,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 02 Oct 2026 12:49:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66081 · 8.7 HIGH 🌩️ — Apache Thrift: c_glib read_message_begin leaves output parameters unset for non-versioned messages</title>
-      <link>https://vulnogram.org/CVE-2026-66081</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66081</guid>
-      <description>Access of Uninitialized Pointer vulnerability in Apache Thrift c_glib bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:33:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66331 · 6.9 MEDIUM 🌩️ — Apache Thrift: Buffered transport reads are not accounted against MaxMessageSize</title>
-      <link>https://vulnogram.org/CVE-2026-66331</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66331</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in Apache Thrift Delphi bindings buffered transport. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:32:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66837 · 8.7 HIGH 🌩️ — Apache Thrift: PHP accelerator sizes a stack buffer from a wire-controlled string length</title>
-      <link>https://vulnogram.org/CVE-2026-66837</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66837</guid>
-      <description>Stack-based Buffer Overflow, Integer Overflow or Wraparound vulnerability in Apache Thrift php bindings. This issue affects Apache Thrift: before 0.25.0. Users are recommended to upgrade to version 0.25.0, which fixes the issue.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:29:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66858 · 8.7 HIGH 🌩️ — Apache Thrift, Apache Thrift, Apache Thrift, Apache Thrift, Apache Thrift, Apache Thrift: skip() does not apply the recursion limit (Python accelerator, PHP, Perl, Lua, Smalltalk, OCaml)</title>
-      <link>https://vulnogram.org/CVE-2026-66858</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66858</guid>
-      <description>The protocol skip routine in several Apache Thrift bindings did not apply the binding&apos;s recursion limit, so a message that nests unknown fields deeply enough can exhaust the stack. Affected: the Python C++ accelerator (the pure-Python protocols are n…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 12:27:31 GMT</pubDate>
     </item>
   </channel>
 </rss>

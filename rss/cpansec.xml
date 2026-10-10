@@ -11,7 +11,28 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 10 Oct 2026 08:06:28 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 14:11:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-107794 — ExtUtils::Typemaps::STL::List versions before 1.07 for Perl allocate a 32 GiB array on an empty list</title>
+      <link>https://vulnogram.org/CVE-2026-107794</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107794</guid>
+      <description>ExtUtils::Typemaps::STL::List versions before 1.07 for Perl allocate a 32 GiB array on an empty list. The OUTPUT typemaps call av_extend( av, len-1 ). On an empty list, this undeflows, and av_extend will allocate an array with 2^32 slots, leading to…</description>
+      <pubDate>Sat, 10 Oct 2026 12:45:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2013-10076 — ExtUtils::Typemaps::STL::Vector versions before 1.05 for Perl allocate a 32 GiB array on an empty list</title>
+      <link>https://vulnogram.org/CVE-2013-10076</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2013-10076</guid>
+      <description>ExtUtils::Typemaps::STL::Vector versions before 1.05 for Perl allocate a 32 GiB array on an empty list. The OUTPUT typemaps call av_extend( av, len-1 ). On an empty list, this undeflows, and av_extend will allocate an array with 2^32 slots, leading t…</description>
+      <pubDate>Sat, 10 Oct 2026 12:44:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107373 — ExtUtils::Typemaps::STL::String versions before 1.06 for Perl T_STD_STRING typemap may read the SV length before stringifying the argument</title>
+      <link>https://vulnogram.org/CVE-2026-107373</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107373</guid>
+      <description>ExtUtils::Typemaps::STL::String versions before 1.06 for Perl T_STD_STRING typemap may read the SV length before stringifying the argument. The typemap uses $var = std::string( SvPV_nolen($arg), SvCUR($arg) ) However, evaluation order for C++ argumen…</description>
+      <pubDate>Sat, 10 Oct 2026 12:44:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-104380 · 5.3 MEDIUM 🌩️ — Punk versions from 0.48 before 0.55 for Perl route Extended CONNECT requests to any GET route without an Origin check in ps_serve_one</title>
       <link>https://vulnogram.org/CVE-2026-104380</link>
@@ -423,33 +444,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 31 Aug 2026 10:07:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78655 · 9.1 CRITICAL 🌩️ — Punk::Plugin::TOTP versions before 0.05 for Perl allow the second-factor attempt limit to be reset by replaying an earlier session cookie because the challenge route counts failures in the session</title>
-      <link>https://vulnogram.org/CVE-2026-78655</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78655</guid>
-      <description>Punk::Plugin::TOTP versions before 0.05 for Perl allow the second-factor attempt limit to be reset by replaying an earlier session cookie because the challenge route counts failures in the session. The POST handler on challenge_path keeps the failure…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 25 Aug 2026 21:23:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78619 · 9.8 CRITICAL 🌩️ — Punk::Plugin::TOTP versions before 0.05 for Perl accept another account&apos;s recovery code at the two-factor challenge because totp_use_recovery compares user identifiers numerically</title>
-      <link>https://vulnogram.org/CVE-2026-78619</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78619</guid>
-      <description>Punk::Plugin::TOTP versions before 0.05 for Perl accept another account&apos;s recovery code at the two-factor challenge because totp_use_recovery compares user identifiers numerically. The helper searches the recovery model for the submitted code&apos;s diges…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 25 Aug 2026 21:21:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78183 · 9.8 CRITICAL 🌩️ — DBD::Pg version 3.21.0 for Perl has a heap out-of-bounds write in quote_float</title>
-      <link>https://vulnogram.org/CVE-2026-78183</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78183</guid>
-      <description>DBD::Pg version 3.21.0 for Perl has a heap out-of-bounds write in quote_float. quote_float() allocates the length of the string + 1, which is the size of the bare numeric symbol plus NULL. But for special literals NaN, Inf, +Inf, -Inf, Infinity, +Inf…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 23 Aug 2026 19:53:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
