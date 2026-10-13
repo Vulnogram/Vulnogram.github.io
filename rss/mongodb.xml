@@ -11,7 +11,47 @@
       <title>MongoDB, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 13 Oct 2026 08:52:22 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 16:44:17 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-104005 · 7.1 HIGH — Incorrect authorization in MongoDB Server router for bulk writes to system namespaces</title>
+      <link>https://vulnogram.org/CVE-2026-104005</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104005</guid>
+      <description>A security issue was discovered in MongoDB mongos (the sharded cluster router) where an authenticated user with readWrite privileges could crash the mongos process by crafting a specially formed aggregation pipeline. The issue leverages an internal a…</description>
+      <category>High</category>
+      <pubDate>Tue, 13 Oct 2026 15:38:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104004 · 7.1 HIGH — Collection validators using collation-accepting expressions can crash MongoDB Server on insert</title>
+      <link>https://vulnogram.org/CVE-2026-104004</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104004</guid>
+      <description>MongoDB Server&apos;s collection validation feature may not properly handle certain expressions stored in a validator. In some cases, this can cause the server process to stop running when a document is later inserted. The behavior can occur for authentic…</description>
+      <category>High</category>
+      <pubDate>Tue, 13 Oct 2026 15:36:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103965 · 5.4 MEDIUM — Fixed values in MongoDB Server $bucket stage may be misread as field references</title>
+      <link>https://vulnogram.org/CVE-2026-103965</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103965</guid>
+      <description>An issue in MongoDB Server&apos;s aggregation framework can cause certain constant values to be handled incorrectly during internal query rewriting. Under certain conditions, an authenticated user with read access may receive field values in aggregation o…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 13 Oct 2026 15:33:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96299 · 7.1 HIGH — MongoDB Nested `$_internalSchemaAllElemMatchFromIndex` Cross-Product MatchExpression OOM</title>
+      <link>https://vulnogram.org/CVE-2026-96299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96299</guid>
+      <description>Missing limits on resource use in the match expression evaluator of MongoDB Server can cause the server to consume excessive memory. Internal schema validation operators that are meant only for server use are accepted in user-supplied query filters.…</description>
+      <category>High</category>
+      <pubDate>Tue, 13 Oct 2026 15:27:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96297 · 6.5 MEDIUM — MongoDB Server may disclose process memory via a crafted `$_internalApplyOplogUpdate` aggregation pipeline</title>
+      <link>https://vulnogram.org/CVE-2026-96297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96297</guid>
+      <description>Use of freed memory in the aggregation feature of MongoDB Server can cause the server to read data from a memory area after it has been released. When an internal aggregation stage is combined with a batch size of 0, the server may read from memory t…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 13 Oct 2026 15:23:57 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-87109 · 6 MEDIUM — Ops Manager Sensitive MFA Enrollment Information Exposure in User Listings</title>
       <link>https://vulnogram.org/CVE-2026-87109</link>
@@ -388,46 +428,6 @@
       <description>Improper neutralization of special elements in data query logic in the GridFS component of the MongoDB Go Driver can cause a caller-supplied structured file identifier to be interpreted as a query condition rather than as a literal identifier. An aut…</description>
       <category>High</category>
       <pubDate>Thu, 10 Sep 2026 17:59:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88030 · 8.3 HIGH — GridFS data disclosure and deletion via query-operator injection in file IDs in the MongoDB Ruby Driver</title>
-      <link>https://vulnogram.org/CVE-2026-88030</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88030</guid>
-      <description>Improper neutralization of special elements in data query logic in the GridFS component of the MongoDB Ruby Driver can cause a caller-supplied structured file identifier to be interpreted as a query condition rather than as a literal identifier. An a…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 17:57:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88029 · 8.3 HIGH — GridFS data disclosure and deletion via query-operator injection in file IDs in the MongoDB Python Driver</title>
-      <link>https://vulnogram.org/CVE-2026-88029</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88029</guid>
-      <description>Improper neutralization of special elements in data query logic in the GridFS component of the MongoDB Python Driver can cause a caller-supplied structured file identifier to be interpreted as a query condition rather than as a literal identifier. An…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 17:56:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88028 · 7.1 HIGH — Unauthorized document disclosure via query-operator injection in polymorphic relation identifiers in MongoDB integration for Laravel</title>
-      <link>https://vulnogram.org/CVE-2026-88028</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88028</guid>
-      <description>Improper neutralization of special elements in data query logic in the polymorphic relation handling of the MongoDB integration for Laravel can cause a caller-supplied relation identifier to be interpreted as a query condition rather than as a litera…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 17:54:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88027 · 7.1 HIGH — Mass deletion and overwrite of embedded documents via query-operator injection in embedded record keys in MongoDB integration for Laravel</title>
-      <link>https://vulnogram.org/CVE-2026-88027</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88027</guid>
-      <description>Improper neutralization of special elements in data query logic in the embedded-document relation handling of the MongoDB integration for Laravel can cause a caller-supplied embedded record identifier to be interpreted as a query condition rather tha…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 17:52:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88026 · 7.1 HIGH — Regular expression injection via unescaped characters in LINQ query translation in MongoDB C# Driver</title>
-      <link>https://vulnogram.org/CVE-2026-88026</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88026</guid>
-      <description>Improper neutralization of regular-expression metacharacters in the LINQ query translation component of the MongoDB C# Driver can cause a caller-supplied character sequence to alter a regular-expression predicate generated by an affected application.…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 17:48:39 GMT</pubDate>
     </item>
   </channel>
 </rss>

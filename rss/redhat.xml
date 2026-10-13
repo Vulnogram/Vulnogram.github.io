@@ -11,7 +11,49 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 13 Oct 2026 08:52:21 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 16:44:17 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-105460 · 5.5 MEDIUM — Bluez: bluez: stack-based out-of-bounds read in btmon via unvalidated num_keys in return_link_keys_evt()</title>
+      <link>https://vulnogram.org/CVE-2026-105460</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105460</guid>
+      <description>A flaw was found in BlueZ. An out-of-bounds read vulnerability exists in the btmon Bluetooth monitor tool when processing crafted HCI Return Link Keys events. A maliciously crafted btsnoop capture file can specify a large number of link keys that exc…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 13 Oct 2026 15:12:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109976 · 4.7 MEDIUM — Clevis: clevis: integer underflow in pkcs#11 data socket handler crashes daemon on unbound client connection</title>
+      <link>https://vulnogram.org/CVE-2026-109976</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109976</guid>
+      <description>A flaw was found in the clevis PKCS#11 pin. The clevis-pkcs11-afunix-socket-unlock daemon crashes when an AF_UNIX client connects to the data socket without a bound address, due to an integer underflow in the getpeername result handling. This causes…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 13 Oct 2026 12:17:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109833 · 5.9 MEDIUM 🌩️ — Gnome-remote-desktop: heap buffer overflow in gnome-remote-desktop vnc tls peek buffer handling allows remote denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-109833</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109833</guid>
+      <description>A flaw was found in gnome-remote-desktop as shipped in Red Hat Enterprise Linux. In the VNC TLS read path, partial consumption of the internal peek buffer incorrectly moves remaining peeked bytes into the caller-supplied buffer instead of compacting…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 13 Oct 2026 12:00:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109832 · 7.5 HIGH 🌩️ — Gnome-remote-desktop: busy-wait dos in vnc tls i/o handlers (gnutls_e_again / gnutls_e_interrupted)</title>
+      <link>https://vulnogram.org/CVE-2026-109832</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109832</guid>
+      <description>A flaw was found in gnome-remote-desktop as shipped in Red Hat Enterprise Linux. In the VNC TLS I/O handlers, retryable GnuTLS results (GNUTLS_E_AGAIN and GNUTLS_E_INTERRUPTED) are handled with an unbounded busy loop instead of yielding to the event…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 13 Oct 2026 11:36:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109854 · 2.5 LOW — M17n-lib: uninitialized stack read in iso-2022 compound text utf-8 decoding</title>
+      <link>https://vulnogram.org/CVE-2026-109854</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109854</guid>
+      <description>A flaw was found in m17n-lib. An attacker who supplies crafted input to an application processing ISO-2022 encoded text can cause the library to read uninitialized memory from the stack. If the application exposes or returns the decoded output, this…</description>
+      <category>Low</category>
+      <pubDate>Tue, 13 Oct 2026 09:16:55 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-83535 · 7.4 HIGH 🌩️ — Openstack-network-exporter: basic-auth uses plaintext password storage and non-constant-time comparison</title>
       <link>https://vulnogram.org/CVE-2026-83535</link>
@@ -380,46 +422,6 @@
       <description>A flaw was found in GIMP’s X cursor (XMC) thumbnail loader. When GIMP generates a thumbnail for a crafted XMC file, it allocates a pixel buffer using a width * height size computed in 32-bit signed arithmetic. If that product overflows, the allocatio…</description>
       <category>Medium</category>
       <pubDate>Wed, 07 Oct 2026 02:36:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106471 · 8.1 HIGH — Candlepin: candlepin: broken object-level authorization via verifyauthorizationfilter multi-@verify hasaccess latching</title>
-      <link>https://vulnogram.org/CVE-2026-106471</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106471</guid>
-      <description>A flaw was found in Candlepin. The central authorization filter incorrectly grants access when any one of multiple @Verify-annotated parameters is accessible, instead of requiring access to every verified entity. A low-privilege authenticated attacke…</description>
-      <category>High</category>
-      <pubDate>Wed, 07 Oct 2026 01:49:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80048 · 5.5 MEDIUM — Sssd: sssd-kcm: local denial of service via excessive memory preallocation</title>
-      <link>https://vulnogram.org/CVE-2026-80048</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80048</guid>
-      <description>A flaw was found in `sssd-kcm`. A local user or process able to connect to the `sssd-kcm` UNIX socket can exploit this vulnerability. By sending a large request length header and then stalling the connection, an attacker can cause the system to preal…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 06 Oct 2026 23:28:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104045 · 4.7 MEDIUM — Sssd: sssd: denial of service via race condition in autofs responder</title>
-      <link>https://vulnogram.org/CVE-2026-104045</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104045</guid>
-      <description>A flaw was found in SSSD. A local user can trigger a Denial of Service (DoS) by exploiting a race condition in the autofs responder between asynchronous enumeration completion and map invalidation. By repeatedly sending concurrent map enumeration and…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 06 Oct 2026 20:37:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104046 · 6.2 MEDIUM — Sssd: sssd: denial of service via incomplete identity provider authentication requests</title>
-      <link>https://vulnogram.org/CVE-2026-104046</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104046</guid>
-      <description>A flaw was found in SSSD (System Security Services Daemon). When Identity Provider (IdP) authentication is enabled, pre-authentication requests retain state in memory without being cleared or timed out. A local attacker can repeatedly initiate authen…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 06 Oct 2026 20:03:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106062 · 7.8 HIGH — Gimp: gimp: heap buffer overflow in dds loader on crafted directdraw surface file</title>
-      <link>https://vulnogram.org/CVE-2026-106062</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106062</guid>
-      <description>A heap-based buffer overflow was found in GIMP’s DirectDraw Surface (DDS) loader. When loading a crafted DDS image, buffer sizes derived from width, height, and pitch can be computed using 32-bit arithmetic that overflows. The allocated buffer is too…</description>
-      <category>High</category>
-      <pubDate>Tue, 06 Oct 2026 20:02:52 GMT</pubDate>
     </item>
   </channel>
 </rss>
