@@ -11,7 +11,31 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 12 Oct 2026 19:44:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 01:58:56 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-19938 · 5.9 MEDIUM — Use-after-free of an ATT PDU buffer when signing an outgoing Bluetooth ATT Signed Write Command fails</title>
+      <link>https://vulnogram.org/CVE-2026-19938</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19938</guid>
+      <description>The Bluetooth host&apos;s ATT transmit path releases a buffer it does not own when signing fails. chan_send() in subsys/bluetooth/host/att.c documents (and every other error exit implements) the contract that on failure the caller retains ownership of the…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 12 Oct 2026 23:19:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19937 · 5.7 MEDIUM — Bluetooth Mesh Access layer permanently leaks delayable-message contexts, disabling all model responses</title>
+      <link>https://vulnogram.org/CVE-2026-19937</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19937</guid>
+      <description>The Bluetooth Mesh Access layer delayable-message machinery in subsys/bluetooth/mesh/delayable_msg.c manages a static pool of CONFIG_BT_MESH_ACCESS_DELAYABLE_MSG_COUNT message contexts (default 4) threaded onto a free_ctx or busy_ctx list. release_de…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 12 Oct 2026 23:19:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19936 · 4.8 MEDIUM — Bluetooth Mesh delayable message queue: unsynchronized list access leads to NULL pointer dereference</title>
+      <link>https://vulnogram.org/CVE-2026-19936</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19936</guid>
+      <description>The Bluetooth Mesh Access-layer delayable message queue in subsys/bluetooth/mesh/delayable_msg.c shares three intrusive lists (busy_ctx, free_ctx, free_chunks) and one k_work_delayable between two cooperative threads with no synchronization: bt_mesh_…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 12 Oct 2026 23:19:53 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-19740 · 6.5 MEDIUM — Bluetooth LE Controller: retained RX node leak and reachable assertion in the PHY Update procedure</title>
       <link>https://vulnogram.org/CVE-2026-19740</link>
@@ -387,30 +411,6 @@
       <description>The Bluetooth Classic (BR/EDR) L2CAP receive handler bt_l2cap_br_recv() in subsys/bluetooth/host/classic/l2cap_br.c dispatched inbound data PDUs based only on the destination channel ID, without checking that the target channel had reached the BT_L2C…</description>
       <category>Medium</category>
       <pubDate>Wed, 09 Sep 2026 22:40:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14697 · 6.5 MEDIUM — IPv6 Neighbor Solicitation packet leak causes TX pool exhaustion denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-14697</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14697</guid>
-      <description>net_ipv6_send_ns() in subsys/net/ip/ipv6_nbr.c allocates a transmit net_pkt for a Neighbor Solicitation. When it is called with a data packet pending on an unresolved neighbor and that neighbor&apos;s pending_queue is already non-empty (an NS is already o…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 31 Aug 2026 19:34:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14696 · 6.5 MEDIUM — Ethernet bridge RX packet leak enables denial of service via RX buffer-pool exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-14696</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14696</guid>
-      <description>When Ethernet bridging is enabled (CONFIG_NET_ETHERNET_BRIDGE), eth_bridge_input_process() in subsys/net/l2/ethernet/bridge/bridge_input.c decides how each frame received on a bridge member interface is handled. For frames that must also be delivered…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 31 Aug 2026 18:57:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14368 · 5.4 MEDIUM — Off-by-one out-of-bounds NUL write in Zephyr LwM2M JSON string parser</title>
-      <link>https://vulnogram.org/CVE-2026-14368</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14368</guid>
-      <description>The LwM2M JSON content formatter&apos;s get_string() in subsys/net/lib/lwm2m/lwm2m_rw_json.c copies a parsed JSON string into a caller-supplied buffer and NUL-terminates it. The length guard used if (string_length &gt; buflen), which accepts a string whose l…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 31 Aug 2026 18:45:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
