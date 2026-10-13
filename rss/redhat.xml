@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 13 Oct 2026 16:44:17 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 21:55:03 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-110036 · 3.3 LOW — Device-mapper-persistent-data: device-mapper-persistent-data: denial of service via crafted block indices</title>
+      <link>https://vulnogram.org/CVE-2026-110036</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110036</guid>
+      <description>A flaw was found in device-mapper-persistent-data. A local attacker can cause a Denial of Service (DoS) by inducing a user or system tool to process crafted device metadata containing an excessively large block index. An arithmetic error in the synch…</description>
+      <category>Low</category>
+      <pubDate>Tue, 13 Oct 2026 18:45:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88834 · 3.7 LOW 🌩️ — Busybox: busybox: httpd user existence oracle in non-default shadow-disabled builds</title>
+      <link>https://vulnogram.org/CVE-2026-88834</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88834</guid>
+      <description>A flaw was found in BusyBox&apos;s httpd web server. When configured with system password authentication, a user existence oracle may exist in certain build configurations. An attacker could distinguish existing from non-existing usernames by observing au…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 13 Oct 2026 16:58:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88838 · 5.5 MEDIUM — Busybox: busybox: non-root mount option filter bypass allows clearing fstab security restrictions</title>
+      <link>https://vulnogram.org/CVE-2026-88838</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88838</guid>
+      <description>A flaw was found in BusyBox&apos;s mount utility. A non-root user can bypass mount security restrictions set in /etc/fstab by specifying clearing-mask options on the command line. These options pass the non-root flag filter and are merged with fstab optio…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 13 Oct 2026 16:56:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88833 · 6.5 MEDIUM — Busybox: busybox: udhcpc integer underflow in dhcp packet length calculation causes denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-88833</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88833</guid>
+      <description>A flaw was found in BusyBox&apos;s udhcpc DHCP client. When processing raw DHCP packets, the client replaces the validated packet length with an attacker-controlled value from the IP header without re-validating the minimum size. This leads to an integer…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 13 Oct 2026 16:56:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-105460 · 5.5 MEDIUM — Bluez: bluez: stack-based out-of-bounds read in btmon via unvalidated num_keys in return_link_keys_evt()</title>
       <link>https://vulnogram.org/CVE-2026-105460</link>
@@ -390,38 +423,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 07 Oct 2026 07:42:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103870 · 5 MEDIUM — Pulp-rpm: distribution tree publish creates directories from .treeinfo ids</title>
-      <link>https://vulnogram.org/CVE-2026-103870</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103870</guid>
-      <description>A flaw was found in pulp-rpm when it publishes a distribution tree. Addon and variant ids from .treeinfo are used as directory names. A user who can sync or upload that tree can make the publish task create a new directory outside the task work area…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 05:46:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103869 · 6.5 MEDIUM — Pulp-ansible: bearer tokens are reused across remotes in a worker</title>
-      <link>https://vulnogram.org/CVE-2026-103869</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103869</guid>
-      <description>A flaw was found in pulp-ansible&apos;s bearer-token refresh for collection remotes. The access token is kept in one module-level variable and reused for every token download in that worker. A user who can sync an Ansible remote that uses token refresh, a…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 05:46:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103868 · 6.5 MEDIUM — Pulp-container: registry credentials are reused across remotes in a worker</title>
-      <link>https://vulnogram.org/CVE-2026-103868</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103868</guid>
-      <description>A flaw was found in pulp-container when it authenticates to an upstream registry. Basic and bearer credentials from one remote are reused for later downloads in the same worker. A user who can sync a container remote, and can point that remote at a s…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 05:46:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106061 · 5.5 MEDIUM — Gimp: gimp: heap buffer over-read in x cursor (xmc) thumbnail loader on crafted file</title>
-      <link>https://vulnogram.org/CVE-2026-106061</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106061</guid>
-      <description>A flaw was found in GIMP’s X cursor (XMC) thumbnail loader. When GIMP generates a thumbnail for a crafted XMC file, it allocates a pixel buffer using a width * height size computed in 32-bit signed arithmetic. If that product overflows, the allocatio…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 02:36:51 GMT</pubDate>
     </item>
   </channel>
 </rss>
