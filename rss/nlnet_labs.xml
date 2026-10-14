@@ -11,7 +11,39 @@
       <title>NLnet Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 14 Oct 2026 11:01:55 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 15:53:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-101341 · 8.7 HIGH — Stack overwrite from specially formatted TXT-DATA RDATA field</title>
+      <link>https://vulnogram.org/CVE-2026-101341</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101341</guid>
+      <description>Tokens of text in RDATA (of for example TXT records) under 32 bytes are not checked to stay within the space reserved for the RDATA allowing for arbitrary sized out of bound stack writes, including an overwrite of a callback function pointer which is…</description>
+      <category>High</category>
+      <pubDate>Wed, 14 Oct 2026 10:56:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101339 · 8.7 HIGH — Stack overwrite from a specially crafted and formatted HIP RR</title>
+      <link>https://vulnogram.org/CVE-2026-101339</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101339</guid>
+      <description>A HIP resource record that fills the RDATA near or at is limit, and has another dname RDATA field (a HIP Rendezvous server) can overwrite the stack with up to 191 bytes of attacker controlled data. Zone files which are written out by NSD itself, such…</description>
+      <category>High</category>
+      <pubDate>Wed, 14 Oct 2026 10:56:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101338 · 8.7 HIGH — Stack overwrite from a specially crafted and formatted SVCB or HTTPS RR</title>
+      <link>https://vulnogram.org/CVE-2026-101338</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101338</guid>
+      <description>When a SVCB or HTTPS RR has filled the wire format RDATA up to the brim, another ECH parameter may overwrite the stack, and once beyond the limit, the base64 decoder can write attacker controlled data of unlimited size. Zone files which are written o…</description>
+      <category>High</category>
+      <pubDate>Wed, 14 Oct 2026 10:56:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101337 · 8.7 HIGH — Stack overwrite from specially formatted base64 RDATA field</title>
+      <link>https://vulnogram.org/CVE-2026-101337</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101337</guid>
+      <description>When base64 data is split up in pieces, of 3 character or less, tokens were incorrectly calculated to produce 0 bytes. This enables attackers to overwrite the stack with up to 64K of attacker controlled data. Zone files which are written out by NSD i…</description>
+      <category>High</category>
+      <pubDate>Wed, 14 Oct 2026 10:56:15 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-85501 · 5.3 MEDIUM — Retrap: Novel Vulnerabilities to launch Algorithmic Complexity Attacks on DNSSEC</title>
       <link>https://vulnogram.org/CVE-2026-85501</link>
@@ -379,40 +411,6 @@
       <description>Routinator exits on any error when accepting incoming HTTP or RTR connections, including ones it can recover from such as running out of file descriptors. This condition can be triggered maliciously by an attacker by opening a large number of connect…</description>
       <category>High</category>
       <pubDate>Mon, 08 Jun 2026 12:58:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44608 · 4.6 MEDIUM — Use after free and crash under special conditions in RPZ code</title>
-      <link>https://vulnogram.org/CVE-2026-44608</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44608</guid>
-      <description>NLnet Labs Unbound 1.14.0 up to and including version 1.25.0 has a locking inconsistency vulnerability that when certain conditions are met (multi-threaded, RPZ XFR reload, RPZ zone with &apos;rpz-nsip&apos;/&apos;rpz-nsdname&apos; triggers) it could result in heap use-…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 20 May 2026 09:21:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44390 · 7.5 HIGH 🌩️ — Unbounded name compression in certain cases causes degradation of service</title>
-      <link>https://vulnogram.org/CVE-2026-44390</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44390</guid>
-      <description>NLnet Labs Unbound up to and including version 1.25.0 has a vulnerability when handling replies with very large RRsets that Unbound needs to perform name compression for. Malicious upstream responses with very large RRsets with records that don&apos;t sha…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 20 May 2026 09:21:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42960 · 5.7 MEDIUM — Possible cache poisoning via promiscuous records for the authority section</title>
-      <link>https://vulnogram.org/CVE-2026-42960</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42960</guid>
-      <description>NLnet Labs Unbound up to and including version 1.25.0 is vulnerable to poisoning via promiscuous records for the authority section. Promiscuous RRSets that complement DNS replies in the authority section can be used to trick Unbound to cache such rec…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 20 May 2026 09:21:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42959 · 8.7 HIGH 🌩️ — Crash during DNSSEC validation of malicious content</title>
-      <link>https://vulnogram.org/CVE-2026-42959</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42959</guid>
-      <description>NLnet Labs Unbound up to and including version 1.25.0 has a denial of service vulnerability in the DNSSEC validator that can lead to a crash given malicious upstream replies. When Unbound constructs chase-reply messages for validation, the code uses…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 20 May 2026 09:20:45 GMT</pubDate>
     </item>
   </channel>
 </rss>
