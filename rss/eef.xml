@@ -11,7 +11,42 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 14 Oct 2026 15:53:47 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 20:03:19 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-96596 · 5.9 MEDIUM — erl_tar:extract/2 loops forever on a GNU sparse member with a trailing hole</title>
+      <link>https://vulnogram.org/CVE-2026-96596</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96596</guid>
+      <description>Loop with Unreachable Exit Condition (&apos;Infinite Loop&apos;) vulnerability in Erlang OTP stdlib (erl_tar module), hexpm hex_core (hex_erl_tar module), hexpm hex (mix_hex_erl_tar module) and erlang rebar3 (r3_hex_erl_tar module) allows an attacker who suppl…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 16:56:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105236 · 6.3 MEDIUM 🌩️ — TLS 1.2 session resumption in ssl crosses SNI virtual-host client-certificate trust boundaries</title>
+      <link>https://vulnogram.org/CVE-2026-105236</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105236</guid>
+      <description>Improper Certificate Validation vulnerability in the ssl application in Erlang/OTP allows a client that holds a certificate trusted by one SNI virtual host to authenticate to a second SNI virtual host on the same listener by resuming its TLS 1.2 sess…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 14 Oct 2026 16:55:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94200 · 8.2 HIGH 🌩️ — TLS 1.3 client ticket store crashed by NewSessionTicket with empty early_data extension in ssl</title>
+      <link>https://vulnogram.org/CVE-2026-94200</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94200</guid>
+      <description>Improper Validation of Consistency within Input vulnerability in Erlang OTP ssl (tls_handshake_1_3, ssl_handshake and tls_client_ticket_store modules) allows a malicious TLS 1.3 server to cause a denial of service of the ssl application on the client…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 14 Oct 2026 16:55:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105659 · 8.7 HIGH 🌩️ — HTTP/2 blocked-send deadlines reset on every WINDOW_UPDATE, letting a trickle pin stream processes indefinitely in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-105659</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105659</guid>
+      <description>Uncontrolled Resource Consumption vulnerability in mtrudel bandit allows an unauthenticated remote attacker to pin HTTP/2 stream processes indefinitely via a trickle of small WINDOW_UPDATE frames. A stream whose response outruns the connection or str…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 14 Oct 2026 16:54:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-103061 · 5.9 MEDIUM 🌩️ — Path traversal in Gleam via unvalidated package application names</title>
       <link>https://vulnogram.org/CVE-2026-103061</link>
@@ -413,39 +448,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 17 Sep 2026 13:08:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82759 · 1.8 LOW — Reversible IP address pseudonymisation in AshAuthentication audit log hash mode</title>
-      <link>https://vulnogram.org/CVE-2026-82759</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82759</guid>
-      <description>Use of a One-Way Hash with a Predictable Salt vulnerability in team-alembic AshAuthentication allows readers of the audit store to recover the client IP addresses that the audit log add-on&apos;s :hash privacy mode is meant to pseudonymise. AshAuthenticat…</description>
-      <category>Low</category>
-      <pubDate>Thu, 17 Sep 2026 13:08:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82723 · 1.8 LOW — Actor record with password digest stored in AshAuthentication audit log entries</title>
-      <link>https://vulnogram.org/CVE-2026-82723</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82723</guid>
-      <description>Insertion of Sensitive Information into Log File vulnerability in team-alembic AshAuthentication allows disclosure of user password digests to readers of the audit store. The audit_log add-on builds each entry&apos;s extra_data in AshAuthentication.AddOn.…</description>
-      <category>Low</category>
-      <pubDate>Thu, 17 Sep 2026 13:08:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86338 · 6 MEDIUM — Ash field policies do not filter-nil forbidden calculations and aggregates, enabling an information-disclosure oracle</title>
-      <link>https://vulnogram.org/CVE-2026-86338</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86338</guid>
-      <description>Ash field_policies are documented to protect against filter-based information disclosure: when a field the actor may not see is referenced in a filter, it is replaced with an expression that evaluates to nil, so a filter cannot be used as a yes/no or…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 16 Sep 2026 08:28:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88255 · 6.3 MEDIUM 🌩️ — mpp Tempo keys its pre-broadcast dedup reserve on the caller-supplied transaction encoding, so a re-encoded signed transaction reserves a second slot</title>
-      <link>https://vulnogram.org/CVE-2026-88255</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88255</guid>
-      <description>Improper Validation of Unsafe Equivalence in Input in ZenHive mpp allows an unauthenticated remote client to pass the Tempo duplicate-submission gate twice with one signed transaction. MPP.Methods.Tempo reserves the pre-broadcast dedup slot on the ca…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 16 Sep 2026 08:24:40 GMT</pubDate>
     </item>
   </channel>
 </rss>

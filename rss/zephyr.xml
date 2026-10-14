@@ -11,7 +11,39 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 14 Oct 2026 15:53:46 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 20:03:19 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-75085 · 4.2 MEDIUM — Out-of-bounds read from received-frame length underflow in the STM32WBA IEEE 802.15.4 driver</title>
+      <link>https://vulnogram.org/CVE-2026-75085</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75085</guid>
+      <description>The STM32WBA IEEE 802.15.4 driver in drivers/ieee802154/ieee802154_stm32wba.c computed the packet length of a received frame as pkt_len = rx_frame-&gt;length - IEEE802154_FCS_LENGTH without first checking that the radio-reported length could hold an FCS…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 16:46:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75084 · 6.8 MEDIUM — Out-of-bounds write in the TI CC1200 IEEE 802.15.4 driver from an unvalidated radio-supplied packet length</title>
+      <link>https://vulnogram.org/CVE-2026-75084</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75084</guid>
+      <description>The CC1200 sub-GHz IEEE 802.15.4 driver takes the PHY packet length from the first byte of the radio&apos;s RX FIFO in get_packet_length() and validates it in verify_rxfifo_validity() (drivers/ieee802154/ieee802154_cc1200.c). That validation only enforced…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 16:46:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19673 · 7.1 HIGH — Out-of-bounds read and net_buf length underflow in Zephyr Ethernet L2 when parsing a truncated VLAN header</title>
+      <link>https://vulnogram.org/CVE-2026-19673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19673</guid>
+      <description>ethernet_recv() in subsys/net/l2/ethernet/ethernet.c validates only that the first net_buf of a received frame holds a plain 14-byte struct net_eth_hdr. When the ethertype is 0x8100 and VLAN is enabled on the interface, the same buffer is reinterpret…</description>
+      <category>High</category>
+      <pubDate>Wed, 14 Oct 2026 16:45:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75083 · 5.9 MEDIUM — Integer underflow of the radio-reported frame length causes an out-of-bounds write in the NXP KW41Z IEEE 802.15.4 driver</title>
+      <link>https://vulnogram.org/CVE-2026-75083</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75083</guid>
+      <description>The receive path of the NXP KW41Z IEEE 802.15.4 driver, kw41z_rx() in drivers/ieee802154/ieee802154_kw41z.c, computed the payload size as pkt_len = len - KW41Z_FCS_LENGTH in a uint8_t, where len is the frame length reported by the radio. The interrup…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 16:45:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-19940 · 6.5 MEDIUM — Bluetooth HFP AG reuses a connection slot while a delayable work item is still armed, corrupting kernel timeout bookkeeping</title>
       <link>https://vulnogram.org/CVE-2026-19940</link>
@@ -379,38 +411,6 @@
       <description>Zephyr&apos;s TLS socket layer in subsys/net/lib/sockets/sockets_tls.c keeps a single process-global array, client_cache, of cached client sessions that is shared by every TLS socket context. The functions that mutate and read it — tls_session_save(), tls…</description>
       <category>Medium</category>
       <pubDate>Mon, 14 Sep 2026 19:33:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15893 · 6.5 MEDIUM — Zephyr IPv6 Neighbor Discovery zero reachable time from crafted Router Advertisement causes assertion/DoS</title>
-      <link>https://vulnogram.org/CVE-2026-15893</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15893</guid>
-      <description>net_if_ipv6_calc_reachable_time() in subsys/net/ip/net_if.c derives a randomized ND reachable time from ipv6-&gt;base_reachable_time as min_reachable + sys_rand32_get() % (max_reachable - min_reachable), where min_reachable = base/2 and max_reachable =…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 18:49:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15923 · 4.6 MEDIUM — Infinite loop denial of service in Zephyr SDIO byte-I/O from a card-supplied zero max_blk_size</title>
-      <link>https://vulnogram.org/CVE-2026-15923</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15923</guid>
-      <description>The Zephyr SDIO subsystem function sdio_io_rw_extended_helper() in subsys/sd/sdio.c finishes transfers with a byte-I/O loop that uses size = MIN(remaining, func-&gt;cis.max_blk_size) as the per-iteration step. The value func-&gt;cis.max_blk_size is decoded…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 16:12:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15892 · 5.3 MEDIUM — Heap memory leak in mcumgr settings-management handlers on access-hook rejection leads to denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-15892</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15892</guid>
-      <description>The mcumgr SMP settings-management group handlers settings_mgmt_read(), settings_mgmt_write(), and settings_mgmt_delete() in subsys/mgmt/mcumgr/grp/settings_mgmt/src/settings_mgmt.c allocate a key_name buffer (and, for read, a data buffer) via k_mall…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 13 Sep 2026 22:46:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15891 · 7.5 HIGH — NULL pointer dereference in Zephyr MQTT-SN client when removing a non-responsive gateway</title>
-      <link>https://vulnogram.org/CVE-2026-15891</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15891</guid>
-      <description>The MQTT-SN client keepalive handler process_ping() in subsys/net/lib/mqtt_sn/mqtt_sn.c removes the gateway record after PINGREQ retries are exhausted. It invoked SYS_SLIST_PEEK_HEAD_CONTAINER(&amp;client-&gt;gateways, gw, next) but discarded the result. Th…</description>
-      <category>High</category>
-      <pubDate>Sun, 13 Sep 2026 22:46:15 GMT</pubDate>
     </item>
   </channel>
 </rss>
