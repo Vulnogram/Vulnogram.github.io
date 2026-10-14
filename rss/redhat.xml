@@ -11,7 +11,81 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 14 Oct 2026 05:45:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 11:01:53 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-100229 · 6.5 MEDIUM 🌩️ — Gstreamer1-plugins-bad-free: gstreamer1-plugins-bad-free: out-of-bounds write in gst_h266_parser_parse_dci() due to off-by-one array bound check</title>
+      <link>https://vulnogram.org/CVE-2026-100229</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100229</guid>
+      <description>A flaw was found in GStreamer&apos;s H.266 codec parser library (libgstcodecparsers). An out-of-bounds write vulnerability exists in the DCI parsing function, where a reserved field value is incorrectly accepted, causing the parser to write beyond the bou…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 14 Oct 2026 10:02:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88842 · 3.3 LOW — Busybox: busybox: dpkg stale field_start pointer causes out-of-bounds read and status file corruption</title>
+      <link>https://vulnogram.org/CVE-2026-88842</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88842</guid>
+      <description>A flaw was found in BusyBox dpkg. The write_status_file() function does not reset a field cursor between package stanzas. When two packages are removed in a single invocation and the first stanza is larger than the second, the second package stanza c…</description>
+      <category>Low</category>
+      <pubDate>Wed, 14 Oct 2026 10:02:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109971 · 4.7 MEDIUM — Clevis: clevis: pkcs#11 token pin exposed on command line via pkcs11-tool</title>
+      <link>https://vulnogram.org/CVE-2026-109971</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109971</guid>
+      <description>A flaw was found in the clevis PKCS#11 pin. The clevis-decrypt-pkcs11 script passes the PKCS#11 token PIN as a command-line argument to pkcs11-tool, making it visible to any local user through process listing or the /proc filesystem.</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 10:01:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109970 · 4.7 MEDIUM — Clevis: clevis: pkcs#11 token pin written to world-readable file</title>
+      <link>https://vulnogram.org/CVE-2026-109970</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109970</guid>
+      <description>A flaw was found in the clevis PKCS#11 pin. The clevis-luks-pkcs11-askpin script writes the PKCS#11 token PIN in plaintext to a file without setting restrictive permissions. Under the default process umask, the file is world-readable. Additionally, t…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 10:01:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109969 · 4.7 MEDIUM — Clevis: clevis: no authentication on pkcs#11 af_unix sockets allows key injection under permissive umask</title>
+      <link>https://vulnogram.org/CVE-2026-109969</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109969</guid>
+      <description>A flaw was found in the clevis PKCS#11 pin. The clevis-pkcs11-afunix-socket-unlock daemon creates AF_UNIX sockets without explicit permission restrictions or peer credential verification. Under a permissive process umask, any local user can connect t…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 10:00:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-100231 · 6.1 MEDIUM — Gstreamer1-plugins-bad-free: gstreamer1-plugins-bad-free: heap out-of-bounds write in asfmux due to incorrect utf-16 size calculation for non-bmp characters</title>
+      <link>https://vulnogram.org/CVE-2026-100231</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100231</guid>
+      <description>A flaw was found in the GStreamer multimedia framework&apos;s ASF muxer plugin (asfmux). When writing string metadata tags containing Unicode characters outside the Basic Multilingual Plane (such as emoji) to an ASF container, the plugin incorrectly calcu…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 10:00:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88829 · 7.2 HIGH 🌩️ — Busybox: busybox: http request smuggling via pipelined requests in httpd reverse proxy</title>
+      <link>https://vulnogram.org/CVE-2026-88829</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88829</guid>
+      <description>A flaw was found in BusyBox httpd&apos;s reverse proxy feature. When the proxy is configured to forward requests matching a URL prefix to a backend server, only the first HTTP request on a TCP connection has its path rewritten. An attacker can send a pipe…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 14 Oct 2026 10:00:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90954 · 7.8 HIGH — Busybox: busybox: dpkg-deb extraction-root escape via per-ar-member deferred symlink flush</title>
+      <link>https://vulnogram.org/CVE-2026-90954</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90954</guid>
+      <description>A flaw was found in BusyBox&apos;s dpkg-deb archive extraction. The ar archive handler flushes deferred symlinks after each archive member, unlike the tar, cpio, and unzip handlers which flush once after the last member. A specially crafted .deb archive w…</description>
+      <category>High</category>
+      <pubDate>Wed, 14 Oct 2026 10:00:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86476 · 8.4 HIGH — Gstreamer1-plugins-base: gst-plugins-base: heap buffer overflow via unvalidated gstvideometa plane extents in gst_video_frame_map_id and video_meta_deserialize</title>
+      <link>https://vulnogram.org/CVE-2026-86476</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86476</guid>
+      <description>A flaw was found in gst-plugins-base. A heap buffer overflow can be triggered when processing video buffers whose attached GstVideoMeta metadata declares plane strides and offsets that exceed the actual backing memory allocation. The metadata is not…</description>
+      <category>High</category>
+      <pubDate>Wed, 14 Oct 2026 10:00:02 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-110036 · 3.3 LOW — Device-mapper-persistent-data: device-mapper-persistent-data: denial of service via crafted block indices</title>
       <link>https://vulnogram.org/CVE-2026-110036</link>
@@ -349,80 +423,6 @@
       <description>A heap-based buffer overflow was found in GIMP’s raw data export plug-in. When exporting very large images, g_malloc() sizing based on overflowing width * height * bytes-per-pixel can allocate far less memory than GEGL reads or writes during export,…</description>
       <category>Medium</category>
       <pubDate>Wed, 07 Oct 2026 17:36:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106065 · 6.3 MEDIUM — Gimp: gimp: heap buffer overflow in pcx export on oversized image dimensions</title>
-      <link>https://vulnogram.org/CVE-2026-106065</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106065</guid>
-      <description>A heap-based buffer overflow was found in GIMP’s PCX export plug-in. For images with extremely large width and height, buffer allocation uses overflowing 32-bit width * height arithmetic while subsequent GEGL operations use the full extent, after int…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 16:55:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107174 · 6.4 MEDIUM — Source-to-image: source-to-image: security boundary bypass via absolute symbolic link extraction</title>
-      <link>https://vulnogram.org/CVE-2026-107174</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107174</guid>
-      <description>A flaw was found in source-to-image. When unpacking archive files, the application fails to properly sanitize symbolic links pointing to absolute file paths. An attacker who supplies a malicious builder image can exploit this vulnerability by embeddi…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 14:34:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107169 · 6.2 MEDIUM — M17n-lib: null-pointer write in read_mtext_element() on malformed utf-8</title>
-      <link>https://vulnogram.org/CVE-2026-107169</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107169</guid>
-      <description>A flaw was found in m17n-lib. An attacker could provide specially crafted or truncated UTF-8 input to trigger an unhandled null pointer dereference during text processing. This issue causes the application to crash unexpectedly, resulting in a Denial…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 14:34:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107167 · 6.2 MEDIUM — M17n-lib: heap use-after-free write in re_init_ic()</title>
-      <link>https://vulnogram.org/CVE-2026-107167</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107167</guid>
-      <description>A flaw was found in m17n-lib. A user providing specially crafted text input can trigger a heap use-after-free condition during input-method state transitions. Under specific conditions, the library frees an internal input context object but subsequen…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 14:34:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106064 · 6.3 MEDIUM — Gimp: gimp: heap buffer overflow in gif export on oversized image dimensions</title>
-      <link>https://vulnogram.org/CVE-2026-106064</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106064</guid>
-      <description>A heap-based buffer overflow was found in GIMP’s GIF export plug-in. Exporting an image with very large width and height can cause 32-bit overflow when computing the pixel buffer size. The plug-in allocates a buffer based on the wrapped value while G…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 14:34:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107170 · 2.9 LOW — M17n-lib: null dereference in minput_open_im() after failed m17n_init()</title>
-      <link>https://vulnogram.org/CVE-2026-107170</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107170</guid>
-      <description>A flaw was found in m17n-lib. A partial failure during library initialization can leave an internal driver pointer uninitialized. Under specific error conditions, such as system resource exhaustion or database corruption, an application attempting to…</description>
-      <category>Low</category>
-      <pubDate>Wed, 07 Oct 2026 12:41:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107168 · 6.2 MEDIUM — M17n-lib: parser infinite loop on malformed utf-8 in count_utf_8_chars()</title>
-      <link>https://vulnogram.org/CVE-2026-107168</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107168</guid>
-      <description>A flaw was found in m17n-lib. By providing crafted input containing an invalid UTF-8 character sequence, an attacker can cause the text parsing function to enter an infinite loop. This issue leads to sustained high CPU utilization, resulting in a Den…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 07 Oct 2026 12:36:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107151 · 5.9 MEDIUM 🌩️ — Rubygem-smart_proxy_dynflow: task update and done callbacks accept unauthenticated requests</title>
-      <link>https://vulnogram.org/CVE-2026-107151</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107151</guid>
-      <description>Missing authentication has been found in remote-execution task updates in the smart_proxy_dynflow package. The progress and completion callbacks accept a report when the one-time token is missing. A network attacker or user must already know the iden…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 07 Oct 2026 12:36:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107121 · 6.5 MEDIUM 🌩️ — Keycloak-services: keycloak-services: smtp starttls plaintext credential and message downgrade</title>
-      <link>https://vulnogram.org/CVE-2026-107121</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107121</guid>
-      <description>A flaw was found in the SMTP email configuration handling of the keycloak-services component. When the STARTTLS option is enabled, Keycloak fails to strictly enforce an encrypted connection, allowing it to fall back to unencrypted communication if th…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 07 Oct 2026 07:42:04 GMT</pubDate>
     </item>
   </channel>
 </rss>
