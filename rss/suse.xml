@@ -11,7 +11,47 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 15 Oct 2026 06:52:27 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:27:09 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-104618 · 6.9 MEDIUM — sdbootutil: world-readable debug log</title>
+      <link>https://vulnogram.org/CVE-2026-104618</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104618</guid>
+      <description>On request the `sdbootutil` script creates a world-readable debug log in /var/log/sdbootutil.log. The log file is created world-readable, however, which means that arbitrary low-privileged users in the system will be able to extract secrets from it.</description>
+      <category>Medium</category>
+      <pubDate>Thu, 15 Oct 2026 08:41:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104617 · 5.9 MEDIUM — sdbootutil: qrencode invocation leaks PIN/recovery key in /proc/&lt;pid&gt;/cmdline</title>
+      <link>https://vulnogram.org/CVE-2026-104617</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104617</guid>
+      <description>There are two invocations of `qrencode` to display a QR code for scanning. These invocations leak the private data $pin / $key via /proc accessible for arbitrary low-privileged users in the system.</description>
+      <category>Medium</category>
+      <pubDate>Thu, 15 Oct 2026 08:33:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2023-32198 · 8 HIGH — Steve doesn’t verify a server’s certificate and is susceptible to man-in-the-middle (MitM) attacks</title>
+      <link>https://vulnogram.org/CVE-2023-32198</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-32198</guid>
+      <description>A vulnerability has been identified in Steve where by default it was using an insecure option that did not validate the certificate presented by the remote server while performing a TLS connection. This could allow the execution of a man-in-the-middl…</description>
+      <category>High</category>
+      <pubDate>Thu, 15 Oct 2026 08:22:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2024-22031 · 8.5 HIGH — Rancher users who can create Projects can gain access to arbitrary projects</title>
+      <link>https://vulnogram.org/CVE-2024-22031</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-22031</guid>
+      <description>A vulnerability has been identified within Rancher where a user with the ability to create a project, on a certain cluster, can create a project with the same name as an existing project in a different cluster. This results in the user gaining access…</description>
+      <category>High</category>
+      <pubDate>Thu, 15 Oct 2026 08:21:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-23390 · 6.3 MEDIUM — Fleet doesn’t validate a server’s certificate when connecting through SSH</title>
+      <link>https://vulnogram.org/CVE-2025-23390</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-23390</guid>
+      <description>A vulnerability has been identified within Fleet where, by default, Fleet will automatically trust a remote server’s certificate when connecting through SSH if the certificate isn’t set in the `known_hosts` file. This could allow the execution of a m…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 15 Oct 2026 08:16:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-88804 · 9.6 CRITICAL 🌩️ — Unauthenticated update of public UI settings leading to stored cross-site scripting in Rancher</title>
       <link>https://vulnogram.org/CVE-2026-88804</link>
@@ -392,47 +432,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 26 Aug 2026 09:13:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75038 · 6.9 MEDIUM — Predictable temporary file in /tmp allows symlink attack in LACT</title>
-      <link>https://vulnogram.org/CVE-2026-75038</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75038</guid>
-      <description>UNIX symbolic link (symlink) following vulnerability in ilya-zlobintsev/LACT allows for local denial-of-service. This issue affects LACT: through 0.10.0.</description>
-      <category>Medium</category>
-      <pubDate>Tue, 25 Aug 2026 10:00:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75037 · 7.3 HIGH — Polkit authentication bypass in LACT</title>
-      <link>https://vulnogram.org/CVE-2026-75037</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75037</guid>
-      <description>Polkit Authentication Based on UnixProcessSubject / Peer PID in LACT on Linux allows an Authentication Bypass. This issue affects LACT through 0.10.0. Fixed by commit d0478fe42c2219454e272f96b1cbd29ab37ee566.</description>
-      <category>High</category>
-      <pubDate>Tue, 25 Aug 2026 09:52:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44945 · 9.1 CRITICAL — Cross-Cluster Impersonation Confused-Deputy Privilege Escalation</title>
-      <link>https://vulnogram.org/CVE-2026-44945</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44945</guid>
-      <description>A privilege escalation vulnerability exists in Rancher&apos;s impersonation middleware (pkg/auth/requests/impersonate.go). An authenticated Rancher user with the default user global role can gain full administrative access to the Rancher control plane and…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 05 Aug 2026 10:00:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25703 · 7.3 HIGH 🌩️ — Potential information leakage from manager /network/graph API in NeuVector</title>
-      <link>https://vulnogram.org/CVE-2026-25703</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25703</guid>
-      <description>NeuVector through 5.4.9 is can potentially leak information from manager /network/graph API due to missing authentication and cached data containing sensitive information.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 05 Aug 2026 09:48:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55997 · 8.8 HIGH — Long-lived Rancher registration token exposed in plaintext</title>
-      <link>https://vulnogram.org/CVE-2026-55997</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55997</guid>
-      <description>Rancher issues long-lived registration tokens to authenticate nodes and agents joining a downstream cluster. These tokens were stored and exposed in plaintext with no expiration, so a malicious user could obtain one either through the Rancher API, et…</description>
-      <category>High</category>
-      <pubDate>Wed, 05 Aug 2026 07:53:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

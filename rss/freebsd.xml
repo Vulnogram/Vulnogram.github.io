@@ -11,7 +11,77 @@
       <title>FreeBSD — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 15 Oct 2026 06:52:27 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:27:09 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-101311 — Multiple vulnerabilities in bhyve device models</title>
+      <link>https://vulnogram.org/CVE-2026-101311</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101311</guid>
+      <description>The framebuffer device model&apos;s maximum resolution constants were duplicated between the framebuffer and RFB modules and had gotten out of sync. Additionally, writes to the framebuffer BAR could set arbitrary width and height values without validation…</description>
+      <pubDate>Thu, 15 Oct 2026 07:18:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101310 — Multiple vulnerabilities in bhyve device models</title>
+      <link>https://vulnogram.org/CVE-2026-101310</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101310</guid>
+      <description>The HDA audio device model did not check for zero-length Buffer Descriptor List (BDL) entries when starting a stream. A zero-length entry caused an out-of-bounds read or write during DMA transfer processing. BDL fields were also subject to modificati…</description>
+      <pubDate>Thu, 15 Oct 2026 07:18:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101309 — Multiple vulnerabilities in bhyve device models</title>
+      <link>https://vulnogram.org/CVE-2026-101309</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101309</guid>
+      <description>The xHCI (USB 3) device model did not validate or save the event ring size provided by the guest. The size was re-read from guest memory on each use, and Transfer Request Block (TRB) fields were loaded without protection against concurrent modificati…</description>
+      <pubDate>Thu, 15 Oct 2026 07:17:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101308 — TOCTOU race between sound(4) buffer resizing and mmap</title>
+      <link>https://vulnogram.org/CVE-2026-101308</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101308</guid>
+      <description>When an audio channel&apos;s buffer needs to be resized, the sound(4) driver checks that the buffer is not memory-mapped and then drops the channel lock to allocate a new buffer. An mmap(2) call on another thread can complete during this window, after whi…</description>
+      <pubDate>Thu, 15 Oct 2026 07:08:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101307 — Remotely triggerable buffer overflow in tcp_rack</title>
+      <link>https://vulnogram.org/CVE-2026-101307</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101307</guid>
+      <description>When the PCM sample array needs to grow, the RACK stack doubles a 16-bit allocation counter. Repeated doublings caused the counter to wrap to zero, resulting in a near-zero-length allocation followed by a copy of the existing samples into the undersi…</description>
+      <pubDate>Thu, 15 Oct 2026 07:05:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101303 — IPv6 UDP sendto(2) bypasses jail loopback restriction</title>
+      <link>https://vulnogram.org/CVE-2026-101303</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101303</guid>
+      <description>The IPv6 UDP send path for unconnected sockets did not apply the jail policy of rewriting a loopback destination address to the jail&apos;s primary IPv6 address. A process in a classic (non-VNET) jail can send UDP datagrams to services listening on the ho…</description>
+      <pubDate>Thu, 15 Oct 2026 06:58:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101302 — Remote DoS via receive-side kernel TLS</title>
+      <link>https://vulnogram.org/CVE-2026-101302</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101302</guid>
+      <description>TLS 1.3 embeds the actual record type as the last non-zero byte of the decrypted payload, optionally followed by zero padding. The code which searches for the inner record type had an off-by-one bug which could be triggered by an invalid frame, leadi…</description>
+      <pubDate>Thu, 15 Oct 2026 06:53:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101306 — Multiple jail filesystem root escapes</title>
+      <link>https://vulnogram.org/CVE-2026-101306</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101306</guid>
+      <description>SCM_RIGHTS file descriptor passing did not preserve FD_RESOLVE_BENEATH when a descriptor was transferred. A process could clear the restriction by sending the descriptor to itself over a Unix domain socket. A process in a jail that has received a dir…</description>
+      <pubDate>Thu, 15 Oct 2026 06:46:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101305 — Multiple jail filesystem root escapes</title>
+      <link>https://vulnogram.org/CVE-2026-101305</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101305</guid>
+      <description>renameat(2) did not enforce FD_RESOLVE_BENEATH on its directory arguments. A jailed process could rename a directory relative to a restricted descriptor, then escape the jail root via fchdir(2). This requires the directory to reside on a filesystem t…</description>
+      <pubDate>Thu, 15 Oct 2026 06:46:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-101304 — Multiple jail filesystem root escapes</title>
+      <link>https://vulnogram.org/CVE-2026-101304</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101304</guid>
+      <description>When fdescfs(4) was mounted in a jail with the &quot;nodup&quot; option, opening /dev/fd/N returned a descriptor that did not inherit FD_RESOLVE_BENEATH or the Capsicum capability rights of descriptor N. A process in a jail that has received a directory file d…</description>
+      <pubDate>Thu, 15 Oct 2026 06:46:03 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-58100 — Memory safety bugs in kqueue copy-on-fork implementation</title>
       <link>https://vulnogram.org/CVE-2026-58100</link>
@@ -331,87 +401,6 @@
       <description>sigqueue(2) was marked as permitted in capability mode with the introduction of Capsicum in 2011, but the implementation of kern_sigqueue did not include a capability mode check restricting signal delivery to the calling process&apos;s own PID. A process…</description>
       <category>Medium</category>
       <pubDate>Sat, 27 Jun 2026 08:59:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45258 · 7.8 HIGH — Multiple vulnerabilities in the sound(4) mmap path</title>
-      <link>https://vulnogram.org/CVE-2026-45258</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45258</guid>
-      <description>dsp_mmap_single() validated the requested mapping by checking the sum of the user-supplied offset and length against the buffer size. This addition could overflow, so that a large offset and length wrapped around and passed the check. The offset was…</description>
-      <category>High</category>
-      <pubDate>Sat, 27 Jun 2026 08:50:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49417 · 7 HIGH — Multiple vulnerabilities in the sound(4) mmap path</title>
-      <link>https://vulnogram.org/CVE-2026-49417</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49417</guid>
-      <description>Second, the audio buffer backing a mapping could be freed when the device was closed even though the mapping remained valid. The freed memory could then be reused elsewhere while still accessible through the stale mapping. The /dev/dsp device nodes a…</description>
-      <category>High</category>
-      <pubDate>Sat, 27 Jun 2026 08:48:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45257 · 7.8 HIGH — Arbitrary file overwrite via the KTLS receive path</title>
-      <link>https://vulnogram.org/CVE-2026-45257</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45257</guid>
-      <description>The KTLS receive path decrypted each record in place, assuming that the mbufs holding received data were anonymous and safe to modify. This assumption does not hold for data placed on a socket by sendfile(2), which can reference file-backed memory di…</description>
-      <category>High</category>
-      <pubDate>Fri, 26 Jun 2026 14:50:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45256 · 5.5 MEDIUM — Missing permission check in thr_kill2(2)</title>
-      <link>https://vulnogram.org/CVE-2026-45256</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45256</guid>
-      <description>When used to deliver a signal to a specific thread, thr_kill2(2) called p_cansignal() to determine whether the operation was permitted but did not check the result before delivering the signal. The signal was sent even when the permission check faile…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 26 Jun 2026 14:43:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45254 · 6.5 MEDIUM 🌩️ — Incorrect libcap_net limitation list manipulation</title>
-      <link>https://vulnogram.org/CVE-2026-45254</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45254</guid>
-      <description>In the case of the cap_net service, when a key present in the old limit was omitted from the new limit, the missing key was treated as &quot;allow any&quot; instead of being rejected. In certain scenarios, an application that had previously restricted a subset…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 21 May 2026 09:34:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45255 · 7.5 HIGH — Remote code execution via installer Wi-Fi access point scans</title>
-      <link>https://vulnogram.org/CVE-2026-45255</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45255</guid>
-      <description>When bsdinstall or bsdconfig are prompted to scan for nearby Wi-Fi networks, they build up a list of network names and use bsddialog(1) to prompt the user to select a network. This is implemented using a shell script, and the code which handled netwo…</description>
-      <category>High</category>
-      <pubDate>Thu, 21 May 2026 09:27:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39461 · 8.8 HIGH — select(2) file descriptor set overflow causes stack overflow</title>
-      <link>https://vulnogram.org/CVE-2026-39461</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39461</guid>
-      <description>libcasper(3) communicates with helper processes via UNIX domain sockets, and uses the select(2) system call to wait for data to become available. However, it does not verify that its socket descriptor fits within select(2)&apos;s descriptor set size limit…</description>
-      <category>High</category>
-      <pubDate>Thu, 21 May 2026 09:20:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45253 · 8.4 HIGH — Missing validation in ptrace(PT_SC_REMOTE)</title>
-      <link>https://vulnogram.org/CVE-2026-45253</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45253</guid>
-      <description>ptrace(PT_SC_REMOTE) failed to properly validate parameters for the syscall(2) and __syscall(2) meta-system calls. As a result, a user with the ability to debug a process may trigger arbitrary code execution in the kernel, even if the target process…</description>
-      <category>High</category>
-      <pubDate>Thu, 21 May 2026 09:17:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45252 · 5.5 MEDIUM — Heap overflow in FUSE_LISTXATTR</title>
-      <link>https://vulnogram.org/CVE-2026-45252</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45252</guid>
-      <description>When a fusefs file system implements extended attributes, the kernel may send a FUSE_LISTXATTR message to the userspace daemon to retrieve the list of extended attributes for a given file. The FUSE protocol requires the daemon to return a packed list…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 21 May 2026 09:08:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45251 · 7.8 HIGH — Kernel use-after-free via file descriptor syscalls</title>
-      <link>https://vulnogram.org/CVE-2026-45251</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45251</guid>
-      <description>A file descriptor can be closed while a thread is blocked in a poll(2) or select(2) call waiting for that descriptor. Because the blocked thread does not hold a reference to the underlying object, this closure may result in the object being freed whi…</description>
-      <category>High</category>
-      <pubDate>Thu, 21 May 2026 09:04:52 GMT</pubDate>
     </item>
   </channel>
 </rss>
