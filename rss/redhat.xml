@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 15 Oct 2026 12:27:08 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 17:45:07 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-85634 · 8.8 HIGH — Wildfly-core: wildfly-core: deployer rbac role privilege escalation via path traversal in deployment name</title>
+      <link>https://vulnogram.org/CVE-2026-85634</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85634</guid>
+      <description>A flaw was found in the ContentRepositoryImpl.copyExplodedContent function of the wildfly-core library, which is used by WildFly and JBoss EAP to manage server deployments. The issue occurs when the library processes an unsanitized deployment name. D…</description>
+      <category>High</category>
+      <pubDate>Thu, 15 Oct 2026 16:08:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92982 · 8.5 HIGH — Ansible-operator-plugins: ansible operator plugins: arbitrary code execution via jinja2 template injection</title>
+      <link>https://vulnogram.org/CVE-2026-92982</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92982</guid>
+      <description>A flaw was found in Ansible Operator Plugins. A low-privileged Kubernetes user can exploit a Jinja2 template injection vulnerability by crafting malicious custom resource (CR) specification values. These values are processed by Ansible without proper…</description>
+      <category>High</category>
+      <pubDate>Thu, 15 Oct 2026 15:36:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110927 · 4.3 MEDIUM — Openssh: openssh: a compressed payload can expand past the maximum packet size</title>
+      <link>https://vulnogram.org/CVE-2026-110927</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110927</guid>
+      <description>A flaw was found in OpenSSH. After compression is negotiated, a compressed payload can expand past the maximum supported packet size because the inflate loop does not stop at that limit. Memory use grows in the process handling that connection.</description>
+      <category>Medium</category>
+      <pubDate>Thu, 15 Oct 2026 13:07:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110924 · 4.8 MEDIUM 🌩️ — Openssh: openssh: gssapi delegated credentials can be stored after a failed authentication</title>
+      <link>https://vulnogram.org/CVE-2026-110924</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110924</guid>
+      <description>A flaw was found in OpenSSH. With GSSAPI authentication enabled, a failed GSSAPI attempt can leave delegated credentials stored for the connection even though user authorization did not succeed. A later successful login on that connection is not auth…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 15 Oct 2026 13:07:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-110926 · 5.3 MEDIUM — Openssh: openssh: shared lz77 compression dictionary leaks plaintext across channels</title>
       <link>https://vulnogram.org/CVE-2026-110926</link>
@@ -391,39 +424,6 @@
       <description>A flaw was found in Red Hat Quay. The build trigger management application programming interface (API) fails to verify whether a requested trigger belongs to the specified repository. An authenticated user with administrative access to any repository…</description>
       <category>Medium</category>
       <pubDate>Mon, 12 Oct 2026 15:27:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-108094 · 7.8 HIGH — Mutter: mutter: client-triggered use-after-free in wayland color-management icc image description path</title>
-      <link>https://vulnogram.org/CVE-2026-108094</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108094</guid>
-      <description>A use-after-free flaw was found in mutter in the Wayland color-management ICC image-description path. A local attacker who can run a malicious Wayland client can destroy a wp_image_description_v1 resource while an asynchronous ICC file read is still…</description>
-      <category>High</category>
-      <pubDate>Mon, 12 Oct 2026 14:43:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-52903 · 8.8 HIGH — YAML safe_load production fallback to unsafe_load enables RCE via deserialization</title>
-      <link>https://vulnogram.org/CVE-2026-52903</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-52903</guid>
-      <description>A deserialization of untrusted data vulnerability was found in ManageIQ. The YamlLoadAliases module overrides YAML.safe_load to silently fall back to YAML.unsafe_load in production when a Psych::DisallowedClass error occurs. An authenticated attacker…</description>
-      <category>High</category>
-      <pubDate>Mon, 12 Oct 2026 12:16:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109082 · 6.8 MEDIUM 🌩️ — Keycloak-services: keycloak-services: ciba confidential-only contract not enforced for public clients</title>
-      <link>https://vulnogram.org/CVE-2026-109082</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109082</guid>
-      <description>A flaw was found in the Client-Initiated Backchannel Authentication CIBA implementation within the keycloak-services component of Keycloak. This component handles advanced authentication flows where a client initiates a login on behalf of a user. The…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 12 Oct 2026 06:18:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107203 · 5.4 MEDIUM — Foreman: domain and subnet interface api skips host search filters</title>
-      <link>https://vulnogram.org/CVE-2026-107203</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107203</guid>
-      <description>An **incorrect authorization** flaw has been found in **network interface handling** in the **Foreman** package. The domain and subnet interface API checks only that the caller holds a host permission. It does not apply the search limit on that permi…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 12 Oct 2026 05:10:29 GMT</pubDate>
     </item>
   </channel>
 </rss>
