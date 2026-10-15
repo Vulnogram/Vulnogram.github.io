@@ -11,7 +11,28 @@
       <title>FreeBSD — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 15 Oct 2026 05:34:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 06:52:27 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-58100 — Memory safety bugs in kqueue copy-on-fork implementation</title>
+      <link>https://vulnogram.org/CVE-2026-58100</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58100</guid>
+      <description>kqueue_fork_copy_knote() indexed into the child&apos;s file descriptor table using a knote&apos;s file descriptor number without a bounds check. Because the child&apos;s table is copied before knotes are transferred, a concurrent thread in the parent could grow the…</description>
+      <pubDate>Thu, 15 Oct 2026 06:31:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-58099 — Memory safety bugs in kqueue copy-on-fork implementation</title>
+      <link>https://vulnogram.org/CVE-2026-58099</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58099</guid>
+      <description>When copying knotes from a parent kqueue to a child, the copy code did not correctly exclude marker knotes (used internally to track list traversal position) before marking them as in-flux and releasing the kqueue lock. If another thread freed a mark…</description>
+      <pubDate>Thu, 15 Oct 2026 06:31:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-58098 — Heap out-of-bounds access in semop(2)</title>
+      <link>https://vulnogram.org/CVE-2026-58098</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58098</guid>
+      <description>When semop(2) blocks waiting for a semaphore condition, it releases the per-set lock and sleeps. Upon waking, it checks the sequence number embedded in the semaphore set&apos;s IPC identifier to detect whether the set was removed while the caller was asle…</description>
+      <pubDate>Thu, 15 Oct 2026 06:15:44 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-58094 · 7.8 HIGH — TOCTOU race in POSIX shared memory large page configuration</title>
       <link>https://vulnogram.org/CVE-2026-58094</link>
@@ -391,31 +412,6 @@
       <description>A file descriptor can be closed while a thread is blocked in a poll(2) or select(2) call waiting for that descriptor. Because the blocked thread does not hold a reference to the underlying object, this closure may result in the object being freed whi…</description>
       <category>High</category>
       <pubDate>Thu, 21 May 2026 09:04:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-45250 · 7.8 HIGH — Stack buffer overflow via setcred(2)</title>
-      <link>https://vulnogram.org/CVE-2026-45250</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-45250</guid>
-      <description>The setcred(2) system call is only available to privileged users. However, before the privilege level of the caller is checked, the user-supplied list of supplementary groups is copied into a fixed-size kernel stack buffer without first validating it…</description>
-      <category>High</category>
-      <pubDate>Thu, 21 May 2026 08:37:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-35547 · 8.1 HIGH 🌩️ — Heap overflow in libnv</title>
-      <link>https://vulnogram.org/CVE-2026-35547</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35547</guid>
-      <description>When processing the header of an incoming message, libnv failed to properly validate the message size. The lack of validation allows a malicious program to write outside the bounds of a heap allocation. This can trigger a crash or system panic, and i…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 30 Apr 2026 08:08:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39457 · 7.8 HIGH — Stack overflow via select() file descriptor set overflow</title>
-      <link>https://vulnogram.org/CVE-2026-39457</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39457</guid>
-      <description>When exchanging data over a socket, libnv uses select(2) to wait for data to arrive. However, it does not verify whether the provided socket descriptor fits in select(2)&apos;s file descriptor set size limit of FD_SETSIZE (1024). An attacker who is able t…</description>
-      <category>High</category>
-      <pubDate>Thu, 30 Apr 2026 08:01:49 GMT</pubDate>
     </item>
   </channel>
 </rss>
