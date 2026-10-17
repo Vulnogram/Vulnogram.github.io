@@ -11,7 +11,48 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 16 Oct 2026 22:34:21 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 01:01:20 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-89096 · 5.9 MEDIUM 🌩️ — Nfs-utils: nfs-utils: denial of service via memory leak in rpc.statd</title>
+      <link>https://vulnogram.org/CVE-2026-89096</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89096</guid>
+      <description>A flaw was found in nfs-utils. An unauthenticated remote attacker can trigger a Denial of Service (DoS) by sending repeated state notification requests to an exposed rpc.statd service. The service fails to properly release memory allocated during cal…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 16 Oct 2026 23:06:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89088 · 5.5 MEDIUM — Parted: parted: denial of service via heap buffer overflow during fat16 resize</title>
+      <link>https://vulnogram.org/CVE-2026-89088</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89088</guid>
+      <description>A flaw was found in parted. A heap-based buffer overflow exists in libparted&apos;s file system resizing logic when handling FAT16 volumes. By convincing a user or administrator to resize a specially crafted FAT16 file system image with malformed director…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 16 Oct 2026 23:06:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89085 · 6.6 MEDIUM — Parted: parted: heap-based buffer overflow via crafted fat32 filesystem image</title>
+      <link>https://vulnogram.org/CVE-2026-89085</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89085</guid>
+      <description>A flaw was found in parted. A heap-based buffer overflow can occur when processing a specially crafted FAT32 filesystem due to an integer calculation error during buffer allocation. A local attacker could exploit this by enticing a user or automated…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 16 Oct 2026 23:04:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111802 · 6.6 MEDIUM — Nautilus: nautilus: arbitrary file deletion via trash symlink</title>
+      <link>https://vulnogram.org/CVE-2026-111802</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111802</guid>
+      <description>A flaw was found in Nautilus. When a removable drive or disk image is unmounted or ejected, Nautilus prompts the user to empty the trash without verifying whether the trash directory paths are symbolic links. An attacker can exploit this flaw by tric…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 16 Oct 2026 22:03:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17591 · 3.6 LOW — Libarchive: libarchive: use-after-free via aliased mac metadata copy</title>
+      <link>https://vulnogram.org/CVE-2026-17591</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17591</guid>
+      <description>A flaw was found in libarchive. An attacker can cause a Denial of Service (DoS) or potential information disclosure due to a use-after-free vulnerability, which occurs when a program reads memory that has already been released. This issue arises when…</description>
+      <category>Low</category>
+      <pubDate>Fri, 16 Oct 2026 22:03:40 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-62438 · 6.1 MEDIUM — Gimp: gimp: paa integer overflow out-of-bounds read</title>
       <link>https://vulnogram.org/CVE-2026-62438</link>
@@ -378,47 +419,6 @@
       <description>A flaw was found in BusyBox&apos;s dpkg-deb archive extraction. The ar archive handler flushes deferred symlinks after each archive member, unlike the tar, cpio, and unzip handlers which flush once after the last member. A specially crafted .deb archive w…</description>
       <category>High</category>
       <pubDate>Wed, 14 Oct 2026 10:00:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86476 · 8.4 HIGH — Gstreamer1-plugins-base: gst-plugins-base: heap buffer overflow via unvalidated gstvideometa plane extents in gst_video_frame_map_id and video_meta_deserialize</title>
-      <link>https://vulnogram.org/CVE-2026-86476</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86476</guid>
-      <description>A flaw was found in gst-plugins-base. A heap buffer overflow can be triggered when processing video buffers whose attached GstVideoMeta metadata declares plane strides and offsets that exceed the actual backing memory allocation. The metadata is not…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 10:00:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110036 · 3.3 LOW — Device-mapper-persistent-data: device-mapper-persistent-data: denial of service via crafted block indices</title>
-      <link>https://vulnogram.org/CVE-2026-110036</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110036</guid>
-      <description>A flaw was found in device-mapper-persistent-data. A local attacker can cause a Denial of Service (DoS) by inducing a user or system tool to process crafted device metadata containing an excessively large block index. An arithmetic error in the synch…</description>
-      <category>Low</category>
-      <pubDate>Tue, 13 Oct 2026 18:45:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88834 · 3.7 LOW 🌩️ — Busybox: busybox: httpd user existence oracle in non-default shadow-disabled builds</title>
-      <link>https://vulnogram.org/CVE-2026-88834</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88834</guid>
-      <description>A flaw was found in BusyBox&apos;s httpd web server. When configured with system password authentication, a user existence oracle may exist in certain build configurations. An attacker could distinguish existing from non-existing usernames by observing au…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 16:58:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88838 · 5.5 MEDIUM — Busybox: busybox: non-root mount option filter bypass allows clearing fstab security restrictions</title>
-      <link>https://vulnogram.org/CVE-2026-88838</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88838</guid>
-      <description>A flaw was found in BusyBox&apos;s mount utility. A non-root user can bypass mount security restrictions set in /etc/fstab by specifying clearing-mask options on the command line. These options pass the non-root flag filter and are merged with fstab optio…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 13 Oct 2026 16:56:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88833 · 6.5 MEDIUM — Busybox: busybox: udhcpc integer underflow in dhcp packet length calculation causes denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-88833</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88833</guid>
-      <description>A flaw was found in BusyBox&apos;s udhcpc DHCP client. When processing raw DHCP packets, the client replaces the validated packet length with an attacker-controlled value from the IP header without re-validating the minimum size. This leads to an integer…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 13 Oct 2026 16:56:11 GMT</pubDate>
     </item>
   </channel>
 </rss>
