@@ -11,7 +11,56 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 18 Oct 2026 11:57:56 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 15:14:07 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-98439 — smb/server: cancel async requests when closing connection</title>
+      <link>https://vulnogram.org/CVE-2026-98439</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98439</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: smb/server: cancel async requests when closing connection An async request may still be waiting when a connection is closed. This can stop the connection from closing. Cancel active…</description>
+      <pubDate>Sun, 18 Oct 2026 14:45:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98438 — mptcp: options: fix uninit-value in mptcp_write_data_fin</title>
+      <link>https://vulnogram.org/CVE-2026-98438</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98438</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: mptcp: options: fix uninit-value in mptcp_write_data_fin When sending a DATA_FIN without data, and because the DATA_FIN occupies 1 octet of the connection-level sequence space [1], i…</description>
+      <pubDate>Sun, 18 Oct 2026 14:45:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98437 — media: qcom: iris: fix runtime PM reference leaks</title>
+      <link>https://vulnogram.org/CVE-2026-98437</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98437</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: qcom: iris: fix runtime PM reference leaks Use pm_runtime_resume_and_get() in iris_enable_power_domains() to avoid leaking a runtime PM usage count on failure. Also ensure pm_…</description>
+      <pubDate>Sun, 18 Oct 2026 14:45:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98436 — accel/amdxdna: Disable device buffer exporting</title>
+      <link>https://vulnogram.org/CVE-2026-98436</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98436</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: accel/amdxdna: Disable device buffer exporting Device buffers are never intended to be exported. Disable exporting support explicitly.</description>
+      <pubDate>Sun, 18 Oct 2026 14:45:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98435 — EDAC/altera: Use parent device for devres in altr_portb_setup()</title>
+      <link>https://vulnogram.org/CVE-2026-98435</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98435</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: EDAC/altera: Use parent device for devres in altr_portb_setup() Anchor the devres group and the devm-managed IRQ requests in altr_portb_setup() to the actual parent device (device-&gt;e…</description>
+      <pubDate>Sun, 18 Oct 2026 14:45:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98434 — sysctl: Check range in  proc_dointvec_ms_jiffies_minmax</title>
+      <link>https://vulnogram.org/CVE-2026-98434</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98434</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: sysctl: Check range in proc_dointvec_ms_jiffies_minmax Add the range check to do_proc_int_conv_ms_jiffies_minmax that commit d174174c6776 (&quot;sysctl: replace SYSCTL_INT_CONV_CUSTOM mac…</description>
+      <pubDate>Sun, 18 Oct 2026 14:38:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-98433 — KVM: PPC: Book3S HV: fix secure device page leak on uv_page_in() failure</title>
+      <link>https://vulnogram.org/CVE-2026-98433</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98433</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: PPC: Book3S HV: fix secure device page leak on uv_page_in() failure In kvmppc_svm_page_in(), if uv_page_in() fails after kvmppc_uvmem_get_page() has succeeded, the secure device…</description>
+      <pubDate>Sun, 18 Oct 2026 14:38:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-99999 · 9.3 CRITICAL — ipv4: validate checksum_start before completing checksum</title>
       <link>https://vulnogram.org/CVE-2026-99999</link>
@@ -313,55 +362,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98391</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: drm/xe: Guard page-fault worker with runtime PM check During VM teardown, the VM&apos;s runtime PM reference is dropped asynchronously, allowing the device to autosuspend while stale page…</description>
       <pubDate>Wed, 14 Oct 2026 13:25:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98390 — x86/amd_node: Avoid divide by zero on virtualized systems</title>
-      <link>https://vulnogram.org/CVE-2026-98390</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98390</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: x86/amd_node: Avoid divide by zero on virtualized systems On a virtualized system, the number of nodes does not have a relationship to the number of roots. A Xen PVH dom0 can calcula…</description>
-      <pubDate>Wed, 14 Oct 2026 13:25:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98389 — drm/amdgpu: skip gfx switch_power_profile during GPU reset</title>
-      <link>https://vulnogram.org/CVE-2026-98389</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98389</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu: skip gfx switch_power_profile during GPU reset During resume from GPU reset, the gfx idle work may invoke switch_power_profile before the reset completes. This causes the…</description>
-      <pubDate>Wed, 14 Oct 2026 13:25:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98388 — exec: do_close_on_exec() before taking exec_update_lock</title>
-      <link>https://vulnogram.org/CVE-2026-98388</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98388</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: exec: do_close_on_exec() before taking exec_update_lock do_close_on_exec() currently happens while holding the exec_update_lock, which is used in a lot of places that access process…</description>
-      <pubDate>Wed, 14 Oct 2026 13:25:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98387 — s390/crypto: Fix skcipher_walk return code handling in aes_s390</title>
-      <link>https://vulnogram.org/CVE-2026-98387</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98387</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: s390/crypto: Fix skcipher_walk return code handling in aes_s390 The return codes from skcipher_walk_virt() were not properly checked before entering the processing loops in ecb_aes_c…</description>
-      <pubDate>Wed, 14 Oct 2026 13:25:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98386 — scsi: qla2xxx: Use memset_io() to clear QLAFX00 request ring slot</title>
-      <link>https://vulnogram.org/CVE-2026-98386</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98386</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: scsi: qla2xxx: Use memset_io() to clear QLAFX00 request ring slot For QLAFX00 the request ring is ioremapped device I/O memory (ha-&gt;iobase + req_que_off), not DMA-coherent RAM, which…</description>
-      <pubDate>Wed, 14 Oct 2026 13:25:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98385 — sched/cache: Decouple sched_cache_group from mm to fix UAF</title>
-      <link>https://vulnogram.org/CVE-2026-98385</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98385</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: sched/cache: Decouple sched_cache_group from mm to fix UAF Currently the sched cache grouping is by mm and the scheduling statistics sched_cache_stat lives in the mm structure. This…</description>
-      <pubDate>Mon, 12 Oct 2026 05:48:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-98384 — bpf: Fix out-of-bounds read of sk_protocol in bpf_sock_destroy()</title>
-      <link>https://vulnogram.org/CVE-2026-98384</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-98384</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: bpf: Fix out-of-bounds read of sk_protocol in bpf_sock_destroy() sk_protocol lives in struct sock, not in struct sock_common. A timewait or request sock handed to bpf_sock_destroy()…</description>
-      <pubDate>Fri, 09 Oct 2026 07:34:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
