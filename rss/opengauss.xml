@@ -11,7 +11,23 @@
       <title>openGauss Community — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 19 Oct 2026 07:14:38 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 15:21:30 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-111438 · 6.5 MEDIUM — check_hba_replication 认证与访问控制绕过</title>
+      <link>https://vulnogram.org/CVE-2026-111438</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111438</guid>
+      <description>在 openGauss-server 的 src/common/backend/libpq/hba.cpp 中，复制连接认证存在访问控制绕过。hba_getauthmethod() 在处理 HADR/SW 复制发送方时，不要求 is_node_internal_connection()，直接调用 check_hba_replication()。check_hba_replication() 仅按 replication 标记做弱匹配，缺少普通 check_hba() 中的远程 trust 禁止等…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 19 Oct 2026 08:08:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111439 · 4.3 MEDIUM — pg_read_binary_file_blocks 缺少初始用户权限校验，普通用户可读取 relation 文件块</title>
+      <link>https://vulnogram.org/CVE-2026-111439</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111439</guid>
+      <description>在 openGauss-server的 src/common/backend/utils/adt/genfile.cpp 模块中，内置函数 pg_read_binary_file_blocks() 存在权限校验逻辑缺陷。该函数在入口处仅校验了起始块号（startBlockNum）和块数量（blockCount）的范围，随后直接调用底层文件读取例程 ReadBinaryFileBlocksFirstCall()。该底层例程仅执行了路径规范化检查以及针对 .. 路径遍历和数据目录边界的基本检查，缺失…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 19 Oct 2026 07:59:44 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-111440 · 7 HIGH — JDBC LogFactory 任意类加载/构造导致潜在 RCE</title>
       <link>https://vulnogram.org/CVE-2026-111440</link>
