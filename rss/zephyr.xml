@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 19 Oct 2026 15:21:30 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 21:08:29 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-76788 · 8.8 HIGH — Stack out-of-bounds write in the OSDP Control Panel reply parser</title>
+      <link>https://vulnogram.org/CVE-2026-76788</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76788</guid>
+      <description>The OSDP Control Panel reply parser cp_decode_response() in subsys/mgmt/osdp/src/osdp_cp.c decodes replies from a Peripheral Device into a stack-allocated struct osdp_event. For the REPLY_KEYPPAD and REPLY_RAW reply types, the payload length is taken…</description>
+      <category>High</category>
+      <pubDate>Mon, 19 Oct 2026 20:39:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-76787 · 5.9 MEDIUM — NULL pointer dereference in the UpdateHub FOTA client when probe metadata omits sha256sum</title>
+      <link>https://vulnogram.org/CVE-2026-76787</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76787</guid>
+      <description>The UpdateHub firmware-over-the-air client parses the CoAP probe response with Zephyr&apos;s JSON library in z_impl_updatehub_probe() (subsys/mgmt/updatehub/updatehub.c). The decoder treats every descriptor field as optional — json_obj_parse() returns a b…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 19 Oct 2026 20:39:20 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-75085 · 4.2 MEDIUM — Out-of-bounds read from received-frame length underflow in the STM32WBA IEEE 802.15.4 driver</title>
       <link>https://vulnogram.org/CVE-2026-75085</link>
@@ -395,22 +411,6 @@
       <description>The ITE it82xx2 USB device-controller driver initialized its bus-suspend detection work with k_work_init_delayable(&amp;priv-&gt;suspended_work, suspended_handler) inside it82xx2_enable() (the driver&apos;s .enable op) in drivers/usb/udc/udc_it82xx2.c. This work…</description>
       <category>Medium</category>
       <pubDate>Mon, 14 Sep 2026 19:33:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16147 · 6.8 MEDIUM — it82xx2 USB device controller submits incomplete OUT transfer buffers, causing use-after-free and event-list corruption</title>
-      <link>https://vulnogram.org/CVE-2026-16147</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16147</guid>
-      <description>The ITE IT82xx2 USB device-controller driver (drivers/usb/udc/udc_it82xx2.c) mishandles multi-packet OUT transfers on non-control endpoints. In work_handler_out() the active transfer buffer is obtained with udc_buf_peek() (which does not dequeue it);…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 19:33:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15924 · 5.9 MEDIUM — Use-after-free / double-free from unsynchronized concurrent access to the TLS client session cache in Zephyr sockets</title>
-      <link>https://vulnogram.org/CVE-2026-15924</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15924</guid>
-      <description>Zephyr&apos;s TLS socket layer in subsys/net/lib/sockets/sockets_tls.c keeps a single process-global array, client_cache, of cached client sessions that is shared by every TLS socket context. The functions that mutate and read it — tls_session_save(), tls…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 19:33:45 GMT</pubDate>
     </item>
   </channel>
 </rss>

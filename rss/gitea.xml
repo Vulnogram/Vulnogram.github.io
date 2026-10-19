@@ -11,54 +11,61 @@
       <title>Gitea Limited — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 19 Oct 2026 15:21:29 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 21:08:27 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-97859 — Gitea API disclosure of private user social graph, keys and stars</title>
+      <title>CVE-2026-97859 · 6.5 MEDIUM — Gitea API disclosure of private user social graph, keys and stars</title>
       <link>https://vulnogram.org/CVE-2026-97859</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97859</guid>
       <description>Seven Gitea API routes under `/api/v1/users/{username}` (followers, following, following/{target}, starred, subscriptions, keys and gpg_keys) were registered without the `individualPermsChecker` middleware that enforces the visibility of the target u…</description>
+      <category>Medium</category>
       <pubDate>Sun, 18 Oct 2026 19:01:04 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-97204 — Gitea label deletion across repository and organization IDs</title>
+      <title>CVE-2026-97204 · 3.1 LOW — Gitea label deletion across repository and organization IDs</title>
       <link>https://vulnogram.org/CVE-2026-97204</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97204</guid>
       <description>Deleting a label compared the ID of the repository in the request against the organization ID of organization labels, and the two ID sequences overlap. A user with write access to the issues of a repository could therefore delete the labels of an org…</description>
+      <category>Low</category>
       <pubDate>Sun, 18 Oct 2026 19:00:50 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-110494 — Gitea release attachment re-linking of issue attachments</title>
+      <title>CVE-2026-110494 · 6.3 MEDIUM — Gitea release attachment re-linking of issue attachments</title>
       <link>https://vulnogram.org/CVE-2026-110494</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110494</guid>
       <description>Adding attachments to a release checked the repository and release of an attachment but not whether it was already linked to an issue or comment. A user with write access to the releases of a repository, who knew the UUID of an attachment in that rep…</description>
+      <category>Medium</category>
       <pubDate>Sun, 18 Oct 2026 18:57:26 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-110324 — Gitea private profile information disclosure through POST request</title>
+      <title>CVE-2026-110324 · 6.5 MEDIUM — Gitea private profile information disclosure through POST request</title>
       <link>https://vulnogram.org/CVE-2026-110324</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110324</guid>
       <description>The visibility check of Gitea user profiles was applied to GET requests only, while `POST /{username}` (follow and unfollow) required only a signed-in user. Any authenticated user could therefore obtain the full name, location, website and descriptio…</description>
+      <category>Medium</category>
       <pubDate>Sun, 18 Oct 2026 18:57:20 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-110311 — Gitea draft release creation disclosing attachment metadata</title>
+      <title>CVE-2026-110311 · 4.3 MEDIUM — Gitea draft release creation disclosing attachment metadata</title>
       <link>https://vulnogram.org/CVE-2026-110311</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110311</guid>
       <description>Creating a draft release through the API returned an `assets` list that was built from a release without an ID, which matched every attachment that was not linked to a release. A user who could create a draft release in a repository therefore receive…</description>
+      <category>Medium</category>
       <pubDate>Sun, 18 Oct 2026 18:57:14 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109844 — Gitea watched repositories API disclosure after access revocation</title>
+      <title>CVE-2026-109844 · 4.3 MEDIUM — Gitea watched repositories API disclosure after access revocation</title>
       <link>https://vulnogram.org/CVE-2026-109844</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109844</guid>
       <description>`GET /api/v1/user/subscriptions` returned the metadata of every repository a user was watching without checking that the user still had access to it. A user who watched a private repository while having access, and later lost it, for example through…</description>
+      <category>Medium</category>
       <pubDate>Sun, 18 Oct 2026 18:57:08 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-107686 — Gitea reactions accepted on locked issues and comments</title>
+      <title>CVE-2026-107686 · 4.3 MEDIUM — Gitea reactions accepted on locked issues and comments</title>
       <link>https://vulnogram.org/CVE-2026-107686</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107686</guid>
       <description>The Gitea web handlers for adding and removing reactions on issues and comments did not refuse locked issues for users without write access, although the API did. A signed-in user who could read an issue could therefore add or remove reactions on a l…</description>
+      <category>Medium</category>
       <pubDate>Sun, 18 Oct 2026 18:56:59 GMT</pubDate>
     </item>
     <item>
@@ -69,31 +76,37 @@
       <pubDate>Sun, 18 Oct 2026 18:56:53 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-105964 — Gitea Actions artifact v4 API unbounded request body</title>
+      <title>CVE-2026-105964 · 6.5 MEDIUM — Gitea Actions artifact v4 API unbounded request body</title>
       <link>https://vulnogram.org/CVE-2026-105964</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105964</guid>
       <description>The Gitea Actions artifact v4 (Twirp) handlers read the whole request body into memory without a size limit. A user who can run a workflow and obtains the runner token of that run could send an oversized request to the artifact service and exhaust th…</description>
+      <category>Medium</category>
       <pubDate>Sun, 18 Oct 2026 18:56:47 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-105661 — Gitea panic on the repositories route of individual users</title>
+      <title>CVE-2026-105661 · 5.3 MEDIUM 🌩️ — Gitea panic on the repositories route of individual users</title>
       <link>https://vulnogram.org/CVE-2026-105661</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105661</guid>
       <description>Requesting `/{username}/-/repositories` for an individual user instead of an organization made the organization home handler dereference a nil organization and panic. The request needs no authentication and no special configuration. The server answer…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 18 Oct 2026 18:56:41 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109553 — Gitea SSH certificate principal impersonation of other users</title>
+      <title>CVE-2026-109553 · 7.5 HIGH — Gitea SSH certificate principal impersonation of other users</title>
       <link>https://vulnogram.org/CVE-2026-109553</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109553</guid>
       <description>Gitea resolved the principals of an SSH certificate by searching the content of all stored public keys instead of only principal keys. When Gitea trusts a user certificate authority (`SSH_TRUSTED_USER_CA_KEYS`) and accepts arbitrary principals (`SSH_…</description>
+      <category>High</category>
       <pubDate>Sun, 18 Oct 2026 18:51:31 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-104627 — Gitea OpenID account linking without session binding</title>
+      <title>CVE-2026-104627 · 5.4 MEDIUM 🌩️ — Gitea OpenID account linking without session binding</title>
       <link>https://vulnogram.org/CVE-2026-104627</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104627</guid>
       <description>The Gitea OpenID association callback in the security settings accepted a positive OpenID 2.0 assertion without checking that the signed-in user had started the linking. Because OpenID 2.0 allows unsolicited assertions, an attacker-controlled OpenID…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 18 Oct 2026 18:51:06 GMT</pubDate>
     </item>
     <item>

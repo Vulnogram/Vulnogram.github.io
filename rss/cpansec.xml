@@ -11,7 +11,112 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 19 Oct 2026 15:21:30 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 21:08:28 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-110688 — Cpanel::JSON::XS versions from 4.51 before 4.80 for Perl allow quadratic CPU use by revalidating the remaining buffer per value in incr_parse</title>
+      <link>https://vulnogram.org/CVE-2026-110688</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110688</guid>
+      <description>Cpanel::JSON::XS versions from 4.51 before 4.80 for Perl allow quadratic CPU use by revalidating the remaining buffer per value in incr_parse. At the first non-ASCII byte in a string, the decoder validates UTF-8 from there to the end of its input. in…</description>
+      <pubDate>Mon, 19 Oct 2026 18:12:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110687 — Cpanel::JSON::XS versions from 4.43 before 4.80 for Perl misorder byte-string keys during canonical encoding in utf16_cmp</title>
+      <link>https://vulnogram.org/CVE-2026-110687</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110687</guid>
+      <description>Cpanel::JSON::XS versions from 4.43 before 4.80 for Perl misorder byte-string keys during canonical encoding in utf16_cmp. canonical sorts keys by UTF-16 code units. When any key in a hash is UTF-8 flagged, every key is decoded as UTF-8 for the compa…</description>
+      <pubDate>Mon, 19 Oct 2026 18:12:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110686 — Cpanel::JSON::XS versions before 4.80 for Perl use freed filter callbacks when a filter removes itself during decoding in decode_hv</title>
+      <link>https://vulnogram.org/CVE-2026-110686</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110686</guid>
+      <description>Cpanel::JSON::XS versions before 4.80 for Perl use freed filter callbacks when a filter removes itself during decoding in decode_hv. A decode copies the parser&apos;s filter_json_object and filter_json_single_key_object callbacks without taking references…</description>
+      <pubDate>Mon, 19 Oct 2026 18:12:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110685 — Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded arguments of a tagged value when its THAW method dies in decode_tag</title>
+      <link>https://vulnogram.org/CVE-2026-110685</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110685</guid>
+      <description>Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded arguments of a tagged value when its THAW method dies in decode_tag. With allow_tags, a tagged value&apos;s class name and argument array are decoded and passed to the class&apos;s THAW method. Bo…</description>
+      <pubDate>Mon, 19 Oct 2026 18:12:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110684 — Cpanel::JSON::XS versions from 3.0202 before 4.80 for Perl leak memory and retain overloaded objects when encoding values as strings in encode_stringify</title>
+      <link>https://vulnogram.org/CVE-2026-110684</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110684</guid>
+      <description>Cpanel::JSON::XS versions from 3.0202 before 4.80 for Perl leak memory and retain overloaded objects when encoding values as strings in encode_stringify. encode_stringify writes a value in its string form under allow_stringify, under convert_blessed…</description>
+      <pubDate>Mon, 19 Oct 2026 18:12:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110682 — Cpanel::JSON::XS versions from 4.42 before 4.80 for Perl let input chunking change the decoded value of top-level numbers in incr_parse</title>
+      <link>https://vulnogram.org/CVE-2026-110682</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110682</guid>
+      <description>Cpanel::JSON::XS versions from 4.42 before 4.80 for Perl let input chunking change the decoded value of top-level numbers in incr_parse. allow_nonref is enabled by default and incr_parse inherits it. A top-level number, true, false or null has no clo…</description>
+      <pubDate>Mon, 19 Oct 2026 18:12:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110681 — Cpanel::JSON::XS versions before 4.80 for Perl use the parent interpreter&apos;s scalars from a parser object cloned into a new ithread</title>
+      <link>https://vulnogram.org/CVE-2026-110681</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110681</guid>
+      <description>Cpanel::JSON::XS versions before 4.80 for Perl use the parent interpreter&apos;s scalars from a parser object cloned into a new ithread. A parser object holds its callbacks and its incremental parse buffer as raw scalar pointers. When a thread is created,…</description>
+      <pubDate>Mon, 19 Oct 2026 18:12:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110680 — Cpanel::JSON::XS versions from 4.20 before 4.80 for Perl write out of bounds when a tied or shared hash grows during canonical encoding in encode_hv</title>
+      <link>https://vulnogram.org/CVE-2026-110680</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110680</guid>
+      <description>Cpanel::JSON::XS versions from 4.20 before 4.80 for Perl write out of bounds when a tied or shared hash grows during canonical encoding in encode_hv. With canonical, the keys of a tied or threads::shared hash are counted before a second pass collects…</description>
+      <pubDate>Mon, 19 Oct 2026 18:12:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110678 — Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by buffering incremental input past max_size in incr_parse</title>
+      <link>https://vulnogram.org/CVE-2026-110678</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110678</guid>
+      <description>Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by buffering incremental input past max_size in incr_parse. The parser appends each chunk to its buffer. In scalar or list context, it compares max_size with how far it has progre…</description>
+      <pubDate>Mon, 19 Oct 2026 18:11:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110677 — Cpanel::JSON::XS versions from 4.28 before 4.80 for Perl leak the array collecting duplicate key values under dupkeys_as_arrayref in decode_hv</title>
+      <link>https://vulnogram.org/CVE-2026-110677</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110677</guid>
+      <description>Cpanel::JSON::XS versions from 4.28 before 4.80 for Perl leak the array collecting duplicate key values under dupkeys_as_arrayref in decode_hv. With dupkeys_as_arrayref, the values of a duplicate object key are collected into a new array. An extra re…</description>
+      <pubDate>Mon, 19 Oct 2026 18:11:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110676 — Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by encoding exponent notation as full decimal digits under allow_bignum</title>
+      <link>https://vulnogram.org/CVE-2026-110676</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110676</guid>
+      <description>Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by encoding exponent notation as full decimal digits under allow_bignum. With allow_bignum, a JSON number with a fraction or exponent decodes to a Math::BigFloat, which stores the…</description>
+      <pubDate>Mon, 19 Oct 2026 18:11:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110675 — Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl accept malformed UTF-8 in bare hash keys under allow_barekey in decode_hv</title>
+      <link>https://vulnogram.org/CVE-2026-110675</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110675</guid>
+      <description>Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl accept malformed UTF-8 in bare hash keys under allow_barekey in decode_hv. With utf8 and allow_barekey, which relaxed enables, a quoted key is validated as UTF-8 but a bare key&apos;s bytes are stor…</description>
+      <pubDate>Mon, 19 Oct 2026 18:11:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110674 — Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl miss duplicate non-ASCII bare keys, allowing type confusion under dupkeys_as_arrayref in decode_hv</title>
+      <link>https://vulnogram.org/CVE-2026-110674</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110674</guid>
+      <description>Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl miss duplicate non-ASCII bare keys, allowing type confusion under dupkeys_as_arrayref in decode_hv. With allow_barekey, which relaxed enables, a bare key containing a non-ASCII byte is stored a…</description>
+      <pubDate>Mon, 19 Oct 2026 18:11:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110673 — Cpanel::JSON::XS versions before 4.80 for Perl allow stack exhaustion via nested tagged values under allow_tags in decode_tag</title>
+      <link>https://vulnogram.org/CVE-2026-110673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110673</guid>
+      <description>Cpanel::JSON::XS versions before 4.80 for Perl allow stack exhaustion via nested tagged values under allow_tags in decode_tag. With allow_tags, &quot;(&quot; starts a tagged value. Its tag and value are decoded recursively, and each can start another tagged va…</description>
+      <pubDate>Mon, 19 Oct 2026 18:11:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110672 — Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded key of an object rejected for a duplicate key or a missing colon in decode_hv</title>
+      <link>https://vulnogram.org/CVE-2026-110672</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110672</guid>
+      <description>Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded key of an object rejected for a duplicate key or a missing colon in decode_hv. A quoted key of 24 or more bytes, or one containing a non-ASCII byte or an escape sequence, is decoded into…</description>
+      <pubDate>Mon, 19 Oct 2026 18:11:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-78497 — JQ::Lite versions before 2.51 for Perl execute Perl code embedded in a query&apos;s regular expression by compiling it with string eval</title>
       <link>https://vulnogram.org/CVE-2026-78497</link>
@@ -300,139 +405,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 22 Sep 2026 07:18:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2016-15059 · 9.8 CRITICAL 🌩️ — Net::IDN::Punycode versions before 2.301 for Perl allow a heap buffer overflow via unchecked writes past the output buffer in encode_punycode</title>
-      <link>https://vulnogram.org/CVE-2016-15059</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2016-15059</guid>
-      <description>Net::IDN::Punycode versions before 2.301 for Perl allow a heap buffer overflow via unchecked writes past the output buffer in encode_punycode. The XS backend builds the encoded label in the string buffer of the scalar it returns, sized from the input…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 07:18:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93712 · 7.5 HIGH 🌩️ — Dancer2 versions from 2.1.0 before 2.2.0 for Perl serve files from outside public_dir via relative path segments in the File route handler</title>
-      <link>https://vulnogram.org/CVE-2026-93712</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93712</guid>
-      <description>Dancer2 versions from 2.1.0 before 2.2.0 for Perl serve files from outside public_dir via relative path segments in the File route handler. The handler joins the request path onto public_dir without collapsing relative segments, and checks only that…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 00:52:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93711 · 6.5 MEDIUM 🌩️ — Dancer2 versions before 2.2.0 for Perl do not strip CR and LF from response header names in headers_to_array</title>
-      <link>https://vulnogram.org/CVE-2026-93711</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93711</guid>
-      <description>Dancer2 versions before 2.2.0 for Perl do not strip CR and LF from response header names in headers_to_array. The routine removes CR and LF from each header value but not from the name. A name carrying them therefore reaches the PSGI server intact. A…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 00:52:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93710 · 7.5 HIGH 🌩️ — Dancer2 versions from 2.0.0 before 2.2.0 for Perl dispatch a route that a dying hook refused when the exception handler halts the response in compile_hooks</title>
-      <link>https://vulnogram.org/CVE-2026-93710</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93710</guid>
-      <description>Dancer2 versions from 2.0.0 before 2.2.0 for Perl dispatch a route that a dying hook refused when the exception handler halts the response in compile_hooks. A hook that dies fires core.app.hook_exception, then calls cleanup unless the failing hook is…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 00:51:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93709 · 5.3 MEDIUM 🌩️ — Dancer2 versions before 2.2.0 for Perl serve a layout as a page when an equivalent spelling of its path misses the guard in the AutoPage handler</title>
-      <link>https://vulnogram.org/CVE-2026-93709</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93709</guid>
-      <description>Dancer2 versions before 2.2.0 for Perl serve a layout as a page when an equivalent spelling of its path misses the guard in the AutoPage handler. The handler compares the request path against the layout directory name as text, while the lookup that f…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 00:50:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93012 · 9.8 CRITICAL 🌩️ — Email::Sender::Transport::Sendmail versions before 2.602 for Perl allow arbitrary command execution on Windows sending a message whose envelope address reaches the shell in _sendmail_pipe</title>
-      <link>https://vulnogram.org/CVE-2026-93012</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93012</guid>
-      <description>Email::Sender::Transport::Sendmail versions before 2.602 for Perl allow arbitrary command execution on Windows sending a message whose envelope address reaches the shell in _sendmail_pipe. On MSWin32 the envelope sender and every recipient go into a…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 21 Sep 2026 17:19:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82560 · 7.5 HIGH 🌩️ — Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhaustion formatting a POD document whose =over nesting drives the margin to the output width</title>
-      <link>https://vulnogram.org/CVE-2026-82560</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82560</guid>
-      <description>Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhaustion formatting a POD document whose =over nesting drives the margin to the output width. Each =over adds its indent to the margin, which wrap() subtracts from the output width to ge…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 19 Sep 2026 15:15:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78030 · 9.8 CRITICAL 🌩️ — DBI versions before 1.653 for Perl load arbitrary modules via unvalidated dbm_type and dbm_mldbm attributes in DBD::DBM</title>
-      <link>https://vulnogram.org/CVE-2026-78030</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78030</guid>
-      <description>DBI versions before 1.653 for Perl load arbitrary modules via unvalidated dbm_type and dbm_mldbm attributes in DBD::DBM. DBD::DBM passes the dbm_type and dbm_mldbm connect attributes to require without checking that the value names a module. require…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 19 Sep 2026 10:45:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93019 · 9.1 CRITICAL 🌩️ — Imager versions before 1.036 for Perl exit the process reading a TGA with a colour map length of 32768 or more in tga_palette_read</title>
-      <link>https://vulnogram.org/CVE-2026-93019</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93019</guid>
-      <description>Imager versions before 1.036 for Perl exit the process reading a TGA with a colour map length of 32768 or more in tga_palette_read. The reader unpacks the two-byte colour map length into a signed short, so a length of 32768 or more becomes negative.…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 13:58:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93018 · 5.5 MEDIUM — Imager versions before 1.036 for Perl disclose uninitialised heap memory reading a paletted image with pixel indexes past its colour map in i_gpix_p and i_glin_p</title>
-      <link>https://vulnogram.org/CVE-2026-93018</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93018</guid>
-      <description>Imager versions before 1.036 for Perl disclose uninitialised heap memory reading a paletted image with pixel indexes past its colour map in i_gpix_p and i_glin_p. The palette is allocated uninitialised, and only the entries a reader adds count as pop…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 18 Sep 2026 13:57:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73639 · 9.1 CRITICAL 🌩️ — Imager::File::PNG versions from 1.003 before 1.004 for Perl write past the end of the row buffer reading a PNG with a tRNS transparency chunk in read_direct8</title>
-      <link>https://vulnogram.org/CVE-2026-73639</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73639</guid>
-      <description>Imager::File::PNG versions from 1.003 before 1.004 for Perl write past the end of the row buffer reading a PNG with a tRNS transparency chunk in read_direct8. With a tRNS chunk, read_direct8() adds an alpha channel to the image it creates but still s…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 21:18:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73638 · 6.2 MEDIUM — Imager versions from 0.45_02 before 1.035 for Perl read outside the EXIF block via unchecked start offsets in tiff_load_ifd</title>
-      <link>https://vulnogram.org/CVE-2026-73638</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73638</guid>
-      <description>Imager versions from 0.45_02 before 1.035 for Perl read outside the EXIF block via unchecked start offsets in tiff_load_ifd. tiff_load_ifd() validates an IFD entry&apos;s data by checking that `entry-&gt;offset + entry-&gt;size` stays within the EXIF block, and…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 17 Sep 2026 21:18:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85630 · 6.1 MEDIUM 🌩️ — HTML::FormHandler versions before 0.410002 for Perl render field attributes into HTML without escaping using the process_attrs method</title>
-      <link>https://vulnogram.org/CVE-2026-85630</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85630</guid>
-      <description>HTML::FormHandler versions before 0.410002 for Perl render field attributes into HTML without escaping using the process_attrs method. Any application with fields or field labels where some attributes are built from data rather than literals allows a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 08 Sep 2026 20:09:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85485 · 6.1 MEDIUM 🌩️ — HTML::FormHandler versions before 0.410002 for Perl render some error messages into HTML without escaping</title>
-      <link>https://vulnogram.org/CVE-2026-85485</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85485</guid>
-      <description>HTML::FormHandler versions before 0.410002 for Perl render some error messages into HTML without escaping. The Table form layout and the Bootstrap 2 and 3 wrappers splice each error string straight into the surrounding markup. Version 0.410000, the f…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 08 Sep 2026 20:09:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85484 · 6.1 MEDIUM 🌩️ — HTML::FormHandler versions before 0.410002 for Perl render option group labels and radio button labels into HTML without escaping</title>
-      <link>https://vulnogram.org/CVE-2026-85484</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85484</guid>
-      <description>HTML::FormHandler versions before 0.410002 for Perl render option group labels and radio button labels into HTML without escaping. The Select, RadioGroup, CheckboxGroup and HorizCheckboxGroup widgets render a group label unescaped, Select into a labe…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 08 Sep 2026 20:08:49 GMT</pubDate>
     </item>
   </channel>
 </rss>
