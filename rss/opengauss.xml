@@ -11,7 +11,23 @@
       <title>openGauss Community — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 19 Oct 2026 02:08:14 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 07:14:38 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-111440 · 7 HIGH — JDBC LogFactory 任意类加载/构造导致潜在 RCE</title>
+      <link>https://vulnogram.org/CVE-2026-111440</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111440</guid>
+      <description>在 openGauss-connector-jdbc 的 pgjdbc/src/main/java/org/postgresql/log/LogFactory.java 中，LogFactory 根据 JDBC 连接参数中的 logger 类名调用 Class.forName 加载类后，直接反射调用以 String 为参数的构造函数，再转换为 Log。缺少 asSubclass(Log.class) 校验，非 Log 实现类也会在类型检查前被实例化。因此，当攻击者可控制 JDBC URL 或连接…</description>
+      <category>High</category>
+      <pubDate>Mon, 19 Oct 2026 03:55:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111441 · 8.1 HIGH — HLL 反序列化 lenTotal/lenUsed 校验缺失导致堆越界写</title>
+      <link>https://vulnogram.org/CVE-2026-111441</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111441</guid>
+      <description>在 openGauss-server 的 src/gausskernel/cbb/utils/hll/hll.cpp 中，内置函数 HllObjectUnpack() 存在长度校验缺陷。该函数从用户提供的 packed HLL 解析 lenUsed 与 lenTotal 后，仅检查输入长度足以覆盖 HLL_HEAD_SIZE + lenUsed，随后按 lenTotal 分配缓冲区、按 lenUsed 调用 memcpy_s() 拷贝输入，既未校验 lenTotal &gt;= lenUsed，也将…</description>
+      <category>High</category>
+      <pubDate>Mon, 19 Oct 2026 02:31:01 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-14178 · 5.9 MEDIUM 🌩️ — openGauss存在非法内存访问导致DoS漏洞</title>
       <link>https://vulnogram.org/CVE-2026-14178</link>
