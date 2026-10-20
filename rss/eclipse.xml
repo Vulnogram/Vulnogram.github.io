@@ -11,7 +11,24 @@
       <title>Eclipse Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 20 Oct 2026 05:42:34 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 10:44:56 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-107597 · 5.1 MEDIUM — jwks_uri from the OIDC discovery document is fetched without checking its origin or scheme</title>
+      <link>https://vulnogram.org/CVE-2026-107597</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107597</guid>
+      <description>PIA&apos;s token verification (`verify_token` in `pia/oidc.py`) fetches the OIDC discovery document of an allowlisted issuer and then follows the `jwks_uri` contained in that response without parsing it as a URL, comparing it against the approved issuer&apos;s…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Oct 2026 10:06:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-108062 · 6.9 MEDIUM 🌩️ — Pre-authentication OIDC discovery and JWKS fetches run synchronously on the asyncio event loop</title>
+      <link>https://vulnogram.org/CVE-2026-108062</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108062</guid>
+      <description>Pre-authentication OIDC discovery and JWKS fetches run synchronously on the asyncio event loop, so one unauthenticated request stalls the whole service.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 10:04:35 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-93649 · 7.5 HIGH 🌩️</title>
       <link>https://vulnogram.org/CVE-2026-93649</link>
@@ -432,23 +449,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 29 Sep 2026 17:47:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102721 · 6.9 MEDIUM 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-102721</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102721</guid>
-      <description>A TFTP server that answers with a short ERROR packet makes the client read up to 64 bytes past the received datagram. Each receive path checks only that the datagram is at least four bytes long (nxd_tftp_client.c:1229, 1521, 1984). When the opcode is…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 29 Sep 2026 17:47:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102720 · 5.3 MEDIUM</title>
-      <link>https://vulnogram.org/CVE-2026-102720</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102720</guid>
-      <description>A DHCP server, or anyone on the LAN who answers a DISCOVER first, can make the client read about a kilobyte past the end of the received message. The option walk keeps a pointer and an offset in step, and the only bound check uses the offset: ```c /*…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 29 Sep 2026 17:46:23 GMT</pubDate>
     </item>
   </channel>
 </rss>
