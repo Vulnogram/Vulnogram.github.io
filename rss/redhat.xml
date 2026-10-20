@@ -11,7 +11,55 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 20 Oct 2026 10:44:55 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 15:44:59 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-105941 · 8.1 HIGH — Kroxylicious-kms-provider-azure-key-vault-kms: streams for apache kafka kroxylicious: azure key vault ssrf exfiltrates bearer token via untrusted edek vaultname</title>
+      <link>https://vulnogram.org/CVE-2026-105941</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105941</guid>
+      <description>The Azure Key Vault KMS provider in Kroxylicious accepts an untrusted vaultName from wire-deserialized EDEK bytes without format validation, enabling SSRF that exfiltrates the proxy&apos;s Azure bearer token to an attacker-controlled host. Token replay ag…</description>
+      <category>High</category>
+      <pubDate>Tue, 20 Oct 2026 12:59:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105949 · 8.8 HIGH — Cruise-control: streams for apache kafka cruise control: authentication bypass via extra path segment allows unauthenticated access to all admin endpoints</title>
+      <link>https://vulnogram.org/CVE-2026-105949</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105949</guid>
+      <description>Cruise Control&apos;s Jetty ConstraintSecurityHandler registers security constraints on exact path specs without a catch-all wildcard constraint and without calling setDenyUncoveredHttpMethods(true). The servlet routes requests using Path.of(pathInfo).get…</description>
+      <category>High</category>
+      <pubDate>Tue, 20 Oct 2026 11:30:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105312 · 9.9 CRITICAL — Console-operator: streams for apache kafka console: tenant-controlled container image on clusterrole-bound pod enables namespace-to-cluster privilege escalation</title>
+      <link>https://vulnogram.org/CVE-2026-105312</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105312</guid>
+      <description>A Kubernetes tenant with create permission on Console custom resources can set spec.containers.api.spec.image to an arbitrary container image. The operator deploys this image into a pod whose ServiceAccount is bound via ClusterRoleBinding to a Cluste…</description>
+      <category>Critical</category>
+      <pubDate>Tue, 20 Oct 2026 11:30:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105311 · 7.7 HIGH — Console-operator: streams for apache kafka console: cross-namespace kafkauser secret exfiltration via confused deputy</title>
+      <link>https://vulnogram.org/CVE-2026-105311</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105311</guid>
+      <description>The StreamsHub Console operator acts as a confused deputy: a Kubernetes tenant with permission to create a Console custom resource can set spec.kafkaClusters[].credentials.kafkaUser.namespace to any namespace. The operator, running with cluster-wide…</description>
+      <category>High</category>
+      <pubDate>Tue, 20 Oct 2026 11:30:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113496 · 5 MEDIUM — Cockpit-machines: vnc console password disclosure through virt-xml command-line arguments</title>
+      <link>https://vulnogram.org/CVE-2026-113496</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113496</guid>
+      <description>A flaw was found in cockpit-machines. When saving Virtual Network Computing (VNC) console settings, the configured password is passed directly as a command-line argument to an underlying system utility. A local unprivileged attacker on a host that al…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Oct 2026 11:09:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113495 · 5 MEDIUM — Cockpit-machines: rhsm access-token disclosure through image helper command-line arguments</title>
+      <link>https://vulnogram.org/CVE-2026-113495</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113495</guid>
+      <description>A flaw was found in cockpit-machines. Red Hat Subscription Management (RHSM) authentication tokens are passed as command-line arguments to background helper processes during image retrieval operations. A local, unprivileged attacker on a system permi…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Oct 2026 11:09:07 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-112177 · 7.3 HIGH 🌩️ — Ghostscript: reintroduction of .charkeys -dsafer bypass in rhel 8</title>
       <link>https://vulnogram.org/CVE-2026-112177</link>
@@ -372,55 +420,6 @@
       <description>A flaw was found in DPDK lib/vhost vhost-crypto. The indirect-descriptor snapshot double-fetches a guest descriptor next index, allowing a malicious guest to cause an out-of-bounds access in the host backend.</description>
       <category>High</category>
       <pubDate>Wed, 14 Oct 2026 17:50:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86567 · 8.8 HIGH — Dpdk: dpdk: vduse handler fails to invalidate vring pointers when iotlb is invalidated, leading to use-after-unmap</title>
-      <link>https://vulnogram.org/CVE-2026-86567</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86567</guid>
-      <description>A flaw was found in DPDK lib/vhost. The VDUSE handler fails to invalidate vring pointers when the IOTLB is invalidated, leading to use-after-unmap.</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 17:50:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-100236 · 8.6 HIGH 🌩️ — Dpdk: dpdk: heap out-of-bounds read/write in gso header copy</title>
-      <link>https://vulnogram.org/CVE-2026-100236</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100236</guid>
-      <description>A flaw was found in the DPDK GSO library. When software GSO copies packet headers into a new mbuf, it does not check that the header fits in the source first segment or in the destination buffer, and a header longer than the configured GSO segment si…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 14 Oct 2026 16:33:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86565 · 8.2 HIGH — Dpdk: dpdk: guest can desynchronize virtqueue size from inflight descriptor table size, causing out-of-bounds write</title>
-      <link>https://vulnogram.org/CVE-2026-86565</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86565</guid>
-      <description>A flaw was found in DPDK lib/vhost. A guest can desynchronize virtqueue size from inflight descriptor table size, causing an out-of-bounds write in the host vhost process.</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 16:08:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86563 · 7.8 HIGH — Dpdk: dpdk: double offset bug in vhost log mapping calculation</title>
-      <link>https://vulnogram.org/CVE-2026-86563</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86563</guid>
-      <description>A flaw was found in DPDK lib/vhost. A double-offset bug in vhost log mapping calculation can lead to incorrect memory access.</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 16:08:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86562 · 7.8 HIGH — Dpdk: dpdk: control-queue descriptor double-fetch overflows host heap in dpdk vhost (vduse)</title>
-      <link>https://vulnogram.org/CVE-2026-86562</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86562</guid>
-      <description>A flaw was found in DPDK lib/vhost. A TOCTOU double-fetch of control-queue descriptors allows a heap buffer overflow with attacker-controlled content in the VDUSE control-queue handler.</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 16:07:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86561 · 6.5 MEDIUM — Dpdk: dpdk: missing memory size validation before mmap in vhost memory region setup</title>
-      <link>https://vulnogram.org/CVE-2026-86561</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86561</guid>
-      <description>A flaw was found in DPDK lib/vhost. Memory size is not adequately validated before mmap during vhost memory-region setup, which can lead to a host crash or memory corruption.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 15:42:42 GMT</pubDate>
     </item>
   </channel>
 </rss>
