@@ -11,7 +11,31 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 19 Oct 2026 21:08:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 00:19:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-112261 · 7.8 HIGH — Gimp: gimp: use-after-free in xcf loader via prop_selected_path</title>
+      <link>https://vulnogram.org/CVE-2026-112261</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112261</guid>
+      <description>A flaw was found in GIMP. Opening a crafted XCF that selects a path and then fails to load that path can cause a use-after-free in the main process, leading to a crash and potentially arbitrary code execution.</description>
+      <category>High</category>
+      <pubDate>Mon, 19 Oct 2026 21:37:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112258 · 7.8 HIGH — Gimp: gimp: use-after-free in xcf loader via prop_linked and prop_selection on channels</title>
+      <link>https://vulnogram.org/CVE-2026-112258</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112258</guid>
+      <description>A flaw was found in GIMP. The XCF loader can leave a dangling pointer in the linked-channels list when a linked channel is later destroyed via a selection property. Opening a crafted XCF file can cause a use-after-free in the main GIMP process, leadi…</description>
+      <category>High</category>
+      <pubDate>Mon, 19 Oct 2026 21:37:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112257 · 7.8 HIGH — Gimp: gimp: heap out-of-bounds read/write in psd thumbnail loader (load_resource_1033)</title>
+      <link>https://vulnogram.org/CVE-2026-112257</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112257</guid>
+      <description>A flaw was found in GIMP. The PSD thumbnail resource loader performs a BGR-to-RGB channel swap with a fixed 3-byte stride and does not verify that the JPEG thumbnail is RGB. A crafted grayscale PSD thumbnail can cause a heap out-of-bounds read and wr…</description>
+      <category>High</category>
+      <pubDate>Mon, 19 Oct 2026 21:37:19 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-112260 · 7.1 HIGH — Gimp: gimp: heap out-of-bounds read in xcf text-layer parasite parsing</title>
       <link>https://vulnogram.org/CVE-2026-112260</link>
@@ -396,31 +420,6 @@
       <description>A flaw was found in the DPDK vhost library. When handling a virtio indirect descriptor table, the host reads the table length more than once from guest memory and can allocate a host copy before validating that length. A guest that changes the length…</description>
       <category>Medium</category>
       <pubDate>Wed, 14 Oct 2026 15:42:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109968 · 5.5 MEDIUM — Clevis: clevis: pkcs#11 luks passphrase logged in plaintext to world-readable file</title>
-      <link>https://vulnogram.org/CVE-2026-109968</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109968</guid>
-      <description>A flaw was found in the clevis PKCS#11 pin. The clevis-pkcs11-afunix-socket-unlock daemon logs LUKS disk encryption passphrases in plaintext to a log file. The log file is created without restrictive permissions, making it world-readable under the de…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 12:50:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104795 · 8.8 HIGH — Insights-runtime-extractor: insights-runtime-extractor: container escape via privileged binary execution</title>
-      <link>https://vulnogram.org/CVE-2026-104795</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104795</guid>
-      <description>The insights-runtime-extractor runs as a privileged DaemonSet (`hostPID: true`) that scans container processes for runtime fingerprinting. When scanning a container, the coordinator: 1. **fork()s** a child process 2. **setns()** into the target conta…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 10:55:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-100229 · 6.5 MEDIUM 🌩️ — Gstreamer1-plugins-bad-free: gstreamer1-plugins-bad-free: out-of-bounds write in gst_h266_parser_parse_dci() due to off-by-one array bound check</title>
-      <link>https://vulnogram.org/CVE-2026-100229</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100229</guid>
-      <description>A flaw was found in GStreamer&apos;s H.266 codec parser library (libgstcodecparsers). An out-of-bounds write vulnerability exists in the DCI parsing function, where a reserved field value is incorrectly accepted, causing the parser to write beyond the bou…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 14 Oct 2026 10:02:12 GMT</pubDate>
     </item>
   </channel>
 </rss>

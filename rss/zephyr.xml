@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 19 Oct 2026 21:08:29 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 00:19:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-77684 · 5.7 MEDIUM — Bluetooth Classic HFP Hands-Free: TX buffer leak on RFCOMM disconnect leads to permanent Bluetooth denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-77684</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77684</guid>
+      <description>The Bluetooth Classic Hands-Free Profile HF role in subsys/bluetooth/host/classic/hfp_hf.c does not release the AT command buffers that are still queued on hf-&gt;tx_pending when the RFCOMM DLC goes down. hfp_hf_disconnected() only cancelled the work it…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 19 Oct 2026 22:49:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19595 · 6.1 MEDIUM — Zephyr RTIO syscall verifier validates output parameters for read instead of write access</title>
+      <link>https://vulnogram.org/CVE-2026-19595</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19595</guid>
+      <description>The user-mode syscall verifier z_vrfy_rtio_cqe_get_mempool_buffer() in subsys/rtio/rtio_syscalls.c validated its two output parameters, buff and buff_len, with K_SYSCALL_MEMORY_READ() rather than K_SYSCALL_MEMORY_WRITE(). Both are pure out-parameters…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 19 Oct 2026 22:49:40 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-76788 · 8.8 HIGH — Stack out-of-bounds write in the OSDP Control Panel reply parser</title>
       <link>https://vulnogram.org/CVE-2026-76788</link>
@@ -395,22 +411,6 @@
       <description>gptp_handle_msg() in subsys/net/l2/ethernet/gptp/gptp.c dereferenced the gPTP header returned by GPTP_HDR() and switched on hdr-&gt;message_type without first checking that the received frame carries at least sizeof(struct gptp_hdr) (34) bytes of payloa…</description>
       <category>Low</category>
       <pubDate>Fri, 18 Sep 2026 14:30:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14986 · 6.8 MEDIUM — Out-of-bounds write in it51xxx I2C target FIFO ISR on oversized write transaction</title>
-      <link>https://vulnogram.org/CVE-2026-14986</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14986</guid>
-      <description>The ITE it51xxx I2C driver, when operating as an I2C target (slave) in buffer mode (CONFIG_I2C_TARGET + CONFIG_I2C_TARGET_BUFFER_MODE), copies host-supplied write data into the fixed-size data-&gt;target_in_buffer inside its target FIFO interrupt handle…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 22:07:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16148 · 4.6 MEDIUM — Kernel panic in the it82xx2 USB device controller driver via re-initialization of a busy delayable work item</title>
-      <link>https://vulnogram.org/CVE-2026-16148</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16148</guid>
-      <description>The ITE it82xx2 USB device-controller driver initialized its bus-suspend detection work with k_work_init_delayable(&amp;priv-&gt;suspended_work, suspended_handler) inside it82xx2_enable() (the driver&apos;s .enable op) in drivers/usb/udc/udc_it82xx2.c. This work…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 19:33:47 GMT</pubDate>
     </item>
   </channel>
 </rss>

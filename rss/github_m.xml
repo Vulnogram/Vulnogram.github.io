@@ -11,7 +11,232 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 19 Oct 2026 21:08:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 00:19:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-112901 · 6.9 MEDIUM 🌩️ — Pillow: ReDoS in XbmImagePlugin: 512-byte file stalls Image.open() for minutes</title>
+      <link>https://vulnogram.org/CVE-2026-112901</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112901</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, Pillow&apos;s XBM header parser is vulnerable to regular-expression denial of service. In XbmImageFile._open, when an application calls Image.open() on a small crafted XBM file, XbmImagePlugin applies a…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 22:09:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112900 · 9.2 CRITICAL 🌩️ — Pillow: Argument Injection in Ghostscript call, potentially leading into RCE</title>
+      <link>https://vulnogram.org/CVE-2026-112900</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112900</guid>
+      <description>Pillow is a Python imaging library. From 2.6.0 until 13.0.0, Pillow is vulnerable to argument injection when invoking Ghostscript for EPS input. EpsImagePlugin.Ghostscript passes a caller-controlled input filename after -f without converting it to a…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 22:07:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112898 · 6.9 MEDIUM 🌩️ — Pillow: Image.quantize() with empty palette leaks uninitialized stack memory</title>
+      <link>https://vulnogram.org/CVE-2026-112898</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112898</guid>
+      <description>Pillow is a Python imaging library. From 9.1.0 until 13.0.0, Pillow can disclose uninitialized stack memory when Image.quantize() uses an empty palette. ImagingPaletteCacheUpdate() leaves a local cache array uninitialized when the palette has zero en…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 22:04:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112897 · 8.7 HIGH 🌩️ — Pillow: TiffDecode returns uninitialized memory as pixels for short JPEG strips</title>
+      <link>https://vulnogram.org/CVE-2026-112897</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112897</guid>
+      <description>Pillow is a Python imaging library. From 5.3.0 until 13.0.0, Pillow can return uninitialized memory as pixels when libtiff performs a short decode of JPEG-compressed or Group 4 fax TIFF data. The _decodeStrip and _decodeTile buffers can be larger tha…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 22:00:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112896 · 8.8 HIGH 🌩️ — Pillow: TIFF encoder ColorMap plane-size mismatch causes a heap out-of-bounds read</title>
+      <link>https://vulnogram.org/CVE-2026-112896</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112896</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, Pillow&apos;s TIFF encoder can read beyond a ColorMap buffer when retained TIFF metadata has a plane size inconsistent with BitsPerSample. A small TIFF can be opened normally and then retain a crafted C…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:59:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112895 · 8.7 HIGH 🌩️ — Pillow: Unbounded recursion parsing a PDF page tree or trailer chain (incomplete fix for CVE-2026-42310)</title>
+      <link>https://vulnogram.org/CVE-2026-112895</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112895</guid>
+      <description>Pillow is a Python imaging library. From 5.1.0 until 13.0.0, Pillow can exhaust resources while parsing an existing PDF during an append operation. PdfParser follows page-tree child references without cycle or duplication tracking and follows previou…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:57:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112894 · 8.7 HIGH 🌩️ — Pillow: Quadratic-time DoS in PDF save_all (PdfParser.next_object_id)</title>
+      <link>https://vulnogram.org/CVE-2026-112894</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112894</guid>
+      <description>Pillow is a Python imaging library. From 5.1.0 until 13.0.0, Pillow takes quadratic time to reserve PDF object identifiers when saving many frames with save_all enabled. PdfParser.next_object_id() repeatedly rebuilds and scans all previously reserved…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:55:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112893 · 8.2 HIGH 🌩️ — Pillow: Invalid free in FreeType glyph rendering when a stroker is active</title>
+      <link>https://vulnogram.org/CVE-2026-112893</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112893</guid>
+      <description>Pillow is a Python imaging library. From 10.0.0 until 13.0.0, Pillow can free an invalid glyph pointer during FreeType rendering with an active stroker. If FT_Load_Glyph fails, cleanup may call FT_Done_Glyph on an uninitialized or stale glyph variabl…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:53:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112892 · 8.7 HIGH 🌩️ — Pillow: MSP RLE decoder expands a tiny file into unbounded memory</title>
+      <link>https://vulnogram.org/CVE-2026-112892</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112892</guid>
+      <description>Pillow is a Python imaging library. From 4.1.0 until 13.0.0, Pillow&apos;s MSP RLE decoder can expand a small file into an unbounded in-memory buffer. The decoder writes run-length output to BytesIO without limiting expansion to the declared image size. A…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:35:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112891 · 6.9 MEDIUM 🌩️ — Pillow: Quadratic GIF comment copying during save</title>
+      <link>https://vulnogram.org/CVE-2026-112891</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112891</guid>
+      <description>Pillow is a Python imaging library. From 9.2.0 until 13.0.0, Pillow performs quadratic copying when saving a GIF with a long comment. _get_global_header() repeatedly copies portions of comment data while assembling the global header, including commen…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:33:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112406 · 8.7 HIGH 🌩️ — Pillow: Infinite loop in PdfParser.rewrite_pages on page tree Parent cycle</title>
+      <link>https://vulnogram.org/CVE-2026-112406</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112406</guid>
+      <description>Pillow is a Python imaging library. From 5.1.0 until 13.0.0, Pillow can enter an infinite loop while rewriting PDF pages. PdfParser.rewrite_pages() follows Parent relationships without detecting a cycle in the page tree. An attacker can supply a cycl…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:31:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112405 · 8.7 HIGH 🌩️ — Pillow: NULL pointer dereference in Image.merge via an unvalidated band 0</title>
+      <link>https://vulnogram.org/CVE-2026-112405</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112405</guid>
+      <description>Pillow is a Python imaging library. From 12.0.0 until 13.0.0, Pillow&apos;s Image.merge() can dereference a null image8 plane. Validation skips the first input band, allowing a 32-bit integer or floating-point image backed by image32 storage to be merged…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:29:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112404 · 8.8 HIGH 🌩️ — Pillow: OOB read in TiffDecode.c tile and RGBA paths leaks heap memory into pixels</title>
+      <link>https://vulnogram.org/CVE-2026-112404</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112404</guid>
+      <description>Pillow is a Python imaging library. From 8.1.0 until 13.0.0, Pillow&apos;s TIFF tile and RGBA decode paths can read beyond row data produced by libtiff. In _decodeTile and the RGBA unpacker path, when Pillow and libtiff interpret duplicated PhotometricInt…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:27:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112403 · 9.2 CRITICAL 🌩️ — Pillow: Heap buffer overflow in ImagingJpegDecode</title>
+      <link>https://vulnogram.org/CVE-2026-112403</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112403</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, Pillow&apos;s JPEG decoder can write a full-width scanline into a buffer sized for a requested draft scale. ImagingJpegDecode does not verify libjpeg&apos;s actual output width and component count after scal…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:22:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112402 · 8.7 HIGH 🌩️ — Pillow: Double free in ImagingScaleAffine on calloc failure via Image.transform</title>
+      <link>https://vulnogram.org/CVE-2026-112402</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112402</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, Pillow can double free image memory when ImagingScaleAffine encounters a selective allocation failure. The affected fast path handles Transform.EXTENT or pure scale-and-translate Transform.AFFINE o…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:18:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112397 · 8.7 HIGH 🌩️ — Pillow: Out-of-bounds access in _imagingmorph on a zero-width image</title>
+      <link>https://vulnogram.org/CVE-2026-112397</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112397</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, Pillow&apos;s ImageMorph.MorphOp.apply() can access memory before a row buffer for a zero-width image. PPM and PGM input can create an image with width zero, and the native morphology routine indexes ou…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:17:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112392 · 8.2 HIGH 🌩️ — Pillow: NULL dereference in ImagingExpand via rank filters on zero-size images</title>
+      <link>https://vulnogram.org/CVE-2026-112392</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112392</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, Pillow&apos;s rank-based filters can dereference invalid image storage for a zero-size image. ImagingExpand() allocates a non-empty output and then faults while replicating edges by reading the first pi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:17:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112401 · 6.9 MEDIUM 🌩️ — Pillow: Quadratic GIF comment concatenation allows DoS in Image.open()</title>
+      <link>https://vulnogram.org/CVE-2026-112401</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112401</guid>
+      <description>Pillow is a Python imaging library. From 5.4.0 until 13.0.0, Pillow performs quadratic copying while parsing GIF comments. GifImageFile._seek() repeatedly appends immutable bytes for comment sub-blocks and multiple comment extensions, and frame zero…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:15:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112400 · 8.7 HIGH 🌩️ — Pillow: GIF seek keeps rejected size after DecompressionBombError, allowing DoS</title>
+      <link>https://vulnogram.org/CVE-2026-112400</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112400</guid>
+      <description>Pillow is a Python imaging library. From 9.2.0 until 13.0.0, Pillow can retain a rejected GIF frame size after a decompression-bomb exception. In GifImageFile._seek, a crafted GIF can leave rejected dimensions stored after Image.DecompressionBombErro…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:12:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112399 · 8.7 HIGH 🌩️ — Pillow: APNG background disposal allocates full canvas before decompression bomb check</title>
+      <link>https://vulnogram.org/CVE-2026-112399</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112399</guid>
+      <description>Pillow is a Python imaging library. From 8.1.0 until 13.0.0, Pillow can allocate an APNG disposal background at the full canvas size before applying the decompression-bomb check. A crafted APNG with a small first frame, a very large declared canvas,…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:10:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112398 · 9.2 CRITICAL 🌩️ — Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution</title>
+      <link>https://vulnogram.org/CVE-2026-112398</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112398</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, Pillow&apos;s FlashPix JPEG-tile decoder can write decoded scanlines beyond the allocated tile buffer. FlashPix (FPX) JPEG decoding selects raw mode LA with two bytes per pixel, while an unrecognized JP…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:07:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112396 · 5.9 MEDIUM 🌩️ — Pillow: Heap use-after-free when encoding TIFF to an in-memory buffer</title>
+      <link>https://vulnogram.org/CVE-2026-112396</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112396</guid>
+      <description>Pillow is a Python imaging library. From 11.3.0 until 13.0.0, Pillow has a heap use-after-free when libtiff rejects a tag while encoding TIFF data to an in-memory buffer. When an application saves attacker-influenced TIFF tags to BytesIO, libtiff can…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 21:02:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112395 · 6.5 MEDIUM 🌩️ — Pillow tiled-TIFF decoder reads past tile buffer in copy4 (Unpack.c:1290)</title>
+      <link>https://vulnogram.org/CVE-2026-112395</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112395</guid>
+      <description>Pillow is a Python imaging library. From 8.2.0 until 13.0.0, Pillow&apos;s tiled-TIFF decoder can read past the tile buffer while copying four-byte pixels. In _decodeTile, libtiff can return a tile allocation smaller than the required row stride multiplie…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 20:59:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112394 · 6.3 MEDIUM 🌩️ — Pillow: P;2L and P;4L decoders may read 1 to 3 bytes past the passed buffer size</title>
+      <link>https://vulnogram.org/CVE-2026-112394</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112394</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, Pillow&apos;s P;2L and P;4L raw decoders can read past the end of an input buffer. ImagingRawDecode calculates a packed-pixel row size, while the unpackers read separately padded bit planes. A caller ca…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 20:48:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112393 · 9.2 CRITICAL 🌩️ — Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO</title>
+      <link>https://vulnogram.org/CVE-2026-112393</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112393</guid>
+      <description>Pillow is a Python imaging library. From 2.0.0 until 13.0.0, Pillow has a heap buffer overflow and stale-heap disclosure in _tiffWriteProc when saving compressed TIFF data through libtiff to a target without a usable fileno(), such as BytesIO. The ca…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 19 Oct 2026 20:46:40 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-112391 · 6.3 MEDIUM 🌩️ — Pillow: PdfParser can recurse without limit in get_value() and linearize_page_tree()</title>
       <link>https://vulnogram.org/CVE-2026-112391</link>
@@ -233,210 +458,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 16 Oct 2026 21:25:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96627 · 8.8 HIGH — Arcane: Delegated users:update permission allows admin account takeover via password reset (no privilege-hierarchy check)</title>
-      <link>https://vulnogram.org/CVE-2026-96627</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96627</guid>
-      <description>Arcane is an interface for managing Docker containers, images, networks, and volumes. Prior to 2.6.0, UpdateUser in backend/api/handlers/users.go sets PasswordHash for any target without comparing caller and target privilege. A holder of delegated us…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 21:13:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96628 · 4.3 MEDIUM — Arcane: Environment access token bypasses the admin-required authorization gate on `/api/debug/pprof`</title>
-      <link>https://vulnogram.org/CVE-2026-96628</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96628</guid>
-      <description>Arcane is an interface for managing Docker containers, images, networks, and volumes. Prior to 2.11.0, AuthMiddleware.managerAuth accepts X-Arcane-Agent-Token credentials and the environment-token branch calls next before the AdminRequired option is…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 21:10:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96626 · 8.5 HIGH — Arcane: Container-registry credential exfiltration via URL repoint + test to attacker host</title>
-      <link>https://vulnogram.org/CVE-2026-96626</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96626</guid>
-      <description>Arcane is an interface for managing Docker containers, images, networks, and volumes. Prior to 2.5.0, UpdateRegistry and TestRegistry in backend/api/services/container_registry_service.go allow the registry URL to change while preserving the stored e…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 21:07:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-64862 · 6.5 MEDIUM — Frappe HR: Missing Authorization on PWA API Endpoints enables Cross-Employee Data access in HRMS</title>
-      <link>https://vulnogram.org/CVE-2026-64862</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-64862</guid>
-      <description>Frappe HR is an open-source human resources management solution (HRMS). Prior to 15.58.3 and 16.4.3, HRMS PWA API endpoints for employee data do not consistently authorize employee-specific PWA API requests. An authenticated user requests records ass…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 20:52:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-55796 · 6.5 MEDIUM — Frappe HR: SQL Injection in HRMS Salary Payments via ECS Report</title>
-      <link>https://vulnogram.org/CVE-2026-55796</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-55796</guid>
-      <description>Frappe HR is an open-source human resources management solution (HRMS). Prior to 15.60.3 and 16.7.1, the Salary Payments via ECS report constructs report conditions with unsafe SQL string interpolation. An authenticated HR user supplies crafted Salar…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 20:50:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-108373 · 6.5 MEDIUM — ERPNext: Unauthorised access to financial data due to missing validation</title>
-      <link>https://vulnogram.org/CVE-2026-108373</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108373</guid>
-      <description>ERPNext is a free and open source Enterprise Resource Planning tool. Prior to 15.118.0 and 16.27.0, certain endpoints in the Sales Person-wise Transaction Summary report fail to enforce proper authorization checks. When a role-limited authenticated u…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 20:48:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-108374 · 7.7 HIGH — ERPNext: Unauthorised status modification due to missing validation</title>
-      <link>https://vulnogram.org/CVE-2026-108374</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108374</guid>
-      <description>ERPNext is a free and open source Enterprise Resource Planning tool. Prior to 15.121.0 and 16.34.0, certain endpoints for status modification fail to enforce proper authorization checks. A low-privileged authenticated user can invoke state-changing w…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 20:38:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102834 · 7.5 HIGH 🌩️ — JavaCV: Integer Overflow in IPCameraFrameGrabber Causes Infinite-Loop DoS</title>
-      <link>https://vulnogram.org/CVE-2026-102834</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102834</guid>
-      <description>JavaCV provides Java interfaces to OpenCV, FFmpeg, and other multimedia libraries. Prior to 1.5.14, IPCameraFrameGrabber doubles a 32-bit buffer capacity without checking for overflow or bounding the parsed Content-Length. An application consumes an…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 16 Oct 2026 19:51:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96620 · 9.2 CRITICAL 🌩️ — Claude Agent SDK: Argument Injection via resume Option Allows Arbitrary Command Execution</title>
-      <link>https://vulnogram.org/CVE-2026-96620</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96620</guid>
-      <description>Claude Agent SDK is a Python SDK for Claude Code. Prior to 0.2.121, the resume option is passed to the Claude CLI as a separate token without validation, so a dash-leading value is parsed as an independent CLI flag. An attacker can inject the --mcp-c…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 16 Oct 2026 19:44:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-30971 · 8.8 HIGH — ZoneMinder: Authenticated RCE via command injection in monitor Device Path</title>
-      <link>https://vulnogram.org/CVE-2026-30971</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-30971</guid>
-      <description>ZoneMinder is a free, open source closed-circuit television software application. Prior to 1.39.2, 1.38.2, and 1.36.40, ZoneMinder interpolates an unvalidated monitor Device field into shell commands in PHP and Perl control paths when an authenticate…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 19:40:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102608 · 9 CRITICAL — ZoneMinder: Authenticated OS Command Injection via unsanitized Monitor Name in event export (download_functions.php)</title>
-      <link>https://vulnogram.org/CVE-2026-102608</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102608</guid>
-      <description>ZoneMinder is a free, open source closed-circuit television software application. Prior to 1.38.3, downloadEvents() manually wraps a monitor Name value in single quotes instead of using escapeshellarg() before placing it in shell commands when a user…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 16 Oct 2026 19:35:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102607 · 8.8 HIGH — ZoneMinder: Authenticated OS Command Injection (RCE) via Export Feature</title>
-      <link>https://vulnogram.org/CVE-2026-102607</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102607</guid>
-      <description>ZoneMinder is a free, open source closed-circuit television software application. Prior to 1.38.3, the exportEvents() function concatenates the attacker-controlled exportFile request parameter into a shell command without neutralizing shell metachara…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 19:29:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59970 · 7.7 HIGH — Tandoor Recipes: Blind SSRF via AI provider URL (api_base)</title>
-      <link>https://vulnogram.org/CVE-2026-59970</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59970</guid>
-      <description>Tandoor Recipes is an application for managing recipes, planning meals, and building shopping lists. Prior to 2.6.10, passes an administrator-controlled AI provider URL directly to LiteLLM without applying the server&apos;s outbound-request SSRF checks wh…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 19:21:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-61726 · 8.1 HIGH — Tandoor Recipes: Private recipe authorization bypass via /api/step/ - read and modify another Space member&apos;s private recipe content</title>
-      <link>https://vulnogram.org/CVE-2026-61726</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61726</guid>
-      <description>Tandoor Recipes is an application for managing recipes, planning meals, and building shopping lists. Prior to 2.6.12, StepViewSet and IngredientViewSet filter only by active Space and use role-level CustomIsUser checks instead of the private-recipe o…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 19:19:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59966 · 5.7 MEDIUM — Tandoor Recipes: ReDoS (Regular Expression Denial of Service) via User-Controlled Automation Regex Patterns</title>
-      <link>https://vulnogram.org/CVE-2026-59966</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59966</guid>
-      <description>Tandoor Recipes is an application for managing recipes, planning meals, and building shopping lists. Prior to 2.6.10, executes user-controlled Automation regular-expression patterns with Python re.sub() without complexity validation or an execution t…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 19:18:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59963 · 7.1 HIGH — Tandoor Recipes: Private recipe file and share-link authorization bypass in recipe utility API endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-59963</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59963</guid>
-      <description>Tandoor Recipes is an application for managing recipes, planning meals, and building shopping lists. Prior to 2.6.10, recipe utility endpoints retrieve same-Space Recipe objects without invoking the private-recipe owner or sharing permission when an…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 19:17:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59962 · 6.5 MEDIUM — Tandoor Recipes: ORM ORDER BY Injection via FK Traversal in Tandoor Recipes</title>
-      <link>https://vulnogram.org/CVE-2026-59962</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59962</guid>
-      <description>Tandoor Recipes is an application for managing recipes, planning meals, and building shopping lists. Prior to 2.6.10, passes unvalidated sort_order and order_field strings into Django ORM order_by() calls when an authenticated user supplies foreign-k…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 16:52:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59967 · 5.4 MEDIUM — Tandoor Recipes: Cross-user IDOR in /api/recipe-from-source/ bookmarklet import — read and destroy another space member&apos;s pending BookmarkletImport</title>
-      <link>https://vulnogram.org/CVE-2026-59967</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59967</guid>
-      <description>Tandoor Recipes is an application for managing recipes, planning meals, and building shopping lists. Prior to 2.6.10, looks up BookmarkletImport by sequential primary key within the active Space without restricting created_by to the requesting user w…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 16:51:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49868 · 9.8 CRITICAL 🌩️ — RIOT: DHCPv6 client _parse_reply() missing sub-option length check leads to size_t underflow and unbounded OOB heap read</title>
-      <link>https://vulnogram.org/CVE-2026-49868</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49868</guid>
-      <description>RIOT is an open-source microcontroller operating system designed for Internet of Things devices and other embedded systems. Prior to 2026.07, _parse_reply() in sys/net/application_layer/dhcpv6/client.c omits minimum-length validation before passing I…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 16 Oct 2026 16:50:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102693 · 9.6 CRITICAL — RIOT: Remote Stack Buffer Overflow in ATWINC15x0 driver via unsanitized SSID</title>
-      <link>https://vulnogram.org/CVE-2026-102693</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102693</guid>
-      <description>RIOT is an open-source microcontroller operating system designed for Internet of Things devices and other embedded systems. Prior to 2026.04, the ATWINC15x0 driver&apos;s _atwinc15x0_sta_set_current_ssid function uses strcpy to copy an SSID without checki…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 16 Oct 2026 16:49:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102692 · 9.1 CRITICAL 🌩️ — RIOT: Potential integer overflow in nanocoap Block2 handling leading to out-of-bounds memory access</title>
-      <link>https://vulnogram.org/CVE-2026-102692</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102692</guid>
-      <description>RIOT is an open-source microcontroller operating system designed for Internet of Things devices and other embedded systems. Prior to 2026.07, nanocoap accepts oversized CoAP Block2 option values without enforcing the 20-bit maximum block number, allo…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 16 Oct 2026 16:48:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-62362 · 4.9 MEDIUM — PeerBanHelper: SQL injection via ${field} interpolation in MyBatis mapper for analysis endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-62362</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62362</guid>
-      <description>PeerBanHelper automatically blocks unwanted, leeching, and abnormal BitTorrent peers using customizable and cloud rules. From 5.0.0 until 9.3.15, the /api/statistic/analysis/field endpoint accepts a crafted field query parameter from an authenticated…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 16:43:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86047 · 7.7 HIGH — MariaDB: Insufficient quoting in mariadb-dump and SHOW commands</title>
-      <link>https://vulnogram.org/CVE-2026-86047</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86047</guid>
-      <description>MariaDB server is a community developed fork of MySQL server. From 10.6.1 until 10.6.28, 10.11.19, 11.4.13, 11.8.9, 12.3.3, and 13.0.2, SHOW CREATE SERVER, SHOW CREATE USER, and mariadb-dump are affected because each does not consistently quote ident…</description>
-      <category>High</category>
-      <pubDate>Fri, 16 Oct 2026 16:37:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85745 · 4.3 MEDIUM — MariaDB: Out-of-bound buffer read on in `ST_Area` of a multipolygon.</title>
-      <link>https://vulnogram.org/CVE-2026-85745</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85745</guid>
-      <description>MariaDB server is a community developed fork of MySQL server. From 10.6.1 until 10.6.28, 10.11.19, 11.4.13, 11.8.9, 12.3.3, and 13.0.2, ST_Area reads beyond the allocated buffer when processing invalid WKB for a MultiPolygon because the multi-polygon…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 16 Oct 2026 16:30:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85748 · 9.9 CRITICAL — MariaDB: Use-after-free with a large number of SYS_REFCURSOR&apos;s</title>
-      <link>https://vulnogram.org/CVE-2026-85748</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85748</guid>
-      <description>MariaDB server is a community developed fork of MySQL server. From 12.3.1 until 12.3.3 and 13.0.2, SYS_REFCURSOR handling is affected because cursor-array reallocation can leave stale references in routine contexts. A low-privileged attacker can open…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 16 Oct 2026 16:28:55 GMT</pubDate>
     </item>
   </channel>
 </rss>
