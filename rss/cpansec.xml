@@ -11,7 +11,42 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 20 Oct 2026 20:00:25 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 23:05:21 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-112202 — Imager::File::GIF versions before 1.006 for Perl allow out-of-bounds reads when consolidating GIF images</title>
+      <link>https://vulnogram.org/CVE-2026-112202</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112202</guid>
+      <description>Imager::File::GIF versions before 1.006 for Perl allow out-of-bounds reads when consolidating GIF images. With `gif_consolidate =&gt; 1`, palette indices from the image are used without checking the colour table&apos;s bounds. The i_readgif_low routine reads…</description>
+      <pubDate>Tue, 20 Oct 2026 22:37:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85783 — Crypt::Age versions before 0.004 for Perl allow CPU exhaustion via an unbounded number of recipient stanzas, each costing an X25519 scalar multiplication in unwrap_file_key</title>
+      <link>https://vulnogram.org/CVE-2026-85783</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85783</guid>
+      <description>Crypt::Age versions before 0.004 for Perl allow CPU exhaustion via an unbounded number of recipient stanzas, each costing an X25519 scalar multiplication in unwrap_file_key. The header parser accepts any number of recipient stanzas, and unwrap_file_k…</description>
+      <pubDate>Tue, 20 Oct 2026 21:29:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111879 — DBI versions before 1.656 for Perl hang on a later open of a DBD::DBM table because a failed open_data does not release the table&apos;s lock</title>
+      <link>https://vulnogram.org/CVE-2026-111879</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111879</guid>
+      <description>DBI versions before 1.656 for Perl hang on a later open of a DBD::DBM table because a failed open_data does not release the table&apos;s lock. open_data creates the table&apos;s lock file and takes an exclusive flock on it for a CREATE, before the checks that…</description>
+      <pubDate>Tue, 20 Oct 2026 21:24:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-108518 — DBI versions before 1.656 for Perl crash via type confusion in dbi_profile when a database handle is destroyed under a Profile Path with an {attr} element</title>
+      <link>https://vulnogram.org/CVE-2026-108518</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108518</guid>
+      <description>DBI versions before 1.656 for Perl crash via type confusion in dbi_profile when a database handle is destroyed under a Profile Path with an {attr} element. An {attr} element names a database handle attribute, which dbi_profile reads from the handle&apos;s…</description>
+      <pubDate>Tue, 20 Oct 2026 21:23:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113812 — Mozilla::CA versions before 20261020 for Perl provide a CA certificate bundle containing a root linked to compromised intermediates</title>
+      <link>https://vulnogram.org/CVE-2026-113812</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113812</guid>
+      <description>Mozilla::CA versions before 20261020 for Perl provide a CA certificate bundle containing a root linked to compromised intermediates. The bundle includes &quot;emSign ECC Root CA - G3&quot;, which provides a trust path for intermediate certificates whose privat…</description>
+      <pubDate>Tue, 20 Oct 2026 21:07:44 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-111946 — Plack::Middleware::ETag versions from 0.04 before 0.06 for Perl disclose file inode numbers in the default ETag header</title>
       <link>https://vulnogram.org/CVE-2026-111946</link>
@@ -376,50 +411,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 22 Sep 2026 07:25:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87081 · 7.5 HIGH 🌩️ — Net::IDN::UTS46 versions before 2.590 for Perl allow CPU exhaustion via quadratic punycode encoding of an overlong label before the length check in to_ascii</title>
-      <link>https://vulnogram.org/CVE-2026-87081</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87081</guid>
-      <description>Net::IDN::UTS46 versions before 2.590 for Perl allow CPU exhaustion via quadratic punycode encoding of an overlong label before the length check in to_ascii. to_ascii punycode encodes each label and only then applies the 63-byte DNS limit. encode_pun…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 07:25:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87080 · 9.1 CRITICAL 🌩️ — Net::IDN::Punycode::PP versions before 2.590 for Perl decode a truncated label to a name containing a character it never encoded in decode_punycode</title>
-      <link>https://vulnogram.org/CVE-2026-87080</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87080</guid>
-      <description>Net::IDN::Punycode::PP versions before 2.590 for Perl decode a truncated label to a name containing a character it never encoded in decode_punycode. The pure-Perl decoder reads one digit at a time with four-argument substr and tests the result with d…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 07:25:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87079 · 7.5 HIGH 🌩️ — Net::IDN::Punycode versions before 2.590 for Perl allow CPU exhaustion via quadratic insertion cost when decoding a long label in decode_punycode</title>
-      <link>https://vulnogram.org/CVE-2026-87079</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87079</guid>
-      <description>Net::IDN::Punycode versions before 2.590 for Perl allow CPU exhaustion via quadratic insertion cost when decoding a long label in decode_punycode. The XS backend inserts each decoded code point into a UTF-8 buffer and finds the insertion point by sca…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 07:24:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87078 · 9.1 CRITICAL 🌩️ — Net::IDN::Punycode versions from 2.302 before 2.590 for Perl leak the output buffer on every rejected label in decode_punycode</title>
-      <link>https://vulnogram.org/CVE-2026-87078</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87078</guid>
-      <description>Net::IDN::Punycode versions from 2.302 before 2.590 for Perl leak the output buffer on every rejected label in decode_punycode. The XS backend allocates the scalar it returns before it validates the input, sizing the buffer at twice the input length.…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 07:19:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74766 · 8.4 HIGH — Net::IDN::Punycode versions from 2.301 before 2.590 for Perl allow a heap use-after-free via a decoded code point that reallocates the output buffer in decode_punycode</title>
-      <link>https://vulnogram.org/CVE-2026-74766</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74766</guid>
-      <description>Net::IDN::Punycode versions from 2.301 before 2.590 for Perl allow a heap use-after-free via a decoded code point that reallocates the output buffer in decode_punycode. The XS backend inserts each decoded code point into the string buffer of the scal…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 07:19:09 GMT</pubDate>
     </item>
   </channel>
 </rss>
