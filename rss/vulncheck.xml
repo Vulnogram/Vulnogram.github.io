@@ -11,7 +11,147 @@
       <title>VulnCheck — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 20 Oct 2026 00:19:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 05:42:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-77938 · 7.1 HIGH 👻 — Letta through 0.16.8 Credential Exposure via Tool Sandbox Environment Inheritance</title>
+      <link>https://vulnogram.org/CVE-2026-77938</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77938</guid>
+      <description>Letta through 0.16.8 contains an information disclosure vulnerability that allows users running tools to read server secrets because LocalSandbox subprocesses inherit the full server environment. Attackers can run code via POST /v1/tools/run or custo…</description>
+      <category>High</category>
+      <category>Unsupported When Assigned</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77937 · 8.6 HIGH 👻 — Letta through 0.16.8 Cross-Tenant Impersonation via user_id Header</title>
+      <link>https://vulnogram.org/CVE-2026-77937</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77937</guid>
+      <description>Letta through 0.16.8 contains an authentication bypass vulnerability that allows API callers to impersonate other users by supplying a self-asserted user_id HTTP header. Attackers can set user_id to another tenant&apos;s ID, even with LETTA_SERVER_SECURE…</description>
+      <category>High</category>
+      <category>Unsupported When Assigned</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77936 · 9.8 CRITICAL 🌩️ 👻 — Letta through 0.16.8 Insecure Default Configuration Unauthenticated API and PostgreSQL Access</title>
+      <link>https://vulnogram.org/CVE-2026-77936</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77936</guid>
+      <description>Letta through 0.16.8 ships a compose.yaml that does not enable LETTA_SERVER_SECURE, so the password middleware is never added and all API routes are unauthenticated, and it exposes a superuser PostgreSQL port with default credentials. Remote attacker…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <category>Unsupported When Assigned</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77935 · 8.7 HIGH — Coze Studio through 0.5.1 Cross-Space Workflow IDOR via Workflow API Handlers</title>
+      <link>https://vulnogram.org/CVE-2026-77935</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77935</guid>
+      <description>Coze Studio through 0.5.1 contains an insecure direct object reference vulnerability in workflow.go that allows authenticated users to access other spaces&apos; workflows by supplying foreign workflowIDs. Attackers can pair their own spaceID with another…</description>
+      <category>High</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77934 · 8.8 HIGH — Coze Studio before 0.5.0 RCE via Unsandboxed Local Python Code Runner</title>
+      <link>https://vulnogram.org/CVE-2026-77934</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77934</guid>
+      <description>Coze Studio before 0.5.0 contains an insecure default configuration that allows any registered user to execute commands by running workflow code nodes in an unsandboxed python3 subprocess. Attackers can bypass the regex import filter with __import__(…</description>
+      <category>High</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77933 · 9.8 CRITICAL 🌩️ — DB-GPT through 0.8.2 Hardcoded MySQL Root Credentials in docker-compose Deployment</title>
+      <link>https://vulnogram.org/CVE-2026-77933</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77933</guid>
+      <description>DB-GPT through 0.8.2 contains a hardcoded credentials vulnerability in its default docker-compose.yml that sets a static MYSQL_ROOT_PASSWORD and publishes port 3306 on all interfaces. Attackers reaching port 3306 or the shared dbgptnet network can au…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77932 · 9.8 CRITICAL 🌩️ — DB-GPT through 0.8.2 Unauthenticated RCE via /api/v1/chat/react-agent</title>
+      <link>https://vulnogram.org/CVE-2026-77932</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77932</guid>
+      <description>DB-GPT through 0.8.2 contains an unauthenticated remote code execution vulnerability because the /api/v1/chat/react-agent endpoint relies on a mock get_user_from_headers function that grants every caller the admin role. Unauthenticated attackers can…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77930 · 8.8 HIGH 🌩️ — EvoScientist 0.1.0 before 0.2.5 Human Approval Bypass via Async Sub-Agents</title>
+      <link>https://vulnogram.org/CVE-2026-77930</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77930</guid>
+      <description>EvoScientist 0.1.0 before 0.2.5 contains an approval bypass vulnerability that allows attackers to run host shell commands by delegating them to async sub-agents lacking an interrupt_on gate. Attackers can plant instructions in ingested content such…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77926 · 8.8 HIGH — Aix-DB 1.2.4 Authenticated RCE via ChatBI Common Agent Execute Tool</title>
+      <link>https://vulnogram.org/CVE-2026-77926</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77926</guid>
+      <description>Aix-DB 1.2.4 contains a remote code execution vulnerability that allows authenticated non-admin users to run operating system commands through the ChatBI common agent&apos;s ungated deepagents execute tool. Attackers can send crafted chat input to POST /d…</description>
+      <category>High</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-75128 · 9.8 CRITICAL 🌩️ — Langchain-Chatchat through 0.3.1.3 Unauthenticated RCE via /tools/call Endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-75128</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75128</guid>
+      <description>Langchain-Chatchat through 0.3.1.3 exposes a POST /tools/call API endpoint that invokes any registered tool by name without authentication, leaving the always-registered shell tool callable. Remote attackers can send a single request naming the shell…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109444 · 8.8 HIGH 🌩️ — OpenSRE through 0.1.2026.10.19 Approval Gate Bypass via shell_run Prompt Injection</title>
+      <link>https://vulnogram.org/CVE-2026-109444</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109444</guid>
+      <description>OpenSRE through 0.1.2026.10.19 contains an approval gate bypass vulnerability that allows attackers to execute shell_run commands without confirmation because the headless presenter&apos;s execution_allowed() always returns True. Attackers can inject inst…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109443 · 8.8 HIGH — JoySafeter through 1.0.0 Authenticated RCE via Copilot Standard Mode Shell</title>
+      <link>https://vulnogram.org/CVE-2026-109443</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109443</guid>
+      <description>JoySafeter through 1.0.0 contains a remote code execution vulnerability that allows authenticated users to run operating system commands via an unsandboxed execute tool in Copilot standard mode. Attackers can self-register, select standard mode in th…</description>
+      <category>High</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109442 · 9.8 CRITICAL 🌩️ — piflow 2.0.0 through 2.0.1 Unauthenticated RCE via Chat Agent exec_shell</title>
+      <link>https://vulnogram.org/CVE-2026-109442</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109442</guid>
+      <description>piflow 2.0.0 through 2.0.1 contains a remote code execution vulnerability in its DeepAgents chat agent, whose POST /chat and POST /chat/stream endpoints lack authentication. Attackers can instruct the agent to call the exec_shell tool, which runs arb…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109441 · 6.9 MEDIUM — LangAlpha through 2026.09.07 Cross-Tenant Sandbox Exposure via Shared Docker Bridge</title>
+      <link>https://vulnogram.org/CVE-2026-109441</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109441</guid>
+      <description>LangAlpha through 2026.09.07 contains an improper isolation vulnerability that places all tenants&apos; sandbox containers on Docker&apos;s shared default bridge network with inter-container communication enabled. Authenticated users with code execution in the…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109440 · 8.6 HIGH 🌩️ — LangAlpha through 2026.09.07 Indirect Prompt Injection RCE via Bash and ExecuteCode</title>
+      <link>https://vulnogram.org/CVE-2026-109440</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109440</guid>
+      <description>LangAlpha through 2026.09.07 contains an indirect prompt injection vulnerability that allows remote attackers to execute shell commands or Python by planting instructions in web content retrieved by the agent. Because Bash and ExecuteCode lack an all…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109395 · 9.1 CRITICAL 🌩️ — Ning compress-lzf before 1.2.0 Out-of-Bounds Memory Access via UnsafeChunkDecoder</title>
+      <link>https://vulnogram.org/CVE-2026-109395</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109395</guid>
+      <description>Ning compress-lzf before 1.2.0 contains an out-of-bounds memory access vulnerability in the sun.misc.Unsafe based UnsafeChunkDecoder that fails to validate back-references and literal runs. Attackers can supply crafted LZF streams to applications usi…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:04 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-53995 · 8.8 HIGH 🌩️ — MLflow 3.17.1 Path Traversal via Trace ID API</title>
       <link>https://vulnogram.org/CVE-2026-53995</link>
@@ -304,138 +444,6 @@
       <description>The Sensei LMS WordPress plugin before 4.26.4 contains a broken access control vulnerability in the legacy save_new_message handler hooked on the init action, which validates only a generic nonce without verifying course enrollment or restricting pos…</description>
       <category>Medium</category>
       <pubDate>Mon, 19 Oct 2026 14:45:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112328 · 5.3 MEDIUM — Sensei LMS 4.26.4 Broken Access Control via add_new_module_term AJAX</title>
-      <link>https://vulnogram.org/CVE-2026-112328</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112328</guid>
-      <description>The Sensei LMS WordPress plugin before 4.26.4 contains a broken access control vulnerability in the add_new_module_term AJAX handler that allows authenticated Teacher-role attackers to assign module taxonomy terms to arbitrary courses by supplying a…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 14:44:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112296 · 9.8 CRITICAL 🌩️ — FlyCms through commit edfdf724 Default Super Administrator Credentials</title>
-      <link>https://vulnogram.org/CVE-2026-112296</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112296</guid>
-      <description>FlyCms through commit edfdf724 contains a default credentials vulnerability that allows unauthenticated remote attackers to gain super administrator access via the flycms account with password admin123. Attackers can log in through POST /api/auth/log…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112295 · 5.4 MEDIUM — FlyCms through commit edfdf724 Mass Assignment via /ucenter/account_update</title>
-      <link>https://vulnogram.org/CVE-2026-112295</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112295</guid>
-      <description>FlyCms through commit edfdf724 contains a mass assignment vulnerability that allows authenticated users to overwrite protected account columns by submitting extra User bean fields to /ucenter/account_update. Attackers can change their review status,…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112294 · 5.3 MEDIUM — FlyCms through commit edfdf724 Missing Authorization via Action Counter Endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-112294</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112294</guid>
-      <description>FlyCms through commit edfdf724 contains a missing authorization vulnerability in ActionService.counter() that allows authenticated users to modify other users&apos; content rows because checkRowOwner never verifies ownership. Any registered user can send…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112293 · 5.4 MEDIUM — BoxyHQ SaaS Starter Kit through 1.6.0 Missing Authorization on Team Payment API</title>
-      <link>https://vulnogram.org/CVE-2026-112293</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112293</guid>
-      <description>BoxyHQ Enterprise SaaS Starter Kit through 1.6.0 contains a missing authorization vulnerability that allows non-owner team members to manage billing because payment routes skip the team_payments permission check. Authenticated MEMBER or ADMIN users c…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112292 · 9.8 CRITICAL 🌩️ — CheckCle through 1.6.0 Missing Authorization via Empty PocketBase API Rules</title>
-      <link>https://vulnogram.org/CVE-2026-112292</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112292</guid>
-      <description>CheckCle through 1.6.0 contains a missing authorization vulnerability that allows unauthenticated attackers to read, modify and delete records because shipped PocketBase collections use empty API rules. Attackers can query /api/collections/&lt;name&gt;/rec…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112291 · 6.9 MEDIUM 🌩️ — Flarum Extension Manager 2.0.0-beta.1 before 2.0.0-beta.8 Missing Authorization via Task API</title>
-      <link>https://vulnogram.org/CVE-2026-112291</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112291</guid>
-      <description>Flarum Extension Manager 2.0.0-beta.1 before 2.0.0-beta.8 lacks authentication and admin checks on the TaskResource index endpoint, allowing unauthenticated information disclosure. Remote attackers can send GET requests to /api/extension-manager-task…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112290 · 4.7 MEDIUM 🌩️ — MI6 @ukic/canary-web-components 3.0.0-canary.12 before 3.0.0-canary.48 DOM XSS via ic-tree-item</title>
-      <link>https://vulnogram.org/CVE-2026-112290</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112290</guid>
-      <description>Intelligence Community UI Kit @ukic/canary-web-components 3.0.0-canary.12 before 3.0.0-canary.48 contains a DOM-based cross-site scripting vulnerability in ic-tree-item that re-parses router-item slot text as HTML. When tree item truncation is enable…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112289 · 5.4 MEDIUM — Koalixcrm through 1.14.0 Stored XSS via Task Title in Django Admin</title>
-      <link>https://vulnogram.org/CVE-2026-112289</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112289</guid>
-      <description>Koalixcrm through 1.14.0 contains a stored cross-site scripting vulnerability that allows staff users to inject script by storing malicious task titles rendered unescaped by Task.link_to_task(). Attackers can embed HTML or script that executes when a…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112288 · 3.3 LOW — Krayin CRM 2.2.5 before 2.2.7 SSRF Filter Bypass via DNS Rebinding</title>
-      <link>https://vulnogram.org/CVE-2026-112288</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112288</guid>
-      <description>Krayin CRM 2.2.5 before 2.2.7 contains a server-side request forgery filter bypass that allows users with webhook permissions to reach internal addresses via DNS rebinding. Attackers can return a public address during WebhookService::isSafeEndpoint()…</description>
-      <category>Low</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112287 · 7.1 HIGH — Krayin CRM before 2.2.7 Broken Object Level Authorization in Mail Module</title>
-      <link>https://vulnogram.org/CVE-2026-112287</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112287</guid>
-      <description>Krayin CRM before 2.2.7 contains a broken object level authorization vulnerability in EmailController write actions that allows scope-restricted authenticated users to manipulate other users&apos; emails by supplying their numeric IDs. Attackers can call…</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112286 · 7.1 HIGH — Krayin CRM before 2.2.7 IDOR via Quote Search and Lead-Products Endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-112286</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112286</guid>
-      <description>Krayin CRM before 2.2.7 contains an insecure direct object reference vulnerability that allows scope-restricted authenticated users to read other users&apos; quotes by bypassing per-user data scope checks in QuoteController. Attackers can query the quotes…</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112285 · 5.3 MEDIUM — Thelia before 3.1.5 and 3.2.4 Coupon Usage Limit Bypass via Pay-Later Orders</title>
-      <link>https://vulnogram.org/CVE-2026-112285</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112285</guid>
-      <description>Thelia before 3.1.5 and 3.2.x before 3.2.4 contains a business logic vulnerability that allows authenticated customers to bypass coupon usage limits because usage is counted only when orders become paid. Attackers can place multiple pay-later orders…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112284 · 4.8 MEDIUM — libaribcaption 1.1.0 through 1.1.2 Out-of-Bounds Read via DecoderImpl::HandleGLGR</title>
-      <link>https://vulnogram.org/CVE-2026-112284</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112284</guid>
-      <description>libaribcaption 1.1.0 through 1.1.2 contains a global out-of-bounds read in DecoderImpl::HandleGLGR() that reads past the 78-entry kLatinSpecialTable without an upper bound check. Attackers can supply crafted captions designating the Latin special set…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112283 · 6.8 MEDIUM — libbluray through 1.5.1 Uncontrolled Memory Allocation via _parse_extent_start_points</title>
-      <link>https://vulnogram.org/CVE-2026-112283</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112283</guid>
-      <description>VideoLAN libbluray through 1.5.1 contains an uncontrolled memory allocation vulnerability in _parse_extent_start_points() in clpi_parse.c that trusts the num_point field without bounds checking. Attackers can supply a crafted .clpi file on a disc, im…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112282 · 6.8 MEDIUM — VideoLAN libbluray through 1.5.1 Out-of-Bounds Read via clpi_access_point</title>
-      <link>https://vulnogram.org/CVE-2026-112282</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112282</guid>
-      <description>VideoLAN libbluray through 1.5.1 contains an out-of-bounds read vulnerability in clpi_access_point() that allows attackers to crash applications by supplying a ClipInfo file with an empty EP-map fine table. Attackers can place a crafted .clpi file in…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 13:55:27 GMT</pubDate>
     </item>
   </channel>
 </rss>

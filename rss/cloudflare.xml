@@ -11,7 +11,34 @@
       <title>Cloudflare, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 20 Oct 2026 00:19:33 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 05:42:34 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-105299 · 8.7 HIGH 🌩️ — Pingora forwards client-nominated Connection headers to HTTP/1 upstreams, allowing ACL bypass in specific chained deployments</title>
+      <link>https://vulnogram.org/CVE-2026-105299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105299</guid>
+      <description>Summary Before version 0.9.0, the HTTP/1 upstream path in pingora-proxy passed the downstream request through upstream_request_filter and wrote it to the upstream without removing the client&apos;s Connection header, other hop-by-hop headers, or the heade…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 01:07:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105298 · 6.3 MEDIUM 🌩️ — Pingora HTTP/2 :authority and Host header mismatch enables cache poisoning and host-based access control bypass</title>
+      <link>https://vulnogram.org/CVE-2026-105298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105298</guid>
+      <description>Summary Before version 0.9.0, Pingora accepted HTTP/2 requests whose Host header differed from the :authority pseudo-header. Request filters, cache keys, and logs that read the request URI (session.req_header().uri) saw the :authority value, but the…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:46:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105297 · 7.5 HIGH 🌩️ — Pingora HTTP/2 server memory exhaustion through unbounded default header-list and concurrent-stream limits</title>
+      <link>https://vulnogram.org/CVE-2026-105297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105297</guid>
+      <description>Summary Before version 0.8.1, Pingora&apos;s HTTP/2 server used the h2 crate&apos;s default limits unless the application set its own 16 MiB decoded header-list size and no limit on concurrent streams. A remote, unauthenticated client can send 1-byte HPACK ref…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 20 Oct 2026 00:40:27 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-11325 · 8.8 HIGH 🌩️ — cloudflare/pages-action is deprecated — migration required by September 18th, 2026</title>
       <link>https://vulnogram.org/CVE-2026-11325</link>
@@ -418,30 +445,6 @@
       <description>Due to a hardlink created in the ProgramData folder during the repair process of the software, the installer (MSI) of WARP Client for Windows (&lt;= 2022.12.582.0) allowed a malicious attacker to forge the destination of the hardlink and escalate privil…</description>
       <category>High</category>
       <pubDate>Thu, 06 Apr 2023 09:42:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-1412 · 7 HIGH — Local Privilege Escalation Vulnerability in WARP&apos;s MSI Installer</title>
-      <link>https://vulnogram.org/CVE-2023-1412</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-1412</guid>
-      <description>An unprivileged (non-admin) user can exploit an Improper Access Control vulnerability in the Cloudflare WARP Client for Windows (&lt;= 2022.12.582.0) to perform privileged operations with SYSTEM context by working with a combination of opportunistic loc…</description>
-      <category>High</category>
-      <pubDate>Wed, 05 Apr 2023 15:22:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-1314 · 7.5 HIGH — Local Privilege Escalation Vulnerability in cloudflared&apos;s Installer</title>
-      <link>https://vulnogram.org/CVE-2023-1314</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-1314</guid>
-      <description>A vulnerability has been discovered in cloudflared&apos;s installer (&lt;= 2023.3.0) for Windows 32-bits devices that allows a local attacker with no administrative permissions to escalate their privileges on the affected device. This vulnerability exists be…</description>
-      <category>High</category>
-      <pubDate>Tue, 21 Mar 2023 11:01:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-4428 · 8.9 HIGH — support_uri validation missing in WARP client for Windows</title>
-      <link>https://vulnogram.org/CVE-2022-4428</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-4428</guid>
-      <description>support_uri parameter in the WARP client local settings file (mdm.xml) lacked proper validation which allowed for privilege escalation and launching an arbitrary executable on the local machine upon clicking on the &quot;Send feedback&quot; option. An attacker…</description>
-      <category>High</category>
-      <pubDate>Wed, 11 Jan 2023 16:49:36 GMT</pubDate>
     </item>
   </channel>
 </rss>
