@@ -11,12 +11,40 @@
       <title>Mozilla Corporation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 20 Oct 2026 15:45:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 20:00:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-113869 — Use-after-free in S/MIME decryption during a security device password prompt</title>
+      <link>https://vulnogram.org/CVE-2026-113869</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113869</guid>
+      <description>When Thunderbird asked for a security device password (for example a smartcard PIN or the Primary Password) while decrypting an S/MIME message, the message load could finish or be cancelled while the prompt was open. This freed the message decoder wh…</description>
+      <pubDate>Tue, 20 Oct 2026 19:14:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113868 — Uninitialized memory disclosure and out-of-bounds read in POP3 and SMTP NTLM authentication</title>
+      <link>https://vulnogram.org/CVE-2026-113868</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113868</guid>
+      <description>When authenticating to a POP3 or SMTP server using NTLM, Thunderbird did not check whether the server&apos;s challenge was valid base64. A malicious server could send a challenge that caused Thunderbird to include uninitialized heap memory in its NTLM res…</description>
+      <pubDate>Tue, 20 Oct 2026 19:14:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113867 — Stanza injection in XMPP chat</title>
+      <link>https://vulnogram.org/CVE-2026-113867</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113867</guid>
+      <description>Thunderbird did not escape attribute values when serializing outgoing XMPP stanzas. Because values from incoming requests were echoed back in automatic replies, a remote XMPP user could send a crafted request that caused Thunderbird to inject arbitra…</description>
+      <pubDate>Tue, 20 Oct 2026 19:14:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113866 — Account password sent unencrypted during Exchange account setup</title>
+      <link>https://vulnogram.org/CVE-2026-113866</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113866</guid>
+      <description>When setting up an account, Thunderbird&apos;s Exchange AutoDiscover lookup also queried the domain&apos;s AutoDiscover service over plain HTTP. Due to a bug, that unencrypted request included the credentials the user had entered, allowing a network attacker t…</description>
+      <pubDate>Tue, 20 Oct 2026 19:14:54 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-113401 · 6.5 MEDIUM 🌩️ — Denial-of-service in the PDF Viewer component</title>
       <link>https://vulnogram.org/CVE-2026-113401</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113401</guid>
-      <description>Denial-of-service in the PDF Viewer component. This vulnerability was fixed in Firefox 158.0.1.</description>
+      <description>Denial-of-service in the PDF Viewer component. This vulnerability was fixed in Firefox 158.0.1 and Thunderbird 158.0.1.</description>
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 12:58:16 GMT</pubDate>
@@ -25,7 +53,7 @@
       <title>CVE-2026-113400 · 5.4 MEDIUM 🌩️ — Uninitialized memory in the Audio/Video: cubeb component</title>
       <link>https://vulnogram.org/CVE-2026-113400</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113400</guid>
-      <description>Uninitialized memory in the Audio/Video: cubeb component. This vulnerability was fixed in Firefox 158.0.1.</description>
+      <description>Uninitialized memory in the Audio/Video: cubeb component. This vulnerability was fixed in Firefox 158.0.1 and Thunderbird 158.0.1.</description>
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 12:58:15 GMT</pubDate>
@@ -34,7 +62,7 @@
       <title>CVE-2026-113399 — Incorrect boundary conditions in the SVG component</title>
       <link>https://vulnogram.org/CVE-2026-113399</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113399</guid>
-      <description>Incorrect boundary conditions in the SVG component. This vulnerability was fixed in Firefox 158.0.1.</description>
+      <description>Incorrect boundary conditions in the SVG component. This vulnerability was fixed in Firefox 158.0.1 and Thunderbird 158.0.1.</description>
       <pubDate>Tue, 20 Oct 2026 12:58:14 GMT</pubDate>
     </item>
     <item>
@@ -47,17 +75,19 @@
       <pubDate>Tue, 20 Oct 2026 12:58:14 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-110249 — Denial-of-service in the Exchange email component</title>
+      <title>CVE-2026-110249 · 8.6 HIGH — Denial-of-service in the Exchange email component</title>
       <link>https://vulnogram.org/CVE-2026-110249</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110249</guid>
       <description>A malicious, compromised, or MITM-controlled Exchange server can return a single well-formed SOAP response containing an element with enough attributes to keep Thunderbird&apos;s main thread CPU-bound for seconds to hours. This vulnerability was fixed in…</description>
+      <category>High</category>
       <pubDate>Tue, 13 Oct 2026 18:08:38 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-110247 — Integer overflow in libmime buffer growth could lead to heap corruption</title>
+      <title>CVE-2026-110247 · 8.4 HIGH — Integer overflow in libmime buffer growth could lead to heap corruption</title>
       <link>https://vulnogram.org/CVE-2026-110247</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110247</guid>
       <description>Several buffer-growth sites in libmime performed size arithmetic in 32-bit types without overflow checks. On a sufficiently large message the growth guard could fail open, or the buffer could be reallocated smaller than required, and a subsequent mem…</description>
+      <category>High</category>
       <pubDate>Tue, 13 Oct 2026 18:08:37 GMT</pubDate>
     </item>
     <item>
@@ -406,41 +436,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 13 Oct 2026 12:29:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109741 · 5.4 MEDIUM 🌩️ — Use-after-free in the Storage: Bucket File System component</title>
-      <link>https://vulnogram.org/CVE-2026-109741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109741</guid>
-      <description>Use-after-free in the Storage: Bucket File System component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109740 · 9.6 CRITICAL 🌩️ — Sandbox escape due to incorrect boundary conditions in the Widget: Win32 component</title>
-      <link>https://vulnogram.org/CVE-2026-109740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109740</guid>
-      <description>Sandbox escape due to incorrect boundary conditions in the Widget: Win32 component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109739 · 8.8 HIGH — Privilege escalation in the WebExtensions component</title>
-      <link>https://vulnogram.org/CVE-2026-109739</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109739</guid>
-      <description>Privilege escalation in the WebExtensions component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>High</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109738 · 5.4 MEDIUM 🌩️ — Use-after-free in the Audio/Video: Playback component</title>
-      <link>https://vulnogram.org/CVE-2026-109738</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109738</guid>
-      <description>Use-after-free in the Audio/Video: Playback component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:25 GMT</pubDate>
     </item>
   </channel>
 </rss>
