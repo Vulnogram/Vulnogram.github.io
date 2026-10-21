@@ -11,7 +11,23 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 21 Oct 2026 07:00:06 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 12:49:23 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-114236 · 3.3 LOW — Podman: goroutine/file-descriptor leak in storage/pkg/archive.applylayer and applyuncompressedlayer on malformed layers</title>
+      <link>https://vulnogram.org/CVE-2026-114236</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114236</guid>
+      <description>storage/pkg/archive.ApplyLayer and ApplyUncompressedLayer may, when processing corrupt or malicious inputs, leak a file descriptor; unbounded repeated calls can exhaust the process’ file descriptor limit</description>
+      <category>Low</category>
+      <pubDate>Wed, 21 Oct 2026 08:04:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-17557 · 6.5 MEDIUM — Lm-evaluation-harness: lm-evaluation-harness: ssrf via job-spec model.url with bearer credential forwarding</title>
+      <link>https://vulnogram.org/CVE-2026-17557</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17557</guid>
+      <description>A flaw was found in the `lm-evaluation-harness` component of Red Hat OpenShift AI. An authenticated user, able to submit an evaluation job, could exploit this by providing a malicious model URL in the `JobSpec`. This vulnerability allows for the disc…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 07:59:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-92824 · 6.2 MEDIUM — Libmodulemd: libmodulemd: out-of-bounds read when emitting rpm-map artifacts</title>
       <link>https://vulnogram.org/CVE-2026-92824</link>
@@ -338,49 +354,6 @@
       <pubDate>Thu, 15 Oct 2026 15:36:57 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-110927 · 4.3 MEDIUM — Openssh: openssh: a compressed payload can expand past the maximum packet size</title>
-      <link>https://vulnogram.org/CVE-2026-110927</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110927</guid>
-      <description>A flaw was found in OpenSSH. After compression is negotiated, a compressed payload can expand past the maximum supported packet size because the inflate loop does not stop at that limit. Memory use grows in the process handling that connection.</description>
-      <category>Medium</category>
-      <pubDate>Thu, 15 Oct 2026 13:07:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110924 · 4.8 MEDIUM 🌩️ — Openssh: openssh: gssapi delegated credentials can be stored after a failed authentication</title>
-      <link>https://vulnogram.org/CVE-2026-110924</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110924</guid>
-      <description>A flaw was found in OpenSSH. With GSSAPI authentication enabled, a failed GSSAPI attempt can leave delegated credentials stored for the connection even though user authorization did not succeed. A later successful login on that connection is not auth…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 13:07:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110926 · 5.3 MEDIUM — Openssh: openssh: shared lz77 compression dictionary leaks plaintext across channels</title>
-      <link>https://vulnogram.org/CVE-2026-110926</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110926</guid>
-      <description>A flaw was found in OpenSSH. When compression is negotiated, channels on the same connection share one LZ77 dictionary. A peer who can write on one channel can recover plaintext from another channel by chosen-plaintext lengths.</description>
-      <category>Medium</category>
-      <pubDate>Thu, 15 Oct 2026 05:25:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110925 · 5.4 MEDIUM 🌩️ — Openssh: openssh: &apos;$&apos; and &apos;\&apos; in a command-line username expand through %u</title>
-      <link>https://vulnogram.org/CVE-2026-110925</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110925</guid>
-      <description>A flaw was found in OpenSSH. A username entered on the ssh command line can still contain &apos;$&apos; or a non-trailing backslash. When a configuration expands %u inside ProxyCommand or Match exec, those characters are passed into the shell.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 05:25:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110923 · 6.5 MEDIUM 🌩️ — Openssh: openssh: sftp can write outside the destination directory from a server-supplied path</title>
-      <link>https://vulnogram.org/CVE-2026-110923</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110923</guid>
-      <description>A flaw was found in OpenSSH. During an sftp copy, a malicious server can supply an empty name, a slash-only path, or a &quot;..&quot; basename that sftp uses as the local destination, writing outside the directory the user selected.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 05:24:59 GMT</pubDate>
-    </item>
-    <item>
       <title>CVE-2026-110777 · 5.7 MEDIUM — Evolution-data-server: local file disclosure via attach file:// uris</title>
       <link>https://vulnogram.org/CVE-2026-110777</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110777</guid>
@@ -419,6 +392,30 @@
       <description>A flaw was found in DPDK lib/vhost vhost-crypto. A guest can supply an avail-ring descriptor index that is used without bounds checking, causing an out-of-bounds write in the host vhost-crypto backend.</description>
       <category>Medium</category>
       <pubDate>Wed, 14 Oct 2026 17:52:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86845 · 6.5 MEDIUM — Dpdk: dpdk: guest-triggered use-after-free and type confusion in vhost-crypto session cleanup</title>
+      <link>https://vulnogram.org/CVE-2026-86845</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86845</guid>
+      <description>A flaw was found in DPDK lib/vhost vhost-crypto. Session cleanup can leave a stale cached session pointer, and the data path does not check the session type before attaching it, leading to use-after-free or type confusion in the host vhost-crypto bac…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 17:52:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86566 · 6.5 MEDIUM — Dpdk: dpdk: guest with runt rx descriptors underflows copy length in vhost enqueue (split and packed rings)</title>
+      <link>https://vulnogram.org/CVE-2026-86566</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86566</guid>
+      <description>A flaw was found in DPDK lib/vhost. A guest with runt RX descriptors can underflow the copy length in vhost enqueue, causing a denial of service in a shared vhost backend such as OVS-DPDK.</description>
+      <category>Medium</category>
+      <pubDate>Wed, 14 Oct 2026 17:52:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86848 · 8.8 HIGH — Dpdk: dpdk: time-of-check/time-of-use vulnerability allowing guest-triggered out-of-bounds write in vhost-crypto</title>
+      <link>https://vulnogram.org/CVE-2026-86848</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86848</guid>
+      <description>A flaw was found in DPDK lib/vhost vhost-crypto. The indirect-descriptor snapshot double-fetches a guest descriptor next index, allowing a malicious guest to cause an out-of-bounds access in the host backend.</description>
+      <category>High</category>
+      <pubDate>Wed, 14 Oct 2026 17:50:08 GMT</pubDate>
     </item>
   </channel>
 </rss>
