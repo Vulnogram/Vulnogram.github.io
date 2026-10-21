@@ -11,7 +11,31 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 21 Oct 2026 01:23:53 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 07:00:06 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-92824 · 6.2 MEDIUM — Libmodulemd: libmodulemd: out-of-bounds read when emitting rpm-map artifacts</title>
+      <link>https://vulnogram.org/CVE-2026-92824</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92824</guid>
+      <description>A flaw was found in libmodulemd. In the module stream v2 rpm-map emission path, an inner loop incorrectly uses the count of digest algorithms as its bound instead of the number of checksums in the current digest table. Crafted modulemd v2 metadata wi…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 03:18:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92822 · 6.2 MEDIUM — Libmodulemd: libmodulemd: unbounded recursion when parsing nested xmd yaml</title>
+      <link>https://vulnogram.org/CVE-2026-92822</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92822</guid>
+      <description>A flaw was found in libmodulemd. When parsing module metadata, the xmd field is converted into nested GVariant values through recursive YAML mapping and sequence helpers without a recursion-depth or node-count limit. An attacker who can supply crafte…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 03:18:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92823 · 6.2 MEDIUM — Libmodulemd: libmodulemd: missing decompressed-size limit when parsing compressed yaml</title>
+      <link>https://vulnogram.org/CVE-2026-92823</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92823</guid>
+      <description>A flaw was found in libmodulemd. In builds with rpmio support enabled, compressed modulemd YAML is decompressed through a custom read handler that does not enforce a cumulative decompressed-size limit before parsing. An attacker who can supply a high…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 03:18:37 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-114038 · 5.1 MEDIUM — Device-mapper-multipath: device-mapper-multipath: information disclosure via malformed format string</title>
       <link>https://vulnogram.org/CVE-2026-114038</link>
@@ -150,15 +174,6 @@
       <description>A flaw was found in bootc and ostree. Already-staged deployments are finalized without revalidating the deployment&apos;s container image against the current containers signature policy. Unsigned OS content staged under a prior permissive policy can remai…</description>
       <category>High</category>
       <pubDate>Mon, 19 Oct 2026 06:40:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16487 · 8.1 HIGH 🌩️ — Bootc: containers-common: bootc: automatic updates can apply unsigned mutable-tag content under default containers policy</title>
-      <link>https://vulnogram.org/CVE-2026-16487</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16487</guid>
-      <description>A flaw was found in bootc when operating with the default containers signature policy. Automatic or manual upgrades of a mutable image tag may apply unsigned content for registries that fall through to insecureAcceptAnything, allowing an attacker who…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 05:27:30 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-89096 · 5.9 MEDIUM 🌩️ — Nfs-utils: nfs-utils: denial of service via memory leak in rpc.statd</title>
@@ -404,22 +419,6 @@
       <description>A flaw was found in DPDK lib/vhost vhost-crypto. A guest can supply an avail-ring descriptor index that is used without bounds checking, causing an out-of-bounds write in the host vhost-crypto backend.</description>
       <category>Medium</category>
       <pubDate>Wed, 14 Oct 2026 17:52:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86845 · 6.5 MEDIUM — Dpdk: dpdk: guest-triggered use-after-free and type confusion in vhost-crypto session cleanup</title>
-      <link>https://vulnogram.org/CVE-2026-86845</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86845</guid>
-      <description>A flaw was found in DPDK lib/vhost vhost-crypto. Session cleanup can leave a stale cached session pointer, and the data path does not check the session type before attaching it, leading to use-after-free or type confusion in the host vhost-crypto bac…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 17:52:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86566 · 6.5 MEDIUM — Dpdk: dpdk: guest with runt rx descriptors underflows copy length in vhost enqueue (split and packed rings)</title>
-      <link>https://vulnogram.org/CVE-2026-86566</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86566</guid>
-      <description>A flaw was found in DPDK lib/vhost. A guest with runt RX descriptors can underflow the copy length in vhost enqueue, causing a denial of service in a shared vhost backend such as OVS-DPDK.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 17:52:01 GMT</pubDate>
     </item>
   </channel>
 </rss>
