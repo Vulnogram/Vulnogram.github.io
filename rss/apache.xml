@@ -11,7 +11,264 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 21 Oct 2026 17:54:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 21:16:53 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-112381 · 8.2 HIGH 🌩️ — Apache Traffic Server: Nullptr dereference in net_write_io on a POST half-close with chunked response</title>
+      <link>https://vulnogram.org/CVE-2026-112381</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112381</guid>
+      <description>Apache Traffic Server can crash with a null pointer dereference when a client POST request is torn down via half-close while a chunked origin response is being reparsed from a reentrant write-ready callback, a timing-dependent race introduced by the…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:20:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111817 · 6.9 MEDIUM 🌩️ — Apache Traffic Server: Dropping chunked trailers stalls a passthrough transfer until timeout</title>
+      <link>https://vulnogram.org/CVE-2026-111817</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111817</guid>
+      <description>Apache Traffic Server can stall a chunked transfer that it passes through with its trailers removed (proxy.config.http.drop_chunked_trailers) until the connection times out, because it waits for the trailer bytes it has already dropped. Trailer dropp…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:20:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111812 · 10 CRITICAL 🌩️ — Apache Traffic Server: origin_server_auth signs client-controlled AWS headers under the proxy&apos;s IAM credentials</title>
+      <link>https://vulnogram.org/CVE-2026-111812</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111812</guid>
+      <description>Apache Traffic Server&apos;s origin_server_auth plugin lets a client force signing of attacker-chosen AWS request headers under the proxy&apos;s own credentials. This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, fr…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:18:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111811 · 9.4 CRITICAL 🌩️ — Apache Traffic Server: tsmemcache plugin exposes the shared proxy cache over the network with no authentication</title>
+      <link>https://vulnogram.org/CVE-2026-111811</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111811</guid>
+      <description>Apache Traffic Server&apos;s experimental tsmemcache plugin allows unauthenticated network read, write, and deletion of the shared proxy cache. This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 thr…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:17:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111809 · 9.3 CRITICAL 🌩️ — Apache Traffic Server: HEAD requests carrying Content-Length or Transfer-Encoding enable request smuggling</title>
+      <link>https://vulnogram.org/CVE-2026-111809</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111809</guid>
+      <description>Apache Traffic Server allows request smuggling via HEAD requests that carry Content-Length or Transfer-Encoding. This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0. Users…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:16:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111810 · 8.7 HIGH 🌩️ — Apache Traffic Server: Unthrottled per-header diagnostic logging enables a log-flood denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-111810</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111810</guid>
+      <description>Apache Traffic Server 9.2.15, 10.1.4 and 10.2.0 write one unthrottled diagnostic log line for every internal @ header they strip, so a request carrying many such headers makes the proxy write far more log data than the request contains. This issue af…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:14:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111815 · 10 CRITICAL 🌩️ — Apache Traffic Server: TLS session ticket resumption bypasses per-SNI verify_client STRICT enforcement</title>
+      <link>https://vulnogram.org/CVE-2026-111815</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111815</guid>
+      <description>Apache Traffic Server can resume a TLS session across SNI virtual hosts without re-verifying a client certificate required by the resumed host&apos;s verify_client STRICT policy. This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:13:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111814 · 10 CRITICAL 🌩️ — Apache Traffic Server: Default server_session_sharing.match omits MASK_CERT, allowing pooled mTLS identity confusion at the origin</title>
+      <link>https://vulnogram.org/CVE-2026-111814</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111814</guid>
+      <description>Apache Traffic Server&apos;s default outbound session-sharing policy can reuse a pooled TLS session authenticated with one client certificate for a transaction configured to present a different one. This issue affects Apache Traffic Server: from 9.0.0 thr…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:13:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111808 · 8.6 HIGH 🌩️ — Apache Traffic Server: HTTP/2 DATA frame padding underflow lets a client trigger backend worker-pool exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-111808</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111808</guid>
+      <description>Apache Traffic Server can be used to exhaust an HTTP/1.1 origin&apos;s worker pool via a malformed padded HTTP/2 DATA frame. This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.2.0…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:11:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111805 · 8.6 HIGH 🌩️ — Apache Traffic Server: HTTP/2 Content-Length truncation lets a client trigger backend worker-pool exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-111805</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111805</guid>
+      <description>Apache Traffic Server can be used to exhaust an HTTP/1.1 origin&apos;s worker pool via a truncated HTTP/2 Content-Length value. This issue affects Apache Traffic Server: from 8.0.0 through 8.1.11, from 9.0.0 through 9.2.15, from 10.0.0 through 10.1.4, 10.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 19:10:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111816 · 9.3 CRITICAL 🌩️ — Apache Traffic Server: A malformed 302 response bypasses parse-error rejection through the Transfer-Encoding: chunked carve-out</title>
+      <link>https://vulnogram.org/CVE-2026-111816</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111816</guid>
+      <description>Apache Traffic Server forwarded a malformed 302 response that should have been rejected as a parse error, because the Transfer-Encoding: chunked carve-out bypassed the rejection path. A response that two peers can read differently is then stored and…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 18:26:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-55702 · 8.7 HIGH 🌩️ — Apache Traffic Server: An unread Expect: 100-continue request body is framed as a new request</title>
+      <link>https://vulnogram.org/CVE-2025-55702</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-55702</guid>
+      <description>When a client sends a POST with Expect: 100-continue and the origin answers before reading the body, Apache Traffic Server parses the unread body left on the client connection as the next request. An attacker behind a front-end proxy that shares conn…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 18:24:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-31699 · 9.1 CRITICAL 🌩️ — Apache Traffic Server: Origin connection still owed a request body is reused, enabling request smuggling</title>
+      <link>https://vulnogram.org/CVE-2025-31699</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-31699</guid>
+      <description>Apache Traffic Server can return an origin connection to the shared pool while the origin is still waiting on a request body the client declared but never fully sent, including when the client used Expect: 100-continue. The origin then reads a later…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 18:22:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111804 · 8.8 HIGH 🌩️ — Apache Traffic Server: wasm plugin has a use-after-free and forwards unvalidated guest metric IDs</title>
+      <link>https://vulnogram.org/CVE-2026-111804</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111804</guid>
+      <description>Apache Traffic Server&apos;s experimental wasm plugin has a use-after-free in its transaction-close handler and forwards unvalidated guest-supplied metric IDs to the internal stats API. This issue affects Apache Traffic Server: from 10.0.0 through 10.1.4,…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 18:21:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111813 · 10 CRITICAL 🌩️ — Apache Traffic Server: magick plugin passes client query strings unfiltered to ImageMagick convert in the default configuration</title>
+      <link>https://vulnogram.org/CVE-2026-111813</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111813</guid>
+      <description>Apache Traffic Server&apos;s experimental magick plugin lets an unauthenticated client control ImageMagick convert arguments in its default (unsigned) configuration. This issue affects Apache Traffic Server: from 8.0.1 through 8.1.11, from 9.0.0 through 9…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 18:20:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105945 · 7.7 HIGH — Apache Pulsar: Improper Validation of Package Name Components Allows Cross-Tenant Package Access in Filesystem Package Storage</title>
+      <link>https://vulnogram.org/CVE-2026-105945</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105945</guid>
+      <description>The Pulsar Packages Management Service can be configured to store packages on the local filesystem of the broker by using the filesystem storage provider. Package names consist of a type, tenant, namespace, name and version. Authorization of package…</description>
+      <category>High</category>
+      <pubDate>Wed, 21 Oct 2026 18:18:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105944 · 10 CRITICAL 🌩️ — Apache Pulsar Manager: Missing authentication and authorization and disclosure of the Pulsar admin credential; end of life</title>
+      <link>https://vulnogram.org/CVE-2026-105944</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105944</guid>
+      <description>Apache Pulsar Manager is a web console for administering Apache Pulsar clusters. It has its own user accounts and login, and it can be configured with an HTTP authentication credential, such as a token, that it uses to call the Pulsar admin API on be…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 18:17:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105942 · 7.7 HIGH — Apache Pulsar: Original principal of proxied requests authorized with the proxy&apos;s authentication data, allowing privilege escalation</title>
+      <link>https://vulnogram.org/CVE-2026-105942</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105942</guid>
+      <description>When a configured proxy role sends a request to the broker on behalf of another user (the original principal), the broker is designed to authorize both the proxy role and the original principal and to allow the request only if both are authorized, so…</description>
+      <category>High</category>
+      <pubDate>Wed, 21 Oct 2026 18:14:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105938 · 2.3 LOW — Apache Pulsar: Subscription authorization policies not enforced by namespace-level backlog and unsubscribe operations and by topic expire-all</title>
+      <link>https://vulnogram.org/CVE-2026-105938</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105938</guid>
+      <description>Apache Pulsar namespaces can restrict which roles may use a subscription, either with the Prefix subscription authentication mode, which requires a subscription name to start with the role name, or by granting permission on a subscription to specific…</description>
+      <category>Low</category>
+      <pubDate>Wed, 21 Oct 2026 18:13:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105937 · 8.7 HIGH — Apache Pulsar: Missing authorization of the shadow topic source allows cross-tenant message disclosure and deletion of source topic data</title>
+      <link>https://vulnogram.org/CVE-2026-105937</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105937</guid>
+      <description>Apache Pulsar shadow topics (PIP-180) are topics that read the stored messages of a source topic from that topic&apos;s managed ledger. The source topic is selected by setting the reserved topic property PULSAR.SHADOW_SOURCE. The admin REST API accepts th…</description>
+      <category>High</category>
+      <pubDate>Wed, 21 Oct 2026 18:12:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105936 · 5.3 MEDIUM — Apache Pulsar: Functions connectors list endpoint does not apply the super-user check of the worker connectors endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-105936</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105936</guid>
+      <description>The Pulsar Functions worker REST API provides two endpoints that return the catalog of Pulsar IO connectors installed on the functions worker: the worker connectors endpoint (/admin/v2/worker/connectors) and the deprecated functions connectors endpoi…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 18:11:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105935 · 4.9 MEDIUM — Apache Pulsar: Function trigger publishes to the input topic without checking the caller&apos;s produce permission</title>
+      <link>https://vulnogram.org/CVE-2026-105935</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105935</guid>
+      <description>The Pulsar Functions Worker provides a REST API endpoint for triggering a function, which publishes a caller-supplied value to one of the function&apos;s configured input topics. The Functions Worker performs this publish with its own broker client, which…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 18:10:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105934 · 7.2 HIGH — Apache Pulsar: Missing tenant admin authorization check when truncating a partitioned topic</title>
+      <link>https://vulnogram.org/CVE-2026-105934</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105934</guid>
+      <description>The Apache Pulsar broker admin REST API provides a truncate operation for persistent topics (DELETE /admin/v2/persistent/{tenant}/{namespace}/{topic}/truncate). Truncating a topic moves all subscription cursors of the topic to the end of the topic an…</description>
+      <category>High</category>
+      <pubDate>Wed, 21 Oct 2026 18:08:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105933 · 2.3 LOW — Apache Pulsar: Namespace encryption requirement not enforced after a failure during topic initialization</title>
+      <link>https://vulnogram.org/CVE-2026-105933</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105933</guid>
+      <description>Apache Pulsar allows an administrator to require end-to-end message encryption for all topics in a namespace by setting the encryption_required namespace policy. When this policy is set, the broker rejects messages that are published without encrypti…</description>
+      <category>Low</category>
+      <pubDate>Wed, 21 Oct 2026 18:07:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105932 · 2.3 LOW — Apache Pulsar: Missing topic policy authorization on non-persistent topic entry filter endpoints</title>
+      <link>https://vulnogram.org/CVE-2026-105932</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105932</guid>
+      <description>The Apache Pulsar broker admin REST API provides endpoints to read, set and remove the topic-level entry filter policy of a topic. For persistent topics these endpoints check that the caller is authorized for the entry filters topic policy operation.…</description>
+      <category>Low</category>
+      <pubDate>Wed, 21 Oct 2026 18:06:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105931 · 2.3 LOW — Apache Pulsar: Missing authorization on transaction admin endpoints exposes transaction coordinator and transaction statistics of other tenants</title>
+      <link>https://vulnogram.org/CVE-2026-105931</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105931</guid>
+      <description>The Apache Pulsar broker exposes a transaction administration REST API under /admin/v3/transactions. When authentication and authorization are enabled, most of the read endpoints of this API verify only that the request is authenticated and that the…</description>
+      <category>Low</category>
+      <pubDate>Wed, 21 Oct 2026 18:02:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105930 · 6 MEDIUM — Apache Pulsar: Improper Authorization of Function, Source and Sink Package URLs Allows Cross-Tenant Package Download</title>
+      <link>https://vulnogram.org/CVE-2026-105930</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105930</guid>
+      <description>When package management is enabled, Pulsar Functions, Sources and Sinks can be registered or updated from a package stored in the Pulsar Packages Management Service by supplying a package URL. The Pulsar Functions worker authorized these requests onl…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 18:01:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105927 · 2.3 LOW — Apache Pulsar: Improper authorization of WebSocket consumer dead letter topic allows writes without PRODUCE permission</title>
+      <link>https://vulnogram.org/CVE-2026-105927</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105927</guid>
+      <description>The Apache Pulsar WebSocket service allows a WebSocket consumer to configure a dead letter policy through query parameters of the consumer endpoint, including the deadLetterTopic parameter that names the topic to which messages are written after the…</description>
+      <category>Low</category>
+      <pubDate>Wed, 21 Oct 2026 18:00:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105926 · 5.3 MEDIUM — Apache Pulsar: Missing Topic Authorization on Binary Protocol GetSchema and GetOrCreateSchema Commands</title>
+      <link>https://vulnogram.org/CVE-2026-105926</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105926</guid>
+      <description>The Pulsar broker serves two schema commands on its binary protocol: GetSchema, which returns the schema registered for a topic, and GetOrCreateSchema, which registers a new schema version for an existing topic. The broker handled both commands after…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 17:59:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105869 · 9.2 CRITICAL 🌩️ — Apache Pulsar: MultiRolesTokenAuthorizationProvider uses roles from unverified tokens for HTTP requests that fall back to the anonymous user role</title>
+      <link>https://vulnogram.org/CVE-2026-105869</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105869</guid>
+      <description>Apache Pulsar&apos;s MultiRolesTokenAuthorizationProvider authorizes a client with all roles listed in a claim of its JSON Web Token (JWT). The provider is intended for use with token authentication, which verifies the token before authorization. The prov…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 17:58:54 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-90484 — Apache bRPC: Null pointer dereference in MySQL reply parser leading to client crash</title>
       <link>https://vulnogram.org/CVE-2026-90484</link>
@@ -154,232 +411,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78058</guid>
       <description>Uncontrolled resource consumption in the HTTP/2 (h2) receive path of Apache bRPC (version &lt; 1.18.0) on all platforms allows a remote unauthenticated attacker to crash the server or grow its memory without bound by sending crafted HTTP/2 frames. Root…</description>
       <pubDate>Wed, 21 Oct 2026 11:52:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78048 — Apache bRPC: Remote Denial of Service via Out-of-Bounds Dynamic Table Sizing in HPACK Decoder</title>
-      <link>https://vulnogram.org/CVE-2026-78048</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78048</guid>
-      <description>A reachable-assertion flaw in the HPACK header-compression decoder of the HTTP/2 (h2/gRPC) stack in Apache bRPC (version &lt; 1.18.0) on all platforms allows a remote attacker to crash the server process by sending a crafted sequence of HPACK headers, r…</description>
-      <pubDate>Wed, 21 Oct 2026 11:51:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74758 — Apache bRPC: Heap Use-After-Free in RTMP Abort Message Handling</title>
-      <link>https://vulnogram.org/CVE-2026-74758</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74758</guid>
-      <description>A heap use-after-free in the RTMP protocol component of Apache bRPC (versions &lt; 1.18.0) allows a remote attacker to crash a bRPC RTMP server by sending a crafted Abort control message. No authentication or application-level request is required. Root…</description>
-      <pubDate>Wed, 21 Oct 2026 11:48:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74757 — Apache bRPC: Uncontrolled Memory Allocation via Malicious mcpack Array Item Count</title>
-      <link>https://vulnogram.org/CVE-2026-74757</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74757</guid>
-      <description>Uncontrolled resource allocation in the mcpack2pb component in Apache bRPC (version &lt; 1.18.0) on all platforms allows remote attackers to make the server allocate a large amount of memory via sending a crafted mcpack request with a huge array item co…</description>
-      <pubDate>Wed, 21 Oct 2026 11:46:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74755 — Apache bRPC: Integer Underflow in mcpack2pb Parser Leading to Denial of Service</title>
-      <link>https://vulnogram.org/CVE-2026-74755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74755</guid>
-      <description>An integer underflow in the mcpack2pb component of Apache bRPC (version &lt; 1.18.0) on all platforms allows remote attackers to crash a bRPC server by sending a request containing a string field with a zero value_size. The UnparsedValue::as_string() fu…</description>
-      <pubDate>Wed, 21 Oct 2026 11:45:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66392 — Apache bRPC: TLS Client Accepts Certificates for Mismatched Peer Names</title>
-      <link>https://vulnogram.org/CVE-2026-66392</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66392</guid>
-      <description>Apache bRPC versions before 1.18.0 validate the server certificate chain when client TLS peer verification is enabled, but do not bind the certificate to an expected DNS name or IP address. A network attacker who can redirect or intercept a connectio…</description>
-      <pubDate>Wed, 21 Oct 2026 11:43:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-61916 — Apache bRPC: Out-of-bounds Read in URL and Header Lookup Tables on Unsigned-char Platforms</title>
-      <link>https://vulnogram.org/CVE-2026-61916</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61916</guid>
-      <description>Out-of-bounds reads in URL parsing and case-insensitive header lookup in Apache bRPC before version 1.18.0 on platforms where plain char is unsigned, such as ARM64, allow remote attackers to cause a process crash and denial of service by sending craf…</description>
-      <pubDate>Wed, 21 Oct 2026 11:42:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-61902 — Apache bRPC: Memory Exhaustion Through Inconsistent Message Body Limits</title>
-      <link>https://vulnogram.org/CVE-2026-61902</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-61902</guid>
-      <description>Apache bRPC versions before 1.18.0 do not consistently enforce the configured max_body_size limit in non-progressive HTTP/1 and HTTP/2 parsing and in memcache and couchbase response parsing. A remote unauthenticated peer can cause an affected process…</description>
-      <pubDate>Wed, 21 Oct 2026 11:41:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58064 — Apache bRPC: Denial of Service via Unbounded Redis Inline Command Allocation</title>
-      <link>https://vulnogram.org/CVE-2026-58064</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58064</guid>
-      <description>The Redis protocol implementation in Apache bRPC allowed inline command parsing to allocate and copy the full connection buffer before a complete CRLF-terminated command was available. A remote attacker with access to a Redis-protocol bRPC service co…</description>
-      <pubDate>Wed, 21 Oct 2026 11:41:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56388 — Apache bRPC: Out-of-Bounds Write in Redis Command Parser</title>
-      <link>https://vulnogram.org/CVE-2026-56388</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56388</guid>
-      <description>The Redis server command parser in Apache bRPC accepts an empty RESP array as a command header. A remote unauthenticated attacker who can reach a bRPC server with Redis service enabled can send an empty array header followed by a bulk string, causing…</description>
-      <pubDate>Wed, 21 Oct 2026 11:40:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56387 — Apache bRPC: Remote Memory Exhaustion in RTMP AMF Parser</title>
-      <link>https://vulnogram.org/CVE-2026-56387</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56387</guid>
-      <description>The RTMP AMF parser in Apache bRPC accepts AMF string lengths and array counts directly from untrusted input. A remote unauthenticated attacker who can reach a bRPC server with RTMP enabled can send a small AMF payload with an excessive declared long…</description>
-      <pubDate>Wed, 21 Oct 2026 11:39:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-56386 · 7.5 HIGH 🌩️ — Apache bRPC: Integer Underflow and Out-of-Bounds Read in HTTP/2 DATA Frame Parser</title>
-      <link>https://vulnogram.org/CVE-2026-56386</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-56386</guid>
-      <description>Integer underflow and out-of-bounds read in the HTTP/2 server DATA frame parser in Apache bRPC allows an unauthenticated remote attacker to cause denial of service by sending a malformed DATA frame with the PADDED flag set and a zero-length payload.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Oct 2026 11:37:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54427 — Apache bRPC: Stack Exhaustion via Unbounded Recursion in AMF Parser</title>
-      <link>https://vulnogram.org/CVE-2026-54427</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54427</guid>
-      <description>Uncontrolled recursion in the AMF parser in Apache bRPC &lt; 1.18.0 allows a remote RTMP peer to crash a bRPC process by sending deeply nested AMF objects or arrays. The parser recursively processed nested AMF containers without enforcing a depth limit,…</description>
-      <pubDate>Wed, 21 Oct 2026 11:36:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54426 — Apache bRPC: Stack Exhaustion via Unbounded Recursion in Redis Reply Parser</title>
-      <link>https://vulnogram.org/CVE-2026-54426</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54426</guid>
-      <description>Uncontrolled recursion in the Redis reply parser in Apache bRPC &lt; 1.18.0 allows a remote Redis server peer to crash a bRPC Redis client process by returning a deeply nested RESP array reply. The parser recursed once for each nested array level withou…</description>
-      <pubDate>Wed, 21 Oct 2026 11:32:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-54425 — Apache bRPC: Stack Exhaustion via Recursive HPACK Dynamic Table Size Update Decoding</title>
-      <link>https://vulnogram.org/CVE-2026-54425</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-54425</guid>
-      <description>Uncontrolled recursion in the HTTP/2 HPACK decoder in Apache bRPC before 1.18.0 allows remote attackers to cause denial of service by sending a crafted HTTP/2 header block containing many consecutive Dynamic Table Size Update entries. Each update was…</description>
-      <pubDate>Wed, 21 Oct 2026 11:31:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-48830 — Apache bRPC: HTTP builtin request can mark a connection authenticated and bypass auth for later requests</title>
-      <link>https://vulnogram.org/CVE-2026-48830</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-48830</guid>
-      <description>Improper authentication in Apache bRPC through 1.17.0 allows a remote unauthenticated attacker to bypass authentication for protected non-builtin HTTP endpoints by first sending a builtin HTTP request on the same HTTP/1.1 keep-alive connection. When…</description>
-      <pubDate>Wed, 21 Oct 2026 11:30:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59229 — Apache IoTDB: Legacy Pipe Privilege Escalation</title>
-      <link>https://vulnogram.org/CVE-2026-59229</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59229</guid>
-      <description>The Legacy Pipe receiver protocol (handshake / sendPipeData) uses a hardcoded SUPER_USER (root) identity when executing data loading and deletion operations. A user with only SYSTEM-level privileges (such as USE_PIPE or MAINTAIN) who does NOT have WR…</description>
-      <pubDate>Wed, 21 Oct 2026 11:11:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59562 — Apache IoTDB: Remote code execution and Unauthenticated path traversal in legacy pipe sendFile RPC</title>
-      <link>https://vulnogram.org/CVE-2026-59562</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59562</guid>
-      <description>Missing authentication for critical function vulnerability in Apache IoTDB. This issue affects Apache IoTDB: from 2.0.0 before 2.0.11. Users are recommended to upgrade to version 2.0.11, which fixes the issue.</description>
-      <pubDate>Wed, 21 Oct 2026 11:10:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41114 — Apache IoTDB JDBC driver: Large-scale Memory Exhaustion via BigDecimal toPlainString in JDBC Driver</title>
-      <link>https://vulnogram.org/CVE-2026-41114</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41114</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in Apache IoTDB JDBC driver. This issue affects Apache IoTDB JDBC driver: from 1.3.3 before 2.0.11. Users are recommended to upgrade to version 2.0.11, which fixes the issue.</description>
-      <pubDate>Wed, 21 Oct 2026 11:07:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-58663 — Apache IoTDB: Auth Bypass in pipeTransfer() interface</title>
-      <link>https://vulnogram.org/CVE-2026-58663</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-58663</guid>
-      <description>An authentication bypass vulnerability exists in Apache IoTDB&apos;s Thrift RPC service This issue affects Apache IoTDB: from 2.0.0 before 2.0.11. Users are recommended to upgrade to version 2.0.11, which fixes the issue.</description>
-      <pubDate>Wed, 21 Oct 2026 11:03:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107755 · 6 MEDIUM — Apache CouchDB: Credential Disclosure to Non-Owner Members via Object-Form Replication Endpoint URLs</title>
-      <link>https://vulnogram.org/CVE-2026-107755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107755</guid>
-      <description>Insufficient filtering of credentials in the _replicator database in Apache CouchDB 3.5.2 and below on all platforms allows an authenticated user to read replication credentials of other users’ replications, not just their own. Users are recommended…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 15:41:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90800 · 8.1 HIGH 🌩️ — Apache CouchDB: Auth bypass in prefixed _users and _replicator databases</title>
-      <link>https://vulnogram.org/CVE-2026-90800</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90800</guid>
-      <description>Missing authorisation checks in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows any request to read the full contents of a prefixed _user or _replicator database via an unauthorised API endpoint. The use of prefixed system databases…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 15:40:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90799 · 1.3 LOW — Apache CouchDB: Atom-table exhaustion in _changes sequences and _search bookmarks with specially crafted sequence values</title>
-      <link>https://vulnogram.org/CVE-2026-90799</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90799</guid>
-      <description>Unsafe binary deserialisation in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows an authenticated user to cause a denial of service via memory exhaustion. Users are recommended to upgrade to version 3.5.3, which fixes this issue.</description>
-      <category>Low</category>
-      <pubDate>Tue, 20 Oct 2026 15:40:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90798 · 0.6 LOW — Apache CouchDB: Replicator follows redirects indefinitely</title>
-      <link>https://vulnogram.org/CVE-2026-90798</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90798</guid>
-      <description>A missing circuit-breaker in the replicator in Apache CouchDB 3.5.2 and below on all platforms allows the owner of a replication source or target to cause a denial of service via creating an infinite HTTP redirect loop. Users are recommended to upgra…</description>
-      <category>Low</category>
-      <pubDate>Tue, 20 Oct 2026 15:39:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90797 · 7.7 HIGH 🌩️ — Apache CouchDB: Pre-authentication gzip decompression bomb via POST /_session</title>
-      <link>https://vulnogram.org/CVE-2026-90797</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90797</guid>
-      <description>An unlimited gzip decompression routine in chttpd in Apache CouchDB 3.5.2 and below on all platforms allows any remote client to cause a denial of service via memory exhaustion. Users are recommended to upgrade to version 3.5.3, which fixes this issu…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 15:39:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86471 · 9.3 CRITICAL — Apache CouchDB: Admin credentials leading to code execution as operating system user</title>
-      <link>https://vulnogram.org/CVE-2026-86471</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86471</guid>
-      <description>An unvalidated runtime configuration value in Apache CouchDB 3.5.2 and below on all platforms allows a CouchDB server admin to run arbitrary shell commands as the CouchDB operating system user. Users are recommended to upgrade to version 3.5.3, which…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 20 Oct 2026 15:38:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103119 · 9.1 CRITICAL 🌩️ — Apache Tomcat: AJP response mix-up</title>
-      <link>https://vulnogram.org/CVE-2026-103119</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103119</guid>
-      <description>Buffer under-read vulnerability in Apache Tomcat meant that a large non-blocking write could result in the response body being split between the current request and the next request received on that connection leading most likely to failure of the se…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 13:54:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101356 · 9.1 CRITICAL 🌩️ — Apache Tomcat: HTTP/2 request/response mix-up after error during async processing</title>
-      <link>https://vulnogram.org/CVE-2026-101356</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101356</guid>
-      <description>Incorrect object recycling and re-use vulnerability in Apache Tomcat affecting HTTP/2 processing of asynchronous servlets can trigger request and/or response mix-up between users. This issue affects Apache Tomcat: from 11.0.22 through 11.0.26, from 1…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 13:46:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101296 · 9.1 CRITICAL 🌩️ — Apache Tomcat: JNDIRealm bind credential validation fails open for non-GSSAPI SASL mechanisms</title>
-      <link>https://vulnogram.org/CVE-2026-101296</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101296</guid>
-      <description>A missing critical step in authentication vulnerability in Apache Tomcat when the JNDI realm was configured with with a non GSSAPI SASL authentication mechanism allowed attackers to authenticate without providing the correct password. This issue affe…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 13:45:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93446 — Apache Tomcat: Possible TLS 1.3 connection failures</title>
-      <link>https://vulnogram.org/CVE-2026-93446</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93446</guid>
-      <description>Incomplete cleanup vulnerability in Apache Tomcat could cause TLS 1.3 connections to fail intermittently. This issue affects Apache Tomcat: from 11.0.0-M21 through 11.0.26, from 10.1.25 through 10.1.60, from 9.0.90 through 9.0.122. Users are recommen…</description>
-      <pubDate>Tue, 20 Oct 2026 13:44:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88041 — Apache Tomcat: HTTP/2 trailer header cross-contamination</title>
-      <link>https://vulnogram.org/CVE-2026-88041</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88041</guid>
-      <description>Incomplete cleanup vulnerability in Apache Tomcat allowed an trailer information from a previous request to leak into a subsequent request. This issue affects Apache Tomcat: from 11.0.0-M23 through 11.0.26, from 10.1.27 through 10.1.60, from 9.0.92 t…</description>
-      <pubDate>Tue, 20 Oct 2026 13:43:28 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,183 @@
       <title>GitHub, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 21 Oct 2026 17:54:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 21:16:53 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-96641 · 6.5 MEDIUM 🌩️ — Pillow: Reachable undefined behavior in native integer operations, potentially leading to denial of service or logic integrity compromise</title>
+      <link>https://vulnogram.org/CVE-2026-96641</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96641</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, PILfont text-width accumulation in src/_imaging.c checks positive glyph advances against INT_MAX but does not check negative advances against INT_MIN. Repeating a signed 16-bit advance of -32768 ca…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:51:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96642 · 7.1 HIGH 🌩️ — Pillow: TarIO negative size field causes infinite CPU-spin loop</title>
+      <link>https://vulnogram.org/CVE-2026-96642</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96642</guid>
+      <description>Pillow is a Python imaging library. Prior to 13.0.0, the TarIO initializer in src/PIL/TarIO.py accepts a negative octal member size and computes a backward seek that returns to the same 512-byte header. When the requested member name does not match,…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:49:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96638 · 6.5 MEDIUM 🌩️ — Pillow: BMP RLE decoder memory-amplification DoS via unbounded delta escape / absolute mode</title>
+      <link>https://vulnogram.org/CVE-2026-96638</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96638</guid>
+      <description>Pillow is a Python imaging library. From 9.1.0 until 13.0.0, BmpRleDecoder.decode() in src/PIL/BmpImagePlugin.py permits crafted RLE BMP delta escapes and absolute-mode runs to append beyond the remaining dest_length without a per-branch cap. A delta…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:47:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114145 · 7.5 HIGH 🌩️ — GitPython validates a submodule&apos;s &quot;.git&quot; path only after cloning into it (RCE)</title>
+      <link>https://vulnogram.org/CVE-2026-114145</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114145</guid>
+      <description>GitPython is a python library used to interact with Git repositories. Prior to 3.2.1, create_submodule() in git/objects/submodule/base.py accepts an attacker-influenced submodule path such as .git/hooks and invokes _clone_repo() before safely rejecti…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:35:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114144 · 7.5 HIGH 🌩️ — toml-node: Uncontrolled resource consumption (CPU DoS) via unbounded-length integer literals in toml.parse()</title>
+      <link>https://vulnogram.org/CVE-2026-114144</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114144</guid>
+      <description>toml-node is a TOML parser for Node.js and the browser. Prior to 5.0.1, toml.parse() passes unbounded hexadecimal, octal, binary, and decimal digit sequences from lib/parser.js to BigInt() before reduceInteger() in lib/compiler.js checks whether the…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:32:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114143 · 8.7 HIGH 🌩️ — toml-node: Quadratic-complexity DoS via long dotted keys or table paths in toml.parse()</title>
+      <link>https://vulnogram.org/CVE-2026-114143</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114143</guid>
+      <description>toml-node is a TOML parser for Node.js and the browser. Prior to 5.0.1, toml.parse() repeatedly slices and rejoins every path prefix in lib/compiler.js while processing long dotted keys, table headers, array-of-tables headers, and inline-table keys i…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:31:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114142 · 8.8 HIGH 🌩️ — toml-node: Prototype pollution: parsing a TOML document can write to Object.prototype</title>
+      <link>https://vulnogram.org/CVE-2026-114142</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114142</guid>
+      <description>toml-node is a TOML parser for Node.js and the browser. Prior to 5.0.1, toml.parse() can write attacker-controlled properties to Object.prototype because quoteDottedString() in lib/compiler.js produces the same bookkeeping string for distinct quoted…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:28:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114141 · 8.7 HIGH 🌩️ — toml-node: Quadratic-complexity DoS via many array-of-tables headers in toml.parse()</title>
+      <link>https://vulnogram.org/CVE-2026-114141</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114141</guid>
+      <description>toml-node is a TOML parser for Node.js and the browser. Prior to 5.0.1, the toml.parse() compiler&apos;s addTableArray() function in lib/compiler.js rescans the complete assignedPaths and valueAssignments bookkeeping sets for every array-of-tables header.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:25:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114140 · 8.8 HIGH — nbconvert: File write via path traversal in cell output filenames</title>
+      <link>https://vulnogram.org/CVE-2026-114140</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114140</guid>
+      <description>The nbconvert tool, jupyter nbconvert, converts Jupyter notebooks to various other formats via Jinja templates. From 5.4.0 until 7.17.2, ExtractOutputPreprocessor in nbconvert/preprocessors/extractoutput.py joins the attacker-controlled cell output m…</description>
+      <category>High</category>
+      <pubDate>Wed, 21 Oct 2026 20:19:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114139 · 9.1 CRITICAL 🌩️ — Sentry-Javascript: Middleware Bypass when using Tunnel route</title>
+      <link>https://vulnogram.org/CVE-2026-114139</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114139</guid>
+      <description>Sentry-Javascript is an official Sentry SDKs for JavaScript. From 9.36.0 until 9.47.2, 10.75.2, and 11.0.0-rc.1, the webpack integration for @sentry/nextjs skips application middleware for every request path under a configured tunnelRoute, while the…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:14:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114138 · 7.5 HIGH 🌩️ — Django REST framework: Accept header with many large quoted parameters burns ~19s of CPU per request in content negotiation</title>
+      <link>https://vulnogram.org/CVE-2026-114138</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114138</guid>
+      <description>Django REST framework is a toolkit for building Web APIs. Prior to 3.18.2, DefaultContentNegotiation.get_accept_list in rest_framework/negotiation.py accepts an unbounded number and aggregate size of Accept tokens, while select_renderer in that file…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:09:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114137 · 7.4 HIGH 🌩️ — Django REST framework: TokenProxy.delete() reports success and revokes nothing</title>
+      <link>https://vulnogram.org/CVE-2026-114137</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114137</guid>
+      <description>Django REST framework is a toolkit for building Web APIs. From 3.12.0 until 3.18.2, TokenProxy.delete() in rest_framework/authtoken/models.py uses the proxy&apos;s user-id pk while the concrete Token token-string primary key identifies rows, so Django iss…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:06:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114136 · 7.5 HIGH 🌩️ — Django REST framework: JSONParser applies an attacker-named codec to the request stream</title>
+      <link>https://vulnogram.org/CVE-2026-114136</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114136</guid>
+      <description>Django REST framework is a toolkit for building Web APIs. From 3.6.4 until 3.18.2, JSONParser.parse in rest_framework/parsers.py uses the client-supplied Content-Type charset value with codecs.getreader, which accepts byte-transform codecs such as bz…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 20:02:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114135 · 8.8 HIGH — Jupyter Server: Gateway WebSocket handler bypasses kernel execute authorization</title>
+      <link>https://vulnogram.org/CVE-2026-114135</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114135</guid>
+      <description>Jupyter Server is the backend for Jupyter web applications. From 2.0.0 until 2.6.0, enabling GatewayClient.url replaced the normal KernelWebsocketHandler with WebSocketChannelsHandler, which authenticated the user but did not call authorizer.is_autho…</description>
+      <category>High</category>
+      <pubDate>Wed, 21 Oct 2026 19:58:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114133 · 5.4 MEDIUM — Nuxt server islands render `useHeadSafe` input without sanitisation</title>
+      <link>https://vulnogram.org/CVE-2026-114133</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114133</guid>
+      <description>Nuxt is an open-source web development framework for Vue.js. From 3.13.0 until 4.6.2, the server-island renderer serializes raw useHeadSafe entry input into the island response without preserving the safe-input marker, and NuxtIsland later inserts th…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 17:52:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114132 · 6.3 MEDIUM 🌩️ — Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive</title>
+      <link>https://vulnogram.org/CVE-2026-114132</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114132</guid>
+      <description>Nuxt is an open-source web development framework for Vue.js. Prior to 4.6.2, Nuxt resolves pages case-insensitively by default while Nitro matches server-side route-rule keys case-sensitively, allowing a request whose path differs only by letter case…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 17:50:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114131 · 6.5 MEDIUM 🌩️ — Nuxt: Route rules are matched against the raw request path, so a percent-encoded segment can bypass `appMiddleware` on dynamic and catch-all routes</title>
+      <link>https://vulnogram.org/CVE-2026-114131</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114131</guid>
+      <description>Nuxt is an open-source web development framework for Vue.js. From 3.11.0 until 3.21.4 and 4.4.4, Nuxt compares route-rule keys with the raw request path while route resolution decodes dynamic and catch-all parameters, allowing a percent-encoded segme…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 17:41:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114130 · 2.3 LOW 🌩️ — Nuxt: Incomplete fix for GHSA-934w-87qh-qr26: a `javascript:` URL prefixed with an ASCII control character executes from `&lt;NuxtLink&gt;` when `pages` is disabled</title>
+      <link>https://vulnogram.org/CVE-2026-114130</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114130</guid>
+      <description>Nuxt is an open-source web development framework for Vue.js. Prior to 4.6.0, an incomplete fix for CVE-2026-53722 allows an application with pages disabled to render a script-capable URL through NuxtLink when attacker-controlled input bound to to is…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 17:37:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114129 · 6.2 MEDIUM — stream-json: FlexAssembler string/RegExp path filters join the full key stack per container start, giving O(depth^2) CPU denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-114129</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114129</guid>
+      <description>stream-json is a micro-library of stream components for processing JSON and JSONC with a minimal memory footprint. From 2.0.0 until 3.7.0, FlexAssembler compiles string and regular-expression path filters into matchers that join the full key stack on…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 21 Oct 2026 17:34:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114128 · 6.5 MEDIUM 🌩️ — Astro: Reflected/Stored XSS via unescaped &lt;script&gt;/&lt;style&gt; tag content in JSX/MDX rendering</title>
+      <link>https://vulnogram.org/CVE-2026-114128</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114128</guid>
+      <description>Astro is a web framework for content-driven websites. Prior to 7.3.2, Astro&apos;s JSX and MDX rendering pipeline treats string children of script and style elements as trusted HTML without distinguishing compiler-generated literal content from dynamic ex…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 17:32:28 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-114127 · 2.3 LOW 🌩️ — Astro: Arbitrary CSS injection in Astro View Transitions</title>
       <link>https://vulnogram.org/CVE-2026-114127</link>
@@ -271,170 +447,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 21:12:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113727 · 7.4 HIGH — OpenChoreo: Authorization bypass on WorkflowRun update allows cross-project takeover of workflow runs</title>
-      <link>https://vulnogram.org/CVE-2026-113727</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113727</guid>
-      <description>OpenChoreo is a developer platform for Kubernetes. From 1.0.0 until 1.0.6, 1.1.7, and 1.2.5, the PUT .../workflowruns/{runName} update route authorizes a request using the openchoreo.dev/project and openchoreo.dev/component labels in the submitted bo…</description>
-      <category>High</category>
-      <pubDate>Tue, 20 Oct 2026 21:08:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111758 · 7.5 HIGH 🌩️ — markdown-it: Quadratic-time rendering of a single multi-line link reference definition with default options (regression since 14.0)</title>
-      <link>https://vulnogram.org/CVE-2026-111758</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111758</guid>
-      <description>markdown-it is a Markdown parser. From versions 14.1.0 to before 14.3.3, and 15.0.0 to before 15.0.3, a link reference definition whose label or title is never closed is O(n²) with default options. Continuation lines are pulled lazily with str += lin…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 20:28:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113725 · 7.8 HIGH — virtualenv bash activate runs commands from an environment name with a backslash before $</title>
-      <link>https://vulnogram.org/CVE-2026-113725</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113725</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.7, the bash activate script escapes the environment name for only one of the two passes bash makes over PS1, so a backslash in the name undoes the escaping and a n…</description>
-      <category>High</category>
-      <pubDate>Tue, 20 Oct 2026 19:56:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113724 · 4.5 MEDIUM — virtualenv: Deletion recovery can change a symlink target&apos;s mode</title>
-      <link>https://vulnogram.org/CVE-2026-113724</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113724</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, the safe_delete() deletion error handler responds to a failed removal by reading mode bits with os.lstat(path) and applying owner-write permission with os.chmod…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:53:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113723 · 7.1 HIGH — virtualenv: Bash prompt values can change meaning under older compatibility modes</title>
-      <link>https://vulnogram.org/CVE-2026-113723</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113723</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, caller-supplied prompt text can become executable syntax in the bash activation prompt. An attacker must influence the value passed to virtualenv, and a user mu…</description>
-      <category>High</category>
-      <pubDate>Tue, 20 Oct 2026 19:51:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113722 · 7.8 HIGH — virtualenv: Generated POSIX console launchers interpret destination paths as shell syntax</title>
-      <link>https://vulnogram.org/CVE-2026-113722</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113722</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, virtualenv&apos;s ScriptMakerCustom and pip pass an incompletely quoted interpreter path to distlib ScriptMaker when generating POSIX console scripts. When the path…</description>
-      <category>High</category>
-      <pubDate>Tue, 20 Oct 2026 19:48:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113721 · 4.5 MEDIUM — virtualenv: Generated files can follow existing destination links</title>
-      <link>https://vulnogram.org/CVE-2026-113721</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113721</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, ViaTemplateActivator._generate() removes an existing output only when Path.exists() is true, allowing a dangling symlink to survive and redirect generated activ…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:46:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113720 · 4.4 MEDIUM — virtualenv: Seeded files retain permissions from an older cache</title>
-      <link>https://vulnogram.org/CVE-2026-113720</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113720</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, the app-data copy seeder uses shutil.copy() to copy cached package files into later environments, causing cached source modes to override the current run&apos;s umas…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:43:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113715 · 2 LOW — virtualenv: Venv configuration readback can reinterpret path boundaries</title>
-      <link>https://vulnogram.org/CVE-2026-113715</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113715</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, the stdlib venv creator reads generated pyvenv.cfg with str.splitlines() and merges parsed keys over virtualenv&apos;s selected configuration. An untrusted caller wh…</description>
-      <category>Low</category>
-      <pubDate>Tue, 20 Oct 2026 19:42:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113719 · 4.5 MEDIUM — virtualenv: Seed replacement does not contain metadata deletion paths</title>
-      <link>https://vulnogram.org/CVE-2026-113719</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113719</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, PipInstall._uninstall_previous_version() accepts existing seed-package metadata and _uninstall_dist() joins entries from top_level.txt and RECORD to site-packag…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:42:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113718 · 7.1 HIGH — virtualenv: Xonsh activation literals depend on the script decoding codec</title>
-      <link>https://vulnogram.org/CVE-2026-113718</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113718</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, POSIX xonsh activation quote() uses repr() to write printable non-ASCII prompt or destination data into UTF-8 activate.xsh, while xonsh can read that script usi…</description>
-      <category>High</category>
-      <pubDate>Tue, 20 Oct 2026 19:39:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113717 · 2.3 LOW 🌩️ — virtualenv: Pip seeding with download omits wheel digest verification</title>
-      <link>https://vulnogram.org/CVE-2026-113717</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113717</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, PipInvoke.get_pip_install_cmd() handles --seeder pip --download by calling get_wheel(download=False) and then allowing pip to consult the configured index, bypa…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 19:22:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113716 · 4.5 MEDIUM — virtualenv: Builtin creation follows linked environment directories</title>
-      <link>https://vulnogram.org/CVE-2026-113716</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113716</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, the builtin creator calls ensure_dir() for executable, library, and package directories, and ensure_dir() accepts an existing symlink to a directory because exi…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:18:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113712 · 4.8 MEDIUM — Cachet has Stored XSS in Incident Component</title>
-      <link>https://vulnogram.org/CVE-2026-113712</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113712</guid>
-      <description>Cachet is an open-source status page system. Versions 2.4.1 and earlier have a stored Cross-Site Scripting (XSS) vulnerability in the incident creation form, allowing an authenticated attacker to inject malicious HTML/JavaScript that executes in the…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:14:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113714 · 2.3 LOW 🌩️ — virtualenv: Downloaded wheel selection and caching precede verification</title>
-      <link>https://vulnogram.org/CVE-2026-113714</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113714</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. Prior to 21.14.9, download_wheel() writes package-index downloads directly into the reusable wheel/house cache before selecting a verification target from pip&apos;s textual Saved out…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 19:09:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113713 · 4.4 MEDIUM — virtualenv: Temporary app-data can leave dangling seed package links</title>
-      <link>https://vulnogram.org/CVE-2026-113713</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113713</guid>
-      <description>virtualenv is a tool for creating isolated virtual python environments. From 21.14.8 until 21.14.10, the app-data seeder can leave an environment linked to temporary package files that virtualenv deletes when creation finishes. The environment-variab…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:06:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111767 · 8.6 HIGH 🌩️ — MCP TypeScript SDK: Experimental tasks were not tied to the session that created them</title>
-      <link>https://vulnogram.org/CVE-2026-111767</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111767</guid>
-      <description>MCP TypeScript SDK is the official TypeScript SDK for Model Context Protocol servers and clients. From version 1.24.0 to before version 1.32.0, the experimental tasks feature (taskStore) did not check which session created a task. Clients sharing one…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 18:28:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113709 · 9.9 CRITICAL — Argo CD: A Kustomize Helm config home can run commands in the repo-server</title>
-      <link>https://vulnogram.org/CVE-2026-113709</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113709</guid>
-      <description>Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. From 2.1.0 until 3.3.15, 3.4.10, 3.5.4, and 3.6.0-rc2, when an operator has enabled --enable-helm for kustomize build, helmGlobals.configHome can point Helm&apos;s config and data d…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 20 Oct 2026 18:08:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113708 · 9.9 CRITICAL — Argo CD: A Kustomize remote ref can run commands in the repo-server</title>
-      <link>https://vulnogram.org/CVE-2026-113708</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113708</guid>
-      <description>Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. From 2.7.0 until 3.3.15, 3.4.10, 3.5.4, and 3.6.0-rc2, Kustomize passes ref or version query values from remote resource, base, or component URLs to git fetch without an end-of…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 20 Oct 2026 18:03:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113672 · 9.9 CRITICAL — Argo CD: A Jsonnet import can read files from the repo-server</title>
-      <link>https://vulnogram.org/CVE-2026-113672</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113672</guid>
-      <description>Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. From 0.9.0 until 3.3.15, 3.4.10, 3.5.4, and 3.6.0-rc2, the repo-server evaluates .jsonnet files with an importer that does not confine import, importstr, or importbin to the re…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 20 Oct 2026 18:00:54 GMT</pubDate>
     </item>
   </channel>
 </rss>
