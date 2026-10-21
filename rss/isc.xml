@@ -11,7 +11,43 @@
       <title>Internet Systems Consortium (ISC) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 21 Oct 2026 12:49:25 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 17:54:49 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-97313 · 7.5 HIGH 🌩️ — Specific RPZ configurations and query patterns may result in an unexpected exit</title>
+      <link>https://vulnogram.org/CVE-2026-97313</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97313</guid>
+      <description>A recursive BIND server that receives a query with recursion desired (RD=1) followed by a non-recursive query (RD=0) may exit with an assertion failure, resulting in a denial of service. To be vulnerable, the BIND server must allow recursive queries…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 12:47:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96888 · 7.5 HIGH 🌩️ — Named may terminate unexpectedly when a redirect zone is used with strict QNAME minimization</title>
+      <link>https://vulnogram.org/CVE-2026-96888</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96888</guid>
+      <description>A BIND resolver that is configured with both a &quot;redirect&quot; zone and &quot;qname-minimization strict&quot; may abort with an assertion failure while processing the redirect. This issue affects BIND 9 versions 9.16.0 through 9.18.50, 9.20.0 through 9.20.29, 9.21.…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 12:46:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94300 · 8.1 HIGH 🌩️ — Concurrent GSS-TSIG messages corrupt memory</title>
+      <link>https://vulnogram.org/CVE-2026-94300</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94300</guid>
+      <description>Replaying GSS-TSIG signed UDP messages can result in memory corruption in &quot;`named`&quot;. An attacker who can capture a previously signed UDP message can replay it while the negotiated TSIG key is still valid. By also sending crafted queries to a zone the…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 12:45:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19630 · 7.5 HIGH 🌩️ — Amplified resource exhaustion in inbound message processing</title>
+      <link>https://vulnogram.org/CVE-2026-19630</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19630</guid>
+      <description>In a BIND resolver, inbound DNS protocol messages with a particular structure will result in additional processing, with no limit imposed by BIND. A DNS message with a maliciously large number of such structures will cause BIND to consume disproporti…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 21 Oct 2026 12:41:04 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-77119 · 5.9 MEDIUM 🌩️ — NSEC3 insecure-referral proof can use unrelated cached NSEC3 RRsets</title>
       <link>https://vulnogram.org/CVE-2026-77119</link>
@@ -419,42 +455,6 @@
       <description>Kea configuration and API directives can be used to load a malicious hook library. Many common configurations run Kea as root, leave the API entry points unsecured by default, and/or place the control sockets in insecure paths. This issue affects Kea…</description>
       <category>High</category>
       <pubDate>Wed, 28 May 2025 17:03:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-40775 · 7.5 HIGH 🌩️ — DNS message with invalid TSIG causes an assertion failure</title>
-      <link>https://vulnogram.org/CVE-2025-40775</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-40775</guid>
-      <description>When an incoming DNS protocol message includes a Transaction Signature (TSIG), BIND always checks it. If the TSIG contains an invalid value in the algorithm field, BIND immediately aborts with an assertion failure. This issue affects BIND 9 versions…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 May 2025 12:35:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-12705 · 7.5 HIGH 🌩️ — DNS-over-HTTPS implementation suffers from multiple issues under heavy query load</title>
-      <link>https://vulnogram.org/CVE-2024-12705</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-12705</guid>
-      <description>Clients using DNS-over-HTTPS (DoH) can exhaust a DNS resolver&apos;s CPU and/or memory by flooding it with crafted valid or invalid HTTP/2 traffic. This issue affects BIND 9 versions 9.18.0 through 9.18.32, 9.20.0 through 9.20.4, 9.21.0 through 9.21.3, an…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 29 Jan 2025 21:40:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-11187 · 7.5 HIGH 🌩️ — Many records in the additional section cause CPU exhaustion</title>
-      <link>https://vulnogram.org/CVE-2024-11187</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11187</guid>
-      <description>It is possible to construct a zone such that some queries to it will generate responses containing numerous records in the Additional section. An attacker sending many such queries can cause either the authoritative server itself or an independent re…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 29 Jan 2025 21:40:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-4076 · 7.5 HIGH 🌩️ — Assertion failure when serving both stale cache data and authoritative zone content</title>
-      <link>https://vulnogram.org/CVE-2024-4076</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-4076</guid>
-      <description>Client queries that trigger serving stale data and that also require lookups in local authoritative zone data may result in an assertion failure. This issue affects BIND 9 versions 9.16.13 through 9.16.50, 9.18.0 through 9.18.27, 9.19.0 through 9.19.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 23 Jul 2024 14:40:57 GMT</pubDate>
     </item>
   </channel>
 </rss>
