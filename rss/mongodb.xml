@@ -11,7 +11,115 @@
       <title>MongoDB, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 22 Oct 2026 19:05:43 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 22:18:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-114655 · 6 MEDIUM — KMS request injection via unsanitized key vault and provider values in libmongocrypt</title>
+      <link>https://vulnogram.org/CVE-2026-114655</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114655</guid>
+      <description>libmongocrypt builds requests to external key management services (AWS, Azure and GCP) by inserting values from key vault documents, KMS provider configuration and KMS responses into request lines, headers and signed request bodies without validating…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 22 Oct 2026 19:14:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114654 · 6.9 MEDIUM 🌩️ — BSON output corruption via out-of-range binary subtype bypassing UUID and OldBinary guards</title>
+      <link>https://vulnogram.org/CVE-2026-114654</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114654</guid>
+      <description>A numeric-type conversion flaw in the BSON handling library of the MongoDB C# Driver allows an out-of-range binary subtype value supplied through untrusted textual input to bypass the library&apos;s binary-element integrity checks. When such a value is la…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114653 · 7.1 HIGH — Silent client-side encryption bypass via unescaped field-name regex in CSFLE schema builder</title>
+      <link>https://vulnogram.org/CVE-2026-114653</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114653</guid>
+      <description>A client-side encryption schema construction component in the MongoDB C# Driver places caller-supplied field identifiers into a position that is interpreted as a pattern expression, without normalizing or validating them. As a result, an application…</description>
+      <category>High</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114652 · 7.1 HIGH — Update operator injection via single-element list rewriting in the update builder</title>
+      <link>https://vulnogram.org/CVE-2026-114652</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114652</guid>
+      <description>A data-query-logic neutralization weakness in the update-statement construction component of the MongoDB C# Driver can cause application-supplied values to be interpreted as query/update logic rather than as literal data. An application user who can…</description>
+      <category>High</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114651 · 6.3 MEDIUM 🌩️ — Cross-document data leak via malformed BSON array parsing in reused thread buffer</title>
+      <link>https://vulnogram.org/CVE-2026-114651</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114651</guid>
+      <description>A memory-handling weakness in the BSON deserialization component of the MongoDB C# Driver may cause data left over from previously processed content to be returned when specially crafted serialized input is parsed. An unauthenticated party able to su…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114650 · 6.9 MEDIUM — Plaintext exposure of encrypted fields via ANSI code-page corruption of database name</title>
+      <link>https://vulnogram.org/CVE-2026-114650</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114650</guid>
+      <description>A flaw in the client-side encryption support of the MongoDB .NET/C# driver can cause data designated for client-side field-level encryption to be written without encryption. Under certain platform text-encoding configurations, an internal name conver…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114649 · 7.6 HIGH — Authentication bypass via issuer-and-serial-only certificate equality in shared cluster cache</title>
+      <link>https://vulnogram.org/CVE-2026-114649</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114649</guid>
+      <description>The MongoDB C# Driver compares TLS client certificates by issuer and serial number only when deciding whether two clients can share cached connections. In an application that creates clients from certificates supplied by different users, a user who p…</description>
+      <category>High</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114648 · 7.6 HIGH — NoSQL injection via dot and dollar characters in LINQ filter field names and dictionary keys</title>
+      <link>https://vulnogram.org/CVE-2026-114648</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114648</guid>
+      <description>The MongoDB C# Driver does not neutralize dot and dollar characters in dictionary keys, field names and array-filter identifiers used in LINQ queries before placing them into the field paths it sends to the server. An application user whose input rea…</description>
+      <category>High</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114647 · 5.3 MEDIUM — NoSQL operator injection via unvalidated replacement document in findOneAndReplace</title>
+      <link>https://vulnogram.org/CVE-2026-114647</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114647</guid>
+      <description>The MongoDB C# Driver does not reject replacement documents whose top-level field names begin with a dollar sign in FindOneAndReplace, unlike other replace operations. An application that builds such a document from user-supplied field names can have…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114646 · 6.9 MEDIUM 🌩️ — NoSQL command injection via mismatched raw BSON length prefix written verbatim to the wire</title>
+      <link>https://vulnogram.org/CVE-2026-114646</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114646</guid>
+      <description>A data-validation flaw exists in the BSON handling and binary serialization path of the MongoDB C# Driver. When an application constructs a raw or lazy BSON document object from externally supplied binary data, the driver does not verify that the siz…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114645 · 5.7 MEDIUM — Heap overflow via 32-bit length wrap of the URI username in Windows Kerberos auth message wrapping</title>
+      <link>https://vulnogram.org/CVE-2026-114645</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114645</guid>
+      <description>A 32-bit integer wraparound in the MongoDB C Driver&apos;s Windows-only Kerberos/SSPI authentication code can cause an undersized heap buffer to be allocated when an excessively long credential value is supplied in the client&apos;s connection configuration. A…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114644 · 8.2 HIGH 🌩️ — Memory-exhaustion denial of service via unbounded symbol interning during BSON/JSON deserialization</title>
+      <link>https://vulnogram.org/CVE-2026-114644</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114644</guid>
+      <description>The MongoDB C# Driver&apos;s BSON library contains an uncontrolled resource consumption weakness in its deserialization handling of one BSON value type. An application that deserializes untrusted content with the library retains data derived from that con…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114643 · 5.4 MEDIUM — Duplicate geometry fields via unvalidated GeoJSON extra members</title>
+      <link>https://vulnogram.org/CVE-2026-114643</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114643</guid>
+      <description>The MongoDB C# Driver writes GeoJSON extra members without checking whether their names collide with reserved GeoJSON members such as type and coordinates. An application that places user-supplied field names into these extra members can store docume…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 22 Oct 2026 19:13:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-113870 · 8.8 HIGH 🌩️ — Improper Encoding of Server-Supplied JavaScript Values in MongoDB Compass BSON Parsing</title>
       <link>https://vulnogram.org/CVE-2026-113870</link>
@@ -321,114 +429,6 @@
       <description>Mongoid may omit encryption rules for fields declared on embedded models when generating the client-side field-level encryption schema. Applications that enable this feature can therefore store values intended to be encrypted in readable form, with n…</description>
       <category>High</category>
       <pubDate>Fri, 18 Sep 2026 17:06:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93765 · 9.1 CRITICAL 🌩️ — Document deletion and process crash via unvalidated method-name dispatch in atomic pop operation</title>
-      <link>https://vulnogram.org/CVE-2026-93765</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93765</guid>
-      <description>Mongoid contains an unsafe reflection weakness in the document persistence layer of its object-document mapping code. Input whose keys are passed through from an unauthenticated party by an embedding application can cause unintended internal method i…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 17:01:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93758 · 8.6 HIGH — Cross-principal document update, theft, and deletion via unvalidated id in nested attributes</title>
-      <link>https://vulnogram.org/CVE-2026-93758</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93758</guid>
-      <description>An insecure direct object reference in the nested attributes handling of the Mongoid object-document mapper may allow a user with basic application privileges to reference a record identifier that is not their own. Processing such a request can cause…</description>
-      <category>High</category>
-      <pubDate>Fri, 18 Sep 2026 16:56:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93395 · 6.9 MEDIUM 🌩️ — Integer Underflow → Heap Out-of-Bounds Read in `bson_new_from_buffer()</title>
-      <link>https://vulnogram.org/CVE-2026-93395</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93395</guid>
-      <description>A missing lower-bound validation in the bson_new_from_buffer() function of libbson allows an integer underflow when processing BSON data with a zero-length prefix. The function reads a 32-bit document length from the input buffer but does not verify…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 20:34:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93394 · 6.3 MEDIUM 🌩️ — libmongoc SCRAM client nonce-validation bypass</title>
-      <link>https://vulnogram.org/CVE-2026-93394</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93394</guid>
-      <description>A flaw in libmongoc&apos;s SCRAM authentication implementation caused the client to continue the authentication handshake and transmit the client proof even when a nonce mismatch was detected in the server&apos;s first message. An unauthorized party with a man…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 20:31:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93393 · 9.2 CRITICAL 🌩️ — Heap overflow via oversized decrypted TLS record sequence in Windows Secure Channel stream</title>
-      <link>https://vulnogram.org/CVE-2026-93393</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93393</guid>
-      <description>A heap-based buffer overflow exists in the TLS transport layer of the MongoDB C Driver when built with the Windows platform TLS backend. A remote endpoint that the client connects to can cause the driver to write uncontrolled data outside the bounds…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 20:26:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92757 · 6.8 MEDIUM — Malformed connection string may disable field level encryption</title>
-      <link>https://vulnogram.org/CVE-2026-92757</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92757</guid>
-      <description>Applications built on MongoDB Entity Framework Core Provider which place a database name in the connection string may inadvertently disable field level encryption.</description>
-      <category>Medium</category>
-      <pubDate>Thu, 17 Sep 2026 19:20:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92758 · 5.7 MEDIUM — Logs may collect sensitive information</title>
-      <link>https://vulnogram.org/CVE-2026-92758</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92758</guid>
-      <description>If logging mode is set to DEBUG or a malformed MongoDB connection string is used, application logs may collect sensitive information (if in use) such as passwords and AWS secure access keys.</description>
-      <category>Medium</category>
-      <pubDate>Thu, 17 Sep 2026 19:16:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92756 · 6.8 MEDIUM — Combining encryption settings may disable encryption</title>
-      <link>https://vulnogram.org/CVE-2026-92756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92756</guid>
-      <description>Applications built on MongoDB Entity Framework Core Provider which combine independent encryption settings and this provider&apos;s encryption settings may silently lose TLS and schema-map settings leading to protected fields being stored unencrypted in t…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 17 Sep 2026 19:04:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89099 · 7.7 HIGH — Race Condition in MongoDB Server Document Value Layer Leads to Memory Corruption</title>
-      <link>https://vulnogram.org/CVE-2026-89099</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89099</guid>
-      <description>A race condition in the document value layer of MongoDB Server can allow concurrent server threads to operate on the same internal memory without synchronization, leading to memory corruption. An authenticated user holding ordinary read-write privile…</description>
-      <category>High</category>
-      <pubDate>Fri, 11 Sep 2026 17:39:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88036 · 8.3 HIGH — GridFS data disclosure and deletion via query-operator injection in file IDs in the MongoDB C Driver</title>
-      <link>https://vulnogram.org/CVE-2026-88036</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88036</guid>
-      <description>Improper neutralization of special elements in data query logic in the GridFS component of the MongoDB C Driver can cause a caller-supplied structured file identifier to be interpreted as a query condition rather than as a literal identifier. An auth…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 18:09:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88035 · 5.7 MEDIUM — Heap buffer overflow via wrapped size check during SASL username canonicalization in MongoDB C Driver</title>
-      <link>https://vulnogram.org/CVE-2026-88035</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88035</guid>
-      <description>A size check in the client-side authentication path of the MongoDB C Driver can wrap around, so an unusually large user-name value is accepted and copied past the end of a small buffer. A party able to set the driver&apos;s connection settings may cause t…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 10 Sep 2026 18:07:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88034 · 8.3 HIGH — GridFS data disclosure and deletion via query-operator injection in file IDs in the MongoDB C++ Driver</title>
-      <link>https://vulnogram.org/CVE-2026-88034</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88034</guid>
-      <description>Improper neutralization of special elements in data query logic in the GridFS component of the MongoDB C++ Driver can cause a caller-supplied structured file identifier to be interpreted as a query condition rather than as a literal identifier. An au…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 18:05:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88033 · 8.3 HIGH — GridFS data disclosure and deletion via query-operator injection in file IDs in the MongoDB Java Driver</title>
-      <link>https://vulnogram.org/CVE-2026-88033</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88033</guid>
-      <description>Improper neutralization of special elements in data query logic in the GridFS component of the MongoDB Java Driver can cause a caller-supplied structured file identifier to be interpreted as a query condition rather than as a literal identifier. An a…</description>
-      <category>High</category>
-      <pubDate>Thu, 10 Sep 2026 18:04:01 GMT</pubDate>
     </item>
   </channel>
 </rss>
