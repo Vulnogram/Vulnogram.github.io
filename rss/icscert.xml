@@ -11,7 +11,67 @@
       <title>Cybersecurity and Infrastructure Security Agency (CISA) Industrial Control Systems (ICS) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 22 Oct 2026 22:18:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 00:38:38 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-110825 · 8.7 HIGH 🌩️ — Kiloview E3 NDI Encoder Missing Authentication for Critical Function</title>
+      <link>https://vulnogram.org/CVE-2026-110825</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110825</guid>
+      <description>The ONVIF device service on affected Kiloview E3 NDI encoder firmware accepts hostname, DNS, and NTP configuration write operations without requiring authentication, regardless of the device&apos;s configured authentication setting for this service. A rem…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 22 Oct 2026 22:11:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-92450 · 8.7 HIGH 🌩️ — Kiloview E3 NDI Encoder Use of Hard-coded Credentials</title>
+      <link>https://vulnogram.org/CVE-2026-92450</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92450</guid>
+      <description>The authentication framework used by affected Kiloview E3 NDI encoder firmware signs session JSON Web Tokens using an HMAC-SHA256 secret hardcoded as a static string within the firmware image, identical across all deployed devices. An attacker with a…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 22 Oct 2026 22:09:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110243 · 9.9 CRITICAL — Kiloview E3 NDI Encoder OS Command Injection</title>
+      <link>https://vulnogram.org/CVE-2026-110243</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110243</guid>
+      <description>The network management service on affected Kiloview E3 NDI encoder firmware fails to validate the network interface name accepted by its link maintenance address configuration endpoint before passing it to a shell command, unlike sibling handlers tha…</description>
+      <category>Critical</category>
+      <pubDate>Thu, 22 Oct 2026 22:06:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107861 · 9.9 CRITICAL — Kiloview E3 NDI Encoder OS Command Injection</title>
+      <link>https://vulnogram.org/CVE-2026-107861</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107861</guid>
+      <description>The system control service on affected Kiloview E3 NDI encoder firmware fails to sanitize the hostname parameter accepted by its device naming endpoint, passing it unquoted into a shell command. An authenticated web user with access to this function…</description>
+      <category>Critical</category>
+      <pubDate>Thu, 22 Oct 2026 22:04:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110491 · 7.5 HIGH 🌩️ — Kiloview E3 NDI Encoder NULL Pointer Dereference</title>
+      <link>https://vulnogram.org/CVE-2026-110491</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110491</guid>
+      <description>The ONVIF service on the E3 can be rendered unresponsive by sending malformed or incomplete requests to certain operations. The affected service stops accepting new connections while the rest of the device continues operating normally, and will recov…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 22 Oct 2026 22:01:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105265 · 6 MEDIUM — Kiloview E3 NDI Encoder Path Traversal</title>
+      <link>https://vulnogram.org/CVE-2026-105265</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105265</guid>
+      <description>A vulnerability exists in the the time zone parameter and does not properly validate user input, which may allow an authenticated user to cause /etc/localtime to point to a file outside the intended zoneinfo directory .</description>
+      <category>Medium</category>
+      <pubDate>Thu, 22 Oct 2026 21:58:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-96616 · 8.3 HIGH 🌩️ — Kiloview E3 NDI Encoder Insufficient Session Expiration</title>
+      <link>https://vulnogram.org/CVE-2026-96616</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96616</guid>
+      <description>Authentication tokens issued by the E3&apos;s web management interface on login are given an expiration time far beyond any reasonable session lifetime, effectively making them non-expiring. A token obtained through interception or device compromise remai…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 22 Oct 2026 21:55:57 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-111100 · 6.9 MEDIUM 🌩️ — Kiloview E3 NDI Encoder Missing Authentication for Critical Function</title>
       <link>https://vulnogram.org/CVE-2026-111100</link>
@@ -372,64 +432,6 @@
       <description>The Malcolm kiosk Flask application exposes a POST /script_call/&lt;script&gt; endpoint with zero authentication and wildcard CORS (CORS(app)). An attacker can force the operator&apos;s browser to execute arbitrary management commands via CSRF, including contro…</description>
       <category>High</category>
       <pubDate>Thu, 08 Oct 2026 17:28:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107361 · 4.2 MEDIUM — Authentication Bypass Using an Alternate Path or Channel in Malcolm</title>
-      <link>https://vulnogram.org/CVE-2026-107361</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107361</guid>
-      <description>The Arkime live capture service (arkime-live) in Malcolm runs with network_mode: host, exposing port 8005 on all network interfaces (viewHost=0.0.0.0). Arkime trusts the X-Forwarded-User header from any IP address (userAuthIps=::,0.0.0.0/0) and auto-…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 08 Oct 2026 17:27:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107362 · 7.1 HIGH — Server-Side Request Forgery in Malcolm</title>
-      <link>https://vulnogram.org/CVE-2026-107362</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107362</guid>
-      <description>Malcolm file-upload component ships the upstream FilePond PHP server (pqina/filepond-server-php) largely unmodified: Dockerfile copies all upstream *.php files and Malcolm only overwrites config.php and submit.php. Upstream index.php exposes a fetch…</description>
-      <category>High</category>
-      <pubDate>Thu, 08 Oct 2026 17:25:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107333 · 8.1 HIGH — Incorrect Authorization in Malcolm</title>
-      <link>https://vulnogram.org/CVE-2026-107333</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107333</guid>
-      <description>Malcolm&apos;s nginx based reverse proxy contains a URL path normalization inconsistency between its Lua based role-based access control (RBAC) authorization layer and nginx&apos;s own request routing logic. An authenticated user can craft a specially formatte…</description>
-      <category>High</category>
-      <pubDate>Thu, 08 Oct 2026 17:23:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107336 · 6.5 MEDIUM 🌩️ — Authentication Bypass by Spoofing in Malcolm</title>
-      <link>https://vulnogram.org/CVE-2026-107336</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107336</guid>
-      <description>Malcolm&apos;s front nginx reverse proxy defines a &quot;Dashboards → Arkime shortcut&quot; location using a case-insensitive regex matcher but a case-sensitive rewrite. A request whose path segment is not exact-lowercase (for example /IDDASH2ARK/...) enters the lo…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 08 Oct 2026 17:20:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84411 · 9.8 CRITICAL 🌩️ — MikroTik RouterOS Integer Underflow</title>
-      <link>https://vulnogram.org/CVE-2026-84411</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84411</guid>
-      <description>The web management service in affected RouterOS versions contains an integer underflow in its HTTP request body handling that is reachable before authentication. This can be leveraged by an unauthenticated network attacker to achieve arbitrary code e…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 22:09:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94591 · 8.6 HIGH — Armatura LLC Armatura One Use of Hard-coded Cryptographic Key</title>
-      <link>https://vulnogram.org/CVE-2026-94591</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94591</guid>
-      <description>Armatura One stores database and message-broker credentials in an install configuration file, encrypting them with AES-128-CBC when this protection is enabled. The encryption key and initialization vector are fixed values embedded in the software its…</description>
-      <category>High</category>
-      <pubDate>Fri, 02 Oct 2026 21:54:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94592 · 8.6 HIGH — Armatura LLC Armatura One Use of Hard-coded Credentials</title>
-      <link>https://vulnogram.org/CVE-2026-94592</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94592</guid>
-      <description>Armatura One&apos;s database initialization routine assigns a fixed, vendor-defined password to the database superuser account at creation time, rather than generating a unique password per installation. An individual with access to the server operating s…</description>
-      <category>High</category>
-      <pubDate>Fri, 02 Oct 2026 21:52:54 GMT</pubDate>
     </item>
   </channel>
 </rss>
