@@ -11,7 +11,88 @@
       <title>Eclipse Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 23 Oct 2026 05:47:53 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 10:54:34 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-89320 · 8.8 HIGH 🌩️ — HmacShaCryptor.Hash never hashes its input — returns constant HMAC_K(&quot;&quot;) for all inputs, voiding CBC-HMAC JWE integrity</title>
+      <link>https://vulnogram.org/CVE-2026-89320</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89320</guid>
+      <description>`HmacShaCryptor.Hash` never hashed its input. For any input it returned `HMAC_K(&quot;&quot;)` — the MAC of the empty message under the key. Every AES-CBC-HMAC JWE produced or verified by gose therefore carried an authentication tag that is constant per key an…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:56:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89319 · 6.3 MEDIUM 🌩️ — JweDirectDecryptorBlock.Decrypt: unchecked _thales_aad length header reachable with forged tag → index-out-of-range / slice-bounds panic and unbounded allocation</title>
+      <link>https://vulnogram.org/CVE-2026-89319</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89319</guid>
+      <description>`JweDirectDecryptorBlock.Decrypt` read a 64-bit plaintext length from the `_thales_aad` protected-header field and used it without any validation. A truncated field panics `binary.BigEndian.Uint64`, an oversized value drives an unbounded allocation,…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:54:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89318 · 6.9 MEDIUM 🌩️ — JweRsaKeyEncryptionDecryptorImpl.Decrypt panics on attacker-chosen IV length (stdlib GCM.Open reached without nonce-size check)</title>
+      <link>https://vulnogram.org/CVE-2026-89318</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89318</guid>
+      <description>`JweRsaKeyEncryptionDecryptorImpl.Decrypt` passed the JWE&apos;s initialization vector to `cipher.AEAD.Open` without checking its length. The Go standard library **panics** rather than returning an error when a GCM nonce is not exactly `NonceSize()` bytes…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:51:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89317 · 6.3 MEDIUM 🌩️ — JwtVerifierImpl.Verify does not enforce the JWS `crit` header (RFC 7515 §4.1.11)</title>
+      <link>https://vulnogram.org/CVE-2026-89317</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89317</guid>
+      <description>gose parsed the JWS `crit` header into `JwsHeader.Crit` and then never read it. RFC 7515 §4.1.11 requires a recipient to reject a JWS whose listed critical extension parameters it does not understand. gose implements no header extensions, so every to…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:50:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89316 · 6.3 MEDIUM 🌩️ — LoadPublicKey panics on kty/alg mismatch (kty=EC with a non-EC alg) via unchecked *ECDSAOptions type assertion</title>
+      <link>https://vulnogram.org/CVE-2026-89316</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89316</guid>
+      <description>`LoadPublicKey` resolved an EC key&apos;s curve with an unchecked type assertion, `algToOptsMap[alg].(*ECDSAOptions)`. A JWK declaring `&quot;kty&quot;:&quot;EC&quot;` together with a non-EC `&quot;alg&quot;` — which RFC 7517 §4.4 permits — reaches that assertion and **panics**.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:48:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89315 · 6.9 MEDIUM 🌩️ — JwtClaims.MarshalJSON panics via reflect.StructOf when any untyped claim key is not a valid Go identifier suffix</title>
+      <link>https://vulnogram.org/CVE-2026-89315</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89315</guid>
+      <description>`JwtClaims.MarshalJSON` built a Go struct at runtime with `reflect.StructOf`, synthesising a field named `&quot;A&quot; + claimName` for each untyped claim. `reflect.StructOf` **panics** when a field name is not a valid Go identifier, or when it duplicates ano…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:46:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89314 · 6.9 MEDIUM 🌩️ — Quadratic-time key_ops duplicate check lets a sub-1 MB JWKS body pin a CPU core for ~15 s</title>
+      <link>https://vulnogram.org/CVE-2026-89314</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89314</guid>
+      <description>`jwkFields.CheckConsistency` detected duplicate `key_ops` entries with a pairwise nested loop, making validation cost grow with the **square** of the entry count. Because the check runs on every JWK and JWKS unmarshal, a modestly sized but hostile JW…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:43:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89313 · 6.3 MEDIUM 🌩️ — JwksTrustStore.Get returns the last fetched JWKS key (err=nil) when the requested kid is absent, instead of nil</title>
+      <link>https://vulnogram.org/CVE-2026-89313</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89313</guid>
+      <description>`JwksTrustStore.Get` assigned each parsed key to the function&apos;s **named return value** while refreshing the JWKS cache. When the requested `kid` was not present, the trailing naked `return` handed the caller the last key in the JWKS document together…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:40:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89312 · 6.9 MEDIUM 🌩️ — AesGcmCryptor.Open passes attacker-controlled nonce to cipher.AEAD.Open without length check, causing panic on wrong-size IV</title>
+      <link>https://vulnogram.org/CVE-2026-89312</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89312</guid>
+      <description>`AesGcmCryptor.Open` passed a caller-supplied nonce straight to `cipher.AEAD.Open` without checking its length. The Go standard library **panics** rather than returning an error when a GCM nonce is not exactly `NonceSize()` bytes, so a JWE carrying a…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 23 Oct 2026 08:36:53 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-110938 · 8.7 HIGH 🌩️ — JITServer: Multiple Denial of Service vulnerabilities via out-of-bounds heap reads during message and reply parsing</title>
       <link>https://vulnogram.org/CVE-2026-110938</link>
@@ -357,87 +438,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 15 Oct 2026 09:38:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18661 · 8.8 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-18661</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18661</guid>
-      <description>In Eclipse Jetty, across various versions of `jetty-annotations`, and `jetty-eeN-annotations`, the Jakarta Spec authoritative url-pattern rules for mixed `@ServletSecurity` annotation, and `web.xml` defined `security-constraint` on the same `url-patt…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 09:01:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77711 · 8.2 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-77711</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77711</guid>
-      <description>When Jetty&apos;s `HttpClient` make a request to a server through a forward proxy, the server may reply with a 407 (Proxy Authentication Required). The client mistakenly interprets the 407 as coming from the proxy, so it re-sends the request with the `Pro…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 08:51:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76184 · 8.2 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-76184</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76184</guid>
-      <description>In Eclipse Jetty, HttpClient may receive a redirect of the form: ``` /secure/../evil ``` If an attacker is able to control the redirects, then HttpClient matches authentication credentials against `/secure` rather than normalizing the path to `/evil`…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 08:46:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76182 · 6.9 MEDIUM 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-76182</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76182</guid>
-      <description>In Eclipse Jetty, `TryPathsHandler` and `TryFilesFilter` can be configured to forward requests to template URIs such as `index?p=$path`, where `$path` is the request path in context. However, URI paths may contain characters that are reserved in URI…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 08:40:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102477 · 8.7 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-102477</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102477</guid>
-      <description>In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], a gRPC endpoint does have a configurable per message maximum size in bytes, however the maximum size applies to the received bytes. When applied to a com…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 08:28:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102464 · 8.2 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-102464</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102464</guid>
-      <description>In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the Eclipse Vert.x MQTT (vertx-mqtt) MqttClient stores every inbound QoS 2 PUBLISH message received from the broker in an internal map (qos2inbound) whil…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 08:26:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-102461 · 8.7 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-102461</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102461</guid>
-      <description>In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the uniqueItems keyword validation uses an O(n²) pairwise comparison loop with no short-circuit or size limit. A remote unauthenticated attacker can subm…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 08:23:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103224 · 8.2 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-103224</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103224</guid>
-      <description>In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the MySQL message decoder aggregates inbound multi-packet payloads into a composite direct-memory buffer without any cumulative size limit. A malicious,…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 08:22:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103223 · 8.2 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-103223</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103223</guid>
-      <description>In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the PostgreSQL message decoder reads the 4-byte message length field from the PostgreSQL wire protocol without any maximum validation. A malicious, compr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 08:20:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
