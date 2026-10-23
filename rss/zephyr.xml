@@ -11,7 +11,63 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 23 Oct 2026 19:50:48 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 23:00:54 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-79982 · 8.8 HIGH — Out-of-bounds write in the USB Bluetooth HCI transport class when a controller-to-host HCI packet exceeds the bulk endpoint maximum packet size</title>
+      <link>https://vulnogram.org/CVE-2026-79982</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79982</guid>
+      <description>The Bluetooth HCI USB transport class of the new USB device stack, subsys/usb/device_next/class/bt_hci.c, copies every controller-to-host HCI packet into a USB transfer buffer before enqueuing it on an endpoint. bt_hci_tx_sync_in() allocated that buf…</description>
+      <category>High</category>
+      <pubDate>Fri, 23 Oct 2026 19:56:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79981 · 6.5 MEDIUM — DNS resolver reuses a single UDP source port for all queries, easing off-path answer spoofing</title>
+      <link>https://vulnogram.org/CVE-2026-79981</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79981</guid>
+      <description>The DNS stub resolver in subsys/net/lib/dns/resolve.c binds one UDP socket per configured server when the resolver context is initialised (dns_resolve_init_locked() -&gt; register_dispatcher() -&gt; dns_dispatcher_register()), with the local port left at 0…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 23 Oct 2026 19:56:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79980 · 5.6 MEDIUM — Predictable and reused DHCPv4 transaction identifier allows spoofed DHCP replies to reconfigure gateway and DNS</title>
+      <link>https://vulnogram.org/CVE-2026-79980</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79980</guid>
+      <description>The DHCPv4 client in subsys/net/lib/dhcpv4/dhcpv4.c maintained its transaction identifier (iface-&gt;config.dhcpv4.xid) as a counter rather than as a per-transaction random value. It was seeded once with sys_rand32_get() in dhcpv4_start_internal(), incr…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 23 Oct 2026 19:56:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79979 · 7.8 HIGH — Stale TLB entries after demand-paging page-out let arm64 user threads access reused physical frames</title>
+      <link>https://vulnogram.org/CVE-2026-79979</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79979</guid>
+      <description>The arm64 MMU backend invalidates a single virtual address from the TLB with invalidate_tlb_page() in arch/arm64/core/mmu.c, which issued TLBI VAE1{IS} with an operand of virt &gt;&gt; 12. That operand encodes the ASID in bits [63:48], so the invalidation…</description>
+      <category>High</category>
+      <pubDate>Fri, 23 Oct 2026 19:56:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79978 · 3.6 LOW — Out-of-bounds write in the ADXL345 sensor driver RTIO streaming FIFO read path</title>
+      <link>https://vulnogram.org/CVE-2026-79978</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79978</guid>
+      <description>The RTIO streaming completion callback adxl345_process_fifo_samples_cb() in drivers/sensor/adi/adxl345/adxl345_stream.c clamps the amount of FIFO data it will report (read_len = MIN(fifo_bytes, buf_avail)) to the space actually returned by rtio_sqe_r…</description>
+      <category>Low</category>
+      <pubDate>Fri, 23 Oct 2026 19:56:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-79977 · 8.2 HIGH — WireGuard peer endpoint learned from unauthenticated transport-data messages allows off-path tunnel hijack in Zephyr</title>
+      <link>https://vulnogram.org/CVE-2026-79977</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79977</guid>
+      <description>The WireGuard VPN service in subsys/net/lib/wireguard/wg.c updated the peer endpoint from a message it could not authenticate. In handle_transport_data(), when the 32-bit receiver index of an incoming transport-data message matched no session, the co…</description>
+      <category>High</category>
+      <pubDate>Fri, 23 Oct 2026 19:56:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19741 · 7.5 HIGH — OpenThread joiner autostart uses a publicly documented default Joining Device Credential (PSKd)</title>
+      <link>https://vulnogram.org/CVE-2026-19741</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19741</guid>
+      <description>Zephyr&apos;s OpenThread integration defined CONFIG_OPENTHREAD_JOINER_PSKD with default &quot;J01NME&quot; in modules/openthread/Kconfig.thread (previously subsys/net/l2/openthread/Kconfig, then subsys/net/l2/openthread/Kconfig.thread). J01NME is the example Joinin…</description>
+      <category>High</category>
+      <pubDate>Fri, 23 Oct 2026 19:56:12 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-19947 · 5.3 MEDIUM — Missing kernel object permission check in devmux syscalls allows unprivileged user threads to retarget a device multiplexer</title>
       <link>https://vulnogram.org/CVE-2026-19947</link>
@@ -355,62 +411,6 @@
       <description>The MCUmgr SMP-over-console transport decodes a base64 frame, reads a 16-bit packet length from it, verifies a CRC and then unconditionally strips the trailing CRC with rx_ctxt-&gt;nb-&gt;len -= 2U; in mcumgr_serial_process_frag() (subsys/mgmt/mcumgr/trans…</description>
       <category>Medium</category>
       <pubDate>Mon, 28 Sep 2026 23:25:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18746 · 5.9 MEDIUM — NULL pointer dereference in Zephyr LwM2M client when the CoAP Block1 context pool is exhausted</title>
-      <link>https://vulnogram.org/CVE-2026-18746</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18746</guid>
-      <description>parse_write_op() in subsys/net/lib/lwm2m/lwm2m_message_handling.c handles inbound CoAP WRITE/CREATE requests that carry a Block1 option. For the first block of a transfer it called init_block_ctx() and then immediately stored the peer-selected block…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 28 Sep 2026 23:25:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18417 · 6.5 MEDIUM — Wild pointer dereference in Zephyr BSD sockets when a TCP listening socket reports an asynchronous error</title>
-      <link>https://vulnogram.org/CVE-2026-18417</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18417</guid>
-      <description>The native BSD-socket layer recorded a pending asynchronous socket error by type-punning it into struct net_context&apos;s void user_data field (ctx-&gt;user_data = INT_TO_POINTER(-status) in zsock_accepted_cb(), zsock_received_cb(), zsock_connected_cb() and…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 28 Sep 2026 23:25:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18416 · 3.7 LOW — Out-of-bounds read in CoAP well-known-core Uri-Query href matching (match_path_uri)</title>
-      <link>https://vulnogram.org/CVE-2026-18416</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18416</guid>
-      <description>The CoAP link-format helper match_path_uri() in subsys/net/lib/coap/coap_link_format.c compares a registered resource path against the URI carried in a Uri-Query href= option. That URI is not NUL terminated, but the inner character loop advanced its…</description>
-      <category>Low</category>
-      <pubDate>Mon, 28 Sep 2026 20:00:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18415 · 6.3 MEDIUM — Out-of-bounds write in the IEEE 802.15.4 L2 transmit path for oversized non-6LoWPAN frames</title>
-      <link>https://vulnogram.org/CVE-2026-18415</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18415</guid>
-      <description>ieee802154_send() in subsys/net/l2/ieee802154/ieee802154.c copies the outgoing packet into a single fixed 125-byte transmit buffer (tx_frame_buf_pool, sized IEEE802154_MTU). In builds with CONFIG_NET_L2_IEEE802154_FRAGMENT enabled (the default whenev…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 28 Sep 2026 20:00:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18414 · 7.8 HIGH — Out-of-bounds write in the ADI MAX32 ADC driver due to incorrect adc_sequence buffer size validation</title>
-      <link>https://vulnogram.org/CVE-2026-18414</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18414</guid>
-      <description>The ADC API requires each driver to reject a sampling sequence whose destination buffer is too small: the buffer_size field of struct adc_sequence in include/zephyr/drivers/adc.h documents that &quot;the driver must ensure that samples are not written bey…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 20:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18413 · 7.8 HIGH — Out-of-bounds write in the NXP MCUX LPADC ADC driver due to missing adc_sequence buffer size validation</title>
-      <link>https://vulnogram.org/CVE-2026-18413</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18413</guid>
-      <description>The ADC API requires each driver to reject a sampling sequence whose destination buffer is too small: the buffer_size field of struct adc_sequence in include/zephyr/drivers/adc.h documents that &quot;the driver must ensure that samples are not written bey…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 19:59:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16513 · 7.8 HIGH — Missing write validation of user-supplied handle pointer in the RTIO syscall verifier allows arbitrary kernel write</title>
-      <link>https://vulnogram.org/CVE-2026-16513</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16513</guid>
-      <description>The userspace verifier z_vrfy_rtio_sqe_copy_in_get_handles() in subsys/rtio/rtio_syscalls.c (subsys/rtio/rtio_handlers.c before v4.3.0) validated the RTIO object handle and the sqes input array, but not the handle out-parameter. On the first loop ite…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Sep 2026 19:59:57 GMT</pubDate>
     </item>
   </channel>
 </rss>
