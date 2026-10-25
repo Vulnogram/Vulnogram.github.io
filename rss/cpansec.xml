@@ -11,7 +11,42 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 25 Oct 2026 14:56:18 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 18:14:24 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-115825 — HTTP::Server::PSGI versions before 1.0056 for Perl allow a single request to crash the server by declaring a large Content-Length</title>
+      <link>https://vulnogram.org/CVE-2026-115825</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115825</guid>
+      <description>HTTP::Server::PSGI versions before 1.0056 for Perl allow a single request to crash the server by declaring a large Content-Length. The request body is read with sysread() calls sized by the remaining Content-Length. Perl grows the read buffer to the…</description>
+      <pubDate>Sun, 25 Oct 2026 16:51:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115824 — Starman versions before 0.4019 for Perl allow memory exhaustion via unbounded buffering of chunked request bodies</title>
+      <link>https://vulnogram.org/CVE-2026-115824</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115824</guid>
+      <description>Starman versions before 0.4019 for Perl allow memory exhaustion via unbounded buffering of chunked request bodies. The chunked body decoder keeps each chunk in memory until the whole chunk and its CRLF have arrived, and sets no limit on the length of…</description>
+      <pubDate>Sun, 25 Oct 2026 16:51:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115823 — Starman versions before 0.4019 for Perl send response bodies for HEAD requests, desynchronizing responses on keep-alive connections</title>
+      <link>https://vulnogram.org/CVE-2026-115823</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115823</guid>
+      <description>Starman versions before 0.4019 for Perl send response bodies for HEAD requests, desynchronizing responses on keep-alive connections. For a HEAD request Starman omits chunked framing but still writes the body returned by the application, on both the a…</description>
+      <pubDate>Sun, 25 Oct 2026 16:51:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115822 — Starman versions before 0.4019 for Perl allow CPU exhaustion via quadratic regex backtracking when parsing chunked request bodies</title>
+      <link>https://vulnogram.org/CVE-2026-115822</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115822</guid>
+      <description>Starman versions before 0.4019 for Perl allow CPU exhaustion via quadratic regex backtracking when parsing chunked request bodies. Starman decodes chunked request bodies before calling the application, matching each chunk-size line with `s/^(([0-9a-f…</description>
+      <pubDate>Sun, 25 Oct 2026 16:51:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115817 — Starman versions before 0.4019 for Perl allow a stalled request body to hold a worker indefinitely, as read_timeout covers only the headers</title>
+      <link>https://vulnogram.org/CVE-2026-115817</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115817</guid>
+      <description>Starman versions before 0.4019 for Perl allow a stalled request body to hold a worker indefinitely, as read_timeout covers only the headers. Content-Length and chunked request bodies are read with blocking reads and no deadline. A client that sends c…</description>
+      <pubDate>Sun, 25 Oct 2026 16:50:33 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-114629 — Web::Simple versions before 0.035 for Perl allocate a buffer sized by the Content-Length header for urlencoded body parameters</title>
       <link>https://vulnogram.org/CVE-2026-114629</link>
@@ -360,47 +395,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 01 Oct 2026 13:11:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-80490 — Algorithm::AhoCorasick::XS versions through 0.04 for Perl read the haystack string length before the scalar is stringified</title>
-      <link>https://vulnogram.org/CVE-2026-80490</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-80490</guid>
-      <description>Algorithm::AhoCorasick::XS versions through 0.04 for Perl read the haystack string length before the scalar is stringified. The matches, first_match and match_details methods use the T_STD_STRING typemap to translate Perl scalars (SVs) into strings v…</description>
-      <pubDate>Wed, 30 Sep 2026 15:20:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85644 · 7.5 HIGH 🌩️ — XS::Parse::Infix versions from 0.40 through 0.49 for Perl treat a number as an array reference</title>
-      <link>https://vulnogram.org/CVE-2026-85644</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85644</guid>
-      <description>XS::Parse::Infix versions from 0.40 through 0.49 for Perl treat a number as an array reference. The wrapper function XS::Parse::Infix generates for a list-associative infix operator checks whether arguments are array references, but it tests using Sv…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 16:09:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88816 · 7.5 HIGH 🌩️ — DBI versions before 1.654 for Perl incorrectly treat numeric values as strings in FetchHashKeyName</title>
-      <link>https://vulnogram.org/CVE-2026-88816</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88816</guid>
-      <description>DBI versions before 1.654 for Perl incorrectly treat numeric values as strings in FetchHashKeyName. fetchrow_hashref uses the string pointer of the FetchHashKeyName attribute as the key name without stringifying it first. When FetchHashKeyName has be…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 16:04:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88815 · 6.2 MEDIUM — DBI versions before 1.654 for Perl incorrectly treat numeric values as strings in sql_type_cast_svpv</title>
-      <link>https://vulnogram.org/CVE-2026-88815</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88815</guid>
-      <description>DBI versions before 1.654 for Perl incorrectly treat numeric values as strings in sql_type_cast_svpv. When casting to SQL_NUMERIC, sql_type_cast_svpv passes the string pointer and length of the SV to grok_number without stringifying it first. An inte…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 28 Sep 2026 16:04:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95811 · 6.5 MEDIUM — Lemonldap::NG::Handler versions from 2.0.0 before 2.16.10, from 2.17.0 before 2.21.6, from 2.22.0 before 2.23.4 for Perl allow an equivalent spelling of a path to bypass the locationRules that restrict it</title>
-      <link>https://vulnogram.org/CVE-2026-95811</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95811</guid>
-      <description>Lemonldap::NG::Handler versions from 2.0.0 before 2.16.10, from 2.17.0 before 2.21.6, from 2.22.0 before 2.23.4 for Perl allow an equivalent spelling of a path to bypass the locationRules that restrict it. The handler matches each vhost&apos;s locationRul…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 25 Sep 2026 01:31:22 GMT</pubDate>
     </item>
   </channel>
 </rss>
