@@ -11,7 +11,55 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 26 Oct 2026 11:47:27 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 17:52:06 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-82390 · 3.7 LOW — Cross-session AES key confusion in the Espressif ESP32 hardware crypto driver</title>
+      <link>https://vulnogram.org/CVE-2026-82390</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82390</guid>
+      <description>The Espressif AES driver drivers/crypto/crypto_esp32_aes.c advertises a multi-session cipher API — it hands out up to CONFIG_ESP32_CRYPTO_AES_SESSIONS_MAX (default 4) independent sessions, each carrying its own key and direction. The AES peripheral,…</description>
+      <category>Low</category>
+      <pubDate>Mon, 26 Oct 2026 16:08:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82389 · 6.5 MEDIUM — Bluetooth Classic HFP AG wipes an object still linked in the SDP request list on connect failure, causing a NULL dereference</title>
+      <link>https://vulnogram.org/CVE-2026-82389</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82389</guid>
+      <description>In the Bluetooth Classic Hands-Free Profile Audio Gateway role, hfp_ag_create() in subsys/bluetooth/host/classic/hfp_ag.c starts an SDP discovery toward the peer, which links the embedded ag-&gt;sdp_param._node into the SDP client&apos;s pending request list…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 16:08:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82388 · 5.3 MEDIUM — Use of a released HFP HF object after a failed RFCOMM connect in the Bluetooth Classic host</title>
+      <link>https://vulnogram.org/CVE-2026-82388</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82388</guid>
+      <description>bt_hfp_hf_connect() in subsys/bluetooth/host/classic/hfp_hf.c allocates the per-connection HFP Hands-Free object with hfp_hf_create(), which starts an SDP discovery by passing the object&apos;s embedded hf-&gt;sdp_param to bt_sdp_discover(). That call links…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 16:08:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19742 · 3.7 LOW — IPv6 stable and temporary interface identifiers derived from a non-cryptographic PRNG secret key</title>
+      <link>https://vulnogram.org/CVE-2026-19742</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19742</guid>
+      <description>The IPv6 stack derived the long-lived secret key used to compute RFC 7217 stable interface identifiers (gen_stable_iid() in subsys/net/ip/ipv6.c) and RFC 8981 temporary interface identifiers (gen_temporary_iid() in subsys/net/ip/ipv6_pe.c) with sys_r…</description>
+      <category>Low</category>
+      <pubDate>Mon, 26 Oct 2026 16:08:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81038 · 7.1 HIGH — Bluetooth OTS server discloses uninitialized stack memory in failed Calculate Checksum responses</title>
+      <link>https://vulnogram.org/CVE-2026-81038</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81038</guid>
+      <description>The Object Transfer Service server builds its Object Action Control Point (OACP) response indication in oacp_ind_send() (subsys/bluetooth/services/ots/ots_oacp.c). Before this fix the four-byte Checksum Value field was appended whenever the requested…</description>
+      <category>High</category>
+      <pubDate>Mon, 26 Oct 2026 16:08:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81039 · 4.3 MEDIUM — Bluetooth Host connection reservation leak when multiple connectable advertising sets share an identity</title>
+      <link>https://vulnogram.org/CVE-2026-81039</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81039</guid>
+      <description>The Bluetooth host pre-allocates a bt_conn object (a &quot;reservation&quot;) from the fixed acl_conns[] pool for every connectable advertising set it starts, in le_adv_start_add_conn() in subsys/bluetooth/host/adv.c. When an incoming peripheral connection com…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 16:08:48 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-79982 · 8.8 HIGH — Out-of-bounds write in the USB Bluetooth HCI transport class when a controller-to-host HCI packet exceeds the bulk endpoint maximum packet size</title>
       <link>https://vulnogram.org/CVE-2026-79982</link>
@@ -363,54 +411,6 @@
       <description>The LE Audio Broadcast Sink in subsys/bluetooth/audio/bap_broadcast_sink.c copies subgroup metadata from a received Basic Audio Announcement (BASE) into the static Broadcast Audio Scan Service parameter structure mod_src_param without any bounds chec…</description>
       <category>High</category>
       <pubDate>Fri, 09 Oct 2026 07:16:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15894 · 8.8 HIGH — Bluetooth Mesh solicitation PDU stack buffer overflow via oversized advertisement</title>
-      <link>https://vulnogram.org/CVE-2026-15894</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15894</guid>
-      <description>The Bluetooth Mesh On-Demand Private Proxy solicitation handler in subsys/bluetooth/mesh/solicitation.c copies a received Solicitation PDU into a fixed 17-byte stack buffer without bounding the source length. In sol_pdu_decrypt(), out is allocated as…</description>
-      <category>High</category>
-      <pubDate>Wed, 07 Oct 2026 08:55:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19186 · 8.1 HIGH — Integer underflow in IEEE 802.15.4 frame decryption leads to out-of-bounds read and write</title>
-      <link>https://vulnogram.org/CVE-2026-19186</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19186</guid>
-      <description>ieee802154_decipher_data_frame() in subsys/net/l2/ieee802154/ieee802154_frame.c computed payload_len = net_pkt_get_len(pkt) - ll_hdr_len - authtag_len without first checking that the received frame is at least ll_hdr_len + authtag_len bytes long. All…</description>
-      <category>High</category>
-      <pubDate>Wed, 07 Oct 2026 08:55:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19185 · 7.8 HIGH — Unvalidated user-supplied buffer pointers in the I3C do_ccc system call handler allow kernel memory read/write from user mode</title>
-      <link>https://vulnogram.org/CVE-2026-19185</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19185</guid>
-      <description>The system-call verifier for i3c_do_ccc() in drivers/i3c/i3c_handlers.c validated the outer struct i3c_ccc_payload, the broadcast ccc.data buffer and the targets.payloads[] array, but did not validate the per-target data buffers those array elements…</description>
-      <category>High</category>
-      <pubDate>Mon, 05 Oct 2026 08:06:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19184 · 8.4 HIGH — Out-of-bounds write in the NXP GAU ADC driver due to byte-versus-sample buffer size validation mismatch</title>
-      <link>https://vulnogram.org/CVE-2026-19184</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19184</guid>
-      <description>The NXP GAU ADC driver (drivers/adc/adc_mcux_gau_adc.c) validated the caller-supplied sequence-&gt;buffer_size, which is expressed in bytes, against the number of active channels, which is a sample count. It then stored that byte count directly in data-…</description>
-      <category>High</category>
-      <pubDate>Mon, 05 Oct 2026 08:06:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-17053 · 4.4 MEDIUM — SMBus callback-removal syscalls accept an unvalidated user pointer, letting user threads manipulate kernel callback state</title>
-      <link>https://vulnogram.org/CVE-2026-17053</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17053</guid>
-      <description>The SMBus driver API exposed smbus_smbalert_remove_cb() and smbus_host_notify_remove_cb() as Zephyr syscalls. Their verifiers in drivers/smbus/smbus_handlers.c validated only the dev argument with K_SYSCALL_OBJ(dev, K_OBJ_DRIVER_SMBUS) and forwarded…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 01 Oct 2026 15:08:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18747 · 6.8 MEDIUM — Integer underflow of net_buf length in the MCUmgr serial (SMP over console) transport leads to out-of-bounds read</title>
-      <link>https://vulnogram.org/CVE-2026-18747</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18747</guid>
-      <description>The MCUmgr SMP-over-console transport decodes a base64 frame, reads a 16-bit packet length from it, verifies a CRC and then unconditionally strips the trailing CRC with rx_ctxt-&gt;nb-&gt;len -= 2U; in mcumgr_serial_process_frag() (subsys/mgmt/mcumgr/trans…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 28 Sep 2026 23:25:26 GMT</pubDate>
     </item>
   </channel>
 </rss>

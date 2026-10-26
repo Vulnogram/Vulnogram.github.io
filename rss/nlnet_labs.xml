@@ -11,7 +11,63 @@
       <title>NLnet Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 26 Oct 2026 11:47:28 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 17:52:06 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-72758 · 7.5 HIGH — Routinator may exit on malformed ranges</title>
+      <link>https://vulnogram.org/CVE-2026-72758</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72758</guid>
+      <description>When parsing an AS range in Routinator, if the maximum value of the range is smaller than the minimum value of the range, Routinator will never reach the maximum value and run out of memory.</description>
+      <category>High</category>
+      <pubDate>Mon, 26 Oct 2026 17:07:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-72757 · 5.3 MEDIUM — Routinator HTTP server becomes unavailable with many unclosed connections</title>
+      <link>https://vulnogram.org/CVE-2026-72757</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72757</guid>
+      <description>Routinator runs out of open connections on the HTTP server when many connections are opened but never closed, leaving the HTTP server unavailable. This condition can be triggered maliciously by an attacker by opening a large number of connections to…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 17:07:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-72756 · 7.5 HIGH — Routinator exits on malformed rsync URIs</title>
+      <link>https://vulnogram.org/CVE-2026-72756</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72756</guid>
+      <description>Routinator exits when an rsync URI for a file obtained over RRDP contains a path that cannot be stored on disk, such as too long file names, and folder names that overlap with existing file names.</description>
+      <category>High</category>
+      <pubDate>Mon, 26 Oct 2026 17:06:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-72755 · 3.8 LOW — Routinator stores TA certificate in cache without validation</title>
+      <link>https://vulnogram.org/CVE-2026-72755</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72755</guid>
+      <description>Routinator stores a newly-retrieved TA certificate via HTTPS in cache without validation, potentially overwriting a known good TA certificate even if validation fails.</description>
+      <category>Low</category>
+      <pubDate>Mon, 26 Oct 2026 17:06:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-72754 · 7.5 HIGH — Routinator exits when parsing an incorrect or very large CRL file</title>
+      <link>https://vulnogram.org/CVE-2026-72754</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72754</guid>
+      <description>When Routinator encounters a CRL with many entries, it may hang or run out of memory. If Routinator encounters a CRL file with the wrong encoding, it may exit.</description>
+      <category>High</category>
+      <pubDate>Mon, 26 Oct 2026 17:06:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-72753 · 8.2 HIGH — Routinator incorrectly handles delta updates</title>
+      <link>https://vulnogram.org/CVE-2026-72753</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72753</guid>
+      <description>When Routinator encounters an RRDP notification file with gaps in the delta entries, it is still accepted and parsed, potentially leading to missing data. If it encounters too many delta entries it may run out of memory.</description>
+      <category>High</category>
+      <pubDate>Mon, 26 Oct 2026 17:06:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-72752 · 6.5 MEDIUM — Routinator exits when requesting the output repeatedly</title>
+      <link>https://vulnogram.org/CVE-2026-72752</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-72752</guid>
+      <description>Routinator runs out of memory when the JSON output is requested many times concurrently. This condition can be triggered maliciously by an attacker by opening a large number of connections to the HTTP server. Additionally Routinator runs into a stack…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 17:06:15 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-97206 · 7.5 HIGH — DNS-over-QUIC (DoQ) path-migration can lead to use-after-free on multi-threaded deployments.</title>
       <link>https://vulnogram.org/CVE-2026-97206</link>
@@ -355,62 +411,6 @@
       <description>In NLnet Labs Unbound 1.22.0 up to and including 1.25.1, client terminated DNS-over-QUIC (DoQ) queries are not accounted properly by Unbound resulting in low-cost inflation of the waiting number of replies for already in-flight resolution queries. Th…</description>
       <category>Low</category>
       <pubDate>Wed, 22 Jul 2026 13:04:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40691 · 7.5 HIGH — Packet of death for DNSCrypt over TCP</title>
-      <link>https://vulnogram.org/CVE-2026-40691</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40691</guid>
-      <description>In Unbound 1.9.0 up to and including 1.25.1, when a DNSCrypt query is received over TCP, the routine that encrypts the reply in place fails to bound the reply length against the destination buffer size. The size clamp that protects the UDP path is no…</description>
-      <category>High</category>
-      <pubDate>Wed, 22 Jul 2026 13:04:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-32665 · 7.5 HIGH — Remote DNS-over-QUIC denial of service due to `quic-size` budget bypass</title>
-      <link>https://vulnogram.org/CVE-2026-32665</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-32665</guid>
-      <description>In NLnet Labs Unbound 1.22.0 up to and including 1.25.1, when downstream DNS-over-QUIC (DoQ) is enabled, the first two bidirectional streams on a new QUIC connection (stream_id 0 and 4) bypass the per-stream &apos;quic-size&apos; gate entirely, and large input…</description>
-      <category>High</category>
-      <pubDate>Wed, 22 Jul 2026 13:04:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14586 · 5.9 MEDIUM — Assertion in libngtcp2 when under pressure in high concurrency DNS-over-QUIC environments</title>
-      <link>https://vulnogram.org/CVE-2026-14586</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14586</guid>
-      <description>In NLnet Labs Unbound 1.22.0 up to and including 1.25.1, in DNS-over-QUIC environments, with high concurrency and under pressure, an assertion in libngtcp2 about monotonic timestamps could trigger and result in server termination and thus denial of s…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Jul 2026 13:03:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12490 · 8.2 HIGH — Bypass of client certificate verification with transfer over TLS</title>
-      <link>https://vulnogram.org/CVE-2026-12490</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12490</guid>
-      <description>When a provide-xfr is given with a tls-auth-name, a secondary requesting a transfer should provide a client certificate with that name. However, no client certificate is needed when the request comes in over TLS over the regular tls-port (and not the…</description>
-      <category>High</category>
-      <pubDate>Thu, 25 Jun 2026 05:24:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12246 · 7.2 HIGH — Out of bounds stack write with crafted APL RR</title>
-      <link>https://vulnogram.org/CVE-2026-12246</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12246</guid>
-      <description>NSD version 4.14.0 introduced a bug where a specially crafted APL RR, with an adflength larger than permitted for the address family will overwrite the stack when the zone is written to disk, with a maximum of 111 attacker controlled bytes.</description>
-      <category>High</category>
-      <pubDate>Thu, 25 Jun 2026 05:24:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12245 · 8.7 HIGH — Denial of DNS over TLS service by any DoT client</title>
-      <link>https://vulnogram.org/CVE-2026-12245</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12245</guid>
-      <description>NSD from version 4.13.0 has a heap use-after-free bug in logging errors on TLS connections, causing a crash of the server process, which can be triggered trivially by sending a DNS query over a DoT connection, and closing the connection without readi…</description>
-      <category>High</category>
-      <pubDate>Thu, 25 Jun 2026 05:24:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-12244 · 8.7 HIGH — Heap overflow and crash with crafted SVCB RR</title>
-      <link>https://vulnogram.org/CVE-2026-12244</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-12244</guid>
-      <description>If NSD is configured as secondary for a zone, the primary of that zone can crash NSD with an AXFR containing a DNS message with a special crafted SVCB RR with an rdata size of 65512, that let&apos;s an (uint16_t) variable that is used to allocate space ne…</description>
-      <category>High</category>
-      <pubDate>Thu, 25 Jun 2026 05:24:08 GMT</pubDate>
     </item>
   </channel>
 </rss>

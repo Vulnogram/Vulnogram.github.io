@@ -11,7 +11,149 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 26 Oct 2026 11:47:27 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 17:52:05 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-97200 · 8.2 HIGH 🌩️ — Unbounded response body buffering and decompression in hackney</title>
+      <link>https://vulnogram.org/CVE-2026-97200</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97200</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in hackney_conn in benoitc hackney allows a malicious HTTP server to exhaust client memory via an oversized or highly compressed response body. hackney:request/5 and hackney:body/1 re…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:49:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115693 · 9.1 CRITICAL 🌩️ — Custom cacerts or cacertfile do not restrict trust to the pinned CA in hackney</title>
+      <link>https://vulnogram.org/CVE-2026-115693</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115693</guid>
+      <description>Improper Certificate Validation vulnerability in hackney_ssl in benoitc hackney allows an on-path attacker to impersonate a server pinned to a private certificate authority via a certificate chain that ends in a publicly trusted root. hackney adds {p…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:49:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113440 · 6 MEDIUM 🌩️ — HTTP/1.1 and HTTP/2 redirects resend basic_auth and cookie to a different scheme or port in hackney</title>
+      <link>https://vulnogram.org/CVE-2026-113440</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113440</guid>
+      <description>Insufficiently Protected Credentials vulnerability in hackney in benoitc hackney allows a redirecting server to obtain the basic_auth and cookie credentials of a request via a same-host redirect to another scheme or port. With follow_redirect enabled…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:49:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115700 · 6.9 MEDIUM — SSRF allowlist bypass via percent-encoded bracketed IPv6 or trailing-dot IP literal in hackney</title>
+      <link>https://vulnogram.org/CVE-2026-115700</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115700</guid>
+      <description>Interpretation Conflict vulnerability in hackney_url in benoitc hackney allows Server Side Request Forgery via a percent-encoded bracketed IPv6 literal or an IP literal with a trailing dot. A host such as %5B%3A%3Affff%3A127%2E0%2E0%2E1%5D (decoding…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 13:49:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112880 · 2.1 LOW — CRLF injection in Proxy-Authorization header built from proxy_auth_fun in hackney</title>
+      <link>https://vulnogram.org/CVE-2026-112880</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112880</guid>
+      <description>Improper Neutralization of CRLF Sequences in HTTP Headers (&apos;HTTP Request/Response Splitting&apos;) vulnerability in hackney_http_connect in benoitc hackney allows HTTP Request Splitting via the value a proxy_auth_fun callback returns. After a 407 response…</description>
+      <category>Low</category>
+      <pubDate>Mon, 26 Oct 2026 13:48:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-108529 · 8.7 HIGH 🌩️ — SETTINGS and stream-0 WINDOW_UPDATE frames trigger quadratic work over blocked streams in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-108529</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108529</guid>
+      <description>Inefficient Algorithmic Complexity vulnerability in the HTTP/2 implementation of mtrudel bandit allows an unauthenticated remote attacker to exhaust server CPU via small SETTINGS or connection-level WINDOW_UPDATE frames. The attacker opens thousands…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:35:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110499 · 8.7 HIGH 🌩️ — Client-chosen HPACK encoder table size is applied uncapped, growing per-connection state with every response in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-110499</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110499</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in the HTTP/2 implementation of mtrudel bandit allows an unauthenticated remote attacker to grow per-connection memory and CPU cost without bound via a large SETTINGS_HEADER_TABLE_SIZ…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:32:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109584 · 8.7 HIGH 🌩️ — HTTP/2 cookie crumb join expands a small HPACK header block into an unbounded allocation in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-109584</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109584</guid>
+      <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in the HTTP/2 implementation of mtrudel bandit allows an unauthenticated remote attacker to exhaust server memory via a small HPACK-compressed HEADERS block. The block sto…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:32:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111103 · 8.2 HIGH 🌩️ — HTTP/2 StreamError recovery rolls back connection state and bypasses per-connection limits in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-111103</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111103</guid>
+      <description>Improper Cleanup on Thrown Exception vulnerability in the HTTP/2 handler of mtrudel bandit allows an unauthenticated remote attacker to bypass per-connection resource limits via a single TCP write that carries several frames, one of which raises a st…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:32:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111101 · 8.7 HIGH 🌩️ — HTTP/1.1 chunked request bodies made of 1-byte chunks amplify memory use in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-111101</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111101</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in the HTTP/1.1 chunked body reader of mtrudel bandit allows an unauthenticated remote attacker to exhaust server memory and CPU via a request body made of many 1-byte chunks. The chu…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:31:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113436 · 8.7 HIGH 🌩️ — Quadratic bignum parsing of Content-Length and Host port values in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-113436</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113436</guid>
+      <description>Inefficient Algorithmic Complexity vulnerability in the header integer parser of mtrudel bandit allows an unauthenticated remote attacker to consume server CPU via a content-length value or a Host or :authority port made of thousands of digits. Bandi…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:31:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110314 · 6.3 MEDIUM 🌩️ — WebSocket frames keep reaching the WebSock after a server-initiated close in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-110314</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110314</guid>
+      <description>Client-Side Enforcement of Server-Side Security vulnerability in the WebSocket connection handling of mtrudel bandit allows a remote client to keep running WebSock handler code after the server has stopped its connection, via data frames sent after i…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:31:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114213 · 8.7 HIGH 🌩️ — WebSocket 1-byte continuation frames bypass `max_fragmented_message_size` in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-114213</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114213</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in the WebSocket fragment reassembly of mtrudel bandit allows an unauthenticated remote attacker to exhaust server memory via a fragmented message made of many 1-byte continuation fra…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:30:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114216 · 6.3 MEDIUM 🌩️ — Chunk extensions accept bare LF and CR, enabling request smuggling in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-114216</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114216</guid>
+      <description>Inconsistent Interpretation of HTTP Requests (&apos;HTTP Request/Response Smuggling&apos;) vulnerability in the HTTP/1.1 chunked body reader of mtrudel bandit allows an unauthenticated remote attacker to smuggle a second request past a front-end proxy via a ch…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:30:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115269 · 8.7 HIGH 🌩️ — HTTP/2 WINDOW_UPDATE and SETTINGS frames reset the request body read timeout in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-115269</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115269</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in the HTTP/2 request body reader of mtrudel bandit allows an unauthenticated remote attacker to hold stream processes open indefinitely via WINDOW_UPDATE or empty SETTINGS frames sen…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:30:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-108525 · 8.7 HIGH 🌩️ — HTTP/2 inbound flow control is not enforced, letting a client queue unbounded DATA in stream processes in Bandit</title>
+      <link>https://vulnogram.org/CVE-2026-108525</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108525</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in the HTTP/2 implementation of mtrudel bandit allows an unauthenticated remote attacker to exhaust server memory via DATA frames sent past the advertised receive window. The attacker…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 26 Oct 2026 13:29:42 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-96581 · 7.6 HIGH — An upsert on the primary key in Ash ignores attribute multitenancy, so one tenant can read, overwrite and take over another tenant&apos;s records</title>
       <link>https://vulnogram.org/CVE-2026-96581</link>
@@ -306,146 +448,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 28 Sep 2026 11:15:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92103 · 6.3 MEDIUM 🌩️ — Mint HTTP/2 client buffers oversized frames up to 16 MiB before enforcing max_frame_size</title>
-      <link>https://vulnogram.org/CVE-2026-92103</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92103</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in elixir-mint mint allows a malicious HTTP/2 server to make the client hold up to about 16 MiB per connection in frames it should reject, consuming client memory. Mint.HTTP2.Frame.de…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 11:15:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91043 · 8.2 HIGH 🌩️ — HPACK-indexed cookie fields in Mint HTTP/2 responses bypass max_header_list_size and exhaust client memory</title>
-      <link>https://vulnogram.org/CVE-2026-91043</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91043</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in elixir-mint mint allows a malicious HTTP/2 server to exhaust memory on the client host and cause a denial of service. Mint.HTTP2 enforces the client&apos;s max_header_list_size setting…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 11:15:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92106 · 2.3 LOW 🌩️ — lazy_html serializes SVG and MathML style and script text unescaped, allowing mutation XSS</title>
-      <link>https://vulnogram.org/CVE-2026-92106</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92106</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;) vulnerability in dashbitco lazy_html allows mutation XSS via a parse and serialize round-trip of attacker-supplied HTML. LazyHTML.to_html/2 and LazyHTML.Tree.to_html…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 25 Sep 2026 09:33:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93477 · 5.9 MEDIUM — Private action arguments can be set by user input on the bulk destroy and bulk update paths in Ash</title>
-      <link>https://vulnogram.org/CVE-2026-93477</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93477</guid>
-      <description>Improperly Controlled Modification of Dynamically-Determined Object Attributes vulnerability in ash-project ash allows a user to set the value of a private action argument on the bulk destroy and bulk update paths. Action arguments declared with publ…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 25 Sep 2026 07:08:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91187 · 9.3 CRITICAL 🌩️ — Improper Verification of Cryptographic Signature in dashbit nimble_zta Cloudflare strategy</title>
-      <link>https://vulnogram.org/CVE-2026-91187</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91187</guid>
-      <description>Improper Verification of Cryptographic Signature vulnerability in dashbit nimble_zta allows an unauthenticated remote attacker to authenticate as an arbitrary Cloudflare service token. Applications using the Cloudflare Zero Trust authentication strat…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 24 Sep 2026 13:20:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86698 · 2.3 LOW — Refresh tokens accepted as private repository credentials at the CDN</title>
-      <link>https://vulnogram.org/CVE-2026-86698</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86698</guid>
-      <description>Insufficient Session Expiration vulnerability in OAuth token issuance in hexpm hexpm allows a user whose organization membership or session has ended to keep reading the organization&apos;s private packages and their documentation tarballs via a retained…</description>
-      <category>Low</category>
-      <pubDate>Tue, 22 Sep 2026 15:51:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87119 · 8.2 HIGH 🌩️ — mpp Tempo subscription key authorization is not bound to the issuing challenge, allowing a captured activation credential to be replayed</title>
-      <link>https://vulnogram.org/CVE-2026-87119</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87119</guid>
-      <description>Authentication Bypass by Capture-replay in ZenHive mpp allows an attacker holding a captured subscription activation credential to charge the payer repeatedly. The payer signs a Tempo KeyAuthorization over the chain id, key type, key id, expiry, limi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 11:16:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89420 · 7.1 HIGH — Session voucher adding no new funds is accepted without a charge in mpp, serving paid resources for free</title>
-      <link>https://vulnogram.org/CVE-2026-89420</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89420</guid>
-      <description>Improper Validation of Specified Quantity in Input in ZenHive mpp allows a client holding an open payment channel to obtain paid resources without being charged. MPP.Session.Actions.accept_voucher/3 in lib/mpp/session/actions.ex treats a voucher whos…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 11:16:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65634 · 8.2 HIGH 🌩️ — Superlinear CPU denial of service in Erlang/OTP ASN.1 OBJECT IDENTIFIER decoder</title>
-      <link>https://vulnogram.org/CVE-2026-65634</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65634</guid>
-      <description>Inefficient algorithmic complexity in the Erlang/OTP asn1 OBJECT IDENTIFIER decoder allows a remote unauthenticated attacker to cause denial of service by sending a crafted OID during the TLS handshake. The BER OID decoder asn1rtt_ber:dec_subidentifi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 08:49:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68956 · 7.1 HIGH — SSH daemon allocates unbounded idle session channels, bypassing max_channels</title>
-      <link>https://vulnogram.org/CVE-2026-68956</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68956</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in Erlang/OTP ssh allows an authenticated remote attacker to exhaust node memory by repeatedly opening session channels that are never assigned a handler. The &quot;session&quot; clause of ssh_…</description>
-      <category>High</category>
-      <pubDate>Tue, 22 Sep 2026 08:49:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89422 · 9.3 CRITICAL 🌩️ — TLS 1.3 client skips server authentication when ServerHello carries an unsolicited pre_shared_key extension</title>
-      <link>https://vulnogram.org/CVE-2026-89422</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89422</guid>
-      <description>Key Exchange without Entity Authentication vulnerability in Erlang/OTP ssl allows a peer that answers a TLS 1.3 client connection to impersonate the intended server. A pre_shared_key extension in the ServerHello that the client never offered causes t…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 22 Sep 2026 08:49:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82672 · 6.3 MEDIUM 🌩️ — Unvalidated chunk-size line tail in Mint HTTP/1 client enables response smuggling against strict intermediaries on pooled connections</title>
-      <link>https://vulnogram.org/CVE-2026-82672</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82672</guid>
-      <description>Inconsistent Interpretation of HTTP Requests (&apos;HTTP Request/Response Smuggling&apos;) vulnerability in elixir-mint mint allows a malicious HTTP/1 server to desynchronize a strict intermediary and the Mint client on a pooled connection, enabling response-q…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 19 Sep 2026 17:00:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86688 · 7.4 HIGH 🌩️ — Session id is not renewed on authentication in ash_authentication, allowing session fixation</title>
-      <link>https://vulnogram.org/CVE-2026-86688</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86688</guid>
-      <description>Session Fixation vulnerability in team-alembic ash_authentication allows an attacker who can plant a session identifier in a victim&apos;s browser to hold an authenticated session once that victim signs in. AshAuthentication.Plug.Helpers.store_in_session/…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 21:58:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76949 · 9.1 CRITICAL 🌩️ — Remember-me sign-in guard reads a session key that is never written in ash_authentication, allowing session replacement</title>
-      <link>https://vulnogram.org/CVE-2026-76949</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76949</guid>
-      <description>Authentication Bypass by Spoofing vulnerability in team-alembic ash_authentication allows an attacker who can plant a remember-me cookie in a victim&apos;s browser to replace that victim&apos;s authenticated session with one for the attacker&apos;s own account. Ash…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 21:57:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91039 · 9.1 CRITICAL 🌩️ — dynamic_oidc identities are not namespaced by connection in ash_authentication, allowing cross-connection account takeover</title>
-      <link>https://vulnogram.org/CVE-2026-91039</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91039</guid>
-      <description>Authentication Bypass by Spoofing vulnerability in team-alembic ash_authentication allows an attacker who operates one identity-provider connection of a dynamic_oidc strategy to be signed in as a local user established through a different connection.…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 15:19:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88952 · 9.1 CRITICAL 🌩️ — OAuth2 sign-in attached to an existing account without an email comparison in AshAuthentication</title>
-      <link>https://vulnogram.org/CVE-2026-88952</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88952</guid>
-      <description>Improper Authentication vulnerability in team-alembic AshAuthentication allows an attacker to be signed in as another user by linking an OAuth2 identity to an account that is not theirs. AshAuthentication.Strategy.OAuth2.UserResolver.resolve/3 matche…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 14:15:19 GMT</pubDate>
     </item>
   </channel>
 </rss>
