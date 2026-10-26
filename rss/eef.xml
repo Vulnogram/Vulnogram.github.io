@@ -11,7 +11,71 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 26 Oct 2026 19:31:21 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 22:16:37 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-65630 · 5.9 MEDIUM — Timing side-channel in pure-Erlang X25519 scalar multiplication leaks the private key in jose</title>
+      <link>https://vulnogram.org/CVE-2026-65630</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65630</guid>
+      <description>Observable Timing Discrepancy vulnerability in potatosalad jose allows recovery of a long-term X25519 private key through a timing side channel in the pure-Erlang Curve25519 fallback. The pure-Erlang X25519 implementation performs scalar multiplicati…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 19:54:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65632 · 5.1 MEDIUM — ECDSA signature length is not validated in jose, allowing signature malleability</title>
+      <link>https://vulnogram.org/CVE-2026-65632</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65632</guid>
+      <description>The jose library accepts ECDSA (ES256, ES256K, ES384, and ES512) JWS signatures of a non-canonical length. When verifying an ECDSA signature, jose_jwk_kty_ec:verify/4 in src/jwk/jose_jwk_kty_ec.erl splits the raw signature in half by its actual byte…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 19:53:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65631 · 6.9 MEDIUM — erlang-jose RSA JWK parsing attempts to factor an attacker-controlled modulus, enabling CPU-exhaustion denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-65631</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65631</guid>
+      <description>Inefficient Algorithmic Complexity in erlang-jose allows an unauthenticated remote attacker to cause a CPU-exhaustion denial of service by submitting a crafted RSA JSON Web Key. When an application parses an untrusted JWK through the public jose_jwk:…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 19:53:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65629 · 7.4 HIGH — Weak PBKDF2 parameters for password-encrypted private-key export in jose</title>
+      <link>https://vulnogram.org/CVE-2026-65629</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65629</guid>
+      <description>Use of Password Hash With Insufficient Computational Effort in the jose library allows an attacker who obtains a password-encrypted private-key export to recover the private key through an offline password-cracking attack. When jose exports a passwor…</description>
+      <category>High</category>
+      <pubDate>Mon, 26 Oct 2026 19:53:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65628 · 5.9 MEDIUM — Infinite recursion (CPU denial-of-service) in JOSE.JWK.shared_secret/2 on mismatched key types</title>
+      <link>https://vulnogram.org/CVE-2026-65628</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65628</guid>
+      <description>jose_jwk:shared_secret/2 (exposed in Elixir as JOSE.JWK.shared_secret/2) derives an ECDH shared secret from two JWKs. Its first function clause only matches when both JWKs carry the same key type (kty) module, and its fallback clause re-invokes itsel…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 19:53:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65627 · 6.9 MEDIUM — Decompression bomb via unbounded zlib:inflate in jose_jwe_zip:uncompress/2</title>
+      <link>https://vulnogram.org/CVE-2026-65627</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65627</guid>
+      <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in potatosalad jose (erlang-jose) allows a remote attacker to exhaust a node&apos;s memory with a small crafted JWE token. The jose_jwe_zip:uncompress/2 function in src/jwe/jos…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 19:53:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65626 · 5.9 MEDIUM — Bleichenbacher padding oracle in RSAES-PKCS1-v1_5 decryption in jose</title>
+      <link>https://vulnogram.org/CVE-2026-65626</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65626</guid>
+      <description>The pure-Erlang RSAES-PKCS1-v1_5 decryption in the jose_jwa_pkcs1 module is a Bleichenbacher padding oracle. eme_pkcs1_decode/2 returns the recovered message when a decrypted block has valid PKCS#1 v1.5 padding (a leading 0x00 0x02, a padding string…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 19:53:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65625 · 5.9 MEDIUM — Attacker-controlled AES-GCM authentication tag length allows tag forgery in jose</title>
+      <link>https://vulnogram.org/CVE-2026-65625</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65625</guid>
+      <description>The pure-Erlang AES-GCM fallback in jose_jwa_aes derives the number of verified authentication tag bits from the attacker-supplied tag itself. In the {aes_gcm, Bits} clause of block_decrypt/4, the incoming tag is guarded only by is_binary/1, with no…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 26 Oct 2026 19:52:54 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-97200 · 8.2 HIGH 🌩️ — Unbounded response body buffering and decompression in hackney</title>
       <link>https://vulnogram.org/CVE-2026-97200</link>
@@ -379,75 +443,6 @@
       <description>Memory Allocation with Excessive Size Value vulnerability in ericmj decimal allows Denial of Service. Decimal.round/3 builds the full result for the requested number of decimal places before the context precision (34 digits by default) is applied, so…</description>
       <category>Medium</category>
       <pubDate>Sat, 10 Oct 2026 19:43:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104635 · 8.2 HIGH 🌩️ — Uncontrolled recursion in elixir-protobuf/protobuf JSON decoding of self-referential messages</title>
-      <link>https://vulnogram.org/CVE-2026-104635</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104635</guid>
-      <description>Uncontrolled Recursion vulnerability in Protobuf.JSON.Decode in elixir-protobuf protobuf allows an unauthenticated remote attacker to crash the decoding process via a deeply nested JSON document. Any application that decodes attacker-supplied JSON wi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 09 Oct 2026 08:17:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101028 · 6 MEDIUM — Ash.count, Ash.exists and Ash.aggregate skip related resources&apos; read policies in filters and sorts</title>
-      <link>https://vulnogram.org/CVE-2026-101028</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101028</guid>
-      <description>Incorrect Authorization vulnerability in ash-project ash allows an actor to infer data in related records they cannot read via Ash.count/2, Ash.exists/2 and Ash.aggregate/3. Ash.Actions.Aggregate.run/4 (lib/ash/actions/aggregate.ex) applied only the…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 09 Oct 2026 07:01:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104634 · 2.3 LOW — beam_mcp: JSON boolean and null tool arguments reach dispatch as strings</title>
-      <link>https://vulnogram.org/CVE-2026-104634</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104634</guid>
-      <description>Incorrect Type Conversion or Cast vulnerability in BeamMCP.Server in ScriptKittyOS beam_mcp allows an MCP client&apos;s JSON true, false and null tool arguments to reach the host&apos;s dispatch function as the strings &quot;true&quot;, &quot;false&quot; and &quot;nil&quot;. After BeamMCP.…</description>
-      <category>Low</category>
-      <pubDate>Thu, 08 Oct 2026 13:41:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88257 · 5.3 MEDIUM — beam_mcp: nested tool argument constraints advertised but not enforced</title>
-      <link>https://vulnogram.org/CVE-2026-88257</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88257</guid>
-      <description>Improper Input Validation vulnerability in BeamMCP.Schema in ScriptKittyOS beam_mcp allows an MCP client to reach a tool&apos;s dispatch function with arguments that violate the input schema the server advertised. BeamMCP.Schema.validate/2 checked type, r…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 08 Oct 2026 13:40:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94206 · 6.3 MEDIUM 🌩️ — Cloak PBKDF2 field ignores the configured iteration count and runs only :size rounds</title>
-      <link>https://vulnogram.org/CVE-2026-94206</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94206</guid>
-      <description>Use of Password Hash With Insufficient Computational Effort vulnerability in danielberkompas cloak_ecto and danielberkompas cloak allows an attacker who holds the hashed values and the configured secret to brute-force low-entropy plaintexts much fast…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 06 Oct 2026 08:38:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95105 · 8.2 HIGH 🌩️ — Cloak AES-CTR cipher lacks ciphertext authentication, allowing chosen-plaintext forgery by bit flipping</title>
-      <link>https://vulnogram.org/CVE-2026-95105</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95105</guid>
-      <description>Reliance on Obfuscation or Encryption of Security-Relevant Inputs without Integrity Checking vulnerability in danielberkompas cloak allows an attacker with write access to stored ciphertext to make it decrypt to a chosen value via bit flipping. Cloak…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 06 Oct 2026 08:37:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94201 · 8.2 HIGH 🌩️ — Filtering an :atom attribute with unsafe_to_atom? can exhaust the BEAM atom table in Ash</title>
-      <link>https://vulnogram.org/CVE-2026-94201</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94201</guid>
-      <description>Ash stores :atom-typed attributes as strings and compares them as strings. When such an attribute is referenced in a filter, the comparison value is coerced through Ash.Type.Atom. Because the type defined no coerce/2 callback, coercion fell back to t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 05 Oct 2026 19:19:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94194 · 6.3 MEDIUM 🌩️ — Mint HTTP/1 client applies chunked framing when chunked is not the final transfer coding, enabling response smuggling through intermediaries</title>
-      <link>https://vulnogram.org/CVE-2026-94194</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94194</guid>
-      <description>Inconsistent Interpretation of HTTP Requests (&apos;HTTP Request/Response Smuggling&apos;) vulnerability in elixir-mint mint allows a malicious HTTP/1 server to desynchronize an intermediary and the Mint client on a pooled connection, poisoning the responses t…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 28 Sep 2026 11:15:30 GMT</pubDate>
     </item>
   </channel>
 </rss>
