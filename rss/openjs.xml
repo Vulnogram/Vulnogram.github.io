@@ -11,7 +11,23 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 27 Oct 2026 07:05:01 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 13:09:37 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-112362 · 9.1 CRITICAL — @fastify/express vulnerable to path-scoped middleware bypass via absolute-form request targets</title>
+      <link>https://vulnogram.org/CVE-2026-112362</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112362</guid>
+      <description>@fastify/express is a Fastify plugin that runs Express middleware inside Fastify. In versions 4.0.5 through 4.0.8, when Fastify runs with the non-default ignoreDuplicateSlashes option enabled, the plugin matches path-scoped Express middleware against…</description>
+      <category>Critical</category>
+      <pubDate>Tue, 27 Oct 2026 11:27:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117499 · 3.7 LOW — @fastify/session vulnerable to session revocation bypass via a logout race condition</title>
+      <link>https://vulnogram.org/CVE-2026-117499</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117499</guid>
+      <description>@fastify/session is a session plugin for Fastify. In all releases before 11.1.6, with the default rolling session behavior, a request that restored a session before a logout could save its own copy after another request had completed the session dest…</description>
+      <category>Low</category>
+      <pubDate>Tue, 27 Oct 2026 11:19:22 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-111181 · 7.5 HIGH — body-parser vulnerable to Denial of Service via trailing bytes after a compressed request body</title>
       <link>https://vulnogram.org/CVE-2026-111181</link>
@@ -395,22 +411,6 @@
       <description>undici&apos;s experimental WebSocketStream client crashes the whole Node.js process when a remote peer closes the TCP connection without a WebSocket close handshake. On an unclean close the internal socket-close handler calls abort on the writable stream…</description>
       <category>Medium</category>
       <pubDate>Fri, 04 Sep 2026 16:30:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85024 · 5.9 MEDIUM — undici vulnerable to Denial of Service via unhandled error in WebSocket permessage-deflate decompression</title>
-      <link>https://vulnogram.org/CVE-2026-85024</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85024</guid>
-      <description>undici bundles a WebSocket client whose permessage-deflate size-limit cleanup removes all listeners from the internal zlib inflate stream, including its error listener, while that stream can still emit. When a remote peer sends a compressed payload t…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 04 Sep 2026 16:20:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84428 · 7.5 HIGH — fastify vulnerable to header validation bypass via incomplete schema case normalization</title>
-      <link>https://vulnogram.org/CVE-2026-84428</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84428</guid>
-      <description>fastify versions before 5.12.2 implement the case-insensitive nature of HTTP header names by lowercasing names in a route&apos;s header schema before compiling it, but the transformation is incomplete: it lowercases the properties keys and the root-level…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Sep 2026 10:24:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
