@@ -11,7 +11,42 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 27 Oct 2026 13:09:38 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 18:50:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-88812 · 7.8 HIGH — X.Org Server XKB SetGeometry TextDoodad Double Free</title>
+      <link>https://vulnogram.org/CVE-2026-88812</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88812</guid>
+      <description>A double free in XKB SetGeometryin X.Org X Server before 21.1.25 and X Wayland before 24.1.14 could be used by attached clients to cause a crash or potentially code in the x server context.</description>
+      <category>High</category>
+      <pubDate>Tue, 27 Oct 2026 17:43:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109090 · 7.5 HIGH 🌩️ — libXi XGetDeviceControl DEVICE_ENABLE Heap Buffer Overflow</title>
+      <link>https://vulnogram.org/CVE-2026-109090</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109090</guid>
+      <description>A malicious X server could cause a heap overflow by injecting a large DEVICE_ENABLE reply when processed by libXi before 1.8.4.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 27 Oct 2026 16:32:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109088 · 6.5 MEDIUM 🌩️ — libXtst RECORD EnableContext Reply Endless Loop</title>
+      <link>https://vulnogram.org/CVE-2026-109088</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109088</guid>
+      <description>A malicious X server could send malformed RECORD EnableContext reolies that can cause a X client using the parse_reply_call_callback function in libXtst before 1.2.6 to enter a endless loop.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 27 Oct 2026 16:26:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109089 · 7.5 HIGH 🌩️ — libXi XGetDeviceControl Control Type Mismatch Heap Buffer Overflow</title>
+      <link>https://vulnogram.org/CVE-2026-109089</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109089</guid>
+      <description>A buffer overflow when handling DEVICE_RESOLUTION in libXi before 1.8.4 could overflow a heap, triggered by a malicious X server.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 27 Oct 2026 16:05:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-104618 · 6.9 MEDIUM — sdbootutil: world-readable debug log</title>
       <link>https://vulnogram.org/CVE-2026-104618</link>
@@ -397,41 +432,6 @@
       <description>An out-of-bounds read was found in the DHCPv4 packet capture code of wicked. ni_capture_inspect_udp_header() in src/capture.c reports the IP total length as the payload length instead of the length of the remaining UDP payload. Consequently, the DHCP…</description>
       <category>Medium</category>
       <pubDate>Thu, 27 Aug 2026 15:09:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71401 · 5.3 MEDIUM — wicked: integer underflow of the UDP length in ni_capture_inspect_udp_header() leads to an out-of-bounds read</title>
-      <link>https://vulnogram.org/CVE-2026-71401</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71401</guid>
-      <description>An integer underflow was found in the DHCPv4 packet capture code of wicked. ni_capture_inspect_udp_header() in src/capture.c does not verify that the IP total length field (ip_len) is at least as large as the IP header length (ihl) before subtracting…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 27 Aug 2026 15:01:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18794 · 8.8 HIGH 🌩️ — OpenRGB: insufficient input data checks lead to Denial-of-Service, memory overread and overwrite</title>
-      <link>https://vulnogram.org/CVE-2026-18794</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18794</guid>
-      <description>The OpenRGB network protocol allows attackers to cause memory exhaustion and out-of-bounds memory reads and writes by passing inconsistent data.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 26 Aug 2026 09:29:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59683 · 9.8 CRITICAL 🌩️ — OpenRGB: local and remote system compromise via arbitrary file write using attacker controlled strings</title>
-      <link>https://vulnogram.org/CVE-2026-59683</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59683</guid>
-      <description>The OpenRGB network protocol allows to write attacker controlled strings into arbitrary file system paths (extension of CVE-2026-59682). This allows either a full system compromise from local or remote (if the daemon is running as root) or a full acc…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 26 Aug 2026 09:24:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59682 · 9.1 CRITICAL 🌩️ — Arbitrary file overwrite and deletion local and remote in OpenRGB</title>
-      <link>https://vulnogram.org/CVE-2026-59682</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59682</guid>
-      <description>Arbitrary file overwrite via SAVE_PROFILE message in OpenRGB. This issue affects OpenRGB through 1.0rc3.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 26 Aug 2026 09:13:22 GMT</pubDate>
     </item>
   </channel>
 </rss>

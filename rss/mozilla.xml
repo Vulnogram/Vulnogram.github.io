@@ -11,446 +11,358 @@
       <title>Mozilla Corporation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 27 Oct 2026 13:09:37 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 18:50:17 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-116631 · 5.4 MEDIUM 🌩️ — External protocol handler (tel:) address bar spoof</title>
-      <link>https://vulnogram.org/CVE-2026-116631</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116631</guid>
-      <description>A malicious web page could open a tel link in a window that was showing a different website, causing the phone-call prompt to appear as if that site had requested the call. This vulnerability was fixed in Firefox for iOS 156.1.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 18:32:36 GMT</pubDate>
+      <title>CVE-2026-118180 — Matrix homeserver could redirect the chat session to a local file or network share</title>
+      <link>https://vulnogram.org/CVE-2026-118180</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118180</guid>
+      <description>When logging in to a Matrix account, Thunderbird used the homeserver address provided in the server&apos;s login response without validating it. A malicious or compromised homeserver could provide a file: URL, causing Thunderbird to send all further Matri…</description>
+      <pubDate>Tue, 27 Oct 2026 18:16:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-116632 · 5.4 MEDIUM 🌩️ — Facetime protocol handler enabled spoofing</title>
-      <link>https://vulnogram.org/CVE-2026-116632</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116632</guid>
-      <description>A malicious web page could insert arbitrary text into the FaceTime call prompt shown by iOS, potentialy allowing it to display a phishing message inside system UI. This vulnerability was fixed in Firefox for iOS 156.1.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 18:32:35 GMT</pubDate>
+      <title>CVE-2026-118179 — Request forgery via news: links</title>
+      <link>https://vulnogram.org/CVE-2026-118179</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118179</guid>
+      <description>Clicking a news: or snews: link that referenced a message-ID made Thunderbird connect, without asking, to the host and port given in the link, even if it was not a configured news server. Line breaks in the message-ID were sent to the server unmodifi…</description>
+      <pubDate>Tue, 27 Oct 2026 18:16:32 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113869 · 5.4 MEDIUM — Use-after-free in S/MIME decryption during a security device password prompt</title>
-      <link>https://vulnogram.org/CVE-2026-113869</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113869</guid>
-      <description>When Thunderbird asked for a security device password (for example a smartcard PIN or the Primary Password) while decrypting an S/MIME message, the message load could finish or be cancelled while the prompt was open. This freed the message decoder wh…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:14:55 GMT</pubDate>
+      <title>CVE-2026-118178 — RSS feed could redirect its subscription to a local file or network share</title>
+      <link>https://vulnogram.org/CVE-2026-118178</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118178</guid>
+      <description>A remote RSS feed could use the itunes:new-feed-url or newLocation element to permanently change its stored subscription URL to a file: URL. Thunderbird then read that location on every feed update. This allowed a malicious feed, or an attacker able…</description>
+      <pubDate>Tue, 27 Oct 2026 18:16:31 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113868 · 5.3 MEDIUM — Uninitialized memory disclosure and out-of-bounds read in POP3 and SMTP NTLM authentication</title>
-      <link>https://vulnogram.org/CVE-2026-113868</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113868</guid>
-      <description>When authenticating to a POP3 or SMTP server using NTLM, Thunderbird did not check whether the server&apos;s challenge was valid base64. A malicious server could send a challenge that caused Thunderbird to include uninitialized heap memory in its NTLM res…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 19:14:55 GMT</pubDate>
+      <title>CVE-2026-118177 — Calendar discovery accepted local file and remote network share locations</title>
+      <link>https://vulnogram.org/CVE-2026-118177</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118177</guid>
+      <description>When looking for calendars in a directory on a server, during account setup or when adding a new network calendar, Thunderbird accepted calendar locations pointing to other servers, local files or network shares. A malicious server, or a network atta…</description>
+      <pubDate>Tue, 27 Oct 2026 18:16:31 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113867 — Stanza injection in XMPP chat</title>
-      <link>https://vulnogram.org/CVE-2026-113867</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113867</guid>
-      <description>Thunderbird did not escape attribute values when serializing outgoing XMPP stanzas. Because values from incoming requests were echoed back in automatic replies, a remote XMPP user could send a crafted request that caused Thunderbird to inject arbitra…</description>
-      <pubDate>Tue, 20 Oct 2026 19:14:55 GMT</pubDate>
+      <title>CVE-2026-118176 — Bypass of remote UNC path restriction in mailbox: URLs</title>
+      <link>https://vulnogram.org/CVE-2026-118176</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118176</guid>
+      <description>Thunderbird&apos;s check that prevents mailbox: URLs from accessing files on remote Windows network shares could be bypassed using extended-length UNC paths. Displaying a specially crafted email could cause Thunderbird to connect to an SMB server chosen b…</description>
+      <pubDate>Tue, 27 Oct 2026 18:16:30 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113866 · 5.9 MEDIUM 🌩️ — Account password sent unencrypted during Exchange account setup</title>
-      <link>https://vulnogram.org/CVE-2026-113866</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113866</guid>
-      <description>When setting up an account, Thunderbird&apos;s Exchange AutoDiscover lookup also queried the domain&apos;s AutoDiscover service over plain HTTP. Due to a bug, that unencrypted request included the credentials the user had entered, allowing a network attacker t…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 19:14:54 GMT</pubDate>
+      <title>CVE-2026-118175 — Content of other messages could be included when replying to a crafted message</title>
+      <link>https://vulnogram.org/CVE-2026-118175</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118175</guid>
+      <description>When replying to, forwarding, or editing a crafted email message as new, Thunderbird could embed parts of a different message stored in the same folder into the message being composed, without showing a blocked content warning. If the user sent the m…</description>
+      <pubDate>Tue, 27 Oct 2026 18:16:29 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113401 · 6.5 MEDIUM 🌩️ — Denial-of-service in the PDF Viewer component</title>
-      <link>https://vulnogram.org/CVE-2026-113401</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113401</guid>
-      <description>Denial-of-service in the PDF Viewer component. This vulnerability was fixed in Firefox 158.0.1 and Thunderbird 158.0.1.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 12:58:16 GMT</pubDate>
+      <title>CVE-2026-118174 — Displaying a message could load an attacker-chosen URL through an OpenPGP key attachment</title>
+      <link>https://vulnogram.org/CVE-2026-118174</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118174</guid>
+      <description>When a message containing an OpenPGP key attachment was displayed, Thunderbird automatically loaded the attachment&apos;s content to offer importing the key. A sender could mark the attachment as an external attachment pointing to an arbitrary URL, which…</description>
+      <pubDate>Tue, 27 Oct 2026 18:16:28 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113400 · 5.4 MEDIUM 🌩️ — Uninitialized memory in the Audio/Video: cubeb component</title>
-      <link>https://vulnogram.org/CVE-2026-113400</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113400</guid>
-      <description>Uninitialized memory in the Audio/Video: cubeb component. This vulnerability was fixed in Firefox 158.0.1 and Thunderbird 158.0.1.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 12:58:15 GMT</pubDate>
+      <title>CVE-2026-118027 — Frame poisoning in the Layout component</title>
+      <link>https://vulnogram.org/CVE-2026-118027</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118027</guid>
+      <description>Frame poisoning in the Layout component. This vulnerability was fixed in Firefox ESR 115.44.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:06 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113399 — Incorrect boundary conditions in the SVG component</title>
-      <link>https://vulnogram.org/CVE-2026-113399</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113399</guid>
-      <description>Incorrect boundary conditions in the SVG component. This vulnerability was fixed in Firefox 158.0.1 and Thunderbird 158.0.1.</description>
-      <pubDate>Tue, 20 Oct 2026 12:58:14 GMT</pubDate>
+      <title>CVE-2026-118026 — Invalid pointer in the JavaScript: GC component</title>
+      <link>https://vulnogram.org/CVE-2026-118026</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118026</guid>
+      <description>Invalid pointer in the JavaScript: GC component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:05 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113470 · 5.4 MEDIUM 🌩️ — Cryptographic issue in the Security Block-lists, Allow-lists, and other State component</title>
-      <link>https://vulnogram.org/CVE-2026-113470</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113470</guid>
-      <description>Cryptographic issue in the Security Block-lists, Allow-lists, and other State component. This vulnerability was fixed in Firefox 158.0.1, Firefox ESR 153.5.1, Firefox ESR 115.43.1, Thunderbird 158.0.1, Thunderbird 153.5.1, and Firefox 158.0.2.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 12:58:14 GMT</pubDate>
+      <title>CVE-2026-118025 — Other issue in the SVG component</title>
+      <link>https://vulnogram.org/CVE-2026-118025</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118025</guid>
+      <description>Other issue in the SVG component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:05 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-110249 · 8.6 HIGH — Denial-of-service in the Exchange email component</title>
-      <link>https://vulnogram.org/CVE-2026-110249</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110249</guid>
-      <description>A malicious, compromised, or MITM-controlled Exchange server can return a single well-formed SOAP response containing an element with enough attributes to keep Thunderbird&apos;s main thread CPU-bound for seconds to hours. This vulnerability was fixed in…</description>
-      <category>High</category>
-      <pubDate>Tue, 13 Oct 2026 18:08:38 GMT</pubDate>
+      <title>CVE-2026-118024 — Use-after-free in the Graphics: Text component</title>
+      <link>https://vulnogram.org/CVE-2026-118024</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118024</guid>
+      <description>Use-after-free in the Graphics: Text component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:05 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-110247 · 8.4 HIGH — Integer overflow in libmime buffer growth could lead to heap corruption</title>
-      <link>https://vulnogram.org/CVE-2026-110247</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110247</guid>
-      <description>Several buffer-growth sites in libmime performed size arithmetic in 32-bit types without overflow checks. On a sufficiently large message the growth guard could fail open, or the buffer could be reallocated smaller than required, and a subsequent mem…</description>
-      <category>High</category>
-      <pubDate>Tue, 13 Oct 2026 18:08:37 GMT</pubDate>
+      <title>CVE-2026-118023 — Sandbox escape due to use-after-free in the Graphics: WebRender component</title>
+      <link>https://vulnogram.org/CVE-2026-118023</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118023</guid>
+      <description>Sandbox escape due to use-after-free in the Graphics: WebRender component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:04 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109783 · 8.3 HIGH 🌩️ — Mitigation bypass in the File Handling component</title>
-      <link>https://vulnogram.org/CVE-2026-109783</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109783</guid>
-      <description>Mitigation bypass in the File Handling component. This vulnerability was fixed in Firefox ESR 153.5 and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:36 GMT</pubDate>
+      <title>CVE-2026-118022 — Sandbox escape due to use-after-free in the Disability Access APIs component</title>
+      <link>https://vulnogram.org/CVE-2026-118022</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118022</guid>
+      <description>Sandbox escape due to use-after-free in the Disability Access APIs component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:04 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109782 · 8.3 HIGH 🌩️ — Mitigation bypass in the File Handling component</title>
-      <link>https://vulnogram.org/CVE-2026-109782</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109782</guid>
-      <description>Mitigation bypass in the File Handling component. This vulnerability was fixed in Firefox ESR 153.5 and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:36 GMT</pubDate>
+      <title>CVE-2026-118021 — Sandbox escape due to use-after-free in the XPCOM component</title>
+      <link>https://vulnogram.org/CVE-2026-118021</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118021</guid>
+      <description>Sandbox escape due to use-after-free in the XPCOM component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:04 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109781 · 6.5 MEDIUM 🌩️ — Denial-of-service in the Printing: Output component</title>
-      <link>https://vulnogram.org/CVE-2026-109781</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109781</guid>
-      <description>Denial-of-service in the Printing: Output component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:35 GMT</pubDate>
+      <title>CVE-2026-118020 — Use-after-free in the Layout component</title>
+      <link>https://vulnogram.org/CVE-2026-118020</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118020</guid>
+      <description>Use-after-free in the Layout component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:03 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109780 · 9.8 CRITICAL 🌩️ — Mitigation bypass in the DOM: Core &amp; HTML component</title>
-      <link>https://vulnogram.org/CVE-2026-109780</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109780</guid>
-      <description>Mitigation bypass in the DOM: Core &amp; HTML component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:35 GMT</pubDate>
+      <title>CVE-2026-118019 — Race condition, use-after-free in the DOM: File component</title>
+      <link>https://vulnogram.org/CVE-2026-118019</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118019</guid>
+      <description>Race condition, use-after-free in the DOM: File component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:03 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109779 · 4.2 MEDIUM 🌩️ — Race condition in the Networking: DNS component</title>
-      <link>https://vulnogram.org/CVE-2026-109779</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109779</guid>
-      <description>Race condition in the Networking: DNS component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:35 GMT</pubDate>
+      <title>CVE-2026-118018 — Spoofing issue in the Downloads component in Firefox for Android</title>
+      <link>https://vulnogram.org/CVE-2026-118018</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118018</guid>
+      <description>Spoofing issue in the Downloads component in Firefox for Android. This vulnerability was fixed in Firefox 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:02 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109778 · 8.8 HIGH 🌩️ — Privilege escalation in the WebExtensions component</title>
-      <link>https://vulnogram.org/CVE-2026-109778</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109778</guid>
-      <description>Privilege escalation in the WebExtensions component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:35 GMT</pubDate>
+      <title>CVE-2026-118017 — Use-after-free in the SVG component</title>
+      <link>https://vulnogram.org/CVE-2026-118017</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118017</guid>
+      <description>Use-after-free in the SVG component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:02 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109777 · 4.3 MEDIUM 🌩️ — Information disclosure in the Storage: IndexedDB component</title>
-      <link>https://vulnogram.org/CVE-2026-109777</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109777</guid>
-      <description>Information disclosure in the Storage: IndexedDB component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:34 GMT</pubDate>
+      <title>CVE-2026-118016 — Use-after-free in the DOM: Core &amp; HTML component</title>
+      <link>https://vulnogram.org/CVE-2026-118016</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118016</guid>
+      <description>Use-after-free in the DOM: Core &amp; HTML component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:02 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109776 · 4.2 MEDIUM 🌩️ — Race condition in the XPCOM component</title>
-      <link>https://vulnogram.org/CVE-2026-109776</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109776</guid>
-      <description>Race condition in the XPCOM component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:34 GMT</pubDate>
+      <title>CVE-2026-118015 — Use-after-free in the DOM: Core &amp; HTML component</title>
+      <link>https://vulnogram.org/CVE-2026-118015</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118015</guid>
+      <description>Use-after-free in the DOM: Core &amp; HTML component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:01 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109775 · 6.5 MEDIUM 🌩️ — Denial-of-service in the WebRTC component</title>
-      <link>https://vulnogram.org/CVE-2026-109775</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109775</guid>
-      <description>Denial-of-service in the WebRTC component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:34 GMT</pubDate>
+      <title>CVE-2026-118014 — Use-after-free in the JavaScript Engine: JIT component</title>
+      <link>https://vulnogram.org/CVE-2026-118014</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118014</guid>
+      <description>Use-after-free in the JavaScript Engine: JIT component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:01 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109774 · 9.8 CRITICAL 🌩️ — Invalid pointer, undefined behavior in the DOM: Notifications component</title>
-      <link>https://vulnogram.org/CVE-2026-109774</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109774</guid>
-      <description>Invalid pointer, undefined behavior in the DOM: Notifications component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:34 GMT</pubDate>
+      <title>CVE-2026-118013 — Use-after-free in the Layout: Images, Video, and HTML Frames component</title>
+      <link>https://vulnogram.org/CVE-2026-118013</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118013</guid>
+      <description>Use-after-free in the Layout: Images, Video, and HTML Frames component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:01 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109773 · 6.5 MEDIUM 🌩️ — Denial-of-service in the Sync component</title>
-      <link>https://vulnogram.org/CVE-2026-109773</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109773</guid>
-      <description>Denial-of-service in the Sync component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:34 GMT</pubDate>
+      <title>CVE-2026-118012 — Use-after-free in the DOM: Animation component</title>
+      <link>https://vulnogram.org/CVE-2026-118012</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118012</guid>
+      <description>Use-after-free in the DOM: Animation component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:00 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109772 · 9.1 CRITICAL 🌩️ — Same-origin policy bypass in the DevTools component</title>
-      <link>https://vulnogram.org/CVE-2026-109772</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109772</guid>
-      <description>Same-origin policy bypass in the DevTools component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:33 GMT</pubDate>
+      <title>CVE-2026-118011 — Frame poisoning in the CSS Parsing and Computation component</title>
+      <link>https://vulnogram.org/CVE-2026-118011</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118011</guid>
+      <description>Frame poisoning in the CSS Parsing and Computation component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:00 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109771 · 4.3 MEDIUM 🌩️ — Information disclosure in the WebRTC: Networking component</title>
-      <link>https://vulnogram.org/CVE-2026-109771</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109771</guid>
-      <description>Information disclosure in the WebRTC: Networking component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:33 GMT</pubDate>
+      <title>CVE-2026-118010 — Use-after-free in the Disability Access APIs component</title>
+      <link>https://vulnogram.org/CVE-2026-118010</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118010</guid>
+      <description>Use-after-free in the Disability Access APIs component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:06:00 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109770 · 6.1 MEDIUM 🌩️ — Spoofing issue in the DOM: Web Serial component</title>
-      <link>https://vulnogram.org/CVE-2026-109770</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109770</guid>
-      <description>Spoofing issue in the DOM: Web Serial component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:33 GMT</pubDate>
+      <title>CVE-2026-118009 — Integer overflow, use-after-free in the Graphics: Text component</title>
+      <link>https://vulnogram.org/CVE-2026-118009</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118009</guid>
+      <description>Integer overflow, use-after-free in the Graphics: Text component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109769 · 4.3 MEDIUM 🌩️ — Information disclosure in the Networking: Cache component</title>
-      <link>https://vulnogram.org/CVE-2026-109769</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109769</guid>
-      <description>Information disclosure in the Networking: Cache component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109768 · 6.5 MEDIUM 🌩️ — Denial-of-service in the Site Reports component</title>
-      <link>https://vulnogram.org/CVE-2026-109768</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109768</guid>
-      <description>Denial-of-service in the Site Reports component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109767 · 4.3 MEDIUM 🌩️ — Information disclosure in the Networking component</title>
-      <link>https://vulnogram.org/CVE-2026-109767</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109767</guid>
-      <description>Information disclosure in the Networking component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109766 · 8.1 HIGH 🌩️ — Mitigation bypass in the Enterprise Policies component</title>
-      <link>https://vulnogram.org/CVE-2026-109766</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109766</guid>
-      <description>Mitigation bypass in the Enterprise Policies component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
+      <title>CVE-2026-118008 · 8.8 HIGH 🌩️ — Privilege escalation in the DOM: Navigation component</title>
+      <link>https://vulnogram.org/CVE-2026-118008</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118008</guid>
+      <description>Privilege escalation in the DOM: Navigation component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
       <category>High</category>
       <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:32 GMT</pubDate>
+      <pubDate>Tue, 27 Oct 2026 14:05:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109765 · 4.2 MEDIUM 🌩️ — Race condition, use-after-free in the Graphics: Text component</title>
-      <link>https://vulnogram.org/CVE-2026-109765</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109765</guid>
-      <description>Race condition, use-after-free in the Graphics: Text component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:32 GMT</pubDate>
+      <title>CVE-2026-118007 — Use-after-free in the JavaScript: GC component</title>
+      <link>https://vulnogram.org/CVE-2026-118007</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118007</guid>
+      <description>Use-after-free in the JavaScript: GC component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109764 · 5.4 MEDIUM 🌩️ — Mitigation bypass in the Enterprise Policies component</title>
-      <link>https://vulnogram.org/CVE-2026-109764</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109764</guid>
-      <description>Mitigation bypass in the Enterprise Policies component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:32 GMT</pubDate>
+      <title>CVE-2026-118006 — Privilege escalation due to use-after-free in the WebRTC: Signaling component</title>
+      <link>https://vulnogram.org/CVE-2026-118006</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118006</guid>
+      <description>Privilege escalation due to use-after-free in the WebRTC: Signaling component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109763 — Mitigation bypass in the File Handling component</title>
-      <link>https://vulnogram.org/CVE-2026-109763</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109763</guid>
-      <description>Mitigation bypass in the File Handling component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <pubDate>Tue, 13 Oct 2026 12:29:31 GMT</pubDate>
+      <title>CVE-2026-118005 — Use-after-free in the WebRTC: Signaling component</title>
+      <link>https://vulnogram.org/CVE-2026-118005</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118005</guid>
+      <description>Use-after-free in the WebRTC: Signaling component. This vulnerability was fixed in Firefox 159 and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109762 · 8.8 HIGH 🌩️ — Incorrect boundary conditions in the SVG component</title>
-      <link>https://vulnogram.org/CVE-2026-109762</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109762</guid>
-      <description>Incorrect boundary conditions in the SVG component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:31 GMT</pubDate>
+      <title>CVE-2026-118004 — Incorrect boundary conditions in the CSS Transitions and Animations component</title>
+      <link>https://vulnogram.org/CVE-2026-118004</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118004</guid>
+      <description>Incorrect boundary conditions in the CSS Transitions and Animations component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:57 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109761 · 5.4 MEDIUM 🌩️ — Use-after-free in the JavaScript: WebAssembly component</title>
-      <link>https://vulnogram.org/CVE-2026-109761</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109761</guid>
-      <description>Use-after-free in the JavaScript: WebAssembly component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:31 GMT</pubDate>
+      <title>CVE-2026-118003 — Information disclosure in the Networking: DNS component</title>
+      <link>https://vulnogram.org/CVE-2026-118003</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118003</guid>
+      <description>Information disclosure in the Networking: DNS component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:56 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109760 · 8.1 HIGH 🌩️ — Mitigation bypass in the Networking: HTTP component</title>
-      <link>https://vulnogram.org/CVE-2026-109760</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109760</guid>
-      <description>Mitigation bypass in the Networking: HTTP component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:31 GMT</pubDate>
+      <title>CVE-2026-118002 — Information disclosure due to race condition in the Networking component</title>
+      <link>https://vulnogram.org/CVE-2026-118002</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118002</guid>
+      <description>Information disclosure due to race condition in the Networking component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:56 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109759 · 8.1 HIGH 🌩️ — Site isolation issue in the Networking component</title>
-      <link>https://vulnogram.org/CVE-2026-109759</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109759</guid>
-      <description>Site isolation issue in the Networking component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:30 GMT</pubDate>
+      <title>CVE-2026-118000 — Information disclosure in the Networking: HTTP component</title>
+      <link>https://vulnogram.org/CVE-2026-118000</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118000</guid>
+      <description>Information disclosure in the Networking: HTTP component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:55 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109757 · 8.3 HIGH 🌩️ — Sandbox escape due to race condition in the Networking component</title>
-      <link>https://vulnogram.org/CVE-2026-109757</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109757</guid>
-      <description>Sandbox escape due to race condition in the Networking component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:30 GMT</pubDate>
+      <title>CVE-2026-117999 — Race condition in the IPC component</title>
+      <link>https://vulnogram.org/CVE-2026-117999</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117999</guid>
+      <description>Race condition in the IPC component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:55 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109756 · 8.8 HIGH 🌩️ — Privilege escalation in the DOM: Navigation component</title>
-      <link>https://vulnogram.org/CVE-2026-109756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109756</guid>
-      <description>Privilege escalation in the DOM: Navigation component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:30 GMT</pubDate>
+      <title>CVE-2026-117998 — Mitigation bypass in the DOM: Push Subscriptions component</title>
+      <link>https://vulnogram.org/CVE-2026-117998</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117998</guid>
+      <description>Mitigation bypass in the DOM: Push Subscriptions component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:55 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109755 · 9.6 CRITICAL 🌩️ — Sandbox escape in the DOM: Content Processes component</title>
-      <link>https://vulnogram.org/CVE-2026-109755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109755</guid>
-      <description>Sandbox escape in the DOM: Content Processes component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:30 GMT</pubDate>
+      <title>CVE-2026-117997 — Sandbox escape due to use-after-free in the Widget component</title>
+      <link>https://vulnogram.org/CVE-2026-117997</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117997</guid>
+      <description>Sandbox escape due to use-after-free in the Widget component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:54 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109754 · 8.1 HIGH 🌩️ — Incorrect boundary conditions in the DOM: Editor component</title>
-      <link>https://vulnogram.org/CVE-2026-109754</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109754</guid>
-      <description>Incorrect boundary conditions in the DOM: Editor component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:29 GMT</pubDate>
+      <title>CVE-2026-117996 — Incorrect boundary conditions in the WebRTC component</title>
+      <link>https://vulnogram.org/CVE-2026-117996</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117996</guid>
+      <description>Incorrect boundary conditions in the WebRTC component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:54 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109752 · 5.4 MEDIUM 🌩️ — Use-after-free in the DOM: Workers component</title>
-      <link>https://vulnogram.org/CVE-2026-109752</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109752</guid>
-      <description>Use-after-free in the DOM: Workers component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:29 GMT</pubDate>
+      <title>CVE-2026-117995 — Privilege escalation in the DOM: UI Events &amp; Focus Handling component</title>
+      <link>https://vulnogram.org/CVE-2026-117995</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117995</guid>
+      <description>Privilege escalation in the DOM: UI Events &amp; Focus Handling component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:54 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109751 · 4.3 MEDIUM 🌩️ — Information disclosure in the Networking component</title>
-      <link>https://vulnogram.org/CVE-2026-109751</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109751</guid>
-      <description>Information disclosure in the Networking component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:29 GMT</pubDate>
+      <title>CVE-2026-117994 — Use-after-free in the JavaScript: GC component</title>
+      <link>https://vulnogram.org/CVE-2026-117994</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117994</guid>
+      <description>Use-after-free in the JavaScript: GC component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:53 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109750 · 9.6 CRITICAL 🌩️ — Site isolation issue in the DOM: Web Authentication component</title>
-      <link>https://vulnogram.org/CVE-2026-109750</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109750</guid>
-      <description>Site isolation issue in the DOM: Web Authentication component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:28 GMT</pubDate>
+      <title>CVE-2026-117993 — Integer overflow in the Graphics: Text component</title>
+      <link>https://vulnogram.org/CVE-2026-117993</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117993</guid>
+      <description>Integer overflow in the Graphics: Text component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:53 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109749 · 5.4 MEDIUM 🌩️ — Use-after-free in the JavaScript: WebAssembly component</title>
-      <link>https://vulnogram.org/CVE-2026-109749</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109749</guid>
-      <description>Use-after-free in the JavaScript: WebAssembly component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:28 GMT</pubDate>
+      <title>CVE-2026-117992 — Information disclosure in the CSS Parsing and Computation component</title>
+      <link>https://vulnogram.org/CVE-2026-117992</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117992</guid>
+      <description>Information disclosure in the CSS Parsing and Computation component. This vulnerability was fixed in Firefox 159, Firefox ESR 115.44, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:53 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109748 · 5.4 MEDIUM 🌩️ — Use-after-free in the JavaScript: WebAssembly component</title>
-      <link>https://vulnogram.org/CVE-2026-109748</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109748</guid>
-      <description>Use-after-free in the JavaScript: WebAssembly component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:28 GMT</pubDate>
+      <title>CVE-2026-117991 — Incorrect boundary conditions in the Layout: Text and Fonts component</title>
+      <link>https://vulnogram.org/CVE-2026-117991</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117991</guid>
+      <description>Incorrect boundary conditions in the Layout: Text and Fonts component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:52 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109747 · 7.3 HIGH 🌩️ — Other issue in the Address Bar component</title>
-      <link>https://vulnogram.org/CVE-2026-109747</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109747</guid>
-      <description>Other issue in the Address Bar component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:27 GMT</pubDate>
+      <title>CVE-2026-117990 — Sandbox escape due to incorrect boundary conditions in the Graphics: WebRender component</title>
+      <link>https://vulnogram.org/CVE-2026-117990</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117990</guid>
+      <description>Sandbox escape due to incorrect boundary conditions in the Graphics: WebRender component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:52 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109746 · 7.3 HIGH 🌩️ — Mitigation bypass in the DOM: Security component</title>
-      <link>https://vulnogram.org/CVE-2026-109746</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109746</guid>
-      <description>Mitigation bypass in the DOM: Security component. This vulnerability was fixed in Firefox 158 and Thunderbird 158.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:27 GMT</pubDate>
+      <title>CVE-2026-117989 — Use-after-free in the Graphics component</title>
+      <link>https://vulnogram.org/CVE-2026-117989</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117989</guid>
+      <description>Use-after-free in the Graphics component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:51 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109745 · 9.6 CRITICAL 🌩️ — Sandbox escape due to uninitialized memory in the DOM: Web Serial component</title>
-      <link>https://vulnogram.org/CVE-2026-109745</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109745</guid>
-      <description>Sandbox escape due to uninitialized memory in the DOM: Web Serial component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:27 GMT</pubDate>
+      <title>CVE-2026-117988 — Sandbox escape due to incorrect boundary conditions in the Graphics: CanvasWebGL component</title>
+      <link>https://vulnogram.org/CVE-2026-117988</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117988</guid>
+      <description>Sandbox escape due to incorrect boundary conditions in the Graphics: CanvasWebGL component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:51 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-109744 · 8.1 HIGH 🌩️ — Other issue in the DOM: File component</title>
-      <link>https://vulnogram.org/CVE-2026-109744</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109744</guid>
-      <description>Other issue in the DOM: File component. This vulnerability was fixed in Firefox 158, Firefox ESR 153.5, Thunderbird 158, and Thunderbird 153.5.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 13 Oct 2026 12:29:27 GMT</pubDate>
+      <title>CVE-2026-117987 — Use-after-free in the Graphics component</title>
+      <link>https://vulnogram.org/CVE-2026-117987</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117987</guid>
+      <description>Use-after-free in the Graphics component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117986 — Use-after-free in the Graphics component</title>
+      <link>https://vulnogram.org/CVE-2026-117986</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117986</guid>
+      <description>Use-after-free in the Graphics component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117985 — Sandbox escape due to use-after-free in the Graphics component</title>
+      <link>https://vulnogram.org/CVE-2026-117985</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117985</guid>
+      <description>Sandbox escape due to use-after-free in the Graphics component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117984 — Incorrect boundary conditions in the Layout: Scrolling and Overflow component</title>
+      <link>https://vulnogram.org/CVE-2026-117984</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117984</guid>
+      <description>Incorrect boundary conditions in the Layout: Scrolling and Overflow component. This vulnerability was fixed in Firefox 159, Firefox ESR 153.6, and Thunderbird 159.</description>
+      <pubDate>Tue, 27 Oct 2026 14:05:50 GMT</pubDate>
     </item>
   </channel>
 </rss>
