@@ -11,7 +11,21 @@
       <title>Go Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 27 Oct 2026 18:50:18 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 23:00:46 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-97045 — Check all ancestor namespace transitions when rendering raw text in html in golang.org/x/net</title>
+      <link>https://vulnogram.org/CVE-2026-97045</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97045</guid>
+      <description>In childTextNodesAreLiteral, walking up the tree previously stopped at the nearest foreign ancestor once an HTML integration point was found. However, that integration point may itself be a descendant of an element that was foster-parented into a for…</description>
+      <pubDate>Tue, 27 Oct 2026 21:38:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-78661 — Avoid quadratic complexity when coalescing text nodes in html in golang.org/x/net</title>
+      <link>https://vulnogram.org/CVE-2026-78661</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78661</guid>
+      <description>When coalescing adjacent text nodes in addText and fosterParent, appending to an existing TextNode&apos;s Data via string concatenation (n.Data += text) reallocated and copied the accumulated string on every token. Inputs containing many short text runs s…</description>
+      <pubDate>Tue, 27 Oct 2026 21:38:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-111943 — Distrust compromised intermediate certificates in crypto/x509</title>
       <link>https://vulnogram.org/CVE-2026-111943</link>
@@ -435,24 +449,6 @@
       <description>The ToASCII and ToUnicode functions incorrectly accept Punycode-encoded labels that decode to an ASCII-only label. For example, ToUnicode(&quot;xn--example-.com&quot;) incorrectly returns the name &quot;example.com&quot; rather than an error. This behavior can lead to p…</description>
       <category>Critical</category>
       <pubDate>Fri, 22 May 2026 15:01:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42506 · 6.1 MEDIUM 🌩️ — Invoking  incorrect handling of namespaced elements in foreign content in golang.org/x/net/html</title>
-      <link>https://vulnogram.org/CVE-2026-42506</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42506</guid>
-      <description>Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 15:01:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46598 · 5.3 MEDIUM 🌩️ — Invoking  pathological inputs can lead to client panic in golang.org/x/crypto/ssh/agent</title>
-      <link>https://vulnogram.org/CVE-2026-46598</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46598</guid>
-      <description>For certain crafted inputs, a &apos;ed25519.PrivateKey&apos; was created by casting malformed wire bytes, leading to a panic when used.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 02:31:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
