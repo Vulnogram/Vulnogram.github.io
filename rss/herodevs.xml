@@ -11,7 +11,43 @@
       <title>HeroDevs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 27 Oct 2026 23:00:45 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 02:10:49 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-110879 · 9.8 CRITICAL 🌩️ — jackson-databind: PolymorphicTypeValidator bypass via generic type arguments and array element types allows arbitrary class instantiation (incomplete fix for CVE-2026-54512)</title>
+      <link>https://vulnogram.org/CVE-2026-110879</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110879</guid>
+      <description>jackson-databind validates the outer class of a class-name type ID but accepts attacker-selected classes inside its generic arguments, even when those classes violate the declared type or would be rejected as direct type IDs. This bypasses the generi…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 28 Oct 2026 00:07:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110747 · 7.5 HIGH 🌩️ — jackson-dataformat-protobuf: integer overflow in ProtobufParser._readStringKey() allows OutOfMemoryError from an 8-byte payload</title>
+      <link>https://vulnogram.org/CVE-2026-110747</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110747</guid>
+      <description>ProtobufParser._readStringKey() reads the length prefix of a protobuf map entry&apos;s string key into an attacker-controlled int and then checks (_inputPtr + len) &lt;= _inputEnd using signed arithmetic. For values near Integer.MAX_VALUE the addition overfl…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 28 Oct 2026 00:02:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104895 · 7.5 HIGH 🌩️ — jackson-dataformat-smile: unbounded eager byte[] allocation for raw binary in the async parser allows OutOfMemoryError denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-104895</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104895</guid>
+      <description>The asynchronous Smile parser (NonBlockingByteArrayParser) uses a raw-binary length prefix taken from untrusted input to allocate a byte[] before the body is read, with no upper bound and no overflow check. On the raw-binary marker 0xFD, _decodeVInt(…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 28 Oct 2026 00:01:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104016 · 7.5 HIGH 🌩️ — jackson-dataformat-protobuf: signed integer overflow in string-length paths allows unbounded array allocation and OutOfMemoryError</title>
+      <link>https://vulnogram.org/CVE-2026-104016</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104016</guid>
+      <description>ProtobufParser parses length-prefixed protobuf string and bytes fields by checking (_inputPtr + len) &lt;= _inputEnd and then, on the fast path, calling _finishShortText(len). Both use 32-bit signed integer arithmetic. When an attacker supplies a varint…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 27 Oct 2026 23:52:20 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-68498 · 7.5 HIGH 🌩️ — jackson-core: Delayed maxNameLength enforcement for char-backed input (ReaderBasedJsonParser) allows memory-exhaustion denial of service</title>
       <link>https://vulnogram.org/CVE-2026-68498</link>
