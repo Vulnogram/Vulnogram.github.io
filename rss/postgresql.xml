@@ -11,7 +11,103 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 28 Oct 2026 14:54:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 20:15:35 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-110183 · 4.3 MEDIUM — PostgreSQL Anonymizer: statistics can expose some of the original data after statistic masking</title>
+      <link>https://vulnogram.org/CVE-2026-110183</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110183</guid>
+      <description>PostgreSQL Anonymizer contains a vulnerability related to static masking and statistics persistence. Statistics pertaining to the original data remain visible in pg_stats until an ANALYZE operation is performed on the table, either manually or by aut…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110182 · 4.3 MEDIUM — PostgreSQL Anonymizer: anon.partial() and anon.partial_email() can reveal the whole data</title>
+      <link>https://vulnogram.org/CVE-2026-110182</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110182</guid>
+      <description>PostgreSQL Anonymizer contains a vulnerability related to the anon.partial() and anon.partial_email() functions. These function can reveal the while data if the data is small enough. The issue is fixed in PostgreSQL Anonymizer 3.3.0 and later version…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110181 · 6.5 MEDIUM — PostgreSQL Anonymizer: Function declared with SQL-standard syntax leak anonymized data</title>
+      <link>https://vulnogram.org/CVE-2026-110181</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110181</guid>
+      <description>PostgreSQL Anonymizer contains a vulnerability related to anonymization functions defined using SQL-standard function bodies. PostgreSQL analyses such functions at declaration time, while Anonymizer only attempts to check them at execution time. This…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105620 · 6.5 MEDIUM — PostgreSQL Anonymizer: A masked role reads the authentic data of masked tables through a masking rule with a sub-query</title>
+      <link>https://vulnogram.org/CVE-2026-105620</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105620</guid>
+      <description>PostgreSQL Anonymizer doesn&apos;t mask data returned by a sub-query in a rule. The problem is resolved in PostgreSQL Anonymizer 3.3.0 and later versions.</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105619 · 4.8 MEDIUM — PostgreSQL Anonymizer: Masking rules of the tables are not applied through security_invoker views</title>
+      <link>https://vulnogram.org/CVE-2026-105619</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105619</guid>
+      <description>PostgreSQL Anonymizer doesn&apos;t mask data accessed thru a security_invoker view. The problem is resolved in PostgreSQL Anonymizer 3.3.0 and later versions.</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105618 · 5.7 MEDIUM — PostgreSQL Anonymizer: Masked partitions and child tables are not masked when they are queried through their parent</title>
+      <link>https://vulnogram.org/CVE-2026-105618</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105618</guid>
+      <description>PostgreSQL Anonymizer&apos;s documentation recommends applying rules on partitions and inheritance tables. Direct access to the paritions / inheritance tables is masked but not thru the parent table. The problem is resolved in PostgreSQL Anonymizer 3.3.0…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105617 · 5.7 MEDIUM — PostgreSQL Anonymizer: Cached plans bypass transparent dynamic masking after a role change or a new masking rule</title>
+      <link>https://vulnogram.org/CVE-2026-105617</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105617</guid>
+      <description>PostgreSQL Anonymizer doesn&apos;t invalidate plans prepared after a rule was added or a role changed. Users using such plans can still see the unmasked data until the end of the session. The problem is resolved in PostgreSQL Anonymizer 3.3.0 and later ve…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105616 · 5.7 MEDIUM — PostgreSQL Anonymizer: The secret salt and shift of anon are readable by any role in pg_roles or pg_db_role_setting</title>
+      <link>https://vulnogram.org/CVE-2026-105616</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105616</guid>
+      <description>PostgreSQL restricts acces to the salt and shift via the `SHOW` command for users not member of `pg_read_all_settings`. But they are visible in `pg_db_role_setting` or `pg_roles` if they were set on the database, user or both. PostgreSQL Anonymizer&apos;s…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105615 · 3.5 LOW — PostgreSQL Anonymizer: Masked roles can read the statistics of masked columns in pg_stats</title>
+      <link>https://vulnogram.org/CVE-2026-105615</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105615</guid>
+      <description>PostgreSQL&apos;s optimized statistics on a table are visible as long as you have SELECT privilege on said table. A masked role can therefore read a limited subset of the data through the statistics view&apos;s histograms and mcvs. The vulnerability is resolve…</description>
+      <category>Low</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105614 · 4.7 MEDIUM — PostgreSQL Anonymizer: Unbounded image-decode memory allocation (DoS) in anon.image_blur()</title>
+      <link>https://vulnogram.org/CVE-2026-105614</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105614</guid>
+      <description>PostgreSQL Anonymizer&apos;s `anon.image_blur()` function doesn&apos;t check the declared dimension of the provided image, allowing an attacker to provide a small image with enormous declared dimensions. This vulnerability can be exploited to exhaust the memor…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105613 · 4.7 MEDIUM — PostgreSQL Anonymizer: Unbounded memory allocation (DoS) in range-based dummy functions</title>
+      <link>https://vulnogram.org/CVE-2026-105613</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105613</guid>
+      <description>PostgreSQL Anonymizer&apos;s range-based dummy functions dont constraint the range size. This vulnerability can be exploited to exhaust the memory of a backend and OOM-kill it (when ovecommit is on), which results in a cluster-wide crash recovery. The pro…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105612 · 3.5 LOW — PostgreSQL Anonymizer: Data-modifying CTEs bypass the read-only restriction of masked roles</title>
+      <link>https://vulnogram.org/CVE-2026-105612</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105612</guid>
+      <description>PostgreSQL Anonymizer contains a vulnerability that data-modifying CTEs to bypass the read-only restriction of masked roles. The problem is resolved in PostgreSQL Anonymizer 3.3.0 and later versions</description>
+      <category>Low</category>
+      <pubDate>Wed, 28 Oct 2026 17:31:44 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-107350 · 8.8 HIGH — Authentication bypass via second StartupMessage during SCRAM authentication in PgBouncer</title>
       <link>https://vulnogram.org/CVE-2026-107350</link>
@@ -318,102 +414,6 @@
       <description>Heap buffer overflow in PostgreSQL pg_stat_statements allows the query author to execute arbitrary code as the operating system user running the database, via crafted queries containing array constants. Within major version 18, minor versions before…</description>
       <category>High</category>
       <pubDate>Thu, 13 Aug 2026 13:00:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14673 · 3.8 LOW — PostgreSQL amcheck does not clear untrusted search path</title>
-      <link>https://vulnogram.org/CVE-2026-14673</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14673</guid>
-      <description>Untrusted search path in PostgreSQL amcheck allows a grantee of amcheck function EXECUTE privilege to execute arbitrary functions as the owners of expression indexes that depend on the search path, via setting a hostile search path before calling the…</description>
-      <category>Low</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14672 · 5.3 MEDIUM — PostgreSQL observable response discrepancy with non-default scram_iterations provides user existence oracle</title>
-      <link>https://vulnogram.org/CVE-2026-14672</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14672</guid>
-      <description>Observable response discrepancy in PostgreSQL SCRAM authentication allows an unauthenticated user to test the existence of a user via observing the SCRAM iteration count. This requires the probed user to have a non-default scram_iterations count, bec…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14670 · 8.8 HIGH — PostgreSQL plperl tied object heap buffer overflow executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-14670</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14670</guid>
-      <description>Heap buffer overflow in PostgreSQL plperl return of a tied hash allows the function owner to execute arbitrary code as the operating system user running the database, via a crafted function body. Versions before PostgreSQL 18.6, 17.11, 16.15, 15.19,…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14669 · 8.8 HIGH — PostgreSQL to_char heap buffer overflow executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-14669</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14669</guid>
-      <description>Heap buffer overflow in PostgreSQL to_char(timestamptz) allows the party choosing the timezone to execute arbitrary code as the operating system user running the database, via a long POSIX timezone abbreviation. Versions before PostgreSQL 18.6, 17.11…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14668 · 8.1 HIGH — PostgreSQL ctid type confusion in selectivity estimator discloses derivative of arbitrary read</title>
-      <link>https://vulnogram.org/CVE-2026-14668</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14668</guid>
-      <description>Type confusion regarding input of PostgreSQL ctid data type selectivity estimator allows an object creator to view a calculation derived from the value of an arbitrary 4-byte span of memory, via a chosen non-ctid input. While the calculation loses pr…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14666 · 4.2 MEDIUM — PostgreSQL row security caching disregards role modifications</title>
-      <link>https://vulnogram.org/CVE-2026-14666</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14666</guid>
-      <description>Incomplete tracking in PostgreSQL of changes to role membership, role attributes, and database ownership allows a query to continue using cached row-level security policies after those changes require a different policy, via plan reuse. Stale policie…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14664 · 8.8 HIGH — PostgreSQL regexp heap buffer overflow executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-14664</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14664</guid>
-      <description>Heap buffer overflow in PostgreSQL regexp allows the query author to execute arbitrary code as the operating system user running the database, via text that would not pass encoding validation. This shares heritage with CVE-2026-2006, but this case in…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14663 · 6.5 MEDIUM — PostgreSQL pgcrypto, for OpenSSL-disabled ciphers, silently encrypts to and decrypts from cleartext</title>
-      <link>https://vulnogram.org/CVE-2026-14663</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14663</guid>
-      <description>Cleartext storage in PostgreSQL pgcrypto disabled ciphers allows a user to recover cleartext, via direct observation of the faulty ciphertext. The OpenSSL version and OpenSSL configuration determine the disabled ciphers. If the application accepts en…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14662 · 8.8 HIGH — PostgreSQL tsvector and tsquery undersize allocations, via integer wraparound</title>
-      <link>https://vulnogram.org/CVE-2026-14662</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14662</guid>
-      <description>Integer wraparound in PostgreSQL tsvector and tsquery data type functions allows an unprivileged database user to cause the server to undersize an allocation and write out-of-bounds, via crafted large inputs. This may execute arbitrary code as the op…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-17566 · 9.9 CRITICAL — pgAdmin 4: RCE via backslash-escape mismatch in Import/Export Data query guard (incomplete defense, sibling gap to CVE-2025-13780)</title>
-      <link>https://vulnogram.org/CVE-2026-17566</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17566</guid>
-      <description>pgAdmin 4&apos;s Import/Export Data tool builds a psql \copy (...) command line by interpolating a user-supplied SQL query into a Jinja template and passing the rendered line to psql via --command. To stop an attacker from breaking out of the (...) wrappe…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 31 Jul 2026 16:00:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-17351 · 9.4 CRITICAL — pgAdmin 4: AI Assistant read-only transaction bypass via sqlparse/PostgreSQL lexer disagreement (incomplete fix for CVE-2026-12045)</title>
-      <link>https://vulnogram.org/CVE-2026-17351</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17351</guid>
-      <description>The fix for CVE-2026-12045 in pgAdmin 4 9.16 required the LLM-supplied query passed to the AI Assistant&apos;s execute_sql_query tool to parse, via sqlparse, as exactly one non-transaction-control statement before running it inside a BEGIN TRANSACTION REA…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 31 Jul 2026 16:00:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-17350 · 5.4 MEDIUM — pgAdmin 4: Tool permission bypass via backend routes and Socket.IO handlers</title>
-      <link>https://vulnogram.org/CVE-2026-17350</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17350</guid>
-      <description>The per-tool permission system (custom roles / role-based tool permissions, introduced in pgAdmin 4 9.3) did not enforce its permission check consistently. In SERVER mode, pgAdmin 4 gates each tool behind a per-tool Flask-Security permission, but the…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 31 Jul 2026 16:00:03 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 28 Oct 2026 14:54:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 20:15:35 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-82962 · 6.5 MEDIUM — Out-of-bounds write in Zephyr Ethernet L2 when adding the link-layer header to a forwarded packet</title>
+      <link>https://vulnogram.org/CVE-2026-82962</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82962</guid>
+      <description>ethernet_fill_header() in subsys/net/l2/ethernet/ethernet.c can prepend the Ethernet header in place, by pushing it into the headroom of the packet&apos;s first fragment, instead of allocating a separate header fragment. Before this fix the in-place path…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 16:59:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82961 · 7.8 HIGH — Unvalidated pin index in GPIO syscall handlers allows out-of-bounds kernel writes from user mode</title>
+      <link>https://vulnogram.org/CVE-2026-82961</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82961</guid>
+      <description>The GPIO syscall handlers in drivers/gpio/gpio_handlers.c did not validate the pin argument supplied by a user-mode caller. z_vrfy_gpio_pin_configure(), z_vrfy_gpio_pin_get_config() and z_vrfy_gpio_pin_interrupt_configure() verified only the device o…</description>
+      <category>High</category>
+      <pubDate>Wed, 28 Oct 2026 16:58:58 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-82390 · 3.7 LOW — Cross-session AES key confusion in the Espressif ESP32 hardware crypto driver</title>
       <link>https://vulnogram.org/CVE-2026-82390</link>
@@ -395,22 +411,6 @@
       <description>The ARM64 MMU back-end allocated address space identifiers (ASIDs) for memory domains with a bare round-robin counter in arch_mem_domain_init() (arch/arm64/core/mmu.c). VM_ASID_BITS is 8, so only 255 ASIDs exist; once the counter wrapped, arch_mem_do…</description>
       <category>High</category>
       <pubDate>Fri, 09 Oct 2026 07:16:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19571 · 6.7 MEDIUM — Race condition in ITE IT8xxx2 SHI host-command backend lets a second SPI request write an unvalidated length into the in-flight request buffer</title>
-      <link>https://vulnogram.org/CVE-2026-19571</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19571</guid>
-      <description>The ITE IT8xxx2 SHI host-command backend (subsys/mgmt/ec_host_cmd/backends/ec_host_cmd_backend_shi_ite.c) copied the 8-byte host-command request header from the SPI Rx FIFO directly into the shared receive buffer data-&gt;in_msg and only afterwards chec…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 09 Oct 2026 07:16:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19570 · 8.8 HIGH — Out-of-bounds write in LE Audio Broadcast Sink when copying BASE subgroup metadata into the BASS receive state</title>
-      <link>https://vulnogram.org/CVE-2026-19570</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19570</guid>
-      <description>The LE Audio Broadcast Sink in subsys/bluetooth/audio/bap_broadcast_sink.c copies subgroup metadata from a received Basic Audio Announcement (BASE) into the static Broadcast Audio Scan Service parameter structure mod_src_param without any bounds chec…</description>
-      <category>High</category>
-      <pubDate>Fri, 09 Oct 2026 07:16:38 GMT</pubDate>
     </item>
   </channel>
 </rss>

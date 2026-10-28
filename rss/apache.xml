@@ -11,7 +11,91 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 28 Oct 2026 14:54:14 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 20:15:35 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-114349 — Apache Kafka: Denial of service via unbounded memory allocation when decoding compressed record batches</title>
+      <link>https://vulnogram.org/CVE-2026-114349</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114349</guid>
+      <description>When a broker decodes a compressed record batch, the per-record decoder reads a declared body size from the decompressed stream and allocates a buffer of that size before validating it against the bytes available or any configured limit. The size is…</description>
+      <pubDate>Wed, 28 Oct 2026 16:46:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112375 — Apache Kafka: Unauthorized principal can read arbitrary broker files via IncrementalAlterConfigs</title>
+      <link>https://vulnogram.org/CVE-2026-112375</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112375</guid>
+      <description>An authenticated Kafka principal with no authorization grants (not even ALTER_CONFIGS) can make a broker read a file or an environment variable from the broker host and return its contents. An IncrementalAlterConfigs (or AlterConfigs) request targeti…</description>
+      <pubDate>Wed, 28 Oct 2026 16:46:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116593 — Apache Kafka: Kafka Connect configuration provider values exposed via validation REST API endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-116593</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116593</guid>
+      <description>Apache Kafka Connect has the /connector-plugins/{connector-type}/config/validate endpoint on its REST API to validate connector configurations. Apache Kafka Connect also support Configuration Providers which enable to hide the values of sensitive con…</description>
+      <pubDate>Wed, 28 Oct 2026 16:46:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115644 — Apache Kafka: Connect Admin REST API Authentication Bypass via Unapplied REST Extensions</title>
+      <link>https://vulnogram.org/CVE-2026-115644</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115644</guid>
+      <description>Apache Kafka Connect contains an authentication bypass vulnerability affecting the admin REST API when admin.listeners is configured with a separate listener from the main listeners property. When operators isolate the admin REST API by explicitly co…</description>
+      <pubDate>Wed, 28 Oct 2026 16:45:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111551 — Apache Kafka: Denial of service in Kafka Streams and client deserializers via unbounded memory allocation</title>
+      <link>https://vulnogram.org/CVE-2026-111551</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111551</guid>
+      <description>Several Kafka deserialization paths read a size or count field from input data and use it directly to allocate an array, collection, or byte buffer, with no check against the bytes actually available. A small crafted input can therefore declare a ver…</description>
+      <pubDate>Wed, 28 Oct 2026 16:45:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111496 — Apache Kafka: Kafka Streams StreamThread hang from integer overflow in stream-time punctuation</title>
+      <link>https://vulnogram.org/CVE-2026-111496</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111496</guid>
+      <description>Kafka Streams derives its stream-time clock from record timestamps. PunctuationSchedule.next() computed the next punctuation time as timestamp + (intervalsMissed + 1) * interval with no overflow check. A record with a timestamp at or near Long.MAX_VA…</description>
+      <pubDate>Wed, 28 Oct 2026 16:45:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111115 — Apache Kafka: Broker OutOfMemoryError via tagged-field allocation amplification in flexible protocol request parsing</title>
+      <link>https://vulnogram.org/CVE-2026-111115</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111115</guid>
+      <description>Apache Kafka&apos;s code-generated readers for flexible protocol versions read a tagged-field count declared by the sender and retain a RawTaggedField object for each unknown field. That count was bounded only by the outer request frame size (socket.reque…</description>
+      <pubDate>Wed, 28 Oct 2026 16:44:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111108 — Apache Kafka: Broker OutOfMemoryError via array allocation amplification in code-generated protocol readers</title>
+      <link>https://vulnogram.org/CVE-2026-111108</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111108</guid>
+      <description>Apache Kafka&apos;s code-generated protocol readers pre-size an array&apos;s collection from the element count declared by the sender. That count is checked only against the bytes remaining in the request buffer, which assumes about one byte per element; becau…</description>
+      <pubDate>Wed, 28 Oct 2026 16:38:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111073 — Apache Kafka: PushTelemetry (KIP-714) metrics payloads are decompressed without a size limit, allowing a broker out-of-memory denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-111073</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111073</guid>
+      <description>The broker-side PushTelemetry API (KIP-714) validates only the compressed size of a client&apos;s metrics payload against telemetry.max.bytes (default 1 MB) before decompressing it. ClientTelemetryUtils.decompress() then decompresses the payload with no l…</description>
+      <pubDate>Wed, 28 Oct 2026 16:37:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110985 — Apache Kafka: Broker silently skips JWT signature verification for SASL/OAUTHBEARER when the JWKS endpoint URL is not configured</title>
+      <link>https://vulnogram.org/CVE-2026-110985</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110985</guid>
+      <description>A Kafka broker using SASL/OAUTHBEARER with the default validator (sasl.oauthbearer.jwt.validator.class=DefaultJwtValidator) selects its implementation from configuration. When sasl.oauthbearer.jwks.endpoint.url is set, the validator verifies the JWT…</description>
+      <pubDate>Wed, 28 Oct 2026 16:37:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110952 — Apache Kafka: Broker does not enforce JWT issuer and audience validation for SASL/OAUTHBEARER by default</title>
+      <link>https://vulnogram.org/CVE-2026-110952</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110952</guid>
+      <description>A Kafka broker that authenticates clients with SASL/OAUTHBEARER using the bundled JWKS-backed validator always verifies the JWT signature, but two further checks are only performed when explicitly configured: - The issuer (iss) claim is verified only…</description>
+      <pubDate>Wed, 28 Oct 2026 16:37:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-83525 — Apache Kafka: Incorrect boolean operator in FetchSnapshot RPC handler allows authenticated network clients to crash the KRaft controller via a malformed request.</title>
+      <link>https://vulnogram.org/CVE-2026-83525</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-83525</guid>
+      <description>Incorrect operator (CWE-480) in the FetchSnapshot RPC handler in Apache Kafka from 2.8.0 before 4.2.2, and from 4.3.0 before 4.3.2 on all platforms allows an authenticated attacker with CLUSTER_ACTION privilege to cause a denial of service (controlle…</description>
+      <pubDate>Wed, 28 Oct 2026 16:37:19 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-111422 — Apache Airflow SSH provider: SSHRemoteJobOperator: `environment` values are executed as shell on the remote host</title>
       <link>https://vulnogram.org/CVE-2026-111422</link>
@@ -339,99 +423,6 @@
       <description>Apache Pulsar allows an administrator to require end-to-end message encryption for all topics in a namespace by setting the encryption_required namespace policy. When this policy is set, the broker rejects messages that are published without encrypti…</description>
       <category>Low</category>
       <pubDate>Wed, 21 Oct 2026 18:07:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105932 · 2.3 LOW — Apache Pulsar: Missing topic policy authorization on non-persistent topic entry filter endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-105932</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105932</guid>
-      <description>The Apache Pulsar broker admin REST API provides endpoints to read, set and remove the topic-level entry filter policy of a topic. For persistent topics these endpoints check that the caller is authorized for the entry filters topic policy operation.…</description>
-      <category>Low</category>
-      <pubDate>Wed, 21 Oct 2026 18:06:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105931 · 2.3 LOW — Apache Pulsar: Missing authorization on transaction admin endpoints exposes transaction coordinator and transaction statistics of other tenants</title>
-      <link>https://vulnogram.org/CVE-2026-105931</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105931</guid>
-      <description>The Apache Pulsar broker exposes a transaction administration REST API under /admin/v3/transactions. When authentication and authorization are enabled, most of the read endpoints of this API verify only that the request is authenticated and that the…</description>
-      <category>Low</category>
-      <pubDate>Wed, 21 Oct 2026 18:02:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105930 · 6 MEDIUM — Apache Pulsar: Improper Authorization of Function, Source and Sink Package URLs Allows Cross-Tenant Package Download</title>
-      <link>https://vulnogram.org/CVE-2026-105930</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105930</guid>
-      <description>When package management is enabled, Pulsar Functions, Sources and Sinks can be registered or updated from a package stored in the Pulsar Packages Management Service by supplying a package URL. The Pulsar Functions worker authorized these requests onl…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 18:01:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105927 · 2.3 LOW — Apache Pulsar: Improper authorization of WebSocket consumer dead letter topic allows writes without PRODUCE permission</title>
-      <link>https://vulnogram.org/CVE-2026-105927</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105927</guid>
-      <description>The Apache Pulsar WebSocket service allows a WebSocket consumer to configure a dead letter policy through query parameters of the consumer endpoint, including the deadLetterTopic parameter that names the topic to which messages are written after the…</description>
-      <category>Low</category>
-      <pubDate>Wed, 21 Oct 2026 18:00:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105926 · 5.3 MEDIUM — Apache Pulsar: Missing Topic Authorization on Binary Protocol GetSchema and GetOrCreateSchema Commands</title>
-      <link>https://vulnogram.org/CVE-2026-105926</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105926</guid>
-      <description>The Pulsar broker serves two schema commands on its binary protocol: GetSchema, which returns the schema registered for a topic, and GetOrCreateSchema, which registers a new schema version for an existing topic. The broker handled both commands after…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 17:59:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105869 · 9.2 CRITICAL 🌩️ — Apache Pulsar: MultiRolesTokenAuthorizationProvider uses roles from unverified tokens for HTTP requests that fall back to the anonymous user role</title>
-      <link>https://vulnogram.org/CVE-2026-105869</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105869</guid>
-      <description>Apache Pulsar&apos;s MultiRolesTokenAuthorizationProvider authorizes a client with all roles listed in a claim of its JSON Web Token (JWT). The provider is intended for use with token authentication, which verifies the token before authorization. The prov…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Oct 2026 17:58:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90484 · 6.5 MEDIUM — Apache bRPC: Null pointer dereference in MySQL reply parser leading to client crash</title>
-      <link>https://vulnogram.org/CVE-2026-90484</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90484</guid>
-      <description>The MySQL client response parser in Apache bRPC dereferences a null pointer when the server peer sends a zero-payload-length response packet. A response packet whose declared payload length is zero is accepted by the frame-length check (is_full_packa…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 12:19:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87849 · 4.3 MEDIUM — Apache bRPC: Out-of-bounds read via non-object fields in Discovery naming-service reply parsing</title>
-      <link>https://vulnogram.org/CVE-2026-87849</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87849</guid>
-      <description>The Discovery naming-service reply parser in Apache bRPC (versions &lt; 1.18.0) calls RapidJSON object-only accessors (FindMember) on JSON values without first validating that those values are objects. A malformed Discovery response whose data/service m…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 12:18:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86249 — Apache bRPC: Authentication bypass when a server sets ServerOptions.internal_port and ServerOptions.auth</title>
-      <link>https://vulnogram.org/CVE-2026-86249</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86249</guid>
-      <description>On a brpc::Server that sets both ServerOptions.auth and ServerOptions.internal_port, the HTTP built-in service exemption on internal_port can be abused to bypass authentication entirely. VerifyHttpRequest() returns true without checking any credentia…</description>
-      <pubDate>Wed, 21 Oct 2026 12:17:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86147 — Apache bRPC: Arbitrary file creation/truncation via /flags and unbounded profiling duration via /pprof</title>
-      <link>https://vulnogram.org/CVE-2026-86147</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86147</guid>
-      <description>External control of file name or path and uncontrolled resource consumption in Apache bRPC (version &lt; 1.18.0) on all platforms allows remote attackers who can reach the builtin service port to create directories and truncate/overwrite files with the…</description>
-      <pubDate>Wed, 21 Oct 2026 12:16:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86146 — Apache bRPC: HTTP Request Smuggling and Header Injection via Lenient HTTP/1.1 Header Parsing</title>
-      <link>https://vulnogram.org/CVE-2026-86146</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86146</guid>
-      <description>Inconsistent interpretation of HTTP requests (HTTP request/response smuggling) in the bundled HTTP/1.1 parser of Apache bRPC (version &lt; 1.18.0) on all platforms allows remote attackers to smuggle requests and inject headers when bRPC is deployed behi…</description>
-      <pubDate>Wed, 21 Oct 2026 12:15:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84748 — Apache bRPC: Builtin services reachable from the public port via protobuf protocols despite ServerOptions.internal_port configuration</title>
-      <link>https://vulnogram.org/CVE-2026-84748</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84748</guid>
-      <description>Improper authorization in Apache bRPC (versions &lt; 1.18.0) on all platforms allows remote attackers to access builtin services through the public port. Root Cause: ServerOptions.internal_port is documented to make builtin services (and Tabbed services…</description>
-      <pubDate>Wed, 21 Oct 2026 12:14:28 GMT</pubDate>
     </item>
   </channel>
 </rss>

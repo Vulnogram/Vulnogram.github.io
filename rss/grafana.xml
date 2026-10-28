@@ -11,7 +11,47 @@
       <title>Grafana Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 28 Oct 2026 14:54:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 20:15:35 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-79656 · 6 MEDIUM — OAuth and OIDC tokens written unredacted to server logs by the Generic OAuth, Google and GitLab connectors</title>
+      <link>https://vulnogram.org/CVE-2026-79656</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79656</guid>
+      <description>A user with read access to Grafana&apos;s server logs, or to a log store they are shipped to, can recover the OAuth and OIDC access, refresh and ID tokens of users who sign in through the Generic OAuth, Google or GitLab providers. Grafana writes these tok…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 17:23:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-103506 · 8.9 HIGH — SSO settings authorization bypass</title>
+      <link>https://vulnogram.org/CVE-2026-103506</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103506</guid>
+      <description>An authenticated user in Grafana can read SSO client secrets and modify instance-wide SSO settings without the required permissions (missing authorization). This affects Grafana OSS and Enterprise 13.2 installations with the experimental kubernetesSs…</description>
+      <category>High</category>
+      <pubDate>Wed, 28 Oct 2026 16:50:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88858 · 6.5 MEDIUM — Server-side expression parser denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-88858</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88858</guid>
+      <description>A user with the Viewer role in Grafana can crash the server by submitting a crafted server-side math expression (uncontrolled recursion). A user with permission to provision alert rules can make the outage persist across restarts.</description>
+      <category>Medium</category>
+      <pubDate>Wed, 28 Oct 2026 16:50:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88967 · 7.7 HIGH — Azure Monitor access token disclosure via SSRF</title>
+      <link>https://vulnogram.org/CVE-2026-88967</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88967</guid>
+      <description>A user with query access to an Azure Monitor data source in Grafana can cause server-side requests to an attacker-controlled endpoint that disclose the data source&apos;s Azure access token (server-side request forgery).</description>
+      <category>High</category>
+      <pubDate>Wed, 28 Oct 2026 16:49:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-100105 · 7.7 HIGH — Alerting contact point authorization bypass via schema downgrade</title>
+      <link>https://vulnogram.org/CVE-2026-100105</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100105</guid>
+      <description>A user with permission to edit contact points but not their protected fields can change protected settings, such as a contact point&apos;s destination URL, by switching an integration to a legacy schema version, which can expose stored credentials and red…</description>
+      <category>High</category>
+      <pubDate>Wed, 28 Oct 2026 16:48:58 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-16491 · 6.5 MEDIUM — CVE-2026-16491 CVE Record</title>
       <link>https://vulnogram.org/CVE-2026-16491</link>
@@ -371,47 +411,6 @@
       <description>Any Editor could delete any snapshot, even if they have no access to read or write them.</description>
       <category>Medium</category>
       <pubDate>Wed, 13 May 2026 19:28:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33381 · 5.9 MEDIUM — Users can generate Service Account tokens after permissions removal</title>
-      <link>https://vulnogram.org/CVE-2026-33381</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33381</guid>
-      <description>When a user&apos;s access to mint tokens for a service account is revoked, it is sometimes still possible to do so for a few seconds after the event. The user will eventually lose access to do this.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 May 2026 19:28:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33377 · 7.1 HIGH — Dashboard Import Overwrites ACL — Editor Privilege Escalation to Dashboard Admin</title>
-      <link>https://vulnogram.org/CVE-2026-33377</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33377</guid>
-      <description>An Editor can overwrite a dashboard not owned by them to acquire admin on that specific dashboard. The user must have write access to the dashboard to escalate privilege.</description>
-      <category>High</category>
-      <pubDate>Wed, 13 May 2026 19:28:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28376 · 6.5 MEDIUM — Grafana Live push endpoint allows unbounded memory allocation leading to OOM</title>
-      <link>https://vulnogram.org/CVE-2026-28376</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28376</guid>
-      <description>The Grafana Live push endpoint can be exploited to cause unbounded memory allocation by sending a large or streaming request body, potentially leading to out-of-memory conditions. An authenticated user with access to the Grafana Live API can trigger…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 May 2026 19:28:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28379 · 6.5 MEDIUM — Viewer-triggered race condition in Grafana Live leads to complete server crash</title>
-      <link>https://vulnogram.org/CVE-2026-28379</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28379</guid>
-      <description>A race condition in Grafana Live allows authenticated users with Viewer role to trigger a server crash by sending concurrent requests that cause a fatal map access error. This results in complete service unavailability requiring restart of the Grafan…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 May 2026 19:28:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-21728 · 7.5 HIGH 🌩️ — Tempo query limit results in unbounded memory allocation</title>
-      <link>https://vulnogram.org/CVE-2026-21728</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-21728</guid>
-      <description>Tempo queries with large limits can cause large memory allocations which can impact the availability of the service, depending on its deployment strategy. Mitigation can be done by setting max_result_limit in the search config, e.g. to 262144 (2^18).…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 24 Apr 2026 08:00:47 GMT</pubDate>
     </item>
   </channel>
 </rss>
