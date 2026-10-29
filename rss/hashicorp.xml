@@ -11,7 +11,39 @@
       <title>HashiCorp Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 29 Oct 2026 16:46:14 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 21:51:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-13303 · 8.7 HIGH — Boundary vulnerable to server-side request forgery in Vault credential store</title>
+      <link>https://vulnogram.org/CVE-2026-13303</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13303</guid>
+      <description>HashiCorp Boundary and Boundary Enterprise are vulnerable to a server-side request forgery in the Vault credential store integration that may allow an authenticated user with permission to manage credential stores and credential libraries within a pr…</description>
+      <category>High</category>
+      <pubDate>Thu, 29 Oct 2026 21:03:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119168 · 8.8 HIGH — Nomad allocation data migration may allow host directory permission modification via symlink following</title>
+      <link>https://vulnogram.org/CVE-2026-119168</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119168</guid>
+      <description>HashiCorp Nomad and Nomad Enterprise are vulnerable to symlink following during same-client allocation data migration that may allow a malicious workload to change permissions and ownership of host directories. This could allow unauthorized access to…</description>
+      <category>High</category>
+      <pubDate>Thu, 29 Oct 2026 18:12:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107347 · 8.4 HIGH — Nomad dispatch payload writes can escape the allocation directory through symlinks</title>
+      <link>https://vulnogram.org/CVE-2026-107347</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107347</guid>
+      <description>HashiCorp Nomad and Nomad Enterprise are vulnerable to symlink following during dispatch payload and executor log writes that may allow a malicious workload to modify files outside its allocation directory. When the client agent runs as root, this co…</description>
+      <category>High</category>
+      <pubDate>Thu, 29 Oct 2026 18:10:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102260 · 4.3 MEDIUM — Nomad vulnerable to cross-namespace information disclosure in multiple endpoints</title>
+      <link>https://vulnogram.org/CVE-2026-102260</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102260</guid>
+      <description>HashiCorp Nomad and Nomad Enterprise are vulnerable to cross-namespace authorization bypasses in several read-only API endpoints that may allow an authenticated user with read permissions in one namespace to view information about objects in other na…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 29 Oct 2026 18:05:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-110720 · 9.9 CRITICAL — Consul-k8s vulnerable to a cross-namespace authorization bypass in component ACL binding rules</title>
       <link>https://vulnogram.org/CVE-2026-110720</link>
@@ -379,39 +411,6 @@
       <description>Boundary Community Edition and Boundary Enterprise (“Boundary”) workers are vulnerable to a denial-of-service condition during node enrollment TLS handshakes. An attacker with network access to the worker authentication listener may open a connection…</description>
       <category>High</category>
       <pubDate>Mon, 04 May 2026 21:34:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5807 · 7.5 HIGH 🌩️ — Vault Vulnerable to Denial-of-Service via Unauthenticated Root Token Generation/Rekey Operations</title>
-      <link>https://vulnogram.org/CVE-2026-5807</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5807</guid>
-      <description>Vault is vulnerable to a denial-of-service condition where an unauthenticated attacker can repeatedly initiate or cancel root token generation or rekey operations, occupying the single in-progress operation slot. This prevents legitimate operators fr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 17 Apr 2026 03:22:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-4525 · 7.5 HIGH — Vault Token Leaked to Backends via Authorization: Bearer Passthrough Header</title>
-      <link>https://vulnogram.org/CVE-2026-4525</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4525</guid>
-      <description>If a Vault auth mount is configured to pass through the &quot;Authorization&quot; header, and the &quot;Authorization&quot; header is used to authenticate to Vault, Vault forwarded the Vault token to the auth plugin backend. Fixed in 2.0.0, 1.21.5, 1.20.10, and 1.19.16.</description>
-      <category>High</category>
-      <pubDate>Fri, 17 Apr 2026 03:00:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-5052 · 5.3 MEDIUM — Vault Vulnerable to Server-Side Request Forgery in ACME Challenge Validation via Attacker-Controlled DNS</title>
-      <link>https://vulnogram.org/CVE-2026-5052</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-5052</guid>
-      <description>Vault’s PKI engine’s ACME validation did not reject local targets when issuing http-01 and tls-alpn-01 challenges. This may lead to these requests being sent to local network targets, potentially leading to information disclosure. Fixed in Vault Comm…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 17 Apr 2026 02:55:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-3605 · 8.1 HIGH — Vault KVv2 Metadata and Secret Deletion Policy Bypass Denial-of-Service</title>
-      <link>https://vulnogram.org/CVE-2026-3605</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-3605</guid>
-      <description>An authenticated user with access to a kvv2 path through a policy containing a glob may be able to delete secrets they were not authorized to read or write, resulting in denial-of-service. This vulnerability did not allow a malicious user to delete s…</description>
-      <category>High</category>
-      <pubDate>Fri, 17 Apr 2026 02:44:42 GMT</pubDate>
     </item>
   </channel>
 </rss>
