@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RT-Labs AB — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <atom:link href="https://vulnogram.org/rss/rt-labs" rel="self" type="application/rss+xml"/>
+    <description>Most recent CVEs assigned by RT-Labs AB (rt-labs).</description>
+    <image>
+      <url>https://vulnogram.org/seaview/icons/rt-labs.png</url>
+      <title>RT-Labs AB — recent CVEs</title>
+      <link>https://vulnogram.org/</link>
+    </image>
+    <lastBuildDate>Thu, 29 Oct 2026 16:46:15 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-115793 · 8.7 HIGH 🌩️ — Resource exhaustion from RPC sessions kept for requests to unknown interface</title>
+      <link>https://vulnogram.org/CVE-2026-115793</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115793</guid>
+      <description>P-Net before 1.0.3 does not release the RPC session allocated for an RPC request that names an unknown interface or object UUID, and does not start a timeout for it. Repeated requests with different activity UUIDs exhaust the available sessions. Once…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 15:44:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115794 · 2.3 LOW — Alarm data length not validated against received frame length</title>
+      <link>https://vulnogram.org/CVE-2026-115794</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115794</guid>
+      <description>P-Net before 1.0.3 passes the application alarm callback a data length derived from the variable part length field of a received RTA alarm frame without checking it against the length of the received frame. A short frame can make the callback receive…</description>
+      <category>Low</category>
+      <pubDate>Thu, 29 Oct 2026 15:43:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115795 · 5.3 MEDIUM — Out-of-bounds read of DCP block header in DCP Set and Identify request parsing</title>
+      <link>https://vulnogram.org/CVE-2026-115795</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115795</guid>
+      <description>P-Net before 1.0.3 does not check that a complete block header is present in the received data before reading the next block in DCP Set and Identify requests. If the last block ends at the end of the receive buffer, the block length of the following…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 29 Oct 2026 15:43:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111736 · 8.7 HIGH 🌩️ — NULL pointer dereference on implicit read of user specific record index</title>
+      <link>https://vulnogram.org/CVE-2026-111736</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111736</guid>
+      <description>P-Net before 1.0.3 dereferences a NULL AR pointer in pf_fspm_cm_read_ind() when handling an implicit read request without a valid target AR UUID for a user specific record index, if the application has registered a read callback. A remote unauthentic…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 15:43:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112200 · 8.7 HIGH 🌩️ — Resource exhaustion from unreleased AR and RPC session on RPC requests with incorrect endianness</title>
+      <link>https://vulnogram.org/CVE-2026-112200</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112200</guid>
+      <description>P-Net before 1.0.3 does not release the Application Relationship (AR) and the RPC session when an RPC request is rejected because its data representation has incorrect endianness. The session and its AR remain allocated, so repeated requests exhaust…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 15:42:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111735 · 7.1 HIGH — Integer underflow leads to out-of-bounds read in pf_cpm_c_data_ind()</title>
+      <link>https://vulnogram.org/CVE-2026-111735</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111735</guid>
+      <description>P-Net before 1.0.3 contains an integer underflow in pf_cpm_c_data_ind(). When handling a received cyclic data frame while the consumer is in the FRUN or RUN state, the offset of the APDU status was computed as the frame length minus 4 using 16-bit ar…</description>
+      <category>High</category>
+      <pubDate>Thu, 29 Oct 2026 15:42:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111734 · 7.1 HIGH — Missing length validation of EtherType, VLAN and FrameID fields in pf_eth_recv()</title>
+      <link>https://vulnogram.org/CVE-2026-111734</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111734</guid>
+      <description>P-Net before 1.0.3 does not validate the length of a received Ethernet frame in pf_eth_recv() before reading the EtherType, any VLAN tags and the PROFINET FrameID. The VLAN tag loop had no upper bound, so a truncated frame, or a frame consisting only…</description>
+      <category>High</category>
+      <pubDate>Thu, 29 Oct 2026 15:42:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111733 · 8.7 HIGH 🌩️ — NULL pointer dereference on implicit read of AR specific record index</title>
+      <link>https://vulnogram.org/CVE-2026-111733</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111733</guid>
+      <description>P-Net before 1.0.3 dereferences a NULL AR pointer when handling an implicit read request without a valid target AR UUID for a record index that requires an AR (AR specific indices 0xE000-0xEFFF, and the expected identification data of a slot or subsl…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 15:41:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111732 · 9.3 CRITICAL 🌩️ — Out-of-bounds write when parsing AR Vendor Block requests</title>
+      <link>https://vulnogram.org/CVE-2026-111732</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111732</guid>
+      <description>P-Net before 1.0.3, when built with PNET_OPTION_AR_VENDOR_BLOCKS enabled, parses a data length from a field of the ARVendorBlock request that is not part of the block definition and uses it as the number of bytes to copy into a fixed-size buffer, wit…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 15:40:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111731 · 8.7 HIGH 🌩️ — Infinite loop when reading PDPortDataCheck record of subslot 0</title>
+      <link>https://vulnogram.org/CVE-2026-111731</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111731</guid>
+      <description>P-Net before 1.0.3 enters an infinite loop when handling a read request for the PDPortDataCheck record with subslot 0 (whole module). The loop over the ports never advanced to the next port, so the request never completes and the device stops respond…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 15:39:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111730 · 7.2 HIGH — Out-of-bounds write in CheckPeers block parser due to unvalidated peer station name length</title>
+      <link>https://vulnogram.org/CVE-2026-111730</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111730</guid>
+      <description>P-Net before 1.0.3 does not validate the LengthPeerStationName field of a CheckPeers block in get_check_peer(). The received length (up to 255) was used to copy data into the 241-byte peer station name buffer and to place the terminating NUL byte, so…</description>
+      <category>High</category>
+      <pubDate>Thu, 29 Oct 2026 15:37:52 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

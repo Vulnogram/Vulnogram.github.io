@@ -11,7 +11,75 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 29 Oct 2026 09:21:05 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 16:46:13 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-118425 · 6.8 MEDIUM 🌩️ — Keycloak-services: keycloak-services: redirect uri domain allowlist bypass via dns resolution to loopback</title>
+      <link>https://vulnogram.org/CVE-2026-118425</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118425</guid>
+      <description>A flaw was found in the secure-redirect-uris-enforcer client policy of Keycloak, an identity and access management solution. The issue occurs when the policy is configured to allow loopback addresses, as Keycloak resolves hostnames via DNS during val…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 13:58:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93009 · 4.3 MEDIUM — Dnsmasq: dnsmasq: heap out-of-bounds read in dhcpv6 option 39 fqdn decoder</title>
+      <link>https://vulnogram.org/CVE-2026-93009</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93009</guid>
+      <description>A flaw was found in dnsmasq. The DHCPv6 client hostname parser can read one byte past the end of a crafted FQDN option because it checks the next label length before confirming the pointer is still inside the option. An attacker on the local network…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 29 Oct 2026 13:13:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93010 · 4.3 MEDIUM — Dnsmasq: dnsmasq: --leasequery without address argument applies no source address check</title>
+      <link>https://vulnogram.org/CVE-2026-93010</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93010</guid>
+      <description>A flaw was found in dnsmasq. When DHCP leasequery is enabled without listing allowed source addresses, the server does not check who sent the query. A host on the local network can request DHCP lease records and learn assigned addresses, MAC addresse…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 29 Oct 2026 13:13:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93006 · 6.8 MEDIUM — Dnsmasq: dnsmasq: tftp prefetch cache keyed on stale heap pointer serves wrong file content</title>
+      <link>https://vulnogram.org/CVE-2026-93006</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93006</guid>
+      <description>A flaw was found in dnsmasq. The TFTP server can serve the wrong file contents because a recently used transfer cache is not invalidated when a transfer finishes. An attacker on the local network who can request a TFTP file may cause a later client t…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 29 Oct 2026 12:47:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93007 · 5.3 MEDIUM 🌩️ — Dnsmasq: dnsmasq: tcp/53 child-slot exhaustion starves dnssec validation</title>
+      <link>https://vulnogram.org/CVE-2026-93007</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93007</guid>
+      <description>A flaw was found in dnsmasq. The TCP DNS service uses a small fixed pool of child processes and does not set a receive timeout on client connections. A remote attacker can open idle TCP connections to port 53 and occupy the entire pool, preventing ne…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 12:47:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93011 · 5.3 MEDIUM 🌩️ — Dnsmasq: dnsmasq: heap out-of-bounds write in dnssec validator via to_wire/from_wire transforms</title>
+      <link>https://vulnogram.org/CVE-2026-93011</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93011</guid>
+      <description>A flaw was found in dnsmasq. After a reduction of internal domain-name buffer sizes, the DNSSEC validator can write a few bytes past a name buffer when converting names to and from DNS wire format. An attacker who can cause the server to validate a c…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 12:47:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93008 · 6.8 MEDIUM 🌩️ — Dnsmasq: dnsmasq: out-of-bailiwick cache injection through cname chase in split-dns configurations</title>
+      <link>https://vulnogram.org/CVE-2026-93008</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93008</guid>
+      <description>A flaw was found in dnsmasq. When following a CNAME in a DNS response, the resolver can cache records for the CNAME target without checking that those records belong to the responding server&apos;s authorized zone. In split-DNS deployments that send some…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 12:33:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85498 · 3.5 LOW — Polkit: regression in cve-2026-4897 fix (polkit read_cookie()) - stack buffer underflow</title>
+      <link>https://vulnogram.org/CVE-2026-85498</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85498</guid>
+      <description>A flaw was found in polkit. When processing input that begins with a null byte, an arithmetic error in the authentication agent helper causes an integer underflow during buffer length calculation, resulting in an out-of-bounds memory read. An attacke…</description>
+      <category>Low</category>
+      <pubDate>Thu, 29 Oct 2026 09:02:35 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-118030 · 4.2 MEDIUM — Keycloak-services: keycloak-services: hotp race condition allows single otp code reuse across concurrent logins</title>
       <link>https://vulnogram.org/CVE-2026-118030</link>
@@ -353,72 +421,6 @@
       <description>A flaw was found in GIMP. Opening a crafted XCF that selects a path and then fails to load that path can cause a use-after-free in the main process, leading to a crash and potentially arbitrary code execution.</description>
       <category>High</category>
       <pubDate>Mon, 19 Oct 2026 21:37:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112258 · 7.8 HIGH — Gimp: gimp: use-after-free in xcf loader via prop_linked and prop_selection on channels</title>
-      <link>https://vulnogram.org/CVE-2026-112258</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112258</guid>
-      <description>A flaw was found in GIMP. The XCF loader can leave a dangling pointer in the linked-channels list when a linked channel is later destroyed via a selection property. Opening a crafted XCF file can cause a use-after-free in the main GIMP process, leadi…</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 21:37:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112257 · 7.8 HIGH — Gimp: gimp: heap out-of-bounds read/write in psd thumbnail loader (load_resource_1033)</title>
-      <link>https://vulnogram.org/CVE-2026-112257</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112257</guid>
-      <description>A flaw was found in GIMP. The PSD thumbnail resource loader performs a BGR-to-RGB channel swap with a fixed 3-byte stride and does not verify that the JPEG thumbnail is RGB. A crafted grayscale PSD thumbnail can cause a heap out-of-bounds read and wr…</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 21:37:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112260 · 7.1 HIGH — Gimp: gimp: heap out-of-bounds read in xcf text-layer parasite parsing</title>
-      <link>https://vulnogram.org/CVE-2026-112260</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112260</guid>
-      <description>A flaw was found in GIMP. Opening a crafted XCF with a malformed text-layer parasite can cause a heap out-of-bounds read, disclosing adjacent heap data into layer text and causing denial of service.</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 19:24:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112259 · 5.5 MEDIUM — Gimp: gimp: null pointer dereference in swatchbooker (sbz) palette import</title>
-      <link>https://vulnogram.org/CVE-2026-112259</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112259</guid>
-      <description>A flaw was found in GIMP. Importing a crafted SBZ palette without a color-model attribute can cause a NULL pointer dereference during string comparison, resulting in denial of service of the GIMP application.</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 18:42:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112214 · 6.5 MEDIUM 🌩️ — Gstreamer1-plugins-ugly-free: gstreamer1-plugins-ugly-free: unbounded memory allocation in asfdemux simple index parser</title>
-      <link>https://vulnogram.org/CVE-2026-112214</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112214</guid>
-      <description>A flaw was found in the GStreamer ASF demuxer in gst-plugins-ugly. When parsing a Simple Index object, an attacker-controlled entry count is used to size a heap allocation without being limited to the payload available in the object. Processing a cra…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 12:15:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103314 · 7.4 HIGH 🌩️ — Stackrox: stackrox: saml response replay allows multiple central authentication tokens</title>
-      <link>https://vulnogram.org/CVE-2026-103314</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103314</guid>
-      <description>A flaw was found in Red Hat Advanced Cluster Security for Kubernetes (RHACS). The Central SAML authentication ACS endpoint does not retain used SAML assertion or response identifiers to prevent replay. An attacker who obtains a valid, unexpired signe…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 12:14:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112210 · 6 MEDIUM — Rhc: rhc: local privilege escalation via symlink following in rhc-canonical-facts.service</title>
-      <link>https://vulnogram.org/CVE-2026-112210</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112210</guid>
-      <description>A flaw was found in the rhc-canonical-facts.service systemd unit shipped with rhc. The service runs as root and operates on a file inside a directory owned by an unprivileged system user without verifying that the file is not a symbolic link. A local…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 11:39:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16460 · 7.4 HIGH — Bootc: ostree: bootc/ostree: staged deployments not revalidated against container signature policy before finalization</title>
-      <link>https://vulnogram.org/CVE-2026-16460</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16460</guid>
-      <description>A flaw was found in bootc and ostree. Already-staged deployments are finalized without revalidating the deployment&apos;s container image against the current containers signature policy. Unsigned OS content staged under a prior permissive policy can remai…</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 06:40:50 GMT</pubDate>
     </item>
   </channel>
 </rss>

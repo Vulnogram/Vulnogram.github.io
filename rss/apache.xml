@@ -11,7 +11,44 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 29 Oct 2026 09:21:06 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 16:46:14 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-71569 · 4.8 MEDIUM 🌩️ — Apache Camel: Camel-A2A Push Notification Webhook Guard Accepts IPv6 Unique Local Addresses Reached Through a Host Name</title>
+      <link>https://vulnogram.org/CVE-2026-71569</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71569</guid>
+      <description>Server-Side Request Forgery (SSRF) vulnerability in Apache Camel A2A component. This issue affects Apache Camel: from 4.21.0 before 4.22.2. WebhookUrlValidator classified a push notification webhook host in two places that did not agree. A host writt…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 29 Oct 2026 10:31:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115942 — Apache Qpid Proton C: Verifying non compliant TLS wildcard cert can cause stack buffer overflow read</title>
+      <link>https://vulnogram.org/CVE-2026-115942</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115942</guid>
+      <description>A misconfigured wildcard TLS certificate causes a stack read overflow. This issue does not affect any wildcard certificate issued to the RFC9525 standard - the fix only accepts certificates that comply to this standard. This issue affects Apache Qpid…</description>
+      <pubDate>Thu, 29 Oct 2026 10:19:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114230 — Apache Qpid Proton C: Potential authentication bypass: regular AMQP frames can be sent as SASL frames</title>
+      <link>https://vulnogram.org/CVE-2026-114230</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114230</guid>
+      <description>When dispatching SASL frames to authenticate the peer, Proton will also dispatch AMQP frames if they claim to be SASL frames. This allows authentication bypass. However there will be no user name set so the effects depend on how the application deals…</description>
+      <pubDate>Thu, 29 Oct 2026 10:19:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105042 — Apache Qpid Proton C: Unbounded recursion in parsing AMQP message bodies can lead to crash</title>
+      <link>https://vulnogram.org/CVE-2026-105042</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105042</guid>
+      <description>A message body that is deeply nested and decoded by pn_message_body() could overflow the stack and cause a crash. This issue affects Apache Qpid Proton C: through 0.40.0. Users are recommended to upgrade to version 0.41.1, which fixes the issue.</description>
+      <pubDate>Thu, 29 Oct 2026 10:17:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105031 — Apache Qpid Proton C: The OpenSSL TLS implementation adds a locally trusted certificate authority to the existing trusted system trust anchors.</title>
+      <link>https://vulnogram.org/CVE-2026-105031</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105031</guid>
+      <description>When using the OpenSSL TLS implementation, both the pn_ssl_domain_set_trusted_ca_db() &amp; pn_tls_config_set_trusted_certs() APIs added to rather than replaced the default system trust anchors. Leading to potentially trusting unexpected peer certificate…</description>
+      <pubDate>Thu, 29 Oct 2026 10:16:41 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-114349 — Apache Kafka: Denial of service via unbounded memory allocation when decoding compressed record batches</title>
       <link>https://vulnogram.org/CVE-2026-114349</link>
@@ -97,10 +134,11 @@
       <pubDate>Wed, 28 Oct 2026 16:37:19 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-111422 — Apache Airflow SSH provider: SSHRemoteJobOperator: `environment` values are executed as shell on the remote host</title>
+      <title>CVE-2026-111422 · 8.8 HIGH — Apache Airflow SSH provider: SSHRemoteJobOperator: `environment` values are executed as shell on the remote host</title>
       <link>https://vulnogram.org/CVE-2026-111422</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111422</guid>
       <description>In apache-airflow-providers-ssh before 7.0.1, SSHRemoteJobOperator quoted the values of its templated `environment` parameter only once, although they are placed inside an already-quoted wrapper script, so shell syntax such as `$(...)` in a value was…</description>
+      <category>High</category>
       <pubDate>Mon, 26 Oct 2026 23:29:30 GMT</pubDate>
     </item>
     <item>
@@ -383,46 +421,6 @@
       <description>Apache Pulsar namespaces can restrict which roles may use a subscription, either with the Prefix subscription authentication mode, which requires a subscription name to start with the role name, or by granting permission on a subscription to specific…</description>
       <category>Low</category>
       <pubDate>Wed, 21 Oct 2026 18:13:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105937 · 8.7 HIGH — Apache Pulsar: Missing authorization of the shadow topic source allows cross-tenant message disclosure and deletion of source topic data</title>
-      <link>https://vulnogram.org/CVE-2026-105937</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105937</guid>
-      <description>Apache Pulsar shadow topics (PIP-180) are topics that read the stored messages of a source topic from that topic&apos;s managed ledger. The source topic is selected by setting the reserved topic property PULSAR.SHADOW_SOURCE. The admin REST API accepts th…</description>
-      <category>High</category>
-      <pubDate>Wed, 21 Oct 2026 18:12:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105936 · 5.3 MEDIUM — Apache Pulsar: Functions connectors list endpoint does not apply the super-user check of the worker connectors endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-105936</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105936</guid>
-      <description>The Pulsar Functions worker REST API provides two endpoints that return the catalog of Pulsar IO connectors installed on the functions worker: the worker connectors endpoint (/admin/v2/worker/connectors) and the deprecated functions connectors endpoi…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 18:11:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105935 · 4.9 MEDIUM — Apache Pulsar: Function trigger publishes to the input topic without checking the caller&apos;s produce permission</title>
-      <link>https://vulnogram.org/CVE-2026-105935</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105935</guid>
-      <description>The Pulsar Functions Worker provides a REST API endpoint for triggering a function, which publishes a caller-supplied value to one of the function&apos;s configured input topics. The Functions Worker performs this publish with its own broker client, which…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 18:10:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105934 · 7.2 HIGH — Apache Pulsar: Missing tenant admin authorization check when truncating a partitioned topic</title>
-      <link>https://vulnogram.org/CVE-2026-105934</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105934</guid>
-      <description>The Apache Pulsar broker admin REST API provides a truncate operation for persistent topics (DELETE /admin/v2/persistent/{tenant}/{namespace}/{topic}/truncate). Truncating a topic moves all subscription cursors of the topic to the end of the topic an…</description>
-      <category>High</category>
-      <pubDate>Wed, 21 Oct 2026 18:08:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105933 · 2.3 LOW — Apache Pulsar: Namespace encryption requirement not enforced after a failure during topic initialization</title>
-      <link>https://vulnogram.org/CVE-2026-105933</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105933</guid>
-      <description>Apache Pulsar allows an administrator to require end-to-end message encryption for all topics in a namespace by setting the encryption_required namespace policy. When this policy is set, the broker rejects messages that are published without encrypti…</description>
-      <category>Low</category>
-      <pubDate>Wed, 21 Oct 2026 18:07:43 GMT</pubDate>
     </item>
   </channel>
 </rss>
