@@ -11,7 +11,128 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 30 Oct 2026 19:58:16 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 23:40:04 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-116252 · 7.1 HIGH — pgAdmin 4: Materialized view refresh redirects its connection through a crafted database name</title>
+      <link>https://vulnogram.org/CVE-2026-116252</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116252</guid>
+      <description>pgAdmin 4&apos;s materialized view refresh passed the target database&apos;s name to psql&apos;s --dbname argument unchanged. libpq treats a --dbname value containing &quot;=&quot; (or a postgresql:// URI) as a full connection string, whose keywords override the host, port a…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116251 · 4.2 MEDIUM — pgAdmin 4: A user&apos;s other sessions survive a change of their password</title>
+      <link>https://vulnogram.org/CVE-2026-116251</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116251</guid>
+      <description>pgAdmin 4 did not invalidate a user&apos;s existing sessions when their password changed, either through the user&apos;s own change password dialog or through an administrator resetting it in User Management. A session established before the change, for exampl…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116250 · 7.3 HIGH — pgAdmin 4: Files opened in a storage directory follow a symbolic link, hard link or FIFO planted after the containment check</title>
+      <link>https://vulnogram.org/CVE-2026-116250</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116250</guid>
+      <description>In server mode pgAdmin 4 validates a path a user gives for a file in their storage directory with check_access_permission() and then opened it by name. Several places opened it with a plain open() or handed the path to a utility that opened it later:…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116249 · 8.4 HIGH — pgAdmin 4: Connection file paths and parameter keys escape the user&apos;s storage directory</title>
+      <link>https://vulnogram.org/CVE-2026-116249</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116249</guid>
+      <description>In server mode pgAdmin 4 resolves a server&apos;s password file, SSL certificate, key, CRL and SSH tunnel identity file relative to the user&apos;s storage directory, but get_complete_file_path() only stripped leading slashes before joining the two. A path suc…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116248 · 6.8 MEDIUM — pgAdmin 4: Non-administrators can share a server with every user</title>
+      <link>https://vulnogram.org/CVE-2026-116248</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116248</guid>
+      <description>In pgAdmin 4 server mode only administrators are meant to share a server with all users; the server dialog shows the Shared switch only to them. The create and update endpoints of the server API, however, stored the &quot;shared&quot; flag and shared username…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116247 · 8.2 HIGH — pgAdmin 4: libpq uses the pgAdmin service account&apos;s own password file and client certificate</title>
+      <link>https://vulnogram.org/CVE-2026-116247</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116247</guid>
+      <description>When a server in pgAdmin 4 had no password file, client certificate or client key configured, or the configured one could not be found, pgAdmin left the parameter out of the connection and libpq fell back to the defaults of the operating-system accou…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116246 · 7 HIGH — pgAdmin 4: Server passwords are left in pgAdmin&apos;s process environment</title>
+      <link>https://vulnogram.org/CVE-2026-116246</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116246</guid>
+      <description>To pass a server&apos;s password to psql and to the utilities pgAdmin 4 runs as background processes, the server manager wrote it into pgAdmin&apos;s own process environment: as PGPASSWORD for the PSQL tool, and under a per-process variable for a utility. Noth…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116245 · 8.2 HIGH — pgAdmin 4: Connection services are not restricted in server mode</title>
+      <link>https://vulnogram.org/CVE-2026-116245</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116245</guid>
+      <description>libpq looks a connection service up in the service file of the operating-system account running pgAdmin 4, and an entry there can hold a password or name a password file or client certificate. In server mode any user could set a server&apos;s Service, or…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116244 · 8.2 HIGH — pgAdmin 4: libpq uses the pgAdmin service account&apos;s Kerberos credentials</title>
+      <link>https://vulnogram.org/CVE-2026-116244</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116244</guid>
+      <description>When a pgAdmin 4 connection was not meant to use a Kerberos user&apos;s delegated credentials, pgAdmin removed KRB5CCNAME from its environment, so the Kerberos library fell back to the default credential cache, or a client keytab, of the operating-system…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116243 · 7.7 HIGH — pgAdmin 4: Utility binary path can point at a shared storage directory</title>
+      <link>https://vulnogram.org/CVE-2026-116243</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116243</guid>
+      <description>pgAdmin 4 runs pg_dump, pg_restore, pg_dumpall and psql from the binary path a user sets in their preferences. In server mode the binary path was refused only when it lay under the per-user storage directory (STORAGE_DIR), not under a SHARED_STORAGE…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116242 · 8.2 HIGH — pgAdmin 4: SSH tunnels use the pgAdmin service account&apos;s own SSH identity</title>
+      <link>https://vulnogram.org/CVE-2026-116242</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116242</guid>
+      <description>pgAdmin 4 opens SSH tunnels with the sshtunnel library but gave it neither host_pkey_directories nor ssh_config_file, so it always loaded the unencrypted private keys in ~/.ssh of the operating-system account running pgAdmin, read that account&apos;s ~/.s…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116241 · 9.9 CRITICAL — pgAdmin 4: Import/Export Data query export runs a command through a backslash in a double-quoted identifier</title>
+      <link>https://vulnogram.org/CVE-2026-116241</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116241</guid>
+      <description>pgAdmin 4&apos;s Import/Export Data tool wraps a user&apos;s query export in a psql \copy (...) TO command and checks that the query&apos;s parentheses are balanced so that nothing can escape the wrapper. The check rejected a backslash inside a single-quoted string…</description>
+      <category>Critical</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116240 · 7.1 HIGH — pgAdmin 4: File Manager and storage-path tools act on a different path from the one checked</title>
+      <link>https://vulnogram.org/CVE-2026-116240</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116240</guid>
+      <description>In server mode pgAdmin 4 validates a path into the user&apos;s storage directory with check_access_permission(), which builds the absolute path with get_abs_path(). Several callers then acted on a path they built differently, so the path checked and the p…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116239 · 8.9 HIGH — pgAdmin 4: An LDAP or Kerberos login is logged in to another account with the same username</title>
+      <link>https://vulnogram.org/CVE-2026-116239</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116239</guid>
+      <description>In server mode pgAdmin 4 keeps an account per authentication source, so the same username can exist as, for example, an internal account and an LDAP account. After LDAP or Kerberos authenticated a user, pgAdmin chose the account to log in by username…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116238 · 9.2 CRITICAL 🌩️ — pgAdmin 4: The failed login limit can be bypassed, and Flask-Security&apos;s own views skip pgAdmin&apos;s login and password checks</title>
+      <link>https://vulnogram.org/CVE-2026-116238</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116238</guid>
+      <description>In server mode pgAdmin 4 locks an internal account after MAX_LOGIN_ATTEMPTS failed logins (3 by default). The limit could be bypassed, giving an unauthenticated attacker an unlimited number of password guesses against any internal account, including…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 30 Oct 2026 19:55:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-110183 · 4.3 MEDIUM — PostgreSQL Anonymizer: statistics can expose some of the original data after statistic masking</title>
       <link>https://vulnogram.org/CVE-2026-110183</link>
@@ -294,126 +415,6 @@
       <description>Incorrect ownership assignment in PostgreSQL ALTER TABLE ALTER TYPE command reassigns ownership of dependent statistics objects to the current user. This wrongly allows the table owner to run DROP STATISTICS and ALTER STATISTICS via this improper own…</description>
       <category>Low</category>
       <pubDate>Thu, 13 Aug 2026 13:00:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6464 · 8.1 HIGH — PostgreSQL psql COPY FROM STDIN early failure processes data lines as psql commands</title>
-      <link>https://vulnogram.org/CVE-2026-6464</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6464</guid>
-      <description>Untrusted data inclusion in PostgreSQL psql COPY may allow a server administrator to elicit execution of data lines as psql commands, via error injection. If the &quot;COPY FROM STDIN&quot; or &quot;\copy FROM STDIN&quot; command fails before the server indicates that i…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19385 · 8.8 HIGH — PostgreSQL pg_dump heap buffer overflow executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-19385</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19385</guid>
-      <description>Heap buffer overflow in PostgreSQL pg_dump of long function transform lists allows an object creator to execute arbitrary code as the operating system user running pg_dump, via a crafted transform list. Versions before PostgreSQL 18.6, 17.11, 16.15,…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18408 · 8.8 HIGH — PostgreSQL psql \unrestrict lets superuser of pg_dump origin server execute arbitrary code in psql client</title>
-      <link>https://vulnogram.org/CVE-2026-18408</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18408</guid>
-      <description>Untrusted data inclusion in pg_dump in PostgreSQL allows a malicious superuser of the origin server to inject arbitrary code for restore-time execution as the client operating system account running psql to restore the dump, via psql \restrict meta-c…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18024 · 4.3 MEDIUM — PostgreSQL ascii() function reads past end of buffer</title>
-      <link>https://vulnogram.org/CVE-2026-18024</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18024</guid>
-      <description>Buffer over-read in PostgreSQL ascii() SQL function allows a user to disclose up to 3 bytes after the end of a specific allocation, via a crafted text value. This is the same class of defect that CVE-2026-2006 fixed, though this instance has less imp…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16241 · 3.8 LOW — PostgreSQL ECPG integer underflow can crash the client</title>
-      <link>https://vulnogram.org/CVE-2026-16241</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16241</guid>
-      <description>Integer underflow in PostgreSQL ECPG allows a database server administrator to achieve temporary denial of service against the ECPG client via sending a bytea value lacking the mandatory prefix. The client overwrites a huge memory region with bytes o…</description>
-      <category>Low</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16239 · 8.8 HIGH — PostgreSQL type confusion in cursor CLOSE + DECLARE executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-16239</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16239</guid>
-      <description>Type confusion in PostgreSQL &quot;portal&quot;/cursor lifecycle allows a user to execute arbitrary code as the operating system user running the database, via re-creation of a cursor or other portal with different types. Versions before PostgreSQL 18.6, 17.11…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16238 · 8.8 HIGH — PostgreSQL type confusion in pg_restore_attribute_stats() executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-16238</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16238</guid>
-      <description>Type confusion in PostgreSQL pg_restore_attribute_stats() allows an object creator to execute arbitrary code as the operating system user running the database, via conflation of range and multirange values. Within major version 18, minor versions bef…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15742 · 8.8 HIGH — PostgreSQL fuzzystrmatch writes effectively-arbitrary addresses, via integer wraparound</title>
-      <link>https://vulnogram.org/CVE-2026-15742</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15742</guid>
-      <description>Integer wraparound in PostgreSQL fuzzystrmatch allows a user to direct writes to a huge range of addresses, executing arbitrary code as the operating system user running the database, via extreme inputs to SQL function levenshtein() or levenshtein_le…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15741 · 8.8 HIGH — PostgreSQL expression deparse allows SQL injection via EXTRACT argument</title>
-      <link>https://vulnogram.org/CVE-2026-15741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15741</guid>
-      <description>SQL injection in PostgreSQL EXTRACT() deparse allows an object owner to execute arbitrary SQL as a superuser via a hostile object definition. Attacks affect expression deparse consumers broadly, including pg_dump, psql commands like \sf, and any simi…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14681 · 4.2 MEDIUM — PostgreSQL improper enforcement of GSSAPI encryption when coupled with SSL</title>
-      <link>https://vulnogram.org/CVE-2026-14681</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14681</guid>
-      <description>Improper enforcement of message integrity in PostgreSQL GSSAPI support allows a user to negotiate GSSAPI contrary to pg_hba.conf rules, via initial direct TLS connection. Despite a pg_hba.conf that appears to require GSSAPI, the connection may exchan…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14680 · 8.8 HIGH — PostgreSQL type confusion via &quot;internal&quot; arguments</title>
-      <link>https://vulnogram.org/CVE-2026-14680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14680</guid>
-      <description>Type confusion with PostgreSQL &quot;internal&quot; data type arguments allows any user to execute arbitrary code as the operating system user running the database, via calls to functions with that argument type. Type &quot;internal&quot; represents a class of mutually-…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14679 · 8.2 HIGH — PostgreSQL stack buffer overflow in argument match writes 0x0 and 0x1 to server memory</title>
-      <link>https://vulnogram.org/CVE-2026-14679</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14679</guid>
-      <description>Stack buffer overflow in PostgreSQL argument name matching allows an object creator to achieve unknown impacts via OUT parameter count. The attack can write only 0x0 and 0x1 bytes. Versions before PostgreSQL 18.6, 17.11, 16.15, 15.19, and 14.24 are a…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14678 · 4.3 MEDIUM — PostgreSQL pg_trgm picksplit reads past end of buffer</title>
-      <link>https://vulnogram.org/CVE-2026-14678</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14678</guid>
-      <description>Buffer over-read in PostgreSQL pg_trgm index picksplit function reads past end of a heap buffer. This might allow a table maintainer to infer limited memory values, via the lossy signal of index split choices. Versions before PostgreSQL 18.6, 17.11,…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14677 · 8.8 HIGH — PostgreSQL 32-bit pltcl and plperl undersize allocations, via integer wraparound</title>
-      <link>https://vulnogram.org/CVE-2026-14677</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14677</guid>
-      <description>Integer wraparound in PostgreSQL 32-bit builds of pltcl and plperl allows an object creator to cause the server to undersize an allocation and write out-of-bounds via crafted function bodies. This may execute arbitrary code as the operating system us…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14676 · 8.8 HIGH — PostgreSQL pg_stat_statements heap buffer overflow executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-14676</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14676</guid>
-      <description>Heap buffer overflow in PostgreSQL pg_stat_statements allows the query author to execute arbitrary code as the operating system user running the database, via crafted queries containing array constants. Within major version 18, minor versions before…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
