@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 29 Oct 2026 21:51:01 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 01:44:20 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-91920 · 6.5 MEDIUM 🌩️ — Undertow: undertow: chunkreader message length permits chunk-size overflow</title>
+      <link>https://vulnogram.org/CVE-2026-91920</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91920</guid>
+      <description>A flaw was found in the ChunkReader component of the Undertow web server, which is used to handle chunked transfer encoding in HTTP requests. The issue occurs because a security check for the chunk size is performed before the value is shifted, allow…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 30 Oct 2026 01:16:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110133 · 5.8 MEDIUM — Ghostscript: heap buffer overflow in ghostscript truetype outliner due to npointstotal integer underflow during retry rollback</title>
+      <link>https://vulnogram.org/CVE-2026-110133</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110133</guid>
+      <description>A flaw was found in Ghostscript. When processing a specially crafted TrueType font or document embedding one, an accounting error during font rendering can bypass buffer size checks, triggering a heap-based buffer overflow. A remote attacker could ex…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Oct 2026 00:17:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118959 · 5.4 MEDIUM — Keycloak-services: keycloak-services: required actions bypassed via kc_action parameter</title>
+      <link>https://vulnogram.org/CVE-2026-118959</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118959</guid>
+      <description>A flaw was found in the required action provider mechanism of Keycloak. The issue occurs when an authorization request includes the kc_action query parameter set to a mandatory action already assigned to the user, such as profile verification or term…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Oct 2026 00:15:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118947 · 4.3 MEDIUM — Keycloak-services: keycloak-services: authorization bypass via uma resource registration idor</title>
+      <link>https://vulnogram.org/CVE-2026-118947</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118947</guid>
+      <description>A flaw was found in the UMA resource registration endpoint of the keycloak-services component, which provides the core logic for Keycloak&apos;s authorization and identity services. The issue occurs when remote resource management is enabled, allowing an…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Oct 2026 00:13:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-92092 · 7.4 HIGH 🌩️ — Openshift-ansible: openshift-ansible: installer container downloads and executes remote inventory script without integrity verification</title>
       <link>https://vulnogram.org/CVE-2026-92092</link>
@@ -389,39 +422,6 @@
       <description>A Kubernetes tenant with create permission on Console custom resources can set spec.containers.api.spec.image to an arbitrary container image. The operator deploys this image into a pod whose ServiceAccount is bound via ClusterRoleBinding to a Cluste…</description>
       <category>Critical</category>
       <pubDate>Tue, 20 Oct 2026 11:30:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105311 · 7.7 HIGH — Console-operator: streams for apache kafka console: cross-namespace kafkauser secret exfiltration via confused deputy</title>
-      <link>https://vulnogram.org/CVE-2026-105311</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105311</guid>
-      <description>The StreamsHub Console operator acts as a confused deputy: a Kubernetes tenant with permission to create a Console custom resource can set spec.kafkaClusters[].credentials.kafkaUser.namespace to any namespace. The operator, running with cluster-wide…</description>
-      <category>High</category>
-      <pubDate>Tue, 20 Oct 2026 11:30:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113496 · 5 MEDIUM — Cockpit-machines: vnc console password disclosure through virt-xml command-line arguments</title>
-      <link>https://vulnogram.org/CVE-2026-113496</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113496</guid>
-      <description>A flaw was found in cockpit-machines. When saving Virtual Network Computing (VNC) console settings, the configured password is passed directly as a command-line argument to an underlying system utility. A local unprivileged attacker on a host that al…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 11:09:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113495 · 5 MEDIUM — Cockpit-machines: rhsm access-token disclosure through image helper command-line arguments</title>
-      <link>https://vulnogram.org/CVE-2026-113495</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113495</guid>
-      <description>A flaw was found in cockpit-machines. Red Hat Subscription Management (RHSM) authentication tokens are passed as command-line arguments to background helper processes during image retrieval operations. A local, unprivileged attacker on a system permi…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 11:09:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112177 · 7.3 HIGH 🌩️ — Ghostscript: reintroduction of .charkeys -dsafer bypass in rhel 8</title>
-      <link>https://vulnogram.org/CVE-2026-112177</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112177</guid>
-      <description>A flaw was found in Ghostscript as shipped with Red Hat Enterprise Linux 8. The correction for CVE-2019-14869 was omitted during the rebase from version 9.25 to 9.27, leaving privileged .forceput operations in the .charkeys procedure insufficiently p…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 07:25:16 GMT</pubDate>
     </item>
   </channel>
 </rss>
