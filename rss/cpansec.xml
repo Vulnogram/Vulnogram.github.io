@@ -11,7 +11,147 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 30 Oct 2026 08:11:51 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 14:58:35 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-118986 — CallBackery versions before 0.62.0 for Perl allow session cookie forgery via a signing secret generated with rand()</title>
+      <link>https://vulnogram.org/CVE-2026-118986</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118986</guid>
+      <description>CallBackery versions before 0.62.0 for Perl allow session cookie forgery via a signing secret generated with rand(). The secret that signs session cookies is built from two calls to the built-in rand(), which is seeded with 32 bits. The secret theref…</description>
+      <pubDate>Fri, 30 Oct 2026 13:13:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118987 — CallBackery versions before 0.62.0 for Perl accept session cookies of any age sent in the X-Session-Cookie header</title>
+      <link>https://vulnogram.org/CVE-2026-118987</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118987</guid>
+      <description>CallBackery versions before 0.62.0 for Perl accept session cookies of any age sent in the X-Session-Cookie header. cookieConf() rejects a cookie older than 300 seconds only when it arrives in the xsc query parameter. The same cookie sent in the X-Ses…</description>
+      <pubDate>Fri, 30 Oct 2026 13:13:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118990 — CallBackery versions before 0.62.0 for Perl leave a world-readable dump of the configuration database in /tmp when taking a configuration backup</title>
+      <link>https://vulnogram.org/CVE-2026-118990</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118990</guid>
+      <description>CallBackery versions before 0.62.0 for Perl leave a world-readable dump of the configuration database in /tmp when taking a configuration backup. getConfigBlob() has the sqlite3 shell write the dump to /tmp/cbdump&lt;pid&gt; and never removes it. The file…</description>
+      <pubDate>Fri, 30 Oct 2026 13:12:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118991 — CallBackery versions before 0.62.0 for Perl encrypt configuration backups with the padded password as the AES key</title>
+      <link>https://vulnogram.org/CVE-2026-118991</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118991</guid>
+      <description>CallBackery versions before 0.62.0 for Perl encrypt configuration backups with the padded password as the AES key. getCrypt() pads the backup password with &quot;x&quot; characters and cuts it to 32 bytes to form the AES key, with no salt and no key derivation…</description>
+      <pubDate>Fri, 30 Oct 2026 13:12:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118992 — CallBackery versions before 0.62.0 for Perl allow OS command execution via sqlite3 shell commands in a restored configuration backup</title>
+      <link>https://vulnogram.org/CVE-2026-118992</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118992</guid>
+      <description>CallBackery versions before 0.62.0 for Perl allow OS command execution via sqlite3 shell commands in a restored configuration backup. restoreConfigBlob() feeds the database dump in a backup to the sqlite3 command-line shell. The shell runs lines star…</description>
+      <pubDate>Fri, 30 Oct 2026 13:11:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118993 — CallBackery versions before 0.62.0 for Perl allow denial of service via the request path interpolated as a regular expression under CGI, FastCGI and PSGI</title>
+      <link>https://vulnogram.org/CVE-2026-118993</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118993</guid>
+      <description>CallBackery versions before 0.62.0 for Perl allow denial of service via the request path interpolated as a regular expression under CGI, FastCGI and PSGI. The before_dispatch hook installed by startup() removes PATH_INFO from the end of the request U…</description>
+      <pubDate>Fri, 30 Oct 2026 13:11:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118994 — CallBackery versions before 0.62.0 for Perl allow log injection via newlines in the login name</title>
+      <link>https://vulnogram.org/CVE-2026-118994</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118994</guid>
+      <description>CallBackery versions before 0.62.0 for Perl allow log injection via newlines in the login name. login() writes the login name to the application log without escaping control characters. The login RPC method needs no authentication, so a name containi…</description>
+      <pubDate>Fri, 30 Oct 2026 13:10:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118995 — CallBackery versions before 0.62.0 for Perl accept unintended values in form fields checked by createRxValidator</title>
+      <link>https://vulnogram.org/CVE-2026-118995</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118995</guid>
+      <description>CallBackery versions before 0.62.0 for Perl accept unintended values in form fields checked by createRxValidator. createRxValidator() is documented to anchor the supplied pattern at both ends, but builds /^${rx}$/ without grouping the pattern. An alt…</description>
+      <pubDate>Fri, 30 Oct 2026 13:10:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118996 — CallBackery versions before 0.62.0 for Perl send users their own password hash and the admin-only user note via getUserConfig</title>
+      <link>https://vulnogram.org/CVE-2026-118996</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118996</guid>
+      <description>CallBackery versions before 0.62.0 for Perl send users their own password hash and the admin-only user note via getUserConfig. getUserConfig() returns the caller&apos;s whole cbuser row, including the stored password hash and the note field that the user…</description>
+      <pubDate>Fri, 30 Oct 2026 13:10:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13576 — CallBackery versions before 0.62.0 for Perl store user passwords as unsalted HMAC-SHA1 hashes</title>
+      <link>https://vulnogram.org/CVE-2026-13576</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13576</guid>
+      <description>CallBackery versions before 0.62.0 for Perl store user passwords as unsalted HMAC-SHA1 hashes. Passwords are hashed with hmac_sha1_sum() from Mojo::Util with no key, a single fast SHA-1 HMAC. There is no salt, so equal passwords give equal hashes, an…</description>
+      <pubDate>Fri, 30 Oct 2026 13:09:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119038 — Business::GoCardless versions before 1.01 for Perl complete redirect flows without checking the session token, letting a leaked redirect flow ID create payments against another customer&apos;s mandate</title>
+      <link>https://vulnogram.org/CVE-2026-119038</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119038</guid>
+      <description>Business::GoCardless versions before 1.01 for Perl complete redirect flows without checking the session token, letting a leaked redirect flow ID create payments against another customer&apos;s mandate. confirm_resource takes no session token from the call…</description>
+      <pubDate>Fri, 30 Oct 2026 12:56:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119037 — Business::GoCardless versions before 1.01 for Perl accept forged webhooks when a configured webhook secret is undef or empty</title>
+      <link>https://vulnogram.org/CVE-2026-119037</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119037</guid>
+      <description>Business::GoCardless versions before 1.01 for Perl accept forged webhooks when a configured webhook secret is undef or empty. signature_valid uses each configured secret as the HMAC key, and nothing rejects undef or an empty string, both of which Dig…</description>
+      <pubDate>Fri, 30 Oct 2026 12:56:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119036 — Business::GoCardless versions before 1.01 for Perl allow memory exhaustion by flattening legacy webhook payloads before checking their signature</title>
+      <link>https://vulnogram.org/CVE-2026-119036</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119036</guid>
+      <description>Business::GoCardless versions before 1.01 for Perl allow memory exhaustion by flattening legacy webhook payloads before checking their signature. A webhook body with a top-level &quot;payload&quot; key is verified as a legacy webhook. To rebuild the signed str…</description>
+      <pubDate>Fri, 30 Oct 2026 12:56:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116128 — Starlet versions from 0.20 before 0.33 for Perl allow memory exhaustion via unbounded buffering when decoding chunked request bodies</title>
+      <link>https://vulnogram.org/CVE-2026-116128</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116128</guid>
+      <description>Starlet versions from 0.20 before 0.33 for Perl allow memory exhaustion via unbounded buffering when decoding chunked request bodies. The decoder adds each read to one buffer of unconsumed input. Nothing limits the length of a chunk-size line, so a l…</description>
+      <pubDate>Fri, 30 Oct 2026 12:46:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116127 — Starlet versions before 0.33 for Perl send a body in responses to HEAD requests, corrupting the next response on a persistent or pipelined connection</title>
+      <link>https://vulnogram.org/CVE-2026-116127</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116127</guid>
+      <description>Starlet versions before 0.33 for Perl send a body in responses to HEAD requests, corrupting the next response on a persistent or pipelined connection. The request method is not passed to the response writer, so whatever body the application returns f…</description>
+      <pubDate>Fri, 30 Oct 2026 12:46:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115866 — Starlet versions from 0.20 before 0.33 for Perl allow CPU exhaustion via regular expression backtracking when decoding chunked request bodies</title>
+      <link>https://vulnogram.org/CVE-2026-115866</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115866</guid>
+      <description>Starlet versions from 0.20 before 0.33 for Perl allow CPU exhaustion via regular expression backtracking when decoding chunked request bodies. A chunk-size line is matched as a run of hex digits, then .* and a CRLF. A run followed by a bare LF and th…</description>
+      <pubDate>Fri, 30 Oct 2026 12:45:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115865 — Starlet versions before 0.33 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory</title>
+      <link>https://vulnogram.org/CVE-2026-115865</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115865</guid>
+      <description>Starlet versions before 0.33 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory. The request body is read in a loop that asks sysread for all of the remaining declared length at once. Perl grows the read b…</description>
+      <pubDate>Fri, 30 Oct 2026 12:44:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116130 — HTTP::Parser::XS versions before 0.18 for Perl truncate PATH_INFO at an encoded NUL byte in parse_http_request</title>
+      <link>https://vulnogram.org/CVE-2026-116130</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116130</guid>
+      <description>HTTP::Parser::XS versions before 0.18 for Perl truncate PATH_INFO at an encoded NUL byte in parse_http_request. The XS parser URL-decodes the request path and measures the result with strlen(), so PATH_INFO ends at the first byte decoded from %00. Th…</description>
+      <pubDate>Fri, 30 Oct 2026 12:38:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118988 — CallBackery versions before 0.60.1 for Perl let unauthenticated clients read the POD of any file via path traversal in the /doc route</title>
+      <link>https://vulnogram.org/CVE-2026-118988</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118988</guid>
+      <description>CallBackery versions before 0.60.1 for Perl let unauthenticated clients read the POD of any file via path traversal in the /doc route. Every CallBackery application mounts its documentation plugin at /doc, ahead of any session check. The route passes…</description>
+      <pubDate>Fri, 30 Oct 2026 12:34:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87768 — DateTime::Lite versions before 0.8.1 for Perl allow CPU exhaustion via a per-day loop when adding seconds</title>
+      <link>https://vulnogram.org/CVE-2026-87768</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87768</guid>
+      <description>DateTime::Lite versions before 0.8.1 for Perl allow CPU exhaustion via a per-day loop when adding seconds. _normalize_leap_seconds crosses day boundaries one day at a time, so add(seconds =&gt; $n) on an object with a non-floating time zone takes about…</description>
+      <pubDate>Fri, 30 Oct 2026 12:25:21 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-115943 — Spreadsheet::XLSX versions before 0.19 for Perl allow code execution via string eval of number format conditions in ExcelFmt</title>
       <link>https://vulnogram.org/CVE-2026-115943</link>
@@ -221,166 +361,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94140</guid>
       <description>Rex versions through 1.16.1 for Perl accept an unknown SSH host key for remote rsync transfers because sync hardcodes StrictHostKeyChecking=no. Every remote branch of sync builds its ssh command with that option, for password authentication, for priv…</description>
       <pubDate>Wed, 21 Oct 2026 21:22:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113811 — Algorithm::UrataniTakeda versions from 0.1.5 before 0.1.7 for Perl allow memory exhaustion via a never-cleared failure shift cache in search</title>
-      <link>https://vulnogram.org/CVE-2026-113811</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113811</guid>
-      <description>Algorithm::UrataniTakeda versions from 0.1.5 before 0.1.7 for Perl allow memory exhaustion via a never-cleared failure shift cache in search. The failure shift is cached for each pair of trie state and text character in a field of the matcher object,…</description>
-      <pubDate>Wed, 21 Oct 2026 20:58:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-112202 — Imager::File::GIF versions before 1.006 for Perl allow out-of-bounds reads when consolidating GIF images</title>
-      <link>https://vulnogram.org/CVE-2026-112202</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112202</guid>
-      <description>Imager::File::GIF versions before 1.006 for Perl allow out-of-bounds reads when consolidating GIF images. With `gif_consolidate =&gt; 1`, palette indices from the image are used without checking the colour table&apos;s bounds. The i_readgif_low routine reads…</description>
-      <pubDate>Tue, 20 Oct 2026 22:37:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85783 — Crypt::Age versions before 0.004 for Perl allow CPU exhaustion via an unbounded number of recipient stanzas, each costing an X25519 scalar multiplication in unwrap_file_key</title>
-      <link>https://vulnogram.org/CVE-2026-85783</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85783</guid>
-      <description>Crypt::Age versions before 0.004 for Perl allow CPU exhaustion via an unbounded number of recipient stanzas, each costing an X25519 scalar multiplication in unwrap_file_key. The header parser accepts any number of recipient stanzas, and unwrap_file_k…</description>
-      <pubDate>Tue, 20 Oct 2026 21:29:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111879 — DBI versions before 1.656 for Perl hang on a later open of a DBD::DBM table because a failed open_data does not release the table&apos;s lock</title>
-      <link>https://vulnogram.org/CVE-2026-111879</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111879</guid>
-      <description>DBI versions before 1.656 for Perl hang on a later open of a DBD::DBM table because a failed open_data does not release the table&apos;s lock. open_data creates the table&apos;s lock file and takes an exclusive flock on it for a CREATE, before the checks that…</description>
-      <pubDate>Tue, 20 Oct 2026 21:24:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-108518 — DBI versions before 1.656 for Perl crash via type confusion in dbi_profile when a database handle is destroyed under a Profile Path with an {attr} element</title>
-      <link>https://vulnogram.org/CVE-2026-108518</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108518</guid>
-      <description>DBI versions before 1.656 for Perl crash via type confusion in dbi_profile when a database handle is destroyed under a Profile Path with an {attr} element. An {attr} element names a database handle attribute, which dbi_profile reads from the handle&apos;s…</description>
-      <pubDate>Tue, 20 Oct 2026 21:23:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113812 — Mozilla::CA versions before 20261020 for Perl provide a CA certificate bundle containing a root linked to compromised intermediates</title>
-      <link>https://vulnogram.org/CVE-2026-113812</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113812</guid>
-      <description>Mozilla::CA versions before 20261020 for Perl provide a CA certificate bundle containing a root linked to compromised intermediates. The bundle includes &quot;emSign ECC Root CA - G3&quot;, which provides a trust path for intermediate certificates whose privat…</description>
-      <pubDate>Tue, 20 Oct 2026 21:07:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111946 · 5.3 MEDIUM 🌩️ — Plack::Middleware::ETag versions from 0.04 before 0.06 for Perl disclose file inode numbers in the default ETag header</title>
-      <link>https://vulnogram.org/CVE-2026-111946</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111946</guid>
-      <description>Plack::Middleware::ETag versions from 0.04 before 0.06 for Perl disclose file inode numbers in the default ETag header. When the response body is a filehandle and the file_etag option is not set, the ETag is built from the file&apos;s inode number, modifi…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 20:54:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110688 · 7.5 HIGH 🌩️ — Cpanel::JSON::XS versions from 4.51 before 4.80 for Perl allow quadratic CPU use by revalidating the remaining buffer per value in incr_parse</title>
-      <link>https://vulnogram.org/CVE-2026-110688</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110688</guid>
-      <description>Cpanel::JSON::XS versions from 4.51 before 4.80 for Perl allow quadratic CPU use by revalidating the remaining buffer per value in incr_parse. At the first non-ASCII byte in a string, the decoder validates UTF-8 from there to the end of its input. in…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 18:12:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110687 · 7.5 HIGH 🌩️ — Cpanel::JSON::XS versions from 4.43 before 4.80 for Perl misorder byte-string keys during canonical encoding in utf16_cmp</title>
-      <link>https://vulnogram.org/CVE-2026-110687</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110687</guid>
-      <description>Cpanel::JSON::XS versions from 4.43 before 4.80 for Perl misorder byte-string keys during canonical encoding in utf16_cmp. canonical sorts keys by UTF-16 code units. When any key in a hash is UTF-8 flagged, every key is decoded as UTF-8 for the compa…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 18:12:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110686 · 6.5 MEDIUM — Cpanel::JSON::XS versions before 4.80 for Perl use freed filter callbacks when a filter removes itself during decoding in decode_hv</title>
-      <link>https://vulnogram.org/CVE-2026-110686</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110686</guid>
-      <description>Cpanel::JSON::XS versions before 4.80 for Perl use freed filter callbacks when a filter removes itself during decoding in decode_hv. A decode copies the parser&apos;s filter_json_object and filter_json_single_key_object callbacks without taking references…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 18:12:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110685 · 9.1 CRITICAL 🌩️ — Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded arguments of a tagged value when its THAW method dies in decode_tag</title>
-      <link>https://vulnogram.org/CVE-2026-110685</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110685</guid>
-      <description>Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded arguments of a tagged value when its THAW method dies in decode_tag. With allow_tags, a tagged value&apos;s class name and argument array are decoded and passed to the class&apos;s THAW method. Bo…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 18:12:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110684 · 8.1 HIGH — Cpanel::JSON::XS versions from 3.0202 before 4.80 for Perl leak memory and retain overloaded objects when encoding values as strings in encode_stringify</title>
-      <link>https://vulnogram.org/CVE-2026-110684</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110684</guid>
-      <description>Cpanel::JSON::XS versions from 3.0202 before 4.80 for Perl leak memory and retain overloaded objects when encoding values as strings in encode_stringify. encode_stringify writes a value in its string form under allow_stringify, under convert_blessed…</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 18:12:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110682 · 7.5 HIGH 🌩️ — Cpanel::JSON::XS versions from 4.42 before 4.80 for Perl let input chunking change the decoded value of top-level numbers in incr_parse</title>
-      <link>https://vulnogram.org/CVE-2026-110682</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110682</guid>
-      <description>Cpanel::JSON::XS versions from 4.42 before 4.80 for Perl let input chunking change the decoded value of top-level numbers in incr_parse. allow_nonref is enabled by default and incr_parse inherits it. A top-level number, true, false or null has no clo…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 18:12:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110681 — Cpanel::JSON::XS versions before 4.80 for Perl use the parent interpreter&apos;s scalars from a parser object cloned into a new ithread</title>
-      <link>https://vulnogram.org/CVE-2026-110681</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110681</guid>
-      <description>Cpanel::JSON::XS versions before 4.80 for Perl use the parent interpreter&apos;s scalars from a parser object cloned into a new ithread. A parser object holds its callbacks and its incremental parse buffer as raw scalar pointers. When a thread is created,…</description>
-      <pubDate>Mon, 19 Oct 2026 18:12:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110680 — Cpanel::JSON::XS versions from 4.20 before 4.80 for Perl write out of bounds when a tied or shared hash grows during canonical encoding in encode_hv</title>
-      <link>https://vulnogram.org/CVE-2026-110680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110680</guid>
-      <description>Cpanel::JSON::XS versions from 4.20 before 4.80 for Perl write out of bounds when a tied or shared hash grows during canonical encoding in encode_hv. With canonical, the keys of a tied or threads::shared hash are counted before a second pass collects…</description>
-      <pubDate>Mon, 19 Oct 2026 18:12:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110678 · 7.5 HIGH 🌩️ — Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by buffering incremental input past max_size in incr_parse</title>
-      <link>https://vulnogram.org/CVE-2026-110678</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110678</guid>
-      <description>Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by buffering incremental input past max_size in incr_parse. The parser appends each chunk to its buffer. In scalar or list context, it compares max_size with how far it has progre…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 18:11:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110677 · 7.5 HIGH 🌩️ — Cpanel::JSON::XS versions from 4.28 before 4.80 for Perl leak the array collecting duplicate key values under dupkeys_as_arrayref in decode_hv</title>
-      <link>https://vulnogram.org/CVE-2026-110677</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110677</guid>
-      <description>Cpanel::JSON::XS versions from 4.28 before 4.80 for Perl leak the array collecting duplicate key values under dupkeys_as_arrayref in decode_hv. With dupkeys_as_arrayref, the values of a duplicate object key are collected into a new array. An extra re…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 18:11:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110676 · 7.5 HIGH 🌩️ — Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by encoding exponent notation as full decimal digits under allow_bignum</title>
-      <link>https://vulnogram.org/CVE-2026-110676</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110676</guid>
-      <description>Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by encoding exponent notation as full decimal digits under allow_bignum. With allow_bignum, a JSON number with a fraction or exponent decodes to a Math::BigFloat, which stores the…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 19 Oct 2026 18:11:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110675 · 8.1 HIGH — Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl accept malformed UTF-8 in bare hash keys under allow_barekey in decode_hv</title>
-      <link>https://vulnogram.org/CVE-2026-110675</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110675</guid>
-      <description>Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl accept malformed UTF-8 in bare hash keys under allow_barekey in decode_hv. With utf8 and allow_barekey, which relaxed enables, a quoted key is validated as UTF-8 but a bare key&apos;s bytes are stor…</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 18:11:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110674 · 6.5 MEDIUM — Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl miss duplicate non-ASCII bare keys, allowing type confusion under dupkeys_as_arrayref in decode_hv</title>
-      <link>https://vulnogram.org/CVE-2026-110674</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110674</guid>
-      <description>Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl miss duplicate non-ASCII bare keys, allowing type confusion under dupkeys_as_arrayref in decode_hv. With allow_barekey, which relaxed enables, a bare key containing a non-ASCII byte is stored a…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 18:11:25 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,47 @@
       <title>VMware by Broadcom — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 30 Oct 2026 08:11:52 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 14:58:37 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-59387 · 8.8 HIGH — Broken access control restriction in Cloud Controller API</title>
+      <link>https://vulnogram.org/CVE-2026-59387</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59387</guid>
+      <description>The Nginx routing configuration for Cloud Controller blocks unauthenticated access to /internal/v4/ and /internal/v5/ endpoints but omits an equivalent deny rule for /internal/v3/. As a result, the staging callback endpoints /internal/v3/staging/:gui…</description>
+      <category>High</category>
+      <pubDate>Fri, 30 Oct 2026 08:47:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59385 · 2.7 LOW — Space Developer can extract space-scoped broker credentials</title>
+      <link>https://vulnogram.org/CVE-2026-59385</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59385</guid>
+      <description>A user with SpaceDeveloper privileges could modify the URL of a space-scoped broker without altering its credentials, enabling extraction of existing broker credentials by redirecting them to a broker under their control. The CF API does not permit d…</description>
+      <category>Low</category>
+      <pubDate>Fri, 30 Oct 2026 08:44:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59388 · 6.5 MEDIUM — Cloud Controller exposes secrets in audit log</title>
+      <link>https://vulnogram.org/CVE-2026-59388</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59388</guid>
+      <description>Cloud Controller (CAPI) leaks sensitive data into audit logs in multiple instances: custom buildpack credentials are exposed in audit events for app manifest application, creation, and updates; syslog drain URL credentials are exposed in user-provide…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Oct 2026 08:40:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59386 · 6.5 MEDIUM — Credential exposure to space supporter</title>
+      <link>https://vulnogram.org/CVE-2026-59386</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59386</guid>
+      <description>A SpaceSupporter could improperly modify an application&apos;s start command and buildpack—actions requiring SpaceDeveloper privileges. This privilege escalation enables unauthorized retrieval of service credentials through malicious start commands or cus…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Oct 2026 08:35:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59396 · 6.9 MEDIUM — DoS Vulnerability in UAA Related to JWKS URI Handling</title>
+      <link>https://vulnogram.org/CVE-2026-59396</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59396</guid>
+      <description>A denial-of-service vulnerability exists in UAA&apos;s private_key_jwt client-authentication mechanism. When UAA retrieves a remote JWKS URI, it caches the response. Invalid authentication attempts can trigger full deserialization of this cached data. An…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 30 Oct 2026 08:24:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-59347 · 8.1 HIGH — VMware Workstation and Fusion HGFS stack-based buffer-overflow vulnerability</title>
       <link>https://vulnogram.org/CVE-2026-59347</link>
@@ -388,49 +428,6 @@
       <description>Applications using Spring Framework&apos;s FreeMarker integration may be vulnerable to a path traversal attack when a controller returns a view name derived from untrusted input and FreeMarker is configured to resolve templates through SpringTemplateLoade…</description>
       <category>Medium</category>
       <pubDate>Thu, 27 Aug 2026 16:41:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59272 · 6.8 MEDIUM — Log4j2 AmqpAppender disables TLS hostname verification by default</title>
-      <link>https://vulnogram.org/CVE-2026-59272</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59272</guid>
-      <description>Any application shipping logs to RabbitMQ over TLS via the Log4j2 appender, relying on the documented default, is exposed to man-in-the-middle interception of every log event. Spring AMQP 4.1.0 Spring AMQP 4.0.0 - 4.0.4 Spring AMQP 3.2.0 - 3.2.12 Spr…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 27 Aug 2026 16:41:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59355 · 6.1 MEDIUM 🌩️ — Spring Authorization Server: Open Redirect via request_uri parameter</title>
-      <link>https://vulnogram.org/CVE-2026-59355</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59355</guid>
-      <description>In versions of Spring Authorization Server 1.5.0 through 1.5.7, the authorization endpoint performs insufficient validation of the request_uri parameter. An attacker can craft a request containing an invalid request_uri paired with an unvalidated red…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 27 Aug 2026 06:35:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-59354 · 9.6 CRITICAL — Spring Security OAuth2 Authorization Server: Insufficient validation of Dynamic Client Registration metadata</title>
-      <link>https://vulnogram.org/CVE-2026-59354</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59354</guid>
-      <description>In versions of Spring Security&apos;s OAuth2 Authorization Server module 7.0.0 through 7.0.4, when Dynamic Client Registration is explicitly enabled, the registration endpoint performs insufficient validation of certain client metadata fields supplied by…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 27 Aug 2026 06:33:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47893 · 7.5 HIGH 🌩️ — Spring Framework Request Headers Included in Exception Reasons in HandshakeWebsocketService</title>
-      <link>https://vulnogram.org/CVE-2026-47893</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47893</guid>
-      <description>A Spring WebFlux application that supports WebSocket connections may expose indirectly sensitive user information by including request headers in an exception reason. Spring Framework 7.0.0 - 7.0.8 Spring Framework 6.2.0 - 6.2.19 Spring Framework 6.1…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 27 Aug 2026 05:21:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47892 · 9.8 CRITICAL 🌩️ — Spring Framework Header Predicate Bypass in WebFlux Functional Endpoints</title>
-      <link>https://vulnogram.org/CVE-2026-47892</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47892</guid>
-      <description>A WebFlux application using functional endpoints and deployed with DispatcherServlet may be vulnerable to a header predicate bypass in a pre-flight request. Spring Framework 7.0.0 - 7.0.8 Spring Framework 6.2.0 - 6.2.19 Spring Framework 6.1.0 - 6.1.2…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 27 Aug 2026 05:21:40 GMT</pubDate>
     </item>
   </channel>
 </rss>

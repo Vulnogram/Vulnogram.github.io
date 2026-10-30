@@ -11,7 +11,7 @@
       <title>curl — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 30 Oct 2026 08:11:51 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 14:58:36 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-107929 — local interface connection reuse mixup</title>
       <link>https://vulnogram.org/CVE-2026-107929</link>
@@ -55,17 +55,21 @@
       <pubDate>Tue, 20 Oct 2026 20:23:08 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-92389 — TFTP direction confusion</title>
+      <title>CVE-2026-92389 · 8.1 HIGH 🌩️ — TFTP direction confusion</title>
       <link>https://vulnogram.org/CVE-2026-92389</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92389</guid>
       <description>libcurl&apos;s TFTP state machine fails to validate state transitions against the requested transfer direction, accepting opening server responses for both reads and writes interchangeably. A malicious TFTP server can respond to a download request in a wa…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:21:45 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-92388 — FTP wildcard write callback mixup</title>
+      <title>CVE-2026-92388 · 9.1 CRITICAL 🌩️ — FTP wildcard write callback mixup</title>
       <link>https://vulnogram.org/CVE-2026-92388</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92388</guid>
       <description>When an FTP wildcard `LIST` operation fails, libcurl omits the restoration path meant for successful listings, leaving the write callback set to the internal listing parser and the write callback data pointing directly to the easy handle. Subsequent…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:20:41 GMT</pubDate>
     </item>
     <item>
@@ -96,59 +100,75 @@
       <pubDate>Tue, 20 Oct 2026 20:16:30 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-87865 — knownhost callback mismatches key as missing</title>
+      <title>CVE-2026-87865 · 7.4 HIGH 🌩️ — knownhost callback mismatches key as missing</title>
       <link>https://vulnogram.org/CVE-2026-87865</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87865</guid>
       <description>When libcurl uses libssh2 with a hashed `known_hosts` file, an unrelated initial entry can cause host key validation to report a key *mismatch* as a *missing* key to the `CURLOPT_SSH_KEYFUNCTION` callback.</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:15:13 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-87863 — HSTS response erases persisted entries</title>
+      <title>CVE-2026-87863 · 8.1 HIGH 🌩️ — HSTS response erases persisted entries</title>
       <link>https://vulnogram.org/CVE-2026-87863</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87863</guid>
       <description>An authenticated HTTPS origin can supply an HSTS `max-age` value that the parser accepts, but time serialization later fails to process. On 64-bit systems, extreme max-age values compute an absolute expiry within standard time integer limits that exc…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:13:22 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-87864 — IMAP APPEND plus CRLF conversion command injection</title>
+      <title>CVE-2026-87864 · 8.1 HIGH 🌩️ — IMAP APPEND plus CRLF conversion command injection</title>
       <link>https://vulnogram.org/CVE-2026-87864</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87864</guid>
       <description>Enabling `CURLOPT_CRLF` causes curl to advertise the raw input byte count in the `IMAP APPEND {N}` literal while transmitting line-ending expanded data. The server reads only $N$ bytes for the payload, causing the remaining overflow bytes to be inter…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:13:13 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-87862 — HSTS cache import drops longer-lived child</title>
+      <title>CVE-2026-87862 · 8.1 HIGH 🌩️ — HSTS cache import drops longer-lived child</title>
       <link>https://vulnogram.org/CVE-2026-87862</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87862</guid>
       <description>Importing a `includeSubDomains` parent HSTS entry before a longer-lived child entry, silently drops the child. Consequently, when the parent expires, the child&apos;s valid HSTS policy is lost, causing curl to issue unencrypted HTTP requests rather than u…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:10:37 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-87861 — cross-origin reuse of a Negotiate connection</title>
+      <title>CVE-2026-87861 · 9.1 CRITICAL 🌩️ — cross-origin reuse of a Negotiate connection</title>
       <link>https://vulnogram.org/CVE-2026-87861</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87861</guid>
       <description>When using ambient user credentials, an HTTP request directed to one origin may be dispatched over a connection previously authenticated via Negotiate for a different origin, leaving the request&apos;s intended credentials unused.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:09:28 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-86415 — auto client cert connection reuse mixup</title>
+      <title>CVE-2026-86415 · 7.5 HIGH 🌩️ — auto client cert connection reuse mixup</title>
       <link>https://vulnogram.org/CVE-2026-86415</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86415</guid>
       <description>libcurl&apos;s connection cache match function never considers the automatic client certificate option, so a cached, already authenticated Schannel connection can be handed to a transfer that got redirected to a different origin, even though the code expl…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:08:29 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-86414 — leaking host credentials to HTTP proxy</title>
+      <title>CVE-2026-86414 · 9.1 CRITICAL 🌩️ — leaking host credentials to HTTP proxy</title>
       <link>https://vulnogram.org/CVE-2026-86414</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86414</guid>
       <description>An HTTP proxy can trick libcurl into sending the origin&apos;s credentials (Basic password, or a Negotiate/Kerberos ticket) to the proxy itself, by answering the `CONNECT` tunnel request with 401 `WWW-Authenticate:` instead of the expected 407 `Proxy-Auth…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:07:22 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-86413 — Negotiate credentials sent to redirected origin</title>
+      <title>CVE-2026-86413 · 9.1 CRITICAL 🌩️ — Negotiate credentials sent to redirected origin</title>
       <link>https://vulnogram.org/CVE-2026-86413</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86413</guid>
       <description>When using an *ambient user* in a first transfer doing Negotiate authentication and asked to follow redirects, curl could pass on its credential details to an unrelated second origin when asked to redirect there.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 20 Oct 2026 20:06:11 GMT</pubDate>
     </item>
     <item>
