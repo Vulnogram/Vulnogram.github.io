@@ -11,7 +11,48 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 31 Oct 2026 09:20:12 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 15:53:05 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-120194 · 7.5 HIGH 🌩️ — Json-glib: json-glib: infinite loop in json_path_query() with negative jsonpath slice step</title>
+      <link>https://vulnogram.org/CVE-2026-120194</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120194</guid>
+      <description>A flaw was found in json-glib. The JSONPath slice evaluator used by json_path_query() can enter an infinite loop when given a slice expression with a negative step. An application that evaluates attacker-controlled JSONPath expressions can be forced…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sat, 31 Oct 2026 10:11:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117681 · 8 HIGH — Konflux-ci: ui proxy skips backend tls verification on non-openshift clusters, leaking a token that can impersonate anyone</title>
+      <link>https://vulnogram.org/CVE-2026-117681</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117681</guid>
+      <description>A flaw was found in konflux-ci. This vulnerability allows privilege escalation when the user interface proxy automatically disables Transport Layer Security (TLS) certificate verification for connections to internal backend services in environments l…</description>
+      <category>High</category>
+      <pubDate>Sat, 31 Oct 2026 08:57:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116964 · 8.4 HIGH — Konflux-ci: remote code execution via eval() in manifest scripts</title>
+      <link>https://vulnogram.org/CVE-2026-116964</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116964</guid>
+      <description>A flaw was found in konflux-ci. An attacker with repository write access can achieve arbitrary code execution within the Continuous Integration and Continuous Delivery (CI/CD) workflow environment. By injecting shell commands into environment export…</description>
+      <category>High</category>
+      <pubDate>Sat, 31 Oct 2026 08:57:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116086 · 8.8 HIGH — Konflux-ci: jq filter injection in github workflow issue management</title>
+      <link>https://vulnogram.org/CVE-2026-116086</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116086</guid>
+      <description>A flaw was found in konflux-ci. An attacker with permission to trigger automated workflow runs can cause an information disclosure by providing crafted issue titles to workflow scripts. The affected script incorporates user-provided titles directly i…</description>
+      <category>High</category>
+      <pubDate>Sat, 31 Oct 2026 08:55:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114217 · 8.6 HIGH — Konflux-ci: github token plaintext exposure in ci/cd scripts</title>
+      <link>https://vulnogram.org/CVE-2026-114217</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114217</guid>
+      <description>A flaw was found in konflux-ci. Continuous Integration (CI) automation scripts store sensitive GitHub access tokens in plaintext on the runner without cleaning them up after execution. A local attacker with access to the CI environment can read these…</description>
+      <category>High</category>
+      <pubDate>Sat, 31 Oct 2026 08:55:09 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-119842 · 6.5 MEDIUM 🌩️ — Gst-plugins-base: gst-plugins-base: null-pointer dereference in mdvdsub subtitle parser via missing closing-brace check</title>
       <link>https://vulnogram.org/CVE-2026-119842</link>
@@ -387,46 +428,6 @@
       <description>A flaw was found in the iscsiuio component of open-iscsi. The IPv6 Neighbor Discovery handler accesses link-layer address options at a fixed offset without verifying the packet contains them. Additionally, the ARP table is updated unconditionally wit…</description>
       <category>High</category>
       <pubDate>Fri, 23 Oct 2026 00:16:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115485 · 6.3 MEDIUM — Open-iscsi: open-iscsi: dhcpv6 vendor option strlen heap out-of-bounds read and 1-byte write in iscsiuio</title>
-      <link>https://vulnogram.org/CVE-2026-115485</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115485</guid>
-      <description>A flaw was found in the iscsiuio component of open-iscsi. The DHCPv6 option parser calls strlen() on raw network data without ensuring a NUL terminator is present, causing it to read past the buffer into heap memory. This can result in a daemon crash…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 23 Oct 2026 00:16:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115484 · 7.6 HIGH — Open-iscsi: open-iscsi: dhcpv4 option parser heap out-of-bounds read in iscsiuio parse_msg</title>
-      <link>https://vulnogram.org/CVE-2026-115484</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115484</guid>
-      <description>A flaw was found in the iscsiuio component of open-iscsi. The DHCPv4 option parser incorrectly calculates the length of the options data, causing it to read beyond the allocated buffer into adjacent heap memory. An attacker on the same network segmen…</description>
-      <category>High</category>
-      <pubDate>Fri, 23 Oct 2026 00:16:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115449 · 3.5 LOW — Libslirp: libslirp: icmp echo reply length desynchronization leaks host ip to guest</title>
-      <link>https://vulnogram.org/CVE-2026-115449</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115449</guid>
-      <description>A flaw was found in libslirp. When handling ICMP echo requests, the reply length is not updated to match the actual data received from the host. Under specific conditions where the normal ICMP socket is unavailable, this length mismatch causes the ho…</description>
-      <category>Low</category>
-      <pubDate>Thu, 22 Oct 2026 21:20:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115221 · 5.4 MEDIUM — Ipa: freeipa: freeipa uses subject cn as proof of certificate ownership</title>
-      <link>https://vulnogram.org/CVE-2026-115221</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115221</guid>
-      <description>A flaw was found in FreeIPA. An improper authorization check allows an authenticated host to retrieve and revoke digital certificates assigned to other users or services. This issue occurs because FreeIPA verifies ownership solely by matching the hos…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 22 Oct 2026 21:13:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115424 · 5.5 MEDIUM — Oc: oc: symlink/hardlink target validation bypass in oc image extract allows file write outside destination</title>
-      <link>https://vulnogram.org/CVE-2026-115424</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115424</guid>
-      <description>A flaw was found in the OpenShift client oc. When extracting container image layers with oc image extract, the application fails to properly sanitize symbolic and hard link targets pointing to absolute paths or to sibling directories of the extractio…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 22 Oct 2026 21:12:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
