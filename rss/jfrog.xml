@@ -11,7 +11,40 @@
       <title>JFrog — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 01 Nov 2026 08:35:59 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 15:42:39 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-120338 · 10 CRITICAL 🌩️ — Prefab UI Pyodide sandbox escape to host RCE</title>
+      <link>https://vulnogram.org/CVE-2026-120338</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120338</guid>
+      <description>Prefab UI&apos;s Generative UI sandbox runs caller-supplied Python inside Pyodide, Python compiled to WebAssembly, in a Deno subprocess. The feature is documented as isolation for untrusted code, including LLM-written UI. From prefab-ui 0.14.0 through 0.2…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Sun, 01 Nov 2026 15:24:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120308 · 9.9 CRITICAL — Beta9 host filesystem exposure via volume path traversal</title>
+      <link>https://vulnogram.org/CVE-2026-120308</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120308</guid>
+      <description>A Beta9 tenant can attach a volume when deploying a function, endpoint, or task queue. The gateway builds the host path by joining the shared volumes root, the workspace name, and the volume identifier from the stub configuration. Nothing checks that…</description>
+      <category>Critical</category>
+      <pubDate>Sun, 01 Nov 2026 12:51:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120307 · 9.9 CRITICAL — Beta9 container escape via unvalidated sandbox file paths</title>
+      <link>https://vulnogram.org/CVE-2026-120307</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120307</guid>
+      <description>The Beta9 worker serves the sandbox file API from outside the container. getHostPathFromContainerPath turns the tenant&apos;s container path into a worker path. If the unresolved path starts with a mount destination, including the default upload mount at…</description>
+      <category>Critical</category>
+      <pubDate>Sun, 01 Nov 2026 12:49:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120306 · 9.9 CRITICAL — Beta9 build sandbox escape via chroot-only isolation</title>
+      <link>https://vulnogram.org/CVE-2026-120306</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120306</guid>
+      <description>Beta9 turns each shell command in a tenant image definition into a Dockerfile RUN line and executes it with Buildah on the build worker. The worker image sets BUILDAH_ISOLATION=chroot, and no buildah invocation passes --isolation, so the step only ch…</description>
+      <category>Critical</category>
+      <pubDate>Sun, 01 Nov 2026 12:49:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-92892 · 9 CRITICAL 🌩️ — Potential command execution on the host running JFrog CLI.</title>
       <link>https://vulnogram.org/CVE-2026-92892</link>
@@ -397,38 +430,6 @@
       <description>An authorization weakness in JFrog Artifactory internal metadata handling could allow a user with limited repository access to write to restricted internal metadata areas under specific conditions. Successful abuse is limited to integrity and availab…</description>
       <category>High</category>
       <pubDate>Mon, 27 Jul 2026 19:44:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65923 · 6.8 MEDIUM — Potential server-side request forgery in Artifactory Ansible repository handling</title>
-      <link>https://vulnogram.org/CVE-2026-65923</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65923</guid>
-      <description>A URL validation weakness in JFrog Artifactory Ansible repository handling could allow a user, under specific repository access conditions, to cause unintended server-side requests. The issue primarily affects confidentiality and integrity and has be…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 27 Jul 2026 19:43:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65617 · 8.8 HIGH — Potential remote code execution on an Artifactory package service container.</title>
-      <link>https://vulnogram.org/CVE-2026-65617</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65617</guid>
-      <description>A deserialization weakness in JFrog Artifactory package handling could allow a low-privileged user to impact confidentiality, integrity, and availability under specific repository conditions.</description>
-      <category>High</category>
-      <pubDate>Mon, 27 Jul 2026 19:37:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65924 · 6.5 MEDIUM — Server-Side Request Forgery (SSRF) via Terraform Remote repository</title>
-      <link>https://vulnogram.org/CVE-2026-65924</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65924</guid>
-      <description>JFrog Artifactory support for Terraform remote repositories was found to be susceptible to Server-Side Request Forgery (SSRF). An authenticated user - or, if anonymous access is enabled on the repository, an unauthenticated user - could cause Artifac…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 27 Jul 2026 19:36:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65925 · 6.5 MEDIUM — Server-Side Request Forgery (SSRF) via JFrog Artifactory Cargo remote repository</title>
-      <link>https://vulnogram.org/CVE-2026-65925</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65925</guid>
-      <description>A user with JFrog Artifactory Cargo remote repository read access could make Artifactory request unintended URLs and return the response.</description>
-      <category>Medium</category>
-      <pubDate>Mon, 27 Jul 2026 19:35:17 GMT</pubDate>
     </item>
   </channel>
 </rss>
