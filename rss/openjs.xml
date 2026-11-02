@@ -11,7 +11,63 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 02 Nov 2026 10:23:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 20:49:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-120216 · 5.9 MEDIUM — fastify vulnerable to Denial of Service via uncaught exception on handlerTimeout with streaming responses</title>
+      <link>https://vulnogram.org/CVE-2026-120216</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120216</guid>
+      <description>fastify is a web framework for Node.js. In versions 5.8.0 through 5.12.7, when the server is configured with a nonzero handlerTimeout and a route returns a streaming response, a request whose stream has already sent its headers but stays open past th…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 11:08:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117518 · 8.2 HIGH — @fastify/reply-from vulnerable to path traversal via backslash dot-segment prefix escape</title>
+      <link>https://vulnogram.org/CVE-2026-117518</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117518</guid>
+      <description>@fastify/reply-from is a Fastify plugin that forwards requests to an upstream HTTP server. In versions up to and including 12.8.0, the plugin validated proxy paths against forward-slash dot-segments only and then built the target with the WHATWG URL…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 10:39:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117531 · 5.9 MEDIUM — @fastify/multipart vulnerable to Denial of Service via a malformed upload hanging delayed file consumers</title>
+      <link>https://vulnogram.org/CVE-2026-117531</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117531</guid>
+      <description>@fastify/multipart is the multipart form-data and file upload plugin for the Fastify web framework. In versions 5.3.0 through 10.1.6, the plugin does not propagate a parser error to the file stream when a request body ends inside a file part with no…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 10:32:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117549 · 4.2 MEDIUM — @fastify/secure-session vulnerable to signature verification bypass via cookie signature removal</title>
+      <link>https://vulnogram.org/CVE-2026-117549</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117549</guid>
+      <description>@fastify/secure-session is a session plugin for Fastify that stores an encrypted session in a cookie. In versions 7.5.0 through 8.4.1, when the plugin is configured with the signed cookie option, it calls the cookie unsign routine but, when the signa…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 10:26:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120215 · 3.7 LOW — @fastify/cors vulnerable to Denial of Service on a CORS preflight with the onSend hook</title>
+      <link>https://vulnogram.org/CVE-2026-120215</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120215</guid>
+      <description>@fastify/cors is the CORS plugin for the Fastify web framework. In versions 8.2.0 through 11.3.x, an application that registers the plugin with the non-default onSend hook option crashes on a CORS preflight. On an OPTIONS request that carries the Ori…</description>
+      <category>Low</category>
+      <pubDate>Mon, 02 Nov 2026 10:20:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120213 · 9.1 CRITICAL — @fastify/http-proxy vulnerable to prefix escape via decoded route parameters</title>
+      <link>https://vulnogram.org/CVE-2026-120213</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120213</guid>
+      <description>@fastify/http-proxy is a Fastify plugin that proxies HTTP requests to an upstream server under a configured prefix. In versions 9.0.0 through 11.6.5, when an application uses parameterized prefix and rewritePrefix options to pin clients to a fixed up…</description>
+      <category>Critical</category>
+      <pubDate>Mon, 02 Nov 2026 10:15:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120214 · 5.9 MEDIUM — @fastify/http-proxy vulnerable to prefix escape via percent-encoded backslash dot-segments</title>
+      <link>https://vulnogram.org/CVE-2026-120214</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120214</guid>
+      <description>@fastify/http-proxy is a Fastify plugin that proxies HTTP requests to an upstream server under a configured prefix. In versions 11.6.0 through 11.6.2, the destination validation normalizes literal backslashes before it percent-decodes the request pat…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 10:07:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-112362 · 9.1 CRITICAL — @fastify/express vulnerable to path-scoped middleware bypass via absolute-form request targets</title>
       <link>https://vulnogram.org/CVE-2026-112362</link>
@@ -355,62 +411,6 @@
       <description>undici&apos;s WebSocket client crashes the whole Node.js process during the opening handshake when a server responds with a subprotocol that the client never requested. A default WebSocket connection sends no subprotocol, but if the server&apos;s 101 response…</description>
       <category>High</category>
       <pubDate>Fri, 04 Sep 2026 17:10:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84890 · 5.9 MEDIUM — undici vulnerable to Denial of Service via unbounded decompression of compressed responses</title>
-      <link>https://vulnogram.org/CVE-2026-84890</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84890</guid>
-      <description>undici&apos;s decompress interceptor decompresses response bodies according to the untrusted Content-Encoding header. While the number of content-encoding layers is capped, the total decompressed output size is unbounded and there is no configuration opti…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 04 Sep 2026 17:04:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84933 · 6.5 MEDIUM — undici vulnerable to cross-user cookie disclosure via Set-Cookie caching in shared caches</title>
-      <link>https://vulnogram.org/CVE-2026-84933</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84933</guid>
-      <description>undici&apos;s cache interceptor does not handle the Set-Cookie response header anywhere in its cache path, so it neither refuses to store nor strips that header. In shared cache mode, which is the default, an otherwise cacheable response that carries a Se…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 04 Sep 2026 16:59:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84947 · 3.7 LOW — undici vulnerable to response truncation via oversized chunked responses in the dump interceptor</title>
-      <link>https://vulnogram.org/CVE-2026-84947</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84947</guid>
-      <description>undici&apos;s dump interceptor reads and discards a response body up to a configurable maximum size. When a response declares a Content-Length that exceeds the maximum, the interceptor aborts cleanly, but when a response has no Content-Length and is chunk…</description>
-      <category>Low</category>
-      <pubDate>Fri, 04 Sep 2026 16:53:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84961 · 7.4 HIGH — undici vulnerable to TLS certificate validation bypass via dropped connect options in BalancedPool</title>
-      <link>https://vulnogram.org/CVE-2026-84961</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84961</guid>
-      <description>undici&apos;s BalancedPool constructor passes its entire options object through an internal deep-clone that serializes and reparses the value as JSON. Because JSON cannot represent functions, any function-valued TLS option, such as a caller-supplied check…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Sep 2026 16:47:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85008 · 3.7 LOW — undici vulnerable to caching and replay of unsafe HTTP method responses</title>
-      <link>https://vulnogram.org/CVE-2026-85008</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85008</guid>
-      <description>undici&apos;s cache interceptor documents that only safe HTTP methods are cached, but its logic to skip caching is built by subtracting the configured methods from the set of safe methods, so an unsafe method such as POST, PUT, or DELETE is never placed i…</description>
-      <category>Low</category>
-      <pubDate>Fri, 04 Sep 2026 16:42:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85152 · 7.4 HIGH — undici vulnerable to cross-origin cache poisoning via missing origin isolation in interceptors</title>
-      <link>https://vulnogram.org/CVE-2026-85152</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85152</guid>
-      <description>undici 8.10.0 omits the destination origin from the cache and request-deduplication keys when the cache or deduplicate interceptor is composed directly onto a Client or Pool. Because the internal cache key falls back to an empty origin string, a cach…</description>
-      <category>High</category>
-      <pubDate>Fri, 04 Sep 2026 16:36:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85014 · 5.9 MEDIUM — undici vulnerable to Denial of Service via WebSocketStream unclean close</title>
-      <link>https://vulnogram.org/CVE-2026-85014</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85014</guid>
-      <description>undici&apos;s experimental WebSocketStream client crashes the whole Node.js process when a remote peer closes the TCP connection without a WebSocket close handshake. On an unclean close the internal socket-close handler calls abort on the writable stream…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 04 Sep 2026 16:30:07 GMT</pubDate>
     </item>
   </channel>
 </rss>

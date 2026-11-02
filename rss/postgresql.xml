@@ -11,7 +11,100 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 02 Nov 2026 10:23:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 20:49:31 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-120067 · 5.9 MEDIUM 🌩️ — psqlODBC stack buffer overflow copying ctid and oid values for updatable cursors</title>
+      <link>https://vulnogram.org/CVE-2026-120067</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120067</guid>
+      <description>For updatable cursors, which are enabled by default, psqlODBC adds hidden ctid and, for tables with OIDs, oid columns to the query. It copies each value into a 32-byte stack buffer using the length the server sent, without checking it against the buf…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120066 · 5.3 MEDIUM — psqlODBC log files are created with default permissions at a predictable path and follow symbolic links</title>
+      <link>https://vulnogram.org/CVE-2026-120066</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120066</guid>
+      <description>On Unix-like systems, when logging is enabled, psqlODBC creates its log files in /tmp by default, named from the program name, user name, and process ID, with the default permissions, typically world-readable, and follows symbolic links when opening…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120065 · 7.1 HIGH — psqlODBC does not escape a server-supplied column name in its updatable-cursor queries</title>
+      <link>https://vulnogram.org/CVE-2026-120065</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120065</guid>
+      <description>For an updatable cursor over a table without OIDs that has an auto-increment int4 column, psqlODBC uses that column to identify rows. It places the column&apos;s name, as reported by the server, between double quotes in its keyset queries and in the WHERE…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120064 · 7.5 HIGH — psqlODBC does not validate column numbers and row indexes in binding and descriptor functions</title>
+      <link>https://vulnogram.org/CVE-2026-120064</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120064</guid>
+      <description>Several psqlODBC entry points use an application-supplied column number or row index as an array index without validating it. SQLBindCol with a column number above 32767 wraps the binding count negative and a later copy runs off the array. A negative…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120063 · 5.9 MEDIUM — psqlODBC stack buffer overflow when quoting long schema and table names</title>
+      <link>https://vulnogram.org/CVE-2026-120063</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120063</guid>
+      <description>When psqlODBC quotes a schema or table name into a 128-byte stack buffer, its length check lets it write up to two bytes past the end of the buffer for a long name. The names come from the application&apos;s SQL text: the table of a statement the driver p…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120062 · 7.5 HIGH — psqlODBC SQL injection through SQLSpecialColumns table and schema names</title>
+      <link>https://vulnogram.org/CVE-2026-120062</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120062</guid>
+      <description>SQLSpecialColumns in psqlODBC splices the table and schema names it receives into its catalog query without escaping them, while the other catalog functions escape them. An application that passes an untrusted table or schema name to SQLSpecialColumn…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120061 · 7.5 HIGH — psqlODBC ODBC escape parser stack buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-120061</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120061</guid>
+      <description>The psqlODBC parser for ODBC escape sequences in application SQL text writes the argument offsets of a {fn} escape into a fixed 16-entry stack array without a bound and does not initialize the array. An escape with too many arguments overflows the st…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120060 · 5.9 MEDIUM 🌩️ — psqlODBC does not validate server-supplied counts and lengths</title>
+      <link>https://vulnogram.org/CVE-2026-120060</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120060</guid>
+      <description>psqlODBC trusts counts and lengths in server data in three places. SQLBulkOperations uses a server-supplied row count in a size subtraction that can underflow. SQLStatistics iterates index keys using a server-supplied key count without bounding it to…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120059 · 6.8 MEDIUM 🌩️ — psqlODBC uses a server-supplied column name as a format string</title>
+      <link>https://vulnogram.org/CVE-2026-120059</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120059</guid>
+      <description>For an updatable cursor over a table without OIDs that has an auto-increment int4 column, psqlODBC places that column&apos;s name, as reported by the server, into a printf-style format string. It later expands that string with one argument while it builds…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120058 · 7.5 HIGH 🌩️ — psqlODBC row cache overflow when a later FETCH changes the column count</title>
+      <link>https://vulnogram.org/CVE-2026-120058</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120058</guid>
+      <description>psqlODBC sizes its row cache from the column count of a cursor&apos;s first result, but recomputes the column count from each later FETCH reply without checking that it matches. A server not trusted under current SSL settings can answer a later FETCH with…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120057 · 7.5 HIGH 🌩️ — psqlODBC large-object read overflows the application buffer</title>
+      <link>https://vulnogram.org/CVE-2026-120057</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120057</guid>
+      <description>psqlODBC copies the reply to a large-object read (loread) into the application&apos;s buffer using the length sent by the server, without comparing it to the buffer size. A server not trusted under current SSL settings, or a man-in-the-middle, can return…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 02 Nov 2026 19:09:09 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-116252 · 7.1 HIGH — pgAdmin 4: Materialized view refresh redirects its connection through a crafted database name</title>
       <link>https://vulnogram.org/CVE-2026-116252</link>
@@ -326,95 +419,6 @@
       <description>Integer overflow in the packet buffer growth logic in PgBouncer through 1.25.2 allows an unauthenticated remote attacker to cause a denial of service. Sufficiently large input makes the buffer size computation overflow, leaving the growth loop unable…</description>
       <category>High</category>
       <pubDate>Wed, 23 Sep 2026 16:04:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86864 · 8.8 HIGH — pgAdmin 4: Argument and connection-string injection via the database field in the Backup tool</title>
-      <link>https://vulnogram.org/CVE-2026-86864</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86864</guid>
-      <description>pgAdmin 4&apos;s Backup tool appended the client-supplied &apos;database&apos; field from the /backup/job/&lt;sid&gt;/object request to the pg_dump argument vector as a bare trailing positional argument, without validation. Because pg_dump parses its options with getopt_…</description>
-      <category>High</category>
-      <pubDate>Thu, 17 Sep 2026 15:31:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86863 · 9.8 CRITICAL 🌩️ — pgAdmin 4: Authentication bypass via a client-controlled identity header in Webserver authentication mode</title>
-      <link>https://vulnogram.org/CVE-2026-86863</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86863</guid>
-      <description>pgAdmin 4&apos;s Webserver authentication source is intended to accept an identity asserted by the web server or reverse proxy in front of pgAdmin, delivered through the WSGI/CGI environment. WebserverAuthentication.get_user() read config.WEBSERVER_REMOTE…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 15:30:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86862 · 7.1 HIGH — pgAdmin 4: Connection-string injection via the database field in the Restore and Maintenance tools</title>
-      <link>https://vulnogram.org/CVE-2026-86862</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86862</guid>
-      <description>pgAdmin 4&apos;s Restore and Maintenance tools passed the client-supplied &apos;database&apos; field directly as the value of the --dbname option given to pg_restore and psql. libpq expands a database name containing an equals sign into a full connection string, an…</description>
-      <category>High</category>
-      <pubDate>Thu, 17 Sep 2026 15:30:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86861 · 6 MEDIUM — pgAdmin 4: File Manager save_file writes through a symbolic link planted after the containment check</title>
-      <link>https://vulnogram.org/CVE-2026-86861</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86861</guid>
-      <description>pgAdmin 4&apos;s File Manager save_file endpoint, which backs saving from the Query Tool and ERD, validated the requested path with Filemanager.check_access_permission() and then opened the file for writing with a plain open() call. CVE-2026-7819 had prev…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 17 Sep 2026 15:30:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-83534 · 6.4 MEDIUM — PostgreSQL Anonymizer: Privilege escalation to superuser via anon.anonymize_database_parallel()</title>
-      <link>https://vulnogram.org/CVE-2026-83534</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-83534</guid>
-      <description>PostgreSQL Anonymizer contains a vulnerability in the anon.anonymize_database_parallel() function that allows the owner of a table to run arbitrary code with superuser privilege. The issue is fixed in PostgreSQL Anonymizer 3.2.0 and later versions</description>
-      <category>Medium</category>
-      <pubDate>Sun, 06 Sep 2026 15:25:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19634 · 6.4 MEDIUM — PostgreSQL Anonymizer: SQL injection in import_database_rules() and import_roles_rules() via crafted object names / JSON</title>
-      <link>https://vulnogram.org/CVE-2026-19634</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19634</guid>
-      <description>PostgreSQL Anonymizer contains a SQL injection vulnerability in two import functions. A user can create a malicious JSON document containing specially crafted object names. If a superuser subsequently calls anon.import_database_rules() or anon.import…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 06 Sep 2026 15:25:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19633 · 8.8 HIGH — PostgreSQL Anonymizer: unprivileged masked users can execute code via operators, domain casts and view subqueries</title>
-      <link>https://vulnogram.org/CVE-2026-19633</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19633</guid>
-      <description>PostgreSQL Anonymizer contains a vulnerability that allows unprivileged masked users to execute arbitrary code by abusing operators, domain casts, or view subqueries that carry untrusted expressions. When these objects are evaluated in the context of…</description>
-      <category>High</category>
-      <pubDate>Sun, 06 Sep 2026 15:25:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-14671 · 8.8 HIGH — PostgreSQL refint plan cache type confusion executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-14671</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14671</guid>
-      <description>Type confusion in PostgreSQL module &quot;refint&quot; allows an object creator to execute arbitrary code as the operating system user running the database. The fix for this emerged as a non-security bug report, and the fix appear in the git repository with su…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6471 · 7.2 HIGH — PostgreSQL logical decoding can dlopen arbitrary file</title>
-      <link>https://vulnogram.org/CVE-2026-6471</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6471</guid>
-      <description>Missing authorization in PostgreSQL logical decoding allows a non-superuser holding REPLICATION privilege to dlopen any file visible to the operating system account running the server, via the choice of logical decoding plugin. This in turn runs arbi…</description>
-      <category>High</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6470 · 4.3 MEDIUM — PostgreSQL fails to check type USAGE privilege</title>
-      <link>https://vulnogram.org/CVE-2026-6470</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6470</guid>
-      <description>Missing authorization in PostgreSQL DDL commands allows an object creator to achieve denial of service against ALTER and DROP of the type, via creating a dependency on the type. Many DDL operations did check the privilege, but assigning a range subty…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-6469 · 3.8 LOW — PostgreSQL ALTER TABLE ALTER TYPE resets extended statistics ownership</title>
-      <link>https://vulnogram.org/CVE-2026-6469</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-6469</guid>
-      <description>Incorrect ownership assignment in PostgreSQL ALTER TABLE ALTER TYPE command reassigns ownership of dependent statistics objects to the current user. This wrongly allows the table owner to run DROP STATISTICS and ALTER STATISTICS via this improper own…</description>
-      <category>Low</category>
-      <pubDate>Thu, 13 Aug 2026 13:00:16 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,40 @@
       <title>SUSE — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 02 Nov 2026 10:23:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 20:49:31 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-88811 · 9.1 CRITICAL 🌩️ — Rancher credentials disclosed to third-party hosts by the Rancher Manager meta proxy</title>
+      <link>https://vulnogram.org/CVE-2026-88811</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88811</guid>
+      <description>Missing filtering in the SUSE Rancher Manager meta proxy could cause passed in rancher credentials to be leaked to cloud providers. This affects SUSE Rancher 2.15.0 up to 2.15.3, 2.14.0 up to 2.14.7, 2.13.0 up to 2.13.11,</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 02 Nov 2026 16:48:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88810 · 7.2 HIGH — Privilege escalation in downstream clusters via GlobalRole inheritedNamespacedRules</title>
+      <link>https://vulnogram.org/CVE-2026-88810</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88810</guid>
+      <description>A privilege escalation issue was discovered in Rancher Manager&apos;s role-based access control. The inheritedNamespacedRules field of a GlobalRole propagates permissions into named namespaces of every downstream cluster managed by the Rancher instance, b…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 16:29:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-88809 · 7.6 HIGH — Rancher meta proxy allowlist bypass leading to server-side request forgery</title>
+      <link>https://vulnogram.org/CVE-2026-88809</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88809</guid>
+      <description>A security vulnerability exists in the SUSE Rancher Manager meta proxy endpoint (/meta/proxy). This endpoint is intended to forward requests only to destinations that appear on a configured allowlist. The allowlist decision was evaluated in a place w…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 16:03:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-94290 · 9.1 CRITICAL — Privilege escalation to cluster-admin on the Rancher local cluster through Fleet&apos;s agent management controller</title>
+      <link>https://vulnogram.org/CVE-2026-94290</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94290</guid>
+      <description>SUSE Rancher Fleet clusters reference a kubeconfig secret that the controller uses to install and manage a Fleet agent on the target cluster. The controller did not sufficiently restrict which kubeconfig secrets a Fleet Cluster object was allowed to…</description>
+      <category>Critical</category>
+      <pubDate>Mon, 02 Nov 2026 15:29:41 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-104623 · 6.3 MEDIUM — Authorization bypass on the local cluster shell endpoint allows an unauthorized Rancher user to obtain a shell pod on the management cluster</title>
       <link>https://vulnogram.org/CVE-2026-104623</link>
@@ -394,40 +427,6 @@
       <description>Authorised users of outside applications behind the same corporate identity provider (IdP), for example, a wiki, a ticketing system, an expenses tool, or anything they legitimately hold an account on can log into their system via SAML SSO. The IdP is…</description>
       <category>High</category>
       <pubDate>Thu, 17 Sep 2026 09:32:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78426 · 2 LOW — Logout bypass via alternate JWT spelling</title>
-      <link>https://vulnogram.org/CVE-2026-78426</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78426</guid>
-      <description>The NeuVector JWT verifier accepts noncanonical Base64URL encodings of the same RSA signature field. An attacker holding a valid JWT that has not expired, but was logged out of NeuVector, can continue using the non-expired token with equivalent spell…</description>
-      <category>Low</category>
-      <pubDate>Thu, 17 Sep 2026 09:28:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78428 · 8.8 HIGH 🌩️ — Flaw in Neuvector can result in one user receiving another user&apos;s authenticated session when multiple SSO login attempts occur concurrently</title>
-      <link>https://vulnogram.org/CVE-2026-78428</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78428</guid>
-      <description>For users authenticated through SAML or OpenID Connect (OIDC), this vulnerability can result in one user receiving another user&apos;s authenticated session when multiple SSO login attempts occur concurrently</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 17 Sep 2026 09:19:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44940 · 5.7 MEDIUM — Service token exposure and potential privilege escalation in SUSE Observability</title>
-      <link>https://vulnogram.org/CVE-2026-44940</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44940</guid>
-      <description>The rancher-extension-stackstate extension in SUSE Observability exposes service tokens in plain configuration or insecure locations rather than managing them securely. An attacker with minimal access could obtain the token to gain unauthorized acces…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 17 Sep 2026 06:43:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44950 · 9.5 CRITICAL 🌩️ — fs_read_glyphs() heap buffer overflow via cumulative glyph data overflow in libXfont2</title>
-      <link>https://vulnogram.org/CVE-2026-44950</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44950</guid>
-      <description>fs_read_glyphs() in the libXfont2 font-server client (src/fc/fserve.c) copies each glyph&apos;s bitmap into a single buffer. Existing checks validates only that the source slice (position, length) lies within the source bitmap buffer. It does not check wh…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 10 Sep 2026 08:19:55 GMT</pubDate>
     </item>
   </channel>
 </rss>

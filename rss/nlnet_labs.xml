@@ -11,7 +11,31 @@
       <title>NLnet Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 02 Nov 2026 10:23:40 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 20:49:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-109142 · 8.4 HIGH — Krill treats a &quot;local parent&quot; as already-authenticated, letting a CA operator act as any child of any CA on the same server</title>
+      <link>https://vulnogram.org/CVE-2026-109142</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109142</guid>
+      <description>When a CA&apos;s parent lives on the same Krill server: instead of building and verifying a signed CMS message, it runs the RFC 6492 provisioning exchange in-process and trusts the child identity (child_handle) that the caller put in the parent contact. N…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 15:42:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109141 · 8.4 HIGH — Krill users restricted to one CA can make any other CA delegate its prefixes and publish ROAs for them via bulk import</title>
+      <link>https://vulnogram.org/CVE-2026-109141</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109141</guid>
+      <description>The vulnerability gives a role that is restricted to a list of CAs (cas = [...]) its full permission set for every request that is not tied to a CA, including the bulk import endpoint POST /api/v1/bulk/cas/import. It adds a new child CA under any exi…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 15:42:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-109140 · 8.4 HIGH — Krill login-session tokens reuse their encryption nonce across restarts, so any user who can log in can forge an &quot;admin&quot; token</title>
+      <link>https://vulnogram.org/CVE-2026-109140</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109140</guid>
+      <description>The vulnerability is that Krill encrypts every login-session token with a nonce built from a counter that is reset to 0 on every Krill restart, so the same (key, nonce) pair is used again after each restart.</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 15:41:58 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-72758 · 7.5 HIGH — Routinator may exit on malformed ranges</title>
       <link>https://vulnogram.org/CVE-2026-72758</link>
@@ -387,30 +411,6 @@
       <description>In NLnet Labs Unbound 1.13.2 up to and including 1.25.1, stub or forward zones where the name is below an intermediate labed below a DNSSEC signed zone could be shadowed by the intermediate label&apos;s secure NXDOMAIN answer from the parent. This is caus…</description>
       <category>Low</category>
       <pubDate>Wed, 22 Jul 2026 13:06:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44621 · 5.9 MEDIUM — Libunbound applications configured with &apos;unwanted-reply-threshold&apos; could eventually be abruptly terminated</title>
-      <link>https://vulnogram.org/CVE-2026-44621</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44621</guid>
-      <description>With NLnet Labs Unbound up to and including version 1.25.1, applications using libunbound and configured with &apos;unwanted-reply-threshold&apos;, could eventually be abruptly terminated if the threshold is reached and libunbound needs to call &apos;libworker_allo…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 22 Jul 2026 13:06:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42955 · 3.7 LOW — Extra fix for CVE-2026-40622 to also clamp the TTL of A/AAAA records disallowing a one-time &apos;ghost domain&apos; delegation renewal via glue records</title>
-      <link>https://vulnogram.org/CVE-2026-42955</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42955</guid>
-      <description>In NLnet Labs Unbound 1.16.2 up to and including 1.25.1, a similar vulnerability as with CVE-2026-40622 in the &apos;ghost domain names&apos; family of attacks was found in Unbound that could extend the ghost domain window by up to one cached TTL configured va…</description>
-      <category>Low</category>
-      <pubDate>Wed, 22 Jul 2026 13:05:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-41637 · 3.7 LOW — Degradation of resolution service from improperly accounted client-terminated DNS-over-QUIC queries</title>
-      <link>https://vulnogram.org/CVE-2026-41637</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-41637</guid>
-      <description>In NLnet Labs Unbound 1.22.0 up to and including 1.25.1, client terminated DNS-over-QUIC (DoQ) queries are not accounted properly by Unbound resulting in low-cost inflation of the waiting number of replies for already in-flight resolution queries. Th…</description>
-      <category>Low</category>
-      <pubDate>Wed, 22 Jul 2026 13:04:52 GMT</pubDate>
     </item>
   </channel>
 </rss>

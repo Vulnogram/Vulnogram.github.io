@@ -11,7 +11,40 @@
       <title>Eclipse Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 02 Nov 2026 10:23:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 20:49:32 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-115654 · 6.9 MEDIUM — User-mode module can suspend, terminate, re-prioritise and abort the waits of threads it does not own</title>
+      <link>https://vulnogram.org/CVE-2026-115654</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115654</guid>
+      <description>In Eclipse ThreadX versions 6.0.1 through 6.5.2.202603, the Module Manager&apos;s thread-control services do not check that a thread passed by a user-mode, memory-protected module belongs to that module. Any loaded module can suspend, resume, terminate, r…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 15:15:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115653 · 7 HIGH — Cortex-M module ports save a preempted user-mode module thread&apos;s registers through its unchecked stack pointer in privileged mode</title>
+      <link>https://vulnogram.org/CVE-2026-115653</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115653</guid>
+      <description>In Eclipse ThreadX versions 6.0.1 through 6.5.2.202603, the PendSV handler of the Cortex-M module ports saves a preempted user-mode module thread&apos;s registers in privileged mode at addresses taken from the thread&apos;s stack pointer, without checking that…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 15:10:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114408 · 8.7 HIGH 🌩️ — NULL pointer dereference in ICMPv6 Packet Too Big processing when the destination table is full</title>
+      <link>https://vulnogram.org/CVE-2026-114408</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114408</guid>
+      <description>In Eclipse ThreadX NetX Duo versions 6.4.5.202504 through 6.5.2.202603a, built with IPv6 path MTU discovery, the ICMPv6 Packet Too Big handler uses the destination-table entry it adds without checking that the add succeeded. A sender on the network c…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 02 Nov 2026 15:04:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118052 · 6.8 MEDIUM — Module Manager loaders leave the manager mutex held when a module preamble&apos;s sizes overflow, blocking every later module operation</title>
+      <link>https://vulnogram.org/CVE-2026-118052</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118052</guid>
+      <description>In Eclipse ThreadX versions 6.0.1 through 6.5.2.202603, the Module Manager loaders return an overflow error without releasing the Module Manager mutex when a module preamble declares a data or stack size that overflows the allocation arithmetic. Load…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 14:57:27 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-114278 · 9.8 CRITICAL 🌩️ — Unauthenticated Command Injection via kubeconfig Username in che-machine-exec</title>
       <link>https://vulnogram.org/CVE-2026-114278</link>
@@ -403,41 +436,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 15 Oct 2026 13:28:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110723 · 7.5 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-110723</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110723</guid>
-      <description>In `api-gateway` versions till `1.7.3`, The default rate-limit key resolver, `ClientIpKeyResolver`, derives the per-client bucket key from the leftmost element of the `X-Forwarded-For` request header. That element is supplied by the originating HTTP…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 12:14:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110724 · 7.5 HIGH 🌩️</title>
-      <link>https://vulnogram.org/CVE-2026-110724</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110724</guid>
-      <description>In `api-gateway` versions till `1.7.3`, The default rate-limit key resolver, `ClientIpKeyResolver`, derives the per-client bucket key from the leftmost element of the `X-Forwarded-For` request header. That element is supplied by the originating HTTP…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 12:11:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110726 · 6.5 MEDIUM</title>
-      <link>https://vulnogram.org/CVE-2026-110726</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110726</guid>
-      <description>In `api-gateway` versions till `1.7.3`, The default rate-limit key resolver, `ClientIpKeyResolver`, derives the per-client bucket key from the leftmost element of the `X-Forwarded-For` request header. That element is supplied by the originating HTTP…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 15 Oct 2026 11:58:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18659 · 6.9 MEDIUM 🌩️ — Unauthenticated authorization bypass in ConstraintSecurityHandler - HTTP method-omission matched by substring</title>
-      <link>https://vulnogram.org/CVE-2026-18659</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18659</guid>
-      <description>In Eclipse Jetty, across various versions of `jetty-security`, and `jetty-eeN-security`, and `jetty-eeN-servlet`, the Jakarta Spec constraints defined as `http-method-omission` can be bypassed by using substrings of the defined HTTP Methods.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 09:44:11 GMT</pubDate>
     </item>
   </channel>
 </rss>
