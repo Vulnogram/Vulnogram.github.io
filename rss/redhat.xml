@@ -11,7 +11,39 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 02 Nov 2026 20:49:31 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 03:03:17 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-120831 · 6.5 MEDIUM — Libslirp: libslirp: queue pointer corruption in if_output() leading to denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-120831</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120831</guid>
+      <description>A flaw was found in libslirp in if_output(). When moving a session from the fast queue to the batch queue, the code unlinked and reinserted an arbitrary packet via ifm-&gt;m_nextpkt instead of the session queue head, corrupting queue pointers. A guest g…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 01:55:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120830 · 7.4 HIGH — Libslirp: libslirp: out-of-bounds heap read in icmp_forward_error() leading to information disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-120830</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120830</guid>
+      <description>A flaw was found in libslirp in icmp_forward_error(). When building an ICMP error response, the length of the quoted original IPv4 packet was taken from the IP header without clamping it to the actual buffer length. A truncated or malformed packet co…</description>
+      <category>High</category>
+      <pubDate>Tue, 03 Nov 2026 00:00:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120740 · 2 LOW — Hivex: hivex: denial of service via out-of-bounds read in big-data block processing</title>
+      <link>https://vulnogram.org/CVE-2026-120740</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120740</guid>
+      <description>A flaw was found in hivex. By supplying a specially crafted Windows registry hive file, an attacker can trigger an out-of-bounds memory read when hivex parses registry values containing malformed large data block lists. This issue can cause the appli…</description>
+      <category>Low</category>
+      <pubDate>Mon, 02 Nov 2026 21:54:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116958 · 6.7 MEDIUM — Konflux-ci: unquoted variable expansion in shell command execution</title>
+      <link>https://vulnogram.org/CVE-2026-116958</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116958</guid>
+      <description>A flaw was found in konflux-ci. This vulnerability allows arbitrary code execution due to improper quoting of shell variables in deployment scripts. A local attacker who can supply arguments to the affected scripts could exploit this issue to trigger…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 02 Nov 2026 20:59:48 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-120194 · 7.5 HIGH 🌩️ — Json-glib: json-glib: infinite loop in json_path_query() with negative jsonpath slice step</title>
       <link>https://vulnogram.org/CVE-2026-120194</link>
@@ -396,38 +428,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 28 Oct 2026 17:30:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92171 · 6.5 MEDIUM — Infinispan-operator: infinispan operator: sensitive information disclosure due pod args store</title>
-      <link>https://vulnogram.org/CVE-2026-92171</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92171</guid>
-      <description>A flaw was found in the Infinispan Operator for Red Hat Data Grid. When cross-site (xsite) TLS is enabled, the operator launches the Gossip Router container with keystore and truststore passwords passed as plain-text command-line arguments (`-tls_key…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 14:35:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116497 · 5.5 MEDIUM — Gssproxy: gssproxy: null pointer dereference in gssx_init_sec_context crashes daemon</title>
-      <link>https://vulnogram.org/CVE-2026-116497</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116497</guid>
-      <description>A NULL pointer dereference vulnerability was found in gssproxy. When a GSSX_INIT_SEC_CONTEXT request is received with the target_name field absent, the daemon dereferences the resulting NULL pointer and crashes. The request requires no authentication…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 14:31:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110975 · 7.4 HIGH — Autotune: kruize/autotune: kruize/autotune: datasources credential disclosure</title>
-      <link>https://vulnogram.org/CVE-2026-110975</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110975</guid>
-      <description>A flaw was found in Kruize Autotune. Its REST API ships without an authentication layer, and the endpoints that return datasource configuration — the list-datasources endpoint (GET /datasources) and the datasource-metadata endpoint — serialized datas…</description>
-      <category>High</category>
-      <pubDate>Fri, 23 Oct 2026 17:10:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115486 · 7.1 HIGH — Open-iscsi: open-iscsi: ipv6 neighbor discovery missing option length validation in iscsiuio allows arp table poisoning</title>
-      <link>https://vulnogram.org/CVE-2026-115486</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115486</guid>
-      <description>A flaw was found in the iscsiuio component of open-iscsi. The IPv6 Neighbor Discovery handler accesses link-layer address options at a fixed offset without verifying the packet contains them. Additionally, the ARP table is updated unconditionally wit…</description>
-      <category>High</category>
-      <pubDate>Fri, 23 Oct 2026 00:16:34 GMT</pubDate>
     </item>
   </channel>
 </rss>
