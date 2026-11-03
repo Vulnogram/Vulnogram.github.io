@@ -11,7 +11,48 @@
       <title>MongoDB, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 03 Nov 2026 10:21:22 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 18:48:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-119674 · 3.7 LOW — mongorestore may restore encoded collection names into an unintended collection</title>
+      <link>https://vulnogram.org/CVE-2026-119674</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119674</guid>
+      <description>MongoDB Database Tools mongorestore incorrectly URL-decodes an original collection name read from metadata when the corresponding dump filename has been truncated. A database user who can create and populate a suitably encoded collection can cause a…</description>
+      <category>Low</category>
+      <pubDate>Tue, 03 Nov 2026 16:21:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119673 · 2.8 LOW — mongofiles may write outside the working directory through a symlink</title>
+      <link>https://vulnogram.org/CVE-2026-119673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119673</guid>
+      <description>MongoDB Database Tools mongofiles does not resolve existing parent-directory symlinks when validating output paths for get_regex. An unauthorized user who can both upload a GridFS file and place a symlink in the operator&apos;s download working directory…</description>
+      <category>Low</category>
+      <pubDate>Tue, 03 Nov 2026 16:14:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119672 · 5.9 MEDIUM — mongofiles may disclose GridFS content to standard output through a stored filename</title>
+      <link>https://vulnogram.org/CVE-2026-119672</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119672</guid>
+      <description>MongoDB Database Tools mongofiles uses a database-stored GridFS filename as the output destination for get_id when --local is not specified. A user who can modify the file metadata can set the stored filename to &apos;-&apos;, causing a later authorized retrie…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 16:09:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119675 · 8.6 HIGH — mongorestore may bypass collection guards through a system.buckets prefix</title>
+      <link>https://vulnogram.org/CVE-2026-119675</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119675</guid>
+      <description>MongoDB Database Tools mongorestore inconsistently handles the system.buckets. prefix when validating collection names in an untrusted dump. A specially crafted collection name can bypass special-collection guards and operator namespace filters, caus…</description>
+      <category>High</category>
+      <pubDate>Tue, 03 Nov 2026 16:06:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119179 · 8.3 HIGH 🌩️ — MongoDB Node.js driver: Connection pool desynchronization after operation timeout can expose other user&apos;s data</title>
+      <link>https://vulnogram.org/CVE-2026-119179</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119179</guid>
+      <description>A flaw in the connection management layer of the MongoDB Node.js driver can leave a pooled network connection in the pool for reuse while data from an earlier operation is still outstanding on it. In applications that enable an optional client-side o…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 13:33:39 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-116641 · 7.6 HIGH 🌩️ — The DB Tools trust certificates issued by recoverable eMudhra intermediate CAs</title>
       <link>https://vulnogram.org/CVE-2026-116641</link>
@@ -387,49 +428,6 @@
       <description>The client-side field level encryption support in the MongoDB Python Driver can treat a key management endpoint value ending in &quot;.sock&quot; as a local Unix domain socket path rather than a remote host. A user with write access to the encryption key metad…</description>
       <category>Medium</category>
       <pubDate>Thu, 24 Sep 2026 18:18:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96745 · 6.3 MEDIUM 🌩️ — PHP object injection via unsuppressible __pclass class inference in command monitoring events</title>
-      <link>https://vulnogram.org/CVE-2026-96745</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96745</guid>
-      <description>Deserialization of untrusted data in the command monitoring support of the MongoDB PHP Driver can cause class names embedded in document content to be honored when the driver builds monitoring event objects. When an application registers a command mo…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 24 Sep 2026 15:51:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96746 · 8.3 HIGH 🌩️ — Heap buffer overflow via mid-scan command list growth in client topology monitoring</title>
-      <link>https://vulnogram.org/CVE-2026-96746</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96746</guid>
-      <description>An out-of-bounds write in the connection-monitoring logic of the MongoDB C Driver may allow an unauthenticated party who controls name resolution and the responses of the hosts named in a client&apos;s connection string to write beyond the end of a heap b…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 24 Sep 2026 15:51:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96750 · 7.3 HIGH — Shell script injection via server-supplied database name in Open MongoDB shell</title>
-      <link>https://vulnogram.org/CVE-2026-96750</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96750</guid>
-      <description>MongoDB Compass can interpolate a database name without escaping into the initial input of its embedded MongoDB shell when a user opens the shell from that database&apos;s view. A user with privileges to create databases on a server that a Compass user co…</description>
-      <category>High</category>
-      <pubDate>Thu, 24 Sep 2026 15:51:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96744 · 7.1 HIGH — Unauthorized cache lock takeover via expression injection in lock owner values in MongoDB integration for Laravel</title>
-      <link>https://vulnogram.org/CVE-2026-96744</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96744</guid>
-      <description>Improper neutralization of special elements in data query logic in the cache lock implementation of the MongoDB integration for Laravel can cause a caller-supplied lock owner value to be evaluated as an aggregation expression rather than as a literal…</description>
-      <category>High</category>
-      <pubDate>Thu, 24 Sep 2026 15:51:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-93759 · 8.8 HIGH 🌩️ — Server-side JavaScript injection via string query criteria bypassing the strict operator allowlist</title>
-      <link>https://vulnogram.org/CVE-2026-93759</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93759</guid>
-      <description>Mongoid does not neutralize a string-typed query criterion supplied to its query builder, and instead passes it to the database as a server-side JavaScript expression. An unauthenticated party able to influence the value an application supplies as a…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 18 Sep 2026 17:27:51 GMT</pubDate>
     </item>
   </channel>
 </rss>

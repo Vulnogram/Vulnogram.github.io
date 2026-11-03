@@ -11,7 +11,41 @@
       <title>Eclipse Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 03 Nov 2026 10:21:22 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 18:48:46 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-118487 · 7.5 HIGH 🌩️ — Heap exhaustion via unbounded line accumulation in Vert.x STOMP FrameParser</title>
+      <link>https://vulnogram.org/CVE-2026-118487</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118487</guid>
+      <description>In Eclipse Vert.x versions [4.0.0, 4.5.35] or [5.0.0, 5.2.2], the `FrameParser` in vertx-stomp creates a `RecordParser` without setting `maxRecordSize`, so any peer that streams bytes continuously without a newline character causes the parser to accu…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 15:27:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118488 · 5.9 MEDIUM 🌩️ — Heap exhaustion via unbounded simple string or bulk string allocation in Vert.x Redis client</title>
+      <link>https://vulnogram.org/CVE-2026-118488</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118488</guid>
+      <description>In Eclipse Vert.x versions [4.0.0, 4.5.35] or [5.0.0, 5.2.2], when a malicious server keeps sending bytes on an EOL-terminated line (not length-prefixed, for example a simple string [1]), we&apos;ll keep growing the buffer without bounds, eventually leadi…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 15:13:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118489 · 7.5 HIGH 🌩️ — CachingWebClient shares user-specific HTTP responses across users via the shared cache tier</title>
+      <link>https://vulnogram.org/CVE-2026-118489</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118489</guid>
+      <description>In Eclipse Vert.x versions [4.0.0,4.5.35] or [5.0.0,5.2.2], when one `CachingWebClient` is shared across users — the documented pattern of a per-user `WebClientSession` over a shared caching client — a response that is specific to one user but is cac…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 14:55:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-89295 — Unauthenticated memory-exhaustion denial of service in Eclipse Mnestix AAS Generator unbounded count parameter</title>
+      <link>https://vulnogram.org/CVE-2026-89295</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89295</guid>
+      <description>In Eclipse Mnestix AAS Generator versions 0.1.0 up until but excluding 1.5.0, a practical upper bound on the client-supplied count parameter of the GET /api/v1/IdGenerator/submodelIds/{count} and GET /api/v2/IdGenerator/submodelIds/{count} endpoints…</description>
+      <pubDate>Tue, 03 Nov 2026 13:30:36 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-89293 · 8.8 HIGH 🌩️ — Missing server-side authorization in Eclipse Mnestix Browser admin server actions allows unauthenticated configuration tampering</title>
       <link>https://vulnogram.org/CVE-2026-89293</link>
@@ -403,38 +437,6 @@
       <description>The PNG chunk reader has no notion of chunk ordering. It records whether an IDAT has been seen and whether a tRNS has already supplied transparency, but nothing prevents an IHDR being read a second time. A PNG carries exactly one IHDR and it is the f…</description>
       <category>High</category>
       <pubDate>Tue, 20 Oct 2026 14:47:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95111 · 4.8 MEDIUM — Module queue front-send validates a word count as a byte count</title>
-      <link>https://vulnogram.org/CVE-2026-95111</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95111</guid>
-      <description>A memory-protected ThreadX module&apos;s queue request reaches the Module Manager&apos;s dispatch layer, which decides how much of the module&apos;s buffer the privileged queue copy may touch and hands that extent to the module port&apos;s range check. A queue&apos;s `tx_que…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 14:35:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96402 · 5.2 MEDIUM — USBX PIMA/MTP host class reads past its receive buffer when a device over-reports its object handle count</title>
-      <link>https://vulnogram.org/CVE-2026-96402</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96402</guid>
-      <description>A malicious USB MTP/PTP device can cause the USBX host to read past a heap buffer during ordinary object enumeration, leaking adjacent heap contents to the application or faulting on an unmapped page.</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 14:31:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97400 · 6.8 MEDIUM — jdmpview / DTFJ reads arbitrary local files and makes arbitrary outbound requests when opening a third-party diagnostic dump bundle (XXE in XMLIndexReader)</title>
-      <link>https://vulnogram.org/CVE-2026-97400</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97400</guid>
-      <description>In Eclipse OpenJ9 versions up to 0.63, opening a supplied diagnostic dump bundle with the jdmpview tool, or equivalent DTFJ code, may cause the analyst&apos;s machine to read an arbitrary local file named inside the bundle and send its contents to an arbi…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 14:08:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96406 · 4.9 MEDIUM — VIDEO class descriptor walk consumes device-controlled wTotalLength as its bound</title>
-      <link>https://vulnogram.org/CVE-2026-96406</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96406</guid>
-      <description>A VideoStreaming interface reports the size of its whole class-specific descriptor block in the `wTotalLength` field of its input header. The USBX host recorded that figure and used it as the budget for walking the format, frame and frame-interval de…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 13:17:37 GMT</pubDate>
     </item>
   </channel>
 </rss>

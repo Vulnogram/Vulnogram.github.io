@@ -11,7 +11,39 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 03 Nov 2026 10:21:22 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 18:48:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-85035 · 8.8 HIGH — Use-after-free via dynamically allocated message queue retained by the CAN RX filter</title>
+      <link>https://vulnogram.org/CVE-2026-85035</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85035</guid>
+      <description>The can_add_rx_filter_msgq() system call installs a CAN RX filter whose callback (can_msgq_put() in drivers/can/can_common.c) is handed the caller&apos;s struct k_msgq * as user_data. The controller driver stores that raw pointer in its filter table and d…</description>
+      <category>High</category>
+      <pubDate>Tue, 03 Nov 2026 13:36:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85034 · 6.7 MEDIUM — Out-of-bounds write in the Bluetooth GATT client: oversized notification and indication values delivered to subscribers</title>
+      <link>https://vulnogram.org/CVE-2026-85034</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85034</guid>
+      <description>The Bluetooth host&apos;s GATT client passed the value of a received Handle Value Notification, Handle Value Indication or Multiple Handle Value Notification to bt_gatt_subscribe_params::notify callbacks using only the length derived from the received ATT…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 13:36:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85033 · 4.6 MEDIUM — Bluetooth Classic AVRCP Target: missing TX cleanup on disconnect permanently stalls vendor-dependent responses and leaks them to the next peer</title>
+      <link>https://vulnogram.org/CVE-2026-85033</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85033</guid>
+      <description>The AVRCP Target role in subsys/bluetooth/host/classic/avrcp.c keeps its vendor-dependent response transmit state in a per-connection object selected by connection index (get_avrcp_tg()), with the per-transfer context (tid, sent_len, and the BT_AVRCP…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 13:36:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85032 · 4.8 MEDIUM — Use-after-free in the MCTP over USB binding when the host disables the class while RX parsing is in progress</title>
+      <link>https://vulnogram.org/CVE-2026-85032</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85032</guid>
+      <description>The MCTP over USB device class in subsys/pmci/mctp/mctp_usb.c splits RX handling across two threads: the system workqueue runs mctp_usb_class_out_work(), which parses host OUT data byte by byte and fills a packet buffer at usb-&gt;rx_pkt, while the USB…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 13:36:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-82962 · 6.5 MEDIUM — Out-of-bounds write in Zephyr Ethernet L2 when adding the link-layer header to a forwarded packet</title>
       <link>https://vulnogram.org/CVE-2026-82962</link>
@@ -379,38 +411,6 @@
       <description>The Goodix GT9xx input driver in drivers/input/input_gt911.c reads the touch point count from the controller&apos;s status register and masks it with GT911_TOUCH_POINTS_MSK (0x0F), yielding a value of 0..15. In gt911_process() that value is used directly…</description>
       <category>Medium</category>
       <pubDate>Sun, 11 Oct 2026 17:14:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19669 · 7.8 HIGH — Unbounded variable-length array in fuel gauge syscall verifiers allows kernel stack overflow from user mode</title>
-      <link>https://vulnogram.org/CVE-2026-19669</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19669</guid>
-      <description>The user-mode syscall verifiers z_vrfy_fuel_gauge_get_props() and z_vrfy_fuel_gauge_set_props() in drivers/fuel_gauge/fuel_gauge_syscall_handlers.c declared two variable-length arrays, union fuel_gauge_prop_val k_vals[len] and fuel_gauge_prop_t k_pro…</description>
-      <category>High</category>
-      <pubDate>Sun, 11 Oct 2026 17:14:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19575 · 7.8 HIGH — Type confusion in the device_deinit system call allows user-mode threads to execute arbitrary kernel code</title>
-      <link>https://vulnogram.org/CVE-2026-19575</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19575</guid>
-      <description>The user-mode verification handler for the device_deinit() system call, z_vrfy_device_deinit() in kernel/device.c, validated its dev argument with K_SYSCALL_OBJ_INIT(dev, K_OBJ_ANY). k_object_validate() short-circuits its type comparison when the req…</description>
-      <category>High</category>
-      <pubDate>Fri, 09 Oct 2026 07:16:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19569 · 8.8 HIGH — Integer overflow in dynamic kernel object allocation allows user-mode threads to corrupt the kernel heap</title>
-      <link>https://vulnogram.org/CVE-2026-19569</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19569</guid>
-      <description>dynamic_object_create() in kernel/userspace/userspace.c computed the backing allocation for a dynamically allocated kernel object as obj_size_get(otype) + size, and for thread stack elements as STACK_ELEMENT_DATA_SIZE(size) (a round-up plus fixed ove…</description>
-      <category>High</category>
-      <pubDate>Fri, 09 Oct 2026 07:16:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19574 · 7 HIGH — ARM64 MMU can assign an in-use ASID to a new memory domain, breaking user-mode memory isolation</title>
-      <link>https://vulnogram.org/CVE-2026-19574</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19574</guid>
-      <description>The ARM64 MMU back-end allocated address space identifiers (ASIDs) for memory domains with a bare round-robin counter in arch_mem_domain_init() (arch/arm64/core/mmu.c). VM_ASID_BITS is 8, so only 255 ASIDs exist; once the counter wrapped, arch_mem_do…</description>
-      <category>High</category>
-      <pubDate>Fri, 09 Oct 2026 07:16:43 GMT</pubDate>
     </item>
   </channel>
 </rss>
