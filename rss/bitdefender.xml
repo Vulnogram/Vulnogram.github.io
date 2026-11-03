@@ -11,7 +11,52 @@
       <title>Bitdefender — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 03 Nov 2026 03:03:19 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 10:21:22 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-118448 · 6.9 MEDIUM 👻 — Uninitialized output buffer returned after nd_to_text failure in pybddisasm</title>
+      <link>https://vulnogram.org/CVE-2026-118448</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118448</guid>
+      <description>A use of uninitialized memory vulnerability in the pybddisasm Python bindings affects nd_to_text. If the underlying text conversion fails, including failures caused by invalid parameters, the output buffer may remain uninitialized while still being c…</description>
+      <category>Medium</category>
+      <category>Unsupported When Assigned</category>
+      <pubDate>Tue, 03 Nov 2026 09:01:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118447 · 4.8 MEDIUM 👻 — Uninitialized INSTRUX contents returned after decoding failure in pybddisasm</title>
+      <link>https://vulnogram.org/CVE-2026-118447</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118447</guid>
+      <description>A use of uninitialized memory vulnerability in the pybddisasm Python bindings may disclose process memory when instruction decoding fails. The nd_decode, nd_decode_ex, nd_decode_ex2, and nd_decode_with_context functions may return an INSTRUX object w…</description>
+      <category>Medium</category>
+      <category>Unsupported When Assigned</category>
+      <pubDate>Tue, 03 Nov 2026 09:01:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118446 · 6.9 MEDIUM 👻 — Use-after-free in INSTRUX array members in pybddisasm</title>
+      <link>https://vulnogram.org/CVE-2026-118446</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118446</guid>
+      <description>A use-after-free vulnerability in the pybddisasm Python bindings affects array-valued members of INSTRUX objects, including ND_OPERAND arrays. These arrays are exposed as Python lists whose elements reference memory owned by the parent INSTRUX object…</description>
+      <category>Medium</category>
+      <category>Unsupported When Assigned</category>
+      <pubDate>Tue, 03 Nov 2026 09:00:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118445 · 6.9 MEDIUM 👻 — Use-after-free in INSTRUX structure members in pybddisasm</title>
+      <link>https://vulnogram.org/CVE-2026-118445</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118445</guid>
+      <description>A use-after-free vulnerability in the pybddisasm Python bindings affects structure-valued members of INSTRUX objects. These members are exposed through Python objects that reference memory owned by the parent INSTRUX object. A retained reference to a…</description>
+      <category>Medium</category>
+      <category>Unsupported When Assigned</category>
+      <pubDate>Tue, 03 Nov 2026 09:00:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118444 · 4.8 MEDIUM 👻 — Out-of-bounds reads during instruction decoding in pybddisasm</title>
+      <link>https://vulnogram.org/CVE-2026-118444</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118444</guid>
+      <description>Out-of-bounds read vulnerabilities in the pybddisasm Python bindings may disclose adjacent process memory during instruction decoding. The nd_decode function may read up to 15 bytes without checking the actual length of the supplied Python buffer. Th…</description>
+      <category>Medium</category>
+      <category>Unsupported When Assigned</category>
+      <pubDate>Tue, 03 Nov 2026 09:00:36 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-6851 · 7 HIGH — Improper link resolution before file access in Bitdefender Total Security via Link Following (VA-13681)</title>
       <link>https://vulnogram.org/CVE-2026-6851</link>
@@ -390,46 +435,6 @@
       <description>Improper JPAKE implementation allows offline PIN brute-forcing due to the initialization of random values to a known value, which leads to unauthorized authentication to amzn.lightning services. This issue affects: Amazon Fire TV Stick 3rd gen versio…</description>
       <category>High</category>
       <pubDate>Wed, 03 May 2023 12:33:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-1384 · 4.3 MEDIUM</title>
-      <link>https://vulnogram.org/CVE-2023-1384</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-1384</guid>
-      <description>The setMediaSource function on the amzn.thin.pl service does not sanitize the &quot;source&quot; parameter allowing for arbitrary javascript code to be run This issue affects: Amazon Fire TV Stick 3rd gen versions prior to 6.2.9.5. Insignia TV with FireOS vers…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 03 May 2023 12:10:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2023-1383 · 5.4 MEDIUM</title>
-      <link>https://vulnogram.org/CVE-2023-1383</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2023-1383</guid>
-      <description>An Improper Enforcement of Behavioral Workflow vulnerability in the exchangeDeviceServices function on the amzn.dmgr service allowed an attacker to register services that are only locally accessible. This issue affects: Amazon Fire TV Stick 3rd gen v…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 03 May 2023 11:42:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-3369 · 8.6 HIGH — Improper handling of registry symbolic links in Bitdefender Engines</title>
-      <link>https://vulnogram.org/CVE-2022-3369</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-3369</guid>
-      <description>An Improper Access Control vulnerability in the bdservicehost.exe component, as used in Bitdefender Engines for Windows, allows an attacker to delete privileged registry keys by pointing a Registry symlink to a privileged key. This issue affects: Bit…</description>
-      <category>High</category>
-      <pubDate>Tue, 01 Nov 2022 07:45:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-2472 · 7.6 HIGH — Improper Initialization vulnerability in local server authentication logic</title>
-      <link>https://vulnogram.org/CVE-2022-2472</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-2472</guid>
-      <description>Improper Initialization vulnerability in the local server component of EZVIZ CS-C6N-A0-1C2WFR allows a local attacker to read the contents of the memory space containing the encrypted admin password. This issue affects: EZVIZ CS-C6N-A0-1C2WFR version…</description>
-      <category>High</category>
-      <pubDate>Thu, 15 Sep 2022 13:20:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-2471 · 9.9 CRITICAL — Stack-Based Buffer Overflow Vulnerability in the EZVIZ Motion Detection component</title>
-      <link>https://vulnogram.org/CVE-2022-2471</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-2471</guid>
-      <description>Stack-based Buffer Overflow vulnerability in the EZVIZ Motion Detection component as used in camera models CS-CV248, CS-C6N-A0-1C2WFR, CS-DB1C-A0-1E2W2FR, CS-C6N-B0-1G2WF, CS-C3W-A0-3H4WFRL allows a remote attacker to execute remote code on the devic…</description>
-      <category>Critical</category>
-      <pubDate>Thu, 15 Sep 2022 13:15:15 GMT</pubDate>
     </item>
   </channel>
 </rss>

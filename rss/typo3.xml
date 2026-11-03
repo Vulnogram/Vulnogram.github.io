@@ -11,7 +11,66 @@
       <title>TYPO3 Association — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 03 Nov 2026 03:03:19 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 10:21:22 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-120327 · 5.3 MEDIUM 🌩️ — Open Redirection in extension &quot;Mail&quot; (mail)</title>
+      <link>https://vulnogram.org/CVE-2026-120327</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120327</guid>
+      <description>The click tracking middleware accepts an arbitrary target URL and redirects to it. Attackers can misuse links to the website to redirect users to external sites.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 09:56:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120328 · 6.9 MEDIUM 🌩️ — Information Disclosure in extension &quot;Mail&quot; (mail)</title>
+      <link>https://vulnogram.org/CVE-2026-120328</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120328</guid>
+      <description>The click tracking middleware does not validate the authentication code of a recipient if the code is omitted. Unauthenticated attackers can retrieve personal data of newsletter recipients, which is inserted into links of sent mails.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 09:56:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120329 · 5.3 MEDIUM — Broken Access Control in extension &quot;Mail&quot; (mail)</title>
+      <link>https://vulnogram.org/CVE-2026-120329</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120329</guid>
+      <description>Saving the configuration of the mail backend module writes submitted settings to the page TSconfig without restricting them to the configuration options of the module. Backend users with access to the mail module can write arbitrary page TSconfig.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 09:56:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120330 · 7.1 HIGH — Broken Access Control in extension &quot;Mail&quot; (mail)</title>
+      <link>https://vulnogram.org/CVE-2026-120330</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120330</guid>
+      <description>Backend actions and ajax routes of the mail module do not check whether the backend user has access to the page of the requested mail or recipient group. Backend users with access to the mail module can view, change, send and export mails and recipie…</description>
+      <category>High</category>
+      <pubDate>Tue, 03 Nov 2026 09:56:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120331 · 5.3 MEDIUM — Server-Side Request Forgery in extension &quot;Mail&quot; (mail)</title>
+      <link>https://vulnogram.org/CVE-2026-120331</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120331</guid>
+      <description>Content of external URL mails, their stylesheets and images to embed is fetched by the server without validating the target host. Backend users with access to the mail module can make the server send requests to hosts in the internal network.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 09:56:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120332 · 5.1 MEDIUM — Cross-Site Scripting in extension &quot;Mail&quot; (mail)</title>
+      <link>https://vulnogram.org/CVE-2026-120332</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120332</guid>
+      <description>The HTML content of mails and tracked URLs are rendered unescaped in the backend module. Backend users with access to the mail module can inject arbitrary HTML and JavaScript, which is executed in the context of other backend users viewing the mail p…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 09:56:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120333 · 8.8 HIGH 🌩️ — Broken Access Control in extension &quot;Frontend User Registration&quot; (sf_register)</title>
+      <link>https://vulnogram.org/CVE-2026-120333</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120333</guid>
+      <description>The actions linked in the emails of the extension (e.g. to confirm a registration or the deletion of an account) do not reject requests with a missing or invalid hash. Instead, the frontend user given in the request is used. Unauthenticated attackers…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 09:56:03 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-112069 · 6.3 MEDIUM 🌩️ — Broken Access Control in extension &quot;FAL Protect&quot; (fal_protect)</title>
       <link>https://vulnogram.org/CVE-2026-112069</link>
@@ -377,63 +436,6 @@
       <description>The referrer enforcement introduced with TYPO3-CORE-SA-2020-006 (CVE-2020-11069) became ineffective in TYPO3 v13.0, where TYPO3 CMS started serving the backend and Install Tool applications from the site&apos;s main entry script instead of the dedicated t…</description>
       <category>High</category>
       <pubDate>Tue, 11 Aug 2026 07:29:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-15305 · 6.3 MEDIUM 🌩️ — TYPO3 CMS - Unrestricted File Upload in Form Framework</title>
-      <link>https://vulnogram.org/CVE-2026-15305</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15305</guid>
-      <description>Users were able to upload files with arbitrary MIME types to forms using FileUpload or ImageUpload elements with allowedMimeTypes configured. The restriction was not enforced server-side because the MimeTypeValidator was registered during form buildi…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 14 Jul 2026 12:45:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49742 · 7.1 HIGH — TYPO3 CMS - Broken Access Control in Media Module</title>
-      <link>https://vulnogram.org/CVE-2026-49742</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49742</guid>
-      <description>Backend users with file download permissions were able to download files from the fallback storage of the file abstraction layer (FAL) via the Media Module. Since the fallback storage resolves paths relative to the server&apos;s document root, this could…</description>
-      <category>High</category>
-      <pubDate>Tue, 09 Jun 2026 10:54:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49741 · 8.7 HIGH — TYPO3 CMS - Privilege Escalation &amp; SQL Injection in Form Framework</title>
-      <link>https://vulnogram.org/CVE-2026-49741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49741</guid>
-      <description>Backend users with write access to the form_definition database table were able to directly create, update, or delete form definition records via DataHandler, bypassing the Form Framework&apos;s persistence validation and permission checks. This allowed i…</description>
-      <category>High</category>
-      <pubDate>Tue, 09 Jun 2026 10:54:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49740 · 6.3 MEDIUM — TYPO3 CMS - Insecure Deserialization in Core API</title>
-      <link>https://vulnogram.org/CVE-2026-49740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49740</guid>
-      <description>TYPO3&apos;s cache frontend (VariableFrontend) and persistent key-value store (Registry) deserialized PHP payloads without integrity validation or class restrictions. An attacker with write access to the underlying storage backend (cache store or sys_regi…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 09 Jun 2026 10:53:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49738 · 2.1 LOW — TYPO3 CMS - Broken Access Control in File Abstraction Layer</title>
-      <link>https://vulnogram.org/CVE-2026-49738</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49738</guid>
-      <description>The path allowance check in GeneralUtility::isAllowedAbsPath() performed a plain string prefix comparison without requiring a directory separator boundary, causing a path like /var/www/html-other/secret.yaml to be incorrectly accepted as valid when t…</description>
-      <category>Low</category>
-      <pubDate>Tue, 09 Jun 2026 10:53:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47352 · 5.3 MEDIUM — TYPO3 CMS - Broken Access Control in Backend API</title>
-      <link>https://vulnogram.org/CVE-2026-47352</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47352</guid>
-      <description>Authenticated backend users were able to retrieve file metadata via several Backend API routes without proper permission checks, allowing access to files outside their permitted file mounts or storages. This issue affects TYPO3 CMS versions before 10…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 09 Jun 2026 10:53:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-47351 · 5.3 MEDIUM — TYPO3 CMS - Broken Access Control in Clipboard</title>
-      <link>https://vulnogram.org/CVE-2026-47351</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-47351</guid>
-      <description>Backend users were able to insert arbitrary records and files into the TYPO3 clipboard without proper read permission checks, which allowed users to gather information about records and files they were not authorized to view. This issue affects TYPO3…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 09 Jun 2026 10:52:38 GMT</pubDate>
     </item>
   </channel>
 </rss>
