@@ -11,7 +11,71 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 04 Nov 2026 03:41:28 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 11:54:23 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-87044 · 6.5 MEDIUM — Memory leak in the Mbed TLS crypto shim on failed cipher/AEAD operations leads to remotely triggered crypto denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-87044</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87044</guid>
+      <description>The Mbed TLS crypto shim driver in drivers/crypto/crypto_mbedtls_shim.c drives PSA multipart cipher and AEAD operations. In mbedtls_cbc() and mbedtls_aead(), every error path after a successful psa_cipher_encrypt_setup() / psa_aead_decrypt_setup() re…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 04 Nov 2026 06:09:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87043 · 4.8 MEDIUM — sys_rand_get() silently returns an unwritten buffer when the entropy device is not ready</title>
+      <link>https://vulnogram.org/CVE-2026-87043</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87043</guid>
+      <description>The entropy-device random number generator in subsys/random/random_entropy_device.c returned early with -ENODEV from rand_get() as soon as device_is_ready() failed, before reaching the non-cryptographic system-timer fallback further down the same fun…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 04 Nov 2026 06:09:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87041 · 7.8 HIGH — Inverted memory-permission check in the RTIO syscall verifier allows a user-mode thread to read and write arbitrary kernel memory</title>
+      <link>https://vulnogram.org/CVE-2026-87041</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87041</guid>
+      <description>The RTIO submission-queue verifier rtio_vrfy_sqe() in subsys/rtio/rtio_syscalls.c (subsys/rtio/rtio_handlers.c before v4.3.0) accumulated the results of K_SYSCALL_MEMORY() into its valid_sqe flag with &amp;=. That macro returns nonzero on failure (it is…</description>
+      <category>High</category>
+      <pubDate>Wed, 04 Nov 2026 06:09:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87040 · 8.3 HIGH — Bluetooth LE Controller accepts received PDUs whose length field exceeds the configured maximum receive length, causing out-of-bounds read and write</title>
+      <link>https://vulnogram.org/CVE-2026-87040</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87040</guid>
+      <description>The nRF link-layer receive paths of the open-source Bluetooth LE Controller did not validate the on-air LENGTH field of a received PDU against the maximum receive length that was used to program the radio. isr_rx_pdu() in subsys/bluetooth/controller/…</description>
+      <category>High</category>
+      <pubDate>Wed, 04 Nov 2026 06:09:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87039 · 7.8 HIGH — I2S configure syscall handler passes an unvalidated user-supplied kernel object pointer to drivers</title>
+      <link>https://vulnogram.org/CVE-2026-87039</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87039</guid>
+      <description>The user-mode syscall verifier z_vrfy_i2s_configure() in drivers/i2s/i2s_handlers.c copies the caller&apos;s struct i2s_config in from user memory and then, when cfg-&gt;frame_clk_freq is 0 (the API&apos;s &quot;unconfigure the stream&quot; request), jumps straight to z_im…</description>
+      <category>High</category>
+      <pubDate>Wed, 04 Nov 2026 06:09:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87038 · 7 HIGH — Time-of-check/time-of-use double fetch in the Zephyr i3c_transfer() syscall handler allows kernel-mode control-flow hijack from user mode</title>
+      <link>https://vulnogram.org/CVE-2026-87038</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87038</guid>
+      <description>The user-mode verification handler for the i3c_transfer() system call, z_vrfy_i3c_transfer() in drivers/i3c/i3c_handlers.c, validated the caller-supplied struct i3c_device_desc in place instead of snapshotting it. It confirmed only that the descripto…</description>
+      <category>High</category>
+      <pubDate>Wed, 04 Nov 2026 06:09:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16511 · 8.8 HIGH — Unvalidated user pointers in RTIO syscall verifiers allow a user-mode thread to write kernel memory</title>
+      <link>https://vulnogram.org/CVE-2026-16511</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16511</guid>
+      <description>Two RTIO syscall verifiers, in subsys/rtio/rtio_syscalls.c (subsys/rtio/rtio_handlers.c before v4.3.0), did not validate user-supplied pointers before the kernel wrote through them. z_vrfy_rtio_sqe_cancel() performed no validation at all. It passed t…</description>
+      <category>High</category>
+      <pubDate>Wed, 04 Nov 2026 06:09:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-85036 · 5.7 MEDIUM — Bluetooth Classic AVDTP session reuse re-initializes a queued work item, corrupting the system work queue</title>
+      <link>https://vulnogram.org/CVE-2026-85036</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85036</guid>
+      <description>The Bluetooth Classic AVDTP layer defers releasing a session&apos;s stream endpoints: bt_avdtp_l2cap_disconnected() in subsys/bluetooth/host/classic/avdtp.c ends with k_work_submit(&amp;session-&gt;_release_work), placing the embedded struct k_work on the system…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 04 Nov 2026 06:09:01 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-85035 · 8.8 HIGH — Use-after-free via dynamically allocated message queue retained by the CAN RX filter</title>
       <link>https://vulnogram.org/CVE-2026-85035</link>
@@ -347,70 +411,6 @@
       <description>The Bluetooth Link Layer control procedure code in subsys/bluetooth/controller/ll_sw/ull_llcp_conn_upd.c retains the received RX node while a Connection Update / Connection Parameter procedure waits for its instant, so the node can later carry the ho…</description>
       <category>Medium</category>
       <pubDate>Sun, 11 Oct 2026 17:15:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19738 · 6.5 MEDIUM — Retained RX node leak and reachable assertion in Bluetooth Controller CIS Create procedures</title>
-      <link>https://vulnogram.org/CVE-2026-19738</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19738</guid>
-      <description>The Bluetooth Link Layer Control Procedure (LLCP) implementation for Connected Isochronous Stream (CIS) creation retains an RX node (ctx-&gt;node_ref.rx, marked NODE_RX_TYPE_RETAIN) so it can later be reused as the host notification — on the peripheral…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 11 Oct 2026 17:15:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19935 · 7.5 HIGH — Use-after-free of an L2CAP CoC channel object in the Zephyr Bluetooth host: RX work item is not cancelled on channel teardown</title>
-      <link>https://vulnogram.org/CVE-2026-19935</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19935</guid>
-      <description>The Bluetooth LE host queues received L2CAP connection-oriented channel (CoC) data for deferred processing through a struct k_work embedded in the channel object (le_chan-&gt;rx_work, handler l2cap_rx_process()) whenever the channel uses a dynamic PSM (…</description>
-      <category>High</category>
-      <pubDate>Sun, 11 Oct 2026 17:15:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19737 · 5.5 MEDIUM — NULL pointer dereference in the ESP32 I2S driver when triggering an unsupported direction</title>
-      <link>https://vulnogram.org/CVE-2026-19737</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19737</guid>
-      <description>i2s_esp32_trigger_check() in drivers/i2s/i2s_esp32.c validates the requested direction only for I2S_DIR_BOTH. The I2S_DIR_RX and I2S_DIR_TX branches read dev_cfg-&gt;rx.data-&gt;configured / dev_cfg-&gt;tx.data-&gt;configured without first checking the stream po…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 11 Oct 2026 17:15:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18418 · 3.4 LOW — Out-of-bounds read when the zbus proxy agent IPC backend logs a rejected peer frame&apos;s channel name</title>
-      <link>https://vulnogram.org/CVE-2026-18418</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18418</guid>
-      <description>The zbus proxy agent IPC backend in subsys/zbus/proxy_agent/zbus_proxy_agent_ipc.c logged the channel name of a rejected inter-domain frame with a plain %s conversion. The frame type struct zbus_proxy_msg carries a fixed-size channel_name[] array as…</description>
-      <category>Low</category>
-      <pubDate>Sun, 11 Oct 2026 17:15:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19736 · 7.8 HIGH — Out-of-bounds write in the NXP MCUX TRNG entropy driver for non-word-multiple request lengths</title>
-      <link>https://vulnogram.org/CVE-2026-19736</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19736</guid>
-      <description>The NXP MCUX TRNG entropy driver in drivers/entropy/entropy_mcux_trng.c passed the caller&apos;s byte count straight to the vendor SDK routine TRNG_GetRandomData(). On i.MX RT5xx and RT6xx parts the SDK compiles its TRNG_SW_HEALTH_TESTS variant, which alw…</description>
-      <category>High</category>
-      <pubDate>Sun, 11 Oct 2026 17:14:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19735 · 4.8 MEDIUM — Predictable TCP initial sequence numbers when the RFC 6528 secret key generation fails silently in the Zephyr TCP stack</title>
-      <link>https://vulnogram.org/CVE-2026-19735</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19735</guid>
-      <description>The RFC 6528 initial-sequence-number implementation in subsys/net/ip/tcp.c derived every TCP ISN from SHA-256(unique_key || four-tuple) plus a uptime-derived offset, where unique_key is a 128-bit secret filled once by sys_csrand_get(). The return val…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 11 Oct 2026 17:14:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19577 · 7.1 HIGH — Out-of-bounds read in IPv6 route forwarding when the nexthop neighbor has no link-layer address</title>
-      <link>https://vulnogram.org/CVE-2026-19577</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19577</guid>
-      <description>net_route_ipv6_packet() in subsys/net/ip/route_ipv6.c resolved the nexthop&apos;s link-layer address with net_nbr_get_lladdr(nbr-&gt;idx) without first checking whether the neighbor cache entry actually had a linked link-layer address. An unresolved neighbor…</description>
-      <category>High</category>
-      <pubDate>Sun, 11 Oct 2026 17:14:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19576 · 6.8 MEDIUM — Stack out-of-bounds write in the Goodix GT911 touch controller driver from an unvalidated device-reported touch point count</title>
-      <link>https://vulnogram.org/CVE-2026-19576</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19576</guid>
-      <description>The Goodix GT9xx input driver in drivers/input/input_gt911.c reads the touch point count from the controller&apos;s status register and masks it with GT911_TOUCH_POINTS_MSK (0x0F), yielding a value of 0..15. In gt911_process() that value is used directly…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 11 Oct 2026 17:14:53 GMT</pubDate>
     </item>
   </channel>
 </rss>
