@@ -11,7 +11,42 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 04 Nov 2026 11:54:23 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 19:07:08 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-121009 — SQL::Abstract versions from 1.90_01 before 2.000001_04 for Perl skip the injection_guard check for function names given with -func</title>
+      <link>https://vulnogram.org/CVE-2026-121009</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121009</guid>
+      <description>SQL::Abstract versions from 1.90_01 before 2.000001_04 for Perl skip the injection_guard check for function names given with -func. injection_guard is documented to apply to every function name, but only the { -name =&gt; ... } shorthand goes through it…</description>
+      <pubDate>Wed, 04 Nov 2026 14:36:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121008 — SQL::Abstract::Tree versions before 2.000001_04 for Perl allow cross-site scripting via unescaped SQL text and bind values in the html profile</title>
+      <link>https://vulnogram.org/CVE-2026-121008</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121008</guid>
+      <description>SQL::Abstract::Tree versions before 2.000001_04 for Perl allow cross-site scripting via unescaped SQL text and bind values in the html profile. The html profile wraps keywords and placeholders in span elements and breaks lines with br elements, so it…</description>
+      <pubDate>Wed, 04 Nov 2026 14:36:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121007 — SQL::Abstract versions from 1.90_01 before 2.000001_04 for Perl allow SQL injection via the where values of a nested statement in an identifier position</title>
+      <link>https://vulnogram.org/CVE-2026-121007</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121007</guid>
+      <description>SQL::Abstract versions from 1.90_01 before 2.000001_04 for Perl allow SQL injection via the where values of a nested statement in an identifier position. A nested statement such as { -select =&gt; ... } in a position where plain scalars are identifiers…</description>
+      <pubDate>Wed, 04 Nov 2026 14:35:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-114627 — Web::Simple versions before 0.036 for Perl do not escape values interpolated into double-quoted strings in HTML::Tags output</title>
+      <link>https://vulnogram.org/CVE-2026-114627</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114627</guid>
+      <description>Web::Simple versions before 0.036 for Perl do not escape values interpolated into double-quoted strings in HTML::Tags output. Under use HTML::Tags or use XML::Tags, a double-quoted string literal becomes a StringThing object that holds each interpola…</description>
+      <pubDate>Wed, 04 Nov 2026 14:31:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121632 — Data::MuForm versions through 0.05 for Perl render attribute values and option labels into HTML without escaping</title>
+      <link>https://vulnogram.org/CVE-2026-121632</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121632</guid>
+      <description>Data::MuForm versions through 0.05 for Perl render attribute values and option labels into HTML without escaping. process_attrs writes each attribute value into the markup as is. The select, radio group and checkbox group renderers pass each option t…</description>
+      <pubDate>Wed, 04 Nov 2026 14:23:14 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-120651 — CGI versions before 5.00 for Perl allow an infinite loop on a short request body when $DISABLE_UPLOADS is set</title>
       <link>https://vulnogram.org/CVE-2026-120651</link>
@@ -327,41 +362,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116128</guid>
       <description>Starlet versions from 0.20 before 0.33 for Perl allow memory exhaustion via unbounded buffering when decoding chunked request bodies. The decoder adds each read to one buffer of unconsumed input. Nothing limits the length of a chunk-size line, so a l…</description>
       <pubDate>Fri, 30 Oct 2026 12:46:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116127 — Starlet versions before 0.33 for Perl send a body in responses to HEAD requests, corrupting the next response on a persistent or pipelined connection</title>
-      <link>https://vulnogram.org/CVE-2026-116127</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116127</guid>
-      <description>Starlet versions before 0.33 for Perl send a body in responses to HEAD requests, corrupting the next response on a persistent or pipelined connection. The request method is not passed to the response writer, so whatever body the application returns f…</description>
-      <pubDate>Fri, 30 Oct 2026 12:46:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115866 — Starlet versions from 0.20 before 0.33 for Perl allow CPU exhaustion via regular expression backtracking when decoding chunked request bodies</title>
-      <link>https://vulnogram.org/CVE-2026-115866</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115866</guid>
-      <description>Starlet versions from 0.20 before 0.33 for Perl allow CPU exhaustion via regular expression backtracking when decoding chunked request bodies. A chunk-size line is matched as a run of hex digits, then .* and a CRLF. A run followed by a bare LF and th…</description>
-      <pubDate>Fri, 30 Oct 2026 12:45:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115865 — Starlet versions before 0.33 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory</title>
-      <link>https://vulnogram.org/CVE-2026-115865</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115865</guid>
-      <description>Starlet versions before 0.33 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory. The request body is read in a loop that asks sysread for all of the remaining declared length at once. Perl grows the read b…</description>
-      <pubDate>Fri, 30 Oct 2026 12:44:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116130 — HTTP::Parser::XS versions before 0.18 for Perl truncate PATH_INFO at an encoded NUL byte in parse_http_request</title>
-      <link>https://vulnogram.org/CVE-2026-116130</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116130</guid>
-      <description>HTTP::Parser::XS versions before 0.18 for Perl truncate PATH_INFO at an encoded NUL byte in parse_http_request. The XS parser URL-decodes the request path and measures the result with strlen(), so PATH_INFO ends at the first byte decoded from %00. Th…</description>
-      <pubDate>Fri, 30 Oct 2026 12:38:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-118988 — CallBackery versions before 0.60.1 for Perl let unauthenticated clients read the POD of any file via path traversal in the /doc route</title>
-      <link>https://vulnogram.org/CVE-2026-118988</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118988</guid>
-      <description>CallBackery versions before 0.60.1 for Perl let unauthenticated clients read the POD of any file via path traversal in the /doc route. Every CallBackery application mounts its documentation plugin at /doc, ahead of any session check. The route passes…</description>
-      <pubDate>Fri, 30 Oct 2026 12:34:35 GMT</pubDate>
     </item>
   </channel>
 </rss>

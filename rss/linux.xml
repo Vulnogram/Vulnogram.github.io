@@ -11,7 +11,7 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 04 Nov 2026 11:54:23 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 19:07:08 GMT</lastBuildDate>
     <item>
       <title>CVE-2026-99270 · 8.1 HIGH — tcp: Fix potential UAF in reqsk_timer_handler().</title>
       <link>https://vulnogram.org/CVE-2026-99270</link>
@@ -27,56 +27,6 @@
       <description>In the Linux kernel, the following vulnerability has been resolved: sched_ext: Wait for SCX_OPSS_DISPATCHING before moving tasks off DSQs A task can be found on a non-local DSQ while the CPU which dispatched it is still running ops.dequeue() and hasn…</description>
       <category>High</category>
       <pubDate>Tue, 03 Nov 2026 11:48:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99268 — io_uring: wake ring pollers for local task_work</title>
-      <link>https://vulnogram.org/CVE-2026-99268</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99268</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring: wake ring pollers for local task_work With IORING_SETUP_DEFER_TASKRUN completions are queued as local work, and only become CQEs when the submitter enters the kernel to wai…</description>
-      <pubDate>Tue, 03 Nov 2026 11:48:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99267 — io_uring/napi: make stale entries time out after 60s</title>
-      <link>https://vulnogram.org/CVE-2026-99267</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99267</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/napi: make stale entries time out after 60s With dynamic tracking a NAPI id that hasn&apos;t been seen for a minute is meant to be dropped from the list the ring busy polls. The…</description>
-      <pubDate>Tue, 03 Nov 2026 11:48:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99266 — io_uring/zcrx: fix buffer offsets in areas above 4GB</title>
-      <link>https://vulnogram.org/CVE-2026-99266</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99266</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/zcrx: fix buffer offsets in areas above 4GB io_zcrx_queue_cqe() computes the offset of the buffer in its area from net_iov_idx(), which is an unsigned int, so the shift is d…</description>
-      <pubDate>Tue, 03 Nov 2026 11:48:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99265 — io_uring/openclose: keep the lock in io_pipe_fixed()</title>
-      <link>https://vulnogram.org/CVE-2026-99265</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99265</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/openclose: keep the lock in io_pipe_fixed() io_pipe_fixed() installs both ends of the pipe in the fixed file table, drops -&gt;uring_lock, and copies the slot numbers to the ap…</description>
-      <pubDate>Tue, 03 Nov 2026 11:48:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99264 · 7.8 HIGH — io_uring/net: don&apos;t retry recv on uncommitted buffers</title>
-      <link>https://vulnogram.org/CVE-2026-99264</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99264</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/net: don&apos;t retry recv on uncommitted buffers Commit 41b70df5b38b (&quot;io_uring/net: commit partial buffers on retry&quot;) commits ring provided buffers when a receive is going to b…</description>
-      <category>High</category>
-      <pubDate>Tue, 03 Nov 2026 11:48:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99263 — io_uring/poll: avoid retry wakeup loss when dropping ownership</title>
-      <link>https://vulnogram.org/CVE-2026-99263</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99263</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/poll: avoid retry wakeup loss when dropping ownership If a wakeup sets IO_POLL_RETRY_FLAG between the owning task consuming the existing instance of IO_POLL_RETRY_FLAG and t…</description>
-      <pubDate>Tue, 03 Nov 2026 11:48:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99262 — io_uring/timeout: don&apos;t lose a cancel as io-wq arms a timeout</title>
-      <link>https://vulnogram.org/CVE-2026-99262</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99262</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/timeout: don&apos;t lose a cancel as io-wq arms a timeout An IORING_OP_TIMEOUT run by io-wq, because of IOSQE_ASYNC, has the same problem as poll, futex and waitid. io_wq_submit_…</description>
-      <pubDate>Tue, 03 Nov 2026 11:48:15 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-99261 — drm/amdgpu: correct reservation fence slots for userq per-vm BOs eviction</title>
@@ -142,13 +92,6 @@
       <pubDate>Tue, 03 Nov 2026 11:20:12 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-99252 — io_uring/mpscq: disable preemption while pushing</title>
-      <link>https://vulnogram.org/CVE-2026-99252</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99252</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/mpscq: disable preemption while pushing A push makes the node the new tail, and then links it to its predecessor. In between the queue isn&apos;t empty, but mpscq_pop() can&apos;t get…</description>
-      <pubDate>Tue, 03 Nov 2026 11:20:12 GMT</pubDate>
-    </item>
-    <item>
       <title>CVE-2026-99251 — Drivers: hv: Avoid infinite retry loop in init_vp_index()</title>
       <link>https://vulnogram.org/CVE-2026-99251</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99251</guid>
@@ -204,13 +147,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99244</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: pid_namespace: prevent TIF_NOTIFY_SIGNAL from interrupting the reaper Since commit 7fea700e04bd (&quot;zap_pid_ns_processes: clear TIF_NOTIFY_SIGNAL along with TIF_SIGPENDING&quot;) zap_pid_ns…</description>
       <pubDate>Tue, 03 Nov 2026 11:15:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99243 — io-wq: order the exit bit against worker creation task work</title>
-      <link>https://vulnogram.org/CVE-2026-99243</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99243</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io-wq: order the exit bit against worker creation task work io_wq_exit_workers() cancels task work for queued worker creation with task_work_cancel_match(). That has a plain load of…</description>
-      <pubDate>Tue, 03 Nov 2026 11:14:30 GMT</pubDate>
     </item>
     <item>
       <title>CVE-2026-99242 — ntfs: fix race between fallocate and mmap reads</title>
@@ -374,6 +310,73 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99221</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: keys/trusted_keys: return immediately after TPM unseal failure trusted_tpm_unseal() proceeds to pcrlock() when the TPM unseal operation fails. If pcrlock() succeeds, its return value…</description>
       <pubDate>Mon, 02 Nov 2026 16:06:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99220 — asymmetric_keys: reject trust keys without IDs</title>
+      <link>https://vulnogram.org/CVE-2026-99220</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99220</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: asymmetric_keys: reject trust keys without IDs The PKCS#8 parser deliberately leaves the asym_key_ids payload slot empty. key_or_keyring_common() unconditionally dereferences that sl…</description>
+      <pubDate>Mon, 02 Nov 2026 16:06:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99219 — ftrace: Initialize modname and offset in print_rec()</title>
+      <link>https://vulnogram.org/CVE-2026-99219</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99219</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ftrace: Initialize modname and offset in print_rec() print_rec() leaves &apos;modname&apos; and &apos;offset&apos; uninitialized and kallsyms_lookup() only sets them on success. When the lookup fails li…</description>
+      <pubDate>Mon, 02 Nov 2026 16:06:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99218 · 7 HIGH — coredump: hold RCU while releasing parked threads</title>
+      <link>https://vulnogram.org/CVE-2026-99218</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99218</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: coredump: hold RCU while releasing parked threads coredump_finish() releases the parked threads by clearing -&gt;task in their core_thread entry and calling wake_up_process() on each of…</description>
+      <category>High</category>
+      <pubDate>Mon, 02 Nov 2026 16:06:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99216 · 8.4 HIGH — Drivers: hv: Don&apos;t reset VMBus connection state on error/exit paths</title>
+      <link>https://vulnogram.org/CVE-2026-99216</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99216</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Drivers: hv: Don&apos;t reset VMBus connection state on error/exit paths In two places, current code forces vmbus_connection.conn_state to DISCONNECTED prior to calling vmbus_disconnect()…</description>
+      <category>High</category>
+      <pubDate>Wed, 28 Oct 2026 10:36:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99215 — power: supply: core: prevent unregistering a power supply while a callback runs</title>
+      <link>https://vulnogram.org/CVE-2026-99215</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99215</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: power: supply: core: prevent unregistering a power supply while a callback runs Once a power supply is registered, its callbacks can immediately start firing from other contexts, suc…</description>
+      <pubDate>Wed, 28 Oct 2026 10:36:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99214 — drm/vc4: hdmi: Move packet RAM enable to PM runtime</title>
+      <link>https://vulnogram.org/CVE-2026-99214</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99214</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: drm/vc4: hdmi: Move packet RAM enable to PM runtime Audio can be triggered by the HPD handler and start up before video has been restored, calling vc4_hdmi_write_infoframe() for the…</description>
+      <pubDate>Wed, 28 Oct 2026 10:36:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99213 · 7.8 HIGH — vsock: treat TCP_CLOSING as once-established</title>
+      <link>https://vulnogram.org/CVE-2026-99213</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99213</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: vsock: treat TCP_CLOSING as once-established Handle the TCP_ESTABLISHED -&gt; TCP_CLOSING transition on OP_RST, which can race with the connect loop. Immediately break and return 0 on E…</description>
+      <category>High</category>
+      <pubDate>Wed, 28 Oct 2026 10:36:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99212 · 7 HIGH — net/rds: don&apos;t let the rdma_cm destroy an id RDS still owns on route failure</title>
+      <link>https://vulnogram.org/CVE-2026-99212</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99212</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net/rds: don&apos;t let the rdma_cm destroy an id RDS still owns on route failure rds_rdma_cm_event_handler_cmn() hands the return value of rdma_resolve_route() straight back to the rdma_…</description>
+      <category>High</category>
+      <pubDate>Wed, 28 Oct 2026 10:36:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99211 — netlink: reset skb headers before unicast and multicast filtering</title>
+      <link>https://vulnogram.org/CVE-2026-99211</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99211</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: netlink: reset skb headers before unicast and multicast filtering Socket filters can use SKF_NET_OFF and SKF_LL_OFF to read relative to an skb&apos;s network and MAC headers. Netlink prod…</description>
+      <pubDate>Wed, 28 Oct 2026 10:36:04 GMT</pubDate>
     </item>
   </channel>
 </rss>
