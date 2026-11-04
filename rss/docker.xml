@@ -11,7 +11,63 @@
       <title>Docker Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 03 Nov 2026 18:48:46 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 00:06:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-121520 · 4.5 MEDIUM — Malicious client could set xattr value outside of BuildKit state directory</title>
+      <link>https://vulnogram.org/CVE-2026-121520</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121520</guid>
+      <description>In BuildKit versions prior to v0.34.1, a malicious client with access to the BuildKit control APIs can submit a build request that sets an extended attribute on a file outside the BuildKit state directory. Extended attributes in the trusted. or secur…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 22:11:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121522 · 6.7 MEDIUM — Possible panic from Git source resolver</title>
+      <link>https://vulnogram.org/CVE-2026-121522</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121522</guid>
+      <description>In BuildKit versions v0.26.0 through v0.34.1, a specific build definition that resolves metadata for the same Git source reference twice can cause the BuildKit daemon to panic and crash, interrupting builds handled by that daemon. The issue is fixed…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 22:09:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121541 · 5.6 MEDIUM — Bake filesystem path entitlements approval can be skipped in some multi-target builds</title>
+      <link>https://vulnogram.org/CVE-2026-121541</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121541</guid>
+      <description>In Docker Buildx versions v0.19.0 through v0.38.0, an untrusted Bake definition that builds multiple targets together may expose files accessible to the Buildx client without the expected fs.read approval. Under certain conditions, filesystem paths f…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 22:01:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121542 · 1.8 LOW — Bake filesystem path entitlements approval can be skipped for path using basename prefix</title>
+      <link>https://vulnogram.org/CVE-2026-121542</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121542</guid>
+      <description>In Docker Buildx versions v0.19.0 through v0.38.0, an untrusted Bake definition may expose files accessible to the Buildx client without the expected fs.read approval. Under certain conditions, paths under the same parent directory as the current wor…</description>
+      <category>Low</category>
+      <pubDate>Tue, 03 Nov 2026 21:59:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121614 · 7.1 HIGH — Docker Sandboxes host Git executes repository-controlled programs</title>
+      <link>https://vulnogram.org/CVE-2026-121614</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121614</guid>
+      <description>Docker Sandboxes versions 0.31.0 before 0.50.0 do not neutralize repository-controlled Git configuration when running certain host-side Git commands. An attacker who can modify a host repository&apos;s Git configuration, for example through a direct-mode…</description>
+      <category>High</category>
+      <pubDate>Tue, 03 Nov 2026 21:54:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93325 · 7.3 HIGH — Bake filesystem entitlement consent is skipped under --progress=rawjson in Docker Buildx</title>
+      <link>https://vulnogram.org/CVE-2026-93325</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93325</guid>
+      <description>Buildx bake requires the user to grant entitlements with --allow or an interactive prompt before a build reaches outside the working directory. Under --progress=rawjson that consent step is skipped.</description>
+      <category>High</category>
+      <pubDate>Tue, 03 Nov 2026 19:35:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112917 · 9.2 CRITICAL — Docker Desktop WSL2 AF_VSOCK isolation bypass via 32-bit socketcall</title>
+      <link>https://vulnogram.org/CVE-2026-112917</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112917</guid>
+      <description>In Docker Desktop for Windows with the WSL2 backend, an unprivileged Linux container can use 32-bit socketcall to bypass the default seccomp restriction on AF_VSOCK. This can expose host-facing services and Windows files accessible to the logged-in u…</description>
+      <category>Critical</category>
+      <pubDate>Tue, 03 Nov 2026 19:08:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-103916 · 8.4 HIGH — Docker Sandboxes sbx cp follows workspace symlinks outside the authorized host directory</title>
       <link>https://vulnogram.org/CVE-2026-103916</link>
@@ -360,63 +416,6 @@
       <description>System environment variables are recorded in Docker Desktop diagnostic logs, when using shell auto-completion. This leads to unintentional disclosure of sensitive information such as api keys, passwords, etc. A malicious actor with read access to the…</description>
       <category>Medium</category>
       <pubDate>Thu, 03 Jul 2025 10:03:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-3911 · 5.2 MEDIUM — Exposure in Docker Desktop logs of environment variables configured for running containers</title>
-      <link>https://vulnogram.org/CVE-2025-3911</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-3911</guid>
-      <description>Recording of environment variables, configured for running containers, in Docker Desktop application logs could lead to unintentional disclosure of sensitive information such as api keys, passwords, etc. A malicious actor with read access to these lo…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 29 Apr 2025 17:20:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-4095 · 4.3 MEDIUM — Registry Access Management (RAM) policies not applied when sign-in enforcement is configured via a configuration profile</title>
-      <link>https://vulnogram.org/CVE-2025-4095</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-4095</guid>
-      <description>Registry Access Management (RAM) is a security feature allowing administrators to restrict access for their developers to only allowed registries. When a MacOS configuration profile is used to enforce organization sign-in, the RAM policies are not be…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 29 Apr 2025 17:16:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-3224 · 7.3 HIGH — Elevation of Privilege in Docker Desktop for Windows during Upgrade due to Insecure Directory Deletion</title>
-      <link>https://vulnogram.org/CVE-2025-3224</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-3224</guid>
-      <description>A vulnerability in the update process of Docker Desktop for Windows versions prior to 4.41.0 could allow a local, low-privileged attacker to escalate privileges to SYSTEM. During an update, Docker Desktop attempts to delete files and subdirectories u…</description>
-      <category>High</category>
-      <pubDate>Mon, 28 Apr 2025 19:21:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-0495 · 4.1 MEDIUM — Secrets leakage to telemetry endpoint via cache backend configuration via buildx</title>
-      <link>https://vulnogram.org/CVE-2025-0495</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-0495</guid>
-      <description>Buildx is a Docker CLI plugin that extends build capabilities using BuildKit. Cache backends support credentials by setting secrets directly as attribute values in cache-to/cache-from configuration. When supplied as user input, these secure values ma…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 17 Mar 2025 19:21:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1696 · 5.2 MEDIUM — Exposure of Proxy Credentials in Docker Desktop Logs</title>
-      <link>https://vulnogram.org/CVE-2025-1696</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1696</guid>
-      <description>A vulnerability exists in Docker Desktop prior to version 4.39.0 that could lead to the unintentional disclosure of sensitive information via application logs. In affected versions, proxy configuration data—potentially including sensitive details—was…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 06 Mar 2025 11:58:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-10846 · 5.9 MEDIUM — Excessive Platform Resource Consumption within a Loop when unmarshalling Compose file having recursive loop</title>
-      <link>https://vulnogram.org/CVE-2024-10846</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-10846</guid>
-      <description>The compose-go library component in versions v2.10-v2.4.0 allows an authorized user who sends malicious YAML payloads to cause the compose-go to consume excessive amount of Memory and CPU cycles while parsing YAML, such as used by Docker Compose from…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 23 Jan 2025 15:22:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-9348 · 8.9 HIGH 🌩️ — Docker Desktop before v4.34.3 allows RCE via unsanitized GitHub source link in Build view</title>
-      <link>https://vulnogram.org/CVE-2024-9348</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-9348</guid>
-      <description>Docker Desktop before v4.34.3 allows RCE via unsanitized GitHub source link in Build view.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 16 Oct 2024 14:50:06 GMT</pubDate>
     </item>
   </channel>
 </rss>

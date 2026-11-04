@@ -11,7 +11,92 @@
       <title>MongoDB, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 03 Nov 2026 18:48:45 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 00:06:17 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-120959 · 3.7 LOW — MongoDB Atlas SQL ODBC Driver uses ignored SQLBindCol BufferLength as fixed-width row-array stride, causing out-of-bounds writes</title>
+      <link>https://vulnogram.org/CVE-2026-120959</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120959</guid>
+      <description>A memory-handling flaw in the MongoDB Atlas SQL ODBC Driver can cause values returned for a query to be written outside the bounds of a buffer provided by the calling application. A party able to influence the values a query returns may cause data to…</description>
+      <category>Low</category>
+      <pubDate>Tue, 03 Nov 2026 20:18:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120952 · 7.1 HIGH — MongoDB Atlas SQL ODBC Driver writes 48-byte Extended JSON into fixed 16-byte SQL_C_GUID target, causing a 32-byte out-of-bounds write</title>
+      <link>https://vulnogram.org/CVE-2026-120952</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120952</guid>
+      <description>An out-of-bounds write in the MongoDB Atlas SQL ODBC Driver may be triggered when a value of a particular database type is retrieved into a fixed-width client-side target. The driver produces a textual form of the value that is longer than the fixed…</description>
+      <category>High</category>
+      <pubDate>Tue, 03 Nov 2026 20:16:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120567 · 5.4 MEDIUM — ExecuteUpdate may evaluate caller-supplied values as MongoDB expressions</title>
+      <link>https://vulnogram.org/CVE-2026-120567</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120567</guid>
+      <description>The MongoDB Entity Framework Core provider does not neutralize special elements when it places a caller-supplied value into a bulk update that is expressed as a databasea result, a value supplied as plain data may be interpreted by the database as ex…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 19:36:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120953 · 5.1 MEDIUM 🌩️ — Atlas SQL JDBC Driver &lt;=4.0.0: OIDC discovery endpoints not scheme-validated - attacker-controlled URI dispatched to OS protocol handler</title>
+      <link>https://vulnogram.org/CVE-2026-120953</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120953</guid>
+      <description>A URI redirection weakness exists in the authentication component of the Atlas SQL JDBC Driver. During an interactive sign-in flow the driver accepts endpoint addresses supplied by the remote endpoint it is pointed at without validating their scheme,…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 18:47:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120954 · 6.3 MEDIUM 🌩️ — Silent element-count truncation via 32-bit bit-length overflow in packed-bit vector views</title>
+      <link>https://vulnogram.org/CVE-2026-120954</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120954</guid>
+      <description>A weakness in the BSON library&apos;s handling of a specialized binary vector data type allows an arithmetic wraparound when computing the number of elements described by an oversized attacker-supplied value. On builds where the platform word size is 32 b…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 18:45:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120955 · 8.7 HIGH 🌩️ — MongoDB C Driver Modern GridFS mongoc_gridfs_bucket_download_to_stream() Aborts Application on Malformed GridFS Metadata</title>
+      <link>https://vulnogram.org/CVE-2026-120955</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120955</guid>
+      <description>The GridFS file download API in the MongoDB C Driver does not check the result of an internal operation under certain error conditions during file retrieval. This can cause the process to terminate when stream operations continue. A user who can infl…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 18:42:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120956 · 7.1 HIGH 🌩️ — remote abort and memory disclosure from a malformed cursor.ns</title>
+      <link>https://vulnogram.org/CVE-2026-120956</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120956</guid>
+      <description>The MongoDB C Driver does not validate the type or format of a namespace field returned by the server in a query response. A MongoDB endpoint that a client application connects to, without needing any credentials, can return a malformed value in that…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 18:41:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120684 · 6.5 MEDIUM — MongoDB C Driver GridFS gap lets a shared writer recover a protected client&apos;s password</title>
+      <link>https://vulnogram.org/CVE-2026-120684</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120684</guid>
+      <description>A memory-initialization flaw in the legacy GridFS file handling of the MongoDB C Driver can cause uninitialized process memory to be treated as valid file content and stored on the server. A database user holding ordinary write access to a shared sto…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 18:40:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120678 · 8.7 HIGH 🌩️ — MongoDB C Driver leaks the decompressed reply buffer when an OP_COMPRESSED reply fails to parse (denial of service)</title>
+      <link>https://vulnogram.org/CVE-2026-120678</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120678</guid>
+      <description>A memory management flaw in the MongoDB C Driver&apos;s handling of compressed responses may cause the client library to hold on to memory that is never released. An unauthenticated party that controls the database endpoint a client application connects t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 03 Nov 2026 18:39:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120673 · 6.8 MEDIUM — Rust Driver 3.9.1 exports CSFLE plaintext in `db.query.text` before encrypting the command</title>
+      <link>https://vulnogram.org/CVE-2026-120673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120673</guid>
+      <description>A component of the MongoDB Rust Driver that records diagnostic tracing data can capture command content before automatic client-side field level encryption is applied. In deployments that turn on the optional tracing capability together with automati…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 03 Nov 2026 18:33:32 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-119674 · 3.7 LOW — mongorestore may restore encoded collection names into an unintended collection</title>
       <link>https://vulnogram.org/CVE-2026-119674</link>
@@ -346,88 +431,6 @@
       <description>Improper state management in MongoDB libmongocrypt can cause provider-specific data to be treated as an incompatible type when cleaning up a key document containing duplicate masterKey fields. An authenticated actor who can modify key vault documents…</description>
       <category>High</category>
       <pubDate>Thu, 08 Oct 2026 18:55:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106429 · 7.1 HIGH — Application denial of service via malformed KMS endpoint in MongoDB libmongocrypt</title>
-      <link>https://vulnogram.org/CVE-2026-106429</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106429</guid>
-      <description>An integer underflow in the KMS endpoint-parsing logic of MongoDB libmongocrypt can cause an allocation failure that terminates the application process. This can occur when an authenticated user modifies a key document in the key vault collection, or…</description>
-      <category>High</category>
-      <pubDate>Thu, 08 Oct 2026 18:54:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106430 · 6 MEDIUM — Query and rename target confusion via embedded NUL truncation in MongoDB C++ Driver</title>
-      <link>https://vulnogram.org/CVE-2026-106430</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106430</guid>
-      <description>The MongoDB C++ Driver discards content after an embedded NUL byte in certain field and collection names accepted by the collection API. This can cause the driver and the calling application to interpret the same name differently. An authenticated ac…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 08 Oct 2026 18:45:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106438 · 5.1 MEDIUM — Silent Decimal128 value corruption via incorrect exactness check in MongoDB C Driver</title>
-      <link>https://vulnogram.org/CVE-2026-106438</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106438</guid>
-      <description>An incorrect calculation in Decimal128 string parsing in the MongoDB C Driver can accept certain over-precision inputs containing leading zeros instead of rejecting them. This produces a value different from the supplied text. An actor who can provid…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 08 Oct 2026 18:44:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106437 · 6.2 MEDIUM — Out-of-bounds read and write via undersized BSON buffer reservation in MongoDB C Driver</title>
-      <link>https://vulnogram.org/CVE-2026-106437</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106437</guid>
-      <description>The BSON buffer-reservation API in the MongoDB C Driver can record a length smaller than the five-byte BSON minimum. Later append or comparison operations can underflow unsigned length calculations and read or write outside the document buffer. An ac…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 08 Oct 2026 18:42:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106431 · 5.9 MEDIUM — One-byte heap buffer overflow in BSON bulk document writer in MongoDB C Driver</title>
-      <link>https://vulnogram.org/CVE-2026-106431</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106431</guid>
-      <description>An off-by-one error in the BSON bulk document writer in the MongoDB C Driver can write one zero byte immediately past a heap allocation when a document ends at a specific buffer boundary. An actor who can influence the size of documents serialized by…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 08 Oct 2026 18:40:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-106428 · 6.3 MEDIUM 🌩️ — Out-of-bounds read in SCRAM response parsing in MongoDB C Driver</title>
-      <link>https://vulnogram.org/CVE-2026-106428</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106428</guid>
-      <description>An out-of-bounds read in SCRAM authentication response parsing in the MongoDB C Driver can read one byte beyond a fixed-size buffer when processing a malformed server-final message. A server or network intermediary able to provide this message before…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 08 Oct 2026 18:35:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103546 · 4.3 MEDIUM — Improper validation of Ops Manager configuration in MongoDB Kubernetes Operator</title>
-      <link>https://vulnogram.org/CVE-2026-103546</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103546</guid>
-      <description>In MongoDB Controllers for Kubernetes, insufficient validation of Ops Manager backup configuration may allow a user who can modify an OpsManager custom resource to cause unintended administrative changes in Ops Manager. This affects deployments using…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 05 Oct 2026 21:50:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96749 · 8.4 HIGH — Heap out-of-bounds write via signed size overflow in BSON document encoding</title>
-      <link>https://vulnogram.org/CVE-2026-96749</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96749</guid>
-      <description>An integer overflow in the BSON document encoding component of the MongoDB Python Driver&apos;s bundled native extension may occur when a single document is built from an unusually large amount of caller-supplied data. Size arithmetic is performed in a si…</description>
-      <category>High</category>
-      <pubDate>Thu, 24 Sep 2026 18:18:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96748 · 8.3 HIGH 🌩️ — Connection redirection via percent-encoded delimiter injection in connection string hosts</title>
-      <link>https://vulnogram.org/CVE-2026-96748</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96748</guid>
-      <description>PyMongo&apos;s connection string parsing decodes percent-encoded characters in the host portion before the host list is separated on its delimiters. When an application places a hostname value supplied by an unauthenticated party into a connection string,…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 24 Sep 2026 18:18:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96747 · 5.3 MEDIUM — Forced local Unix socket connection via dot-sock KMS endpoint in client-side field encryption</title>
-      <link>https://vulnogram.org/CVE-2026-96747</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96747</guid>
-      <description>The client-side field level encryption support in the MongoDB Python Driver can treat a key management endpoint value ending in &quot;.sock&quot; as a local Unix domain socket path rather than a remote host. A user with write access to the encryption key metad…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 24 Sep 2026 18:18:10 GMT</pubDate>
     </item>
   </channel>
 </rss>
