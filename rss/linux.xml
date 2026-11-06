@@ -11,7 +11,28 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 06 Nov 2026 16:43:01 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 22:10:11 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-100082 — xen-blkback: Avoid UAF when reading I/O statistics</title>
+      <link>https://vulnogram.org/CVE-2026-100082</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100082</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: xen-blkback: Avoid UAF when reading I/O statistics Reading I/O statistics via sysfs concurrently with tearing down a frontend device might result in UAF or a NULL dereference, as the…</description>
+      <pubDate>Fri, 06 Nov 2026 18:23:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-100081 — xen-netback: defer xenvif_mcast_addr_list_free()</title>
+      <link>https://vulnogram.org/CVE-2026-100081</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100081</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: xen-netback: defer xenvif_mcast_addr_list_free() In order for the function to legitimately avoid locking/RCU, it needs to run after all TX/RX processing has finished/stopped: Lookups…</description>
+      <pubDate>Fri, 06 Nov 2026 18:23:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-100080 — xen-netback: Fix UAF when reading statistics data</title>
+      <link>https://vulnogram.org/CVE-2026-100080</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100080</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: xen-netback: Fix UAF when reading statistics data The network statistic data in the driver is protected by RCU. Unfortunately when tearing down the queues after an error during conne…</description>
+      <pubDate>Fri, 06 Nov 2026 18:23:01 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-99270 · 8.1 HIGH — tcp: Fix potential UAF in reqsk_timer_handler().</title>
       <link>https://vulnogram.org/CVE-2026-99270</link>
@@ -354,29 +375,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99214</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: drm/vc4: hdmi: Move packet RAM enable to PM runtime Audio can be triggered by the HPD handler and start up before video has been restored, calling vc4_hdmi_write_infoframe() for the…</description>
       <pubDate>Wed, 28 Oct 2026 10:36:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99213 · 7.8 HIGH — vsock: treat TCP_CLOSING as once-established</title>
-      <link>https://vulnogram.org/CVE-2026-99213</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99213</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: vsock: treat TCP_CLOSING as once-established Handle the TCP_ESTABLISHED -&gt; TCP_CLOSING transition on OP_RST, which can race with the connect loop. Immediately break and return 0 on E…</description>
-      <category>High</category>
-      <pubDate>Wed, 28 Oct 2026 10:36:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99212 · 7 HIGH — net/rds: don&apos;t let the rdma_cm destroy an id RDS still owns on route failure</title>
-      <link>https://vulnogram.org/CVE-2026-99212</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99212</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: net/rds: don&apos;t let the rdma_cm destroy an id RDS still owns on route failure rds_rdma_cm_event_handler_cmn() hands the return value of rdma_resolve_route() straight back to the rdma_…</description>
-      <category>High</category>
-      <pubDate>Wed, 28 Oct 2026 10:36:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99211 — netlink: reset skb headers before unicast and multicast filtering</title>
-      <link>https://vulnogram.org/CVE-2026-99211</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99211</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: netlink: reset skb headers before unicast and multicast filtering Socket filters can use SKF_NET_OFF and SKF_LL_OFF to read relative to an skb&apos;s network and MAC headers. Netlink prod…</description>
-      <pubDate>Wed, 28 Oct 2026 10:36:04 GMT</pubDate>
     </item>
   </channel>
 </rss>
