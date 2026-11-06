@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 06 Nov 2026 08:53:36 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:43:01 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-87045 · 7.5 HIGH — NULL pointer dereference in the Zephyr HTTP/2 server when a header block is completed by a CONTINUATION frame</title>
+      <link>https://vulnogram.org/CVE-2026-87045</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87045</guid>
+      <description>The HTTP/2 server in subsys/net/lib/http/http_server_http2.c clears the connection&apos;s stream binding at the start of every frame. handle_http_frame_header() executed client-&gt;current_stream = NULL unconditionally, but a CONTINUATION frame does not open…</description>
+      <category>High</category>
+      <pubDate>Fri, 06 Nov 2026 14:38:25 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-87044 · 6.5 MEDIUM — Memory leak in the Mbed TLS crypto shim on failed cipher/AEAD operations leads to remotely triggered crypto denial of service</title>
       <link>https://vulnogram.org/CVE-2026-87044</link>
@@ -403,14 +411,6 @@
       <description>The Link Layer Control Procedure (LLCP) implementation of the Zephyr software Bluetooth LE Controller retains the receive node that carried an accepted LL_PHY_UPDATE_IND so that it can later be reused for the host notification when the update instant…</description>
       <category>Medium</category>
       <pubDate>Sun, 11 Oct 2026 17:15:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19739 · 6.5 MEDIUM — Bluetooth LE controller leaks a retained RX node when an unexpected LL Control PDU arrives during a Connection Update</title>
-      <link>https://vulnogram.org/CVE-2026-19739</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19739</guid>
-      <description>The Bluetooth Link Layer control procedure code in subsys/bluetooth/controller/ll_sw/ull_llcp_conn_upd.c retains the received RX node while a Connection Update / Connection Parameter procedure waits for its instant, so the node can later carry the ho…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 11 Oct 2026 17:15:06 GMT</pubDate>
     </item>
   </channel>
 </rss>

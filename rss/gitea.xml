@@ -11,61 +11,73 @@
       <title>Gitea Limited — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 06 Nov 2026 08:53:37 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:43:02 GMT</lastBuildDate>
     <item>
-      <title>CVE-2026-119627 — Gitea limited-visibility profile disclosure with public-only tokens</title>
+      <title>CVE-2026-119627 · 4.3 MEDIUM — Gitea limited-visibility profile disclosure with public-only tokens</title>
       <link>https://vulnogram.org/CVE-2026-119627</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119627</guid>
       <description>The web profile and RSS/Atom feed routes of users and organizations checked only whether a signed-in viewer could see a limited-visibility owner, without considering the `public-only` restriction of the personal access token used to authenticate. Any…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:58 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-119625 — Gitea user and organization feed token scope bypass</title>
+      <title>CVE-2026-119625 · 4.3 MEDIUM — Gitea user and organization feed token scope bypass</title>
       <link>https://vulnogram.org/CVE-2026-119625</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119625</guid>
       <description>The `/{username}` web route accepted personal access tokens over HTTP Basic authentication without checking their scope. A token confined to an unrelated scope, such as `read:issue`, could read its owner&apos;s private activity through the user RSS/Atom f…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:57 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-119533 — Gitea private pull request disclosure on project boards</title>
+      <title>CVE-2026-119533 · 7.5 HIGH 🌩️ — Gitea private pull request disclosure on project boards</title>
       <link>https://vulnogram.org/CVE-2026-119533</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119533</guid>
       <description>Repository and organization project boards listed the pull requests that reference each issue on the board without checking whether the viewer can read them. When a private pull request mentions an issue on a board the viewer can open, the board reve…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 01 Nov 2026 09:48:55 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-119441 — Gitea public-only token bypass on bulk organization repository deletion</title>
+      <title>CVE-2026-119441 · 7.5 HIGH 🌩️ — Gitea public-only token bypass on bulk organization repository deletion</title>
       <link>https://vulnogram.org/CVE-2026-119441</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119441</guid>
       <description>`DELETE /api/v1/orgs/{org}/repos` deletes all repositories of an organization, but it did not enforce the public-only restriction of access tokens: the route only checked that the organization itself was public. A public-only token of an owner of a p…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 01 Nov 2026 09:48:54 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-118504 — Gitea issue changes on archived repositories through the API</title>
+      <title>CVE-2026-118504 · 6.5 MEDIUM — Gitea issue changes on archived repositories through the API</title>
       <link>https://vulnogram.org/CVE-2026-118504</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118504</guid>
       <description>The web interface blocks issue and pull request changes on archived repositories, but several issue routes of the REST API did not check whether the repository is archived. A user allowed to change issues of an archived repository could use the API t…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:52 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-118395 — Gitea public-only token bypass in repository and organization creation</title>
+      <title>CVE-2026-118395 · 7.5 HIGH 🌩️ — Gitea public-only token bypass in repository and organization creation</title>
       <link>https://vulnogram.org/CVE-2026-118395</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118395</guid>
       <description>Gitea 1.27.3 stopped personal access tokens restricted to public resources (`public-only`) from creating repositories through `POST /api/v1/user/repos` and `POST /api/v1/repos/migrate`, but `POST /api/v1/org/{org}/repos`, `POST /api/v1/orgs/{org}/rep…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 01 Nov 2026 09:48:51 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-118394 — Gitea OAuth2 userinfo private group disclosure to public-only tokens</title>
+      <title>CVE-2026-118394 · 4.3 MEDIUM — Gitea OAuth2 userinfo private group disclosure to public-only tokens</title>
       <link>https://vulnogram.org/CVE-2026-118394</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118394</guid>
       <description>The OAuth2 userinfo endpoint (`/login/oauth/userinfo`) decided whether to limit the `groups` claim to public organizations by re-parsing the `Authorization` header as an OAuth2 access token instead of using the scope of the credential that authentica…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:49 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-117685 — Gitea public-only package token access to private OCI blobs</title>
+      <title>CVE-2026-117685 · 9.1 CRITICAL 🌩️ — Gitea public-only package token access to private OCI blobs</title>
       <link>https://vulnogram.org/CVE-2026-117685</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117685</guid>
       <description>The OCI registry&apos;s cross-repository blob mount checked the target package against the token&apos;s `public-only` restriction, but checked the source blob only against the full account permissions of the token owner. A `public-only` token with `write:packa…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 01 Nov 2026 09:48:46 GMT</pubDate>
     </item>
     <item>
@@ -76,80 +88,94 @@
       <pubDate>Sun, 01 Nov 2026 09:48:45 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-117649 — Gitea private issue disclosure through issue dependency timeline events</title>
+      <title>CVE-2026-117649 · 3.5 LOW — Gitea private issue disclosure through issue dependency timeline events</title>
       <link>https://vulnogram.org/CVE-2026-117649</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117649</guid>
       <description>The issue timeline API and the web issue page hid cross-reference events that point at issues the reader cannot access, but not &quot;dependency added&quot; and &quot;dependency removed&quot; events. When a readable issue had been linked as a dependency to an issue in a…</description>
+      <category>Low</category>
       <pubDate>Sun, 01 Nov 2026 09:48:43 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-117646 — Gitea private repository listing to public-only tokens on profiles</title>
+      <title>CVE-2026-117646 · 4.3 MEDIUM — Gitea private repository listing to public-only tokens on profiles</title>
       <link>https://vulnogram.org/CVE-2026-117646</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117646</guid>
       <description>The repositories, stars and watching tabs of user profiles and the repository list of organization home pages included private repositories for every signed-in request without checking whether the request used a personal access token restricted to pu…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:42 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-117635 — Gitea admin API public-only token scope bypass</title>
+      <title>CVE-2026-117635 · 6.5 MEDIUM — Gitea admin API public-only token scope bypass</title>
       <link>https://vulnogram.org/CVE-2026-117635</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117635</guid>
       <description>The `/api/v1/admin` route group did not enforce the `public-only` restriction of personal access tokens. A public-only token with admin scope issued by a site administrator could therefore list private organizations and the email addresses of all use…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:40 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-116474 — Gitea Actions job token spoofing of instance-signed commits</title>
+      <title>CVE-2026-116474 · 6.5 MEDIUM — Gitea Actions job token spoofing of instance-signed commits</title>
       <link>https://vulnogram.org/CVE-2026-116474</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116474</guid>
       <description>The `GITEA_TOKEN` of a Gitea Actions job authenticates as the `gitea-actions` system user, and the `/api/v1/user` email and GPG key endpoints accepted that user, so a job could register an email address and a GPG key on it; without required email con…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:38 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-116296 — Gitea archived repository release, milestone and label modification</title>
+      <title>CVE-2026-116296 · 6.5 MEDIUM — Gitea archived repository release, milestone and label modification</title>
       <link>https://vulnogram.org/CVE-2026-116296</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116296</guid>
       <description>The API routes for releases, release assets, milestones and repository labels did not reject changes to archived repositories. A user with write access to an archived repository, or a holder of such a user&apos;s write-scoped token, could replace or delet…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:37 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-116289 — Gitea public-only token bypass through Actions runner registration</title>
+      <title>CVE-2026-116289 · 9.1 CRITICAL 🌩️ — Gitea public-only token bypass through Actions runner registration</title>
       <link>https://vulnogram.org/CVE-2026-116289</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116289</guid>
       <description>Gitea did not reject personal access tokens restricted to public resources (`public-only`) on the organization Actions runner registration-token endpoint, and the runner registered with the resulting token was not limited to public repositories. Hold…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 01 Nov 2026 09:48:35 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-114199 — Gitea contribution heatmap private activity disclosure to public-only tokens</title>
+      <title>CVE-2026-114199 · 5.3 MEDIUM 🌩️ — Gitea contribution heatmap private activity disclosure to public-only tokens</title>
       <link>https://vulnogram.org/CVE-2026-114199</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114199</guid>
       <description>`GET /api/v1/users/{username}/heatmap` computed the contribution heatmap with the repository access of the token owner and ignored the public-only restriction of the access token, unlike the activity feed endpoints. A holder of a user&apos;s public-only t…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 01 Nov 2026 09:48:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-113429 — Gitea stored XSS through legacy Actions artifact Content-Encoding</title>
+      <title>CVE-2026-113429 · 5.4 MEDIUM — Gitea stored XSS through legacy Actions artifact Content-Encoding</title>
       <link>https://vulnogram.org/CVE-2026-113429</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113429</guid>
       <description>Legacy (v1 to v3) Actions artifact uploads stored the request&apos;s `Content-Encoding` header unchecked in the column that is served as the artifact&apos;s `Content-Type` on download, and a value starting with `video/` or `audio/` also removed the sandboxing…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:32 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-112887 — Gitea Actions task token private repository enumeration</title>
+      <title>CVE-2026-112887 · 4.3 MEDIUM — Gitea Actions task token private repository enumeration</title>
       <link>https://vulnogram.org/CVE-2026-112887</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112887</guid>
       <description>Gitea Actions task tokens authenticate to the REST API as a shared system user with a negative ID, which repository, organization, project and key filters treated as having no owner restriction, and the token carried no API scope to restrict user-sco…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:48:30 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120263 — Gitea OAuth2 account auto-linking takeover through the sign-up form</title>
+      <title>CVE-2026-120263 · 9.8 CRITICAL 🌩️ — Gitea OAuth2 account auto-linking takeover through the sign-up form</title>
       <link>https://vulnogram.org/CVE-2026-120263</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120263</guid>
       <description>When `[oauth2_client].ACCOUNT_LINKING` is set to `auto` (not the default) and registration is enabled, the link-account sign-up form looked up the existing account to link by the user name or email submitted in the form instead of the identity assert…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Sun, 01 Nov 2026 09:47:09 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-118386 — Gitea Actions fork workflow trust through pull request review commit</title>
+      <title>CVE-2026-118386 · 6.5 MEDIUM — Gitea Actions fork workflow trust through pull request review commit</title>
       <link>https://vulnogram.org/CVE-2026-118386</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118386</guid>
       <description>Workflows triggered by a pull request review were read from the commit named in the review&apos;s `commit_id`, while the fork restrictions were decided by the reviewed pull request, and the commit was not checked to belong to that pull request. A user wit…</description>
+      <category>Medium</category>
       <pubDate>Sun, 01 Nov 2026 09:47:07 GMT</pubDate>
     </item>
     <item>

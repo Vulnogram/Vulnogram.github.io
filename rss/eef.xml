@@ -11,7 +11,49 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 06 Nov 2026 08:53:37 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:43:02 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-115701 · 8.2 HIGH 🌩️ — Cowboy HTTP/1.1 Unbounded Buffering of Pipelined Data During Request Handling Enables Memory Exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-115701</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115701</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in ninenines cowboy allows an unauthenticated remote attacker to exhaust connection process memory over HTTP/1.1. Once a request has been received in full and its handler is still run…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 06 Nov 2026 10:29:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-113431 · 8.7 HIGH 🌩️ — Unbounded decoded HTTP/2 header-list size in cowlib cow_http2_machine enables HPACK amplification memory exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-113431</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113431</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in ninenines cowlib allows an unauthenticated remote peer to exhaust the memory of an HTTP/2 endpoint via HPACK-indexed header fields. cow_http2_machine:headers_decode/4 in src/cow_ht…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 06 Nov 2026 10:28:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66294 · 2.1 LOW — XML injection in Saxy via unescaped CDATA section terminator</title>
+      <link>https://vulnogram.org/CVE-2026-66294</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66294</guid>
+      <description>XML injection in the Saxy XML encoder. Saxy.Encoder.cdata/1 serializes a {:cdata, characters} node by wrapping the supplied characters between &lt;![CDATA[ and ]]&gt; and passing the payload through byte for byte. The encoder&apos;s character-data and attribute…</description>
+      <category>Low</category>
+      <pubDate>Fri, 06 Nov 2026 10:16:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66295 · 2.1 LOW — Processing instruction target and content emitted unescaped in Saxy encoder allows XML injection</title>
+      <link>https://vulnogram.org/CVE-2026-66295</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66295</guid>
+      <description>Saxy&apos;s XML encoder writes the target and the content of a processing instruction into the output document verbatim, without validation or escaping. The encoder builds the construct by concatenating both fields between &lt;? and ?&gt;, so neither field is c…</description>
+      <category>Low</category>
+      <pubDate>Fri, 06 Nov 2026 10:16:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-66293 · 2.1 LOW — XML comment injection in Saxy encoder via unescaped double hyphen</title>
+      <link>https://vulnogram.org/CVE-2026-66293</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66293</guid>
+      <description>XML injection in the encoder of Saxy. Saxy.Encoder does not neutralize the -- sequence in XML comment content: escape_comment/2 returns the comment binary unchanged in every clause and only appends a space when the comment ends in a single -, so neit…</description>
+      <category>Low</category>
+      <pubDate>Fri, 06 Nov 2026 10:16:42 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-119434 · 6.9 MEDIUM — Decompression bomb in ezstd:decompress_using_ddict/2 allows BEAM memory exhaustion via unbounded output buffer</title>
       <link>https://vulnogram.org/CVE-2026-119434</link>
@@ -397,50 +439,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 22 Oct 2026 06:59:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86696 · 8.2 HIGH 🌩️ — Unbounded atom creation from unsigned LogoutResponse status codes in esaml allows atom table exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-86696</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86696</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in esaml in dropbox esaml allows an unauthenticated attacker to exhaust the Erlang VM atom table and crash the node via unsigned LogoutResponse messages. esaml:status_code_map/1 in sr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 22 Oct 2026 06:59:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105270 · 8.7 HIGH 🌩️ — Unbounded atom creation while parsing SAML messages in esaml allows atom table exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-105270</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105270</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in esaml_binding in dropbox esaml allows an unauthenticated attacker to exhaust the Erlang VM atom table and crash the node via a crafted SAMLResponse. esaml_binding:decode_response/2…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 22 Oct 2026 06:58:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105660 · 6.9 MEDIUM 🌩️ — Unvalidated HTTP/1 request-target authority lets a client choose conn.host and conn.port in Bandit</title>
-      <link>https://vulnogram.org/CVE-2026-105660</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105660</guid>
-      <description>Improper Validation of Syntactic Correctness of Input vulnerability in mtrudel bandit allows an unauthenticated remote attacker to set conn.host and conn.port to values outside the RFC 3986 host grammar via the authority of an HTTP/1 absolute-form or…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 15 Oct 2026 18:37:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96596 · 5.9 MEDIUM — erl_tar:extract/2 loops forever on a GNU sparse member with a trailing hole</title>
-      <link>https://vulnogram.org/CVE-2026-96596</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96596</guid>
-      <description>Loop with Unreachable Exit Condition (&apos;Infinite Loop&apos;) vulnerability in Erlang OTP stdlib (erl_tar module), hexpm hex_core (hex_erl_tar module), hexpm hex (mix_hex_erl_tar module) and erlang rebar3 (r3_hex_erl_tar module) allows an attacker who suppl…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 16:56:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-105236 · 6.3 MEDIUM 🌩️ — TLS 1.2 session resumption in ssl crosses SNI virtual-host client-certificate trust boundaries</title>
-      <link>https://vulnogram.org/CVE-2026-105236</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105236</guid>
-      <description>Improper Certificate Validation vulnerability in the ssl application in Erlang/OTP allows a client that holds a certificate trusted by one SNI virtual host to authenticate to a second SNI virtual host on the same listener by resuming its TLS 1.2 sess…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 14 Oct 2026 16:55:51 GMT</pubDate>
     </item>
   </channel>
 </rss>
