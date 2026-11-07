@@ -11,7 +11,91 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 07 Nov 2026 08:17:48 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 14:47:55 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-99282 — net/sched: sch_teql: fix use-after-free on lower qdisc drop</title>
+      <link>https://vulnogram.org/CVE-2026-99282</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99282</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net/sched: sch_teql: fix use-after-free on lower qdisc drop The issue: teql_master_xmit() tests the slave&apos;s ndo_start_xmit() return value against NETDEV_TX_OK alone. A slave that con…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99281 — tun: Require CAP_NET_ADMIN to attach to an ownerless device</title>
+      <link>https://vulnogram.org/CVE-2026-99281</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99281</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: tun: Require CAP_NET_ADMIN to attach to an ownerless device Twenty years ago I made creating a tuntap device require CAP_NET_ADMIN in commit ca6bb5d7ab22 (&quot;[NET]: Require CAP_NET_ADM…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99280 — ksmbd: drain session procfs readers before dropping table references</title>
+      <link>https://vulnogram.org/CVE-2026-99280</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99280</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: drain session procfs readers before dropping table references Session registration failure and connection cleanup can drop the table reference while the per-session procfs ent…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99279 — ksmbd: reclaim ended sessions on logoff and expiration</title>
+      <link>https://vulnogram.org/CVE-2026-99279</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99279</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: reclaim ended sessions on logoff and expiration LOGOFF and previous-session replacement leave sessions Expired with a zero credential expiry. Ended sessions can retain their m…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99278 — ksmbd: limit sessions on each connection</title>
+      <link>https://vulnogram.org/CVE-2026-99278</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99278</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: limit sessions on each connection The pending setup limit only counts InProgress sessions. A client can complete authentication repeatedly and retain an unbounded number of Va…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99277 — ksmbd: hold a connection reference for each session channel</title>
+      <link>https://vulnogram.org/CVE-2026-99277</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99277</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: hold a connection reference for each session channel ksmbd_session_unregister() removes a session from the global and per- connection tables before dropping the table referenc…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99276 — ksmbd: defer connection scavenging while session locks are busy</title>
+      <link>https://vulnogram.org/CVE-2026-99276</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99276</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: defer connection scavenging while session locks are busy The expiration worker holds conn_list_lock for reading while checking for authenticated sessions. Without this change,…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99275 — smb: client: reject short SESSION_SETUP responses</title>
+      <link>https://vulnogram.org/CVE-2026-99275</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99275</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: smb: client: reject short SESSION_SETUP responses smb2_check_message() accepts frames shorter than struct smb2_pdu when the SMB2 status is non-zero, before the minimum-PDU check adde…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99274 — smb: client: fix fiemap wild read on empty truncated response</title>
+      <link>https://vulnogram.org/CVE-2026-99274</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99274</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: smb: client: fix fiemap wild read on empty truncated response smb3_fiemap() treats -E2BIG from SMB2_ioctl() as a truncated range blob and loops for the next chunk. If the server repo…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99273 — ksmbd: reserve space for the UTF-16 terminator in stream info</title>
+      <link>https://vulnogram.org/CVE-2026-99273</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99273</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: reserve space for the UTF-16 terminator in stream info smb_strtoUTF16() always writes a terminating zero UTF-16 unit after the converted characters, but get_file_stream_info()…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99272 — smb: client: validate the data area in SMB2_read()</title>
+      <link>https://vulnogram.org/CVE-2026-99272</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99272</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: smb: client: validate the data area in SMB2_read() SMB2_read() copies le32_to_cpu(rsp-&gt;DataLength) bytes from (char *)rsp + rsp-&gt;DataOffset without checking that the range lies withi…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99271 — ALSA: line6: Clear prev_fbuf on capture buffer release</title>
+      <link>https://vulnogram.org/CVE-2026-99271</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99271</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: line6: Clear prev_fbuf on capture buffer release A KASAN slab-use-after-free read was reported in submit_audio_out_urb() when generating an impulse test signal: BUG: KASAN: sla…</description>
+      <pubDate>Sat, 07 Nov 2026 14:08:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-100082 — xen-blkback: Avoid UAF when reading I/O statistics</title>
       <link>https://vulnogram.org/CVE-2026-100082</link>
@@ -288,93 +372,6 @@
       <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/waitid: prevent cancel reference wrap io_waitid packs the cancellation state into bit 31 of -&gt;refs and uses bits 30:0 as a 31-bit reference counter: #define IO_WAITID_CANCEL…</description>
       <category>High</category>
       <pubDate>Mon, 02 Nov 2026 16:06:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99226 — keys: Avoid the owner account dereference in named keyring lookup</title>
-      <link>https://vulnogram.org/CVE-2026-99226</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99226</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: keys: Avoid the owner account dereference in named keyring lookup Named keyring lookup must keep the storage containing the owner UID alive through the namespace mapping check. find_…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99225 — keys: Check the authorization payload in process keyring searches</title>
-      <link>https://vulnogram.org/CVE-2026-99225</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99225</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: keys: Check the authorization payload in process keyring searches An authorization payload and its saved credentials must remain valid while search_process_keyrings_rcu() searches th…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99224 · 7 HIGH — keys: Protect the type name while describing a key</title>
-      <link>https://vulnogram.org/CVE-2026-99224</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99224</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: keys: Protect the type name while describing a key keyctl_describe_key() must keep the key type&apos;s name alive until kasprintf() has consumed it. The retained key reference keeps the k…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Nov 2026 16:06:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99223 — keys: make keyring indexes independent of kernel addresses</title>
-      <link>https://vulnogram.org/CVE-2026-99223</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99223</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: keys: make keyring indexes independent of kernel addresses KEYCTL_READ returns the serial numbers in a keyring in associative-array traversal order. The first word of the index is a…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99222 — keys: Protect the read method check against type removal</title>
-      <link>https://vulnogram.org/CVE-2026-99222</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99222</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: keys: Protect the read method check against type removal keyctl_read_key() checks key-&gt;type-&gt;read without holding key-&gt;sem. A reference keeps the key alive, but does not pin the modu…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99221 — keys/trusted_keys: return immediately after TPM unseal failure</title>
-      <link>https://vulnogram.org/CVE-2026-99221</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99221</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: keys/trusted_keys: return immediately after TPM unseal failure trusted_tpm_unseal() proceeds to pcrlock() when the TPM unseal operation fails. If pcrlock() succeeds, its return value…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99220 — asymmetric_keys: reject trust keys without IDs</title>
-      <link>https://vulnogram.org/CVE-2026-99220</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99220</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: asymmetric_keys: reject trust keys without IDs The PKCS#8 parser deliberately leaves the asym_key_ids payload slot empty. key_or_keyring_common() unconditionally dereferences that sl…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99219 — ftrace: Initialize modname and offset in print_rec()</title>
-      <link>https://vulnogram.org/CVE-2026-99219</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99219</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ftrace: Initialize modname and offset in print_rec() print_rec() leaves &apos;modname&apos; and &apos;offset&apos; uninitialized and kallsyms_lookup() only sets them on success. When the lookup fails li…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99218 · 7 HIGH — coredump: hold RCU while releasing parked threads</title>
-      <link>https://vulnogram.org/CVE-2026-99218</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99218</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: coredump: hold RCU while releasing parked threads coredump_finish() releases the parked threads by clearing -&gt;task in their core_thread entry and calling wake_up_process() on each of…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Nov 2026 16:06:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99216 · 8.4 HIGH — Drivers: hv: Don&apos;t reset VMBus connection state on error/exit paths</title>
-      <link>https://vulnogram.org/CVE-2026-99216</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99216</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: Drivers: hv: Don&apos;t reset VMBus connection state on error/exit paths In two places, current code forces vmbus_connection.conn_state to DISCONNECTED prior to calling vmbus_disconnect()…</description>
-      <category>High</category>
-      <pubDate>Wed, 28 Oct 2026 10:36:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99215 — power: supply: core: prevent unregistering a power supply while a callback runs</title>
-      <link>https://vulnogram.org/CVE-2026-99215</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99215</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: power: supply: core: prevent unregistering a power supply while a callback runs Once a power supply is registered, its callbacks can immediately start firing from other contexts, suc…</description>
-      <pubDate>Wed, 28 Oct 2026 10:36:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99214 — drm/vc4: hdmi: Move packet RAM enable to PM runtime</title>
-      <link>https://vulnogram.org/CVE-2026-99214</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99214</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/vc4: hdmi: Move packet RAM enable to PM runtime Audio can be triggered by the HPD handler and start up before video has been restored, calling vc4_hdmi_write_infoframe() for the…</description>
-      <pubDate>Wed, 28 Oct 2026 10:36:07 GMT</pubDate>
     </item>
   </channel>
 </rss>
