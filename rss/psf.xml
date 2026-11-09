@@ -11,7 +11,24 @@
       <title>Python Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 09 Nov 2026 07:38:53 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 18:14:10 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-124249 · 6.3 MEDIUM 🌩️ — `http.cookiejar` applies expired `Set-Cookie` to cookie store before policy validation</title>
+      <link>https://vulnogram.org/CVE-2026-124249</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124249</guid>
+      <description>http.cookiejar.CookieJar deleted a stored cookie when a response carried an already expired Set-Cookie header for it, using the Domain and Path attributes from the header without consulting the cookie policy. A server could therefore delete cookies b…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 09 Nov 2026 14:20:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19552 🌩️ — ssl.get_server_certificate(addr, ca_certs=...) verifies the chain but never the identity</title>
+      <link>https://vulnogram.org/CVE-2026-19552</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19552</guid>
+      <description>When ca_certs parameter was supplied to ssl.get_server_certificate() function, the identity of the certificate is not checked.</description>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 09 Nov 2026 14:15:31 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-119170 · 8.2 HIGH 🌩️ — Regression in FIPS enforcement of hash algorithms affecting only Python 3.14.10</title>
       <link>https://vulnogram.org/CVE-2026-119170</link>
@@ -415,23 +432,6 @@
       <description>The email module, specifically the &quot;BytesGenerator&quot; class, didn’t properly quote newlines for email headers when serializing an email message allowing for header injection when an email is serialized. This is only applicable if using &quot;LiteralHeader&quot;…</description>
       <category>Medium</category>
       <pubDate>Fri, 23 Jan 2026 16:27:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-12781 · 6.3 MEDIUM 🌩️ — base64.b64decode() always accepts &quot;+/&quot; characters, despite setting altchars</title>
-      <link>https://vulnogram.org/CVE-2025-12781</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-12781</guid>
-      <description>When passing data to the b64decode(), standard_b64decode(), and urlsafe_b64decode() functions in the &quot;base64&quot; module the characters &quot;+/&quot; will always be accepted, regardless of the value of &quot;altchars&quot; parameter, typically used to establish an &quot;alterna…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Jan 2026 19:34:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-0672 · 6 MEDIUM — Header injection in http.cookies.Morsel</title>
-      <link>https://vulnogram.org/CVE-2026-0672</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-0672</guid>
-      <description>When using http.cookies.Morsel, user-controlled cookie values and parameters can allow injecting HTTP headers into messages. Patch rejects all control characters within cookie names, values, and parameters.</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Jan 2026 21:52:33 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,50 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 09 Nov 2026 07:38:53 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 18:14:10 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-19706 · 8.3 HIGH — Openshift/installer: openshift installer: unconditional csr approval during agent-based installation (abi) bootstrap</title>
+      <link>https://vulnogram.org/CVE-2026-19706</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19706</guid>
+      <description>During ABI bootstrap, the bootstrap node&apos;s approve-csr.service approves and signs every CSR without identity validation. An attacker on the install network can retrieve the unauthenticated Ignition file (ports 22623/22624), extract a limited kubeconf…</description>
+      <category>High</category>
+      <pubDate>Mon, 09 Nov 2026 17:20:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121611 · 6.5 MEDIUM 🌩️ — Gstreamer1-plugins-bad-free: gst-plugins-bad: use of uninitialized gsth265hrdparams in gst_h265_parse_vps() multi-hrd workaround loop</title>
+      <link>https://vulnogram.org/CVE-2026-121611</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121611</guid>
+      <description>A flaw was found in GStreamer&apos;s gst-plugins-bad package. A use of uninitialized memory vulnerability exists in the H.265 (HEVC) bitstream parser when processing Video Parameter Sets that declare more than one HRD (Hypothetical Reference Decoder) para…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 09 Nov 2026 13:01:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121601 · 6.1 MEDIUM — Gstreamer1-plugins-bad-free: gstreamer1-plugins-bad-free: out-of-bounds read in mxfdemux via unchecked delta_id and slice index</title>
+      <link>https://vulnogram.org/CVE-2026-121601</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121601</guid>
+      <description>A flaw was found in GStreamer&apos;s MXF demuxer plugin (gst-plugins-bad). When processing a specially crafted MXF media file, the demuxer indexes its internal delta-entry and slice-offset tables using values from the file without validating that they are…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 09 Nov 2026 13:00:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119610 · 8.2 HIGH 🌩️ — Gstreamer1-plugins-good: gstreamer1-plugins-good: out-of-bounds heap read in mtap16/mtap24 h.264 rtp depayloader via signed/unsigned underflow</title>
+      <link>https://vulnogram.org/CVE-2026-119610</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119610</guid>
+      <description>A flaw was found in GStreamer&apos;s gst-plugins-good, specifically in the H.264 RTP depayloader element. When processing MTAP16 or MTAP24 multi-time aggregation RTP packets, a signed/unsigned integer conversion error causes the remaining-length counter t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 09 Nov 2026 13:00:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121629 · 7.5 HIGH 🌩️ — Gst-plugins-good: gst-plugins-good: local file disclosure via unvalidated file:// uris in adaptivedemux2 manifest handling</title>
+      <link>https://vulnogram.org/CVE-2026-121629</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121629</guid>
+      <description>A flaw was found in GStreamer&apos;s adaptive streaming demuxers (HLS, DASH, MSS). When processing a media playlist or manifest, URIs referenced in the manifest content are fetched without restricting which URI schemes are permitted. An attacker who contr…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 09 Nov 2026 11:35:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-120984 · 9.1 CRITICAL — Keycloak-services: keycloak-services: manage-clients to arbitrary code execution through inline javascript policy import</title>
       <link>https://vulnogram.org/CVE-2026-120984</link>
@@ -384,49 +427,6 @@
       <description>A flaw was found in ansible-core. When a task marked `no_log: true` fails, the task result is censored before being emitted, but the `exception` field is retained because it is present in the PRESERVE allow-list in lib/ansible/_internal/_task.py, and…</description>
       <category>Medium</category>
       <pubDate>Thu, 05 Nov 2026 09:38:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-121621 · 8.8 HIGH — Github.com/argoproj-labs/argocd-image-updater: argocd-image-updater: arbitrary command execution via crafted ssh repository proxy configuration</title>
-      <link>https://vulnogram.org/CVE-2026-121621</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121621</guid>
-      <description>A command injection vulnerability was found in Argo CD Image Updater, where a proxy URL configured on an SSH Git repository is passed unsanitized into a shell-interpreted SSH command. An attacker able to set a malicious proxy value can inject shell m…</description>
-      <category>High</category>
-      <pubDate>Tue, 03 Nov 2026 21:00:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82976 · 7.1 HIGH — Image-customization-controller: unauthenticated plaintext image server with directory listing exposes ignition images containing cluster pull secret</title>
-      <link>https://vulnogram.org/CVE-2026-82976</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82976</guid>
-      <description>A flaw was found in the image-customization-controller used in OpenShift&apos;s bare metal provisioning stack. The controller registers an HTTP file server on port 8084 with no authentication. The custom imageFileSystem implementation exposes a browsable…</description>
-      <category>High</category>
-      <pubDate>Tue, 03 Nov 2026 18:36:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-121259 · 6.5 MEDIUM 🌩️ — Gst-plugins-bad: gst-plugins-bad: integer overflows and division by zero in jpeg 2000 decimator</title>
-      <link>https://vulnogram.org/CVE-2026-121259</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121259</guid>
-      <description>A flaw was found in the GStreamer JPEG 2000 decimator in gst-plugins-bad. Crafted JPEG 2000 media can cause integer overflows or division by zero during tile processing. An application that processes the malicious media may crash, resulting in a deni…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Nov 2026 16:30:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-119843 · 6.5 MEDIUM 🌩️ — Gst-plugins-good: assertion failures in FLV demuxer when parsing malformed enhanced audio/video tags</title>
-      <link>https://vulnogram.org/CVE-2026-119843</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119843</guid>
-      <description>A flaw was found in GStreamer&apos;s gst-plugins-good package. The FLV media demuxer does not properly validate buffer sizes and data availability when processing enhanced audio and video tags in malformed or truncated FLV streams. A remote attacker could…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Nov 2026 09:45:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-120971 · 5.3 MEDIUM 🌩️ — Org.jboss.resteasy/resteasy-core: resteasy: information disclosure through default exception mapper responses</title>
-      <link>https://vulnogram.org/CVE-2026-120971</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120971</guid>
-      <description>A flaw was found in RESTEasy&apos;s default exception mapper. When an unhandled exception other than a WebApplicationException is not handled by an application exception mapper, RESTEasy returns the exception&apos;s localized message in the HTTP 500 response b…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Nov 2026 04:16:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
