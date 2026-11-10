@@ -11,7 +11,21 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 10 Nov 2026 16:03:51 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 21:55:43 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-120212 — Web::Simple versions before 0.037 for Perl do not escape single quotes in HTML::Tags output</title>
+      <link>https://vulnogram.org/CVE-2026-120212</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120212</guid>
+      <description>Web::Simple versions before 0.037 for Perl do not escape single quotes in HTML::Tags output. HTML::Tags and XML::Tags escape a plain string value by replacing only &amp;, &quot;, &lt; and &gt; with entities. A value interpolated into a single-quoted attribute, as i…</description>
+      <pubDate>Tue, 10 Nov 2026 17:42:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-125729 — Plack::Middleware::CSP versions before 0.03 for Perl send the Content Security Policy under the wrong header name, so browsers never enforce it</title>
+      <link>https://vulnogram.org/CVE-2026-125729</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125729</guid>
+      <description>Plack::Middleware::CSP versions before 0.03 for Perl send the Content Security Policy under the wrong header name, so browsers never enforce it. The call method sets the policy in a response header named &quot;content-security-protocol&quot; instead of &quot;Conten…</description>
+      <pubDate>Tue, 10 Nov 2026 17:35:57 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-115864 — Monoceros versions before 0.30 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory</title>
       <link>https://vulnogram.org/CVE-2026-115864</link>
@@ -38,10 +52,12 @@
       <pubDate>Sat, 07 Nov 2026 11:17:35 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-121006 — HTTP::Body versions before 1.24_02 for Perl parse the trailer in quadratic time</title>
+      <title>CVE-2026-121006 · 7.5 HIGH 🌩️ — HTTP::Body versions before 1.24_02 for Perl parse the trailer in quadratic time</title>
       <link>https://vulnogram.org/CVE-2026-121006</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121006</guid>
       <description>HTTP::Body versions before 1.24_02 for Perl parse the trailer in quadratic time. Everything after the last chunk in the same call to add() is parsed with HTTP::Headers, which takes time quadratic in the number of fields of one name. For example, it t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Fri, 06 Nov 2026 07:47:23 GMT</pubDate>
     </item>
     <item>
@@ -430,23 +446,6 @@
       <category>Critical</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 30 Oct 2026 13:10:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-118996 · 4.9 MEDIUM — CallBackery versions before 0.62.0 for Perl send users their own password hash and the admin-only user note via getUserConfig</title>
-      <link>https://vulnogram.org/CVE-2026-118996</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118996</guid>
-      <description>CallBackery versions before 0.62.0 for Perl send users their own password hash and the admin-only user note via getUserConfig. getUserConfig() returns the caller&apos;s whole cbuser row, including the stored password hash and the note field that the user…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 30 Oct 2026 13:10:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13576 · 7.5 HIGH 🌩️ — CallBackery versions before 0.62.0 for Perl store user passwords as unsalted HMAC-SHA1 hashes</title>
-      <link>https://vulnogram.org/CVE-2026-13576</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13576</guid>
-      <description>CallBackery versions before 0.62.0 for Perl store user passwords as unsalted HMAC-SHA1 hashes. Passwords are hashed with hmac_sha1_sum() from Mojo::Util with no key, a single fast SHA-1 HMAC. There is no salt, so equal passwords give equal hashes, an…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 30 Oct 2026 13:09:47 GMT</pubDate>
     </item>
   </channel>
 </rss>

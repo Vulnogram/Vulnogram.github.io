@@ -11,7 +11,57 @@
       <title>Eclipse Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 10 Nov 2026 16:03:51 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 21:55:43 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-111729 · 7 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-111729</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111729</guid>
+      <description>In Kura versions &lt;= 5.6.2, the &quot;Command&quot; file-upload handler at `POST /admin/denali/file/command` extracts a client-supplied ZIP archive into the configured `command.working.directory`. The path-containment check `validateFileName()` compares canonic…</description>
+      <category>High</category>
+      <pubDate>Tue, 10 Nov 2026 17:09:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97401 · 7.4 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-97401</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97401</guid>
+      <description>In Kura versions &lt;= 5.6.2, `CommandCloudApp.execute()` extracts a caller-supplied ZIP archive into a caller-supplied directory inside the Kura JVM process before dispatching the command to the executor service. On a packaged Kura installation the JVM…</description>
+      <category>High</category>
+      <pubDate>Tue, 10 Nov 2026 17:06:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112186 · 8.7 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-112186</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112186</guid>
+      <description>In Eclipse Kura versions 5.4.0 through 5.6.2, the Service Listing V1 REST API read the JSON body of every request into memory, with no limit on its size. The endpoints parse the body before they check whether the caller is authenticated. A remote att…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 10 Nov 2026 17:02:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-112185 · 8.6 HIGH</title>
+      <link>https://vulnogram.org/CVE-2026-112185</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-112185</guid>
+      <description>In Eclipse Kura versions 5.1.0 through 5.6.2, the Configuration REST API v2 (org.eclipse.kura.rest.configuration.provider) does not restrict access to the configuration of the UserAdmin persistence component to identities holding the kura.admin permi…</description>
+      <category>High</category>
+      <pubDate>Tue, 10 Nov 2026 16:58:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97891 · 8.8 HIGH 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-97891</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97891</guid>
+      <description>In Eclipse Kura version 5.0.0 to 5.6.2, the Web Console allocates a new HTTP session for every request to its built-in authentication endpoints (/admin/auth, /admin/login/password, /admin/login/cert) before checking the HTTP method, parsing the reque…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 10 Nov 2026 16:55:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97402 · 2.3 LOW</title>
+      <link>https://vulnogram.org/CVE-2026-97402</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97402</guid>
+      <description>In Eclipse Kura versions 3.1.0 to 5.6.2, the iBeacon and Eddystone advertisement decoders wrongly parse the AD-structure length field of an over-the-air BLE advertising payload. Any unauthenticated attacker within BLE radio range can broadcast a two-…</description>
+      <category>Low</category>
+      <pubDate>Tue, 10 Nov 2026 15:56:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-112191 · 8.6 HIGH</title>
       <link>https://vulnogram.org/CVE-2026-112191</link>
@@ -392,55 +442,6 @@
       <description>The Module Manager&apos;s block-pool create dispatcher proved that two `ALIGN_TYPE` words of the extra-parameter array a memory-protected module supplies lay inside the module&apos;s data, and then used indices 0 through 3 of that array. One of the two unprove…</description>
       <category>Medium</category>
       <pubDate>Tue, 20 Oct 2026 15:19:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95108 · 6.8 MEDIUM — Deleting a user-mode module thread leaks its privileged kernel stack</title>
-      <link>https://vulnogram.org/CVE-2026-95108</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95108</guid>
-      <description>One logical thread of a user-mode ThreadX module costs the Module Manager&apos;s shared object pool two allocations, not one. The module asks for a `TX_THREAD` control block through `txm_module_object_allocate`; `_txm_module_manager_thread_create` then ta…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 15:19:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94024 · 6.9 MEDIUM — Module Manager object lookup validates one byte of a module&apos;s search name</title>
-      <link>https://vulnogram.org/CVE-2026-94024</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94024</guid>
-      <description>The Module Manager&apos;s object lookup validated one byte of a memory-protected module&apos;s search name and then walked as much of it as the module declared, in privileged mode, with the kernel&apos;s preemption count raised. Both lookup dispatchers are affected…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 15:18:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94023 · 6.9 MEDIUM — Module delete dispatchers do not enforce kernel-object ownership before irreversible deletion</title>
-      <link>https://vulnogram.org/CVE-2026-94023</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94023</guid>
-      <description>A ThreadX module reaches a kernel object&apos;s delete service through the Module Manager&apos;s dispatch layer, which asked one question about the pointer: does the object lie outside the module&apos;s own code and data. That is the policy for *using* an object, a…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 20 Oct 2026 15:18:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-95109 · 8.5 HIGH — Cortex-A7 module data validation checks only the first address of a caller-supplied range</title>
-      <link>https://vulnogram.org/CVE-2026-95109</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95109</guid>
-      <description>The Cortex-A7 MMU Modules port validates a caller-supplied buffer by translating **one address** — the first byte. The common Module Manager hands its range check the module instance, the start address and the complete byte size; the Cortex-A7 implem…</description>
-      <category>High</category>
-      <pubDate>Tue, 20 Oct 2026 15:17:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94192 · 8.5 HIGH — Module object deallocation can free a live ThreadX kernel object</title>
-      <link>https://vulnogram.org/CVE-2026-94192</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94192</guid>
-      <description>A ThreadX module allocates the control blocks of its kernel objects from the Module Manager&apos;s object pool, and can ask for that memory back by address with `txm_module_object_deallocate`. The manager released it whatever was in it, including a contro…</description>
-      <category>High</category>
-      <pubDate>Tue, 20 Oct 2026 15:15:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92843 · 8.7 HIGH 🌩️ — Out-of-bounds Read via the TLS 1.3 Certificate extensions_length in NetX Secure</title>
-      <link>https://vulnogram.org/CVE-2026-92843</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92843</guid>
-      <description>A missing bounds check in the TLS 1.3 Certificate-message parser of NetX Secure lets a malicious TLS 1.3 server trigger an unsigned-integer underflow and a subsequent heap out-of-bounds read in any peer that processes a remote Certificate message. It…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 20 Oct 2026 15:12:55 GMT</pubDate>
     </item>
   </channel>
 </rss>
