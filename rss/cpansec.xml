@@ -11,7 +11,14 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 09 Nov 2026 18:14:10 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 01:08:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-115864 — Monoceros versions before 0.30 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory</title>
+      <link>https://vulnogram.org/CVE-2026-115864</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115864</guid>
+      <description>Monoceros versions before 0.30 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory. The request body is read in a loop that asks sysread for all of the remaining declared length at once. Perl grows the read…</description>
+      <pubDate>Mon, 09 Nov 2026 21:16:28 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-123776 — RRD::CGI::Image versions through 0.01 for Perl pass CGI query parameters containting &quot;tz&quot; to tzset(), , so a FIFO or device path blocks the CGI process</title>
       <link>https://vulnogram.org/CVE-2026-123776</link>
@@ -69,143 +76,178 @@
       <pubDate>Wed, 04 Nov 2026 14:23:14 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120651 — CGI versions before 5.00 for Perl allow an infinite loop on a short request body when $DISABLE_UPLOADS is set</title>
+      <title>CVE-2026-120651 · 7.5 HIGH 🌩️ — CGI versions before 5.00 for Perl allow an infinite loop on a short request body when $DISABLE_UPLOADS is set</title>
       <link>https://vulnogram.org/CVE-2026-120651</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120651</guid>
       <description>CGI versions before 5.00 for Perl allow an infinite loop on a short request body when $DISABLE_UPLOADS is set. When $CGI::PUTDATA_UPLOAD or an upload hook is set, read_postdata_putdata takes a request body that is not a form submission. With $CGI::DI…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:41:17 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120650 — CGI versions before 5.00 for Perl allow memory, CPU and disk exhaustion via missing or unenforced request size, parameter and upload limits</title>
+      <title>CVE-2026-120650 · 6.5 MEDIUM — CGI versions before 5.00 for Perl allow memory, CPU and disk exhaustion via missing or unenforced request size, parameter and upload limits</title>
       <link>https://vulnogram.org/CVE-2026-120650</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120650</guid>
       <description>CGI versions before 5.00 for Perl allow memory, CPU and disk exhaustion via missing or unenforced request size, parameter and upload limits. $CGI::POST_MAX defaults to no limit, and when set is not enforced for chunked multipart bodies or for the bou…</description>
+      <category>Medium</category>
       <pubDate>Tue, 03 Nov 2026 23:41:14 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120648 — CGI versions before 5.00 for Perl allow HTML injection via text containing --&gt; in comment</title>
+      <title>CVE-2026-120648 · 6.1 MEDIUM 🌩️ — CGI versions before 5.00 for Perl allow HTML injection via text containing --&gt; in comment</title>
       <link>https://vulnogram.org/CVE-2026-120648</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120648</guid>
       <description>CGI versions before 5.00 for Perl allow HTML injection via text containing --&gt; in comment. Arguments are placed between &lt;!-- and --&gt; without escaping, so text containing --&gt; closes the comment early. An application that passes request data to comment…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:41:09 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120647 — CGI versions before 5.00 for Perl allow Content-Disposition parameter injection via unescaped double quotes in the header attachment filename</title>
+      <title>CVE-2026-120647 · 9.8 CRITICAL 🌩️ — CGI versions before 5.00 for Perl allow Content-Disposition parameter injection via unescaped double quotes in the header attachment filename</title>
       <link>https://vulnogram.org/CVE-2026-120647</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120647</guid>
       <description>CGI versions before 5.00 for Perl allow Content-Disposition parameter injection via unescaped double quotes in the header attachment filename. header(-attachment =&gt; $name) writes $name into the quoted filename parameter of Content-Disposition without…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:41:05 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120646 — CGI versions from 4.71 before 5.00 for Perl allow denial of service via a plain string dereferenced as a symbolic reference in uploadInfo</title>
+      <title>CVE-2026-120646 · 7.5 HIGH 🌩️ — CGI versions from 4.71 before 5.00 for Perl allow denial of service via a plain string dereferenced as a symbolic reference in uploadInfo</title>
       <link>https://vulnogram.org/CVE-2026-120646</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120646</guid>
       <description>CGI versions from 4.71 before 5.00 for Perl allow denial of service via a plain string dereferenced as a symbolic reference in uploadInfo. uploadInfo dereferences its argument and calls its filename method without checking that it is an upload fileha…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:59 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120645 — CGI versions before 5.00 for Perl allow denial of service via submitted values used as a regex for optgroup selection in scrolling_list</title>
+      <title>CVE-2026-120645 · 7.5 HIGH 🌩️ — CGI versions before 5.00 for Perl allow denial of service via submitted values used as a regex for optgroup selection in scrolling_list</title>
       <link>https://vulnogram.org/CVE-2026-120645</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120645</guid>
       <description>CGI versions before 5.00 for Perl allow denial of service via submitted values used as a regex for optgroup selection in scrolling_list. When rendering option groups, scrolling_list marks the selected options by interpolating each selected value, by…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:54 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120644 — CGI::Cookie versions before 5.00 for Perl allow cookie attribute injection via unvalidated path, domain and expires values</title>
+      <title>CVE-2026-120644 · 9.1 CRITICAL 🌩️ — CGI::Cookie versions before 5.00 for Perl allow cookie attribute injection via unvalidated path, domain and expires values</title>
       <link>https://vulnogram.org/CVE-2026-120644</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120644</guid>
       <description>CGI::Cookie versions before 5.00 for Perl allow cookie attribute injection via unvalidated path, domain and expires values. The path, domain and expires values are written into the Set-Cookie header without checking for semicolons or control characte…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:51 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120643 — CGI versions from 4.62 before 5.00 for Perl allow cross-site scripting via a raw apostrophe in URLs returned by url and self_url</title>
+      <title>CVE-2026-120643 · 6.1 MEDIUM 🌩️ — CGI versions from 4.62 before 5.00 for Perl allow cross-site scripting via a raw apostrophe in URLs returned by url and self_url</title>
       <link>https://vulnogram.org/CVE-2026-120643</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120643</guid>
       <description>CGI versions from 4.62 before 5.00 for Perl allow cross-site scripting via a raw apostrophe in URLs returned by url and self_url. Both pass the URL through URI&apos;s canonical method, which leaves an apostrophe in the path raw and decodes the %27 that qu…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:48 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120642 — CGI versions before 5.00 for Perl return request-derived values untainted under taint mode</title>
+      <title>CVE-2026-120642 · 9.1 CRITICAL 🌩️ — CGI versions before 5.00 for Perl return request-derived values untainted under taint mode</title>
       <link>https://vulnogram.org/CVE-2026-120642</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120642</guid>
       <description>CGI versions before 5.00 for Perl return request-derived values untainted under taint mode. The upload filename, uploadInfo values, some path_info and script_name values, Accept results, and the name lists from url_param and cookie are returned witho…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:44 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120641 — CGI versions before 5.00 for Perl return upload filenames with any client-supplied path, including ../ and Windows paths</title>
+      <title>CVE-2026-120641 · 8.8 HIGH — CGI versions before 5.00 for Perl return upload filenames with any client-supplied path, including ../ and Windows paths</title>
       <link>https://vulnogram.org/CVE-2026-120641</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120641</guid>
       <description>CGI versions before 5.00 for Perl return upload filenames with any client-supplied path, including ../ and Windows paths. The name returned for an uploaded file is the filename parameter of the part&apos;s Content-Disposition header, unchanged. An applica…</description>
+      <category>High</category>
       <pubDate>Tue, 03 Nov 2026 23:40:36 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120640 — CGI versions before 5.00 for Perl allow the POSTDATA, PUTDATA, PATCHDATA and XForms:Model parameters to be set from the query string or form fields</title>
+      <title>CVE-2026-120640 · 6.5 MEDIUM 🌩️ — CGI versions before 5.00 for Perl allow the POSTDATA, PUTDATA, PATCHDATA and XForms:Model parameters to be set from the query string or form fields</title>
       <link>https://vulnogram.org/CVE-2026-120640</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120640</guid>
       <description>CGI versions before 5.00 for Perl allow the POSTDATA, PUTDATA, PATCHDATA and XForms:Model parameters to be set from the query string or form fields. CGI stores a non-form request body under POSTDATA, PUTDATA or PATCHDATA, and an XForms body under XFo…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:33 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120639 — CGI versions before 5.00 for Perl allow HTTP header injection via entity decoding after the newline check in header and unchecked values in multipart_start and do_push</title>
+      <title>CVE-2026-120639 · 7.2 HIGH 🌩️ — CGI versions before 5.00 for Perl allow HTTP header injection via entity decoding after the newline check in header and unchecked values in multipart_start and do_push</title>
       <link>https://vulnogram.org/CVE-2026-120639</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120639</guid>
       <description>CGI versions before 5.00 for Perl allow HTTP header injection via entity decoding after the newline check in header and unchecked values in multipart_start and do_push. With autoEscape off, header decodes HTML entities in extra header values after it…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:30 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120638 — CGI versions before 5.00 for Perl allow open redirects via HTML entity decoding of the URL after application validation in redirect</title>
+      <title>CVE-2026-120638 · 6.1 MEDIUM 🌩️ — CGI versions before 5.00 for Perl allow open redirects via HTML entity decoding of the URL after application validation in redirect</title>
       <link>https://vulnogram.org/CVE-2026-120638</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120638</guid>
       <description>CGI versions before 5.00 for Perl allow open redirects via HTML entity decoding of the URL after application validation in redirect. redirect decodes HTML entities in its URL before writing the Location header, so a URL the application has already va…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:27 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120637 — CGI versions before 5.00 for Perl take request parameters from the process command line arguments for an unrecognised REQUEST_METHOD</title>
+      <title>CVE-2026-120637 · 9.8 CRITICAL 🌩️ — CGI versions before 5.00 for Perl take request parameters from the process command line arguments for an unrecognised REQUEST_METHOD</title>
       <link>https://vulnogram.org/CVE-2026-120637</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120637</guid>
       <description>CGI versions before 5.00 for Perl take request parameters from the process command line arguments for an unrecognised REQUEST_METHOD. For a REQUEST_METHOD such as OPTIONS, CGI falls through to its offline debugging mode, which is on by default, and b…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:24 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120636 — CGI versions before 5.00 for Perl allow open redirects and script injection via URLs built from REQUEST_URI in url and start_form</title>
+      <title>CVE-2026-120636 · 6.1 MEDIUM 🌩️ — CGI versions before 5.00 for Perl allow open redirects and script injection via URLs built from REQUEST_URI in url and start_form</title>
       <link>https://vulnogram.org/CVE-2026-120636</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120636</guid>
       <description>CGI versions before 5.00 for Perl allow open redirects and script injection via URLs built from REQUEST_URI in url and start_form. url(-absolute=&gt;1), url(-relative=&gt;1) and the default start_form action are built from the client-supplied REQUEST_URI w…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:18 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120635 — CGI versions before 5.00 for Perl allow form fields to be smuggled past proxies and WAFs via multipart parsing that differs from the RFCs</title>
+      <title>CVE-2026-120635 · 8.1 HIGH — CGI versions before 5.00 for Perl allow form fields to be smuggled past proxies and WAFs via multipart parsing that differs from the RFCs</title>
       <link>https://vulnogram.org/CVE-2026-120635</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120635</guid>
       <description>CGI versions before 5.00 for Perl allow form fields to be smuggled past proxies and WAFs via multipart parsing that differs from the RFCs. The multipart/form-data parser matches the boundary anywhere rather than at the start of a line, uses the bound…</description>
+      <category>High</category>
       <pubDate>Tue, 03 Nov 2026 23:40:15 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120634 — CGI::Carp versions before 5.00 for Perl leak warnings across requests in persistent environments via the warningsToBrowser buffer</title>
+      <title>CVE-2026-120634 · 6.5 MEDIUM — CGI::Carp versions before 5.00 for Perl leak warnings across requests in persistent environments via the warningsToBrowser buffer</title>
       <link>https://vulnogram.org/CVE-2026-120634</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120634</guid>
       <description>CGI::Carp versions before 5.00 for Perl leak warnings across requests in persistent environments via the warningsToBrowser buffer. Warnings are held in a package-level buffer until warningsToBrowser writes them into the page as HTML comments, and the…</description>
+      <category>Medium</category>
       <pubDate>Tue, 03 Nov 2026 23:40:08 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120633 — CGI versions before 5.00 for Perl trust the client X-Forwarded-Host header in url, self_url, virtual_host and virtual_port</title>
+      <title>CVE-2026-120633 · 6.1 MEDIUM 🌩️ — CGI versions before 5.00 for Perl trust the client X-Forwarded-Host header in url, self_url, virtual_host and virtual_port</title>
       <link>https://vulnogram.org/CVE-2026-120633</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120633</guid>
       <description>CGI versions before 5.00 for Perl trust the client X-Forwarded-Host header in url, self_url, virtual_host and virtual_port. These take the host name and port from the X-Forwarded-Host request header when present, and otherwise from Host, without vali…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:40:04 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120632 — CGI versions before 5.00 for Perl allow CPU exhaustion via a backtracking regex on the XForms multipart/related Content-Type</title>
+      <title>CVE-2026-120632 · 6.5 MEDIUM — CGI versions before 5.00 for Perl allow CPU exhaustion via a backtracking regex on the XForms multipart/related Content-Type</title>
       <link>https://vulnogram.org/CVE-2026-120632</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120632</guid>
       <description>CGI versions before 5.00 for Perl allow CPU exhaustion via a backtracking regex on the XForms multipart/related Content-Type. When a POST Content-Type contains multipart/related, the boundary and start parameters are extracted with an unanchored patt…</description>
+      <category>Medium</category>
       <pubDate>Tue, 03 Nov 2026 23:40:01 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-120631 — CGI::Cookie versions from 4.67 before 5.00 for Perl allow denial of service via the client cookie expires value used as a regex in parse</title>
+      <title>CVE-2026-120631 · 7.5 HIGH 🌩️ — CGI::Cookie versions from 4.67 before 5.00 for Perl allow denial of service via the client cookie expires value used as a regex in parse</title>
       <link>https://vulnogram.org/CVE-2026-120631</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120631</guid>
       <description>CGI::Cookie versions from 4.67 before 5.00 for Perl allow denial of service via the client cookie expires value used as a regex in parse. CGI&apos;s cookie method reads the Cookie request header through parse, which interpolates the header&apos;s expires value…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Tue, 03 Nov 2026 23:39:55 GMT</pubDate>
     </item>
     <item>
@@ -392,15 +434,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 30 Oct 2026 13:09:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-119038 · 6.1 MEDIUM 🌩️ — Business::GoCardless versions before 1.01 for Perl complete redirect flows without checking the session token, letting a leaked redirect flow ID create payments against another customer&apos;s mandate</title>
-      <link>https://vulnogram.org/CVE-2026-119038</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119038</guid>
-      <description>Business::GoCardless versions before 1.01 for Perl complete redirect flows without checking the session token, letting a leaked redirect flow ID create payments against another customer&apos;s mandate. confirm_resource takes no session token from the call…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 30 Oct 2026 12:56:46 GMT</pubDate>
     </item>
   </channel>
 </rss>

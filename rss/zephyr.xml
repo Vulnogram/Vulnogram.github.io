@@ -11,7 +11,63 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 09 Nov 2026 18:14:10 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 01:08:44 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-90591 · 7.5 HIGH — NXP ENET-QOS Ethernet driver re-arms RX descriptors with a clobbered DMA buffer address on packet drop</title>
+      <link>https://vulnogram.org/CVE-2026-90591</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90591</guid>
+      <description>The NXP ENET-QOS Ethernet driver&apos;s receive work handler eth_nxp_enet_qos_rx() in drivers/ethernet/eth_nxp_enet_qos hands each processed descriptor back to the DMA by writing desc-&gt;read.control = rx_desc_refresh_flags, which sets OWN_FLAG and BUF1_ADD…</description>
+      <category>High</category>
+      <pubDate>Mon, 09 Nov 2026 22:04:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90590 · 6.5 MEDIUM — Permanent loss of transmit capability in the NXP ENET QoS Ethernet driver after an Ethernet link drop</title>
+      <link>https://vulnogram.org/CVE-2026-90590</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90590</guid>
+      <description>The NXP ENET QoS Ethernet driver in drivers/ethernet/eth_nxp_enet_qos serialises transmission with a binary semaphore, data-&gt;tx.tx_sem, taken in eth_nxp_enet_qos_tx() and returned only by the transmit-completion interrupt handler tx_dma_done(). A fra…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 09 Nov 2026 22:04:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90589 · 5.5 MEDIUM — Memory-mapped thread stack is never unmapped when a thread is aborted by another thread, exhausting kernel virtual address space</title>
+      <link>https://vulnogram.org/CVE-2026-90589</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90589</guid>
+      <description>When CONFIG_THREAD_STACK_MEM_MAPPED is enabled, each thread stack is mapped into the kernel virtual address space with a guard page on either side, and the mapping is released during abort cleanup. k_thread_abort_cleanup() in kernel/thread.c has two…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 09 Nov 2026 22:04:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90588 · 3.7 LOW — Out-of-bounds read in Zephyr HTTP client debug logging of response header fields</title>
+      <link>https://vulnogram.org/CVE-2026-90588</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90588</guid>
+      <description>The HTTP client&apos;s debug helper print_header_field() in subsys/net/lib/http/http_client.c formatted an http_parser data-callback slice with a %s conversion: snprintk(output, len + 1, &quot;%s&quot;, str). The parser hands its callbacks a pointer and a length in…</description>
+      <category>Low</category>
+      <pubDate>Mon, 09 Nov 2026 22:04:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90587 · 4.6 MEDIUM — NULL pointer dereference in the Zephyr USB host stack when a device reports zero configurations</title>
+      <link>https://vulnogram.org/CVE-2026-90587</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90587</guid>
+      <description>usbh_device_init() in subsys/usb/host/usbh_device.c rejects a device whose device descriptor advertises bNumConfigurations == 0, but it only logs the error and jumps to the cleanup label without setting the return code. At that point the local err is…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 09 Nov 2026 22:03:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90586 · 7.8 HIGH — Xtensa MMU userspace: uninitialized thread page-table pointer leads to out-of-bounds supervisor-mode writes</title>
+      <link>https://vulnogram.org/CVE-2026-90586</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90586</guid>
+      <description>The Xtensa MMU userspace port never initialized the per-thread page-table pointer thread-&gt;arch.ptables during thread setup, while arch_mem_domain_thread_add() in arch/xtensa/core/ptables.c uses a non-NULL value of that field as its &quot;this thread is mi…</description>
+      <category>High</category>
+      <pubDate>Mon, 09 Nov 2026 22:03:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90585 · 4.6 MEDIUM — Renesas RA SCI UART driver: unacknowledged receive-error interrupt causes a permanent interrupt storm and CPU lockup</title>
+      <link>https://vulnogram.org/CVE-2026-90585</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90585</guid>
+      <description>The Renesas RA SCI UART driver&apos;s receive-error ISR, uart_ra_sci_eri_isr() in drivers/serial/uart_renesas_ra_sci.c, acknowledged the error condition only when a Zephyr interrupt-driven callback had already been registered. With CONFIG_UART_INTERRUPT_D…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 09 Nov 2026 22:03:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-87045 · 7.5 HIGH — NULL pointer dereference in the Zephyr HTTP/2 server when a header block is completed by a CONTINUATION frame</title>
       <link>https://vulnogram.org/CVE-2026-87045</link>
@@ -355,62 +411,6 @@
       <description>ethernet_recv() in subsys/net/l2/ethernet/ethernet.c validates only that the first net_buf of a received frame holds a plain 14-byte struct net_eth_hdr. When the ethertype is 0x8100 and VLAN is enabled on the interface, the same buffer is reinterpret…</description>
       <category>High</category>
       <pubDate>Wed, 14 Oct 2026 16:45:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75083 · 5.9 MEDIUM — Integer underflow of the radio-reported frame length causes an out-of-bounds write in the NXP KW41Z IEEE 802.15.4 driver</title>
-      <link>https://vulnogram.org/CVE-2026-75083</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75083</guid>
-      <description>The receive path of the NXP KW41Z IEEE 802.15.4 driver, kw41z_rx() in drivers/ieee802154/ieee802154_kw41z.c, computed the payload size as pkt_len = len - KW41Z_FCS_LENGTH in a uint8_t, where len is the frame length reported by the radio. The interrup…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 16:45:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19940 · 6.5 MEDIUM — Bluetooth HFP AG reuses a connection slot while a delayable work item is still armed, corrupting kernel timeout bookkeeping</title>
-      <link>https://vulnogram.org/CVE-2026-19940</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19940</guid>
-      <description>The Bluetooth Classic Hands-Free Profile Audio Gateway implementation in subsys/bluetooth/host/classic/hfp_ag.c keeps its struct bt_hfp_ag objects in a static pool indexed by ACL connection index. On link teardown, hfp_ag_disconnected() cancels ag-&gt;t…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 13 Oct 2026 16:40:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19939 · 6.3 MEDIUM — Bluetooth Classic AVDTP: stale timeout work on signalling-channel disconnect leads to kernel timeout-list corruption</title>
-      <link>https://vulnogram.org/CVE-2026-19939</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19939</guid>
-      <description>The AVDTP signalling layer arms a 6-second command timeout (AVDTP_TIMEOUT) in avdtp_send_cmd() whenever the local device issues an AVDTP request. Every response handler in subsys/bluetooth/host/classic/avdtp.c cancels session-&gt;timeout_work before cle…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 13 Oct 2026 16:39:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19938 · 5.9 MEDIUM — Use-after-free of an ATT PDU buffer when signing an outgoing Bluetooth ATT Signed Write Command fails</title>
-      <link>https://vulnogram.org/CVE-2026-19938</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19938</guid>
-      <description>The Bluetooth host&apos;s ATT transmit path releases a buffer it does not own when signing fails. chan_send() in subsys/bluetooth/host/att.c documents (and every other error exit implements) the contract that on failure the caller retains ownership of the…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 12 Oct 2026 23:19:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19937 · 5.7 MEDIUM — Bluetooth Mesh Access layer permanently leaks delayable-message contexts, disabling all model responses</title>
-      <link>https://vulnogram.org/CVE-2026-19937</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19937</guid>
-      <description>The Bluetooth Mesh Access layer delayable-message machinery in subsys/bluetooth/mesh/delayable_msg.c manages a static pool of CONFIG_BT_MESH_ACCESS_DELAYABLE_MSG_COUNT message contexts (default 4) threaded onto a free_ctx or busy_ctx list. release_de…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 12 Oct 2026 23:19:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19936 · 4.8 MEDIUM — Bluetooth Mesh delayable message queue: unsynchronized list access leads to NULL pointer dereference</title>
-      <link>https://vulnogram.org/CVE-2026-19936</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19936</guid>
-      <description>The Bluetooth Mesh Access-layer delayable message queue in subsys/bluetooth/mesh/delayable_msg.c shares three intrusive lists (busy_ctx, free_ctx, free_chunks) and one k_work_delayable between two cooperative threads with no synchronization: bt_mesh_…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 12 Oct 2026 23:19:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19740 · 6.5 MEDIUM — Bluetooth LE Controller: retained RX node leak and reachable assertion in the PHY Update procedure</title>
-      <link>https://vulnogram.org/CVE-2026-19740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19740</guid>
-      <description>The Link Layer Control Procedure (LLCP) implementation of the Zephyr software Bluetooth LE Controller retains the receive node that carried an accepted LL_PHY_UPDATE_IND so that it can later be reused for the host notification when the update instant…</description>
-      <category>Medium</category>
-      <pubDate>Sun, 11 Oct 2026 17:15:08 GMT</pubDate>
     </item>
   </channel>
 </rss>
