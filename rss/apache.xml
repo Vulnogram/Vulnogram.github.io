@@ -11,7 +11,273 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 10 Nov 2026 08:05:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 16:03:50 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-86336 — Apache TomEE: EJB method authorization is silently skipped on JDK 21+</title>
+      <link>https://vulnogram.org/CVE-2026-86336</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86336</guid>
+      <description>Apache TomEE running on JDK 21 or later skips EJB method authorization checks, allowing callers to invoke EJB methods without the configured access restrictions being enforced. Users are recommended to upgrade to version 10.3.0 or 11.0.0-M2, which fi…</description>
+      <pubDate>Tue, 10 Nov 2026 15:38:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86531 — Apache TomEE: DoS via unbounded request body and multipart handling in embedded HTTP server</title>
+      <link>https://vulnogram.org/CVE-2026-86531</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86531</guid>
+      <description>The embedded OpenEJB HTTP server does not limit the size of incoming request bodies or of multipart requests, and does not remove the temporary files it creates for multipart parts. A remote unauthenticated attacker can cause excessive memory or disk…</description>
+      <pubDate>Tue, 10 Nov 2026 15:37:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87758 — Apache TomEE: Missing TLS hostname verification in ejbds client connections</title>
+      <link>https://vulnogram.org/CVE-2026-87758</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87758</guid>
+      <description>The remote EJB client does not verify that the hostname of the server it connects to matches the server&apos;s TLS certificate. An attacker able to intercept network traffic between an EJB client and server can impersonate the server and read or modify th…</description>
+      <pubDate>Tue, 10 Nov 2026 15:37:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97849 — Apache TomEE: Derby network service listens on all interfaces</title>
+      <link>https://vulnogram.org/CVE-2026-97849</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97849</guid>
+      <description>The embedded Derby network service ignores its configured bind address and listens on all network interfaces. When the service is enabled, a remote attacker with network access can connect to the database server and read or modify data. Users are rec…</description>
+      <pubDate>Tue, 10 Nov 2026 15:36:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97867 — Apache TomEE: Database credential disclosure via remote JNDI lookup</title>
+      <link>https://vulnogram.org/CVE-2026-97867</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97867</guid>
+      <description>The EJBd remote protocol returns datasource connection details, including database credentials, to remote clients that look up a datasource. A remote client able to reach the EJBd endpoint can obtain the database credentials and connect to the databa…</description>
+      <pubDate>Tue, 10 Nov 2026 15:36:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97870 — Apache TomEE: Missing authentication for Hessian endpoints in embedded HTTP server</title>
+      <link>https://vulnogram.org/CVE-2026-97870</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97870</guid>
+      <description>When Hessian remoting endpoints are served by the embedded HTTP server, configured authentication and transport security requirements are silently ignored. A remote unauthenticated attacker can invoke the exposed EJB methods without credentials or ov…</description>
+      <pubDate>Tue, 10 Nov 2026 15:34:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97872 — Apache TomEE: Authentication bypass of Hessian EJB endpoints due to ignored security settings</title>
+      <link>https://vulnogram.org/CVE-2026-97872</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97872</guid>
+      <description>When an EJB is exposed over the optional Hessian protocol inside an existing web application, some configured authentication and transport security settings are silently not enforced. A remote unauthenticated attacker can invoke the exposed EJB metho…</description>
+      <pubDate>Tue, 10 Nov 2026 15:34:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97874 — Apache TomEE: Authentication bypass for Hessian endpoints in non-root web applications</title>
+      <link>https://vulnogram.org/CVE-2026-97874</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97874</guid>
+      <description>When Hessian remoting is configured with BASIC authentication, the authentication check is not applied to Hessian endpoints of applications deployed under a non-root context path. A remote unauthenticated attacker can invoke the exposed EJB methods w…</description>
+      <pubDate>Tue, 10 Nov 2026 15:33:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97880 — Apache TomEE: Authentication bypass in the embedded HTTP server for endpoints protected by HTTP Basic authentication</title>
+      <link>https://vulnogram.org/CVE-2026-97880</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97880</guid>
+      <description>The embedded OpenEJB HTTP server dispatches some requests to REST endpoints configured for HTTP Basic authentication without verifying credentials. A remote unauthenticated attacker can invoke protected resources, bypassing authentication. Only deplo…</description>
+      <pubDate>Tue, 10 Nov 2026 15:33:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97881 — Apache TomEE: Path traversal in embedded HTTP server static resource handling</title>
+      <link>https://vulnogram.org/CVE-2026-97881</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97881</guid>
+      <description>The embedded OpenEJB HTTP server does not restrict static resource paths to the configured resource directories. A remote unauthenticated attacker can read arbitrary files accessible to the server process. Users are recommended to block network acces…</description>
+      <pubDate>Tue, 10 Nov 2026 15:32:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97888 — Apache TomEE: Caller identity leaks across requests in embedded HTTP server</title>
+      <link>https://vulnogram.org/CVE-2026-97888</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97888</guid>
+      <description>The embedded HTTP server does not clear the security identity established during a request before its worker thread handles the next request. A remote unauthenticated attacker can have their request processed with the identity of a previously authent…</description>
+      <pubDate>Tue, 10 Nov 2026 15:32:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97890 — Apache TomEE: Session fixation in embedded HTTP server</title>
+      <link>https://vulnogram.org/CVE-2026-97890</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97890</guid>
+      <description>The embedded HTTP server does not invalidate the previous session identifier when an application changes the session id, e.g. after login. An attacker who can plant a session identifier in a victim&apos;s browser can hijack the victim&apos;s authenticated sess…</description>
+      <pubDate>Tue, 10 Nov 2026 15:31:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111239 — Apache TomEE: Code execution by any authenticated user via the SSH administration shell</title>
+      <link>https://vulnogram.org/CVE-2026-111239</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111239</guid>
+      <description>The optional SSH administration service grants full access to the administration shell to every user that authenticates against its configured login domain, without checking for an administrative role. An attacker holding the credentials of any user…</description>
+      <pubDate>Tue, 10 Nov 2026 15:30:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111240 — Apache TomEE: Authentication bypass for accounts without a stored password in SQL login module</title>
+      <link>https://vulnogram.org/CVE-2026-111240</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111240</guid>
+      <description>The JDBC based JAAS login module accepts a login without a password for accounts whose stored password is NULL. A remote attacker who knows the user name of such an account can authenticate as that user and obtain its roles. Only deployments using th…</description>
+      <pubDate>Tue, 10 Nov 2026 15:30:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111241 — Apache TomEE: Local code execution via predictable passivation files in the shared temporary directory</title>
+      <link>https://vulnogram.org/CVE-2026-111241</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111241</guid>
+      <description>When a non-default stateful session bean passivation strategy is configured, passivated bean state is written to predictably named files in the shared system temporary directory, reusing files that already exist there, and is deserialized on activati…</description>
+      <pubDate>Tue, 10 Nov 2026 15:30:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111242 — Apache TomEE: Privilege escalation via leaked MicroProfile JWT run-as identity</title>
+      <link>https://vulnogram.org/CVE-2026-111242</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111242</guid>
+      <description>When MicroProfile JWT authentication is used for servlets that declare a run-as identity, the security state established for a request is not always cleared from the processing thread when the request does not complete normally. A remote attacker hol…</description>
+      <pubDate>Tue, 10 Nov 2026 15:29:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111243 — Apache TomEE: Expired MicroProfile JWT tokens accepted with negative clock skew</title>
+      <link>https://vulnogram.org/CVE-2026-111243</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111243</guid>
+      <description>A negative MicroProfile JWT clock skew setting is not rejected and disables validation of the token expiration and other time-based claims. In such configurations, an attacker in possession of an expired token can still authenticate with it. Users ar…</description>
+      <pubDate>Tue, 10 Nov 2026 15:29:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111244 — Apache TomEE: Authorization bypass in MicroProfile JWT role checks for JAX-RS resources</title>
+      <link>https://vulnogram.org/CVE-2026-111244</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111244</guid>
+      <description>When MicroProfile JWT role-based access control is used, the access constraints of JAX-RS resources are not always enforced as declared: resources that declare an empty set of allowed roles are accessible to every caller, resource classes that inheri…</description>
+      <pubDate>Tue, 10 Nov 2026 15:27:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111245 — Apache TomEE: Privilege escalation via WS-Security caller identity leaking between requests</title>
+      <link>https://vulnogram.org/CVE-2026-111245</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111245</guid>
+      <description>After a successful WS-Security UsernameToken authentication, the caller identity stays associated with the worker thread once the request completes when web services are served by the standalone OpenEJB HTTP server. A remote unauthenticated attacker…</description>
+      <pubDate>Tue, 10 Nov 2026 15:24:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111246 — Apache TomEE: HTTP sessions shared across web applications in embedded HTTP server</title>
+      <link>https://vulnogram.org/CVE-2026-111246</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111246</guid>
+      <description>The embedded OpenEJB HTTP server does not isolate HTTP sessions between web applications. A remote attacker can use a session established in one web application in another one, which then trusts session state set by the first application. Only deploy…</description>
+      <pubDate>Tue, 10 Nov 2026 15:23:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111247 — Apache TomEE: Privilege escalation via user name matching a role name</title>
+      <link>https://vulnogram.org/CVE-2026-111247</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111247</guid>
+      <description>When resolving security roles of a realm-authenticated caller, the caller&apos;s user name is also treated as a role name in addition to the roles assigned by the realm. An authenticated attacker who can obtain an account whose user name equals a role nam…</description>
+      <pubDate>Tue, 10 Nov 2026 15:23:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111248 — Apache TomEE: Authentication with the stored password digest in Tomcat user identity store</title>
+      <link>https://vulnogram.org/CVE-2026-111248</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111248</guid>
+      <description>The Jakarta Security identity store backed by the Tomcat user database compares the supplied password with the stored value as plain text and ignores the configured credential handler. When digested passwords are stored, an attacker who obtained a st…</description>
+      <pubDate>Tue, 10 Nov 2026 15:22:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111249 — Apache TomEE: Unauthenticated LiveReload endpoint reachable from the network</title>
+      <link>https://vulnogram.org/CVE-2026-111249</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111249</guid>
+      <description>The development-time LiveReload support listens on all network interfaces without authentication and accepts websocket connections from any origin. A network attacker, or a web page visited by the developer, can observe the names of changed files in…</description>
+      <pubDate>Tue, 10 Nov 2026 15:22:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111250 — Apache TomEE: Authentication bypass via programmatic authentication in embedded HTTP server</title>
+      <link>https://vulnogram.org/CVE-2026-111250</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111250</guid>
+      <description>The embedded OpenEJB HTTP server reports every request as authenticated when an application requests authentication programmatically. A remote unauthenticated attacker can access functionality protected this way. Only applications served by the embed…</description>
+      <pubDate>Tue, 10 Nov 2026 15:21:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111251 — Apache TomEE: Unauthenticated server shutdown via the admin port</title>
+      <link>https://vulnogram.org/CVE-2026-111251</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111251</guid>
+      <description>The admin service of the standalone OpenEJB server accepts stop requests without any authentication. Any local user or process able to connect to the admin port can stop the server, leading to denial of service; the admin service is enabled by defaul…</description>
+      <pubDate>Tue, 10 Nov 2026 15:20:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111256 — Apache TomEE: Missing authentication for web service endpoints in embedded HTTP server</title>
+      <link>https://vulnogram.org/CVE-2026-111256</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111256</guid>
+      <description>When JAX-WS or JAX-RS endpoints are published by the embedded OpenEJB HTTP server rather than Tomcat, some configured authentication methods are silently ignored and the endpoint is published without authentication. A remote unauthenticated attacker…</description>
+      <pubDate>Tue, 10 Nov 2026 15:20:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111257 — Apache TomEE: Well-known administrative credentials created at startup</title>
+      <link>https://vulnogram.org/CVE-2026-111257</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111257</guid>
+      <description>With the default configuration and no users defined in the default user database, TomEE silently adds an administrative user with a well-known password at startup. A remote attacker can use these credentials to authenticate to web applications that u…</description>
+      <pubDate>Tue, 10 Nov 2026 15:19:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111258 — Apache TomEE: Security constraint bypass via request routing</title>
+      <link>https://vulnogram.org/CVE-2026-111258</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111258</guid>
+      <description>The optional request routing feature forwards requests to their configured destination without applying the security constraints of that destination or the protection of the web application&apos;s private directories. If a route copies client-controlled p…</description>
+      <pubDate>Tue, 10 Nov 2026 15:19:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111259 — Apache TomEE: Predictable HTTP session identifiers in embedded server</title>
+      <link>https://vulnogram.org/CVE-2026-111259</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111259</guid>
+      <description>The embedded server generates HTTP session identifiers with a non-cryptographic random number generator by default. A remote attacker who observes a session identifier can predict the identifiers issued to other users and hijack their sessions, if th…</description>
+      <pubDate>Tue, 10 Nov 2026 15:18:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111260 — Apache TomEE: Predictable OpenID Connect state and nonce values</title>
+      <link>https://vulnogram.org/CVE-2026-111260</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111260</guid>
+      <description>The Jakarta Security OpenID Connect authentication mechanism generates the state and nonce values with a non-cryptographic random number generator and insufficient entropy. A remote attacker who predicts these values can forge an authentication callb…</description>
+      <pubDate>Tue, 10 Nov 2026 15:15:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111261 — Apache TomEE: Authentication bypass with empty password in LDAP identity store</title>
+      <link>https://vulnogram.org/CVE-2026-111261</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111261</guid>
+      <description>The Jakarta Security LDAP identity store accepts an empty password as valid if the directory server allows unauthenticated binds, which some directory servers do by default. A remote attacker can then authenticate as any existing user without knowing…</description>
+      <pubDate>Tue, 10 Nov 2026 15:14:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111262 — Apache TomEE: LDAP injection in LDAP identity store</title>
+      <link>https://vulnogram.org/CVE-2026-111262</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111262</guid>
+      <description>The Jakarta Security LDAP identity store does not neutralize special characters in the caller name before using it in directory queries. A remote unauthenticated attacker can alter the queries to enumerate accounts, infer directory attribute values,…</description>
+      <pubDate>Tue, 10 Nov 2026 15:05:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111263 — Apache TomEE: Missing authentication on EJB web service endpoints deployed in a web application</title>
+      <link>https://vulnogram.org/CVE-2026-111263</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111263</guid>
+      <description>Authentication configured for an EJB JAX-WS endpoint in the TomEE deployment descriptor is not enforced when the endpoint is published within an existing web application. A remote unauthenticated attacker can invoke the web service operations, unless…</description>
+      <pubDate>Tue, 10 Nov 2026 15:05:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111264 — Apache TomEE: Authentication bypass on EJB web service endpoints via HTTP method</title>
+      <link>https://vulnogram.org/CVE-2026-111264</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111264</guid>
+      <description>The security constraint generated for EJB JAX-WS endpoints with configured authentication protects only some HTTP methods. A remote unauthenticated attacker can bypass authentication by sending requests with another HTTP method. Users are recommended…</description>
+      <pubDate>Tue, 10 Nov 2026 15:04:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87756 — Apache TomEE: Missing authorization on internal deployer EJBs in default profile</title>
+      <link>https://vulnogram.org/CVE-2026-87756</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87756</guid>
+      <description>The internal system EJBs used for remote deployment and configuration did not enforce their administrative role check when the server ran with the default profile. A remote unauthenticated attacker able to reach the remote EJB endpoint could deploy a…</description>
+      <pubDate>Tue, 10 Nov 2026 14:57:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87755 — Apache TomEE: Stateful session bean hijacking via predictable session identifiers</title>
+      <link>https://vulnogram.org/CVE-2026-87755</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87755</guid>
+      <description>Stateful session bean identifiers are not generated from a cryptographically secure random source. A remote attacker with access to the EJB remote endpoint who holds one valid identifier can derive those of other clients&apos; sessions and invoke methods…</description>
+      <pubDate>Tue, 10 Nov 2026 14:56:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86811 — Apache TomEE: Path traversal via stateful EJB passivation</title>
+      <link>https://vulnogram.org/CVE-2026-86811</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86811</guid>
+      <description>The stateful session bean passivation mechanism derives the on-disk file name from a client-supplied identifier without validating it. A remote attacker with access to the remote EJB service can cause session state to be read from or written to files…</description>
+      <pubDate>Tue, 10 Nov 2026 14:55:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-86532 — Apache TomEE: Username enumeration and timing side channel in JAAS login modules</title>
+      <link>https://vulnogram.org/CVE-2026-86532</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86532</guid>
+      <description>The bundled JAAS login modules leak whether a username exists and compare credentials in a non-constant-time manner. A remote unauthenticated attacker can enumerate valid accounts and may infer credential material through timing analysis. Users are r…</description>
+      <pubDate>Tue, 10 Nov 2026 14:53:27 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-119078 — Apache Commons Codec: Blake3 doFinalize is stateless; the documented KDF example derives identical keys</title>
       <link>https://vulnogram.org/CVE-2026-119078</link>
@@ -97,279 +363,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82440</guid>
       <description>Description Nimbus instantiates the class named by a topology&apos;s `topology.scheduler.strategy` when scheduling it. The allowlist intended to constrain that choice, `nimbus.scheduler.strategy.class.whitelist`, was treated as &quot;allow any class&quot; when unse…</description>
       <pubDate>Mon, 09 Nov 2026 10:01:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-40913 — Apache Airflow: Import Errors API Leaks Unauthorized DAG Stack Traces via Incomplete Per-File RBAC Enforcement</title>
-      <link>https://vulnogram.org/CVE-2026-40913</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-40913</guid>
-      <description>Apache Airflow&apos;s public Import Errors API returns the raw parse-failure stack trace to any user with the `ImportError.can_read` permission when the failing file has no registered DAG. This happens when a file fails to parse before any DAG is defined,…</description>
-      <pubDate>Mon, 09 Nov 2026 10:00:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-50204 — Apache Airflow: Audit-log secrets masker redacts by key name only, persisting connection and Variable secrets in cleartext</title>
-      <link>https://vulnogram.org/CVE-2026-50204</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50204</guid>
-      <description>Apache Airflow&apos;s audit log stored Connection and Variable secret values in cleartext in the `Log.extra` column because the secrets masker matched only on configured sensitive key names. An authenticated low-privilege user with read access to the even…</description>
-      <pubDate>Mon, 09 Nov 2026 09:57:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68982 — Apache Airflow: CeleryExecutor: forged callback workloads run on Celery workers without workload-token validation</title>
-      <link>https://vulnogram.org/CVE-2026-68982</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68982</guid>
-      <description>Apache Airflow&apos;s CeleryExecutor ran callback workloads (`ExecuteCallback`, used for deadline-alert callbacks) without validating the workload&apos;s authentication token. Anyone able to write to the Celery broker could enqueue a forged callback and execut…</description>
-      <pubDate>Mon, 09 Nov 2026 09:55:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76185 — Apache Airflow Task SDK: SecretCache: non-injective team cache key enables cross-team secret disclosure in multi-team mode</title>
-      <link>https://vulnogram.org/CVE-2026-76185</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76185</guid>
-      <description>Apache Airflow&apos;s Task SDK secret cache built its keys from the team name and secret id with unescaped `_` delimiters, so different (team, secret id) pairs could collide. In multi-team deployments a Dag author could read another team&apos;s Variable or Con…</description>
-      <pubDate>Mon, 09 Nov 2026 09:53:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86829 — Apache Airflow: Deserialization of task-controlled XCom values in the Scheduler during dependency evaluation</title>
-      <link>https://vulnogram.org/CVE-2026-86829</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86829</guid>
-      <description>Apache Airflow&apos;s scheduler fully deserializes XCom values written by task code while evaluating task dependencies. A Dag author, who controls what a task writes to XCom, therefore controls data that is deserialized inside the scheduler process - a co…</description>
-      <pubDate>Mon, 09 Nov 2026 09:52:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82337 — Apache Airflow: DeadlineAlert fields bypass plugin-registration gate for scheduler-side deserialization</title>
-      <link>https://vulnogram.org/CVE-2026-82337</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82337</guid>
-      <description>Apache Airflow rebuilt deadline alert fields through generic deserialization, which imports and instantiates the class named in the serialized Dag, in the scheduler and API server. A Dag author could cause classes within Airflow&apos;s deserialization all…</description>
-      <pubDate>Mon, 09 Nov 2026 09:51:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86468 — Apache Airflow: CLI argv masking misses Variable values and --conn-extra, persisting secrets in audit logs</title>
-      <link>https://vulnogram.org/CVE-2026-86468</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86468</guid>
-      <description>Apache Airflow&apos;s CLI records its arguments in the audit log but masks secrets by argument position, so some supported command shapes leave secrets in cleartext, for example a trailing `--description` on Variable commands, `--conn-extra`, and the inli…</description>
-      <pubDate>Mon, 09 Nov 2026 09:49:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-96285 — Apache Airflow: Scheduler: next_kwargs deserialized before the dict check, so resume data still invokes constructors</title>
-      <link>https://vulnogram.org/CVE-2026-96285</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-96285</guid>
-      <description>Apache Airflow 3.3.1 shipped a fix for CVE-2026-67260 that checks the scheduler&apos;s decoded `next_kwargs` value is a dictionary, but performs that check only after deserializing the whole stored payload. Deserialization reconstructs nested objects of c…</description>
-      <pubDate>Mon, 09 Nov 2026 09:47:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113508 — Apache Airflow: Logout token revocation fails open; errors silently swallowed</title>
-      <link>https://vulnogram.org/CVE-2026-113508</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113508</guid>
-      <description>Apache Airflow&apos;s logout endpoint attempted to revoke the presented token on the server, but any failure during revocation was silently ignored and logout still reported success. When the auth manager redirects logout to an external logout URL (for ex…</description>
-      <pubDate>Mon, 09 Nov 2026 09:46:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-101031 — Apache Airflow: Shell command injection in the example_dag_decorator example Dag via an IPv6 zone identifier</title>
-      <link>https://vulnogram.org/CVE-2026-101031</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-101031</guid>
-      <description>The `example_dag_decorator` example Dag shipped with Apache Airflow validated an IP address fetched over HTTP with Python&apos;s `ipaddress` module and then placed it into a shell command. `ipaddress` accepts IPv6 zone identifiers containing arbitrary cha…</description>
-      <pubDate>Mon, 09 Nov 2026 09:44:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113504 — Apache Airflow: Secrets masker: pattern-based masking bounded at depth 5 returns deeply-nested registered secrets in cleartext</title>
-      <link>https://vulnogram.org/CVE-2026-113504</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113504</guid>
-      <description>Apache Airflow&apos;s secrets masker stopped descending into nested structures after five levels, so a secret registered with the masker — for example a Connection password or a Variable value — that appeared more than five containers deep under non-sensi…</description>
-      <pubDate>Mon, 09 Nov 2026 09:21:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107474 — Apache Airflow: Connections API: apprise connection &quot;config&quot; extra returned in cleartext</title>
-      <link>https://vulnogram.org/CVE-2026-107474</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107474</guid>
-      <description>The Apache Airflow connections API did not mask the apprise provider&apos;s `config` connection extra, which can embed notification-service credentials. A user with permission to read connections could retrieve it in cleartext, although Airflow 3 treats c…</description>
-      <pubDate>Mon, 09 Nov 2026 09:19:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111395 — Apache Airflow: Reserved serialization keys in Dag run conf crash the scheduler or are rebuilt as objects in the Triggerer via deadline callbacks</title>
-      <link>https://vulnogram.org/CVE-2026-111395</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111395</guid>
-      <description>Apache Airflow did not reject reserved serialization keys inside a Dag run&apos;s `conf`. A user allowed to trigger a Dag that uses a deadline alert with an asynchronous callback could pass a `conf` that, once the deadline was missed, either crashed the s…</description>
-      <pubDate>Mon, 09 Nov 2026 09:18:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111421 · 8.8 HIGH — Apache Airflow: Execution API: set_xcom skips the reserved-key check, so task-written XComs instantiate airflow.* classes on the API server</title>
-      <link>https://vulnogram.org/CVE-2026-111421</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111421</guid>
-      <description>Apache Airflow&apos;s Task Execution API stored XCom values written by a task without the reserved-key check applied elsewhere, so a Dag author&apos;s task could write an XCom that, when a user later viewed it through the API with deserialization enabled, made…</description>
-      <category>High</category>
-      <pubDate>Mon, 09 Nov 2026 09:15:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111452 — Apache Airflow: Secrets masker: camelCase key names (privateKey, connectionString, webhookUrl) not matched against the sensitive-field list</title>
-      <link>https://vulnogram.org/CVE-2026-111452</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111452</guid>
-      <description>Apache Airflow&apos;s secrets masker matched sensitive key names only in their snake_case form, so values stored under camelCase keys such as `privateKey`, `connectionString`, `webhookUrl` or `accessKey` — for example in a Connection&apos;s extra or a Variable…</description>
-      <pubDate>Mon, 09 Nov 2026 09:12:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111453 · 4.3 MEDIUM — Apache Airflow: API: asset queuedEvents DELETE checks Dag edit on a ?dag_id query value but deletes rows for every readable Dag</title>
-      <link>https://vulnogram.org/CVE-2026-111453</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111453</guid>
-      <description>Apache Airflow&apos;s API endpoint for deleting an asset&apos;s queued events checked Dag edit permission against the `dag_id` query parameter, but deleted the queued events of every Dag the caller could read. An authenticated user with edit permission on one…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 09 Nov 2026 09:10:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111454 — Apache Airflow: API: asset endpoints return scheduled/producing/consuming Dag IDs the caller cannot read</title>
-      <link>https://vulnogram.org/CVE-2026-111454</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111454</guid>
-      <description>Apache Airflow&apos;s asset API endpoints returned the IDs of Dags that are scheduled on, produce, or consume an asset without checking whether the caller may read those Dags. An authenticated user with asset read access could learn the IDs of Dags they a…</description>
-      <pubDate>Mon, 09 Nov 2026 09:07:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111455 — Apache Airflow: Connections API: async connection test authorizes create at enqueue but overwrites a later-created connection at commit</title>
-      <link>https://vulnogram.org/CVE-2026-111455</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111455</guid>
-      <description>Apache Airflow&apos;s asynchronous connection test checked permissions when the test was queued — only create permission when the connection ID did not exist yet — but, when the test completed with `commit_on_success`, wrote the tested connection under th…</description>
-      <pubDate>Mon, 09 Nov 2026 09:06:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90436 👻 — Apache Axis 1.x (EOL): unauthenticated remote class instantiation via SOAP fault exceptionName</title>
-      <link>https://vulnogram.org/CVE-2026-90436</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90436</guid>
-      <description>** UNSUPPORTED WHEN ASSIGNED ** Deserialization of an inbound SOAP fault in Apache Axis 1.x allows unauthenticated remote class instantiation. When a SOAP &lt;Fault&gt; carries a &lt;detail&gt;&lt;exceptionName&gt; element, Axis loads the named class and, if a String…</description>
-      <category>Unsupported When Assigned</category>
-      <pubDate>Fri, 06 Nov 2026 15:37:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85111 · 8.7 HIGH 🌩️ — Apache James: Denial of service upon MIME parsing</title>
-      <link>https://vulnogram.org/CVE-2026-85111</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85111</guid>
-      <description>Allocation of Resources Without Limits or Throttling in Apache James Mime4J library prior version 0.8.15 allows Denial of Service upon parsing Mime messages. Users are recommended to upgrade to Apache James server 3.9.1 that relies on fixed MIME4J 0.…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 06 Nov 2026 11:50:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85108 — Apache James MIME4J: Denial of service due to Allocation of Resources Without Limits or Throttling</title>
-      <link>https://vulnogram.org/CVE-2026-85108</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85108</guid>
-      <description>Allocation of Resources Without Limits or Throttling in Apache James Mime4J library prior version 0.8.15 allows Denial of Service upon parsing Mime messages. Users are recommended to upgrade to version 0.8.15 which fixes the issue by enforcing new li…</description>
-      <pubDate>Fri, 06 Nov 2026 11:46:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76168 — Apache James: ManageSieve file implementation cross-user path traversal</title>
-      <link>https://vulnogram.org/CVE-2026-76168</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76168</guid>
-      <description>In Apache James server prior version 3.9.1 relying on the SieveFileRepository incorect validation of file paths can result in path transversal, allowing to set arbitrary SIEVE scripts for other users. This allows a logged in attacker to set arbitrary…</description>
-      <pubDate>Fri, 06 Nov 2026 11:44:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74756 — Apache James: WebAdmin exposed without authentication on official Docker default</title>
-      <link>https://vulnogram.org/CVE-2026-74756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74756</guid>
-      <description>Some docker-compose shipped by the project exposes by default Webadmin REST API publically without proper authentication setup. Version 3.9.1 onward sets a random credential by default on unprotected webadmin endpoints to prevent this while retain co…</description>
-      <pubDate>Fri, 06 Nov 2026 11:43:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76171 — Apache James: SSRF filter bypass in the JMAP PushSubscription web-push client</title>
-      <link>https://vulnogram.org/CVE-2026-76171</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76171</guid>
-      <description>In Apache James server prior version 3.9.1 improper validation in JMAP webPush SSRF validation did lead to the possibility to reach internal addresses. Users are recommended to upgrade to version 3.9.1 which fixes this issue.</description>
-      <pubDate>Fri, 06 Nov 2026 11:42:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49939 — Apache James: Negative IMAP ACL administer authorization bypass through JMAP protocol</title>
-      <link>https://vulnogram.org/CVE-2026-49939</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49939</guid>
-      <description>In Apache James server prior version 3.9.1 improper Access Control List processing is exposed by the JMAP protocol which do not account for negative rules positionned by IMAP protocol. This results in users being able to administer folders in JMAP de…</description>
-      <pubDate>Fri, 06 Nov 2026 11:40:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-66621 — Apache James: SASL OAUTHBEARER do not validate aud in JWT payload if misconfigred</title>
-      <link>https://vulnogram.org/CVE-2025-66621</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-66621</guid>
-      <description>Apache James SASL OAuthBearer/XOAUTH2 prior versions 3.9.1 fails to validate correctly AUD claim of JWT payloads when introspection is not configured. This allows an attacker with valid credentials to access the mail server even if they are not autho…</description>
-      <pubDate>Fri, 06 Nov 2026 11:38:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66903 · 6.5 MEDIUM — Apache OFBiz: Authenticated Path Traversal in Catalog Image Management</title>
-      <link>https://vulnogram.org/CVE-2026-66903</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66903</guid>
-      <description>Authenticated Path Traversal in Catalog Image Management allows writing image files outside the intended directory in Apache OFBiz. This issue affects Apache OFBiz: before 24.09.08. Users are recommended to upgrade to version 24.09.08, which fixes th…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 05 Nov 2026 14:12:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71901 · 8.1 HIGH — Apache OFBiz: Dispatch arbitrary internal services on SFA component</title>
-      <link>https://vulnogram.org/CVE-2026-71901</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71901</guid>
-      <description>Improper Control of Resource Identifiers (&apos;Resource Injection&apos;) vulnerability in Apache OFBiz. An authenticate user with access to sfa component can override the service to use on vcard import and access to other service. This issue affects Apache OF…</description>
-      <category>High</category>
-      <pubDate>Thu, 05 Nov 2026 14:12:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-68524 — Apache OFBiz: Pre-Authentication Remote Code Execution via Attacker-Controlled Screen Definition Loading</title>
-      <link>https://vulnogram.org/CVE-2026-68524</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-68524</guid>
-      <description>An unauthenticated attacker can exploit temporary-file handling, access an open file descriptor, and inject a &quot;file:&quot; URI to cause OFBiz to load an attacker-controlled Screen definition. This issue affects Apache OFBiz: before 24.09.08. Users are rec…</description>
-      <pubDate>Thu, 05 Nov 2026 14:11:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73577 — Apache OFBiz: Unauthenticated path-suffix view authorization bypass</title>
-      <link>https://vulnogram.org/CVE-2026-73577</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73577</guid>
-      <description>Incorrect authorization in RequestHandler in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the authentication requirement of a protected view by appending it as a path suffix to a public reques…</description>
-      <pubDate>Thu, 05 Nov 2026 14:11:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73578 — Apache OFBiz: Unauthenticated saved-view authorization bypass with RCE impact</title>
-      <link>https://vulnogram.org/CVE-2026-73578</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73578</guid>
-      <description>Missing authorization enforcement in RequestHandler.renderView in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote unauthenticated attacker to bypass the request-map authentication policy for protected views by supplying a crafted…</description>
-      <pubDate>Thu, 05 Nov 2026 14:10:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73580 — Apache OFBiz: Unauthenticated HR organization and employee disclosure</title>
-      <link>https://vulnogram.org/CVE-2026-73580</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73580</guid>
-      <description>Missing authorization check in the getHRChild service in Apache OFBiz through 24.09.07 on all platforms allows a remote unauthenticated attacker to recursively enumerate Human Resources organization and employee data, including department names and i…</description>
-      <pubDate>Thu, 05 Nov 2026 14:10:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74841 — Apache OFBiz: Denial of Service via unauthenticated userTenantId in multitenant mode</title>
-      <link>https://vulnogram.org/CVE-2026-74841</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74841</guid>
-      <description>In multitenant deployments, ContextFilter and LoginWorker built a per-tenant delegator name from a request-supplied userTenantId parameter and requested a delegator for it before confirming the tenant existed. DelegatorFactory&apos;s internal cache retain…</description>
-      <pubDate>Thu, 05 Nov 2026 14:09:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76150 — Apache OFBiz: Authenticated path traversal and missing authorization check in replaceImageToExistImage</title>
-      <link>https://vulnogram.org/CVE-2026-76150</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76150</guid>
-      <description>Path traversal and missing authorization check in the replaceImageToExistImage service in Apache OFBiz through 24.09.07 on all platforms allows a remote authenticated attacker with only Catalog view permission to overwrite arbitrary files writable by…</description>
-      <pubDate>Thu, 05 Nov 2026 14:09:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81734 — Apache OFBiz: Missing authorization - catalog quick-admin product writes</title>
-      <link>https://vulnogram.org/CVE-2026-81734</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81734</guid>
-      <description>Missing Authorization in ProductEvents in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote authenticated attacker holding only catalog view permission to create, modify, or remove arbitrary product, product feature association, and…</description>
-      <pubDate>Thu, 05 Nov 2026 14:08:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76152 — Apache OFBiz: Authenticated path traversal and missing authorization check in imageCrop and imageRotate services</title>
-      <link>https://vulnogram.org/CVE-2026-76152</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76152</guid>
-      <description>Path traversal and missing authorization check in the imageCrop and imageRotate services in Apache OFBiz through 24.09.07 on all platforms allows a remote authenticated attacker with only Catalog view permission to read arbitrary image-parseable file…</description>
-      <pubDate>Thu, 05 Nov 2026 14:08:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81744 — Apache OFBiz: Authorization bypass - self-grant content OWNER</title>
-      <link>https://vulnogram.org/CVE-2026-81744</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81744</guid>
-      <description>Incorrect Authorization in ContentPermissionServices in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote authenticated attacker holding only a limited content-create permission to self-grant the OWNER role on arbitrary content by i…</description>
-      <pubDate>Thu, 05 Nov 2026 14:07:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81808 — Apache OFBiz: Missing authorization - search-result bulk catalog mutation</title>
-      <link>https://vulnogram.org/CVE-2026-81808</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81808</guid>
-      <description>Missing Authorization in ProductSearchEvents in Apache OFBiz 24.09 before 24.09.08 on all platforms allows a remote authenticated attacker holding only catalog view permission to bulk-modify product category and feature associations across arbitrary…</description>
-      <pubDate>Thu, 05 Nov 2026 14:07:19 GMT</pubDate>
     </item>
   </channel>
 </rss>
