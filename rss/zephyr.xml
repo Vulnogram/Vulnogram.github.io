@@ -11,7 +11,55 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 10 Nov 2026 21:55:43 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 01:49:06 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-90834 · 5.5 MEDIUM — UART wide-data syscall verifiers check the 8-bit driver op, allowing a user-mode thread to trigger a NULL function-pointer call in kernel mode</title>
+      <link>https://vulnogram.org/CVE-2026-90834</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90834</guid>
+      <description>The user-mode syscall verifiers for the 16-bit (&quot;wide data&quot;) UART API in drivers/serial/uart_handlers.c validated the wrong driver operation. z_vrfy_uart_poll_out_u16(), z_vrfy_uart_tx_u16() and z_vrfy_uart_rx_enable_u16() each ran K_SYSCALL_DRIVER_U…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 10 Nov 2026 22:07:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90833 · 7.8 HIGH — Signed offset bypasses bounds check in simulated EEPROM driver, allowing out-of-bounds kernel memory read and write from user mode</title>
+      <link>https://vulnogram.org/CVE-2026-90833</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90833</guid>
+      <description>The simulated EEPROM driver validated access ranges in eeprom_range_is_valid() (drivers/eeprom/eeprom_simulator.c) with a single test, (offset + len) &lt;= config-&gt;size. Because offset is a signed off_t and len an unsigned size_t of the same rank, the a…</description>
+      <category>High</category>
+      <pubDate>Tue, 10 Nov 2026 22:07:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-77685 · 8.3 HIGH — Bluetooth Classic RFCOMM: integer underflow in the MCC TEST command handler leads to out-of-bounds read disclosed to the peer and out-of-bounds write</title>
+      <link>https://vulnogram.org/CVE-2026-77685</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77685</guid>
+      <description>The RFCOMM multiplexer control-channel handler in subsys/bluetooth/host/classic/rfcomm.c computed the echo length for a BT_RFCOMM_TEST command as buf-&gt;len - 1 and passed it to rfcomm_send_test(), whose length parameter is a uint8_t. A malformed but F…</description>
+      <category>High</category>
+      <pubDate>Tue, 10 Nov 2026 22:07:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-87042 · 6.5 MEDIUM — Zephyr PTP: unvalidated Delay_Resp message interval lets an on-link peer wedge the PTP thread and flood the network</title>
+      <link>https://vulnogram.org/CVE-2026-87042</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87042</guid>
+      <description>The IEEE 1588 (PTP) port implementation in subsys/net/lib/ptp/port.c adopted the logMessageInterval field of a received Delay_Resp message without any validation. port_delay_resp_msg_process() stored the raw wire value (a full-range int8_t) into port…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 10 Nov 2026 22:07:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82391 · 9.1 CRITICAL — Out-of-bounds write in Zephyr HTTP/2 server static-filesystem handler via corrupted receive-buffer length</title>
+      <link>https://vulnogram.org/CVE-2026-82391</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82391</guid>
+      <description>The HTTP/2 front-end of the Zephyr HTTP server aliased connection receive state as a scratch output. In subsys/net/lib/http/http_server_http2.c, handle_http2_static_fs_resource() passed &amp;client-&gt;data_len as the file_size out-parameter of http_server_…</description>
+      <category>Critical</category>
+      <pubDate>Tue, 10 Nov 2026 22:07:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-90832 · 4.3 MEDIUM — Out-of-bounds read in Bluetooth Host periodic advertising report reassembly due to unvalidated report length</title>
+      <link>https://vulnogram.org/CVE-2026-90832</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90832</guid>
+      <description>bt_hci_le_per_adv_report_common() in subsys/bluetooth/host/scan.c handles the HCI_LE_Periodic_Advertising_Report (and _v2) event. It verified that the fixed event header was present and that the controller-declared Data_Length fits the tailroom of th…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 10 Nov 2026 22:07:37 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-90591 · 7.5 HIGH — NXP ENET-QOS Ethernet driver re-arms RX descriptors with a clobbered DMA buffer address on packet drop</title>
       <link>https://vulnogram.org/CVE-2026-90591</link>
@@ -363,54 +411,6 @@
       <description>The Bluetooth Classic Hands-Free Profile HF role in subsys/bluetooth/host/classic/hfp_hf.c does not release the AT command buffers that are still queued on hf-&gt;tx_pending when the RFCOMM DLC goes down. hfp_hf_disconnected() only cancelled the work it…</description>
       <category>Medium</category>
       <pubDate>Mon, 19 Oct 2026 22:49:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19595 · 6.1 MEDIUM — Zephyr RTIO syscall verifier validates output parameters for read instead of write access</title>
-      <link>https://vulnogram.org/CVE-2026-19595</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19595</guid>
-      <description>The user-mode syscall verifier z_vrfy_rtio_cqe_get_mempool_buffer() in subsys/rtio/rtio_syscalls.c validated its two output parameters, buff and buff_len, with K_SYSCALL_MEMORY_READ() rather than K_SYSCALL_MEMORY_WRITE(). Both are pure out-parameters…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 22:49:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76788 · 8.8 HIGH — Stack out-of-bounds write in the OSDP Control Panel reply parser</title>
-      <link>https://vulnogram.org/CVE-2026-76788</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76788</guid>
-      <description>The OSDP Control Panel reply parser cp_decode_response() in subsys/mgmt/osdp/src/osdp_cp.c decodes replies from a Peripheral Device into a stack-allocated struct osdp_event. For the REPLY_KEYPPAD and REPLY_RAW reply types, the payload length is taken…</description>
-      <category>High</category>
-      <pubDate>Mon, 19 Oct 2026 20:39:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-76787 · 5.9 MEDIUM — NULL pointer dereference in the UpdateHub FOTA client when probe metadata omits sha256sum</title>
-      <link>https://vulnogram.org/CVE-2026-76787</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-76787</guid>
-      <description>The UpdateHub firmware-over-the-air client parses the CoAP probe response with Zephyr&apos;s JSON library in z_impl_updatehub_probe() (subsys/mgmt/updatehub/updatehub.c). The decoder treats every descriptor field as optional — json_obj_parse() returns a b…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 19 Oct 2026 20:39:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75085 · 4.2 MEDIUM — Out-of-bounds read from received-frame length underflow in the STM32WBA IEEE 802.15.4 driver</title>
-      <link>https://vulnogram.org/CVE-2026-75085</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75085</guid>
-      <description>The STM32WBA IEEE 802.15.4 driver in drivers/ieee802154/ieee802154_stm32wba.c computed the packet length of a received frame as pkt_len = rx_frame-&gt;length - IEEE802154_FCS_LENGTH without first checking that the radio-reported length could hold an FCS…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 16:46:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-75084 · 6.8 MEDIUM — Out-of-bounds write in the TI CC1200 IEEE 802.15.4 driver from an unvalidated radio-supplied packet length</title>
-      <link>https://vulnogram.org/CVE-2026-75084</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-75084</guid>
-      <description>The CC1200 sub-GHz IEEE 802.15.4 driver takes the PHY packet length from the first byte of the radio&apos;s RX FIFO in get_packet_length() and validates it in verify_rxfifo_validity() (drivers/ieee802154/ieee802154_cc1200.c). That validation only enforced…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 16:46:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19673 · 7.1 HIGH — Out-of-bounds read and net_buf length underflow in Zephyr Ethernet L2 when parsing a truncated VLAN header</title>
-      <link>https://vulnogram.org/CVE-2026-19673</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19673</guid>
-      <description>ethernet_recv() in subsys/net/l2/ethernet/ethernet.c validates only that the first net_buf of a received frame holds a plain 14-byte struct net_eth_hdr. When the ethertype is 0x8100 and VLAN is enabled on the interface, the same buffer is reinterpret…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 16:45:57 GMT</pubDate>
     </item>
   </channel>
 </rss>
