@@ -11,7 +11,91 @@
       <title>Go Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 11 Nov 2026 01:49:06 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 08:55:46 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-97054 — HTTP/1 server crash due to MaxBytesReader header race in net/http</title>
+      <link>https://vulnogram.org/CVE-2026-97054</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97054</guid>
+      <description>For HTTP/1 servers, when MaxBytesReader&apos;s limit is exceeded, &quot;Connection: close&quot; header is automatically set without synchronization, which might race with another header being set explicitly in the server handler. As a result, an HTTP/1 server that…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97033 — Unexpected code execution via --sysroot, -target, -isysroot, -Wl,-syslibroot, and -x cgo flags in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-97033</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97033</guid>
+      <description>Building a malicious package that uses cgo could cause arbitrary code execution at build time through several compiler and linker flags permitted in &quot;#cgo&quot; directives. Specifically, &quot;--sysroot&quot; in GCC and Clang relocates compiler subprograms, spec fi…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97034 — Arbitrary command execution via GCC spec files in cgo linker search directories in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-97034</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97034</guid>
+      <description>When using GCC, building a malicious package that uses cgo could cause arbitrary command execution at link time via untrusted GCC spec files (&quot;specs&quot; or &quot;*.spec&quot;). When linking with &quot;-fopenmp&quot;, &quot;-fopenacc&quot;, or &quot;-fsanitize=&quot; in &quot;#cgo LDFLAGS&quot;, GCC&apos;s b…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97035 — Unexpected code execution and arbitrary file write via Clang -gen-* and GCC -gnat* flags in cgo in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-97035</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97035</guid>
+      <description>When using Clang or GCC, building a malicious package that uses cgo could cause unexpected code execution at build time or write files to arbitrary directories via &quot;-gen-*&quot; or &quot;-gnat*&quot; flags in &quot;#cgo&quot; directives. The &quot;-g*&quot; wildcard in the compiler an…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97036 — Arbitrary code execution during build on darwin via &quot;-l to_library&quot; in cgo in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-97036</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97036</guid>
+      <description>On Darwin, building a malicious package that uses cgo could cause arbitrary code execution when using the Apple linker due to passing &quot;-l to_library &lt;path&gt;&quot; in a &quot;#cgo LDFLAGS&quot; directive. The Apple linker recombines the separated arguments &quot;-l&quot; and &quot;…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97037 — Linker script injection via split -Wl, flags and Darwin or symbol linker flags in cgo in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-97037</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97037</guid>
+      <description>Building a malicious package that uses cgo could cause arbitrary code execution at link time by passing linker script files to the host linker via &quot;#cgo LDFLAGS&quot;. Split &quot;-Wl,&quot; flags that consume a following argument (such as &quot;-Wl,-rpath&quot;, &quot;-Wl,--just…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97038 — Arbitrary code execution via crafted .syso files and cgo linker input files in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-97038</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97038</guid>
+      <description>Building a malicious package containing &quot;.syso&quot; files or cgo linker inputs could inject arbitrary linker flags or execute arbitrary code at link time. Linker input files—including &quot;.syso&quot; files, direct object or library inputs in &quot;#cgo LDFLAGS&quot;, and…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97039 — Flag sanitization bypass via &quot;#cgo pkg-config:&quot; directives in cmd/go</title>
+      <link>https://vulnogram.org/CVE-2026-97039</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97039</guid>
+      <description>Building a malicious package that uses &quot;#cgo pkg-config:&quot; directives could load untrusted pkg-config &quot;.pc&quot; files or inject unvalidated compiler and linker flags. The pkg-config flag allowlist previously permitted &quot;--with-path=&quot; and &quot;--personality=&quot;,…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97040 — Cgo directive injection via .syso files disguised as Go object files in cmd/go and cmd/link</title>
+      <link>https://vulnogram.org/CVE-2026-97040</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97040</guid>
+      <description>Building a package containing a crafted &quot;.syso&quot; file could bypass cgo flag validation and inject arbitrary linker flags when linking. When loading &quot;.syso&quot; entries from a package archive, the linker only checked for recognized host object headers (ELF…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97041 — Host linker flag injection via //go:cgo_* directives in cmd/compile and cmd/link</title>
+      <link>https://vulnogram.org/CVE-2026-97041</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97041</guid>
+      <description>Building a malicious package containing &quot;//go:cgo_*&quot; compiler directives could inject arbitrary flags into the external linker invocation on ELF platforms. The compiler and linker did not reject commas in &quot;//go:cgo_import_dynamic&quot;, &quot;//go:cgo_export_d…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97042 — Linker flag injection via cgo_import_dynamic and PE DLL names in cmd/cgo, cmd/compile, and cmd/link</title>
+      <link>https://vulnogram.org/CVE-2026-97042</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97042</guid>
+      <description>Building a malicious package that uses &quot;//go:cgo_import_dynamic&quot; or links against a crafted PE object on Windows could pass unsafe library arguments to the external linker. The compiler only checked the first character of the library name in &quot;//go:cg…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-97043 — Unexpected code execution via escaped quotes in //go:cgo_ldflag in cmd/go and cmd/compile</title>
+      <link>https://vulnogram.org/CVE-2026-97043</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97043</guid>
+      <description>Building a malicious package that uses cgo could bypass &quot;#cgo LDFLAGS&quot; validation and cause unexpected code execution at build time, or cause the go command to panic, via crafted quoting in &quot;//go:cgo_ldflag&quot; directives. When &quot;cmd/cgo&quot; generates &quot;_cgo…</description>
+      <pubDate>Wed, 11 Nov 2026 03:13:14 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-97045 · 6.1 MEDIUM 🌩️ — Check all ancestor namespace transitions when rendering raw text in html in golang.org/x/net</title>
       <link>https://vulnogram.org/CVE-2026-97045</link>
@@ -349,112 +433,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 25 Jun 2026 19:47:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46601 · 7.5 HIGH 🌩️ — Panic on VP8 alpha channel size mismatch in x/image/webp in golang.org/x/image</title>
-      <link>https://vulnogram.org/CVE-2026-46601</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46601</guid>
-      <description>The webp decoder can panic when processing a VP8 chunk with dimensions that do not match the canvas size.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 25 Jun 2026 19:47:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42507 · 5.3 MEDIUM 🌩️ — Arbitrary inputs are included in errors without any escaping in net/textproto</title>
-      <link>https://vulnogram.org/CVE-2026-42507</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42507</guid>
-      <description>When returning errors, functions in the net/textproto package would include its input as part of the error. This might allow an attacker to inject misleading content to errors that are printed or logged.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 02 Jun 2026 22:01:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42504 · 7.5 HIGH 🌩️ — Quadratic complexity in WordDecoder.DecodeHeader in mime</title>
-      <link>https://vulnogram.org/CVE-2026-42504</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42504</guid>
-      <description>Decoding a maliciously-crafted MIME header containing many invalid encoded-words can consume excessive CPU.</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 02 Jun 2026 22:01:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-27145 · 7.5 HIGH 🌩️ — Inefficient candidate hostname parsing in crypto/x509</title>
-      <link>https://vulnogram.org/CVE-2026-27145</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-27145</guid>
-      <description>(*x509.Certificate).VerifyHostname previously called matchHostnames in a loop over all DNS Subject Alternative Name (SAN) entries. This caused strings.Split(host, &quot;.&quot;) to execute repeatedly on the same input hostname. With a large DNS SAN list, verif…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 02 Jun 2026 22:01:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-46599 · 7.5 HIGH 🌩️ — Excessive resource consumption in PackBits decompression in golang.org/x/image/tiff</title>
-      <link>https://vulnogram.org/CVE-2026-46599</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-46599</guid>
-      <description>The TIFF decoder does not place a limit on the size of PackBits-compressed data. A maliciously-crafted image can exploit this to cause a small image (both in terms of pixel width/height and encoded size) to make the decoder decode large amounts of co…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 29 May 2026 19:35:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42500 · 5.3 MEDIUM 🌩️ — Panic when reading out of bound palette index in golang.org/x/image/bmp</title>
-      <link>https://vulnogram.org/CVE-2026-42500</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42500</guid>
-      <description>Decoding a paletted BMP file with an out-of-range palette index results in a panic when accessing pixels in the invalid image.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 29 May 2026 18:36:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39824 · 3.3 LOW — Invoking  integer overflow in NewNTUnicodeString in golang.org/x/sys/windows</title>
-      <link>https://vulnogram.org/CVE-2026-39824</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39824</guid>
-      <description>NewNTUnicodeString does not check for string length overflow. When provided with a string that overflows the maximum size of a NTUnicodeString (a 16-bit number of bytes), it returns a truncated string rather than an error.</description>
-      <category>Low</category>
-      <pubDate>Fri, 22 May 2026 19:39:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-27136 · 6.1 MEDIUM 🌩️ — Invoking  duplicate attributes can cause XSS in golang.org/x/net/html</title>
-      <link>https://vulnogram.org/CVE-2026-27136</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-27136</guid>
-      <description>Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 15:01:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25681 · 6.1 MEDIUM 🌩️ — Invoking  incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html</title>
-      <link>https://vulnogram.org/CVE-2026-25681</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25681</guid>
-      <description>Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 15:01:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-25680 · 6.5 MEDIUM 🌩️ — Invoking denial of service when parsing arbitrary HTML in golang.org/x/net/html</title>
-      <link>https://vulnogram.org/CVE-2026-25680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-25680</guid>
-      <description>Parsing arbitrary HTML can consume excessive CPU time, possibly leading to denial of service.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 15:01:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42502 · 6.1 MEDIUM 🌩️ — Invoking  incorrect handling of HTML elements in foreign content in golang.org/x/net/html</title>
-      <link>https://vulnogram.org/CVE-2026-42502</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42502</guid>
-      <description>Parsing arbitrary HTML which is then rendered using Render can result in an unexpected HTML tree. This can be leveraged to execute XSS attacks in applications that attempt to sanitize input HTML before rendering.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 May 2026 15:01:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-39821 · 9.6 CRITICAL — Invoking failure to reject ASCII-only Punycode-encoded labels in golang.org/x/net/idna</title>
-      <link>https://vulnogram.org/CVE-2026-39821</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-39821</guid>
-      <description>The ToASCII and ToUnicode functions incorrectly accept Punycode-encoded labels that decode to an ASCII-only label. For example, ToUnicode(&quot;xn--example-.com&quot;) incorrectly returns the name &quot;example.com&quot; rather than an error. This behavior can lead to p…</description>
-      <category>Critical</category>
-      <pubDate>Fri, 22 May 2026 15:01:21 GMT</pubDate>
     </item>
   </channel>
 </rss>
