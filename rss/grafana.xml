@@ -11,7 +11,79 @@
       <title>Grafana Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 11 Nov 2026 08:55:45 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 16:54:13 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-110289 · 5.5 MEDIUM — Git Sync connections send credentials to unvalidated server URLs</title>
+      <link>https://vulnogram.org/CVE-2026-110289</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110289</guid>
+      <description>A user with the Organization Admin role could point the server or token URL of a Git Sync connection at a loopback or internal address, and Grafana would then send the connection&apos;s OAuth client secret and tokens, or requests signed with the GitHub Ap…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 15:03:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102589 · 7.1 HIGH — Cross-instance user impersonation through image renderer JWTs</title>
+      <link>https://vulnogram.org/CVE-2026-102589</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102589</guid>
+      <description>When independent Grafana instances share the same [rendering] renderer_token, an image renderer key issued by one instance is accepted by the others, so a user on one instance could act as the user with the same ID on another (origin validation error…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 15:03:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111024 · 7.1 HIGH — Folder permission bypass in the Git Sync repository files API</title>
+      <link>https://vulnogram.org/CVE-2026-111024</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111024</guid>
+      <description>A user with the Viewer or Editor role could bypass folder permissions on Git Sync managed resources through the repository files API: a Viewer could read files in folders they could not access, and an Editor could create, modify, move or delete provi…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 15:02:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-111000 · 7.1 HIGH — Privilege escalation through folder move in the folders API</title>
+      <link>https://vulnogram.org/CVE-2026-111000</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111000</guid>
+      <description>A user with the Editor role who can edit a folder can move it, through the folders resource API, under a folder they administer, and so gain Admin on the moved folder and its contents, including the right to change their permissions. The legacy folde…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 15:02:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107509 · 6.5 MEDIUM — Memory exhaustion denial of service in SQL Expressions</title>
+      <link>https://vulnogram.org/CVE-2026-107509</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107509</guid>
+      <description>A user with the Viewer role can make Grafana allocate an unbounded amount of memory, and crash it, with a single SQL Expression query that casts a value to a very large BINARY length (memory allocation with excessive size value).</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 15:02:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110992 · 6.5 MEDIUM — Path traversal in Git Sync delete and move jobs</title>
+      <link>https://vulnogram.org/CVE-2026-110992</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110992</guid>
+      <description>A user who can create Git Sync provisioning jobs (the Editor role by default) could delete or move files outside the configured repository path with a job that references a resource whose source path contains ../ sequences (path traversal). With a lo…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 15:01:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-82014 · 4.3 MEDIUM — Team preferences RBAC bypass through the set-home-dash endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-82014</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82014</guid>
+      <description>Any authenticated user, including a Viewer, could change the preferences of any team, such as its home dashboard, theme and timezone, through an undocumented endpoint with no access control, and so redirect every member of that team to a dashboard of…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 15:01:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-14242 · 6.5 MEDIUM — Authorization bypass in the Git Sync provisioning jobs API</title>
+      <link>https://vulnogram.org/CVE-2026-14242</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-14242</guid>
+      <description>A user with the Editor role could delete, move, push or pull Git Sync managed resources in folders where they only had view access, by creating a provisioning job through the jobs resource API, which skipped the folder permission checks (incorrect au…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 15:01:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-13721 · 6.5 MEDIUM — Folder authorization bypass in the Git Sync provisioning files API</title>
+      <link>https://vulnogram.org/CVE-2026-13721</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13721</guid>
+      <description>A user with edit access to one folder could modify, move or delete Git Sync provisioned resources in folders where they only had view access, through the provisioning files API (incorrect authorization).</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 15:00:45 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-33379 · 8.5 HIGH — Dashboard snapshot permission bypass</title>
       <link>https://vulnogram.org/CVE-2026-33379</link>
@@ -339,78 +411,6 @@
       <description>The Snowflake datasource allows for GET/PUT commands, which can allow any user with access to run queries against the data source to read/write files between the local grafana server and the connected Snowflake host.</description>
       <category>Critical</category>
       <pubDate>Mon, 22 Jun 2026 13:20:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9029 · 7.3 HIGH — Stored XSS in the Geomap panel tile-layer attribution</title>
-      <link>https://vulnogram.org/CVE-2026-9029</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9029</guid>
-      <description>A user with Editor permissions can place a malicious script in the attribution field of a Geomap panel&apos;s XYZ tile layer via a template variable. The script then executes in the browser of any user who views the affected dashboard (stored cross-site s…</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 13:18:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-10601 · 5.4 MEDIUM — Path traversal in the Tempo and Loki data source plugins</title>
-      <link>https://vulnogram.org/CVE-2026-10601</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-10601</guid>
-      <description>A user with Viewer permissions can use specially crafted requests to the Tempo and Loki data source plugins to reach unintended backend endpoints. Depending on the backend configuration this can expose data source credentials, leak internal responses…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 22 Jun 2026 13:18:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42129 · 7.7 HIGH — Path traversal in the Loki data source plugin</title>
-      <link>https://vulnogram.org/CVE-2026-42129</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42129</guid>
-      <description>A user with Viewer permissions can use a path traversal in the Loki data source plugin to reach administrative Loki endpoints and read sensitive backend configuration and internal service information.</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 13:18:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-27878 · 6.5 MEDIUM — Tempo TraceQL query with exemplar hint could result in unbounded memory usage</title>
-      <link>https://vulnogram.org/CVE-2026-27878</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-27878</guid>
-      <description>A TraceQL query in Grafana Tempo with a large exemplars hint value can cause the Tempo instance to allocate an excessive amount of memory, resulting in an out-of-memory crash. This could allow an authenticated user to trigger a denial of service agai…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 19 Jun 2026 19:02:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-11769 · 6.4 MEDIUM — Operator - Namespaced User Path Traversal</title>
-      <link>https://vulnogram.org/CVE-2026-11769</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-11769</guid>
-      <description>We have released version 5.24.0 of the Grafana Operator. This patch includes a MEDIUM severity security fix for a path traversal/privilege escalation vulnerability in the Grafana Operator. ### Summary The Grafana Operator supports loading dashboards…</description>
-      <category>Medium</category>
-      <pubDate>Sat, 13 Jun 2026 04:17:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28374 · 4.3 MEDIUM — IDOR in Annotations API allows unprivileged users to DELETE annotation</title>
-      <link>https://vulnogram.org/CVE-2026-28374</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28374</guid>
-      <description>Editors could delete any annotation, even those they do not have read access to. The editor user cannot create or read the annotations.</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 May 2026 19:28:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33378 · 6.5 MEDIUM — Grafana Data Source Plugin: DoS (OOM) via Negative Interval Injection in $__timeGroup Macro</title>
-      <link>https://vulnogram.org/CVE-2026-33378</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33378</guid>
-      <description>Using the $__timeGroup macro, one can achieve an OOM by overloading the server. This requires a SQL datasource. If the server is set up to auto-restart, the impact is minimal or non-existent, as the attack can take upwards of half an hour to crash th…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 May 2026 19:28:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28383 · 6.5 MEDIUM — Grafana plugin resources can lead to unbounded memory allocation</title>
-      <link>https://vulnogram.org/CVE-2026-28383</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28383</guid>
-      <description>A request to the Grafana plugin resources endpoint can cause unbounded memory allocation by reading the entire request body into memory. An authenticated user can exploit this to trigger an out-of-memory condition, potentially causing a denial of ser…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 13 May 2026 19:28:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33376 · 7.4 HIGH — Auth Proxy IPv6 whitelist bypass</title>
-      <link>https://vulnogram.org/CVE-2026-33376</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33376</guid>
-      <description>When using an IPv6 allow-list for the Auth Proxy feature, it defaults to /32 addresses. Addresses specifying a mask explicitly are not affected; to mitigate easily, add the desired mask (usually /128) to the addresses. Only auth proxy is affected; Ok…</description>
-      <category>High</category>
-      <pubDate>Wed, 13 May 2026 19:28:34 GMT</pubDate>
     </item>
   </channel>
 </rss>
