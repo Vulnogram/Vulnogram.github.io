@@ -11,7 +11,127 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 11 Nov 2026 16:54:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 23:31:21 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-126051 · 7.5 HIGH — Node.js is vulnerable to a remotely triggerable uncaught exception in TLS servers via deferred handshake callbacks</title>
+      <link>https://vulnogram.org/CVE-2026-126051</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126051</guid>
+      <description>A deferred-callback use-after-destroy in Node.js TLS server handshake handling allows a remote, unauthenticated attacker to terminate the server process. When a TLS server uses any of the SNICallback, OCSPRequest, newSession, or resumeSession hooks,…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:35:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123875 · 5.9 MEDIUM — Node.js is vulnerable to an HTTP/2 denial of service via a NULL pointer dereference when a respondWithFile() download is cancelled</title>
+      <link>https://vulnogram.org/CVE-2026-123875</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123875</guid>
+      <description>A NULL pointer dereference in Node.js HTTP/2 lets an unauthenticated client crash the server, over both TLS and cleartext, by cancelling file downloads. When the server serves a file with stream.respondWithFile() or stream.respondWithFD() and the cli…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 18:33:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123874 · 7.5 HIGH — Node.js is vulnerable to an HTTP/2 use-after-free via respondWithFile() stream reset during a pending write</title>
+      <link>https://vulnogram.org/CVE-2026-123874</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123874</guid>
+      <description>A use-after-free in Node.js HTTP/2 lets an unauthenticated client corrupt server memory, over both TLS and cleartext, when the server serves files with respondWithFile() or respondWithFD(). A client can make the server free an Http2Stream while a wri…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:32:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123872 · 8.1 HIGH — Node.js is vulnerable to a client certificate authentication bypass via TLS 1.2 renegotiation servername change</title>
+      <link>https://vulnogram.org/CVE-2026-123872</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123872</guid>
+      <description>A client certificate authentication bypass in Node.js TLS lets a client change the servername during TLS 1.2 renegotiation to reach endpoints it was not authorized for. On a server that applies different client-certificate policies per hostname, for…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:30:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123877 · 6.8 MEDIUM — Node.js is vulnerable to a certificate validation bypass in https.Agent via cross-policy TLS session reuse</title>
+      <link>https://vulnogram.org/CVE-2026-123877</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123877</guid>
+      <description>A certificate validation bypass in Node.js https.Agent lets a cached TLS session authenticated under one CA policy be reused by a later request with a stricter policy. https.Agent.prototype.getName() assigns the same Agent and session-cache key to a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 18:28:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123871 · 6.2 MEDIUM — Node.js is vulnerable to proxy credential disclosure via ERR_PROXY_INVALID_CONFIG error messages</title>
+      <link>https://vulnogram.org/CVE-2026-123871</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123871</guid>
+      <description>Node.js discloses proxy credentials in ERR_PROXY_INVALID_CONFIG error messages. CVE-2026-48615 established that a proxy credential must not appear in a Node.js error message and redacted the username and password from ProxyConfig.href, but that fix m…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 18:26:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123868 · 5.9 MEDIUM — Node.js is vulnerable to an HTTP/2 memory exhaustion denial of service via unaccounted inbound DATA on an undrained stream</title>
+      <link>https://vulnogram.org/CVE-2026-123868</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123868</guid>
+      <description>An unauthenticated HTTP/2 client can exhaust Node.js server memory because inbound DATA queued on an undrained stream is charged to no session budget. Each inbound DATA frame creates one JavaScript Buffer view in the receiving stream&apos;s readable queue…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 18:25:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123867 · 4.2 MEDIUM — Node.js is vulnerable to a per-host mTLS authorization bypass via a CA-only SNI context failing open to the default CA</title>
+      <link>https://vulnogram.org/CVE-2026-123867</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123867</guid>
+      <description>A per-host mutual-TLS authorization bypass in Node.js lets a client authorized for the default hostname reach a protected hostname it is not authorized for. When a TLS server assigns a hostname a different client-certificate CA with server.addContext…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 18:23:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123866 · 7.5 HIGH — Node.js is vulnerable to HTTP/2 response memory disclosure via a use-after-free during stream teardown</title>
+      <link>https://vulnogram.org/CVE-2026-123866</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123866</guid>
+      <description>A use-after-free in Node.js HTTP/2 stream teardown can leak response memory, including the contents of other connections&apos; response buffers, to a peer. When a stream is torn down while a write is still backpressured, for example by a peer RST_STREAM o…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:21:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123865 · 7.5 HIGH — Node.js is vulnerable to an HTTP/2 memory and file-descriptor leak via a protocol error during session shutdown</title>
+      <link>https://vulnogram.org/CVE-2026-123865</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123865</guid>
+      <description>An unauthenticated HTTP/2 client can permanently leak Node.js server memory and file descriptors. If a peer triggers a protocol error, for example an oversized frame header, while the session is already shutting down, nghttp2 tears the session down i…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:19:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123864 · 8.1 HIGH — Node.js is vulnerable to cross-connection memory disclosure via TLS write re-entrancy in the HTTPS request parser</title>
+      <link>https://vulnogram.org/CVE-2026-123864</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123864</guid>
+      <description>A re-entrancy flaw in Node.js HTTPS lets an unauthenticated client read memory belonging to other connections, including TLS private keys and other users&apos; requests. TLSWrap::DoWrite() calls ClearOut() directly when asked to write zero bytes; if that…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:17:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123863 · 8.2 HIGH — Node.js is vulnerable to a remote HTTP/2 denial of service via a reachable assertion in Http2Session teardown</title>
+      <link>https://vulnogram.org/CVE-2026-123863</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123863</guid>
+      <description>A reachable assertion in Node.js HTTP/2 session teardown lets any unauthenticated client abort the server, over both TLS and cleartext. A client can arrange for an Http2Stream that still holds nghttp2-allocated header buffers to outlive its session:…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:16:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123862 · 2.9 LOW — Node.js is vulnerable to a zlib denial of service via a stream destroy during a pending params() call</title>
+      <link>https://vulnogram.org/CVE-2026-123862</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123862</guid>
+      <description>An uncatchable exception in the Node.js zlib streaming API lets a peer crash a process by disconnecting while data is being compressed. zlib.params() queues a flush and completes its work in that write&apos;s callback; if the stream is destroyed first, as…</description>
+      <category>Low</category>
+      <pubDate>Wed, 11 Nov 2026 18:14:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123829 · 2.5 LOW — Node.js is vulnerable to Permission Model file-name disclosure via recursive fs.watch</title>
+      <link>https://vulnogram.org/CVE-2026-123829</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123829</guid>
+      <description>A Permission Model bypass in Node.js recursive file watching discloses the names of files and directories the process is not permitted to read. On macOS and Windows, fs.watch() and fs.promises.watch() in recursive mode are backed by the native libuv…</description>
+      <category>Low</category>
+      <pubDate>Wed, 11 Nov 2026 18:12:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123828 · 5.9 MEDIUM — Node.js is vulnerable to a heap buffer overflow in HTTP/2 session.altsvc() via a long origin</title>
+      <link>https://vulnogram.org/CVE-2026-123828</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123828</guid>
+      <description>A one-byte heap buffer overflow in Node.js HTTP/2 Alt-Svc handling lets a remote, unauthenticated attacker corrupt process memory. When an application passes an attacker-controlled value such as a request&apos;s :authority header to Http2Session.altsvc(),…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 11 Nov 2026 18:10:54 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-116630 · 5.9 MEDIUM — undici vulnerable to cross-user information disclosure via cross-origin redirect revalidation</title>
       <link>https://vulnogram.org/CVE-2026-116630</link>
@@ -291,126 +411,6 @@
       <description>undici is an HTTP client library for Node.js. In versions 8.11.0 and 8.11.1, its experimental WebSocket client, which is enabled by default when HTTP/2 is allowed, mishandles a failed WebSocket handshake over HTTP/2: the request is already marked com…</description>
       <category>High</category>
       <pubDate>Thu, 15 Oct 2026 08:12:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107832 · 3.7 LOW — fastify vulnerable to header validation bypass via case-sensitive propertyNames</title>
-      <link>https://vulnogram.org/CVE-2026-107832</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107832</guid>
-      <description>fastify is a fast and low overhead web framework for Node.js. In versions 5.12.2 through 5.12.5, the routine that lowercases header names declared in a route schema does not lowercase the enum or const header names nested inside a propertyNames subsc…</description>
-      <category>Low</category>
-      <pubDate>Tue, 13 Oct 2026 13:23:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107318 · 7.4 HIGH — @fastify/reply-from vulnerable to improper certificate validation in built-in HTTPS transports</title>
-      <link>https://vulnogram.org/CVE-2026-107318</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107318</guid>
-      <description>@fastify/reply-from is a Fastify plugin that forwards requests to an upstream HTTP or HTTPS server. In versions prior to 12.7.0, all of the built-in HTTPS transports override the secure default and set rejectUnauthorized to false, so the proxy does n…</description>
-      <category>High</category>
-      <pubDate>Thu, 08 Oct 2026 20:32:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-107275 · 6.8 MEDIUM — @fastify/jwt vulnerable to missing token expiration when temporal options cannot be parsed</title>
-      <link>https://vulnogram.org/CVE-2026-107275</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107275</guid>
-      <description>@fastify/jwt is a JSON Web Token plugin for the Fastify web framework. In versions before 10.2.3, a time span passed to expiresIn, notBefore, or maxAge that the plugin&apos;s parser cannot read, such as a compound span, a month unit, an ISO 8601 duration,…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 08 Oct 2026 11:05:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90982 · 5.3 MEDIUM — @fastify/static vulnerable to route guard bypass via path case-folding</title>
-      <link>https://vulnogram.org/CVE-2026-90982</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90982</guid>
-      <description>@fastify/static is a Fastify plugin that serves static files from a configured root directory. In versions before 10.1.4, on a case-insensitive filesystem such as Windows or the default macOS volume, a route guard or allowedPath restriction can be by…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 17 Sep 2026 06:55:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92395 · 9.1 CRITICAL — @fastify/proxy-addr vulnerable to IP spoofing via IPv4-mapped IPv6 trust subnet</title>
-      <link>https://vulnogram.org/CVE-2026-92395</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92395</guid>
-      <description>@fastify/proxy-addr is a Fastify plugin that determines a request&apos;s client address behind trusted reverse proxies, and it backs Fastify request.ip and request.ips. In versions 3.0.0 through 5.1.0, a trust subnet written in IPv4-mapped IPv6 notation w…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 16 Sep 2026 14:35:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92087 · 8.1 HIGH — @fastify/auth vulnerable to Authorization Bypass via order-dependent evaluation of composed auth</title>
-      <link>https://vulnogram.org/CVE-2026-92087</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92087</guid>
-      <description>@fastify/auth is a Fastify plugin that composes multiple authentication and authorization strategies into a single route guard. In versions 5.0.0 through 5.1.0, when strategies are composed with the relation &quot;or&quot; option together with the run &quot;all&quot; op…</description>
-      <category>High</category>
-      <pubDate>Wed, 16 Sep 2026 14:21:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-92081 · 5.9 MEDIUM — fastify vulnerable to Denial of Service via unhandled exception on HTTP/2 trailer responses</title>
-      <link>https://vulnogram.org/CVE-2026-92081</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92081</guid>
-      <description>fastify is a fast and low-overhead web framework for Node.js. In versions before 5.12.5, when a route registers a response trailer via reply.trailer() and is served over HTTP/2, fastify unconditionally sets the Transfer-Encoding: chunked header, whic…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 16 Sep 2026 08:52:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86818 · 4.8 MEDIUM — fast-uri vulnerable to mailto header injection via percent-encoded field-name desynchronization</title>
-      <link>https://vulnogram.org/CVE-2026-86818</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86818</guid>
-      <description>fast-uri is a dependency-free RFC 3986 URI parser for Node.js, used by Fastify and ajv, that added a mailto scheme parser in version 4.1.3. In versions 4.1.3 and 4.1.4, the mailto parser compares each query field name to the reserved names to, subjec…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 15 Sep 2026 10:40:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86472 · 4.8 MEDIUM — fast-uri vulnerable to inconsistent host case normalization via percent-encoded octets</title>
-      <link>https://vulnogram.org/CVE-2026-86472</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86472</guid>
-      <description>fast-uri is a dependency-free RFC 3986 URI parser for Node.js, used by Fastify and ajv. In versions before 2.4.7, from 3.0.0 through 3.1.7, and from 4.0.0 through 4.1.4, fast-uri folds the host to lowercase before it percent-decodes the host, so a pe…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 15 Sep 2026 10:29:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90711 · 9.1 CRITICAL — proxy-addr vulnerable to IP spoofing via IPv4-mapped IPv6 trust subnet</title>
-      <link>https://vulnogram.org/CVE-2026-90711</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90711</guid>
-      <description>proxy-addr is a Node.js module that determines a request&apos;s client address behind trusted reverse proxies, and it backs Express req.ip and req.ips. In versions 1.1.0 through 2.0.7, a trust subnet written in IPv4-mapped IPv6 notation with an IPv4-sized…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 15 Sep 2026 06:19:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-17495 · 5.9 MEDIUM — moment vulnerable to Path Traversal via crafted non-string locale name</title>
-      <link>https://vulnogram.org/CVE-2026-17495</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-17495</guid>
-      <description>moment is a JavaScript date library for parsing, validating, manipulating, and formatting dates. In versions 2.29.2 through 2.30.1, a specially crafted non-string object passed to moment.locale() can bypass the locale-name path-traversal guard. The g…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 15 Sep 2026 05:40:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-88932 · 5.3 MEDIUM — multer vulnerable to Denial of Service via orphaned disk writes on aborted uploads</title>
-      <link>https://vulnogram.org/CVE-2026-88932</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-88932</guid>
-      <description>multer is a Node.js middleware for handling multipart/form-data uploads. In versions 2.2.0 through 2.3.0, when a request using disk storage is aborted mid-upload, file writes that complete after multer has already run its abort cleanup are not remove…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 14 Sep 2026 08:46:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87776 · 7.5 HIGH — compression vulnerable to Denial of Service via memory leak on premature response close</title>
-      <link>https://vulnogram.org/CVE-2026-87776</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87776</guid>
-      <description>compression is a Node.js and Express compression middleware. In versions before 1.8.2, when a client aborts the connection while a compressed response is still being sent, the zlib stream created to compress that response is never destroyed, so each…</description>
-      <category>High</category>
-      <pubDate>Fri, 11 Sep 2026 11:24:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87123 · 5.9 MEDIUM — hbs vulnerable to Denial of Service via unhandled exception in async helper output escaping</title>
-      <link>https://vulnogram.org/CVE-2026-87123</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87123</guid>
-      <description>hbs is an Express view engine wrapper for Handlebars. Version 4.3.0 can crash the Node.js process during output escaping when an async helper, registered with registerAsyncHelper, resolves to an object whose toHTML property is truthy but not callable…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 09:50:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87859 · 5.3 MEDIUM — morgan vulnerable to Log Injection via unescaped double quote in quoted log fields</title>
-      <link>https://vulnogram.org/CVE-2026-87859</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87859</guid>
-      <description>morgan is an HTTP request logger middleware for Node.js. In versions before 1.12.1, its escapeLogField() function does not escape the double quote character, which delimits the quoted fields of the Apache combined log format that morgan emits. An una…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 11 Sep 2026 09:15:19 GMT</pubDate>
     </item>
   </channel>
 </rss>

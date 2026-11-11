@@ -11,7 +11,56 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 11 Nov 2026 16:54:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 23:31:21 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-125637 · 7.2 HIGH — Konflux-ci: unvalidated hostname fields enable caddyfile config injection in the konflux ui proxy generator, allowing an unauthenticated route to be spliced ahead of the forward_auth/impersonate authorization chain</title>
+      <link>https://vulnogram.org/CVE-2026-125637</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125637</guid>
+      <description>A flaw was found in the Konflux UI proxy. Hostname values defined in the KonfluxUI custom resource are inserted directly into proxy configuration files without adequate validation or sanitization. An authenticated user with permissions to modify the…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 22:35:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91151 · 7.3 HIGH — Cockpit: cockpit: local privilege escalation via insecure symlink handling in public key addition helper</title>
+      <link>https://vulnogram.org/CVE-2026-91151</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91151</guid>
+      <description>A flaw was found in Cockpit. A local authenticated user with control over a target account&apos;s home directory can exploit a privileged symlink dereference vulnerability in the `ssh-add-public-key.sh` helper. When this helper runs with elevated privileg…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 19:46:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-108472 · 7.8 HIGH — Xfsprogs: xfsprogs: local privilege escalation via command injection in xfs_admin</title>
+      <link>https://vulnogram.org/CVE-2026-108472</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-108472</guid>
+      <description>A flaw was found in the xfs_admin utility in xfsprogs. The tool does not properly validate user-supplied parameters, allowing operating system command injection. A local attacker can exploit this issue by providing crafted input arguments, which may…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:38:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91150 · 7.5 HIGH 🌩️ — Cockpit: cockpit: denial of service via unbounded fragmented websocket messages</title>
+      <link>https://vulnogram.org/CVE-2026-91150</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91150</guid>
+      <description>A flaw was found in Cockpit. This vulnerability allows a remote attacker, without prior authentication, to send specially crafted fragmented WebSocket messages. These messages accumulate without a total-size limit, leading to unbounded memory exhaust…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 11 Nov 2026 18:38:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123747 · 7.3 HIGH — Pappl-retrofit: directory traversal in the add-ppdfiles and delete-ppdfiles actions</title>
+      <link>https://vulnogram.org/CVE-2026-123747</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123747</guid>
+      <description>A flaw was found in pappl-retrofit. The application fails to properly sanitize user-supplied filenames when handling the upload and deletion of PostScript Printer Description (PPD) files. A remote, unauthenticated attacker can exploit this directory…</description>
+      <category>High</category>
+      <pubDate>Wed, 11 Nov 2026 18:31:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110697 · 9.9 CRITICAL — Quay: quay: sql like wildcard injection in robot listing leaks cross-tenant robot tokens</title>
+      <link>https://vulnogram.org/CVE-2026-110697</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110697</guid>
+      <description>A flaw was found in Quay where the robot account listing function constructs a SQL LIKE pattern from user-controlled namespace names without escaping wildcard metacharacters. An attacker who creates a namespace containing an underscore character can…</description>
+      <category>Critical</category>
+      <pubDate>Wed, 11 Nov 2026 17:06:13 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-124746 · 5.5 MEDIUM — Busybox: out-of-bounds read in volume_id_get_buffer() via an offset+length wraparound</title>
       <link>https://vulnogram.org/CVE-2026-124746</link>
@@ -384,55 +433,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 09 Nov 2026 13:01:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-121601 · 6.1 MEDIUM — Gstreamer1-plugins-bad-free: gstreamer1-plugins-bad-free: out-of-bounds read in mxfdemux via unchecked delta_id and slice index</title>
-      <link>https://vulnogram.org/CVE-2026-121601</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121601</guid>
-      <description>A flaw was found in GStreamer&apos;s MXF demuxer plugin (gst-plugins-bad). When processing a specially crafted MXF media file, the demuxer indexes its internal delta-entry and slice-offset tables using values from the file without validating that they are…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 09 Nov 2026 13:00:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-119610 · 8.2 HIGH 🌩️ — Gstreamer1-plugins-good: gstreamer1-plugins-good: out-of-bounds heap read in mtap16/mtap24 h.264 rtp depayloader via signed/unsigned underflow</title>
-      <link>https://vulnogram.org/CVE-2026-119610</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119610</guid>
-      <description>A flaw was found in GStreamer&apos;s gst-plugins-good, specifically in the H.264 RTP depayloader element. When processing MTAP16 or MTAP24 multi-time aggregation RTP packets, a signed/unsigned integer conversion error causes the remaining-length counter t…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 09 Nov 2026 13:00:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-121629 · 7.5 HIGH 🌩️ — Gst-plugins-good: gst-plugins-good: local file disclosure via unvalidated file:// uris in adaptivedemux2 manifest handling</title>
-      <link>https://vulnogram.org/CVE-2026-121629</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121629</guid>
-      <description>A flaw was found in GStreamer&apos;s adaptive streaming demuxers (HLS, DASH, MSS). When processing a media playlist or manifest, URIs referenced in the manifest content are fetched without restricting which URI schemes are permitted. An attacker who contr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 09 Nov 2026 11:35:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-120984 · 9.1 CRITICAL — Keycloak-services: keycloak-services: manage-clients to arbitrary code execution through inline javascript policy import</title>
-      <link>https://vulnogram.org/CVE-2026-120984</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120984</guid>
-      <description>A flaw was found in the Keycloak server&apos;s client management component. When a client is created or imported with authorization services enabled, the system fails to properly clear an internal session attribute used during the setup process. This allo…</description>
-      <category>Critical</category>
-      <pubDate>Sat, 07 Nov 2026 13:22:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-83495 — Trainer: trainer: trainjob env passthrough enables valuefrom.secretkeyref injection for namespace secret exfiltration</title>
-      <link>https://vulnogram.org/CVE-2026-83495</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-83495</guid>
-      <description>A flaw was found in the Trainer v2 TrainJob API. A user with permissions to create TrainJobs can exploit this by injecting `valueFrom.secretKeyRef` into environment variable definitions. This allows them to read and exfiltrate sensitive information (…</description>
-      <pubDate>Sat, 07 Nov 2026 06:02:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-50240 · 8.8 HIGH — Pipelines-as-code: openshift-pipelines-operator-rh: pipelines-as-code: repository users can trigger namespace edit-equivalent execution via auto-provisioned pipeline serviceaccount</title>
-      <link>https://vulnogram.org/CVE-2026-50240</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-50240</guid>
-      <description>A flaw was found in OpenShift Pipelines-as-Code (PAC). PAC does not verify whether the creator of a Repository custom resource has permission to create PipelineRuns. A namespace user with only Repository and Secret create/delete permissions can cause…</description>
-      <category>High</category>
-      <pubDate>Fri, 06 Nov 2026 21:53:53 GMT</pubDate>
     </item>
   </channel>
 </rss>
