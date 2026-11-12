@@ -11,7 +11,39 @@
       <title>Grafana Labs — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 12 Nov 2026 13:32:54 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 21:27:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-106475 · 7.1 HIGH — Elasticsearch data source resource proxy allows arbitrary methods and paths with the data source&apos;s credentials</title>
+      <link>https://vulnogram.org/CVE-2026-106475</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106475</guid>
+      <description>The Elasticsearch data source resource proxy forwards the request method and path to Elasticsearch using the data source&apos;s own credentials, without restricting them to the operations the plugin needs. A user who can query the data source can alter in…</description>
+      <category>High</category>
+      <pubDate>Thu, 12 Nov 2026 17:40:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107365 · 5.3 MEDIUM — Unintended API access through the Google Cloud Monitoring data source resource proxy</title>
+      <link>https://vulnogram.org/CVE-2026-107365</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107365</guid>
+      <description>A user with query access to a Google Cloud Monitoring data source can use its resource proxy to send requests to other Cloud Monitoring API paths with the data source&apos;s credentials, and read data from any project those credentials can reach. When the…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 12 Nov 2026 17:40:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-81843 · 6.5 MEDIUM — Memory exhaustion denial of service in Elasticsearch data source index patterns</title>
+      <link>https://vulnogram.org/CVE-2026-81843</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81843</guid>
+      <description>Grafana is an open-source platform for monitoring and observability. When an Elasticsearch data source is configured with a time-based index pattern, Grafana generated one index name for every interval in the requested query time range without any up…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 12 Nov 2026 17:40:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-106472 · 6.3 MEDIUM — Server-side request forgery in the Prometheus data source resource API</title>
+      <link>https://vulnogram.org/CVE-2026-106472</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106472</guid>
+      <description>Grafana&apos;s Prometheus data source passes the resource path supplied by the caller to the configured Prometheus server without restricting it to the supported API endpoints [missing path allowlist]. A user with permission to query the data source can r…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 12 Nov 2026 17:40:38 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-110289 · 5.5 MEDIUM — Git Sync connections send credentials to unvalidated server URLs</title>
       <link>https://vulnogram.org/CVE-2026-110289</link>
@@ -379,38 +411,6 @@
       <description>An unauthenticated attacker can repeatedly call Grafana&apos;s OAuth login route with unique values, causing unbounded memory growth that can eventually exhaust memory and crash the Grafana instance (denial of service).</description>
       <category>Medium</category>
       <pubDate>Fri, 10 Jul 2026 14:58:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-33382 · 7.5 HIGH — Denial of service via unbounded request body size</title>
-      <link>https://vulnogram.org/CVE-2026-33382</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-33382</guid>
-      <description>Several Grafana API endpoints, some of them unauthenticated, do not limit the size of the request body before processing it. An attacker can send very large payloads that force excessive memory allocation, potentially exhausting memory and causing a…</description>
-      <category>High</category>
-      <pubDate>Fri, 10 Jul 2026 14:58:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28378 · 3.1 LOW — Cross-Organization Public Dashboard Deletion via Missing Org Isolation</title>
-      <link>https://vulnogram.org/CVE-2026-28378</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28378</guid>
-      <description>The public dashboard deletion endpoint does not enforce organization isolation, allowing an Org Admin in one organization to delete public dashboards belonging to a different organization by supplying the target dashboard&apos;s identifiers.</description>
-      <category>Low</category>
-      <pubDate>Tue, 07 Jul 2026 21:08:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-42127 · 7.5 HIGH — Pre-authentication denial of service in the public dashboard query endpoint</title>
-      <link>https://vulnogram.org/CVE-2026-42127</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-42127</guid>
-      <description>The public dashboard query endpoint does not limit request body size before processing, allowing unauthenticated attackers to trigger excessive memory allocation by sending arbitrarily large JSON payloads. This can lead to denial of service through m…</description>
-      <category>High</category>
-      <pubDate>Mon, 22 Jun 2026 16:31:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-28381 · 9.6 CRITICAL — Local File Read/Write to Potential Privilege Escalation via Snowflake GET/PUT</title>
-      <link>https://vulnogram.org/CVE-2026-28381</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-28381</guid>
-      <description>The Snowflake datasource allows for GET/PUT commands, which can allow any user with access to run queries against the data source to read/write files between the local grafana server and the connected Snowflake host.</description>
-      <category>Critical</category>
-      <pubDate>Mon, 22 Jun 2026 13:20:29 GMT</pubDate>
     </item>
   </channel>
 </rss>

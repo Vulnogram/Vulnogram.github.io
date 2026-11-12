@@ -11,7 +11,23 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 12 Nov 2026 13:32:54 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 21:27:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-19809 · 3.3 LOW — Kernel stack information disclosure in the charger_get_prop() system call handler</title>
+      <link>https://vulnogram.org/CVE-2026-19809</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19809</guid>
+      <description>The user-mode system call verifier z_vrfy_charger_get_prop() in drivers/charger/charger_handlers.c declares an uninitialized union charger_propval k_val on the kernel (privileged) stack, passes it to the charger driver back end via z_impl_charger_get…</description>
+      <category>Low</category>
+      <pubDate>Thu, 12 Nov 2026 15:19:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-91007 · 7.8 HIGH — Arbitrary supervisor-mode function pointer injection via charger_set_prop() syscall in the charger driver API</title>
+      <link>https://vulnogram.org/CVE-2026-91007</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91007</guid>
+      <description>The user-mode syscall verifiers for the charger driver API in drivers/charger/charger_handlers.c did not inspect the prop argument before copying union charger_propval across the user/kernel boundary. Two members of that union are function pointers —…</description>
+      <category>High</category>
+      <pubDate>Thu, 12 Nov 2026 15:19:20 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-126957 · 6.9 MEDIUM 🌩️ — ICMPv4 Record Route / Timestamp option: stack OOB read via ptr underflow in icmpv4.c</title>
       <link>https://vulnogram.org/CVE-2026-126957</link>
@@ -396,22 +412,6 @@
       <description>The Bluetooth Classic A2DP host stores a codec Information Element (IE) in struct bt_a2dp_codec_ie, a one-byte len field plus a fixed 8-byte codec_ie[] array. When an AVDTP peer sent a codec IE longer than 8 bytes, a2dp_process_config_ind() in subsys…</description>
       <category>Low</category>
       <pubDate>Wed, 21 Oct 2026 18:19:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78116 · 5.2 MEDIUM — Double free of an RTIO submission in the Broadcom AFBR-S50 sensor driver data-evaluation error path</title>
-      <link>https://vulnogram.org/CVE-2026-78116</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78116</guid>
-      <description>The Broadcom AFBR-S50 time-of-flight sensor driver double-completes an RTIO submission when sensor data evaluation fails. In data_ready_work_handler() (drivers/sensor/broadcom/afbr_s50/afbr_s50.c), a non-STATUS_OK return from Argus_EvaluateData() cal…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 18:19:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19676 · 7.8 HIGH — PECI transfer syscall verifier does not validate embedded user buffer pointers, allowing arbitrary kernel memory read/write from user mode</title>
-      <link>https://vulnogram.org/CVE-2026-19676</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19676</guid>
-      <description>The user-mode verifier for the peci_transfer() system call, z_vrfy_peci_transfer() in drivers/peci/peci_handlers.c, checked only the device object permission and copied the caller-supplied struct peci_msg with k_usermode_from_copy(). That copy valida…</description>
-      <category>High</category>
-      <pubDate>Wed, 21 Oct 2026 18:19:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
