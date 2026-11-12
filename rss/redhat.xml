@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 12 Nov 2026 04:46:35 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 13:32:54 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-126644 · 3.9 LOW — Ansible.posix: authorized_key module follows a parent-directory symlink allowing writes outside the intended directory</title>
+      <link>https://vulnogram.org/CVE-2026-126644</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126644</guid>
+      <description>A link-following flaw was found in the authorized_key module of the ansible.posix collection, residual to the fix for CVE-2026-11837. That fix guards only the final path component (os.chown with follow_symlinks=False and O_NOFOLLOW in _safe_open_writ…</description>
+      <category>Low</category>
+      <pubDate>Thu, 12 Nov 2026 10:50:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126643 · 6.5 MEDIUM — Aap-gateway-operator: resource-server secret exposed in plaintext in the automationcontroller custom resource</title>
+      <link>https://vulnogram.org/CVE-2026-126643</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126643</guid>
+      <description>A cleartext storage flaw was found in the AAP Gateway Operator. When reconciling an AutomationController, the operator reads the protected resource-server Secret (Secret/&lt;aap-name&gt;-resource-server, key controller_resource_server_secret) and copies it…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 12 Nov 2026 10:47:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126641 · 6.5 MEDIUM 🌩️ — Ansible-pylibssh: accepts a changed ssh host key when host_key_auto_add is enabled</title>
+      <link>https://vulnogram.org/CVE-2026-126641</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126641</guid>
+      <description>A host key verification flaw was found in ansible-pylibssh and in the ansible.netcommon libssh connection plugin. When trust-on-first-use is enabled (host_key_auto_add on the libssh connection plugin, or AutoAddPolicy in ansible-pylibssh), a host tha…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 12 Nov 2026 10:47:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126642 · 6.5 MEDIUM — Awx: webhook credential assignment omits use_role check, exposing another user&apos;s token</title>
+      <link>https://vulnogram.org/CVE-2026-126642</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126642</guid>
+      <description>An incorrect authorization flaw was found in AWX, the automation controller component of Red Hat Ansible Automation Platform. The API access classes for JobTemplate and WorkflowJobTemplate do not check the caller&apos;s Credential use_role when assigning…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 12 Nov 2026 08:29:21 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-125637 · 7.2 HIGH — Konflux-ci: unvalidated hostname fields enable caddyfile config injection in the konflux ui proxy generator, allowing an unauthenticated route to be spliced ahead of the forward_auth/impersonate authorization chain</title>
       <link>https://vulnogram.org/CVE-2026-125637</link>
@@ -400,39 +433,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 09 Nov 2026 18:16:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-84503 · 6.7 MEDIUM — Ansible-core: ansible-core: ansible.builtin.git invokes git without a `--` separator, allowing argument injection via a `-`-leading repository url (e.g. --upload-pack) -&gt; rce</title>
-      <link>https://vulnogram.org/CVE-2026-84503</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84503</guid>
-      <description>A flaw was found in ansible-core&apos;s ansible.builtin.git module. The module invokes git (ls-remote, clone, fetch) with the repository URL as a positional argument and without a &quot;--&quot; separator, so a repository URL that begins with a dash is interpreted…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 09 Nov 2026 17:57:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-125063 · 4.3 MEDIUM — Automation-controller: automation-controller: quadratic regex in schedule rrule validation allows an authenticated user to exhaust api web workers (denial of service)</title>
-      <link>https://vulnogram.org/CVE-2026-125063</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125063</guid>
-      <description>A flaw was found in the rrule validation of schedules in automation controller. Several non-anchored regular expressions with lazy wildcard prefixes are applied to the user-supplied rrule value; when the expected DTSTART/RRULE tokens are absent, vali…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 09 Nov 2026 17:51:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19706 · 8.3 HIGH — Openshift/installer: openshift installer: unconditional csr approval during agent-based installation (abi) bootstrap</title>
-      <link>https://vulnogram.org/CVE-2026-19706</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19706</guid>
-      <description>During ABI bootstrap, the bootstrap node&apos;s approve-csr.service approves and signs every CSR without identity validation. An attacker on the install network can retrieve the unauthenticated Ignition file (ports 22623/22624), extract a limited kubeconf…</description>
-      <category>High</category>
-      <pubDate>Mon, 09 Nov 2026 17:20:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-121611 · 6.5 MEDIUM 🌩️ — Gstreamer1-plugins-bad-free: gst-plugins-bad: use of uninitialized gsth265hrdparams in gst_h265_parse_vps() multi-hrd workaround loop</title>
-      <link>https://vulnogram.org/CVE-2026-121611</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121611</guid>
-      <description>A flaw was found in GStreamer&apos;s gst-plugins-bad package. A use of uninitialized memory vulnerability exists in the H.265 (HEVC) bitstream parser when processing Video Parameter Sets that declare more than one HRD (Hypothetical Reference Decoder) para…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 09 Nov 2026 13:01:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
