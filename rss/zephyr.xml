@@ -11,7 +11,71 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 12 Nov 2026 21:27:40 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 02:28:44 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-127916 · 2.9 LOW — MCUboot image hash span is not bounded against the slot, allowing a read past the flash area during image validation</title>
+      <link>https://vulnogram.org/CVE-2026-127916</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127916</guid>
+      <description>bootutil_img_hash() computes the image digest over ih_hdr_size + ih_img_size + ih_protect_tlv_size bytes, all three taken from the candidate image&apos;s header, and reads that span out of the slot without checking that it fits in the flash area. The thre…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 00:23:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-127915 · 2 LOW — TLV iterator does not bound each entry against the declared TLV area in MCUboot bootutil</title>
+      <link>https://vulnogram.org/CVE-2026-127915</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127915</guid>
+      <description>The MCUboot TLV iterator bootutil_tlv_iter_next() in boot/bootutil/src/tlv.c walks image trailer TLVs with a single loop guard (it-&gt;tlv_off &lt; it-&gt;tlv_end) and advances by sizeof(struct image_tlv) + tlv.it_len using the attacker-controlled it_len fiel…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 00:23:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16664 · 5.1 MEDIUM — Unchecked serial-recovery image index causes out-of-bounds slot-table read in MCUboot Zephyr port</title>
+      <link>https://vulnogram.org/CVE-2026-16664</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16664</guid>
+      <description>MCUboot&apos;s Zephyr serial-recovery upload handler bs_upload() in boot/boot_serial/src/boot_serial.c decodes the host-supplied image field of an MCUmgr image-upload request into img_num (a full 32-bit value) and latches it on the off == 0 packet without…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 00:23:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16659 · 4 MEDIUM — Pre-authentication NULL pointer dereference in MCUboot serial-recovery image upload (encrypted-image builds)</title>
+      <link>https://vulnogram.org/CVE-2026-16659</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16659</guid>
+      <description>MCUboot&apos;s serial-recovery image-upload handler bs_upload() in boot/boot_serial/src/boot_serial.c declares const struct flash_area *fap = NULL and assigns it only via flash_area_open() part-way through the function. Two early validation failures (goto…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 00:23:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16671 · 2.9 LOW — Out-of-bounds stack write in MCUboot split-image validation with SHA-384/SHA-512 builds</title>
+      <link>https://vulnogram.org/CVE-2026-16671</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16671</guid>
+      <description>split_image_check() in boot/bootutil/src/loader.c declares a fixed uint8_t loader_hash[32] buffer and passes it as the out_hash out-parameter to bootutil_img_validate(). That routine copies IMAGE_HASH_SIZE bytes into out_hash (memcpy(out_hash, hash,…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 00:23:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16662 · 2.4 LOW — Uninitialised bootloader stack disclosed into the measured-boot attestation record via a short EXPECTED_HASH TLV in MCUboot</title>
+      <link>https://vulnogram.org/CVE-2026-16662</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16662</guid>
+      <description>boot_save_boot_status() in boot/bootutil/src/boot_record.c reads the image&apos;s EXPECTED_HASH_TLV into a stack buffer image_hash[IMAGE_HASH_SIZE] that is never zero-initialised. The TLV handler validates only the upper bound (len &gt; sizeof(image_hash)) a…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 00:23:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128091 · 2 LOW — AES key schedule not cleared by the TinyCrypt AES-CTR backend in MCUboot bootutil</title>
+      <link>https://vulnogram.org/CVE-2026-128091</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128091</guid>
+      <description>When MCUboot is built with the TinyCrypt crypto backend (MCUBOOT_USE_TINYCRYPT), bootutil_aes_ctr_drop() in boot/bootutil/include/bootutil/crypto/aes_ctr_tinycrypt.h was an empty stub. The AES-CTR context for this backend is the fully expanded AES-12…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 00:22:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-127928 · 2 LOW — AES image key left on the stack after serial-recovery encrypted-image handling in MCUboot</title>
+      <link>https://vulnogram.org/CVE-2026-127928</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127928</guid>
+      <description>In MCUboot&apos;s serial-recovery encrypted-image support (boot/boot_serial/src/boot_serial_encryption.c), decrypt_image_inplace() and boot_image_validate_encrypted() each keep a stack-local struct boot_status. boot_enc_load() writes the plaintext per-ima…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 00:22:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-19809 · 3.3 LOW — Kernel stack information disclosure in the charger_get_prop() system call handler</title>
       <link>https://vulnogram.org/CVE-2026-19809</link>
@@ -348,70 +412,6 @@
       <description>The RTIO streaming completion callback adxl345_process_fifo_samples_cb() in drivers/sensor/adi/adxl345/adxl345_stream.c clamps the amount of FIFO data it will report (read_len = MIN(fifo_bytes, buf_avail)) to the space actually returned by rtio_sqe_r…</description>
       <category>Low</category>
       <pubDate>Fri, 23 Oct 2026 19:56:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79977 · 8.2 HIGH — WireGuard peer endpoint learned from unauthenticated transport-data messages allows off-path tunnel hijack in Zephyr</title>
-      <link>https://vulnogram.org/CVE-2026-79977</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79977</guid>
-      <description>The WireGuard VPN service in subsys/net/lib/wireguard/wg.c updated the peer endpoint from a message it could not authenticate. In handle_transport_data(), when the 32-bit receiver index of an incoming transport-data message matched no session, the co…</description>
-      <category>High</category>
-      <pubDate>Fri, 23 Oct 2026 19:56:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19741 · 7.5 HIGH — OpenThread joiner autostart uses a publicly documented default Joining Device Credential (PSKd)</title>
-      <link>https://vulnogram.org/CVE-2026-19741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19741</guid>
-      <description>Zephyr&apos;s OpenThread integration defined CONFIG_OPENTHREAD_JOINER_PSKD with default &quot;J01NME&quot; in modules/openthread/Kconfig.thread (previously subsys/net/l2/openthread/Kconfig, then subsys/net/l2/openthread/Kconfig.thread). J01NME is the example Joinin…</description>
-      <category>High</category>
-      <pubDate>Fri, 23 Oct 2026 19:56:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19947 · 5.3 MEDIUM — Missing kernel object permission check in devmux syscalls allows unprivileged user threads to retarget a device multiplexer</title>
-      <link>https://vulnogram.org/CVE-2026-19947</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19947</guid>
-      <description>The device multiplexer pseudo-driver in drivers/misc/devmux/devmux.c exposes two system calls, devmux_select_get() and devmux_select_set(). When CONFIG_USERSPACE is enabled, their user-mode verifiers z_vrfy_devmux_select_get() and z_vrfy_devmux_selec…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 18:19:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79976 · 7.1 HIGH — NULL pointer dereference in the MCTP I2C+GPIO target binding triggerable by a peer I2C controller</title>
-      <link>https://vulnogram.org/CVE-2026-79976</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79976</guid>
-      <description>The MCTP-over-I2C+GPIO target binding in subsys/pmci/mctp/mctp_i2c_gpio_target.c emulates a small pseudo-register file, where the bus controller first writes a register number and then writes or reads payload bytes. The selected register (b-&gt;reg_addr…</description>
-      <category>High</category>
-      <pubDate>Wed, 21 Oct 2026 18:19:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78119 · 6.3 MEDIUM — Out-of-bounds write in the Nuvoton NPCX eSPI Target-Attached-Flash receive path from an unvalidated host-supplied packet length</title>
-      <link>https://vulnogram.org/CVE-2026-78119</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78119</guid>
-      <description>The Nuvoton NPCX eSPI driver parses Target-Attached-Flash (TAF) requests in espi_taf_parse() (drivers/espi/espi_npcx.c), taking the 12-bit length field directly out of the request header in the FLASHRXBUF FIFO. For write and RPMC OP1 requests it copi…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 18:19:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78118 · 7 HIGH — Race condition on kernel wait queues: unlocked z_waitq_head() read in the timer expiration handler can yield a stale or sentinel thread pointer on SMP</title>
-      <link>https://vulnogram.org/CVE-2026-78118</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78118</guid>
-      <description>The kernel helper z_waitq_head() (kernel/include/wait_q.h) reads the head of a thread wait queue, but on SMP systems it was called from several places without holding the scheduler spinlock _sched_spinlock that serializes wait-queue mutation. The con…</description>
-      <category>High</category>
-      <pubDate>Wed, 21 Oct 2026 18:19:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78117 · 4.2 MEDIUM — Race condition on shared HCI TX descriptor in the Infineon PSOC 6 BLESS Bluetooth driver can leak adjacent memory over the air</title>
-      <link>https://vulnogram.org/CVE-2026-78117</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78117</guid>
-      <description>The Infineon PSOC 6 BLESS HCI driver in drivers/bluetooth/hci/hci_infineon_psoc6_bless.c stored the outgoing HCI packet descriptor in a file-scope variable, static cy_stc_ble_hci_tx_packet_info_t hci_tx_pkt. psoc6_bless_send() cleared and populated t…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 21 Oct 2026 18:19:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-18748 · 3.5 LOW — Out-of-bounds read in Bluetooth Classic A2DP codec information element handling</title>
-      <link>https://vulnogram.org/CVE-2026-18748</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-18748</guid>
-      <description>The Bluetooth Classic A2DP host stores a codec Information Element (IE) in struct bt_a2dp_codec_ie, a one-byte len field plus a fixed 8-byte codec_ie[] array. When an AVDTP peer sent a codec IE longer than 8 bytes, a2dp_process_config_ind() in subsys…</description>
-      <category>Low</category>
-      <pubDate>Wed, 21 Oct 2026 18:19:29 GMT</pubDate>
     </item>
   </channel>
 </rss>

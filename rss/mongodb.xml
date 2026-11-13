@@ -11,7 +11,39 @@
       <title>MongoDB, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 12 Nov 2026 21:27:40 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 02:28:44 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-126982 · 7.7 HIGH — Remote code execution via generic-type allow-list bypass in BSON object deserialization</title>
+      <link>https://vulnogram.org/CVE-2026-126982</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126982</guid>
+      <description>A type allow-list bypass in the BSON serialization library of the MongoDB C# Driver allows a type-restriction check to be circumvented when polymorphic data is deserialized into loosely typed members. An unauthorized party who can supply or plant BSO…</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Nov 2026 00:00:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126839 · 4.2 MEDIUM — Deserialization allow-list bypass via anonymous-type misdetection in BSON object deserialization</title>
+      <link>https://vulnogram.org/CVE-2026-126839</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126839</guid>
+      <description>A deserialization type-restriction control in the BSON serialization component can be bypassed because the check used to recognize a class of compiler-generated types relies on an overly permissive heuristic rather than a precise identification. An u…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 12 Nov 2026 23:58:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126792 · 5.6 MEDIUM — Heap overflow via oversized RSA signature in GCP KMS signing callback</title>
+      <link>https://vulnogram.org/CVE-2026-126792</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126792</guid>
+      <description>A memory-safety flaw in the key-management request-building component of the library can lead to an out-of-bounds write on the heap. A fixed-size output buffer is used under an assumption about cryptographic key size that is never validated, so when…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 12 Nov 2026 23:53:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126823 · 7.3 HIGH — Atlas SQL JDBC driver loads a native library it did not write: NativeLoader tolerates a pre-existing libmongosqltranslate.so in a shared temp dir</title>
+      <link>https://vulnogram.org/CVE-2026-126823</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126823</guid>
+      <description>A local user with an ordinary account on the same host can place a file in a shared temporary location that the JDBC driver&apos;s native library loading routine will accept and load without verifying its origin. Loading the driver class in a Java applica…</description>
+      <category>High</category>
+      <pubDate>Thu, 12 Nov 2026 21:51:20 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-126838 · 5.7 MEDIUM — Rust Driver public Client Debug output exposes CSFLE KMS master-key material</title>
       <link>https://vulnogram.org/CVE-2026-126838</link>
@@ -394,40 +426,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Wed, 28 Oct 2026 16:51:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-118510 · 8.8 HIGH — Laravel MongoDB `whereDoesntHave` misses deny records for numeric string IDs</title>
-      <link>https://vulnogram.org/CVE-2026-118510</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118510</guid>
-      <description>A type-handling flaw in the relationship query building of this MongoDB integration library can cause a check for the absence of a related record to be compiled with an identifier of the wrong data type. In an application that relies on such a check…</description>
-      <category>High</category>
-      <pubDate>Wed, 28 Oct 2026 16:15:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115930 · 7.6 HIGH 🌩️ — MongoDB Shell (mongosh) bundled with Node.js trusts certificates issued by recoverable eMudhra intermediate CAs</title>
-      <link>https://vulnogram.org/CVE-2026-115930</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115930</guid>
-      <description>The MongoDB Shell (mongosh) relies on Node.js as a third-party runtime that carries its own TLS root certificate store. This certificate store has the recoverable eMudhra intermediate CA certificates. This issue impacts MongoDB Shell (mongosh) versio…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 14:02:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115929 · 7.6 HIGH 🌩️ — MongoDB Compass trusts certificates issued by recoverable eMudhra intermediate CAs</title>
-      <link>https://vulnogram.org/CVE-2026-115929</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115929</guid>
-      <description>MongoDB Compass relies on Electron, a third-party runtime that carries its own TLS root certificate store. This root certificate store has the recoverable eMudhra intermediate CA certificates. Issue is resolved by updating to Compass 1.53.1, which in…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 24 Oct 2026 00:31:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-114655 · 6 MEDIUM — KMS request injection via unsanitized key vault and provider values in libmongocrypt</title>
-      <link>https://vulnogram.org/CVE-2026-114655</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114655</guid>
-      <description>libmongocrypt builds requests to external key management services (AWS, Azure and GCP) by inserting values from key vault documents, KMS provider configuration and KMS responses into request lines, headers and signed request bodies without validating…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 22 Oct 2026 19:14:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
