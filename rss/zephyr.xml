@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 13 Nov 2026 10:20:11 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 18:28:08 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-92241 · 5.7 MEDIUM — Bluetooth Classic AVRCP browsing channel can deadlock the Bluetooth receive thread, hanging the host</title>
+      <link>https://vulnogram.org/CVE-2026-92241</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-92241</guid>
+      <description>The AVRCP browsing channel&apos;s L2CAP receive-buffer callback, browsing_avrcp_l2cap_alloc_buf() in subsys/bluetooth/host/classic/avrcp.c, allocated from the shared avctp_browsing_rx_pool with K_FOREVER. L2CAP invokes that callback from the Bluetooth RX…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 14:03:47 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-127916 · 2.9 LOW — MCUboot image hash span is not bounded against the slot, allowing a read past the flash area during image validation</title>
       <link>https://vulnogram.org/CVE-2026-127916</link>
@@ -404,14 +412,6 @@
       <description>The arm64 MMU backend invalidates a single virtual address from the TLB with invalidate_tlb_page() in arch/arm64/core/mmu.c, which issued TLBI VAE1{IS} with an operand of virt &gt;&gt; 12. That operand encodes the ASID in bits [63:48], so the invalidation…</description>
       <category>High</category>
       <pubDate>Fri, 23 Oct 2026 19:56:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79978 · 3.6 LOW — Out-of-bounds write in the ADXL345 sensor driver RTIO streaming FIFO read path</title>
-      <link>https://vulnogram.org/CVE-2026-79978</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79978</guid>
-      <description>The RTIO streaming completion callback adxl345_process_fifo_samples_cb() in drivers/sensor/adi/adxl345/adxl345_stream.c clamps the amount of FIFO data it will report (read_len = MIN(fifo_bytes, buf_avail)) to the space actually returned by rtio_sqe_r…</description>
-      <category>Low</category>
-      <pubDate>Fri, 23 Oct 2026 19:56:14 GMT</pubDate>
     </item>
   </channel>
 </rss>

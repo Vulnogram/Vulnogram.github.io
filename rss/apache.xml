@@ -11,7 +11,81 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 13 Nov 2026 10:20:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 18:28:08 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-124679 · 7.8 HIGH 🌩️ — Apache APISIX: jwe-decrypt and forward-auth may pass a client-supplied identity header</title>
+      <link>https://vulnogram.org/CVE-2026-124679</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124679</guid>
+      <description>Authentication bypass by spoofing vulnerability in Apache APISIX. On routes using jwe-decrypt with strict: false and a forward_header distinct from the token header an unauthenticated client can supply the value the upstream treats as gateway-decrypt…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 13 Nov 2026 17:53:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124716 · 6.4 MEDIUM — Apache APISIX: authz-keycloak authorization scope mismatch</title>
+      <link>https://vulnogram.org/CVE-2026-124716</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124716</guid>
+      <description>Incorrect Authorization vulnerability in Apache APISIX. An authenticated user who holds any one of a route&apos;s required permissions or scopes can reach the protected upstream without the others, including HTTP methods the authorization server denied. T…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 17:52:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124666 · 6.4 MEDIUM — Apache APISIX: Multi-auth preserves client-supplied Wolf identity headers</title>
+      <link>https://vulnogram.org/CVE-2026-124666</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124666</guid>
+      <description>Authentication bypass by spoofing vulnerability in Apache APISIX. On a route where multi-auth falls back from wolf-rbac to another successful authenticator, client-supplied Wolf identity headers can remain in the request. A downstream service that re…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 17:52:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124680 · 7 HIGH 🌩️ — Apache APISIX: Route-level authentication bypass via path normalization mismatch between routing and upstream forwarding</title>
+      <link>https://vulnogram.org/CVE-2026-124680</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124680</guid>
+      <description>Interpretation Conflict, resulting in (Incorrect Authorization) vulnerability in Apache APISIX. An unauthenticated client can reach upstream paths protected by a route-level auth plugin when a route without auth exists on the same upstream and the up…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 13 Nov 2026 17:51:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124719 · 2.3 LOW — Apache APISIX: identity spoofing in openapi-to-mcp</title>
+      <link>https://vulnogram.org/CVE-2026-124719</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124719</guid>
+      <description>Authentication bypass by spoofing vulnerability in Apache APISIX. When a Route&apos;s configured headers carry a caller identity and the OpenAPI document declares the same header, a caller can act as another identity against the upstream API. This issue a…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 17:50:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124723 · 6.3 MEDIUM 🌩️ — Apache APISIX: unauthorized access to mTLS protected resources</title>
+      <link>https://vulnogram.org/CVE-2026-124723</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124723</guid>
+      <description>Interpretation Conflict, leading to Incorrect Authorization vulnerability in Apache APISIX. With match_uri_encoded_slash enabled and skip_mtls_uri_regex configured, a client without a certificate can reach an upstream behind a route that requires one…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 13 Nov 2026 17:49:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124726 · 6.9 MEDIUM 🌩️ — Apache APISIX: openapi-to-mcp tool call can reach an API path the document does not declare</title>
+      <link>https://vulnogram.org/CVE-2026-124726</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124726</guid>
+      <description>Relative Path Traversal, with Unintended Proxy vulnerability in Apache APISIX. A caller of the MCP endpoint can invoke endpoints the OpenAPI document never declared, under the declared tool&apos;s HTTP method, using the credentials the Route adds. This is…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 13 Nov 2026 17:49:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123274 — Apache DataSketches C++: Out-of-bounds write in KLL sketch deserialization allows memory corruption via a crafted sketch</title>
+      <link>https://vulnogram.org/CVE-2026-123274</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123274</guid>
+      <description>Out-of-bounds Write vulnerability in Apache DataSketches C++. An application that deserializes a KLL sketch from an untrusted source can have heap memory corrupted by a crafted sketch, because the serialized level boundaries were not validated. This…</description>
+      <pubDate>Fri, 13 Nov 2026 10:34:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123338 — Apache DataSketches C++: Out-of-bounds write in REQ sketch deserialization allows memory corruption via a crafted sketch</title>
+      <link>https://vulnogram.org/CVE-2026-123338</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123338</guid>
+      <description>Out-of-bounds Write vulnerability in Apache DataSketches C++. An application that deserializes a REQ sketch from an untrusted source can have heap memory corrupted by a crafted sketch, because the serialized compactor headers were not validated. This…</description>
+      <pubDate>Fri, 13 Nov 2026 10:32:43 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-124023 — Apache Axis2/C: Out-of-bounds read in the Guththila XML reader wrapper</title>
       <link>https://vulnogram.org/CVE-2026-124023</link>
@@ -48,10 +122,12 @@
       <pubDate>Wed, 11 Nov 2026 14:55:08 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-119618 — Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers</title>
+      <title>CVE-2026-119618 · 8.1 HIGH 🌩️ — Apache HTTP Server: mod_http2: heap corruption and RCE in assign_headers</title>
       <link>https://vulnogram.org/CVE-2026-119618</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119618</guid>
       <description>Concurrent Execution using Shared Resource with Improper Synchronization vulnerability in Apache HTTP Server&apos;s mod_http2 in assign_headers() can lead to RCE. This issue affects Apache HTTP Server: from 2.4.55 through 2.4.70. Affected releases of mod_…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
       <pubDate>Wed, 11 Nov 2026 14:54:08 GMT</pubDate>
     </item>
     <item>
@@ -313,69 +389,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97880</guid>
       <description>The embedded OpenEJB HTTP server dispatches some requests to REST endpoints configured for HTTP Basic authentication without verifying credentials. A remote unauthenticated attacker can invoke protected resources, bypassing authentication. Only deplo…</description>
       <pubDate>Tue, 10 Nov 2026 15:33:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97881 — Apache TomEE: Path traversal in embedded HTTP server static resource handling</title>
-      <link>https://vulnogram.org/CVE-2026-97881</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97881</guid>
-      <description>The embedded OpenEJB HTTP server does not restrict static resource paths to the configured resource directories. A remote unauthenticated attacker can read arbitrary files accessible to the server process. Users are recommended to block network acces…</description>
-      <pubDate>Tue, 10 Nov 2026 15:32:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97888 — Apache TomEE: Caller identity leaks across requests in embedded HTTP server</title>
-      <link>https://vulnogram.org/CVE-2026-97888</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97888</guid>
-      <description>The embedded HTTP server does not clear the security identity established during a request before its worker thread handles the next request. A remote unauthenticated attacker can have their request processed with the identity of a previously authent…</description>
-      <pubDate>Tue, 10 Nov 2026 15:32:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97890 — Apache TomEE: Session fixation in embedded HTTP server</title>
-      <link>https://vulnogram.org/CVE-2026-97890</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97890</guid>
-      <description>The embedded HTTP server does not invalidate the previous session identifier when an application changes the session id, e.g. after login. An attacker who can plant a session identifier in a victim&apos;s browser can hijack the victim&apos;s authenticated sess…</description>
-      <pubDate>Tue, 10 Nov 2026 15:31:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111239 — Apache TomEE: Code execution by any authenticated user via the SSH administration shell</title>
-      <link>https://vulnogram.org/CVE-2026-111239</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111239</guid>
-      <description>The optional SSH administration service grants full access to the administration shell to every user that authenticates against its configured login domain, without checking for an administrative role. An attacker holding the credentials of any user…</description>
-      <pubDate>Tue, 10 Nov 2026 15:30:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111240 — Apache TomEE: Authentication bypass for accounts without a stored password in SQL login module</title>
-      <link>https://vulnogram.org/CVE-2026-111240</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111240</guid>
-      <description>The JDBC based JAAS login module accepts a login without a password for accounts whose stored password is NULL. A remote attacker who knows the user name of such an account can authenticate as that user and obtain its roles. Only deployments using th…</description>
-      <pubDate>Tue, 10 Nov 2026 15:30:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111241 — Apache TomEE: Local code execution via predictable passivation files in the shared temporary directory</title>
-      <link>https://vulnogram.org/CVE-2026-111241</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111241</guid>
-      <description>When a non-default stateful session bean passivation strategy is configured, passivated bean state is written to predictably named files in the shared system temporary directory, reusing files that already exist there, and is deserialized on activati…</description>
-      <pubDate>Tue, 10 Nov 2026 15:30:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111242 — Apache TomEE: Privilege escalation via leaked MicroProfile JWT run-as identity</title>
-      <link>https://vulnogram.org/CVE-2026-111242</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111242</guid>
-      <description>When MicroProfile JWT authentication is used for servlets that declare a run-as identity, the security state established for a request is not always cleared from the processing thread when the request does not complete normally. A remote attacker hol…</description>
-      <pubDate>Tue, 10 Nov 2026 15:29:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111243 — Apache TomEE: Expired MicroProfile JWT tokens accepted with negative clock skew</title>
-      <link>https://vulnogram.org/CVE-2026-111243</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111243</guid>
-      <description>A negative MicroProfile JWT clock skew setting is not rejected and disables validation of the token expiration and other time-based claims. In such configurations, an attacker in possession of an expired token can still authenticate with it. Users ar…</description>
-      <pubDate>Tue, 10 Nov 2026 15:29:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-111244 — Apache TomEE: Authorization bypass in MicroProfile JWT role checks for JAX-RS resources</title>
-      <link>https://vulnogram.org/CVE-2026-111244</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-111244</guid>
-      <description>When MicroProfile JWT role-based access control is used, the access constraints of JAX-RS resources are not always enforced as declared: resources that declare an empty set of allowed roles are accessible to every caller, resource classes that inheri…</description>
-      <pubDate>Tue, 10 Nov 2026 15:27:04 GMT</pubDate>
     </item>
   </channel>
 </rss>

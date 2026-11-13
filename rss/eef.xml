@@ -11,7 +11,51 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 13 Nov 2026 10:20:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 18:28:09 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-124279 · 8.2 HIGH 🌩️ — Streaming request body limit enforced only after an 8 MB read in elixir-grpc grpc_server</title>
+      <link>https://vulnogram.org/CVE-2026-124279</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124279</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in elixir-grpc grpc_server allows unauthenticated attackers to exhaust server memory via client-streaming or bidirectional-streaming requests. The streaming read clause of GRPC.Server…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 13 Nov 2026 16:18:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121809 · 8.2 HIGH 🌩️ — CPU exhaustion via a truncated gRPC message on streaming RPCs in elixir-grpc grpc_server</title>
+      <link>https://vulnogram.org/CVE-2026-121809</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121809</guid>
+      <description>Loop with Unreachable Exit Condition (&apos;Infinite Loop&apos;) vulnerability in elixir-grpc grpc_server and grpc allows unauthenticated attackers to occupy a BEAM scheduler indefinitely via a client-streaming or bidirectional-streaming request whose body end…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 13 Nov 2026 16:18:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124278 · 7.6 HIGH — Path bindings ignored for gRPC Content-Types on transcoded routes in elixir-grpc grpc_server</title>
+      <link>https://vulnogram.org/CVE-2026-124278</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124278</guid>
+      <description>Authorization Bypass Through User-Controlled Key vulnerability in elixir-grpc grpc_server and grpc allows an attacker to make a handler act on a resource other than the one named in the URL of an HTTP-transcoded route, via a request with a gRPC Conte…</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Nov 2026 15:58:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121808 · 8.2 HIGH 🌩️ — Memory exhaustion via compressed Erlang terms in the elixir-grpc Erlpack codec</title>
+      <link>https://vulnogram.org/CVE-2026-121808</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121808</guid>
+      <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in elixir-grpc grpc_core and grpc allows unauthenticated attackers to exhaust server memory via a compressed Erlang external term in a gRPC message body. GRPC.Codec.Erlpac…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 13 Nov 2026 15:48:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123635 · 6.3 MEDIUM 🌩️ — Refused calls drain the HTTP/2 connection flow-control window in elixir-grpc grpc_server</title>
+      <link>https://vulnogram.org/CVE-2026-123635</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123635</guid>
+      <description>Missing Release of Resource after Effective Lifetime vulnerability in elixir-grpc grpc_server allows a client to stall all later calls on a shared HTTP/2 connection via calls that the server refuses while their DATA frames are in flight. The stream h…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 13 Nov 2026 15:40:16 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-119446 · 9.4 CRITICAL 🌩️ — Session fixation in the CLI login flow allows an unauthenticated attacker to obtain a user&apos;s API token</title>
       <link>https://vulnogram.org/CVE-2026-119446</link>
@@ -394,51 +438,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Mon, 26 Oct 2026 13:31:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113436 · 8.7 HIGH 🌩️ — Quadratic bignum parsing of Content-Length and Host port values in Bandit</title>
-      <link>https://vulnogram.org/CVE-2026-113436</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113436</guid>
-      <description>Inefficient Algorithmic Complexity vulnerability in the header integer parser of mtrudel bandit allows an unauthenticated remote attacker to consume server CPU via a content-length value or a Host or :authority port made of thousands of digits. Bandi…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 13:31:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110314 · 6.3 MEDIUM 🌩️ — WebSocket frames keep reaching the WebSock after a server-initiated close in Bandit</title>
-      <link>https://vulnogram.org/CVE-2026-110314</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110314</guid>
-      <description>Client-Side Enforcement of Server-Side Security vulnerability in the WebSocket connection handling of mtrudel bandit allows a remote client to keep running WebSock handler code after the server has stopped its connection, via data frames sent after i…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 13:31:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-114213 · 8.7 HIGH 🌩️ — WebSocket 1-byte continuation frames bypass `max_fragmented_message_size` in Bandit</title>
-      <link>https://vulnogram.org/CVE-2026-114213</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114213</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in the WebSocket fragment reassembly of mtrudel bandit allows an unauthenticated remote attacker to exhaust server memory via a fragmented message made of many 1-byte continuation fra…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 13:30:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-114216 · 6.3 MEDIUM 🌩️ — Chunk extensions accept bare LF and CR, enabling request smuggling in Bandit</title>
-      <link>https://vulnogram.org/CVE-2026-114216</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-114216</guid>
-      <description>Inconsistent Interpretation of HTTP Requests (&apos;HTTP Request/Response Smuggling&apos;) vulnerability in the HTTP/1.1 chunked body reader of mtrudel bandit allows an unauthenticated remote attacker to smuggle a second request past a front-end proxy via a ch…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 13:30:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115269 · 8.7 HIGH 🌩️ — HTTP/2 WINDOW_UPDATE and SETTINGS frames reset the request body read timeout in Bandit</title>
-      <link>https://vulnogram.org/CVE-2026-115269</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115269</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in the HTTP/2 request body reader of mtrudel bandit allows an unauthenticated remote attacker to hold stream processes open indefinitely via WINDOW_UPDATE or empty SETTINGS frames sen…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 13:30:24 GMT</pubDate>
     </item>
   </channel>
 </rss>

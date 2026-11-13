@@ -11,7 +11,79 @@
       <title>RT-Labs AB — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 13 Nov 2026 10:20:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 18:28:09 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-127125 · 6 MEDIUM — NULL pointer dereference when a response fragment is not acknowledged</title>
+      <link>https://vulnogram.org/CVE-2026-127125</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127125</guid>
+      <description>P-Net before 1.0.4 aborts the Application Relationship of an RPC session when a fragment of a response has been resent without being acknowledged, without checking that the session has an Application Relationship. A request for an existing Applicatio…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 13:25:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-127124 · 7.1 HIGH — RPC session pool exhausted by unfinished fragmented requests</title>
+      <link>https://vulnogram.org/CVE-2026-127124</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127124</guid>
+      <description>P-Net before 1.0.4 keeps the RPC session that is allocated for a fragment of a request with an unknown activity UUID, without a timeout, when the rest of the request never arrives. A session that does not get an Application Relationship is also kept…</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Nov 2026 13:25:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-127123 · 6 MEDIUM — Fragment with another data representation releases an Application Relationship</title>
+      <link>https://vulnogram.org/CVE-2026-127123</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127123</guid>
+      <description>P-Net before 1.0.4 releases the Application Relationship of an RPC session, without the abort procedure, when a fragment of a request has another data representation (endianness) than the first fragment of the call. The application is not told that t…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 13:25:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-127122 · 7.2 HIGH — Out-of-bounds write with too many MCR blocks in a Connect request</title>
+      <link>https://vulnogram.org/CVE-2026-127122</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127122</guid>
+      <description>P-Net before 1.0.4 does not check the number of MCR request blocks in a Connect request against the number of multicast communication relations that an Application Relationship has room for (PNET_MAX_MC_CR, 1 by default). Each further block is writte…</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Nov 2026 13:24:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124762 · 6 MEDIUM — RPC reject, fault and cancel PDUs abort an Application Relationship</title>
+      <link>https://vulnogram.org/CVE-2026-124762</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124762</guid>
+      <description>P-Net before 1.0.4 finds the RPC session of a received PDU by its activity UUID only, and a reject, fault or cancel PDU for the session aborts the Application Relationship, without checking that the PDU is the answer to a call of the device or where…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 13:24:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124761 · 7.1 HIGH — A DCP Set of the IP suite that is refused is still stored</title>
+      <link>https://vulnogram.org/CVE-2026-124761</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124761</guid>
+      <description>P-Net before 1.0.4 copies the IP suite of a DCP Set request to the current and the non-volatile configuration, and starts saving it, before the state of the device is checked. If the request is refused, for example because an Application Relationship…</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Nov 2026 13:24:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124760 · 2.3 LOW — Alarm receiver stops delivering alarms after a malformed alarm notification</title>
+      <link>https://vulnogram.org/CVE-2026-124760</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124760</guid>
+      <description>P-Net before 1.0.4 sets the alarm receiver state to waiting for confirmation before the data of a received alarm notification is parsed. If the parsing fails the state is not restored, and later alarm notifications of the same priority are discarded…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 13:23:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124758 · 2.3 LOW — Integer underflow of the record data length in IODWrite requests</title>
+      <link>https://vulnogram.org/CVE-2026-124758</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124758</guid>
+      <description>P-Net before 1.0.4 does not check the record data length of an IODWrite request to a non-user record index against the size of the record block header. The 32-bit length is reduced by the header size before it is passed to the record handlers, so a l…</description>
+      <category>Low</category>
+      <pubDate>Fri, 13 Nov 2026 13:23:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124759 · 7.1 HIGH — Alarm frames are accepted from any source address</title>
+      <link>https://vulnogram.org/CVE-2026-124759</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124759</guid>
+      <description>P-Net before 1.0.4 routes a received RTA alarm frame to an Application Relationship using only the destination alarm reference in the frame, without checking the source of the frame. A host with ADJACENT network access can abort an established Applic…</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Nov 2026 13:22:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-115793 · 8.7 HIGH 🌩️ — Resource exhaustion from RPC sessions kept for requests to unknown interface</title>
       <link>https://vulnogram.org/CVE-2026-115793</link>
