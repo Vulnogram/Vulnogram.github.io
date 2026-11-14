@@ -11,7 +11,47 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 13 Nov 2026 18:28:08 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 00:20:23 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-128886 · 6.2 MEDIUM — Dbus: server accept watch can be stalled by blocking nonce-tcp accept_with_noncefile path</title>
+      <link>https://vulnogram.org/CVE-2026-128886</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128886</guid>
+      <description>A flaw was found in dbus when configured with the nonce-tcp transport. An unauthenticated attacker able to connect to an exposed listener can cause a Denial of Service (DoS) by opening a connection and withholding the expected authentication token. B…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 21:42:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110330 · 5.5 MEDIUM — Abrt: abrt: abrt-server trusts client-supplied pid= allowing unprivileged read of other processes&apos; /proc environ</title>
+      <link>https://vulnogram.org/CVE-2026-110330</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110330</guid>
+      <description>A flaw was found in abrt. abrt-server trusts a client-supplied PID when creating problem dumps over abrt.socket and, running as root, copies that process&apos;s /proc data (including environ) into a dump directory owned by the connecting unprivileged user…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 21:26:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110331 · 7.8 HIGH — Abrt: abrt: incomplete cve-2026-54228/54229 fix — completeness gate bypassed via attacker-supplied count element</title>
+      <link>https://vulnogram.org/CVE-2026-110331</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110331</guid>
+      <description>A flaw was found in abrt. The completeness check introduced to mitigate CVE-2026-54228 and CVE-2026-54229 only verifies that a dump directory contains a &quot;count&quot; element, which an unprivileged user can create. This allows a local attacker to bypass th…</description>
+      <category>High</category>
+      <pubDate>Fri, 13 Nov 2026 21:25:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128987 · 6.2 MEDIUM — Dbus: infinite cpu-spin loop in libdbus socket transport when epipe is received during write operations</title>
+      <link>https://vulnogram.org/CVE-2026-128987</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128987</guid>
+      <description>A flaw was found in dbus. A local attacker can exploit this vulnerability by connecting to an affected service, requesting a response, and stopping socket reads while keeping the connection open. Because the socket transport handles broken pipe write…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 21:06:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128885 · 5.5 MEDIUM — Dbus: stack out-of-bounds write in dbus _dbus_poll() select() fallback when file descriptor exceeds fd_setsize</title>
+      <link>https://vulnogram.org/CVE-2026-128885</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128885</guid>
+      <description>A flaw was found in D-Bus. In configurations where the daemon falls back to using the Unix select() mechanism for event monitoring, it does not verify whether file descriptor numbers exceed allocated limits. A local attacker can exploit this flaw by…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 13 Nov 2026 21:06:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-123177 · 8.4 HIGH — Dnf5: dnf5daemon-server: dnf5daemon-server: unauthenticated privileged cmdline package fetch/open via add_cmdline_packages</title>
       <link>https://vulnogram.org/CVE-2026-123177</link>
@@ -382,51 +422,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 10 Nov 2026 14:34:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-120399 · 7.5 HIGH 🌩️ — Flightctl-api: flightctl-remote-access: flightctl: unbounded tls handshake in conncontext can block accepting connections</title>
-      <link>https://vulnogram.org/CVE-2026-120399</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120399</guid>
-      <description>A flaw was found in flightctl. A TLS handshake is performed synchronously in the HTTP server’s connection-context callback without a deadline. A network-reachable unauthenticated client can stall the handshake and prevent the affected listener from a…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 10 Nov 2026 14:08:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-124747 · 7.5 HIGH 🌩️ — Busybox: heap buffer overflow in wget ftp resume when the resume offset exceeds the reported file size</title>
-      <link>https://vulnogram.org/CVE-2026-124747</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124747</guid>
-      <description>A flaw was found in BusyBox. When resuming a download over File Transfer Protocol (FTP), the wget utility fails to verify that the resume offset does not exceed the file size reported by the server, resulting in an integer calculation error. A malici…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 10 Nov 2026 13:03:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-125709 · 4.2 MEDIUM 🌩️ — Libstdc++: overflow leaves streambuf in inconsistent state on i/o error.</title>
-      <link>https://vulnogram.org/CVE-2026-125709</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125709</guid>
-      <description>A flaw was found in libstdc++. When a byte-by-byte write operation fails during file stream processing, the library may still append data into the internal memory buffer. An attacker capable of inducing repeated write failures in an affected service…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 10 Nov 2026 11:23:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-125707 · 7.1 HIGH 🌩️ — Gst-plugins-bad: gst-plugins-bad: off-by-one write in mxf demuxer temporal offset table</title>
-      <link>https://vulnogram.org/CVE-2026-125707</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125707</guid>
-      <description>A flaw was found in GStreamer&apos;s MXF demuxer. When an application processes a crafted MXF file, an off-by-one bounds check can allow a one-byte write past the logical end of a temporal offset array. This may corrupt memory and cause the application to…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 10 Nov 2026 11:23:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-125706 · 6.5 MEDIUM 🌩️ — Gst-plugins-bad: gst-plugins-bad: missing bounds checks in mpeg ps pes header parsing</title>
-      <link>https://vulnogram.org/CVE-2026-125706</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125706</guid>
-      <description>A flaw was found in GStreamer&apos;s gst-plugins-bad MPEG Program Stream demuxer and resindvd DVD-playback plugin. The PES header parsers do not adequately check remaining data before reading timestamps and optional header fields. Opening a specially craf…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 10 Nov 2026 11:23:11 GMT</pubDate>
     </item>
   </channel>
 </rss>
