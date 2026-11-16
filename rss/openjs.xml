@@ -11,7 +11,63 @@
       <title>OpenJS Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 16 Nov 2026 07:46:33 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 17:48:06 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-124724 · 7.5 HIGH — @fastify/busboy vulnerable to Denial of Service via truncated multipart part past the parts limit</title>
+      <link>https://vulnogram.org/CVE-2026-124724</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124724</guid>
+      <description>@fastify/busboy is a streaming parser for multipart form data used by Fastify. In versions 1.0.0 through 3.2.5, when a request reaches the configured limit on the number of multipart parts, each further part is skipped without attaching an error list…</description>
+      <category>High</category>
+      <pubDate>Mon, 16 Nov 2026 13:25:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128846 · 3.7 LOW — @fastify/busboy vulnerable to multipart file/field type confusion via chunk-dependent header parsing</title>
+      <link>https://vulnogram.org/CVE-2026-128846</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128846</guid>
+      <description>@fastify/busboy is a streaming parser for multipart form data used by Fastify. In versions 3.2.1 through 3.2.5, the parser can interpret the same multipart bytes differently depending on how they are split across socket reads: when the sequence that…</description>
+      <category>Low</category>
+      <pubDate>Mon, 16 Nov 2026 13:21:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128842 · 5.3 MEDIUM — @fastify/busboy vulnerable to Denial of Service via URL-encoded field size-limit bypass</title>
+      <link>https://vulnogram.org/CVE-2026-128842</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128842</guid>
+      <description>@fastify/busboy is a streaming parser for multipart and url-encoded form data used by Fastify. In versions 1.0.0 through 3.2.5, the url-encoded parser stops accumulating a field only when the decoded length exactly equals the configured per-field siz…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Nov 2026 13:18:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128835 · 7.5 HIGH — @fastify/busboy vulnerable to Denial of Service via a multipart part with unterminated headers</title>
+      <link>https://vulnogram.org/CVE-2026-128835</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128835</guid>
+      <description>@fastify/busboy is a streaming parser for multipart form data used by Fastify. In versions 1.0.0 through 3.2.5, a multipart part whose header block is never terminated before the next boundary is counted by the vendored Dicer parser as an open part t…</description>
+      <category>High</category>
+      <pubDate>Mon, 16 Nov 2026 13:16:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124289 · 7.5 HIGH — @fastify/multipart vulnerable to arbitrary file write via type confusion in saveRequestFiles()</title>
+      <link>https://vulnogram.org/CVE-2026-124289</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124289</guid>
+      <description>@fastify/multipart is the official Fastify plugin for handling multipart/form-data uploads. In versions 7.4.0 through 10.1.8, when the plugin is registered with the attachFieldsToBody option, the saveRequestFiles helper treats any object in the parse…</description>
+      <category>High</category>
+      <pubDate>Mon, 16 Nov 2026 13:09:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110710 · 7.5 HIGH — @fastify/multipart vulnerable to Denial of Service via temporary file leak after client disconnect</title>
+      <link>https://vulnogram.org/CVE-2026-110710</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110710</guid>
+      <description>@fastify/multipart is the official Fastify plugin for handling multipart/form-data uploads. In versions 3.0.0 through 10.1.3, temporary files written by the saveRequestFiles helper are removed only by a response hook that runs when the response finis…</description>
+      <category>High</category>
+      <pubDate>Mon, 16 Nov 2026 13:03:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121192 · 6.8 MEDIUM — @fastify/proxy-addr vulnerable to IP spoofing via ignored IPv6 zone identifier</title>
+      <link>https://vulnogram.org/CVE-2026-121192</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121192</guid>
+      <description>@fastify/proxy-addr determines which network hops are trusted proxies and backs Fastify&apos;s trustProxy setting, so that forwarded headers can be believed. In versions 3.0.0 through 5.1.2, when trustProxy is configured with a zoned IPv6 link-local addre…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Nov 2026 12:55:59 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-126051 · 7.5 HIGH — Node.js is vulnerable to a remotely triggerable uncaught exception in TLS servers via deferred handshake callbacks</title>
       <link>https://vulnogram.org/CVE-2026-126051</link>
@@ -355,62 +411,6 @@
       <description>undici is an HTTP client library for Node.js. In versions 5.15.0 through 6.29.0, 7.0.0 through 7.30.0, and 8.0.0 through 8.12.1, its WebSocket client, including the bundled WebSocket exposed by Node.js, can be driven to exhaust process memory by a ma…</description>
       <category>Medium</category>
       <pubDate>Thu, 15 Oct 2026 18:44:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87018 · 7.5 HIGH — undici vulnerable to Denial of Service via TLS 1.2 certificate-changing renegotiation</title>
-      <link>https://vulnogram.org/CVE-2026-87018</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87018</guid>
-      <description>undici is an HTTP client library for Node.js. In versions 4.2.1 through 6.29.0, 7.0.0 through 7.30.0, and 8.0.0 through 8.12.1, the client process crashes when a TLS 1.2 server renegotiates after the connection is established and presents a different…</description>
-      <category>High</category>
-      <pubDate>Thu, 15 Oct 2026 18:38:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109383 · 7.4 HIGH — undici vulnerable to TLS certificate validation bypass via dropped tls options in Agent</title>
-      <link>https://vulnogram.org/CVE-2026-109383</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109383</guid>
-      <description>undici is an HTTP client library for Node.js. In versions 4.0.0 through 6.29.0, 7.0.0 through 7.30.0, and 8.0.0 through 8.12.1, its Agent dispatcher passes its constructor options through a JSON-based deep clone before forwarding them to each per-ori…</description>
-      <category>High</category>
-      <pubDate>Thu, 15 Oct 2026 18:34:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109829 · 7.4 HIGH — undici vulnerable to cache poisoning and cross-user disclosure via cross-origin redirects</title>
-      <link>https://vulnogram.org/CVE-2026-109829</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109829</guid>
-      <description>undici is an HTTP client library for Node.js. In versions 7.0.0 through 7.30.0 and 8.0.0 through 8.12.1, when an originless Agent composes the redirect and cache interceptors in that order with a shared cache store, the cache builds its key from the…</description>
-      <category>High</category>
-      <pubDate>Thu, 15 Oct 2026 18:28:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109841 · 5.9 MEDIUM — undici vulnerable to Subresource Integrity bypass via non-lowercase algorithm tokens</title>
-      <link>https://vulnogram.org/CVE-2026-109841</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109841</guid>
-      <description>undici is an HTTP client library for Node.js. In versions 7.15.0 through 7.30.0 and 8.0.0 through 8.12.1, its fetch() implementation verifies Subresource Integrity metadata by matching the algorithm token against a lowercase-only set, even though the…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 15 Oct 2026 18:22:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109924 · 5.9 MEDIUM — undici vulnerable to Denial of Service via unbounded memory in the EventSource parser</title>
-      <link>https://vulnogram.org/CVE-2026-109924</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109924</guid>
-      <description>undici is an HTTP client library for Node.js. In versions 6.5.0 through 6.29.0, 7.0.0 through 7.30.0, and 8.0.0 through 8.12.1, its EventSource client can be driven to exhaust process memory by a malicious or compromised Server-Sent Events peer. By s…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 15 Oct 2026 18:16:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109869 · 7.5 HIGH — undici vulnerable to Denial of Service via unhandled error on excessive content-encodings</title>
-      <link>https://vulnogram.org/CVE-2026-109869</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109869</guid>
-      <description>undici is an HTTP client library for Node.js. In versions 6.23.0 through 6.29.0, 7.18.0 through 7.30.0, and 8.0.0 through 8.12.1, its fetch() implementation crashes the Node.js process when a malicious server returns a response with more than five co…</description>
-      <category>High</category>
-      <pubDate>Thu, 15 Oct 2026 18:08:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109855 · 7.5 HIGH — undici WebSocket client vulnerable to Denial of Service via failed HTTP/2 handshake</title>
-      <link>https://vulnogram.org/CVE-2026-109855</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109855</guid>
-      <description>undici is an HTTP client library for Node.js. In versions 8.11.0 and 8.11.1, its experimental WebSocket client, which is enabled by default when HTTP/2 is allowed, mishandles a failed WebSocket handshake over HTTP/2: the request is already marked com…</description>
-      <category>High</category>
-      <pubDate>Thu, 15 Oct 2026 08:12:51 GMT</pubDate>
     </item>
   </channel>
 </rss>

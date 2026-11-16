@@ -11,7 +11,168 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 16 Nov 2026 07:46:33 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 17:48:06 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-99311 — udf: fix return value for non-recorded-allocated extents in udf_map_block()</title>
+      <link>https://vulnogram.org/CVE-2026-99311</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99311</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: udf: fix return value for non-recorded-allocated extents in udf_map_block() When someone creates a corrupted UDF filesystem where symlink contains other extent type than EXT_RECORDED…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99310 — nfsd: hold cl_lock in client_has_openowners()</title>
+      <link>https://vulnogram.org/CVE-2026-99310</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99310</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: nfsd: hold cl_lock in client_has_openowners() client_has_openowners() walks clp-&gt;cl_openowners and reads so_stateids without clp-&gt;cl_lock. nfs4_put_stateowner() unhashes that openown…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99309 — ksmbd: fix overflow in dacloffset bounds check in build_sec_desc()</title>
+      <link>https://vulnogram.org/CVE-2026-99309</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99309</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: fix overflow in dacloffset bounds check in build_sec_desc() When the large dacl_offset is provided, dacl_offset + sizeof(struct smb_acl) overflows on 32-bit builds and the che…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99308 — usb: xhci: Fix bounce buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-99308</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99308</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: usb: xhci: Fix bounce buffer overflow High-speed devices with out of spec 1024 byte bulk endpoints exist and are allowed by USB core, but xhci-hcd always sets packet size to 512. The…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99307 — ceph: require the dentry lease record to cover struct ceph_mds_reply_lease</title>
+      <link>https://vulnogram.org/CVE-2026-99307</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99307</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ceph: require the dentry lease record to cover struct ceph_mds_reply_lease parse_reply_info_lease() reads a 32-bit struct_len off the wire and only checks that many bytes are present…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99306 — ceph: reject mdsmaps that claim more than CEPH_MAX_MDS ranks</title>
+      <link>https://vulnogram.org/CVE-2026-99306</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99306</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ceph: reject mdsmaps that claim more than CEPH_MAX_MDS ranks check_new_map() sizes its export-target bitmap from CEPH_MAX_MDS but walks it with newmap-&gt;possible_max_rank, which comes…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99305 — fbdev: udlfb: don&apos;t rebuild the mode list while the framebuffer is in use</title>
+      <link>https://vulnogram.org/CVE-2026-99305</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99305</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: fbdev: udlfb: don&apos;t rebuild the mode list while the framebuffer is in use dlfb_setup_modes() frees info-&gt;modelist with fb_destroy_modelist() and rebuilds it, but fbcon holds raw poin…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99304 — ceph: fix integer overflow in the snap trace bounds check</title>
+      <link>https://vulnogram.org/CVE-2026-99304</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99304</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ceph: fix integer overflow in the snap trace bounds check ceph_update_snap_trace() bounds the two encoded snapid arrays that follow a struct ceph_mds_snap_realm with sizeof(u64) * (n…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99303 — speakup: Fix NULL pointer dereference on VT switch + selection</title>
+      <link>https://vulnogram.org/CVE-2026-99303</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99303</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: speakup: Fix NULL pointer dereference on VT switch + selection When selecting/pasting very quickly after VT switch, the tty is not set yet, leading to a NULL dereference. We can just…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99302 — nvmet-rdma: reject short connection requests</title>
+      <link>https://vulnogram.org/CVE-2026-99302</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99302</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: nvmet-rdma: reject short connection requests nvmet_rdma_parse_cm_connect_req() treats RDMA-CM private data as a struct nvme_rdma_cm_req but accepts any nonzero private_data_len. The…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99301 — virtio_net: atomically disable rx mode work</title>
+      <link>https://vulnogram.org/CVE-2026-99301</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99301</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: virtio_net: atomically disable rx mode work virtio-net uses a boolean to gate rx_mode_work during device teardown. The flag is changed under RTNL, but ndo_set_rx_mode checks it under…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99300 — media: go7007: only set audio_enabled if go7007_snd_init() succeeded</title>
+      <link>https://vulnogram.org/CVE-2026-99300</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99300</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: go7007: only set audio_enabled if go7007_snd_init() succeeded go7007_register_encoder() sets go-&gt;audio_enabled before calling go7007_snd_init() and discards its return value.…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99299 — media: em28xx: reject audio endpoint with zero packet size</title>
+      <link>https://vulnogram.org/CVE-2026-99299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99299</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: em28xx: reject audio endpoint with zero packet size em28xx_audio_urb_init() divides by the audio endpoint&apos;s wMaxPacketSize without checking it, so a USB device that declares a…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99298 — net: ipv4: add zero check for snd_cwnd_clamp</title>
+      <link>https://vulnogram.org/CVE-2026-99298</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99298</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: ipv4: add zero check for snd_cwnd_clamp When RTAX_CWND is locked, user is able to pass 0 into it. This could lead to writing 0 to tp-&gt;snd_cwnd, leading to a division by zero err…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99297 — media: em28xx: fix double free in em28xx_alloc_urbs</title>
+      <link>https://vulnogram.org/CVE-2026-99297</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99297</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: media: em28xx: fix double free in em28xx_alloc_urbs When allocation of usb_bufs-&gt;buf[i] fails, em28xx_alloc_urbs() explicitly frees all items within usb_bufs-&gt;buf before calling em28…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99296 — libceph: bound mon_command ack decode to front len</title>
+      <link>https://vulnogram.org/CVE-2026-99296</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99296</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: libceph: bound mon_command ack decode to front len handle_command_ack() bounds the decode with msg-&gt;front_alloc_len, the size of the reply buffer, instead of msg-&gt;front.iov_len, the…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99295 — smb: client: stop processing a read response after a receive error</title>
+      <link>https://vulnogram.org/CVE-2026-99295</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99295</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: smb: client: stop processing a read response after a receive error cifs_read_iter_from_socket() may call cifs_reconnect() before returning an error. The reconnect path aborts pending…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99294 — netfilter: nft_fwd_netdev: use recursion counter in neigh egress path</title>
+      <link>https://vulnogram.org/CVE-2026-99294</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99294</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: netfilter: nft_fwd_netdev: use recursion counter in neigh egress path nft_fwd_neigh can be used in egress chains (NF_NETDEV_EGRESS). When the forwarding rule targets the same device…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99293 — fuse: don&apos;t BUG when the copy buffer is exhausted</title>
+      <link>https://vulnogram.org/CVE-2026-99293</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99293</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: fuse: don&apos;t BUG when the copy buffer is exhausted fuse_copy_fill() hits BUG_ON(!err) once the iterator backing the copy runs out of pages. Over io-uring the amount copied is not boun…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99292 — smb: client: fix slab-out-of-bounds write in id_mode_to_cifs_acl()</title>
+      <link>https://vulnogram.org/CVE-2026-99292</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99292</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: smb: client: fix slab-out-of-bounds write in id_mode_to_cifs_acl() In id_mode_to_cifs_acl(), while the chown branch reserves sizeof(struct smb_ntsd) + 2 * sizeof(struct smb_sid) (plu…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99291 — ksmbd: fix SMB2 CREATE response buffer overflow</title>
+      <link>https://vulnogram.org/CVE-2026-99291</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99291</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: fix SMB2 CREATE response buffer overflow smb2_allocate_rsp_buf() uses the MAX_CIFS_SMALL_BUFFER_SIZE (448-byte) buffer for a single SMB2_CREATE response. That buffer also hold…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99290 — ksmbd: fix use-after-free after a failed durable reconnect</title>
+      <link>https://vulnogram.org/CVE-2026-99290</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99290</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: fix use-after-free after a failed durable reconnect ksmbd_reopen_durable_fd() republishes a detached durable handle in the reconnecting session&apos;s file table and takes no refer…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99289 — ksmbd: fix app-instance non-durable supersede session UAF</title>
+      <link>https://vulnogram.org/CVE-2026-99289</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99289</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ksmbd: fix app-instance non-durable supersede session UAF ksmbd_close_fd_app_instance_id() supersedes a prior open that has the same AppInstanceId. It reaches that open&apos;s session thr…</description>
+      <pubDate>Mon, 16 Nov 2026 09:59:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-99288 — inet: reject unhashed sockets during established lookups</title>
       <link>https://vulnogram.org/CVE-2026-99288</link>
@@ -205,174 +366,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99258</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: x86/hyperv: Avoid using per-cpu output page in hv_apicid_to_vp_index() hv_apicid_to_vp_index() currently uses the per-cpu hypercall input and output pages. This function is called wh…</description>
       <pubDate>Tue, 03 Nov 2026 11:25:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99257 — gpio: shared: gracefully handle no-device lookup of shared GPIOs</title>
-      <link>https://vulnogram.org/CVE-2026-99257</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99257</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: gpio: shared: gracefully handle no-device lookup of shared GPIOs We use platform lookup tables for shared GPIOs. This mechanism needs a struct device to work so fwnode-based lookup w…</description>
-      <pubDate>Tue, 03 Nov 2026 11:25:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99256 — dm cache: fix issue with background work locking</title>
-      <link>https://vulnogram.org/CVE-2026-99256</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99256</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: dm cache: fix issue with background work locking dm cache used a rw_semaphore for background_work_lock. Write locks on rw_semaphores have strict owner semantics, but there was no gua…</description>
-      <pubDate>Tue, 03 Nov 2026 11:25:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99255 — io_uring/io-wq: don&apos;t hide a link from cancellations</title>
-      <link>https://vulnogram.org/CVE-2026-99255</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99255</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/io-wq: don&apos;t hide a link from cancellations A task that exits cancels its tracked requests and waits until they are gone. io_uring_cancel_generic() looks everywhere a reques…</description>
-      <pubDate>Tue, 03 Nov 2026 11:20:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99254 — io_uring: don&apos;t flood a cancelling task with task_work</title>
-      <link>https://vulnogram.org/CVE-2026-99254</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99254</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring: don&apos;t flood a cancelling task with task_work io_ring_exit_work() asks each task which has used the ring to remove its tctx node, by task_work, and repeats that until the li…</description>
-      <pubDate>Tue, 03 Nov 2026 11:20:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99253 — io_uring/cancel: rearm local work wake up before sleep</title>
-      <link>https://vulnogram.org/CVE-2026-99253</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99253</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: io_uring/cancel: rearm local work wake up before sleep io_uring_try_cancel_requests() sets -&gt;cq_wait_nr to 1 so that the next io_req_local_work_add() wakes the cancelling task. The a…</description>
-      <pubDate>Tue, 03 Nov 2026 11:20:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99251 — Drivers: hv: Avoid infinite retry loop in init_vp_index()</title>
-      <link>https://vulnogram.org/CVE-2026-99251</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99251</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: Drivers: hv: Avoid infinite retry loop in init_vp_index() There is a retry loop in init_vp_index() where the CPUs from a certain node are stripped out if they have already been in th…</description>
-      <pubDate>Tue, 03 Nov 2026 11:18:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99250 — printk: Postpone kthread startup</title>
-      <link>https://vulnogram.org/CVE-2026-99250</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99250</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: printk: Postpone kthread startup There have been various bug reports related to SMP systems hanging on boot. The reports vary but seem to have some overlap with regard to missed IPI&apos;…</description>
-      <pubDate>Tue, 03 Nov 2026 11:18:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99249 — pid_namespace: make zap_pid_ns_processes() freezable</title>
-      <link>https://vulnogram.org/CVE-2026-99249</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99249</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: pid_namespace: make zap_pid_ns_processes() freezable When the init of a pid namespace exits, zap_pid_ns_processes() waits until all other pids in the namespace are freed. A tracer ou…</description>
-      <pubDate>Tue, 03 Nov 2026 11:18:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99248 — i2c: xiic: restore non-managed runtime PM to fix clk WARN flood</title>
-      <link>https://vulnogram.org/CVE-2026-99248</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99248</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: i2c: xiic: restore non-managed runtime PM to fix clk WARN flood The devres conversion replaced manual pm_runtime_enable()/disable() with devm_pm_runtime_set_active_enabled() and drop…</description>
-      <pubDate>Tue, 03 Nov 2026 11:18:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99247 — tracing: Do not initialize tracefs work if tracing is disabled</title>
-      <link>https://vulnogram.org/CVE-2026-99247</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99247</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tracing: Do not initialize tracefs work if tracing is disabled If trace buffer allocation fails during early boot (e.g. in early_trace_init() -&gt; allocate_trace_buffers()), tracing_di…</description>
-      <pubDate>Tue, 03 Nov 2026 11:18:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99246 · 8.1 HIGH — tipc: protect node reset trace dump with node lock</title>
-      <link>https://vulnogram.org/CVE-2026-99246</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99246</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tipc: protect node reset trace dump with node lock The tipc_node_reset_links trace event asks tipc_node_dump() to walk the node&apos;s link entries. Unlike the other node events that requ…</description>
-      <category>High</category>
-      <pubDate>Tue, 03 Nov 2026 11:18:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99245 — KEYS: Fix key_reject_and_link() race with keyring restriction</title>
-      <link>https://vulnogram.org/CVE-2026-99245</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99245</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: KEYS: Fix key_reject_and_link() race with keyring restriction The restrict_link check in key_reject_and_link() is done before taking the keyring semaphore, racing with a concurrent k…</description>
-      <pubDate>Tue, 03 Nov 2026 11:15:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99244 — pid_namespace: prevent TIF_NOTIFY_SIGNAL from interrupting the reaper</title>
-      <link>https://vulnogram.org/CVE-2026-99244</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99244</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: pid_namespace: prevent TIF_NOTIFY_SIGNAL from interrupting the reaper Since commit 7fea700e04bd (&quot;zap_pid_ns_processes: clear TIF_NOTIFY_SIGNAL along with TIF_SIGPENDING&quot;) zap_pid_ns…</description>
-      <pubDate>Tue, 03 Nov 2026 11:15:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99242 — ntfs: fix race between fallocate and mmap reads</title>
-      <link>https://vulnogram.org/CVE-2026-99242</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99242</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ntfs: fix race between fallocate and mmap reads The fallocate implementation only takes invalidate_lock for punch hole, collapse range, and insert range operations. For standard allo…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99241 — ntfs: take invalidate_lock in ntfs_filemap_page_mkwrite()</title>
-      <link>https://vulnogram.org/CVE-2026-99241</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99241</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ntfs: take invalidate_lock in ntfs_filemap_page_mkwrite() ntfs_filemap_page_mkwrite() calls iomap_page_mkwrite() without holding mapping-&gt;invalidate_lock, so a concurrent truncate or…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99240 — mm/damon/core: error damos_commit_quota_goal() for zero target_value</title>
-      <link>https://vulnogram.org/CVE-2026-99240</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99240</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: mm/damon/core: error damos_commit_quota_goal() for zero target_value Patch series &quot;mm/damon: move zero damos quota target_value handling to the core layer&quot;. Having zero DAMOS quota t…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99239 · 7.8 HIGH — Bluetooth: L2CAP: refuse __l2cap_chan_add if chan already has conn</title>
-      <link>https://vulnogram.org/CVE-2026-99239</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99239</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: L2CAP: refuse __l2cap_chan_add if chan already has conn l2cap_chan may be linked to l2cap_conn at most once. This is assumed in several places, eg l2cap_chan_del cleanup.…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Nov 2026 16:06:43 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99238 · 7.8 HIGH — tracing: Hold trace_types_lock when updating modules in persistent instances</title>
-      <link>https://vulnogram.org/CVE-2026-99238</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99238</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tracing: Hold trace_types_lock when updating modules in persistent instances trace_module_record() walks ftrace_trace_arrays from the module notifier without trace_types_lock. A conc…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Nov 2026 16:06:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99237 · 7.8 HIGH — tracing: Hold trace_types_lock when resetting last boot data from readers</title>
-      <link>https://vulnogram.org/CVE-2026-99237</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99237</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tracing: Hold trace_types_lock when resetting last boot data from readers update_last_data_if_empty() is called from tracing_open() with O_TRUNC, tracing_read_pipe() and tracing_buff…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Nov 2026 16:06:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99236 · 7.8 HIGH — tracing: Reject incomplete event filter expressions</title>
-      <link>https://vulnogram.org/CVE-2026-99236</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99236</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tracing: Reject incomplete event filter expressions A non-empty expression normally finishes in predicate_parse()&apos;s inner loop, which resolves the pending logical operators before ju…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Nov 2026 16:06:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99235 · 7.8 HIGH — tracing: Save the event file instead of the compatible histogram</title>
-      <link>https://vulnogram.org/CVE-2026-99235</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99235</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tracing: Save the event file instead of the compatible histogram create_field_var_hist() creates a histogram on the matched event to supply a field variable, and records it on the ta…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Nov 2026 16:06:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99234 — tracing: Unregister field variable histograms when the command fails</title>
-      <link>https://vulnogram.org/CVE-2026-99234</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99234</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tracing: Unregister field variable histograms when the command fails An action that names a field on another event needs that field as a variable, so create_field_var_hist() register…</description>
-      <pubDate>Mon, 02 Nov 2026 16:06:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99233 · 7.8 HIGH — tracing/histograms: Verify event_call identity when updating synth_event refcount</title>
-      <link>https://vulnogram.org/CVE-2026-99233</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99233</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tracing/histograms: Verify event_call identity when updating synth_event refcount In event_hist_trigger_parse() and hist_unreg_all(), the histogram registration and unregistration pa…</description>
-      <category>High</category>
-      <pubDate>Mon, 02 Nov 2026 16:06:40 GMT</pubDate>
     </item>
   </channel>
 </rss>
