@@ -11,7 +11,147 @@
       <title>Gitea Limited — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sun, 15 Nov 2026 21:00:25 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 00:44:48 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-129525 — Gitea pull request disclosure to members with access to issues only</title>
+      <link>https://vulnogram.org/CVE-2026-129525</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129525</guid>
+      <description>Several endpoints that work on both issues and pull requests did not check which of the two the addressed item is. A user who can read a repository&apos;s issues but not its pull requests could read pull request data through the issue sub-resources of the…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129341 — Gitea release asset deletion by former writers</title>
+      <link>https://vulnogram.org/CVE-2026-129341</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129341</guid>
+      <description>The web endpoint that removes an attachment skipped the permission check when the request came from the user who had uploaded the attachment, and it was reachable with read access to issues or pull requests. A user who had uploaded a release asset co…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129337 — Gitea push without write access to repositories still being created</title>
+      <link>https://vulnogram.org/CVE-2026-129337</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129337</guid>
+      <description>Git over HTTP lowers the required permission for pushes to read access, so that the AGit flow works, and relies on the repository&apos;s server-side hooks to enforce write access. A repository that is still being created by a migration, fork or template g…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128365 — Gitea required approval bypass through team review request removal</title>
+      <link>https://vulnogram.org/CVE-2026-128365</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128365</guid>
+      <description>Removing a team&apos;s review request looked up a review by the negated team ID, which for the team with ID 2 is the ID of the built-in Actions user, and marked the review it found as official. In the organization that owns that team, a user who can chang…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128359 — Gitea OAuth2 provider tokens issued to disabled users</title>
+      <link>https://vulnogram.org/CVE-2026-128359</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128359</guid>
+      <description>When Gitea acts as an OAuth2 or OpenID Connect provider, the token endpoint did not check the state of the user. After an administrator deactivated an account or prohibited its sign-in, existing refresh tokens and unused authorization codes of that u…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-127958 — Gitea disclosure of pending pull request reviews created through the API</title>
+      <link>https://vulnogram.org/CVE-2026-127958</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127958</guid>
+      <description>A pull request review created through the API as a draft (`event` set to `PENDING` or left empty) was added to the pull request timeline and announced through notifications and activity feeds like a submitted review. Its body and line comments were t…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126338 — Gitea private diff disclosure through code comment replies</title>
+      <link>https://vulnogram.org/CVE-2026-126338</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126338</guid>
+      <description>Replying to a code review comment accepted a review ID that belongs to a different pull request, through the web form, the API and incoming mail replies. A signed-in user could reply on a pull request they can access with the ID of a review in a repo…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-125617 — Gitea hidden organization membership disclosure through the permissions API</title>
+      <link>https://vulnogram.org/CVE-2026-125617</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125617</guid>
+      <description>`GET /api/v1/users/{username}/orgs/{org}/permissions` only checked that the organization is visible to the caller and then returned the named user&apos;s role in it. Any signed-in user could learn whether another user is an owner, admin or member of a pub…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123642 — Gitea pull request creation without pull request access through AGit</title>
+      <link>https://vulnogram.org/CVE-2026-123642</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123642</guid>
+      <description>The AGit flow (pushing to `refs/for/...`) did not check the pusher&apos;s access to pull requests again when it created the pull request. A user or deploy key with read access to the code only, or with write access to the wiki over SSH, could open pull re…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123638 — Gitea protected file pattern bypass with quoted file names</title>
+      <link>https://vulnogram.org/CVE-2026-123638</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123638</guid>
+      <description>The &quot;Protected file patterns&quot; setting of a branch protection rule was checked against file names as git prints them, and git quotes names that contain a double quote, a backslash or a control character. Such names never matched a pattern, so a user w…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123065 — Gitea deletion of arbitrary attachment files through release edit</title>
+      <link>https://vulnogram.org/CVE-2026-123065</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123065</guid>
+      <description>When a release was edited, the files of the attachments to remove were deleted by the identifiers submitted in the form rather than by the attachments verified to belong to the release. A user with write access to the releases of any repository, incl…</description>
+      <pubDate>Sun, 15 Nov 2026 21:14:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123009 — Gitea base repository code disclosure through the web editor in forks</title>
+      <link>https://vulnogram.org/CVE-2026-123009</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123009</guid>
+      <description>When a file is edited in a fork through the web editor, Gitea can first copy a branch from the base repository into the fork. That copy did not check whether the user may read the base repository&apos;s code. A user who had forked a repository and later l…</description>
+      <pubDate>Sun, 15 Nov 2026 21:13:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123002 — Gitea missing attempt limit for TOTP passcodes</title>
+      <link>https://vulnogram.org/CVE-2026-123002</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123002</guid>
+      <description>Gitea accepted an unlimited number of wrong TOTP passcodes during sign-in, in the password reset flow and for Basic authentication with the `X-Gitea-OTP` header. An attacker who already knows an account&apos;s password could guess the six-digit passcode b…</description>
+      <pubDate>Sun, 15 Nov 2026 21:13:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120991 — Gitea deletion of shared container blobs on rejected uploads</title>
+      <link>https://vulnogram.org/CVE-2026-120991</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120991</guid>
+      <description>When a container blob upload was rejected, for example because it exceeded a package size quota, the cleanup removed the blob from storage even if the same content already existed and was used by other packages. On an instance with a package quota co…</description>
+      <pubDate>Sun, 15 Nov 2026 21:13:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120729 — Gitea stored cross-site scripting in the issue reference popup</title>
+      <link>https://vulnogram.org/CVE-2026-120729</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120729</guid>
+      <description>The popup shown when hovering an issue reference loaded its data from the path of the hovered link and inserted part of the response as HTML. A user who can post a comment or other rendered content could add a link that is displayed as an ordinary is…</description>
+      <pubDate>Sun, 15 Nov 2026 21:13:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120725 — Gitea anonymous Git LFS access despite required sign-in</title>
+      <link>https://vulnogram.org/CVE-2026-120725</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120725</guid>
+      <description>With `REQUIRE_SIGNIN_VIEW = true`, the Git LFS endpoints still answered unauthenticated requests for repositories that are not private. An anonymous client who knows the path of such a repository and the SHA-256 of an LFS object could download the ob…</description>
+      <pubDate>Sun, 15 Nov 2026 21:13:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118535 — Gitea scoped workflow trust kept after repository transfer</title>
+      <link>https://vulnogram.org/CVE-2026-118535</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118535</guid>
+      <description>A repository registered by its owner as a source of scoped workflows kept that registration when it was transferred to another owner. The new owner could then change the workflows in the transferred repository, and they kept running in the previous o…</description>
+      <pubDate>Sun, 15 Nov 2026 21:13:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-118389 — Gitea RubyGems compact index injection through package metadata</title>
+      <link>https://vulnogram.org/CVE-2026-118389</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118389</guid>
+      <description>The RubyGems package registry accepted gems whose platform, dependency names or dependency version requirements contain newline characters. Because the compact index served to clients is line-based, a user who can publish a gem to an owner&apos;s registry…</description>
+      <pubDate>Sun, 15 Nov 2026 21:13:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-125423 — Gitea command execution through repository auto-initialization</title>
+      <link>https://vulnogram.org/CVE-2026-125423</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125423</guid>
+      <description>A repository created with auto-init accepted pushes before its initialization had finished, and the initial commit was built in a checkout of whatever the repository already contained. A user who is allowed to create repositories could push a crafted…</description>
+      <pubDate>Sun, 15 Nov 2026 21:10:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-123006 — Gitea password hash disclosure through repository search</title>
+      <link>https://vulnogram.org/CVE-2026-123006</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123006</guid>
+      <description>The repository search used by the dashboard (`GET /repo/search`) returned the internal commit status object of each repository. Since 28.0.0 that object included the repository owner&apos;s full user record, so any signed-in user could read the password h…</description>
+      <pubDate>Sun, 15 Nov 2026 21:10:18 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-119627 · 4.3 MEDIUM — Gitea limited-visibility profile disclosure with public-only tokens</title>
       <link>https://vulnogram.org/CVE-2026-119627</link>
@@ -260,170 +400,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Sun, 18 Oct 2026 18:56:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109553 · 7.5 HIGH — Gitea SSH certificate principal impersonation of other users</title>
-      <link>https://vulnogram.org/CVE-2026-109553</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109553</guid>
-      <description>Gitea resolved the principals of an SSH certificate by searching the content of all stored public keys instead of only principal keys. When Gitea trusts a user certificate authority (`SSH_TRUSTED_USER_CA_KEYS`) and accepts arbitrary principals (`SSH_…</description>
-      <category>High</category>
-      <pubDate>Sun, 18 Oct 2026 18:51:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104627 · 5.4 MEDIUM 🌩️ — Gitea OpenID account linking without session binding</title>
-      <link>https://vulnogram.org/CVE-2026-104627</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104627</guid>
-      <description>The Gitea OpenID association callback in the security settings accepted a positive OpenID 2.0 assertion without checking that the signed-in user had started the linking. Because OpenID 2.0 allows unsolicited assertions, an attacker-controlled OpenID…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 18 Oct 2026 18:51:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78433 · 5.9 MEDIUM 🌩️ — Gitea private attachment disclosure through repository mismatch</title>
-      <link>https://vulnogram.org/CVE-2026-78433</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78433</guid>
-      <description>Gitea&apos;s web attachment handler skips its cross-repository ownership check for attachments created before 16 January 2026 and checks permissions against the repository named in the request URL instead. An unauthenticated attacker who knows a private a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 14 Oct 2026 14:38:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78231 · 5.3 MEDIUM 🌩️ — Gitea blind SSRF through OpenID assertion verification</title>
-      <link>https://vulnogram.org/CVE-2026-78231</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78231</guid>
-      <description>When OpenID sign-in is enabled, Gitea processes unauthenticated assertion parameters and sends an HTTP POST request to the caller-supplied OpenID provider endpoint during verification. An attacker controls the destination and much of the form body, a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 14 Oct 2026 14:38:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73814 · 6.5 MEDIUM — Gitea repository ownership escalation by administrators</title>
-      <link>https://vulnogram.org/CVE-2026-73814</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73814</guid>
-      <description>Gitea&apos;s collaboration access-mode endpoint accepts the Owner access mode from an authenticated repository collaborator with Admin access. The collaborator can promote their effective permissions from Admin to Owner and then perform owner-only operati…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:38:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73804 · 8.1 HIGH — Gitea API token scope escalation through HTTP signatures</title>
-      <link>https://vulnogram.org/CVE-2026-73804</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73804</guid>
-      <description>Gitea allows a token with write:user scope to register an attacker-controlled SSH public key on the token owner&apos;s account. API requests signed with the corresponding private key authenticate as that account through HTTP Signature without API token sc…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 14:38:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73802 · 8.8 HIGH — Gitea Runner host isolation bypass through container options</title>
-      <link>https://vulnogram.org/CVE-2026-73802</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73802</guid>
-      <description>Gitea Runner passes workflow-controlled container options into Docker job container configuration while privileged mode is disabled. Host namespace settings, expanded capabilities, and security profile overrides can remain effective despite Privilege…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73800 · 8.8 HIGH — Gitea reusable workflow secret exposure in pull_request_target</title>
-      <link>https://vulnogram.org/CVE-2026-73800</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73800</guid>
-      <description>Gitea resolves local reusable workflow files from a fork&apos;s head commit when a trusted base-branch workflow runs for a pull_request_target event. A fork author can modify a referenced reusable workflow so attacker-controlled code executes with the rep…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73539 · 7.5 HIGH — Gitea external renderer argument injection and code execution</title>
-      <link>https://vulnogram.org/CVE-2026-73539</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73539</guid>
-      <description>Gitea substitutes a URL derived from the markup Context field into external renderer command templates without escaping the reference path before shell-style argument splitting. A crafted Context can inject additional renderer arguments, including op…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73535 · 8.8 HIGH — Gitea second-factor bypass through OpenID identity linking</title>
-      <link>https://vulnogram.org/CVE-2026-73535</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73535</guid>
-      <description>Gitea&apos;s OpenID connect handler accepts a user&apos;s password without enforcing enrolled TOTP or WebAuthn verification before completing sign-in and linking an OpenID identifier. When OpenID sign-in is enabled, an attacker who knows the victim&apos;s password…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73273 · 4.3 MEDIUM — Gitea Maven checksum upload quota bypass and memory exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-73273</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73273</guid>
-      <description>Gitea&apos;s Maven upload handler reads checksum uploads entirely into memory and returns before enforcing package-size quotas. An authenticated user with package-publish permission can submit an oversized body to a checksum endpoint despite legitimate ch…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73135 · 5.3 MEDIUM 🌩️ — Gitea hidden-owner repository listing disclosure</title>
-      <link>https://vulnogram.org/CVE-2026-73135</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73135</guid>
-      <description>Gitea uses inconsistent repository visibility predicates, and the condition used by some repository-listing endpoints admits repositories whose owners are hidden from the viewer. Those listings disclose repository metadata even though direct routes c…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73130 · 4.3 MEDIUM — Gitea repository initialization resource exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-73130</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73130</guid>
-      <description>Gitea does not limit the length of the gitignores field accepted by repository-creation forms and the API. Repository initialization splits the field into template names, repeatedly reads the referenced templates, and buffers their contents in memory…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:20 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-73126 · 4.3 MEDIUM — Gitea private workflow badge token scope bypass</title>
-      <link>https://vulnogram.org/CVE-2026-73126</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-73126</guid>
-      <description>Gitea&apos;s Actions workflow status badge endpoint does not enforce repository-read scope or the public-only restriction on the token authenticating the request. A token lacking read:repository, or restricted to public repositories, can retrieve the late…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71301 · 4.3 MEDIUM — Gitea private pull request title disclosure through markup</title>
-      <link>https://vulnogram.org/CVE-2026-71301</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71301</guid>
-      <description>Gitea&apos;s repository markup endpoint resolves same-repository pull request references without enforcing the viewer&apos;s Pull Requests permission. A member with only Wiki access to a private repository can submit a markup preview request and retrieve a pri…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-71184 · 8.8 HIGH — Gitea fork workflow approval bypass through review events</title>
-      <link>https://vulnogram.org/CVE-2026-71184</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71184</guid>
-      <description>Gitea&apos;s pull request review notifier does not attach the pull request to the Actions notification, so the fork workflow approval gate does not recognize the run as originating from a fork. Review comment and review approval or rejection events can co…</description>
-      <category>High</category>
-      <pubDate>Wed, 14 Oct 2026 14:37:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70407 · 4.3 MEDIUM — Gitea organization listing token scope bypass</title>
-      <link>https://vulnogram.org/CVE-2026-70407</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70407</guid>
-      <description>Gitea&apos;s organization-list API does not enforce the read:organization token scope. A token limited to another category, such as read:misc, can retrieve organization metadata visible to its owner. For a site administrator&apos;s token, the response can incl…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:36:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70406 · 6.5 MEDIUM — Gitea private comparison disclosure with public-only tokens</title>
-      <link>https://vulnogram.org/CVE-2026-70406</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70406</guid>
-      <description>Gitea&apos;s shared comparison helper omits the token repository-access check used when updating pull requests. A public-only token with read:repository scope can route a comparison or pull request creation through a public base repository and retrieve co…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:36:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70402 · 5.8 MEDIUM — Gitea local code execution through writable Git hooks</title>
-      <link>https://vulnogram.org/CVE-2026-70402</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70402</guid>
-      <description>Gitea creates server-side Git hook directories and scripts with mode 0777 and relies on the process umask to restrict access. With a permissive umask such as 0000 or 0002, another local user who can reach the repository storage may modify a hook or a…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:36:46 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-70400 · 5.4 MEDIUM — Gitea private migration creation with public-only tokens</title>
-      <link>https://vulnogram.org/CVE-2026-70400</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-70400</guid>
-      <description>Gitea&apos;s repository migration API accepts a public-only token when the request specifies creation of a private repository. A delegated token intended to operate only on public resources can create a private repository and migration task under the auth…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 14 Oct 2026 14:36:41 GMT</pubDate>
     </item>
   </channel>
 </rss>
