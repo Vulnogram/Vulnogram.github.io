@@ -11,7 +11,28 @@
       <title>OpenSSL Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 17 Nov 2026 01:25:52 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 09:59:18 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-35190 — Out-of-Bounds Read in TLS 1.3 Key-Share Processing with Suite B Certificate Flag</title>
+      <link>https://vulnogram.org/CVE-2026-35190</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-35190</guid>
+      <description>Issue summary: A server configured with the Suite B certificate flag through SSL_CTX_set_cert_flags() and with TLS 1.3 enabled may read past the end of a fixed group list when it processes a ClientHello whose supported_groups and key_share contain no…</description>
+      <pubDate>Tue, 17 Nov 2026 08:15:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124709 — Unbounded Memory Retention in QUIC Server for Rejected Streams</title>
+      <link>https://vulnogram.org/CVE-2026-124709</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124709</guid>
+      <description>Issue summary: A QUIC server that rejects a stream opened by the peer may retain that stream&apos;s state for the lifetime of the connection if the peer resets the stream before the rejection is signalled, even though the peer&apos;s stream credit is returned.…</description>
+      <pubDate>Tue, 17 Nov 2026 08:14:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107493 — Use-After-Free in PEM_X509_INFO_read_bio_ex() when appending to a caller-supplied stack fails</title>
+      <link>https://vulnogram.org/CVE-2026-107493</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107493</guid>
+      <description>Issue summary: When an application passes a stack to PEM_X509_INFO_read_bio_ex() to add entries to, and reading fails, OpenSSL frees every entry in the stack, both the old ones and any new ones, but leaves them in the stack. Impact summary: An applic…</description>
+      <pubDate>Tue, 17 Nov 2026 08:14:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-95692 · 7.5 HIGH 🌩️ — Out-of-Bounds Read and Incorrect IV Length Handling in AES-GCM-SIV</title>
       <link>https://vulnogram.org/CVE-2026-95692</link>
@@ -429,32 +450,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Tue, 09 Jun 2026 16:03:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-7383 · 8.1 HIGH 🌩️ — Possible Heap Buffer Overflow in ASN.1 Multibyte String Conversion</title>
-      <link>https://vulnogram.org/CVE-2026-7383</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-7383</guid>
-      <description>Issue summary: A signed integer overflow when sizing the destination buffer for Unicode output in ASN1_mbstring_ncopy() can lead to a heap buffer overflow. Impact summary: A heap buffer overflow may lead to a crash or possibly attacker controlled cod…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 16:03:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31790 · 7.5 HIGH 🌩️ — Incorrect Failure Handling in RSA KEM RSASVE Encapsulation</title>
-      <link>https://vulnogram.org/CVE-2026-31790</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31790</guid>
-      <description>Issue summary: Applications using RSASVE key encapsulation to establish a secret encryption key can send contents of an uninitialized memory buffer to a malicious peer. Impact summary: The uninitialized buffer might contain sensitive data from the pr…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 07 Apr 2026 22:00:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-31789 · 5.8 MEDIUM — Heap Buffer Overflow in Hexadecimal Conversion</title>
-      <link>https://vulnogram.org/CVE-2026-31789</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-31789</guid>
-      <description>Issue summary: Converting an excessively large OCTET STRING value to a hexadecimal string leads to a heap buffer overflow on 32 bit platforms. Impact summary: A heap buffer overflow may lead to a crash or possibly an attacker controlled code executio…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 07 Apr 2026 22:00:54 GMT</pubDate>
     </item>
   </channel>
 </rss>
