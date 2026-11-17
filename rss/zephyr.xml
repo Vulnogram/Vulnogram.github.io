@@ -11,7 +11,71 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 16 Nov 2026 17:48:06 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 01:25:52 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-93673 · 4.8 MEDIUM — WebSocket client accepts a handshake without verifying the full Sec-WebSocket-Accept value</title>
+      <link>https://vulnogram.org/CVE-2026-93673</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93673</guid>
+      <description>The Zephyr WebSocket client validates the server&apos;s handshake response in on_header_value() in subsys/net/lib/websocket/websocket.c. The comparison was performed as strncmp(at, str, length), where length is the length of the value the server sent rath…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Nov 2026 21:19:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93672 · 5.3 MEDIUM — NULL pointer dereference in the Bluetooth host ATT request lookup (bt_att_find_req_by_user_data)</title>
+      <link>https://vulnogram.org/CVE-2026-93672</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93672</guid>
+      <description>bt_att_find_req_by_user_data() in subsys/bluetooth/host/att.c walks every ATT channel attached to a connection and dereferences chan-&gt;req-&gt;user_data without checking chan-&gt;req. An ATT channel with no client request in flight holds chan-&gt;req == NULL —…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Nov 2026 21:19:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93671 · 3.7 LOW — Out-of-bounds read logging a mismatched Sec-WebSocket-Accept header in the Zephyr websocket client</title>
+      <link>https://vulnogram.org/CVE-2026-93671</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93671</guid>
+      <description>The websocket client&apos;s HTTP header callback on_header_value() in subsys/net/lib/websocket/websocket.c receives the Sec-WebSocket-Accept header value as a pointer/length pair from the HTTP parser. The referenced bytes live inside the application-suppl…</description>
+      <category>Low</category>
+      <pubDate>Mon, 16 Nov 2026 21:19:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93670 · 3.5 LOW — Out-of-bounds write in the DesignWare I3C driver when the device address table is full</title>
+      <link>https://vulnogram.org/CVE-2026-93670</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93670</guid>
+      <description>The Synopsys DesignWare I3C controller driver (drivers/i3c/i3c_dw.c) tracks free Device Address Table (DAT) slots with get_free_pos(), which signals an exhausted table by returning -1. The helper declared its return type as uint8_t, so the sentinel w…</description>
+      <category>Low</category>
+      <pubDate>Mon, 16 Nov 2026 21:19:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93669 · 4.7 MEDIUM — NULL pointer dereference in the ITE IT8xxx2 SHI host-command backend when a host transaction arrives before backend initialization</title>
+      <link>https://vulnogram.org/CVE-2026-93669</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93669</guid>
+      <description>The ITE IT8xxx2 SHI host-command backend in subsys/mgmt/ec_host_cmd/backends/ec_host_cmd_backend_shi_ite.c arms the SPI peripheral before its receive context exists. shi_ite_init_registers() sets the state machine to SHI_STATE_READY_TO_RECV and calls…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Nov 2026 21:19:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93668 · 6.5 MEDIUM — Bluetooth BR/EDR SDP server blocks the Bluetooth workqueue indefinitely when the SDP buffer pool is empty</title>
+      <link>https://vulnogram.org/CVE-2026-93668</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93668</guid>
+      <description>The Bluetooth Classic SDP server in subsys/bluetooth/host/classic/sdp.c allocated every response PDU through bt_sdp_create_pdu(), which expands to bt_l2cap_create_pdu() and therefore uses a K_FOREVER timeout. The allocation is made from sdp_pool, a f…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Nov 2026 21:19:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93667 · 5.9 MEDIUM — Function pointer type confusion in Zephyr Virtual L2 when a VLAN-tagged frame finds no handling virtual interface</title>
+      <link>https://vulnogram.org/CVE-2026-93667</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93667</guid>
+      <description>The Virtual L2 receive handler virtual_recv() in subsys/net/l2/virtual/virtual.c ends with a fall-through path meant for a virtual interface that has nothing attached below it: it takes net_if_get_device(iface)-&gt;api, treats it as a struct virtual_int…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Nov 2026 21:19:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-93666 · 5.3 MEDIUM — Bluetooth Classic SDP client can deadlock the Bluetooth workqueue on buffer allocation</title>
+      <link>https://vulnogram.org/CVE-2026-93666</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-93666</guid>
+      <description>The Bluetooth Classic SDP client built its outgoing request PDUs with bt_sdp_create_pdu(), which allocates from the sdp_pool net-buf pool with a K_FOREVER timeout and no failure handling, in sdp_client_ss_search(), sdp_client_sa_search() and sdp_clie…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 16 Nov 2026 21:19:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-92241 · 5.7 MEDIUM — Bluetooth Classic AVRCP browsing channel can deadlock the Bluetooth receive thread, hanging the host</title>
       <link>https://vulnogram.org/CVE-2026-92241</link>
@@ -348,70 +412,6 @@
       <description>In the Bluetooth Classic Hands-Free Profile Audio Gateway role, hfp_ag_create() in subsys/bluetooth/host/classic/hfp_ag.c starts an SDP discovery toward the peer, which links the embedded ag-&gt;sdp_param._node into the SDP client&apos;s pending request list…</description>
       <category>Medium</category>
       <pubDate>Mon, 26 Oct 2026 16:08:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82388 · 5.3 MEDIUM — Use of a released HFP HF object after a failed RFCOMM connect in the Bluetooth Classic host</title>
-      <link>https://vulnogram.org/CVE-2026-82388</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82388</guid>
-      <description>bt_hfp_hf_connect() in subsys/bluetooth/host/classic/hfp_hf.c allocates the per-connection HFP Hands-Free object with hfp_hf_create(), which starts an SDP discovery by passing the object&apos;s embedded hf-&gt;sdp_param to bt_sdp_discover(). That call links…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 16:08:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-19742 · 3.7 LOW — IPv6 stable and temporary interface identifiers derived from a non-cryptographic PRNG secret key</title>
-      <link>https://vulnogram.org/CVE-2026-19742</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19742</guid>
-      <description>The IPv6 stack derived the long-lived secret key used to compute RFC 7217 stable interface identifiers (gen_stable_iid() in subsys/net/ip/ipv6.c) and RFC 8981 temporary interface identifiers (gen_temporary_iid() in subsys/net/ip/ipv6_pe.c) with sys_r…</description>
-      <category>Low</category>
-      <pubDate>Mon, 26 Oct 2026 16:08:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81038 · 7.1 HIGH — Bluetooth OTS server discloses uninitialized stack memory in failed Calculate Checksum responses</title>
-      <link>https://vulnogram.org/CVE-2026-81038</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81038</guid>
-      <description>The Object Transfer Service server builds its Object Action Control Point (OACP) response indication in oacp_ind_send() (subsys/bluetooth/services/ots/ots_oacp.c). Before this fix the four-byte Checksum Value field was appended whenever the requested…</description>
-      <category>High</category>
-      <pubDate>Mon, 26 Oct 2026 16:08:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-81039 · 4.3 MEDIUM — Bluetooth Host connection reservation leak when multiple connectable advertising sets share an identity</title>
-      <link>https://vulnogram.org/CVE-2026-81039</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-81039</guid>
-      <description>The Bluetooth host pre-allocates a bt_conn object (a &quot;reservation&quot;) from the fixed acl_conns[] pool for every connectable advertising set it starts, in le_adv_start_add_conn() in subsys/bluetooth/host/adv.c. When an incoming peripheral connection com…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 16:08:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79982 · 8.8 HIGH — Out-of-bounds write in the USB Bluetooth HCI transport class when a controller-to-host HCI packet exceeds the bulk endpoint maximum packet size</title>
-      <link>https://vulnogram.org/CVE-2026-79982</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79982</guid>
-      <description>The Bluetooth HCI USB transport class of the new USB device stack, subsys/usb/device_next/class/bt_hci.c, copies every controller-to-host HCI packet into a USB transfer buffer before enqueuing it on an endpoint. bt_hci_tx_sync_in() allocated that buf…</description>
-      <category>High</category>
-      <pubDate>Fri, 23 Oct 2026 19:56:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79981 · 6.5 MEDIUM — DNS resolver reuses a single UDP source port for all queries, easing off-path answer spoofing</title>
-      <link>https://vulnogram.org/CVE-2026-79981</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79981</guid>
-      <description>The DNS stub resolver in subsys/net/lib/dns/resolve.c binds one UDP socket per configured server when the resolver context is initialised (dns_resolve_init_locked() -&gt; register_dispatcher() -&gt; dns_dispatcher_register()), with the local port left at 0…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 23 Oct 2026 19:56:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79980 · 5.6 MEDIUM — Predictable and reused DHCPv4 transaction identifier allows spoofed DHCP replies to reconfigure gateway and DNS</title>
-      <link>https://vulnogram.org/CVE-2026-79980</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79980</guid>
-      <description>The DHCPv4 client in subsys/net/lib/dhcpv4/dhcpv4.c maintained its transaction identifier (iface-&gt;config.dhcpv4.xid) as a counter rather than as a per-transaction random value. It was seeded once with sys_rand32_get() in dhcpv4_start_internal(), incr…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 23 Oct 2026 19:56:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-79979 · 7.8 HIGH — Stale TLB entries after demand-paging page-out let arm64 user threads access reused physical frames</title>
-      <link>https://vulnogram.org/CVE-2026-79979</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-79979</guid>
-      <description>The arm64 MMU backend invalidates a single virtual address from the TLB with invalidate_tlb_page() in arch/arm64/core/mmu.c, which issued TLBI VAE1{IS} with an operand of virt &gt;&gt; 12. That operand encodes the ASID in bits [63:48], so the invalidation…</description>
-      <category>High</category>
-      <pubDate>Fri, 23 Oct 2026 19:56:16 GMT</pubDate>
     </item>
   </channel>
 </rss>
