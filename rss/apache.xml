@@ -11,7 +11,34 @@
       <title>Apache Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 17 Nov 2026 19:05:43 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 01:40:13 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-129512 · 5.3 MEDIUM 🌩️ — Apache log4net: AdoNetAppender loses an event whose text the database cannot store</title>
+      <link>https://vulnogram.org/CVE-2026-129512</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129512</guid>
+      <description>Improper Neutralization of Null Byte or NUL Character vulnerability in the AdoNetAppender of Apache log4net. Text parameters were bound unchanged, so a NUL character or an unpaired UTF-16 surrogate reached the database as it was. A database that refu…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 17 Nov 2026 22:14:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129511 · 5.3 MEDIUM 🌩️ — Apache log4net: Best-fit encoding in FileAppender lets fullwidth text forge XML log events</title>
+      <link>https://vulnogram.org/CVE-2026-129511</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129511</guid>
+      <description>Improper Output Neutralization for Logs vulnerability in the FileAppender, RollingFileAppender, UdpAppender and SmtpAppender of Apache log4net. Characters the configured encoding could not represent were converted by that encoding&apos;s best-fit fallback…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 17 Nov 2026 22:14:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129510 · 5.3 MEDIUM 🌩️ — Apache log4net: Culture-sensitive CDATA end search in XmlLayout hides later log events</title>
+      <link>https://vulnogram.org/CVE-2026-129510</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129510</guid>
+      <description>Improper Output Neutralization for Logs vulnerability in the XmlLayout and XmlLayoutSchemaLog4J of Apache log4net. Both layouts split a message holding the CDATA end marker into several CDATA sections, but searched for the marker with a culture-sensi…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 17 Nov 2026 22:13:44 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-129448 · 9.8 CRITICAL 🌩️ — Apache Roller: Unauthenticated deserialization in the XML-RPC endpoint (releases before 6.1.5)</title>
       <link>https://vulnogram.org/CVE-2026-129448</link>
@@ -169,17 +196,19 @@
       <pubDate>Fri, 13 Nov 2026 17:49:21 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-123274 — Apache DataSketches C++: Out-of-bounds write in KLL sketch deserialization allows memory corruption via a crafted sketch</title>
+      <title>CVE-2026-123274 · 7.4 HIGH — Apache DataSketches C++: Out-of-bounds write in KLL sketch deserialization allows memory corruption via a crafted sketch</title>
       <link>https://vulnogram.org/CVE-2026-123274</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123274</guid>
       <description>Out-of-bounds Write vulnerability in Apache DataSketches C++. An application that deserializes a KLL sketch from an untrusted source can have heap memory corrupted by a crafted sketch, because the serialized level boundaries were not validated. This…</description>
+      <category>High</category>
       <pubDate>Fri, 13 Nov 2026 10:34:29 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-123338 — Apache DataSketches C++: Out-of-bounds write in REQ sketch deserialization allows memory corruption via a crafted sketch</title>
+      <title>CVE-2026-123338 · 7.4 HIGH — Apache DataSketches C++: Out-of-bounds write in REQ sketch deserialization allows memory corruption via a crafted sketch</title>
       <link>https://vulnogram.org/CVE-2026-123338</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123338</guid>
       <description>Out-of-bounds Write vulnerability in Apache DataSketches C++. An application that deserializes a REQ sketch from an untrusted source can have heap memory corrupted by a crafted sketch, because the serialized compactor headers were not validated. This…</description>
+      <category>High</category>
       <pubDate>Fri, 13 Nov 2026 10:32:43 GMT</pubDate>
     </item>
     <item>
@@ -411,31 +440,6 @@
       <description>When workers run as the topology owner, the Logviewer serves files that a worker has placed in its own log directory as links to other files. A user who is allowed to submit topologies can read the worker logs of other users&apos; topologies, and other fi…</description>
       <category>Medium</category>
       <pubDate>Wed, 11 Nov 2026 12:34:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-94125 · 6.5 MEDIUM — Apache Storm: Supervisor page discloses worker placement of other users&apos; topologies</title>
-      <link>https://vulnogram.org/CVE-2026-94125</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-94125</guid>
-      <description>Nimbus returns the worker placement of every topology running on a supervisor, including the host, port, owner and resource assignment of topologies the caller is not authorized to read. In a multi-tenant cluster, an authenticated user who is allowed…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 11 Nov 2026 12:34:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-122096 · 7.5 HIGH 🌩️ — Apache DataSketches Java: Uncontrolled resource consumption when deserializing crafted sketch images</title>
-      <link>https://vulnogram.org/CVE-2026-122096</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-122096</guid>
-      <description>Uncontrolled Resource Consumption vulnerability in the sketch deserialization of Apache DataSketches Java. Several deserializers trusted sizes and counts declared in the serialized input. A small crafted input could make an application allocate an ex…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 11 Nov 2026 12:13:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-126627 · 3.3 LOW — Apache XML Graphics FOP: Temporary files on Unix-like systems are readable by other local users</title>
-      <link>https://vulnogram.org/CVE-2026-126627</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126627</guid>
-      <description>Creation of Temporary File With Insecure Permissions vulnerability in Apache XML Graphics FOP. This issue affects Apache XML Graphics FOP: through 2.11. Users are recommended to upgrade to version 2.12, which fixes the issue.</description>
-      <category>Low</category>
-      <pubDate>Wed, 11 Nov 2026 11:23:17 GMT</pubDate>
     </item>
   </channel>
 </rss>
