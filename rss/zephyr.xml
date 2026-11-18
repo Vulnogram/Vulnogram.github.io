@@ -11,7 +11,15 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 18 Nov 2026 09:34:33 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 18:44:53 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-95823 · 7.5 HIGH — Use-after-free and net_buf leak in Zephyr TCP header linearization (tcp_pkt_linearize)</title>
+      <link>https://vulnogram.org/CVE-2026-95823</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95823</guid>
+      <description>tcp_pkt_linearize() in subsys/net/ip/tcp.c is used by th_get() whenever a received TCP header is not contiguous in a single net_buf. While pulling the header bytes out of the following fragments, the loop called net_buf_unref() on an emptied fragment…</description>
+      <category>High</category>
+      <pubDate>Wed, 18 Nov 2026 14:23:00 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-95822 · 3.3 LOW — Out-of-bounds read and kernel stack disclosure in the SOCKS5 client when the destination address family differs from the proxy address family</title>
       <link>https://vulnogram.org/CVE-2026-95822</link>
@@ -404,14 +412,6 @@
       <description>The GPIO syscall handlers in drivers/gpio/gpio_handlers.c did not validate the pin argument supplied by a user-mode caller. z_vrfy_gpio_pin_configure(), z_vrfy_gpio_pin_get_config() and z_vrfy_gpio_pin_interrupt_configure() verified only the device o…</description>
       <category>High</category>
       <pubDate>Wed, 28 Oct 2026 16:58:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82390 · 3.7 LOW — Cross-session AES key confusion in the Espressif ESP32 hardware crypto driver</title>
-      <link>https://vulnogram.org/CVE-2026-82390</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82390</guid>
-      <description>The Espressif AES driver drivers/crypto/crypto_esp32_aes.c advertises a multi-session cipher API — it hands out up to CONFIG_ESP32_CRYPTO_AES_SESSIONS_MAX (default 4) independent sessions, each carrying its own key and direction. The AES peripheral,…</description>
-      <category>Low</category>
-      <pubDate>Mon, 26 Oct 2026 16:08:54 GMT</pubDate>
     </item>
   </channel>
 </rss>

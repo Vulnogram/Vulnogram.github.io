@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 18 Nov 2026 09:34:33 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 18:44:53 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-132229 · 8.1 HIGH — Hypershift-addon: hypershift-addon: overly permissive clusterrolebinding allows any authenticated user to modify and delete managed clusters</title>
+      <link>https://vulnogram.org/CVE-2026-132229</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132229</guid>
+      <description>A flaw was found in hypershift-addon. Due to an overly permissive role-based access control (RBAC) configuration that grants permissions to all authenticated users rather than restricting them to the addon service, a low-privileged authenticated user…</description>
+      <category>High</category>
+      <pubDate>Wed, 18 Nov 2026 17:17:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132150 · 7.8 HIGH — Gimp: out-of-bounds access, invalid free and use-after-free when processing xmc file comments</title>
+      <link>https://vulnogram.org/CVE-2026-132150</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132150</guid>
+      <description>A flaw was found in the file-xmc plugin in GIMP. When processing a specially crafted XMC image file, the plugin does not properly validate the comment subtype before using it as an array index. This missing validation leads to out-of-bounds memory ac…</description>
+      <category>High</category>
+      <pubDate>Wed, 18 Nov 2026 14:39:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132138 · 5.3 MEDIUM 🌩️ — Cyrus-sasl: scram channel-binding null dereference allows remote denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-132138</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132138</guid>
+      <description>A flaw was found in cyrus-sasl. When processing authentication requests using the Salted Challenge Response Authentication Mechanism (SCRAM), a remote attacker can trigger a null pointer dereference by submitting unexpected channel-binding data. This…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 18 Nov 2026 13:47:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132049 · 4.3 MEDIUM — Lldpd: lldpd: out-of-bounds read in liblldpctl on a short lldp-med location</title>
+      <link>https://vulnogram.org/CVE-2026-132049</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132049</guid>
+      <description>A flaw was found in lldpd. The service fails to verify that Link Layer Discovery Protocol - Media Endpoint Discovery (LLDP-MED) location records received from network neighbors match their declared lengths. An adjacent attacker on the local network c…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 10:13:17 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-130644 · 8.1 HIGH 🌩️ — Ansible-core: ansible-core: ansible-galaxy collection install path traversal via unvalidated artifact-derived collection name allows file writes and directory deletion outside the collections path</title>
       <link>https://vulnogram.org/CVE-2026-130644</link>
@@ -389,39 +422,6 @@
       <description>A flaw was found in BusyBox. The volume identification component fails to properly validate cluster parameters when analyzing specially formatted FAT filesystems. An attacker able to present a crafted storage device or disk image can trigger a divide…</description>
       <category>Medium</category>
       <pubDate>Wed, 11 Nov 2026 11:19:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-124740 · 4.3 MEDIUM — Busybox: use-after-free of requested_ipv6 in udhcpc6</title>
-      <link>https://vulnogram.org/CVE-2026-124740</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124740</guid>
-      <description>A flaw was found in BusyBox&apos;s udhcpc6 DHCPv6 client. A malicious server on the local network can trigger a use-after-free condition by responding with a crafted Dynamic Host Configuration Protocol for IPv6 (DHCPv6) reply packet lacking usable address…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 11 Nov 2026 11:19:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-124738 · 5.3 MEDIUM 🌩️ — Busybox: httpd password rule bypass for pre-compressed .gz files via accept-encoding: gzip</title>
-      <link>https://vulnogram.org/CVE-2026-124738</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124738</guid>
-      <description>A flaw was found in BusyBox. When the HTTP daemon (httpd) has pre-compressed file support enabled, authentication checks are evaluated only against the requested URL path rather than the pre-compressed file being served. A remote attacker can exploit…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 11 Nov 2026 11:19:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-124741 · 7.6 HIGH — Busybox: stack buffer overflow in udhcpc6 send_d6_renew() and send_d6_release()</title>
-      <link>https://vulnogram.org/CVE-2026-124741</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124741</guid>
-      <description>A flaw was found in BusyBox. The udhcpc6 DHCPv6 client does not properly validate the size of network options sent by a server before copying them into memory. A malicious DHCPv6 server on the local network can exploit this flaw by sending a crafted…</description>
-      <category>High</category>
-      <pubDate>Wed, 11 Nov 2026 10:41:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-124739 · 7.5 HIGH — Busybox: httpd stack buffer overflow via an &quot;i:&quot; rule in a subdirectory httpd.conf</title>
-      <link>https://vulnogram.org/CVE-2026-124739</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124739</guid>
-      <description>A flaw was found in BusyBox. When the httpd web server processes subdirectory configuration files, an overly long index page name can trigger a stack-based buffer overflow. An attacker with permissions to write to a subdirectory configuration file co…</description>
-      <category>High</category>
-      <pubDate>Wed, 11 Nov 2026 10:41:07 GMT</pubDate>
     </item>
   </channel>
 </rss>

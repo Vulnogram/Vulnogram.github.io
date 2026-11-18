@@ -11,7 +11,44 @@
       <title>OpenSSL Software Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 18 Nov 2026 09:34:33 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 18:44:53 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-95690 · 5.3 MEDIUM 🌩️</title>
+      <link>https://vulnogram.org/CVE-2026-95690</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95690</guid>
+      <description>Receiving crafted out-of-sequence DTLS handshake fragments may cause OpenSSL to allocate a full message-length reassembly buffer for each buffered message, so a small amount of wire data consumes a large amount of memory.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 18 Nov 2026 11:44:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-84786</title>
+      <link>https://vulnogram.org/CVE-2026-84786</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-84786</guid>
+      <description>A DANE-enabled TLS client may crash by dereferencing a NULL pointer when processing an unusual combination of certificate and TLSA records.</description>
+      <pubDate>Wed, 18 Nov 2026 11:43:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121482</title>
+      <link>https://vulnogram.org/CVE-2026-121482</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121482</guid>
+      <description>Verifying a maliciously crafted CMS or PKCS#7 SignedData message with CRL checking enabled may consume excessive CPU time, growing with the square of the message size.</description>
+      <pubDate>Wed, 18 Nov 2026 11:43:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-121481</title>
+      <link>https://vulnogram.org/CVE-2026-121481</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121481</guid>
+      <description>Calling EVP_EncodeBlock() with an input length close to INT_MAX may overflow the calculation of the encoded output size and write past the end of the caller-supplied output buffer.</description>
+      <pubDate>Wed, 18 Nov 2026 11:43:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-107494</title>
+      <link>https://vulnogram.org/CVE-2026-107494</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-107494</guid>
+      <description>The QUIC stack queues a RETIRE_CONNECTION_ID frame also for retransmitted NEW_CONNECTION_ID frames. This allows a remote malicious QUIC stack to queue an unlimited number of RETIRE_CONNECTION_ID frames.</description>
+      <pubDate>Wed, 18 Nov 2026 11:43:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-35190 · 5.3 MEDIUM 🌩️ — Out-of-Bounds Read in TLS 1.3 Key-Share Processing with Suite B Certificate Flag</title>
       <link>https://vulnogram.org/CVE-2026-35190</link>
@@ -410,51 +447,6 @@
       <description>Issue summary: A malicious server can exploit TLS OCSP stapling by delivering a crafted response through the status_request extension, triggering a double-free in the client&apos;s certificate verification path. Impact summary: Successful exploitation all…</description>
       <category>Medium</category>
       <pubDate>Tue, 09 Jun 2026 16:03:24 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-34183 · 7.5 HIGH 🌩️ — Unbounded Memory Growth in the QUIC PATH_CHALLENGE Handler</title>
-      <link>https://vulnogram.org/CVE-2026-34183</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-34183</guid>
-      <description>Issue summary: Remote peer may exhaust heap memory of the QUIC server or client by flooding it with packets containing PATH_CHALLENGE frames. Impact summary: A malicious remote peer can cause an unbounded memory allocation which can lead to an abnorm…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 16:03:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-34182 · 9.1 CRITICAL 🌩️ — CMS AuthEnvelopedData Processing May Accept Forged Messages</title>
-      <link>https://vulnogram.org/CVE-2026-34182</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-34182</guid>
-      <description>Issue Summary: Cryptographic Message Services (CMS) processing fails to perform sufficient input validation on the cipher and tag length fields of AuthEnvelopedData containers, leading to various potential compromises. Impact Summary: Attackers makin…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 16:03:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-34181 · 7.4 HIGH 🌩️ — PKCS#12 Files with PBMAC1 Are Accepted with Short HMAC Keys</title>
-      <link>https://vulnogram.org/CVE-2026-34181</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-34181</guid>
-      <description>Issue Summary: The PKCS#12 file processing fails to perform sufficient input validation for files that use Password-Based Message Authentication Code 1 (PBMAC1) integrity mechanism allowing a certificate and private key forgery. Impact Summary: An at…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 16:03:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-34180 · 7.5 HIGH 🌩️ — Heap Buffer Over-read in ASN.1 Content Parsing</title>
-      <link>https://vulnogram.org/CVE-2026-34180</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-34180</guid>
-      <description>Issue summary: Parsing a crafted DER-encoded ASN.1 structure with a primitive element whose content exceeds 2 gigabytes in length may cause a heap buffer over-read on 64-bit Unix and Unix-like platforms. Impact summary: The heap buffer over-read may…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 16:03:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9076 · 7.5 HIGH 🌩️ — Out-of-Bounds Read in CMS Password-Based Decryption</title>
-      <link>https://vulnogram.org/CVE-2026-9076</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9076</guid>
-      <description>Issue summary: When CMS password-based decryption (RFC 3211 / PWRI key unwrap) processes attacker-supplied CMS data, an attacker-chosen stream-mode KEK cipher can trigger a heap out-of-bounds read in kek_unwrap_key(). Impact summary: A heap buffer ov…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 09 Jun 2026 16:03:16 GMT</pubDate>
     </item>
   </channel>
 </rss>

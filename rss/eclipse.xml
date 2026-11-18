@@ -11,7 +11,58 @@
       <title>Eclipse Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 18 Nov 2026 09:34:33 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 18:44:53 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-126763</title>
+      <link>https://vulnogram.org/CVE-2026-126763</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126763</guid>
+      <description>In Eclipse Mosquitto versions 1.6 to 2.0.22 and 2.1.0 to 2.1.2, an MQTT v5.0 client connecting with a will-delay-interval that subsequently disconnects with a shorter interval causes all delayed wills to be suppressed.</description>
+      <pubDate>Wed, 18 Nov 2026 13:21:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129149</title>
+      <link>https://vulnogram.org/CVE-2026-129149</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129149</guid>
+      <description>In Eclipse Mosquitto versions 2.1.0 to 2.1.2, using the mosquitto_ctrl utility in interactive shell mode to interact with a malicious server could result in a crash of the utility if the server sent a hostile response.</description>
+      <pubDate>Wed, 18 Nov 2026 10:44:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126706</title>
+      <link>https://vulnogram.org/CVE-2026-126706</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126706</guid>
+      <description>In Eclipse Mosquitto versions 2.1.0 to 2.1.2, the mosquitto_ctrl utility would crash if attempting to interact with a hostile broker and the broker sent a non-string &quot;error&quot; value.</description>
+      <pubDate>Wed, 18 Nov 2026 10:22:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-110486 · 9.8 CRITICAL 🌩️ — Remote heap out-of-bounds read/write in Eclipse Mosquitto</title>
+      <link>https://vulnogram.org/CVE-2026-110486</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110486</guid>
+      <description>In Eclipse Mosquitto versions 2.1 through 2.1.2, a listener configured with `protocol websockets` mishandles empty WebSocket data frames. `net__read_ws()` in `lib/net_ws.c` returns the number of framing bytes consumed (the 4 masking-key bytes) for a…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 18 Nov 2026 10:15:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129705 — PROXY v2 AF_UNIX TLV injection bypasses TLS/cert policy</title>
+      <link>https://vulnogram.org/CVE-2026-129705</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129705</guid>
+      <description>In Eclipse Mosquitto versions 2.1.0 to 2.1.2, a broker with a listener that is configured to use the PROXY protocol v2 is vulnerable to an untrusted proxy providing details that cause the broker to accept fake SSL information. This can be mitigated b…</description>
+      <pubDate>Wed, 18 Nov 2026 10:07:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126708 — Unchecked PKCS5_PBKDF2_HMAC() return can authenticate any password</title>
+      <link>https://vulnogram.org/CVE-2026-126708</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126708</guid>
+      <description>In Eclipse Mosquitto versions 2.0.0 to 2.0.22 and 2.1.0 to 2.1.2, the return value of password hash functions for sha512-pbkdf2 and legacy sha512 were not checked. Starting with OpenSSL 4.0, sha512-pbkdf2 hashing will fail when using the FIPS provide…</description>
+      <pubDate>Wed, 18 Nov 2026 09:59:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-130491 — Uninitialized heap disclosure in CONNECT through Will payload length truncation</title>
+      <link>https://vulnogram.org/CVE-2026-130491</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-130491</guid>
+      <description>In Eclipse versions 1.5-1.6.13, 2.0.0-2.0.22 and 2.1.0-2.1.2, the client library libmosquitto does not reject Will messages with payloads greater than 65535 bytes when calling `mosquitto_will_set()` or `mosquitto_will_set_v5()`. This results in up to…</description>
+      <pubDate>Wed, 18 Nov 2026 09:44:01 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-130603 · 9.3 CRITICAL 🌩️</title>
       <link>https://vulnogram.org/CVE-2026-130603</link>
@@ -378,69 +429,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 23 Oct 2026 08:51:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89317 · 6.3 MEDIUM 🌩️ — JwtVerifierImpl.Verify does not enforce the JWS `crit` header (RFC 7515 §4.1.11)</title>
-      <link>https://vulnogram.org/CVE-2026-89317</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89317</guid>
-      <description>gose parsed the JWS `crit` header into `JwsHeader.Crit` and then never read it. RFC 7515 §4.1.11 requires a recipient to reject a JWS whose listed critical extension parameters it does not understand. gose implements no header extensions, so every to…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 23 Oct 2026 08:50:22 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89316 · 6.3 MEDIUM 🌩️ — LoadPublicKey panics on kty/alg mismatch (kty=EC with a non-EC alg) via unchecked *ECDSAOptions type assertion</title>
-      <link>https://vulnogram.org/CVE-2026-89316</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89316</guid>
-      <description>`LoadPublicKey` resolved an EC key&apos;s curve with an unchecked type assertion, `algToOptsMap[alg].(*ECDSAOptions)`. A JWK declaring `&quot;kty&quot;:&quot;EC&quot;` together with a non-EC `&quot;alg&quot;` — which RFC 7517 §4.4 permits — reaches that assertion and **panics**.</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 23 Oct 2026 08:48:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89315 · 6.9 MEDIUM 🌩️ — JwtClaims.MarshalJSON panics via reflect.StructOf when any untyped claim key is not a valid Go identifier suffix</title>
-      <link>https://vulnogram.org/CVE-2026-89315</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89315</guid>
-      <description>`JwtClaims.MarshalJSON` built a Go struct at runtime with `reflect.StructOf`, synthesising a field named `&quot;A&quot; + claimName` for each untyped claim. `reflect.StructOf` **panics** when a field name is not a valid Go identifier, or when it duplicates ano…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 23 Oct 2026 08:46:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89314 · 6.9 MEDIUM 🌩️ — Quadratic-time key_ops duplicate check lets a sub-1 MB JWKS body pin a CPU core for ~15 s</title>
-      <link>https://vulnogram.org/CVE-2026-89314</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89314</guid>
-      <description>`jwkFields.CheckConsistency` detected duplicate `key_ops` entries with a pairwise nested loop, making validation cost grow with the **square** of the entry count. Because the check runs on every JWK and JWKS unmarshal, a modestly sized but hostile JW…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 23 Oct 2026 08:43:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89313 · 6.3 MEDIUM 🌩️ — JwksTrustStore.Get returns the last fetched JWKS key (err=nil) when the requested kid is absent, instead of nil</title>
-      <link>https://vulnogram.org/CVE-2026-89313</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89313</guid>
-      <description>`JwksTrustStore.Get` assigned each parsed key to the function&apos;s **named return value** while refreshing the JWKS cache. When the requested `kid` was not present, the trailing naked `return` handed the caller the last key in the JWKS document together…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 23 Oct 2026 08:40:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-89312 · 6.9 MEDIUM 🌩️ — AesGcmCryptor.Open passes attacker-controlled nonce to cipher.AEAD.Open without length check, causing panic on wrong-size IV</title>
-      <link>https://vulnogram.org/CVE-2026-89312</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-89312</guid>
-      <description>`AesGcmCryptor.Open` passed a caller-supplied nonce straight to `cipher.AEAD.Open` without checking its length. The Go standard library **panics** rather than returning an error when a GCM nonce is not exactly `NonceSize()` bytes, so a JWE carrying a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 23 Oct 2026 08:36:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110938 · 8.7 HIGH 🌩️ — JITServer: Multiple Denial of Service vulnerabilities via out-of-bounds heap reads during message and reply parsing</title>
-      <link>https://vulnogram.org/CVE-2026-110938</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110938</guid>
-      <description>In Eclipse OpenJ9 versions up to 0.63.0, the JITServer component is vulnerable to denial of service due to improper boundary checks during protocol message and reply handling. An unauthenticated remote attacker or malicious JITServer can transmit mal…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 21 Oct 2026 08:03:26 GMT</pubDate>
     </item>
   </channel>
 </rss>
