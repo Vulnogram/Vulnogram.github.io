@@ -11,7 +11,41 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 18 Nov 2026 01:40:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 09:34:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-130644 · 8.1 HIGH 🌩️ — Ansible-core: ansible-core: ansible-galaxy collection install path traversal via unvalidated artifact-derived collection name allows file writes and directory deletion outside the collections path</title>
+      <link>https://vulnogram.org/CVE-2026-130644</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-130644</guid>
+      <description>A path traversal flaw was found in ansible-core. When installing a collection with ansible-galaxy collection install, the install destination directory is derived from the namespace and name fields declared inside the collection artifact&apos;s own metada…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 18 Nov 2026 03:35:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120472 · 5.9 MEDIUM — Hive: hive: clusterclaim controller grants cross-tenant hive-claim-owner rbac via user-controlled spec.namespace</title>
+      <link>https://vulnogram.org/CVE-2026-120472</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120472</guid>
+      <description>A flaw was found in OpenShift Hive. The ClusterClaim controller assigns hive-claim-owner RBAC based on a user-controlled ClusterClaim.spec.namespace and only verifies ClusterPoolRef.ClaimName. A tenant can point a same-named claim at another tenant&apos;s…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 02:33:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-106096 · 6.4 MEDIUM — Cri-o: cri-o: writable linklogs bind mount allows pods to redirect privileged conmon log writes</title>
+      <link>https://vulnogram.org/CVE-2026-106096</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-106096</guid>
+      <description>A flaw was found in CRI-O. When the optional Linux LinkLogs feature is enabled, the host pod log directory is bind-mounted into a pod emptyDir and is intended to be read-only, but Linux ignores MS_RDONLY on the initial bind and the CRI mount stays wr…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 01:58:28 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105929 · 8.1 HIGH 🌩️ — Ansible-core: ansible-galaxy role install path traversal via unvalidated role name allows file writes and directory deletion outside the roles directory</title>
+      <link>https://vulnogram.org/CVE-2026-105929</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105929</guid>
+      <description>A path traversal vulnerability (CWE-22) was found in ansible-core&apos;s ansible-galaxy role installation. An explicit role &quot;name&quot; taken from a role&apos;s meta/requirements.yml is used to construct the on-disk installation path without validating that the res…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 18 Nov 2026 01:58:27 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-128886 · 6.2 MEDIUM — Dbus: server accept watch can be stalled by blocking nonce-tcp accept_with_noncefile path</title>
       <link>https://vulnogram.org/CVE-2026-128886</link>
@@ -388,40 +422,6 @@
       <description>A flaw was found in BusyBox. When the httpd web server processes subdirectory configuration files, an overly long index page name can trigger a stack-based buffer overflow. An attacker with permissions to write to a subdirectory configuration file co…</description>
       <category>High</category>
       <pubDate>Wed, 11 Nov 2026 10:41:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-124737 · 7.5 HIGH 🌩️ — Busybox: heap buffer overflow in the tftp client on fallback to the default block size</title>
-      <link>https://vulnogram.org/CVE-2026-124737</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124737</guid>
-      <description>A flaw was found in BusyBox. When the TFTP (Trivial File Transfer Protocol) client requests a custom small block size and receives a standard response, it falls back to the default block size without resizing the allocated memory buffer. A malicious…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 11 Nov 2026 09:40:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116468 · 6.6 MEDIUM — Keycloak-services: keycloak-services: delegated admin escalates to realm-admin via group move</title>
-      <link>https://vulnogram.org/CVE-2026-116468</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116468</guid>
-      <description>A flaw was found in the group-move and organization group reparenting endpoints of the keycloak-services component. This component is responsible for core authentication and authorization services in the Red Hat build of Keycloak. The issue occurs be…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 11 Nov 2026 07:57:21 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-123084 · 6.5 MEDIUM — Python-pulpcore: pulpcore: header content guard jq filter exposes the content-app environment</title>
-      <link>https://vulnogram.org/CVE-2026-123084</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123084</guid>
-      <description>An **expression language injection** has been found in the HeaderContentGuard.permit function in publication.py of the content guard in the **Pulpcore** package. The guard is supposed to check a value in a request header. It saves a jq filter and run…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 10 Nov 2026 22:12:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-121885 · 6.5 MEDIUM 🌩️ — Podman: untrusted image labels allow auto-update to restart arbitrary systemd units</title>
-      <link>https://vulnogram.org/CVE-2026-121885</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-121885</guid>
-      <description>A flaw was found in Podman. An attacker can trigger a Denial of Service (DoS) by supplying a container image containing crafted metadata labels. Podman&apos;s auto-update mechanism improperly trusts these image labels to determine which system services to…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 10 Nov 2026 14:34:31 GMT</pubDate>
     </item>
   </channel>
 </rss>

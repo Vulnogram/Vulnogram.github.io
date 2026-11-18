@@ -11,7 +11,63 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 18 Nov 2026 01:40:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 09:34:33 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-99319 — ALSA: usx2y: Refuse a retried DSP load after a failure</title>
+      <link>https://vulnogram.org/CVE-2026-99319</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99319</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: usx2y: Refuse a retried DSP load after a failure snd_usx2y_hwdep_dsp_load() sets up the asynchronous sequence URBs and the interrupt URB when the FPGA firmware image with index…</description>
+      <pubDate>Wed, 18 Nov 2026 08:42:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99318 — ALSA: bcd2000: Fix use-after-free of MIDI URBs on file close</title>
+      <link>https://vulnogram.org/CVE-2026-99318</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99318</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: bcd2000: Fix use-after-free of MIDI URBs on file close bcd2000_disconnect() calls snd_card_disconnect(), which only prevents new opens, and then frees the MIDI URBs. A rawmidi…</description>
+      <pubDate>Wed, 18 Nov 2026 08:42:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99317 — ALSA: hwdep: Serialize DSP load requests</title>
+      <link>https://vulnogram.org/CVE-2026-99317</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99317</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: hwdep: Serialize DSP load requests The check of the loaded DSP indices and the call of the driver&apos;s dsp_load callback in snd_hwdep_dsp_load() are not serialized. A hwdep file d…</description>
+      <pubDate>Wed, 18 Nov 2026 08:42:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99316 — ALSA: usx2y: Initialize idle URBs before submitting streams</title>
+      <link>https://vulnogram.org/CVE-2026-99316</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99316</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: usx2y: Initialize idle URBs before submitting streams usb_stream_start() submits the first two capture and playback URBs and only afterwards assigns sk-&gt;idle_inurb, sk-&gt;idle_ou…</description>
+      <pubDate>Wed, 18 Nov 2026 08:42:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99315 — ALSA: us122l: Fix NULL dereference at hwdep open and release</title>
+      <link>https://vulnogram.org/CVE-2026-99315</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99315</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: us122l: Fix NULL dereference at hwdep open and release usb_stream_hwdep_open() and usb_stream_hwdep_release() pass the result of usb_ifnum_to_if() straight to usb_autopm_get_in…</description>
+      <pubDate>Wed, 18 Nov 2026 08:42:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99314 — ALSA: us122l: Add missing NULL check in usb_stream_hwdep_mmap()</title>
+      <link>https://vulnogram.org/CVE-2026-99314</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99314</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: ALSA: us122l: Add missing NULL check in usb_stream_hwdep_mmap() usb_stream_hwdep_mmap() reads us122l-&gt;sk.s and dereferences it without checking for NULL. The stream object is release…</description>
+      <pubDate>Wed, 18 Nov 2026 08:42:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99313 — HID: logitech-hidpp: fix race condition when accessing stale stack pointer</title>
+      <link>https://vulnogram.org/CVE-2026-99313</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99313</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: HID: logitech-hidpp: fix race condition when accessing stale stack pointer The driver uses hidpp-&gt;send_receive_buf to point to a stack-allocated buffer in the synchronous command pat…</description>
+      <pubDate>Wed, 18 Nov 2026 08:42:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99312 — KVM: x86: Unconditionally reset MMU context when emulating INIT</title>
+      <link>https://vulnogram.org/CVE-2026-99312</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99312</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: KVM: x86: Unconditionally reset MMU context when emulating INIT Force an MMU reset when emulating an INIT even if paging was already disabled, as the MMU page role includes guest_mod…</description>
+      <pubDate>Wed, 18 Nov 2026 08:42:06 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-99311 — udf: fix return value for non-recorded-allocated extents in udf_map_block()</title>
       <link>https://vulnogram.org/CVE-2026-99311</link>
@@ -309,65 +365,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100082</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: xen-blkback: Avoid UAF when reading I/O statistics Reading I/O statistics via sysfs concurrently with tearing down a frontend device might result in UAF or a NULL dereference, as the…</description>
       <pubDate>Fri, 06 Nov 2026 18:23:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-100081 · 7.8 HIGH — xen-netback: defer xenvif_mcast_addr_list_free()</title>
-      <link>https://vulnogram.org/CVE-2026-100081</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100081</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: xen-netback: defer xenvif_mcast_addr_list_free() In order for the function to legitimately avoid locking/RCU, it needs to run after all TX/RX processing has finished/stopped: Lookups…</description>
-      <category>High</category>
-      <pubDate>Fri, 06 Nov 2026 18:23:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-100080 — xen-netback: Fix UAF when reading statistics data</title>
-      <link>https://vulnogram.org/CVE-2026-100080</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100080</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: xen-netback: Fix UAF when reading statistics data The network statistic data in the driver is protected by RCU. Unfortunately when tearing down the queues after an error during conne…</description>
-      <pubDate>Fri, 06 Nov 2026 18:23:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99270 · 8.1 HIGH — tcp: Fix potential UAF in reqsk_timer_handler().</title>
-      <link>https://vulnogram.org/CVE-2026-99270</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99270</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: tcp: Fix potential UAF in reqsk_timer_handler(). When TCP socket migration fails at inet_ehash_insert() in reqsk_timer_handler(), we jump to the no_ownership: label and free the new…</description>
-      <category>High</category>
-      <pubDate>Tue, 03 Nov 2026 12:32:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99269 · 7.8 HIGH — sched_ext: Wait for SCX_OPSS_DISPATCHING before moving tasks off DSQs</title>
-      <link>https://vulnogram.org/CVE-2026-99269</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99269</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: sched_ext: Wait for SCX_OPSS_DISPATCHING before moving tasks off DSQs A task can be found on a non-local DSQ while the CPU which dispatched it is still running ops.dequeue() and hasn…</description>
-      <category>High</category>
-      <pubDate>Tue, 03 Nov 2026 11:48:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99261 — drm/amdgpu: correct reservation fence slots for userq per-vm BOs eviction</title>
-      <link>https://vulnogram.org/CVE-2026-99261</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99261</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: drm/amdgpu: correct reservation fence slots for userq per-vm BOs eviction It fixes both the move overflow and the eviction fence add for evicting these per-vm BOs.</description>
-      <pubDate>Tue, 03 Nov 2026 11:25:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99260 — ntfs: fix resident conversion in ntfs_new_attr_flags</title>
-      <link>https://vulnogram.org/CVE-2026-99260</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99260</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ntfs: fix resident conversion in ntfs_new_attr_flags When setting sparse/compressed flags on a resident attribute, the function skipped the resident-to-non-resident conversion and te…</description>
-      <pubDate>Tue, 03 Nov 2026 11:25:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99259 — soc/tegra: pmc: Fix uninitialised clock rate</title>
-      <link>https://vulnogram.org/CVE-2026-99259</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99259</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: soc/tegra: pmc: Fix uninitialised clock rate For legacy 32-bit Tegra devices, the warning in the tegra_pmc_enter_suspend_mode() function is being triggered because the early_pmc-&gt;rat…</description>
-      <pubDate>Tue, 03 Nov 2026 11:25:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99258 — x86/hyperv: Avoid using per-cpu output page in hv_apicid_to_vp_index()</title>
-      <link>https://vulnogram.org/CVE-2026-99258</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99258</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: x86/hyperv: Avoid using per-cpu output page in hv_apicid_to_vp_index() hv_apicid_to_vp_index() currently uses the per-cpu hypercall input and output pages. This function is called wh…</description>
-      <pubDate>Tue, 03 Nov 2026 11:25:14 GMT</pubDate>
     </item>
   </channel>
 </rss>
