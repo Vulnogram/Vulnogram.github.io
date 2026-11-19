@@ -11,7 +11,48 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 19 Nov 2026 08:15:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 18:03:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-133200 · 5.9 MEDIUM 🌩️ — Quarkus-vertx-utils: quarkus-vertx-utils: denial of service via worker thread exhaustion on client disconnect</title>
+      <link>https://vulnogram.org/CVE-2026-133200</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133200</guid>
+      <description>A flaw was found in quarkus-vertx-utils. When a client disconnects while receiving a streaming response, the server fails to detect the closed connection and continues processing the data indefinitely. An unauthenticated remote attacker can exploit t…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 16:53:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133007 · 5.5 MEDIUM — Gimp: gimp: uninitialized stack disclosure in xcf tile loader</title>
+      <link>https://vulnogram.org/CVE-2026-133007</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133007</guid>
+      <description>A flaw was found in GIMP. Opening a crafted XCF with a truncated uncompressed tile can expose uninitialized main-process stack memory through the imported layer&apos;s pixel data, which may include process addresses that weaken ASLR.</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 16:51:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133189 · 9.6 CRITICAL — Openstack-cinder: storwize: cinder: ssh command injection through incomplete metacharacter validation in storage drivers</title>
+      <link>https://vulnogram.org/CVE-2026-133189</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133189</guid>
+      <description>A command injection vulnerability was found in OpenStack Cinder&apos;s SSH-based storage-driver support. Incomplete validation of shell metacharacters allows an authenticated user who owns a volume on an affected backend to supply crafted connection infor…</description>
+      <category>Critical</category>
+      <pubDate>Thu, 19 Nov 2026 16:50:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132858 · 7.8 HIGH — Gdm: missing authorization on createremotedisplay allows autologin as arbitrary users, including root</title>
+      <link>https://vulnogram.org/CVE-2026-132858</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132858</guid>
+      <description>A flaw was found in gdm. The CreateRemoteDisplay D-Bus method fails to perform proper authorization checks when initiating a remote display session. A local attacker with access to the login screen environment can invoke this method with an arbitrary…</description>
+      <category>High</category>
+      <pubDate>Thu, 19 Nov 2026 13:42:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126631 · 7.1 HIGH — Openscap: symlink escape in offline scanning mode allows reading host files outside the scanned root</title>
+      <link>https://vulnogram.org/CVE-2026-126631</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126631</guid>
+      <description>A flaw was found in OpenSCAP. This vulnerability allows for information disclosure when performing offline scans of untrusted filesystem images, such as container images or virtual machine (VM) disks. Because the scanner does not properly restrict sy…</description>
+      <category>High</category>
+      <pubDate>Thu, 19 Nov 2026 10:10:15 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-104357 · 4.8 MEDIUM 🌩️ — Libtirpc: libtirpc: sunrpc udp datagram-boundary violation (stale buffer bytes decoded as current request)</title>
       <link>https://vulnogram.org/CVE-2026-104357</link>
@@ -380,48 +421,6 @@
       <description>A flaw was found in the xfs_admin utility in xfsprogs. The tool does not properly validate user-supplied parameters, allowing operating system command injection. A local attacker can exploit this issue by providing crafted input arguments, which may…</description>
       <category>High</category>
       <pubDate>Wed, 11 Nov 2026 18:38:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-91150 · 7.5 HIGH 🌩️ — Cockpit: cockpit: denial of service via unbounded fragmented websocket messages</title>
-      <link>https://vulnogram.org/CVE-2026-91150</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-91150</guid>
-      <description>A flaw was found in Cockpit. This vulnerability allows a remote attacker, without prior authentication, to send specially crafted fragmented WebSocket messages. These messages accumulate without a total-size limit, leading to unbounded memory exhaust…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 11 Nov 2026 18:38:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-123747 · 7.3 HIGH — Pappl-retrofit: directory traversal in the add-ppdfiles and delete-ppdfiles actions</title>
-      <link>https://vulnogram.org/CVE-2026-123747</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123747</guid>
-      <description>A flaw was found in pappl-retrofit. The application fails to properly sanitize user-supplied filenames when handling the upload and deletion of PostScript Printer Description (PPD) files. A remote, unauthenticated attacker can exploit this directory…</description>
-      <category>High</category>
-      <pubDate>Wed, 11 Nov 2026 18:31:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110697 · 9.9 CRITICAL — Quay: quay: sql like wildcard injection in robot listing leaks cross-tenant robot tokens</title>
-      <link>https://vulnogram.org/CVE-2026-110697</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110697</guid>
-      <description>A flaw was found in Quay where the robot account listing function constructs a SQL LIKE pattern from user-controlled namespace names without escaping wildcard metacharacters. An attacker who creates a namespace containing an underscore character can…</description>
-      <category>Critical</category>
-      <pubDate>Wed, 11 Nov 2026 17:06:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-124746 · 5.5 MEDIUM — Busybox: out-of-bounds read in volume_id_get_buffer() via an offset+length wraparound</title>
-      <link>https://vulnogram.org/CVE-2026-124746</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124746</guid>
-      <description>A flaw was found in BusyBox. An integer overflow occurs in the volume_id component when calculating buffer boundaries while probing filesystem metadata. An attacker can exploit this vulnerability by providing a specially crafted filesystem image on a…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 11 Nov 2026 15:03:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-123710 · 9.8 CRITICAL 🌩️ — Quay: red hat quay: unauthenticated registry signing-key takeover via service key rotation</title>
-      <link>https://vulnogram.org/CVE-2026-123710</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-123710</guid>
-      <description>A flaw was found in Red Hat Quay. An unauthenticated client can obtain an anonymous registry token with an audience it controls, present that token to the service key rotation endpoint, and install its own approved signing key with no expiry. Registr…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 11 Nov 2026 15:02:31 GMT</pubDate>
     </item>
   </channel>
 </rss>

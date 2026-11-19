@@ -11,7 +11,97 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 19 Nov 2026 08:15:10 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 18:03:40 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-133190 · 6.3 MEDIUM — MISP CryptographicKey: Revoked PGP Keys Still Validate Protected Event Signatures and Key Revocation Sync Is Ineffective</title>
+      <link>https://vulnogram.org/CVE-2026-133190</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133190</guid>
+      <description>MISP, a threat intelligence sharing platform, contains a vulnerability in its cryptographic key management for protected (PGP-signed) events. Two related defects allow a revoked PGP key to remain effective for signing and validating protected events.…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 14:44:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133188 · 6.9 MEDIUM 🌩️ — MISP Protected Event Signature Bypass via Whitespace Injection in JSON Keys and Identifiers</title>
+      <link>https://vulnogram.org/CVE-2026-133188</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133188</guid>
+      <description>MISP contains a vulnerability in the cryptographic signature verification of protected events. When a MISP instance signs a protected event for synchronization, it strips all whitespace from the JSON body before computing the PGP signature (preg_repl…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:32:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133184 · 5.3 MEDIUM — MISP Push Mechanism Discloses Unpublished and Inaccessible Events to Remote Server</title>
+      <link>https://vulnogram.org/CVE-2026-133184</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133184</guid>
+      <description>MISP contains an authorization and input-validation flaw in its event push mechanism. When a user with push permissions initiates a push of events to a remote MISP instance, the system fails to enforce two critical checks: (1) it does not verify that…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 14:23:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133183 · 5.3 MEDIUM — MISP: Remote Pull and Feed Operations Can Modify Sharing Group Metadata Without Organization Membership</title>
+      <link>https://vulnogram.org/CVE-2026-133183</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133183</guid>
+      <description>MISP contains an authorization flaw in the handling of remote pull and feed operations. When a non-internal pull or a feed processes incoming data and encounters an existing sharing group, the application did not verify that the remote server&apos;s organ…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 14:19:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133178 · 4.8 MEDIUM — CSV Formula Injection in Case and Task Exports in flowintel</title>
+      <link>https://vulnogram.org/CVE-2026-133178</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133178</guid>
+      <description>flowintel allows users with editor-level access to author case and task fields, including aggregated tags. When these records are exported as CSV, the field values are written verbatim into the output file. Because no sanitisation is applied to user-…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 14:11:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133177 · 5.3 MEDIUM — MISP: Insufficient Authorization Allows Sync Users and External Feeds to Overwrite Organisation Details</title>
+      <link>https://vulnogram.org/CVE-2026-133177</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133177</guid>
+      <description>MISP contains an authorization flaw in the sharing group capture logic. When a sharing group is re-captured with a newer modified timestamp and an updated roster, the application unconditionally overwrote the type, nationality, sector, and contacts f…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 14:11:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133175 · 6.9 MEDIUM — MISP Missing Authorization in Sync Proposal Endpoints Allows Cross-Event Data Access and Modification</title>
+      <link>https://vulnogram.org/CVE-2026-133175</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133175</guid>
+      <description>MISP contains an authorization bypass in its server-to-server proposal synchronization mechanism. Two related flaws were identified: 1. The events/pushProposals endpoint located the target event by UUID without enforcing any access-control check. A s…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 14:06:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133165 · 5.3 MEDIUM — MISP Object Reference Cross-Event Integrity Violation via UUID Scope Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-133165</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133165</guid>
+      <description>MISP contains an authorization and scope flaw in the ObjectReference model&apos;s captureReference method. When a user saves an event (via REST API, sync, or feeds), any object reference included in the payload is looked up by its UUID across the entire M…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 14:00:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133163 · 5.3 MEDIUM — MISP: External Sync User Can Modify Protected Events Without Signature via Multiple Write Routes</title>
+      <link>https://vulnogram.org/CVE-2026-133163</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133163</guid>
+      <description>MISP contains an authorization bypass affecting the event protection mechanism. In MISP, a protected event is designed to be modifiable only through the events/edit endpoint with a valid cryptographic signature. However, the protection check was enfo…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 13:55:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133157 · 5.1 MEDIUM 🌩️ — CSV Formula Injection in Audit Log CSV Exports in flowintel</title>
+      <link>https://vulnogram.org/CVE-2026-133157</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133157</guid>
+      <description>flowintel contains a CSV injection vulnerability in its audit log CSV export functionality. Attacker-influenced text recorded in audit logs could be interpreted as spreadsheet formulas when an administrator opened the exported CSV file in a spreadshe…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 13:42:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133001 · 5.3 MEDIUM — FlowIntel Alert Visibility Scope Not Refreshed on Duplicate Ingestion</title>
+      <link>https://vulnogram.org/CVE-2026-133001</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133001</guid>
+      <description>FlowIntel contains an authorization flaw in its duplicate alert ingestion logic. When a duplicate alert is received and its content is updated, the ownership and visibility scope fields (owner user and owner organization) were not refreshed to reflec…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 19 Nov 2026 10:35:06 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-132645 · 6.3 MEDIUM — MISP Galaxy Import Authorization Bypass Allows Unauthorized Overwrite of Default and Other Organizations&apos; Galaxies</title>
       <link>https://vulnogram.org/CVE-2026-132645</link>
@@ -330,96 +420,6 @@
       <description>The CakeResponse::download() method in lib/Cake/Network/CakeResponse.php constructs a Content-Disposition header by directly interpolating a caller-supplied filename into a quoted-string value without sanitization. Two distinct injection vectors exis…</description>
       <category>High</category>
       <pubDate>Tue, 06 Oct 2026 18:48:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104914 · 5.3 MEDIUM — MISP: Soft-Deleted Attributes from Other Organizations Exposed via Attribute Search and Paginated View</title>
-      <link>https://vulnogram.org/CVE-2026-104914</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104914</guid>
-      <description>MISP contains an improper access control vulnerability in its attribute search and paginated attribute view endpoints. When a user queries for soft-deleted attributes (e.g., via the deleted-attributes search or the paginated attribute listing), the a…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 02 Oct 2026 16:09:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104912 · 7.1 HIGH — MISP Correlation Authorization Bypass Exposes Restricted Event and Attribute Data</title>
-      <link>https://vulnogram.org/CVE-2026-104912</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104912</guid>
-      <description>MISP contains an authorization flaw in its correlation handling during attribute searches. When a user performs an attribute search that triggers correlation lookups, the system authorized access to correlated attributes and events based on a stale d…</description>
-      <category>High</category>
-      <pubDate>Fri, 02 Oct 2026 16:04:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104910 · 5.3 MEDIUM — MISP Information Disclosure via Related Events Listing Bypassing Per-Event Authorization</title>
-      <link>https://vulnogram.org/CVE-2026-104910</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104910</guid>
-      <description>MISP contains an authorization bypass in the related events listing functionality. When a user requests the list of events correlated to a given event, the system retrieved related event metadata directly from the correlation table without re-validat…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 02 Oct 2026 16:01:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104908 · 7.1 HIGH — MISP Decaying Model Import Mass Assignment Allows Cross-Organization Model Overwrite and Default Flagging</title>
-      <link>https://vulnogram.org/CVE-2026-104908</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104908</guid>
-      <description>MISP contains an improper input validation vulnerability in the decaying model import functionality. The import endpoint was intended to create a new decaying model belonging exclusively to the importing user&apos;s organisation, with the default flag for…</description>
-      <category>High</category>
-      <pubDate>Fri, 02 Oct 2026 15:56:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104907 · 4.8 MEDIUM — MISP: JavaScript Injection via Remote Tag ID in Event Preview Inline Handler</title>
-      <link>https://vulnogram.org/CVE-2026-104907</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104907</guid>
-      <description>MISP contains a cross-site scripting (XSS) vulnerability in the remote event preview page. When a linked (remote) MISP server is configured, the event preview renders tag identifiers inside an inline JavaScript onclick attribute. The tag ID value was…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 02 Oct 2026 15:51:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104906 · 6.2 MEDIUM — MISP TAXII Object Viewer Stored XSS via Unescaped JSON Output</title>
-      <link>https://vulnogram.org/CVE-2026-104906</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104906</guid>
-      <description>MISP contains a cross-site scripting (XSS) vulnerability in the TAXII object viewer. When displaying a remote TAXII object, the JSON content of string properties was rendered directly into an HTML pre block without HTML-encoding. An attacker who can…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 02 Oct 2026 15:49:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104901 · 5.1 MEDIUM 🌩️ — MISP ID Translator: Unescaped Remote Event ID Enables Cross-Site Scripting via Linked Server</title>
-      <link>https://vulnogram.org/CVE-2026-104901</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104901</guid>
-      <description>MISP contains a cross-site scripting (XSS) vulnerability in the ID Translator feature. When a user views the ID Translator page, the application queries linked (remote) MISP servers for corresponding event identifiers. The event ID returned by the re…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 02 Oct 2026 15:21:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104900 · 5.3 MEDIUM — MISP Stored XSS via Unescaped Count Field Value in Remote Event Preview Index</title>
-      <link>https://vulnogram.org/CVE-2026-104900</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104900</guid>
-      <description>MISP contains a stored cross-site scripting (XSS) vulnerability in the index table rendering of the remote event preview. The count field template escaped the associated link URL but rendered the field value without HTML encoding. An attacker with th…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 02 Oct 2026 15:16:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103858 · 5.3 MEDIUM — MISP Incomplete Thread Authorization Allows Unauthorized Read and Post Access to Discussions</title>
-      <link>https://vulnogram.org/CVE-2026-103858</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103858</guid>
-      <description>MISP contains an incomplete authorization check in the discussion posting functionality. When a user submits a post to a thread or replies to an existing post, the application only verified whether the target thread was restricted to a single organiz…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 01 Oct 2026 11:31:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103664 · 4.8 MEDIUM — MISP Reflected Cross-Site Scripting via Unsanitized Analyst Data Seed Parameter</title>
-      <link>https://vulnogram.org/CVE-2026-103664</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103664</guid>
-      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the analyst data notes panel. The seed path parameter, supplied by the user via the URL, was passed directly into inline JavaScript within the rendered HTML response without any sa…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 01 Oct 2026 08:55:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103662 · 5.1 MEDIUM 🌩️ — MISP Reflected XSS in Taxonomy Tag Confirmation Forms</title>
-      <link>https://vulnogram.org/CVE-2026-103662</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103662</guid>
-      <description>MISP contains a reflected cross-site scripting (XSS) vulnerability in the legacy taxonomy tag management confirmation forms (add tag and disable tag). The affected forms echoed a user-supplied tag name value from the request unescaped into the render…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 08:48:38 GMT</pubDate>
     </item>
   </channel>
 </rss>

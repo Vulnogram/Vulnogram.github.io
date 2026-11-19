@@ -11,7 +11,159 @@
       <title>PHP Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 19 Nov 2026 08:15:10 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 18:03:41 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-129501 · 6.3 MEDIUM 🌩️ — Double free during DOM XML serialization</title>
+      <link>https://vulnogram.org/CVE-2026-129501</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129501</guid>
+      <description>Double free during DOM XML serialization. The XML serializer of Dom\XMLDocument and Dom\HTMLDocument can share ownership of a generated namespace prefix between the namespace-prefix maps of an element and a descendant, so the prefix is used after bei…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:44:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129289 · 9.2 CRITICAL 🌩️ — PHP-FPM request smuggling through an unread HTTP request body</title>
+      <link>https://vulnogram.org/CVE-2026-129289</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129289</guid>
+      <description>PHP-FPM request smuggling through an unread HTTP request body. PHP does not discard the unread part of an HTTP request body at request shutdown when the application has opened php://input without reading it to the end. When the front end reuses backe…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:44:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-15353 · 6.3 MEDIUM 🌩️ — SOAP information disclosure through malformed array dimensions</title>
+      <link>https://vulnogram.org/CVE-2026-15353</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-15353</guid>
+      <description>SOAP information disclosure through malformed array dimensions. The SOAP extension reads an uninitialized array position when decoding an encoded array whose arraySize attribute is empty, whitespace-only or non-numeric, or when such dimensions come f…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:44:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-127960 · 8.7 HIGH 🌩️ — Denial of service through folded HTTP response headers</title>
+      <link>https://vulnogram.org/CVE-2026-127960</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127960</guid>
+      <description>Denial of service through folded HTTP response headers. The HTTP stream wrapper joins each continuation line of a folded response header to the accumulated value by allocating a new string and copying the whole value, so a response with many short co…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:44:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129438 · 6.3 MEDIUM 🌩️ — Incorrect RFC 3986 URI serialization for oversized input</title>
+      <link>https://vulnogram.org/CVE-2026-129438</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129438</guid>
+      <description>Incorrect RFC 3986 URI serialization for oversized input. The Uri\Rfc3986\Uri class does not correctly handle the output-size limit and errors of the uriparser library when converting a URI back to a string. For a URI whose string representation reac…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:44:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129291 · 8.8 HIGH — PHP-FPM epoll use-after-free can lead to local privilege escalation</title>
+      <link>https://vulnogram.org/CVE-2026-129291</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129291</guid>
+      <description>PHP-FPM epoll use-after-free can lead to local privilege escalation. When catch_workers_output is enabled and the epoll event backend is used, the PHP-FPM master can close a worker&apos;s output pipe in fpm_child_close() without removing the associated ev…</description>
+      <category>High</category>
+      <pubDate>Thu, 19 Nov 2026 14:44:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129496 · 9.2 CRITICAL 🌩️ — Timezone cache use-after-free can lead to remote code execution</title>
+      <link>https://vulnogram.org/CVE-2026-129496</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129496</guid>
+      <description>Timezone cache use-after-free can lead to remote code execution. In non-thread-safe builds, a diagnostic written to a file-based error_log during module startup, for example for an invalid date.timezone value or a session configuration warning, cause…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:43:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129481 · 9.2 CRITICAL 🌩️ — Use-after-free after interrupted session shutdown</title>
+      <link>https://vulnogram.org/CVE-2026-129481</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129481</guid>
+      <description>Use-after-free after interrupted session shutdown. The session extension records the filename of the executing script when a session starts. If a fatal error occurs in an application callback while the session variables are destroyed at shutdown, suc…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:43:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126714 · 9.2 CRITICAL 🌩️ — Partially overwritten session files can lead to remote code execution</title>
+      <link>https://vulnogram.org/CVE-2026-126714</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126714</guid>
+      <description>Partially overwritten session files can lead to remote code execution. The files session save handler, which is the default, writes updated session data into the existing session file without first clearing it. If a write is interrupted, the file can…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:43:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128064 · 8.2 HIGH 🌩️ — Mixed-case HTTPS and FTPS URLs can expose data in plaintext</title>
+      <link>https://vulnogram.org/CVE-2026-128064</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128064</guid>
+      <description>Mixed-case HTTPS and FTPS URLs can expose data in plaintext. The HTTP and FTP stream wrappers recognise URL schemes case-insensitively, but enable TLS only when the scheme contains a lowercase &quot;s&quot; at a fixed position. A URL such as HTTPS:// or FTPS:/…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:43:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129474 · 9.2 CRITICAL 🌩️ — Use-after-free in magic method backtraces can lead to remote code execution</title>
+      <link>https://vulnogram.org/CVE-2026-129474</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129474</guid>
+      <description>Use-after-free in magic method backtraces can lead to remote code execution. When collecting the arguments of a method call handled by __call() or __callStatic() for a backtrace, PHP can read stale values that may refer to freed memory. If a fatal er…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:43:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128090 · 7.7 HIGH 🌩️ — PHAR OpenSSL signature bypass via algorithm downgrade</title>
+      <link>https://vulnogram.org/CVE-2026-128090</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128090</guid>
+      <description>PHAR OpenSSL signature bypass via algorithm downgrade. The Phar extension selects the signature verification method from the signature type stored in the archive, and only the OpenSSL types consult the separate .pubkey file holding the trusted public…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:42:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115560 · 9.2 CRITICAL 🌩️ — Session serializer mismatch can lead to remote code execution</title>
+      <link>https://vulnogram.org/CVE-2026-115560</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115560</guid>
+      <description>Session serializer mismatch can lead to remote code execution. Session upload progress, when enabled, can store attacker-controlled data in a session key using the php_binary or php_serialize session serializer. If the same session is later read with…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:42:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129538 · 6.9 MEDIUM 🌩️ — PHP-CGI out-of-bounds read and write during PATH_INFO correction</title>
+      <link>https://vulnogram.org/CVE-2026-129538</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129538</guid>
+      <description>PHP-CGI out-of-bounds read and write during PATH_INFO correction. The PHP CGI binary (php-cgi), in CGI and FastCGI mode with cgi.fix_pathinfo enabled (the default), can perform an out-of-bounds read and write when the path removed from SCRIPT_FILENAM…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:42:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129506 · 6.3 MEDIUM 🌩️ — SOAP use-after-free when processing DTD entity references</title>
+      <link>https://vulnogram.org/CVE-2026-129506</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129506</guid>
+      <description>SOAP use-after-free when processing DTD entity references. The SOAP extension frees the document type definition (DTD) of a parsed XML document while attribute values can still refer to entities it owns, and can then read freed memory. Removing the D…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:42:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129292 · 5.3 MEDIUM 🌩️ — PHP-FPM status endpoint XSS via unescaped user and script fields</title>
+      <link>https://vulnogram.org/CVE-2026-129292</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129292</guid>
+      <description>PHP-FPM status endpoint XSS via unescaped user and script fields. The PHP-FPM full status output includes the request method, authentication user and script filename of each worker without escaping them for the HTML, XML or JSON format. When the stat…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:42:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129182 · 9.2 CRITICAL 🌩️ — Use-after-free via repopulation of last_fatal_error_backtrace global after shutdown</title>
+      <link>https://vulnogram.org/CVE-2026-129182</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129182</guid>
+      <description>Use-after-free via repopulation of last_fatal_error_backtrace global after shutdown. A fatal error raised while modified INI settings are restored during request shutdown can repopulate the stored fatal error backtrace after the executor has been cle…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 19 Nov 2026 14:41:55 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-109619 · 9.2 CRITICAL 💥 🌩️ — RCE via stale global state</title>
       <link>https://vulnogram.org/CVE-2026-109619</link>
@@ -304,156 +456,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Sun, 13 Jul 2025 22:10:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-11235 · 9.2 CRITICAL 🌩️ — Reference counting in php_request_shutdown causes Use-After-Free</title>
-      <link>https://vulnogram.org/CVE-2024-11235</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11235</guid>
-      <description>In PHP versions 8.3.* before 8.3.19 and 8.4.* before 8.4.5, a code sequence involving __set handler or ??= operator and exceptions can lead to a use-after-free vulnerability. If the third party can control the memory layout leading to this, for examp…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 04 Apr 2025 17:51:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1861 · 6.3 MEDIUM 🌩️ — Stream HTTP wrapper truncates redirect location to 1024 bytes</title>
-      <link>https://vulnogram.org/CVE-2025-1861</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1861</guid>
-      <description>In PHP from 8.1.* before 8.1.32, from 8.2.* before 8.2.28, from 8.3.* before 8.3.19, from 8.4.* before 8.4.5, when parsing HTTP redirect in the response to an HTTP request, there is currently limit on the location value size caused by limited size of…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 30 Mar 2025 05:57:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1736 · 6.3 MEDIUM 🌩️ — Stream HTTP wrapper header check might omit basic auth header</title>
-      <link>https://vulnogram.org/CVE-2025-1736</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1736</guid>
-      <description>In PHP from 8.1.* before 8.1.32, from 8.2.* before 8.2.28, from 8.3.* before 8.3.19, from 8.4.* before 8.4.5, when user-supplied headers are sent, the insufficient validation of the end-of-line characters may prevent certain headers from being sent o…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 30 Mar 2025 05:49:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1734 · 6.3 MEDIUM 🌩️ — Streams HTTP wrapper does not fail for headers with invalid name and no colon</title>
-      <link>https://vulnogram.org/CVE-2025-1734</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1734</guid>
-      <description>In PHP from 8.1.* before 8.1.32, from 8.2.* before 8.2.28, from 8.3.* before 8.3.19, from 8.4.* before 8.4.5, when receiving headers from HTTP server, the headers missing a colon (:) are treated as valid headers even though they are not. This may con…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 30 Mar 2025 05:43:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1219 · 6.3 MEDIUM 🌩️ — libxml streams use wrong content-type header when requesting a redirected resource</title>
-      <link>https://vulnogram.org/CVE-2025-1219</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1219</guid>
-      <description>In PHP from 8.1.* before 8.1.32, from 8.2.* before 8.2.28, from 8.3.* before 8.3.19, from 8.4.* before 8.4.5, when requesting a HTTP resource using the DOM or SimpleXML extensions, the wrong content-type header is used to determine the charset when t…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 30 Mar 2025 05:33:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2025-1217 · 6.3 MEDIUM 🌩️ — Header parser of http stream wrapper does not handle folded headers</title>
-      <link>https://vulnogram.org/CVE-2025-1217</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-1217</guid>
-      <description>In PHP from 8.1.* before 8.1.32, from 8.2.* before 8.2.28, from 8.3.* before 8.3.19, from 8.4.* before 8.4.5, when http request module parses HTTP response obtained from a server, folded headers are parsed incorrectly, which may lead to misinterpreti…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 29 Mar 2025 05:19:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2022-31631 · 9.1 CRITICAL 🌩️ — PDO::quote() may return unquoted string</title>
-      <link>https://vulnogram.org/CVE-2022-31631</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2022-31631</guid>
-      <description>In PHP versions 8.0.* before 8.0.27, 8.1.* before 8.1.15, 8.2.* before 8.2.2 when using PDO::quote() function to quote user-supplied data for SQLite, supplying an overly long string may cause the driver to incorrectly quote the data, which may furthe…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 12 Feb 2025 22:10:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-11233 · 4.8 MEDIUM 🌩️ — Single byte overread with convert.quoted-printable-decode filter</title>
-      <link>https://vulnogram.org/CVE-2024-11233</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11233</guid>
-      <description>In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, due to an error in convert.quoted-printable-decode filter certain data can lead to buffer overread by one byte, which can in certain circumstances lead to crashes or discl…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 24 Nov 2024 01:08:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-11234 · 4.8 MEDIUM 🌩️ — Configuring a proxy in a stream context might allow for CRLF injection in URIs</title>
-      <link>https://vulnogram.org/CVE-2024-11234</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11234</guid>
-      <description>In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, when using streams with configured proxy and &quot;request_fulluri&quot; option, the URI is not properly sanitized which can lead to HTTP request smuggling and allow the attacker to…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 24 Nov 2024 00:57:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-11236 · 9.8 CRITICAL 🌩️ — Integer overflow in the firebird and dblib quoters causing OOB writes</title>
-      <link>https://vulnogram.org/CVE-2024-11236</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-11236</guid>
-      <description>In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, uncontrolled long string inputs to ldap_escape() function on 32-bit systems can cause an integer overflow, resulting in an out-of-bounds write.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 24 Nov 2024 00:44:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8929 · 5.8 MEDIUM — Leak partial content of the heap through heap buffer over-read in mysqlnd</title>
-      <link>https://vulnogram.org/CVE-2024-8929</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8929</guid>
-      <description>In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, a hostile MySQL server can cause the client to disclose the content of its heap containing data from other SQL requests and possible other data belonging to different user…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 22 Nov 2024 06:15:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8932 · 9.8 CRITICAL 🌩️ — OOB access in ldap_escape</title>
-      <link>https://vulnogram.org/CVE-2024-8932</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8932</guid>
-      <description>In PHP versions 8.1.* before 8.1.31, 8.2.* before 8.2.26, 8.3.* before 8.3.14, uncontrolled long string inputs to ldap_escape() function on 32-bit systems can cause an integer overflow, resulting in an out-of-bounds write.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 22 Nov 2024 06:03:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-9026 · 3.3 LOW — PHP-FPM logs from children may be altered</title>
-      <link>https://vulnogram.org/CVE-2024-9026</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-9026</guid>
-      <description>In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12, when using PHP-FPM SAPI and it is configured to catch workers output through catch_workers_output = yes, it may be possible to pollute the final log or remove up to 4 char…</description>
-      <category>Low</category>
-      <pubDate>Tue, 08 Oct 2024 04:07:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8927 · 7.5 HIGH 🌩️ — cgi.force_redirect configuration is bypassable due to the environment variable collision</title>
-      <link>https://vulnogram.org/CVE-2024-8927</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8927</guid>
-      <description>In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12, HTTP_REDIRECT_STATUS variable is used to check whether or not CGI binary is being run by the HTTP server. However, in certain scenarios, the content of this variable can b…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 08 Oct 2024 03:56:31 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8926 · 8.1 HIGH 🌩️ — PHP CGI Parameter Injection Vulnerability (CVE-2024-4577 bypass)</title>
-      <link>https://vulnogram.org/CVE-2024-8926</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8926</guid>
-      <description>In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12, when using a certain non-standard configurations of Windows codepages, the fixes for CVE-2024-4577 https://github.com/advisories/GHSA-vxpp-6299-mxw3 may still be bypassed…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 08 Oct 2024 03:48:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-8925 · 3.1 LOW — Erroneous parsing of multipart form data</title>
-      <link>https://vulnogram.org/CVE-2024-8925</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-8925</guid>
-      <description>In PHP versions 8.1.* before 8.1.30, 8.2.* before 8.2.24, 8.3.* before 8.3.12, erroneous parsing of multipart form data contained in an HTTP POST request could lead to legitimate data not being processed. This could lead to malicious attacker able to…</description>
-      <category>Low</category>
-      <pubDate>Tue, 08 Oct 2024 03:35:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2024-2408 · 5.9 MEDIUM 🌩️ — PHP is vulnerable to the Marvin Attack</title>
-      <link>https://vulnogram.org/CVE-2024-2408</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2024-2408</guid>
-      <description>The openssl_private_decrypt function in PHP, when using PKCS1 padding (OPENSSL_PKCS1_PADDING, which is the default), is vulnerable to the Marvin Attack unless it is used with an OpenSSL version that includes the changes from this pull request: https:…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 09 Jun 2024 19:55:51 GMT</pubDate>
     </item>
   </channel>
 </rss>
