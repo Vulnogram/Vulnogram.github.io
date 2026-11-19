@@ -11,7 +11,71 @@
       <title>Computer Incident Response Center Luxembourg (CIRCL) — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 18 Nov 2026 18:44:53 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 01:05:22 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-132645 · 6.3 MEDIUM — MISP Galaxy Import Authorization Bypass Allows Unauthorized Overwrite of Default and Other Organizations&apos; Galaxies</title>
+      <link>https://vulnogram.org/CVE-2026-132645</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132645</guid>
+      <description>MISP contains an authorization bypass vulnerability in the Galaxy import/sync functionality (captureGalaxy in app/Model/Galaxy.php). The captureGalaxy() method matched an incoming galaxy payload to an existing galaxy by UUID and unconditionally overw…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 21:19:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132644 · 6.3 MEDIUM — MISP Galaxy Cluster Import Authorization Bypass Allows Cross-Organization Cluster Takeover</title>
+      <link>https://vulnogram.org/CVE-2026-132644</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132644</guid>
+      <description>MISP contains an authorization flaw in the GalaxyCluster model&apos;s captureCluster() function, which handles the import and synchronization of Galaxy Clusters. Prior to the fix, any authenticated user holding the galaxy editor role could replace an exis…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 21:13:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132643 · 5.3 MEDIUM — MISP Anonymised Sightings Reporter Identity Disclosure via Organisation Filter</title>
+      <link>https://vulnogram.org/CVE-2026-132643</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132643</guid>
+      <description>MISP contains an information disclosure vulnerability in the Sighting model when the Sightings_anonymise setting is enabled. The listSightings and sightings/restSearch endpoints accepted a caller-supplied org_id filter parameter and applied it direct…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 21:08:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132642 · 5.3 MEDIUM — MISP Tag Endpoints Bypass ACL Visibility, Allowing Unauthorized Tag Modification and Enumeration on Hidden Events</title>
+      <link>https://vulnogram.org/CVE-2026-132642</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132642</guid>
+      <description>MISP contains an access control flaw in its tag management endpoints: events/addTag (single and bulk), events/removeTag, and attributes/removeTag. These endpoints loaded their target event or attribute using an unscoped database query (recursive = -1…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 21:04:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132641 · 5.3 MEDIUM — MISP EventDelegationsController Missing Authorization Check on sharing_group_id Allows Unauthorized Sharing Group Name Disclosure</title>
+      <link>https://vulnogram.org/CVE-2026-132641</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132641</guid>
+      <description>MISP&apos;s EventDelegationsController delegateEvent method accepted a user-supplied sharing_group_id parameter without verifying that the requesting user was a member of the referenced sharing group. When a delegation request was submitted with distribut…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 20:59:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132637 · 5.3 MEDIUM — MISP Event Correlations Endpoint Missing Authorization on Queried Event and Hidden Attributes</title>
+      <link>https://vulnogram.org/CVE-2026-132637</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132637</guid>
+      <description>MISP contains an authorization bypass in the correlations/eventCorrelations endpoint and the underlying correlation engines (Default and OnDemand). The CorrelationsController::eventCorrelations action did not verify that the requesting user was permi…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 20:51:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132636 · 5.3 MEDIUM — MISP Event Search Discloses Hidden Attribute and Object Data via Missing Sub-Entity Authorization</title>
+      <link>https://vulnogram.org/CVE-2026-132636</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132636</guid>
+      <description>MISP contains an authorization bypass in its event search and filter functionality. When a user performed searches through events/restSearch (value, value prefix, searchall, type, uuid, attribute tags, object filters), objects/restSearch, or the even…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 18 Nov 2026 20:45:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132144 · 8.3 HIGH — MISP: Non-admin users can change login email under external authentication to capture a directory identity</title>
+      <link>https://vulnogram.org/CVE-2026-132144</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132144</guid>
+      <description>MISP contains an authorization flaw in the user login-email change logic. When an external authentication backend is configured (LDAP, Shibboleth, ApacheSecureAuth, or CustomAuth), the login email address serves as the key by which the directory serv…</description>
+      <category>High</category>
+      <pubDate>Wed, 18 Nov 2026 20:41:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-132069 · 6.3 MEDIUM — MISP Authorization Bypass: Sync Users Can Modify and Read Non-Member Sharing Groups</title>
       <link>https://vulnogram.org/CVE-2026-132069</link>
@@ -356,71 +420,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 01 Oct 2026 08:48:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103659 · 7.1 HIGH — MISP: Object Distribution ACL Bypass via Event Flattening Exposes Organisation-Only Attributes</title>
-      <link>https://vulnogram.org/CVE-2026-103659</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103659</guid>
-      <description>MISP contains an authorization bypass in the event flattening feature. When a user requests an event with the flatten option enabled, the application removes the Object containment from the query and returns object attributes as top-level event attri…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 08:33:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103655 · 9.3 CRITICAL 🌩️ — MISP TOTP Code Replay Allows Duplicate Authentication Within Validity Period</title>
-      <link>https://vulnogram.org/CVE-2026-103655</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103655</guid>
-      <description>MISP contains a vulnerability in its two-factor authentication (TOTP) verification process that permits a valid one-time code to be accepted more than once within its time-based validity window. The issue exists in the user login flow where a TOTP co…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 01 Oct 2026 08:08:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103651 · 7.6 HIGH — MISP HOTP Token Replay via Stale Session-Cached Counter Allows Second-Factor Authentication Bypass</title>
-      <link>https://vulnogram.org/CVE-2026-103651</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103651</guid>
-      <description>MISP contains a vulnerability in its one-time password (OTP) authentication flow that allows replay of a consumed HOTP (paper) token and rewinding of the token counter. The HOTP verification logic compared the submitted token against a counter value…</description>
-      <category>High</category>
-      <pubDate>Thu, 01 Oct 2026 07:34:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103389 · 6.2 MEDIUM — MISP Stored Cross-Site Scripting via Unvalidated Galaxy Icon Field in Correlation Graph</title>
-      <link>https://vulnogram.org/CVE-2026-103389</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103389</guid>
-      <description>MISP contains a stored cross-site scripting (XSS) vulnerability in the galaxy icon handling path. The icon field of a galaxy object was persisted without any server-side validation through the galaxy add, edit, and sync/import capture endpoints. The…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 30 Sep 2026 14:25:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103388 · 6.2 MEDIUM — MISP Stored Cross-Site Scripting via JavaScript URL in Galaxy Cluster Source Field</title>
-      <link>https://vulnogram.org/CVE-2026-103388</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103388</guid>
-      <description>MISP renders the source field of a Galaxy Cluster as a clickable hyperlink whenever the stored value passes PHP&apos;s FILTER_VALIDATE_URL validation. Because FILTER_VALIDATE_URL accepts the javascript: URI scheme, a user with galaxy editor privileges on…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 30 Sep 2026 14:22:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103321 · 8.3 HIGH — MISP Stored Cross-Site Scripting (XSS) via Unvalidated Event Graph Preview Image</title>
-      <link>https://vulnogram.org/CVE-2026-103321</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103321</guid>
-      <description>MISP contains a stored cross-site script (XSS) vulnerability in the event graph preview feature. The event graph preview image field was accepted and stored without server-side validation. On the client side, the stored value was rendered into an HTM…</description>
-      <category>High</category>
-      <pubDate>Wed, 30 Sep 2026 12:19:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103239 · 8.6 HIGH — MISP Tag Collection Save Allows Privilege Escalation via Sibling Model Injection</title>
-      <link>https://vulnogram.org/CVE-2026-103239</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103239</guid>
-      <description>MISP contains a privilege escalation vulnerability in the tag collection creation and editing functionality. The affected actions accepted the full HTTP request payload and passed it to a bulk-association save operation, which writes not only the int…</description>
-      <category>High</category>
-      <pubDate>Wed, 30 Sep 2026 10:16:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-103237 · 8.3 HIGH — MISP: Nested Model Alias Key Bypasses Sanitization to Modify Cross-Tenant Rows</title>
-      <link>https://vulnogram.org/CVE-2026-103237</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-103237</guid>
-      <description>MISP contains an improper input validation vulnerability in its ORM save path. When a user submits data through various endpoints (attribute add/edit, event edit, free-text import, sighting capture, shadow attribute proposal, event report creation, o…</description>
-      <category>High</category>
-      <pubDate>Wed, 30 Sep 2026 09:56:35 GMT</pubDate>
     </item>
   </channel>
 </rss>

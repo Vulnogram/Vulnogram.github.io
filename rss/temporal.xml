@@ -11,7 +11,48 @@
       <title>Temporal Technologies Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 18 Nov 2026 18:44:54 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 01:05:23 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-132559 · 2.3 LOW — temporal-proxy can send decrypted failure messages and stack traces to the upstream in plaintext</title>
+      <link>https://vulnogram.org/CVE-2026-132559</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132559</guid>
+      <description>When payload encryption is enabled, failure messages and stack traces that temporal-proxy is configured to keep from the upstream Temporal service can reach it in plaintext, where anyone who can read the Workflow&apos;s history at the upstream can read th…</description>
+      <category>Low</category>
+      <pubDate>Wed, 18 Nov 2026 20:30:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-130090 · 2.3 LOW — temporal-proxy can send a request under another upstream&apos;s credential when templated upstreams render the same address</title>
+      <link>https://vulnogram.org/CVE-2026-130090</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-130090</guid>
+      <description>When two templated upstreams in temporal-proxy render the same address, a request routed to one upstream can be sent under the other upstream&apos;s credential, namespace translation, and payload encryption keys. temporal-proxy pools connections for templ…</description>
+      <category>Low</category>
+      <pubDate>Wed, 18 Nov 2026 20:28:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-130091 · 7.1 HIGH — temporal-proxy can be terminated by memory exhaustion when decompressing stored payloads</title>
+      <link>https://vulnogram.org/CVE-2026-130091</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-130091</guid>
+      <description>A caller with write permission in a namespace can terminate temporal-proxy through memory exhaustion by storing highly compressed payloads in Workflow history, and the stored history causes the same failure on every later read. temporal-proxy 1.2.0 d…</description>
+      <category>High</category>
+      <pubDate>Wed, 18 Nov 2026 20:24:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-130089 · 7.3 HIGH — temporal-proxy request namespace can redirect a templated upstream and leak its API key</title>
+      <link>https://vulnogram.org/CVE-2026-130089</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-130089</guid>
+      <description>A caller who can send requests to the temporal-proxy gRPC listener can obtain the static API key of an upstream whose address is templated from the request namespace, and then use that key directly against the upstream Temporal service. temporal-prox…</description>
+      <category>High</category>
+      <pubDate>Wed, 18 Nov 2026 20:20:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-130092 · 8.7 HIGH 🌩️ — Unauthenticated callers can exhaust temporal-proxy memory through unbounded request metrics</title>
+      <link>https://vulnogram.org/CVE-2026-130092</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-130092</guid>
+      <description>A caller who can reach the temporal-proxy gRPC listener, with or without a valid credential, can grow the proxy&apos;s memory until the process is terminated by sending requests with many distinct gRPC method names. temporal-proxy labels its request metri…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 18 Nov 2026 20:18:59 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-87857 · 5.3 MEDIUM — Temporal Server workflow-history pagination token is not bound to the requested namespace and workflow</title>
       <link>https://vulnogram.org/CVE-2026-87857</link>
