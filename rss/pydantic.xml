@@ -11,7 +11,63 @@
       <title>pydantic — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 20 Nov 2026 04:52:48 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 14:03:22 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-133505 · 5.9 MEDIUM — Tool result data shaped like a file is rebuilt as a file download or provider file reference when message history is reloaded</title>
+      <link>https://vulnogram.org/CVE-2026-133505</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133505</guid>
+      <description>When message history is serialized and loaded again, a tool result that contains a JSON object in the serialized shape of one of Pydantic AI&apos;s file types is rebuilt as that file. A third party who controls data a tool returns, such as a record that a…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 07:34:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133421 · 6.9 MEDIUM — Quadratic time timedelta validation in Pydantic V1</title>
+      <link>https://vulnogram.org/CVE-2026-133421</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133421</guid>
+      <description>Validating an untrusted ISO 8601 duration string into a timedelta field with Pydantic V1 takes quadratic time: an input of a few dozen kilobytes takes seconds to validate. The iso8601_duration_re regular expression used to parse ISO 8601 durations (i…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 07:33:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133422 · 6.9 MEDIUM — Quadratic time unique_items list validation in Pydantic V1</title>
+      <link>https://vulnogram.org/CVE-2026-133422</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133422</guid>
+      <description>Validating an untrusted list into a field constrained with unique_items=True with Pydantic V1 takes quadratic time: an input of a few hundred kilobytes takes seconds to validate. The ConstrainedList.unique_items_validator validator (in pydantic/types…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 07:33:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133424 · 6.3 MEDIUM — Validation bypass of aliased fields in TypedDict and dataclasses allowing extra data</title>
+      <link>https://vulnogram.org/CVE-2026-133424</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133424</guid>
+      <description>When extra data is allowed, providing both the alias and the name of an aliased TypedDict or dataclass field makes the unvalidated value (provided under the name) overwrite the validated one (provided under the alias), resulting in validated data not…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 07:33:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133426 · 6.3 MEDIUM — Unbounded exponent in Fraction validation</title>
+      <link>https://vulnogram.org/CVE-2026-133426</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133426</guid>
+      <description>Validating an untrusted string in exponent notation into a Fraction field computes the full power of ten without any bound: an input of a few bytes takes seconds to validate. String inputs are passed to the Fraction constructor. For strings in expone…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 07:32:42 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133428 · 6.3 MEDIUM — Quadratic time and memory multi-host URL validation</title>
+      <link>https://vulnogram.org/CVE-2026-133428</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133428</guid>
+      <description>Validating an untrusted URL with a long scheme and many hosts into a multi-host URL field (e.g. PostgresDsn) takes quadratic time and memory: an input of about a hundred kilobytes takes around a gigabyte of memory to validate. The parse_multihost_url…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 07:32:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133429 · 6.3 MEDIUM — Validation bypass of extra data keys in JSON model validation</title>
+      <link>https://vulnogram.org/CVE-2026-133429</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133429</guid>
+      <description>When validating JSON data into a model allowing extra data, the keys of extra data aren&apos;t validated against the key type annotated on __pydantic_extra__, resulting in extra data not matching the declared type. This is the case if you define __pydanti…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 07:32:01 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-133276 · 6.3 MEDIUM — Validation bypass of Pydantic V1 dataclasses allowing extra data</title>
       <link>https://vulnogram.org/CVE-2026-133276</link>

@@ -11,7 +11,82 @@
       <title>pretix GmbH — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 20 Nov 2026 04:52:48 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 14:03:22 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-131171 · 5.3 MEDIUM — Room and world premissions not clearly separated</title>
+      <link>https://vulnogram.org/CVE-2026-131171</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131171</guid>
+      <description>A bug caused room permissions to leak into the world permissions of the acting user during certain actions.</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 12:06:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131163 · 8.6 HIGH — Stored XSS in pretix-adyen</title>
+      <link>https://vulnogram.org/CVE-2026-131163</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131163</guid>
+      <description>A stored XSS in pretix-adyen has been discovered where an attacker could configure his own ticket shop in a way that API calls are not made to Adyen, but an attacker-controlled server. Results of these API calls would then be embedded in a part of th…</description>
+      <category>High</category>
+      <pubDate>Fri, 20 Nov 2026 11:32:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131165 · 2.1 LOW — Incorrect check of permissions in scheduled exports</title>
+      <link>https://vulnogram.org/CVE-2026-131165</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131165</guid>
+      <description>The fix for CVE-2026-127174 published in 2026.9.2 is incomplete: When expanding an export from &quot;some events&quot; to &quot;all events&quot;, it is checked that the acting user is part of a team with permission to all events, but this check is not correctly bound to…</description>
+      <category>Low</category>
+      <pubDate>Fri, 20 Nov 2026 11:30:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131169 · 2.1 LOW — Permissions are copied when copying scheduled exports</title>
+      <link>https://vulnogram.org/CVE-2026-131169</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131169</guid>
+      <description>When a scheduled export is copied, the permissions of the original export&apos;s owner are used when running the export. This allows users to create exports with data they usually shouldn&apos;t be able to see, but only within events they already have permissi…</description>
+      <category>Low</category>
+      <pubDate>Fri, 20 Nov 2026 11:29:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131164 · 2.3 LOW — Link to parent order or ticket exposed in certain conditions</title>
+      <link>https://vulnogram.org/CVE-2026-131164</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131164</guid>
+      <description>When a ticket holder opens the ticket page of a ticket that is an add-on (possible since 2026.9) the HTML content of the page contains the secret link to the parent product, creating a potential data leak. Under different specific conditions, when a…</description>
+      <category>Low</category>
+      <pubDate>Fri, 20 Nov 2026 11:29:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131168 · 6.6 MEDIUM 🌩️ — Validation bypass allows buying sold-out products</title>
+      <link>https://vulnogram.org/CVE-2026-131168</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131168</guid>
+      <description>A legacy code path allowed users to craft requests to a ticket shop that bypass some validation steps for the selected products. In consequence, this could lead to an attacker purchasing products that are in fact sold out.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 20 Nov 2026 11:29:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131170 · 6.3 MEDIUM 🌩️ — Insufficient validation of payment status for Stripe</title>
+      <link>https://vulnogram.org/CVE-2026-131170</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131170</guid>
+      <description>Our payment integration with Stripe did not properly validate payment status responses. An attacker could use a successful payment status response from one payment and supply it to the system for a different payment, gaining access to multiple valid…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 20 Nov 2026 11:29:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131166 · 6 MEDIUM — Incorrect device security profile</title>
+      <link>https://vulnogram.org/CVE-2026-131166</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131166</guid>
+      <description>When configuring a device to use the security profile &quot;pretixSCAN (kiosk mode, no order sync, no search)&quot;, the API search endpoint introduced in pretix 4.12 was not blocked correctly. This theoretically allows these devices to perform searches for or…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 11:29:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131167 · 8.9 HIGH 🌩️ — Unsafe usage of return values</title>
+      <link>https://vulnogram.org/CVE-2026-131167</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131167</guid>
+      <description>pretix offloads certain processes to background tasks that are run by a different server to avoid HTTP workers being clogged with processes that take longer than a usual web request. The browser periodically polls the server to see if the task is alr…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 20 Nov 2026 11:29:02 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-130608 · 8.1 HIGH</title>
       <link>https://vulnogram.org/CVE-2026-130608</link>
