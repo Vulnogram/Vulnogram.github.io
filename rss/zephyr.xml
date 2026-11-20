@@ -11,7 +11,39 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 20 Nov 2026 14:03:21 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 21:58:05 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-95827 · 6.5 MEDIUM — Network packet reference leak in IPv6 Router Advertisement handling leads to buffer pool exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-95827</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95827</guid>
+      <description>The IPv6 neighbour discovery code in subsys/net/ip/ipv6_nbr.c keeps packets that are waiting for address resolution on a per-neighbour pending queue. A queued packet holds two references: the one handed over by the sender and a second one taken by ne…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 17:54:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95826 · 7.5 HIGH — Out-of-bounds write in the SMSC911x Ethernet driver when transmitting frames larger than the staging buffer</title>
+      <link>https://vulnogram.org/CVE-2026-95826</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95826</guid>
+      <description>The SMSC911x/LAN9220 Ethernet driver stages every outgoing frame in a fixed-size static buffer before pushing it to the controller FIFO. eth_tx() in drivers/ethernet/eth_smsc911x.c took the frame length from net_pkt_get_len(pkt) and passed it directl…</description>
+      <category>High</category>
+      <pubDate>Fri, 20 Nov 2026 17:54:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95825 · 5.3 MEDIUM — Reference-count underflow in Zephyr network interface address removal releases an IP address that is still in use</title>
+      <link>https://vulnogram.org/CVE-2026-95825</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95825</guid>
+      <description>net_if_ipv4_addr_rm() and net_if_ipv6_addr_rm() in subsys/net/ip/net_if.c unconditionally called net_if_addr_unref() on the target address. When an earlier removal could not complete because another subsystem still held a reference (the TCP stack tak…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 17:54:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95824 · 6.5 MEDIUM — Infinite loop in IPv6 Router Advertisement handling when the RA omits the source link-layer address option</title>
+      <link>https://vulnogram.org/CVE-2026-95824</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95824</guid>
+      <description>The IPv6 Neighbor Discovery code in subsys/net/ip/ipv6_nbr.c flushes a neighbour&apos;s queued packets at the end of handle_ra_input(). The Source Link-Layer Address Option (SLLAO) is optional in a Router Advertisement; when it is absent, handle_ra_input(…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 16:56:11 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-95823 · 7.5 HIGH — Use-after-free and net_buf leak in Zephyr TCP header linearization (tcp_pkt_linearize)</title>
       <link>https://vulnogram.org/CVE-2026-95823</link>
@@ -380,38 +412,6 @@
       <description>The Bluetooth host&apos;s GATT client passed the value of a received Handle Value Notification, Handle Value Indication or Multiple Handle Value Notification to bt_gatt_subscribe_params::notify callbacks using only the length derived from the received ATT…</description>
       <category>Medium</category>
       <pubDate>Tue, 03 Nov 2026 13:36:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85033 · 4.6 MEDIUM — Bluetooth Classic AVRCP Target: missing TX cleanup on disconnect permanently stalls vendor-dependent responses and leaks them to the next peer</title>
-      <link>https://vulnogram.org/CVE-2026-85033</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85033</guid>
-      <description>The AVRCP Target role in subsys/bluetooth/host/classic/avrcp.c keeps its vendor-dependent response transmit state in a per-connection object selected by connection index (get_avrcp_tg()), with the per-transfer context (tid, sent_len, and the BT_AVRCP…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 03 Nov 2026 13:36:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85032 · 4.8 MEDIUM — Use-after-free in the MCTP over USB binding when the host disables the class while RX parsing is in progress</title>
-      <link>https://vulnogram.org/CVE-2026-85032</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85032</guid>
-      <description>The MCTP over USB device class in subsys/pmci/mctp/mctp_usb.c splits RX handling across two threads: the system workqueue runs mctp_usb_class_out_work(), which parses host OUT data byte by byte and fills a packet buffer at usb-&gt;rx_pkt, while the USB…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 03 Nov 2026 13:36:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82962 · 6.5 MEDIUM — Out-of-bounds write in Zephyr Ethernet L2 when adding the link-layer header to a forwarded packet</title>
-      <link>https://vulnogram.org/CVE-2026-82962</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82962</guid>
-      <description>ethernet_fill_header() in subsys/net/l2/ethernet/ethernet.c can prepend the Ethernet header in place, by pushing it into the headroom of the packet&apos;s first fragment, instead of allocating a separate header fragment. Before this fix the in-place path…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 28 Oct 2026 16:59:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82961 · 7.8 HIGH — Unvalidated pin index in GPIO syscall handlers allows out-of-bounds kernel writes from user mode</title>
-      <link>https://vulnogram.org/CVE-2026-82961</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82961</guid>
-      <description>The GPIO syscall handlers in drivers/gpio/gpio_handlers.c did not validate the pin argument supplied by a user-mode caller. z_vrfy_gpio_pin_configure(), z_vrfy_gpio_pin_get_config() and z_vrfy_gpio_pin_interrupt_configure() verified only the device o…</description>
-      <category>High</category>
-      <pubDate>Wed, 28 Oct 2026 16:58:58 GMT</pubDate>
     </item>
   </channel>
 </rss>
