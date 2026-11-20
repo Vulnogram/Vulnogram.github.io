@@ -11,7 +11,55 @@
       <title>VulnCheck — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 20 Nov 2026 00:09:17 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 04:52:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-133528 · 9.3 CRITICAL — BeamNG.drive before 0.40.6 LuaJIT FFI Sandbox Escape via JIT Bounds-Check Bypass</title>
+      <link>https://vulnogram.org/CVE-2026-133528</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133528</guid>
+      <description>BeamNG.drive before 0.40.6 contains an out-of-bounds write vulnerability because JIT-compiled LuaJIT traces omit FFI array bounds checks, letting untrusted Lua escape the sandbox. Attackers supplying a malicious mod can JIT-compile an FFI store loop,…</description>
+      <category>Critical</category>
+      <pubDate>Fri, 20 Nov 2026 00:42:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-71473 · 6.9 MEDIUM — lwext4 through 1.0.0 Heap Buffer Overflow via ext4_fs_init_inode_bitmap</title>
+      <link>https://vulnogram.org/CVE-2025-71473</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-71473</guid>
+      <description>lwext4 through 1.0.0 contains a heap buffer overflow in ext4_fs_init_inode_bitmap() in src/ext4_fs.c because it does not validate s_inodes_per_group against the inode bitmap size. Attackers can supply a crafted ext4 image with an oversized s_inodes_p…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 00:37:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2025-71474 · 6.9 MEDIUM — lwext4 through 1.0.0 Out-of-Bounds Write via ext4_fs_init_block_bitmap</title>
+      <link>https://vulnogram.org/CVE-2025-71474</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2025-71474</guid>
+      <description>lwext4 through 1.0.0 contains an out-of-bounds write vulnerability in ext4_fs_init_block_bitmap() that allows attackers to corrupt heap memory via crafted superblock geometry fields. Attackers can supply an ext4 image with oversized s_reserved_gdt_bl…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 00:37:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133519 · 6.8 MEDIUM — FFmpeg 7.0 through 9.0.2 Out-of-Bounds Read via dvdvideo_menu_next_ps_block()</title>
+      <link>https://vulnogram.org/CVE-2026-133519</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133519</guid>
+      <description>FFmpeg 7.0 through 9.0.2 contains an out-of-bounds read vulnerability in dvdvideo_menu_next_ps_block() in libavformat/dvdvideodec.c when demuxing DVD menu domains. Attackers can craft a DVD image whose last cell sector and NAV next-VOBU pointer bypas…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 00:37:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133520 · 5.3 MEDIUM — Dokploy 0.28.0 before 0.31.1 Path Traversal via patch.readRepoDirectories repoPath</title>
+      <link>https://vulnogram.org/CVE-2026-133520</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133520</guid>
+      <description>Dokploy 0.28.0 before 0.31.1 contains a path traversal vulnerability in the patch.readRepoDirectories tRPC procedure that allows authenticated organization members to list tracked files of arbitrary git repositories. Attackers with service read permi…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 00:37:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133521 · 5.4 MEDIUM — Bar Assistant 3.0.0 before 6.11.0 Authorization Bypass via Null Invite Code</title>
+      <link>https://vulnogram.org/CVE-2026-133521</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133521</guid>
+      <description>Bar Assistant 3.0.0 before 6.11.0 contains an authorization bypass vulnerability in BarController::join that allows authenticated users to join bars without a valid invite code. Attackers can send POST requests to /api/bars/join omitting invite_code,…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 20 Nov 2026 00:37:07 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-133305 · 4.3 MEDIUM 🌩️ — sqlmap before 1.10.11.89 Credential Leak via Cross-Host HTTP Redirects</title>
       <link>https://vulnogram.org/CVE-2026-133305</link>
@@ -383,54 +431,6 @@
       <description>Vtiger CRM through 8.4.0 contains a blind SQL injection vulnerability in ReportRun::generateAdvFilterSql() that allows authenticated low-privileged users to inject SQL via the bw comparator. Attackers can send a crafted advanced_filter parameter cont…</description>
       <category>High</category>
       <pubDate>Wed, 18 Nov 2026 23:13:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-132750 · 7.1 HIGH — Meilisearch before 1.55.1 and 1.56.x before 1.56.1 Denial of Service via filter-parser Quadratic Memory Consumption</title>
-      <link>https://vulnogram.org/CVE-2026-132750</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132750</guid>
-      <description>Meilisearch before 1.55.1 and 1.56.x before 1.56.1 contains a quadratic memory consumption vulnerability in filter-parser that allows attackers with a search API key to exhaust server memory. Attackers can send a roughly 100 KB filter, such as a _geo…</description>
-      <category>High</category>
-      <pubDate>Wed, 18 Nov 2026 23:13:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-132751 · 8.5 HIGH — yt through 4.4.4 Code Injection via con_args eval() in ytdata HDF5</title>
-      <link>https://vulnogram.org/CVE-2026-132751</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132751</guid>
-      <description>yt through 4.4.4 contains a code injection vulnerability that allows attackers to execute Python code by supplying a crafted con_args attribute in a ytdata HDF5 file. SavedDataset._parse_parameter_file() passes con_args to eval() unrestricted, so loa…</description>
-      <category>High</category>
-      <pubDate>Wed, 18 Nov 2026 23:13:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-132752 · 5.4 MEDIUM — ScreenTinker before 3.2.4 Stored XSS via Kiosk Page Button javascript: URL</title>
-      <link>https://vulnogram.org/CVE-2026-132752</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132752</guid>
-      <description>ScreenTinker before 3.2.4 contains a stored cross-site scripting vulnerability in the GET /api/kiosk/:id/render endpoint that allows users with kiosk page edit rights to store javascript: URLs in page buttons. Attackers can trigger script execution i…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 18 Nov 2026 23:13:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-132753 · 6.8 MEDIUM — MP4v2 through 2.1.0 NULL Pointer Dereference via MP4RtpHintTrack::GetPayload</title>
-      <link>https://vulnogram.org/CVE-2026-132753</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132753</guid>
-      <description>MP4v2 through 2.1.0 contains a NULL pointer dereference vulnerability in MP4RtpHintTrack::GetPayload() in src/rtphint.cpp that passes an unchecked rtpmap value to strchr(). Attackers can supply a crafted MP4 file whose RTP hint track has a corrupted…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 18 Nov 2026 23:13:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-132754 · 6.9 MEDIUM — MediaInfoLib before 26.10 Out-of-Bounds Read via File_Mpeg4::meta_iloc</title>
-      <link>https://vulnogram.org/CVE-2026-132754</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132754</guid>
-      <description>MediaInfoLib before 26.10 contains an out-of-bounds read vulnerability in File_Mpeg4::meta_iloc that allows attackers to trigger a global buffer over-read via oversized iloc field sizes. Attackers can supply a crafted MP4 file with invalid offset_siz…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 18 Nov 2026 23:13:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-132755 · 6.9 MEDIUM — MediaInfoLib before 26.10 Heap-Based Buffer Over-Read via tfsxml_leave</title>
-      <link>https://vulnogram.org/CVE-2026-132755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132755</guid>
-      <description>MediaInfoLib before 26.10 contains a heap-based buffer over-read vulnerability in tfsxml_leave() caused by an off-by-one error when handling generic &lt;! markup in truncated XML. Attackers can supply a crafted media file with malformed ADM XML parsed b…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 18 Nov 2026 23:13:01 GMT</pubDate>
     </item>
   </channel>
 </rss>

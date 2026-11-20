@@ -11,7 +11,63 @@
       <title>CPAN Security Group — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 20 Nov 2026 00:09:18 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 04:52:47 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-131868 — Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via a declared element length passed unchecked to sysread in asn_read and asn_get</title>
+      <link>https://vulnogram.org/CVE-2026-131868</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131868</guid>
+      <description>Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via a declared element length passed unchecked to sysread in asn_read and asn_get. The length an element declares in its BER header is passed to sysread as the read size. Perl grows…</description>
+      <pubDate>Fri, 20 Nov 2026 00:32:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131877 — Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via unbounded arc length in OBJECT IDENTIFIER decoding and encoding</title>
+      <link>https://vulnogram.org/CVE-2026-131877</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131877</guid>
+      <description>Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via unbounded arc length in OBJECT IDENTIFIER decoding and encoding. The content of an OBJECT IDENTIFIER or RELATIVE-OID element is passed to unpack &quot;w*&quot; on decode, and the arcs of an O…</description>
+      <pubDate>Fri, 20 Nov 2026 00:31:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126956 — Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via unlimited recursion depth in constructed-form string decoding</title>
+      <link>https://vulnogram.org/CVE-2026-126956</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126956</guid>
+      <description>Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via unlimited recursion depth in constructed-form string decoding. Any constructed-form string element causes the decoder to recurse on the element&apos;s contents. The BER encoding contr…</description>
+      <pubDate>Fri, 20 Nov 2026 00:29:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126819 — Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via zero-length BIT STRING content</title>
+      <link>https://vulnogram.org/CVE-2026-126819</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126819</guid>
+      <description>Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via zero-length BIT STRING content. A BIT STRING with zero content octets passes -1 to substr as the length. Perl reads a negative length as an offset from the end of the string, so…</description>
+      <pubDate>Fri, 20 Nov 2026 00:28:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126682 — Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via exponent-notation string in INTEGER encoding</title>
+      <link>https://vulnogram.org/CVE-2026-126682</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126682</guid>
+      <description>Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via exponent-notation string in INTEGER encoding. The encoder routes any value with abs &gt;= 2**31 to i2osp without validating that it is an integer. A string in exponent notation such as…</description>
+      <pubDate>Fri, 20 Nov 2026 00:26:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126576 — Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via unchecked exponent length in binary REAL decoding</title>
+      <link>https://vulnogram.org/CVE-2026-126576</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126576</guid>
+      <description>Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via unchecked exponent length in binary REAL decoding. Binary REAL decoding never bounds-checks the exponent length against the available content. For a minimal one-byte binary REAL, th…</description>
+      <pubDate>Fri, 20 Nov 2026 00:24:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126568 — Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via unbounded MSG_PEEK buffer doubling in asn_recv</title>
+      <link>https://vulnogram.org/CVE-2026-126568</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126568</guid>
+      <description>Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via unbounded MSG_PEEK buffer doubling in asn_recv. asn_recv peeks the socket in a loop, doubling the buffer size on each pass until a tag and length can be decoded. An inverted bool…</description>
+      <pubDate>Fri, 20 Nov 2026 00:23:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126540 — Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via quadratic bigint loop in os2ip</title>
+      <link>https://vulnogram.org/CVE-2026-126540</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126540</guid>
+      <description>Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via quadratic bigint loop in os2ip. Every INTEGER or ENUMERATED longer than four content octets reaches os2ip, which iterates over each content octet with $result = ($result * 256) + $o…</description>
+      <pubDate>Fri, 20 Nov 2026 00:22:00 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-129892 · 9.8 CRITICAL 🌩️ — IO::Socket::SSL::PublicSuffix versions through 2.099 for Perl allow code injection via a fetched list line that closes the built-in data heredoc when update_self_from_url rewrites the module&apos;s source</title>
       <link>https://vulnogram.org/CVE-2026-129892</link>
@@ -382,77 +438,6 @@
       <description>CGI versions before 5.00 for Perl allow CPU exhaustion via a backtracking regex on the XForms multipart/related Content-Type. When a POST Content-Type contains multipart/related, the boundary and start parameters are extracted with an unanchored patt…</description>
       <category>Medium</category>
       <pubDate>Tue, 03 Nov 2026 23:40:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-120631 · 7.5 HIGH 🌩️ — CGI::Cookie versions from 4.67 before 5.00 for Perl allow denial of service via the client cookie expires value used as a regex in parse</title>
-      <link>https://vulnogram.org/CVE-2026-120631</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120631</guid>
-      <description>CGI::Cookie versions from 4.67 before 5.00 for Perl allow denial of service via the client cookie expires value used as a regex in parse. CGI&apos;s cookie method reads the Cookie request header through parse, which interpolates the header&apos;s expires value…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Nov 2026 23:39:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74846 · 7.5 HIGH 🌩️ — Catalyst::Plugin::Authentication versions before 0.10029 for Perl allow timing attacks on stored passwords via eq comparisons in the legacy password verifier</title>
-      <link>https://vulnogram.org/CVE-2026-74846</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74846</guid>
-      <description>Catalyst::Plugin::Authentication versions before 0.10029 for Perl allow timing attacks on stored passwords via eq comparisons in the legacy password verifier. CVE-2026-5091 was fixed in the realm-based verifier. The legacy verifier, used by the depre…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Nov 2026 07:51:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65059 · 7.5 HIGH 🌩️ — Furl versions before 3.16 for Perl allow memory exhaustion via unbounded decompression of HTTP responses</title>
-      <link>https://vulnogram.org/CVE-2026-65059</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65059</guid>
-      <description>Furl versions before 3.16 for Perl allow memory exhaustion via unbounded decompression of HTTP responses. Furl inflates a response body sent with a gzip, x-gzip or deflate Content-Encoding and appends the output to the response string with no size li…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 02 Nov 2026 17:01:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74760 · 8.8 HIGH — Google::Auth versions from 0.11 through 0.12 for Perl accept an authorization code from any local process because the gcloud-auth login callback does not check the OAuth state</title>
-      <link>https://vulnogram.org/CVE-2026-74760</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74760</guid>
-      <description>Google::Auth versions from 0.11 through 0.12 for Perl accept an authorization code from any local process because the gcloud-auth login callback does not check the OAuth state. The gcloud-auth login and application-default login commands send a state…</description>
-      <category>High</category>
-      <pubDate>Sun, 01 Nov 2026 16:43:34 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-74759 · 9.8 CRITICAL 🌩️ — Google::Auth versions 0.12 for Perl allow server side request forgery via unvalidated credential_source URLs in AWS external account credentials</title>
-      <link>https://vulnogram.org/CVE-2026-74759</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74759</guid>
-      <description>Google::Auth versions 0.12 for Perl allow server side request forgery via unvalidated credential_source URLs in AWS external account credentials. An external_account configuration with the AWS subject token type selects Google::Auth::ExternalAccountC…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 01 Nov 2026 16:43:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-13575 · 5.6 MEDIUM 🌩️ — HTTP::Session versions before 0.54 for Perl allow memcached command injection via unfiltered session ids in HTTP::Session::Store::CHI</title>
-      <link>https://vulnogram.org/CVE-2026-13575</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-13575</guid>
-      <description>HTTP::Session versions before 0.54 for Perl allow memcached command injection via unfiltered session ids in HTTP::Session::Store::CHI. The session id from the client&apos;s cookie reaches the CHI cache unchanged. The sibling HTTP::Session::Store::Memcache…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sun, 01 Nov 2026 10:46:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115946 · 9.8 CRITICAL 🌩️ — XS::libbrotli versions before 1.2.1.0 for Perl bundle a brotli library with an out-of-bounds write in the decoder</title>
-      <link>https://vulnogram.org/CVE-2026-115946</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115946</guid>
-      <description>XS::libbrotli versions before 1.2.1.0 for Perl bundle a brotli library with an out-of-bounds write in the decoder. Affected versions compile a bundled brotli into static archives that dependent XS modules link against at build time, rather than using…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 31 Oct 2026 23:49:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-78192 · 7.5 HIGH 🌩️ — WebDyne versions from 2.022 before 3.022 for Perl disclose application source to unauthenticated clients via the viewer in the default index page</title>
-      <link>https://vulnogram.org/CVE-2026-78192</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-78192</guid>
-      <description>WebDyne versions from 2.022 before 3.022 for Perl disclose application source to unauthenticated clients via the viewer in the default index page. WebDyne&apos;s wrapper scripts, such as webdyne.psgi, enable the built-in index page by default. Its source…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Sat, 31 Oct 2026 14:34:49 GMT</pubDate>
     </item>
   </channel>
 </rss>
