@@ -11,7 +11,175 @@
       <title>RT-Labs AB — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Sat, 21 Nov 2026 10:41:50 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 18:11:24 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-129814 · 3.1 LOW — CoE Object Name Null Terminator Off-by-One Out-of-Bounds Write</title>
+      <link>https://vulnogram.org/CVE-2026-129814</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129814</guid>
+      <description>The SDO Information Get Object Description and Get Entry Description responses copy the object or entry name into the mailbox data area and then write a null terminator byte. The copy loops ran up to the last available byte in the buffer, leaving no…</description>
+      <category>Low</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129813 · 5.3 MEDIUM — CoE Complete Access Download to Dataless Entry NULL Pointer Dereference</title>
+      <link>https://vulnogram.org/CVE-2026-129813</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129813</guid>
+      <description>The CoE complete-access download handler iterated over all subindices of an object and wrote the master-supplied payload into each writable entry. Entries that hold a constant have write-access flags set but carry a NULL data pointer. The handler did…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:26 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129812 · 5.3 MEDIUM — CoE PDO Mapping of Dataless Entry NULL Pointer Dereference</title>
+      <link>https://vulnogram.org/CVE-2026-129812</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129812</guid>
+      <description>An object dictionary entry that holds a constant has no process data storage and carries a NULL data pointer. sizeOfPDO did not check for this when resolving a mapped entry to its descriptor. A master that maps such an entry to a PDO causes COE_pdoPa…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129811 · 8.8 HIGH — CoE PDO Mapping Size Exceeds Process Data Buffer Out-of-Bounds Write</title>
+      <link>https://vulnogram.org/CVE-2026-129811</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129811</guid>
+      <description>The PDO mapping bit lengths stored in the mapping objects are writable by the master via SDO. sizeOfPDO summed them without checking the total against the size of the rxpdo[] or txpdo[] process data buffers. A master can craft a mapping whose total b…</description>
+      <category>High</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129810 · 5.3 MEDIUM — EoE Unconfigured Access NULL Pointer Dereference</title>
+      <link>https://vulnogram.org/CVE-2026-129810</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129810</guid>
+      <description>ESC_eoeprocess and ESC_eoeprocess_tx can be reached before the application calls EOE_config to supply the callback table pointer. When eoe_cfg is NULL the receive handler dereferenced it while processing an incoming EoE frame, and the transmit pollin…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129809 · 5.3 MEDIUM — FoE Unconfigured Access NULL Pointer Dereference</title>
+      <link>https://vulnogram.org/CVE-2026-129809</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129809</guid>
+      <description>ESC_foeprocess can be reached by an incoming mailbox frame before the application calls FOE_config to supply the file table and flush buffer pointers. When foe_cfg or its fbuffer field is NULL the handler dereferenced those pointers while processing…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129808 · 6.5 MEDIUM — EoE Buffer Callback NULL Pointer Dereference</title>
+      <link>https://vulnogram.org/CVE-2026-129808</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129808</guid>
+      <description>The EoE receive and transmit paths call the handle_recv_buffer and fetch_send_buffer callbacks without first checking whether they are set. Both callbacks are documented as optional; an application that omits either one causes a call through a NULL f…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129807 · 6.5 MEDIUM — FoE Write to Read-Only File NULL Function Pointer Dereference</title>
+      <link>https://vulnogram.org/CVE-2026-129807</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129807</guid>
+      <description>The FoE file table allows entries to omit a write handler by setting write_function to NULL, making the file read-only. FOE_fopen did not check whether write_function was present before accepting a write request; a master sending a WRQ for a read-onl…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129806 · 5.3 MEDIUM — CoE SDO Upload NULL Pointer Dereference on Dataless Entry</title>
+      <link>https://vulnogram.org/CVE-2026-129806</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129806</guid>
+      <description>The CoE SDO upload handler enters its normal-response path (used for objects longer than 4 bytes) and passes (objd + nsub)-&gt;data directly to the pre-object handler and to the response copy. Entries that hold a constant in the value field have data se…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129805 · 5.3 MEDIUM — CoE SDO Download NULL Pointer Dereference on Dataless Entry</title>
+      <link>https://vulnogram.org/CVE-2026-129805</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129805</guid>
+      <description>An object dictionary entry can carry write-access flags and still have a NULL data pointer, for example when a constant value is held in the value field rather than in addressable storage. The CoE SDO download handler checked write access but not whe…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129804 · 4.2 MEDIUM — FoE Filename Matching Bypass via Length Truncation</title>
+      <link>https://vulnogram.org/CVE-2026-129804</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129804</guid>
+      <description>FOE_read and FOE_write store the filename length as uint8_t, truncating it modulo 256. When (mbxheader.length - ESC_FOEHSIZE) is a multiple of 256, the length becomes 0. Additionally, a request whose mailbox length equals ESC_FOEHSIZE exactly also pr…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129803 · 4.3 MEDIUM — CoE SDO Download Out-of-Bounds Read via Undersized Frame</title>
+      <link>https://vulnogram.org/CVE-2026-129803</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129803</guid>
+      <description>The CoE entry gate accepts frames with mbxheader.length as low as COE_MINIMUM_LENGTH (8), but a normal SDO Download requires at least COE_HEADERSIZE (10) bytes of CoE payload to carry its header fields. With mbxheader.length of 8 or 9, the segmented-…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129802 · 4.3 MEDIUM — EoE Set-IP Out-of-Bounds Reads Before Bounds Check</title>
+      <link>https://vulnogram.org/CVE-2026-129802</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129802</guid>
+      <description>EOE_set_ip reads each network parameter field (MAC, IP, subnet, gateway, DNS IP, DNS name) from the mailbox payload before checking whether the payload is large enough to contain them. The single bounds check at the end of the function does not preve…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129801 · 7.1 HIGH — FoE Data Length Unclamped Out-of-Bounds Read</title>
+      <link>https://vulnogram.org/CVE-2026-129801</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129801</guid>
+      <description>The FoE DATA frame handler computes the payload length from the master-supplied mailbox length field and passes it directly to FOE_fwrite. The length is checked against the remaining file capacity but not against the physical mailbox buffer size. A m…</description>
+      <category>High</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129800 · 6.5 MEDIUM — CoE sizeOfPDO Descriptor Traversal Out-of-Bounds Read</title>
+      <link>https://vulnogram.org/CVE-2026-129800</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129800</guid>
+      <description>sizeOfPDO, called during state transitions, uses the subindex-0 count of the SM-assign and PDO-mapping objects as loop bounds without checking those counts against the descriptor array sizes. On builds where those subindex-0 values are writable via S…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129799 · 6.5 MEDIUM — CoE OD Sentinel NULL Pointer Dereference</title>
+      <link>https://vulnogram.org/CVE-2026-129799</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129799</guid>
+      <description>A CoE SDO request for index 0xFFFF matches the object list terminator entry instead of returning not-found. The terminator has a NULL objdesc pointer. Callers dereference it without checking, crashing the slave.</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129798 · 8.8 HIGH — CoE SDO Segmented Download Cumulative Out-of-Bounds Write</title>
+      <link>https://vulnogram.org/CVE-2026-129798</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129798</guid>
+      <description>The CoE SDO segmented download handler advances a write pointer by each incoming segment&apos;s size but does not track how many bytes have been written in total. A master can keep sending non-last segments until the pointer has walked past the end of the…</description>
+      <category>High</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129797 · 8.8 HIGH — CoE SDO Segmented Download Missing State Guard</title>
+      <link>https://vulnogram.org/CVE-2026-129797</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129797</guid>
+      <description>SDO_downloadsegment is called whenever a mailbox frame carries the DOWNLOADSEGREQ command byte, regardless of whether a segmented download is actually in progress. ESCvar.data, which the handler writes through, is NULL until a segmented transfer is s…</description>
+      <category>High</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129796 · 8.8 HIGH — CoE SDO Download Bounds Check Failures on Flexible-Length Objects</title>
+      <link>https://vulnogram.org/CVE-2026-129796</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129796</guid>
+      <description>The CoE SDO download handler for flexible-length objects (VISIBLE_STRING, OCTET_STRING, and similar) does not check that the master-declared transfer size fits within the object before writing. Two distinct writes are affected: the VISIBLE_STRING zer…</description>
+      <category>High</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129795 · 6.5 MEDIUM — EoE Timestamp-Strip Integer Underflow</title>
+      <link>https://vulnogram.org/CVE-2026-129795</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129795</guid>
+      <description>When the last EoE fragment has the TIME_APPEND flag set, the handler subtracts 4 from rxframeoffset to strip the timestamp. There is no check that rxframeoffset is at least 4. A fragment carrying fewer than 4 bytes of payload that is also marked LAST…</description>
+      <category>Medium</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129794 · 8.8 HIGH — EoE Fragment Reassembly Heap Out-of-Bounds Write</title>
+      <link>https://vulnogram.org/CVE-2026-129794</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129794</guid>
+      <description>The EoE fragment reassembly code uses a frame size from the wire as the bound for memcpy into the application receive buffer, without checking that the declared size fits in the actual buffer. A master can write up to 2016 bytes into a buffer the app…</description>
+      <category>High</category>
+      <pubDate>Sat, 21 Nov 2026 12:03:06 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-127125 · 6 MEDIUM — NULL pointer dereference when a response fragment is not acknowledged</title>
       <link>https://vulnogram.org/CVE-2026-127125</link>
