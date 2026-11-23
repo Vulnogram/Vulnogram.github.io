@@ -11,7 +11,40 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 23 Nov 2026 04:19:16 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 15:50:45 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-135055 · 8 HIGH 🌩️ — Webkitgtk: webkitgtk: out-of-bounds read in uiprocess via mismatched dmabufbufferattributes plane vectors</title>
+      <link>https://vulnogram.org/CVE-2026-135055</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-135055</guid>
+      <description>A flaw was found in the GLib DMA-BUF path of WebKitGTK. The UIProcess trusted fds.size() as the DMA-BUF plane count when handling AcceleratedBackingStore::DidCreateDMABufBuffer and copied offsets and strides without verifying that those vectors had t…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 23 Nov 2026 10:50:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-126657 · 6.5 MEDIUM — Qemu-kvm: host heap memory disclosure via incomplete structured nbd read replies</title>
+      <link>https://vulnogram.org/CVE-2026-126657</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126657</guid>
+      <description>A flaw was found in QEMU&apos;s NBD block driver. A malicious NBD server can send an incomplete structured read reply marked as done, causing QEMU to return uninitialized host heap memory to the guest VM, resulting in host memory disclosure.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 10:47:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-125683 · 6.5 MEDIUM — Qemu-kvm: client-triggered assertion failure in nbd_negotiate_options via nbd_opt_set_meta_context with over-long option length</title>
+      <link>https://vulnogram.org/CVE-2026-125683</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125683</guid>
+      <description>A flaw was found in QEMU&apos;s NBD server. A remote attacker can crash qemu-nbd, qemu-storage-daemon, or qemu-system by sending NBD_OPT_SET_META_CONTEXT or NBD_OPT_LIST_META_CONTEXT with a declared option length exceeding the actual payload, triggering a…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 10:47:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124559 · 6.5 MEDIUM — Qemu-kvm: nbd server abort via stale metadata export state</title>
+      <link>https://vulnogram.org/CVE-2026-124559</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124559</guid>
+      <description>A flaw was found in QEMU&apos;s NBD server. A remote attacker can crash a multi-export NBD server process by exploiting stale metadata export state during an extended BLOCK_STATUS request, resulting in an assertion failure and denial of service.</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 10:42:56 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-129830 · 4.7 MEDIUM — Rsyslog: out-of-bounds read in tag parsing on imuxsock</title>
       <link>https://vulnogram.org/CVE-2026-129830</link>
@@ -392,38 +425,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 13 Nov 2026 09:00:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-128424 · 5.3 MEDIUM — Kroxylicious-authorizer-acl: kroxylicious: acl rule file regex escapes are stripped, broadening &apos;matching&apos; authorization rules</title>
-      <link>https://vulnogram.org/CVE-2026-128424</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128424</guid>
-      <description>A flaw was found in Kroxylicious. The ACL authorizer&apos;s rules-file parser unquotes `matching /…/` regular-expression literals using the string unquoting rules, which strips every backslash escape. As a result, an allow rule such as `matching /orders\.…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 13 Nov 2026 06:09:19 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86324 · 4.3 MEDIUM — Foreman: authorization flaw in the foreman::controller::useraware handling used by api::v2::sshkeyscontroller</title>
-      <link>https://vulnogram.org/CVE-2026-86324</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86324</guid>
-      <description>A flaw was found in Foreman’s Api::V2::SshKeysController, where the target user is resolved through Foreman::Controller::UserAware#find_user using User.find(params[:user_id]) without enforcing the required parent-user authorization check. An attacker…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 20:19:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86323 · 4.3 MEDIUM — Foreman: authorization flaw in the mail-notification endpoints implemented by api::v2::mailnotificationscontroller</title>
-      <link>https://vulnogram.org/CVE-2026-86323</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86323</guid>
-      <description>A flaw was found in Foreman’s Api::V2::MailNotificationsController, where authorization checks on user-specific mail-notification resources are insufficient. The GET /api/v2/users/:id/mail_notifications endpoint resolves the target account using User…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 20:19:52 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-86322 · 8.8 HIGH — Foreman: authorization flaw in the foreman::controller::useraware#find_user handling used by api::v2::personalaccesstokenscontroller</title>
-      <link>https://vulnogram.org/CVE-2026-86322</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-86322</guid>
-      <description>A flaw was found in Foreman’s Api::V2::PersonalAccessTokensController, where Foreman::Controller::UserAware#find_user resolves the target account using User.find(params[:user_id]) without applying the required parent-user authorization check. An atta…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 20:19:29 GMT</pubDate>
     </item>
   </channel>
 </rss>
