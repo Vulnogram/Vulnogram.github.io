@@ -11,7 +11,31 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 24 Nov 2026 13:15:29 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 23:35:06 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-16668 · 2.4 LOW — Unbounded CBOR recursion in MCUboot serial recovery allows pre-authentication stack exhaustion</title>
+      <link>https://vulnogram.org/CVE-2026-16668</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16668</guid>
+      <description>The vendored zcbor decoder&apos;s zcbor_any_skip() in boot/zcbor/src/zcbor_decode.c descends one C-stack frame per level of CBOR nesting. On a list or map it copies the decoder state (memcpy(&amp;state_copy, state, sizeof(zcbor_state_t))) and recurses once pe…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 22:39:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16665 · 7.4 HIGH — MCUboot uses assert() as a security guard on the boot/swap/validation path; under NDEBUG (release builds) these checks are compiled out, so an inconsistent/attacker-influenced swap status is not aborted and the swap completes on bad state</title>
+      <link>https://vulnogram.org/CVE-2026-16665</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16665</guid>
+      <description>Summary MCUboot enforces several security-critical invariants on the boot, image-swap, and validation paths using assert(). In a standard release/production build (NDEBUG defined) assert() expands to a no-op, so an invariant the code intends to halt…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 21:39:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16663 · 8.4 HIGH — Pre-authentication out-of-bounds write in MCUboot encrypted serial recovery image decryption</title>
+      <link>https://vulnogram.org/CVE-2026-16663</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16663</guid>
+      <description>MCUboot&apos;s encrypted serial-recovery path contains an attacker-controlled out-of-bounds stack write in decrypt_region_inplace() in boot/boot_serial/src/boot_serial_encryption.c. The routine decrypts an uploaded encrypted image one flash sector at a ti…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 21:39:10 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-102956 · 3.1 LOW — Ethernet L2 net_pkt reference-count error on ARP request send failure can free an unrelated packet</title>
       <link>https://vulnogram.org/CVE-2026-102956</link>
@@ -388,30 +412,6 @@
       <description>usbh_device_init() in subsys/usb/host/usbh_device.c rejects a device whose device descriptor advertises bNumConfigurations == 0, but it only logs the error and jumps to the cleanup label without setting the return code. At that point the local err is…</description>
       <category>Medium</category>
       <pubDate>Mon, 09 Nov 2026 22:03:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90586 · 7.8 HIGH — Xtensa MMU userspace: uninitialized thread page-table pointer leads to out-of-bounds supervisor-mode writes</title>
-      <link>https://vulnogram.org/CVE-2026-90586</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90586</guid>
-      <description>The Xtensa MMU userspace port never initialized the per-thread page-table pointer thread-&gt;arch.ptables during thread setup, while arch_mem_domain_thread_add() in arch/xtensa/core/ptables.c uses a non-NULL value of that field as its &quot;this thread is mi…</description>
-      <category>High</category>
-      <pubDate>Mon, 09 Nov 2026 22:03:58 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90585 · 4.6 MEDIUM — Renesas RA SCI UART driver: unacknowledged receive-error interrupt causes a permanent interrupt storm and CPU lockup</title>
-      <link>https://vulnogram.org/CVE-2026-90585</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90585</guid>
-      <description>The Renesas RA SCI UART driver&apos;s receive-error ISR, uart_ra_sci_eri_isr() in drivers/serial/uart_renesas_ra_sci.c, acknowledged the error condition only when a Zephyr interrupt-driven callback had already been registered. With CONFIG_UART_INTERRUPT_D…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 09 Nov 2026 22:03:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87045 · 7.5 HIGH — NULL pointer dereference in the Zephyr HTTP/2 server when a header block is completed by a CONTINUATION frame</title>
-      <link>https://vulnogram.org/CVE-2026-87045</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87045</guid>
-      <description>The HTTP/2 server in subsys/net/lib/http/http_server_http2.c clears the connection&apos;s stream binding at the start of every frame. handle_http_frame_header() executed client-&gt;current_stream = NULL unconditionally, but a CONTINUATION frame does not open…</description>
-      <category>High</category>
-      <pubDate>Fri, 06 Nov 2026 14:38:25 GMT</pubDate>
     </item>
   </channel>
 </rss>

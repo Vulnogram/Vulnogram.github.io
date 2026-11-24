@@ -11,7 +11,95 @@
       <title>Symfony — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 24 Nov 2026 13:15:30 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 23:35:07 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-133773 · 2.3 LOW — Unbounded Converter Memoisation in twig/markdown-extra Keyed on Template-Controlled Options</title>
+      <link>https://vulnogram.org/CVE-2026-133773</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133773</guid>
+      <description>The html_to_markdown filter of twig/markdown-extra keeps an HtmlConverter for each distinct mapping of options it receives. They&apos;re kept in a static array, with no size limit and no eviction. The options are an argument of the filter. A template that…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133772 · 2.3 LOW — Sandbox Tag Allow-List Bypass via the Branch of a `guard` Tag That Isn&apos;t Selected</title>
+      <link>https://vulnogram.org/CVE-2026-133772</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133772</guid>
+      <description>The guard tag compiles only one of its branches, depending on whether a callable exists. The other branch was still parsed, though. The extends, use, macro and block tags in it registered their effects on the template. The sandbox doesn&apos;t see these t…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133771 · 2.3 LOW — Missing autoescaping for a variable named like a macro import alias of another scope</title>
+      <link>https://vulnogram.org/CVE-2026-133771</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133771</guid>
+      <description>The escaper considered x.attr, x[&apos;key&apos;] and x.method() safe whenever {% import ... as x %} appeared anywhere in the template. Macro calls haven&apos;t needed this rule since Twig 3.0. It only matched ordinary variables that have the name of an alias impor…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133770 · 2.1 LOW — Sandboxed templates can rewrite application-owned `Markup` objects through their constructor</title>
+      <link>https://vulnogram.org/CVE-2026-133770</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133770</guid>
+      <description>The sandbox allows every method of Twig\Markup objects, including their public constructor. A sandboxed template can therefore call __construct() on any Markup object that it reaches, and replace its content: {% do banner.__construct(&apos;&lt;script&gt;alert(1…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133769 · 2.3 LOW — Sandbox property allow-list bypass via `html_cva()` variant values</title>
+      <link>https://vulnogram.org/CVE-2026-133769</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133769</guid>
+      <description>Cva::apply() converted the values of variants, default variants and compound variants with (array). These values come from the arguments of html_cva(). A sandboxed template could therefore pass any object of its context, and print the private and pro…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133768 · 5.3 MEDIUM — Sandbox property allow-list bypass via the `join` filter on non-iterable objects</title>
+      <link>https://vulnogram.org/CVE-2026-133768</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133768</guid>
+      <description>The join filter converted a value that isn&apos;t iterable with (array) $value. For an object, that gives every property, including the private and protected ones. A sandboxed template allowed to use join could therefore print properties that the policy d…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133767 · 5.3 MEDIUM — Sandbox allow-list and `__toString()` bypass via a dynamic `embed` parent expression</title>
+      <link>https://vulnogram.org/CVE-2026-133767</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133767</guid>
+      <description>When the parent of an embed tag was an expression other than a string or a variable, the sandbox didn&apos;t see that expression. The functions, filters and tests of the expression weren&apos;t checked against the policy, and neither were its conversions to st…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133766 · 2.3 LOW — Sandbox `__toString()` policy bypass via spread arguments</title>
+      <link>https://vulnogram.org/CVE-2026-133766</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133766</guid>
+      <description>Since Twig 3.28.0, the sandbox skips the toString() check of an argument whose PHP parameter can&apos;t hold a string, like an int. A spread argument was mapped to a single parameter, although it fills every parameter from its position on. A sandboxed tem…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133765 · 5.3 MEDIUM — Sandbox `__toString()` policy bypass via assignment and destructuring expressions</title>
+      <link>https://vulnogram.org/CVE-2026-133765</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133765</guid>
+      <description>The sandbox checks that a template may call toString() on an object before converting it to a string. Since Twig 3.23.0, assignments like x = obj, and the destructuring forms [a] = list and {a} = obj, evaluate to the value that they assign. The sandb…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133764 · 2.3 LOW — Sandbox `__toString()` policy bypass via the input of custom tests</title>
+      <link>https://vulnogram.org/CVE-2026-133764</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133764</guid>
+      <description>The sandbox checks that a template may call toString() on an object before converting it to a string. It didn&apos;t check the input of tests. The PHP callable of a test may convert this input to a string, for example when its parameter is typed as string…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133763 · 5.3 MEDIUM — Sandbox `__toString()` policy bypass via the `is true` test</title>
+      <link>https://vulnogram.org/CVE-2026-133763</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133763</guid>
+      <description>The sandbox checks that a template may call toString() on an object before converting it to a string. For an object, the is true test evaluates to the object itself, and that result wasn&apos;t checked. A sandboxed template could therefore print an object…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 13:07:46 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-135804 — Incomplete Fix for CVE-2026-45756: JsonPath Queries Can Still Hold a Process Through search(), match() and Chained Filters</title>
       <link>https://vulnogram.org/CVE-2026-135804</link>

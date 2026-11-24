@@ -11,7 +11,204 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 24 Nov 2026 13:15:29 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 23:35:07 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-115747 · 5.9 MEDIUM — AArch64 JIT register-cache bug allows VM denial of service via XML</title>
+      <link>https://vulnogram.org/CVE-2026-115747</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115747</guid>
+      <description>Improper Restriction of Operations within the Bounds of a Memory Buffer vulnerability in the AArch64 JIT in Erlang OTP erts allows an attacker to crash the BEAM virtual machine via input that reaches a chained integer range guard, such as an oversize…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 15:29:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-125658 · 5.7 MEDIUM — Use after free in erts file name normalization on macOS</title>
+      <link>https://vulnogram.org/CVE-2026-125658</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125658</guid>
+      <description>Use After Free vulnerability in Erlang/OTP erts allows an attacker who can create a file system entry with a chosen name to hang or abort the Erlang VM on macOS. On macOS, the VM decodes file names with do_utf8_to_list_normalize in erts/emulator/beam…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 15:28:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124286 · 9.1 CRITICAL 🌩️ — TLS 1.2 Client Completes Handshake Without a Server Certificate</title>
+      <link>https://vulnogram.org/CVE-2026-124286</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124286</guid>
+      <description>Improper Verification of Cryptographic Signature vulnerability in Erlang OTP ssl (ssl_handshake module) allows an on-path attacker to impersonate any server to a TLS 1.2 or DTLS client. When a server sends no Certificate message and a ServerKeyExchan…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 15:12:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120961 · 6.9 MEDIUM — binary_to_term Heap Overrun via FLOAT_EXT Without Terminating Zero Byte May Abort the VM</title>
+      <link>https://vulnogram.org/CVE-2026-120961</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120961</guid>
+      <description>Out-of-bounds Read vulnerability in the external term format decoder in Erlang OTP erts allows an attacker who controls the input to binary_to_term/1,2 to read memory after the input, and to change one byte there, via a FLOAT_EXT term without a termi…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 15:10:40 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-117642 · 6.9 MEDIUM — binary_to_term Stack Exhaustion via Nested Funs in NEW_FUN_EXT and EXPORT_EXT Aborts the VM</title>
+      <link>https://vulnogram.org/CVE-2026-117642</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117642</guid>
+      <description>Uncontrolled Recursion vulnerability in the external term format decoder in Erlang OTP erts allows an attacker who controls the input to binary_to_term/1,2 to abort the Erlang VM via a fun term with funs nested in its integer fields. dec_term in erts…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 15:09:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116293 · 7 HIGH — binary_to_term Heap Overrun via NEWER_REFERENCE_EXT with Zero ID Words Aborts the VM</title>
+      <link>https://vulnogram.org/CVE-2026-116293</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116293</guid>
+      <description>Out-of-bounds Write vulnerability in the external term format decoder in Erlang OTP erts allows an attacker who controls the input to binary_to_term/1,2 to abort the Erlang VM via a NEWER_REFERENCE_EXT term with a zero-length ID. decoded_size in erts…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 15:08:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116225 · 8.7 HIGH 🌩️ — Quadratic CPU Denial of Service in SNMP BER Object Identifier Sub-Identifier Decoding</title>
+      <link>https://vulnogram.org/CVE-2026-116225</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116225</guid>
+      <description>Improper Validation of Specified Quantity in Input vulnerability in the BER decoder in Erlang/OTP snmp allows an unauthenticated remote attacker to exhaust CPU via an SNMP message that contains an OBJECT IDENTIFIER with a very long sub-identifier. sn…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 15:07:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116382 · 8.2 HIGH 🌩️ — Attacker-controlled ESI headers cause persistent atom-table growth in `inets`</title>
+      <link>https://vulnogram.org/CVE-2026-116382</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116382</guid>
+      <description>Allocation of Resources Without Limits or Throttling vulnerability in Erlang OTP inets (httpd_script_env module) allows an unauthenticated remote attacker to exhaust the atom table of an httpd server that serves ESI scripts. When mod_esi builds the e…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 15:05:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-116295 · 2.1 LOW — CRLF injection in httpc request headers</title>
+      <link>https://vulnogram.org/CVE-2026-116295</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116295</guid>
+      <description>Improper Neutralization of CRLF Sequences in HTTP Headers (&apos;HTTP Request/Response Splitting&apos;) vulnerability in Erlang OTP inets (httpc module) allows HTTP Request Splitting. httpc writes request header names and values to the wire without neutralizin…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 15:05:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-119443 · 6.9 MEDIUM — XML Scan Untrusted DTD Which May Result in out of Memory Crash</title>
+      <link>https://vulnogram.org/CVE-2026-119443</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119443</guid>
+      <description>Improper Restriction of XML External Entity Reference vulnerability in xmerl_scan in Erlang OTP xmerl allows an attacker to exhaust the memory of the Erlang VM via an XML document that names an external DTD. With default options, xmerl_scan:string/1,…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 15:02:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-130411 · 9.2 CRITICAL 🌩️ — Code execution through deserialization of pagination cursors in flop</title>
+      <link>https://vulnogram.org/CVE-2026-130411</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-130411</guid>
+      <description>Deserialization of Untrusted Data vulnerability in woylie flop allows a remote attacker to execute code on the server via a crafted pagination cursor. Flop.Cursor.decode/2 in lib/flop/cursor.ex decodes the after and before parameters with :erlang.bin…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 14:58:39 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65622 · 5.9 MEDIUM — ex_aws_ses missing URI-encoding of list_name allows path injection into SES V2 request URLs</title>
+      <link>https://vulnogram.org/CVE-2026-65622</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65622</guid>
+      <description>Improper Encoding or Escaping of Output vulnerability in ex-aws ex_aws_ses (ExAws.SES module) allows path injection into Amazon SES V2 request URLs. This vulnerability is associated with program file lib/ex_aws/ses.ex and program routines ExAws.SES.d…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 14:21:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62273 · 2.1 LOW — XML injection via unescaped tag keys and values in ex_aws_s3 object and bucket tagging</title>
+      <link>https://vulnogram.org/CVE-2026-62273</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62273</guid>
+      <description>XML Injection vulnerability in ex-aws ex_aws_s3 allows an attacker who controls tag keys or values to inject forged tag entries into S3 object and bucket tagging requests. ExAws.S3.put_object_tagging/4 and ExAws.S3.put_bucket_tagging/2 in lib/ex_aws/…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 14:15:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63581 · 6.9 MEDIUM — ex_aws_s3 XML injection in bucket-configuration builders</title>
+      <link>https://vulnogram.org/CVE-2026-63581</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63581</guid>
+      <description>XML Injection vulnerability in ex-aws ex_aws_s3 (ExAws.S3 module) allows an attacker to inject arbitrary XML configuration elements into S3 bucket-configuration request bodies via unescaped, caller-supplied values. This vulnerability is associated wi…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 14:15:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63584 · 2.1 LOW — Copy-source header injection in ExAws.S3.upload_part_copy/8 via unencoded source key</title>
+      <link>https://vulnogram.org/CVE-2026-63584</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63584</guid>
+      <description>Improper Neutralization of CRLF Sequences (&apos;CRLF Injection&apos;) vulnerability in ex-aws ex_aws_s3 allows HTTP header injection via an attacker-controlled copy-source key. ExAws.S3.upload_part_copy/8 in lib/ex_aws/s3.ex builds the x-amz-copy-source reque…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 14:15:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63583 · 7 HIGH — XML injection in ExAws.S3.Utils.build_lifecycle_rule/1 in ex_aws_s3</title>
+      <link>https://vulnogram.org/CVE-2026-63583</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63583</guid>
+      <description>ExAws.S3.Utils.build_lifecycle_rule/1 in ex_aws_s3 interpolates caller-supplied lifecycle rule fields (the rule id, filter prefix, tag key and value, storage class, and noncurrent-version count) directly into the PutBucketLifecycleConfiguration XML b…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 14:14:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-131902 · 5.9 MEDIUM — XML injection via unescaped VersionId in ExAws.S3.delete_multiple_objects/3</title>
+      <link>https://vulnogram.org/CVE-2026-131902</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-131902</guid>
+      <description>XML Injection vulnerability in ex-aws ex_aws_s3 allows an attacker who controls an object version id passed to ExAws.S3.delete_multiple_objects/3 to add objects to the batch delete. delete_multiple_objects/3 in lib/ex_aws/s3.ex builds the &lt;Delete&gt; re…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 14:13:43 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63582 · 5.8 MEDIUM — S3 bucket name controls the host of presigned URLs in ex_aws_s3</title>
+      <link>https://vulnogram.org/CVE-2026-63582</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63582</guid>
+      <description>Externally Controlled Reference to a Resource in Another Sphere vulnerability in ex-aws ex_aws_s3 allows an attacker who controls an S3 bucket name to make presigned URLs and presigned POST forms point at a host of their choice. With virtual_host: tr…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 14:13:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-63585 · 4.8 MEDIUM — ExAws.S3 ACL grantee injection via unescaped grant headers in format_grant_header/1</title>
+      <link>https://vulnogram.org/CVE-2026-63585</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-63585</guid>
+      <description>ExAws.S3 constructs S3 ACL grant headers (such as x-amz-grant-read and x-amz-grant-full-control) in format_grant_header/1 by interpolating grantee identifiers into a quoted, comma-separated list without escaping. Grantee email and id values are wrapp…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 14:13:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-65621 · 2.1 LOW — Unvalidated object metadata in ex_aws_s3 enables HTTP header (CRLF) injection into S3 requests</title>
+      <link>https://vulnogram.org/CVE-2026-65621</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65621</guid>
+      <description>ex_aws_s3 builds x-amz-meta-* request headers by interpolating user-supplied object metadata directly into header names and values without any validation. In ExAws.S3.Utils.build_meta_headers/1 (lib/ex_aws/s3/utils.ex), each :meta entry is turned int…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 14:13:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133555 · 8.9 HIGH — Code execution via the :log option of forged DBConnection.Stream structs in db_connection</title>
+      <link>https://vulnogram.org/CVE-2026-133555</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133555</guid>
+      <description>Use of Externally-Controlled Input to Select Classes or Code (&apos;Unsafe Reflection&apos;) vulnerability in elixir-ecto db_connection allows an attacker to execute arbitrary code via a forged DBConnection.Stream or DBConnection.PrepareStream struct. The Enum…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 14:12:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-129514 · 10 CRITICAL 🌩️ — Unauthenticated remote code execution through struct values in Erlang term request bodies</title>
+      <link>https://vulnogram.org/CVE-2026-129514</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129514</guid>
+      <description>Deserialization of Untrusted Data vulnerability in the application/vnd.hex+erlang request body parser in hexpm hexpm allows an unauthenticated remote attacker to execute operating system commands via a crafted Erlang external term format request body…</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 13:48:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120299 · 2.1 LOW — Ash.Type.Keyword casts client input as trusted stored data, bypassing the input validation of its field types</title>
+      <link>https://vulnogram.org/CVE-2026-120299</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120299</guid>
+      <description>Improper Input Validation vulnerability in ash-project ash allows an attacker to bypass the input validation of the field types of a :keyword attribute or argument. Ash.Type.Keyword.cast_input/2 in lib/ash/type/keyword.ex converts a map input to a ke…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 13:13:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62270 · 5.9 MEDIUM — Type confusion via structural idempotency guard in ExAws.Dynamo.Encoder.encode/2</title>
+      <link>https://vulnogram.org/CVE-2026-62270</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62270</guid>
+      <description>Improper Validation of Specified Type of Input in ExAws.Dynamo.Encoder.encode/2 in ex_aws_dynamo allows an attacker who controls map data passed into a DynamoDB call to choose the raw stored DynamoDB AttributeValue. The encode/2 function in lib/ex_aw…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 12:59:00 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-62271 · 2.1 LOW — ex_aws_kms defaults RSA key-material wrapping to PKCS#1 v1.5 in get_parameters_for_import/3</title>
       <link>https://vulnogram.org/CVE-2026-62271</link>
@@ -231,209 +428,6 @@
       <category>High</category>
       <category>Network Exploitable</category>
       <pubDate>Fri, 06 Nov 2026 10:29:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113431 · 8.7 HIGH 🌩️ — Unbounded decoded HTTP/2 header-list size in cowlib cow_http2_machine enables HPACK amplification memory exhaustion</title>
-      <link>https://vulnogram.org/CVE-2026-113431</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113431</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in ninenines cowlib allows an unauthenticated remote peer to exhaust the memory of an HTTP/2 endpoint via HPACK-indexed header fields. cow_http2_machine:headers_decode/4 in src/cow_ht…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 06 Nov 2026 10:28:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66294 · 2.1 LOW — XML injection in Saxy via unescaped CDATA section terminator</title>
-      <link>https://vulnogram.org/CVE-2026-66294</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66294</guid>
-      <description>XML injection in the Saxy XML encoder. Saxy.Encoder.cdata/1 serializes a {:cdata, characters} node by wrapping the supplied characters between &lt;![CDATA[ and ]]&gt; and passing the payload through byte for byte. The encoder&apos;s character-data and attribute…</description>
-      <category>Low</category>
-      <pubDate>Fri, 06 Nov 2026 10:16:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66295 · 2.1 LOW — Processing instruction target and content emitted unescaped in Saxy encoder allows XML injection</title>
-      <link>https://vulnogram.org/CVE-2026-66295</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66295</guid>
-      <description>Saxy&apos;s XML encoder writes the target and the content of a processing instruction into the output document verbatim, without validation or escaping. The encoder builds the construct by concatenating both fields between &lt;? and ?&gt;, so neither field is c…</description>
-      <category>Low</category>
-      <pubDate>Fri, 06 Nov 2026 10:16:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-66293 · 2.1 LOW — XML comment injection in Saxy encoder via unescaped double hyphen</title>
-      <link>https://vulnogram.org/CVE-2026-66293</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66293</guid>
-      <description>XML injection in the encoder of Saxy. Saxy.Encoder does not neutralize the -- sequence in XML comment content: escape_comment/2 returns the comment binary unchanged in every clause and only appends a space when the comment ends in a single -, so neit…</description>
-      <category>Low</category>
-      <pubDate>Fri, 06 Nov 2026 10:16:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-119434 · 6.9 MEDIUM — Decompression bomb in ezstd:decompress_using_ddict/2 allows BEAM memory exhaustion via unbounded output buffer</title>
-      <link>https://vulnogram.org/CVE-2026-119434</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119434</guid>
-      <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in silviucpp ezstd allows an attacker who supplies a zstd frame to ezstd:decompress_using_ddict/2 to exhaust memory and terminate the Erlang VM via a small frame that decl…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 05 Nov 2026 20:15:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-118391 · 8.9 HIGH 🌩️ — Unbounded query cache growth from interpolated JSON paths and splice lists in Ecto</title>
-      <link>https://vulnogram.org/CVE-2026-118391</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118391</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in elixir-ecto ecto allows an unauthenticated remote attacker to exhaust memory in the application and in the database server by sending requests with distinct JSON keys or list lengt…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 04 Nov 2026 13:57:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-110826 · 6.3 MEDIUM 🌩️ — AshAuthentication log_out_everywhere leaves sessions valid after a password reset or non-atomic password change</title>
-      <link>https://vulnogram.org/CVE-2026-110826</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-110826</guid>
-      <description>Improper Session Invalidation after Authentication Credential Change vulnerability in team-alembic ash_authentication allows an attacker holding a victim&apos;s session token to stay signed in after the victim resets or changes their password. With apply_…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Nov 2026 19:19:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-118505 · 6.3 MEDIUM 🌩️ — AshAuthentication brute_force_strategy does not limit sign-in and request actions defined on the resource</title>
-      <link>https://vulnogram.org/CVE-2026-118505</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-118505</guid>
-      <description>Improper Restriction of Excessive Authentication Attempts vulnerability in team-alembic ash_authentication allows an unauthenticated attacker to guess passwords and one-time passwords without limit. The password, magic link and OTP strategies enforce…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 03 Nov 2026 15:47:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-119215 · 7.6 HIGH — AshAuthentication TOTP setup lets a user install their own authenticator secret on another user&apos;s account</title>
-      <link>https://vulnogram.org/CVE-2026-119215</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-119215</guid>
-      <description>Authorization Bypass Through User-Controlled Key vulnerability in team-alembic ash_authentication allows a user with an account to install a TOTP secret they control on another user&apos;s account, and then sign in as that user or hold their second factor…</description>
-      <category>High</category>
-      <pubDate>Tue, 03 Nov 2026 15:46:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-117680 · 2.1 LOW — jsv treats regex match budget exhaustion as a non-match, bypassing patternProperties and not</title>
-      <link>https://vulnogram.org/CVE-2026-117680</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117680</guid>
-      <description>Improper Check for Unusual or Exceptional Conditions vulnerability in the pattern and patternProperties keywords in lud jsv allows an unauthenticated remote attacker to bypass schema validation via a string that matches a schema regex only after heav…</description>
-      <category>Low</category>
-      <pubDate>Sun, 01 Nov 2026 13:29:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-117656 · 9.3 CRITICAL 🌩️ — Unverified Sign in with Apple callback parameter can override verified ID token claims</title>
-      <link>https://vulnogram.org/CVE-2026-117656</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117656</guid>
-      <description>Acceptance of Extraneous Untrusted Data With Trusted Data vulnerability in the Sign in with Apple strategy in pow-auth Assent allows an unauthenticated remote attacker to impersonate another user via the user parameter of the authorization callback.…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 30 Oct 2026 23:55:23 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-117645 · 5.3 MEDIUM 🌩️ — Phoenix.HTML vulnerable to attribute injection via unvalidated attribute names in attributes_escape/1</title>
-      <link>https://vulnogram.org/CVE-2026-117645</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117645</guid>
-      <description>Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;) vulnerability in phoenixframework phoenix_html allows an attacker who controls attribute names to inject attributes and script into rendered HTML via Phoenix.HTML.at…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 30 Oct 2026 20:25:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-117666 · 9.1 CRITICAL 🌩️ — ssl_verify_fun: partial-label wildcard certificate matches hostnames across a label boundary</title>
-      <link>https://vulnogram.org/CVE-2026-117666</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-117666</guid>
-      <description>Improper Validation of Certificate with Host Mismatch vulnerability in deadtrickster ssl_verify_fun allows an adversary in the middle to impersonate a TLS peer via a certificate that carries a partial-label wildcard. try_match_wildcard/4 in src/ssl_v…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 30 Oct 2026 20:22:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97209 · 5.4 MEDIUM — Insecure temporary file in mix deps.partition lets a local user execute code in another user&apos;s dependency build</title>
-      <link>https://vulnogram.org/CVE-2026-97209</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97209</guid>
-      <description>Insecure Temporary File vulnerability in Mix deps.partition in Elixir allows a local user to execute code as another user via a swapped partition config file. Partitioned dependency compilation passes the project configuration to each partition VM th…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 30 Oct 2026 08:59:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115274 · 6.9 MEDIUM 🌩️ — Unbounded integer parsing in JSON.decode/1 enables CPU and memory exhaustion denial of service in Elixir</title>
-      <link>https://vulnogram.org/CVE-2026-115274</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115274</guid>
-      <description>Improper Validation of Specified Quantity in Input vulnerability in the Elixir standard library&apos;s JSON module allows an unauthenticated attacker who supplies a JSON document to cause a denial of service through CPU and memory exhaustion. JSON.decode/…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 30 Oct 2026 08:57:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109821 · 6.3 MEDIUM 🌩️ — Unbounded port parsing in URI.parse/1 enables CPU exhaustion denial of service in Elixir</title>
-      <link>https://vulnogram.org/CVE-2026-109821</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109821</guid>
-      <description>Improper Validation of Specified Quantity in Input vulnerability in the Elixir standard library&apos;s URI module allows an attacker who supplies a URL to cause a denial of service through CPU exhaustion. URI.parse/1 converts the port component with Strin…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 30 Oct 2026 08:54:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116078 · 8.7 HIGH 🌩️ — HTTP/2 request bodies made of 1-byte DATA frames amplify memory use in Bandit</title>
-      <link>https://vulnogram.org/CVE-2026-116078</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116078</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in the HTTP/2 request body reader of mtrudel bandit allows an unauthenticated remote attacker to exhaust server memory via a request body sent as many 1-byte DATA frames. do_read_data…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Wed, 28 Oct 2026 13:26:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-109823 · 2.3 LOW 🌩️ — Host filesystem path disclosure via DNS rebinding</title>
-      <link>https://vulnogram.org/CVE-2026-109823</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-109823</guid>
-      <description>An attacker can read the name of filesystem paths of your application present via Tidewave configuration via /tidewave/connect or via the rendered toolbar. Neither response checks the Host header. A web page that rebinds its own domain to the loopbac…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Tue, 27 Oct 2026 15:47:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65630 · 5.9 MEDIUM — Timing side-channel in pure-Erlang X25519 scalar multiplication leaks the private key in jose</title>
-      <link>https://vulnogram.org/CVE-2026-65630</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65630</guid>
-      <description>Observable Timing Discrepancy vulnerability in potatosalad jose allows recovery of a long-term X25519 private key through a timing side channel in the pure-Erlang Curve25519 fallback. The pure-Erlang X25519 implementation performs scalar multiplicati…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 19:54:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65632 · 5.1 MEDIUM — ECDSA signature length is not validated in jose, allowing signature malleability</title>
-      <link>https://vulnogram.org/CVE-2026-65632</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65632</guid>
-      <description>The jose library accepts ECDSA (ES256, ES256K, ES384, and ES512) JWS signatures of a non-canonical length. When verifying an ECDSA signature, jose_jwk_kty_ec:verify/4 in src/jwk/jose_jwk_kty_ec.erl splits the raw signature in half by its actual byte…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 19:53:56 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65631 · 6.9 MEDIUM — erlang-jose RSA JWK parsing attempts to factor an attacker-controlled modulus, enabling CPU-exhaustion denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-65631</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65631</guid>
-      <description>Inefficient Algorithmic Complexity in erlang-jose allows an unauthenticated remote attacker to cause a CPU-exhaustion denial of service by submitting a crafted RSA JSON Web Key. When an application parses an untrusted JWK through the public jose_jwk:…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 19:53:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65629 · 7.4 HIGH — Weak PBKDF2 parameters for password-encrypted private-key export in jose</title>
-      <link>https://vulnogram.org/CVE-2026-65629</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65629</guid>
-      <description>Use of Password Hash With Insufficient Computational Effort in the jose library allows an attacker who obtains a password-encrypted private-key export to recover the private key through an offline password-cracking attack. When jose exports a passwor…</description>
-      <category>High</category>
-      <pubDate>Mon, 26 Oct 2026 19:53:35 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65628 · 5.9 MEDIUM — Infinite recursion (CPU denial-of-service) in JOSE.JWK.shared_secret/2 on mismatched key types</title>
-      <link>https://vulnogram.org/CVE-2026-65628</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65628</guid>
-      <description>jose_jwk:shared_secret/2 (exposed in Elixir as JOSE.JWK.shared_secret/2) derives an ECDH shared secret from two JWKs. Its first function clause only matches when both JWKs carry the same key type (kty) module, and its fallback clause re-invokes itsel…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 19:53:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65627 · 6.9 MEDIUM — Decompression bomb via unbounded zlib:inflate in jose_jwe_zip:uncompress/2</title>
-      <link>https://vulnogram.org/CVE-2026-65627</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65627</guid>
-      <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in potatosalad jose (erlang-jose) allows a remote attacker to exhaust a node&apos;s memory with a small crafted JWE token. The jose_jwe_zip:uncompress/2 function in src/jwe/jos…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 19:53:16 GMT</pubDate>
     </item>
   </channel>
 </rss>
