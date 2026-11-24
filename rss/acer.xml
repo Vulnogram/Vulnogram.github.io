@@ -11,7 +11,76 @@
       <title>Acer Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 24 Nov 2026 03:01:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 13:15:29 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-128798 · 10 CRITICAL 🌩️ — Unauthorized access to device and recording metadata</title>
+      <link>https://vulnogram.org/CVE-2026-128798</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128798</guid>
+      <description>Any connected WiFi client can fetch device info and meeting recording metadata without credentials.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 05:59:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128797 · 10 CRITICAL 🌩️ — Web administration panel exposed over public IPv6</title>
+      <link>https://vulnogram.org/CVE-2026-128797</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128797</guid>
+      <description>Web administration panel (port 8080) binds to all network interfaces including public IPv6 addresses, making internal API endpoints reachable over WAN without firewall protection (related to CVE-2026-50224).</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 05:57:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128796 · 8.5 HIGH — Apps can send unrestricted modem AT commands</title>
+      <link>https://vulnogram.org/CVE-2026-128796</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128796</guid>
+      <description>System service &apos;antaiuiserver&apos; exposes transaction 14 (sendMyATCmd) &amp; 4, allowing ANY app on device to send arbitrary AT commands to modem without permissions (no READ_PHONE_STATE, SEND_SMS). Enables reading IMEI, IMSI, ICCID, and managing SMS.</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 05:54:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128795 · 5.3 MEDIUM — Network endpoint exposes sensitive subscriber information</title>
+      <link>https://vulnogram.org/CVE-2026-128795</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128795</guid>
+      <description>After authentication, /user/getNetworkStatus discloses SIM phone number, cell tower ID (enabling geolocation), and network type.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 05:51:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128794 · 6.9 MEDIUM — Admin password stored insecurely in plaintext file</title>
+      <link>https://vulnogram.org/CVE-2026-128794</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128794</guid>
+      <description>Admin password stored in plaintext at /data/data/com.acer.android.m3.webserver/shared_prefs/userInfo.xml, allowing any app with root or file access to read credentials directly.</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 05:46:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128793 · 6.9 MEDIUM 🌩️ — Password reset prompt triggered without authentication</title>
+      <link>https://vulnogram.org/CVE-2026-128793</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128793</guid>
+      <description>Accessible without authentication via /user/resetPasswordFlagTest, forcing a password change prompt on the next admin login.</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 05:43:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-128791 · 10 CRITICAL 🌩️ — Unauthenticated users can delete meeting recordings remotely</title>
+      <link>https://vulnogram.org/CVE-2026-128791</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-128791</guid>
+      <description>Any WiFi client can send HTTP DELETE to /meeting-recording/delete to permanently delete files without authentication.</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 04:03:41 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-9790 · 10 CRITICAL 🌩️ — Unauthenticated access to sensitive API endpoint information</title>
+      <link>https://vulnogram.org/CVE-2026-9790</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9790</guid>
+      <description>Endpoints accessible without authentication from any WiFi client (e.g., /user/hasSimCard, /user/pooling, /api/device-info).</description>
+      <category>Critical</category>
+      <category>Network Exploitable</category>
+      <pubDate>Tue, 24 Nov 2026 03:18:13 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-50228 · 6.1 MEDIUM — Electron DevTools Arbitrary Code Execution Vulnerability in NitroSense</title>
       <link>https://vulnogram.org/CVE-2026-50228</link>
@@ -366,63 +435,6 @@
       <description>Improper access control in the MQTT broker allows wildcard topic subscriptions, exposing all MQTT traffic to unauthorized actors.</description>
       <category>High</category>
       <pubDate>Fri, 29 May 2026 08:30:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49197 · 10 CRITICAL 🌩️ — Predator Connect W6x: Improper Authentication</title>
-      <link>https://vulnogram.org/CVE-2026-49197</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49197</guid>
-      <description>Web endpoints intended for the Acer Connect app improperly validate the HTTP Authorization header, failing to block requests when Base64 decoding fails.</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 29 May 2026 08:24:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49196 · 8.6 HIGH — Predator Connect W6x: Web Interface Command Injection</title>
-      <link>https://vulnogram.org/CVE-2026-49196</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49196</guid>
-      <description>The Wi-Fi device blocking feature fails to sanitize MAC address input, allowing injection and execution of arbitrary shell commands.</description>
-      <category>High</category>
-      <pubDate>Fri, 29 May 2026 08:15:49 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-49195 · 8.7 HIGH — Predator Connect W6x: unauthenticated Debug Service</title>
-      <link>https://vulnogram.org/CVE-2026-49195</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-49195</guid>
-      <description>Unauthenticated Debug Service. The /sbin/mtk_dut binary is exposed on TCP port 9000 without authentication, allowing any LAN-based attacker to execute arbitrary UCC commands.</description>
-      <category>High</category>
-      <pubDate>Fri, 29 May 2026 08:02:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9789 · 8.5 HIGH — NitroSense V3: Security Vulnerability Information</title>
-      <link>https://vulnogram.org/CVE-2026-9789</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9789</guid>
-      <description>A Local Privilege Escalation (LPE) vulnerability affects Acer NitroSense software versions prior to 3.01.3052. The vulnerability stems from the the PSAdminAgent service, which creates a Named Pipe with a weak Access Control List (ACL). This allows an…</description>
-      <category>High</category>
-      <pubDate>Thu, 28 May 2026 02:39:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9490 · 6.8 MEDIUM — Acer Care Center creates a Named Pipe with a weak Security Descriptor</title>
-      <link>https://vulnogram.org/CVE-2026-9490</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9490</guid>
-      <description>A security vulnerability has been identified in Acer Care Center where the ACCSvc service creates a Named Pipe with a weak Security Descriptor. This vulnerability allows an authenticated local user to connect and send a specially crafted message (mes…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 25 May 2026 07:25:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-9489 · 8.5 HIGH — NitroSense V3: Local Privilege Escalation (LPE) vulnerability</title>
-      <link>https://vulnogram.org/CVE-2026-9489</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-9489</guid>
-      <description>NitroSense 3.x before 3.01.3052 contains Local Privilege Escalation (LPE) vulnerability.The program exposes a Windows Named Pipe that uses a custom protocol to invoke internal functions. However, this Named Pipe is misconfigured, allowing any authent…</description>
-      <category>High</category>
-      <pubDate>Mon, 25 May 2026 01:50:32 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-8069 · 8.5 HIGH — PredatorSense V3: Local Privilege Escalation (LPE) vulnerability</title>
-      <link>https://vulnogram.org/CVE-2026-8069</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-8069</guid>
-      <description>PredatorSense version 3.00.3136 to 3.00.3196 contain Local Privilege Escalation (LPE) vulnerability.The program exposes a Windows Named Pipe that uses a custom protocol to invoke internal functions. However, this Named Pipe is misconfigured, allowing…</description>
-      <category>High</category>
-      <pubDate>Fri, 08 May 2026 05:57:22 GMT</pubDate>
     </item>
   </channel>
 </rss>

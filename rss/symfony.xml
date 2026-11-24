@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Symfony — recent CVEs</title>
+    <link>https://vulnogram.org/</link>
+    <atom:link href="https://vulnogram.org/rss/symfony" rel="self" type="application/rss+xml"/>
+    <description>Most recent CVEs assigned by Symfony (symfony).</description>
+    <image>
+      <url>https://vulnogram.org/seaview/icons/symfony.png</url>
+      <title>Symfony — recent CVEs</title>
+      <link>https://vulnogram.org/</link>
+    </image>
+    <lastBuildDate>Tue, 24 Nov 2026 13:15:30 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-135804 — Incomplete Fix for CVE-2026-45756: JsonPath Queries Can Still Hold a Process Through search(), match() and Chained Filters</title>
+      <link>https://vulnogram.org/CVE-2026-135804</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-135804</guid>
+      <description>The fix for CVE-2026-45756 lowers pcre.backtrack_limit to 10000 around each preg_match() call of the match() and search() filter functions. That limit applies to one starting position, not to one call. PCRE resets its counter at every position it tri…</description>
+      <pubDate>Tue, 24 Nov 2026 08:55:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-135803 — Filesystem Path Treats Any Prefix Before &quot;://&quot; as a Root, Letting Paths Escape Their Base Directory</title>
+      <link>https://vulnogram.org/CVE-2026-135803</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-135803</guid>
+      <description>Most methods of Symfony\Component\Filesystem\Path rely on Path::split(), which takes everything before the first :// as the root of a path. It doesn&apos;t check that this prefix is a URI scheme, so the .. segments in that prefix are never resolved. PHP s…</description>
+      <pubDate>Tue, 24 Nov 2026 08:55:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-135802 — Generated URLs Can Point to a Host Chosen by the Client</title>
+      <link>https://vulnogram.org/CVE-2026-135802</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-135802</guid>
+      <description>When Request::getBaseUrl() does not find the script name at the start of the request URI, it looks for it further into the path. This supports web servers that rewrite every URL to a front controller in a subdirectory. The base URL then kept everythi…</description>
+      <pubDate>Tue, 24 Nov 2026 08:55:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-135801 — Path Rules Enforced in Front of PHP Can Be Bypassed by Appending the Path to the Script Name</title>
+      <link>https://vulnogram.org/CVE-2026-135801</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-135801</guid>
+      <description>Since the fix for CVE-2025-64500, Request::getPathInfo() strips the script name from the start of the URL. It does so even when the script name is only the start of a longer path segment. With SCRIPT_NAME set to /index.php, a request to /index.phpadm…</description>
+      <pubDate>Tue, 24 Nov 2026 08:55:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133781 · 7.3 HIGH — Build-time Code Execution in @symfony/stimulus-bridge via a Controller Package That Maps Its package.json to a Script</title>
+      <link>https://vulnogram.org/CVE-2026-133781</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133781</guid>
+      <description>The controllers.json loader of @symfony/stimulus-bridge loads the package.json file of each package listed in controllers.json with require(). Node resolves this path through the exports field of the package, which can map ./package.json to a script.…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 08:41:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133780 · 7.3 HIGH — @symfony/stimulus-bridge lazy-controller-loader: arbitrary code execution via unsanitized Stimulus magic comments</title>
+      <link>https://vulnogram.org/CVE-2026-133780</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133780</guid>
+      <description>The @symfony/stimulus-bridge npm package includes a Webpack loader called lazy-controller-loader that supports &quot;magic comments&quot; placed above a Stimulus controller import, for example /* stimulusFetch: &apos;lazy&apos; */, to control lazy loading behavior. To r…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 08:41:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133779 · 5.3 MEDIUM — XSS in symfony/ux-icons via Attribute Names That the Sanitizer Reads Differently Than Browsers: Incomplete Fix for CVE-2026-55877</title>
+      <link>https://vulnogram.org/CVE-2026-133779</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133779</guid>
+      <description>The fix for CVE-2026-55877 (GHSA-6v8j-33hc-mv84) sanitizes the SVG of icons before they are rendered inline. The checks matched attribute names as written in the icon, while browsers and the renderer read some names differently. On 2.x, fromFile() ke…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 08:24:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133778 · 6.3 MEDIUM — Live Components Configured With a Custom Route Can Still Be Reached Through the Default Route</title>
+      <link>https://vulnogram.org/CVE-2026-133778</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133778</guid>
+      <description>#[AsLiveComponent(route: &apos;...&apos;)] makes a live component send its requests to another route. The documentation suggests it so that the component lives under a specific firewall, for example. The default /_components/{_live_component}/{_live_action} ro…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 08:24:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133777 · 5.3 MEDIUM — XSS in symfony/ux-icons via SVG Content That Browsers Parse as HTML: Incomplete Fix for CVE-2026-55877</title>
+      <link>https://vulnogram.org/CVE-2026-133777</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133777</guid>
+      <description>The fix for CVE-2026-55877 (GHSA-6v8j-33hc-mv84) sanitizes the SVG of icons before they are rendered inline. Browsers parse an inline &lt;svg&gt; element with the rules of SVG, until they meet a start tag like &lt;p&gt;, &lt;img&gt; or &lt;meta&gt;. They then parse the rest…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 08:24:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133776 · 5.3 MEDIUM — XSS in symfony/ux-icons via Text That Sanitized Icons Contain Unescaped: Incomplete Fix for CVE-2026-55877</title>
+      <link>https://vulnogram.org/CVE-2026-133776</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133776</guid>
+      <description>The fix for CVE-2026-55877 (GHSA-6v8j-33hc-mv84) sanitizes the SVG of icons before they are rendered inline. When the sanitizer changes an icon, it writes the icon out again as HTML. HTML writes the content of some elements, like &lt;style&gt;, without esc…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 08:24:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133775 · 5.3 MEDIUM — XSS in symfony/ux-icons via Scripts Nested in SVG Style Elements: Incomplete Fix for CVE-2026-55877</title>
+      <link>https://vulnogram.org/CVE-2026-133775</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133775</guid>
+      <description>The fix for CVE-2026-55877 (GHSA-6v8j-33hc-mv84) sanitizes the SVG of icons before they are rendered inline. It removes scripts and event handlers everywhere, except inside &lt;style&gt; elements. Unlike in HTML, the content of an SVG &lt;style&gt; element is pa…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 08:24:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133774 · 6.3 MEDIUM — Authorization bypass in symfony/ux-live-component via an empty batch action request</title>
+      <link>https://vulnogram.org/CVE-2026-133774</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133774</guid>
+      <description>A live component protected by #[IsGranted], on its class or on its default action, can be rendered by a caller who is not granted access. POST /_components/{name}/_batch is handled by Symfony\UX\LiveComponent\Controller\BatchActionController, which h…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 08:24:08 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

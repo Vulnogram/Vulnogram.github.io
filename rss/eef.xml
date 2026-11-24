@@ -11,7 +11,55 @@
       <title>Erlang Ecosystem Foundation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 24 Nov 2026 03:01:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 13:15:29 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-62271 · 2.1 LOW — ex_aws_kms defaults RSA key-material wrapping to PKCS#1 v1.5 in get_parameters_for_import/3</title>
+      <link>https://vulnogram.org/CVE-2026-62271</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62271</guid>
+      <description>Use of RSA Algorithm without OAEP vulnerability in ex-aws ex_aws_kms (ExAws.KMS module) causes callers who import external key material to wrap their secret KMS key material with the deprecated PKCS#1 v1.5 padding scheme by default. This vulnerabilit…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 12:22:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-120720 · 5.9 MEDIUM — S3 bucket name controls the request host in ex_aws virtual-host requests</title>
+      <link>https://vulnogram.org/CVE-2026-120720</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-120720</guid>
+      <description>Server-Side Request Forgery (SSRF) vulnerability in ex-aws ex_aws allows an attacker who controls an S3 bucket name to send the application&apos;s signed S3 requests to a host of their choice. With virtual_host: true, ExAws.Operation.S3.add_bucket_to_path…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 12:17:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59698 · 7.4 HIGH — ex_aws normalizes .. in S3 object keys client-side, allowing bucket or key-prefix escape</title>
+      <link>https://vulnogram.org/CVE-2026-59698</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59698</guid>
+      <description>Relative path traversal in ex_aws allows an attacker who controls an S3 object key to escape the intended bucket or key prefix. When ex_aws builds a path-style S3 request, ExAws.Operation.S3.add_bucket_to_path/2 in lib/ex_aws/operation/s3.ex joins th…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 11:45:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-59697 · 7.6 HIGH — IMDSv2 metadata token request follows HTTP redirects in ex_aws</title>
+      <link>https://vulnogram.org/CVE-2026-59697</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-59697</guid>
+      <description>Server-Side Request Forgery (SSRF) vulnerability in ex_aws (instance metadata token provider). This vulnerability is associated with program files lib/ex_aws/instance_meta_token_provider.ex and program routines ExAws.InstanceMetaTokenProvider.request…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 11:43:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62269 · 5.1 MEDIUM — S3 object key query-string injection and truncation via unencoded reserved characters in ex_aws</title>
+      <link>https://vulnogram.org/CVE-2026-62269</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62269</guid>
+      <description>Improper Encoding or Escaping of Output vulnerability in ex_aws (S3 request URL construction). This vulnerability is associated with program files lib/ex_aws/request/url.ex and program routines ExAws.Request.Url.build/2, ExAws.Request.Url.sanitize/2…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 11:40:27 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-124283 · 8.9 HIGH — Code execution and SQL injection via struct-wrapped values in a forged keyset pagination cursor in Ash</title>
+      <link>https://vulnogram.org/CVE-2026-124283</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-124283</guid>
+      <description>Deserialization of Untrusted Data vulnerability in ash-project ash allows an unauthenticated attacker to execute arbitrary code or inject SQL through a forged keyset pagination cursor. Ash.Page.Keyset.filter/4 in lib/ash/page/keyset.ex decodes the cl…</description>
+      <category>High</category>
+      <pubDate>Tue, 24 Nov 2026 02:34:31 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-128361 · 8.2 HIGH 🌩️ — Unsanitized presence key crashes Presence tracker</title>
       <link>https://vulnogram.org/CVE-2026-128361</link>
@@ -386,57 +434,6 @@
       <description>Improper Handling of Highly Compressed Data (Data Amplification) vulnerability in potatosalad jose (erlang-jose) allows a remote attacker to exhaust a node&apos;s memory with a small crafted JWE token. The jose_jwe_zip:uncompress/2 function in src/jwe/jos…</description>
       <category>Medium</category>
       <pubDate>Mon, 26 Oct 2026 19:53:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65626 · 5.9 MEDIUM — Bleichenbacher padding oracle in RSAES-PKCS1-v1_5 decryption in jose</title>
-      <link>https://vulnogram.org/CVE-2026-65626</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65626</guid>
-      <description>The pure-Erlang RSAES-PKCS1-v1_5 decryption in the jose_jwa_pkcs1 module is a Bleichenbacher padding oracle. eme_pkcs1_decode/2 returns the recovered message when a decrypted block has valid PKCS#1 v1.5 padding (a leading 0x00 0x02, a padding string…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 19:53:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-65625 · 5.9 MEDIUM — Attacker-controlled AES-GCM authentication tag length allows tag forgery in jose</title>
-      <link>https://vulnogram.org/CVE-2026-65625</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-65625</guid>
-      <description>The pure-Erlang AES-GCM fallback in jose_jwa_aes derives the number of verified authentication tag bits from the attacker-supplied tag itself. In the {aes_gcm, Bits} clause of block_decrypt/4, the incoming tag is guarded only by is_binary/1, with no…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 19:52:54 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-97200 · 8.2 HIGH 🌩️ — Unbounded response body buffering and decompression in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-97200</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-97200</guid>
-      <description>Allocation of Resources Without Limits or Throttling vulnerability in hackney_conn in benoitc hackney allows a malicious HTTP server to exhaust client memory via an oversized or highly compressed response body. hackney:request/5 and hackney:body/1 re…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 13:49:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115693 · 9.1 CRITICAL 🌩️ — Custom cacerts or cacertfile do not restrict trust to the pinned CA in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-115693</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115693</guid>
-      <description>Improper Certificate Validation vulnerability in hackney_ssl in benoitc hackney allows an on-path attacker to impersonate a server pinned to a private certificate authority via a certificate chain that ends in a publicly trusted root. hackney adds {p…</description>
-      <category>Critical</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 13:49:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-113440 · 6 MEDIUM 🌩️ — HTTP/1.1 and HTTP/2 redirects resend basic_auth and cookie to a different scheme or port in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-113440</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-113440</guid>
-      <description>Insufficiently Protected Credentials vulnerability in hackney in benoitc hackney allows a redirecting server to obtain the basic_auth and cookie credentials of a request via a same-host redirect to another scheme or port. With follow_redirect enabled…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Mon, 26 Oct 2026 13:49:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-115700 · 6.9 MEDIUM — SSRF allowlist bypass via percent-encoded bracketed IPv6 or trailing-dot IP literal in hackney</title>
-      <link>https://vulnogram.org/CVE-2026-115700</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115700</guid>
-      <description>Interpretation Conflict vulnerability in hackney_url in benoitc hackney allows Server Side Request Forgery via a percent-encoded bracketed IPv6 literal or an IP literal with a trailing dot. A host such as %5B%3A%3Affff%3A127%2E0%2E0%2E1%5D (decoding…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 26 Oct 2026 13:49:02 GMT</pubDate>
     </item>
   </channel>
 </rss>

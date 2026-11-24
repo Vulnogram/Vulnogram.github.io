@@ -11,7 +11,39 @@
       <title>Securin — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 24 Nov 2026 03:01:32 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 13:15:30 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-135779 · 5.3 MEDIUM — NetBird relay server WebSocket listener trusts client-supplied X-Real-IP and X-Real-Port headers, allowing source address spoofing</title>
+      <link>https://vulnogram.org/CVE-2026-135779</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-135779</guid>
+      <description>Reliance on an untrusted source of the client address in the WebSocket listener of the NetBird relay server (relay/server/listener/ws) in NetBird versions 0.31.1 through 0.74.7 allows an attacker with an enrolled peer to spoof the source address of t…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 08:07:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105428 · 5.3 MEDIUM — NetBird client netstack SOCKS5 proxy binds to all interfaces and exposes an unauthenticated proxy into the overlay network</title>
+      <link>https://vulnogram.org/CVE-2026-105428</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105428</guid>
+      <description>Binding to an unrestricted IP address in the netstack SOCKS5 proxy of the NetBird client (client/iface/netstack) in NetBird versions before 0.74.7 allows an unauthenticated attacker on the same network as the client to relay traffic through the clien…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 08:07:03 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105431 · 2.1 LOW — NetBird client userspace firewall allows IP-fragmented packets without evaluating ACL rules</title>
+      <link>https://vulnogram.org/CVE-2026-105431</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105431</guid>
+      <description>A protection mechanism failure in the userspace firewall of the NetBird client (client/firewall/uspfilter) in NetBird versions 0.55.0 through 0.74.6 allows an attacker who controls an enrolled peer to bypass the access control rules of another peer b…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 07:50:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-105430 · 6.3 MEDIUM — NetBird relay server decodes unauthenticated Hello handshake data with gob before verifying the HMAC signature</title>
+      <link>https://vulnogram.org/CVE-2026-105430</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-105430</guid>
+      <description>Deserialization of untrusted data in the relay server handshake of NetBird versions 0.29.0 through 0.74.7 allows an unauthenticated remote attacker to reach the Go encoding/gob decoder with attacker-supplied bytes before any credential is checked, wh…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 07:50:09 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-105429 · 8.9 HIGH — NetBird client SSH config Match line injection via peer FQDN or hostname allows local command execution</title>
       <link>https://vulnogram.org/CVE-2026-105429</link>
@@ -387,38 +419,6 @@
       <description>Incomplete sanitization of extended attribute (EA) path components in Netatalk 2.1.0 through 4.4.2 allows a remote authenticated attacker to write to files outside the intended metadata namespace via crafted EA names.</description>
       <category>High</category>
       <pubDate>Thu, 21 May 2026 07:34:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44067 · 3.7 LOW — EA header parsing heap over-read</title>
-      <link>https://vulnogram.org/CVE-2026-44067</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44067</guid>
-      <description>A heap over-read in extended attribute (EA) header parsing in Netatalk 2.1.0 through 4.4.2 allows a remote authenticated attacker to obtain limited information or cause a minor service disruption via crafted EA data.</description>
-      <category>Low</category>
-      <pubDate>Thu, 21 May 2026 07:34:55 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44066 · 7.1 HIGH — Heap out-of-bounds reads in Spotlight RPC unmarshalling</title>
-      <link>https://vulnogram.org/CVE-2026-44066</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44066</guid>
-      <description>Multiple heap out-of-bounds reads in the Spotlight RPC unmarshalling code in Netatalk 3.1.0 through 4.4.2 allow a remote authenticated attacker to obtain sensitive information or cause a minor service disruption.</description>
-      <category>High</category>
-      <pubDate>Thu, 21 May 2026 07:34:53 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44065 · 3.7 LOW — Off-by-two in papd lp_write()</title>
-      <link>https://vulnogram.org/CVE-2026-44065</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44065</guid>
-      <description>An off-by-two error in lp_write() in papd in Netatalk 2.0.0 through 4.4.2 allows an adjacent network attacker to modify limited data or cause a minor service disruption via crafted print data.</description>
-      <category>Low</category>
-      <pubDate>Thu, 21 May 2026 07:34:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-44064 · 7.1 HIGH — ASP session ID out-of-bounds access</title>
-      <link>https://vulnogram.org/CVE-2026-44064</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-44064</guid>
-      <description>An out-of-bounds read in ASP session ID handling in Netatalk 1.3 through 4.4.2 allows an adjacent network attacker to obtain limited information or cause a denial of service via a crafted ASP request.</description>
-      <category>High</category>
-      <pubDate>Thu, 21 May 2026 07:34:49 GMT</pubDate>
     </item>
   </channel>
 </rss>
