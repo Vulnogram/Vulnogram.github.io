@@ -11,7 +11,87 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 23 Nov 2026 15:50:45 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 03:01:31 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-102956 · 3.1 LOW — Ethernet L2 net_pkt reference-count error on ARP request send failure can free an unrelated packet</title>
+      <link>https://vulnogram.org/CVE-2026-102956</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102956</guid>
+      <description>ethernet_send() in subsys/net/l2/ethernet/ethernet.c dropped the caller&apos;s reference on an IPv4 packet whenever net_arp_prepare() returned NET_ARP_PKT_REPLACED. That return value is also used when ARP could not queue the packet because every ARP cache…</description>
+      <category>Low</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-100374 · 7.8 HIGH — Missing user buffer validation in SMBus block read and block process call syscalls allows kernel memory writes</title>
+      <link>https://vulnogram.org/CVE-2026-100374</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-100374</guid>
+      <description>The system call verification handlers for smbus_block_read() and smbus_block_pcall() in drivers/smbus/smbus_handlers.c (z_vrfy_smbus_block_read() and z_vrfy_smbus_block_pcall()) validated the device object, the count pointers and (for process call) t…</description>
+      <category>High</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102955 · 3.1 LOW — OpenThread RCP transmits MAC-secured 802.15.4 frames without applying the MAC key when using the PSA crypto backend</title>
+      <link>https://vulnogram.org/CVE-2026-102955</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102955</guid>
+      <description>The OpenThread PSA crypto platform backend in modules/openthread/platform/crypto_psa.c only supported PSA key references. otPlatCryptoAesSetKey() copied aKey-&gt;mKeyRef into the AES context unconditionally. On an OpenThread Radio Co-Processor (RCP) bui…</description>
+      <category>Low</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102954 · 6.8 MEDIUM — Out-of-bounds write from peripheral-supplied block count in STM32 SMBus driver</title>
+      <link>https://vulnogram.org/CVE-2026-102954</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102954</guid>
+      <description>The STM32 SMBus driver (drivers/smbus/smbus_stm32.c) implements smbus_block_read() and smbus_block_pcall() by issuing a single i2c_transfer() in which the byte-count byte returned by the peripheral is read directly into the len field of the following…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102953 · 6 MEDIUM — Use-after-free of control transfer buffer on timeout in USB host usbh_req_setup</title>
+      <link>https://vulnogram.org/CVE-2026-102953</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102953</guid>
+      <description>usbh_req_setup() in subsys/usb/host/usbh_ch9.c returns -ETIMEDOUT as soon as a control request times out, even though the transfer is still in flight. usbh_xfer_dequeue() only requests cancellation, and the host controller driver keeps the transfer a…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102952 · 4.8 MEDIUM — TFTP client accepts a transfer from any source, allowing hijack of TFTP get/put</title>
+      <link>https://vulnogram.org/CVE-2026-102952</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102952</guid>
+      <description>The Zephyr TFTP client in subsys/net/lib/tftp/tftp_client.c does not check where the reply to its request comes from. After sending a read or write request to the configured server, send_request() accepts the first UDP datagram that arrives on the cl…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102951 · 6.6 MEDIUM — Agilex5 System Manager registers mapped read/write for user mode threads</title>
+      <link>https://vulnogram.org/CVE-2026-102951</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102951</guid>
+      <description>The Intel SoC FPGA Agilex5 SoC&apos;s static MMU region table in soc/intel/intel_socfpga/agilex5/mmu_regions.c mapped the System Manager peripheral (sysmgr) with MT_P_RW_U_RW. That sets the EL0 access-permission bit in the page-table descriptor, so user m…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102950 · 5.9 MEDIUM — ZMS mount recovery treats stored value data as allocation table entries, allowing forged entries and storage corruption</title>
+      <link>https://vulnogram.org/CVE-2026-102950</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102950</guid>
+      <description>The mount-time recovery scan of the Zephyr Memory Storage (ZMS) key-value store, zms_recover_last_ate() in subsys/kvss/zms/zms.c (subsys/fs/zms/zms.c in older releases), computes the end of the sector&apos;s data area incorrectly. Every valid allocation t…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102949 · 6.4 MEDIUM — Stale completion after I2C timeout causes use-after-return of transfer buffer in Intel SEDI I2C driver</title>
+      <link>https://vulnogram.org/CVE-2026-102949</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102949</guid>
+      <description>The Intel SEDI I2C controller driver (drivers/i2c/i2c_sedi.c, used on Intel ISH platforms) waits for each asynchronous transfer with k_sem_take() on a per-controller completion semaphore and a 1 s timeout. When the wait times out, i2c_sedi_api_full_i…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102948 · 5.3 MEDIUM — NULL pointer dereference in Bluetooth LE Audio callbacks on BR/EDR connections</title>
+      <link>https://vulnogram.org/CVE-2026-102948</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102948</guid>
+      <description>Several Bluetooth LE Audio services in subsys/bluetooth/audio register global connection and authentication callbacks but assume every connection is LE. When CONFIG_BT_CLASSIC is enabled, the host also invokes these callbacks for BR/EDR connections.…</description>
+      <category>Medium</category>
+      <pubDate>Mon, 23 Nov 2026 18:02:43 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-95827 · 6.5 MEDIUM — Network packet reference leak in IPv6 Router Advertisement handling leads to buffer pool exhaustion</title>
       <link>https://vulnogram.org/CVE-2026-95827</link>
@@ -332,86 +412,6 @@
       <description>The HTTP/2 server in subsys/net/lib/http/http_server_http2.c clears the connection&apos;s stream binding at the start of every frame. handle_http_frame_header() executed client-&gt;current_stream = NULL unconditionally, but a CONTINUATION frame does not open…</description>
       <category>High</category>
       <pubDate>Fri, 06 Nov 2026 14:38:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87044 · 6.5 MEDIUM — Memory leak in the Mbed TLS crypto shim on failed cipher/AEAD operations leads to remotely triggered crypto denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-87044</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87044</guid>
-      <description>The Mbed TLS crypto shim driver in drivers/crypto/crypto_mbedtls_shim.c drives PSA multipart cipher and AEAD operations. In mbedtls_cbc() and mbedtls_aead(), every error path after a successful psa_cipher_encrypt_setup() / psa_aead_decrypt_setup() re…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 04 Nov 2026 06:09:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87043 · 4.8 MEDIUM — sys_rand_get() silently returns an unwritten buffer when the entropy device is not ready</title>
-      <link>https://vulnogram.org/CVE-2026-87043</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87043</guid>
-      <description>The entropy-device random number generator in subsys/random/random_entropy_device.c returned early with -ENODEV from rand_get() as soon as device_is_ready() failed, before reaching the non-cryptographic system-timer fallback further down the same fun…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 04 Nov 2026 06:09:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87041 · 7.8 HIGH — Inverted memory-permission check in the RTIO syscall verifier allows a user-mode thread to read and write arbitrary kernel memory</title>
-      <link>https://vulnogram.org/CVE-2026-87041</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87041</guid>
-      <description>The RTIO submission-queue verifier rtio_vrfy_sqe() in subsys/rtio/rtio_syscalls.c (subsys/rtio/rtio_handlers.c before v4.3.0) accumulated the results of K_SYSCALL_MEMORY() into its valid_sqe flag with &amp;=. That macro returns nonzero on failure (it is…</description>
-      <category>High</category>
-      <pubDate>Wed, 04 Nov 2026 06:09:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87040 · 8.3 HIGH — Bluetooth LE Controller accepts received PDUs whose length field exceeds the configured maximum receive length, causing out-of-bounds read and write</title>
-      <link>https://vulnogram.org/CVE-2026-87040</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87040</guid>
-      <description>The nRF link-layer receive paths of the open-source Bluetooth LE Controller did not validate the on-air LENGTH field of a received PDU against the maximum receive length that was used to program the radio. isr_rx_pdu() in subsys/bluetooth/controller/…</description>
-      <category>High</category>
-      <pubDate>Wed, 04 Nov 2026 06:09:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87039 · 7.8 HIGH — I2S configure syscall handler passes an unvalidated user-supplied kernel object pointer to drivers</title>
-      <link>https://vulnogram.org/CVE-2026-87039</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87039</guid>
-      <description>The user-mode syscall verifier z_vrfy_i2s_configure() in drivers/i2s/i2s_handlers.c copies the caller&apos;s struct i2s_config in from user memory and then, when cfg-&gt;frame_clk_freq is 0 (the API&apos;s &quot;unconfigure the stream&quot; request), jumps straight to z_im…</description>
-      <category>High</category>
-      <pubDate>Wed, 04 Nov 2026 06:09:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87038 · 7 HIGH — Time-of-check/time-of-use double fetch in the Zephyr i3c_transfer() syscall handler allows kernel-mode control-flow hijack from user mode</title>
-      <link>https://vulnogram.org/CVE-2026-87038</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87038</guid>
-      <description>The user-mode verification handler for the i3c_transfer() system call, z_vrfy_i3c_transfer() in drivers/i3c/i3c_handlers.c, validated the caller-supplied struct i3c_device_desc in place instead of snapshotting it. It confirmed only that the descripto…</description>
-      <category>High</category>
-      <pubDate>Wed, 04 Nov 2026 06:09:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-16511 · 8.8 HIGH — Unvalidated user pointers in RTIO syscall verifiers allow a user-mode thread to write kernel memory</title>
-      <link>https://vulnogram.org/CVE-2026-16511</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16511</guid>
-      <description>Two RTIO syscall verifiers, in subsys/rtio/rtio_syscalls.c (subsys/rtio/rtio_handlers.c before v4.3.0), did not validate user-supplied pointers before the kernel wrote through them. z_vrfy_rtio_sqe_cancel() performed no validation at all. It passed t…</description>
-      <category>High</category>
-      <pubDate>Wed, 04 Nov 2026 06:09:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85036 · 5.7 MEDIUM — Bluetooth Classic AVDTP session reuse re-initializes a queued work item, corrupting the system work queue</title>
-      <link>https://vulnogram.org/CVE-2026-85036</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85036</guid>
-      <description>The Bluetooth Classic AVDTP layer defers releasing a session&apos;s stream endpoints: bt_avdtp_l2cap_disconnected() in subsys/bluetooth/host/classic/avdtp.c ends with k_work_submit(&amp;session-&gt;_release_work), placing the embedded struct k_work on the system…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 04 Nov 2026 06:09:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85035 · 8.8 HIGH — Use-after-free via dynamically allocated message queue retained by the CAN RX filter</title>
-      <link>https://vulnogram.org/CVE-2026-85035</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85035</guid>
-      <description>The can_add_rx_filter_msgq() system call installs a CAN RX filter whose callback (can_msgq_put() in drivers/can/can_common.c) is handed the caller&apos;s struct k_msgq * as user_data. The controller driver stores that raw pointer in its filter table and d…</description>
-      <category>High</category>
-      <pubDate>Tue, 03 Nov 2026 13:36:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-85034 · 6.7 MEDIUM — Out-of-bounds write in the Bluetooth GATT client: oversized notification and indication values delivered to subscribers</title>
-      <link>https://vulnogram.org/CVE-2026-85034</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-85034</guid>
-      <description>The Bluetooth host&apos;s GATT client passed the value of a received Handle Value Notification, Handle Value Indication or Multiple Handle Value Notification to bt_gatt_subscribe_params::notify callbacks using only the length derived from the received ATT…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 03 Nov 2026 13:36:07 GMT</pubDate>
     </item>
   </channel>
 </rss>

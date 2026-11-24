@@ -11,7 +11,77 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Mon, 23 Nov 2026 15:50:45 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 03:01:31 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-134848 · 7.4 HIGH 🌩️ — pgjdbc lets a NUL character in a connection property add startup parameters</title>
+      <link>https://vulnogram.org/CVE-2026-134848</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134848</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, does not refuse a NUL character in a startup parameter. The StartupMessage is a list of NUL-terminated strings, so a NUL in the database name, user, currentSchema, options or ApplicationName adds further parameters…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 23 Nov 2026 16:59:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134847 · 6.5 MEDIUM 🌩️ — pgjdbc stores a different number for a BigDecimal outside the binary numeric range</title>
+      <link>https://vulnogram.org/CVE-2026-134847</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134847</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, cuts the weight and scale of a BigDecimal to 16 bits when it sends the value in binary, which is the default. The server then stores a different number without an error. For example 999999.99e-262144 is stored as 9…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 23 Nov 2026 16:59:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134846 · 6.5 MEDIUM 🌩️ — pgjdbc GSS encryption accepts replayed packets and can stop encrypting</title>
+      <link>https://vulnogram.org/CVE-2026-134846</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134846</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, does not check the token state that GSSContext.unwrap() reports on a GSS-encrypted connection. An attacker on the network path can replay an earlier server packet from the same connection, and the driver accepts it…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 23 Nov 2026 16:59:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134845 · 7.4 HIGH 🌩️ — pgjdbc does not enforce TLS for some ssl, service and DataSource settings</title>
+      <link>https://vulnogram.org/CVE-2026-134845</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134845</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, does not enforce TLS for some settings that ask for it. When sslmode is not set, an ssl value such as 1, on, yes or verify-full gives sslmode=prefer, or no TLS before 42.2.5. A service given in the Properties inste…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 23 Nov 2026 16:59:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134844 · 7.5 HIGH — pgjdbc catalog queries can run objects of other database roles</title>
+      <link>https://vulnogram.org/CVE-2026-134844</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134844</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, uses unqualified operators and functions in the catalog queries of DatabaseMetaData, ResultSetMetaData and TypeInfoCache. A role with CREATE on a schema of the application&apos;s search_path can add an operator with an…</description>
+      <category>High</category>
+      <pubDate>Mon, 23 Nov 2026 16:59:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134843 · 7.5 HIGH — pgjdbc leaves a half-written message on the connection after an unchecked exception</title>
+      <link>https://vulnogram.org/CVE-2026-134843</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134843</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, does not close the connection when an unchecked exception interrupts a request. Part of a Bind message stays in the send buffer, and the server reads the bytes that follow as the rest of it. The bytes of a value up…</description>
+      <category>High</category>
+      <pubDate>Mon, 23 Nov 2026 16:59:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134842 · 8.1 HIGH 🌩️ — pgjdbc simple query mode quotes parameters for the wrong standard_conforming_strings value</title>
+      <link>https://vulnogram.org/CVE-2026-134842</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134842</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, can quote a string parameter for the wrong value of standard_conforming_strings when preferQueryMode=simple is set. A statement, trigger or configuration reload can turn the setting off during a session. A paramete…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 23 Nov 2026 16:59:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134841 · 8.1 HIGH 🌩️ — pgjdbc parses quoted text as SQL in JDBC escapes, dollar quotes and E strings</title>
+      <link>https://vulnogram.org/CVE-2026-134841</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134841</guid>
+      <description>pgjdbc, the PostgreSQL JDBC Driver, misreads some quoted text in its query parser. A `}` inside a literal ends a JDBC escape such as `{ts}`, and the rest of the literal is translated as SQL. A dollar quote whose tag has a non-ASCII symbol or space is…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Mon, 23 Nov 2026 16:59:14 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-6467 · 7.2 HIGH — PostgreSQL extension script schema mishandling executes arbitrary SQL</title>
       <link>https://vulnogram.org/CVE-2026-6467</link>
@@ -347,70 +417,6 @@
       <description>Improper input validation in PostgreSQL pg_restore allows a non-plain archive provider to execute arbitrary code as the operating system user running pg_restore, via a crafted archive. Note a contrast: crafted archive data may legitimately cause arbi…</description>
       <category>High</category>
       <pubDate>Thu, 12 Nov 2026 14:15:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116313 · 7.2 HIGH — PostgreSQL &quot;vacuumdb --missing-stats-only&quot; lets a database owner execute code as the vacuumdb user</title>
-      <link>https://vulnogram.org/CVE-2026-116313</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116313</guid>
-      <description>Untrusted search path in PostgreSQL vacuumdb allows a database owner to execute arbitrary SQL as the database user running vacuumdb, via shadowing operators used in the --missing-stats-only catalog query. The pg_upgrade documentation recommends an af…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:07 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116312 · 5.4 MEDIUM — PostgreSQL MERGE can place the wrong row in a trigger transition table</title>
-      <link>https://vulnogram.org/CVE-2026-116312</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116312</guid>
-      <description>Inconsistent transition-capture state in PostgreSQL MERGE allows a table data modifier to make an AFTER trigger process the wrong new row, via a partitioned table MERGE that performs an INSERT before an UPDATE. Within major versions 15-18, minor vers…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116311 · 5.4 MEDIUM — PostgreSQL DROP OWNED can remove restrictive row security policies from non-owned tables</title>
-      <link>https://vulnogram.org/CVE-2026-116311</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116311</guid>
-      <description>Missing authorization in PostgreSQL DROP OWNED allows a role to remove itself from restrictive row level security policies, thereby reading or modifying rows that the policy was intended to deny, via queries after the DROP OWNED. Versions before Post…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:06 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116310 · 4.3 MEDIUM — PostgreSQL COPY error context uses freed field storage</title>
-      <link>https://vulnogram.org/CVE-2026-116310</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116310</guid>
-      <description>Use after free in PostgreSQL COPY FROM error reporting allows a database user to disclose portions of server memory, via a longer input row following an ignored or nullified conversion error. file_fdw reaches the same code path in affected version 18…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116309 · 8.8 HIGH — PostgreSQL plperl blessed-reference type confusion may execute arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116309</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116309</guid>
-      <description>Type confusion in PostgreSQL plperl may allow an object creator to execute arbitrary code, via blessing a non-hash reference into PostgreSQL::InServer::ARRAY. We have not confirmed or ruled out a way to control the pointer sufficiently to achieve sec…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:05 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116308 · 4.3 MEDIUM — PostgreSQL dict_int reads beyond zero-length tokens</title>
-      <link>https://vulnogram.org/CVE-2026-116308</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116308</guid>
-      <description>Buffer over-read in PostgreSQL dict_int allows a database user to disclose portions of server memory, via a zero-length token. Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:04 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116307 · 8.8 HIGH — PostgreSQL plperl prepared-query use-after-free executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116307</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116307</guid>
-      <description>Use after free in PostgreSQL plperl allows an object creator to execute arbitrary code as the operating system user running the database, via re-entering plperl and freeing a prepared query while an outer invocation is executing it. Versions before P…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116306 · 8.8 HIGH — PostgreSQL composite-type change during field assignment executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116306</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116306</guid>
-      <description>Type confusion in PostgreSQL composite-value field assignment allows an object creator to execute arbitrary code as the operating system user running the database, via changing a composite type between deforming and reforming a value. Versions before…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:03 GMT</pubDate>
     </item>
   </channel>
 </rss>
