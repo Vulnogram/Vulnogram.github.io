@@ -11,7 +11,191 @@
       <title>Symfony — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 25 Nov 2026 06:07:40 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 16:25:39 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-134792 · 8.3 HIGH — HttpClient Lets the Proxy Header of a Request Choose the Proxy of Outgoing Requests in HTTP Workers That Run Under the CLI SAPI</title>
+      <link>https://vulnogram.org/CVE-2026-134792</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134792</guid>
+      <description>When the proxy option isn&apos;t set, HttpClient takes the proxy from environment variables like http_proxy or HTTP_PROXY. On web servers, it ignores HTTP_PROXY, because PHP puts the Proxy request header there (the httpoxy issue). On the CLI SAPI, it read…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134791 · 8.7 HIGH — Unclosed Comments Make the Lexer of ExpressionLanguage Quadratic, Letting Untrusted Expressions Hold a Process</title>
+      <link>https://vulnogram.org/CVE-2026-134791</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134791</guid>
+      <description>Since Symfony 7.2, expressions can contain comments. The lexer used a regular expression to find the end of a comment. When a /* was never closed, this regular expression scanned the rest of the expression, and the lexer then went on with the next ch…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-134790 · 5.3 MEDIUM — Login Redirects Can Still Reach Another Host When the Session Cookie Domain Is Set: Incomplete Fix for CVE-2017-16652</title>
+      <link>https://vulnogram.org/CVE-2026-134790</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-134790</guid>
+      <description>The fix for CVE-2017-16652 restricts the redirects of HttpUtils::createRedirectResponse() to the host of the request. When framework.session.cookie_domain is set, it also allows the subdomains of that domain. To check a target, it read the host of th…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133762 · 6 MEDIUM — Without APP_RUNTIME_MODE, HTTP Workers Running Under the CLI SAPI Return Full Exception Dumps in Production</title>
+      <link>https://vulnogram.org/CVE-2026-133762</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133762</guid>
+      <description>Since Symfony 7.4.0, FrameworkBundle chooses the error renderer from the runtime mode of the application, which comes from the APP_RUNTIME_MODE env var. When this variable isn&apos;t set, the cli, phpdbg and embed SAPIs default to the CLI mode, and errors…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133761 · 8.7 HIGH — CsvEncoder Nests Rows Once per Key Separator of a Header, Letting a Small CSV Payload Crash PHP</title>
+      <link>https://vulnogram.org/CVE-2026-133761</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133761</guid>
+      <description>CsvEncoder::decode() splits each header cell on the key separator, . by default, and nests the decoded rows one level per separator, with no limit. PHP frees nested arrays recursively, so freeing data that is nested deeply enough overflows the C stac…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133760 · 8.7 HIGH — Nested Short Ternaries Make the Nesting Check of the Expression Parser Exponential, Letting Untrusted Expressions Hang It</title>
+      <link>https://vulnogram.org/CVE-2026-133760</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133760</guid>
+      <description>The fix for CVE-2026-109449 made the expression parser check the nesting level of long expressions. This check exists since Symfony 5.4.54, 6.4.48, 7.4.21 and 8.1.9. The parser builds a ?: b with the node of a used twice, and the check walked every p…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133759 · 6.3 MEDIUM — Doctrine Remember-Me Token Provider Accepts Outdated Tokens Under the Series of Their Copy, Also After Logout</title>
+      <link>https://vulnogram.org/CVE-2026-133759</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133759</guid>
+      <description>DoctrineTokenProvider keeps a copy of the previous token of a remember-me cookie. This way, concurrent requests sent with that token are still accepted for 60 seconds. The copy is stored in another row, under a series derived from the series of the c…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133758 · 6.3 MEDIUM — NoPrivateNetworkHttpClient Makes the Client It Decorates Ignore Its Own Default Options, Like Certificate Pinning</title>
+      <link>https://vulnogram.org/CVE-2026-133758</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133758</guid>
+      <description>Since Symfony 5.4.48, 6.4.16, 7.1.9 and 7.2.0, NoPrivateNetworkHttpClient prepares each request with the default options of the library. The decorator then passes all these options to the decorated client. Every option is then already set, so that cl…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133757 · 8.2 HIGH — NoPrivateNetworkHttpClient Sends the Default Credentials of the Client It Decorates to Other Origins on Redirects</title>
+      <link>https://vulnogram.org/CVE-2026-133757</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133757</guid>
+      <description>Since Symfony 5.4.48, 6.4.16, 7.1.9 and 7.2.0, NoPrivateNetworkHttpClient follows redirects itself, and sends each hop as a new request through the client it decorates. Before a redirect to another origin, it removes the Authorization and Cookie head…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133756 · 5.3 MEDIUM — HtmlSanitizer Doesn&apos;t Check Meta Refresh URLs Whose Time Follows a Vertical Tab or a Unicode Space: Incomplete Fix for CVE-2026-121373</title>
+      <link>https://vulnogram.org/CVE-2026-133756</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133756</guid>
+      <description>MetaRefreshAttributeSanitizer checks the URL of a &lt;meta http-equiv=&quot;refresh&quot;&gt; directive only when its content starts with a refresh time. Since the fix for CVE-2026-121373, only the ASCII whitespace of the HTML specification could come before that ti…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:15 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133755 · 6.3 MEDIUM — Mailer Trusts Replies That a Man in the Middle Injects Right After STARTTLS</title>
+      <link>https://vulnogram.org/CVE-2026-133755</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133755</guid>
+      <description>Since Symfony 7.3, the require_tls option of EsmtpTransport refuses to send a message over a connection that isn&apos;t encrypted. It prevents a network attacker from stripping STARTTLS. But after the server&apos;s 220 reply to STARTTLS, the transport started…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:14 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133754 · 5.3 MEDIUM — UrlGenerator Lets Host Placeholder Values Send Generated URLs to Another Host</title>
+      <link>https://vulnogram.org/CVE-2026-133754</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133754</guid>
+      <description>UrlGenerator puts the values of host placeholders into the generated URL without encoding them. Their default requirement, [^.]++, accepts /, @, #, ?, \, % and :. With the host {tenant}.example.com, the value evil%2Ecom# gives https://evil%2Ecom#.exa…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133753 · 5.3 MEDIUM — The Unanimous Strategy Grants access_control Rules When Only One of Their Roles Matches: Regression of CVE-2020-5275</title>
+      <link>https://vulnogram.org/CVE-2026-133753</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133753</guid>
+      <description>With the unanimous access decision strategy, an access_control rule that lists several roles requires all of them. That&apos;s the behavior restored by the fix for CVE-2020-5275. Since Symfony 5.4, the access decision manager asked each voter once about a…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:13 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133752 · 6.3 MEDIUM — The Serializer Doesn&apos;t Enforce #[Ignore] on the Class Picked by a Discriminator Map or object_to_populate</title>
+      <link>https://vulnogram.org/CVE-2026-133752</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133752</guid>
+      <description>When it denormalizes data into a class, the Serializer computes which attributes it may write from the #[Ignore] and #[Groups] metadata. It did that for the requested class, but wrote into another class in two cases. The first case is the class that…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:12 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133751 · 6.3 MEDIUM — Mailer&apos;s require_tls Can Be Bypassed by a Man in the Middle</title>
+      <link>https://vulnogram.org/CVE-2026-133751</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133751</guid>
+      <description>Since Symfony 7.3, the require_tls option of EsmtpTransport refuses to send a message over a connection that isn&apos;t encrypted. It prevents a network attacker from stripping STARTTLS. But when the server rejected the EHLO command, the transport fell ba…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133750 · 6.3 MEDIUM — CachingHttpClient Shares Responses Between Users When Credentials Are Set With withOptions()</title>
+      <link>https://vulnogram.org/CVE-2026-133750</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133750</guid>
+      <description>Since Symfony 7.4, CachingHttpClient can cache the responses of HTTP clients, for example when caching is enabled in framework.http_client. Its withOptions() method passes the options to the decorated client only. So credentials set with withOptions(…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133749 · 2.3 LOW — Programmatic Logins With Guard Skip the checkPostAuth() Method of User Checkers</title>
+      <link>https://vulnogram.org/CVE-2026-133749</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133749</guid>
+      <description>GuardAuthenticatorHandler::authenticateUserAndHandleSuccess() logs a user in programmatically with a Guard authenticator, for example in the registration controllers that MakerBundle generated. This method creates the token and stores it, but it call…</description>
+      <category>Low</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133748 · 6.3 MEDIUM — NoPrivateNetworkHttpClient With Custom Subnets Lets IPv4-Mapped Addresses Through</title>
+      <link>https://vulnogram.org/CVE-2026-133748</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133748</guid>
+      <description>NoPrivateNetworkHttpClient accepts a list of subnets to block instead of its default one. When that list contains an IPv6 entry, the client lets IpUtils::checkIp() decide for every address. Before Symfony 6.4.50, 7.4.23 and 8.1.11, checkIp() didn&apos;t m…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133747 · 6.3 MEDIUM — Scoped HTTP Clients With Caching Enabled Send Their Credentials to Any Origin</title>
+      <link>https://vulnogram.org/CVE-2026-133747</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133747</guid>
+      <description>Since Symfony 7.4, framework.http_client.scoped_clients can enable caching on a scoped client. FrameworkBundle then puts a CachingHttpClient inside the ScopingHttpClient, with the options of the scope as default options. CachingHttpClient merges them…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:07 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133746 · 5.3 MEDIUM — UrlGenerator Can Still Generate URLs to Another Host: Incomplete Fix for CVE-2026-45065</title>
+      <link>https://vulnogram.org/CVE-2026-133746</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133746</guid>
+      <description>The fix for CVE-2026-45065 (GHSA-72xp-p242-47p9) anchored the requirements that UrlGenerator checks parameter values against. That check doesn&apos;t run when framework.router.strict_requirements is null, which the routing recipe sets in the prod environm…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133745 · 5.3 MEDIUM — Trailing-Slash and Scheme Redirects Send Paths Starting With // to Another Host</title>
+      <link>https://vulnogram.org/CVE-2026-133745</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133745</guid>
+      <description>The router redirects a request to the same URL with or without its trailing slash, or with the scheme that a route requires. To do so, the matcher returns RedirectController::urlRedirectAction() with the path info of the request as path. Since Symfon…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133744 · 6.3 MEDIUM — JsonPath Queries Can Still Hold a Process Through Duplicated Nodes and Repeated Work: Incomplete Fix for CVE-2026-135804</title>
+      <link>https://vulnogram.org/CVE-2026-133744</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133744</guid>
+      <description>The fixes for CVE-2026-135804 (GHSA-cpww-5vpx-72x7) bound the regex work of a JsonCrawler::find() call, and evaluate filters and absolute queries once per call. Chained recursive descent isn&apos;t bounded. Each ..* segment takes the descendants of every…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 10:00:04 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133743 · 7 HIGH — Inline Fragments Let Untrusted Forwarded Headers Change the URLs of asset() and absolute_url(): Incomplete Fix for CVE-2026-123339</title>
+      <link>https://vulnogram.org/CVE-2026-133743</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133743</guid>
+      <description>The fix for CVE-2026-123339 (GHSA-wg5q-m2ww-f3c9) restores the router context of the main request after an inline fragment, but the cause of that issue is still there. A page can render an inline fragment with render() in Twig, or with an ESI tag whe…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 09:59:54 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-133773 · 2.3 LOW — Unbounded Converter Memoisation in twig/markdown-extra Keyed on Template-Controlled Options</title>
       <link>https://vulnogram.org/CVE-2026-133773</link>
