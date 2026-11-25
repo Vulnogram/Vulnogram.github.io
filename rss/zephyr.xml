@@ -11,7 +11,39 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Tue, 24 Nov 2026 23:35:06 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 06:07:39 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-16670 · 4 MEDIUM — Out-of-bounds read in the PSA ECDSA signature DER parser on a malformed signature TLV before verification</title>
+      <link>https://vulnogram.org/CVE-2026-16670</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16670</guid>
+      <description>MCUboot&apos;s PSA-crypto ECDSA adapter parses the RFC 5480 DER signature with parse_signature_from_rfc5480_encoding() in boot/bootutil/include/bootutil/crypto/ecdsa.h, which takes no length argument. bootutil_ecdsa_verify() explicitly discards the signat…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 23:37:55 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16669 · 2 LOW — Espressif flash-encryption provisioning leaves eFuse key material and plaintext sector buffers on the bootloader stack</title>
+      <link>https://vulnogram.org/CVE-2026-16669</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16669</guid>
+      <description>MCUboot&apos;s Espressif port omits zeroization of two sensitive stack buffers in boot/espressif/hal/src/flash_encrypt.c. In check_and_generate_encryption_keys(), the freshly generated XTS-AES flash-encryption key is held in the stack array keys[BLOCKS_NE…</description>
+      <category>Low</category>
+      <pubDate>Tue, 24 Nov 2026 23:37:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16667 · 6.2 MEDIUM — Cypress/PSoC6 flash backend fails to bounds-check flash accesses, allowing pre-auth out-of-bounds reads</title>
+      <link>https://vulnogram.org/CVE-2026-16667</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16667</guid>
+      <description>The Cypress/PSoC6 flash-map backend in boot/cypress/cy_flash_pal/cy_flash_map.c guards every flash access with assert() against the wrong struct field. flash_area_read(), flash_area_write(), and flash_area_erase() check assert(off &lt; fa-&gt;fa_off) and a…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 23:37:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-16666 · 5.7 MEDIUM — MCUboot swap resume trusts a flash-resident swap_size, allowing pre-authentication out-of-bounds flash operations</title>
+      <link>https://vulnogram.org/CVE-2026-16666</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-16666</guid>
+      <description>When MCUboot resumes an interrupted image swap it takes the number of bytes to move straight from the flash-resident status trailer. In boot_swap_image() (boot/bootutil/src/loader.c) the fresh-swap branch recomputes copy_size from the image headers a…</description>
+      <category>Medium</category>
+      <pubDate>Tue, 24 Nov 2026 23:37:51 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-16668 · 2.4 LOW — Unbounded CBOR recursion in MCUboot serial recovery allows pre-authentication stack exhaustion</title>
       <link>https://vulnogram.org/CVE-2026-16668</link>
@@ -380,38 +412,6 @@
       <description>The NXP ENET-QOS Ethernet driver&apos;s receive work handler eth_nxp_enet_qos_rx() in drivers/ethernet/eth_nxp_enet_qos hands each processed descriptor back to the DMA by writing desc-&gt;read.control = rx_desc_refresh_flags, which sets OWN_FLAG and BUF1_ADD…</description>
       <category>High</category>
       <pubDate>Mon, 09 Nov 2026 22:04:03 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90590 · 6.5 MEDIUM — Permanent loss of transmit capability in the NXP ENET QoS Ethernet driver after an Ethernet link drop</title>
-      <link>https://vulnogram.org/CVE-2026-90590</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90590</guid>
-      <description>The NXP ENET QoS Ethernet driver in drivers/ethernet/eth_nxp_enet_qos serialises transmission with a binary semaphore, data-&gt;tx.tx_sem, taken in eth_nxp_enet_qos_tx() and returned only by the transmit-completion interrupt handler tx_dma_done(). A fra…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 09 Nov 2026 22:04:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90589 · 5.5 MEDIUM — Memory-mapped thread stack is never unmapped when a thread is aborted by another thread, exhausting kernel virtual address space</title>
-      <link>https://vulnogram.org/CVE-2026-90589</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90589</guid>
-      <description>When CONFIG_THREAD_STACK_MEM_MAPPED is enabled, each thread stack is mapped into the kernel virtual address space with a guard page on either side, and the mapping is released during abort cleanup. k_thread_abort_cleanup() in kernel/thread.c has two…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 09 Nov 2026 22:04:01 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90588 · 3.7 LOW — Out-of-bounds read in Zephyr HTTP client debug logging of response header fields</title>
-      <link>https://vulnogram.org/CVE-2026-90588</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90588</guid>
-      <description>The HTTP client&apos;s debug helper print_header_field() in subsys/net/lib/http/http_client.c formatted an http_parser data-callback slice with a %s conversion: snprintk(output, len + 1, &quot;%s&quot;, str). The parser hands its callbacks a pointer and a length in…</description>
-      <category>Low</category>
-      <pubDate>Mon, 09 Nov 2026 22:04:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90587 · 4.6 MEDIUM — NULL pointer dereference in the Zephyr USB host stack when a device reports zero configurations</title>
-      <link>https://vulnogram.org/CVE-2026-90587</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90587</guid>
-      <description>usbh_device_init() in subsys/usb/host/usbh_device.c rejects a device whose device descriptor advertises bNumConfigurations == 0, but it only logs the error and jumps to the cleanup label without setting the return code. At that point the local err is…</description>
-      <category>Medium</category>
-      <pubDate>Mon, 09 Nov 2026 22:03:59 GMT</pubDate>
     </item>
   </channel>
 </rss>
