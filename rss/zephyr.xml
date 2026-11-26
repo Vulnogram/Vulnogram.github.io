@@ -11,7 +11,39 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 25 Nov 2026 16:25:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 01:02:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-90592 · 4.6 MEDIUM — Out-of-bounds read in it51xxx I2C target FIFO ISR on oversized read transaction</title>
+      <link>https://vulnogram.org/CVE-2026-90592</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90592</guid>
+      <description>The ITE it51xxx I2C driver, when operating as an I2C target (slave) in buffer mode (CONFIG_I2C_TARGET + CONFIG_I2C_TARGET_BUFFER_MODE), transmits response data from the fixed-size data-&gt;target_out_buffer inside its target FIFO interrupt handler targe…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 20:27:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102960 · 6.8 MEDIUM — Stack buffer overflow in Grow R502-A fingerprint sensor driver UART RX handler</title>
+      <link>https://vulnogram.org/CVE-2026-102960</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102960</guid>
+      <description>The Grow R502-A fingerprint sensor driver (drivers/sensor/grow_r502a/grow_r502a.c) receives sensor responses in the UART interrupt handler uart_cb_handler(). Once the 9-byte header has arrived, the handler reads the 16-bit package length from the hea…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 20:27:19 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102959 · 6.4 MEDIUM — Stack use-after-return on RX timeout in Grow R502-A fingerprint sensor driver</title>
+      <link>https://vulnogram.org/CVE-2026-102959</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102959</guid>
+      <description>The Grow R502-A fingerprint sensor driver (drivers/sensor/grow_r502a/grow_r502a.c) points drv_data-&gt;rx_buf.data at an rx_packet buffer on the caller&apos;s stack and enables the UART RX interrupt before waiting 1500 ms for a reply. When the wait timed out…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 20:27:18 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102957 · 7.7 HIGH — PWM capture syscall leaves callback armed on a dead kernel stack frame when called with K_NO_WAIT</title>
+      <link>https://vulnogram.org/CVE-2026-102957</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102957</guid>
+      <description>z_impl_pwm_capture_cycles() in drivers/pwm/pwm_capture.c stores its capture context (struct z_pwm_capture_cb_data, including a struct k_sem) on its own stack and registers a pointer to it as the driver capture callback&apos;s user_data. When called with a…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 20:27:16 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-16670 · 4 MEDIUM — Out-of-bounds read in the PSA ECDSA signature DER parser on a malformed signature TLV before verification</title>
       <link>https://vulnogram.org/CVE-2026-16670</link>
@@ -380,38 +412,6 @@
       <description>The RFCOMM multiplexer control-channel handler in subsys/bluetooth/host/classic/rfcomm.c computed the echo length for a BT_RFCOMM_TEST command as buf-&gt;len - 1 and passed it to rfcomm_send_test(), whose length parameter is a uint8_t. A malformed but F…</description>
       <category>High</category>
       <pubDate>Tue, 10 Nov 2026 22:07:41 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-87042 · 6.5 MEDIUM — Zephyr PTP: unvalidated Delay_Resp message interval lets an on-link peer wedge the PTP thread and flood the network</title>
-      <link>https://vulnogram.org/CVE-2026-87042</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-87042</guid>
-      <description>The IEEE 1588 (PTP) port implementation in subsys/net/lib/ptp/port.c adopted the logMessageInterval field of a received Delay_Resp message without any validation. port_delay_resp_msg_process() stored the raw wire value (a full-range int8_t) into port…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 10 Nov 2026 22:07:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-82391 · 9.1 CRITICAL — Out-of-bounds write in Zephyr HTTP/2 server static-filesystem handler via corrupted receive-buffer length</title>
-      <link>https://vulnogram.org/CVE-2026-82391</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-82391</guid>
-      <description>The HTTP/2 front-end of the Zephyr HTTP server aliased connection receive state as a scratch output. In subsys/net/lib/http/http_server_http2.c, handle_http2_static_fs_resource() passed &amp;client-&gt;data_len as the file_size out-parameter of http_server_…</description>
-      <category>Critical</category>
-      <pubDate>Tue, 10 Nov 2026 22:07:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90832 · 4.3 MEDIUM — Out-of-bounds read in Bluetooth Host periodic advertising report reassembly due to unvalidated report length</title>
-      <link>https://vulnogram.org/CVE-2026-90832</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90832</guid>
-      <description>bt_hci_le_per_adv_report_common() in subsys/bluetooth/host/scan.c handles the HCI_LE_Periodic_Advertising_Report (and _v2) event. It verified that the fixed event header was present and that the controller-declared Data_Length fits the tailroom of th…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 10 Nov 2026 22:07:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90591 · 7.5 HIGH — NXP ENET-QOS Ethernet driver re-arms RX descriptors with a clobbered DMA buffer address on packet drop</title>
-      <link>https://vulnogram.org/CVE-2026-90591</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90591</guid>
-      <description>The NXP ENET-QOS Ethernet driver&apos;s receive work handler eth_nxp_enet_qos_rx() in drivers/ethernet/eth_nxp_enet_qos hands each processed descriptor back to the DMA by writing desc-&gt;read.control = rx_desc_refresh_flags, which sets OWN_FLAG and BUF1_ADD…</description>
-      <category>High</category>
-      <pubDate>Mon, 09 Nov 2026 22:04:03 GMT</pubDate>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,143 @@
       <title>PostgreSQL — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 25 Nov 2026 16:25:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 01:02:26 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-136515 · 7.5 HIGH — Memory corruption and crashes when the driver rewrites statements for cursors and escapes</title>
+      <link>https://vulnogram.org/CVE-2026-136515</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136515</guid>
+      <description>psqlODBC rewrites statement text for keyset-driven cursors and ODBC escapes using positions it found in the text. These positions could lie outside the text or describe another statement: - After SQLExecDirect() failed on a statement handle, the FROM…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136514 · 6.5 MEDIUM — Another database user can crash applications by changing a table they own</title>
+      <link>https://vulnogram.org/CVE-2026-136514</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136514</guid>
+      <description>psqlODBC assumed that a table it reads keeps the definition it had when the statement was described or parsed. A database user who owns a table or view another user&apos;s application reads can crash that application, with an honest server and default opt…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:53 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136513 · 3.6 LOW — Another local user can redirect log files (incomplete fix for CVE-2026-120066)</title>
+      <link>https://vulnogram.org/CVE-2026-136513</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136513</guid>
+      <description>When Debug or CommLog is enabled and the log directory cannot be used, psqlODBC falls back to a directory under the user&apos;s home directory. It wrote that path with an unexpanded ~, which is resolved relative to the process&apos;s current directory. Another…</description>
+      <category>Low</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136512 · 7.5 HIGH — Buffer overflows when a converted value does not fit the application&apos;s buffer</title>
+      <link>https://vulnogram.org/CVE-2026-136512</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136512</guid>
+      <description>With SQL_C_DEFAULT, the C type of a bound column or parameter follows its SQL type. An application sizes its buffer from the type it was told when it described the statement. When the column had another type at fetch time, because the server reported…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:52 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136511 · 6.8 MEDIUM — An SSLmode value written with capitals or braces connects without TLS</title>
+      <link>https://vulnogram.org/CVE-2026-136511</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136511</guid>
+      <description>psqlODBC mapped an SSLmode value in a connection string that it did not recognise, such as SSLmode=Require, SSLmode=Verify-Full, SSLmode={require} or SSLmode={verify-full}, to disable. SQLDriverConnect() then returned SQL_SUCCESS with no diagnostic,…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136510 · 4.8 MEDIUM — Statement after an abandoned parameter array sends the abandoned batch&apos;s rows instead of its own</title>
+      <link>https://vulnogram.org/CVE-2026-136510</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136510</guid>
+      <description>A parameter-array execution that fails part-way leaves the rows it has already queued on the statement handle, and the next execution on that handle sends them. After a data-at-execution batch is abandoned, by SQLCancel or a rejected SQLPutData, the…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:51 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136509 · 7.5 HIGH — Driver does not check that server replies match the queries it sent</title>
+      <link>https://vulnogram.org/CVE-2026-136509</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136509</guid>
+      <description>psqlODBC did not check that a server reply matches the query it sent: that a FETCH returns no more rows than it asked for, that each row has the described number of columns, that one query produces one result, and that a COPY, a transaction or the co…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136508 · 6.8 MEDIUM — MSDTC connections drop the connection&apos;s TLS and channel binding settings</title>
+      <link>https://vulnogram.org/CVE-2026-136508</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136508</guid>
+      <description>On Windows, when a connection takes part in a distributed transaction, psqlODBC and its XA library open further connections of their own to finish the transaction. These connections did not keep the security settings of the application&apos;s connection:…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136507 · 8.1 HIGH — Connection string injection in SQLDriverConnect and the MSDTC XA open string</title>
+      <link>https://vulnogram.org/CVE-2026-136507</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136507</guid>
+      <description>psqlODBC parsed and built connection strings in ways that let a value end early: - In a braced value, such as PWD={…}, a trailing byte 0x7d of a GBK, Big5 or SJIS character was taken for the closing brace. - A braced value that ended right after an e…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136506 · 7.5 HIGH — SQL injection through names the driver puts into its own queries</title>
+      <link>https://vulnogram.org/CVE-2026-136506</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136506</guid>
+      <description>psqlODBC builds queries of its own from names, and put these names into them without escaping or qualification: - the database name in SQLForeignKeys(); - the current schema name in catalog functions; - the table name in the currtid2() call that re-r…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136505 · 7.5 HIGH — Unchecked sizes and counters overflow driver buffers</title>
+      <link>https://vulnogram.org/CVE-2026-136505</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136505</guid>
+      <description>psqlODBC uses sizes and counts without checking their range, or keeps them in types too small for them: - A row array size of 0, set with SQLSetStmtAttr() or on the ARD, makes SQLSetPos() with SQL_REFRESH write past the bound arrays. - SQL_DESC_COUNT…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136504 · 5 MEDIUM — Debug log records the database password in clear text</title>
+      <link>https://vulnogram.org/CVE-2026-136504</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136504</guid>
+      <description>With the driver&apos;s debug log (MyLog) turned on, two paths write the database password to the log in clear text, both beside a line where the driver&apos;s own redaction masks it as PWD=xxxxx: - Pressing &quot;Test&quot; in the Windows data source setup dialog (psqls…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136503 · 7.5 HIGH — Use after free, double free and out-of-bounds writes in result and transaction clean-up</title>
+      <link>https://vulnogram.org/CVE-2026-136503</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136503</guid>
+      <description>psqlODBC frees memory that is still in use, frees it twice, or writes outside an application buffer in these cases: - The clean-up the driver runs at commit and rollback sends queries of its own, and the reply to one of them can start the clean-up ag…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136502 · 8.1 HIGH — SQL injection and redirected writes because the driver reads SQL text differently from the server</title>
+      <link>https://vulnogram.org/CVE-2026-136502</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136502</guid>
+      <description>psqlODBC scans statement text itself to substitute parameters, translate ODBC escapes, join batched statements and rewrite queries for updatable cursors. Where it read the text differently from the server, text the driver took for data ran as SQL, or…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136501 · 7.1 HIGH — Positioned writes go to another user&apos;s table through name and case matching</title>
+      <link>https://vulnogram.org/CVE-2026-136501</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136501</guid>
+      <description>To build positioned updates and to describe columns, psqlODBC matches the names in a statement against the catalog. Where it matched differently from the server, it used another table or column: - Table and schema names were compared case-insensitive…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136500 · 8.1 HIGH — SQL injection with BIG5 aliases and the JOHAB, EUC_TW, EUC_CN and EUC_KR client encodings</title>
+      <link>https://vulnogram.org/CVE-2026-136500</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136500</guid>
+      <description>To escape a bound parameter, or a name passed to a catalog function, psqlODBC has to know where each multibyte character of the client encoding ends. It treated a client encoding named by an alias the server accepts, such as WIN950, Windows950 or big…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136499 · 5.9 MEDIUM — Driver sends application memory to the server or returns it to the caller</title>
+      <link>https://vulnogram.org/CVE-2026-136499</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136499</guid>
+      <description>psqlODBC read memory it had not written, or memory past the end of an application buffer, and sent it to the server or returned it to the application: - Text bound as SQL_C_CHAR to a large-object parameter was read past the end of the application&apos;s b…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 22:25:44 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-134848 · 7.4 HIGH 🌩️ — pgjdbc lets a NUL character in a connection property add startup parameters</title>
       <link>https://vulnogram.org/CVE-2026-134848</link>
@@ -281,142 +417,6 @@
       <description>Use after free in PostgreSQL portal setup allows an object creator to execute arbitrary code as the operating system user running the database, via running user-defined code during planning or executor startup that closes the portal currently being p…</description>
       <category>High</category>
       <pubDate>Thu, 12 Nov 2026 14:15:18 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116331 · 8.8 HIGH — PostgreSQL min/max aggregate type confusion executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116331</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116331</guid>
-      <description>Type confusion in PostgreSQL min/max aggregate optimization allows an object creator to execute arbitrary code as the operating system user running the database, via a user-defined aggregate whose SORTOP option causes the planner to treat the aggrega…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116330 · 8.8 HIGH — PostgreSQL pg_dump tar restore.sql fails to block psql command injection</title>
-      <link>https://vulnogram.org/CVE-2026-116330</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116330</guid>
-      <description>Untrusted data inclusion in PostgreSQL pg_dump tar-format restore.sql allows a compromised origin server to execute arbitrary code as the client operating system account running psql, via the predictable restriction key in restore.sql. This is a gap…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:17 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116329 · 8.8 HIGH — PostgreSQL statistics import type confusion executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116329</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116329</guid>
-      <description>Type confusion in PostgreSQL statistics import allows a table maintainer to execute arbitrary code as the operating system user running the database, via nested SET DATA TYPE during conversion of values to import. Within major version 18, minor versi…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116328 · 8.8 HIGH — PostgreSQL generation memory context integer wraparound executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116328</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116328</guid>
-      <description>Integer wraparound in PostgreSQL generation memory contexts allows a database user to execute arbitrary code as the operating system user running the database, via freeing an allocation larger than 1 GB and causing its block to be reused for smaller…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116327 · 4.3 MEDIUM — PostgreSQL security_barrier analysis can expose hidden values through indirect expressions</title>
-      <link>https://vulnogram.org/CVE-2026-116327</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116327</guid>
-      <description>Exposure of sensitive information in PostgreSQL security_barrier processing allows a database user to infer values hidden by a security_barrier view, via applying a leaky function to a CASE test value or internal parameter that indirectly represents…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116326 · 8.8 HIGH — PostgreSQL plperl tied-object exceptions follow stale sigjmp_buf</title>
-      <link>https://vulnogram.org/CVE-2026-116326</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116326</guid>
-      <description>Uncaught exceptions in PostgreSQL plperl allow an object creator to cause use of a stale sigjmp_buf, via a tied Perl object, or a Perl object whose overloaded conversion throws while plperl is handling another error. We have not ruled out arbitrary c…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116325 · 8 HIGH — PostgreSQL reindexdb index name quoting allows SQL injection</title>
-      <link>https://vulnogram.org/CVE-2026-116325</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116325</guid>
-      <description>SQL injection in PostgreSQL reindexdb allows an object creator to execute arbitrary SQL as the database user running reindexdb, via a crafted index name embedded in the parallel catalog query for --jobs with --index. Within major versions 17-18, mino…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116323 · 8.8 HIGH — PostgreSQL pltcl reentrant result conversion use-after-free executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116323</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116323</guid>
-      <description>Use after free in PostgreSQL pltcl allows an object creator to execute arbitrary code as the operating system user running the database, via a domain CHECK that re-enters the Tcl interpreter and frees or changes a string still used by the outer resul…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116322 · 5.3 MEDIUM — PostgreSQL pre-authentication cancel request can leak a spinlock</title>
-      <link>https://vulnogram.org/CVE-2026-116322</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116322</guid>
-      <description>Improper locking in PostgreSQL startup processing allows an unauthenticated network client to trigger a server restart, via arranging for authentication_timeout to arrive while it holds a spinlock during cancel handling. Within major version 18, mino…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116321 · 4.3 MEDIUM — PostgreSQL unterminated name value discloses server memory</title>
-      <link>https://vulnogram.org/CVE-2026-116321</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116321</guid>
-      <description>Improper null termination in PostgreSQL array element assignment allows a database user to disclose server memory, via changing the final byte of a fixed-length name value to a nonzero byte and passing it to code that treats the value as a C string.…</description>
-      <category>Medium</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:12 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116320 · 8.8 HIGH — PostgreSQL plperl array and hash conversion use-after-free executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116320</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116320</guid>
-      <description>Use after free in PostgreSQL plperl allows an object creator to execute arbitrary code as the operating system user running the database, via dropping the final reference to a Perl array or hash while PostgreSQL is converting that object. Versions be…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116319 · 8.8 HIGH — PostgreSQL plperl reentrant return_next() use-after-free executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116319</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116319</guid>
-      <description>Use after free in PostgreSQL plperl allows an object creator to execute arbitrary code as the operating system user running the database, via reentrant return_next() calls. Versions before PostgreSQL 18.7, 17.12, 16.16, 15.20, and 14.25 are affected.</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:11 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116318 · 8.8 HIGH — PostgreSQL pg_dump not-null constraint name allows SQL injection</title>
-      <link>https://vulnogram.org/CVE-2026-116318</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116318</guid>
-      <description>SQL injection in PostgreSQL pg_dump allows an object creator to execute arbitrary SQL as the user restoring the dump, via an inherited column having a child-local not-null constraint whose name requires quoting. Within major version 18, minor version…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116317 · 8.8 HIGH — PostgreSQL ts_rank_cd() heap buffer overflow may execute arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116317</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116317</guid>
-      <description>Heap-based buffer overflow in PostgreSQL ts_rank_cd() may allow a database user to execute arbitrary code as the operating system user running the database, via an invalid tsvector containing duplicate positions. Versions before PostgreSQL 18.7, 17.1…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116316 · 8.8 HIGH — PostgreSQL security-restricted operations can create types in pg_temp, which later queries of the session find</title>
-      <link>https://vulnogram.org/CVE-2026-116316</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116316</guid>
-      <description>Improper protection of alternate path in PostgreSQL security-restricted operations allows an object creator to execute arbitrary SQL as the operation&apos;s caller, via a domain, enum, or range type created in pg_temp. The victim session must later run a…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:09 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116315 · 8.8 HIGH — PostgreSQL tsvector_delete() heap buffer overflow executes arbitrary code</title>
-      <link>https://vulnogram.org/CVE-2026-116315</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116315</guid>
-      <description>Heap-based buffer overflow in PostgreSQL tsvector_delete() allows a database user to execute arbitrary code as the operating system user running the database, via a tsvector whose lexeme data uses a nonstandard but valid ordering that requires additi…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:08 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-116314 · 8.8 HIGH — PostgreSQL pg_restore executes arbitrary code due to missing non-plain archive validation</title>
-      <link>https://vulnogram.org/CVE-2026-116314</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-116314</guid>
-      <description>Improper input validation in PostgreSQL pg_restore allows a non-plain archive provider to execute arbitrary code as the operating system user running pg_restore, via a crafted archive. Note a contrast: crafted archive data may legitimately cause arbi…</description>
-      <category>High</category>
-      <pubDate>Thu, 12 Nov 2026 14:15:08 GMT</pubDate>
     </item>
   </channel>
 </rss>

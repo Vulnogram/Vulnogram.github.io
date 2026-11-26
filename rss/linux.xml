@@ -11,7 +11,56 @@
       <title>kernel.org — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 25 Nov 2026 16:25:37 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 01:02:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-99811 — vfio/cdx: prevent read-only region mappings from becoming writable</title>
+      <link>https://vulnogram.org/CVE-2026-99811</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99811</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: vfio/cdx: prevent read-only region mappings from becoming writable vfio_cdx_mmap() rejects writable mappings of regions without the WRITE flag, but leaves VM_MAYWRITE set. Userspace…</description>
+      <pubDate>Wed, 25 Nov 2026 18:26:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99810 — vfio/fsl-mc: prevent read-only region mappings from becoming writable</title>
+      <link>https://vulnogram.org/CVE-2026-99810</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99810</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: vfio/fsl-mc: prevent read-only region mappings from becoming writable vfio_fsl_mc_mmap() rejects writable mappings of regions without the WRITE flag, but leaves VM_MAYWRITE set. User…</description>
+      <pubDate>Wed, 25 Nov 2026 18:26:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99809 — vfio/platform: prevent read-only region mappings from becoming writable</title>
+      <link>https://vulnogram.org/CVE-2026-99809</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99809</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: vfio/platform: prevent read-only region mappings from becoming writable vfio_platform_mmap() rejects writable mappings of regions without the WRITE flag, but leaves VM_MAYWRITE set.…</description>
+      <pubDate>Wed, 25 Nov 2026 18:26:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99808 — Bluetooth: L2CAP: Use default TxWindow for zero socket option</title>
+      <link>https://vulnogram.org/CVE-2026-99808</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99808</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: L2CAP: Use default TxWindow for zero socket option L2CAP_OPTIONS accepts a txwin_size of zero and stores it in tx_win. The zero is then sent to the peer in our configurati…</description>
+      <pubDate>Wed, 25 Nov 2026 18:26:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99807 — Bluetooth: L2CAP: Reject invalid TxWindow in configuration requests</title>
+      <link>https://vulnogram.org/CVE-2026-99807</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99807</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: L2CAP: Reject invalid TxWindow in configuration requests A peer can send an ERTM RFC option with a TxWindow of zero, which is out of spec. It is stored in remote_tx_win un…</description>
+      <pubDate>Wed, 25 Nov 2026 18:26:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99806 — Bluetooth: L2CAP: Reject mode changes on connected channels</title>
+      <link>https://vulnogram.org/CVE-2026-99806</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99806</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: Bluetooth: L2CAP: Reject mode changes on connected channels A peer can send a configuration response with an RFC option for another mode to a connected channel, for example to switch…</description>
+      <pubDate>Wed, 25 Nov 2026 18:26:08 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-99805 — net: limit priority VLAN untag depth</title>
+      <link>https://vulnogram.org/CVE-2026-99805</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99805</guid>
+      <description>In the Linux kernel, the following vulnerability has been resolved: net: limit priority VLAN untag depth The priority VLAN receive path can repeatedly remove VID 0 tags and retry packet processing. Unlike the read-only VLAN protocol parser, this path…</description>
+      <pubDate>Wed, 25 Nov 2026 18:26:08 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-99804 · 7.8 HIGH — io_uring/io-wq: save worker type before dropping its reference</title>
       <link>https://vulnogram.org/CVE-2026-99804</link>
@@ -320,58 +369,6 @@
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99762</guid>
       <description>In the Linux kernel, the following vulnerability has been resolved: batman-adv: mcast: validate tracker padding before forwarding A multicast tracker with an even number of destinations needs two padding bytes after its destination list. batadv_mcast…</description>
       <pubDate>Fri, 20 Nov 2026 05:51:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99761 · 7.8 HIGH — batman-adv: stop originator purge worker before freeing TT</title>
-      <link>https://vulnogram.org/CVE-2026-99761</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99761</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: batman-adv: stop originator purge worker before freeing TT batadv_mesh_free() releases the translation tables via batadv_tt_free() before batadv_originator_free() stops orig_work. Th…</description>
-      <category>High</category>
-      <pubDate>Fri, 20 Nov 2026 05:51:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99760 · 7.6 HIGH — batman-adv: tt: ignore ROAM flag of received ADD changes</title>
-      <link>https://vulnogram.org/CVE-2026-99760</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99760</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: batman-adv: tt: ignore ROAM flag of received ADD changes A received TT change (OGM diff or full table response) with the ROAM flag but without DEL is handled by batadv_tt_global_add(…</description>
-      <category>High</category>
-      <pubDate>Fri, 20 Nov 2026 05:51:28 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99759 — batman-adv: tt: don&apos;t drop local events queued during TVLV update</title>
-      <link>https://vulnogram.org/CVE-2026-99759</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99759</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: batman-adv: tt: don&apos;t drop local events queued during TVLV update batadv_tt_tvlv_container_update() read the number of local changes without holding changes_list_lock. batadv_tt_loca…</description>
-      <pubDate>Fri, 20 Nov 2026 05:51:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99758 · 7.5 HIGH — sctp: account for chunk padding in sctp_init_cause()</title>
-      <link>https://vulnogram.org/CVE-2026-99758</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99758</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: sctp: account for chunk padding in sctp_init_cause() sctp_init_cause() accepts a chunk when skb_tailroom() can hold the cause header and the payload. sctp_addto_chunk() then writes 0…</description>
-      <category>High</category>
-      <pubDate>Fri, 20 Nov 2026 05:51:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99757 — btrfs: sysfs: restore NOFS context on early return in btrfs_sysfs_add_block_group_type()</title>
-      <link>https://vulnogram.org/CVE-2026-99757</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99757</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: btrfs: sysfs: restore NOFS context on early return in btrfs_sysfs_add_block_group_type() btrfs_sysfs_add_block_group_type() sets up a NOFS context with memalloc_nofs_save() because k…</description>
-      <pubDate>Fri, 20 Nov 2026 05:51:26 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99756 — btrfs: prevent deleting the wrong subvolume by ID</title>
-      <link>https://vulnogram.org/CVE-2026-99756</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99756</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: btrfs: prevent deleting the wrong subvolume by ID When deleting a subvolume by ID, btrfs_ioctl_snap_destroy() first resolves the requested ID to a name, then looks up that name again…</description>
-      <pubDate>Fri, 20 Nov 2026 05:51:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-99755 — ptp: fix use-after-free in extts_fifo_show() reading tsevqs unlocked</title>
-      <link>https://vulnogram.org/CVE-2026-99755</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-99755</guid>
-      <description>In the Linux kernel, the following vulnerability has been resolved: ptp: fix use-after-free in extts_fifo_show() reading tsevqs unlocked extts_fifo_show() walks ptp-&gt;tsevqs with list_count_nodes() and then list_first_entry() without holding ptp-&gt;tsev…</description>
-      <pubDate>Fri, 20 Nov 2026 05:51:24 GMT</pubDate>
     </item>
   </channel>
 </rss>

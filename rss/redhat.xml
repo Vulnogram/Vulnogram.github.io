@@ -11,7 +11,48 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 25 Nov 2026 16:25:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 01:02:25 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-66784 · 8.7 HIGH — Submariner: submariner: shared cluster-set ipsec psk with self-asserted ike identities enables cross-cluster traffic interception</title>
+      <link>https://vulnogram.org/CVE-2026-66784</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-66784</guid>
+      <description>A flaw was found in Submariner. In its default Pre-Shared Key (PSK) mode, all gateways within a broker set utilize the same PSK. An attacker, by knowing this shared PSK, can forge an Endpoint Custom Resource (CR) to impersonate another cluster&apos;s iden…</description>
+      <category>High</category>
+      <pubDate>Thu, 26 Nov 2026 00:25:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-74025 · 6.9 MEDIUM — Ironic-image: coreos rootfs and ignition config always served over plaintext http</title>
+      <link>https://vulnogram.org/CVE-2026-74025</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-74025</guid>
+      <description>A flaw was found in ironic-image. The scripts responsible for constructing kernel parameters for CoreOS root file system (rootfs) and Ignition configuration URLs use a hardcoded `http://` scheme. This bypasses the intended Transport Layer Security (T…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 21:36:46 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-71296 · 6.8 MEDIUM — Maestro: grpc server authentication defaults to &apos;mock&apos; (allow-all authorizer)</title>
+      <link>https://vulnogram.org/CVE-2026-71296</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-71296</guid>
+      <description>A flaw was found in maestro. A remote attacker could exploit a misconfiguration in the gRPC server where authentication defaults to a &apos;mock&apos; mode. This default setting bypasses all authentication and authorization, allowing an unauthorized attacker t…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 21:36:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-136329 · 7.8 HIGH — Gimp: heap-based buffer overflow in the jif loader</title>
+      <link>https://vulnogram.org/CVE-2026-136329</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-136329</guid>
+      <description>A flaw was found in the file-gif-load plugin in GIMP. When processing a specially crafted JIF image file, a 32-bit integer overflow occurs during the pixel buffer size calculation, while the zlib output limit is computed separately without wrapping.…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 16:32:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-132888 · 7.5 HIGH 🌩️ — Librelp: certificate validation bypass in certvalid tls authentication mode</title>
+      <link>https://vulnogram.org/CVE-2026-132888</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-132888</guid>
+      <description>A flaw was found in librelp. When configured to use Transport Layer Security (TLS) with certificate validation and the GnuTLS driver, the library fails to verify the peer certificate chain. A remote, unauthenticated attacker can exploit this issue by…</description>
+      <category>High</category>
+      <category>Network Exploitable</category>
+      <pubDate>Wed, 25 Nov 2026 16:06:54 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-132889 · 6.5 MEDIUM — Librelp: process termination on a malformed tls record</title>
       <link>https://vulnogram.org/CVE-2026-132889</link>
@@ -387,47 +428,6 @@
       <description>A flaw was found in gdm. The CreateRemoteDisplay D-Bus method fails to perform proper authorization checks when initiating a remote display session. A local attacker with access to the login screen environment can invoke this method with an arbitrary…</description>
       <category>High</category>
       <pubDate>Thu, 19 Nov 2026 13:42:48 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-126631 · 7.1 HIGH — Openscap: symlink escape in offline scanning mode allows reading host files outside the scanned root</title>
-      <link>https://vulnogram.org/CVE-2026-126631</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-126631</guid>
-      <description>A flaw was found in OpenSCAP. This vulnerability allows for information disclosure when performing offline scans of untrusted filesystem images, such as container images or virtual machine (VM) disks. Because the scanner does not properly restrict sy…</description>
-      <category>High</category>
-      <pubDate>Thu, 19 Nov 2026 10:10:15 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-104357 · 4.8 MEDIUM 🌩️ — Libtirpc: libtirpc: sunrpc udp datagram-boundary violation (stale buffer bytes decoded as current request)</title>
-      <link>https://vulnogram.org/CVE-2026-104357</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104357</guid>
-      <description>A flaw was found in libtirpc. The SunRPC UDP/datagram server transport reuses a single receive buffer across requests and resets the XDR decode position without rebinding the decode length to the size of the datagram actually received. As a result, w…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 19 Nov 2026 04:42:14 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-129829 · 5.5 MEDIUM — Rsyslog: rsyslog&apos;s imuxsock special parser can write beyond a received message&apos;s raw buffer when replacing the message timestamp</title>
-      <link>https://vulnogram.org/CVE-2026-129829</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-129829</guid>
-      <description>The rsyslog&apos;s`imuxsock` special parser can end up writing into the received message raw buffer when trying to replace the message timestamp with the system&apos;s timestamp. A local attacker with the ability to write to the `imuxsock` socket can leverage…</description>
-      <category>Medium</category>
-      <pubDate>Wed, 18 Nov 2026 19:32:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-127096 · 3.3 LOW — Vscode-ansible: denial of service via quadratic documentation-regex scanning in the ansible language server</title>
-      <link>https://vulnogram.org/CVE-2026-127096</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127096</guid>
-      <description>A flaw was found in the Ansible language server shipped with the vscode-ansible extension. The regular expression used to extract documentation fragments from Ansible module files is susceptible to quadratic-time scanning. A module file containing a…</description>
-      <category>Low</category>
-      <pubDate>Wed, 18 Nov 2026 19:17:47 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-127095 · 3.3 LOW — Ansible-builder: denial of service via super-quadratic regular expression backtracking in ansible-builder requirements parsing</title>
-      <link>https://vulnogram.org/CVE-2026-127095</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127095</guid>
-      <description>A flaw was found in ansible-builder. The regular expression used to strip comments from a collection&apos;s requirements.txt during introspection is susceptible to super-quadratic backtracking. A requirements file containing a line with a long run of inte…</description>
-      <category>Low</category>
-      <pubDate>Wed, 18 Nov 2026 19:17:45 GMT</pubDate>
     </item>
   </channel>
 </rss>

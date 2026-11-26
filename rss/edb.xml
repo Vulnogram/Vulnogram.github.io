@@ -11,7 +11,63 @@
       <title>EnterpriseDB Corporation — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Wed, 25 Nov 2026 16:25:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 01:02:26 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-62157 · 5.3 MEDIUM — mongo_fdw out-of-bounds read when building an ObjectId from short _id values</title>
+      <link>https://vulnogram.org/CVE-2026-62157</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62157</guid>
+      <description>mongo_fdw converts _id values to 12-byte MongoDB ObjectIds with libbson functions that read a fixed number of bytes without checking the input length: 12 bytes for a bytea _id, and 24 characters for name-typed values and $oid fields in JSON. A shorte…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 16:36:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62156 · 6.5 MEDIUM — hdfs_fdw HiveQL injection through pushed-down IN and = ANY(array) string literals</title>
+      <link>https://vulnogram.org/CVE-2026-62156</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62156</guid>
+      <description>hdfs_fdw builds string literals for IN and = ANY(array) clauses pushed down to the remote Hive or Spark server without escaping single quotes. An authenticated user with only SELECT on a foreign table can supply a crafted array value that breaks out…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 16:36:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62155 · 5.3 MEDIUM — mongo_fdw connection URI injection through unencoded option values</title>
+      <link>https://vulnogram.org/CVE-2026-62155</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62155</guid>
+      <description>mongo_fdw builds the mongodb:// connection URI by inserting option values without percent-encoding them, so URI metacharacters (@ : / ? # &amp; =) in a value are parsed as part of the URI structure. A role that is not a superuser but has USAGE on a forei…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 16:36:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62154 · 7.5 HIGH — mysql_fdw runs SQL supplied by a malicious MySQL server during IMPORT FOREIGN SCHEMA</title>
+      <link>https://vulnogram.org/CVE-2026-62154</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62154</guid>
+      <description>During IMPORT FOREIGN SCHEMA, mysql_fdw copies column metadata returned by the remote MySQL server into the CREATE FOREIGN TABLE statements it runs locally without quoting it. The COLUMN_DEFAULT value is placed directly in the DEFAULT clause, and the…</description>
+      <category>High</category>
+      <pubDate>Wed, 25 Nov 2026 16:36:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62153 · 6.4 MEDIUM — mysql_fdw SQL injection through ANALYZE, IMPORT FOREIGN SCHEMA and the sql_mode option</title>
+      <link>https://vulnogram.org/CVE-2026-62153</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62153</guid>
+      <description>mysql_fdw inserts several values into statements sent to the remote MySQL server without escaping them: the dbname and table_name options in ANALYZE, the remote schema name and the LIMIT TO and EXCEPT table names in IMPORT FOREIGN SCHEMA, and the sql…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 16:36:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62152 · 5.8 MEDIUM — mysql_fdw allows non-superusers to set connection options that run SQL and read server files</title>
+      <link>https://vulnogram.org/CVE-2026-62152</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62152</guid>
+      <description>mysql_fdw accepts several security-sensitive connection options from roles that are not superusers. A role with USAGE on the mysql_fdw foreign data wrapper can set init_command, which runs arbitrary SQL on the remote MySQL server at every connection,…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 16:36:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-62151 · 5.8 MEDIUM — mysql_fdw SQL injection through a multi-byte character set escaping bypass</title>
+      <link>https://vulnogram.org/CVE-2026-62151</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-62151</guid>
+      <description>mysql_fdw builds string literals for queries sent to the remote MySQL server with an escaping routine that is not character-set aware. When the connection uses a multi-byte character set such as GBK, SJIS or Big5 and MySQL&apos;s default backslash escapin…</description>
+      <category>Medium</category>
+      <pubDate>Wed, 25 Nov 2026 16:36:21 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-132668 · 2.3 LOW</title>
       <link>https://vulnogram.org/CVE-2026-132668</link>
