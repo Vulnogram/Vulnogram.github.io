@@ -11,7 +11,48 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Thu, 26 Nov 2026 19:09:22 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 02:23:12 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-137653 · 6.5 MEDIUM — Spice-server: spice-server: remote denial of service via unbounded message-size allocation</title>
+      <link>https://vulnogram.org/CVE-2026-137653</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-137653</guid>
+      <description>A flaw was found in spice-server. A malicious SPICE client can send a message header declaring an arbitrarily large message body. The server sizes the receive-buffer allocation from this declared size before any message content is received; when the…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 26 Nov 2026 23:12:02 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-135107 · 6.5 MEDIUM — Samba: samba: smb2 pipe transceive allocates maxoutputresponse before the read</title>
+      <link>https://vulnogram.org/CVE-2026-135107</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-135107</guid>
+      <description>An **uncontrolled memory allocation** flaw has been found in the smbd_smb2_ioctl_pipe_write_done() function in source3/smbd/smb2_ioctl_named_pipe.c of the SMB2 named-pipe ioctl handling in the samba package. The file server reserves memory for a name…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 26 Nov 2026 23:04:30 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-137602 · 5.3 MEDIUM — Org.keycloak.services: bypass do access check no parameterized scope user property mapper</title>
+      <link>https://vulnogram.org/CVE-2026-137602</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-137602</guid>
+      <description>A flaw was found in Keycloak. This vulnerability enables information disclosure when the parameterized-scopes feature is enabled. The protocol mapper fails to enforce authorization checks for certain scope parameter types during token and authorizati…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 26 Nov 2026 22:55:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-137596 · 5 MEDIUM — Kubevirt: virt-api-rhel9: kubevirt: ssrf blind network-reconnaissance oracle via unvalidated connecturl in decentralized live migration</title>
+      <link>https://vulnogram.org/CVE-2026-137596</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-137596</guid>
+      <description>A server-side request forgery (SSRF) flaw was found in KubeVirt&apos;s decentralized live migration. The connectURL field of a VirtualMachineInstanceMigration object is not validated at admission, and the privileged synchronization-controller dials the at…</description>
+      <category>Medium</category>
+      <pubDate>Thu, 26 Nov 2026 22:55:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-4981 · 5.4 MEDIUM 🌩️ — Rhacs: red hat advanced cluster security (acs): open redirect and content spoofing via oauth callback endpoint</title>
+      <link>https://vulnogram.org/CVE-2026-4981</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-4981</guid>
+      <description>A flaw was found in Red Hat Advanced Cluster Security (ACS). An unauthenticated remote attacker can exploit a vulnerability in the login interface&apos;s OAuth callback endpoint by crafting a malicious URL. This URL, containing unvalidated `error` and `er…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Thu, 26 Nov 2026 22:03:35 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-126984 · 10 CRITICAL 🌩️ — Pulp_python: pulp_python: pull-through caching fetches a client-supplied url with the remote&apos;s credentials</title>
       <link>https://vulnogram.org/CVE-2026-126984</link>
@@ -386,48 +427,6 @@
       <description>A flaw was found in Hawtio. An authenticated remote attacker can cause a Denial of Service (DoS) by sending a specially crafted request URI to monitored endpoints. The FlightRecordingDownloadFacade servlet filter uses an inefficient regular expressio…</description>
       <category>Medium</category>
       <pubDate>Fri, 20 Nov 2026 02:43:10 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133226 · 4.3 MEDIUM — Org.keycloak:keycloak-services: org.keycloak:keycloak-server-spi-private: account resource sharing grants scopes outside the resource definition</title>
-      <link>https://vulnogram.org/CVE-2026-133226</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133226</guid>
-      <description>A flaw was found in Keycloak. The Account API endpoint for sharing resources fails to verify whether owner-managed access is enabled and accepts permission scopes not assigned to the resource. An authenticated user can exploit this vulnerability to g…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 20 Nov 2026 01:41:40 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133225 · 5.4 MEDIUM — Org.keycloak:keycloak-services: uma issues fresh rpts for disabled resource-server clients</title>
-      <link>https://vulnogram.org/CVE-2026-133225</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133225</guid>
-      <description>A flaw was found in Keycloak. When processing token requests using the User-Managed Access (UMA) grant, Keycloak fails to verify whether a target client or resource server is enabled before issuing an authorization token. An authenticated remote user…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 20 Nov 2026 01:41:30 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133228 · 6.8 MEDIUM 🌩️ — Org.keycloak.services.resources: client minimum acr (level of authentication) is not enforced when the login starts at the credential reset endpoint, allowing a second factor bypass</title>
-      <link>https://vulnogram.org/CVE-2026-133228</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133228</guid>
-      <description>A flaw was found in Keycloak. When a client application enforces step-up authentication or multi-factor authentication (MFA) via a minimum authentication level, Keycloak fails to apply this requirement to login sessions initiated through the credenti…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 20 Nov 2026 01:41:27 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133224 · 5.4 MEDIUM — Org.keycloak:keycloak-services: pre-revocation id tokens can mint fresh uma rpts after realm not-before</title>
-      <link>https://vulnogram.org/CVE-2026-133224</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133224</guid>
-      <description>A flaw was found in Keycloak. When an administrator revokes tokens by setting a not-before revocation cutoff, Keycloak fails to enforce this boundary when processing User-Managed Access (UMA) grant requests using ID token claims. An authenticated rem…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 20 Nov 2026 01:41:25 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133435 · 3.7 LOW 🌩️ — Org.keycloak:keycloak-model-jpa: case-variant realm urls bypass proxy restrictions</title>
-      <link>https://vulnogram.org/CVE-2026-133435</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133435</guid>
-      <description>A flaw was found in Keycloak. When configured with a database that uses case-insensitive collation, Keycloak resolves realm URLs regardless of letter casing. A remote attacker can exploit this behavior by sending requests with alternate letter casing…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Thu, 19 Nov 2026 22:35:34 GMT</pubDate>
     </item>
   </channel>
 </rss>
