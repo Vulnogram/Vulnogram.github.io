@@ -11,7 +11,31 @@
       <title>Zephyr Project — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 27 Nov 2026 11:53:26 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 20:35:06 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-102963 · 6.5 MEDIUM — Use-after-return in getaddrinfo() when a DNS query that followed a CNAME cannot be cancelled</title>
+      <link>https://vulnogram.org/CVE-2026-102963</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102963</guid>
+      <description>dns_resolve_cancel_with_name() in subsys/net/lib/dns/resolve.c looks up the pending query to cancel by DNS id plus a hash of the name the caller originally asked for. When a reply contains only a CNAME, the resolver sends a new query for the alias an…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 27 Nov 2026 15:42:06 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-104928 · 2.8 LOW — Kernel object validation bypass in k_thread_stack_space_get syscall verifier with CONFIG_NO_RUNTIME_CHECKS</title>
+      <link>https://vulnogram.org/CVE-2026-104928</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-104928</guid>
+      <description>The system call verifier z_vrfy_k_thread_stack_space_get() in kernel/thread.c checked the result of K_SYSCALL_OBJ(thread, K_OBJ_THREAD) with the CHECKIF() macro instead of K_OOPS(). CHECKIF() compiles to if (0) when CONFIG_NO_RUNTIME_CHECKS is select…</description>
+      <category>Low</category>
+      <pubDate>Fri, 27 Nov 2026 15:42:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-102962 · 4.2 MEDIUM — MCUmgr SMP client accepts responses from any transport, allowing spoofed command results</title>
+      <link>https://vulnogram.org/CVE-2026-102962</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-102962</guid>
+      <description>The MCUmgr SMP client matched an incoming response to a pending command in smp_client_response_discover() (subsys/mgmt/mcumgr/smp_client/src/client.c) using only the 8-bit sequence number and the operation. It did not check the transport the response…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 27 Nov 2026 15:42:03 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-90592 · 4.6 MEDIUM — Out-of-bounds read in it51xxx I2C target FIFO ISR on oversized read transaction</title>
       <link>https://vulnogram.org/CVE-2026-90592</link>
@@ -388,30 +412,6 @@
       <category>Medium</category>
       <category>Network Exploitable</category>
       <pubDate>Thu, 12 Nov 2026 02:23:44 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90834 · 5.5 MEDIUM — UART wide-data syscall verifiers check the 8-bit driver op, allowing a user-mode thread to trigger a NULL function-pointer call in kernel mode</title>
-      <link>https://vulnogram.org/CVE-2026-90834</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90834</guid>
-      <description>The user-mode syscall verifiers for the 16-bit (&quot;wide data&quot;) UART API in drivers/serial/uart_handlers.c validated the wrong driver operation. z_vrfy_uart_poll_out_u16(), z_vrfy_uart_tx_u16() and z_vrfy_uart_rx_enable_u16() each ran K_SYSCALL_DRIVER_U…</description>
-      <category>Medium</category>
-      <pubDate>Tue, 10 Nov 2026 22:07:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-90833 · 7.8 HIGH — Signed offset bypasses bounds check in simulated EEPROM driver, allowing out-of-bounds kernel memory read and write from user mode</title>
-      <link>https://vulnogram.org/CVE-2026-90833</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-90833</guid>
-      <description>The simulated EEPROM driver validated access ranges in eeprom_range_is_valid() (drivers/eeprom/eeprom_simulator.c) with a single test, (offset + len) &lt;= config-&gt;size. Because offset is a signed off_t and len an unsigned size_t of the same rank, the a…</description>
-      <category>High</category>
-      <pubDate>Tue, 10 Nov 2026 22:07:42 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-77685 · 8.3 HIGH — Bluetooth Classic RFCOMM: integer underflow in the MCC TEST command handler leads to out-of-bounds read disclosed to the peer and out-of-bounds write</title>
-      <link>https://vulnogram.org/CVE-2026-77685</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-77685</guid>
-      <description>The RFCOMM multiplexer control-channel handler in subsys/bluetooth/host/classic/rfcomm.c computed the echo length for a BT_RFCOMM_TEST command as buf-&gt;len - 1 and passed it to rfcomm_send_test(), whose length parameter is a uint8_t. A malformed but F…</description>
-      <category>High</category>
-      <pubDate>Tue, 10 Nov 2026 22:07:41 GMT</pubDate>
     </item>
   </channel>
 </rss>
