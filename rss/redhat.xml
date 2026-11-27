@@ -11,7 +11,83 @@
       <title>Red Hat, Inc. — recent CVEs</title>
       <link>https://vulnogram.org/</link>
     </image>
-    <lastBuildDate>Fri, 27 Nov 2026 02:23:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 11:53:26 GMT</lastBuildDate>
+    <item>
+      <title>CVE-2026-115836 · 3.7 LOW 🌩️ — Sequoia-openpgp: sequoia-openpgp: tolerant ascii armor parsing can select a different block than a strict parser</title>
+      <link>https://vulnogram.org/CVE-2026-115836</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115836</guid>
+      <description>A flaw was found in sequoia-openpgp. The default ASCII-armor parser accepts Unicode dash characters in armor framing and ignores leading quote characters. A crafted byte stream can be parsed as one message by this tolerant parser and as a different m…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 27 Nov 2026 08:22:54 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115841 · 5.3 MEDIUM 🌩️ — Sequoia-openpgp: sequoia-openpgp: degenerate dsa keys are accepted on the nettle and openssl backendsa</title>
+      <link>https://vulnogram.org/CVE-2026-115841</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115841</guid>
+      <description>A flaw was found in sequoia-openpgp. DSA signature verification does not reject a public key with generator 1 and public value 1 before calling the cryptographic backend. Upstream reports that the Nettle and OpenSSL backends, including the default Ne…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 27 Nov 2026 08:19:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115835 · 6.5 MEDIUM 🌩️ — Sequoia-openpgp: sequoia-openpgp: ascii armor parsing buffers a line without a length limit</title>
+      <link>https://vulnogram.org/CVE-2026-115835</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115835</guid>
+      <description>A flaw was found in sequoia-openpgp. The ASCII-armor reader does not limit the length of a line. Parsing an armored message with a very long line can exhaust memory in the process. Memory use follows the input size, with a small constant factor, and…</description>
+      <category>Medium</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 27 Nov 2026 08:19:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133845 · 7.3 HIGH — Flatpak: flatpak: sandbox escape via fd conflict in flatpak-portal spawn()</title>
+      <link>https://vulnogram.org/CVE-2026-133845</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133845</guid>
+      <description>A flaw was found in Flatpak’s flatpak-portal. When a sandboxed application invokes Spawn() and maps two different file descriptors to the same handle, dup2() can fail. Affected Flatpak versions do not handle that failure, so a file descriptor that wa…</description>
+      <category>High</category>
+      <pubDate>Fri, 27 Nov 2026 08:19:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-133842 · 8.2 HIGH — Flatpak: flatpak: flatpak-system-helper extra-data privilege escalation if canonicalizing permissions fails with emfile</title>
+      <link>https://vulnogram.org/CVE-2026-133842</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133842</guid>
+      <description>A flaw was found in Flatpak’s flatpak-system-helper. When a system-wide app, runtime, or extension uses the extra-data mechanism and its apply_extra logic creates a deeply nested directory tree, permission canonicalization can fail (for example with…</description>
+      <category>High</category>
+      <pubDate>Fri, 27 Nov 2026 08:19:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-115834 · 3.1 LOW 🌩️ — Sequoia-openpgp: sequoia-openpgp: user ids and notation data are displayed without escaping control characters</title>
+      <link>https://vulnogram.org/CVE-2026-115834</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-115834</guid>
+      <description>A flaw was found in sequoia-openpgp. Display and Debug formatting of User IDs and notation data does not escape control characters. When an application prints those values, a crafted User ID or notation can misrender the identity or alter terminal ou…</description>
+      <category>Low</category>
+      <category>Network Exploitable</category>
+      <pubDate>Fri, 27 Nov 2026 07:47:23 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-95622 · 6.5 MEDIUM — ModemManager: Reachable assertion in Cell Broadcast encoding parse causes denial of service</title>
+      <link>https://vulnogram.org/CVE-2026-95622</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-95622</guid>
+      <description>A flaw was found in ModemManager. When parsing a Cell Broadcast Message, some 3GPP data-coding-scheme values (8-bit and reserved character sets) are not handled. The process hits a reachable assertion and aborts. An attacker who can deliver a crafted…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 27 Nov 2026 07:38:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-125627 · 6.5 MEDIUM — Samba: samba4: null dereference in vlv_value_compare crashes the ad dc ldap worker</title>
+      <link>https://vulnogram.org/CVE-2026-125627</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-125627</guid>
+      <description>A **NULL pointer dereference** flaw has been found in the vlv_value_compare() function in vlv_pagination.c of the Virtual List View module in the **Samba** package. The function uses the sort value from the search result with no check that the result…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 27 Nov 2026 05:46:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>CVE-2026-19443 · 6.1 MEDIUM — Cri-o: cri-o: checkpoint restore path traversal in deleted.files allows host filesystem deletion</title>
+      <link>https://vulnogram.org/CVE-2026-19443</link>
+      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-19443</guid>
+      <description>A flaw was found in CRI-O. An attacker with access to the kubelet or CRI-O socket can exploit a path traversal vulnerability in the checkpoint restore functionality. This allows the attacker to delete arbitrary files and directories on the host files…</description>
+      <category>Medium</category>
+      <pubDate>Fri, 27 Nov 2026 03:36:05 GMT</pubDate>
+    </item>
     <item>
       <title>CVE-2026-137653 · 6.5 MEDIUM — Spice-server: spice-server: remote denial of service via unbounded message-size allocation</title>
       <link>https://vulnogram.org/CVE-2026-137653</link>
@@ -21,10 +97,10 @@
       <pubDate>Thu, 26 Nov 2026 23:12:02 GMT</pubDate>
     </item>
     <item>
-      <title>CVE-2026-135107 · 6.5 MEDIUM — Samba: samba: smb2 pipe transceive allocates maxoutputresponse before the read</title>
+      <title>CVE-2026-135107 · 6.5 MEDIUM — Samba: smb2 pipe transceive allocates maxoutputresponse before the read</title>
       <link>https://vulnogram.org/CVE-2026-135107</link>
       <guid isPermaLink="true">https://vulnogram.org/CVE-2026-135107</guid>
-      <description>An **uncontrolled memory allocation** flaw has been found in the smbd_smb2_ioctl_pipe_write_done() function in source3/smbd/smb2_ioctl_named_pipe.c of the SMB2 named-pipe ioctl handling in the samba package. The file server reserves memory for a name…</description>
+      <description>An **uncontrolled memory allocation** flaw has been found in the smbd_smb2_ioctl_pipe_write_done() function in source3/smbd/smb2_ioctl_named_pipe.c of the SMB2 named-pipe ioctl handling in the **Samba** package. The file server reserves memory for a…</description>
       <category>Medium</category>
       <pubDate>Thu, 26 Nov 2026 23:04:30 GMT</pubDate>
     </item>
@@ -351,82 +427,6 @@
       <description>A heap-based buffer overflow was found in Corosync&apos;s Totem SRP membership commit token handling. The sanity check for memb_commit_token messages validates only minimum length and address-entry counts, not an upper bound against the fixed commit_token…</description>
       <category>Medium</category>
       <pubDate>Fri, 20 Nov 2026 17:47:39 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-127106 · 5.3 MEDIUM 🌩️ — Quarkus-rest-jsonb: deeply nested json-b bodies cause large stack-trace logs in quarkus rest</title>
-      <link>https://vulnogram.org/CVE-2026-127106</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-127106</guid>
-      <description>A flaw was found in the quarkus-rest-jsonb component of Quarkus. An unauthenticated remote attacker can cause a Denial of Service (DoS) by sending HTTP requests containing deeply nested JSON payloads to vulnerable endpoints. The application fails dur…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 20 Nov 2026 17:46:38 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133879 · 7.7 HIGH — Kubevirt: containerized-data-importer: kubevirt/cdi: cross-namespace pvc clone authorization bypass via user-controlled checkstaticvolume datavolume annotation</title>
-      <link>https://vulnogram.org/CVE-2026-133879</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133879</guid>
-      <description>A flaw was found in KubeVirt/containerized-data-importer. When a VirtualMachine with an embedded DataVolumeTemplate carrying the cdi.kubevirt.io/storage.checkStaticVolume annotation and a cross-namespace clone source is created by a tenant, the servi…</description>
-      <category>High</category>
-      <pubDate>Fri, 20 Nov 2026 17:06:37 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133622 · 3.7 LOW 🌩️ — Certmonger: missing size limits and timeouts in scep ca reply handling lead to denial of service</title>
-      <link>https://vulnogram.org/CVE-2026-133622</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133622</guid>
-      <description>A flaw was found in certmonger. This vulnerability allows a malicious certificate authority or an attacker positioned on an unencrypted network to cause a Denial of Service (DoS) by sending oversized or deliberately slow responses. Certmonger fails t…</description>
-      <category>Low</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 20 Nov 2026 08:57:29 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133531 · 5.9 MEDIUM — Cluster-network-operator: cluster-network-operator: ipsec signer fails to bind certificate identity to the requesting node</title>
-      <link>https://vulnogram.org/CVE-2026-133531</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133531</guid>
-      <description>A flaw was found in cluster-network-operator. The OVN IPsec certificate signer does not verify that the requested certificate Subject and DNS names belong to the requesting node. An attacker with an accepted OVN node credential and permission to subm…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 20 Nov 2026 08:09:13 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133577 · 7.7 HIGH 🌩️ — Github.com/kuadrant/kuadrant-operator: github.com/kuadrant/wasm-shim: kuadrant-operator: authpolicy is silently bypassed (fail-open) when a tokenratelimitpolicy is combined with an authpolicy or a gateway-level ratelimitpolicy</title>
-      <link>https://vulnogram.org/CVE-2026-133577</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133577</guid>
-      <description>A flaw was found in the Kuadrant WebAssembly (WASM) shim shipped in Red Hat Connectivity Link 1.5. When a TokenRateLimitPolicy is attached to an HTTPRoute that also has an AuthPolicy - or when a RateLimitPolicy with defaults or overrides is attached…</description>
-      <category>High</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 20 Nov 2026 06:53:02 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133553 · 7.8 HIGH — Crun: crun: tmpcopyup follows a second path lookup and copies image files onto the host</title>
-      <link>https://vulnogram.org/CVE-2026-133553</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133553</guid>
-      <description>A flaw was found in crun. When copying files onto a tmpfs mounted with tmpcopyup, crun opens the destination a second time by name. A container that shares a writable volume with the container being created can change that path between the two lookup…</description>
-      <category>High</category>
-      <pubDate>Fri, 20 Nov 2026 03:53:59 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133537 · 6.8 MEDIUM — Org.keycloak:keycloak-services: org.keycloak:keycloak-common: uma uri suffix matching authorization bypass</title>
-      <link>https://vulnogram.org/CVE-2026-133537</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133537</guid>
-      <description>A flaw was found in Keycloak. When evaluating access permissions, Keycloak Authorization Services improperly matches resource paths containing wildcard file extensions by evaluating only the file extension suffix and ignoring configured path prefixes…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 20 Nov 2026 03:12:51 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133536 · 4.3 MEDIUM 🌩️ — Org.keycloak:keycloak-services: post-logout redirect uri configuration of a disabled client is still honored, leading to open redirect</title>
-      <link>https://vulnogram.org/CVE-2026-133536</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133536</guid>
-      <description>A flaw was found in Keycloak. The OpenID Connect (OIDC) logout endpoint continues to honor post-logout redirect rules for disabled clients rather than rejecting the requests. If a disabled client retains permissive redirect configurations, a remote a…</description>
-      <category>Medium</category>
-      <category>Network Exploitable</category>
-      <pubDate>Fri, 20 Nov 2026 03:12:50 GMT</pubDate>
-    </item>
-    <item>
-      <title>CVE-2026-133535 · 4.3 MEDIUM — Hawtio: hawtio-systems: quadratic redos in flightrecordingdownloadfacade request-uri pattern</title>
-      <link>https://vulnogram.org/CVE-2026-133535</link>
-      <guid isPermaLink="true">https://vulnogram.org/CVE-2026-133535</guid>
-      <description>A flaw was found in Hawtio. An authenticated remote attacker can cause a Denial of Service (DoS) by sending a specially crafted request URI to monitored endpoints. The FlightRecordingDownloadFacade servlet filter uses an inefficient regular expressio…</description>
-      <category>Medium</category>
-      <pubDate>Fri, 20 Nov 2026 02:43:10 GMT</pubDate>
     </item>
   </channel>
 </rss>
